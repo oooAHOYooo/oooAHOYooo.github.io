@@ -41,6 +41,12 @@ body {
     float: middle;
   }
 
+  @media screen and (min-width: 620px) {
+    nav {
+      background-color: blue;
+    }
+  }
+
   .subHeader {
     background-color:rgba(23, 0, 128, 0.475);
     display:flex;
