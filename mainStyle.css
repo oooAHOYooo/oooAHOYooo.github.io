@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@700&display=swap');
+
+
+
+body {
+    background-color:rgba(255, 0, 0, 0.669);
+    font-family: 'Barlow', sans-serif;
+}
+
+
+
+  .filters {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+ 
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-auto-rows: 200px;
+    gap: 20px;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    background-color: rgb(247, 140, 140);
+  }
+  .item {
+    background-color: #ddd;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  .item.filtered {
+    display: none;
+  }
+  h2 {
+    font-size: 16vw;
+    margin-bottom: 10px;
+  }
+  ul {
+    list-style: none;
+    margin-top: 10px;
+  }
+  li {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #ccc;
+    font-size: 12px;
+  }
+
+  button {
+    width:200px;
+    height:100px;
+  }
+
+  button:hover{
+    filter: invert(1);
+    cursor: pointer;
+  }
+
+  nav {
+    width:100%;
+    background-color:green;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align:center;
+    float: middle;
+  }
+
+  .subHeader {
+    background-color:green;
+    display:flex;
+    padding:20px;
+    flex-direction: row;
+    align-items:top;
+
+  }

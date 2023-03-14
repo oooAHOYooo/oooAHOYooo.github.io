@@ -1,8 +1,75 @@
 <html>
     <head>
         <title>Ahoy 2</title>
+        <!-- AS OF 3.13.23 --><!-- BUILD 0.0.1a-->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <!-- CSS3 -->
+        <link rel="stylesheet" href="mainStyle.css">
+        <link rel="stylesheet" href="jwPlayer.css">
     </head>
     <body>
-        This is where the index will go  - yo
+        <div id="app">
+       
+            <div v-show="selectedTab === 'tab1'">
+              <div class="subHeader">
+              <h2>Watch</h2>
+              <p>This is the content of tab 1.</p>
+            </div>
+              
+              <div style="position:relative; overflow:hidden; padding-bottom:56.25%"><iframe src="https://cdn.jwplayer.com/players/SyfFOIKw-NkmVmcCh.html" width="100%" height="100%" frameborder="0" scrolling="auto" title="playblock5c - 7pm - 10pm [primeTime]" style="position:absolute;" allowfullscreen></iframe></div>
+            </div>
+        
+            <div v-show="selectedTab === 'tab2'">
+              <h2>Radio</h2>
+              <p>This is the content of tab 2.</p>
+            </div>
+        
+            <div v-show="selectedTab === 'tab3'">
+              <h2>Pal-bot 2</h2>
+              <!-- MARKETPLACE CONTENT -->
+              <div class="marketplace">
+                <!-- CONTENT GOES HERE -->
+                <div>
+                    <div style="position:relative; overflow:hidden; padding-bottom:56.25%"><iframe src="https://cdn.jwplayer.com/players/9ew87ik3-NkmVmcCh.html" width="100%" height="100%" frameborder="0" scrolling="auto" title="Pal-bot 2 Takeover" style="position:absolute;" allowfullscreen></iframe></div>
+                </div>
+                </div>
+
+
+                <div v-show="selectedTab === 'tab4'">
+                    <h2>Live Shows</h2>
+                    <!-- Liveshow CONTENT -->
+                    <div class="liveshows">
+                      <!-- CONTENT GOES HERE -->
+                      <div>
+                        <div style="position:relative; overflow:hidden; padding-bottom:56.25%"><iframe src="https://cdn.jwplayer.com/players/9ew87ik3-NkmVmcCh.html" width="100%" height="100%" frameborder="0" scrolling="auto" title="Pal-bot 2 Takeover" style="position:absolute;" allowfullscreen></iframe></div>
+                      </div>
+                      </div></div>
+
+
+
+          
+                      </div>
+                      <nav>
+                        <ul>
+                          <li @click="selectedTab = 'tab1'"><button>Watch</button></li>
+                          <li @click="selectedTab = 'tab2'"><button>Radio</button></li>
+                          <li @click="selectedTab = 'tab3'"><button>Pal-bot 2</button></li>
+                          <li @click="selectedTab = 'tab4'"><button>Live Shows</button></li>
+                        </ul>
+                      </nav>
+                  
+          </div>
+          <!-- VUE TAB SWITCH-->
+          <script>
+            var app = new Vue({
+              el: '#app',
+              data: {
+                selectedTab: 'tab1'
+              }
+            })
+          </script>
+
+          
+
     </body>
 </html>
