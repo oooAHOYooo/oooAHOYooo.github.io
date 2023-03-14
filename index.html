@@ -1,23 +1,26 @@
 <html>
     <head>
         <title>Ahoy 2</title>
-        <!-- AS OF 3.14.23 --><!-- BUILD 0.0.1b-->
+        <!-- AS OF 3.14.23 --><!-- BUILD 0.0.2b-->
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <!-- CSS3 -->
         <link rel="stylesheet" href="mainStyle.css">
         <link rel="stylesheet" href="jwPlayer.css">
     </head>
+
     <body>
         <div id="app">
           <nav>
             <ul>
               <li @click="selectedTab = 'tab1'"><button>Watch</button></li>
               <li @click="selectedTab = 'tab2'"><button>Radio</button></li>
-              <li @click="selectedTab = 'tab3'"><button>Pal-bot 2</button></li>
-              <li @click="selectedTab = 'tab4'"><button>Live Shows</button></li>
+              <li @click="selectedTab = 'tab5'"><button>MarketPlace</button></li>
+              <li @click="selectedTab = 'tab3'"><button>Schedule</button></li>
+              <li @click="selectedTab = 'tab6'"><button>Live Shows</button></li>
             </ul>
           </nav>
        
+          <!-- TAB 1 -->
             <div v-show="selectedTab === 'tab1'">
               <div style="position:relative; overflow:hidden; padding-bottom:56.25%"><iframe src="https://cdn.jwplayer.com/players/SyfFOIKw-NkmVmcCh.html" width="100%" height="100%" frameborder="0" scrolling="auto" title="playblock5c - 7pm - 10pm [primeTime]" style="position:absolute;" allowfullscreen></iframe></div>
               <div class="subHeader">
@@ -31,16 +34,64 @@
             <div v-show="selectedTab === 'tab2'">
             Radio goes here
 
+
+            
+
+              <!-- RADIO SUBHEADER-->
               <div class="subHeader">
                 <h2>Radio</h2>
                 <p>Watch Ahoy Indie Media's 24/7 Channel - with new content every other Thursday at 7pm</p>
-              </div>
+              </div><!-- RADIO SUBHEADER-->
 
-            </div>
+                </div>
+
+               <!-- TAB 5 -->
+            <div v-show="selectedTab === 'tab5'">
+             TAB 5 CONENT GOES here
+              <div class="grid-container">
+                  <div class="grid-item"></div>
+                  <div class="grid-item"></div>
+                  <div class="grid-item"></div>
+                  <div class="grid-item"></div>
+                  <div class="grid-item"></div>
+                  <div class="grid-item"></div>
+              </div>
+                <!-- TAB 5 SUBHEADER-->
+                <div class="subHeader">
+                  <h2>MarketPlace</h2>
+                  <p>Get Access to onDemand Content</p>
+                </div><!-- TAB5 SUBHEADER-->
+  
+                  </div>
+                  <!-- END OF TAB 5-->
+
+     <!-- TAB 6 -->
+     <div v-show="selectedTab === 'tab6'">
+      TAB 6 (liveShow) CONENT GOES here
+       <div class="grid-container">
+           <div class="grid-item"></div>
+           <div class="grid-item"></div>
+           <div class="grid-item"></div>
+           <div class="grid-item"></div>
+           <div class="grid-item"></div>
+           <div class="grid-item"></div>
+       </div>
+         <!-- TAB 6 SUBHEADER-->
+         <div class="subHeader">
+           <h2>MarketPlace</h2>
+           <p>Get Access to onDemand Content</p>
+         </div><!-- TAB5 SUBHEADER-->
+
+           </div>
+           <!-- END OF TAB 6-->
         
             <!-- TAB 3-->
             <div v-show="selectedTab === 'tab3'">
              
+
+
+
+        
               <div class="marketplace">
                 <!-- CONTENT GOES HERE -->
                 <div>
@@ -48,34 +99,17 @@
                 </div>
                 
                 <div class="subHeader">
-                  <h2>Pal-bot 2</h2>
+                  <h2>On Demand</h2>
                   <p>Watch Ahoy Indie Media's 24/7 Channel - with new content every other Thursday at 7pm</p>
                 </div>
 
-
-
                 </div>
 
-                <!-- TAB 4 -->
-                <div v-show="selectedTab === 'tab4'">
-                    <h2>Live Shows</h2>
-                    <!-- Liveshow CONTENT -->
-                    <div class="liveshows">
-                      <!-- CONTENT GOES HERE -->
-                      <div>
-                        <div style="position:relative; overflow:hidden; padding-bottom:56.25%"><iframe src="https://cdn.jwplayer.com/players/9ew87ik3-NkmVmcCh.html" width="100%" height="100%" frameborder="0" scrolling="auto" title="Pal-bot 2 Takeover" style="position:absolute;" allowfullscreen></iframe></div>
-                      </div>
-                      </div>
-
-                      <div class="subHeader">
-                        <h2>Live Content</h2>
-                        <p>Watch Ahoy Indie Media's 24/7 Channel - with new content every other Thursday at 7pm</p>
-                      </div>
-
-          
-                      </div>
-                    
+           
                 
+
+
+
           </div><!-- END OF APP -->
 
 
@@ -90,7 +124,32 @@
               data: {
                 selectedTab: 'tab1'
               }
-            })
+            });
+
+            var app1 = new Vue({
+              el: '#app1',
+              data: {
+                items: [
+                  { id: 1, title: 'Item 1', description: 'This is item 1', tags: ['tag1', 'tag2'] },
+                  { id: 2, title: 'Item 2', description: 'This is item 2', tags: ['tag1', 'tag3'] },
+                  { id: 3, title: 'Item 3', description: 'This is item 3', tags: ['tag2', 'tag3'] },
+                  { id: 4, title: 'Item 4', description: 'This is item 4', tags: ['tag1', 'tag2', 'tag3'] },
+                ],
+                filter: '',
+                tags: ['tag1', 'tag2', 'tag3']
+              },
+              computed: {
+                filteredItems: function () {
+                  var filter = this.filter;
+                  if (!filter) {
+                    return this.items;
+                  }
+                  return this.items.filter(function (item) {
+                    return item.tags.indexOf(filter) !== -1;
+                  });
+                }
+              }
+            });
           </script>
 
           
