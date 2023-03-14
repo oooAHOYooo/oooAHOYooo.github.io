@@ -1,7 +1,7 @@
 <html>
     <head>
         <title>Ahoy 2</title>
-        <!-- AS OF 3.13.23 --><!-- BUILD 0.0.1a-->
+        <!-- AS OF 3.14.23 --><!-- BUILD 0.0.1b-->
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <!-- CSS3 -->
         <link rel="stylesheet" href="mainStyle.css">
@@ -9,32 +9,54 @@
     </head>
     <body>
         <div id="app">
+          <nav>
+            <ul>
+              <li @click="selectedTab = 'tab1'"><button>Watch</button></li>
+              <li @click="selectedTab = 'tab2'"><button>Radio</button></li>
+              <li @click="selectedTab = 'tab3'"><button>Pal-bot 2</button></li>
+              <li @click="selectedTab = 'tab4'"><button>Live Shows</button></li>
+            </ul>
+          </nav>
        
             <div v-show="selectedTab === 'tab1'">
-              <div class="subHeader">
-              <h2>Watch</h2>
-              <p>This is the content of tab 1.</p>
-            </div>
-              
               <div style="position:relative; overflow:hidden; padding-bottom:56.25%"><iframe src="https://cdn.jwplayer.com/players/SyfFOIKw-NkmVmcCh.html" width="100%" height="100%" frameborder="0" scrolling="auto" title="playblock5c - 7pm - 10pm [primeTime]" style="position:absolute;" allowfullscreen></iframe></div>
+              <div class="subHeader">
+                <h2>Watch</h2>
+                <p>Watch Ahoy Indie Media's 24/7 Channel - with new content every other Thursday at 7pm</p>
+              </div>
+            
             </div>
         
+            <!-- TAB 2 -->
             <div v-show="selectedTab === 'tab2'">
-              <h2>Radio</h2>
-              <p>This is the content of tab 2.</p>
+            Radio goes here
+
+              <div class="subHeader">
+                <h2>Radio</h2>
+                <p>Watch Ahoy Indie Media's 24/7 Channel - with new content every other Thursday at 7pm</p>
+              </div>
+
             </div>
         
+            <!-- TAB 3-->
             <div v-show="selectedTab === 'tab3'">
-              <h2>Pal-bot 2</h2>
-              <!-- MARKETPLACE CONTENT -->
+             
               <div class="marketplace">
                 <!-- CONTENT GOES HERE -->
                 <div>
                     <div style="position:relative; overflow:hidden; padding-bottom:56.25%"><iframe src="https://cdn.jwplayer.com/players/9ew87ik3-NkmVmcCh.html" width="100%" height="100%" frameborder="0" scrolling="auto" title="Pal-bot 2 Takeover" style="position:absolute;" allowfullscreen></iframe></div>
                 </div>
+                
+                <div class="subHeader">
+                  <h2>Pal-bot 2</h2>
+                  <p>Watch Ahoy Indie Media's 24/7 Channel - with new content every other Thursday at 7pm</p>
                 </div>
 
 
+
+                </div>
+
+                <!-- TAB 4 -->
                 <div v-show="selectedTab === 'tab4'">
                     <h2>Live Shows</h2>
                     <!-- Liveshow CONTENT -->
@@ -43,22 +65,24 @@
                       <div>
                         <div style="position:relative; overflow:hidden; padding-bottom:56.25%"><iframe src="https://cdn.jwplayer.com/players/9ew87ik3-NkmVmcCh.html" width="100%" height="100%" frameborder="0" scrolling="auto" title="Pal-bot 2 Takeover" style="position:absolute;" allowfullscreen></iframe></div>
                       </div>
-                      </div></div>
+                      </div>
 
-
+                      <div class="subHeader">
+                        <h2>Live Content</h2>
+                        <p>Watch Ahoy Indie Media's 24/7 Channel - with new content every other Thursday at 7pm</p>
+                      </div>
 
           
                       </div>
-                      <nav>
-                        <ul>
-                          <li @click="selectedTab = 'tab1'"><button>Watch</button></li>
-                          <li @click="selectedTab = 'tab2'"><button>Radio</button></li>
-                          <li @click="selectedTab = 'tab3'"><button>Pal-bot 2</button></li>
-                          <li @click="selectedTab = 'tab4'"><button>Live Shows</button></li>
-                        </ul>
-                      </nav>
-                  
-          </div>
+                    
+                
+          </div><!-- END OF APP -->
+
+
+
+
+
+
           <!-- VUE TAB SWITCH-->
           <script>
             var app = new Vue({
