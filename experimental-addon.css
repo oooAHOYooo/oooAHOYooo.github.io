@@ -1,0 +1,126 @@
+.calendar {
+	background-color: #f2f2f2;
+	padding: 20px;
+	border: 2px solid black;
+}
+.weekdays {
+	display: flex;
+	flex-direction:row;
+}
+
+.day {
+    width:300px;
+}
+
+.date {
+    display: flex;
+    flex-direction: column;
+    width:200px;
+}
+
+
+/*CALENDAR */
+.monday {
+    background-color: #f2f2f2;
+    height:100px;
+    text-align:center;
+    color:black;
+}
+
+.tuesday {
+    background-color: aliceblue;
+    text-align:center;
+    color:black;
+}
+
+.wednesday {
+    background-color: aqua;
+    text-align:center;
+    color:black;
+}
+
+.thursday {
+    background-color: cornsilk;
+    text-align:center;
+    color:black;
+}
+
+.friday {
+    background-color:aquamarine;
+    text-align:center;
+    color:black;
+}
+
+.saturday {
+    background-color:thistle;
+    text-align:center;
+    color:black;
+}
+
+.sunday {
+    background-color:lightyellow;
+    text-align:center;
+    color:black;
+}
+
+.weeklyTable {
+    width:100%;
+    height:auto;
+    overflow:hidden;
+   
+}
+
+@media screen and (max-width: 500px) {
+    .weeklyTable {
+      display:none;
+    }
+  }
+
+@media screen and (max-width: 500px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 1em;
+        grid-row-gap: 100px;
+    }
+  }
+
+/*The WRAPS */
+.marketWrap {
+    width:100%;
+    height:auto;
+    display:flex;
+    align-items:center;
+    flex-direction: column;
+    justify-content: center;
+    background-color:#000000;
+    padding-bottom:100px;
+}
+
+.collectionWrap {
+    width:100%;
+    height:auto;
+    display:flex;
+    align-items:center;
+    flex-direction: column;
+    justify-content: center;
+    background-color:#000000;
+    padding-bottom:100px;
+}
+
+.liveShowWrap {
+    width:100%;
+    height:auto;
+    display:flex;
+    align-items:center;
+    flex-direction: column;
+    justify-content: center;
+    background-color:#000000;
+    padding-bottom:100px;
+}
+
+.subHeaderVert {
+    display:block;
+    
+}
+

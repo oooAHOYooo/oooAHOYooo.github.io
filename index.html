@@ -2,12 +2,13 @@
     <head>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <title>Ahoy 2</title>
+        <title>Ahoy 2i</title>
         <!-- AS OF 3.14.23 --><!-- BUILD 0.0.2b-->
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <!-- CSS3 -->
         <link rel="stylesheet" href="mainStyle.css">
         <link rel="stylesheet" href="jwPlayer.css">
+        <link rel="stylesheet" href="experimental-addon.css">
     </head>
 
     <body>
@@ -17,17 +18,85 @@
               <li @click="selectedTab = 'tab1'"><button>Watch</button></li>
               <li @click="selectedTab = 'tab2'"><button>Radio</button></li>
               <li @click="selectedTab = 'tab5'"><button>MarketPlace</button></li>
-              <li @click="selectedTab = 'tab3'"><button>Schedule</button></li>
+              <li @click="selectedTab = 'tab3'"><button>Collection</button></li>
               <li @click="selectedTab = 'tab6'"><button>Live Shows</button></li>
             </ul>
           </nav>
        
-          <!-- TAB 1 -->
+          <!-- TAB 1 (Watch)-->
             <div v-show="selectedTab === 'tab1'">
               <div style="position:relative; overflow:hidden; padding-bottom:56.25%"><iframe src="https://cdn.jwplayer.com/players/SyfFOIKw-NkmVmcCh.html" width="100%" height="100%" frameborder="0" scrolling="auto" title="playblock5c - 7pm - 10pm [primeTime]" style="position:absolute;" allowfullscreen></iframe></div>
               <div class="subHeader">
-                <h2>Watch</h2>
-                <p>Watch Ahoy Indie Media's 24/7 Channel - with new content every other Thursday at 7pm</p>
+                <div class="subHeaderVert">
+                  <a href="#"><img src="/assets/u_ahoy23.png" class="logo"></a>
+                  <h2>Watch</h2>
+                  <p>Watch Ahoy Indie Media's 24/7 Channel - with new content every other Thursday at 7pm</p>
+                </div>
+                
+                <!-- THIS IS WHERE THE SCHEDULE WILL START-->
+                <table class="weeklyTable">
+                  <thead>
+                    <tr>
+                      <th>Time</th>
+                      <th>Monday</th>
+                      <th>Tuesday</th>
+                      <th>Wednesday</th>
+                      <th>Thursday</th>
+                      <th>Friday</th>
+                      <th>Saturday</th>
+                      <th>Sunday</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>8:00am</td>
+                      <td class="monday">Yoga</td>
+                      <td class="tuesday">Pilates</td>
+                      <td class="wednesday">Yoga</td>
+                      <td class="thursday">Pilates</td>
+                      <td class="friday">Yoga</td>
+                      <td class="saturday">Rest Day</td>
+                      <td class="sunday">Rest Day</td>
+                    </tr>
+                    <tr>
+                      <td>10:00am</td>
+                      <td class="monday">Yoga</td>
+                      <td class="tuesday">Pilates</td>
+                      <td class="wednesday">Yoga</td>
+                      <td class="thursday">Pilates</td>
+                      <td class="friday">Yoga</td>
+                      <td class="saturday">Rest Day</td>
+                      <td class="sunday">Rest Day</td>
+                    </tr>
+                    <tr>
+                      <td>3:00pm</td>
+                      <td class="monday">Yoga</td>
+                      <td class="tuesday">Pilates</td>
+                      <td class="wednesday">Yoga</td>
+                      <td class="thursday">Pilates</td>
+                      <td class="friday">Yoga</td>
+                      <td class="saturday">Rest Day</td>
+                      <td class="sunday">Rest Day</td>
+                    </tr>
+                    <tr>
+                      <td>7:00pm</td>
+                      <td class="monday">The Rob Show</td>
+                      <td class="tuesday">The Rob Show</td>
+                      <td class="wednesday">The Rob Show</td>
+                      <td class="thursday">The Rob Show</td>
+                      <td class="friday">The Rob Show</td>
+                      <td class="saturday">The Rob Show</td>
+                      <td class="sunday">The Rob Show</td>
+                    </tr>
+                  </tbody></table>
+
+                <!--This is where the schedule will end -->
+
+
+
+
+
+
               </div>
             
             </div>
@@ -35,6 +104,7 @@
             <!-- TAB 2 -->
             <div v-show="selectedTab === 'tab2'">
             Radio goes here
+            
 
 
             
@@ -47,31 +117,43 @@
 
                 </div>
 
-               <!-- TAB 5 -->
+               <!-- TAB 5 (Market)-->
             <div v-show="selectedTab === 'tab5'">
-             TAB 5 CONENT GOES here
-              <div class="grid-container">
-                  <div class="grid-item"></div>
-                  <div class="grid-item"></div>
-                  <div class="grid-item"></div>
-                  <div class="grid-item"></div>
-                  <div class="grid-item"></div>
-                  <div class="grid-item"></div>
-              </div>
+              <!-- START OF MARKET WRAP -->
+              <div class="marketWrap">
+                  TAB 5 CONENT GOES here (Right now Tab 5 is being used for Marketplace)
+                  <div class="grid-container">
+                      <div class="grid-item">Pal-bot 2</div>
+                      <div class="grid-item">Tallboyz Better Late Than Never</div>
+                      <div class="grid-item"></div>
+                      <div class="grid-item"></div>
+                      <div class="grid-item"></div>
+                      <div class="grid-item"></div>
+                  </div>
+
+            <!--END OF MARKETWRAP--></div>
+            <!--END OF MARKETWRAP-->
+
+
                 <!-- TAB 5 SUBHEADER-->
                 <div class="subHeader">
-                  <h2>MarketPlace</h2>
-                  <p>Get Access to onDemand Content</p>
+                  <div class="subHeaderVert">
+                    <a href="#"><img src="/assets/u_ahoy23.png" class="logo"></a>
+                    <h2>MarketPlace</h2>
+                    <p>Watch Ahoy Indie Media's 24/7 Channel - with new content every other Thursday at 7pm</p>
+                  </div>
+               
                 </div><!-- TAB5 SUBHEADER-->
   
                   </div>
                   <!-- END OF TAB 5-->
 
-     <!-- TAB 6 -->
+     <!-- TAB 6 (Live Show) -->
      <div v-show="selectedTab === 'tab6'">
+      <div class="liveShowWrap">
       TAB 6 (liveShow) CONENT GOES here
        <div class="grid-container">
-           <div class="grid-item"></div>
+           <div class="grid-item"><button @click="selectedTab = 'tab1'" >Gather</button>Shows at Gather</div>
            <div class="grid-item"></div>
            <div class="grid-item"></div>
            <div class="grid-item"></div>
@@ -80,29 +162,46 @@
        </div>
          <!-- TAB 6 SUBHEADER-->
          <div class="subHeader">
-           <h2>MarketPlace</h2>
-           <p>Get Access to onDemand Content</p>
+          <div class="subHeaderVert">
+          <a href="#"><img src="/assets/u_ahoy23.png" class="logo"></a>
+           <h2>Live Shows</h2>
+           <p>We partner with the latest and greatest </p>
+            </div>
          </div><!-- TAB5 SUBHEADER-->
-
+         </div><!-- END OF LVE SHOW RAP-->
            </div>
            <!-- END OF TAB 6-->
         
-            <!-- TAB 3-->
+
+
+
+
+
+
+
+
+
+
+            <!-- TAB 3 (Collection )-->
             <div v-show="selectedTab === 'tab3'">
-             
-
-
-
-        
-              <div class="marketplace">
+              <div class="collectionWrap">
                 <!-- CONTENT GOES HERE -->
-                <div>
-                    <div style="position:relative; overflow:hidden; padding-bottom:56.25%"><iframe src="https://cdn.jwplayer.com/players/9ew87ik3-NkmVmcCh.html" width="100%" height="100%" frameborder="0" scrolling="auto" title="Pal-bot 2 Takeover" style="position:absolute;" allowfullscreen></iframe></div>
-                </div>
+                
+                This is where the collection will go
+                
+                <div class="grid-container">
+                  <div class="grid-item"></div>
+                  <div class="grid-item"></div>
+                  <div class="grid-item"></div>
+                  <div class="grid-item"></div>
+                  <div class="grid-item"></div>
+                  <div class="grid-item"></div>
+              </div>
+                This is where the collection will end 
                 
                 <div class="subHeader">
-                  <h2>On Demand</h2>
-                  <p>Watch Ahoy Indie Media's 24/7 Channel - with new content every other Thursday at 7pm</p>
+                  <h2>Ahoy Indie Media Schedule</h2>
+                  <p>We're working on being more consitent in our programming</p>
                 </div>
 
                 </div>
