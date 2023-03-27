@@ -135,6 +135,22 @@ body {
     text-align:center;
   }
 
+  @media screen and (min-width: 620px) {
+    .grid-container-show {
+      display: block;
+      grid-template-columns: repeat(3, 217px);
+      grid-template-rows: repeat(2, 315px);
+      grid-gap: 50px!important;
+      padding:10px;
+     
+    }
+  
+  }
+
+  
+
+
+
 /*TOP NAV CSS */
 
 .topNavButton {
