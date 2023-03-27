@@ -134,3 +134,13 @@ body {
   .address {
     text-align:center;
   }
+
+/*TOP NAV CSS */
+
+.topNavButton {
+  color:white;
+}
+
+.topNavButton:hover {
+  color:white;
+}
