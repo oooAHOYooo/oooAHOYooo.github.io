@@ -89,6 +89,33 @@ body {
     cursor: pointer;
   }
 
+  .grid-container-show {
+    display: grid;
+    grid-template-columns: repeat(3, 217px);
+    grid-template-rows: repeat(2, 315px);
+    grid-gap: 50px!important;
+    padding:10px;
+   
+  }
+
+  .grid-item-show {
+    background-color: rgb(199, 199, 199);
+    width: 217px;
+    height: 315px;
+    padding: 10px;
+    
+    border: 1px solid gray;
+    margin:5px;
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+  }
+
+.grid-item-show:hover {
+  background-color:black;
+}
+
   .logo {
     width:200px;
     height:auto;
@@ -99,4 +126,11 @@ body {
     cursor: pointer;
     filter: invert(1);
     mix-blend-mode: lighten;
+  }
+
+
+  /*LIVE SHOW CSS */
+
+  .address {
+    text-align:center;
   }
