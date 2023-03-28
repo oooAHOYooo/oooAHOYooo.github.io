@@ -1,5 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@700&display=swap');
 
+:root {
+  --streamColor: #00141A;
+  --marketColor: #B4D2FF;
+  --frontPageColor: #D9D9D9;
+  --radioColor: pink;
+  --liveColor: pink;
+}
+}
+}
+}
+
+}
 
 body {
     background-color:rgb(255, 0, 149);
@@ -159,4 +171,24 @@ body {
 
 .topNavButton:hover {
   color:white;
+}
+
+.topNavButton-stream {
+  background-color: var(--streamColor);
+}
+
+.topNavButton-market {
+  background-color:var(--marketColor);
+}
+
+.topNavButton-frontPage {
+  background-color:var(--frontPageColor);
+}
+
+.topNavButton-radio {
+  background-color:var(--radioColor);
+}
+
+.topNavButton-live {
+  background-color:var(--liveColor);
 }
