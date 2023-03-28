@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="experimental-addon.css">
     </head>
 <!-- TRYING THIS OUT ON MY IPAD - AS OF 3.26.23 -->
+<!-- ADDING SOME SICK COLORS - AS OF 3.27.23 -->
     <body>
         <div id="app">
           <nav>
@@ -23,14 +24,14 @@
             </ul>
           </nav>
        
-          <!-- TAB 1 (Watch)-->
-            <div v-show="selectedTab === 'tab1'">
+          <!-- TAB 1 (Stream)-->
+            <div class="stream" v-show="selectedTab === 'tab1'">
               <div style="position:relative; overflow:hidden; padding-bottom:56.25%"><iframe src="https://cdn.jwplayer.com/players/SyfFOIKw-NkmVmcCh.html" width="100%" height="100%" frameborder="0" scrolling="auto" title="playblock5c - 7pm - 10pm [primeTime]" style="position:absolute;" allowfullscreen></iframe></div>
               <div class="subHeader">
                 <div class="subHeaderVert">
                   <a href="#"><img src="/assets/u_ahoy23.png" class="logo"></a>
-                  <h2>Watch</h2>
-                  <p>Watch Ahoy Indie Media's 24/7 Channel - with new content every other Thursday at 7pm</p>
+                  <h2>Stream</h2>
+                  <p>Stream Ahoy Indie Media's 24/7 Channel - with new content every other Thursday at 7pm</p>
                 </div>
                 
                 <!-- THIS IS WHERE THE SCHEDULE WILL START-->
@@ -102,7 +103,7 @@
             </div>
         
             <!-- TAB 2 -->
-            <div v-show="selectedTab === 'tab2'">
+            <div class="radio" v-show="selectedTab === 'tab2'">
             Radio goes here
             <iframe src="http://66.228.33.153/public/ahoy_indie_media" title="ahoy"></iframe>
             
@@ -150,7 +151,7 @@
                   <!-- END OF TAB 5-->
 
      <!-- TAB 6 (Live Show) -->
-     <div v-show="selectedTab === 'tab6'">
+     <div class="liveShow" v-show="selectedTab === 'tab6'">
       <div class="liveShowWrap">
       TAB 6 (liveShow) CONENT GOES here
       <h2>Venues and Live Shows</h2>

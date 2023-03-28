@@ -1,16 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@700&display=swap');
 
 :root {
-  --streamColor: #00141A;
+  --streamColor: #004E66;
   --marketColor: #B4D2FF;
   --frontPageColor: #D9D9D9;
-  --radioColor: pink;
-  --liveColor: pink;
-}
-}
-}
+  --radioColor: #FFC1B4;
+  --liveColor: #FFB4B4;
 }
 
+html {
+  background-color: white;
 }
 
 body {
@@ -27,8 +26,9 @@ body {
     display: inline-block;
     margin-right: 10px;
     padding: 5px;
-    border-radius: 5px;
-    background-color: rgb(255, 0, 149);
+    border-radius: 8px;
+    border-width: thin;
+    background-color: rgb(0, 0, 0);
     font-size: 12px;
   }
 
@@ -49,7 +49,7 @@ body {
 
   nav {
     width:100%;
-    background-color:green;
+    background-color:transparent;
     display:flex;
     align-items: center;
     justify-content: center;
@@ -60,12 +60,12 @@ body {
 
   @media screen and (min-width: 620px) {
     nav {
-      background-color: rgb(21, 0, 158);
+      background-color: rgba(21, 0, 158, 0);
     }
   }
 
   .subHeader {
-    background-color:rgb(0, 13, 128);
+    background-color:rgb(0, 5, 49);
     display:flex;
     padding:20px;
     flex-direction: row;
@@ -147,7 +147,7 @@ body {
     text-align:center;
   }
 
-  @media screen and (min-width: 620px) {
+  @media screen and (max-width: 750px) {
     .grid-container-show {
       display: block;
       grid-template-columns: repeat(3, 217px);
@@ -191,4 +191,28 @@ body {
 
 .topNavButton-live {
   background-color:var(--liveColor);
+}
+
+
+
+/* STREAM STYLES */
+.stream {
+  background-color:var(--streamColor);
+}
+
+
+/*Radio Styles */
+
+.radio {
+  background-color:var(--radioColor)!important;
+}
+
+/*Live Show Styles */
+
+.liveShow {
+  background-color:var(--liveColor)!important;
+}
+  
+.liveShowWrap {
+  background-color:var(--liveColor)!important;
 }
