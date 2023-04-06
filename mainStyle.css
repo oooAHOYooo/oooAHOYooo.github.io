@@ -216,3 +216,48 @@ body {
 .liveShowWrap {
   background-color:var(--liveColor)!important;
 }
+
+
+/*FRONT PAGE STYLES */
+
+/*BLOG BLOCK STYLES*/
+
+.blogBlock {
+  width:100%;
+  height:auto;
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: center;
+  background-color: var(--frontPageColor);
+  
+  
+}
+
+.blogItem {
+  width:1024px;
+  max-width:1024px;
+  height:432px;
+  display:flex;
+  flex-direction:column;
+  border-style:solid;
+  border-color:white;
+  margin-top:5%;
+}
+
+.blogItem-head {
+  background-color:red;
+  height:50%;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.blogItem-content {
+  background-color:pink;
+  height:50%;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}

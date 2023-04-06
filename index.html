@@ -17,9 +17,9 @@
           <nav>
             <ul>
               <li @click="selectedTab = 'tab1'"><button class="topNavButton-stream">Stream</button></li>
-              <li @click="selectedTab = 'tab2'"><button class="topNavButton-market">MarketWrap</button></li>
+              <li @click="selectedTab = 'tab3'"><button class="topNavButton-market">Market</button></li>
               <li @click="selectedTab = 'tab5'"><button class="topNavButton-frontPage">Front Page</button></li>
-              <li @click="selectedTab = 'tab3'"><button class="topNavButton-radio">Radio</button></li>
+              <li @click="selectedTab = 'tab2'"><button class="topNavButton-radio">Radio</button></li>
               <li @click="selectedTab = 'tab6'"><button class="topNavButton-live">Live Shows</button></li>
             </ul>
           </nav>
@@ -119,18 +119,30 @@
 
                 </div>
 
-               <!-- TAB 5 (Market)-->
+               <!-- TAB 5 (Market) or FRONT PAGE -->
             <div v-show="selectedTab === 'tab5'">
-              <!-- START OF MARKET WRAP -->
+              <!-- START OF FRONT PAGE -->
               <div class="marketWrap">
-                  TAB 5 CONENT GOES here (Right now Tab 5 is being used for Marketplace)
-                  <div class="grid-container">
-                      <div class="grid-item">Pal-bot 2</div>
-                      <div class="grid-item">Tallboyz Better Late Than Never</div>
-                      <div class="grid-item">Tallboyz - Pantalones</div>
-                      <div class="grid-item">High Noon</div>
-                      <div class="grid-item"></div>
-                      <div class="grid-item"></div>
+               FRONT PAGE CONTENT? CONENT GOES here (Right now Tab 5 is being used for Marketplace)
+                  <!-- A SINGLE BLOCK OF CONTENT LIKE A BLOG -->
+                  <div class="blogBlock">
+                    <h2>This is where the blog block will go</h2>
+                      <div class="blogItem">
+                            <div class="blogItem-Head">
+                              This is where the header of the blog content will go 
+                            </div>
+                            <div class="blogItem-content">
+                              This is where the Blog 1 Content will go 
+                            </div>
+                      </div>
+                      <div class="blogItem">
+                            <div class="blogItem-Head">
+                              This is where the header of the blog content will go 
+                            </div>
+                            <div class="blogItem-content">
+                              This is where the Blog 1 Content will go 
+                            </div>
+                      </div>
                   </div>
 
             <!--END OF MARKETWRAP--></div>
@@ -141,7 +153,8 @@
                 <div class="subHeader">
                   <div class="subHeaderVert">
                     <a href="#"><img src="/assets/u_ahoy23.png" class="logo"></a>
-                    <h2>MarketPlace</h2>
+                    <h2>FRONT PAGE</h2>
+                    <p>Because every website needs a frontpage</p>
                     <p>Watch Ahoy Indie Media's 24/7 Channel - with new content every other Thursday at 7pm</p>
                   </div>
                
@@ -170,7 +183,7 @@
            <h2>Live Shows</h2>
            <p>We partner with local venues - mostly in New Haven - because 1. we're from New Haven and 2. New Haven is awesome. he latest and greatest </p>
             </div>
-         </div><!-- TAB5 SUBHEADER-->
+         </div><!-- TAB6 SUBHEADER-->
          </div><!-- END OF LVE SHOW RAP-->
            </div>
            <!-- END OF TAB 6-->
@@ -229,7 +242,7 @@
             var app = new Vue({
               el: '#app',
               data: {
-                selectedTab: 'tab1'
+                selectedTab: 'tab5'
               }
             });
 
