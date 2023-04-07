@@ -20,9 +20,7 @@
 
 
 html {
-  background-image: url("https://i.gifer.com/1AkD.gif");
-  background-size:cover;
-  background-attachment: fixed;
+  
   white-space: nowrap;
 }
 
@@ -30,6 +28,9 @@ body {
     /*background-color:rgb(255, 0, 149);*/
     font-family: 'Barlow', sans-serif;
     color:white;
+    background-image: url("https://i.gifer.com/1AkD.gif");
+    background-size:cover;
+    background-attachment: fixed;
 }
 
 footer {
@@ -37,7 +38,7 @@ footer {
   width:100%;
   height:30px;
   display:flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items:center;
   justify-content: center;
   text-align:center;
@@ -47,6 +48,9 @@ footer {
 }
 
 footer a {
+  text-decoration-line: none;
+  margin-left:5%;
+  margin-right:5%;
   color:rgba(255, 255, 255, 0.279);
 }
 
