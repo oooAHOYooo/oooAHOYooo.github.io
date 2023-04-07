@@ -2,17 +2,18 @@
     <head>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <title>Ahoy 2i</title>
-        <!-- AS OF 3.14.23 --><!-- BUILD 0.0.2b-->
+        <title>Ahoy 2j</title>
+        <!-- AS OF 4.07.23 -->
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <!-- CSS3 -->
         <link rel="stylesheet" href="mainStyle.css">
         <link rel="stylesheet" href="jwPlayer.css">
         <link rel="stylesheet" href="experimental-addon.css">
     </head>
+    <!-- GOT THIS GOING ON VSCODE - but ALSO Workspace - which makes uploading pretty cool -->
 <!-- TRYING THIS OUT ON MY IPAD - AS OF 3.26.23 -->
 <!-- ADDING SOME SICK COLORS - AS OF 3.27.23 -->
-    <body>
+<body>
         <div id="app">
           <nav>
             <ul>
@@ -100,9 +101,9 @@
 
               </div>
             
-            </div>
+            <!-- END OF STREAM--></div>
         
-            <!-- TAB 2 -->
+            <!-- TAB 2 = RADIO -->
             <div class="radio" v-show="selectedTab === 'tab2'">
             Radio goes here
             <iframe src="http://66.228.33.153/public/ahoy_indie_media" title="ahoy"></iframe>
@@ -117,51 +118,60 @@
                 <p>Watch Ahoy Indie Media's 24/7 Channel - with new content every other Thursday at 7pm</p>
               </div><!-- RADIO SUBHEADER-->
 
-                </div>
+                <!-- END OF RADIO --></div>
 
-               <!-- TAB 5 (Market) or FRONT PAGE -->
+            <!-- TAB 5 FRONT PAGE -->
             <div v-show="selectedTab === 'tab5'">
               <!-- START OF FRONT PAGE -->
-              <div class="marketWrap">
-               FRONT PAGE CONTENT? CONENT GOES here (Right now Tab 5 is being used for Marketplace)
+              <div class="frontPageWrap">
+           
+            
                   <!-- A SINGLE BLOCK OF CONTENT LIKE A BLOG -->
                   <div class="blogBlock">
-                    <h2>This is where the blog block will go</h2>
+                    <div class="frontHeader">
+                    <a href="#"><img src="/assets/u_ahoy23.png" class="logoBig"></a>
+                    AHOY INDIE MEDIA : FRONT PAGE UPDATES : AS OF APRIL 2023
+                  </div>
                       <div class="blogItem">
-                            <div class="blogItem-Head">
+                            <!--<div class="blogItem-Head">
                               This is where the header of the blog content will go 
-                            </div>
+                            </div>-->
                             <div class="blogItem-content">
-                              This is where the Blog 1 Content will go 
+                              <div class="calendarItem">
+                                  <div class="date"><h2>April 2023</h2></div>
+                                  <div class="dateDetails">
+                                    <ul class="dateUL">
+                                      <li>Launched New Website</li>
+                                      <li>New Rob Show Content in the works</li>
+                                      <li>Live Streams from Gather East on the way</li>
+                                    </ul>
+                                </div>
+
+                                  </div>
+
+                              </div>
                             </div>
                       </div>
-                      <div class="blogItem">
-                            <div class="blogItem-Head">
-                              This is where the header of the blog content will go 
-                            </div>
-                            <div class="blogItem-content">
-                              This is where the Blog 1 Content will go 
-                            </div>
-                      </div>
+                      
                   </div>
 
-            <!--END OF MARKETWRAP--></div>
-            <!--END OF MARKETWRAP-->
+         
+ 
 
 
-                <!-- TAB 5 SUBHEADER-->
+  <!-- TAB 5 (Front PAGE) SUBHEADER -->
                 <div class="subHeader">
-                  <div class="subHeaderVert">
-                    <a href="#"><img src="/assets/u_ahoy23.png" class="logo"></a>
-                    <h2>FRONT PAGE</h2>
-                    <p>Because every website needs a frontpage</p>
-                    <p>Watch Ahoy Indie Media's 24/7 Channel - with new content every other Thursday at 7pm</p>
-                  </div>
+                    <div class="subHeaderVert">
+                      <a href="#"><img src="/assets/u_ahoy23.png" class="logo"></a>
+                      <h2>FRONT PAGE</h2>
+                      <p>Because every website needs a frontpage</p>
+                      <p>Every month we strive to deliever new content - new code - new updates - and new new new new new new things - to keep the fire going - and to keep the flames</p>
+                    </div>
                
                 </div><!-- TAB5 SUBHEADER-->
-  
-                  </div>
-                  <!-- END OF TAB 5-->
+              <!-- END OF FRONT PAGE --></div>
+                 
+                 
 
      <!-- TAB 6 (Live Show) -->
      <div class="liveShow" v-show="selectedTab === 'tab6'">
@@ -170,11 +180,6 @@
       <h2>Venues and Live Shows</h2>
        <div class="grid-container-show">
            <div class="grid-item-show"><a href="#"><h2 class="address">East Gather</h2></a><h3>1162 State House, New Haven</h3><button @click="selectedTab = 'tab1'" >Watch Shows</button></div>
-           <!-- <div class="grid-item-show"><a href="#"><h2 class="address">The State House</h2></a><h3>882 StateHouse, New Haven</h3><button>Watch Shows</button></div>
-           <div class="grid-item-show"><a href="#"><h2 class="address">Never Ending Books</h2></a><h3>982 State Street</h3><button>Watch Shows</button></div>
-           --> 
-       
-       
           </div>
          <!-- TAB 6 SUBHEADER-->
          <div class="subHeader">
@@ -185,25 +190,16 @@
             </div>
          </div><!-- TAB6 SUBHEADER-->
          </div><!-- END OF LVE SHOW RAP-->
-           </div>
-           <!-- END OF TAB 6-->
-        
+          <!-- END OF TAB 6--> </div>
+           
+     
 
-
-
-
-
-
-
-
-
-
-            <!-- TAB 3 (Collection )-->
+      <!-- TAB 3 (MARKETPLACE)-->
             <div v-show="selectedTab === 'tab3'">
               <div class="collectionWrap">
-                <!-- CONTENT GOES HERE -->
+                <!-- MARKETPLACE CONTENT GOES HERE -->
                 
-                This is where the collection will go
+                This is where MARKETPLACE collection will go
                 
                 <div class="grid-container">
                   <div class="grid-item"></div>
@@ -213,21 +209,23 @@
                   <div class="grid-item"></div>
                   <div class="grid-item"></div>
               </div>
-                This is where the collection will end 
+               <!-- MARKETPLACE SUBHEADER WORK-->>
                 
                 <div class="subHeader">
-                  <h2>Ahoy Indie Media Schedule</h2>
-                  <p>We're working on being more consitent in our programming</p>
+                  <h2>Ahoy Indie Media Marketplace</h2>
+                  <p>This is where you could purchase content to be used offline, in your own device, we don't care about digital stuff - soon, in time we will have physical products for sale</p>
                 </div>
 
-                </div>
+                <!--END OF MARKETPLACE --></div>
 
            
                 
 
 
 
-          </div><!-- END OF APP -->
+          </div>
+          
+          <!-- END OF APP -->
 
 <footer>
   <a href="http://66.228.33.153/public/ahoy_indie_media">Ahoy Radio </a>
@@ -273,7 +271,6 @@
               }
             });
           </script>
-
 
 
 <!-- END OF CONDITIONAL AND CODE LOGIC -->

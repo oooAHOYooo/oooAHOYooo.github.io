@@ -6,16 +6,52 @@
   --frontPageColor: #D9D9D9;
   --radioColor: #FFC1B4;
   --liveColor: #FFB4B4;
+
+  --darkFont: #000000;
+  --lightFont: #FFFFFF;
+
+  --mainFont: 'Barlow', sans-serif;
+
+  --largeFontSize: 9.5rem;
+  --mediumFontSize: 3.5vw;
+  --smallFontSize: 1rem;
 }
 
+
+
 html {
-  background-color: white;
+  background-image: url("https://i.gifer.com/1AkD.gif");
+  background-size:cover;
+  background-attachment: fixed;
+  white-space: nowrap;
 }
 
 body {
-    background-color:rgb(255, 0, 149);
+    /*background-color:rgb(255, 0, 149);*/
     font-family: 'Barlow', sans-serif;
     color:white;
+}
+
+footer {
+ 
+  width:100%;
+  height:30px;
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: center;
+  text-align:center;
+  line-height:90px;
+  font-size: 12px;
+  color:white;
+}
+
+footer a {
+  color:rgba(255, 255, 255, 0.279);
+}
+
+footer a:hover { 
+  color: var(--lightFont);
 }
 
   ul {
@@ -65,7 +101,7 @@ body {
   }
 
   .subHeader {
-    background-color:rgb(0, 5, 49);
+    width:100%;
     display:flex;
     padding:20px;
     flex-direction: row;
@@ -73,8 +109,11 @@ body {
     width:100vw;
     min-height:150px;
     position:relative;
+    max-width:99.99%;
 
   }
+
+
 
   /*TALKS WITH THE MARKETPLACE GRID */
 
@@ -128,6 +167,8 @@ body {
   background-color:black;
 }
 
+
+
   .logo {
     width:200px;
     height:auto;
@@ -137,6 +178,14 @@ body {
   .logo:hover {
     cursor: pointer;
     filter: invert(1);
+    mix-blend-mode: lighten;
+  }
+
+  .logoBig {
+    width:400px;
+    height:auto;
+    margin:0 auto;
+    display:block;
     mix-blend-mode: lighten;
   }
 
@@ -220,6 +269,33 @@ body {
 
 /*FRONT PAGE STYLES */
 
+.frontHeader {
+  background-color:rgb(157, 157, 157);
+  width:100%; 
+  height:100%;
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: center;
+  text-align:center;
+  
+  font-size: 12px;
+  color:white;
+  border-style: thin;
+  border-color:black;
+}
+
+.frontPageWrap {
+  background-color:var(--frontPageColor);
+  width:100%; 
+
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: center;
+  
+}
+
 /*BLOG BLOCK STYLES*/
 
 .blogBlock {
@@ -243,6 +319,7 @@ body {
   border-style:solid;
   border-color:white;
   margin-top:5%;
+  border-width: thin;
 }
 
 .blogItem-head {
@@ -261,3 +338,71 @@ body {
   align-items: center;
   justify-content: center;
 }
+
+/*FRONT PAGE - date Detail styles*/
+
+.calendarItem {
+  width:100%;
+  height:auto;
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: center;
+  background-color: var(--frontPageColor);
+}
+
+.calendarItem h2 {
+  color:var(--darkFont);
+  font-family: var(--mainFont);
+  font-size: var(--mediumFontSize);
+
+}
+.date h2 {
+  width:100%;
+  white-space: nowrap;
+}
+
+.dateDetails {
+  width:100%;
+  height:auto;
+  display:flex!important;
+  flex-direction: column!important;
+  align-items:center;
+  justify-content: center;
+  background-color: var(--frontPageColor);
+  
+}
+
+.dateUL li {
+  text-transform: capitalize;
+  font-family: var(--mainFont);
+  font-weight:100;
+  font-size: 1.2rem;
+  
+}
+
+
+
+
+/*BACKGROUND STYLES */
+
+.background-1-stream {
+  background-color: var(--streamColor);
+}
+
+.background-1-market { 
+  background-color: var(--marketColor);
+}
+
+.background-1-front {
+  background-color: var(--frontPageColor);
+}
+
+.background-1-radio {
+  background-color: var(--radioColor);
+}
+
+.background-1-live {
+  background-color: var(--liveColor);
+}
+
