@@ -21,16 +21,29 @@
 
 html {
   
-  white-space: nowrap;
+}
+
+main {
+  
 }
 
 body {
-    /*background-color:rgb(255, 0, 149);*/
     font-family: 'Barlow', sans-serif;
     color:white;
     background-image: url("https://i.gifer.com/1AkD.gif");
     background-size:cover;
     background-attachment: fixed;
+}
+/*Change the opacity of the background */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 15, 43, 0.765);
+  z-index: -1;
 }
 
 footer {
@@ -65,9 +78,9 @@ footer a:hover {
   li {
     display: inline-block;
     margin-right: 10px;
-    padding: 5px;
-    border-radius: 8px;
+    border-radius: 2px;
     border-width: thin;
+    border-color:white!important;
     background-color: rgb(0, 0, 0);
     font-size: 12px;
   }
@@ -78,6 +91,9 @@ footer a:hover {
     width:195px;
     height:70px;
     background-color:transparent;
+    border-style: solid;
+    border-width: 1px;
+    border-color: (var(--lightFont));
   }
 
   button:hover{
@@ -218,8 +234,13 @@ footer a:hover {
 
 /*TOP NAV CSS */
 
+
+
 .topNavButton {
   color:white;
+  border-style:solid;
+  border-width:1px;
+  border-color: var(--lightFont);
 }
 
 .topNavButton:hover {
@@ -260,7 +281,7 @@ footer a:hover {
   background-color:var(--radioColor)!important;
 }
 
-/*Live Show Styles */
+/*LiveShow Styles */
 
 .liveShow {
   background-color:var(--liveColor)!important;
@@ -269,6 +290,10 @@ footer a:hover {
 .liveShowWrap {
   background-color:var(--liveColor)!important;
 }
+
+
+
+
 
 
 /*FRONT PAGE STYLES */
@@ -353,27 +378,34 @@ footer a:hover {
   align-items:center;
   justify-content: center;
   background-color: var(--frontPageColor);
+  text-align: center;
 }
 
 .calendarItem h2 {
   color:var(--darkFont);
   font-family: var(--mainFont);
   font-size: var(--mediumFontSize);
+  text-align: center;
 
 }
 .date h2 {
   width:100%;
   white-space: nowrap;
+  text-align: center;
 }
 
 .dateDetails {
   width:100%;
+  max-width:700px;
   height:auto;
   display:flex!important;
-  flex-direction: column!important;
+  flex-direction: row!important;
   align-items:center;
+  text-align: center;
   justify-content: center;
   background-color: var(--frontPageColor);
+  border-style:solid;
+
   
 }
 
@@ -382,7 +414,15 @@ footer a:hover {
   font-family: var(--mainFont);
   font-weight:100;
   font-size: 1.2rem;
-  
+  display:flex;
+  margin:10px;
+  text-align:center;
+  width:100%;
+
+
+}
+
+.dateUL li:hover {
 }
 
 
