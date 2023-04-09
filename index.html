@@ -2,22 +2,27 @@
     <head>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <title>Ahoy 2j</title>
-        <!-- AS OF 4.07.23 -->
+        <title>Ahoy Indie Media</title>
+        <!-- As of 4.09.23 -->
+        <!-- IMPORT OF VUE -->
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <!-- CSS3 -->
         <link rel="stylesheet" href="mainStyle.css">
         <link rel="stylesheet" href="jwPlayer.css">
         <link rel="stylesheet" href="experimental-addon.css">
     </head>
-<!-- GOT THIS GOING ON VSCODE - but ALSO Workspace - which makes uploading pretty cool -->
-<!-- Adding some changing backgrounds to see if this helps -->
-<!-- TRYING THIS OUT ON MY IPAD - AS OF 3.26.23 -->
-<!-- ADDING SOME SICK COLORS - AS OF 3.27.23 -->
+
 <body>
   <main>
         <div id="app">
-          <nav>
+          <div class="navTippyWrap">
+          <button @click="selectedTab = 'tab1'" class="topNavButton-stream">Stream</button>
+          <button @click="selectedTab = 'tab3'" class="topNavButton-market">Market</button>
+          <button @click="selectedTab = 'tab5'" class="topNavButton-frontPage">Front Page</button>
+          <button @click="selectedTab = 'tab2'" class="topNavButton-radio">Radio</button>
+          <button @click="selectedTab = 'tab6'" class="topNavButton-live">Live Shows</button>
+          </div>
+          <!-- <nav>
             <ul>
               <li @click="selectedTab = 'tab1'"><button class="topNavButton-stream">Stream</button></li>
               <li @click="selectedTab = 'tab3'"><button class="topNavButton-market">Market</button></li>
@@ -25,7 +30,7 @@
               <li @click="selectedTab = 'tab2'"><button class="topNavButton-radio">Radio</button></li>
               <li @click="selectedTab = 'tab6'"><button class="topNavButton-live">Live Shows</button></li>
             </ul>
-          </nav>
+          </nav>-->
        
           <!-- TAB 1 (Stream)-->
             <div class="stream" v-show="selectedTab === 'tab1'">
