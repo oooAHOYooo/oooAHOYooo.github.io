@@ -3,6 +3,11 @@
 ![alt text](https://oooahoyooo.github.io/assets/u_ahoy23.png)
 
 
+# Uncover a trove of fresh and thrilling content from the unbridled minds of independent filmmakers, musicians, podcasters, and more. And let it not escape your notice, friend, that every other Thursday at the strike of 7 in the evening, we'll be unveiling a brand-new offering for your viewing pleasure.
+
+## Below regards the code 
+
+
 This is the home for the code of Ahoy Indie Media
 
 This code was hand-written by Alex Gonzalez and aims to strive for a single html file and css file 
@@ -21,7 +26,6 @@ Our goal is to provide a platform for underrepresented voices and stories, and t
 
 Thank you for your interest in Ahoy Indie Media. We look forward to sharing our stories with you.
 
-# Whenever you fancy, be it night or day, you may tune in and uncover a trove of fresh and thrilling content from the unbridled minds of independent filmmakers, musicians, podcasters, and more. And let it not escape your notice, friend, that every other Thursday at the strike of 7 in the evening, we'll be unveiling a brand-new offering for your viewing pleasure.
 
 
 
