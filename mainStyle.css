@@ -120,17 +120,46 @@ footer a:hover {
     }
   }
 
+  p {
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 1.5;
+    margin: 0;
+    text-transform: lowercase;
+  }
+
+  /*CUSTOM STYLES FROM THIS POINT */
+
   .subHeader {
     width:100%;
     display:flex;
-    padding:20px;
     flex-direction: row;
+    padding:40px;
     align-items:top;
     width:100vw;
     min-height:150px;
     position:relative;
     max-width:99.99%;
+    background-color:var(--darkFont);
 
+  }
+
+  .subHeader:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 15, 43, 0.765);
+    z-index: -1;
   }
 
 
@@ -291,6 +320,26 @@ footer a:hover {
   background-color:var(--liveColor)!important;
 }
 
+/*LIVESHOW = CALENDAR STYLES */
+
+.calendar {
+	display: grid;
+  grid-template-columns: repeat(3, 217px);
+    grid-template-rows: repeat(2, 315px);
+    grid-gap: 10px;
+    padding:10px;
+	
+}
+
+.day {
+	width: calc(100% / 7);
+	height: 100px;
+	border: 1px solid #ddd;
+	box-sizing: border-box;
+	display: flex;
+  justify-content: center;
+
+}
 
 
 
@@ -298,8 +347,25 @@ footer a:hover {
 
 /*FRONT PAGE STYLES */
 
+.monthBlock {
+  width:100%;
+  min-height:500px;
+  height:100%;
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: center;
+  background-color: rgba(19, 19, 19, 0.843);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10%;
+
+}
+
 .frontHeader {
-  background-color:rgb(157, 157, 157);
+  background-color:rgb(0, 0, 0);
+  padding-top: 5%;
+  padding-bottom: 5%;
   width:100%; 
   height:100%;
   display:flex;
@@ -308,21 +374,26 @@ footer a:hover {
   justify-content: center;
   text-align:center;
   
-  font-size: 12px;
   color:white;
   border-style: thin;
   border-color:black;
 }
 
+.frontHeader:hover {
+  cursor: pointer;
+  filter: invert(1);
+  mix-blend-mode: lighten;
+}
+
 .frontPageWrap {
   background-color:var(--frontPageColor);
   width:100%; 
-
   display:flex;
   flex-direction: column;
   align-items:center;
   justify-content: center;
-  
+
+
 }
 
 /*BLOG BLOCK STYLES*/
@@ -339,7 +410,7 @@ footer a:hover {
   
 }
 
-.blogItem {
+/*.blogItem {
   width:1024px;
   max-width:1024px;
   height:432px;
@@ -349,7 +420,7 @@ footer a:hover {
   border-color:white;
   margin-top:5%;
   border-width: thin;
-}
+}*/
 
 .blogItem-head {
   background-color:red;
@@ -395,7 +466,7 @@ footer a:hover {
 }
 
 .dateDetails {
-  width:100%;
+  /*width:100%;*/
   max-width:700px;
   height:auto;
   display:flex!important;
@@ -407,6 +478,22 @@ footer a:hover {
   border-style:solid;
 
   
+}
+
+.dateLI {
+  width:100%;
+  height:auto;
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: center;
+  background-color: var(--frontPageColor);
+  text-align: center;
+  border-style:solid;
+  border-width:thin;
+  border-color:var(--lightFont);
+  margin:10px;
+  padding:10px;
 }
 
 .dateUL li {
@@ -450,3 +537,24 @@ footer a:hover {
   background-color: var(--liveColor);
 }
 
+
+/*RADIO STYLES*/
+
+.radioWrap {
+  background-color:var(--radioColor);
+  width:100%; 
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: center;
+}
+
+.radioFrame {
+  width:80%;
+  height:400px;
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: center;
+  background-color: var(--radioColor);
+}

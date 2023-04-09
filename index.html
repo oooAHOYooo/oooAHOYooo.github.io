@@ -38,7 +38,7 @@
                 </div>
                 
                 <!-- THIS IS WHERE THE SCHEDULE WILL START-->
-                <table class="weeklyTable">
+                <!--<table class="weeklyTable">
                   <thead>
                     <tr>
                       <th>Time</th>
@@ -92,7 +92,7 @@
                       <td class="saturday">The Rob Show</td>
                       <td class="sunday">The Rob Show</td>
                     </tr>
-                  </tbody></table>
+                  </tbody></table>-->
 
                 <!--This is where the schedule will end -->
                     <!-- What's an easier way to have this -->
@@ -107,9 +107,9 @@
         
             <!-- TAB 2 = RADIO -->
             <div class="radio" v-show="selectedTab === 'tab2'">
-            Radio goes here
-            <iframe src="http://66.228.33.153/public/ahoy_indie_media" title="ahoy"></iframe>
-            
+            <div class="radioWrap">
+            <iframe class="radioFrame" src="http://66.228.33.153/public/ahoy_indie_media" title="ahoy"></iframe>
+            </div>
 
 
             
@@ -126,30 +126,33 @@
             <div v-show="selectedTab === 'tab5'">
               <!-- START OF FRONT PAGE -->
               <div class="frontPageWrap">
-           
-            
-                  <!-- A SINGLE BLOCK OF CONTENT LIKE A BLOG -->
-                  <div class="blogBlock">
-                    <div class="frontHeader">
+                <div class="frontHeader">
                     <a href="#"><img src="/assets/u_ahoy23.png" class="logoBig"></a>
                     AHOY INDIE MEDIA : FRONT PAGE UPDATES : AS OF APRIL 2023
                   </div>
+                <div class="monthBlock">
+                    <h3>April 2023</h3>
+                    <div>Developed New Website</div>
+                    <div>New Rob Show Episodes Filmed</div>
+                    <div>Live Shows from Gather East - on the way</div>
+                </div>
+            
+                  <!-- A SINGLE BLOCK OF CONTENT LIKE A BLOG -->
+                  <div class="blogBlock">
+                    
+                    
+
+
                       <div class="blogItem">
                             <!--<div class="blogItem-Head">
                               This is where the header of the blog content will go 
                             </div>-->
                             <div class="blogItem-content">
                               <div class="calendarItem">
-                                  <div class="date"><h2>April 2023</h2></div>
-                                  <div class="dateDetails">
-                                    <ul class="dateUL">
-                                      <li>Launched New Website</li>
-                                      <li>New Rob Show Content in the works</li>
-                                      <li>Live Streams from Gather East on the way</li>
-                                    </ul>
-                                </div>
-
-                                  </div>
+                                  <!--<div class="date"><h2>April 2023</h2></div>-->
+                                  
+                                   
+                              </div>
 
                               </div>
                             </div>
@@ -242,9 +245,9 @@
           
           <!-- END OF APP -->
 <!-- THE CODE THAT IS GOING TO DYMANICALLY CHANGE THE BACKGROUND IMAGES -->
-<div class="changeBackgroundMagic">
+<!--<div class="changeBackgroundMagic">
   <button type="button" onclick="changeBackground()">Change background image</button> 
-  </div>
+  </div>-->
 <footer>
   <a href="#">About</a>
   <a href="http://66.228.33.153/public/ahoy_indie_media">Ahoy Radio </a>
