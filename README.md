@@ -17,3 +17,8 @@ Our team is made up of passionate journalists, writers, and creatives who are de
 Our goal is to provide a platform for underrepresented voices and stories, and to help build a more informed and engaged community. We believe that everyone has a story to tell, and we're here to help tell it.
 
 Thank you for your interest in Ahoy Indie Media. We look forward to sharing our stories with you.
+
+# Whenever you fancy, be it night or day, you may tune in and uncover a trove of fresh and thrilling content from the unbridled minds of independent filmmakers, musicians, podcasters, and more. And let it not escape your notice, friend, that every other Thursday at the strike of 7 in the evening, we'll be unveiling a brand-new offering for your viewing pleasure.
+
+
+
