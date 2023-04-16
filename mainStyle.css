@@ -606,6 +606,8 @@ footer a:hover {
 }
 
 .cart {
+
+
   grid-column: 2 / span 2;
   background-color: #f2f2f2;
   padding: 20px;
@@ -625,4 +627,30 @@ footer a:hover {
 .cart li {
   list-style: none;
   margin-bottom: 10px;
+}
+
+
+/*Mobile Business */
+
+:root {
+  --breakpoint-small: 480px;
+  --breakpoint-medium: 768px;
+  --breakpoint-large: 1024px;
+  --breakpoint-xlarge: 1200px;
+}
+
+@media screen and (min-width: var(--breakpoint-small)) {
+  /* CSS rules for small breakpoint */
+}
+
+@media screen and (min-width: var(--breakpoint-medium)) {
+  /* CSS rules for medium breakpoint */
+}
+
+@media screen and (min-width: var(--breakpoint-large)) {
+  /* CSS rules for large breakpoint */
+}
+
+@media screen and (min-width: var(--breakpoint-xlarge)) {
+  /* CSS rules for extra-large breakpoint */
 }
