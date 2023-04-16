@@ -170,9 +170,6 @@
                       
                   </div>
 
-         
- 
-
 
   <!-- TAB 5 (Front PAGE) SUBHEADER -->
                 <div class="subHeader">
@@ -192,17 +189,21 @@
      <div class="liveShow" v-show="selectedTab === 'tab6'">
       <div class="liveShowWrap">
         <script src="https://cdn.jwplayer.com/players/IdqbXxlv-NkmVmcCh.js"></script>
-      <h2>Venues and Live Shows</h2>
-
+        
+        <h2>Venues and Live Shows</h2>
+        <h3>Upcoming Shows</h3>
+        <div class="upcomingShowsWrap">
+          <ul>
+            <li><span class="upcomingShows-date">May 1st 2023</span>Gather East New Haven : Open Mic</li>
+          </ul>
+        </div>
 
 
    <!-- END OF 31 View Calendar for Live Shows -->
 
-       <div class="grid-container-show">
+       <!-- <div class="grid-container-show">
            <div class="grid-item-show"><a href="#"><h2 class="address">East Gather</h2></a><h3>1162 State House, New Haven</h3><button @click="selectedTab = 'tab1'" >Watch Shows</button></div>
-          </div>
-
-
+          </div> -->
 
          <!-- TAB 6 SUBHEADER-->
          <div class="subHeader">
@@ -221,16 +222,14 @@
             <div v-show="selectedTab === 'tab3'">
               <div class="collectionWrap">
                 <!-- MARKETPLACE CONTENT GOES HERE -->
-                
-                This is where MARKETPLACE collection will go
-                
+                  
                 <div class="grid-container">
-                  <div class="grid-item">Pal-bot 2 Sticker</div>
+                  <div class="grid-item"><div><h3>Pal-bot 2 Sticker Pack</h3></div><span class="text-market-price">$15</span><div>A collection of 10 stickers all from various iconic scenes from Pal-bot 2</div></div>
                   <div class="grid-item">Pal-bot 2 Personalized Message from Rob</div>
-                  <div class="grid-item">Tallboyz Hoodie</div>
-                  <div class="grid-item"></div>
-                  <div class="grid-item"></div>
-                  <div class="grid-item"></div>
+                  <div class="grid-item"><div><h3>Pal-bot 2 on VHS</h3></div><div><span class="text-market-price">$27</span></div><div>The adventures continues on VHS</div></div>
+                  <div class="grid-item">Ahoy Sticker Pack</div>
+                  <div class="grid-item">The Rob Show Coffee Mug</div>
+                  <div class="grid-item">The Ahoy T Shirt Series #1</div>
               </div>
                <!-- MARKETPLACE SUBHEADER WORK-->>
                 

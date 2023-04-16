@@ -12,16 +12,12 @@
 
   --mainFont: 'Barlow', sans-serif;
 
-  --largeFontSize: 9.5rem;
-  --mediumFontSize: 3.5vw;
-  --smallFontSize: 1rem;
+  --largeFontSize: 64px;
+  --mediumFontSize: 32px;
+  --smallFontSize: 16px;
+  --xsmallFontSize: 11px;
 
 
-}
-
-
-main {
-  
 }
 
 body {
@@ -132,7 +128,7 @@ footer a:hover {
   }
 
   h3 {
-    font-size: 1.5rem;
+    font-size: var(--mediumFontSize);
     font-weight: 300;
     line-height: 1.5;
     margin: 0;
@@ -185,7 +181,7 @@ footer a:hover {
     display: grid;
     grid-template-columns: repeat(3, 217px);
     grid-template-rows: repeat(2, 315px);
-    grid-gap: 10px;
+    grid-gap: 10px!important;
     padding:10px;
    
   }
@@ -196,7 +192,14 @@ footer a:hover {
     padding: 10px;
     border: 1px solid gray;
     margin:5px;
-    
+    margin-left:10px;
+    margin-right:10px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align:center;
+    flex-direction: column;
+
   }
 
   .grid-item:hover {
@@ -340,7 +343,7 @@ footer a:hover {
   background-color:var(--radioColor)!important;
 }
 
-/*LiveShow Styles */
+/*LiveShow Styles */ 
 
 .liveShow {
   background-color:var(--liveColor)!important;
@@ -348,6 +351,14 @@ footer a:hover {
   
 .liveShowWrap {
   background-color:var(--liveColor)!important;
+}
+
+.upcomingShowsWrap {
+  background-color:red!important;
+}
+
+.upcomingShows-date {
+  font-size: var(--smallFontSize);
 }
 
 /*LIVESHOW = CALENDAR STYLES */
@@ -532,7 +543,7 @@ footer a:hover {
   text-align:center;
   width:100%;
 
-
+  animation:typewriter 1s;
 }
 
 .dateUL li:hover {
@@ -583,4 +594,30 @@ footer a:hover {
   align-items:center;
   justify-content: center;
   background-color: var(--radioColor);
+}
+
+/*Animations*/
+
+.typewriter {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 4s steps(30, end);
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+
+
+/* Market Styles */
+
+.text-market-price {
+  font-size: var(--mediumFontSize);
+  font-weight:700;
 }
