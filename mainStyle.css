@@ -3,7 +3,7 @@
 :root {
   --streamColor: #004e66c8;
   --marketColor: #b4d2ffcd;
-  --frontPageColor: #d9d9d9cd;
+  --frontPageColor:#d9e9d9cd; 
   --radioColor: #ffc1b4d2;
   --liveColor: #ffb4b4c3;
 
@@ -54,7 +54,10 @@ footer {
   text-align:center;
   line-height:90px;
   font-size: 12px;
-  color:white;
+  color:var(--lightFont);
+
+  padding-top:10px;
+  padding-bottom:10px;
 }
 
 footer a {
@@ -458,7 +461,7 @@ footer a:hover {
 }
 
 .blogItem-content {
-  background-color:pink;
+  background-color:var(--liveColor);
   height:50%;
   display:flex;
   align-items: center;
@@ -587,6 +590,12 @@ footer a:hover {
 
 /*MarketPlace Styles + Grid Market Place */
 
+.marketData-section {
+
+  min-height:900px;
+  margin-top:2.5%;
+}
+
 #marketplace {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -594,8 +603,11 @@ footer a:hover {
 }
 
 .product {
+  border-color: var(--lightFont);
+  border-style: solid;
+  border-width:1px;
+  padding:25px;
   background-color: var(--marketColor)
-  padding: 20px;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
@@ -609,7 +621,7 @@ footer a:hover {
 
 
   grid-column: 2 / span 2;
-  background-color: #f2f2f2;
+  background-color: var(--marketColor);
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);

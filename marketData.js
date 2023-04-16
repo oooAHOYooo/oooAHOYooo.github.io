@@ -2,10 +2,11 @@ var marketplace = new Vue({
     el: '#marketplace',
     data: {
       products: [
-        { id: 1, name: 'Pal-bot 2 (VHS)', price: 10, description: 'This is a short description of product 1', image: 'https://via.placeholder.com/150' },
+        { id: 1, name: 'Pal-bot 2 (VHS)', price: 28, description: 'This is a short description of product 1', image: 'https://via.placeholder.com/150' },
         { id: 2, name: 'Product 2', price: 20, description: 'This is a short description of product 2', image: 'https://via.placeholder.com/150' },
-        { id: 3, name: 'Product 3', price: 30, description: 'This is a short description of product 3', image: 'https://via.placeholder.com/150' },
-        { id: 4, name: 'Product 4', price: 40, description: 'This is a short description of product 4', image: 'https://via.placeholder.com/150' }
+        { id: 3, name: 'Pal-bot 2 Sticker Series', price: 30, description: 'This is a short description of product 3', image: 'https://via.placeholder.com/150' },
+        { id: 4, name: 'Product 4', price: 40, description: 'This is a short description of product 4', image: 'https://via.placeholder.com/150' },
+        { id: 5, name: 'Product 5', price: 32, description: 'This is a short description of product 5', image: 'https://via.placeholder.com/150' }
       ],
       cartItems: [],
     },

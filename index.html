@@ -221,7 +221,7 @@
             <div v-show="selectedTab === 'tab3'">
               <div class="collectionWrap">
                 <!-- MARKETPLACE CONTENT GOES HERE -->
-                
+                <!-- 
                 This is where MARKETPLACE collection will go
                 
                 <div class="grid-container">
@@ -231,13 +231,11 @@
                   <div class="grid-item"></div>
                   <div class="grid-item"></div>
                   <div class="grid-item"></div>
-              </div>
+              </div> -->
 
               <!-- MARKETPLACE VUE TAKE 1 -->
               <section class="marketData-section">
-              Marketplace Vue Connection - Experiment 1 
-
-              <div id="marketplace">
+             <div id="marketplace">
                 <div v-for="product in products" :key="product.id" class="product">
                   <img :src="product.image" :alt="product.name">
                   <h2>{{ product.name }}</h2>
