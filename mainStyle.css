@@ -584,3 +584,45 @@ footer a:hover {
   justify-content: center;
   background-color: var(--radioColor);
 }
+
+/*MarketPlace Styles + Grid Market Place */
+
+#marketplace {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+.product {
+  background-color: var(--marketColor)
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.product img {
+  max-width: 100%;
+  margin-bottom: 10px;
+}
+
+.cart {
+  grid-column: 2 / span 2;
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.cart h2 {
+  margin-top: 0;
+}
+
+.cart ul {
+  margin: 0;
+  padding: 0;
+}
+
+.cart li {
+  list-style: none;
+  margin-bottom: 10px;
+}
