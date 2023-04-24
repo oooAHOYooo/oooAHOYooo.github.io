@@ -2,6 +2,8 @@
 
 ![alt text](https://oooahoyooo.github.io/assets/u_ahoy23.png)
 
+Live Preview of Ahoy (Beta) (https://oooahoyooo.github.io/)
+Old Ahoy (https://ahoy.ooo)
 
 # Uncover a trove of fresh and thrilling content from the unbridled minds of independent filmmakers, musicians, podcasters, and more. And let it not escape your notice, friend, that every other Thursday at the strike of 7 in the evening, we'll be unveiling a brand-new offering for your viewing pleasure.
 
