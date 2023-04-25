@@ -16,7 +16,7 @@
   --mediumFontSize: 3.5vw;
   --smallFontSize: 1rem;
 
-  --frameHeightDefault: 650px;
+  --frameHeightDefault: 750px;
 
 }
 
@@ -131,6 +131,12 @@ footer a:hover {
     margin: 0;
   }
 
+  h2 {
+    font-size: 52px;
+    line-height:45px;
+
+  }
+
   h3 {
     font-size: 1.5rem;
     font-weight: 300;
@@ -138,6 +144,16 @@ footer a:hover {
     margin: 0;
     text-transform: lowercase;
   }
+
+
+audio {
+  font-size:100px;
+}
+
+
+
+
+
 
   /*CUSTOM STYLES FROM THIS POINT */
 
@@ -553,12 +569,14 @@ footer a:hover {
 /*RADIO STYLES*/
 
 .radioWrap {
-  background-color:var(--radioColor);
+  background-color:#000e3030;
   width:100%; 
   display:flex;
   flex-direction: column;
   align-items:center;
   justify-content: center;
+  mix-blend-mode: lighten;
+  background-image:url(animatedgif.gif);
 
   height:var(--frameHeightDefault);
 }
@@ -652,4 +670,46 @@ footer a:hover {
 
 @media screen and (min-width: var(--breakpoint-xlarge)) {
   /* CSS rules for extra-large breakpoint */
+}
+
+
+
+
+/*Audio Player */
+#audio-player{
+  background-color:red;
+}
+
+audio {
+  
+  display:flex;
+  align-items: center;
+  background-color:green;
+}
+
+.albumWrap {
+  max-width:500px;
+  overflow:hidden;
+  position: absolute;
+  z-index:0;
+}
+
+.audioData {
+  /*Make a grid */
+  display: grid;
+  grid-template-columns: .25fr 1fr;
+  grid-gap: 20px;
+  background-color: var(--radioColor);
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  padding:20px;
+  margin:20px;
+
+}
+
+.audioDisplay {
+  font-size:18px;
+  font-weight: 700;
+  line-height:16px;
+  text-transform:uppercase;
 }

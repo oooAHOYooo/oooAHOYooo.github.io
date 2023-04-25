@@ -1,16 +1,20 @@
-<html>
+<html> <!-- As of 4.24.23 -->
     <head>
       
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <title>Ahoy Indie Media</title>
-        <!-- As of 4.16.23 -->
+       
+
         <!-- IMPORT OF VUE -->
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
         <!-- CSS3 -->
         <link rel="stylesheet" href="mainStyle.css">
         <link rel="stylesheet" href="jwPlayer.css">
         <link rel="stylesheet" href="experimental-addon.css">
+
+ 
     </head>
 
 <body>
@@ -38,19 +42,38 @@
             
             <!-- END OF STREAM--></div>
         
+
+
+
+
+
             <!-- TAB 2 = RADIO -->
             <div class="radio" v-show="selectedTab === 'tab2'">
             <div class="radioWrap">
-            <iframe class="radioFrame" src="http://66.228.33.153/public/ahoy_indie_media" title="ahoy"></iframe>
+        
+              <script src="https://embed.radio.co/player/d942b19.js"></script>
+            
+              
             </div>
 
               <!-- RADIO SUBHEADER-->
               <div class="subHeader">
                 <h2>Radio</h2>
-                <p>Watch Ahoy Indie Media's 24/7 Channel - with new content every other Thursday at 7pm</p>
+                <div class="audioData">
+                <p class="audioDisplay">Now Playing</p><script src="https://embed.radio.co/embed/saf4aee19b/song.js"></script>
+                <p>Up Next</p><script src="https://embed.radio.co/embed/saf4aee19b/next.js"></script>
+                <p>Recently Played</p><script src="https://embed.radio.co/embed/saf4aee19b/last.js"></script>
+              </div>
+
               </div><!-- RADIO SUBHEADER-->
 
                 <!-- END OF RADIO --></div>
+
+
+
+
+
+
 
             <!-- TAB 5 FRONT PAGE -->
             <div v-show="selectedTab === 'tab5'">
@@ -65,7 +88,7 @@
                     <h3>April 2023</h3>
                     <div>Began Development on New Web Application</div>
                     <div>New Rob Show Episodes Planned</div>
-                    <div>Live Shows from Gather East - on the way</div>
+                    <div>got the radio working</div>
                 </div>
             
                   <!-- A SINGLE BLOCK OF CONTENT LIKE A BLOG -->
@@ -78,8 +101,6 @@
                             <div class="blogItem-content">
                               <div class="calendarItem">
                                   <!--<div class="date"><h2>April 2023</h2></div>-->
-                                  
-                                   
                               </div>
 
                               </div>
@@ -94,7 +115,7 @@
                     <div class="subHeaderVert">
                       <a href="#"><img src="/assets/u_ahoy23.png" class="logo"></a>
                       <h2>FRONT PAGE</h2>
-                      <p>Because every website needs a frontpage</p>
+                      <p>Because everything needs a frontpage</p>
                       <p>Every month we strive to deliever new content - new code - new updates - and new new new new new new things - to keep the fire going - and to keep the flames</p>
                     </div>
                
@@ -114,7 +135,6 @@
        <div class="grid-container-show">
            <div class="grid-item-show"><a href="#"><h2 class="address">East Gather</h2></a><h3>1162 State House, New Haven</h3><button @click="selectedTab = 'tab1'" >Watch Shows</button></div>
           </div>
-
 
 
          <!-- TAB 6 SUBHEADER-->
@@ -179,7 +199,6 @@
   </div>-->
 <footer>
   <a href="#">About</a>
-  <a href="http://66.228.33.153/public/ahoy_indie_media">Ahoy Radio </a>
   <a href="#">Send Content</a>
   <a href="#">Invest in Ahoy</a>
   <a href="#">Contact</a>
@@ -385,6 +404,7 @@ document.body.style.backgroundImage = "url('https://c.tenor.com/lWbWfolwJfIAAAAC
 
 
 <!-- END OF CONDITIONAL AND CODE LOGIC -->
+<!-- HOpe you enjoyed this journey -->
 
     </body>
 </html>
