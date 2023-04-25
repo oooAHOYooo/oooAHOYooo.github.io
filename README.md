@@ -22,10 +22,13 @@ This is the home for the code of Ahoy Indie Media
 This code was hand-written by Alex Gonzalez circa 2023
 
 
-#Ahoy Operations:
+# Ahoy Operations:
 
 
-##Team Ahoy
+## Team Ahoy
 - Alex Gonzalez (Founder, Chief FrontEnd Coder, Editor, Graphic Designer)
 - Chris Batista (Chief Backend Captain, Live Streaming Specialist, Audio Engineer)
 - Rob Meglio (Star, Misc)
+
+
+![alt text](https://oooahoyooo.github.io/assets/u_ahoy23.png)
