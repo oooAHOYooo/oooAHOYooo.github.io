@@ -4,7 +4,7 @@
   --streamColor: #004e66c8;
   --marketColor: #b4d2ffcd;
   --frontPageColor:#d9e9d9cd; 
-  --radioColor: #ffc1b4d2;
+  --radioColor: #000000a8;
   --liveColor: #ffb4b4c3;
 
   --darkFont: #000000;
@@ -16,13 +16,10 @@
   --mediumFontSize: 3.5vw;
   --smallFontSize: 1rem;
 
+  --frameHeightDefault: 650px;
 
 }
 
-
-main {
-  
-}
 
 body {
     font-family: 'Barlow', sans-serif;
@@ -222,7 +219,7 @@ footer a:hover {
     height: 315px;
     padding: 10px;
     
-    border: 1px solid gray;
+    border: 1.5px solid gray;
     margin:5px;
     display:flex;
     flex-direction: column;
@@ -341,6 +338,7 @@ footer a:hover {
 
 .radio {
   background-color:var(--radioColor)!important;
+
 }
 
 /*LiveShow Styles */
@@ -436,20 +434,8 @@ footer a:hover {
   justify-content: center;
   background-color: var(--frontPageColor);
   
-  
 }
 
-/*.blogItem {
-  width:1024px;
-  max-width:1024px;
-  height:432px;
-  display:flex;
-  flex-direction:column;
-  border-style:solid;
-  border-color:white;
-  margin-top:5%;
-  border-width: thin;
-}*/
 
 .blogItem-head {
   background-color:red;
@@ -541,9 +527,6 @@ footer a:hover {
 .dateUL li:hover {
 }
 
-
-
-
 /*BACKGROUND STYLES */
 
 .background-1-stream {
@@ -576,6 +559,8 @@ footer a:hover {
   flex-direction: column;
   align-items:center;
   justify-content: center;
+
+  height:var(--frameHeightDefault);
 }
 
 .radioFrame {
@@ -586,6 +571,9 @@ footer a:hover {
   align-items:center;
   justify-content: center;
   background-color: var(--radioColor);
+  border-radius:25px;
+  position:absolute;
+  top:20%;
 }
 
 /*MarketPlace Styles + Grid Market Place */
@@ -606,19 +594,18 @@ footer a:hover {
   border-color: var(--lightFont);
   border-style: solid;
   border-width:1px;
-  padding:25px;
-  background-color: var(--marketColor)
+  padding:26px;
+  background-color: var(--marketColor);
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .product img {
   max-width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: 11px;
 }
 
 .cart {
-
 
   grid-column: 2 / span 2;
   background-color: var(--marketColor);
