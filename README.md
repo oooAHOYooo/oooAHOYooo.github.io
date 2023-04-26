@@ -29,6 +29,7 @@ This code was hand-written by Alex Gonzalez circa 2023
 - Alex Gonzalez (Founder, Chief FrontEnd Coder, Editor, Graphic Designer)
 - Chris Batista (Chief Backend Captain, Live Streaming Specialist, Audio Engineer)
 - Rob Meglio (Star, Misc)
+- Ellen Jane Martin (DJ, Musical Coordinator, Class Act)
 
 
 ![alt text](https://oooahoyooo.github.io/assets/u_ahoy23.png)
