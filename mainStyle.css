@@ -40,6 +40,12 @@ body::before {
   z-index: -1;
 }
 
+/*HTML DEFO STYLES */
+a {
+  text-decoration: none;
+  color: white;
+}
+
 footer {
  
   width:100%;
@@ -230,12 +236,11 @@ audio {
   }
 
   .grid-item-show {
-    background-color: rgb(199, 199, 199);
     width: 217px;
     height: 315px;
     padding: 10px;
     
-    border: 1.5px solid gray;
+    border: 1.5px solid rgb(255, 255, 255);
     margin:5px;
     display:flex;
     flex-direction: column;
@@ -289,9 +294,6 @@ audio {
   }
 
   
-
-
-
 /*TOP NAV CSS */
 
 
@@ -364,7 +366,14 @@ audio {
 }
   
 .liveShowWrap {
-  background-color:var(--liveColor)!important;
+  background-color:transparent;
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: center;
+  text-align:center;
+  width:100%;
+  
 }
 
 /*LIVESHOW = CALENDAR STYLES */
