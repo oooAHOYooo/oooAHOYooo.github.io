@@ -18,6 +18,10 @@
 
   --frameHeightDefault: 750px;
 
+  --backgroundNavy : #000f2b85;
+
+  --radioHoverColor: orange;
+
 }
 
 
@@ -45,6 +49,17 @@ a {
   text-decoration: none;
   color: white;
 }
+
+span {
+  font-weight:700;
+}
+
+p {
+  text-align:left;
+}
+
+
+/*end of HTML DEFO STYLES */
 
 footer {
  
@@ -158,35 +173,47 @@ audio {
 
 
 
-
-
-
-  /*CUSTOM STYLES FROM THIS POINT */
-
   .subHeader {
-    width:100%;
-    display:flex;
-    flex-direction: row;
-    padding:40px;
-    align-items:top;
-    width:100vw;
-    min-height:150px;
-    position:relative;
-    max-width:99.99%;
-    background-color:var(--darkFont);
-
+    display: flex;
+    flex-wrap: wrap;
+    background-color: var(--backgroundNavy);
+    
   }
-
-  .subHeader:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 15, 43, 0.765);
-    z-index: -1;
+  
+  .subHeaderVert {
+    flex-basis: 50%; /* set the width of each column */
+    padding: 20px;
+    box-sizing: border-box;
   }
+  
+  .logo {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  /* On mobile devices, show one column per row */
+  @media screen and (max-width: 600px) {
+    .subHeaderVert {
+      flex-basis: 100%;
+    }
+  }
+  
+  h2, p {
+    margin: 0;
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  
+
+
+
 
   /*TOP NAV SUGAR STYLES */
   .navTippyWrap {
@@ -254,11 +281,9 @@ audio {
 
 
 
-  .logo {
-    width:200px;
-    height:auto;
+ 
   
-  }
+  
 
   .logo:hover {
     cursor: pointer;
@@ -311,7 +336,7 @@ audio {
 
 .topNavButton-stream {
   color:white;
-  /*background-color: var(--streamColor);*/s
+  /*background-color: var(--streamColor);*/
 }
 
 .topNavButton-stream::before {
@@ -320,36 +345,33 @@ audio {
 
 .topNavButton-stream:hover {
   background-color: var(--streamColor);
+  animation: pulse 1s infinite;
 }
 
 .topNavButton-market:hover {
   background-color: var(--marketColor);
-  
+  animation: pulse 1s infinite;
 }
 
 .topNavButton-frontPage:hover {
   background-color: var(--frontPageColor);
+  animation: pulse 1s infinite;
 }
 
 .topNavButton-radio:hover {
   background-color: var(--radioColor);
-  
- 
+  animation: pulse 1s infinite;
 }
 
 .topNavButton-live:hover {
   background-color: var(--liveColor);
-  
- 
-  
+  animation: pulse 1s infinite;
 }
 
+/*topDownNav Animations */
 
 
-/* STREAM STYLES */
-.stream {
-  background-color:var(--streamColor);
-}
+
 
 
 /*Radio Styles */
@@ -360,13 +382,9 @@ audio {
 }
 
 /*LiveShow Styles */
-
-.liveShow {
-  background-color:var(--liveColor)!important;
-}
   
 .liveShowWrap {
-  background-color:transparent;
+
   display:flex;
   flex-direction: column;
   align-items:center;
@@ -374,8 +392,26 @@ audio {
   text-align:center;
   width:100%;
   
+  
+  
 }
 
+.liveShowContent {
+  border-style:solid;
+  border-width:1px!important;
+  border-color:white;
+  width:100%;
+  height:auto;
+ 
+}
+
+
+.liveShowContentDescWrap {
+  background-color:var(--backgroundNavy);
+  width:100%;
+  padding:20px;
+
+}
 /*LIVESHOW = CALENDAR STYLES */
 
 .calendar {
@@ -398,6 +434,17 @@ audio {
 }
 
 
+/*STREAM STYLES */
+
+.streamShowContent {
+  border-style:solid;
+  border-width:1px!important;
+  border-color:white;
+  width:100%;
+  height:auto;
+}
+
+
 
 
 
@@ -414,7 +461,8 @@ audio {
   background-color: rgba(19, 19, 19, 0.843);
   border-style: solid;
   border-width: 1px;
-  border-radius: 10%;
+  border-radius: 15;
+  text-align:left;
 
 }
 
@@ -603,6 +651,28 @@ audio {
   top:20%;
 }
 
+
+.radioShowContent {
+  border-style:solid;
+  border-width:1px!important;
+  border-color:white;
+  width:200px;
+  height:200px;
+ 
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: center;
+
+}
+
+.radioShowContent:hover {
+  animation: pulse 1s infinite;
+  background-color: var(--radioHoverColor);
+}
+
+
+
 /*MarketPlace Styles + Grid Market Place */
 
 .marketData-section {
@@ -721,4 +791,28 @@ audio {
   font-weight: 700;
   line-height:16px;
   text-transform:uppercase;
+}
+
+
+/*ANIMATIONS */
+
+
+/*pulsating border*/
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.478);
+  }
+
+  70% {
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
+
+.link {
+  text-decoration: underline;
 }

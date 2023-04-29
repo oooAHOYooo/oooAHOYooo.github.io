@@ -1,43 +1,45 @@
 <html> <!-- As of 4.29.23 -->
     <head>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Ahoy Indie Media</title>
+        <title>Send Content to Ahoy Indie Media</title>
         <!-- IMPORT OF VUE -->
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-        <!-- MARKET DATA -->
 
         <!-- CSS3 -->
         <link rel="stylesheet" href="mainStyle.css">
         <link rel="stylesheet" href="jwPlayer.css">
-     
+        <link rel="stylesheet" href="experimental-addon.css">
     </head>
   <body>
     <main>
         <div id="app">
-          <div class="navTippyWrap">
-          <button @click="selectedTab = 'tab1'" class="topNavButton-stream">Stream</button>
-          <button @click="selectedTab = 'tab3'" class="topNavButton-market">Market</button>
-          <button @click="selectedTab = 'tab5'" class="topNavButton-frontPage">Updates</button>
-          <button @click="selectedTab = 'tab2'" class="topNavButton-radio">Radio</button>
-          <button @click="selectedTab = 'tab6'" class="topNavButton-live">Live Shows</button>
-          </div>
+            <div class="navTippyWrap">
+            <button onclick="window.location.href='index.html'" class="topNavButton-stream">Home</button>
+            <button @click="selectedTab = 'tab3'" class="topNavButton-market">Submission</button>
+            <button @click="selectedTab = 'tab5'" class="topNavButton-frontPage">Submission Status</button>
+            <button @click="selectedTab = 'tab2'" class="topNavButton-radio">Recommend a Friend</button>
+            <button @click="selectedTab = 'tab6'" class="topNavButton-live">Get on the Rob Show</button>
+            </div>
+        
       
           <!-- TAB 1 (Stream)-->
             <div class="stream" v-show="selectedTab === 'tab1'">
-              <div class="streamShowContent">
               <div style="position:relative; overflow:hidden; padding-bottom:56.25%">
                 <iframe src="https://cdn.jwplayer.com/players/SyfFOIKw-NkmVmcCh.html" width="100%" height="100%" frameborder="0" scrolling="auto" title="playblock5c - 7pm - 10pm [primeTime]" style="position:absolute;" allowfullscreen></iframe>
               </div>
-            </div>
               
               <div class="subHeader">
+
+              
+
                 <div class="subHeaderVert">
-                  <a href="#"><img src="/assets/u_ahoy23.png" class="logo"></a>
-                </div>
-                <div class="subHeaderVert content">
                   <h2>Stream</h2>
                   <p>Stream Ahoy Indie Media's 24/7 Channel - with new content every other Thursday at 7pm</p>
                 </div>
+
+                <div class="subHeaderVert">
+                    <a href="#"><img src="/assets/u_ahoy23.png" class="logo"></a>
+                  </div>
 
               </div>
             
@@ -46,50 +48,33 @@
             <!-- TAB 2 = RADIO -->
             <div class="radio" v-show="selectedTab === 'tab2'">
             <div class="radioWrap">
-              <div class="radioShowContent">
-                <script src="https://embed.radio.co/player/d942b19.js"></script>    
-              </div>    
+              <script src="https://embed.radio.co/player/d942b19.js"></script>        
             </div>
               <!-- RADIO SUBHEADER-->
               <div class="subHeader">
-                <div class="subHeaderVert">
-                  <a href="#"><img src="/assets/u_ahoy23.png" class="logo"></a>
-                </div>
-                <div class="subHeaderVert content">
-                <h2>Live Radio</h2><p>Status = <span>online</span></p>
+                <h2>Radio</h2>
                 <div class="audioData">
                 <p class="audioDisplay">Now Playing</p><script src="https://embed.radio.co/embed/saf4aee19b/song.js"></script>
                 <p>Up Next</p><script src="https://embed.radio.co/embed/saf4aee19b/next.js"></script>
                 <p>Recently Played</p><script src="https://embed.radio.co/embed/saf4aee19b/last.js"></script>
               </div>
-            </div>
 
               </div><!-- RADIO SUBHEADER-->
                 <!-- END OF RADIO --></div>
-
-
             <!-- TAB 5 FRONT PAGE -->
             <div v-show="selectedTab === 'tab5'">
               <!-- START OF FRONT PAGE -->
               <div class="frontPageWrap">
                 <div class="frontHeader">
                     <a href="#"><img src="/assets/u_ahoy23.png" class="logoBig"></a>
-                    APP + CONTENT UPDATES : AS OF MAY 2023
+                    AHOY INDIE MEDIA : SEND CONTENT TO AHOY : 
                   </div>
                 <div class="monthBlock">
-                    <h3>May 2023</h3>
-                    <div>
-                      <p>                      Updated App Style and Layout <br><a class="link" href="https://github.com/oooAHOYooo/oooAHOYooo.github.io">Check the Github Repo</a> </div>
-                      </p>
-                  
+                    <h3>Your Name</h3>
+                    <div>your content</div>
+                    <div>New Rob Show Episodes Planned</div>
+                    <div>got the radio working</div>
                 </div>
-                <div class="monthBlock">
-                  <h3>April 2023</h3>
-                  <p>
-                  <div>Began Development on New Web Application</div>
-                  <div>New Rob Show Episodes Planned</div>
-                  <div>got the radio working</div></p>
-              </div>
                   <!-- A SINGLE BLOCK OF CONTENT LIKE A BLOG -->
                   <div class="blogBlock">
                       <div class="blogItem">
@@ -108,18 +93,13 @@
 
   <!-- TAB 5 (Front PAGE) SUBHEADER -->
                 <div class="subHeader">
-                  <div class="subHeaderVert">
-                    <a href="#"><img src="/assets/u_ahoy23.png" class="logo"></a>
-                  </div>
-
-                    <div class="subHeaderVert content">
-                      <h2>FRONT PAGE</h2>
+                    <div class="subHeaderVert">
+                      <a href="#"><img src="/assets/u_ahoy23.png" class="logo"></a>
+                      <h2>Send Content to Ahoy</h2>
                       <p>Because everything needs a frontpage</p>
                       <p>Every month we strive to deliever new content - new code - new updates - and new new new new new new things - to keep the fire going - and to keep the flames</p>
-                      <p>alive. They need fanning and we're here to flame.</p>
-
                     </div>
-                   
+               
                 </div><!-- TAB5 SUBHEADER-->
               <!-- END OF FRONT PAGE --></div>
       <!-- TAB 3 (MARKETPLACE)-->
@@ -143,44 +123,33 @@
                   <p>Total: {{ cartTotal }}</p>
                 </div>
               </div>
-             
+              <script src="marketData.js"></script>
               </section>
                <!-- MARKETPLACE SUBHEADER WORK-->>
               <!---->
               <div class="subHeader">
                 <div class="subHeaderVert">
                   <a href="#"><img src="/assets/u_ahoy23.png" class="logo"></a>
-                </div>
-                <div class="subHeaderVert content">
                   <h2>Marketplace</h2>
                   <p>Because every website needs a frontpage</p>
                   <p>Every month we strive to deliever new content - new code - new updates - and new new new new new new things - to keep the fire going - and to keep the flames</p>
-                </div>
-              
-              </div>
-            </div>
+                </div></div></div>
 
                 <!--END OF MARKETPLACE --></div>
      <!-- TAB 6 (Live Show) -->
      <div class="liveShow" v-show="selectedTab === 'tab6'">
       <div class="liveShowWrap">
-        <div class="liveShowContent">
-        <script src="https://cdn.jwplayer.com/players/IdqbXxlv-NkmVmcCh.js"></script>
-        </div>
-        <div class="liveShowContentDescWrap">
-      <h2>Folk Punk Dad</h2><p><span>Gather East, New Haven, CT</span> Circa 2022</p>
+        <!--<script src="https://cdn.jwplayer.com/players/IdqbXxlv-NkmVmcCh.js"></script>-->
+      <h2>Venues and Live Shows</h2>
       </div>
-      </div>
-      <div class="subHeader">
-        <div class="subHeaderVert">
-          <a href="#"><img src="/assets/u_ahoy23.png" class="logo"></a>
+        <div class="subHeader">
+          <div class="subHeaderVert">
+            <a href="#"><img src="/assets/u_ahoy23.png" class="logo"></a>
+            <h2>Live Shows and Venues</h2>
+            <p>We're hoping to team up with local venues and broadcast local shows and open mics</p>
+          </div>
+        
         </div>
-        <div class="subHeaderVert content">
-          <h2>Live Shows and Venues</h2>
-          <p>We're hoping to team up with local venues and broadcast local shows and open mics</p>
-        </div>
-      </div>
-      
       </div>
 
        
@@ -206,11 +175,7 @@
 
 <!-- SCRIPTS AND CONDITIONAL LOGIC -->
 
-<!-- MARKET PLACE DATA FEED -->
-<script src="marketData.js"></script>
-
 <!-- START OF DAILY BACKGROUND CHANGES -->
-
 
 
 <script src="backgroundChange.js"></script>
