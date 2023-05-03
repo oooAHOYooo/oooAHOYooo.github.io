@@ -19,7 +19,7 @@
   --frameHeightDefault: 750px;
 
   --backgroundNavy : #000f2b85;
-
+/*Hover Colors*/
   --radioHoverColor: orange;
 
 }
@@ -119,15 +119,12 @@ footer a:hover {
     text-transform: uppercase;
     font-weight: 400;
     background-color:transparent;
-    
-   
-  }
+    }
 
   button:hover {
     cursor: pointer;
     mix-blend-mode: lighten;
-
-  }
+    }
 
   nav {
     width:100%;
@@ -137,13 +134,9 @@ footer a:hover {
     text-align:center;
     float: middle;
     line-height:90px;
-  }
-
-  @media screen and (min-width: 620px) {
-    nav {
-      background-color: rgba(21, 0, 158, 0);
     }
-  }
+
+
 
   p {
     font-size: 1rem;
@@ -527,77 +520,6 @@ audio {
   justify-content: center;
 }
 
-/*FRONT PAGE - date Detail styles*/
-
-.calendarItem {
-  width:100%;
-  height:auto;
-  display:flex;
-  flex-direction: column;
-  align-items:center;
-  justify-content: center;
-  background-color: var(--frontPageColor);
-  text-align: center;
-}
-
-.calendarItem h2 {
-  color:var(--darkFont);
-  font-family: var(--mainFont);
-  font-size: var(--mediumFontSize);
-  text-align: center;
-
-}
-.date h2 {
-  width:100%;
-  white-space: nowrap;
-  text-align: center;
-}
-
-.dateDetails {
-  /*width:100%;*/
-  max-width:700px;
-  height:auto;
-  display:flex!important;
-  flex-direction: row!important;
-  align-items:center;
-  text-align: center;
-  justify-content: center;
-  background-color: var(--frontPageColor);
-  border-style:solid;
-
-  
-}
-
-.dateLI {
-  width:100%;
-  height:auto;
-  display:flex;
-  flex-direction: column;
-  align-items:center;
-  justify-content: center;
-  background-color: var(--frontPageColor);
-  text-align: center;
-  border-style:solid;
-  border-width:thin;
-  border-color:var(--lightFont);
-  margin:10px;
-  padding:10px;
-}
-
-.dateUL li {
-  text-transform: capitalize;
-  font-family: var(--mainFont);
-  font-weight:100;
-  font-size: 1.2rem;
-  display:flex;
-  margin:10px;
-  text-align:center;
-  width:100%;
-
-
-}
-
-
 
 /*BACKGROUND STYLES */
 
@@ -814,4 +736,12 @@ audio {
 
 .link {
   text-decoration: underline;
+}
+
+/*AHOY MOBILES */
+
+@media screen and (min-width: 620px) {
+  nav {
+    background-color: rgba(21, 0, 158, 0);
+  }
 }
