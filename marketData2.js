@@ -2,12 +2,12 @@ var marketplace = new Vue({
   el: '#marketplace',
   data: {
     products: [
-      { id: 1, name: 'Pal-bot 2 (VHS)', price: 28, description: 'This is a short description of product 1', image: 'https://via.placeholder.com/150', checkoutLink: '' },
-      { id: 2, name: 'Product 2', price: 20, description: 'This is a short description of product 2', image: 'https://via.placeholder.com/150', checkoutLink: '' },
-      { id: 3, name: 'Ellen Jane Poetry', price: 30, description: 'This is a short description of product 3', image: 'https://via.placeholder.com/150', checkoutLink: '' },
-      { id: 4, name: 'Tallboyz Series', price: 40, description: 'This is a short description of product 4', image: 'https://via.placeholder.com/150', checkoutLink: '' },
-      { id: 5, name: 'The Tines Album', price: 32, description: 'This is a short description of product 5', image: 'https://via.placeholder.com/150', checkoutLink: '' },
-      { id: 6, name: 'Rambles and Rough Drafts', price: 22, description: 'This is a short description of product 6', image: 'https://via.placeholder.com/150', checkoutLink: '' }
+      { id: 1, name: 'Pal-bot 2 (VHS)', price: 28, description: 'This is a short description of product 1', image: 'https://via.placeholder.com/150', checkoutLink: 'https://buy.stripe.com/test_cN26rKb2B64jaYM144' },
+      { id: 2, name: 'Product 2', price: 20, description: 'This is a short description of product 2', image: 'https://via.placeholder.com/150', checkoutLink: 'https://buy.stripe.com/test_cN26rKb2B64jaYM144' },
+      { id: 3, name: 'Ellen Jane Poetry', price: 30, description: 'This is a short description of product 3', image: 'https://via.placeholder.com/150', checkoutLink: 'https://buy.stripe.com/test_cN26rKb2B64jaYM144' },
+      { id: 4, name: 'Tallboyz Series', price: 40, description: 'This is a short description of product 4', image: 'https://via.placeholder.com/150', checkoutLink: 'https://buy.stripe.com/test_cN26rKb2B64jaYM144' },
+      { id: 5, name: 'The Tines Album', price: 32, description: 'This is a short description of product 5', image: 'https://via.placeholder.com/150', checkoutLink: 'https://buy.stripe.com/test_cN26rKb2B64jaYM144' },
+      { id: 6, name: 'Rambles and Rough Drafts', price: 22, description: 'This is a short description of product 6', image: 'https://via.placeholder.com/150', checkoutLink: 'https://buy.stripe.com/test_cN26rKb2B64jaYM144' }
     ],
     cartItems: [],
   },
