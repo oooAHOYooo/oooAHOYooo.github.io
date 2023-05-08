@@ -21,6 +21,7 @@
   --backgroundNavy : #000f2b85;
 
   --radioHoverColor: orange;
+  --borderColor: #2500aa;
 
 }
 
@@ -292,9 +293,8 @@ audio {
   }
 
   .logoBig {
-    width:400px;
-    height:auto;
-    margin:0 auto;
+    width:100%;
+    height:500px;
     display:block;
     mix-blend-mode: lighten;
   }
@@ -450,24 +450,68 @@ audio {
 
 /*FRONT PAGE STYLES */
 
-.monthBlock {
-  width:100%;
-  min-height:500px;
-  height:100%;
+.frontSubHeader {
+  width: 100%;
+  height: 100px;
+  background-color: var(--backgroundNavy);
   display:flex;
   flex-direction: column;
-  align-items:center;
+  align-items: center;
   justify-content: center;
-  background-color: rgba(19, 19, 19, 0.843);
+}
+
+.monthBlock {
+  width:720px;
+  min-height:560px;
+  height:auto;
+  display:flex;
+  flex-direction: column;
+  align-items:top;
+  justify-content: center;
+  background-color: rgba(19, 19, 19, 0.143);
   border-style: solid;
+  border-color: var(--borderColor);
   border-width: 1px;
-  border-radius: 15;
   text-align:left;
+  padding:20px;
 
 }
 
+.monthDisplay-text {
+  display:flex;
+  flex-direction: row;
+  align-items:left;
+  justify-content: left;
+  font-family: var(--mainFont);
+  font-size:122px;
+  font-weight: bold;
+  margin:auto;
+  text-transform: uppercase;
+}
+
+.monthUpdateText-bold {
+  display:flex;
+  flex-direction: row;
+  align-items:left;
+  justify-content: left;
+  font-family: var(--mainFont);
+  font-size:22px;
+  font-weight: bold;
+  margin:auto;
+  text-transform: uppercase;
+}
+
+.monthUpdateText {
+  display:flex;
+  flex-direction: row;
+  align-items:left;
+  justify-content: left;
+  font-family: var(--mainFont);
+  font-size:22px;
+}
+
 .frontHeader {
-  background-color:rgba(0, 0, 0, 0.727);
+  background-color:rgba(0, 0, 0, 0.327);
   padding-top: 5%;
   padding-bottom: 5%;
   width:100%; 
@@ -479,8 +523,8 @@ audio {
   text-align:center;
   
   color:white;
-  border-style: thin;
-  border-color:black;
+  border-style: solid;
+  border-color:var(--borderColor)!important;
 }
 
 
@@ -527,75 +571,7 @@ audio {
   justify-content: center;
 }
 
-/*FRONT PAGE - date Detail styles*/
 
-.calendarItem {
-  width:100%;
-  height:auto;
-  display:flex;
-  flex-direction: column;
-  align-items:center;
-  justify-content: center;
-  background-color: var(--frontPageColor);
-  text-align: center;
-}
-
-.calendarItem h2 {
-  color:var(--darkFont);
-  font-family: var(--mainFont);
-  font-size: var(--mediumFontSize);
-  text-align: center;
-
-}
-.date h2 {
-  width:100%;
-  white-space: nowrap;
-  text-align: center;
-}
-
-.dateDetails {
-  /*width:100%;*/
-  max-width:700px;
-  height:auto;
-  display:flex!important;
-  flex-direction: row!important;
-  align-items:center;
-  text-align: center;
-  justify-content: center;
-  background-color: var(--frontPageColor);
-  border-style:solid;
-
-  
-}
-
-.dateLI {
-  width:100%;
-  height:auto;
-  display:flex;
-  flex-direction: column;
-  align-items:center;
-  justify-content: center;
-  background-color: var(--frontPageColor);
-  text-align: center;
-  border-style:solid;
-  border-width:thin;
-  border-color:var(--lightFont);
-  margin:10px;
-  padding:10px;
-}
-
-.dateUL li {
-  text-transform: capitalize;
-  font-family: var(--mainFont);
-  font-weight:100;
-  font-size: 1.2rem;
-  display:flex;
-  margin:10px;
-  text-align:center;
-  width:100%;
-
-
-}
 
 
 
@@ -814,4 +790,101 @@ audio {
 
 .link {
   text-decoration: underline;
+}
+
+
+/*MOBILE BUSINESS */
+@media only screen and (max-width: 620px) {
+  /* your styles here */
+
+  
+
+.frontPageWrap {
+  
+  width:100%; 
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: center;
+
+
+}
+
+
+.frontHeader {
+  background-color:rgba(0, 0, 0, 0.327);
+  padding-top: 5%;
+  padding-bottom: 5%;
+  width:100%; 
+  height:100%;
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: center;
+  text-align:center;
+  
+  color:white;
+  border-style: solid;
+  border-color:var(--borderColor)!important;
+}
+
+
+.frontSubHeader {
+  width: 100%;
+  height: 100px;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.monthBlock {
+  width:720px;
+  min-height:560px;
+  height:auto;
+  display:flex;
+  flex-direction: column;
+  align-items:top;
+  justify-content: center;
+  background-color: rgba(19, 19, 19, 0.143);
+  border-style: solid;
+  border-color: var(--borderColor);
+  border-width: 1px;
+  border-radius: 15;
+  text-align:left;
+  padding:20px;
+
+}
+
+.monthDisplay-text {
+  font-size:72px;
+}
+
+.logoBig {
+  width:400px;
+  height:auto;
+  display:block;
+  mix-blend-mode: lighten;
+}
+
+
+.monthBlock {
+  width:100%;
+  min-height:560px;
+  height:auto;
+  display:flex;
+  flex-direction: column;
+  align-items:top;
+  justify-content: center;
+  background-color: rgba(19, 19, 19, 0.143);
+  border-style: solid;
+  border-color: var(--borderColor);
+  border-width: 1px;
+  text-align:left;
+  padding:20px;
+  margin:5px;
+
+}
+
 }
