@@ -58,4 +58,4 @@ var marketplace = new Vue({
     for (var i = 0; i < this.products.length; i++) {
       this.createCheckoutLink(this.products[i]);
     }
-  }
+  });

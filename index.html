@@ -133,15 +133,16 @@
                   <img :src="product.image" :alt="product.name">
                   <h2>{{ product.name }}</h2>
                   <p>{{ product.description }}</p>
-                  <button @click="addToCart(product)">Add to Cart</button>
+                  <button @click="addToCart(product)">Buy</button>
                 </div>
-                <div class="cart">
+          <!--<div class="cart">
                   <h2>Shopping Cart</h2>
                   <ul>
                     <li v-for="item in cartItems" :key="item.id">{{ item.name }} - {{ item.price }}</li>
                   </ul>
                   <p>Total: {{ cartTotal }}</p>
                 </div>
+              -->
               </div>
               <a href="https://buy.stripe.com/test_cN26rKb2B64jaYM144">Pal-bot 2 test</a>
               </section>
