@@ -648,19 +648,7 @@ audio {
 
 
 
-/*MarketPlace Styles + Grid Market Place */
 
-.marketData-section {
-
-  min-height:900px;
-  margin-top:2.5%;
-}
-
-#marketplace {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px;
-}
 
 .product {
   border-color: var(--lightFont);
@@ -887,4 +875,119 @@ audio {
 
 }
 
+}
+
+
+/* MARKETPLACE STYLES */
+
+.marketData-section {
+  min-width:100%;
+  margin-top:2.5%;
+  padding-right:10px;
+  padding-left:10px;
+  margin-left:10px;
+  margin-right:20px;
+}
+
+.market-text-header {
+  font-size: 36px;
+  font-weight: 900;
+  line-height: 36px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  text-align:center;
+}
+
+.market-text-sub-header {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 24px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  text-align:center;
+}
+
+.market-text-body {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  text-align:center;
+}
+
+.market-button {
+  background-color: var(--buttonColor);
+  border: solid;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  text-transform: uppercase;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+  margin-top: 20px;
+  cursor: pointer;
+  border-color: var(--borderColor)!important;
+}
+
+.market-button:hover {
+  background-color: var(--borderColor);
+}
+
+/*#marketplace {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}*/
+
+/*MARKETPLACE REFACTOR GRID */
+
+.market-product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    overflow-y: scroll;
+    max-height: 700px;
+    min-width:100%;
+}
+
+/*MarketPlace Item*/
+
+.market-grid-item {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  min-width:300px;
+  max-width:300px;
+  min-height:600px;
+  max-height: 600px;
+ 
+}
+
+/*MarketPlace Styles + Grid Market Place */
+
+/*BUY BUTTON*/
+.buy-button {
+  background-color: var(--buttonColor);
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  position: relative;
+  z-index: 100;
 }
