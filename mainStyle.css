@@ -22,6 +22,7 @@
 
   --radioHoverColor: orange;
   --borderColor: #2500aa;
+  --borderColor-inactive:#1400aa4d;
 
 }
 
@@ -44,6 +45,37 @@ body::before {
   background-color: rgba(0, 15, 43, 0.765);
   z-index: -1;
 }
+
+header {
+  width:100%;
+  background-color:red;
+}
+
+.login-button {
+  width: 95px;
+  height: 40px;
+  background-color: transparent;
+  color: #ffffff57;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 300;
+  cursor: pointer;
+  float: right;
+  font-family:'Barlow', sans-serif;
+  border-style:solid;
+  border-width:1px;
+  border-color:var(--borderColor-inactive);
+
+}
+
+.login-button:hover {
+  background-color: var(--backgroundNavy);
+  color: white;
+  border-color: var(--borderColor);
+
+}
+
 
 /*HTML DEFO STYLES */
 a {
@@ -293,7 +325,7 @@ audio {
   }
 
   .logoBig {
-    width:700px;
+    width:700px!important;
     height:auto;
     display:block;
     mix-blend-mode: lighten;
