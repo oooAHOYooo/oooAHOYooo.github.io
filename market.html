@@ -131,7 +131,7 @@
                             <h2>{{ product.name }}</h2>
                             <p>{{ product.description }}</p>
                             <p>Price: ${{ product.price }}</p>
-                            <button class="buy-button" @click="buyProduct(product.id)">Buy</button>
+                            <a :href="product.stripeBuyUrl">Buy</a>
                         </div>
                     </div>
                 </div>
@@ -198,7 +198,6 @@
 <footer>
   <a href="https://github.com/oooAHOYooo/oooAHOYooo.github.io">About</a>
   <a href="/content.html">Send Content</a>
-  <a href="#">Invest in Ahoy</a>
   <a href="#">Contact</a>
 </footer>
 
@@ -207,7 +206,7 @@
 <!-- SCRIPTS AND CONDITIONAL LOGIC -->
 
 <!-- MARKET PLACE DATA FEED -->
-<!--<script src="marketData3.js"></script>-->
+<script src="marketData3.js"></script>
 
 <!-- START OF DAILY BACKGROUND CHANGES -->
 
@@ -218,34 +217,6 @@
 
 <!--buy button method call?-->
 
-<script>
-  var ahoyMarketplace = new Vue({
-    el: '#marketplace-ahoy-app',
-    data: {
-        products: [
-            {
-                id: 1,
-                name: 'Ahoy Default Stickers',
-                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-                price: 10.99,
-                image: 'https://via.placeholder.com/150',
-                stripeBuyUrl: 'https://buy.stripe.com/test_cN26rKb2B64jaYM144'
-            },
-            // other products omitted for brevity
-        ]
-    },
-    methods: {
-        buyProduct: function(productId) {
-            // redirect to the product's Stripe Buy URL
-            var product = this.products.find(function(product) {
-                return product.id === productId;
-            });
-            window.location.href = product.stripeBuyUrl;
-        }
-    }
-});
-
-</script>
 
 <!-- FUNCTION 1 = TAB SWITCH -->
 
