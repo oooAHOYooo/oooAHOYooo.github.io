@@ -293,8 +293,8 @@ audio {
   }
 
   .logoBig {
-    width:100%;
-    height:500px;
+    width:700px;
+    height:auto;
     display:block;
     mix-blend-mode: lighten;
   }
