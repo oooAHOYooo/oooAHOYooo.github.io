@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100;300;400;500;600;700;800;900&display=swap');
 
 :root {
+
+  --white: #FFFFFF;
+  --black: #000000;
+
   --streamColor: #004e66c8;
   --marketColor: #b4d2ffcd;
   --frontPageColor:#d9e9d9cd; 
@@ -23,6 +27,8 @@
   --radioHoverColor: orange;
   --borderColor: #2500aa;
   --borderColor-inactive:#1400aa4d;
+
+  --happyHover: #003caa7a;
 
 }
 
@@ -987,6 +993,7 @@ audio {
     grid-gap: 20px;
     overflow-y: scroll;
     max-height: 700px;
+    max-width: 700px;
     min-width:100%;
 }
 
@@ -1006,12 +1013,21 @@ audio {
 
 /*MarketPlace Styles + Grid Market Place */
 
+/*Buy button wrap*/
+.product-buy-wrap {
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: center;
+  width:100%;
+  height:100%;
+}
+
 /*BUY BUTTON*/
 .buy-button {
-  background-color: var(--buttonColor);
+  background-color: var(-buttonColor);
   border: none;
   color: white;
-  padding: 15px 32px;
   text-align: center;
   text-decoration: none;
   font-size: 16px;
@@ -1019,7 +1035,20 @@ audio {
   cursor: pointer;
   margin-top: 10px;
   margin-bottom: 10px;
-  width: 100%;
+  min-width: 100%!important;
   position: relative;
-  z-index: 100;
+    height:50px;
+  z-index: 12;
+  text-transform:uppercase;
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: center;
+  border-style:solid;
+  border-width:1px;
+  border-color:(--white)!important;
+}
+
+.buy-button:hover {
+  background-color: var(--happyHover);
 }

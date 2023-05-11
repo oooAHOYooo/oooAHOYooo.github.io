@@ -140,8 +140,10 @@
                             <h2>{{ product.name }}</h2>
                             <p>{{ product.description }}</p>
                             <p>Price: ${{ product.price }}</p>
-                            <a :href="product.stripeBuyUrl">Buy</a>
-                        </div>
+                            <div class="product-buy-wrap">
+                            <a class="buy-button" :href="product.stripeBuyUrl">Buy</a>
+                              </div>
+                          </div>
                     </div>
                 </div>
             </section>
