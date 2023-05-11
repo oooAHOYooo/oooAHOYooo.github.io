@@ -1037,7 +1037,7 @@ audio {
   margin-bottom: 10px;
   min-width: 100%!important;
   position: relative;
-    height:50px;
+  height:50px;
   z-index: 12;
   text-transform:uppercase;
   display:flex;
@@ -1051,4 +1051,23 @@ audio {
 
 .buy-button:hover {
   background-color: var(--happyHover);
+}
+
+
+/*CUSTOM SCROLL BARZ */
+
+/* Track */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--happyHover);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--buttonColor);
 }
