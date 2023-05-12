@@ -28,6 +28,8 @@
   --borderColor: #2500aa;
   --borderColor-inactive:#1400aa4d;
 
+  --borderColor-white : #ffffff;
+
   --happyHover: #003caa7a;
 
 }
@@ -923,8 +925,8 @@ audio {
   margin-top:2.5%;
   padding-right:10px;
   padding-left:10px;
-  margin-left:10px;
-  margin-right:20px;
+  margin-left:auto;
+  margin-right:auto;
 }
 
 .market-text-header {
@@ -989,7 +991,9 @@ audio {
 
 .market-product-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 
+    repeat(auto-fill, 
+    minmax(300px, 1fr));
     grid-gap: 20px;
     overflow-y: scroll;
     max-height: 700px;
@@ -1001,14 +1005,13 @@ audio {
 
 .market-grid-item {
   border: 1px solid #ccc;
-  border-radius: 5px;
   padding: 10px;
   text-align: center;
   min-width:300px;
   max-width:300px;
   min-height:600px;
   max-height: 600px;
- 
+  background-color:var(--backgroundNavy); 
 }
 
 /*MarketPlace Styles + Grid Market Place */
@@ -1021,13 +1024,14 @@ audio {
   justify-content: center;
   width:100%;
   height:100%;
+  position:relative;
 }
 
 /*BUY BUTTON*/
 .buy-button {
-  background-color: var(-buttonColor);
+  background-color: var(--buttonColor);
   border: none;
-  color: white;
+  color: var(--white);
   text-align: center;
   text-decoration: none;
   font-size: 16px;
@@ -1035,18 +1039,16 @@ audio {
   cursor: pointer;
   margin-top: 10px;
   margin-bottom: 10px;
-  min-width: 100%!important;
-  position: relative;
-  height:50px;
-  z-index: 12;
-  text-transform:uppercase;
-  display:flex;
+  height: 50px;
+  z-index: 1;
+  text-transform: uppercase;
+  display: flex;
   flex-direction: column;
-  align-items:center;
+  align-items: center;
   justify-content: center;
-  border-style:solid;
-  border-width:1px;
-  border-color:(--white)!important;
+  border-style: solid;
+  border-width: 1px;
+  border-color: (--white);
 }
 
 .buy-button:hover {
@@ -1058,16 +1060,17 @@ audio {
 
 /* Track */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 5px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: var(--happyHover);
-  border-radius: 10px;
+  background: var(--happyHover)!important;
+  border-radius: 5px;
+  
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--buttonColor);
+  background: var(--happyHover)!important;
 }
