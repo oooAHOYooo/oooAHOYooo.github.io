@@ -14,6 +14,11 @@ Ahoy Indie Media is a hand-crafted media company based out of New Haven, Connect
 Thank you for your interest in Ahoy Indie Media. 
 We look forward to sharing our stories with you. If you like what you see - share share share - star star star - spread spread spread - enjoy enjoy enjoy . ahoy. 
 
+## ABOUT THE BUSINESS
+
+###Ahoy MarketPlace
+Ahoy Marketplace offers exclusive in-house content, including "The Rob Show," available on-demand for just $7 a month. By subscribing to this ad-free platform, you can show your support for indie creators and enjoy uninterrupted access to high-quality content while also contributing to the platform's upkeep. Join us today and discover the best in independent entertainment.
+
 
 ## About this Github Repo
 
