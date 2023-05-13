@@ -86,18 +86,23 @@
                 <a class="link" href="https://github.com/oooAHOYooo/oooAHOYooo.github.io">Check the company's Github Repo</a>
               </div>
              
+              <button class="button-toggle3d" onclick="toggleTransform()">Toggle 3D</button>
 
-              <div class="frontContent">
+<div class="frontContent transform">
+
+  <!-- content goes here -->
+
+            
               <div id="updates-ahoy-app">
                 <div v-for="month in months" :key="month.displayText">
                   <h2 className="monthDisplay-text">{{ month.displayText }}</h2>
                   <div v-for="update in month.updates" :key="update.text">
                     <p :class="{ 'bold': update.bold }">{{ update.text }}</p>
-                    <img v-if="update.image" :src="update.image" alt="">
+                    <img class="update-image" v-if="update.image" :src="update.image" alt="">
                   </div>
                 </div>
               </div>
-
+            </div>
               <!-- START OF FRONT PAGE -->
       
 
@@ -131,7 +136,7 @@
                       <p class="monthUpdateText">Ellen Martin joins the party as the radio "Station Manager"</p>
                     </div>
                   
-                  </div>
+                  
                 <div class="monthBlock">
                   <p class="monthDisplay-text">April 2023</p>
                   <p>
@@ -142,6 +147,16 @@
                   </div>
                   </div>
 
+
+
+<!-- SCRIPT FOR TOGGLE 3D -->
+<script>
+  function toggleTransform() {
+    const frontContent = document.querySelector('.frontContent');
+    frontContent.classList.toggle('transformed');
+    alert("Transform toggled!");
+  }
+</script>
 
   <!-- TAB 5 (Front PAGE) SUBHEADER -->
   <!-- TURN OFF TEMPORAILIY -->

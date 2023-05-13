@@ -24,6 +24,8 @@
 
   --backgroundNavy : #000f2b85;
 
+  --backgroundColor-sub: #00297523;
+
   --radioHoverColor: orange;
   --borderColor: #2500aa;
   --borderColor-inactive:#1400aa4d;
@@ -525,22 +527,49 @@ audio {
   min-width: 100%!important;
 }
 
-@media screen and (min-width: 700px) {
+.transformed {
+  transform: perspective(400px) rotateX(-23deg)!important;
+  transition: transform 0.5s;
+}
+
+@media screen and (max-width: 700px) {
+  .frontContent.transformed {
+    transform: none!important;
+    transition: none!important;
+  }
+}
+
+.button-toggle3d {
+  position:absolute;
+  top:0;
+  left:0;
+  z-index: 1000;
+  height:20px;
+
+}
+
+/*@media screen and (min-width: 700px) {
   .frontContent {
     transform: perspective(400px) rotateX(30deg)!important;
     transition: transform 0.5s;
   }
+}*/
+
+#updates-ahoy-app {
+  background-color: var(--backgroundColor-sub);
+  border-style:solid;
+  border-color: var(--borderColor-white);
+  position:relative;
+  margin-top:200px;
+  max-width:100%;
 }
 
-
-
 .update-image {
-  min-width:100%;
-  width:100%;
+  min-width:720px;
   height:auto;
   margin:auto;
   display:block;
-  background-color:var(--black);
+
 }
 
 .monthDisplay-text {
