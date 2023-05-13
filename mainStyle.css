@@ -519,13 +519,17 @@ audio {
   padding:20px;
 }
 
-.frontContent {
-  transform: perspective(400px) rotateX(-23deg)!important;
-  transition: transform 0.5s;
-  overflow-y: auto;
-  height:100vh;
-  min-width:100%!important;
+@media screen and (min-width: 700px) {
+  .frontContent {
+    transform: perspective(400px) rotateX(-23deg)!important;
+    transition: transform 0.5s;
+    overflow-y: auto;
+    height: 100vh;
+    min-width: 100%!important;
+  }
 }
+
+
 
 .update-image {
   min-width:100%;
