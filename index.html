@@ -1,4 +1,4 @@
-<html> <!-- As of 5.09.23 -->
+<html> <!-- As of 5.13.23 -->
     <head>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Ahoy Indie Media</title>
@@ -11,11 +11,25 @@
         <link rel="stylesheet" href="mainStyle.css">
         <link rel="stylesheet" href="jwPlayer.css">
      
+
+            <!-- SCRIPT FOR TOGGLE 3D -->
+            <script>
+              function toggleTransform() {
+                const frontContent = document.querySelector('.frontContent','marketData-section');
+                frontContent.classList.toggle('transformed');
+                //alert("Transform toggled!");
+              }
+            </script>
+
+
+
     </head>
   <body>
     <header>
       <div>
-        <a href="#/ms/signup/635fbdb822ded60004f597b3"><button class="login-button">Log In</button></a>
+        <a href="#/ms/signup/635fbdb822ded60004f597b3"><button class="login-button">Login</button></a>
+        <button class="button-toggle3d" onclick="toggleTransform()">Toggle 3D</button>
+
       </div>
     </header>
     <main>
@@ -42,7 +56,8 @@
                 </div>
                 <div class="subHeaderVert content">
                   <h2>Stream</h2>
-                  <p>Stream Ahoy Indie Media's 24/7 Channel - with new content every other Thursday at 7pm</p>
+                  <p>Welcome to the Stream, a place you can access in-house content, such as "The Rob Show," for a monthly fee of $7, with all proceeds going towards the platform's upkeep. By subscribing, you can access ondemand content and support indie creators, making it an option for those seeking independent entertainment.
+                  </p>
                 </div>
 
               </div>
@@ -73,52 +88,30 @@
               </div><!-- RADIO SUBHEADER-->
                 <!-- END OF RADIO --></div>
 
-
-
-
-
             <!-- TAB 5 FRONT PAGE -->
             <div id="mainFront" v-show="selectedTab === 'tab5'">
-
-             
               <div class="frontSubHeader">
                 APP + CONTENT UPDATES + DEV LOG + COMPANY JOURNAL : AS OF MAY 2023
                 <a class="link" href="https://github.com/oooAHOYooo/oooAHOYooo.github.io">Check the company's Github Repo</a>
               </div>
              
-              <button class="button-toggle3d" onclick="toggleTransform()">Toggle 3D</button>
 
-<div class="frontContent transform">
+              <div class="frontContent transform">
 
-  <!-- content goes here -->
+            <!-- content goes here -->
 
-            
-              <div id="updates-ahoy-app">
-                <div v-for="month in months" :key="month.displayText">
-                  <h2 class="monthDisplay-text">{{ month.displayText }}</h2>
-                  <div v-for="update in month.updates" :key="update.text">
-                    <p class="monthUpdateText-bold" :class="{ 'bold': update.bold }">{{ update.text }}</p>
-                    <img class="update-image" v-if="update.image" :src="update.image" alt="">
-                  </div>
-                </div>
-              </div>
-            </div>
-              <!-- START OF FRONT PAGE -->
+                        <div id="updates-ahoy-app">
+                          <div v-for="month in months" :key="month.displayText">
+                            <h2 class="monthDisplay-text">{{ month.displayText }}</h2>
+                            <div v-for="update in month.updates" :key="update.text">
+                              <p class="monthUpdateText-bold" :class="{ 'bold': update.bold }">{{ update.text }}</p>
+                              <img class="update-image" v-if="update.image" :src="update.image" alt="">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                        <!-- START OF FRONT PAGE -->
       
-
-
-
-
-
-
-<!-- SCRIPT FOR TOGGLE 3D -->
-<script>
-  function toggleTransform() {
-    const frontContent = document.querySelector('.frontContent');
-    frontContent.classList.toggle('transformed');
-    //alert("Transform toggled!");
-  }
-</script>
 
   <!-- TAB 5 (Front PAGE) SUBHEADER -->
   <!-- TURN OFF TEMPORAILIY -->
@@ -136,22 +129,21 @@
                    
                 </div>
                
-              <!-- END OF FRONT PAGE </div>
+        END OF FRONT PAGE </div> 
 
 
 
-      <!-- TAB 3 (MARKETPLACE)-->
+
             <div v-show="selectedTab === 'tab3'">
 
-              <p>Note to the user - this page is in Beta and in development mode - some features might not work and intentionally broken - use this page at your own risk</p>
+              <p style="text-align:center; font-size:12px;" ><span>Note to the user </span> this page is in Beta and in development mode - some features might not work and intentionally broken - use this page at your own risk</p>
 
               <div>
                 <!-- MARKETPLACE CONTENT GOES HERE -->
               <!-- MARKETPLACE VUE TAKE 1 -->
               <section class="marketData-section">
                 <div id="marketplace-ahoy-app">
-                    This is the Market.html page - not index.html
-                    <div class="market-product-grid-parent">
+                    <div class="market-product-grid-parent transform">
                       <div class="market-product-grid">
                           <div v-for="(product, index) in products" :key="index" class="market-grid-item">
                               <img :src="product.image" :alt="product.name">
@@ -177,14 +169,14 @@
                 </div>
                 <div class="subHeaderVert content">
                   <h2>Marketplace</h2>
-                  <p>Because every website needs a frontpage</p>
-                  <p>Every month we strive to deliever new content - new code - new updates - and new new new new new new things - to keep the fire going - and to keep the flames</p>
+                  <p>When you buy content on Ahoy Marketplace, all the proceeds go directly to the artist, with a $3 surcharge added for the platform's upkeep. This makes it an ideal way to support indie creators while enjoying ad-free content. Join the community, subscribe, donate, or purchase content to show your support.</p>
                 </div>
               
               </div>
             </div>
 
                 <!--END OF MARKETPLACE --></div>
+
      <!-- TAB 6 (Live Show) -->
      <div class="liveShow" v-show="selectedTab === 'tab6'">
       <div class="liveShowWrap">

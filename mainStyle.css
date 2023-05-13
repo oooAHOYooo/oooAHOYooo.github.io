@@ -8,7 +8,7 @@
   --streamColor: #004e66c8;
   --marketColor: #b4d2ffcd;
   --frontPageColor:#d9e9d9cd; 
-  --radioColor: #000000a8;
+  --radioColor: #000f2b85;
   --liveColor: #ffb4b4c3;
 
   --darkFont: #000000;
@@ -26,13 +26,15 @@
 
   --backgroundColor-sub: #00297523;
 
-  --radioHoverColor: orange;
+  --radioHoverColor: rgba(76, 0, 255, 0.431);
   --borderColor: #2500aa;
   --borderColor-inactive:#1400aa4d;
 
   --borderColor-white : #ffffff;
 
   --happyHover: #003caa7a;
+
+  --inactiveText: #ffffff4d;
 
 }
 
@@ -58,11 +60,28 @@ body::before {
 
 header {
   width:100%;
-  background-color:red;
+  z-index:0;
+  height:40px;
 }
 
+
+
 .login-button {
-  width: 95px;
+
+  position:absolute;
+  top:0;
+  right:0;
+  z-index: 10;
+  height:50px;
+  border-radius:5px;
+  border-style:none;
+  font-weight:500;
+  margin:5px;
+  border-style:solid;
+  color:var(--inactiveText);
+  border-color: var(--borderColor-inactive);
+  font-family:'barlow';
+  /*width: 95px;
   height: 40px;
   background-color: transparent;
   color: #ffffff57;
@@ -75,14 +94,15 @@ header {
   font-family:'Barlow', sans-serif;
   border-style:solid;
   border-width:1px;
-  border-color:var(--borderColor-inactive);
+  border-color:var(--borderColor-inactive);*/
 
 }
 
 .login-button:hover {
-  background-color: var(--backgroundNavy);
-  color: white;
-  border-color: var(--borderColor);
+  background-color: var(--backgroundColor-sub);
+  color: var(--white);
+  border-style:solid;
+  border-color: var(--borderColor-white);
 
 }
 
@@ -99,6 +119,7 @@ span {
 
 p {
   text-align:left;
+  font-size:12px;
 }
 
 
@@ -267,6 +288,9 @@ audio {
     align-items: center;
     justify-content: center;
     text-align: center;
+
+    transform: perspective(400px) rotateX(23deg)!important;
+
   }
 
 
@@ -531,19 +555,36 @@ audio {
   transition: transform 0.5s;
 }
 
-@media screen and (max-width: 700px) {
+/*@media screen and (max-width: 700px) {
   .frontContent.transformed {
     transform: none!important;
     transition: none!important;
   }
-}
+}*/
 
 .button-toggle3d {
   position:absolute;
   top:0;
   left:0;
-  z-index: 1000;
-  height:20px;
+  z-index: 10;
+  height:50px;
+  border-radius:5px;
+  border-style:none;
+  font-weight:400;
+  margin:5px;
+  border-style:solid;
+  color:var(--inactiveText);
+  border-color: var(--borderColor-inactive);
+  transition: transform 0.75s;
+
+}
+
+.button-toggle3d:hover {
+  background-color: var(--backgroundColor-sub);
+  color: var(--white);
+  border-style:solid;
+  border-color: var(--borderColor-white);
+  transform: perspective(400px) rotateX(30deg)!important;
 
 }
 
@@ -745,12 +786,16 @@ audio {
   border-width:1px!important;
   border-color:white;
   width:200px;
-  height:200px;
+  height:auto;
  
   display:flex;
   flex-direction: column;
   align-items:center;
   justify-content: center;
+  background-color: var(--radioColor);
+  border-radius:25px;
+  position:relative;
+  padding-top:90px;
 
 }
 
@@ -1005,7 +1050,9 @@ audio {
   padding-left:10px;
   margin-left:auto;
   margin-right:auto;
-
+  width:100%;
+  height:62.3vh;
+  overflow-y:auto;
 
 
 }
@@ -1071,11 +1118,12 @@ audio {
 /*MARKETPLACE REFACTOR GRID */
 
 .market-product-grid-parent {
-  background-color:red;
   display: flex;
-  align-content: start; /* Add this line to align items to the top of the grid */
-
+  align-content: center; /* Add this line to align items to the top of the grid */
   justify-content: center; /* Center the child grid horizontally */
+  height:100%;
+  overflow-y:auto;
+
 }
 
 
@@ -1091,6 +1139,8 @@ audio {
     max-height: 700px;
     max-width: 700px;
     min-width:100%;
+
+    align-items: center;
 }
 
 /*MarketPlace Item*/
