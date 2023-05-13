@@ -6,7 +6,7 @@ Live Preview of Ahoy (Beta) (https://oooahoyooo.github.io/)
 <br>
 Old Ahoy (https://ahoy.ooo)
 
-# When you purchase content on Ahoy Marketplace, 100% of the proceeds go directly to the artist, and a small $3 surcharge is added to keep the platform afloat, making it a great way to support indie creators while enjoying ad-free content. Join the community and show your support by subscribing, donating, or purchasing content today.
+# When you buy content on Ahoy Marketplace, all the proceeds go directly to the artist, with a $3 surcharge added for the platform's upkeep. This makes it an ideal way to support indie creators while enjoying ad-free content. Join the community, subscribe, donate, or purchase content to show your support.
 
 Ahoy Indie Media is a hand-crafted media company based out of New Haven, Connecticut. Our mission is to provide an alternative voice in media, with a focus on independent journalism and storytelling.
 
