@@ -520,11 +520,20 @@ audio {
 }
 
 .frontContent {
-  transform: perspective(400px) rotateX(30deg)!important;
+  transform: perspective(400px) rotateX(-23deg)!important;
   transition: transform 0.5s;
   overflow-y: auto;
   height:100vh;
   min-width:100%!important;
+}
+
+.update-image {
+  min-width:100%;
+  width:100%;
+  height:auto;
+  margin:auto;
+  display:block;
+  background-color:var(--black);
 }
 
 .monthDisplay-text {

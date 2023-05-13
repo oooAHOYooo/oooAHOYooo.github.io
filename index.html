@@ -87,10 +87,24 @@
               </div>
              
 
+              <div class="frontContent">
+              <div id="updates-ahoy-app">
+                <div v-for="month in months" :key="month.displayText">
+                  <h2 className="monthDisplay-text">{{ month.displayText }}</h2>
+                  <div v-for="update in month.updates" :key="update.text">
+                    <p :class="{ 'bold': update.bold }">{{ update.text }}</p>
+                    <img v-if="update.image" :src="update.image" alt="">
+                  </div>
+                </div>
+              </div>
 
               <!-- START OF FRONT PAGE -->
       
-                <div class="frontContent">
+
+
+           
+
+
 
                   <div class="monthBlock">
                     <p class="monthDisplay-text">May 2023</p>
@@ -245,6 +259,8 @@
 <!-- MARKET PLACE DATA FEED -->
 <script src="marketData3.js"></script>
 
+<!-- UPDATES PLACE DATA FEED -->
+<script src="updates.js"></script>
 
 
 
