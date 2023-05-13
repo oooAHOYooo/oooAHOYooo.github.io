@@ -95,9 +95,9 @@
             
               <div id="updates-ahoy-app">
                 <div v-for="month in months" :key="month.displayText">
-                  <h2 className="monthDisplay-text">{{ month.displayText }}</h2>
+                  <h2 class="monthDisplay-text">{{ month.displayText }}</h2>
                   <div v-for="update in month.updates" :key="update.text">
-                    <p :class="{ 'bold': update.bold }">{{ update.text }}</p>
+                    <p class="monthUpdateText-bold" :class="{ 'bold': update.bold }">{{ update.text }}</p>
                     <img class="update-image" v-if="update.image" :src="update.image" alt="">
                   </div>
                 </div>
@@ -107,45 +107,7 @@
       
 
 
-           
 
-
-
-                  <div class="monthBlock">
-                    <p class="monthDisplay-text">May 2023</p>
-                    <div id="mayUpdates">
-                      <p class="monthUpdateText-bold">Working on</p>
-                      <p class="monthUpdateText">1. The Marketplace functioning (custom baby) </p>
-                      <p class="monthUpdateText">2. Live Shows - up and running - but debating if we should really even have "live shows" instead would people be down for "Yesterday shows?"</p>
-                      <p class="monthUpdateText-bold">Pumped about</p>
-                      <p class="monthUpdateText">  Met some great artists at Gather - going to put their music on the radio - Riddle M + Justin Arena</p>
-                      <p class="monthUpdateText-bold">Special News</p>
-                      <p class="monthUpdateText">Ellen Martin joins the party as the radio "Station Manager"</p>
-                    </div>
-                  
-                  </div>
-                  <div class="monthBlock">
-                    <p class="monthDisplay-text">May 2023</p>
-                    <div id="mayUpdates">
-                      <p class="monthUpdateText-bold">Working on</p>
-                      <p class="monthUpdateText">1. The Marketplace functioning (custom baby) </p>
-                      <p class="monthUpdateText">2. Live Shows - up and running - but debating if we should really even have "live shows" instead would people be down for "Yesterday shows?"</p>
-                      <p class="monthUpdateText-bold">Pumped about</p>
-                      <p class="monthUpdateText">  Met some great artists at Gather - going to put their music on the radio - Riddle M + Justin Arena</p>
-                      <p class="monthUpdateText-bold">Special News</p>
-                      <p class="monthUpdateText">Ellen Martin joins the party as the radio "Station Manager"</p>
-                    </div>
-                  
-                  
-                <div class="monthBlock">
-                  <p class="monthDisplay-text">April 2023</p>
-                  <p>
-                  <div>Began Development on New Web Application</div>
-                  <div>New Rob Show Episodes Planned</div>
-                  <div>got the radio working</div></p>
-              </div>
-                  </div>
-                  </div>
 
 
 
@@ -154,7 +116,7 @@
   function toggleTransform() {
     const frontContent = document.querySelector('.frontContent');
     frontContent.classList.toggle('transformed');
-    alert("Transform toggled!");
+    //alert("Transform toggled!");
   }
 </script>
 
@@ -162,7 +124,7 @@
   <!-- TURN OFF TEMPORAILIY -->
 
 
-                <!--<div class="subHeader">
+                <div class="subHeader">
                   <div class="subHeaderVert">
                     <a href="#"><img src="/assets/u_ahoy23.png" class="logo"></a>
                   </div>
@@ -173,8 +135,8 @@
                     </div>
                    
                 </div>
-                TAB5 SUBHEADER-->
-              <!-- END OF FRONT PAGE </div>-->
+               
+              <!-- END OF FRONT PAGE </div>
 
 
 
