@@ -493,15 +493,18 @@ audio {
 .frontSubHeader {
   width: 100%;
   height: 100px;
+  overflow:hidden;
   background-color: var(--backgroundNavy);
   display:flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position:fixed;
+  border-color: var(--white);
 }
 
 .monthBlock {
-  width:720px;
+  min-width:520px;
   min-height:560px;
   height:auto;
   display:flex;
@@ -514,7 +517,14 @@ audio {
   border-width: 1px;
   text-align:left;
   padding:20px;
+}
 
+.frontContent {
+  transform: perspective(400px) rotateX(30deg)!important;
+  transition: transform 0.5s;
+  overflow-y: auto;
+  height:100vh;
+  min-width:100%!important;
 }
 
 .monthDisplay-text {
@@ -567,6 +577,11 @@ audio {
   border-color:var(--borderColor)!important;
 }
 
+#mainFront {
+  height:100vh;
+  max-height:100vh;
+  overflow-y: auto;
+}
 
 
 .frontPageWrap {
@@ -577,6 +592,7 @@ audio {
   align-items:center;
   justify-content: center;
 
+ 
 
 }
 
@@ -864,6 +880,7 @@ audio {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position:fixed;
 }
 
 
@@ -882,6 +899,10 @@ audio {
   border-radius: 15;
   text-align:left;
   padding:20px;
+
+  transform: perspective(400px) rotateX(15deg);
+  overflow-y:auto;
+  max-height:100vh;
 
 }
 
@@ -927,6 +948,9 @@ audio {
   padding-left:10px;
   margin-left:auto;
   margin-right:auto;
+
+
+
 }
 
 .market-text-header {
@@ -1055,7 +1079,8 @@ audio {
   cursor: pointer;
   margin-top: 10px;
   margin-bottom: 10px;
-  min-width:100%;
+  min-width:200px;
+  width:100%!important;
   height: 50px;
   z-index: 1;
   text-transform: uppercase;
@@ -1066,6 +1091,7 @@ audio {
   border-style: solid;
   border-width: 1px;
   border-color: (--white);
+  
 }
 
 .buy-button:hover {

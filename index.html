@@ -74,18 +74,24 @@
                 <!-- END OF RADIO --></div>
 
 
+
+
+
             <!-- TAB 5 FRONT PAGE -->
-            <div v-show="selectedTab === 'tab5'">
+            <div id="mainFront" v-show="selectedTab === 'tab5'">
+
+             
+              <div class="frontSubHeader">
+                APP + CONTENT UPDATES + DEV LOG + COMPANY JOURNAL : AS OF MAY 2023
+                <a class="link" href="https://github.com/oooAHOYooo/oooAHOYooo.github.io">Check the company's Github Repo</a>
+              </div>
+             
+
+
               <!-- START OF FRONT PAGE -->
-              <div class="frontPageWrap">
-                <div class="frontHeader">
-                    <a href="#"><img src="/assets/u_ahoy23.png" class="logoBig"></a>
-                  </div>
-                  <div class="frontSubHeader">
-                  APP + CONTENT UPDATES + DEV LOG + COMPANY JOURNAL : AS OF MAY 2023
-                  <a class="link" href="https://github.com/oooAHOYooo/oooAHOYooo.github.io">Check the company's Github Repo</a>
-                </div>
-                
+      
+                <div class="frontContent">
+
                   <div class="monthBlock">
                     <p class="monthDisplay-text">May 2023</p>
                     <div id="mayUpdates">
@@ -98,7 +104,20 @@
                       <p class="monthUpdateText">Ellen Martin joins the party as the radio "Station Manager"</p>
                     </div>
                   
-                </div>
+                  </div>
+                  <div class="monthBlock">
+                    <p class="monthDisplay-text">May 2023</p>
+                    <div id="mayUpdates">
+                      <p class="monthUpdateText-bold">Working on</p>
+                      <p class="monthUpdateText">1. The Marketplace functioning (custom baby) </p>
+                      <p class="monthUpdateText">2. Live Shows - up and running - but debating if we should really even have "live shows" instead would people be down for "Yesterday shows?"</p>
+                      <p class="monthUpdateText-bold">Pumped about</p>
+                      <p class="monthUpdateText">  Met some great artists at Gather - going to put their music on the radio - Riddle M + Justin Arena</p>
+                      <p class="monthUpdateText-bold">Special News</p>
+                      <p class="monthUpdateText">Ellen Martin joins the party as the radio "Station Manager"</p>
+                    </div>
+                  
+                  </div>
                 <div class="monthBlock">
                   <p class="monthDisplay-text">April 2023</p>
                   <p>
@@ -106,12 +125,15 @@
                   <div>New Rob Show Episodes Planned</div>
                   <div>got the radio working</div></p>
               </div>
-                  
+                  </div>
                   </div>
 
 
   <!-- TAB 5 (Front PAGE) SUBHEADER -->
-                <div class="subHeader">
+  <!-- TURN OFF TEMPORAILIY -->
+
+
+                <!--<div class="subHeader">
                   <div class="subHeaderVert">
                     <a href="#"><img src="/assets/u_ahoy23.png" class="logo"></a>
                   </div>
@@ -121,8 +143,12 @@
                       <p>We strive to deliever - new content - new code - new updates - and new new new new new new things - all the time. Not all the time - but a good amount of time.</p>
                     </div>
                    
-                </div><!-- TAB5 SUBHEADER-->
-              <!-- END OF FRONT PAGE --></div>
+                </div>
+                TAB5 SUBHEADER-->
+              <!-- END OF FRONT PAGE </div>-->
+
+
+
       <!-- TAB 3 (MARKETPLACE)-->
             <div v-show="selectedTab === 'tab3'">
 
@@ -233,7 +259,7 @@
             var app = new Vue({
               el: '#app',
               data: {
-                selectedTab: 'tab3'
+                selectedTab: 'tab5'
               }
             });
 
