@@ -134,16 +134,20 @@
               <section class="marketData-section">
                 <div id="marketplace-ahoy-app">
                     This is the Market.html page - not index.html
-                    <div class="market-product-grid">
-                        <div v-for="(product, index) in products" :key="index" class="market-grid-item">
-                            <img :src="product.image" :alt="product.name">
-                            <h2>{{ product.name }}</h2>
-                            <p>{{ product.description }}</p>
-                            <p>Price: ${{ product.price }}</p>
-                            <div class="product-buy-wrap">
-                            <a class="buy-button" :href="product.stripeBuyUrl">Buy</a>
+                    <div class="market-product-grid-parent">
+                      <div class="market-product-grid">
+                          <div v-for="(product, index) in products" :key="index" class="market-grid-item">
+                              <img :src="product.image" :alt="product.name">
+                              <h2>{{ product.name }}</h2>
+                              <p>{{ product.description }}</p>
+                              <p>Price: ${{ product.price }}</p>
+                              <div class="product-buy-wrap">
+                                <p>
+                                  <a class="buy-button" :href="product.stripeBuyUrl">Buy</a>
+                                </p>  
                               </div>
-                          </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>

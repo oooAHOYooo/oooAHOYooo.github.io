@@ -989,13 +989,24 @@ audio {
 
 /*MARKETPLACE REFACTOR GRID */
 
+.market-product-grid-parent {
+  background-color:red;
+  display: flex;
+  align-content: start; /* Add this line to align items to the top of the grid */
+
+  justify-content: center; /* Center the child grid horizontally */
+}
+
+
 .market-product-grid {
-    display: grid;
-    grid-template-columns: 
-    repeat(auto-fill, 
-    minmax(300px, 1fr));
-    grid-gap: 20px;
-    overflow-y: scroll;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 5px; /* Add a 5-pixel gap between grid items */
+  max-width: 700px;
+  width: 100%; /* Ensure the grid takes up 100% of the parent's width */
+    
+
     max-height: 700px;
     max-width: 700px;
     min-width:100%;
@@ -1007,11 +1018,13 @@ audio {
   border: 1px solid #ccc;
   padding: 10px;
   text-align: center;
-  min-width:300px;
-  max-width:300px;
-  min-height:600px;
+  min-width: 300px;
+  max-width: 300px;
+  min-height: 600px;
   max-height: 600px;
-  background-color:var(--backgroundNavy); 
+  background-color: var(--backgroundNavy);
+  position: relative; /* Add this line to allow absolute positioning */
+
 }
 
 /*MarketPlace Styles + Grid Market Place */
@@ -1024,8 +1037,11 @@ audio {
   justify-content: center;
   width:100%;
   height:100%;
-  position:relative;
+  justify-content: flex-end; /* Change to flex-end to position button at bottom */
+  position: absolute; /* Add this line to position the wrap inside the grid item */
+  bottom: 0; /* Add this line to stick the wrap to the bottom of t*/
 }
+
 
 /*BUY BUTTON*/
 .buy-button {
@@ -1039,6 +1055,7 @@ audio {
   cursor: pointer;
   margin-top: 10px;
   margin-bottom: 10px;
+  min-width:100%;
   height: 50px;
   z-index: 1;
   text-transform: uppercase;
@@ -1054,6 +1071,30 @@ audio {
 .buy-button:hover {
   background-color: var(--happyHover);
 }
+
+
+/*MarketPlace Mobile */
+
+/*EVERYONE LOVES MOBILE */
+
+@media only screen and (max-width: 700px) {
+  
+
+  .market-product-grid-parent {
+    background-color: rgba(0, 73, 128, 0.233);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .market-product-grid {
+    grid-template-columns: 1fr; /* Set grid to one column per row */
+  }
+}
+
+
+
 
 
 /*CUSTOM SCROLL BARZ */
@@ -1074,3 +1115,7 @@ audio {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--happyHover)!important;
 }
+
+
+
+
