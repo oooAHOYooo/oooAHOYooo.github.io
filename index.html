@@ -27,14 +27,14 @@
     </head>
   <body>
     <header>
-      <div>
-        <a href="#/ms/signup/635fbdb822ded60004f597b3"><button class="login-button">Login</button></a>
-        <!--<button class="button-toggle3d" onclick="toggleTransform()">Toggle 3D</button>-->
-
-      </div>
+      <div><button class="login-button"" onclick="toggleTransform()">Toggle 3D</button></div>
+      <div><a href="#/ms/signup/635fbdb822ded60004f597b3"><button class="login-button">Login</button></a></div>
     </header>
     <main>
         <div id="app">
+          <div class="topLogo-wrap">
+            <a href="#"><img src="./assets/u_ahoy23.png" class="topLogo-graphic"></a>
+          </div>
           <div class="navTippyWrap">
           <button @click="selectedTab = 'tab1'" class="topNavButton-stream">Stream</button>
           <button @click="selectedTab = 'tab3'" class="topNavButton-stream">Market</button>
@@ -92,9 +92,6 @@
 
             <!-- TAB 5 FRONT PAGE -->
             <div id="mainFront" v-show="selectedTab === 'tab5'">
-              <div class="frontPage-logo-wrap">
-                <img src="./assets/u_ahoy23.png" class="frontPage-logo">
-              </div>
               <div class="frontSubHeader">
                 APP + CONTENT UPDATES + DEV LOG + COMPANY JOURNAL : AS OF MAY 2023
                 <a class="link" href="https://github.com/oooAHOYooo/oooAHOYooo.github.io">Check the company's Github Repo</a>
@@ -136,13 +133,8 @@
                
                 END OF FRONT PAGE </div> 
 
-
-
-
             <div v-show="selectedTab === 'tab3'">
-
               <p style="text-align:center; font-size:12px;" ><span>Note to the user </span> this page is in Beta and in development mode - some features might not work and intentionally broken - use this page at your own risk</p>
-
               <div>
                 <!-- MARKETPLACE CONTENT GOES HERE -->
               <!-- MARKETPLACE VUE TAKE 1 -->

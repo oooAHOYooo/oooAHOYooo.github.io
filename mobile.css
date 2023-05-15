@@ -9,6 +9,16 @@
   
   @media screen and (min-width: var(--breakpoint-small)) {
     /* CSS rules for small breakpoint */
+    .navTippyWrap {
+        width: 100%;
+        height:97px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+            
+      }
   }
   
   @media screen and (min-width: var(--breakpoint-medium)) {
@@ -59,13 +69,13 @@
         }
       }
 
-      @media screen and (max-width: 750px) {
+    /*  @media screen and (max-width: 750px) {
         .navTippyWrap {
-          height: 87px;
+          height: 100px;
           width:100%;
           
         }
-      }
+      }*/
 
       @media screen and (max-width: 750px) {
         .grid-container-show {
