@@ -8,7 +8,7 @@ Live Preview of Ahoy (Beta) (https://oooahoyooo.github.io/)
 Old Ahoy (https://ahoy.ooo)
 
 
-#Ahoy Indie Media is a hand-crafted media company based out of New Haven, Connecticut. 
+## Ahoy Indie Media is a hand-crafted media company based out of New Haven, Connecticut. 
 Our mission is to provide an alternative option in media.
 
 ![alt text](https://oooahoyooo.github.io/images/Ahoy-Indie-Media---The-Rob-Show---Season-2---Episode-1---2023.jpg)
@@ -17,10 +17,10 @@ Our mission is to provide an alternative option in media.
 
 ## HOW THIS BUSINESS MAKES THE MONEY - Part 1
 
-##Ahoy MarketPlace
+### Ahoy MarketPlace
 Ahoy Marketplace offers exclusive in-house content, including "The Rob Show," available on-demand for just $7 a month. By subscribing to this ad-free platform, you can show your support for indie creators and enjoy uninterrupted access to high-quality content while also contributing to the platform's upkeep. Join us today and discover the best in independent entertainment.
 
-## When you buy content on Ahoy Marketplace, all the proceeds go directly to the artist, with a $3 surcharge added for the platform's upkeep. This makes it an ideal way to support indie creators while enjoying ad-free content. Join the community, subscribe, donate, or purchase content to show your support.
+When you buy content on Ahoy Marketplace, all the proceeds go directly to the artist, with a $3 surcharge added for the platform's upkeep. This makes it an ideal way to support indie creators while enjoying ad-free content. Join the community, subscribe, donate, or purchase content to show your support.
 
 
 
