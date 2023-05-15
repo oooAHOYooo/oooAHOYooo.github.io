@@ -1,0 +1,281 @@
+/*Mobile Business */
+
+:root {
+    --breakpoint-small: 480px;
+    --breakpoint-medium: 768px;
+    --breakpoint-large: 1024px;
+    --breakpoint-xlarge: 1200px;
+  }
+  
+  @media screen and (min-width: var(--breakpoint-small)) {
+    /* CSS rules for small breakpoint */
+  }
+  
+  @media screen and (min-width: var(--breakpoint-medium)) {
+    /* CSS rules for medium breakpoint */
+  }
+  
+  @media screen and (min-width: var(--breakpoint-large)) {
+    /* CSS rules for large breakpoint */
+  }
+  
+  @media screen and (min-width: var(--breakpoint-xlarge)) {
+    /* CSS rules for extra-large breakpoint */
+  }
+
+
+@media screen and (max-width: 750px) {
+    header {
+      display:none;
+    }
+  }
+  
+  @media screen and (max-width: 750px) {
+    .login-button {
+      height: 55px;
+      position: relative;
+      background-color:green;
+    }
+  }
+
+  /*Mobile Footer */
+
+@media screen and (max-width: 750px) {
+    footer {
+      height: 55px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-style:solid;
+      border-width:.5px;
+      border-color:var(--borderColor-inactive);
+    }
+  }
+
+    /* On mobile devices, show one column per row */
+    @media screen and (max-width: 750px) {
+        .subHeaderVert {
+          flex-basis: 100%;
+        }
+      }
+
+      @media screen and (max-width: 750px) {
+        .navTippyWrap {
+          height: 87px;
+          width:100%;
+          
+        }
+      }
+
+      @media screen and (max-width: 750px) {
+        .grid-container-show {
+          display: block;
+          grid-template-columns: repeat(3, 217px);
+          grid-template-rows: repeat(2, 315px);
+          grid-gap: 50px!important;
+          padding:10px;
+         
+        }
+      
+      }
+
+      @media screen and (max-width: 750px) {
+        .frontPage-logo-wrap {
+          width: 100%;
+          height: 100%;
+          max-height:175px;
+          display:flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+    }
+
+    @media screen and (max-width: 400px) {
+        .frontPage-logo-wrap {
+          width: 100%;
+          height: 100%;
+          max-height:165px;
+          display:flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          background-color:transparent;
+        }
+       
+       
+        .frontPage-logo {
+          width: 100%;
+          max-width:400px;
+          height: auto;
+          display:block;
+          
+        }
+        
+      }
+
+      @media screen and (max-width: 750px) {
+        .button-toggle3d {
+          display:none;
+        }
+      }
+
+/*MOBILE BUSINESS */
+@media only screen and (max-width: 750px) {
+    /* your styles here */
+  
+    
+  
+  .frontPageWrap {
+    
+    width:100%; 
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+  
+  
+  }
+  
+  
+  .frontHeader {
+    background-color:rgba(0, 0, 0, 0.327);
+    padding-top: 5%;
+    padding-bottom: 5%;
+    width:100%; 
+    height:100%;
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    text-align:center;
+    
+    color:white;
+    border-style: solid;
+    border-color:var(--borderColor)!important;
+  }
+  
+  
+  .frontSubHeader {
+    width: 100%;
+    height: 100px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  @media only screen and (max-width: 750px) {
+    .frontSubHeader {
+      text-align: center;
+      padding: 0px!important;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size:12px;
+      max-height: 250px;
+    }
+  }
+  
+  @media only screen and (max-width: 400px) {
+    .frontSubHeader {
+      text-align: center;
+      padding: 0px!important;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size:12px;
+      max-height: 40px!important;
+      
+    }
+  }
+  
+  
+  .monthBlock {
+    width:720px;
+    min-height:560px;
+    height:auto;
+    display:flex;
+    flex-direction: column;
+    align-items:top;
+    justify-content: center;
+    background-color: rgba(19, 19, 19, 0.143);
+    border-style: solid;
+    border-color: var(--borderColor);
+    border-width: 1px;
+    border-radius: 15;
+    text-align:left;
+    padding:20px;
+  
+    transform: perspective(400px) rotateX(15deg);
+    overflow-y:auto;
+    max-height:100vh;
+  
+  }
+  
+  .monthDisplay-text {
+    font-size:72px;
+    line-height:75%;
+  }
+  
+  .logoBig {
+    width:400px;
+    height:auto;
+    display:block;
+    mix-blend-mode: lighten;
+  }
+  
+  
+  .monthBlock {
+    width:100%;
+    min-height:560px;
+    height:auto;
+    display:flex;
+    flex-direction: column;
+    align-items:top;
+    justify-content: center;
+    background-color: rgba(19, 19, 19, 0.143);
+    border-style: solid;
+    border-color: var(--borderColor);
+    border-width: 1px;
+    text-align:left;
+    padding:20px;
+    margin:5px;
+  
+  }
+  
+  }
+
+  @media only screen and (max-width: 900px) {
+    .market-product-grid-parent {
+      display:flex;
+      flex-direction:column;
+    }
+  }
+  
+  @media only screen and (max-width: 750px) {
+    .market-product-grid-parent {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      padding: 5px;
+      padding-top: 175px;
+    }
+  
+    .market-product-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      justify-content: center;
+      align-items: flex-start;
+    }
+  
+    .buy-button {
+      width: 100%;
+    }
+  }
+  
