@@ -248,7 +248,7 @@
   
   }
 
-  @media only screen and (max-width: 900px) {
+  /*@media only screen and (max-width: 900px) {
     .market-product-grid-parent {
       display:flex;
       flex-direction:column;
@@ -277,5 +277,5 @@
     .buy-button {
       width: 100%;
     }
-  }
+  }*/
   
