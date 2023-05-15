@@ -56,7 +56,7 @@
                 </div>
                 <div class="subHeaderVert content">
                   <h2>Stream</h2>
-                  <p>Welcome to the Stream, a place you can access in-house content, such as "The Rob Show," for a monthly fee of $7, with all proceeds going towards the platform's upkeep. By subscribing, you can access ondemand content and support indie creators, making it an option for those seeking independent entertainment.
+                  <p>Welcome to the Stream, a place you can watch free content - in shuffle format - or - access in-house content, such as "The Rob Show," for a monthly fee of $7, with all proceeds going towards the platform's upkeep. By subscribing, you can access ondemand content and support indie creators, making it an option for those seeking independent entertainment.
                   </p>
                 </div>
 
@@ -148,8 +148,8 @@
                           <div v-for="(product, index) in products" :key="index" class="market-grid-item">
                               <img :src="product.image" :alt="product.name">
                               <h2>{{ product.name }}</h2>
-                              <p>{{ product.description }}</p>
-                              <p>Price: ${{ product.price }}</p>
+                              <!--<p>{{ product.description }}</p>-->
+                              <!--<p>Price: ${{ product.price }}</p>-->
                               <div class="product-buy-wrap">
                                 <p>
                                   <a class="buy-button" :href="product.stripeBuyUrl">Buy</a>
@@ -184,8 +184,9 @@
           <script src="https://cdn.jwplayer.com/players/IdqbXxlv-9Gtk2B1J.js"></script>
         </div>
         <div class="liveShowContentDescWrap">
-      <h2>Folk Punk Dad</h2><p><span>Gather East, New Haven, CT</span> Circa 2022</p>
-      </div>
+          <h2>Folk Punk Dad</h2>
+          <p><span>Gather East, New Haven, CT</span> Circa 2022</p>
+        </div>
       </div>
       <div class="subHeader">
         <div class="subHeaderVert">
@@ -193,7 +194,7 @@
         </div>
         <div class="subHeaderVert content">
           <h2>Live Shows and Venues</h2>
-          <p>We're excited to collaborate with nearby venues to stream live performances and open mic events, and we plan to bring you new content as soon as the very next day. Our goal is to grow this initiative and eventually expand to include your favorite local indie music venues and cafes, so you can experience the vibrant music scene in your area from the comfort of your own home.</p>
+          <p>We're excited to collaborate with local venues to stream live performances and open mic events, and plan to bring new content the next day or at least soon after. </p>
         </div>
       </div>
       
