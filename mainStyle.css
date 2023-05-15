@@ -239,11 +239,7 @@ footer a:hover {
     line-height:90px;
   }
 
-  @media screen and (min-width: 620px) {
-    nav {
-      background-color: rgba(21, 0, 158, 0);
-    }
-  }
+ 
 
   p {
     font-size: 1rem;
@@ -300,9 +296,9 @@ audio {
     }
   }
   
-  h2, p {
+  /*h2, p {
     margin: 0;
-  }
+  }*/
   
   .content {
     display: flex;
@@ -333,7 +329,7 @@ audio {
 
   @media screen and (max-width: 750px) {
     .navTippyWrap {
-      height: 77px;
+      height: 87px;
       width:100%;
       
     }
@@ -668,6 +664,7 @@ audio {
 .transformed {
   transform: perspective(400px) rotateX(-23deg)!important;
   transition: transform 0.5s;
+  overflow-y:auto;
 }
 
 /*@media screen and (max-width: 700px) {
@@ -722,10 +719,8 @@ audio {
   border-color: var(--borderColor-inactive);
   position:relative;
   height:auto;
-  max-height:60vh;
   padding:20px;
   padding-bottom:23px;
-  overflow-y: auto;
 }
 
 .update-image {
@@ -797,11 +792,11 @@ audio {
   border-color:var(--borderColor)!important;
 }
 
-#mainFront {
+/*#mainFront {
   height:100vh;
   max-height:100vh;
   overflow-y: auto;
-}
+}*/
 
 
 .frontPageWrap {
@@ -1235,7 +1230,7 @@ audio {
   text-align:center;
 }
 
-.market-button {
+/*.market-button {
   background-color: var(--buttonColor);
   border: solid;
   color: white;
@@ -1252,50 +1247,37 @@ audio {
   margin-top: 20px;
   cursor: pointer;
   border-color: var(--borderColor)!important;
-}
-
-.market-button:hover {
-  background-color: var(--borderColor);
-}
-
-/*#marketplace {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px;
 }*/
 
 /*MARKETPLACE REFACTOR GRID */
 
+.market-image {
+  width:300px;
+  height:300px;
+  overflow:hidden;
+}
+
+
 .market-product-grid-parent {
   display: flex;
-  align-content: center; /* Add this line to align items to the top of the grid */
-  justify-content: center; /* Center the child grid horizontally */
-  height:100%;
-  overflow-y:auto;
-
+  flex-direction: row;
+  justify-content: space-evenly;
+  height: 100%;
+  overflow-y: auto;
 }
-
 
 .market-product-grid {
-
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-gap: 5px; /* Add a 5-pixel gap between grid items */
+  grid-gap: 5px;
   max-width: 700px;
-  width: 100%; /* Ensure the grid takes up 100% of the parent's width */
-    
-
-    max-height: 700px;
-    max-width: 700px;
-    min-width:100%;
-
-    align-items: center;
+  width: 100%;
+  max-height: 700px;
+  min-width: 100%;
 }
 
-/*MarketPlace Item*/
-
 .market-grid-item {
-  border: 1px solid #ccc;
+  border: 1px solid var(--borderColor-white);
   padding: 10px;
   text-align: center;
   min-width: 300px;
@@ -1303,30 +1285,23 @@ audio {
   min-height: 600px;
   max-height: 600px;
   background-color: var(--backgroundNavy);
-  position: relative; /* Add this line to allow absolute positioning */
-
+  position: relative;
 }
 
-/*MarketPlace Styles + Grid Market Place */
-
-/*Buy button wrap*/
 .product-buy-wrap {
-  display:flex;
+  display: flex;
   flex-direction: column;
-  align-items:center;
+  align-items: center;
   justify-content: center;
-  width:100%;
-  height:100%;
-  justify-content: flex-end; /* Change to flex-end to position button at bottom */
-  position: absolute; /* Add this line to position the wrap inside the grid item */
-  bottom: 0; /* Add this line to stick the wrap to the bottom of t*/
+  width: 100%;
+  height: 100%;
+  justify-content: flex-end;
+  position: absolute;
+  bottom: 0;
 }
 
-
-/*BUY BUTTON*/
 .buy-button {
   background-color: var(--buttonColor);
-  border: none;
   color: var(--white);
   text-align: center;
   text-decoration: none;
@@ -1335,8 +1310,8 @@ audio {
   cursor: pointer;
   margin-top: 10px;
   margin-bottom: 10px;
-  min-width:200px;
-  width:100%!important;
+  min-width: 200px;
+  width: 100% !important;
   height: 50px;
   z-index: 1;
   text-transform: uppercase;
@@ -1347,42 +1322,42 @@ audio {
   border-style: solid;
   border-width: 1px;
   border-color: (--white);
-  
 }
 
 .buy-button:hover {
   background-color: var(--happyHover);
 }
 
+@media only screen and (max-width: 900px) {
+  .market-product-grid-parent {
+    display:flex;
+    flex-direction:column;
+  }
+}
+
 @media only screen and (max-width: 750px) {
   .market-product-grid-parent {
-    background-color: rgba(0, 73, 128, 0);
-    width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center; /* center horizontally */
-    justify-content: center; /* center vertically */
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
     padding: 5px;
-    padding-top:175px;
+    padding-top: 175px;
   }
-}
-
-/*MarketPlace Mobile */
-
-/*EVERYONE LOVES MOBILE */
-
-@media only screen and (max-width: 750px) {
-  
-
-
-  
 
   .market-product-grid {
-    grid-template-columns: 1fr; /* Set grid to one column per row */
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .buy-button {
+    width: 100%;
   }
 }
-
 
 
 

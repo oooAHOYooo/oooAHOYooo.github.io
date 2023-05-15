@@ -28,7 +28,7 @@
     <header>
       <div>
         <a href="#/ms/signup/635fbdb822ded60004f597b3"><button class="login-button">Login</button></a>
-        <button class="button-toggle3d" onclick="toggleTransform()">Toggle 3D</button>
+        <!--<button class="button-toggle3d" onclick="toggleTransform()">Toggle 3D</button>-->
 
       </div>
     </header>
@@ -93,7 +93,6 @@
               <div class="frontPage-logo-wrap">
                 <img src="./assets/u_ahoy23.png" class="frontPage-logo">
               </div>
-
               <div class="frontSubHeader">
                 APP + CONTENT UPDATES + DEV LOG + COMPANY JOURNAL : AS OF MAY 2023
                 <a class="link" href="https://github.com/oooAHOYooo/oooAHOYooo.github.io">Check the company's Github Repo</a>
@@ -133,7 +132,7 @@
                    
                 </div>
                
-        END OF FRONT PAGE </div> 
+                END OF FRONT PAGE </div> 
 
 
 
@@ -147,10 +146,10 @@
               <!-- MARKETPLACE VUE TAKE 1 -->
               <section class="marketData-section">
                 <div id="marketplace-ahoy-app">
-                    <div class="market-product-grid-parent transform">
+                    <div class="market-product-grid-parent">
                       <div class="market-product-grid">
                           <div v-for="(product, index) in products" :key="index" class="market-grid-item">
-                              <img :src="product.image" :alt="product.name">
+                              <img :src="product.image" :alt="product.name" class="market-image">
                               <h2>{{ product.name }}</h2>
                               <!--<p>{{ product.description }}</p>-->
                               <!--<p>Price: ${{ product.price }}</p>-->

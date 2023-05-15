@@ -7,7 +7,7 @@ var ahoyMarketplace = new Vue({
                 name: 'Ahoy Defaultz Stickers',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
                 price: 10.99,
-                image: 'https://via.placeholder.com/300',
+                image: './images/Ahoy-Indie-Media-DEFAULT-COVER-A-8.jpg',
                 stripeBuyUrl: 'https://buy.stripe.com/test_cN26rKb2B64jaYM144'
             },
             {
@@ -15,7 +15,7 @@ var ahoyMarketplace = new Vue({
                 name: 'Ahoy Slicktz Stickers',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
                 price: 120.99,
-                image: 'https://via.placeholder.com/300',
+                image: './images/Ahoy-Indie-Media-DEFAULT-COVER-A-8.jpg',
                 stripeBuyUrl: 'https://buy.stripe.com/test_cN26rKb2B64jaYM144'
             },
             {
@@ -23,7 +23,7 @@ var ahoyMarketplace = new Vue({
                 name: 'Ahoy ASZ',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
                 price: 132.99,
-                image: 'https://via.placeholder.com/300',
+                image: './images/Ahoy-Indie-Media-DEFAULT-COVER-A-8.jpg',
                 stripeBuyUrl: 'https://buy.stripe.com/test_cN26rKb2B64jaYM144'
             },
             {
@@ -31,7 +31,7 @@ var ahoyMarketplace = new Vue({
                 name: 'Ahoy ASZ',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
                 price: 132.99,
-                image: 'https://via.placeholder.com/300',
+                image: './images/Ahoy-Indie-Media-DEFAULT-COVER-A-8.jpg',
                 stripeBuyUrl: 'https://buy.stripe.com/test_cN26rKb2B64jaYM144'
             },
             {
@@ -39,7 +39,7 @@ var ahoyMarketplace = new Vue({
                 name: 'Ahoy ASZ',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
                 price: 132.99,
-                image: 'https://via.placeholder.com/300',
+                image: './images/Ahoy-Indie-Media-DEFAULT-COVER-A-8.jpg',
                 stripeBuyUrl: 'https://buy.stripe.com/test_cN26rKb2B64jaYM144'
             },
             {
@@ -47,7 +47,7 @@ var ahoyMarketplace = new Vue({
                 name: 'Ahoy ASZ',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
                 price: 132.99,
-                image: 'https://via.placeholder.com/300',
+                image: './images/Ahoy-Indie-Media-DEFAULT-COVER-A-8.jpg',
                 stripeBuyUrl: 'https://buy.stripe.com/test_cN26rKb2B64jaYM144'
             },
             {
@@ -55,7 +55,7 @@ var ahoyMarketplace = new Vue({
                 name: 'Ahoy ASZ',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
                 price: 132.99,
-                image: 'https://via.placeholder.com/300',
+                image: './images/Ahoy-Indie-Media-DEFAULT-COVER-A-8.jpg',
                 stripeBuyUrl: 'https://buy.stripe.com/test_cN26rKb2B64jaYM144'
             },
             {
@@ -63,7 +63,7 @@ var ahoyMarketplace = new Vue({
                 name: 'Ahoy ASZ',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
                 price: 132.99,
-                image: 'https://via.placeholder.com/300',
+                image: './images/Ahoy-Indie-Media-DEFAULT-COVER-A-8.jpg',
                 stripeBuyUrl: 'https://buy.stripe.com/test_cN26rKb2B64jaYM144'
             }
             // other products omitted for brevity
