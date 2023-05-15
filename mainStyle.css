@@ -64,14 +64,22 @@ body::before {
 
 header {
   width:100%;
-  z-index:10;
+  z-index:0;
   height:40px;
+  background-color:transparent;
 }
 
-@media screen and (max-width: 620px) {
+@media screen and (max-width: 750px) {
   header {
+    display:none;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .login-button {
     height: 55px;
-    background-color:red;
+    position: relative;
+    background-color:green;
   }
 }
 
@@ -165,7 +173,7 @@ footer a:hover {
 
 /*Mobile Footer */
 
-@media screen and (max-width: 620px) {
+@media screen and (max-width: 750px) {
   footer {
     height: 55px;
     display: flex;
@@ -286,7 +294,7 @@ audio {
   }
   
   /* On mobile devices, show one column per row */
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 750px) {
     .subHeaderVert {
       flex-basis: 100%;
     }
@@ -318,7 +326,17 @@ audio {
     text-align: center;
 
     transform: perspective(400px) rotateX(23deg)!important;
+    transform-style: preserve-3d!important;
+    transform-origin: bottom!important;
 
+  }
+
+  @media screen and (max-width: 750px) {
+    .navTippyWrap {
+      height: 77px;
+      width:100%;
+      
+    }
   }
 
 
@@ -559,8 +577,72 @@ audio {
   align-items: center;
   justify-content: center;
   border-color: var(--white);
-  positon:relative;
+  position:relative;
 }
+
+
+.frontPage-logo-wrap {
+  width: 100%;
+  height: 100%;
+  max-height:300px;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.frontPage-logo {
+  width: 700px;
+  height: auto;
+  display:block;
+  mix-blend-mode: lighten;
+}
+
+@media screen and (max-width: 750px) {
+  .frontPage-logo-wrap {
+    width: 100%;
+    height: 100%;
+    max-height:175px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+ 
+ 
+  .frontPage-logo {
+    width: 100%;
+    max-width:400px;
+    height: auto;
+    display:block;
+    
+  }
+  
+}
+
+@media screen and (max-width: 400px) {
+  .frontPage-logo-wrap {
+    width: 100%;
+    height: 100%;
+    max-height:165px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color:transparent;
+  }
+ 
+ 
+  .frontPage-logo {
+    width: 100%;
+    max-width:400px;
+    height: auto;
+    display:block;
+    
+  }
+  
+}
+
 
 .monthBlock {
   min-width:520px;
@@ -621,6 +703,12 @@ audio {
 
 }
 
+@media screen and (max-width: 750px) {
+  .button-toggle3d {
+    display:none;
+  }
+}
+
 /*@media screen and (min-width: 700px) {
   .frontContent {
     transform: perspective(400px) rotateX(30deg)!important;
@@ -677,7 +765,8 @@ audio {
   align-items:left;
   justify-content: left;
   font-family: var(--mainFont);
-  font-size:22px;
+  font-size:18px;
+  line-height:105%;
   font-weight: 300;
   margin:auto;
 }
@@ -973,7 +1062,7 @@ audio {
 
 
 /*MOBILE BUSINESS */
-@media only screen and (max-width: 620px) {
+@media only screen and (max-width: 750px) {
   /* your styles here */
 
   
@@ -1017,12 +1106,33 @@ audio {
   justify-content: center;
 }
 
-@media only screen and (max-width: 620px) {
+@media only screen and (max-width: 750px) {
   .frontSubHeader {
-    text-align:center;
+    text-align: center;
+    padding: 0px!important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size:12px;
+    max-height: 250px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .frontSubHeader {
+    text-align: center;
+    padding: 0px!important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size:12px;
+    max-height: 40px!important;
     
   }
 }
+
 
 .monthBlock {
   width:720px;
@@ -1244,7 +1354,7 @@ audio {
   background-color: var(--happyHover);
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 750px) {
   .market-product-grid-parent {
     background-color: rgba(0, 73, 128, 0);
     width: 100%;
@@ -1262,7 +1372,7 @@ audio {
 
 /*EVERYONE LOVES MOBILE */
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 750px) {
   
 
 

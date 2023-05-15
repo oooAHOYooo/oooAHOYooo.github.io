@@ -36,10 +36,10 @@
         <div id="app">
           <div class="navTippyWrap">
           <button @click="selectedTab = 'tab1'" class="topNavButton-stream">Stream</button>
-          <button @click="selectedTab = 'tab3'" class="topNavButton-market">Market</button>
-          <button @click="selectedTab = 'tab5'" class="topNavButton-frontPage">Updates</button>
-          <button @click="selectedTab = 'tab2'" class="topNavButton-radio">Radio</button>
-          <button @click="selectedTab = 'tab6'" class="topNavButton-live">Live Shows</button>
+          <button @click="selectedTab = 'tab3'" class="topNavButton-stream">Market</button>
+          <button @click="selectedTab = 'tab5'" class="topNavButton-stream">Updates</button>
+          <button @click="selectedTab = 'tab2'" class="topNavButton-stream">Radio</button>
+          <button @click="selectedTab = 'tab6'" class="topNavButton-stream">Live Shows</button>
           </div>
       
           <!-- TAB 1 (Stream)-->
@@ -90,6 +90,10 @@
 
             <!-- TAB 5 FRONT PAGE -->
             <div id="mainFront" v-show="selectedTab === 'tab5'">
+              <div class="frontPage-logo-wrap">
+                <img src="./assets/u_ahoy23.png" class="frontPage-logo">
+              </div>
+
               <div class="frontSubHeader">
                 APP + CONTENT UPDATES + DEV LOG + COMPANY JOURNAL : AS OF MAY 2023
                 <a class="link" href="https://github.com/oooAHOYooo/oooAHOYooo.github.io">Check the company's Github Repo</a>
