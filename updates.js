@@ -6,7 +6,7 @@ var ahoyUpdates = new Vue({
           displayText: "May 2023",
           updates: [
             { text: "Rob Show Season 2 - Episode 1 is out Wednesday May 17th - with Guest Tyler and Dave Gunn of the Tallboyz" }, 
-            { image: 'https://via.placeholder.com/300' },
+            { image: './images/Ahoy-Indie-Media---The-Rob-Show---Season-2---Episode-1---2023.jpg' },
             { text: "Working on", bold: true },
             { text: "1. The Marketplace functioning (custom baby)", },
             {
