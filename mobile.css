@@ -17,8 +17,10 @@
         align-items: center;
         justify-content: center;
         text-align: center;
-            
       }
+
+
+
   }
   
   @media screen and (min-width: var(--breakpoint-medium)) {
@@ -288,4 +290,10 @@
       width: 100%;
     }
   }*/
+
+  @media only screen and (max-width: 750px) {
+   .radioBG-wrap {
+    display:none;
+   }
+  }
   
