@@ -871,6 +871,27 @@ audio {
 
 /*RADIO STYLES*/
 
+.radio {
+  position: relative;
+}
+
+.radioBG-wrap {
+  position: absolute;
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: center;
+  top:375;
+  left: 0;
+  width: 100%;
+  height: 0;
+  z-index:-1;
+  padding-bottom: 100%; /* Creates a square ratio (1:1) */
+}
+
+
+
+
 .radioWrap {
   background-color:#000e3030;
   width:100%; 
