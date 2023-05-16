@@ -106,7 +106,7 @@
                           <div v-for="month in months" :key="month.displayText">
                             <h2 class="monthDisplay-text">{{ month.displayText }}</h2>
                             <div v-for="update in month.updates" :key="update.text">
-                              <p class="monthUpdateText-bold" :class="{ 'bold': update.bold }">{{ update.text }}</p>
+                              <p :class="['monthUpdateText', { 'bold': update.bold }]">{{ update.text }}</p>
                               <img class="update-image" v-if="update.image" :src="update.image" alt="">
                             </div>
                           </div>
