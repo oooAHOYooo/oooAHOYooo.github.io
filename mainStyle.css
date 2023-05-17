@@ -112,6 +112,7 @@ header {
   color: var(--white);
   border-style:solid;
   border-color: var(--borderColor-white);
+  transform: pulse 1s infinite;
 
 }
 
@@ -222,7 +223,7 @@ footer a:hover {
 
   h2 {
     font-size: 36px;
-    line-height:45%!important;
+    line-height:90%!important;
   }
 
   h3 {
@@ -633,9 +634,9 @@ audio {
   align-items:left;
   justify-content: left;
   font-family: var(--mainFont);
-  font-size:18px;
-  line-height:105%;
-  font-weight: 300;
+  font-size:16px;
+  line-height:50%;
+  font-weight: 400;
   margin:auto;
 }
 
@@ -645,7 +646,10 @@ audio {
   align-items:left;
   justify-content: left;
   font-family: var(--mainFont);
-  font-size:22px;
+  font-size:16px;
+  line-height:95%;
+  font-weight: 400;
+  margin-top:15px;
 }
 
 .frontHeader {
@@ -748,7 +752,7 @@ audio {
   font-size:64px;
   line-height:85%;
   text-align:center;
-  font-weight:400;
+  font-weight:600;
 }
 
 /*RADIO STYLES*/
@@ -1063,7 +1067,12 @@ audio {
 
 .buy-button:hover {
   background-color: var(--happyHover);
+  animation: pulse 1s infinite;
+
 }
+
+
+
 
 /*CUSTOM SCROLL BARZ */
 

@@ -1,6 +1,7 @@
 <html> <!-- As of 5.13.23 -->
     <head>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="icon" type="image/x-icon" href="./assets/ahoyFav.png">
         <title>Ahoy Indie Media</title>
         <!-- IMPORT OF VUE -->
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -132,7 +133,7 @@
                    
                 </div>
                
-                END OF FRONT PAGE </div> 
+                <!--END OF FRONT PAGE --></div> 
 
             <div v-show="selectedTab === 'tab3'">
               <p style="text-align:center; font-size:12px;" ><span>Note to the user </span> this page is in Beta and in development mode - some features might not work and intentionally broken - use this page at your own risk</p>
@@ -146,7 +147,7 @@
                           <div v-for="(product, index) in products" :key="index" class="market-grid-item">
                               <img :src="product.image" :alt="product.name" class="market-image">
                               <h2>{{ product.name }}</h2>
-                              <!--<p>{{ product.description }}</p>-->
+                              <p>{{ product.description }}</p>
                               <!--<p>Price: ${{ product.price }}</p>-->
                               <div class="product-buy-wrap">
                                 <p>
