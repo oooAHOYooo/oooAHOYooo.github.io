@@ -14,24 +14,13 @@ Our mission is to provide an alternative option in media.
 ![alt text](https://oooahoyooo.github.io/images/Ahoy-Indie-Media---The-Rob-Show---Season-2---Episode-1---2023.jpg)
 
 
+### How we plan on making money
+Ahoy Marketplace offers exclusive in-house content, including "The Rob Show," available on-demand with a monthly subscription. We hope to keep this platform completely ad free - and that's going to take some money - thus - you can show your support for indie creators and enjoy uninterrupted access while also contributing to the platform's upkeep. Join us.
 
-## HOW THIS BUSINESS MAKES THE MONEY - Part 1
+## The Master Plan
+We use a variety of software and some in house - some out of the house - some in between. Little by little we hope to make this platform completely indiependent and self sustaining. 
 
-### Ahoy MarketPlace
-Ahoy Marketplace offers exclusive in-house content, including "The Rob Show," available on-demand for just $7 a month. By subscribing to this ad-free platform, you can show your support for indie creators and enjoy uninterrupted access to high-quality content while also contributing to the platform's upkeep. Join us today and discover the best in independent entertainment.
-
-When you buy content on Ahoy Marketplace, all the proceeds go directly to the artist, with a $3 surcharge added for the platform's upkeep. This makes it an ideal way to support indie creators while enjoying ad-free content. Join the community, subscribe, donate, or purchase content to show your support.
-
-
-
-## About this Github Repo
-
-This is the home for the code of Ahoy Indie Media
-
-This code was hand-written by Alex Gonzalez circa 2023
-
-
-# Ahoy Operations:
+## Ahoy Operations:
 
 
 ## Team Ahoy
@@ -42,3 +31,9 @@ This code was hand-written by Alex Gonzalez circa 2023
 
 
 ![alt text](https://oooahoyooo.github.io/assets/u_ahoy23.png)
+
+
+## About this Github Repo
+
+This is the home for the code of Ahoy Indie Media
+This code was hand-written by Alex Gonzalez circa 2023
