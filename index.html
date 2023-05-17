@@ -102,16 +102,17 @@
 
             <!-- content goes here -->
 
-                        <div id="updates-ahoy-app">
-                          <div v-for="month in months" :key="month.displayText">
-                            <h2 class="monthDisplay-text">{{ month.displayText }}</h2>
-                            <div v-for="update in month.updates" :key="update.text">
-                              <p :class="['monthUpdateText', { 'bold': update.bold }]">{{ update.text }}</p>
-                              <img class="update-image" v-if="update.image" :src="update.image" alt="">
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+            <div id="updates-ahoy-app">
+              <div v-for="month in months" :key="month.displayText">
+                <h2 class="monthDisplay-text">{{ month.displayText }}</h2>
+                <div v-for="update in month.updates" :key="update.text">
+                  <p :class="['monthUpdateText', { 'bold': update.bold }, {'superBold':update.superBold}]">{{ update.text }}</p>
+                  <p v-if="update.link" v-html="update.link"></p>
+                  <img class="update-image" v-if="update.image" :src="update.image" alt="">
+                </div>
+              </div>
+            </div>
+            
                         <!-- START OF FRONT PAGE -->
       
 
@@ -125,8 +126,8 @@
                   </div>
 
                     <div class="subHeaderVert content">
-                      <h2>FRONT PAGE</h2>
-                      <p>Discover the latest happenings at Ahoy on our front page, where you'll find a constant stream of updates. From new content and code improvements to fresh features and exciting developments, if it's new, it will be showcased here.</p>
+                      <h2>The FRONT PAGE</h2>
+                      <p>Discover the latest happenings at Ahoy - from new content and to code improvements - to fresh features - and  developments, long story short - if it's new - it will be showcased here.</p><p>Be sure to check out our <a class="link" href="https://github.com/oooAHOYooo/oooAHOYooo.github.io">github repo for all the nerdy code updates</a></p>
                     </div>
                    
                 </div>
@@ -166,7 +167,9 @@
                 </div>
                 <div class="subHeaderVert content">
                   <h2>Marketplace</h2>
-                  <p>When you buy content on Ahoy Marketplace, all the proceeds go directly to the artist, with a $3 surcharge added for the platform's upkeep. This makes it an ideal way to support indie creators while enjoying ad-free content. Join the community, subscribe, donate, or purchase content to show your support. AKA - this is the only way we make money. Ya dig? We don't got any ads - and hope to never do - but if we do get ads one day - know that we're going to make them our own - in our own style. Anyway - yeah. </p>
+                  <p>Oh, the beloved Ahoy Marketplace - your chance to bring home a little piece of Ahoy.</p>
+                  <p>When you buy content on the Ahoy Marketplace, all the proceeds go directly to the artist, with a $3 surcharge added for the platform's upkeep. This creates a way to support indie creators while enjoying ad-free content. Win-win? We hope.</p>
+                  <p>So help us help you by giving a little indie fairy their wings</p>
                 </div>
               
               </div>

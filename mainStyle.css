@@ -39,7 +39,7 @@
   --happyHover: #003caa7a;
 
   --inactiveText: #ffffff4d;
-
+  --text-standOUT: #ff0060;
 }
 
 
@@ -213,10 +213,6 @@ footer a:hover {
     line-height:90px;
   }
 
-
-
- 
-
   p {
     font-size: 1rem;
     font-weight: 300;
@@ -225,9 +221,8 @@ footer a:hover {
   }
 
   h2 {
-    font-size: 52px;
-    line-height:45px;
-
+    font-size: 36px;
+    line-height:45%!important;
   }
 
   h3 {
@@ -717,13 +712,9 @@ audio {
   justify-content: center;
 }
 
-
-
-
-
 /*BACKGROUND STYLES */
 
-.background-1-stream {
+/*.background-1-stream {
   background-color: var(--streamColor);
 }
 
@@ -741,8 +732,21 @@ audio {
 
 .background-1-live {
   background-color: var(--liveColor);
+}*/
+
+.bold {
+  font-size:32px;
+  font-weight:700;
+  text-transform:uppercase;
 }
 
+.superBold {
+  color:var(--text-standOUT);
+  font-size:64px;
+  line-height:85%;
+  text-align:center;
+  font-weight:400;
+}
 
 /*RADIO STYLES*/
 
