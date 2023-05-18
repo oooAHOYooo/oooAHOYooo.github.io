@@ -9,17 +9,7 @@
   
   @media screen and (min-width: var(--breakpoint-small)) {
     /* CSS rules for small breakpoint */
-    .navTippyWrap {
-        width: 100%;
-        height:97px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-      }
-
-
+ 
 
   }
   
@@ -35,6 +25,27 @@
     /* CSS rules for extra-large breakpoint */
   }
 
+  @media screen and (max-width: 750px) {
+   .navTippyWrap {
+        width: 100%;
+        height:97px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin-bottom:50px!important;
+      }
+
+      .frontSubHeader {
+        display:none!important;
+      }
+
+  .frontContent {
+    margin-top:20px;
+  }
+
+  }
 
 @media screen and (max-width: 750px) {
     header {
