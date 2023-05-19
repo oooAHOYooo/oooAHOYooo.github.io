@@ -11,9 +11,6 @@
         <!-- CSS3 -->
         <link rel="stylesheet" href="mainStyle.css">
         <link rel="stylesheet" href="mobile.css">
-        <!--<link rel="stylesheet" href="jwPlayer.css">-->
-     
-
             <!-- SCRIPT FOR TOGGLE 3D -->
             <script>
               function toggleTransform() {
@@ -22,9 +19,6 @@
                 //alert("Transform toggled!");
               }
             </script>
-
-
-
     </head>
   <body>
     <header>
@@ -281,7 +275,7 @@
 day = new Date()
 hr = day.getHours()
 
-
+if (window.innerWidth > 600) {
 
 if (hr == 5) {
 //5am//
@@ -424,6 +418,12 @@ document.body.style.backgroundImage = "url('https://c.tenor.com/lWbWfolwJfIAAAAC
 //MidNight _ Star//
 }
 
+}
+
+else {
+    // Apply the blue background if the screen width is less than or equal to 600px (considered as mobile)
+    document.body.style.backgroundColor = "blue";
+  }
 
 </script>
 
