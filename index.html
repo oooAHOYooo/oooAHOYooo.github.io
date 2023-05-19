@@ -23,7 +23,9 @@
   <body>
     <header>
       <div><button class="login-button" onclick="toggleTransform()">Toggle 3D</button></div>
-      <div><a href="#/ms/signup/635fbdb822ded60004f597b3"><button class="login-button">Login</button></a></div>
+      <div><a href="#/ms/signup/635fbdb822ded60004f597b3"><button class="login-button">Login</button></a>
+        <div id="memberName">Member Name</div>
+      </div>
     </header>
     <main>
         <div id="app">
@@ -303,6 +305,17 @@
   }
 </script>
 
+<script>
+  // JavaScript
+document.addEventListener("DOMContentLoaded", function () {
+  if (MemberStack && MemberStack.currentUser) {
+    MemberStack.onReady.then(function (member) {
+      var memberNameElement = document.getElementById("memberName");
+      memberNameElement.textContent = member["name"]; // Set the member's name in the HTML element
+    });
+  }
+});
+</script>
 
 
 
