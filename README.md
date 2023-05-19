@@ -12,8 +12,21 @@ Our mission is to provide an alternative option in media.
 ![alt text](https://oooahoyooo.github.io/images/Ahoy-Indie-Media---The-Rob-Show---Season-2---Episode-1---2023.jpg)
 
 
-### How we plan on keeping the lights on
-Ahoy Marketplace offers exclusive in-house content, including "The Rob Show," available on-demand with a monthly subscription. We hope to keep this platform completely ad free - and that's going to take some money - thus - you can show your support for indie creators and enjoy uninterrupted access while also contributing to the platform's upkeep. Join us.
+
+## Keeping the Lights On: Our Strategy for Sustainable Growth
+
+We are committed to providing a seamless and uninterrupted experience for our users. As part of our dedication to enhancing your journey on our platform, we have made it a top priority to maintain an ad-free environment. However, in order to achieve this goal, we require the necessary financial resources to cover our operational costs and sustain our ongoing operations.
+
+A distinguishing factor that sets us apart is the unique content we offer exclusively in-house, including the immensely unpopular "Rob Show." This mediocore on-demand production is a highlight of our subscription-based service, providing our valued subscribers with exclusive access to this remarkable series.
+
+By subscribing to Ahoy Indie Media, you not only gain access to the highly acclaimed "Rob Show," but you also play an integral role in supporting our platform and ensuring its sustainability. Your subscription contributes directly to keeping our platform running smoothly and maintaining the ad-free environment that enhances your overall experience.
+
+Be part of our mission to revolutionize the way content is delivered. By subscribing, you not only unlock access to our exclusive in-house content but also contribute to the continued success of our platform. Together, we will keep the lights on and deliver unparalleled entertainment to our subscribers.
+
+At Ahoy Indie Media, we aspire to become indie creator-centric platform. Your subscription not only allows us to stay ad-free but also empowers us to continue nurturing the talents of independent creators. 
+
+Join us on this journey! By subscribing to Ahoy Indie Media, you become an integral part of our tech startup community, helping us thrive among a sea of goliaths and bloom into a splendid flower of media. Together, we will keep the lights on, propel technological advancements, and offer the world an unrivaled platform experience.
+
 
 ## The Ultimate Master Plan
 We use a variety of out of house software and some in house - some out of the house - but rest assured - it's all custom configured. Little by little - click by click - we hope to make this platform completely code indepedent - and not rely on things like google - or facebook - or anything of the like - eff all that. 
