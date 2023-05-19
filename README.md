@@ -16,7 +16,7 @@ Our mission is to provide an alternative option in media.
 Ahoy Marketplace offers exclusive in-house content, including "The Rob Show," available on-demand with a monthly subscription. We hope to keep this platform completely ad free - and that's going to take some money - thus - you can show your support for indie creators and enjoy uninterrupted access while also contributing to the platform's upkeep. Join us.
 
 ## The Ultimate Master Plan
-We use a variety of software and some in house - some out of the house - some in between. Little by little we hope to make this platform completely indiependent - down to the nitty gritty code. 
+We use a variety of out of house software and some in house - some out of the house - but rest assured - it's all custom configured. Little by little - click by click - we hope to make this platform completely code indepedent - and not rely on things like google - or facebook - or anything of the like - eff all that. 
 
 ## Ahoy Operations as of now :
 
