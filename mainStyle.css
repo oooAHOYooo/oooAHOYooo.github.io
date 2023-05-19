@@ -291,7 +291,7 @@ audio {
   /*TOP NAV SUGAR STYLES */
   .navTippyWrap {
     width: 100%;
-    height:120px;
+    height:125px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -303,6 +303,7 @@ audio {
     z-index:10;
     margin-bottom:10px;
     padding-bottom:10px;
+    padding-top:20px;
 
   }
 
@@ -852,46 +853,6 @@ audio {
   margin-bottom: 11px;
 }
 
-.cart {
-
-  grid-column: 2 / span 2;
-  background-color: var(--marketColor);
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.cart h2 {
-  margin-top: 0;
-}
-
-.cart ul {
-  margin: 0;
-  padding: 0;
-}
-
-.cart li {
-  list-style: none;
-  margin-bottom: 10px;
-}
-
-
-
-
-
-
-
-/*Audio Player */
-#audio-player{
-  background-color:red;
-}
-
-audio {
-  
-  display:flex;
-  align-items: center;
-  background-color:green;
-}
 
 .albumWrap {
   max-width:500px;
@@ -899,28 +860,6 @@ audio {
   position: absolute;
   z-index:0;
 }
-
-.audioData {
-  /*Make a grid */
-  display: grid;
-  grid-template-columns: .25fr 1fr;
-  grid-gap: 20px;
-  background-color: var(--radioColor);
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  padding:20px;
-  margin:20px;
-
-}
-
-.audioDisplay {
-  font-size:18px;
-  font-weight: 700;
-  line-height:16px;
-  text-transform:uppercase;
-}
-
-
 
 
 /*ANIMATIONS */
