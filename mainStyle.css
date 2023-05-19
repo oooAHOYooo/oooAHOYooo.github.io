@@ -247,6 +247,7 @@ audio {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  
 }
 
 .topLogo-graphic {
@@ -290,7 +291,7 @@ audio {
   /*TOP NAV SUGAR STYLES */
   .navTippyWrap {
     width: 100%;
-    height:97px;
+    height:120px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -300,6 +301,8 @@ audio {
     transform: perspective(400px) rotateX(23deg)!important;
     position:relative;
     z-index:10;
+    margin-bottom:10px;
+    padding-bottom:10px;
 
   }
 
@@ -535,8 +538,8 @@ audio {
   justify-content: center;
   background-color: rgba(19, 19, 19, 0.143);
   border-style: solid;
-  border-color: var(--borderColor);
-  border-width: 1px;
+ /* border-color: var(--borderColor);
+  border-width: .5px;*/
   text-align:left;
   padding:20px;
 }
