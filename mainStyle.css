@@ -124,6 +124,11 @@ a {
   color: white;
 }
 
+a:hover {
+  color: var(--lightFont);
+  cursor: pointer;
+}
+
 span {
   font-weight:700;
 }

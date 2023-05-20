@@ -1,21 +1,23 @@
 <html>
-  <!-- As of 4.29.23 -->
+  <!-- As of 5.20.23 -->
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Content | Ahoy Indie Media</title>
     <!-- IMPORT OF VUE -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-
+        <!-- Memberstack --> 
+        <script src="https://api.memberstack.io/static/memberstack.js?custom" data-memberstack-id="5a41179e02ed37a57f08aa5720671687"> </script> 
     <!-- CSS3 -->
     <link rel="stylesheet" href="mainStyle.css">
+    <link rel="stylesheet" href="content.css">
   </head>
 
   <body>
     <main>
       <div id="app">
-        <div class="menu">
-          <button @click="selectedTab = 'tab-RS-S2'" class="topNavButton-market">Season 2</button>
-          <button @click="selectedTab = 'tab-RS-S1'" class="topNavButton-market">Season 1</button>
+        
+        <div class="topLogo-wrap">
+          <a href="https://ahoy.ooo"><img src="./assets/u_ahoy23.png" class="topLogo-graphic"></a>
         </div>
         <div class="navTippyWrap">
           <button onclick="window.location.href='index.html'" class="topNavButton-stream">Home</button>
@@ -23,11 +25,19 @@
         </div>
 
         <section v-show="selectedTab === 'tab1'">
-
+          <div class="menu">
+  <button @click="selectedTab = 'tab-RS-S1'" class="topNavButton-market">Season 1</button>
+            <button @click="selectedTab = 'tab-RS-S2'" class="topNavButton-market">Season 2</button>
+          
+          </div>
         </section>
           <section v-show="selectedTab === 'tab-RS-S2'">
-            Rob Show Season 2
+            <div class="menu">
+              <button @click="selectedTab = 'tab-RS-S1'" class="topNavButton-market">Season 1</button>
+              <button @click="selectedTab = 'tab-RS-S2'" class="topNavButton-market">Season 2</button>
+            </div>
             <div id="content-robShow">
+              Season 2
               <div class="row">
                 <div v-for="episode in episodes" :key="episode.episode" class="col-12">
                   <div class="episode-item">
@@ -46,7 +56,27 @@
           </section>
 
           <section v-show="selectedTab === 'tab-RS-S1'">
-            Rob Show Season 1
+            <div class="menu">
+              <button @click="selectedTab = 'tab-RS-S1'" class="topNavButton-market">Season 1</button>
+              <button @click="selectedTab = 'tab-RS-S2'" class="topNavButton-market">Season 2</button>
+            </div>
+              <div id="content-robShow">
+                Season 1
+                <div class="row">
+                  <div v-for="episode in episodes" :key="episode.episode" class="col-12">
+                    <div class="episode-item">
+                      <div class="episode-details">
+                        <h3>Season {{ episode.season }} | Episode {{ episode.episode }}</h3>
+                        <p>{{ episode.name }}</p>
+                        <p>Guest: {{ episode.guest }}</p>
+                      </div>
+                      <div class="play-button-robShow">
+                        <a :href="episode.videoUrl" target="_blank"><button>Play</button></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
           </section>
         </section>
       </div>
@@ -63,7 +93,7 @@
       var app = new Vue({
         el: '#app',
         data: {
-          selectedTab: 'tab-RS-S1'
+          selectedTab: 'tab-RS-S2',
         }
       });
     

@@ -16,6 +16,28 @@ var robShowUpdates = new Vue({
           guest: "Guest John Doe",
           videoUrl: "https://example.com/episode2"
         },
+
+        {
+          season: 1,
+          episode: 12,
+          name: "Rob Show Season 1 Episode 12",
+          guest: "Guest Josh Kebabian",
+          videoUrl: "https://example.com/episode12"
+        },
+        {
+          season: 1,
+          episode: 12,
+          name: "Rob Show Season 1 Episode 12",
+          guest: "Guest Tyler Rice",
+          videoUrl: "https://example.com/episode2"
+        },
+        {
+          season: 1,
+          episode: 5,
+          name: "Rob Show Season 1 Episode 5",
+          guest: "Guest Andrew Leverton",
+          videoUrl: "https://example.com/episode3"
+        }
         // Add more episodes as needed
       ],
       selectedEpisode: null,
