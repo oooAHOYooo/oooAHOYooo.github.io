@@ -20,8 +20,9 @@
           <a href="https://ahoy.ooo"><img src="./assets/u_ahoy23.png" class="topLogo-graphic"></a>
         </div>
         <div class="navTippyWrap">
-          <button onclick="window.location.href='index.html'" class="topNavButton-stream">Home</button>
+          <button @click="selectedTab = 'tab3'" class="topNavButton-market">Music Videos</button>
           <button @click="selectedTab = 'tab1'" class="topNavButton-market">The Rob Show</button>
+          <button @click="selectedTab = 'tab2'" class="topNavButton-market">Short Films</button>
         </div>
 
         <section v-show="selectedTab === 'tab1'">
@@ -79,6 +80,16 @@
               </div>
           </section>
         </section>
+
+
+      <section v-show="selectedTab === 'tab2'">
+     Short Films Will live here
+      </section>
+
+      <section v-show="selectedTab === 'tab3'">
+        Music Videos Will live here
+        </section>
+<!-- END OF CONTENT APP-->
       </div>
 
       <footer>
