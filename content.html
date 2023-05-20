@@ -1,377 +1,96 @@
-<html> <!-- As of 4.29.23 -->
-    <head>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Send Content to Ahoy Indie Media</title>
-        <!-- IMPORT OF VUE -->
-        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<html>
+  <!-- As of 4.29.23 -->
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content | Ahoy Indie Media</title>
+    <!-- IMPORT OF VUE -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
-        <!-- CSS3 -->
-        <link rel="stylesheet" href="mainStyle.css">
-        <link rel="stylesheet" href="jwPlayer.css">
-        <link rel="stylesheet" href="experimental-addon.css">
-    </head>
+    <!-- CSS3 -->
+    <link rel="stylesheet" href="mainStyle.css">
+  </head>
+
   <body>
     <main>
-        <div id="app">
-            <div class="navTippyWrap">
-            <button onclick="window.location.href='index.html'" class="topNavButton-stream">Home</button>
-            <button @click="selectedTab = 'tab3'" class="topNavButton-market">Submission</button>
-            <button @click="selectedTab = 'tab5'" class="topNavButton-frontPage">Submission Status</button>
-            <button @click="selectedTab = 'tab2'" class="topNavButton-radio">Recommend a Friend</button>
-            <button @click="selectedTab = 'tab6'" class="topNavButton-live">Get on the Rob Show</button>
-            </div>
-        
-      
-          <!-- TAB 1 (Stream)-->
-            <div class="stream" v-show="selectedTab === 'tab1'">
-              <div style="position:relative; overflow:hidden; padding-bottom:56.25%">
-                <iframe src="https://cdn.jwplayer.com/players/SyfFOIKw-NkmVmcCh.html" width="100%" height="100%" frameborder="0" scrolling="auto" title="playblock5c - 7pm - 10pm [primeTime]" style="position:absolute;" allowfullscreen></iframe>
-              </div>
-              
-              <div class="subHeader">
-
-              
-
-                <div class="subHeaderVert">
-                  <h2>Stream</h2>
-                  <p>Stream Ahoy Indie Media's 24/7 Channel - with new content every other Thursday at 7pm</p>
-                </div>
-
-                <div class="subHeaderVert">
-                    <a href="#"><img src="/assets/u_ahoy23.png" class="logo"></a>
-                  </div>
-
-              </div>
-            
-            <!-- END OF STREAM--></div>
-      
-            <!-- TAB 2 = RADIO -->
-            <div class="radio" v-show="selectedTab === 'tab2'">
-            <div class="radioWrap">
-              <script src="https://embed.radio.co/player/d942b19.js"></script>        
-            </div>
-              <!-- RADIO SUBHEADER-->
-              <div class="subHeader">
-                <h2>Radio</h2>
-                <div class="audioData">
-                <p class="audioDisplay">Now Playing</p><script src="https://embed.radio.co/embed/saf4aee19b/song.js"></script>
-                <p>Up Next</p><script src="https://embed.radio.co/embed/saf4aee19b/next.js"></script>
-                <p>Recently Played</p><script src="https://embed.radio.co/embed/saf4aee19b/last.js"></script>
-              </div>
-
-              </div><!-- RADIO SUBHEADER-->
-                <!-- END OF RADIO --></div>
-            <!-- TAB 5 FRONT PAGE -->
-            <div v-show="selectedTab === 'tab5'">
-              <!-- START OF FRONT PAGE -->
-              <div class="frontPageWrap">
-                <div class="frontHeader">
-                    <a href="#"><img src="/assets/u_ahoy23.png" class="logoBig"></a>
-                    AHOY INDIE MEDIA : SEND CONTENT TO AHOY : 
-                  </div>
-                <div class="monthBlock">
-                    <h3>Your Name</h3>
-                    <div>your content</div>
-                    <div>New Rob Show Episodes Planned</div>
-                    <div>got the radio working</div>
-                </div>
-                  <!-- A SINGLE BLOCK OF CONTENT LIKE A BLOG -->
-                  <div class="blogBlock">
-                      <div class="blogItem">
-                            <!--<div class="blogItem-Head">
-                              This is where the header of the blog content will go 
-                            </div>-->
-                            <div class="blogItem-content">
-                              <div class="calendarItem">
-                                  <!--<div class="date"><h2>April 2023</h2></div>-->
-                              </div>
-                              </div>
-                            </div>
-                      </div>
-                  </div>
-
-
-  <!-- TAB 5 (Front PAGE) SUBHEADER -->
-                <div class="subHeader">
-                    <div class="subHeaderVert">
-                      <a href="#"><img src="/assets/u_ahoy23.png" class="logo"></a>
-                      <h2>Send Content to Ahoy</h2>
-                      <p>Because everything needs a frontpage</p>
-                      <p>Every month we strive to deliever new content - new code - new updates - and new new new new new new things - to keep the fire going - and to keep the flames</p>
-                    </div>
-               
-                </div><!-- TAB5 SUBHEADER-->
-              <!-- END OF FRONT PAGE --></div>
-      <!-- TAB 3 (MARKETPLACE)-->
-            <div v-show="selectedTab === 'tab3'">
-              <div class="collectionWrap">
-                <!-- MARKETPLACE CONTENT GOES HERE -->
-              <!-- MARKETPLACE VUE TAKE 1 -->
-              <section class="marketData-section">
-             <div id="marketplace">
-                <div v-for="product in products" :key="product.id" class="product">
-                  <img :src="product.image" :alt="product.name">
-                  <h2>{{ product.name }}</h2>
-                  <p>{{ product.description }}</p>
-                  <button @click="addToCart(product)">Add to Cart</button>
-                </div>
-                <div class="cart">
-                  <h2>Shopping Cart</h2>
-                  <ul>
-                    <li v-for="item in cartItems" :key="item.id">{{ item.name }} - {{ item.price }}</li>
-                  </ul>
-                  <p>Total: {{ cartTotal }}</p>
-                </div>
-              </div>
-              <script src="marketData.js"></script>
-              </section>
-               <!-- MARKETPLACE SUBHEADER WORK-->>
-              <!---->
-              <div class="subHeader">
-                <div class="subHeaderVert">
-                  <a href="#"><img src="/assets/u_ahoy23.png" class="logo"></a>
-                  <h2>Marketplace</h2>
-                  <p>Because every website needs a frontpage</p>
-                  <p>Every month we strive to deliever new content - new code - new updates - and new new new new new new things - to keep the fire going - and to keep the flames</p>
-                </div></div></div>
-
-                <!--END OF MARKETPLACE --></div>
-     <!-- TAB 6 (Live Show) -->
-     <div class="liveShow" v-show="selectedTab === 'tab6'">
-      <div class="liveShowWrap">
-        <!--<script src="https://cdn.jwplayer.com/players/IdqbXxlv-NkmVmcCh.js"></script>-->
-      <h2>Venues and Live Shows</h2>
-      </div>
-        <div class="subHeader">
-          <div class="subHeaderVert">
-            <a href="#"><img src="/assets/u_ahoy23.png" class="logo"></a>
-            <h2>Live Shows and Venues</h2>
-            <p>We're hoping to team up with local venues and broadcast local shows and open mics</p>
-          </div>
-        
+      <div id="app">
+        <div class="menu">
+          <button @click="selectedTab = 'tab-RS-S2'" class="topNavButton-market">Season 2</button>
+          <button @click="selectedTab = 'tab-RS-S1'" class="topNavButton-market">Season 1</button>
         </div>
+        <div class="navTippyWrap">
+          <button onclick="window.location.href='index.html'" class="topNavButton-stream">Home</button>
+          <button @click="selectedTab = 'tab1'" class="topNavButton-market">The Rob Show</button>
+        </div>
+
+        <section v-show="selectedTab === 'tab1'">
+
+        </section>
+          <section v-show="selectedTab === 'tab-RS-S2'">
+            Rob Show Season 2
+            <div id="content-robShow">
+              <div class="row">
+                <div v-for="episode in episodes" :key="episode.episode" class="col-12">
+                  <div class="episode-item">
+                    <div class="episode-details">
+                      <h3>Season {{ episode.season }} - Episode {{ episode.episode }}</h3>
+                      <p>{{ episode.name }}</p>
+                      <p>Guest: {{ episode.guest }}</p>
+                    </div>
+                    <div class="play-button-robShow">
+                      <a :href="episode.videoUrl" target="_blank"><button>Play</button></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section v-show="selectedTab === 'tab-RS-S1'">
+            Rob Show Season 1
+          </section>
+        </section>
       </div>
 
-       
-           
+      <footer>
+        <a href="https://github.com/oooAHOYooo/oooAHOYooo.github.io">About</a>
+        <a href="/send.html">Send Content</a>
+        <a href="/contact.html">Contact</a>
+      </footer>
+    </main>
 
-
- <!-- END OF APP TABS -->
-          </div>
-          
-          <!-- END OF APP -->
-<!-- THE CODE THAT IS GOING TO DYMANICALLY CHANGE THE BACKGROUND IMAGES -->
-<!--<div class="changeBackgroundMagic">
-  <button type="button" onclick="changeBackground()">Change background image</button> 
-  </div>-->
-<footer>
-  <a href="https://github.com/oooAHOYooo/oooAHOYooo.github.io">About</a>
-  <a href="/content.html">Send Content</a>
-  <a href="#">Invest in Ahoy</a>
-  <a href="#">Contact</a>
-</footer>
-
-</main>
-
-<!-- SCRIPTS AND CONDITIONAL LOGIC -->
-
-<!-- START OF DAILY BACKGROUND CHANGES -->
-
-
-<script src="backgroundChange.js"></script>
-
-<!-- FUNCTION 1 = TAB SWITCH -->
-
-          <!-- VUE TAB SWITCH-->
-          <script>
-            var app = new Vue({
-              el: '#app',
-              data: {
-                selectedTab: 'tab5'
-              }
+    <script src="content.js"></script>
+    <script>
+      var app = new Vue({
+        el: '#app',
+        data: {
+          selectedTab: 'tab-RS-S1'
+        }
+      });
+    
+      var app1 = new Vue({
+        el: '#app1',
+        data: {
+          items: [
+            { id: 1, title: 'Item 1', description: 'This is item 1', tags: ['tag1', 'tag2'] },
+            { id: 2, title: 'Item 2', description: 'This is item 2', tags: ['tag1', 'tag3'] },
+            { id: 3, title: 'Item 3', description: 'This is item 3', tags: ['tag2', 'tag3'] },
+            { id: 4, title: 'Item 4', description: 'This is item 4', tags: ['tag1', 'tag2', 'tag3'] },
+          ],
+          filter: '',
+          tags: ['tag1', 'tag2', 'tag3']
+        },
+        computed: {
+          filteredItems: function () {
+            var filter = this.filter;
+            if (!filter) {
+              return this.items;
+            }
+            return this.items.filter(function (item) {
+              return item.tags.indexOf(filter) !== -1;
             });
-
-            var app1 = new Vue({
-              el: '#app1',
-              data: {
-                items: [
-                  { id: 1, title: 'Item 1', description: 'This is item 1', tags: ['tag1', 'tag2'] },
-                  { id: 2, title: 'Item 2', description: 'This is item 2', tags: ['tag1', 'tag3'] },
-                  { id: 3, title: 'Item 3', description: 'This is item 3', tags: ['tag2', 'tag3'] },
-                  { id: 4, title: 'Item 4', description: 'This is item 4', tags: ['tag1', 'tag2', 'tag3'] },
-                ],
-                filter: '',
-                tags: ['tag1', 'tag2', 'tag3']
-              },
-              computed: {
-                filteredItems: function () {
-                  var filter = this.filter;
-                  if (!filter) {
-                    return this.items;
-                  }
-                  return this.items.filter(function (item) {
-                    return item.tags.indexOf(filter) !== -1;
-                  });
-                }
-              }
-            });
-          </script>
-
-<script>
-
-day = new Date()
-hr = day.getHours()
-
-
-
-if (hr == 5) {
-//5am//
-document.body.style.backgroundColor = "#acaca3"; 
-document.body.style.backgroundImage = "url('https://thumbs.gfycat.com/FrayedQuaintAnteater-max-1mb.gif')";
-//Morning Tide//
-}
-
-if (hr == 6) {
-//6am//
-document.body.style.backgroundColor = "#acaca3"; 
-document.body.style.backgroundImage = "url('https://www.icegif.com/wp-content/uploads/2022/02/icegif-536.gif')";
-//Morning Tide//
-}
-
-if (hr == 7) {
-//7am//
-document.body.style.backgroundColor = "#acaca3"; 
-document.body.style.backgroundImage = "url('https://thumbs.gfycat.com/BackLankyGangesdolphin-size_restricted.gif')";
-//Morning Tide//
-}
-
-
-if (hr == 8) {
-
-document.body.style.backgroundColor = "#acaca3"; 
-document.body.style.backgroundImage = "url('https://media1.giphy.com/media/wkKyBT94rB196/giphy.gif?cid=ecf05e47b9ypgsrn61em96kw5zberiuv0vmdperhn0uq9ch2&rid=giphy.gif&ct=g')";
-
-}
-
-if (hr == 9) {
-
-document.body.style.backgroundColor = "#acaca3"; 
-document.body.style.backgroundImage = "url('https://i.makeagif.com/media/9-07-2015/gSknpw.gif')";
-
-}
-
-if (hr == 10) {
-
-document.body.style.backgroundColor = "#acaca3"; 
-document.body.style.backgroundImage = "url('https://media.tenor.com/x-ykFer_yJQAAAAM/equatorialcorals-deepseacorals.gif')";
-
-}
-
-if (hr == 11) {
-
-document.body.style.backgroundColor = "#acaca3"; 
-document.body.style.backgroundImage = "url('https://i.gifer.com/ARqO.gif')";
-//Shark//
-
-}
-
-if (hr == 12) {
-
-document.body.style.backgroundColor = "#acaca3"; 
-document.body.style.backgroundImage = "url('https://i.makeagif.com/media/9-07-2015/gSknpw.gif')";
-
-}
-
-if (hr == 13) {
-//1pm//
-document.body.style.backgroundColor = "#acaca3"; 
-document.body.style.backgroundImage = "url('https://media1.giphy.com/media/wkKyBT94rB196/giphy.gif?cid=ecf05e47b9ypgsrn61em96kw5zberiuv0vmdperhn0uq9ch2&rid=giphy.gif&ct=g')";
-
-}
-
-if (hr == 14) {
-//2pm//
-document.body.style.backgroundColor = "#acaca3"; 
-document.body.style.backgroundImage = "url('https://media1.giphy.com/media/wkKyBT94rB196/giphy.gif?cid=ecf05e47b9ypgsrn61em96kw5zberiuv0vmdperhn0uq9ch2&rid=giphy.gif&ct=g')";
-
-}
-
-if (hr == 15) {
-    //3pm//
-    document.body.style.backgroundColor = "#acaca3"; 
-    document.body.style.backgroundImage = "url('https://s.yimg.com/uu/api/res/1.2/rVdUX8eVa31S_5JDCvvp0A--~B/Zmk9ZmlsbDtweW9mZj0wO3c9NjQwO2g9MzYwO3NtPTE7YXBwaWQ9eXRhY2h5b24-/http://media.zenfs.com/en-US/video/video.storyful.com/866362344b92b1cb1d9c3a36db9b0520')";
-
-}
-
-if (hr == 16) {
-    //4pm//
-    document.body.style.backgroundColor = "#acaca3"; 
-    document.body.style.backgroundImage = "url('https://s.yimg.com/uu/api/res/1.2/rVdUX8eVa31S_5JDCvvp0A--~B/Zmk9ZmlsbDtweW9mZj0wO3c9NjQwO2g9MzYwO3NtPTE7YXBwaWQ9eXRhY2h5b24-/http://media.zenfs.com/en-US/video/video.storyful.com/866362344b92b1cb1d9c3a36db9b0520')";
-
-}
-
-
-
-if (hr == 17) {
-//5pm//
-document.body.style.backgroundColor = "#acaca3"; 
-document.body.style.backgroundImage = "url('https://media.tenor.com/S8_V9lNMc3oAAAAM/waves-awesome.gif')";
-//YachtCU//
-}
-
-
-if (hr == 18) {
-//6pm//
-document.body.style.backgroundColor = "#acaca3"; 
-document.body.style.backgroundImage = "url('https://media.tenor.com/S8_V9lNMc3oAAAAM/waves-awesome.gif')";
-//YachtCU//
-}
-
-
-if (hr == 19) {
-//7pm//
-document.body.style.backgroundColor = "#acaca3"; 
-document.body.style.backgroundImage = "url('https://bestanimations.com/media/yachts/627188316sailboat-yacht-sailing-animated-gif-11.gif')";
-//YachtCU//
-}
-
-if (hr == 20) {
-//8pm//
-document.body.style.backgroundColor = "#acaca3"; 
-document.body.style.backgroundImage = "url('https://thumbs.gfycat.com/AccomplishedVillainousDrever-size_restricted.gif')";
-//YachtCU//
-}
-
-
-if (hr == 22) {
-//10pm//
-document.body.style.backgroundColor = "#acaca3"; 
-document.body.style.backgroundImage = "url('https://i.pinimg.com/originals/c6/36/2e/c6362e4ca5fa5e887c6b9ddfcb82c13d.gif')";
-//BeachStar//
-}
-
-
-if (hr == 23) {
-//11pm//
-document.body.style.backgroundColor = "#acaca3"; 
-document.body.style.backgroundImage = "url('https://i.pinimg.com/originals/fc/38/97/fc389789c5fbe80b36df05e8ee441c66.gif')";
-//Star//
-}
-
-if (hr == 24) {
-//12pm//
-document.body.style.backgroundColor = "#acaca3"; 
-document.body.style.backgroundImage = "url('https://c.tenor.com/lWbWfolwJfIAAAAC/ocean-night.gif')";
-//MidNight _ Star//
-}
-
-
-</script>
-
-
-
-<!-- END OF CONDITIONAL AND CODE LOGIC -->
-<!-- HOpe you enjoyed this journey -->
-
-    </body>
+          }
+        }
+      });
+    </script>
+  </body>
 </html>

@@ -48,7 +48,7 @@ body {
     background-image: transparent;
     background-size:cover;
     background-attachment: fixed;
-    color:white;
+    color:black;
 }
 /*Change the opacity of the background */
 body::before {

@@ -36,10 +36,10 @@ We use a variety of out of house software and some in house - some out of the ho
 # The Ultimate Master Plan (draft 2)
 ---
 ## Introduction
-The Ultimate Master Plan outlines a strategic vision to transform our platform into a fully code-independent solution. By leveraging a combination of in-house and customized external software, we aim to create a robust and self-reliant platform that eliminates dependencies on third-party services like Google or Facebook. This plan emphasizes a gradual and meticulous approach to achieving code independence.
+The Ultimate Master Plan outlines a strategic vision to transform our platform into a fully code-independent solution. By leveraging a combination of in-house and customized external software, we aim to create a robust and self-reliant platform that eliminates dependencies on third-party services like Google or Facebook. Our plan is for a gradual and meticulous approach to achieving code independence.
 
 ## Current Software Landscape
-Our platform currently utilizes a mix of in-house and external software. While some of the software solutions are developed internally, others are sourced from external vendors. All software components are meticulously configured to align with our specific needs and requirements.
+Our scrappy little beauty of a platform currently utilizes a mix of in-house and external software. All software components are meticulously configured to align with our specific needs and requirements. But to be honest - the code is sloppy - if anyone is out there who can help - who likes to clean up code and makes things efficent - we could use some pro bono help. 
 
 ## Rationale for Code Independence
 
