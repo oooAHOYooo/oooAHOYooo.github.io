@@ -43,6 +43,10 @@
 }
 
 
+/*CONDITIONS*/
+
+.top-menu {display:none;}
+
 body {
     font-family: 'Barlow', sans-serif;
     background-image: transparent;
@@ -114,7 +118,7 @@ header {
 }
 
 .memberNameWrap {
-  background-color:green;
+  background-color:rgba(0, 128, 0, 0);
 }
 
 
@@ -501,7 +505,7 @@ audio {
 /*FRONT PAGE STYLES */
 
 .frontSubHeader {
-  width: 100!important%;
+  width: 100%!important;
   height: 100px;
   overflow:hidden;
   display:flex;
@@ -512,6 +516,27 @@ audio {
   border-color: var(--white);
   position:relative;
   margin-top:10px;
+  text-align:center;
+  
+}
+
+.frontSubHeader-text {
+  text-align:center;
+  font-weight:600;
+  font-size: 16px;
+  color: var(--white);
+  line-height: 100%;
+  text-transform:uppercase;
+}
+
+.frontSubHeader-text-link {
+  text-align:center;
+  font-weight:600;
+  font-size: 10px;
+  color: var(--white);
+  line-height: 100%;
+  text-transform:uppercase;
+  text-decoration:underline;
 }
 
 
