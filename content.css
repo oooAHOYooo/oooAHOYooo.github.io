@@ -1,5 +1,26 @@
 /* CONTENT CSS */
 
+html {
+    background-color: #050022;
+}
+
+.navTippyWrap {
+    width: 100%;
+    height:100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position:relative;
+    z-index:10;
+    margin-bottom:100px;
+    padding-bottom:10px;
+    padding-top:40px;
+    transform: perspective(200px) rotateX(0deg)!important;
+}
+
+
 #app {
   width: 100%;
   margin: 0 auto;
@@ -11,7 +32,8 @@
 }
 
 .topLogo-graphic {
-  width: 250px;
+  width: 300px;
+  margin-top:25px;
 }
 
 .navTippyWrap {
@@ -82,4 +104,8 @@
   color: #fff;
   border: none;
   cursor: pointer;
+}
+
+.content-header-robShow {
+    background-color:red;
 }

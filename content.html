@@ -18,14 +18,24 @@
         
         <div class="topLogo-wrap">
           <a href="https://ahoy.ooo"><img src="./assets/u_ahoy23.png" class="topLogo-graphic"></a>
+         THE GARDEN CONTENT
         </div>
         <div class="navTippyWrap">
+          <button @click="selectedTab = 'tab3'" class="topNavButton-market">Podcasts</button>
           <button @click="selectedTab = 'tab3'" class="topNavButton-market">Music Videos</button>
           <button @click="selectedTab = 'tab1'" class="topNavButton-market">The Rob Show</button>
           <button @click="selectedTab = 'tab2'" class="topNavButton-market">Short Films</button>
         </div>
 
+        <!-- THE ROB SHOW TAB -->
         <section v-show="selectedTab === 'tab1'">
+          
+          <div class="content-header-robShow">
+            
+         This is the header
+          </div>
+
+
           <div class="menu">
   <button @click="selectedTab = 'tab-RS-S1'" class="topNavButton-market">Season 1</button>
             <button @click="selectedTab = 'tab-RS-S2'" class="topNavButton-market">Season 2</button>
