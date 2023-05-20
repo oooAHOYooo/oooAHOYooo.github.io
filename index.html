@@ -19,18 +19,31 @@
                 //alert("Transform toggled!");
               }
             </script>
+
+
+
+
     </head>
   <body>
-    <header>
-      <div><button class="login-button" onclick="toggleTransform()">Toggle 3D</button></div>
-      <div><a href="#/ms/signup/635fbdb822ded60004f597b3"><button class="login-button">Login</button></a>
-        <div id="memberName">Member Name</div>
+    <!-- 
+    <div class="navSuperTop">
+      <div class="login-container">
+        <button class="nav-ButtonTop-standard" onclick="toggleTransform()">Toggle 3D</button>
+        <a href="#/ms/signup/635fbdb822ded60004f597b3">
+          <button class="login-button" id="loginButton">Login</button>
+        </a>
+        <div class="memberNameWrap" id="memberName">Member Name</div>
       </div>
+    </div>-->
+    <header>
+      
     </header>
+    
+
     <main>
         <div id="app">
           <div class="topLogo-wrap">
-            <a href="#"><img src="./assets/u_ahoy23.png" class="topLogo-graphic"></a>
+            <a href="https://ahoy.ooo"><img src="./assets/u_ahoy23.png" class="topLogo-graphic"></a>
           </div>
           <div class="navTippyWrap">
           <button @click="selectedTab = 'tab1'" class="topNavButton-stream">Stream</button>
@@ -317,7 +330,23 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
+<script>
 
+document.addEventListener("DOMContentLoaded", function () {
+  var loginButton = document.getElementById("loginButton");
+  var memberNameElement = document.getElementById("memberName");
+
+  if (MemberStack && MemberStack.currentUser) {
+    MemberStack.onReady.then(function (member) {
+      loginButton.style.display = "none";
+      memberNameElement.textContent = member["name"]; // Set the member's name in the HTML element
+    });
+  }
+});
+
+
+
+</script>
 
 <!-- END OF CONDITIONAL AND CODE LOGIC -->
 <!-- HOpe you enjoyed this journey -->

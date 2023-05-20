@@ -72,48 +72,49 @@ header {
   justify-content:space-between;
 }
 
+.navSuperTop {
+  background-color: red;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 
+.nav-ButtonTop-standard {
+  background-color:purple;
+}
+
+
+.login-container {
+  display: flex;
+  flex-direction: row;
+}
 
 .login-button {
-
-  /*position:absolute;
-  top:0;
-  right:0;
-  z-index: 10;*/
-  height:30px;
-  border-radius:5px;
-  border-style:none;
-  font-weight:500;
-  margin:5px;
-  border-style:solid;
-  color:var(--inactiveText);
-  border-color: var(--borderColor-inactive);
-  font-family:'barlow';
-  /*width: 95px;
-  height: 40px;
-  background-color: transparent;
-  color: #ffffff57;
+  margin-right: 10px;
+  height: 30px;
   border-radius: 5px;
-  border: none;
-  font-size: 1rem;
-  font-weight: 300;
-  cursor: pointer;
-  float: right;
-  font-family:'Barlow', sans-serif;
-  border-style:solid;
-  border-width:1px;
-  border-color:var(--borderColor-inactive);*/
-
+  border-style: none;
+  font-weight: 500;
+  margin: 5px;
+  border-style: solid;
+  color: var(--inactiveText);
+  border-color: var(--borderColor-inactive);
+  font-family: 'barlow';
 }
 
 .login-button:hover {
   background-color: var(--backgroundColor-sub);
   color: var(--white);
-  border-style:solid;
+  border-style: solid;
   border-color: var(--borderColor-white);
   transform: pulse 1s infinite;
 
+}
+
+.memberNameWrap {
+  background-color:green;
 }
 
 
@@ -129,7 +130,7 @@ span {
 
 p {
   text-align:left;
-  font-size:12px;
+  font-size:14px;
 }
 
 
@@ -247,13 +248,15 @@ audio {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  
+  text-align:center;
+  margin-top:20px;
+  margin-bottom:20px;
 }
 
 .topLogo-graphic {
-  max-height:170px;
+  max-height:190px;
   display:block;
-  margin:0 auto;
+  /*margin:0 auto;*/
 }
 
   .subHeader {

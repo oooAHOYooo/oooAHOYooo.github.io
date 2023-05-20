@@ -26,6 +26,47 @@
   }
 
 
+/* TURN OFF DEGS ON MOBILE */
+
+@media screen and (max-width:750px) {
+  /* CSS rules for medium breakpoint */
+
+
+.transformed {
+  transform: none!important;
+  transform: perspective(400px) rotateX(-23deg)!important;
+  transition: transform 0.5s;
+  overflow-y:auto;
+}
+
+.button-toggle3d:hover {
+  background-color: var(--backgroundColor-sub);
+  color: var(--white);
+  border-style:solid;
+  border-color: var(--borderColor-white);
+  transform: perspective(400px) rotateX(30deg)!important;
+
+}
+
+.navTippyWrap {
+  width: 100%;
+  height:100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position:relative;
+  z-index:10;
+  margin-bottom:100px;
+  padding-bottom:10px;
+  padding-top:40px;
+  transform: perspective(200px) rotateX(0deg)!important;
+
+
+}
+
+}
 
 
 
@@ -56,7 +97,7 @@
       }
 
       .frontSubHeader {
-        display:none!important;
+        display:flex;
       }
 
       .frontContent {
