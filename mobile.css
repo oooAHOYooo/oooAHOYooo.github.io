@@ -377,4 +377,32 @@ html {
     display:none;
    }
   }
+
+  /*MOBILE RADIO */
+
+  @media (max-width: 800px) {
+    .radio {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch; /* Adjusted alignment to stretch */
+    }
+  
+    .radioContent-wrap {
+      flex: 1; /* Make the radio content expand to fill the available space */
+    }
+  
+    .radioTest {
+      min-height: auto !important; /* Removed the fixed minimum height */
+    }
+
+    .radioPlayer-wrap {
+      position:absolute;
+      top:50%;
+      z-index:30;
+    }
+
+
+  }
+
+  
   
