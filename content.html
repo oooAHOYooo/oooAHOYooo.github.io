@@ -21,14 +21,14 @@
          THE GARDEN CONTENT
         </div>
         <div class="navTippyWrap">
-          <button @click="selectedTab = 'tab3'" class="topNavButton-market">Podcasts</button>
-          <button @click="selectedTab = 'tab3'" class="topNavButton-market">Music Videos</button>
-          <button @click="selectedTab = 'tab1'" class="topNavButton-market">The Rob Show</button>
-          <button @click="selectedTab = 'tab2'" class="topNavButton-market">Short Films</button>
+          <button @click="selectedTab = 'tab1'" class="topNavButton-market">Podcasts</button>
+          <button @click="selectedTab = 'tab2'" class="topNavButton-market">Music Videos</button>
+          <button @click="selectedTab = 'tab3'" class="topNavButton-market">The Rob Show</button>
+          <button @click="selectedTab = 'tab4'" class="topNavButton-market">Short Films</button>
         </div>
 
         <!-- THE ROB SHOW TAB -->
-        <section v-show="selectedTab === 'tab1'">
+        <section v-show="selectedTab === 'tab3'">
           
           <div class="content-header-robShow">
             

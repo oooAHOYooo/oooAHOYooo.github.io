@@ -832,26 +832,32 @@ audio {
 }
 
 .radioFrame {
-  width:80%;
-  height:400px;
+
+  width:640px;
+  height:auto;
   display:flex;
   flex-direction: column;
   align-items:center;
   justify-content: center;
   background-color: var(--radioColor);
   border-radius:25px;
-  position:absolute;
-  top:20%;
 }
 
+.radioContent-wrap {
+  width:100%;
+  height:100%;
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: center;
+}
 
 .radioShowContent {
   border-style:solid;
   border-width:1px!important;
   border-color:white;
-  width:200px;
-  height:auto;
- 
+  width:600px!important;
+  height:600px!important;
   display:flex;
   flex-direction: column;
   align-items:center;
@@ -859,7 +865,6 @@ audio {
   background-color: var(--radioColor);
   border-radius:25px;
   position:relative;
-  padding-top:90px;
 
 }
 
