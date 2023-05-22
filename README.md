@@ -46,6 +46,8 @@ Our scrappy little beauty of a platform currently utilizes a mix of in-house and
 
 ## Rationale for Code Independence
 
+![alt text] (https://oooahoyooo.github.io/images/AHOY BACKEND_1.png)
+
 ### Establishing Greater Control
 
 By pursuing code independence, we aim to gain greater control over our platform's functionalities, features, and overall direction. Currently, relying on external software providers means that we are subject to their decisions and limitations. In some cases, these providers may introduce changes or updates that impact the functionality or user experience of our platform. By reducing our reliance on external software, we can take charge of the development and evolution of our platform, ensuring that it aligns with our vision and strategic goals.
