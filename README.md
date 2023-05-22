@@ -79,12 +79,10 @@ In summary, pursuing code independence offers us greater control, flexibility, a
 
 This is the home for the code of Ahoy Indie Media
 This code was hand-written by Alex Gonzalez circa 2023
-
-## Explaination of the Code found on index.html 
-
 This code is consists of a HTML document with embedded JavaScript and Vue.js code. 
 
-### Below is an explanation of each section:
+
+## For the sake of being transparent - and for the non coding enthusist who hopes to dive a bit deeper into how a couple of scrappy folks can do something like this - here are some explainations of the code found on index.html 
 
 HTML structure: The code begins with an opening <html> tag and includes various nested elements like <head>, <meta>, <link>, <title>, and <script>. These elements define the structure and content of the HTML document.
 
