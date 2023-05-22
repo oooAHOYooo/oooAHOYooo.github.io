@@ -33,6 +33,9 @@ We use a variety of out of house software and some in house - some out of the ho
 
 ## Ahoy Operations as of now :
 
+
+![alt text](https://oooahoyooo.github.io/assets/u_ahoy23.png)
+
 # The Ultimate Master Plan (draft 2)
 ---
 ## Introduction
