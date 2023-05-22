@@ -92,8 +92,6 @@ Vue.js: Vue.js is a JavaScript framework for building user interfaces. In this c
 
 JavaScript functions: There are two JavaScript functions defined in the <script> tags. The first function toggleTransform() is used to toggle a CSS class on an element with the class .frontContent and marketData-section when called. The second function contains conditional logic to change the background image of the document based on the current time (hr variable).
 
-HTML markup: The HTML markup includes various elements such as <div>, <button>, <a>, <img>, <h2>, <p>, and more. These elements structure the content and define the layout of the webpage.
-
 Vue.js directives: The Vue.js directives v-show and @click are used on elements to control their visibility and bind click event handlers, respectively. The v-for directive is used to iterate over arrays and render dynamic content based on the data.
 
 External resources: The code includes references to external resources such as Vue.js and Memberstack JavaScript libraries, CSS stylesheets (mainStyle.css and mobile.css), and other JavaScript files (marketData3.js and updates.js). These resources are loaded to provide additional functionality and styling to the webpage.
