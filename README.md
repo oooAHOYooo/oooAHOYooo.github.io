@@ -17,24 +17,21 @@ Our mission is to provide a homegrown alternative to the way folks consume media
 
 We are committed to providing a seamless and uninterrupted experience for our users. As part of our dedication to enhancing your journey on our platform, we have made it a top priority to maintain an ad-free environment. However, in order to achieve this goal, we require the necessary financial resources to cover our operational costs and sustain our ongoing operations.
 
-A distinguishing factor that sets us apart is the unique content we offer exclusively in-house, including the immensely unpopular "Rob Show." This mediocore on-demand production is a highlight of our subscription-based service, providing our valued subscribers with exclusive access to this remarkable series.
+A distinguishing factor that sets us apart is the unique content we offer exclusively in-house, including the immensely unpopular "Rob Show." This mediocore on-demand production is a highlight of our subscription-based service, providing our  subscribers with  access to this series.
 
-By subscribing to Ahoy Indie Media, you not only gain access to the highly acclaimed "Rob Show," but you also play an integral role in supporting our platform and ensuring its sustainability. Your subscription contributes directly to keeping our platform running smoothly and maintaining the ad-free environment that enhances your overall experience.
+At Ahoy Indie Media, we aspire to become an indie creator-centric platform. User subscription allows us to stay ad-free and empowers us to house independent creators. 
 
-Be part of our mission to revolutionize the way content is delivered. By subscribing, you not only unlock access to our exclusive in-house content but also contribute to the continued success of our platform. Together, we will keep the lights on and deliver unparalleled entertainment to our subscribers.
 
-At Ahoy Indie Media, we aspire to become indie creator-centric platform. Your subscription not only allows us to stay ad-free but also empowers us to continue nurturing the talents of independent creators. 
-
-Join us on this journey! By subscribing to Ahoy Indie Media, you become an integral part of our tech startup community, helping us thrive among a sea of goliaths and bloom into a splendid flower of media. Together, we will keep the lights on, propel technological advancements, and offer the world an unrivaled platform experience.
-
+![alt text](https://oooahoyooo.github.io/assets/u_ahoy23.png)
 
 ## The Ultimate Master Plan
 We use a variety of out of house software and some in house - some out of the house - but rest assured - it's all custom configured. Little by little - click by click - we hope to make this platform completely code indepedent - and not rely on things like google - or facebook - or anything of the like - eff all that. 
 
+
 ## Ahoy Operations as of now :
 
 
-![alt text](https://raw.githubusercontent.com/oooAHOYooo/oooAHOYooo.github.io/main/images/AHOY%20BACKEND_1.png)
+
 
 # The Ultimate Master Plan (draft 2)
 ---
@@ -46,7 +43,7 @@ Our scrappy little beauty of a platform currently utilizes a mix of in-house and
 
 ## Rationale for Code Independence
 
-![alt text] (https://oooahoyooo.github.io/images/AHOY BACKEND_1.png)
+![alt text](https://raw.githubusercontent.com/oooAHOYooo/oooAHOYooo.github.io/main/images/AHOY%20BACKEND_1.png)
 
 ### Establishing Greater Control
 
