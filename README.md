@@ -79,3 +79,25 @@ In summary, pursuing code independence offers us greater control, flexibility, a
 
 This is the home for the code of Ahoy Indie Media
 This code was hand-written by Alex Gonzalez circa 2023
+
+## Explaination of the Code found on index.html 
+
+This code is consists of a HTML document with embedded JavaScript and Vue.js code. 
+
+### Below is an explanation of each section:
+
+HTML structure: The code begins with an opening <html> tag and includes various nested elements like <head>, <meta>, <link>, <title>, and <script>. These elements define the structure and content of the HTML document.
+
+Vue.js: Vue.js is a JavaScript framework for building user interfaces. In this code, it is used to create two instances of Vue: app and app1. These instances define data, methods, and computed properties used in the application.
+
+JavaScript functions: There are two JavaScript functions defined in the <script> tags. The first function toggleTransform() is used to toggle a CSS class on an element with the class .frontContent and marketData-section when called. The second function contains conditional logic to change the background image of the document based on the current time (hr variable).
+
+HTML markup: The HTML markup includes various elements such as <div>, <button>, <a>, <img>, <h2>, <p>, and more. These elements structure the content and define the layout of the webpage.
+
+Vue.js directives: The Vue.js directives v-show and @click are used on elements to control their visibility and bind click event handlers, respectively. The v-for directive is used to iterate over arrays and render dynamic content based on the data.
+
+External resources: The code includes references to external resources such as Vue.js and Memberstack JavaScript libraries, CSS stylesheets (mainStyle.css and mobile.css), and other JavaScript files (marketData3.js and updates.js). These resources are loaded to provide additional functionality and styling to the webpage.
+
+Comments: The code includes comments (enclosed within <!-- and -->) that provide additional information or indicate sections that are temporarily disabled.
+
+Overall, this code combines HTML, JavaScript, and Vue.js to create a dynamic webpage with tabs for different content sections, background image changes based on the time, and integration with external resources and libraries.
