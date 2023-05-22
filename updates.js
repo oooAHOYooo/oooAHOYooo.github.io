@@ -5,6 +5,7 @@ var ahoyUpdates = new Vue({
       {
         displayText: "May 2023",
         updates: [
+          { text: "Rob Show Season 2 - Episode 2 is out Thursday May 25th - Dave Gunn of the Tallboyz" },
           { image: './images/Ahoy-Indie-Media---The-Rob-Show---Season-2---Episode-2---2023.jpg' },
           { text: "Subtle Improvments", bold: true },
           { text: "Mobile Responsiveness + Radio Redesign + Marketplace Improvements + Secret New Features about to be launched" },
