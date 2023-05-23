@@ -20,10 +20,10 @@ var ahoyMarketplace = new Vue({
             },
             {
                 id: 3,
-                name: 'Ahoy ASZ',
-                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-                price: 132.99,
-                image: './images/Ahoy-Indie-Media-DEFAULT-COVER-A-8.jpg',
+                name: 'The Original Ahoy Sticker',
+                description: 'Limited Supply of like 30 or so left | Pack of 5 - Limit 5 per order',
+                price: 3,
+                image: './images/productImages/product_sk_2.png',
                 stripeBuyUrl: 'https://buy.stripe.com/test_cN26rKb2B64jaYM144'
             },
             {
