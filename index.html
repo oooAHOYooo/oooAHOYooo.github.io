@@ -133,7 +133,7 @@
             <div id="updates-ahoy-app">
               <div v-for="month in months" :key="month.displayText">
                 <h2 class="monthDisplay-text">{{ month.displayText }}</h2>
-                <div v-for="update in month.updates" :key="update.text">
+                <div class="updates-text-wrap" v-for="update in month.updates" :key="update.text">
                   <p :class="['monthUpdateText', { 'bold': update.bold }, {'superBold':update.superBold}]">{{ update.text }}</p>
                   <p v-if="update.link" v-html="update.link"></p>
                   <div class="image-container">
