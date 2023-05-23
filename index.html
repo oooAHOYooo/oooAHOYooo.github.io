@@ -1,11 +1,10 @@
-<html> <!-- As of 5.20.23 -->
+<html> <!-- As of 5.23.23 -->
     <head>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="icon" type="image/x-icon" href="./assets/ahoyFav.png">
         <title>Ahoy Indie Media</title>
         <!-- IMPORT OF VUE -->
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-       
       <!-- Memberstack --> 
       <script src="https://api.memberstack.io/static/memberstack.js?custom" data-memberstack-id="5a41179e02ed37a57f08aa5720671687"> </script> 
         <!-- CSS3 -->
@@ -37,7 +36,6 @@
           <a href="#/ms/signup/635fbdb822ded60004f597b3">
             <button class="login-button" id="loginButton">Login</button>
           </a>
-         
         </div>
       </div>
     </header>
@@ -123,11 +121,14 @@
                 <div v-for="update in month.updates" :key="update.text">
                   <p :class="['monthUpdateText', { 'bold': update.bold }, {'superBold':update.superBold}]">{{ update.text }}</p>
                   <p v-if="update.link" v-html="update.link"></p>
-                  <img class="update-image" v-if="update.image" :src="update.image" alt="">
+                  <div class="image-container">
+                    <img class="update-image" v-if="update.image" :src="update.image" alt="">
+                    <div class="image-overlay"></div>
+                  </div>
                 </div>
               </div>
             </div>
-            </div>
+            
                         <!-- START OF FRONT PAGE -->
       
 

@@ -1034,3 +1034,26 @@ audio {
   background: var(--happyHover)!important;
 }
 
+
+/*UPDATE PAGE - IMAGE OVERLAY*/
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom right, #FF0062, #000038a2); /* Change the colors as desired */
+  mix-blend-mode: multiply; /* Apply the duotone effect */
+  opacity: 0.6; /* Adjust the opacity as desired */
+}
+
+.update-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
