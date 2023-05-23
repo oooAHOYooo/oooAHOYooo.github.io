@@ -1164,3 +1164,39 @@ audio {
 
 
 }
+
+/* CSS for the overlay duotone effect */
+.image-container-product {
+  position: relative;
+  display: inline-block;
+}
+
+.image-container-product::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to bottom right, #000d46b4, #002a5aa3); /* Transparent gradient */
+  opacity: 1;
+}
+
+.market-grid-item:hover .image-container-product::after {
+  opacity: 0;
+  cursor: pointer;
+}
+
+.market-image {
+  width: 100%;
+  height: auto;
+}
+
+/* Other styles */
+.market-grid-item {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Additional styling for the product grid and buy button */
+/* ... */

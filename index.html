@@ -171,23 +171,32 @@
               <!-- MARKETPLACE VUE TAKE 1 -->
               <section class="marketData-section">
                 <div id="marketplace-ahoy-app">
-                    <div class="market-product-grid-parent">
-                      <div class="market-product-grid">
-                          <div v-for="(product, index) in products" :key="index" class="market-grid-item">
-                              <img :src="product.image" :alt="product.name" class="market-image">
-                              <h2>{{ product.name }}</h2>
-                              <p>{{ product.description }}</p>
-                              <!--<p>Price: ${{ product.price }}</p>-->
-                              <div class="product-buy-wrap">
-                                <p>
-                                  <a class="buy-button" :href="product.stripeBuyUrl">Buy</a>
-                                </p>  
-                              </div>
-                            </div>
+                  <div class="market-product-grid-parent">
+                    <div class="market-product-grid">
+                      <div v-for="(product, index) in products" :key="index" class="market-grid-item">
+                        <div class="image-container-product">
+                          <a :href="product.stripeBuyUrl" target="_blank"> <!-- Added anchor tag around the image -->
+                            <img :src="product.image" :alt="product.name" class="market-image" onclick="navigateToURL(event, product.stripeBuyUrl)">
+                          </a>
+                          <div class="overlay"></div> <!-- Overlay div for duotone effect -->
                         </div>
+                        <h2>{{ product.name }}</h2>
+                        <p>{{ product.description }}</p>
+                        <!--<p>Price: ${{ product.price }}</p>-->
+                        <div class="product-buy-wrap">
+                          <p>
+                            <a class="buy-button" :href="product.stripeBuyUrl" target="_blank">Buy</a>
+                          </p>  
+                        </div>
+                      </div>
                     </div>
+                  </div>
                 </div>
-            </section>
+              </section>
+              
+      
+              
+              
 
              <!--   MARKETPLACE SUBHEADER WORK-->
               <!---->
@@ -366,6 +375,18 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+
+</script>
+
+<script>
+// Add an event listener to set the initial opacity of the overlay to 0 on page load
+window.addEventListener('load', function() {
+  var imageContainers = document.querySelectorAll('.image-container');
+  imageContainers.forEach(function(container) {
+    var overlay = container.querySelector('::after');
+    overlay.style.opacity = 0;
+  });
+});
 
 </script>
 
