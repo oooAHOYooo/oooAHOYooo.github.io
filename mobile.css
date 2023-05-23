@@ -107,7 +107,23 @@ body {
   @media screen and (max-width: 800px) {
 
 
+.update-image {
+  width:100%;
+  height:auto;
+  min-height:240px;
+  margin:auto;
+  display:block;
+  /*transform: perspective(400px) rotateX(3deg)!important;*/
+  border-style:solid;
+  border-color: var(--backgroundColor-sub);
+  margin-top:23px;
+  margin-bottom:10px;
+  mix-blend-mode:lighten;
+  border-color:var(--borderColor);
+  opacity: .72;
 
+
+}
 
    .navTippyWrap {
         width: 100%;

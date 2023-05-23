@@ -28,9 +28,9 @@
 
   --backgroundNavy : #000f2b85;
 
-  --backgroundColor-sub: #00297523;
+  --backgroundColor-sub: #000817b5;
 
-  --radioHoverColor: rgba(76, 0, 255, 0.431);
+  --radioHoverColor: rgba(5, 0, 40, 0.658);
   --borderColor: #2500aa;
   --borderColor-inactive:#1400aa4d;
 
@@ -237,7 +237,7 @@ footer a:hover {
 
   h2 {
     font-size: 36px;
-    line-height:90%!important;
+
     text-align:center!important;
   }
 
@@ -659,10 +659,12 @@ audio {
   margin:auto;
   display:block;
   /*transform: perspective(400px) rotateX(3deg)!important;*/
-  border-style:solid;
-  border-color: var(--backgroundColor-sub);
-  margin-top:23px;
+  
   margin-bottom:10px;
+  mix-blend-mode:ligthen;
+  border-color:var(--borderColor);
+  opacity: .72;
+  border-radius:5px;
 
 
 }
@@ -677,10 +679,6 @@ audio {
   font-weight: bold;
   margin:auto;
   text-transform: uppercase;
-  margin-top:23px;
-  margin-bottom:23px;
-  padding-bottom:23px;
-  padding-top:23px;
   text-align:center;
 }
 
@@ -805,7 +803,7 @@ audio {
 
 .superBold {
   color:var(--text-standOUT);
-  font-size:64px;
+  font-size:48px;
   line-height:85%;
   text-align:center;
   font-weight:600;
@@ -1064,10 +1062,11 @@ audio {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom right, #FF0062, #000038a2); /* Change the colors as desired */
+  height: 95%;
+  margin-top:10px;
+  background: linear-gradient(to bottom right, #0400ff, #000038a2); /* Change the colors as desired */
   mix-blend-mode: multiply; /* Apply the duotone effect */
-  opacity: 0.73; /* Adjust the opacity as desired */
+  opacity: 0.23; /* Adjust the opacity as desired */
 }
 
 .update-image {
