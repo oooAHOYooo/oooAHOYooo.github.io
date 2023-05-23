@@ -56,7 +56,7 @@
           <button @click="selectedTab = 'tab6'" class="topNavButton-stream">LIBRARY</button>
           </div>-->
       
-          <!-- TAB 1 (Stream)-->
+          <!-- TAB 1 (CABLE-->
             <div class="stream" v-show="selectedTab === 'tab1'">
               <div class="streamShowContent">
               <div style="position:relative; overflow:hidden; padding-bottom:56.25%">
@@ -115,7 +115,7 @@
               </div><!-- RADIO SUBHEADER-->
                 <!-- END OF RADIO --></div>
 
-            <!-- TAB 5 FRONT PAGE -->
+            <!-- TAB 5 UPDATES -->
             <div id="mainFront" v-show="selectedTab === 'tab5'">
               <div class="frontSubHeader">
                 <p class="frontSubHeader-text">
@@ -162,7 +162,8 @@
                 </div>
                
                 <!--END OF FRONT PAGE --></div> 
-
+            </div>
+            <!-- TAB 3 = MARKETPLACE -->
             <div v-show="selectedTab === 'tab3'">
               <p style="text-align:center; font-size:12px;" ><span>Note to the user </span> this page is in Beta and in development mode - some features might not work and intentionally broken - use this page at your own risk</p>
               <div>
@@ -206,8 +207,8 @@
 
                 <!--END OF MARKETPLACE --></div>
 
-     <!-- TAB 6 (Live Show) -->
-     <div class="liveShow" v-show="selectedTab === 'tab6'">
+       <!-- TAB 6 (Live Show) -->
+     <!--<div class="liveShow" v-show="selectedTab === 'tab6'">
       <div class="liveShowWrap">
         <div class="liveShowContent">
           <script src="https://cdn.jwplayer.com/players/IdqbXxlv-9Gtk2B1J.js"></script>
@@ -227,7 +228,7 @@
         </div>
       </div>
       
-      </div>
+      </div>-->
 
        
            
