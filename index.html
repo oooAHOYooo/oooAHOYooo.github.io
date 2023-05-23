@@ -1,5 +1,8 @@
 <html> <!-- As of 5.23.23 -->
     <head>
+      <script src="https://unpkg.com/wavesurfer.js"></script>
+
+  
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="icon" type="image/x-icon" href="./assets/ahoyFav.png">
         <title>Ahoy Indie Media</title>
@@ -70,7 +73,7 @@
                 </div>
                 <div class="subHeaderVert content">
                   <h2>Ahoy Indie Cable</h2>
-                  <p>Remember the old days of cable TV? We sort of do... Here's our attempt at it. 
+                  <p>Remember the days of cable TV? We sort of do... Here's our attempt at it. 
                   </p>
                 </div>
 
@@ -80,11 +83,64 @@
       
             <!-- TAB 2 = RADIO -->
             <div class="radio" v-show="selectedTab === 'tab2'">
-              <div class="radioContent-wrap">
-                <div class="radioPlayer-wrap">
-                  <script src="https://embed.radio.co/player/0024c4d.js"></script>          
+
+              <div class="audio-player">
+                <audio controls class="custom-audio-player">
+                  <source src="https://s4.radio.co/saf4aee19b/listen" type="audio/mpeg">
+                  Your browser does not support the audio element.
+                </audio>
+                <template>
+                  <div>
+                    <style>
+                      #waveform {
+                        width: 100%;
+                        height: 200px; /* Set the desired height for the waveform */
+                      }
+                      </style>
+                    <div id="waveform"></div>
                   </div>
-                </div>
+                </template>
+
+                
+                <script>
+                  // Initialize WaveSurfer
+                  var wavesurfer = WaveSurfer.create({
+                    container: '#waveform',
+                    waveColor: 'violet',
+                    progressColor: 'purple'
+                  });
+            
+                  // Load audio file
+                  wavesurfer.load('path_to_audio_file.mp3');
+            
+                  // Play and pause controls
+                  var playButton = document.createElement('button');
+                  playButton.innerHTML = 'Play';
+                  playButton.addEventListener('click', function () {
+                    wavesurfer.playPause();
+                  });
+                  document.body.appendChild(playButton);
+                </script>
+
+
+            
+
+              </div>
+             <!-- 
+                <div id="waveform"></div>
+
+              </div>-->
+<!--<script>
+  var wavesurfer = WaveSurfer.create({
+    container: '#waveform',
+    waveColor: 'violet',
+    progressColor: 'purple'
+});
+</script>-->
+
+         
+
+           
               <!-- RADIO SUBHEADER-->
               <div class="subHeader">
                 <div class="subHeaderVert">

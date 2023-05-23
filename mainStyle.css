@@ -50,12 +50,13 @@
 body {
     font-family: 'Barlow', sans-serif;
     background-image: transparent;
-    background-color: var(--backgroundNavy);
     background-size:cover;
     background-attachment: fixed;
     color:rgb(255, 255, 255);
+    background-color: var(--backgroundNavy)!important;
 }
 /*Change the opacity of the background */
+/*
 body::before {
   content: "";
   position: fixed;
@@ -66,6 +67,8 @@ body::before {
   background-color: rgba(0, 15, 43, 0.565);
   z-index: -1;
 }
+*/
+
 
 header {
   width:100%;
@@ -78,7 +81,7 @@ header {
 }
 
 .navSuperTop {
-  background-color: red;
+  
   height: 50px;
   display: flex;
   justify-content: space-between;
@@ -1049,11 +1052,105 @@ audio {
   height: 100%;
   background: linear-gradient(to bottom right, #FF0062, #000038a2); /* Change the colors as desired */
   mix-blend-mode: multiply; /* Apply the duotone effect */
-  opacity: 0.6; /* Adjust the opacity as desired */
+  opacity: 0.73; /* Adjust the opacity as desired */
 }
 
 .update-image {
   display: block;
-  width: 100%;
+  min-width: 100%!important;
   height: auto;
 }
+
+/*Radio fix ateempt 10x*/
+
+.new-radio {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio (change as needed) */
+}
+
+.new-radio-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/*Audio Player */
+
+.audio-player {
+  width:100%;
+  height:300px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+}
+
+.custom-audio-player {
+
+  background-color: navy;
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+  border-radius: 5px;
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.custom-audio-player::-webkit-media-controls {
+  color: rgb(0, 0, 0) !important;
+  pointer-events: auto !important;
+  mix-blend-mode:multiply;
+}
+
+.custom-audio-player::-webkit-media-controls-timeline {
+  pointer-events: auto !important;
+}
+
+.custom-audio-player::-webkit-media-controls-play-button {
+  background-color: rgba(0, 0, 255, 0.455);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  pointer-events: auto !important;
+}
+
+.custom-audio-player:hover::-webkit-media-controls-play-button {
+  background-color: navy;
+ 
+}
+
+.custom-audio-player::-webkit-media-controls-current-time-display,
+.custom-audio-player::-webkit-media-controls-time-remaining-display {
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-size:15px;
+}
+
+.custom-audio-player::-webkit-media-controls-mute-button,
+.custom-audio-player::-webkit-media-controls-volume-slider {
+  display: none;
+}
+
+.custom-audio-player::-webkit-media-controls-volume-slider::-webkit-slider-thumb {
+  pointer-events: auto !important;
+}
+
+.custom-audio-player::-webkit-media-controls-volume-slider::-webkit-slider-runnable-track {
+  pointer-events: auto !important;
+}
+
+
+
+  
+
+
+
+
+
+
+
+
