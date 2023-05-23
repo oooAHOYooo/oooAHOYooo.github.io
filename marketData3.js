@@ -12,10 +12,10 @@ var ahoyMarketplace = new Vue({
             },
             {
                 id: 2,
-                name: 'Ahoy Slicktz Stickers',
-                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-                price: 120.99,
-                image: './images/Ahoy-Indie-Media-DEFAULT-COVER-A-8.jpg',
+                name: 'Live from the Garage',
+                description: 'Compliation Recordings from the Ahoy Garage Featuring Samuel Dyaln Witch',
+                price: 5,
+                image: './images/productImages/product_sk_1.png',
                 stripeBuyUrl: 'https://buy.stripe.com/test_cN26rKb2B64jaYM144'
             },
             {
