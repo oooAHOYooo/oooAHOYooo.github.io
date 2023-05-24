@@ -1,4 +1,4 @@
-<html> <!-- As of 5.23.23 -->
+<html> <!-- As of 5.24.23 -->
     <head> 
 
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -59,7 +59,7 @@
           </div>-->
       
           <!-- TAB 1 (CABLE-->
-            <div class="stream" v-show="selectedTab === 'tab1'">
+            <div id="cable" class="stream" v-show="selectedTab === 'tab1'">
               <div class="streamShowContent">
               <div style="position:relative; overflow:hidden; padding-bottom:56.25%">
                 <iframe src="https://cdn.jwplayer.com/players/SyfFOIKw-NkmVmcCh.html" width="100%" height="100%" frameborder="0" scrolling="auto" title="playblock5c - 7pm - 10pm [primeTime]" style="position:absolute;" allowfullscreen></iframe>
@@ -117,19 +117,18 @@
               </div><!-- RADIO SUBHEADER-->
                 <!-- END OF RADIO --></div>
 
-            <!-- TAB 5 UPDATES -->
+            <!-- TAB 5 UPDATE Page -->
             <div id="mainFront" v-show="selectedTab === 'tab5'">
               <div class="frontSubHeader">
                 <p class="frontSubHeader-text">
                 AHOY APP + CONTENT UPDATES + DEV LOG + COMPANY JOURNAL : AS OF MAY 2023</p>
                 <p class="frontSubHeader-text-link"><a class="link" href="https://github.com/oooAHOYooo/oooAHOYooo.github.io">Check our Github Repo for nerdy details</a></p>
               </div>
-             
-
-              <div class="frontContent transform">
+   
+        <div class="frontContent transform">
 
             <!-- content goes here -->
-                <div class="update-super-wrap">
+          <div class="update-super-wrap">
             <div id="updates-ahoy-app">
               <div v-for="month in months" :key="month.displayText">
                 <h2 class="monthDisplay-text">{{ month.displayText }}</h2>
@@ -175,14 +174,13 @@
               <section class="marketData-section">
                 <div id="marketplace-ahoy-app">
                   <div class="market-product-grid-parent">
-                    <div class="market-product-grid">
+                    <div class="market-product-grid center-mobile">
                       <div v-for="(product, index) in products" :key="index" class="market-grid-item">
-                        <div class="image-container-product">
-                          <a :href="product.stripeBuyUrl" target="_blank">
-                            <img :src="product.image" :alt="product.name" class="market-image">
-                          </a>
-                          <div class="overlay"></div> <!-- Overlay div for duotone effect -->
-                        </div>
+                          <div class="image-container-product">
+                            <a :href="product.stripeBuyUrl" target="_blank">
+                              <img :src="product.image" :alt="product.name" class="market-image">
+                            </a>
+                          </div>
                         <div class="product-title-wrap">
                         <p class="product-title-text">{{ product.name }}</h2></p>
                         </div>
@@ -277,12 +275,6 @@
 
 <!-- UPDATES PLACE DATA FEED -->
 <script src="updates.js"></script>
-
-
-
-
-<!-- START OF DAILY BACKGROUND CHANGES -->
-<!--<script src="backgroundChange.js"></script>-->
 
 <!-- FUNCTION 1 = TAB SWITCH -->
 

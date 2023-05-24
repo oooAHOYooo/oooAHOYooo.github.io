@@ -376,8 +376,47 @@ body {
     margin:5px;
   
   }
-  
+
+  .market-grid-item {
+    border: 1px solid var(--borderColor-white);
+    padding: 10px;
+    text-align: center;
+    min-width: 300px;
+    max-width: 300px;
+    min-height: 600px;
+    max-height: 600px;
+    background-color: var(--backgroundNavy);
+    position: relative;
+    transform: scale(.75);
   }
+  
+  .buy-button {
+    background-color: var(--buttonColor);
+    color: var(--white);
+    text-align: center;
+    text-decoration: none;
+    font-size: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    min-width: 200px;
+    width: 100% !important;
+    height: 50px;
+    z-index: 1;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-style: solid;
+    border-width: 1px;
+    border-color: (--white);
+  }
+
+  }
+
+
 
   /*@media only screen and (max-width: 900px) {
     .market-product-grid-parent {
@@ -430,6 +469,17 @@ body {
       justify-content: center;
       border-style:solid;
     }
+    
+
+  
+      .center-mobile {
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+        justify-content: top;
+        width:100%;
+   
+      }
     
    
   }
