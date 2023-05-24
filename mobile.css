@@ -481,6 +481,20 @@ body {
    
       }
     
+
+      /*Audio Player (radio) - on mobile */
+
+      .custom-audio-player {
+
+        background-color: rgb(135, 255, 237);
+        color: rgb(0, 0, 0);
+        font-size: 18px;
+        border-radius: 5px;
+        border: none;
+        position: relative;
+        overflow: hidden;
+        width:300px;
+      }
    
   }
   
