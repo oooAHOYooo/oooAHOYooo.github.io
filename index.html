@@ -178,13 +178,16 @@
                     <div class="market-product-grid">
                       <div v-for="(product, index) in products" :key="index" class="market-grid-item">
                         <div class="image-container-product">
-                          <a :href="product.stripeBuyUrl" target="_blank"> <!-- Added anchor tag around the image -->
-                            <img :src="product.image" :alt="product.name" class="market-image" onclick="navigateToURL(event, product.stripeBuyUrl)">
+                          <a :href="product.stripeBuyUrl" target="_blank">
+                            <img :src="product.image" :alt="product.name" class="market-image">
                           </a>
                           <div class="overlay"></div> <!-- Overlay div for duotone effect -->
                         </div>
-                        <h2>{{ product.name }}</h2>
-                        <p>{{ product.description }}</p>
+                        <div class="product-title-wrap">
+                        <p class="product-title-text">{{ product.name }}</h2></p>
+                        </div>
+                        <div class="product-description-wrap">
+                        <p class="product-description-text">{{ product.description }}</p></div>
                         <!--<p>Price: ${{ product.price }}</p>-->
                         <div class="product-buy-wrap">
                           <p>
@@ -288,7 +291,7 @@
             var app = new Vue({
               el: '#app',
               data: {
-                selectedTab: 'tab5'
+                selectedTab: 'tab3'
               }
             });
 

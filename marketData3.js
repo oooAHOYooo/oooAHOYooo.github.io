@@ -21,10 +21,10 @@ var ahoyMarketplace = new Vue({
             {
                 id: 3,
                 name: 'The Original Ahoy Sticker',
-                description: 'Limited Supply of like 30 or so left | Pack of 5 - Limit 5 per order',
-                price: 3,
+                description: 'Perfectly equal on all sides. Thick, durable vinyl protects the stickers from scratching, rain & sunlight. Adorn your favorite laptop, water bottle, and/or bathroom stall. 5 Total per pack.',
+                price: 5,
                 image: './images/productImages/product_sk_2.png',
-                stripeBuyUrl: 'https://buy.stripe.com/test_cN26rKb2B64jaYM144'
+                stripeBuyUrl: 'https://buy.stripe.com/5kA5obd9xflCeJ28ww'
             },
             {
                 id: 4,
