@@ -7,8 +7,7 @@ var ahoyUpdates = new Vue({
         updates: [
           { text: "Little Design Tweaks", bold: true },
           { text: "Updated Marketplace on Mobile + You can actually buy an item now on the marketplace (Ahoy Classic Sticker ((as it's the only one we presently have)))" },
-          { text: "ROB SHOW EPISODE 2 Tomorrow (hopefully) ((maybe)) on Cable!", superBold: true},
-          { text: "Rob Show Season 2 - Episode 2 is out Thursday May 25th - Dave Gunn of the Tallboyz" },
+          { text: "ROB SHOW EPISODE 2 Featuring Dave Gunn - Out Next Week on Cable!", superBold: true},
           { image: './images/Ahoy-Indie-Media---The-Rob-Show---Season-2---Episode-2---2023.png' },
           { text: "Subtle Improvments", bold: true },
           { text: "Mobile Responsiveness + Radio Redesign + Marketplace Improvements + Secret New Features about to be launched" },
