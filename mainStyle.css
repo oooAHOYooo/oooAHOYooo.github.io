@@ -236,8 +236,8 @@ footer a:hover {
 
   h2 {
     font-size: 36px;
-
     text-align:left!important;
+    line-height:105%;
   }
 
   h3 {
@@ -252,17 +252,27 @@ audio {
   font-size:100px;
 }
 
+/*TOP TOP STYLES*/
+
+.topDog-wrap {
+  background-color:rgba(0, 0, 0, 0.631);
+  width:100%;
+  height:auto;
+  border-style:solid;
+  border-radius: 25px 25px 0 0; /* Specifies the border radius for each corner (top-left, top-right, bottom-right, bottom-left) */
+  
+}
+
 /*TOP LOGO WORK*/
 .topLogo-wrap {
   width:100%!important;
-  height:100px;
+  height:auto;
   display:flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align:center;
   margin-top:20px;
-  margin-bottom:20px;
 }
 
 .topLogo-graphic {
@@ -271,6 +281,26 @@ audio {
   /*margin:0 auto;*/
 }
 
+/*TOP NAV SUGAR STYLES */
+.navTippyWrap {
+  width: 100%;
+  height:auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transform: perspective(400px) rotateX(19deg)!important;
+  position:relative;
+  z-index:10;
+  margin-bottom:10px;
+
+}
+
+
+
+
+/*DEFAULT SUBHEADER ON EACH PAGE */
   .subHeader {
     display: flex;
     flex-wrap: wrap;
@@ -303,25 +333,7 @@ audio {
     justify-content: center;
   }
   
-  /*TOP NAV SUGAR STYLES */
-  .navTippyWrap {
-    width: 100%;
-    height:100px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-
-    transform: perspective(400px) rotateX(23deg)!important;
-    position:relative;
-    z-index:10;
-    margin-bottom:10px;
-    padding-bottom:10px;
-    padding-top:40px;
-
-  }
-
+  
 
 
 
@@ -1278,3 +1290,7 @@ text-align:center!important;
   max-width:300px;
   max-height:300px;
 }
+
+
+
+

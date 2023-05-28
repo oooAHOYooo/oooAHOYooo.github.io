@@ -32,7 +32,7 @@
         <div class="memberNameWrap" id="memberName">Member Name</div>
       </div>
     </div>-->
-    <header>
+    <!--<header>
       <div class="top-menu">
         <div class="memberNameWrap" id="memberName">Member Name</div>
           <a href="#/ms/signup/635fbdb822ded60004f597b3">
@@ -40,20 +40,24 @@
           </a>
         </div>
       </div>
-    </header>
+    </header>-->
     
 
     <main>
         <div id="app">
-          <div class="topLogo-wrap">
-            <a href="https://ahoy.ooo"><img src="./assets/u_ahoy23.png" class="topLogo-graphic"></a>
+          <!-- START OF TOPDOG -->
+          <div class="topDog-wrap">
+            <div class="topLogo-wrap">
+              <a href="https://ahoy.ooo"><img src="./assets/u_ahoy23.png" class="topLogo-graphic"></a>
+            </div>
+            <div class="navTippyWrap">
+              <button @click="selectedTab = 'tab1'" class="topNavButton-stream">Cable</button>
+              <button @click="selectedTab = 'tab3'" class="topNavButton-stream">Market</button>
+              <button @click="selectedTab = 'tab5'" class="topNavButton-stream">Updates</button>
+              <button @click="selectedTab = 'tab2'" class="topNavButton-stream">Radio</button>
+            </div>
           </div>
-          <div class="navTippyWrap">
-          <button @click="selectedTab = 'tab1'" class="topNavButton-stream">Cable</button>
-          <button @click="selectedTab = 'tab3'" class="topNavButton-stream">Market</button>
-          <button @click="selectedTab = 'tab5'" class="topNavButton-stream">Updates</button>
-          <button @click="selectedTab = 'tab2'" class="topNavButton-stream">Radio</button>
-          </div>
+          <!-- END OF TOP DOG -->
           <!--<button @click="selectedTab = 'tab6'" class="topNavButton-stream">Music</button>
           <button @click="selectedTab = 'tab6'" class="topNavButton-stream">LIBRARY</button>
           </div>-->
@@ -158,8 +162,8 @@
                   </div>
 
                     <div class="subHeaderVert content">
-                      <h2>The FRONT PAGE</h2>
-                      <p>Discover the latest happenings at Ahoy - from new content and to code improvements - to fresh features - and  developments, long story short - if it's new - it will be showcased here.</p><p>Be sure to check out our <a class="link" href="https://github.com/oooAHOYooo/oooAHOYooo.github.io">github repo for all the nerdy code updates</a></p>
+                      <h2>Ahoy Indie Updates</h2>
+                      <p>Discover the latest updates from Ahoy, including new content, code improvements, fresh features, and significant app developments. If there's something new happening, you'll find it showcased here.</p>
                     </div>
                    
                 </div>
