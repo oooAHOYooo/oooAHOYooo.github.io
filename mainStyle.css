@@ -39,6 +39,8 @@
 
   --inactiveText: #ffffff4d;
   --text-standOUT: #ff0060;
+
+  --topDogColor: #000f2b85;
 }
 
 
@@ -255,7 +257,7 @@ audio {
 /*TOP TOP STYLES*/
 
 .topDog-wrap {
-  background-color:rgba(0, 0, 0, 0.631);
+  background-color:var(--topDogColor);
   width:100%;
   height:auto;
   border-style:solid;
@@ -333,13 +335,7 @@ audio {
     justify-content: center;
   }
   
-  
-
-
-
-
-
-
+ 
   /*TALKS WITH THE MARKETPLACE GRID */
 
   .grid-container {
