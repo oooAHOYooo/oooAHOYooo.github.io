@@ -177,6 +177,11 @@
                 <!-- MARKETPLACE CONTENT GOES HERE -->
               <!-- MARKETPLACE VUE TAKE 1 -->
               <section class="marketData-section">
+                <div class="filter-buttons">
+                  <button @click="showPhysicalProducts = true; showDigitalProducts = true">All</button>
+                  <button @click="showPhysicalProducts = true; showDigitalProducts = false">Physical</button>
+                  <button @click="showPhysicalProducts = false; showDigitalProducts = true">Digital</button>
+                </div>
                 <div id="marketplace-ahoy-app">
                   <div class="market-product-grid-parent">
                     <div class="market-product-grid center-mobile">
@@ -276,7 +281,7 @@
 
 
 <!-- MARKET PLACE DATA FEED -->
-<script src="marketData3.js"></script>
+<script src="marketData4.js"></script>
 
 <!-- UPDATES PLACE DATA FEED -->
 <script src="updates.js"></script>

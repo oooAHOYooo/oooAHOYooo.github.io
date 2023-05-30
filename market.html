@@ -1,203 +1,49 @@
 <html> <!-- As of 4.29.23 -->
     <head>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Ahoy Indie Media</title>
+        <title>MARKET BUILDS </title>
         <!-- IMPORT OF VUE -->
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <!-- MARKET DATA -->
 
         <!-- CSS3 -->
         <link rel="stylesheet" href="mainStyle.css">
-        <link rel="stylesheet" href="jwPlayer.css">
      
     </head>
   <body>
-    <main>
-        <div id="app">
-          <div class="navTippyWrap">
-          <button @click="selectedTab = 'tab1'" class="topNavButton-stream">Stream</button>
-          <button @click="selectedTab = 'tab3'" class="topNavButton-market">Market</button>
-          <button @click="selectedTab = 'tab5'" class="topNavButton-frontPage">Updates</button>
-          <button @click="selectedTab = 'tab2'" class="topNavButton-radio">Radio</button>
-          <button @click="selectedTab = 'tab6'" class="topNavButton-live">Live Shows</button>
-          </div>
-      
-          <!-- TAB 1 (Stream)-->
-            <div class="stream" v-show="selectedTab === 'tab1'">
-              <div class="streamShowContent">
-              <div style="position:relative; overflow:hidden; padding-bottom:56.25%">
-                <iframe src="https://cdn.jwplayer.com/players/SyfFOIKw-NkmVmcCh.html" width="100%" height="100%" frameborder="0" scrolling="auto" title="playblock5c - 7pm - 10pm [primeTime]" style="position:absolute;" allowfullscreen></iframe>
-              </div>
-            </div>
-              
-              <div class="subHeader">
-                <div class="subHeaderVert">
-                  <a href="#"><img src="/assets/u_ahoy23.png" class="logo"></a>
-                </div>
-                <div class="subHeaderVert content">
-                  <h2>Stream</h2>
-                  <p>Stream Ahoy Indie Media's 24/7 Channel - with new content every other Thursday at 7pm</p>
-                </div>
 
-              </div>
-            
-            <!-- END OF STREAM--></div>
-      
-            <!-- TAB 2 = RADIO -->
-            <div class="radio" v-show="selectedTab === 'tab2'">
-            <div class="radioWrap">
-              <div class="radioShowContent">
-                <script src="https://embed.radio.co/player/d942b19.js"></script>    
-              </div>    
-            </div>
-              <!-- RADIO SUBHEADER-->
-              <div class="subHeader">
-                <div class="subHeaderVert">
-                  <a href="#"><img src="/assets/u_ahoy23.png" class="logo"></a>
-                </div>
-                <div class="subHeaderVert content">
-                <h2>Live Radio</h2><p>Status = <span>online</span></p>
-                <div class="audioData">
-                <p class="audioDisplay">Now Playing</p><script src="https://embed.radio.co/embed/saf4aee19b/song.js"></script>
-                <p>Up Next</p><script src="https://embed.radio.co/embed/saf4aee19b/next.js"></script>
-                <p>Recently Played</p><script src="https://embed.radio.co/embed/saf4aee19b/last.js"></script>
-              </div>
-            </div>
-
-              </div><!-- RADIO SUBHEADER-->
-                <!-- END OF RADIO --></div>
-
-
-            <!-- TAB 5 FRONT PAGE -->
-            <div v-show="selectedTab === 'tab5'">
-              <!-- START OF FRONT PAGE -->
-              <div class="frontPageWrap">
-                <div class="frontHeader">
-                    <a href="#"><img src="/assets/u_ahoy23.png" class="logoBig"></a>
-                  </div>
-                  <div class="frontSubHeader">
-                  APP + CONTENT UPDATES + DEV LOG + COMPANY JOURNAL : AS OF MAY 2023
-                  <a class="link" href="https://github.com/oooAHOYooo/oooAHOYooo.github.io">Check the company's Github Repo</a>
-                </div>
-                
-                  <div class="monthBlock">
-                    <p class="monthDisplay-text">May 2023</p>
-                    <div id="mayUpdates">
-                      <p class="monthUpdateText-bold">Working on</p>
-                      <p class="monthUpdateText">1. The Marketplace functioning (custom baby) </p>
-                      <p class="monthUpdateText">2. Live Shows - up and running - but debating if we should really even have "live shows" instead would people be down for "Yesterday shows?"</p>
-                      <p class="monthUpdateText-bold">Pumped about</p>
-                      <p class="monthUpdateText">  Met some great artists at Gather - going to put their music on the radio - Riddle M + Justin Arena</p>
-                      <p class="monthUpdateText-bold">Special News</p>
-                      <p class="monthUpdateText">Ellen Martin joins the party as the radio "Station Manager"</p>
-                    </div>
-                  
-                </div>
-                <div class="monthBlock">
-                  <p class="monthDisplay-text">April 2023</p>
-                  <p>
-                  <div>Began Development on New Web Application</div>
-                  <div>New Rob Show Episodes Planned</div>
-                  <div>got the radio working</div></p>
-              </div>
-                  
-                  </div>
-
-
-  <!-- TAB 5 (Front PAGE) SUBHEADER -->
-                <div class="subHeader">
-                  <div class="subHeaderVert">
-                    <a href="#"><img src="/assets/u_ahoy23.png" class="logo"></a>
-                  </div>
-
-                    <div class="subHeaderVert content">
-                      <h2>FRONT PAGE</h2>
-                      <p>We strive to deliever - new content - new code - new updates - and new new new new new new things - all the time. Not all the time - but a good amount of time.</p>
-                    </div>
-                   
-                </div><!-- TAB5 SUBHEADER-->
-              <!-- END OF FRONT PAGE --></div>
-      <!-- TAB 3 (MARKETPLACE)-->
-            <div v-show="selectedTab === 'tab3'">
-              <div class="collectionWrap">
-                <!-- MARKETPLACE CONTENT GOES HERE -->
-              <!-- MARKETPLACE VUE TAKE 1 -->
               <section class="marketData-section">
                 <div id="marketplace-ahoy-app">
-                    This is the Market.html page - not index.html
-                    <div class="market-product-grid">
-                        <div v-for="(product, index) in products" :key="index" class="market-grid-item">
-                            <img :src="product.image" :alt="product.name">
-                            <h2>{{ product.name }}</h2>
-                            <p>{{ product.description }}</p>
-                            <p>Price: ${{ product.price }}</p>
-                            <a :href="product.stripeBuyUrl">Buy</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-               <!-- MARKETPLACE SUBHEADER WORK-->>
-              <!---->
-              <div class="subHeader">
-                <div class="subHeaderVert">
-                  <a href="#"><img src="/assets/u_ahoy23.png" class="logo"></a>
-                </div>
-                <div class="subHeaderVert content">
-                  <h2>Marketplace</h2>
-                  <p>Buy artwork made by indie artists </p>
-                  <p><a href="https://buy.stripe.com/test_cN26rKb2B64jaYM144">Buy Palbot2 (test link)</a></p>
-                  <p>Support Ahoy buy supporting them - we honestly don't make any money</p>
-
-                  <div>
-                    
+                  <div class="filter-buttons">
+                    <button @click="showPhysicalProducts = true; showDigitalProducts = true">All</button>
+                    <button @click="showPhysicalProducts = true; showDigitalProducts = false">Physical</button>
+                    <button @click="showPhysicalProducts = false; showDigitalProducts = true">Digital</button>
                   </div>
-
-
-
+                  <div v-for="(product, index) in filteredProducts" :key="index" class="market-grid-item">
+                    <div class="image-container-product">
+                      <a :href="product.stripeBuyUrl" target="_blank">
+                        <img :src="product.image" :alt="product.name" class="market-image">
+                      </a>
+                    </div>
+                    <div class="product-title-wrap">
+                      <p class="product-title-text">{{ product.name }}</p>
+                    </div>
+                    <div class="product-description-wrap">
+                      <p class="product-description-text">{{ product.description }}</p>
+                    </div>
+                    <div class="product-buy-wrap">
+                      <p>
+                        <a class="buy-button" :href="product.stripeBuyUrl" target="_blank">Buy</a>
+                      </p>
+                    </div>
+                  </div>
                 </div>
+              </section>
               
-              </div>
-              
-            </div>
-
-                <!--END OF MARKETPLACE --></div>
-     <!-- TAB 6 (Live Show) -->
-     <div class="liveShow" v-show="selectedTab === 'tab6'">
-      <div class="liveShowWrap">
-        <div class="liveShowContent">
-        <script src="https://cdn.jwplayer.com/players/IdqbXxlv-NkmVmcCh.js"></script>
-        </div>
-        <div class="liveShowContentDescWrap">
-      <h2>Folk Punk Dad</h2><p><span>Gather East, New Haven, CT</span> Circa 2022</p>
-      </div>
-      </div>
-      <div class="subHeader">
-        <div class="subHeaderVert">
-          <a href="#"><img src="/assets/u_ahoy23.png" class="logo"></a>
-        </div>
-        <div class="subHeaderVert content">
-          <h2>Live Shows and Venues</h2>
-          <p>We're hoping to team up with local venues and broadcast local shows and open mics</p>
-        </div>
-      </div>
-      
-      </div>
-
-       
-           
-
-
- <!-- END OF APP TABS -->
-          </div>
-          
-          <!-- END OF APP -->
-<!-- THE CODE THAT IS GOING TO DYMANICALLY CHANGE THE BACKGROUND IMAGES -->
-<!--<div class="changeBackgroundMagic">
-  <button type="button" onclick="changeBackground()">Change background image</button> 
-  </div>-->
+            
 <footer>
   <a href="https://github.com/oooAHOYooo/oooAHOYooo.github.io">About</a>
-  <a href="/content.html">Send Content</a>
+  <a href="/content.html">Content</a>
   <a href="#">Contact</a>
 </footer>
 
@@ -206,13 +52,12 @@
 <!-- SCRIPTS AND CONDITIONAL LOGIC -->
 
 <!-- MARKET PLACE DATA FEED -->
-<script src="marketData3.js"></script>
+<script src="marketData4.js"></script>
 
 <!-- START OF DAILY BACKGROUND CHANGES -->
 
 
 
-<script src="backgroundChange.js"></script>
 
 
 <!--buy button method call?-->

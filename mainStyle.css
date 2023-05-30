@@ -1290,3 +1290,14 @@ text-align:center!important;
 
 
 
+/*TEMP CSS FOR MARKETPLACE WORK */
+
+.filter-buttons {
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  justify-content:center;
+  margin-top:10px;
+  margin-bottom:10px;
+  z-index:100;
+}
