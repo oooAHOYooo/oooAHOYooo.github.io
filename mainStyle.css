@@ -71,6 +71,25 @@ body::before {
 */
 
 
+.basicPadre {
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  float: middle;
+  line-height:90px;
+  font-size: 12px;
+
+}
+
+.basicHijo {
+position:relative;
+
+}
+
+
 header {
   width:100%;
   z-index:0;
@@ -939,6 +958,7 @@ audio {
   background-color: var(--marketColor);
 }
 
+/*TOP MARKETPLACE LEFT AND RIGHT SIDE MENU */
 
 
 .marketData-section {
@@ -1319,15 +1339,76 @@ text-align:center!important;
   z-index:100;
 }
 
-.market-featured-header-wrap {
+.market-feature-super-super-wrap {
+  width:100%;
+  height:auto;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+}
+
+.market-feature-super-wrap {
+  min-width:1200px;
+  max-width:1200px;
   display:flex;
   flex-direction:row;
   align-items:center;
   justify-content:center;
   margin-top:10px;
   margin-bottom:10px;
-  padding:20px;
+ background-color:rgba(0, 0, 0, 0.522);
+  border-style:solid;
+  border-color: #ffffff;
+
+}
+
+.market-featured-header-wrap-leftItem {
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  justify-content:center;
+  margin-top:10px;
+  margin-bottom:10px;
+  padding:10px;
   z-index:100;
   text-align:center;
-  max-width:300px!important;
+  width:330px;
+  height: 210px;
+  /*background-color:orange;*/
+}
+
+.market-featured-header-wrap-rightItem {
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  justify-content:center;
+  margin-top:10px;
+  margin-bottom:10px;
+  padding:10px;
+  z-index:100;
+  text-align:center;
+  width:330px;
+  height: 210px;
+}
+
+.market-featured-header-wrap-centerItem {
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  justify-content:center;
+  margin-top:10px;
+  margin-bottom:10px;
+  padding:10px;
+  z-index:100;
+  text-align:center;
+  width:300px;
+  max-width:300px;
+  width:100%;
+  height: 250px;
+}
+
+.market-logo-graphic {
+  width:270px!important;
+  height:270px!important;
 }

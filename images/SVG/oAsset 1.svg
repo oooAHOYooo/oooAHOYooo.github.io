@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1168.04 380.08">
+  <defs>
+    <style>
+      .cls-1 {
+        font-family: AcademyEngravedLetPlain, 'Academy Engraved LET';
+      }
+
+      .cls-2 {
+        font-family: Cochin, Cochin;
+      }
+
+      .cls-3 {
+        fill: #fff;
+        font-size: 200px;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <text class="cls-3" transform="translate(278.21 167.48)"><tspan class="cls-1" x="0" y="0">AHOY</tspan><tspan class="cls-2" x="611.62" y="0"> </tspan><tspan class="cls-2"><tspan x="-219.98" y="155">Marketplace</tspan></tspan></text>
+  </g>
+</svg>
