@@ -38,6 +38,51 @@ var ahoyMarketplace = new Vue({
           stripeBuyUrl: 'https://buy.stripe.com/test_cN26rKb2B64jaYM144',
           digital: true // Physical product
         },
+        {
+            id: 5,
+            name: 'Pal-bot 2 - NFT #1',
+            description: 'Request a personalized video message from Rob Meglio himself. Connect with your favorite personality and receive a personalized message that will leave a lasting impression, making every request an extraordinary and memorable occasion. ',
+            price: 132.99,
+            image: './images/productImages/nfts/PAL BOT 2 - NFT.png',
+            stripeBuyUrl: 'https://buy.stripe.com/test_cN26rKb2B64jaYM144',
+            digital: true // Physical product
+          },
+          {
+            id: 6,
+            name: 'Pal-bot 2 - NFT #2',
+            description: 'Request a personalized video message from Rob Meglio himself. Connect with your favorite personality and receive a personalized message that will leave a lasting impression, making every request an extraordinary and memorable occasion. ',
+            price: 132.99,
+            image: './images/productImages/nfts/PAL BOT 2 - NFT (2).png',
+            stripeBuyUrl: 'https://buy.stripe.com/test_cN26rKb2B64jaYM144',
+            digital: true // Physical product
+          },
+          {
+            id: 7,
+            name: 'Pal-bot 2 - NFT #3',
+            description: 'Request a personalized video message from Rob Meglio himself. Connect with your favorite personality and receive a personalized message that will leave a lasting impression, making every request an extraordinary and memorable occasion. ',
+            price: 132.99,
+            image: './images/productImages/nfts/PAL BOT 2 - NFT (3).png',
+            stripeBuyUrl: 'https://buy.stripe.com/test_cN26rKb2B64jaYM144',
+            digital: true // Physical product
+          },
+          {
+            id: 8,
+            name: 'Pal-bot 2 - NFT #4',
+            description: 'Request a personalized video message from Rob Meglio himself. Connect with your favorite personality and receive a personalized message that will leave a lasting impression, making every request an extraordinary and memorable occasion. ',
+            price: 132.99,
+            image: './images/productImages/nfts/PAL BOT 2 - NFT (4).png',
+            stripeBuyUrl: 'https://buy.stripe.com/test_cN26rKb2B64jaYM144',
+            digital: true // Physical product
+          },
+          {
+            id: 9,
+            name: 'Pal-bot 2 - NFT #5',
+            description: 'Request a personalized video message from Rob Meglio himself. Connect with your favorite personality and receive a personalized message that will leave a lasting impression, making every request an extraordinary and memorable occasion. ',
+            price: 132.99,
+            image: './images/productImages/nfts/PAL BOT 2 - NFT (5).png',
+            stripeBuyUrl: 'https://buy.stripe.com/test_cN26rKb2B64jaYM144',
+            digital: true // Physical product
+          },
      
         // Other product data here
       ],
