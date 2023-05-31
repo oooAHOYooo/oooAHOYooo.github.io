@@ -4,8 +4,8 @@ var ahoyMarketplace = new Vue({
       products: [
         {
           id: 1,
-          name: 'Ahoy Defaultz Stickers',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+          name: 'Classic B&W Ahoy Stickers',
+          description: 'Discover the balanced simplicity of our symmetrical stickers, crafted with durable vinyl for protection against wear. Add a touch of classic style to your laptop, water bottle, or any surface with our pack of five.          ',
           price: 10.99,
           image: './images/Ahoy-Indie-Media-DEFAULT-COVER-A-8.jpg',
           stripeBuyUrl: 'https://buy.stripe.com/test_cN26rKb2B64jaYM144',
@@ -13,9 +13,9 @@ var ahoyMarketplace = new Vue({
         },
         {
           id: 2,
-          name: 'Live from the44 Garage',
-          description: 'Compilation Recordings from the Ahoy Garage Featuring Samuel Dyaln Witch',
-          price: 5,
+          name: 'Live from the Garage',
+          description: 'Compilation Recordings from the Ahoy Garage Featuring Samuel Dyaln Witch - 14 songs total',
+          price: 5.5,
           image: './images/productImages/product_sk_1.png',
           stripeBuyUrl: 'https://buy.stripe.com/test_cN26rKb2B64jaYM144',
           digital: true // Digital product
@@ -27,26 +27,18 @@ var ahoyMarketplace = new Vue({
           price: 5,
           image: './images/productImages/product_sk_2.png',
           stripeBuyUrl: 'https://buy.stripe.com/5kA5obd9xflCeJ28ww',
-          digital: true // Digital product
+          digital: false // physical product
         },
         {
           id: 4,
-          name: 'Ahoy ASZ',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+          name: 'Rob Meglio Cameo',
+          description: 'Request a personalized video message from Rob Meglio himself. Connect with your favorite personality and receive a personalized message that will leave a lasting impression, making every request an extraordinary and memorable occasion. ',
           price: 132.99,
           image: './images/Ahoy-Indie-Media-DEFAULT-COVER-A-8.jpg',
           stripeBuyUrl: 'https://buy.stripe.com/test_cN26rKb2B64jaYM144',
-          digital: false // Physical product
+          digital: true // Physical product
         },
-        {
-          id: 5,
-          name: 'Ahoy ASZ',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          price: 132.99,
-          image: './images/Ahoy-Indie-Media-DEFAULT-COVER-A-8.jpg',
-          stripeBuyUrl: 'https://buy.stripe.com/test_cN26rKb2B64jaYM144',
-          digital: false // Physical product
-        },
+     
         // Other product data here
       ],
       showPhysicalProducts: true, // Show physical products by default

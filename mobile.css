@@ -353,9 +353,14 @@ body {
   
   }
 
+  /*MOBILE MARKET*/
+
+  #marketplace-ahoy-app {
+    min-height:300vh;
+  }
+
   .market-grid-item {
     border: 1px solid var(--borderColor-white);
-    padding: 10px;
     text-align: center;
     min-width: 300px;
     max-width: 300px;
@@ -477,8 +482,12 @@ body {
 
   @media (max-width:800px) {
   
+
+
   .topDog-wrap {
     background-color:transparent;
+    padding:0;
+    margin:0!important;
   }
 
   .topLogo-graphic{

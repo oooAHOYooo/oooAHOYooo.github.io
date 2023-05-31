@@ -1,6 +1,8 @@
 <html> <!-- As of 4.29.23 -->
     <head>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <script defer data-domain="ahoy.ooo" src="https://plausible.io/js/script.js"></script>
+      <link rel="icon" type="image/x-icon" href="./assets/ahoyFav.png">
         <title>MARKET BUILDS </title>
         <!-- IMPORT OF VUE -->
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -8,9 +10,11 @@
 
         <!-- CSS3 -->
         <link rel="stylesheet" href="mainStyle.css">
+        <!--<link rel="stylesheet" href="mobile.css">-->
      
     </head>
-  <body> <div id="marketplace-ahoy-app">
+  <body> 
+    <div id="marketplace-ahoy-app">
     <div class="topDog-wrap">
       <div class="topLogo-wrap">
         <a href="https://ahoy.ooo"><img src="./assets/u_ahoy23.png" class="topLogo-graphic"></a>
@@ -22,13 +26,17 @@
 
       </div>
     </div>
+
+<section class="market-featured-header-wrap">
+  <p>Explore the Ahoy Marketplace, your opportunity to bring a piece of Ahoy home. When you purchase content, all proceeds directly support the artist, with a $3 surcharge for platform maintenance, allowing you to support indie creators and enjoy ad-free content. Help us empower indie fairies by lending your support.
+  </p>
+
+
+
+
+</section>
+
               <section class="marketData-section">
-               
-                 <!--<div class="filter-buttons">
-                    <button @click="showPhysicalProducts = true; showDigitalProducts = true">All</button>
-                    <button @click="showPhysicalProducts = true; showDigitalProducts = false">Physical</button>
-                    <button @click="showPhysicalProducts = false; showDigitalProducts = true">Digital</button>
-                  </div>--> 
                   <div class="market-product-grid-parent">
                     <div class="market-product-grid center-mobile">
                   <div v-for="(product, index) in filteredProducts" :key="index" class="market-grid-item">
@@ -55,8 +63,8 @@
               
             
 
-              <div class="subHeader">
-                <div class="subHeaderVert">
+              <div class="subHeader-market">
+                <div class="subHeaderVert-market">
                   <a href="#"><img src="/assets/u_ahoy23.png" class="logo"></a>
                 </div>
                 <div class="subHeaderVert content">
