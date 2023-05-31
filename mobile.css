@@ -92,7 +92,7 @@ body {
   text-align: center;
   position:relative;
   z-index:10;
-  margin-bottom:10px;
+  margin-bottom:0px;
   /*padding-bottom:10px;*/
   transform: perspective(200px) rotateX(0deg)!important;
   padding-top:10px;
@@ -478,11 +478,12 @@ body {
   @media (max-width:800px) {
   
   .topDog-wrap {
-    background-color:red;
+    background-color:transparent;
   }
 
   .topLogo-graphic{
-    width:320px!important;
+    min-width:400px!important;
+    width:100%;
     height:auto;
   }
 
@@ -493,8 +494,6 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-top:10px;
-    padding-bottom:10px;
   }
 
 }

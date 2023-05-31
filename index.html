@@ -42,7 +42,6 @@
       </div>
     </header>-->
     
-
     <main>
         <div id="app">
           <!-- START OF TOPDOG -->
@@ -52,15 +51,12 @@
             </div>
             <div class="navTippyWrap">
               <button @click="selectedTab = 'tab1'" class="topNavButton-stream">Cable</button>
-              <button @click="selectedTab = 'tab3'" class="topNavButton-stream">Market</button>
+              <a href="market.html"><button class="topNavButton-stream">Market</button></a>
               <button @click="selectedTab = 'tab5'" class="topNavButton-stream">Updates</button>
               <button @click="selectedTab = 'tab2'" class="topNavButton-stream">Radio</button>
             </div>
           </div>
           <!-- END OF TOP DOG -->
-          <!--<button @click="selectedTab = 'tab6'" class="topNavButton-stream">Music</button>
-          <button @click="selectedTab = 'tab6'" class="topNavButton-stream">LIBRARY</button>
-          </div>-->
       
           <!-- TAB 1 (CABLE-->
             <div id="cable" class="stream" v-show="selectedTab === 'tab1'">
@@ -170,50 +166,43 @@
                
                 <!--END OF FRONT PAGE --></div> 
             </div>
-            <!-- TAB 3 = MARKETPLACE -->
-            <div v-show="selectedTab === 'tab3'">
-              <p style="text-align:center; font-size:12px;" ><span>Note to the user </span> this page is in Beta and in development mode - some features might not work and intentionally broken - use this page at your own risk</p>
-              <div>
-                <!-- MARKETPLACE CONTENT GOES HERE -->
-              <!-- MARKETPLACE VUE TAKE 1 -->
-              <section class="marketData-section">
-                <div class="filter-buttons">
-                  <button @click="showPhysicalProducts = true; showDigitalProducts = true">All</button>
-                  <button @click="showPhysicalProducts = true; showDigitalProducts = false">Physical</button>
-                  <button @click="showPhysicalProducts = false; showDigitalProducts = true">Digital</button>
+            <!-- END OF UPDATE PAGE -->
+            
+            <!-- TAB 3 = MARKETPLACE
+            <div class="marketData-section" v-show="selectedTab === 'tab3'">
+              <div id="marketplace-ahoy-app">
+                <div class="filter-links">
+                  <a href="#" @click="showPhysicalProducts = true; showDigitalProducts = true">All</a>
+                  <a href="#" @click="showPhysicalProducts = true; showDigitalProducts = false">Physical</a>
+                  <a href="#" @click="showPhysicalProducts = false; showDigitalProducts = true">Digital</a>
                 </div>
-                <div id="marketplace-ahoy-app">
-                  <div class="market-product-grid-parent">
-                    <div class="market-product-grid center-mobile">
-                      <div v-for="(product, index) in products" :key="index" class="market-grid-item">
-                          <div class="image-container-product">
-                            <a :href="product.stripeBuyUrl" target="_blank">
-                              <img :src="product.image" :alt="product.name" class="market-image">
-                            </a>
-                          </div>
-                        <div class="product-title-wrap">
-                        <p class="product-title-text">{{ product.name }}</h2></p>
-                        </div>
-                        <div class="product-description-wrap">
-                        <p class="product-description-text">{{ product.description }}</p></div>
-                        <!--<p>Price: ${{ product.price }}</p>-->
-                        <div class="product-buy-wrap">
-                          <p>
-                            <a class="buy-button" :href="product.stripeBuyUrl" target="_blank">Buy</a>
-                          </p>  
-                        </div>
+                <div class="market-product-grid-parent">
+                  <div class="market-product-grid center-mobile">
+                    <div v-for="(product, index) in filteredProducts" :key="index" class="market-grid-item">
+                      <div class="image-container-product">
+                        <a :href="product.stripeBuyUrl" target="_blank">
+                          <img :src="product.image" :alt="product.name" class="market-image">
+                        </a>
+                      </div>
+                      <div class="product-title-wrap">
+                        <p class="product-title-text">{{ product.name }}</p>
+                      </div>
+                      <div class="product-description-wrap">
+                        <p class="product-description-text">{{ product.description }}</p>
+                      </div>
+                      <div class="product-buy-wrap">
+                        <p>
+                          <a class="buy-button" :href="product.stripeBuyUrl" target="_blank">Buy</a>
+                        </p>
                       </div>
                     </div>
                   </div>
                 </div>
-              </section>
-              
-      
-              
-              
-
-             <!--   MARKETPLACE SUBHEADER WORK-->
-              <!---->
+              </div>
+            </div> -->
+            
+             <!--   MARKETPLACE SUBHEADER WORK
+             
               <div class="subHeader">
                 <div class="subHeaderVert">
                   <a href="#"><img src="/assets/u_ahoy23.png" class="logo"></a>
@@ -225,46 +214,15 @@
                   <p>So help us help you by giving a little indie fairy their wings</p>
                 </div>
               
-              </div>
-            </div>
+              </div>-->
+            <!-- </div>-->  <!--END OF MARsKETPLACE -->
 
-                <!--END OF MARKETPLACE --></div>
-
-       <!-- TAB 6 (Live Show) -->
-     <!--<div class="liveShow" v-show="selectedTab === 'tab6'">
-      <div class="liveShowWrap">
-        <div class="liveShowContent">
-          <script src="https://cdn.jwplayer.com/players/IdqbXxlv-9Gtk2B1J.js"></script>
-        </div>
-        <div class="liveShowContentDescWrap">
-          <h2>Folk Punk Dad</h2>
-          <p><span>Gather East, New Haven, CT</span> Circa 2022</p>
-        </div>
-      </div>
-      <div class="subHeader">
-        <div class="subHeaderVert">
-          <a href="#"><img src="/assets/u_ahoy23.png" class="logo"></a>
-        </div>
-        <div class="subHeaderVert content">
-          <h2>Live Shows and Venues</h2>
-          <p>We're excited to collaborate with local venues to stream live performances and open mic events, and plan to bring new content the next day or at least soon after. </p>
-        </div>
-      </div>
-      
-      </div>-->
-
-       
-           
-
-
+             
  <!-- END OF APP TABS -->
           </div>
           
           <!-- END OF APP -->
-<!-- THE CODE THAT IS GOING TO DYMANICALLY CHANGE THE BACKGROUND IMAGES -->
-<!--<div class="changeBackgroundMagic">
-  <button type="button" onclick="changeBackground()">Change background image</button> 
-  </div>-->
+
 <footer>
   <a href="https://github.com/oooAHOYooo/oooAHOYooo.github.io">About</a>
   <a href="/content.html">Send Content</a>
@@ -281,7 +239,7 @@
 
 
 <!-- MARKET PLACE DATA FEED -->
-<script src="marketData4.js"></script>
+<script src="marketData5.js"></script>
 
 <!-- UPDATES PLACE DATA FEED -->
 <script src="updates.js"></script>
