@@ -284,6 +284,18 @@ audio {
   
 }
 
+.topDog-wrap-mini {
+  background-color:var(--topDogColor);
+  width:100%;
+  height:auto;
+  max-height:100px;
+  border-style:solid;
+  border-radius: 25px 25px 0 0; /* Specifies the border radius for each corner (top-left, top-right, bottom-right, bottom-left) */
+  
+}
+
+
+
 /*TOP LOGO WORK*/
 .topLogo-wrap {
   width:100%!important;
@@ -296,9 +308,29 @@ audio {
   margin-top:20px;
 }
 
+.topLogo-wrap-mini {
+  width:100%!important;
+  height:auto;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align:center;
+  margin-top:20px;
+
+}
+
+
 .topLogo-graphic {
   max-height:190px;
   display:block;
+  /*margin:0 auto;*/
+}
+
+.topLogo-graphic-mini {
+  max-height:40px;
+  display:block;
+  margin:0;
   /*margin:0 auto;*/
 }
 
@@ -1346,11 +1378,16 @@ text-align:center!important;
   flex-direction:column;
   align-items:center;
   justify-content:center;
+  overflow:hidden;
+}
+
+.market-featured-sub-text {
+  line-height:100%;
 }
 
 .market-feature-super-wrap {
-  min-width:1200px;
-  max-width:1200px;
+  min-width:100%;
+  max-width:100%;
   display:flex;
   flex-direction:row;
   align-items:center;
@@ -1360,36 +1397,37 @@ text-align:center!important;
  background-color:rgba(0, 0, 0, 0.522);
   border-style:solid;
   border-color: #ffffff;
+  overflow:hidden;
+  align-items: flex-end;
 
 }
 
 .market-featured-header-wrap-leftItem {
-  display:flex;
-  flex-direction:row;
-  align-items:center;
-  justify-content:center;
-  margin-top:10px;
-  margin-bottom:10px;
-  padding:10px;
-  z-index:100;
-  text-align:center;
-  width:330px;
-  height: 210px;
-  /*background-color:orange;*/
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  z-index: 100;
+  text-align: center;
+  width: 330px;
+  /* height: 210px; */
 }
 
 .market-featured-header-wrap-rightItem {
-  display:flex;
-  flex-direction:row;
-  align-items:center;
-  justify-content:center;
-  margin-top:10px;
-  margin-bottom:10px;
-  padding:10px;
-  z-index:100;
-  text-align:center;
-  width:330px;
-  height: 210px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  z-index: 100;
+  text-align: center;
+  width: 330px;
+  /* height: 210px; */
 }
 
 .market-featured-header-wrap-centerItem {
