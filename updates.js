@@ -3,6 +3,17 @@ var ahoyUpdates = new Vue({
   data: {
     months: [
       {
+        displayText: "June 2023",
+        updates: [
+          { text: "Hunting down studio space", bold: true },
+          { text: "Getting some studio space to record the Rob Show, Hold Video Editing Seshes, Meet with Artists - hoping to have it in New Haven" },
+          { text: "Working on", bold: true },
+          { text: "Creating an onDemand section for the Rob Show episodes" },
+          { text: "Researching and Developing NFTs for Sale" },
+
+        ]
+      },
+      {
         displayText: "May 2023",
         updates: [
           { text: "Little Design Tweaks", bold: true },
