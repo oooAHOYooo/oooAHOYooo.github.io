@@ -17,7 +17,7 @@ nav ul {
   }
   
   #daily-dash {
-    background-color: #fff;
+    background-color: #6a6a6a;
     padding: 20px;
   }
   
@@ -54,4 +54,116 @@ nav ul {
     width:100%;
   }
   
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
   
+  .dashboard {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  .section {
+    margin-bottom: 20px;
+  }
+  
+  .section-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .task-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .task {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    margin-bottom: 10px;
+  }
+  
+  .task input[type="checkbox"] {
+    margin-right: 10px;
+  }
+  
+  .task label {
+    flex-grow: 1;
+    margin: 0;
+  }
+
+  .team-footer-wrap {
+    background-color:black;
+    color:white;
+  }
+
+  .big-ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display:flex;
+    justify-content:space-between;
+    height:auto;
+    width:100%;
+    flex-direction: column;
+  }
+
+  li {
+    color:black;
+    padding:10px;
+    text-align:center;
+  }
+
+  .super-trello-wrap {
+    background-color:white;
+  }
+
+  .ticket-button {
+    background-color:black;
+  }
+
+  .container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  form {
+    margin-bottom: 20px;
+  }
+
+  input[type="text"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  button {
+    padding: 10px 20px;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  li {
+    margin-bottom: 10px;
+    background-color: #f2f2f2;
+    padding: 10px;
+    border-radius: 5px;
+  }

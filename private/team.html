@@ -43,14 +43,103 @@
     </ul>
   </nav>
 
+<!-- FEATURE 1 -->
+<div class="container">
+  <div class="dashboard">
+    <div class="section">
+      <h2 class="section-title">Morning To-Do List</h2>
+      <ul class="task-list">
+        <li class="task">
+          <input type="checkbox" id="task1">
+          <label for="task1">Exercise for 30 minutes</label>
+        </li>
+        <li class="task">
+          <input type="checkbox" id="task2">
+          <label for="task2">Have a healthy breakfast</label>
+        </li>
+        <li class="task">
+          <input type="checkbox" id="task3">
+          <label for="task3">Review and prioritize tasks for the day</label>
+        </li>
+        <li class="task">
+          <input type="checkbox" id="task4">
+          <label for="task4">Check emails and respond if urgent</label>
+        </li>
+        <li class="task">
+          <input type="checkbox" id="task5">
+          <label for="task5">Plan and schedule meetings</label>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- FEATURE 1.5 = TODO LIST THINGY -->
+<div class="container">
+  <h1>Ticket Management</h1>
+
+  <form id="ticket-form">
+    <input type="text" id="ticket-name" placeholder="Ticket Name" required>
+    <textarea id="ticket-description" placeholder="Ticket Description" required></textarea>
+    <button class="ticket-button" type="submit">Submit</button>
+  </form>
+
+  <ul id="ticket-list"></ul>
+</div>
+<style>
+
+</style>
+<script>
+  const ticketForm = document.getElementById('ticket-form');
+  const ticketNameInput = document.getElementById('ticket-name');
+  const ticketDescriptionInput = document.getElementById('ticket-description');
+  const ticketList = document.getElementById('ticket-list');
+
+  ticketForm.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    const ticketName = ticketNameInput.value;
+    const ticketDescription = ticketDescriptionInput.value;
+
+    if (ticketName === '' || ticketDescription === '') {
+      alert('Please enter both a name and description for the ticket.');
+      return;
+    }
+
+    const ticketItem = document.createElement('li');
+    ticketItem.innerHTML = `
+      <h3>${ticketName}</h3>
+      <p>${ticketDescription}</p>
+    `;
+
+    ticketList.appendChild(ticketItem);
+
+    ticketNameInput.value = '';
+    ticketDescriptionInput.value = '';
+  });
+</script>
+</body>
+
+
+
+<!-- FEATURE 2 -->
+<div class="super-trello-wrap">
+
+
+<!-- END OF TRELLO -->
+
+
   <section id="agenda">
     <h2 class="uppercase text-center">Team Agenda</h2>
     <div class="agenda-item">
-      <h3 class="black uppercase">Updates</h3>
-      <ul>
-        <li>Update 1</li>
-        <li>Update 2</li>
-        <li>Update 3</li>
+      <h3 class="black uppercase">Short Term</h3>
+      <ul class="big-ul">
+        <li>Getting a Space</li>
+        <li>Collect and Compile - Summer Content</li>
+        <li>Garden Content Page</li>
+        <li>Garden Content Page</li>
       </ul>
     </div>
     <div class="agenda-item">
@@ -80,8 +169,8 @@
   </section>
 <section id="columns">
   <div class="column">
-    <h2 class="text-center">Column 1</h2>
-    <p>Column 1 content goes here</p>
+    <h2 class="text-center">Meeting Notes</h2>
+    <a href="#" class="black"><p>Playwright Meeting on Sunday - 4th of June - in the Year 2023 AD</p></a>
   </div>
   <div class="column">
     <h2 class="text-center">Column 2</h2>
@@ -98,15 +187,21 @@
   </div>
 </section>
 
-<footer>
+
+    
+
+<div class="team-footer-wrap">
   <p>Static information:</p>
   <ul>
-    <li>Google Business #: 1234567890</li>
-    <li>Address: 123 Main Street, City</li>
+    <li>Ahoy Media Group, LLC</li>
+    <li>Address: New Haven, CT</li>
   </ul>
-</footer>
-
 </div>
+
+
+
+    <!-- Add more sections for different parts of the morning routine if needed -->
+    
 
 
 <!-- END OF CONTENT APP-->

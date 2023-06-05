@@ -68,7 +68,9 @@
 }
 
 
-
+li {
+  font-size:22px;
+}
 
 
 
@@ -236,8 +238,9 @@ footer a:hover {
     border-radius: 2px;
     border-width: thin;
     border-color:white!important;
-    background-color: rgb(0, 0, 0);
-    font-size: 12px;
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 22px;
+    color:black;
   }
 
   
