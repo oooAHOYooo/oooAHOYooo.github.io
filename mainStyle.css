@@ -1375,6 +1375,12 @@ text-align:center!important;
   z-index:100;
 }
 
+/*MARKET*/
+
+#market-body {
+  background-color:black!important;
+}
+
 .market-feature-super-super-wrap {
   width:100%;
   height:auto;
