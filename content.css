@@ -109,3 +109,85 @@ html {
 .content-header-robShow {
     background-color:red;
 }
+
+
+/*ROB SHOW CONTENT CSS */
+
+.content-header-robShow {
+  position: relative;
+  background-color: black;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  overflow: hidden;
+}
+
+.content-header-robShow img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.header-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  text-align: center;
+}
+
+.show-title {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.season-episode {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.play-button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: #FF9800;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 3px;
+  transition: background-color 0.3s ease;
+}
+
+.play-button:hover {
+  background-color: #F57C00;
+}
+
+.breadCrumb-link {
+  font-size:12px;
+  text-decoration: underline;
+}
+
+.breadCrumb-wrap {
+  display:flex;
+  width:50%;
+  text-align:center;
+}
+
+.bottomButtons-menu {
+  display:flex;
+  align-items: center;
+  background-color:rgba(0, 0, 0, 0.296);
+  width:100%;
+  height:200px;
+  justify-content:center;
+  margin-top:20px;
+}

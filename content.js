@@ -7,7 +7,7 @@ var robShowUpdates = new Vue({
           episode: 1,
           name: "Rob Show Season 2 Premiere",
           guest: "Guest Tyler and Dave Gunn",
-          videoUrl: "https://example.com/episode1"
+          videoUrl: "/oooAHOYooo.github.io/content/rs/rs-s2-e1.html"
         },
         {
           season: 2,
