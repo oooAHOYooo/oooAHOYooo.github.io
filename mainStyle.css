@@ -44,6 +44,34 @@
 }
 
 
+/* QUICK CSS TO CALL UPON */
+
+.black {
+  color:#000000;
+}
+
+.white {
+  color:#ffffff;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.text-center {
+  width:100%!important;
+  height:auto;
+  display:flex;
+  align-items:center!important;
+  justify-content: center!important;
+  text-align: center;
+}
+
+
+
+
+
+
 /*CONDITIONS*/
 
 .top-menu {display:none;}

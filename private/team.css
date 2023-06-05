@@ -1,0 +1,57 @@
+/*TEAM CSS*/
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin-right: 10px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #cccccc;
+  }
+  
+  #daily-dash {
+    background-color: #fff;
+    padding: 20px;
+  }
+  
+  #columns {
+    display: flex;
+    justify-content: space-between;
+    background-color: #5b5b5b;
+    padding: 20px;
+  }
+  
+  .column {
+    flex-basis: 30%;
+  }
+
+
+  #team-body {
+    background-color:white!important;
+    color:black!important;
+    margin: 0;
+    padding: 0;
+
+    height: 100vh;
+  }
+
+  #agenda {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+  }
+  
+  .agenda-item {
+    margin-bottom: 20px;
+    color:white;
+    width:100%;
+  }
+  
+  
