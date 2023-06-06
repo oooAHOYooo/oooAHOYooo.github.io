@@ -326,6 +326,21 @@ audio {
   
 }
 
+.topDog-wrap-mini-footer {
+  background-color:var(--topDogColor);
+  width:99%;
+  margin:0;
+  padding:0;
+  height:auto;
+  max-height:100px;
+  border-style:solid;
+  border-color:var(--beigeGlass);
+  border-radius: 25px 25px 0 0; /* Specifies the border radius for each corner (top-left, top-right, bottom-right, bottom-left) */
+  position:fixed;
+  bottom:1%;
+  mix-blend-mode: luminosity;
+}
+
 
 
 /*TOP LOGO WORK*/

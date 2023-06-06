@@ -15,24 +15,30 @@
   <body>
     <main>
       <div id="app">
-        
+        <div class="topDog-wrap-mini-footer">
+          <div class="topLogo-wrap-mini">
+            <a href="https://ahoy.ooo"><img src="./assets/u_ahoy23.png" class="topLogo-graphic-mini"></a>
+          </div>
+          
+        </div>
         <div class="topLogo-wrap">
           <a href="https://ahoy.ooo"><img src="./assets/u_ahoy23.png" class="topLogo-graphic"></a>
-         THE GARDEN CONTENT
+          CONTENT !!!onDemand!!!
         </div>
         <div class="navTippyWrap">
+          <button @click="selectedTab = 'tab3'" class="topNavButton-market">The Rob Show</button>
           <button @click="selectedTab = 'tab1'" class="topNavButton-market">Podcasts</button>
           <button @click="selectedTab = 'tab2'" class="topNavButton-market">Music Videos</button>
-          <button @click="selectedTab = 'tab3'" class="topNavButton-market">The Rob Show</button>
+          <button @click="selectedTab = 'tab6'" class="topNavButton-market">The Pal Bot Series</button>
           <button @click="selectedTab = 'tab4'" class="topNavButton-market">Short Films</button>
         </div>
 
         <!-- THE ROB SHOW TAB -->
-        <section v-show="selectedTab === 'tab3'">
-          
-          <div class="content-header-robShow">
-            
-         This is the for the rob show
+    <section v-show="selectedTab === 'tab3'">
+          <!--OY OY OY THIS BE THE ROB SHOW-->
+          <div class="content-splash"><h2>The Rob Show</h2></div>
+          Below is the code for the show - should show season 2 + season 1
+         
          <div id="content-robShow">
           Season 2
           <div class="row">
@@ -50,76 +56,29 @@
             </div>
           </div>
         </div>
-          </div>
-
-
-          <div class="menu">
-  <button @click="selectedTab = 'tab-RS-S1'" class="topNavButton-market">Season 1</button>
-            <button @click="selectedTab = 'tab-RS-S2'" class="topNavButton-market">Season 2</button>
-          
-          </div>
-        
-          <section v-show="selectedTab === 'tab-RS-S2'">
-            <div class="menu">
-              <button @click="selectedTab = 'tab-RS-S1'" class="topNavButton-market">Season 1</button>
-              <button @click="selectedTab = 'tab-RS-S2'" class="topNavButton-market">Season 2</button>
-            </div>
-            <div id="content-robShow">
-              Season 2
-              <div class="row">
-                <div v-for="episode in episodes" :key="episode.episode" class="col-12">
-                  <div class="episode-item">
-                    <div class="episode-details">
-                      <h3>Season {{ episode.season }} - Episode {{ episode.episode }}</h3>
-                      <p>{{ episode.name }}</p>
-                      <p>Guest: {{ episode.guest }}</p>
-                    </div>
-                    <div class="play-button-robShow">
-                      <a :href="episode.videoUrl" target="_blank"><button>Play</button></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+       
           </section>
-        </section>
-         
 
-          <section v-show="selectedTab === 'tab-RS-S1'">
-            <div class="menu">
-              <button @click="selectedTab = 'tab-RS-S1'" class="topNavButton-market">Season 1</button>
-              <button @click="selectedTab = 'tab-RS-S2'" class="topNavButton-market">Season 2</button>
-            </div>
-              <div id="content-robShow">
-                Season 1
-                <div class="row">
-                  <div v-for="episode in episodes" :key="episode.episode" class="col-12">
-                    <div class="episode-item">
-                      <div class="episode-details">
-                        <h3>Season {{ episode.season }} | Episode {{ episode.episode }}</h3>
-                        <p>{{ episode.name }}</p>
-                        <p>Guest: {{ episode.guest }}</p>
-                      </div>
-                      <div class="play-button-robShow">
-                        <a :href="episode.videoUrl" target="_blank"><button>Play</button></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-          </section>
-        </section>
-
-
-      <section v-show="selectedTab === 'tab2'">
+      <section v-show="selectedTab === 'tab4'">
+        <div class="content-splash"><h2>Short Films</h2></div>
      Short Films Will live here
       </section>
 
-      <section v-show="selectedTab === 'tab3'">
+      <section v-show="selectedTab === 'tab2'">
+        <div class="content-splash"><h2>Music Videos</h2></div>
         Music Videos Will live here
         </section>
+
+        <section v-show="selectedTab === 'tab1'">
+          <div class="content-splash"><h2>Podcasts</h2></div>
+Podcasts will live here          </section>
+
+
+      <section v-show="selectedTab === 'tab6'">
+        <div class="content-splash"><h2>The Pal Bot Series</h2></div>
+Pal-bot 2 Will Live Here        </section>
 <!-- END OF CONTENT APP-->
-      </div>
+    </div>
 
       <footer>
         <a href="https://github.com/oooAHOYooo/oooAHOYooo.github.io">About</a>
@@ -133,7 +92,7 @@
       var app = new Vue({
         el: '#app',
         data: {
-          selectedTab: 'tab-RS-S2',
+          selectedTab: 'tab3',
         }
       });
     
