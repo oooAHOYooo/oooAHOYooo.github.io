@@ -5,6 +5,8 @@ var ahoyUpdates = new Vue({
       {
         displayText: "June 2023",
         updates: [
+          { text: "the Team met at the Playwright", bold: true },
+          { text: "We went to our favorite watering hole in Hamden, CT - the Playwright - and outlined some summer goals - got some cheeky bevs and a microsoft paid teams account"},
           { text: "Hunting down studio space", bold: true },
           { text: "Getting some studio space to record the Rob Show, Hold Video Editing Seshes, Meet with Artists - hoping to have it in New Haven" },
           { text: "Working on", bold: true },

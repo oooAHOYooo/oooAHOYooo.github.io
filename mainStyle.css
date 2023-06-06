@@ -41,7 +41,50 @@
   --text-standOUT: #ff0060;
 
   --topDogColor: #000f2b85;
+
+  /*GLASS STYLES*/
+
+  --beigeGlass:rgba(245, 245, 220, 0.21);
+
+/*TEXT COLORS*/
+
+--textWavyNavy: #000f2bac;
+
+
 }
+
+/*HTML DEFO STYLES */
+
+body {
+  font-family: 'Barlow', sans-serif;
+  background-image: transparent;
+  background-size:cover;
+  background-attachment: fixed;
+  color:rgb(255, 255, 255);
+  background-color: var(--backgroundNavy)!important;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  color: var(--lightFont);
+  cursor: pointer;
+}
+
+span {
+  font-weight:700;
+}
+
+p {
+  text-align:left;
+  font-size:14px;
+}
+
+
+/*end of HTML DEFO STYLES */
 
 
 /* QUICK CSS TO CALL UPON */
@@ -78,27 +121,8 @@ li {
 
 .top-menu {display:none;}
 
-body {
-    font-family: 'Barlow', sans-serif;
-    background-image: transparent;
-    background-size:cover;
-    background-attachment: fixed;
-    color:rgb(255, 255, 255);
-    background-color: var(--backgroundNavy)!important;
-}
-/*Change the opacity of the background */
-/*
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 15, 43, 0.565);
-  z-index: -1;
-}
-*/
+
+
 
 
 .basicPadre {
@@ -130,14 +154,12 @@ header {
   justify-content:space-between;
 }
 
-.navSuperTop {
-  
+.navSuperTop {  
   height: 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
 
 .nav-ButtonTop-standard {
   background-color:purple;
@@ -176,28 +198,7 @@ header {
 }
 
 
-/*HTML DEFO STYLES */
-a {
-  text-decoration: none;
-  color: white;
-}
 
-a:hover {
-  color: var(--lightFont);
-  cursor: pointer;
-}
-
-span {
-  font-weight:700;
-}
-
-p {
-  text-align:left;
-  font-size:14px;
-}
-
-
-/*end of HTML DEFO STYLES */
 
 footer {
  
@@ -621,7 +622,7 @@ audio {
 
 .frontSubHeader {
   width: 100%!important;
-  height: 100px;
+  height: 50px;
   overflow:hidden;
   display:flex;
   flex-direction: column;
@@ -632,6 +633,8 @@ audio {
   position:relative;
   margin-top:10px;
   text-align:center;
+  background-color:rgba(245, 245, 220, 0.21);
+  color:var(--textWavyNavy)!important;
   
 }
 
@@ -642,16 +645,20 @@ audio {
   color: var(--white);
   line-height: 100%;
   text-transform:uppercase;
+  color:var(--textWavyNavy)!important;
 }
 
 .frontSubHeader-text-link {
   text-align:center;
   font-weight:600;
   font-size: 10px;
-  color: var(--white);
+  
   line-height: 100%;
   text-transform:uppercase;
   text-decoration:underline;
+  margin-top:5px;
+  color:var(--textWavyNavy)!important;
+  
 }
 
 
@@ -806,6 +813,9 @@ audio {
   margin:auto;
   text-transform: uppercase;
   text-align:center;
+  color:beige;
+  margin-top:15px;
+
 }
 
 .monthUpdateText-bold {
@@ -818,6 +828,7 @@ audio {
   line-height:50%;
   font-weight: 400;
   margin:auto;
+  
 }
 
 .monthUpdateText {
@@ -831,29 +842,9 @@ audio {
   font-weight: 400;
   margin-top:15px;
   text-align:center;
+  max-width: 550px!important;
 }
 
-/*.frontHeader {
-  background-color:rgba(255, 10, 10, 0.327);
-
-  width:100%; 
-  height:100px;
-  display:flex;
-  flex-direction: column;
-  align-items:center;
-  justify-content: center;
-  text-align:center;
-  
-  color:white;
-  border-style: solid;
-  border-color:var(--borderColor)!important;
-}*/
-
-/*#mainFront {
-  height:100vh;
-  max-height:100vh;
-  overflow-y: auto;
-}*/
 
 
 .frontPageWrap {
