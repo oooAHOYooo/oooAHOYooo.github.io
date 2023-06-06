@@ -1,5 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100;300;400;500;600;700;800;900&display=swap');
 
+
+@font-face {
+  font-family: 'Cubano';
+  src: url('path/to/cubano-regular.woff2') format('woff2'),
+       url('path/to/cubano-regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1 {
+  font-family: 'Cubano', sans-serif;
+}
+
+.cubano {
+  font-family: 'Cubano', sans-serif;
+}
+
+
 :root {
 
   --white: #FFFFFF;
@@ -290,7 +308,7 @@ footer a:hover {
   h2 {
     font-size: 36px;
     text-align:left!important;
-    line-height:105%;
+   
   }
 
   h3 {
