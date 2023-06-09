@@ -12,15 +12,7 @@
         <!-- CSS3 -->
         <link rel="stylesheet" href="mainStyle.css">
         <link rel="stylesheet" href="mobile.css">
-            <!-- SCRIPT FOR TOGGLE 3D -->
-            <script>
-              function toggleTransform() {
-                const frontContent = document.querySelector('.frontContent','marketData-section');
-                frontContent.classList.toggle('transformed');
-                //alert("Transform toggled!");
-              }
-            </script>
-    </head>
+
   <body>
     <!-- 
     <div class="navSuperTop">
@@ -168,54 +160,7 @@
             </div>
             <!-- END OF UPDATE PAGE -->
             
-            <!-- TAB 3 = MARKETPLACE
-            <div class="marketData-section" v-show="selectedTab === 'tab3'">
-              <div id="marketplace-ahoy-app">
-                <div class="filter-links">
-                  <a href="#" @click="showPhysicalProducts = true; showDigitalProducts = true">All</a>
-                  <a href="#" @click="showPhysicalProducts = true; showDigitalProducts = false">Physical</a>
-                  <a href="#" @click="showPhysicalProducts = false; showDigitalProducts = true">Digital</a>
-                </div>
-                <div class="market-product-grid-parent">
-                  <div class="market-product-grid center-mobile">
-                    <div v-for="(product, index) in filteredProducts" :key="index" class="market-grid-item">
-                      <div class="image-container-product">
-                        <a :href="product.stripeBuyUrl" target="_blank">
-                          <img :src="product.image" :alt="product.name" class="market-image">
-                        </a>
-                      </div>
-                      <div class="product-title-wrap">
-                        <p class="product-title-text">{{ product.name }}</p>
-                      </div>
-                      <div class="product-description-wrap">
-                        <p class="product-description-text">{{ product.description }}</p>
-                      </div>
-                      <div class="product-buy-wrap">
-                        <p>
-                          <a class="buy-button" :href="product.stripeBuyUrl" target="_blank">Buy</a>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> -->
-            
-             <!--   MARKETPLACE SUBHEADER WORK
-             
-              <div class="subHeader">
-                <div class="subHeaderVert">
-                  <a href="#"><img src="/assets/u_ahoy23.png" class="logo"></a>
-                </div>
-                <div class="subHeaderVert content">
-                  <h2>Marketplace</h2>
-                  <p>Oh, the beloved Ahoy Marketplace - your chance to bring home a little piece of Ahoy.</p>
-                  <p>When you buy content on the Ahoy Marketplace, all the proceeds go directly to the artist, with a $3 surcharge added for the platform's upkeep. This creates a way to support indie creators while enjoying ad-free content. Win-win? We hope.</p>
-                  <p>So help us help you by giving a little indie fairy their wings</p>
-                </div>
-              
-              </div>-->
-            <!-- </div>-->  <!--END OF MARsKETPLACE -->
+          
 
              
  <!-- END OF APP TABS -->
@@ -227,7 +172,6 @@
   <a href="https://github.com/oooAHOYooo/oooAHOYooo.github.io">About</a>
   <a href="/content.html">Send Content</a>
   <a href="/content.html">Content</a>
-  <a href="mailto:alex@ahoy.ooo">Contact</a>
 </footer>
 
 </main>
