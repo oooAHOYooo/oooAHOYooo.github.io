@@ -12,6 +12,8 @@
 --mobileBackgroundColor-sub3: #000000;
 
 --backgroundNavy : #050022;
+--white:#fff;
+
 
   }
   
@@ -503,6 +505,19 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+  }
+
+  .topNavButton-stream {
+    color:var(--white);
+    min-width:90px;
+    max-width:90px;
+  }
+
+  .frontSubHeader-text {
+    color: var(--white) !important;
+    text-align:justify;
+    padding-left:10px;
+    padding-right:10px;
   }
 
 }

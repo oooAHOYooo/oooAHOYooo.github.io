@@ -565,7 +565,8 @@ audio {
 }
 
 .topNavButton-stream {
-  color:white;
+  color:var(--white);
+  max-width:220px;
   /*background-color: var(--streamColor);*/
 }
 
