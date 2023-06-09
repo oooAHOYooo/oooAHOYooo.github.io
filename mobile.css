@@ -72,7 +72,7 @@ body {
   transform: none!important;
   transform: perspective(400px) rotateX(-23deg)!important;
   transition: transform 0.5s;
-  overflow-y:auto;
+ /* overflow-y:auto;*/
 }
 
 .button-toggle3d:hover {
@@ -370,7 +370,7 @@ body {
     max-height: 600px;
     background-color: var(--backgroundNavy);
     position: relative;
-    transform: scale(.75);
+    transform: scale(.95);
   }
   
   .buy-button {
