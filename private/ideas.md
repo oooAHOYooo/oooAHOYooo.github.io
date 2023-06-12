@@ -6,3 +6,5 @@ Have it so now on the marketplace - We programmed new functionality - passing th
 
 "To activate a specific code function in another HTML page based on a button press, you can use JavaScript to pass a parameter through the URL and retrieve it on the target page. Here's an example of how you can achieve this:
 
+# PLUGS TO ADD
+- Ahoy.ooo 

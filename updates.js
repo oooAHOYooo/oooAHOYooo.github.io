@@ -5,6 +5,8 @@ var ahoyUpdates = new Vue({
       {
         displayText: "June 2023",
         updates: [
+          { text: "Major website refactor, bold:true" },
+          { text: "Refactored the backend and the structure of the webapp - visually it will look the same - but now things have their own pages and homes and is much more reliable"}
           { text: "the Team met at the Playwright", bold: true },
           { text: "We went to our favorite watering hole in Hamden, CT - the Playwright - and outlined some summer goals - got some cheeky bevs and a microsoft paid teams account"},
           { text: "Hunting down studio space", bold: true },

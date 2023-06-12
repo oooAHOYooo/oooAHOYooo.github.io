@@ -1,33 +1,35 @@
-<html> <!-- Market as of 6.9.23 -->
+<html> <!-- Radio as of 6.12.23 -->
     <head>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <script defer data-domain="ahoy.ooo" src="https://plausible.io/js/script.js"></script>
       <link rel="icon" type="image/x-icon" href="./assets/ahoyFav.png">
-        <title>Ahoy Indie Media | Market Place </title>
+        <title>Ahoy Indie Media | Cable </title>
         <!-- IMPORT OF VUE -->
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-        <!-- MARKET DATA -->
+   
 
         <!-- CSS3 -->
         <link rel="stylesheet" href="mainStyle.css">
        <link rel="stylesheet" href="mobile.css">
      
     </head>
-  <body id="market-body"> 
-    <div id="marketplace-ahoy-app">
+  <body id="radio-body"> 
+
 <!-- PART 1 -->
          <!-- START OF TOPDOG -->
          <div class="topDog-wrap">
           <div class="topLogo-wrap">
             <a href="https://ahoy.ooo"><img src="./assets/u_ahoy23.png" class="topLogo-graphic"></a>
           </div>
+          
           <div class="navTippyWrap">
             <a href="./cable.html"><button class="topNavButton-stream">Cable</button></a>
             <a href="./market.html"><button class="topNavButton-stream">Market</button></a>
             <a href="./updates.html"><button class="topNavButton-stream">Updates</button></a>
             <a href="./radio.html"><button class="topNavButton-stream">Radio</button></a>
           </div>
-        </div>
+          </div>
+   
         <!-- END OF TOP DOG -->
 
         <!-- 
@@ -39,102 +41,49 @@
       
     </div>
   -->
-
-
-        <!-- PART 2 -->
-<div class="market-feature-super-super-wrap">
-  <div class="market-feature-super-wrap">
-              <div class="market-featured-header-wrap-leftItem">
-                </p>
-              </div>
-
-              <div class="market-featured-header-wrap-centerItem">
-              <img src="./assets/AHOYmarketplace.png" class="market-logo-graphic">            
-            </div>
-          <div class="market-featured-header-wrap-rightItem">
-            </p>
-      </div>
-    
-
+ <!-- TAB 1 (CABLE-->
+ <div id="cable" class="stream" v-show="selectedTab === 'tab1'">
+    <div class="streamShowContent">
+    <div style="position:relative; overflow:hidden; padding-bottom:56.25%">
+      <iframe src="https://cdn.jwplayer.com/players/SyfFOIKw-NkmVmcCh.html" width="100%" height="100%" frameborder="0" scrolling="auto" title="playblock5c - 7pm - 10pm [primeTime]" style="position:absolute;" allowfullscreen></iframe>
+    </div>
   </div>
-</div>
-
-
-
-
-
-
-    <div class="navTippyWrap">
-      <button @click="showPhysicalProducts = true; showDigitalProducts = false">Physical Products</button>
-      <button @click="showPhysicalProducts = false; showDigitalProducts = true">Digital Products </button>
-      <button @click="showPhysicalProducts = true; showDigitalProducts = true">All Products</button>
+    
+    <div class="subHeader">
+      <div class="subHeaderVert">
+        <a href="#"><img src="/assets/u_ahoy23.png" class="logo"></a>
+      </div>
+      <div class="subHeaderVert content">
+        <h2 class="cubano">Ahoy Indie Cable</h2>
+        <p>Remember the days of cable TV? We sort of do... Here's our attempt at it. 
+        </p>
+      </div>
 
     </div>
+  
+  <!-- END OF STREAM--></div>
 
-    <!-- PART 3 -->
-
-              <section class="marketData-section">
-                  <div class="market-product-grid-parent">
-                    <div class="market-product-grid center-mobile">
-                  <div v-for="(product, index) in filteredProducts" :key="index" class="market-grid-item">
-                    <div class="image-container-product">
-                      <a :href="product.stripeBuyUrl" target="_blank">
-                        <img :src="product.image" :alt="product.name" class="market-image">
-                      </a>
-                    </div>
-                    <div class="product-title-wrap">
-                      <p class="product-title-text">{{ product.name }}</p>
-                    </div>
-                    <div class="product-description-wrap">
-                      <p class="product-description-text">{{ product.description }}</p>
-                    </div>
-                    <div class="product-buy-wrap">
-                      <p>
-                        <a class="buy-button" :href="product.stripeBuyUrl" target="_blank">Buy</a>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                </div></div>
-              </section>
-              
-
-
-              <!-- PART 5 - THE BIG ASS GRAPHIC -->
+<!-- PART 5 - THE BIG ASS GRAPHIC 
               <div class="basicPadre">
                 <div class="basicHijo">
                   <img src="./assets/AHOYmarketplace.png">
                 </div>
               </div>
-           
+           -->
             
 
-              <div class="subHeader-market">
-                <div class="subHeaderVert-market">
-                  <a href="#"><img src="/assets/u_ahoy23.png" class="logo"></a>
-                </div>
-                <div class="subHeaderVert content">
-                  <h2 class="cubano">Ahoy Indie Media | Market Place</h2>
-                  <p>Oh, the beloved Ahoy Marketplace - your chance to bring home a little piece of Ahoy.</p>
-                  <p>When you buy content on the Ahoy Marketplace, proceeds go to the artist, with a tiny surcharge to support the handsome folks behind ahoy. If you want to get rid of the surcharge - no worries baby - become a super duper uper super member! And enjoy TRUE TRUE TRUE FREE (after you pay us monthly)</p>
-                  <p class="market-featured-sub-text">Indulge the senses with our place of market. Each piece of media is curated and checked for freshness even if its old.  At our marketplace, you'll find a bountiful collection of fresh art and other sugar. Sweet sweet sugar.</p>
-                    <p class="market-featured-sub-text">When you buy content on the Ahoy Marketplace, the proceeds go to the artist, we surcharge a tiny bit - to keep with the platform's upkeep. We think this will be a way to support indie media people behind the screens while enjoying ad-free content. Win-win? We hope - but time will tell <a style="text-decoration:underline" href="#">honestly. </a></p>
-  
-                </div>
-              
-              </div>
+
 <footer>
   <a href="https://github.com/oooAHOYooo/oooAHOYooo.github.io">About</a>
   <a href="/content.html">Content</a>
-  <a href="#">Contact</a>
+
 </footer>
 
 </main>
 
 <!-- SCRIPTS AND CONDITIONAL LOGIC -->
 
-<!-- MARKET PLACE DATA FEED -->
-<script src="marketData4.js"></script>
+
 
 <!-- START OF DAILY BACKGROUND CHANGES -->
 

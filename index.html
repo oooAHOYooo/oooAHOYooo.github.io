@@ -47,10 +47,10 @@
               <a href="https://ahoy.ooo"><img src="./assets/u_ahoy23.png" class="topLogo-graphic"></a>
             </div>
             <div class="navTippyWrap">
-              <button @click="selectedTab = 'tab1'" class="topNavButton-stream">Cable</button>
-              <a href="market.html"><button class="topNavButton-stream">Market</button></a>
-              <button @click="selectedTab = 'tab5'" class="topNavButton-stream">Updates</button>
-              <button @click="selectedTab = 'tab2'" class="topNavButton-stream">Radio</button>
+              <a href="./cable.html"><button class="topNavButton-stream">Cable</button></a>
+              <a href="./market.html"><button class="topNavButton-stream">Market</button></a>
+              <a href="./updates.html"><button class="topNavButton-stream">Updates</button></a>
+              <a href="./radio.html"><button class="topNavButton-stream">Radio</button></a>
             </div>
           </div>
           <!-- END OF TOP DOG -->
@@ -179,7 +179,7 @@
   <a href="/content.html">Content</a>
 </footer>
 
-</main>
+    </main>
 
 
 <!-- SCRIPTS AND CONDITIONAL LOGIC -->
@@ -195,40 +195,48 @@
 
 <!-- FUNCTION 1 = TAB SWITCH -->
 
-          <!-- VUE TAB SWITCH-->
-          <script>
-            var app = new Vue({
-              el: '#app',
-              data: {
-                selectedTab: 'tab5'
-              }
-            });
+<script>
+  var app = new Vue({
+    el: '#app',
+    data: {
+      selectedTab: 'tab5',
+      dataUrl: ''
+    },
+    mounted() {
+      // Retrieve the value of the dataUrl parameter from the URL
+      const urlParams = new URLSearchParams(window.location.search);
+      this.dataUrl = urlParams.get('dataUrl');
 
-            var app1 = new Vue({
-              el: '#app1',
-              data: {
-                items: [
-                  { id: 1, title: 'Item 1', description: 'This is item 1', tags: ['tag1', 'tag2'] },
-                  { id: 2, title: 'Item 2', description: 'This is item 2', tags: ['tag1', 'tag3'] },
-                  { id: 3, title: 'Item 3', description: 'This is item 3', tags: ['tag2', 'tag3'] },
-                  { id: 4, title: 'Item 4', description: 'This is item 4', tags: ['tag1', 'tag2', 'tag3'] },
-                ],
-                filter: '',
-                tags: ['tag1', 'tag2', 'tag3']
-              },
-              computed: {
-                filteredItems: function () {
-                  var filter = this.filter;
-                  if (!filter) {
-                    return this.items;
-                  }
-                  return this.items.filter(function (item) {
-                    return item.tags.indexOf(filter) !== -1;
-                  });
-                }
-              }
-            });
-          </script>
+      // Do something with the dataUrl
+      console.log('Data URL:', this.dataUrl);
+    }
+  });
+
+  var app1 = new Vue({
+    el: '#app1',
+    data: {
+      items: [
+        { id: 1, title: 'Item 1', description: 'This is item 1', tags: ['tag1', 'tag2'] },
+        { id: 2, title: 'Item 2', description: 'This is item 2', tags: ['tag1', 'tag3'] },
+        { id: 3, title: 'Item 3', description: 'This is item 3', tags: ['tag2', 'tag3'] },
+        { id: 4, title: 'Item 4', description: 'This is item 4', tags: ['tag1', 'tag2', 'tag3'] },
+      ],
+      filter: '',
+      tags: ['tag1', 'tag2', 'tag3']
+    },
+    computed: {
+      filteredItems: function () {
+        var filter = this.filter;
+        if (!filter) {
+          return this.items;
+        }
+        return this.items.filter(function (item) {
+          return item.tags.indexOf(filter) !== -1;
+        });
+      }
+    }
+  });
+</script>
 
 <!-- CODE = BACKGROUND CHANGES DEPENDING ON HOUR -->
 <script>
@@ -313,12 +321,8 @@ window.addEventListener('load', function() {
     var urlParams = new URLSearchParams(window.location.search);
     var selectedTab = urlParams.get('selectedTab');
 
-    if (selectedTab === 'tab1') {
-      // Code to activate tab 1
-    } else if (selectedTab === 'tab2') {
-      // Code to activate tab 2
-    } else if (selectedTab === 'tab5') {
-      // Code to activate tab 5
+    if (selectedTab === 'tab1' || selectedTab === 'tab2' || selectedTab === 'tab3' || selectedTab === 'tab4' || selectedTab === 'tab5') {
+      app.selectedTab = selectedTab;
     }
     // ... Handle other tab cases
   };
