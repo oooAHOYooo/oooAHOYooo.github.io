@@ -460,13 +460,7 @@ audio {
     display: block;
     margin: 0 auto;
   }
-  
-
-  
-  /*h2, p {
-    margin: 0;
-  }*/
-  
+    
   .content {
     display: flex;
     flex-direction: column;
@@ -556,7 +550,7 @@ audio {
 .topNavButton {
   color:white;
   border-style:solid;
-  border-width:1px;
+  border-width:2px;
   border-color: var(--lightFont);
 }
 

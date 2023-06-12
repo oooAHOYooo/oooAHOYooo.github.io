@@ -490,11 +490,16 @@ body {
     background-color:transparent;
     padding:0;
     margin:0!important;
+
+    width:100%;
+    height:auto;
+    border-style:solid;
+    border-radius: 25px 25px 0 0; /* Specifies the border radius for each corner (top-left, top-right, bottom-right, bottom-left) */
+    
   }
 
   .topLogo-graphic{
-    min-width:400px!important;
-    width:100%;
+    width:250px!important;
     height:auto;
   }
 
@@ -509,8 +514,8 @@ body {
 
   .topNavButton-stream {
     color:var(--white);
-    min-width:90px;
-    max-width:90px;
+    width:70px;
+    height:40px;
   }
 
   .frontSubHeader-text {
@@ -519,5 +524,19 @@ body {
     padding-left:10px;
     padding-right:10px;
   }
+
+}
+
+
+@media screen and (max-width:800px) { 
+
+  h2 {
+    font-size: 36px;
+    text-align:center!important;
+    text-transform:uppercase;
+
+   
+  }
+
 
 }
