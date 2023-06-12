@@ -38,7 +38,8 @@
         </div>
       </div>
     </header>-->
-    
+   
+  
     <main>
         <div id="app">
           <!-- START OF TOPDOG -->
@@ -55,8 +56,8 @@
           </div>
           <!-- END OF TOP DOG -->
       
-          <!-- TAB 1 (CABLE-->
-            <div id="cable" class="stream" v-show="selectedTab === 'tab1'">
+    <!-- TAB 1 (CABLE--> <!-- DISABLED AS OF 6.12.23 -->
+           <!--  <div id="cable" class="stream" v-show="selectedTab === 'tab1'">
               <div class="streamShowContent">
               <div style="position:relative; overflow:hidden; padding-bottom:56.25%">
                 <iframe src="https://cdn.jwplayer.com/players/SyfFOIKw-NkmVmcCh.html" width="100%" height="100%" frameborder="0" scrolling="auto" title="playblock5c - 7pm - 10pm [primeTime]" style="position:absolute;" allowfullscreen></iframe>
@@ -74,11 +75,12 @@
                 </div>
 
               </div>
+              -->
             
-            <!-- END OF STREAM--></div>
+            <!-- END OF STREAM</div>-->
       
-            <!-- TAB 2 = RADIO -->
-            <div class="radio" v-show="selectedTab === 'tab2'">
+            <!-- TAB 2 = RADIO --> <!-- Disabled as of 6.12.23 -->
+            <!-- <div class="radio" v-show="selectedTab === 'tab2'">
             
               <div class="audio-player">
 
@@ -89,9 +91,10 @@
                 <div class="warning-wrap">
                   <p style="text-align:center; font-size:12px; max-width:300px;" ><span>Note to the user </span> Please allow up to 30 seconds for the radio to load - it's all live - a real real radio - we're working asap to improve speeds and player function - but it works - you can even click out of the screen on your phone and cast it in your car</p>
                 </div>
-              </div>
+              </div> -->
 
               <!-- RADIO SUBHEADER-->
+              <!-- 
               <div class="subHeader">
                 <div class="subHeaderVert">
                   <a href="#"><img src="/assets/u_ahoy23.png" class="logo"></a>
@@ -109,24 +112,27 @@
                   <p>Recently Played</p><script src="https://embed.radio.co/embed/saf4aee19b/last.js"></script>
                   
                  
-
               </div>
-            </div>
+            </div
 
-              </div><!-- RADIO SUBHEADER-->
-                <!-- END OF RADIO --></div>
+              </div>>--><!-- RADIO SUBHEADER-->
+                <!-- END OF RADIO </div>-->
 
-            <!-- TAB 5 UPDATE Page -->
+         
+            <!-- TAB 5 UPDATE Page --><!-- DISABLED AS OF 6.12.23-->
+            <!-- 
             <div id="mainFront" v-show="selectedTab === 'tab5'">
               <div class="frontSubHeader">
                 <p class="frontSubHeader-text">
                 AHOY APP + CONTENT UPDATES + DEV LOG + COMPANY JOURNAL : AS OF JUNE 2023</p>
                 <a href="https://github.com/oooAHOYooo/oooAHOYooo.github.io"> <p class="frontSubHeader-text-link">Check our Github Repo for nerdy details</p></a>
               </div>
+            -->
    
-        <div class="frontContent transform">
+       <!-- <div class="frontContent transform">--> 
 
             <!-- content goes here -->
+            <!-- 
           <div class="update-super-wrap">
             <div id="updates-ahoy-app">
               <div v-for="month in months" :key="month.displayText">
@@ -136,18 +142,21 @@
                   <p v-if="update.link" v-html="update.link"></p>
                   <div class="image-container">
                     <img class="update-image" v-if="update.image" :src="update.image" alt="">
-                    <!--<div class="image-overlay"></div>-->
+                    
+                
                   </div>
                 </div>
               </div>
             </div>
-          </div><!-- END OF UPDATE WRAP -->
+          </div>  -->
+          
+          <!-- END OF UPDATE WRAP -->
             
                         <!-- START OF FRONT PAGE -->
 
   <!-- TAB 5 (Front PAGE) SUBHEADER -->
 
-
+<!-- 
 
                 <div class="subHeader">
                   <div class="subHeaderVert">
@@ -159,11 +168,11 @@
                       <p>Discover the latest updates from Ahoy, including new content, code improvements, fresh features, and significant app developments. If there's something new happening, you'll find it showcased here.</p>
                     </div>
                    
-                </div>
+                </div>-->
                
-                <!--END OF FRONT PAGE --></div> 
-            </div>
-            <!-- END OF UPDATE PAGE -->
+                <!--END OF FRONT PAGE </div> -->
+              <!--  </div> 
+         END OF UPDATE PAGE -->
             
           
 
@@ -172,10 +181,10 @@
           </div>
           
           <!-- END OF APP -->
+     
 
 <footer>
   <a href="https://github.com/oooAHOYooo/oooAHOYooo.github.io">About</a>
-  <a href="/content.html">Send Content</a>
   <a href="/content.html">Content</a>
 </footer>
 
@@ -194,7 +203,7 @@
 <script src="updates.js"></script>
 
 <!-- FUNCTION 1 = TAB SWITCH -->
-
+<!-- 
 <script>
   var app = new Vue({
     el: '#app',
@@ -237,7 +246,7 @@
     }
   });
 </script>
-
+-->
 <!-- CODE = BACKGROUND CHANGES DEPENDING ON HOUR -->
 <script>
   const day = new Date();
@@ -303,6 +312,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 
 <!-- SOME RANDOM OPACITY SCRIPT THAT Don't KNOW WHAT IT DOES -->
+<!-- 
 <script>
 // Add an event listener to set the initial opacity of the overlay to 0 on page load
 window.addEventListener('load', function() {
@@ -313,9 +323,10 @@ window.addEventListener('load', function() {
   });
 });
 
-</script>
+</script>-->
 
 <!-- CODE THAT WILL ACCEPT LOGIC FROM OUTSIDE URLS -->
+<!-- 
 <script>
   window.onload = function() {
     var urlParams = new URLSearchParams(window.location.search);
@@ -326,7 +337,7 @@ window.addEventListener('load', function() {
     }
     // ... Handle other tab cases
   };
-</script>
+</script>-->
 
 <!-- END OF CONDITIONAL AND CODE LOGIC -->
 <!-- HOpe you enjoyed this journey -->
