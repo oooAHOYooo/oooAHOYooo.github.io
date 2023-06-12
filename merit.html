@@ -1,9 +1,9 @@
-<html> <!-- Radio as of 6.12.23 -->
+<html> <!-- Updates as of 6.12.23 -->
     <head>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <script defer data-domain="ahoy.ooo" src="https://plausible.io/js/script.js"></script>
       <link rel="icon" type="image/x-icon" href="./assets/ahoyFav.png">
-        <title>Ahoy Indie Media | Cable </title>
+        <title>Ahoy Indie Media | Merit </title>
         <!-- IMPORT OF VUE -->
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
    
@@ -11,9 +11,10 @@
         <!-- CSS3 -->
         <link rel="stylesheet" href="mainStyle.css">
        <link rel="stylesheet" href="mobile.css">
-     
+       <script src="./meritBadgeTable.js"></script> <!-- Replace with the actual path to the meritBadgeTable.js file -->
+
     </head>
-  <body id="cable-body"> 
+  <body id="merit-body"> 
 
 <!-- PART 1 -->
          <!-- START OF TOPDOG -->
@@ -41,43 +42,118 @@
       
     </div>
   -->
- <!-- TAB 1 (CABLE-->
- <div id="cable" class="stream" v-show="selectedTab === 'tab1'">
-    <div class="streamShowContent">
-    <div style="position:relative; overflow:hidden; padding-bottom:56.25%">
-      <iframe src="https://cdn.jwplayer.com/players/SyfFOIKw-NkmVmcCh.html" width="100%" height="100%" frameborder="0" scrolling="auto" title="playblock5c - 7pm - 10pm [primeTime]" style="position:absolute;" allowfullscreen></iframe>
+
+
+<!-- END OF UPDATE WRAP -->
+
+<section>
+    <div id="app">
+        <div class="fullWidth-Container-TopCenteredContent">
+        <merit-badge-table></merit-badge-table>
+      </div>
     </div>
-  </div>
+</section>
+
+<style>
+    .merit-badge-table {
+      position:relative;
+      padding:20px;
+    }
     
-    <div class="subHeader">
-      <div class="subHeaderVert">
-        <a href="#"><img src="/assets/u_ahoy23.png" class="logo"></a>
-      </div>
-      <div class="subHeaderVert content">
-        <h2 class="cubano">Ahoy Indie Cable</h2>
-        <p>Remember the days of cable TV? We sort of do... Here's our attempt at it. 
-        </p>
-      </div>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    
+    th,
+    td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    
+    th {
+      background-color: #f2f2f23e;
+      border-style:solid;
+      border-width:1px;
+      text-align:left;
+      text-transform:uppercase;
+      font-weight:300;
+      line-height:90%;
+    }
+    
+    .badge-status {
+      background-color: rgba(0, 255, 106, 0.616);
+      color: white;
+      padding: 4px;
+      text-align: center;
+      border-style:solid;
+      border-width:1px;
+      border-color:aquamarine;
+    }
+    
+    .no-badge-status {
+      background-color: rgba(255, 0, 0, 0.437);
+      color: white;
+      padding: 4px;
+      text-align: center;
+      border-style:solid;
+      border-color:rgba(217, 0, 0, 0.496);
+    }
 
-    </div>
-  
-  <!-- END OF STREAM--></div>
+    .fullWidth-Container-TopCenteredContent {
+  width:100%;
+  height:auto;
+  display:flex;
+  align-items:center;
+}
+    </style>
 
-<!-- PART 5 - THE BIG ASS GRAPHIC 
+<script>
+    export default {
+      data() {
+        return {
+          badges: [
+            {
+              numberIssued: 1,
+              name: 'Badge 1',
+              description: 'Description of Badge 1',
+              hasBadge: true
+            },
+            {
+              numberIssued: 2,
+              name: 'Badge 2',
+              description: 'Description of Badge 2',
+              hasBadge: false
+            },
+            {
+              numberIssued: 3,
+              name: 'Badge 3',
+              description: 'Description of Badge 3',
+              hasBadge: true
+            },
+            // Add more badges as needed
+          ]
+        };
+      }
+    };
+    </script>
+
+<!-- PART 5 - THE BIG ASS GRAPHIC
               <div class="basicPadre">
                 <div class="basicHijo">
                   <img src="./assets/AHOYmarketplace.png">
                 </div>
               </div>
-           -->
+            -->
             
 
+            
 
 <footer>
   <a href="https://github.com/oooAHOYooo/oooAHOYooo.github.io">About</a>
   <a href="/content.html">Content</a>
   <a href="./merit.html">Merit Badges</a>
-
 
 </footer>
 
@@ -85,16 +161,14 @@
 
 <!-- SCRIPTS AND CONDITIONAL LOGIC -->
 
-
+<script>
+    new Vue({
+      el: '#app',
+      // Your existing Vue code
+    });
+  </script>
 
 <!-- START OF DAILY BACKGROUND CHANGES -->
-
-
-
-
-
-<!--buy button method call?-->
-
 
 
 
@@ -133,6 +207,11 @@
 
 
 
+
+
+
+<!-- IMPORT MERIT FEED -->
+<script src="merit.js"></script>
 <!-- END OF CONDITIONAL AND CODE LOGIC -->
 <!-- HOpe you enjoyed this journey -->
 

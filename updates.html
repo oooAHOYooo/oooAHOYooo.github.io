@@ -13,7 +13,7 @@
        <link rel="stylesheet" href="mobile.css">
      
     </head>
-  <body id="radio-body"> 
+  <body id="updates-body"> 
 
 <!-- PART 1 -->
          <!-- START OF TOPDOG -->
@@ -49,8 +49,6 @@
       <a href="https://github.com/oooAHOYooo/oooAHOYooo.github.io"> <p class="frontSubHeader-text-link">Check our Github Repo for nerdy details</p></a>
     </div>
 
-<div class="frontContent transform">
-
   <!-- content goes here -->
 <div class="update-super-wrap">
   <div id="updates-ahoy-app">
@@ -66,7 +64,9 @@
       </div>
     </div>
   </div>
-</div><!-- END OF UPDATE WRAP -->
+</div>
+
+<!-- END OF UPDATE WRAP -->
 
 <!-- PART 5 - THE BIG ASS GRAPHIC
               <div class="basicPadre">
@@ -81,6 +81,8 @@
 <footer>
   <a href="https://github.com/oooAHOYooo/oooAHOYooo.github.io">About</a>
   <a href="/content.html">Content</a>
+  <a href="./merit.html">Merit Badges</a>
+
 
 </footer>
 
@@ -93,48 +95,6 @@
 <!-- START OF DAILY BACKGROUND CHANGES -->
 
 
-
-
-
-<!--buy button method call?-->
-
-
-<!-- FUNCTION 1 = TAB SWITCH -->
-
-          <!-- VUE TAB SWITCH-->
-          <script>
-            var app = new Vue({
-              el: '#app',
-              data: {
-                selectedTab: 'tab3'
-              }
-            });
-
-            var app1 = new Vue({
-              el: '#app1',
-              data: {
-                items: [
-                  { id: 1, title: 'Item 1', description: 'This is item 1', tags: ['tag1', 'tag2'] },
-                  { id: 2, title: 'Item 2', description: 'This is item 2', tags: ['tag1', 'tag3'] },
-                  { id: 3, title: 'Item 3', description: 'This is item 3', tags: ['tag2', 'tag3'] },
-                  { id: 4, title: 'Item 4', description: 'This is item 4', tags: ['tag1', 'tag2', 'tag3'] },
-                ],
-                filter: '',
-                tags: ['tag1', 'tag2', 'tag3']
-              },
-              computed: {
-                filteredItems: function () {
-                  var filter = this.filter;
-                  if (!filter) {
-                    return this.items;
-                  }
-                  return this.items.filter(function (item) {
-                    return item.tags.indexOf(filter) !== -1;
-                  });
-                }
-              }
-            });
-          </script>
 
 <script>
   const day = new Date();
@@ -169,17 +129,6 @@
   }
 </script>
 
-<!-- CODE THAT WILL ACCEPT LOGIC FROM OUTSIDE URLS -->
-<script>
-  window.onload = function() {
-    var urlParams = new URLSearchParams(window.location.search);
-    var selectedTab = urlParams.get('selectedTab');
-
-    if (selectedTab === 'tab1' || selectedTab === 'tab2' || selectedTab === 'tab3' || selectedTab === 'tab4' || selectedTab === 'tab5') {
-      app.selectedTab = selectedTab;
-    }
-    // ... Handle other tab cases
-  };
 </script>
 
 <!-- UPDATES PLACE DATA FEED -->
