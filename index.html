@@ -1,14 +1,19 @@
-<html> <!-- As of 6.09.23 -->
+<html> <!-- As of 6.12.23 -->
     <head> 
-
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <script defer data-domain="ahoy.ooo" src="https://plausible.io/js/script.js"></script>
-      <link rel="icon" type="image/x-icon" href="./assets/ahoyFav.png">
+        <!-- BASIC META -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- PLAUSIBLE -->
+        <script defer data-domain="ahoy.ooo" src="https://plausible.io/js/script.js"></script>
+        <!--FAVICON -->
+        <link rel="icon" type="image/x-icon" href="./assets/ahoyFav.png">
+        <!-- SITE TITLE -->
         <title>Ahoy Indie Media</title>
         <!-- IMPORT OF VUE -->
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-      <!-- Memberstack --> 
-      <script src="https://api.memberstack.io/static/memberstack.js?custom" data-memberstack-id="5a41179e02ed37a57f08aa5720671687"> </script> 
+        <!-- IMPORT OF JQUERY -->
+        <script src="path/to/jquery.min.js"></script>
+        <!-- IMPORT OF Memberstack --> 
+        <script src="https://api.memberstack.io/static/memberstack.js?custom" data-memberstack-id="5a41179e02ed37a57f08aa5720671687"> </script> 
         <!-- CSS3 -->
         <link rel="stylesheet" href="mainStyle.css">
         <link rel="stylesheet" href="mobile.css">
@@ -225,6 +230,7 @@
             });
           </script>
 
+<!-- CODE = BACKGROUND CHANGES DEPENDING ON HOUR -->
 <script>
   const day = new Date();
   const hr = day.getHours();
@@ -258,6 +264,7 @@
   }
 </script>
 
+<!-- MEMBERSTACK - USER LOGGED IN REPLACE P BLOCK -->
 <script>
   // JavaScript
 document.addEventListener("DOMContentLoaded", function () {
@@ -270,6 +277,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
+<!-- MEMBERSTACK LOGIN CODE -->
 <script>
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -284,10 +292,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-
-
 </script>
 
+<!-- SOME RANDOM OPACITY SCRIPT THAT Don't KNOW WHAT IT DOES -->
 <script>
 // Add an event listener to set the initial opacity of the overlay to 0 on page load
 window.addEventListener('load', function() {
@@ -300,8 +307,25 @@ window.addEventListener('load', function() {
 
 </script>
 
+<!-- CODE THAT WILL ACCEPT LOGIC FROM OUTSIDE URLS -->
+<script>
+  window.onload = function() {
+    var urlParams = new URLSearchParams(window.location.search);
+    var selectedTab = urlParams.get('selectedTab');
+
+    if (selectedTab === 'tab1') {
+      // Code to activate tab 1
+    } else if (selectedTab === 'tab2') {
+      // Code to activate tab 2
+    } else if (selectedTab === 'tab5') {
+      // Code to activate tab 5
+    }
+    // ... Handle other tab cases
+  };
+</script>
+
 <!-- END OF CONDITIONAL AND CODE LOGIC -->
 <!-- HOpe you enjoyed this journey -->
 
-    </body>
+</body>
 </html>
