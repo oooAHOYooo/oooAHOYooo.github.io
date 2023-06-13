@@ -333,7 +333,14 @@ audio {
   height:auto;
   border-style:solid;
   border-radius: 25px 25px 0 0; /* Specifies the border radius for each corner (top-left, top-right, bottom-right, bottom-left) */
-  
+}
+
+.topDog-wrap-index {
+  background-color:var(--topDogColor);
+  width:100%;
+  height:auto;
+  border-style:solid;
+  border-radius: 25px 25px 25px 25px; /* Specifies the border radius for each corner (top-left, top-right, bottom-right, bottom-left) */
 }
 
 .topDog-wrap-mini {
@@ -564,6 +571,18 @@ audio {
   color:var(--white);
   max-width:220px;
   /*background-color: var(--streamColor);*/
+}
+
+.full-width-total-super-wrap-index {
+  width:100%;
+  height:100%;
+  display:flex;
+  align-items:center;
+
+}
+
+.topNavButton-stream:hover {
+  color:var(--ahoyBlue1);
 }
 
 .topNavButton-stream::before {

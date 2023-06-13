@@ -18,7 +18,7 @@
         <link rel="stylesheet" href="mainStyle.css">
         <link rel="stylesheet" href="mobile.css">
 
-  <body>
+  <body id="index-body">
     <!-- 
     <div class="navSuperTop">
       <div class="login-container">
@@ -43,6 +43,8 @@
     <main>
         <div id="app">
           <!-- START OF TOPDOG -->
+  
+          <div class="full-width-total-super-wrap-index">
           <div class="topDog-wrap">
             <div class="topLogo-wrap">
               <a href="https://ahoy.ooo"><img src="./assets/u_ahoy23.png" class="topLogo-graphic"></a>
@@ -54,128 +56,8 @@
               <a href="./radio.html"><button class="topNavButton-stream">Radio</button></a>
             </div>
           </div>
+        </div>
           <!-- END OF TOP DOG -->
-      
-    <!-- TAB 1 (CABLE--> <!-- DISABLED AS OF 6.12.23 -->
-           <!--  <div id="cable" class="stream" v-show="selectedTab === 'tab1'">
-              <div class="streamShowContent">
-              <div style="position:relative; overflow:hidden; padding-bottom:56.25%">
-                <iframe src="https://cdn.jwplayer.com/players/SyfFOIKw-NkmVmcCh.html" width="100%" height="100%" frameborder="0" scrolling="auto" title="playblock5c - 7pm - 10pm [primeTime]" style="position:absolute;" allowfullscreen></iframe>
-              </div>
-            </div>
-              
-              <div class="subHeader">
-                <div class="subHeaderVert">
-                  <a href="#"><img src="/assets/u_ahoy23.png" class="logo"></a>
-                </div>
-                <div class="subHeaderVert content">
-                  <h2 class="cubano">Ahoy Indie Cable</h2>
-                  <p>Remember the days of cable TV? We sort of do... Here's our attempt at it. 
-                  </p>
-                </div>
-
-              </div>
-              -->
-            
-            <!-- END OF STREAM</div>-->
-      
-            <!-- TAB 2 = RADIO --> <!-- Disabled as of 6.12.23 -->
-            <!-- <div class="radio" v-show="selectedTab === 'tab2'">
-            
-              <div class="audio-player">
-
-                <audio controls class="custom-audio-player">
-                  <source src="https://s4.radio.co/saf4aee19b/listen" type="audio/mpeg">
-                  Your browser does not support the audio element.
-                </audio>
-                <div class="warning-wrap">
-                  <p style="text-align:center; font-size:12px; max-width:300px;" ><span>Note to the user </span> Please allow up to 30 seconds for the radio to load - it's all live - a real real radio - we're working asap to improve speeds and player function - but it works - you can even click out of the screen on your phone and cast it in your car</p>
-                </div>
-              </div> -->
-
-              <!-- RADIO SUBHEADER-->
-              <!-- 
-              <div class="subHeader">
-                <div class="subHeaderVert">
-                  <a href="#"><img src="/assets/u_ahoy23.png" class="logo"></a>
-                </div>
-                <div class="subHeaderVert content">
-
-                  <div class="radio-art-wrap">
-                    <script src="https://embed.radio.co/embed/saf4aee19b/artwork.js"></script>
-                  </div>
-
-                  <h2 class="cubano">Live Radio</h2><p>Status = <span>online</span></p>
-                  <div class="audioData">
-                  <p class="audioDisplay">Now Playing</p><script src="https://embed.radio.co/embed/saf4aee19b/song.js"></script>
-                  <p>Up Next</p><script src="https://embed.radio.co/embed/saf4aee19b/next.js"></script>
-                  <p>Recently Played</p><script src="https://embed.radio.co/embed/saf4aee19b/last.js"></script>
-                  
-                 
-              </div>
-            </div
-
-              </div>>--><!-- RADIO SUBHEADER-->
-                <!-- END OF RADIO </div>-->
-
-         
-            <!-- TAB 5 UPDATE Page --><!-- DISABLED AS OF 6.12.23-->
-            <!-- 
-            <div id="mainFront" v-show="selectedTab === 'tab5'">
-              <div class="frontSubHeader">
-                <p class="frontSubHeader-text">
-                AHOY APP + CONTENT UPDATES + DEV LOG + COMPANY JOURNAL : AS OF JUNE 2023</p>
-                <a href="https://github.com/oooAHOYooo/oooAHOYooo.github.io"> <p class="frontSubHeader-text-link">Check our Github Repo for nerdy details</p></a>
-              </div>
-            -->
-   
-       <!-- <div class="frontContent transform">--> 
-
-            <!-- content goes here -->
-            <!-- 
-          <div class="update-super-wrap">
-            <div id="updates-ahoy-app">
-              <div v-for="month in months" :key="month.displayText">
-                <h2 class="monthDisplay-text">{{ month.displayText }}</h2>
-                <div class="updates-text-wrap" v-for="update in month.updates" :key="update.text">
-                  <p :class="['monthUpdateText', { 'bold': update.bold }, {'superBold':update.superBold}]">{{ update.text }}</p>
-                  <p v-if="update.link" v-html="update.link"></p>
-                  <div class="image-container">
-                    <img class="update-image" v-if="update.image" :src="update.image" alt="">
-                    
-                
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>  -->
-          
-          <!-- END OF UPDATE WRAP -->
-            
-                        <!-- START OF FRONT PAGE -->
-
-  <!-- TAB 5 (Front PAGE) SUBHEADER -->
-
-<!-- 
-
-                <div class="subHeader">
-                  <div class="subHeaderVert">
-                    <a href="#"><img src="/assets/u_ahoy23.png" class="logo"></a>
-                  </div>
-
-                    <div class="subHeaderVert content">
-                      <h2 class="cubano">Ahoy Indie Updates</h2>
-                      <p>Discover the latest updates from Ahoy, including new content, code improvements, fresh features, and significant app developments. If there's something new happening, you'll find it showcased here.</p>
-                    </div>
-                   
-                </div>-->
-               
-                <!--END OF FRONT PAGE </div> -->
-              <!--  </div> 
-         END OF UPDATE PAGE -->
-            
-          
-
              
  <!-- END OF APP TABS -->
           </div>
@@ -198,57 +80,6 @@
 <!-- SCRIPTS AND CONDITIONAL LOGIC -->
 
 
-<!-- MARKET PLACE DATA FEED -->
-<script src="marketData5.js"></script>
-
-<!-- UPDATES PLACE DATA FEED -->
-<script src="updates.js"></script>
-
-<!-- FUNCTION 1 = TAB SWITCH -->
-<!-- 
-<script>
-  var app = new Vue({
-    el: '#app',
-    data: {
-      selectedTab: 'tab5',
-      dataUrl: ''
-    },
-    mounted() {
-      // Retrieve the value of the dataUrl parameter from the URL
-      const urlParams = new URLSearchParams(window.location.search);
-      this.dataUrl = urlParams.get('dataUrl');
-
-      // Do something with the dataUrl
-      console.log('Data URL:', this.dataUrl);
-    }
-  });
-
-  var app1 = new Vue({
-    el: '#app1',
-    data: {
-      items: [
-        { id: 1, title: 'Item 1', description: 'This is item 1', tags: ['tag1', 'tag2'] },
-        { id: 2, title: 'Item 2', description: 'This is item 2', tags: ['tag1', 'tag3'] },
-        { id: 3, title: 'Item 3', description: 'This is item 3', tags: ['tag2', 'tag3'] },
-        { id: 4, title: 'Item 4', description: 'This is item 4', tags: ['tag1', 'tag2', 'tag3'] },
-      ],
-      filter: '',
-      tags: ['tag1', 'tag2', 'tag3']
-    },
-    computed: {
-      filteredItems: function () {
-        var filter = this.filter;
-        if (!filter) {
-          return this.items;
-        }
-        return this.items.filter(function (item) {
-          return item.tags.indexOf(filter) !== -1;
-        });
-      }
-    }
-  });
-</script>
--->
 <!-- CODE = BACKGROUND CHANGES DEPENDING ON HOUR -->
 <script>
   const day = new Date();
@@ -313,33 +144,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </script>
 
-<!-- SOME RANDOM OPACITY SCRIPT THAT Don't KNOW WHAT IT DOES -->
-<!-- 
-<script>
-// Add an event listener to set the initial opacity of the overlay to 0 on page load
-window.addEventListener('load', function() {
-  var imageContainers = document.querySelectorAll('.image-container');
-  imageContainers.forEach(function(container) {
-    var overlay = container.querySelector('::after');
-    overlay.style.opacity = 0;
-  });
-});
-
-</script>-->
-
-<!-- CODE THAT WILL ACCEPT LOGIC FROM OUTSIDE URLS -->
-<!-- 
-<script>
-  window.onload = function() {
-    var urlParams = new URLSearchParams(window.location.search);
-    var selectedTab = urlParams.get('selectedTab');
-
-    if (selectedTab === 'tab1' || selectedTab === 'tab2' || selectedTab === 'tab3' || selectedTab === 'tab4' || selectedTab === 'tab5') {
-      app.selectedTab = selectedTab;
-    }
-    // ... Handle other tab cases
-  };
-</script>-->
 
 <!-- END OF CONDITIONAL AND CODE LOGIC -->
 <!-- HOpe you enjoyed this journey -->
