@@ -4,18 +4,57 @@ html {
     background-color: #050022;
 }
 
-.navTippyWrap {
+
+.navTop-superWrap-content {
+  width:100%!important;
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  position:relative;
+
+
+}
+
+.navTippyWrap-content {
+  width: 100%; /* Set the width to 100% for full container width */
+  display: flex; /* Change from grid to flex */
+  flex-wrap: wrap; /* Ensure the menu items wrap within the container */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+  margin:10px;
+}
+
+@media screen and (max-width:800px) {
+  .navTippyWrap-content {
+  
     width: 100%;
-    height:100px;
     display: flex;
-    flex-direction: row;
-    align-items: center;
     justify-content: center;
-    text-align: center;
-    position:relative;
-    z-index:10;
-    margin-bottom:0px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 0px;
     transform: perspective(200px) rotateX(0deg)!important;
+    padding-bottom:10px;
+  }
+
+
+  .navTop-superWrap-content {
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+  
+  }
+
+  .topNavButton-content {
+    color:var(--ahoyBlue1);
+  }
+
+
+
 }
 
 
@@ -38,8 +77,15 @@ html {
   margin-top: 20px;
 }
 
-.topNavButton-stream,
-.topNavButton-market {
+.topNavButton-content {
+  color:var(--ahoyBlue1);
+  width:200px;
+  height:50px;
+  margin:5px;
+}
+
+.topNavButton-stream
+ {
   padding: 10px 20px;
   background-color: #007bff00;
   color: #fff;
@@ -58,22 +104,43 @@ html {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  border-style:solid;
+
 }
+
+#content-robShow {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* Anchor content to the bottom */
+}
+
+.episode-item {
+  margin-bottom: 20px; /* Add some bottom margin between each episode item */
+}
+
+.play-button-robShow {
+  margin-top: auto; /* Push the play button to the bottom */
+}
+
 
 .col-12 {
   width: 100%;
-  padding : 50px; 
+  height:500px;
+  border-style:solid;
+  border-width:1px;
+  color:white;
+  display:flex;
+  justify-content: center;
 }
 
 .episode-item {
   width: 100%!important;
-  height:400px;
+  height:200px;
   display: flex;
+  align-items:flex-end;
   flex-direction: column;
   align-items: center;
-  border-style:solid;
-  border: 1px; 
-  border-color:var(--beigeGlass)!important;
+
   padding: 10px;
 }
 
@@ -108,9 +175,6 @@ html {
   cursor: pointer;
 }
 
-.content-header-robShow {
-    background-color:red;
-}
 
 
 /*CONTENT HEADER SPLASH */
@@ -123,16 +187,15 @@ html {
   justify-content:center;
   align-items:center;
   text-align:center;
+  border-style:solid;
 }
 
 .content-splash h2 {
   text-transform:uppercase;
-  font-size:150px;
+  font-size:12vw;
   line-height:80%;
-  text-align:center;
-  display:flex;
-  justify-content:center;
-  align-items:center;
+ 
+  
 
 }
 

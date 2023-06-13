@@ -1,8 +1,10 @@
 <html>
-  <!-- As of 5.20.23 -->
+  <!-- As of 6.12.23 -->
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Content | Ahoy Indie Media</title>
+    <script defer data-domain="ahoy.ooo" src="https://plausible.io/js/script.js"></script>
+    <link rel="icon" type="image/x-icon" href="./assets/ahoyFav.png">
+    <title>Ahoy Indie Media | Content </title>
     <!-- IMPORT OF VUE -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <!-- Memberstack --> 
@@ -25,29 +27,31 @@
           <a href="https://ahoy.ooo"><img src="./assets/u_ahoy23.png" class="topLogo-graphic"></a>
           CONTENT !!!onDemand!!!
         </div>
-        <div class="navTippyWrap">
-          <button @click="selectedTab = 'tab3'" class="topNavButton-market">The Rob Show</button>
-          <button @click="selectedTab = 'tab1'" class="topNavButton-market">Podcasts</button>
-          <button @click="selectedTab = 'tab2'" class="topNavButton-market">Music Videos</button>
-          <button @click="selectedTab = 'tab6'" class="topNavButton-market">The Pal Bot Series</button>
-          <button @click="selectedTab = 'tab4'" class="topNavButton-market">Short Films</button>
+        <div class="navTop-superWrap-content">
+        <div class="navTippyWrap-content">
+          <button @click="selectedTab = 'tab3'" class="topNavButton-content">The Rob Show</button>
+          <button @click="selectedTab = 'tab1'" class="topNavButton-content">Podcasts</button>
+          <button @click="selectedTab = 'tab2'" class="topNavButton-content">Music Videos</button>
+          <button @click="selectedTab = 'tab6'" class="topNavButton-content">The Pal Bot Series</button>
+          <button @click="selectedTab = 'tab4'" class="topNavButton-content">Skate Films</button>
+          <button @click="selectedTab = 'tab4'" class="topNavButton-content">The Tallboyz Collection</button>
         </div>
+      </div>
 
         <!-- THE ROB SHOW TAB -->
     <section v-show="selectedTab === 'tab3'">
           <!--OY OY OY THIS BE THE ROB SHOW-->
+          <!-- START OF CONTENT SPLASH TEMPLATE -->
           <div class="content-splash"><h2>The Rob Show</h2></div>
-          Below is the code for the show - should show season 2 + season 1
-         
+          <!-- END OF CONTENT SPLASH TEMPLATE -->
          <div id="content-robShow">
-          Season 2
           <div class="row">
             <div v-for="episode in episodes" :key="episode.episode" class="col-12">
               <div class="episode-item">
                 <div class="episode-details">
                   <h3>Season {{ episode.season }} - Episode {{ episode.episode }}</h3>
                   <p>{{ episode.name }}</p>
-                  <p>Guest: {{ episode.guest }}</p>
+                  <p><span>Guest: </span>{{ episode.guest }}</p>
                 </div>
                 <div class="play-button-robShow">
                   <a :href="episode.videoUrl" target="_blank"><button>Play</button></a>
