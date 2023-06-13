@@ -69,7 +69,7 @@ h1 {
 --textWavyNavy: #000f2bac;
 
 --ahoyBlue1: rgb(0, 221, 255)!important;
-
+--ahoyBlue2: #000f2bac;
 
 }
 
@@ -328,7 +328,7 @@ audio {
 /*TOP TOP STYLES*/
 
 .topDog-wrap {
-  background-color:var(--topDogColor);
+  background-color:transparent!important;
   width:100%;
   height:auto;
   border-style:solid;
@@ -336,10 +336,13 @@ audio {
 }
 
 .topDog-wrap-index {
-  background-color:var(--topDogColor);
+ 
+
+
   width:100%;
+  max-width:950px;
   height:auto;
-  border-style:solid;
+  /*border-style:solid;
   border-radius: 25px 25px 25px 25px; /* Specifies the border radius for each corner (top-left, top-right, bottom-right, bottom-left) */
 }
 
@@ -426,6 +429,24 @@ audio {
   margin-bottom:10px;
 
 }
+
+/*TOP NAV SUGAR STYLES */
+.navTippyWrap-index {
+  width: 100%;
+  height:auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transform: perspective(400px) rotateX(19deg)!important;
+  position:relative;
+  z-index:10;
+  margin-top:15px;
+  margin-bottom:10px;
+
+}
+
 
 
 
@@ -568,31 +589,52 @@ audio {
 }
 
 .topNavButton-stream {
-  color:var(--white);
-  max-width:220px;
-  /*background-color: var(--streamColor);*/
+  color: var(--white);
+  max-width: 220px;
+  transition: background-color 0.3s; /* Add a transition for smooth color change */
 }
+
+.topNavButton-stream:hover {
+  color: var(--ahoyBlue2) !important;
+  background-color: rgba(255, 255, 255, 0.366) !important;
+  animation: liquidBackground 0.8s infinite; 
+  animation: pulse 1s infinite;
+}
+
+
+/* ANIMATIONS */
+@keyframes liquidBackground {
+  0% {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0); /* Add a box shadow effect */
+  }
+  50% {
+    background-color: rgba(255, 255, 255, 0.8) !important;
+    box-shadow: 0 0 10px rgba(0, 191, 255, 0.3); /* Modify the box shadow effect */
+  }
+  100% {
+    background-color: rgba(12, 192, 174, 0.685) !important;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.326); /* Add a box shadow effect */
+  }
+}
+
+
+
+
 
 .full-width-total-super-wrap-index {
   width:100%;
   height:100%;
   display:flex;
   align-items:center;
+  justify-content: center;
 
 }
 
-.topNavButton-stream:hover {
-  color:var(--ahoyBlue1);
-}
 
-.topNavButton-stream::before {
-  background-color:rgba(0, 0, 0, 0.423);
-}
 
-.topNavButton-stream:hover {
-  background-color: var(--streamColor);
-  animation: pulse 1s infinite;
-}
+
+
 
 .topNavButton-market:hover {
   background-color: var(--marketColor);
@@ -720,20 +762,7 @@ audio {
   justify-content: center;
 }
 
-/*.frontPage-logo {
-  width: 900px;
-  height: 100%;
-  display:block;
-  mix-blend-mode: lighten;
-}*/
 
-  /*.frontPage-logo {
-    width: 100%;
-    max-width:400px;
-    height: auto;
-    display:block;
-    
-  }*/
 
 .monthBlock {
   min-width:520px;
