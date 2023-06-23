@@ -71,7 +71,6 @@ In summary, pursuing code independence offers us greater control, flexibility, a
 - Alex Gonzalez (Founder, CTO)
 - Rob Meglio (Movie Star)
 - Chris Batista (Audio Engineer)
-- Ellen Martin (Station Manager)
 
 
 ![alt text](https://oooahoyooo.github.io/assets/u_ahoy23.png)

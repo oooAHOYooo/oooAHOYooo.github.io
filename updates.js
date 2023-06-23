@@ -52,9 +52,8 @@ var ahoyUpdates = new Vue({
           {
             text:
               "Met some great artists at Gather - going to put their music on the radio - Riddle M + Justin Arena",
-          },
-          { text: "Special News", bold: true },
-          { text: 'Ellen Martin joins the party as the radio "Station Manager"' },
+          }
+      
         ]
       },
       {
