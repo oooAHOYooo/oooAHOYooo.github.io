@@ -19,10 +19,7 @@
         <link rel="stylesheet" href="mobile.css">
 
   <body id="index-body">
-    <!-- LOADING SCREEN -->
-    <div id="loading-screen">
-      <div class="spinner"></div>
-    </div>
+
   
     <!-- 
     <div class="navSuperTop">
@@ -68,7 +65,7 @@
           </div>
           
           <!-- END OF APP -->
-        </main>
+
 
 <footer>
   <a href="https://github.com/oooAHOYooo/oooAHOYooo.github.io">About</a>
@@ -77,7 +74,7 @@
 
 </footer>
 
-
+</main>
 
 
 <!-- SCRIPTS AND CONDITIONAL LOGIC -->
@@ -149,13 +146,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </script>
 
-<!-- LOADING SCREEN LOGIC -->
-<script>
-  window.addEventListener("load", function () {
-    var loadingScreen = document.getElementById("loading-screen");
-    loadingScreen.style.display = "none";
-  });
-</script>
+
 
 
 <!-- CONTENT FADE IN AND ZOOM CODE -->
@@ -164,7 +155,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var loadingScreen = document.getElementById("loading-screen");
   var content = document.querySelector(".fade-in-zoom");
 
-  loadingScreen.style.display = "none";
+
   content.classList.add("show");
 });
 
