@@ -19,6 +19,11 @@
         <link rel="stylesheet" href="mobile.css">
 
   <body id="index-body">
+    <!-- LOADING SCREEN -->
+    <div id="loading-screen">
+      <div class="spinner"></div>
+    </div>
+  
     <!-- 
     <div class="navSuperTop">
       <div class="login-container">
@@ -40,7 +45,7 @@
     </header>-->
    
   
-    <main>
+    <main class="fade-in-zoom">
         <div id="app">
           <!-- START OF TOPDOG -->
   
@@ -140,6 +145,27 @@ document.addEventListener("DOMContentLoaded", function () {
       memberNameElement.textContent = member["name"]; // Set the member's name in the HTML element
     });
   }
+});
+
+</script>
+
+<!-- LOADING SCREEN LOGIC -->
+<script>
+  window.addEventListener("load", function () {
+    var loadingScreen = document.getElementById("loading-screen");
+    loadingScreen.style.display = "none";
+  });
+</script>
+
+
+<!-- CONTENT FADE IN AND ZOOM CODE -->
+<script>
+  window.addEventListener("load", function () {
+  var loadingScreen = document.getElementById("loading-screen");
+  var content = document.querySelector(".fade-in-zoom");
+
+  loadingScreen.style.display = "none";
+  content.classList.add("show");
 });
 
 </script>
