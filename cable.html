@@ -1,4 +1,4 @@
-<html> <!-- Radio as of 6.12.23 -->
+<html> <!-- Radio as of 6.27.23 -->
     <head>
       <!-- BASIC META -->
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,13 +9,10 @@
       <!--FAVICON -->
       <link rel="icon" type="image/x-icon" href="./assets/ahoyFav.png">
         <title>Ahoy Indie Media | Cable </title>
-        <!-- IMPORT OF VUE -->
-        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-   
-
+       
         <!-- CSS3 -->
         <link rel="stylesheet" href="mainStyle.css">
-       <link rel="stylesheet" href="mobile.css">
+        <link rel="stylesheet" href="mobile.css">
      
     </head>
   <body id="cable-body"> 
@@ -136,7 +133,19 @@
   }
 </script>
 
+<script>
+  // Wait for the document to load
+document.addEventListener("DOMContentLoaded", function () {
+  // Select the streamShowContent element
+  const streamShowContent = document.querySelector(".streamShowContent");
 
+  // Trigger the animation after a delay of 1 second (1000 milliseconds)
+  setTimeout(function () {
+    streamShowContent.classList.add("fade-in");
+  }, 100);
+});
+
+</script>
 
 <!-- END OF CONDITIONAL AND CODE LOGIC -->
 <!-- HOpe you enjoyed this journey -->

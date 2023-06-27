@@ -1621,12 +1621,28 @@ text-align:center!important;
 /*FRONT PAGE ZOOM AND FADE IN ANIMATION */
 
 .fade-in-zoom {
-  opacity: 0;
+  opacity: 0.1;
   transform: scale(0.5);
-  transition: opacity .333s ease-in-out, transform 1s ease-in-out;
+  transition: opacity .933s ease-in-out, transform 1s ease-in-out;
 }
 
 .fade-in-zoom.show {
   opacity: 1;
   transform: scale(1);
 }
+
+
+/*Cable Animation */
+
+/* Apply initial styles to the streamShowContent element */
+.streamShowContent {
+  opacity: 0;
+  transition: opacity 0.9s ease, transform 0.3s ease;
+}
+
+/* Apply styles to fade in and move downward when the class is added */
+.streamShowContent.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
