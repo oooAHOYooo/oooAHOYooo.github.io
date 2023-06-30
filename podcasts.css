@@ -1,9 +1,11 @@
 /* Podcast CSS */
-
+html {
+    background-color:navy;
+}
 /* Mobile Styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f6f6f6;
+    background-color: #000000!important;
     padding: 10px;
 }
 
