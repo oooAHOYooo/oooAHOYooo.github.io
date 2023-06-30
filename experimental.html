@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experimental</title>
+    <style>
+        /* Global Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Main Styles */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f6f6f6;
+        }
+
+        .menu {
+            display: flex;
+        }
+
+        .menu-item {
+            flex: 1;
+            height: 200px;
+            background-color: #fff;
+            border-radius: 10px;
+            margin: 10px;
+            text-align: center;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .menu-item:hover {
+            background-color: #ff8dd1;
+        }
+
+        .menu-item a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .logo {
+            width:100px;
+            height:auto;
+        }
+
+        .full-width-div {
+            width:100%;
+            height:200px;
+            display:flex;
+            align-items:center;
+            justify-items: center;
+        }
+    </style>
+</head>
+<body>
+    <a href="./index.html"><img src="./assets/u_ahoy23.png" class="logo"></a>
+    <div class="full-width-div">
+        <h2>
+        Experimental Features</h2>
+    </div>
+
+    <div class="container">
+        <div class="menu">
+            <div class="menu-item">
+                <a href="./merit.html">Merit Badges</a>
+            </div>
+            <div class="menu-item">
+                <a href="./podcasts.html">Podcasts</a>
+            </div>
+            <div class="menu-item">
+                <a href="./content.html">Content</a>
+            </div>
+            <div class="menu-item">
+                <a href="#">Pending Features</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
