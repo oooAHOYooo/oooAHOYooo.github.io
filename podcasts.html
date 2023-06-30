@@ -1,128 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ahoy Indie Media Podcast</title>
-    <style>
-        /* Mobile Styles */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f6f6f6;
-            padding: 10px;
-        }
-
-        .header {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .featured-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-gap: 10px;
-            margin-bottom: 20px;
-        }
-
-        .featured-item {
-            background-color: #fff;
-            border-radius: 5px;
-            padding: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            display: flex;
-        }
-
-        .featured-item img {
-            width: 100px;
-            height: 100px;
-            border-radius: 5px;
-            margin-right: 10px;
-        }
-
-        .featured-item .details {
-            flex-grow: 1;
-        }
-
-        .featured-item h3 {
-            margin: 0;
-            font-size: 16px;
-        }
-
-        .content-packs {
-            background-color: #fff;
-            border-radius: 5px;
-            padding: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-        }
-
-        .content-packs h2 {
-            margin: 0 0 10px;
-        }
-
-        .content-packs ul {
-            padding: 0;
-            list-style-type: none;
-        }
-
-        .content-packs li {
-            margin-bottom: 5px;
-        }
-
-        .content-packs li a {
-            text-decoration: none;
-            color: #333;
-        }
-
-        .content-packs li a:hover {
-            text-decoration: underline;
-        }
-    </style>
+  <!-- BASIC META -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- META DESCRIPTION -->
+  <meta name="description" content="Ahoy Indie Media - A hand-crafted media company based out of New Haven, Connecticut. Our mission is to provide a homegrown alternative to the way folks consume media. We believe in good media - good indie media - the real stuff. Learn about our strategy for sustainable growth and how we maintain an ad-free environment. Join our subscription-based service to access unique in-house content, including the immensely unpopular 'Rob Show.' Become a part of our indie creator-centric platform.">
+  <!-- PLAUSIBLE -->
+  <script defer data-domain="ahoy.ooo" src="https://plausible.io/js/script.js"></script>
+  <!-- FAVICON -->
+  <link rel="icon" type="image/x-icon" href="./assets/ahoyFav.png">
+  <!-- SITE TITLE -->
+  <title>Podcasts - Ahoy Indie Media</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="./podcasts.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 </head>
 <body>
-    <div class="header">
-        <h1>Ahoy Indie Media Podcast</h1>
-    </div>
+    <style>
+       
+      </style>
+      
+      <div class="header">
+        <img class="logo" src="./assets/u_ahoy23.png" alt="Logo">
+        <!-- Replace "your-logo.png" with the path to your logo image -->
+      </div>
+      
 
+  <div class="featured-grid">
+    <div class="featured-item">
+      <img src="episode1.jpg" alt="Episode 1">
+      <div class="details">
+        <h3>Episode 1: Title</h3>
+        <p>Description of Episode 1.</p>
+      </div>
+    </div>
+    <!-- Add more featured items for the latest episodes -->
+
+    <!-- Example Episodes -->
+    <div class="featured-item">
+      <img src="episode2.jpg" alt="Episode 2">
+      <div class="details">
+        <h3>Episode 2: Title</h3>
+        <p>Description of Episode 2.</p>
+      </div>
+    </div>
+    <div class="featured-item">
+      <img src="episode3.jpg" alt="Episode 3">
+      <div class="details">
+        <h3>Episode 3: Title</h3>
+        <p>Description of Episode 3.</p>
+      </div>
+    </div>
+    <!-- Add more featured items for the latest episodes -->
+  </div>
+
+  <div id="app">
     <div class="featured-grid">
-        <div class="featured-item">
-            <img src="episode1.jpg" alt="Episode 1">
-            <div class="details">
-                <h3>Episode 1: Title</h3>
-                <p>Description of Episode 1.</p>
-            </div>
+      <div class="featured-item" v-for="(episode, index) in episodes" :key="index">
+        <img :src="episode.imageUrl" :alt="episode.title">
+        <div class="details">
+          <h3>{{ episode.title }}</h3>
+          <p>{{ episode.description }}</p>
         </div>
-        <!-- Add more featured items for the latest episodes -->
-
-        <!-- Example Episodes -->
-        <div class="featured-item">
-            <img src="episode2.jpg" alt="Episode 2">
-            <div class="details">
-                <h3>Episode 2: Title</h3>
-                <p>Description of Episode 2.</p>
-            </div>
-        </div>
-        <div class="featured-item">
-            <img src="episode3.jpg" alt="Episode 3">
-            <div class="details">
-                <h3>Episode 3: Title</h3>
-                <p>Description of Episode 3.</p>
-            </div>
-        </div>
-        <!-- Add more featured items for the latest episodes -->
+      </div>
     </div>
+  </div>
 
-    <div class="content-packs">
-        <h2>Content Packs</h2>
-        <ul>
-            <li><a href="#">Content Pack 1</a></li>
-            <li><a href="#">Content Pack 2</a></li>
-            <li><a href="#">Content Pack 3</a></li>
-            <!-- Add more content packs -->
-        </ul>
+  <div class="content-packs">
+    <h2>Content Packs</h2>
+    <ul>
+      <li><a href="#">Content Pack 1</a></li>
+      <li><a href="#">Content Pack 2</a></li>
+      <li><a href="#">Content Pack 3</a></li>
+      <!-- Add more content packs -->
+    </ul>
+  </div>
+
+  <!-- Add more content sections as needed -->
+  <footer>
+    <a href="./index.html">Homes</a>
+    <a href="https://github.com/oooAHOYooo/oooAHOYooo.github.io">About</a>
+    <a href="./experimental.html">Experimental and In-Progress</a>
+  </footer>
+
+  <script>
+    var ahoyPodcasts = new Vue({
+      el: '#app',
+      data: {
+        episodes: [
+          {
+            id: 'episode1',
+            imageUrl: 'episode1.jpg',
+            title: 'Yerr Episode 1: Title',
+            description: 'Description of Episode 1.',
+            mp3file: 'blahblah.mp3'
+          },
+          // Add more episodes here based on the provided Vue data
+        ]
+      },
+      methods: {
+        getEpisodeAudioUrl: function(episodeId) {
+          // Assuming you have a way to determine the audio URL based on the episode ID
+          return 'path/to/episode/' + episodeId + '.mp3';
+        }
+      }
+    });
+  </script>
+  
+  <style>
+    .audio-player {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 200px;
+      background-color: rgba(0, 0, 78, 0.344);
+      color: white;
+      padding: 10px;
+      box-sizing: border-box;
+      text-align: center;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Add a minimal drop shadow */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .play-button {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      border-style:solid;
+      border-color:black;
+      border-radius:3px;
+      color:white;
+      background-color:navy;
+    }
+
+    .play-button:hover {
+        background-color:rgba(0, 0, 128, 0.341);
+        cursor: pointer;
+    }
+  
+    .podcast-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .podcast-title {
+      font-size: 1.5rem;
+      margin-bottom: 5px;
+    }
+  
+    .podcast-details {
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+  
+    .album-artwork {
+      max-width: 150px; /* Adjust the size of the album artwork */
+      height: auto;
+      margin-bottom: 10px;
+    }
+  
+    .bookmark-button {
+      background-color: transparent;
+      color: white;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+  </style>
+  
+  <div class="audio-player">
+    <button class="play-button">&#9658;</button>
+    <div class="podcast-info">
+      <h2 class="podcast-title">Podcast Title</h2>
+      <p class="podcast-details">Time - Podcast Series Name</p>
     </div>
-
-    <!-- Add more content sections as needed -->
-
+    <img class="album-artwork" src="album-artwork.jpg" alt="Album Artwork">
+    <!-- Replace "album-artwork.jpg" with the path to your album artwork -->
+    <button class="bookmark-button">Add to My Library</button>
+  </div>
+  
+  
 </body>
 </html>
