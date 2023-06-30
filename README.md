@@ -9,6 +9,8 @@ Live Preview of Ahoy (Beta) (https://ahoy.ooo)
 # Ahoy Indie Media is a hand-crafted media company based out of New Haven, Connecticut. 
 Our mission is to provide a homegrown alternative to the way folks consume media. We believe in good media - good indie media - the real stuff. 
 
+![alt text](https://oooahoyooo.github.io/images/github-app-preview.jpg)
+
 # Key Features
 
 
@@ -28,6 +30,7 @@ Connect with local artists, creators, and businesses through our marketplace. Su
 Gain access to a growing library of on-demand content, including exclusive interviews, archived radio shows, documentaries, and original series. Subscribe to unlock premium content and enjoy it at your convenience.
 
 ![alt text](https://oooahoyooo.github.io/images/Ahoy-Indie-Media---The-Rob-Show---Season-2---Episode-1---2023.jpg)
+
 
 
 # Project Roadmap
