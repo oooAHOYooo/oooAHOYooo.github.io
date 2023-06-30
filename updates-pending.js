@@ -8,9 +8,9 @@ var ahoyUpdates = new Vue({
               { text: "Met as a group ", superBold: true },
               { text: "App is getting smoother", bold: true },
               { text: "Lot of little updates - improved the cable section - added a new experimental feature so users can check out what we're working on before it is ready " },
-              { image: './images/updates/AhoyUpdates-YouthXL.png' },
-              { text: " Riddle M", bold: true },
-              { text: " Glued in Nude, Snout, Mustard Seed, Melted Side, Honeydew " },
+
+              { text: " Big Cable Updates ", bold: true },
+              { text: " Every 4 hours it will change a block - check the cable schedule - added up for a cable schedule" },
               { image: './images/updates/AhoyUpdates-RiddleM.png' },
               { text: " Justin Arena", bold: true },
               { text: " Crash the Party, When you Wake Up, Oceans" },
