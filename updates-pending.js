@@ -6,8 +6,8 @@ var ahoyUpdates = new Vue({
             displayText: "July 2023",
             updates: [
               { text: "Met as a group ", superBold: true },
-              { text: "YouthXL", bold: true },
-              { text: "Text your Friends, Summer Bummer, Gypsy Gia, Yoga " },
+              { text: "App is getting smoother", bold: true },
+              { text: "Lot of little updates - improved the cable section - added a new experimental feature so users can check out what we're working on before it is ready " },
               { image: './images/updates/AhoyUpdates-YouthXL.png' },
               { text: " Riddle M", bold: true },
               { text: " Glued in Nude, Snout, Mustard Seed, Melted Side, Honeydew " },
