@@ -6,31 +6,61 @@
 Live Preview of Ahoy (Beta) (https://ahoy.ooo)
 
 
-## Ahoy Indie Media is a hand-crafted media company based out of New Haven, Connecticut. 
+# Ahoy Indie Media is a hand-crafted media company based out of New Haven, Connecticut. 
 Our mission is to provide a homegrown alternative to the way folks consume media. We believe in good media - good indie media - the real stuff. 
+
+# Key Features
+
+
+## Live Radio: 
+Enjoy a curated selection of music, talk shows, interviews, and more, broadcasting live 24/7. Discover emerging artists and dive into niche genres, all without the interruption of advertisements.
+
+## Cable TV Alternative:
+ Experience a new approach to cable TV, free from the limitations of traditional networks. Access a diverse range of independent shows, documentaries, short films, and live performances, highlighting the vibrant culture of New Haven and beyond.
+
+## Ad-Free Experience: 
+Say goodbye to annoying commercials and intrusive advertisements. Ahoy Indie Media prioritizes your viewing and listening experience by providing an ad-free environment throughout the platform.
+
+## Marketplace: 
+Connect with local artists, creators, and businesses through our marketplace. Support independent talent by purchasing unique merchandise, art, music, and more, directly from the creators themselves.
+
+## On-Demand Content: 
+Gain access to a growing library of on-demand content, including exclusive interviews, archived radio shows, documentaries, and original series. Subscribe to unlock premium content and enjoy it at your convenience.
 
 ![alt text](https://oooahoyooo.github.io/images/Ahoy-Indie-Media---The-Rob-Show---Season-2---Episode-1---2023.jpg)
 
 
+# Project Roadmap
 
-## Keeping the Lights On: Our Strategy for Sustainable Growth
+## Phase 1: Initial Release (v1.0):
 
-We are committed to providing a seamless and uninterrupted experience for our users. As part of our dedication to enhancing your journey on our platform, we have made it a top priority to maintain an ad-free environment. However, in order to achieve this goal, we require the necessary financial resources to cover our operational costs and sustain our ongoing operations.
+Implement the live radio feature, allowing users to tune in to the broadcast.
+Develop the cable TV alternative, providing a selection of independent shows and films.
+Set up the marketplace, enabling artists and creators to showcase and sell their work.
+Introduce the on-demand content section, offering a limited selection of free content.
 
-A distinguishing factor that sets us apart is the unique content we offer exclusively in-house, including the immensely unpopular "Rob Show." This mediocore on-demand production is a highlight of our subscription-based service, providing our  subscribers with  access to this series.
+## Phase 2: Enhancements (v2.0):
 
-At Ahoy Indie Media, we aspire to become an indie creator-centric platform. User subscription allows us to stay ad-free and empowers us to house independent creators. 
+Expand the live radio with additional channels, genre-specific playlists, and live events coverage.
+Improve the cable TV alternative with more diverse content, including collaborations with local artists and organizations.
+Enhance the marketplace with advanced search and filtering options, user reviews, and a secure payment system.
+Expand the on-demand content library, adding exclusive interviews, behind-the-scenes footage, and original series.
+
+## Phase 3: Apple CarPlay Integration (v3.0):
+
+Develop integration with Apple CarPlay, allowing users to access Ahoy Indie Media seamlessly while on the road.
+Optimize the user interface for in-car displays, ensuring a safe and enjoyable listening and viewing experience.
+Enable voice commands for hands-free control of the platform within the Apple CarPlay environment.
+
+
+
+
 
 
 ![alt text](https://oooahoyooo.github.io/assets/u_ahoy23.png)
 
-## The Ultimate Master Plan
+# The Ultimate Master Plan
 We use a variety of out of house software and some in house - some out of the house - but rest assured - it's all custom configured. Little by little - click by click - we hope to make this platform completely code indepedent - and not rely on things like google - or facebook - or anything of the like - eff all that. 
-
-
-## Ahoy Operations as of now :
-
-
 
 
 # The Ultimate Master Plan (draft 2)
@@ -57,6 +87,14 @@ Code independence allows us to tailor our platform to meet our specific business
 
 Relying heavily on external software introduces inherent risks that can impact the stability and continuity of our platform. Potential service disruptions, such as downtime or outages from third-party providers, can have severe consequences for our operations and customer satisfaction. Additionally, changes in terms of use or pricing models imposed by these providers can significantly impact our costs or limit our access to critical features. By reducing our dependence on external software, we mitigate these risks and gain more control over the reliability and availability of our platform. We can ensure seamless service delivery to our customers, reducing the potential for disruptions that could harm our reputation or business performance.
 
+## Keeping the Lights On: Our Strategy for Sustainable Growth
+
+We are committed to providing a seamless and uninterrupted experience for our users. As part of our dedication to enhancing your journey on our platform, we have made it a top priority to maintain an ad-free environment. However, in order to achieve this goal, we require the necessary financial resources to cover our operational costs and sustain our ongoing operations.
+
+A distinguishing factor that sets us apart is the unique content we offer exclusively in-house, including the immensely unpopular "Rob Show." This mediocore on-demand production is a highlight of our subscription-based service, providing our  subscribers with  access to this series.
+
+At Ahoy Indie Media, we aspire to become an indie creator-centric platform. User subscription allows us to stay ad-free and empowers us to house independent creators. 
+
 ### Shaping the Platform's Future
 
 Code independence empowers us to shape the future of our platform according to our vision and customer needs. Rather than being constrained by the roadmap and decisions of external providers, we have the freedom to prioritize features, enhancements, and integrations based on our strategic goals and user feedback. This agility allows us to stay ahead of industry trends, adapt to evolving customer expectations, and deliver innovative solutions that drive user engagement and satisfaction.
@@ -67,7 +105,7 @@ Building a code-independent platform establishes a foundation for long-term sust
 
 In summary, pursuing code independence offers us greater control, flexibility, and long-term sustainability for our platform. It mitigates risks associated with external software providers, allowing us to shape the platform's future according to our vision and customer needs. By reducing dependencies and leveraging custom solutions, we can optimize our platform's functionality, enhance user experience, and stay at the forefront of our industry.
 
-## The OG Ahoy Staff
+## The OG Ahoy Staff (and presently)
 - Alex Gonzalez (Founder, CTO)
 - Rob Meglio (Movie Star)
 - Chris Batista (Audio Engineer)
@@ -83,18 +121,10 @@ This code was hand-written by Alex Gonzalez circa 2023
 This code is consists of a HTML document with embedded JavaScript and Vue.js code. 
 
 
-## For the sake of being transparent - and for the non coding enthusist who hopes to dive a bit deeper into how a couple of scrappy folks can do something like this - here are some explainations of the code found on index.html 
 
-HTML structure: The code begins with an opening <html> tag and includes various nested elements like <head>, <meta>, <link>, <title>, and <script>. These elements define the structure and content of the HTML document.
 
-Vue.js: Vue.js is a JavaScript framework for building user interfaces. In this code, it is used to create two instances of Vue: app and app1. These instances define data, methods, and computed properties used in the application.
 
-JavaScript functions: There are two JavaScript functions defined in the <script> tags. The first function toggleTransform() is used to toggle a CSS class on an element with the class .frontContent and marketData-section when called. The second function contains conditional logic to change the background image of the document based on the current time (hr variable).
+# Seeking Investors and Contributors
+We are actively seeking investors who share our vision for independent media and are interested in supporting the growth of Ahoy Indie Media. If you are passionate about the project and would like to explore investment opportunities, please reach out to us at invest@ahoy.ooo
 
-Vue.js directives: The Vue.js directives v-show and @click are used on elements to control their visibility and bind click event handlers, respectively. The v-for directive is used to iterate over arrays and render dynamic content based on the data.
-
-External resources: The code includes references to external resources such as Vue.js and Memberstack JavaScript libraries, CSS stylesheets (mainStyle.css and mobile.css), and other JavaScript files (marketData3.js and updates.js). These resources are loaded to provide additional functionality and styling to the webpage.
-
-Comments: The code includes comments (enclosed within <!-- and -->) that provide additional information or indicate sections that are temporarily disabled.
-
-Overall, this code combines HTML, JavaScript, and Vue.js to create a dynamic webpage with tabs for different content sections, background image changes based on the time, and integration with external resources and libraries.
+Additionally, we welcome contributions from individuals with expertise in media, technology, design, and marketing. If you believe in our mission and would like to contribute to the development and expansion of Ahoy Indie Media, please get in touch with us at contributors@ahoy.ooo
