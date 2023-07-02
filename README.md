@@ -7,7 +7,7 @@ Live Preview of Ahoy (Beta) (https://ahoy.ooo)
 
 
 # Ahoy Indie Media is a hand-crafted media company based out of New Haven, Connecticut. 
-Our mission is to provide a homegrown alternative to the way folks consume media. We believe in good media - good indie media - the real stuff. 
+Our mission is to provide a homegrown alternative to the way folks consume media. We believe in good media - good indie media - the real deal sort of stuff. 
 
 ![alt text](https://oooahoyooo.github.io/images/github-app-preview.jpg)
 
