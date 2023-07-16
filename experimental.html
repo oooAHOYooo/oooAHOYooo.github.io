@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- AS OF 7.16.23-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Experimental</title>
@@ -10,6 +11,11 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
+            background-color: #fa006c;
+        }
+
+        h2 {
+            text-transform: uppercase;
         }
 
         /* Main Styles */
@@ -17,27 +23,36 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            background-color: #f6f6f6;
+            background-color: #fa006c;
+            background-image: url('/experimental/AAHOYEXPBG.svg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: darken;
+            background-attachment: fixed;
         }
 
         .menu {
-            display: flex;
+            display: block;
         }
 
         .menu-item {
-            flex: 1;
+          
+            width:300px;
             height: 200px;
-            background-color: #fff;
+            background-color: #fa006c83;
             border-radius: 10px;
             margin: 10px;
             text-align: center;
             transition: background-color 0.3s ease;
             cursor: pointer;
+            border-color:#2e001483;
+            border-style:solid;
         }
 
         .menu-item:hover {
-            background-color: #ff8dd1;
+            background-color: #fa006c;
+            color:white;
         }
 
         .menu-item a {
@@ -49,19 +64,35 @@
             color: #333;
             font-weight: bold;
             font-size: 20px;
+            color:white;
         }
 
         .logo {
             width:100px;
             height:auto;
+            margin-top:10px;
+            margin:5px;
+            text-align:center;
+            display:flex;
+            justify-content:center;
         }
+
+        .logo:hover {
+            transform:scale(1.01);
+            transition:transform 0.3s ease;
+            opacity: 0.8;
+        }
+
 
         .full-width-div {
             width:100%;
-            height:200px;
+            height:100px;
             display:flex;
             align-items:center;
             justify-items: center;
+            flex-direction: column;
+            background-color: #fa006c23;
+            border-style:solid;
         }
     </style>
 </head>
@@ -70,21 +101,31 @@
     <div class="full-width-div">
         <h2>
         Experimental Features</h2>
+        <a href="./index.html">Back to regular Ahoy</a>
     </div>
 
     <div class="container">
         <div class="menu">
             <div class="menu-item">
-                <a href="./merit.html">Merit Badges</a>
+                <a href="/experimental/download/download.html">Downloads</a>
             </div>
             <div class="menu-item">
-                <a href="./podcasts.html">Podcasts</a>
+                <a href="./merit.html">Merit Badges System</a>
             </div>
             <div class="menu-item">
-                <a href="./content.html">Content</a>
+                <a href="./podcasts.html">Podcasts Feature</a>
+            </div>
+            <div class="menu-item">
+                <a href="./content.html">onDemand Content</a>
             </div>
             <div class="menu-item">
                 <a href="./experimental/expCable/exp_cable.html">Experimental Cable Shuffle</a>
+            </div>
+            <div class="menu-item">
+                <a href="./experimental/expCable/exp_cable.html">Portable Audio Playlists</a>
+            </div>
+            <div class="menu-item">
+                <a href="./experimental/artistSection/artist.html">artistSection</a>
             </div>
         </div>
     </div>
