@@ -5,10 +5,10 @@ var ahoyUpdates = new Vue({
       {
         displayText: "July 2023",
         updates: [
-          { text: "Met as a team ", superBold: true },
-          { text: " At our beloved playwright Pub in Hamden"},
-          { text: "App is getting smoother", bold: true },
-          { text: "Updated the Cable Section - made it so it dynamically changes every 3 hours - cleaned up the mobile and have been attempting to wrap this bad boy as an image - so we can eventually run it in the car and on the TV - big goals - slow progress - but progress on it"}
+          { text: "Getting Closer to the MVP", superBold: true },
+          { text: "At our beloved playwright Pub in Hamden - we met as a team and decided what our summer goals ought to be - and it revolved around two factors - getting this app up and running smooth - ready for content - and finding a studio space. We presently aren't going to concern ourselves with content - however if you have any let us know. As you know, we are a team of 3, and all have full time jobs outside ahoy - but the thunder is alive - and little by little - inch by inch - the little choo choo train of ahoy marches on.     "},
+          { text: "So far what we've updated ", bold: true },
+          { text: "Refactored the Cable Section - so it dynamically changes playlists every 3 hours - cleaned up the mobile and have been attempting to wrap this bad boy as an image file - with the goal of allowing it to run in the car and on the TV - big goals - slow progress - progress on it"}
           
   
 
