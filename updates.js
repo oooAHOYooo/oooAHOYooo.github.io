@@ -3,6 +3,18 @@ var ahoyUpdates = new Vue({
   data: {
     months: [
       {
+        displayText: "July 2023",
+        updates: [
+          { text: "Met as a team ", superBold: true },
+          { text: " At our beloved playwright Pub in Hamden"},
+          { text: "App is getting smoother", bold: true },
+          { text: "Updated the Cable Section - made it so it dynamically changes every 3 hours - cleaned up the mobile and have been attempting to wrap this bad boy as an image - so we can eventually run it in the car and on the TV - big goals - slow progress - but progress on it"}
+          
+  
+
+        ]
+      },
+      {
         displayText: "June 2023",
         updates: [
           { text: "New Music Added to the Radio ", superBold: true },
