@@ -1,4 +1,4 @@
-<html> <!-- As of 7.19.23 -->
+<html> <!-- As of 7.23.23 -->
     <head> 
         <!-- BASIC META -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,8 +12,7 @@
         <title>Ahoy Indie Media</title>
         <!-- CSS3 -->
         <link rel="stylesheet" href="mainStyle.css">
-        <!--<link rel="stylesheet" href="mobile.css">-->
-        <!-- TEMPT TOOK OFF MOBILE CSS _ SEE WHAT IT DOES LATER _ AND WHAT FEATURES I NEED _ PERHAPS I CAN MAKE A LITTLE BOX ON A BOX _ OR GIVE SOME KIND OF FADE-->
+       <link rel="stylesheet" href="mobile.css">
 
   <body id="index-body">
     <main class="fade-in-zoom">
@@ -42,7 +41,7 @@
 
 <footer>
   <a href="https://github.com/oooAHOYooo/oooAHOYooo.github.io">About</a>
-  <a href="./experimental.html">Experimental and In-Progress</a>
+  <a href="./experimental/experimental.html">Experimental and In-Progress</a>
 </footer>
 
 </main>
@@ -58,7 +57,7 @@
   const day = new Date();
   const hr = day.getHours();
 
-  if (window.innerWidth > 600) {
+  if (window.innerWidth > 300) {
     document.body.style.backgroundColor = "#acaca3";
 
     if (hr === 5) {
@@ -87,35 +86,6 @@
   }
 </script>
 
-<!-- MEMBERSTACK - USER LOGGED IN REPLACE P BLOCK -->
-<script>
-  // JavaScript
-document.addEventListener("DOMContentLoaded", function () {
-  if (MemberStack && MemberStack.currentUser) {
-    MemberStack.onReady.then(function (member) {
-      var memberNameElement = document.getElementById("memberName");
-      memberNameElement.textContent = member["name"]; // Set the member's name in the HTML element
-    });
-  }
-});
-</script>
-
-<!-- MEMBERSTACK LOGIN CODE -->
-<script>
-
-document.addEventListener("DOMContentLoaded", function () {
-  var loginButton = document.getElementById("loginButton");
-  var memberNameElement = document.getElementById("memberName");
-
-  if (MemberStack && MemberStack.currentUser) {
-    MemberStack.onReady.then(function (member) {
-      loginButton.style.display = "none";
-      memberNameElement.textContent = member["name"]; // Set the member's name in the HTML element
-    });
-  }
-});
-
-</script>
 
 
 <!-- CONTENT FADE IN AND ZOOM CODE -->
