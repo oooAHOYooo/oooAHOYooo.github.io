@@ -1,5 +1,5 @@
-<html> <!-- As of 7.23.23 -->
-    <head> 
+<html> <!-- As of 7.24.23 -->
+<head> 
         <!-- BASIC META -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- META DESCRIPTION -->
@@ -13,6 +13,39 @@
         <!-- CSS3 -->
         <link rel="stylesheet" href="mainStyle.css">
        <link rel="stylesheet" href="mobile.css">
+
+       <style>
+        #index-body {
+          height: 100vh;
+          background-color:black;
+        }
+
+#index-body:before {
+  animation: grain 8s steps(10) infinite;
+  background-image: url(./assets/ahoygrain.jpg);
+  content: "";
+  height: 300%;
+  left: -50%;
+  opacity: 0.63;
+  position: fixed;
+  top: -110%;
+  width: 300%;
+}
+
+@keyframes grain {
+  0%, 100% { transform:translate(0, 0) }
+  10% { transform:translate(-5%, -10%) }
+  20% { transform:translate(-15%, 5%) }
+  30% { transform:translate(7%, -25%) }
+  40% { transform:translate(-5%, 25%) }
+  50% { transform:translate(-15%, 10%) }
+  60% { transform:translate(15%, 0%) }
+  70% { transform:translate(0%, 15%) }
+  80% { transform:translate(3%, 35%) }
+  90% { transform:translate(-10%, 10%) }
+}
+       </style>
+</head>
 
   <body id="index-body">
     <main class="fade-in-zoom">

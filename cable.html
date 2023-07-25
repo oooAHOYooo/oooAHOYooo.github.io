@@ -11,7 +11,7 @@
 <link rel="icon" type="image/x-icon" href="./assets/ahoyFav.png">
 <title>Cable | Ahoy Indie Media </title>
 <!-- CSS3 -->
-<link rel="stylesheet" href="/mainStyle.css">
+<link rel="stylesheet" href="mainStyle.css">
 <link rel="stylesheet" href="/mobile.css">
 
 <style>
@@ -22,12 +22,57 @@ margin-top:10px;
 margin-bottom:10px;
 }
 th, td {
-border: 1px solid #ddd;
+border: 1px solid #dddddd46;
 padding: 8px;
 text-align: left;
+font-size:16px;
 }
 th {
-background-color: rgba(0, 0, 128, 0.261);
+background-color: rgba(0, 0, 128, 0.066);
+}
+
+h2 {
+    text-transform:uppercase;
+    font-weight:900;
+    font-size:48px;
+    text-align:center;
+
+}
+
+h3 {
+    text-transform:uppercase;
+    font-weight:900;
+    font-size:32px;
+}
+
+#cable-body {
+          height: 100vh;
+          background-color:black;
+        }
+
+#cable-body:before {
+  animation: grain 8s steps(10) infinite;
+  background-image: url(./assets/ahoygrain.jpg);
+  content: "";
+  height: 300%;
+  left: -50%;
+  opacity: 0.63;
+  position: fixed;
+  top: -110%;
+  width: 300%;
+}
+
+@keyframes grain {
+  0%, 100% { transform:translate(0, 0) }
+  10% { transform:translate(-5%, -10%) }
+  20% { transform:translate(-15%, 5%) }
+  30% { transform:translate(7%, -25%) }
+  40% { transform:translate(-5%, 25%) }
+  50% { transform:translate(-15%, 10%) }
+  60% { transform:translate(15%, 0%) }
+  70% { transform:translate(0%, 15%) }
+  80% { transform:translate(3%, 35%) }
+  90% { transform:translate(-10%, 10%) }
 }
 </style>
 

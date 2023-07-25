@@ -1623,7 +1623,7 @@ text-align:center!important;
 .fade-in-zoom {
   opacity: 0.1;
   transform: scale(0.5);
-  transition: opacity .933s ease-in-out, transform 1s ease-in-out;
+  transition: opacity .333s ease-in-out, transform .4s ease-in-out;
 }
 
 .fade-in-zoom.show {
