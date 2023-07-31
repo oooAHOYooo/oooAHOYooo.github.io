@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Get on Ahoy</title>
+    <link rel="stylesheet" type="text/css" href="./geton.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="signup.js"></script>
+    <style>
+        #agreement-text {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #333;
+            padding: 20px;
+            background-color: #f7f7f7;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .artistAgreement {
+            font-size:30px;
+            text-align:center;
+            text-transform:uppercase;
+            font-weight:600;
+        }
+
+        label {
+            font-size:20px;
+            text-transform:uppercase;
+            font-weight:600;
+        }
+
+        strong {
+            text-align:center;
+        }
+
+        .submit-button {
+            color:white;
+            font-size:20px;
+            font-weight:900;
+            text-transform:uppercase;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="./u_ahoy23.png" alt="Ahoy Logo" class="logo">
+    </header>
+    <form id="signup-form">
+        <label for="name">Legal Full Name:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" required>
+
+        <label class="artistAgreement" for="agreement">Artist Agreement:</label>
+       
+        
+        <p id="agreement-text">
+        </p>
+        <h2>I agree to the above terms</h2>
+        <input type="checkbox" id="agreement" name="agreement" required>
+        
+        <label for="content">Content Upload:</label>
+        <p>Album Artwork:</p>
+        <input type="file" id="content" name="content" required>
+        <p>Zip file of Files</p>
+        <input type="file" id="content" name="content" required>
+
+        <input type="submit" value="Submit" class="submit-button">
+    </form>
+    <p>We'll get back to you in 2-3 weeks and notify you if you are on Ahoy</p>
+    <section>
+        <a href="./geton.html" class="cta-button">Back</a>
+    </section>
+</body>
+<script>
+    $(document).ready(function() {
+        var date = new Date();
+        var dateString = date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate();
+        var agreementText = `
+        
+        <strong><p>You've made some good sugar, and you're okay with Ahoy playing them on our platform.</p></strong><br>
+       
+        <p>This friendly agreement (let's call it the "Agreement") is made as of ${dateString} between you, [Your Name] (the "Music Provider") and us, Ahoy Indie Media.</p>
+        
+            <br>
+            
+            <p>So, let's put this into friendly terms:</p>
+            <br>
+            <p><strong>Music Sharing.</strong></p>
+            <p>You're giving Ahoy permission to play your content on the Radio and/or Cable. We don't own them, we can't give this permission to anyone else, we're just playing them.</p><br>
+            
+            <p><strong>No Money Involved.</strong></p>
+            <p>Just to be super clear, Ahoy won't pay you any money for playing your content. This is all about sharing your content and getting it out there!</p><br>
+            
+            <p><strong>Time Period.</strong></p>
+            <p>This Agreement will last for [15 months] from today's date, unless either of us wants to end it sooner. If that's the case, we just need to give [insert notice period] days' notice to each other.</p><br>
+            
+            <p><strong>Promises.</strong></p>
+            <p>You're promising Ahoy that you own the content and have the right to let us play them. Also, you're assuring us that your content aren't stepping on anyone else's toes (meaning, they don't infringe any third-party rights).</p><br>
+            
+            <p><strong>Taking Responsibility.</strong></p>
+            <p>If something goes wrong, like someone makes a claim against Ahoy related to your content, you'll have Ahoy's back. This means you'll cover any costs or damages we might face.</p><br>
+            
+            <p><strong>Legal Bits.</strong></p>
+            <p>This Agreement is under the laws of [insert state], without any complications from other laws.</p><br>
+            
+            <p><strong>This is It!</strong> This Agreement is the whole deal between us. It replaces any previous chats or agreements we've had.</p><br>
+            
+            <p>This Agreement is valid and applies to both of us.</p>`;
+    
+        $('#agreement-text').html(agreementText); // Use .html() instead of .text() to parse the HTML tags
+    
+        $('#name').on('input', function() {
+            var artistName = $(this).val();
+            var updatedText = agreementText.replace('[Your Name]', artistName);
+            $('#agreement-text').html(updatedText); // Use .html() instead of .text() to parse the HTML tags
+        });
+    });
+    </script>
+    
+</html>

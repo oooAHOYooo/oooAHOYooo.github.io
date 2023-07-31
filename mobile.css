@@ -1,4 +1,4 @@
-/*Mobile Business */
+/*Mobile Business */ /* as of 7.23.23 */
 
 :root {
     --breakpoint-small: 480px;
@@ -456,7 +456,6 @@ body {
 
 
   .topDog-wrap {
-    background-color:transparent;
     padding:0;
     margin:0!important;
 

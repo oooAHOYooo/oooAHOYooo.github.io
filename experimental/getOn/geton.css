@@ -1,0 +1,143 @@
+/* reset some default styles */
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100;300;400;500;600;700;800;900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Barlow', sans-serif;
+}
+
+body {
+    font-family: 'Barlow', sans-serif;
+    background-color: #ff0060; /* neon pink background */
+    color: #fff; /* white text */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+h1,h2 {
+    text-transform:uppercase;
+}
+
+/* make the main elements take up the whole width and center the text */
+header, section, footer {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    margin: 20px 0;
+  
+}
+
+/* create the neuromorphic effect */
+header, section, footer {
+    border-radius: 15px;
+    background: #ff0060;
+    box-shadow: -8px -8px 16px #cc0052, 
+                8px 8px 16px #ff3380;
+}
+
+/* make the website responsive */
+@media (min-width: 768px) {
+    header, section, footer {
+        width: 70%;
+    }
+}
+
+/* styling for the form */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form input[type="text"], form input[type="file"] {
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+    background: #ff0060;
+    box-shadow: inset 4px 4px 8px #cc0052, 
+                inset -4px -4px 8px #ff3380;
+}
+
+form input[type="submit"] {
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+    background: #ff0060;
+    box-shadow: 4px 4px 8px #cc0052, 
+                -4px -4px 8px #ff3380;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+form input[type="submit"]:active {
+    box-shadow: inset 4px 4px 8px #cc0052, 
+                inset -4px -4px 8px #ff3380;
+}
+
+.cta-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 15px;
+    background: #ff0060;
+    box-shadow: 4px 4px 8px #cc0052, 
+                -4px -4px 8px #ff3380;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+    color: #fff;
+}
+
+.cta-button:active {
+    box-shadow: inset 4px 4px 8px #cc0052, 
+                inset -4px -4px 8px #ff3380;
+}
+
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.carousel .item {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    width: 100%;
+    height: 200px;
+    margin-right: 20px;
+    border-radius: 10px;
+    background: #ff0060;
+    transition: transform 0.3s;
+    box-shadow: -8px -8px 16px #cc0052, 
+                8px 8px 16px #ff3380;
+}
+
+.carousel .item:last-child {
+    margin-right: 0;
+}
+
+.carousel .item:focus, .carousel .item:hover {
+    transform: scale(0.9);
+}
+
+.logo {
+    width:300px;
+    height:auto;
+    margin:10px;
+}
+
+.artist-logo {
+    width:100px;
+    height:auto;
+    margin:10px;
+}
+
+a {
+    color:white;
+}
