@@ -26,6 +26,7 @@
             font-size:20px;
             text-transform:uppercase;
             font-weight:600;
+            text-align:center;
         }
 
         strong {
@@ -37,6 +38,18 @@
             font-size:20px;
             font-weight:900;
             text-transform:uppercase;
+        }
+
+        .text-superAGREE {
+            font-size:100px;
+            text-align:center;
+            line-height: .8;
+        }
+
+        .superCheck {
+            width:62px;
+            height:62px;
+            text-align:center;
         }
     </style>
 </head>
@@ -51,22 +64,56 @@
         <label for="location">Location:</label>
         <input type="text" id="location" name="location" required>
 
-        <label class="artistAgreement" for="agreement">Artist Agreement:</label>
+        <label class="artistAgreement" for="agreement">
+            <h1>Artist Agreement:</h1></label>
        
         
         <p id="agreement-text">
         </p>
-        <h2>I agree to the above terms</h2>
-        <input type="checkbox" id="agreement" name="agreement" required>
-        
-        <label for="content">Content Upload:</label>
-        <p>Album Artwork:</p>
-        <input type="file" id="content" name="content" required>
-        <p>Zip file of Files</p>
-        <input type="file" id="content" name="content" required>
+        <h1 class="text-superAGREE">I agree to the above terms</h1>
+        <style>
+            .check-wrap {
+                width:100%;
+                display:flex;
+                align-items:center;
+                justify-content: center;
+                margin:20px;
 
-        <input type="submit" value="Submit" class="submit-button">
+            }
+        </style>
+        <div class="check-wrap">
+        <input class="superCheck" type="checkbox" id="agreement" name="agreement" required>
+    </div>
+<div>BORDER - THIS IS WHERE A CHEEKY BORDER WILL LIVE _ THIS IS WHERE WE WILL PUT A CHEEKY BOARDDER INDEED  </div>
+
+        <section>
+
+        <div id="contentUpload">
+                <label for="content">
+                    <h1>Content Upload:</h1></label>
+                <p>Album Artwork:</p>
+                <input type="file" id="content" name="content" required>
+                <p>Zip file of Files</p>
+                <input type="file" id="content" name="content" required>
+
+                <input type="submit" value="Submit" class="submit-button">
+        </div>
+        <div id="additionalDetails">
+            <label for="content">
+                <h1>Additional Details</h1></label>
+            <p>Give us as much as you'd like - this is all for the meta data and how we display and organize the site - we want to know basic sugar like, how many years you've been a band - so we can do things as we add features - imagine our own wikipedia style content source for artists</p>
+            <p>How many years have you been at it? </p>
+            <input type="text" id="name" name="name" required>
+            <p>What is the size of your crew</p>
+            <input type="text" id="name" name="name" required>
+            <p>Where are you playing next?</p>
+            <input type="text" id="name" name="name" required>
+
+
+            <input type="submit" value="Submit" class="submit-button">
+    </div>
     </form>
+</section>
     <p>We'll get back to you in 2-3 weeks and notify you if you are on Ahoy</p>
     <section>
         <a href="./geton.html" class="cta-button">Back</a>
