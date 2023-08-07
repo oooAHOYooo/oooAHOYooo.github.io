@@ -6,6 +6,43 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="script.js"></script>
 </head>
+
+<style>
+
+    .artist-logo {
+        width:62px;
+        height:62px;
+        background-size:cover;
+    }
+
+#artist-image1 {
+    background-color:green;
+    background-image: url(/images/getOn/cambellrice.png);
+}
+
+#artist-image2 {
+    background-color:green;
+    background-image: url(/images/getOn/youthxl.png);
+}
+
+#artist-image3 {
+    background-color:green;
+    background-image: url(/images/getOn/cambellrice.png);
+}
+
+#artist-image4 {
+    background-color:green;
+    background-image: url(/images/getOn/cambellrice.png);
+}
+
+.featured-artist-item {
+    display:flex;
+    flex-direction:column;
+    text-align:center;
+    justify-content: center;
+}
+
+</style>
 <body>
     <header>
         <h1>Get on</h1>
@@ -26,29 +63,26 @@
         <h2>Featured Artists</h2>
         <div class="carousel">
             <div class="featured-artist-item" id="artist1">
-                Artist 1
-                <img src="./u_ahoy23.png" alt="artist-thumbnail" class="artist-logo">
-
+                <p>Artist 1</p>
+                <div class="artist-logo" id="artist-image1"></div>
                 <h2>Cambell Rice</h2>
                 <h3>Musician</h3>
             </div>
             <div class="featured-artist-item" id="artist2">
-                Artist 2
-                <img src="./u_ahoy23.png" alt="artist-thumbnail" class="artist-logo">
-
+                <p>Artist 2</p>
+                <div class="artist-logo" id="artist-image2"></div>
                 <h2>YouthXL</h2>
                 <h3>Musician</h3>
             </div>
             <div class="featured-artist-item" id="artist3">
-                Artist 3
-                <img src="./u_ahoy23.png" alt="artist-thumbnail" class="artist-logo">
+                <p>Artist 3</p>
+                <div class="artist-logo" id="artist-image3"></div>
                 <h2>Samuel Dyaln Witch</h2>
                 <h3>Musician</h3>
             </div>
             <div class="featured-artist-item" id="artist4">
-                Artist 4
-                <img src="./u_ahoy23.png" alt="artist-thumbnail" class="artist-logo">
-
+                <p>Artist 4</p>
+                <div class="artist-logo" id="artist-image4"></div>
                 <h2>Jack Galvin</h2>
                 <h3>Filmmaker - Surfer</h3>
             </div>

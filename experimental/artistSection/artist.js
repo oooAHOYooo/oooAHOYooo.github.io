@@ -39,6 +39,15 @@
           { title: "Artwork 10", link: "#" },
         ],
       },
+      {
+        name: "Samuel Dylan Witch",
+        area: "Musician",
+        description: "samuel dylan witch is the best",
+        works: [
+          { title: "Artwork 9", link: "#" },
+          { title: "Artwork 10", link: "#" },
+        ],
+      },
     ];
 
     function populateLeftMenu() {
