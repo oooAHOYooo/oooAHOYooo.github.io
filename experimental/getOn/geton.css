@@ -141,3 +141,94 @@ form input[type="submit"]:active {
 a {
     color:white;
 }
+
+
+#agreement-text {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.artistAgreement {
+    font-size:30px;
+    text-align:center;
+    text-transform:uppercase;
+    font-weight:600;
+}
+
+label {
+    font-size:20px;
+    text-transform:uppercase;
+    font-weight:600;
+    text-align:center;
+}
+
+strong {
+    text-align:center;
+}
+
+.submit-button {
+    color:white;
+    font-size:20px;
+    font-weight:900;
+    text-transform:uppercase;
+}
+
+.text-superAGREE {
+    font-size:100px;
+    text-align:center;
+    line-height: .8;
+}
+
+.superCheck {
+    width:62px;
+    height:62px;
+    text-align:center;
+}
+
+input location {
+    color:white;
+    
+}
+
+.check-wrap {
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    margin:20px;
+
+}
+
+.text-little-note {
+    font-size:10px;
+    text-align:justify;
+}
+
+.text-additional-details {
+    margin-bottom:20px;
+    margin-top:20px;
+}
+
+.text-content-upload {
+    margin-bottom:20px;
+    margin-top:20px;
+
+}
+
+.additionalDetails p {
+
+    margin-top:100px;
+
+}
+
+/* Add this to your geton.css file */
+#additionalDetails input[type="text"] {
+    width: 100%; /* or you can specify a width in px, em, etc. */
+    padding: 5px;
+    height:100px;
+    box-sizing: border-box; /* ensures padding doesn't increase the width */
+}

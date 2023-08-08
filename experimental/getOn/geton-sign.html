@@ -5,59 +5,13 @@
     <link rel="stylesheet" type="text/css" href="./geton.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="signup.js"></script>
-    <style>
-        #agreement-text {
-            font-size: 18px;
-            line-height: 1.6;
-            color: #333;
-            padding: 20px;
-            background-color: #f7f7f7;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
-        .artistAgreement {
-            font-size:30px;
-            text-align:center;
-            text-transform:uppercase;
-            font-weight:600;
-        }
 
-        label {
-            font-size:20px;
-            text-transform:uppercase;
-            font-weight:600;
-            text-align:center;
-        }
-
-        strong {
-            text-align:center;
-        }
-
-        .submit-button {
-            color:white;
-            font-size:20px;
-            font-weight:900;
-            text-transform:uppercase;
-        }
-
-        .text-superAGREE {
-            font-size:100px;
-            text-align:center;
-            line-height: .8;
-        }
-
-        .superCheck {
-            width:62px;
-            height:62px;
-            text-align:center;
-        }
-    </style>
 </head>
 <body>
     <header>
-        <img src="./u_ahoy23.png" alt="Ahoy Logo" class="logo">
+        <a href="/index.html"><img src="./u_ahoy23.png" alt="Ahoy Logo" class="logo"></a>
     </header>
-    <form id="signup-form">
+    <form id="signup-form" action="submit.php" method="post">
         <label for="name">Legal Full Name:</label>
         <input type="text" id="name" name="name" required>
         
@@ -71,16 +25,7 @@
         <p id="agreement-text">
         </p>
         <h1 class="text-superAGREE">I agree to the above terms</h1>
-        <style>
-            .check-wrap {
-                width:100%;
-                display:flex;
-                align-items:center;
-                justify-content: center;
-                margin:20px;
 
-            }
-        </style>
         <div class="check-wrap">
         <input class="superCheck" type="checkbox" id="agreement" name="agreement" required>
     </div>
@@ -90,33 +35,43 @@
 
         <div id="contentUpload">
                 <label for="content">
-                    <h1>Content Upload:</h1></label>
+                    <h1 class="text-content-upload">Content Upload:</h1></label>
                 <p>Album Artwork:</p>
                 <input type="file" id="content" name="content" required>
                 <p>Zip file of Files</p>
                 <input type="file" id="content" name="content" required>
 
-                <input type="submit" value="Submit" class="submit-button">
         </div>
+
         <div id="additionalDetails">
             <label for="content">
-                <h1>Additional Details</h1></label>
-            <p>Give us as much as you'd like - this is all for the meta data and how we display and organize the site - we want to know basic sugar like, how many years you've been a band - so we can do things as we add features - imagine our own wikipedia style content source for artists</p>
+                <h1 class="text-additional-details">Additional Details</h1></label>
             <p>How many years have you been at it? </p>
-            <input type="text" id="name" name="name" required>
+            <input type="text" id="years at it" name="name" required>
             <p>What is the size of your crew</p>
-            <input type="text" id="name" name="name" required>
+            <input type="text" id="size of crew" name="name" required>
             <p>Where are you playing next?</p>
+            <input type="text" id="where play next" name="name" required>
+            <p>Bio</p>
             <input type="text" id="name" name="name" required>
 
+</div>
+        </section>
+
+
+<section>
+    <p class="text-little-note">Give us as much as you'd like - we use this data to sort out our artist library - and it helps us have to not e-mail you - think of us like a wikipedia - this is where the fast stats of who you are is - we don't have the crew to go on and on about a bio - but if you have a bio - feel free - but keep it link free people - robots are all over the place - how we display and organize the site - we want to know basic sugar like, how many years you've been a band - so we can do things as we add features - imagine our own wikipedia style content source for artists</p>
+
+</section>
 
             <input type="submit" value="Submit" class="submit-button">
     </div>
     </form>
 </section>
-    <p>We'll get back to you in 2-3 weeks and notify you if you are on Ahoy</p>
+<section>
+    <p>We'll get back to you in 2-3 weeks and notify you if you are on Ahoy</p></section>
     <section>
-        <a href="./geton.html" class="cta-button">Back</a>
+        <a href="./geton.html" class="cta-button">Submit</a>
     </section>
 </body>
 <script>
