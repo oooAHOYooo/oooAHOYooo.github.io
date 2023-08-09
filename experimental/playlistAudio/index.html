@@ -40,8 +40,86 @@
         <h2>Now Playing</h2>
         <img src="./path-to-artwork.jpg" alt="Artist's Artwork" class="artwork">
         <!-- You can add more elements here like song name, artist name, etc. -->
+   
+        <div class="neumorphic-player">
+            <img id="songThumbnail" src="https://via.placeholder.com/150.png" alt="Song Thumbnail">
+            <audio id="audioElement"></audio>
+            <button id="playPauseBtn" class="neumorphic-button">Play</button>
+            <div class="volume-control neumorphic-slider">
+                <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="1">
+            </div>
+        </div>
+        
+   
     </div>
+  <script>
+    const audioElement = document.getElementById("audioElement");
+const playPauseBtn = document.getElementById("playPauseBtn");
+const volumeSlider = document.getElementById("volumeSlider");
+const songThumbnail = document.getElementById("songThumbnail");
+
+let currentSongIndex = 0;
+
+playPauseBtn.addEventListener("click", function() {
+    if (audioElement.paused) {
+        audioElement.play();
+        playPauseBtn.innerText = "Pause";
+    } else {
+        audioElement.pause();
+        playPauseBtn.innerText = "Play";
+    }
+});
+
+volumeSlider.addEventListener("input", function() {
+    audioElement.volume = volumeSlider.value;
+});
+
+function loadSong(song) {
+    songThumbnail.src = song.thumbnail;
+    audioElement.src = song.url;
+    playPauseBtn.innerText = "Play";
+}
+
+loadSong(songsA[currentSongIndex]);
+
+  </script>
+
+<script>
+    let songsA = [
+    {
+        id: 1,
+        name: "Sample Song 1",
+        artist: "Artist 1",
+        thumbnail: "https://via.placeholder.com/150.png", // replace with actual image URL
+        url: "https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3", // replace with actual song URL
+        buyLink: "http://buySong1.com"
+    },
+    // ... add the other songs similarly
+];
+
+</script>
+
     
+     <script>
+        const audioElement = document.getElementById("audioElement");
+const playPauseBtn = document.getElementById("playPauseBtn");
+const volumeSlider = document.getElementById("volumeSlider");
+
+playPauseBtn.addEventListener("click", function() {
+    if (audioElement.paused) {
+        audioElement.play();
+        playPauseBtn.innerText = "Pause";
+    } else {
+        audioElement.pause();
+        playPauseBtn.innerText = "Play";
+    }
+});
+
+volumeSlider.addEventListener("input", function() {
+    audioElement.volume = volumeSlider.value;
+});
+
+     </script>
 
 
 </div>

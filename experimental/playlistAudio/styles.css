@@ -127,3 +127,69 @@ z-index:-1;
 80% { transform:translate(3%, 35%) }
 90% { transform:translate(-10%, 10%) }
 }
+
+.player {
+    width: 50%; 
+    margin-right: 5%; 
+}
+
+.player h2, 
+.player audio, 
+#songList {
+    width: 100%;
+    box-sizing: border-box; /* Ensure padding and borders are counted within the width */
+    margin: 0; /* Remove any margins */
+    padding: 0; /* Remove any paddings */
+}
+
+.player audio {
+    display: block; /* Make the audio player block level */
+    width: 100%;
+    margin-top: 10px; /* Add some spacing from the title */
+    background-color: rgba(0, 0, 0, 0.5); /* Translucent black */
+    border-radius: 10px; /* Rounded edges */
+    box-shadow:  10px 10px 15px #1a1a1a, 
+                -10px -10px 15px #4a4a4a; /* Neumorphic effect */
+    outline: none;
+}
+
+.neumorphic-player {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow:  10px 10px 15px #d9d9d9, 
+                -10px -10px 15px #ffffff;
+    width: 300px;
+}
+
+.neumorphic-button, .neumorphic-slider input[type="range"] {
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    outline: none;
+    box-shadow:  3px 3px 6px #d9d9d9, 
+                -3px -3px 6px #ffffff;
+    cursor: pointer;
+}
+
+.neumorphic-button:active, .neumorphic-slider input[type="range"]:active {
+    box-shadow: inset 3px 3px 6px #d9d9d9, 
+                inset -3px -3px 6px #ffffff;
+}
+
+.neumorphic-slider input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background: #f0f0f0;
+    cursor: pointer;
+    box-shadow:  2px 2px 4px #d9d9d9, 
+                -2px -2px 4px #ffffff;
+}
+
+.neumorphic-slider input[type="range"]::-moz-range-thumb {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;

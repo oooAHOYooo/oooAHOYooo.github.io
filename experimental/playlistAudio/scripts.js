@@ -1,8 +1,11 @@
 let playlists = [];
 
+
+
+
 let songs = [
-    { id: 1, name: "Sample Song 1", artist: "Artist 1", thumbnail: "path_to_img1.jpg", url: "path_to_song1.mp3", buyLink: "http://buySong1.com" },
-    { id: 2, name: "Sample Song 2", artist: "Artist 2", thumbnail: "path_to_img2.jpg", url: "path_to_song2.mp3", buyLink: "http://buySong2.com" },
+    { id: 1, name: "Sample Song 1", artist: "Artist 1", thumbnail: "path_to_img1.jpg", url: "https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3", buyLink: "http://buySong1.com" },
+    { id: 2, name: "Sample Song 2", artist: "Artist 2", thumbnail: "path_to_img2.jpg", url: "http://techslides.com/demos/samples/sample.mp3", buyLink: "http://buySong2.com" },
     { id: 3, name: "Sample Song 3", artist: "Artist 3", thumbnail: "path_to_img3.jpg", url: "path_to_song3.mp3", buyLink: "http://buySong3.com" },
     { id: 4, name: "Sample Song 4", artist: "Artist 4", thumbnail: "path_to_img4.jpg", url: "path_to_song4.mp3", buyLink: "http://buySong4.com" },
     { id: 5, name: "Sample Song 5", artist: "Artist 5", thumbnail: "path_to_img5.jpg", url: "path_to_song5.mp3", buyLink: "http://buySong5.com" },
