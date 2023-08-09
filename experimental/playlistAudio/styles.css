@@ -1,19 +1,21 @@
 body {
     font-family: Arial, sans-serif;
     background-color: navy;
-    background-size:cover;
-    background-attachment:fixed;
+    background-size: cover;
+    background-attachment: fixed;
     color: white;
     height: 100vh;
+    
 }
 
 .player {
-    width: 300px;
+    width: 50%; /* Changed to 70% width */
+    margin-right: 5%; /* Margin for some space from the right edge */
 }
 
 .flexWRAPS {
-    display:flex;
-    align-items:center;
+    display: flex;
+    align-items: flex-start;
 }
 
 button.buy {
@@ -34,6 +36,11 @@ button.buy {
     border: 1px solid white;
     padding: 10px;
     border-radius: 5px;
+    width: 30%; /* 30% width for the playlist */
+    position: fixed; /* Fixed position to make it stay on the left */
+    left: 5%; /* Some space from the left edge */
+    height: 90vh; /* Make it almost full height */
+    overflow-y: auto; /* If content exceeds the height, it's scrollable */
 }
 
 .playlist h3 {
@@ -51,7 +58,31 @@ button {
     margin: 5px;
 }
 
-
 .ahoyMusicLogo {
-    width:300px;
+    width: 300px;
+}
+
+.now-playing {
+    width: 20%; /* Adjust as per requirement */
+    height: 90vh;
+    margin:10px;
+    border-style:solid;
+    border-color:white;
+    border-width:1px;
+    margin-right: 5%; /* Margin to give some space from the right edge */
+    background-color: #333; /* Background color, adjust as per your design */
+    color: #fff; /* Text color, adjust as per your design */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    right: 0; /* Position it on the far right */
+    padding: 10px;
+    overflow-y: auto; /* Make it scrollable if content exceeds height */
+}
+
+.artwork {
+    max-width: 90%; /* Make sure the artwork fits inside the div */
+    margin-top: 10px;
+    border-radius: 10px; /* Optional: for rounded corners */
 }
