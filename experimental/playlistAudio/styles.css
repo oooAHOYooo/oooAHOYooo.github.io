@@ -1,15 +1,19 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #282828;
+    background-color: navy;
+    background-size:cover;
+    background-attachment:fixed;
     color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
 }
 
 .player {
     width: 300px;
+}
+
+.flexWRAPS {
+    display:flex;
+    align-items:center;
 }
 
 button.buy {
@@ -45,4 +49,9 @@ button.buy {
 button {
     padding: 5px 15px;
     margin: 5px;
+}
+
+
+.ahoyMusicLogo {
+    width:300px;
 }
