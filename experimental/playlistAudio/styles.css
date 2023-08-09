@@ -154,11 +154,11 @@ z-index:-1;
 }
 
 .neumorphic-player {
-    background-color: #f0f0f0;
+    background-color: #f0f0f01a;
     padding: 20px;
     border-radius: 10px;
-    box-shadow:  10px 10px 15px #d9d9d9, 
-                -10px -10px 15px #ffffff;
+    box-shadow:  10px 10px 15px #d9d9d900, 
+                -10px -10px 15px #ffffff1e;
     width: 300px;
 }
 
@@ -168,8 +168,8 @@ z-index:-1;
     border-radius: 5px;
     padding: 10px;
     outline: none;
-    box-shadow:  3px 3px 6px #d9d9d9, 
-                -3px -3px 6px #ffffff;
+    box-shadow:  3px 3px 6px #d9d9d903, 
+                -3px -3px 6px #ffffff03;
     cursor: pointer;
 }
 

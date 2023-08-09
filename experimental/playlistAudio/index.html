@@ -15,7 +15,7 @@
 <body id="index-body">
   <!-- BACK TO EXPERIMENTAL PAGE LINK -->
   <div style="display:flex; align-items: center; flex-direction:column;">
-    <a href="/experimental/experimental.html">Back to Ahoy Experiments </a>
+    <a href="/experimental/index.html">Back to Ahoy Experiments </a>
   </div>
     <div class="ahoyHeader">
         <a href="/index.html"><img src="/assets/u_ahoy23.png" class="ahoyMusicLogo">
@@ -36,11 +36,7 @@
         <div id="songList"></div>
     </div>
 
-    <div class="now-playing">
-        <h2>Now Playing</h2>
-        <img src="./path-to-artwork.jpg" alt="Artist's Artwork" class="artwork">
-        <!-- You can add more elements here like song name, artist name, etc. -->
-   
+    <div style="justify-content:flex-start;" class="now-playing">
         <div class="neumorphic-player">
             <img id="songThumbnail" src="https://via.placeholder.com/150.png" alt="Song Thumbnail">
             <audio id="audioElement"></audio>
@@ -49,77 +45,54 @@
                 <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="1">
             </div>
         </div>
-        
-   
+        <h2>Now Playing</h2>
+        <img src="./path-to-artwork.jpg" alt="Artist's Artwork" class="artwork">
+        <!-- You can add more elements here like song name, artist name, etc. -->
+
     </div>
-  <script>
-    const audioElement = document.getElementById("audioElement");
-const playPauseBtn = document.getElementById("playPauseBtn");
-const volumeSlider = document.getElementById("volumeSlider");
-const songThumbnail = document.getElementById("songThumbnail");
-
-let currentSongIndex = 0;
-
-playPauseBtn.addEventListener("click", function() {
-    if (audioElement.paused) {
-        audioElement.play();
-        playPauseBtn.innerText = "Pause";
-    } else {
-        audioElement.pause();
-        playPauseBtn.innerText = "Play";
-    }
-});
-
-volumeSlider.addEventListener("input", function() {
-    audioElement.volume = volumeSlider.value;
-});
-
-function loadSong(song) {
-    songThumbnail.src = song.thumbnail;
-    audioElement.src = song.url;
-    playPauseBtn.innerText = "Play";
-}
-
-loadSong(songsA[currentSongIndex]);
-
-  </script>
-
-<script>
-    let songsA = [
-    {
-        id: 1,
-        name: "Sample Song 1",
-        artist: "Artist 1",
-        thumbnail: "https://via.placeholder.com/150.png", // replace with actual image URL
-        url: "https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3", // replace with actual song URL
-        buyLink: "http://buySong1.com"
-    },
-    // ... add the other songs similarly
-];
-
-</script>
-
     
-     <script>
+    <script>
+        // Define songs array
+        let songsA = [{
+            id: 1,
+            name: "Sample Song 1",
+            artist: "Artist 1",
+            thumbnail: "https://via.placeholder.com/150.png", // replace with actual image URL
+            url: "https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3", // replace with actual song URL
+            buyLink: "http://buySong1.com"
+        },
+        // ... add other songs similarly
+        ];
+    
         const audioElement = document.getElementById("audioElement");
-const playPauseBtn = document.getElementById("playPauseBtn");
-const volumeSlider = document.getElementById("volumeSlider");
-
-playPauseBtn.addEventListener("click", function() {
-    if (audioElement.paused) {
-        audioElement.play();
-        playPauseBtn.innerText = "Pause";
-    } else {
-        audioElement.pause();
-        playPauseBtn.innerText = "Play";
-    }
-});
-
-volumeSlider.addEventListener("input", function() {
-    audioElement.volume = volumeSlider.value;
-});
-
-     </script>
+        const playPauseBtn = document.getElementById("playPauseBtn");
+        const volumeSlider = document.getElementById("volumeSlider");
+        const songThumbnail = document.getElementById("songThumbnail");
+        let currentSongIndex = 0;
+    
+        function loadSong(song) {
+            songThumbnail.src = song.thumbnail;
+            audioElement.src = song.url;
+            playPauseBtn.innerText = "Play";
+        }
+    
+        playPauseBtn.addEventListener("click", function() {
+            if (audioElement.paused) {
+                audioElement.play();
+                playPauseBtn.innerText = "Pause";
+            } else {
+                audioElement.pause();
+                playPauseBtn.innerText = "Play";
+            }
+        });
+    
+        volumeSlider.addEventListener("input", function() {
+            audioElement.volume = volumeSlider.value;
+        });
+    
+        // Load the first song
+        loadSong(songsA[currentSongIndex]);
+    </script>
 
 
 </div>
