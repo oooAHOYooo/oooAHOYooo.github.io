@@ -315,8 +315,62 @@ button {
         padding: 10px;
     }
 
-    .topMusicBar {
-        height:200px;
-    }
 
+
+}
+
+
+/*BIG BOTTOM BABY */
+
+
+
+.bigBottomBaby {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 100%; /* Updated to Full Width */
+    max-height: 250px; /* Updated max height */
+    overflow: hidden; /* Will hide content beyond max height */
+    background: rgba(0, 0, 0, 0.852); /* Translucent background */
+    backdrop-filter: blur(5px);
+    border-radius: 10px 10px 0 0; /* Rounded top corners */
+    display: flex;
+    flex-direction: column;
+    box-shadow: -5px -5px 15px #0a0a0a, 5px 5px 15px #2a2a2a; /* Neumorphism effect */
+    transition: max-height 0.3s; /* Smooth transition */
+    padding: 15px;
+    padding-left:20%;
+}
+
+.columnContainers {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.rowColumn {
+    flex: 1;
+    margin: 0 15px;
+    background-color: rgba(0, 0, 0, 0.2); /* Darker background for each column for differentiation */
+    padding: 10px;
+    border-radius: 10px; /* Slight curve to each column */
+    box-shadow: inset -2px -2px 5px #0a0a0a, inset 2px 2px 5px #2a2a2a; /* Inset Neumorphism effect */
+}
+
+.collapseButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.collapseButton .fas {
+    font-size: 3rem; /* Makes the icon bigger */
+    transition: transform 0.5s; /* Transition effect for smooth rotation */
+}
+
+/* This is the hover effect for the spinning animation */
+.collapseButton:hover .fas {
+    transform: rotateY(360deg); /* 3D spin on Y-axis */
 }

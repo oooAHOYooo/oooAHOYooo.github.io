@@ -5,18 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ahoy Music Player</title>
+    <title>Ahoy Music Player - as of 8.11.23-a</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-<style>
-  </style>
 </head>
 
 <body id="index-body">
-<style>
 
-
-</style>
 <!-- TOP MUSIC BAR -->
 <div class="topMusicBar">
   <div class="superAudio">
@@ -38,15 +34,15 @@
 </div>
 <!-- TOP BAR MUSIC END -->
 
-  <!-- BACK TO EXPERIMENTAL PAGE LINK -->
-  <div style="display:flex; align-items: center; flex-direction:column;">
-    <a href="/experimental/index.html">Back to Ahoy Experiments </a>
-  </div>
+
+
     <div class="ahoyHeader">
         <a href="/index.html"><img src="/assets/u_ahoy23.png" class="ahoyMusicLogo">
             </a>
         </div>
 
+
+        <!-- CORE STRUCTURE -->
 <div class="flexWRAPS">
     <div class="playlist-container">
         <h2>Playlists</h2>
@@ -54,6 +50,56 @@
         <button onclick="createPlaylist()">Create Playlist</button>
         <div id="playlists"></div>
     </div>
+<!-- END OF CORE STRUCTURE-->
+<script>
+  function toggleBigBottom() {
+    const bottomElement = document.querySelector('.bigBottomBaby');
+    if (bottomElement.style.maxHeight === '0px' || !bottomElement.style.maxHeight) {
+        bottomElement.style.maxHeight = '350px'; // 100px higher
+    } else {
+        bottomElement.style.maxHeight = '0px';
+    }
+}
+
+</script>
+<!-- BIG BOTTOM BABY -->
+<div class="bigBottomBaby">
+  
+  
+  <div>
+    <button class="collapseButton">
+      <i class="fas fa-bars"></i> <!-- Font Awesome Menu Icon -->
+  </button>
+    </div>
+
+  <div class="columnContainers">
+      <div class="rowColumn">
+          <div>Column 1 - will be a big notepad and scratchpad - and a button to send to the artist a note </div>
+      </div>
+
+      <div class="rowColumn">
+          <div>Column 2 - users will be able to create their burn list disc </div>
+      </div>
+
+      <div class="rowColumn">
+          <div>Column 3 - will have all of the ways people can interact with the music they're hearing</div>
+      </div>
+  </div>
+</div>
+
+<script>
+document.querySelector('.collapseButton').addEventListener('click', function() {
+  const dashboard = document.querySelector('.bigBottomBaby');
+  
+  if (dashboard.style.maxHeight === '300px') {
+      dashboard.style.maxHeight = '30px'; // Collapsed state height
+  } else {
+      dashboard.style.maxHeight = '300px';
+  }
+});
+</script>
+
+
     <div id="artists"></div>
 <script>
   let jsonData = {
@@ -191,7 +237,20 @@ window.onload = renderArtists;
     </script>
 
 
+
+
 </div>
+
+
+  <!-- BACK TO EXPERIMENTAL PAGE LINK -->
+  <div style="display:flex; align-items: center; flex-direction:column;">
+    <a href="/experimental/index.html">Back to Ahoy Experiments </a>
+  </div>
+  <!-- END OF PACK TO EXPERIMETNAL-->
+
+
+
+
     <script src="scripts.js"></script>
 </body>
 
