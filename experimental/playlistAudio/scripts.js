@@ -116,4 +116,6 @@ function renderSongs() {
 window.onload = function() {
     renderPlaylists();
     renderSongs();
+
 }
+

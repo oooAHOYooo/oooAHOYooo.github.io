@@ -28,6 +28,18 @@ a:hover {
     align-items: flex-start;
 }
 
+
+/*BUTTONS*/
+
+button {
+    opacity: .9;
+}
+
+button:hover {
+    opacity: 1
+}
+
+
 button.buy {
     background-color: green;
     color: white;
@@ -193,3 +205,118 @@ z-index:-1;
     height: 15px;
     width: 15px;
     border-radius: 50%;
+}
+
+
+/* TOP AUDIO PLAYER */
+
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: rgba(0, 0, 0, 0.5); /* Translucent dark background */
+    padding: 10px;
+    border-radius: 8px;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    color: #FFF;
+    cursor: pointer;
+}
+
+.progress-container {
+    flex: 1;
+    height: 5px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+    position: relative;
+    cursor: pointer;
+}
+
+.progress {
+    height: 100%;
+    background-color: #FFF;
+    width: 0%; /* Initially, the song is at the start so progress is 0% */
+}
+
+
+/*Artist Section */
+
+.artist-item {
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.artist-bio {
+    margin-top: 10px;
+    padding-left: 15px;
+}
+
+
+
+/* ... Existing Styles ... */
+
+/* Mobile-first styles (assuming most of the above are for larger screens/desktops) */
+
+/* General Responsive Media Queries */
+@media screen and (max-width: 768px) { /* Adjust this breakpoint as needed */
+    
+    /* Full width containers for mobile view */
+    .playlist, .now-playing, .player {
+        width: 100%;
+        position: relative; /* Reset to normal flow */
+        left: 0; 
+        height: auto;
+        margin: 10px 0; /* Add vertical margin for separation */
+    }
+    
+    .flexWRAPS {
+        flex-direction: column; /* Stack on top of each other on smaller screens */
+    }
+    
+    .player h2, .player audio, #songList {
+        width: 100%; /* Expand to full width */
+        box-sizing: border-box; 
+        margin: 0;
+        padding: 0;
+    }
+
+    .controls {
+        flex-wrap: wrap; /* Allow wrapping of controls */
+        justify-content: space-between; /* Space out the controls */
+    }
+
+    /* Compact the player for mobile view */
+    .player {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    /* Simplify logo size */
+    .ahoyMusicLogo {
+        width: 150px; /* Reduce size for mobile */
+    }
+    
+    /* Compact other elements */
+    button {
+        padding: 3px 10px;
+        margin: 3px;
+    }
+
+    /* Simplify artwork size for mobile */
+    .artwork {
+        max-width: 80%; 
+    }
+
+    .neumorphic-player {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .topMusicBar {
+        height:200px;
+    }
+
+}

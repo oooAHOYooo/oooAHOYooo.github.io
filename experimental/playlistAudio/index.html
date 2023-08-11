@@ -13,6 +13,31 @@
 </head>
 
 <body id="index-body">
+<style>
+
+
+</style>
+<!-- TOP MUSIC BAR -->
+<div class="topMusicBar">
+  <div class="superAudio">
+      <audio id="audioPlayer">
+          <source src="path_to_audio_file.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+      </audio>
+      <div class="controls">
+        <div>Now Playing</div>
+        <div>Artist Name</div>
+        <div>Song Name</div>
+          <button id="playPauseBtn">Play</button>
+          <div class="progress-container">
+              <div class="progress"></div>
+          </div>
+          <div><button>Add to Playlist </button></div>
+      </div>
+  </div>
+</div>
+<!-- TOP BAR MUSIC END -->
+
   <!-- BACK TO EXPERIMENTAL PAGE LINK -->
   <div style="display:flex; align-items: center; flex-direction:column;">
     <a href="/experimental/index.html">Back to Ahoy Experiments </a>
@@ -29,6 +54,77 @@
         <button onclick="createPlaylist()">Create Playlist</button>
         <div id="playlists"></div>
     </div>
+    <div id="artists"></div>
+<script>
+  let jsonData = {
+    "songs": [
+    {
+            "id": 1,
+            "name": "Sample Song 1",
+            "artist": "Artist 1",
+            "thumbnail": "path_to_img1.jpg",
+            "url": "https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3",
+            "buyLink": "http://buySong1.com"
+        },
+        {
+            "id": 2,
+            "name": "Sample Song 2",
+            "artist": "Artist 2",
+            "thumbnail": "path_to_img2.jpg",
+            "url": "http://techslides.com/demos/samples/sample.mp3",
+            "buyLink": "http://buySong2.com"
+        },
+
+        {
+            "id": 20,
+            "name": "Sample Song 20",
+            "artist": "Artist 20",
+            "thumbnail": "path_to_img20.jpg",
+            "url": "path_to_song20.mp3",
+            "buyLink": "http://buySong20.com"
+        }
+    ]
+};
+
+// Extract unique artist names and their details from the JSON
+let artists = [];
+jsonData.songs.forEach(song => {
+    if (!artists.some(artist => artist.name === song.artist)) {
+        artists.push({ name: song.artist, bio: "" }); // Assuming the bio is empty for now since the JSON doesn't provide it.
+    }
+});
+
+// Sort artists by name
+artists.sort((a, b) => a.name.localeCompare(b.name));
+
+// Render function
+function renderArtists() {
+    const artistsDiv = document.getElementById("artists");
+    let html = '';
+
+    artists.forEach(artist => {
+        html += `
+        <div class="artist-item">
+            <h3 class="artist-name">${artist.name}</h3>
+            <p class="artist-bio" style="display: none;">${artist.bio || "Bio not available."}</p>
+        </div>`;
+    });
+
+    artistsDiv.innerHTML = html;
+}
+
+// Event listener to show/hide bio on artist click
+document.addEventListener('click', function(e) {
+    if (e.target && e.target.classList.contains('artist-name')) {
+        const bio = e.target.nextElementSibling;
+        bio.style.display = bio.style.display === 'none' ? 'block' : 'none';
+    }
+});
+
+// Initialize render
+window.onload = renderArtists;
+
+</script>
 
     <div class="player">
         <h2>Songs</h2>

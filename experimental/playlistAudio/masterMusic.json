@@ -1,0 +1,29 @@
+{
+    "songs": [
+        {
+            "id": 1,
+            "name": "Sample Song 1",
+            "artist": "Artist 1",
+            "thumbnail": "path_to_img1.jpg",
+            "url": "https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3",
+            "buyLink": "http://buySong1.com"
+        },
+        {
+            "id": 2,
+            "name": "Sample Song 2",
+            "artist": "Artist 2",
+            "thumbnail": "path_to_img2.jpg",
+            "url": "http://techslides.com/demos/samples/sample.mp3",
+            "buyLink": "http://buySong2.com"
+        },
+
+        {
+            "id": 20,
+            "name": "Sample Song 20",
+            "artist": "Artist 20",
+            "thumbnail": "path_to_img20.jpg",
+            "url": "path_to_song20.mp3",
+            "buyLink": "http://buySong20.com"
+        }
+    ]
+}
