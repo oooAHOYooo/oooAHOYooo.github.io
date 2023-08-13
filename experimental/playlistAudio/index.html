@@ -15,16 +15,42 @@
     border-style:solid;
     padding:1px;
     border-width:.51px;
-    border-color: transparent;
-    
+    border-color: transparent; 
   }
-
   button:hover {
     border-color:white;
-
-
-
   }
+
+  .searchBarContainer {
+    background-color: rgba(225, 225, 225, 0.187);  /* Translucent background */
+    border-radius: 1px;
+    box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.126), 
+                -9px -9px 16px rgba(255, 255, 255, 0.125);
+    padding: 5px;
+    border-style:solid;
+    border-color:rgba(255, 255, 255, 0.089);
+    text-align:center;
+    
+}
+
+.searchBarContainer input {
+  background-color:transparent;
+  height:40px;
+  width:500px;
+  border-width:1px;
+  border-radius:5px;
+  border-style:solid;
+  border-color:rgba(255, 255, 255, 0.186);
+  color:white;
+  padding-left:10px;
+  text-transform:uppercase;
+  font-size:12px;
+
+}
+
+
+
+
 </style>
 <body id="index-body">
 
@@ -50,14 +76,12 @@
 <!-- TOP BAR MUSIC END -->
 
 <!-- SEARCH BAR -->
-<!-- SEARCH BAR -->
 <div class="searchBarContainer">
-  <input type="text" id="searchInput" placeholder="Search for a song...">
+  <input type="text" id="searchInput" placeholder="Search for a song..." onkeyup="handleKeyPress(event)">
   <button onclick="searchSongs()">Search</button>
   <button id="likeButton"><i class="fas fa-heart"></i></button>
 </div>
 
-</div>
 <!-- SEARCH BAR CODE -->
 <script>
   function searchSongs() {
@@ -78,15 +102,22 @@
     });
 
     songListDiv.innerHTML = html;
-}
+  }
 
-window.onload = function() {
+  // Function to handle the keyup event on the search input
+  function handleKeyPress(event) {
+    if (event.key === 'Enter') {
+      searchSongs();
+    }
+  }
+
+  window.onload = function() {
     renderArtists();
     searchSongs(); // This will display all songs by default
-};
-
+  };
 
 </script>
+
 
 
     <div class="ahoyHeader">
@@ -98,13 +129,23 @@ window.onload = function() {
         </div>
 
         <!-- CORE STRUCTURE -->
+
 <div class="flexWRAPS">
     <div class="playlist-container">
         <h2>Playlists</h2>
         <input type="text" id="newPlaylistName" placeholder="Playlist name...">
         <button onclick="createPlaylist()">Create Playlist</button>
         <div id="playlists"></div>
+        <div class="playlist-container">
+          MORE AND MORE AND more
+          <div id="searchResults" class="searchResultsContainer"></div>
+
+          <div>
+            Artist Section - List of Artists
+          </div>
+        </div>
     </div>
+<!-- END OF LEFT SIDEBAR -->
 <!-- END OF CORE STRUCTURE-->
 <script>
   function toggleBigBottom() {
@@ -129,16 +170,18 @@ window.onload = function() {
 
   <div class="columnContainers">
       <div class="rowColumn">
-          <div>Column 1 - will be a big notepad and scratchpad - and a button to send to the artist a note </div>
+          <div><h2>Notepad</h2>>ill be a big notepad and scratchpad - and a button to send to the artist a note </div>
       </div>
 
       <div class="rowColumn">
-        <div>Burn Songs to a CD and Send to a Friend</div>
+        <div>
+          <h2>Burn CD</h2>Burn Songs to a CD and Send to a Friend</div>
           <button>burn later</button><button>burn now</button>
       </div>
 
       <div class="rowColumn">
-          <div>Column 3 - will have all of the ways people can interact with the music they're hearing</div>
+          <div>
+            <h2>Additional Menu</h2>Column 3 - will have all of the ways people can interact with the music they're hearing</div>
       </div>
   </div>
 </div>
@@ -181,6 +224,48 @@ document.querySelector('.collapseButton').addEventListener('click', function() {
             "id": 20,
             "name": "Sample Song 20",
             "artist": "Artist 20",
+            "thumbnail": "path_to_img20.jpg",
+            "url": "path_to_song20.mp3",
+            "buyLink": "http://buySong20.com"
+        },
+        {
+            "id": 16,
+            "name": "Sample Song Eric",
+            "artist": "Artist 13",
+            "thumbnail": "path_to_img1.jpg",
+            "url": "https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3",
+            "buyLink": "http://buySong1.com"
+        },
+        {
+            "id": 21,
+            "name": "Sample Song Derek",
+            "artist": "Artist 22",
+            "thumbnail": "path_to_img2.jpg",
+            "url": "http://techslides.com/demos/samples/sample.mp3",
+            "buyLink": "http://buySong2.com"
+        },
+
+        {
+            "id": 220,
+            "name": "Sample Song LEREK",
+            "artist": "Artist 250",
+            "thumbnail": "path_to_img20.jpg",
+            "url": "path_to_song20.mp3",
+            "buyLink": "http://buySong20.com"
+        },
+        {
+            "id": 31,
+            "name": "Weeping Willow",
+            "artist": "Samuel Dylan Witch",
+            "thumbnail": "path_to_img2.jpg",
+            "url": "http://techslides.com/demos/samples/sample.mp3",
+            "buyLink": "http://buySong2.com"
+        },
+
+        {
+            "id": 120,
+            "name": "I believe in love",
+            "artist": "Clones of Clarence",
             "thumbnail": "path_to_img20.jpg",
             "url": "path_to_song20.mp3",
             "buyLink": "http://buySong20.com"
