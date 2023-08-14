@@ -41,6 +41,25 @@ function renderPlaylists() {
     const playlistDiv = document.getElementById("playlists");
     let html = '';
 
+    // First, create the 'Add songs to playlist:' section
+    html += `<div><h3>Add songs to playlist:</h3><select id="playlistSelector">`;
+    playlists.forEach(playlist => {
+        html += `<option value="${playlist.id}">${playlist.name}</option>`;
+    });
+    html += `</select>`;
+    songs.forEach(song => {
+        html += `
+        <div style="background-color: lightblue; margin: 5px; padding: 5px;">
+            <label>
+                <input type="checkbox" value="${song.id}" class="songCheckbox"> 
+                ${song.name} by ${song.artist}
+            </label>
+            <button onclick="likeSong(${song.id})">Like</button>
+        </div>`;
+    });
+    html += `<button onclick="addSelectedSongsToPlaylist()">Add to Selected Playlist</button></div>`;
+
+    // Then, list out the individual playlists
     playlists.forEach(playlist => {
         html += `<div><strong>${playlist.name}</strong> <button onclick="deletePlaylist(${playlist.id})">Delete</button><ul>`;
         playlist.songs.forEach(songId => {
@@ -50,18 +69,15 @@ function renderPlaylists() {
         html += `</ul></div>`;
     });
 
-    html += `<div><h3>Add songs to playlist:</h3><select id="playlistSelector">`;
-    playlists.forEach(playlist => {
-        html += `<option value="${playlist.id}">${playlist.name}</option>`;
-    });
-    html += `</select>`;
-    songs.forEach(song => {
-        html += `<div><label><input type="checkbox" value="${song.id}" class="songCheckbox"> ${song.name} by ${song.artist}</label></div>`;
-    });
-    html += `<button onclick="addSelectedSongsToPlaylist()">Add to Selected Playlist</button></div>`;
-
     playlistDiv.innerHTML = html;
 }
+
+function likeSong(songId) {
+    // Here, add the functionality for liking a song. For instance:
+    // Update a "liked" status in your song data, or
+    // Show a confirmation message to the user.
+}
+
 
 function addSelectedSongsToPlaylist() {
     const selectedPlaylistId = document.getElementById("playlistSelector").value;
