@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahoy Music Player - as of 8.11.23-a</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<style>
+  
+</style>
+<body id="index-body">
+
+<!-- TOP MUSIC BAR -->
+<div class="topMusicBar">
+  <div class="superAudio">
+      <audio id="audioPlayer">
+          <source src="path_to_audio_file.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+      </audio>
+      <div class="controls">
+        <div><span>Now Playing</span></div>
+        <div>Artist Name</div>
+        <div>Song Name</div>
+          <button id="playPauseBtn">Play</button>
+          <div class="progress-container">
+              <div class="progress"></div>
+          </div>
+          <div><button>Add to Playlist </button></div>
+      </div>
+  </div>
+</div>
+<!-- TOP BAR MUSIC END -->
+
+<!-- SEARCH BAR -->
+<div class="searchBarContainer">
+  <input type="text" id="searchInput" placeholder="Search for a song..." onkeyup="handleKeyPress(event)">
+  <button onclick="searchSongs()">Search</button>
+  <button id="likeButton"><i class="fas fa-heart"></i></button>
+</div>
+
+<!-- SEARCH BAR CODE -->
+<script>
+  function searchSongs() {
+    const searchQuery = document.getElementById('searchInput').value.toLowerCase();
+    const songListDiv = document.getElementById('songList');
+    
+    let filteredSongs = jsonData.songs.filter(song => {
+        return song.name.toLowerCase().includes(searchQuery) || song.artist.toLowerCase().includes(searchQuery);
+    });
+
+    let html = '';
+    filteredSongs.forEach(song => {
+        html += `
+            <div class="song-item">
+                <h4 class="song-name">${song.name}</h4>
+                <p class="song-artist">${song.artist}</p>
+            </div>`;
+    });
+
+    songListDiv.innerHTML = html;
+  }
+
+  // Function to handle the keyup event on the search input
+  function handleKeyPress(event) {
+    if (event.key === 'Enter') {
+      searchSongs();
+    }
+  }
+
+  window.onload = function() {
+    renderArtists();
+    searchSongs(); // This will display all songs by default
+  };
+
+</script>
+<!-- IMPORTANT -->
+<script src="./songList.js"></script>
+
+    <div class="ahoyHeader">
+        <a href="/index.html"><img src="/assets/u_ahoy23.png" class="ahoyMusicLogo">
+            </a>
+        </div>
+        <div>Search Results
+        <div id="searchResults" class="searchResultsContainer"></div>
+        </div>
+
+        <!-- CORE STRUCTURE -->
+
+<div class="flexWRAPS">
+    <div class="playlist-container">
+        <h2>Playlists</h2>
+        <input type="text" id="newPlaylistName" placeholder="Playlist name...">
+        <button onclick="createPlaylist()">Create Playlist</button>
+        <div id="playlists"></div>
+        <div class="playlist-container">
+          MORE AND MORE AND more
+          <div id="searchResults" class="searchResultsContainer"></div>
+
+          <div>
+            Artist Section - List of Artists
+          </div>
+        </div>
+    </div>
+<!-- END OF LEFT SIDEBAR -->
+<!-- END OF CORE STRUCTURE-->
+<script>
+  function toggleBigBottom() {
+    const bottomElement = document.querySelector('.bigBottomBaby');
+    if (bottomElement.style.maxHeight === '0px' || !bottomElement.style.maxHeight) {
+        bottomElement.style.maxHeight = '350px'; // 100px higher
+    } else {
+        bottomElement.style.maxHeight = '0px';
+    }
+}
+
+</script>
+<!-- BIG BOTTOM BABY -->
+<div class="bigBottomBaby">
+  
+  
+  <div>
+    <button class="collapseButton">
+      <i class="fas fa-bars"></i> <!-- Font Awesome Menu Icon -->
+  </button>
+    </div>
+
+  <div class="columnContainers">
+      <div class="rowColumn">
+          <div><h2>Notepad</h2>>ill be a big notepad and scratchpad - and a button to send to the artist a note </div>
+      </div>
+
+      <div class="rowColumn">
+        <div>
+          <h2>Burn CD</h2>Burn Songs to a CD and Send to a Friend</div>
+          <button>burn later</button><button>burn now</button>
+      </div>
+
+      <div class="rowColumn">
+          <div>
+            <h2>Additional Menu</h2>Column 3 - will have all of the ways people can interact with the music they're hearing</div>
+      </div>
+  </div>
+</div>
+
+<script>
+document.querySelector('.collapseButton').addEventListener('click', function() {
+  const dashboard = document.querySelector('.bigBottomBaby');
+  
+  if (dashboard.style.maxHeight === '300px') {
+      dashboard.style.maxHeight = '30px'; // Collapsed state height
+  } else {
+      dashboard.style.maxHeight = '300px';
+  }
+});
+</script>
+
+<script src="./scripts-audiomgmt.js"></script>
+    <div id="artists"></div>
+
+
+    <div class="player">
+        <h2>Songs</h2>
+        <!-- <audio id="audio" controls></audio> -->
+        <div id="songList"></div>
+    </div>
+
+    <div style="justify-content:flex-start;" class="now-playing">
+        <div class="neumorphic-player">
+            <img id="songThumbnail" src="https://via.placeholder.com/150.png" alt="Song Thumbnail">
+            <audio id="audioElement"></audio>
+            <button id="playPauseBtn" class="neumorphic-button">Play</button>
+            <div class="volume-control neumorphic-slider">
+                <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="1">
+            </div>
+        </div>
+        <h2>Now Playing</h2>
+        <img src="./path-to-artwork.jpg" alt="Artist's Artwork" class="artwork">
+        <!-- You can add more elements here like song name, artist name, etc. -->
+
+    </div>
+    
+    <script>
+        // Define songs array
+        let songsA = [{
+            id: 1,
+            name: "Sample Song 1",
+            artist: "Artist 1",
+            thumbnail: "https://via.placeholder.com/150.png", // replace with actual image URL
+            url: "https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3", // replace with actual song URL
+            buyLink: "http://buySong1.com"
+        },
+        // ... add other songs similarly
+        ];
+    
+        const audioElement = document.getElementById("audioElement");
+        const playPauseBtn = document.getElementById("playPauseBtn");
+        const volumeSlider = document.getElementById("volumeSlider");
+        const songThumbnail = document.getElementById("songThumbnail");
+        let currentSongIndex = 0;
+    
+        function loadSong(song) {
+            songThumbnail.src = song.thumbnail;
+            audioElement.src = song.url;
+            playPauseBtn.innerText = "Play";
+        }
+    
+        playPauseBtn.addEventListener("click", function() {
+            if (audioElement.paused) {
+                audioElement.play();
+                playPauseBtn.innerText = "Pause";
+            } else {
+                audioElement.pause();
+                playPauseBtn.innerText = "Play";
+            }
+        });
+    
+        volumeSlider.addEventListener("input", function() {
+            audioElement.volume = volumeSlider.value;
+        });
+    
+        // Load the first song
+        loadSong(songsA[currentSongIndex]);
+    </script>
+
+
+
+
+</div>
+
+
+  <!-- BACK TO EXPERIMENTAL PAGE LINK -->
+  <div style="display:flex; align-items: center; flex-direction:column;">
+    <a href="/experimental/index.html">Back to Ahoy Experiments </a>
+  </div>
+  <!-- END OF PACK TO EXPERIMETNAL-->
+
+
+
+
+    <script src="scripts.js"></script>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+<!-- CODE = BACKGROUND CHANGES DEPENDING ON Page Refresh - or Hour -->
+<script>
+    const day = new Date();
+    const hr = day.getHours();
+  
+    if (window.innerWidth > 300) {
+      document.body.style.backgroundColor = "#acaca3";
+  
+      if (hr === 5) {
+        document.body.style.backgroundImage = "url('https://thumbs.gfycat.com/FrayedQuaintAnteater-max-1mb.gif')";
+      } else if (hr === 6 || hr === 12) {
+        document.body.style.backgroundImage = "url('https://www.icegif.com/wp-content/uploads/2022/02/icegif-536.gif')";
+      } else if (hr === 7 || hr === 13 || hr === 14) {
+        document.body.style.backgroundImage = "url('https://thumbs.gfycat.com/BackLankyGangesdolphin-size_restricted.gif')";
+      } else if (hr === 8 || hr === 9 || hr === 10) {
+        document.body.style.backgroundImage = "url('https://media1.giphy.com/media/wkKyBT94rB196/giphy.gif?cid=ecf05e47b9ypgsrn61em96kw5zberiuv0vmdperhn0uq9ch2&rid=giphy.gif&ct=g')";
+      } else if (hr === 11) {
+        document.body.style.backgroundImage = "url('https://i.gifer.com/ARqO.gif')";
+      } else if (hr === 15 || hr === 16) {
+        document.body.style.backgroundImage = "url('https://s.yimg.com/uu/api/res/1.2/rVdUX8eVa31S_5JDCvvp0A--~B/Zmk9ZmlsbDtweW9mZj0wO3c9NjQwO2g9MzYwO3NtPTE7YXBwaWQ9eXRhY2h5b24-/http://media.zenfs.com/en-US/video/video.storyful.com/866362344b92b1cb1d9c3a36db9b0520')";
+      } else if (hr === 17 || hr === 18 || hr === 19 || hr === 20) {
+        document.body.style.backgroundImage = "url('https://media.tenor.com/S8_V9lNMc3oAAAAM/waves-awesome.gif')";
+      } else if (hr === 22) {
+        document.body.style.backgroundImage = "url('https://i.pinimg.com/originals/c6/36/2e/c6362e4ca5fa5e887c6b9ddfcb82c13d.gif')";
+      } else if (hr === 23) {
+        document.body.style.backgroundImage = "url('https://i.pinimg.com/originals/fc/38/97/fc389789c5fbe80b36df05e8ee441c66.gif')";
+      } else if (hr === 24) {
+        document.body.style.backgroundImage = "url('https://c.tenor.com/lWbWfolwJfIAAAAC/ocean-night.gif')";
+      }
+    } else {
+      document.body.style.backgroundColor = "#000f2b85;";
+    }
+  </script>
+
+
+</html>
