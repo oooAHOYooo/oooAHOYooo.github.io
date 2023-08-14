@@ -49,7 +49,7 @@ function renderPlaylists() {
     html += `</select>`;
     songs.forEach(song => {
         html += `
-        <div style="background-color: lightblue; margin: 5px; padding: 5px;">
+        <div class="songRenderDiv">
             <label>
                 <input type="checkbox" value="${song.id}" class="songCheckbox"> 
                 ${song.name} by ${song.artist}
