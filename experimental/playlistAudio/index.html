@@ -11,46 +11,7 @@
 
 </head>
 <style>
-  button {
-    border-style:solid;
-    padding:1px;
-    border-width:.51px;
-    border-color: transparent; 
-  }
-  button:hover {
-    border-color:white;
-  }
-
-  .searchBarContainer {
-    background-color: rgba(225, 225, 225, 0.187);  /* Translucent background */
-    border-radius: 1px;
-    box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.126), 
-                -9px -9px 16px rgba(255, 255, 255, 0.125);
-    padding: 5px;
-    border-style:solid;
-    border-color:rgba(255, 255, 255, 0.089);
-    text-align:center;
-    
-}
-
-.searchBarContainer input {
-  background-color:transparent;
-  height:40px;
-  width:500px;
-  border-width:1px;
-  border-radius:5px;
-  border-style:solid;
-  border-color:rgba(255, 255, 255, 0.186);
-  color:white;
-  padding-left:10px;
-  text-transform:uppercase;
-  font-size:12px;
-
-}
-
-
-
-
+  
 </style>
 <body id="index-body">
 
@@ -62,7 +23,7 @@
           Your browser does not support the audio element.
       </audio>
       <div class="controls">
-        <div>Now Playing</div>
+        <div><span>Now Playing</span></div>
         <div>Artist Name</div>
         <div>Song Name</div>
           <button id="playPauseBtn">Play</button>
@@ -315,7 +276,7 @@ window.onload = renderArtists;
 
     <div class="player">
         <h2>Songs</h2>
-        <audio id="audio" controls></audio>
+        <!-- <audio id="audio" controls></audio> -->
         <div id="songList"></div>
     </div>
 
@@ -394,6 +355,15 @@ window.onload = renderArtists;
 
     <script src="scripts.js"></script>
 </body>
+
+
+
+
+
+
+
+
+
 
 
 <!-- CODE = BACKGROUND CHANGES DEPENDING ON Page Refresh - or Hour -->
