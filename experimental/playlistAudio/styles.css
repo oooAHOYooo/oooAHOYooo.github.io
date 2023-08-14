@@ -436,3 +436,23 @@ button {
 
 
 
+.songList {
+    background-color: rgb(191, 255, 0);
+    height: 100px; /* adjust as per your needs */
+    border: 2px solid black; /* adjust border style as per your needs */
+    margin: 10px 0;
+    padding: 10px;
+    color: white; /* to make the text visible on a blue background */
+}
+
+
+
+/*RENDEDERD CSS */
+
+.songRenderDiv {
+    color:lightblue;
+}
+
+.songRenderDiv:hover {
+    background-color:rgba(0, 157, 255, 0.237);
+}
