@@ -1,5 +1,5 @@
 let songs = [
-    { id: 1, name: "Sunrise Days", artist: "YouthXL", thumbnail: "path_to_img1.jpg", url: "https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3", buyLink: "http://buySong1.com" },
+    { id: 1, name: "Sunset Days", artist: "YouthXL", thumbnail: "path_to_img1.jpg", url: "https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3", buyLink: "http://buySong1.com" },
     { id: 2, name: "Dreamy Roads", artist: "YouthXL", thumbnail: "path_to_img2.jpg", url: "http://techslides.com/demos/samples/sample.mp3", buyLink: "http://buySong2.com" },
     { id: 3, name: "Echo Chamber", artist: "Clones of Clarence", thumbnail: "path_to_img3.jpg", url: "path_to_song3.mp3", buyLink: "http://buySong3.com" },
     { id: 4, name: "Pixel World", artist: "Clones of Clarence", thumbnail: "path_to_img4.jpg", url: "path_to_song4.mp3", buyLink: "http://buySong4.com" },
