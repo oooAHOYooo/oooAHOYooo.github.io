@@ -1,11 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100;300;400;500;600;700;800;900&display=swap');
+
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: navy;
+    font-family: 'Barlow', sans-serif;    background-color: navy;
     background-size: cover;
     background-attachment: fixed;
     color: white;
     height: 100vh;
     
+}
+
+#index-body {
+    height: 100vh;
+    background-color:black;
+  }
+
+#index-body:before {
+animation: grain 8s steps(10) infinite;
+background-image: url(./assets/ahoygrain.jpg);
+content: "";
+height: 300%;
+left: -50%;
+opacity: 0.63;
+background-color:black;
+position: fixed;
+top: -110%;
+width: 300%;
+z-index:-1;
 }
 
 .player {
@@ -91,7 +112,7 @@ button.buy {
 }
 
 .player p {
-    color:red;e
+    color:red;
 }
 
 button {
@@ -104,14 +125,14 @@ button {
 }
 
 .now-playing {
-    width: 20%; /* Adjust as per requirement */
-    height: 90vh;
+    width: 25%; /* Adjust as per requirement */
+    height: 50vh;
     margin:10px;
     border-style:solid;
     border-color:white;
-    border-width:1px;
+    border-width:.1px;
     margin-right: 5%; /* Margin to give some space from the right edge */
-    background-color: #333; /* Background color, adjust as per your design */
+    background-color: #33333338; /* Background color, adjust as per your design */
     color: #fff; /* Text color, adjust as per your design */
     display: flex;
     flex-direction: column;
@@ -127,24 +148,7 @@ button {
     margin-top: 10px;
     border-radius: 10px; /* Optional: for rounded corners */
 }
-#index-body {
-    height: 100vh;
-    background-color:black;
-  }
 
-#index-body:before {
-animation: grain 8s steps(10) infinite;
-background-image: url(./assets/ahoygrain.jpg);
-content: "";
-height: 300%;
-left: -50%;
-opacity: 0.63;
-background-color:black;
-position: fixed;
-top: -110%;
-width: 300%;
-z-index:-1;
-}
 
 @keyframes grain {
 0%, 100% { transform:translate(0, 0) }
@@ -350,7 +354,10 @@ button {
     width: 100%; /* Updated to Full Width */
     max-height: 250px; /* Updated max height */
     overflow: hidden; /* Will hide content beyond max height */
-    background: rgba(0, 0, 0, 0.852); /* Translucent background */
+    background-color:black;
+    mix-blend-mode: normal;
+    opacity: 1 ;
+    z-index: 3;
     backdrop-filter: blur(5px);
     border-radius: 10px 10px 0 0; /* Rounded top corners */
     display: flex;
