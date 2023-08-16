@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahoy Music Player</title>
+    <link rel="stylesheet" href="apv4.css">
+</head>
+
+<body id="index-body">
+
+    <audio controls id="audioPlayer">
+        <source id="audioSource" src="" type="audio/mpeg">
+        Your browser does not support the audio tag.
+    </audio>
+
+    <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="1">
+    <input type="text" id="searchInput" placeholder="Search for music..." />
+    <button id="searchButton">Search</button>
+    <div id="searchResults">
+        <table id="songsTable">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Artist</th>
+                    <th>Length</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="songsBody"></tbody>
+        </table>
+    </div>
+    <div id="playlist">
+        <h3>Playlist</h3>
+        <ul id="playlistItems"></ul>
+    </div>
+    <script>
+        let musicData = [
+            { "name": "Sunset Days", "artist": "YouthXL", "url": "https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3", "length": "3:00" },
+            { "name": "Dreamy Roads", "artist": "YouthXL", "url": "http://techslides.com/demos/samples/sample.mp3", "length": "4:15" }
+        ];
+        let playlist = [];
+
+        function populateSongsTable(songs = musicData) {
+            const songsBody = document.getElementById('songsBody');
+            songsBody.innerHTML = '';
+            songs.forEach((song, index) => {
+                const row = songsBody.insertRow();
+                row.insertCell(0).innerHTML = song.name;
+                row.insertCell(1).innerHTML = song.artist;
+                row.insertCell(2).innerHTML = song.length;
+                const actionCell = row.insertCell(3);
+                const playButton = document.createElement('button');
+                playButton.innerHTML = 'Play Song';
+                playButton.addEventListener('click', function () {
+                    playSong(song);
+                });
+                actionCell.appendChild(playButton);
+                const addButton = document.createElement('button');
+                addButton.innerHTML = 'Add to Playlist';
+                addButton.addEventListener('click', function () {
+                    addToPlaylist(song);
+                });
+                actionCell.appendChild(addButton);
+            });
+        }
+
+        function playSong(song) {
+            const audioPlayer = document.getElementById('audioPlayer');
+            const audioSource = document.getElementById('audioSource');
+            audioSource.src = song.url;
+            audioPlayer.load();
+            audioPlayer.play();
+        }
+
+        function addToPlaylist(song) {
+            playlist.push(song);
+            populatePlaylist();
+        }
+
+        function populatePlaylist() {
+            const playlistItems = document.getElementById('playlistItems');
+            playlistItems.innerHTML = '';
+            playlist.forEach((song, index) => {
+                const li = document.createElement('li');
+                li.innerHTML = `${song.name} - ${song.artist}`;
+                const playButton = document.createElement('button');
+                playButton.innerHTML = 'Play';
+                playButton.addEventListener('click', function () {
+                    playSong(song);
+                });
+                li.appendChild(playButton);
+                playlistItems.appendChild(li);
+            });
+        }
+
+        populateSongsTable();
+
+        // Handle search input
+        document.getElementById('searchButton').addEventListener('click', function () {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const results = musicData.filter(song => song.name.toLowerCase().includes(searchTerm) || song.artist.toLowerCase().includes(searchTerm));
+            populateSongsTable(results);
+        });
+
+        // Handle volume control
+        const volumeSlider = document.getElementById('volumeSlider');
+        const audioPlayer = document.getElementById('audioPlayer');
+        volumeSlider.addEventListener('input', function () {
+            audioPlayer.volume = this.value;
+        });
+    </script>
+
+</body>
+
+</html>

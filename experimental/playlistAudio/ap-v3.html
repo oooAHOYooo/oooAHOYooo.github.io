@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMPv3 - Ahoy Music Player - as of 8.15a</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="ap3-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+
+</head>
+
+<body id="index-body">
+    <!-- Add the clock div below the Ahoy Header -->
+    <div class="clock" id="clockDisplay" style="font-size: 48px; text-align: center;"></div>
+
+    <!-- Add Light/Dark mode toggle button after the clock div -->
+    <button id="themeToggle">Toggle Light/Dark Mode</button>
+<!-- TOP MUSIC BAR -->
+<div class="topMusicBar">
+  <div class="superAudio">
+      <audio id="audioPlayer">
+          <source src="path_to_audio_file.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+      </audio>
+      <div class="controls">
+        <div><span>Now Playing</span></div>
+        <div>Artist Name</div>
+        <div>Song Name</div>
+          <button id="playPauseBtn">Play</button>
+          <div class="progress-container">
+              <div class="progress"></div>
+          </div>
+          <div><button>Add to Playlist </button></div>
+      </div>
+  </div>
+</div>
+
+<!-- TOP BAR MUSIC END -->
+
+<!-- SEARCH BAR -->
+<div class="searchBarContainer">
+  <input type="text" id="searchInput" placeholder="Search for a song..." onkeyup="handleKeyPress(event)">
+  <button onclick="searchSongs()">Search</button>
+  <button id="likeButton"><i class="fas fa-heart"></i></button>
+</div>
+
+<!-- SEARCH BAR CODE -->
+<script>
+  function searchSongs() {
+    const searchQuery = document.getElementById('searchInput').value.toLowerCase();
+    const songListDiv = document.getElementById('songList');
+    
+    let filteredSongs = jsonData.songs.filter(song => {
+        return song.name.toLowerCase().includes(searchQuery) || song.artist.toLowerCase().includes(searchQuery);
+    });
+
+    let html = '';
+    filteredSongs.forEach(song => {
+        html += `
+            <div class="song-item">
+                <h4 class="song-name">${song.name}</h4>
+                <p class="song-artist">${song.artist}</p>
+            </div>`;
+    });
+
+    songListDiv.innerHTML = html;
+  }
+
+  // Function to handle the keyup event on the search input
+  function handleKeyPress(event) {
+    if (event.key === 'Enter') {
+      searchSongs();
+    }
+  }
+
+  window.onload = function() {
+    renderArtists();
+    searchSongs(); // This will display all songs by default
+  };
+
+</script>
+<div class="volume-control neumorphic-slider">
+  <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="1">
+</div>
+
+
+
+
+<!-- IMPORTANT -->
+<script src="./songList.js"></script>
+
+    <div class="ahoyHeader">
+        <a href="/index.html"><img src="/assets/u_ahoy23.png" class="ahoyMusicLogo">
+            </a>
+        </div>
+        <div>Search Results
+        <div id="searchResults" class="searchResultsContainer"></div>
+        </div>
+
+        <!-- CORE STRUCTURE -->
+
+<div class="flexWRAPS">
+    <div class="playlist-container">
+        <h2>Playlists</h2>
+        <input type="text" id="newPlaylistName" placeholder="Playlist name...">
+        <button onclick="createPlaylist()">Create Playlist</button>
+        <div id="playlists"></div>
+        <div class="playlist-container">
+          MORE AND MORE AND more
+          <div id="searchResults" class="searchResultsContainer"></div>
+
+          <div>
+            Artist Section - List of Artists
+          </div>
+        </div>
+    </div>
+<!-- END OF LEFT SIDEBAR -->
+<!-- END OF CORE STRUCTURE-->
+<script>
+  function toggleBigBottom() {
+    const bottomElement = document.querySelector('.bigBottomBaby');
+    if (bottomElement.style.maxHeight === '0px' || !bottomElement.style.maxHeight) {
+        bottomElement.style.maxHeight = '450px'; // 100px higher
+    } else {
+        bottomElement.style.maxHeight = '0px';
+    }
+}
+
+</script>
+  <!-- Winamp -->
+  <div class="row4">
+    <div class="winamp-playlist">
+        <h3>Library</h3>
+        <div id="winampPlaylist"></div>
+    </div>
+
+    <script>
+        // ... your other scripts ...
+    
+        function loadWinampPlaylist() {
+            const playlistDiv = document.getElementById('winampPlaylist');
+            let html = '';
+    
+            for (let i = 0; i < Math.min(songsA.length, 10); i++) {
+                let song = songsA[i];
+                html += `
+                    <div class="winamp-playlist-item">
+                        <div>
+                            <span class="song-number">${i + 1}.</span>
+                            ${song.name}
+                        </div>
+                        <div>${song.length || '3:30'}</div> <!-- using '3:30' as a placeholder, replace it with actual lengths if you have them -->
+                    </div>
+                `;
+            }
+    
+            playlistDiv.innerHTML = html;
+        }
+    
+        window.onload = function() {
+            // ... your other onload functions ...
+    
+            loadWinampPlaylist();
+        };
+    
+    </script>
+    
+    
+</div>
+<!-- End of winamp-->
+<!-- BIG BOTTOM BABY -->
+<!-- <div class="bigBottomBaby">
+  <div>
+    <button class="collapseButton">
+      <i class="fas fa-bars"></i>
+  </button>
+    </div>
+
+  <div class="columnContainers">
+      <div class="rowColumn">
+          <div><h2>Notepad</h2>>ill be a big notepad and scratchpad - and a button to send to the artist a note </div>
+      </div>
+
+      <div class="rowColumn">
+        <div>
+          <h2>Burn CD</h2>Burn Songs to a CD and Send to a Friend</div>
+          <button>burn later</button><button>burn now</button>
+      </div>
+
+      <div class="rowColumn">
+          <div>
+            <h2>Additional Menu</h2>Column 3 - will have all of the ways people can interact with the music they're hearing</div>
+      </div>
+  </div>
+</div>-->
+
+<script>
+document.querySelector('.collapseButton').addEventListener('click', function() {
+  const dashboard = document.querySelector('.bigBottomBaby');
+  
+  if (dashboard.style.maxHeight === '300px') {
+      dashboard.style.maxHeight = '30px'; // Collapsed state height
+  } else {
+      dashboard.style.maxHeight = '300px';
+  }
+});
+</script>
+
+<script src="./scripts-audiomgmt.js"></script>
+    <div id="artists"></div>
+
+<style>
+    .div2 {
+        background-color:rgba(0, 81, 255, 0.23);
+        height:500px;
+        border-style:solid;
+        
+    }
+</style>
+    <div class="player">
+        <div class="div2">
+            Div 2
+            <br>
+            The Playlist for Div 2 will go here 
+        </div>
+        <h2>Songs</h2>
+        <!-- <audio id="audio" controls></audio> -->
+        <div id="songList"></div>
+    </div>
+
+    <div style="justify-content:flex-start;" class="now-playing">
+        <div class="neumorphic-player">
+            
+       
+        <div>
+        <h2>Now Playing</h2>
+        <div>
+        <img src="./path-to-artwork.jpg" alt="Artist's Artwork" class="artwork">
+        </div>
+        <div>
+            Artist Name 
+            </div>
+    </div>
+    </div>
+
+ 
+       
+        <!-- You can add more elements here like song name, artist name, etc. -->
+
+    </div>
+
+  
+    <script>
+    let songsA = [];
+
+fetch('masterMusic.json')
+    .then(response => response.json())
+    .then(data => {
+        songsA = data.songs;
+        loadWinampPlaylist();
+    })
+    .catch(error => {
+        console.error("There was an error loading the song data:", error);
+    });
+
+function loadWinampPlaylist() {
+    const playlistDiv = document.getElementById('winampPlaylist');
+    let html = '';
+    
+    for (let i = 0; i < Math.min(songsA.length, 10); i++) {
+        let song = songsA[i];
+        html += `
+            <div class="winamp-playlist-item">
+                <div>
+                    <span class="song-number">${i + 1}.</span>
+                    ${song.name}
+                </div>
+                <div>${song.length || '3:30'}</div>
+            </div>
+        `;
+    }
+    
+    playlistDiv.innerHTML = html;
+}
+
+</script>
+
+
+
+</div>
+
+
+  <!-- BACK TO EXPERIMENTAL PAGE LINK -->
+  <div style="display:flex; align-items: center; flex-direction:column;">
+    <a href="/experimental/index.html">Back to Ahoy Experiments </a>
+  </div>
+  <!-- END OF PACK TO EXPERIMETNAL-->
+
+
+
+<!-- CODE = BACKGROUND CHANGES DEPENDING ON Page Refresh - or Hour -->
+    <script src="/main.js"></script>
+    <script src="/background-change.js"></script>
+    <script src="/scripts.js"></script>
+</body>
+
+
+
+
+
+
+</html>
