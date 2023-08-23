@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMPv3 - Ahoy Music Player - as of 8.15a</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="ap3-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- SEO for Google and other search engines -->
+    <meta name="description" content="Ahoy Indie Media Player - A hand-crafted media player for indie music. Discover and listen to your favorite indie artists.">
+    <meta name="keywords" content="Ahoy, Indie, Media, Player, Music, Artists">
+    <meta name="author" content="Ahoy Indie Media">
+</head>
+
+<body id="index-body">
+    <!-- Add the clock div below the Ahoy Header -->
+    <div class="clock" id="clockDisplay" style="font-size: 48px; text-align: center;"></div>
+
+    <!-- Add Light/Dark mode toggle button after the clock div -->
+    <button id="themeToggle">Toggle Light/Dark Mode</button>
+
+    <!-- TOP MUSIC BAR -->
+    <div class="topMusicBar">
+        <div class="superAudio">
+            <audio id="audioPlayer">
+                <source src="" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <div class="controls">
+                <div><span>Now Playing</span></div>
+                <div id="currentArtist"></div>
+                <div id="currentSong"></div>
+                <button id="playPauseBtn">Play</button>
+                <div class="progress-container">
+                    <div class="progress"></div>
+                </div>
+                <div><button>Add to Playlist</button></div>
+            </div>
+        </div>
+    </div>
+    <!-- TOP BAR MUSIC END -->
+
+    <!-- SEARCH BAR -->
+    <div class="searchBarContainer">
+        <input type="text" id="searchInput" placeholder="Search for a song..." onkeyup="handleKeyPress(event)">
+        <button onclick="searchSongs()">Search</button>
+        <button id="likeButton"><i class="fas fa-heart"></i></button>
+    </div>
+
+    <!-- SEARCH BAR CODE -->
+    <script>
+        let jsonData = {
+            "songs": [
+                {
+                    "id": 1,
+                    "name": "Sample Song 1",
+                    "artist": "Artist 1",
+                    "thumbnail": "path_to_img1.jpg",
+                    "url": "https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3",
+                    "buyLink": "http://buySong1.com"
+                },
+                {
+                    "id": 2,
+                    "name": "Sample Song 2",
+                    "artist": "Artist 2",
+                    "thumbnail": "path_to_img2.jpg",
+                    "url": "http://techslides.com/demos/samples/sample.mp3",
+                    "buyLink": "http://buySong2.com"
+                },
+                {
+                    "id": 20,
+                    "name": "Sample Song 20",
+                    "artist": "Artist 20",
+                    "thumbnail": "path_to_img20.jpg",
+                    "url": "path_to_song20.mp3",
+                    "buyLink": "http://buySong20.com"
+                }
+            ]
+        };
+
+        function searchSongs() {
+            const searchQuery = document.getElementById('searchInput').value.toLowerCase();
+            const songListDiv = document.getElementById('songList');
+
+            let filteredSongs = jsonData.songs.filter(song => {
+                return song.name.toLowerCase().includes(searchQuery) || song.artist.toLowerCase().includes(searchQuery);
+            });
+
+            let html = '';
+            filteredSongs.forEach(song => {
+                html += `
+                    <div class="song-item">
+                        <h4 class="song-name">${song.name}</h4>
+                        <p class="song-artist">${song.artist}</p>
+                    </div>`;
+            });
+
+            songListDiv.innerHTML = html;
+        }
+
+        // Function to handle the keyup event on the search input
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') {
+                searchSongs();
+            }
+        }
+
+        window.onload = function () {
+            renderArtists();
+            searchSongs(); // This will display all songs by default
+        };
+    </script>
+
+    <div class="volume-control neumorphic-slider">
+        <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="1">
+    </div>
+
+    <!-- IMPORTANT -->
+    <script src="./songList.js"></script>
+
+    <div class="ahoyHeader">
+        <a href="/index.html"><img src="/assets/u_ahoy23.png" class="ahoyMusicLogo"></a>
+    </div>
+    <div>Search Results
+        <div id="searchResults" class="searchResultsContainer"></div>
+    </div>
+
+    <!-- CORE STRUCTURE -->
+    <div class="flexWRAPS">
+        <div class="playlist-container">
+            <h2>Playlists</h2>
+            <input type="text" id="newPlaylistName" placeholder="Playlist name...">
+            <button onclick="createPlaylist()">Create Playlist</button>
+            <div id="playlists"></div>
+            <div class="playlist-container">
+                MORE AND MORE AND more
+                <div id="searchResults" class="searchResultsContainer"></div>
+                <div>
+                    Artist Section - List of Artists
+                </div>
+            </div>
+        </div>
+        <!-- END OF LEFT SIDEBAR -->
+        <!-- END OF CORE STRUCTURE-->
+
+        <script>
+            function toggleBigBottom() {
+                const bigBottom = document.getElementById('bigBottom');
+                bigBottom.classList.toggle('big-bottom-active');
+            }
+
+            function createPlaylist() {
+                const newPlaylistName = document.getElementById('newPlaylistName').value;
+                // Logic to create a new playlist
+            }
+
+            // Rest of the code...
+
+        </script>
+
+    </body>
+
+    </html>
