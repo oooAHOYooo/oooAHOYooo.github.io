@@ -16,6 +16,7 @@
 </head>
 
 <body id="index-body">
+    <h1 style="text-align:center;">This is v3-b</h1>
     <!-- Add the clock div below the Ahoy Header -->
     <div class="clock" id="clockDisplay" style="font-size: 48px; text-align: center;"></div>
 
@@ -51,35 +52,9 @@
     </div>
 
     <!-- SEARCH BAR CODE -->
+  
     <script>
-        let jsonData = {
-            "songs": [
-                {
-                    "id": 1,
-                    "name": "Sample Song 1",
-                    "artist": "Artist 1",
-                    "thumbnail": "path_to_img1.jpg",
-                    "url": "https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3",
-                    "buyLink": "http://buySong1.com"
-                },
-                {
-                    "id": 2,
-                    "name": "Sample Song 2",
-                    "artist": "Artist 2",
-                    "thumbnail": "path_to_img2.jpg",
-                    "url": "http://techslides.com/demos/samples/sample.mp3",
-                    "buyLink": "http://buySong2.com"
-                },
-                {
-                    "id": 20,
-                    "name": "Sample Song 20",
-                    "artist": "Artist 20",
-                    "thumbnail": "path_to_img20.jpg",
-                    "url": "path_to_song20.mp3",
-                    "buyLink": "http://buySong20.com"
-                }
-            ]
-        };
+        
 
         function searchSongs() {
             const searchQuery = document.getElementById('searchInput').value.toLowerCase();
@@ -112,6 +87,24 @@
             renderArtists();
             searchSongs(); // This will display all songs by default
         };
+
+
+        // Load the masterMusic.json file using AJAX request
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', 'oooAHOYooo.github.io/experimental/playlistAudio/masterMusic.json', true);
+        xhr.onload = function () {
+            if (xhr.status === 200) {
+                const jsonData = JSON.parse(xhr.responseText);
+
+                function searchSongs() {
+                    // Search logic...
+                }
+
+                // Rest of the code...
+            }
+        };
+        xhr.send();
+
     </script>
 
     <div class="volume-control neumorphic-slider">
@@ -127,6 +120,32 @@
     <div>Search Results
         <div id="searchResults" class="searchResultsContainer"></div>
     </div>
+
+
+
+    <!-- SONG LIST -->
+    <section>
+    <div id="songList">
+        <table style="border-collapse: collapse; width: 100%;">
+            <thead>
+                <tr style="background-color: #000000; color: #ffffff;">
+                    <th style="padding: 10px;">Song Name</th>
+                    <th style="padding: 10px;">Artist</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Song list will be dynamically generated here -->
+                <tr v-for="song in songs" :key="song.id">
+                    <td style="padding: 10px;">{{ song.name }}</td>
+                    <td style="padding: 10px;">{{ song.artist }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+    <!-- CORE STRUCTURE -->
+    
 
     <!-- CORE STRUCTURE -->
     <div class="flexWRAPS">

@@ -3,22 +3,22 @@
         {
             "id": 1,
             "name": "Sample Song 1",
-            "artist": "Artist 1",
+            "artist": "Samuel Dylan Witch",
             "thumbnail": "path_to_img1.jpg",
             "url": "https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3",
             "buyLink": "http://buySong1.com"
         },
         {
             "id": 2,
-            "name": "Sample Song 2",
-            "artist": "Artist 2",
+            "name": "I believe in Love",
+            "artist": "Clones of Clarence",
             "thumbnail": "path_to_img2.jpg",
             "url": "http://techslides.com/demos/samples/sample.mp3",
             "buyLink": "http://buySong2.com"
         },
 
         {
-            "id": 20,
+            "id": 3,
             "name": "Sample Song 20",
             "artist": "Artist 20",
             "thumbnail": "path_to_img20.jpg",
