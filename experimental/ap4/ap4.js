@@ -86,7 +86,17 @@ new Vue({
         });
       },
       togglePlay(song) {
-        // your existing play method
+
+
+        this.currentSong = song.mp3url; // Change the current song to the clicked one
+        this.$nextTick(() => {
+          this.$refs.audioPlayer.play(); // Play the audio
+        });
+
+
+
+
+
       }
     }
   });

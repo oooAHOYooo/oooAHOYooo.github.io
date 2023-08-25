@@ -16,7 +16,7 @@
     
 
 <div>
-    <h1>This is ap4.0.0.23</h1>
+    <h1>This is ap4.0.0.24</h1>
 
     <button @click="clearSearch">Clear Search</button>
 
@@ -35,6 +35,23 @@
 </style>
 
 <div id="app">
+    <div id="audio-navbar">
+        <style>
+            #audio-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #00000085;
+  padding: 10px;
+  z-index: 9999;
+}
+        </style>
+        <audio controls>
+          <source src="your-audio-file.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
   <div>
     <input type="text" v-model="searchTerm" @keyup.enter="searchSongs" placeholder="...">
     <button @click="searchSongs">search</button>
