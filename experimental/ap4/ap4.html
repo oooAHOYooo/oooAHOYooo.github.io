@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ap4</title>
   <link rel="stylesheet" href="ap4.css">
 </head>
 <body>
 
-    <body>
+    <body id="index-body">
 
     <div id="background">
       <div id="background-layer"></div>
@@ -16,23 +19,75 @@
     
 
 <div>
-    <h1>This is ap4.0.0.24</h1>
+    <h1>This is ap4.0.0.25a</h1>
 
-    <button @click="clearSearch">Clear Search</button>
+ 
 
 </div>
 
     
 </div>
 
-
-
-
 <style>
+  .topMusicBar {
+    min-width: 100%;
+    background-color: #5c5c5c24;
+    padding: .1rem;
+  }
+  .superAudio {
+    color:white;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
+    
+  }
+  .controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    min-width:100%;
+    padding:.51px;
+    padding-right: 10px;
 
-
+  }
+  .progress-container {
+    min-width: 80%;
+    height: 4px;
+    background-color: #cccccc42;
+    position: relative;
+  }
+  .progress {
+    width: 50%;
+    height: 100%;
+    background-color: #007bff;
+    position: absolute;
+    left: 0;
+  }
 </style>
+
+<!-- TOP MUSIC BAR -->
+<div class="topMusicBar">
+  <div class="superAudio">
+      <audio id="audioPlayer">
+          <source src="path_to_audio_file.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+      </audio>
+      <div class="controls">
+        <div><span>Now Playing</span></div>
+        <div>Artist Name</div>
+        <div>Song Name</div>
+          <button id="playPauseBtn">Play</button>
+          <div class="progress-container">
+              <div class="progress"></div>
+          </div>
+          <div><button>Add to Playlist </button></div>
+      </div>
+  </div>
+</div>
+
+<!-- TOP BAR MUSIC END -->
 
 <div id="app">
     <div id="audio-navbar">
@@ -41,8 +96,8 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  background-color: #00000085;
+  min-width: 100%;
+  background-color: #000000e8;
   padding: 10px;
   z-index: 9999;
 }
@@ -56,6 +111,8 @@
     <input type="text" v-model="searchTerm" @keyup.enter="searchSongs" placeholder="...">
     <button @click="searchSongs">search</button>
   </div>
+  <p>Oy There Hello {{ name }}!</p>
+
   <table style="border-collapse: collapse; width: 100%;">
     <thead>
       <tr style="background-color: #00000029; color: #ababab;">

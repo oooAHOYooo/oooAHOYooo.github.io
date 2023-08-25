@@ -14,7 +14,24 @@ html {
         background-position: center;
         color:white;
     }
-
+    #index-body {
+      height: 100vh;
+      background-color:black;
+    }
+  
+  #index-body:before {
+  animation: grain 8s steps(10) infinite;
+  background-image: url(/assets/ahoygrain.jpg);
+  content: "";
+  height: 300%;
+  left: -50%;
+  opacity: 0.63;
+  background-color:black;
+  position: fixed;
+  top: -110%;
+  width: 300%;
+  z-index:-1;
+  }
     
 
 
