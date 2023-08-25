@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ap4</title>
+  <link rel="stylesheet" href="ap4.css">
+</head>
+<body>
+
+    <body>
+
+    <div id="background">
+      <div id="background-layer"></div>
+    </div>
+
+    <div>
+    
+
+<div>
+    <h1>This is ap4.0.0.23</h1>
+
+    <button @click="clearSearch">Clear Search</button>
+
+</div>
+
+    
+</div>
+
+
+
+
+<style>
+
+
+
+</style>
+
+<div id="app">
+  <div>
+    <input type="text" v-model="searchTerm" @keyup.enter="searchSongs" placeholder="...">
+    <button @click="searchSongs">search</button>
+  </div>
+  <table style="border-collapse: collapse; width: 100%;">
+    <thead>
+      <tr style="background-color: #00000029; color: #ababab;">
+        <th style="padding: 10px;">Artist</th>
+        <th style="padding: 10px;">Song Title</th>
+        <th style="padding: 10px;">Artist Thumbnail</th>
+        <th style="padding: 10px;">Album Artwork</th>
+        <th style="padding: 10px;">Play</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="song in filteredSongs" :key="song.songTitle">
+        <td style="padding: 10px;"><img :src="song.artistThumbnail" alt="Artist Thumbnail" /></td>
+        <td style="padding: 10px;">{{ song.artist }}</td>
+        <td style="padding: 10px;"><img :src="song.albumArtwork" alt="Album Artwork" /></td>
+        <td style="padding: 10px;">{{ song.songTitle }}</td>
+        <td style="padding: 10px;"><button style="width:100px;" @click="togglePlay(song)">Play</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div id="three-container"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+<script src="ap4.js"></script>
+
+<footer>
+  <a href="../index.html">Back to experimental</a>
+</footer>
+<script>
+    window.onload = function() {
+        var body = document.getElementsByTagName('body')[0];
+        var img = document.createElement('img');
+        img.src = 'https://source.unsplash.com/random/1920x1080?nature,ocean';
+        img.style.position = 'fixed';
+        img.style.top = '0';
+        img.style.left = '0';
+        img.style.width = '100%';
+        img.style.height = '100%';
+        img.style.objectFit = 'cover';
+        img.style.zIndex = '-1'; // Changed zIndex to 1 so that it is behind the content
+        body.appendChild(img);
+
+        var overlay = document.createElement('div');
+        overlay.style.position = 'fixed';
+        overlay.style.top = '0';
+        overlay.style.left = '0';
+        overlay.style.width = '100%';
+        overlay.style.height = '100%';
+        overlay.style.backgroundColor = 'rgba(0, 0, 20, 0.9)';
+        overlay.style.zIndex = '-1'; // Kept zIndex as 0 so that it is in front of the body background
+        body.appendChild(overlay);
+    };
+</script>
+</body>
+</html>

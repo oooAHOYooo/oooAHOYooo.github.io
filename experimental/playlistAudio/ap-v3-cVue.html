@@ -48,7 +48,7 @@
         </table>
     </div>
 
-    <!-- Playlist code -->
+    <!-- Song Import -->
 
     <script>
         new Vue({
@@ -64,7 +64,7 @@
             }
           },
           mounted() {
-            fetch('oooAHOYooo.github.io/experimental/playlistAudio/masterMusic.json')
+            fetch('mL.json')
               .then(response => response.json())
               .then(data => {
                 this.songs = data.songs;
@@ -76,7 +76,7 @@
         });
     </script>
 
-    <script src="masterMusic.json"></script>
+
 
 </body>
 

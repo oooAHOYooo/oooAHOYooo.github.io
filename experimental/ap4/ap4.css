@@ -1,0 +1,119 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap');
+
+html {
+    font-family: 'Barlow', sans-serif;
+    background-color: rgba(0, 149, 255, 0.499);
+
+        background-image: url('https://images.unsplash.com/photo-1522199755839-5a810fda9661');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-size: cover;
+        background-position: center;
+        color:white;
+    }
+
+    
+
+
+button {
+    width: 120px;
+    padding: 10px;
+    margin-top:10px;
+    margin-bottom: 10px;
+    background-color: glass;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.01);
+    font-size: 16px;
+    color: #e3e3e381;
+    border-color:rgb(0, 0, 0);
+    border-width:1px;
+}
+
+button:hover {
+    background-color: #00ccc551;
+    color: rgb(255, 255, 255);
+    border-style:solid;
+    border-color:rgb(27, 67, 148);
+    border-width:1px;
+    cursor: pointer;
+}
+
+input {
+    width: 80%;
+    padding: 10px;
+    margin-top:10px;
+    margin-bottom: 10px;
+    background-color: glass;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.01);
+    font-size: 16px;
+    color: #ffffff;
+    border-color:rgb(0, 0, 0);
+    border-width:1px;
+}
+
+input:hover {
+    background-color: #00ccc5;
+    color: rgb(255, 255, 255);
+    border-style:solid;
+    border-color:rgb(0, 0, 0);
+    border-width:1px;
+    cursor: pointer;
+}
+
+
+
+
+table {
+  border-collapse: collapse;
+  width: 80%;
+  margin: 50px auto;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+th, td {
+  padding: 15px;
+  text-align: left;
+  color: #00b4f57c;
+  background-color:rgba(0, 17, 69, 0.193);
+}
+
+th {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+tr:nth-child(odd) {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+img {
+  width: 50px; /* You can adjust the size */
+  height: 50px; /* You can adjust the size */
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #adadad3e;
+  border: none;
+  padding: 1.5px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-style:solid;
+  border-color:black;
+}
+
+button:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
