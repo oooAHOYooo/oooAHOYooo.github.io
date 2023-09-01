@@ -16,3 +16,19 @@
   .glass-input::placeholder {
     color: white;
   }
+
+  .search-results-div {
+    background-color:rgba(255, 255, 255, 0.092);
+    border-style:solid;
+    border-width:.5px;
+    border-color:rgba(245, 245, 245, 0.209);
+    border-radius:20px;
+    padding:20px;
+    margin-top:10px;
+}
+
+.search-results-menu-wrap {
+    display:flex;
+ 
+
+}

@@ -15,15 +15,26 @@
         <link rel="stylesheet" href="mobile.css">
         <link rel="stylesheet" href="/css/grain-and-tweaks.css">
         <link rel="stylesheet" href="/css/index-addon.css">
+        <!-- INSTALL VUE -->
+        <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+        <script src="path_to_your_javascript_file.js"></script>
+        <script src="songSearch.js"></script>
+        </had>
 
+            
         <!-- LOGIN DEPENDENCIES -->
         <script src="https://apis.google.com/js/platform.js" async defer></script>
         <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+        <script src="/experimental/ap4/ap4.js"></script>
 
 </head>
 
   <body id="index-body">
     <main class="fade-in-zoom">
+        <div id="songSearchApp">
+        <div class="ahoySearchWrap"></div>
+ 
+
 
         <div id="app">
 
@@ -32,69 +43,33 @@
           <div class="full-width-total-super-wrap-index">
           <div class="topDog-wrap-index">
             <div class="topLogo-wrap">
-              <a href="index.html"><img src="./assets/u_ahoy23.png" class="topLogo-graphic"></a>
+              <a href="index.html"><img src="/assets/u_ahoy23.png" class="topLogo-graphic"></a>
             </div>
 
+            <!-- SEARCH -->
             <div class="ahoySearchWrap">
-                <input type="text" class="glass-input" placeholder="..." id="search-bar">
-            </div>
                 
-
-            <!-- SEARCH RESULTS -->
-            <div id="search-results">
-            </div>
             
-            <!-- STYLE FOR SEARCH -->
-            <script>
-                // Get the modal
-var modal = document.getElementById("myModal");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-
-document.getElementById('search-bar').addEventListener('input', function(e) {
-  fetch('/experimental/ap4/ap4.js')
-    .then(response => response.json())
-    .then(data => {
-      // Clear the table
-      document.getElementById('search-results-table').innerHTML = '';
-      // Filter the data
-      var filteredData = data.filter(item => item.includes(e.target.value));
-      // Add the filtered data to the table
-      filteredData.forEach(item => {
-        var row = document.createElement('tr');
-        var cell = document.createElement('td');
-        cell.textContent = item;
-        row.appendChild(cell);
-        document.getElementById('search-results-table').appendChild(row);
-      });
-      // Show the modal
-      modal.style.display = "block";
-    });
-});
-            </script>
-            <!-- The Modal -->
-<div id="myModal" class="modal">
-    <!-- Modal content -->
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <table id="search-results-table"></table>
+    <div class="ahoySearchWrap">
+      <input type="text" v-model="searchTerm" @input="searchSongs" class="glass-input" placeholder="Search..." id="search-bar">
     </div>
-  </div>
-            
-
+  
+    <!-- SEARCH RESULTS -->
+    <div id="search-results">
+      <div v-for="song in filteredSongs" :key="song.songTitle" class="search-results-div">
+        <div class="search-results-result">
+            <h3>{{ song.artist }} - {{ song.songTitle }}</h3>
+        
+        <div class="search-results-menu-wrap">
+        <button>Add to Playlist</button>
+        <button @click="togglePlay(song)">Play</button>
+        </div>
+    </div>
+        
+      </div>
+    </div>
+            </div>
+            <!-- END -->
 
             <div class="navTippyWrap-index">
                 
@@ -153,8 +128,7 @@ document.getElementById('search-bar').addEventListener('input', function(e) {
 
 
 <!-- SCRIPTS AND CONDITIONAL LOGIC -->
-<!-- SCRIPTS AND CONDITIONAL LOGIC -->
-<!-- SCRIPTS AND CONDITIONAL LOGIC -->
+
 
 
 <!-- CODE = BACKGROUND CHANGES DEPENDING ON Page Refresh - or Hour -->
@@ -203,6 +177,9 @@ document.getElementById('search-bar').addEventListener('input', function(e) {
 
 </script>
 
+
+<!-- SCRIPT IMPORTS -->
+<script src="songSearch.js"></script>
 
 <!-- END OF CONDITIONAL AND CODE LOGIC -->
 <!-- HOpe you enjoyed this journey -->
