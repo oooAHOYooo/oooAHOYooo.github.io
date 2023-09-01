@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<title>
+			Ahoy Indie Media - A hand-crafted media company - made with love.
+		</title>
+	</head>
+	<body>
+		<h1>
+			Hello Library!
+		</h1>
+		<div id="songSearchApp">
+			<input type="text" v-model="searchTerm" @input="searchSongs" placeholder="Search for songs...">
+		
+			<table>
+				<thead>
+					<tr>
+						<th>Artist</th>
+						<th>Song Title</th>
+						<th>Artist Thumbnail</th>
+						<th>Album Artwork</th>
+						<th>Play</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr v-for="song in filteredSongs" :key="song.songTitle">
+						<td>{{ song.artist }}</td>
+						<td>{{ song.songTitle }}</td>
+						<td><img :src="song.artistThumbnail" alt="Artist Thumbnail"></td>
+						<td><img :src="song.albumArtwork" alt="Album Artwork"></td>
+						<td><button @click="togglePlay(song)">{{ song.play ? 'Pause' : 'Play' }}</button></td>
+						<td><button @click="togglePlay(song)">Add</button></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+		<script src="songSearch.js"></script>
+	</body>
+</html>
