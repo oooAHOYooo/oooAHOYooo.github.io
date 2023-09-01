@@ -48,6 +48,13 @@ new Vue({
                   play: false
               },
               {
+                artist: 'Samuel Dylan Witch',
+                songTitle: "Sweet Three Chord Melody",
+                artistThumbnail: 'UNSPLASH_URL_FOR_ARTIST_5',
+                albumArtwork: 'UNSPLASH_URL_FOR_ALBUM_5',
+                play: false
+            },
+              {
                   artist: 'Cambell Rice',
                   songTitle: 'Lonely Thoughts in a Crowded Room',
                   artistThumbnail: 'UNSPLASH_URL_FOR_ARTIST_6',
