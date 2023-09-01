@@ -1,0 +1,18 @@
+/*Addon Dash*/
+
+.glass-input {
+    background-color: rgba(255, 255, 255, 0.106);
+    border: none;
+    padding: 15px 30px;
+    border-style:solid;
+    border-width:.5px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    width: 100%;
+    color: white;
+    font-size: 1em;
+    margin-top:10px;
+  }
+  .glass-input::placeholder {
+    color: white;
+  }
