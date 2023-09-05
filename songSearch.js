@@ -7,14 +7,14 @@ new Vue({
             songTitle: 'Willow Tree Blues',
             artistThumbnail: 'UNSPLASH_URL_FOR_ARTIST_1',
             albumArtwork: 'UNSPLASH_URL_FOR_ALBUM_1',
-            play: true
+            play: false
           },
         {
             artist: 'Artist Name 1',
             songTitle: 'Song Title 1',
             artistThumbnail: 'https://unsplash.com/photos/random_person_image2',
             albumArtwork: 'https://unsplash.com/photos/random_nautical_image2',
-            mp3url: 'https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_700KB.mp3',
+            mp3url: 'https://ahoycollection.s3.us-east-2.amazonaws.com/Campbell+Rice-+From+Here.mp3',
             play: false
           },
 
@@ -24,13 +24,14 @@ new Vue({
               artistThumbnail: 'https://unsplash.com/photos/random_person_image2',
               albumArtwork: 'https://unsplash.com/photos/random_nautical_image2',
               mp3url: 'https://ahoycollection.s3.us-east-2.amazonaws.com/Campbell+Rice-+From+Here.mp3',
-              play: true
+              play: false
             },
           {
               artist: 'Youth XL',
               songTitle: 'Another Data',
               artistThumbnail: 'UNSPLASH_URL_FOR_ARTIST_3',
               albumArtwork: 'UNSPLASH_URL_FOR_ALBUM_3',
+              mp3url: 'https://ahoycollection.s3.us-east-2.amazonaws.com/Campbell+Rice-+From+Here.mp3',
               play: false
             },
             {
@@ -38,6 +39,7 @@ new Vue({
                 songTitle: 'I Believe in Love',
                 artistThumbnail: 'UNSPLASH_URL_FOR_ARTIST_4',
                 albumArtwork: 'UNSPLASH_URL_FOR_ALBUM_4',
+                mp3url: 'https://ahoycollection.s3.us-east-2.amazonaws.com/Campbell+Rice-+From+Here.mp3',
                 play: false
               },
               {
@@ -45,12 +47,14 @@ new Vue({
                   songTitle: "I've Seen Better Days",
                   artistThumbnail: 'UNSPLASH_URL_FOR_ARTIST_5',
                   albumArtwork: 'UNSPLASH_URL_FOR_ALBUM_5',
+                  mp3url: 'https://ahoycollection.s3.us-east-2.amazonaws.com/Campbell+Rice-+From+Here.mp3',
                   play: false
               },
               {
                 artist: 'Samuel Dylan Witch',
                 songTitle: "Sweet Three Chord Melody",
                 artistThumbnail: 'https://unsplash.com/photos/your_new_selected_artist_image.png',
+                mp3url: 'https://ahoycollection.s3.us-east-2.amazonaws.com/Campbell+Rice-+From+Here.mp3',
                 albumArtwork: '/getOn/cambellrice.png',
                 play: false
             },
@@ -59,6 +63,7 @@ new Vue({
                   songTitle: 'Lonely Thoughts in a Crowded Room',
                   artistThumbnail: 'UNSPLASH_URL_FOR_ARTIST_6',
                   albumArtwork: 'UNSPLASH_URL_FOR_ALBUM_6',
+                  mp3url: 'https://ahoycollection.s3.us-east-2.amazonaws.com/Campbell+Rice-+From+Here.mp3',
                   play: false
               },
               
@@ -83,7 +88,11 @@ new Vue({
         });
       },
       togglePlay(song) {
-        // Your togglePlay method...
+        const audioPlayer = document.getElementById('audioPlayer');
+  const source = audioPlayer.querySelector('source');
+  source.src = song.mp3url; // assuming song.mp3url contains the URL of the song
+  audioPlayer.load();
+  audioPlayer.play();
       }
     }
 });
