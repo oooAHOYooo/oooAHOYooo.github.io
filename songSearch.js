@@ -19,12 +19,12 @@ new Vue({
           },
 
           {
-              artist: 'Artist Name 2',
-              songTitle: 'Song Title 2',
+              artist: 'Cambell Rice',
+              songTitle: 'Far From Here',
               artistThumbnail: 'https://unsplash.com/photos/random_person_image2',
               albumArtwork: 'https://unsplash.com/photos/random_nautical_image2',
-              mp3url: 'https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_700KB.mp3',
-              play: false
+              mp3url: 'https://ahoycollection.s3.us-east-2.amazonaws.com/Campbell+Rice-+From+Here.mp3',
+              play: true
             },
           {
               artist: 'Youth XL',
