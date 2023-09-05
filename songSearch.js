@@ -66,6 +66,46 @@ new Vue({
                   mp3url: 'https://ahoycollection.s3.us-east-2.amazonaws.com/Campbell+Rice-+From+Here.mp3',
                   play: false
               },
+              {
+                artist: 'Sara-Joy Liebig',
+                songTitle: 'Woman from Waimea',
+                artistThumbnail: 'UNSPLASH_URL_FOR_ARTIST_6',
+                albumArtwork: 'UNSPLASH_URL_FOR_ALBUM_6',
+                mp3url: 'https://ahoycollection.s3.us-east-2.amazonaws.com/Sara-Joy+Liebig+%7C+Woman+from+Waimea+%7C+.mp3',
+                play: false
+            },
+            {
+              artist: 'Youth XL',
+              songTitle: 'Text Your Friends',
+              artistThumbnail: 'UNSPLASH_URL_FOR_ARTIST_6',
+              albumArtwork: 'UNSPLASH_URL_FOR_ALBUM_6',
+              mp3url: 'https://ahoycollection.s3.us-east-2.amazonaws.com/Youth+XL+-+Text+Your+Friends.mp3',
+              play: false
+          },
+          {
+            artist: 'Youth XL',
+            songTitle: 'Gypsy Gia',
+            artistThumbnail: 'UNSPLASH_URL_FOR_ARTIST_6',
+            albumArtwork: 'UNSPLASH_URL_FOR_ALBUM_6',
+            mp3url: 'https://ahoycollection.s3.us-east-2.amazonaws.com/Youth+XL+-+Gypsy+Gia.mp3',
+            play: false
+        },
+        {
+          artist: 'Justin Arena',
+          songTitle: 'Oceans',
+          artistThumbnail: 'UNSPLASH_URL_FOR_ARTIST_6',
+          albumArtwork: 'UNSPLASH_URL_FOR_ALBUM_6',
+          mp3url: 'https://ahoycollection.s3.us-east-2.amazonaws.com/Justin+Arena+-+Oceans.mp3',
+          play: false
+      },
+      {
+        artist: 'Justin Arena',
+        songTitle: 'Oceans',
+        artistThumbnail: 'UNSPLASH_URL_FOR_ARTIST_6',
+        albumArtwork: 'UNSPLASH_URL_FOR_ALBUM_6',
+        mp3url: 'https://ahoycollection.s3.us-east-2.amazonaws.com/Justin+Arena+-+Oceans.mp3',
+        play: false
+    },
               
       ],
       searchTerm: '',
