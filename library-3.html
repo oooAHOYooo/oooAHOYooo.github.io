@@ -64,6 +64,8 @@ body {
                 <h2>Playlists</h2>
                 <input type="text" id="newPlaylistName" placeholder="Playlist name...">
                 <button onclick="createPlaylist()">Create Playlist</button>
+                <select id="playlistSelect"></select>
+                <button onclick="playPlaylist()">Play Playlist</button>
                 <div id="playlists"></div>
             </div>
             <!-- oooo -->
@@ -93,8 +95,7 @@ body {
                             <td><!-- <img :src="song.artistThumbnail" alt="Artist Thumbnail">--></td>
                             <td><!-- <img :src="song.albumArtwork" alt="Album Artwork">--></td>
                             <td><button @click="togglePlay(song)">{{ song.play ? 'Pause' : 'Play' }}</button></td>
-                            <td><button @click="togglePlay(song)">Add</button></td>
-                        </tr>
+                            <td><button @click="addToPlaylist(song)">Add</button></td>                        </tr>
                     </tbody>
                 </table>
             </div>

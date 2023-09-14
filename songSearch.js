@@ -122,10 +122,15 @@ new Vue({
       },
       togglePlay(song) {
         const audioPlayer = document.getElementById('audioPlayer');
-  const source = audioPlayer.querySelector('source');
-  source.src = song.mp3url; // assuming song.mp3url contains the URL of the song
-  audioPlayer.load();
-  audioPlayer.play();
-      }
+        const source = audioPlayer.querySelector('source');
+        source.src = song.mp3url; // assuming song.mp3url contains the URL of the song
+        audioPlayer.load();
+        audioPlayer.play();
+      },
+
+    addToPlaylist(song) {
+      addSongToPlaylist(song, 'Your Playlist Name'); // replace 'Your Playlist Name' with the actual playlist name
     }
+  }
 });
+
