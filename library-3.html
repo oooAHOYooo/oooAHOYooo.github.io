@@ -126,6 +126,41 @@ body {
 
         </div>
     </div>
+    <!-- CODE FOR PLAYLIST -->
+    <script>
+        // JavaScript
+let playlists = [];
+
+function createPlaylist() {
+    let playlistName = document.getElementById('newPlaylistName').value;
+    if (playlistName) {
+        playlists.push({
+            name: playlistName,
+            songs: []
+        });
+        document.getElementById('newPlaylistName').value = '';
+        displayPlaylists();
+    }
+}
+
+function addSongToPlaylist(song, playlistName) {
+    let playlist = playlists.find(pl => pl.name === playlistName);
+    if (playlist) {
+        playlist.songs.push(song);
+        displayPlaylists();
+    }
+}
+
+function displayPlaylists() {
+    let playlistsDiv = document.getElementById('playlists');
+    playlistsDiv.innerHTML = '';
+    for (let playlist of playlists) {
+        let playlistDiv = document.createElement('div');
+        playlistDiv.textContent = playlist.name + ': ' + playlist.songs.join(', ');
+        playlistsDiv.appendChild(playlistDiv);
+    }
+}
+    </script>
     <!-- SCRIPTS -->
     <!-- LIBRARY IMPORT --><script src="songSearch.js"></script>
     <script src="./script_backgroundChange.js"></script>
