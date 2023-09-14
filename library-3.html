@@ -3,6 +3,13 @@
 <head>
     <title>Three Column Layout</title>
     <style>
+
+
+
+body {
+    background-image: url(/images/backgrounds/1.jpg);
+    background-size:cover;
+}
         .container {
             display: flex;
             flex-wrap: wrap;
@@ -23,6 +30,7 @@
             }
         }
     </style>
+    		<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 </head>
 <body>
     <div class="container">
@@ -33,11 +41,41 @@
         <div class="column middle">
             <!-- Insert your middle column content here -->
             Library
+            <br>
+            <!-- CONTENT -->
+            <div id="songSearchApp">
+                <input type="text" v-model="searchTerm" @input="searchSongs" placeholder="Search the library for songs..." class="glass-input">
+            
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Artist</th>
+                            <th>Song Title</th>
+                            <th>Artist Thumbnail</th>
+                            <th>Album Artwork</th>
+                            <th>Play</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="song in filteredSongs" :key="song.songTitle">
+                            <td>{{ song.artist }}</td>
+                            <td>{{ song.songTitle }}</td>
+                            <td><!-- <img :src="song.artistThumbnail" alt="Artist Thumbnail">--></td>
+                            <td><!-- <img :src="song.albumArtwork" alt="Album Artwork">--></td>
+                            <td><button @click="togglePlay(song)">{{ song.play ? 'Pause' : 'Play' }}</button></td>
+                            <td><button @click="togglePlay(song)">Add</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+    
         </div>
         <div class="column right">
             <!-- Insert your right column content here -->
             Now Playing
         </div>
     </div>
+    <script src="songSearch.js"></script>
+    <script src="./script_backgroundChange.js"></script>
 </body>
 </html>
