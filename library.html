@@ -24,6 +24,24 @@
 	
 		<!--<link rel="stylesheet" href="/experimental/playlistAudio/styles.css">-->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	
+	<style>
+		.centered-content {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+		}
+		
+		@media only screen and (max-width: 600px) {
+			.centered-content {
+				height: auto;
+				padding: 20px;
+			}
+		}
+	</style>
+	
 	</head>
 
 
@@ -134,6 +152,44 @@
 			</div>
 		  </div>
 
+		  <style>
+			.radio-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Adjust this value as needed */
+}
+
+.radio-content {
+    width: 100%;
+    max-width: 600px; /* Adjust this value as needed */
+    padding: 20px;
+}
+			.schedule-table {
+    width: 100%;
+    max-width: 600px; /* Adjust this value as needed */
+    margin: 0 auto;
+}
+
+.radio-content {
+	display: flex;
+      justify-content: center;
+      align-items: center;
+      height: auto;
+      margin-top:10px;
+      margin-bottom:10px;
+	  background-color:blue;
+}
+		  </style>
+		  <div class="radio-container">
+			<div class="radio-content">
+				<!-- RADIO CONTENT HERE -->
+				<script src="https://embed.radio.co/player/0024c4d.js"></script>
+			</div>
+			<div class="schedule-table">
+				<!-- RADIO SCHEDULE TABLE HERE -->
+			</div>
+		</div>
 
 		<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 		<script src="songSearch.js"></script>
