@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Three Column Layout</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .column {
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .left, .right {
+            flex: 25%;
+        }
+        .middle {
+            flex: 50%;
+        }
+        @media (max-width: 600px) {
+            .column {
+                flex: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="column left">
+            <!-- Insert your left column content here -->
+            Playlist Column
+        </div>
+        <div class="column middle">
+            <!-- Insert your middle column content here -->
+            Library
+        </div>
+        <div class="column right">
+            <!-- Insert your right column content here -->
+            Now Playing
+        </div>
+    </div>
+</body>
+</html>
