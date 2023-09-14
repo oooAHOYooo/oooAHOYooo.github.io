@@ -4,11 +4,32 @@
     <title>Three Column Layout</title>
     <style>
 
-
+html {
+    color:white;
+}
 
 body {
     background-image: url(/images/backgrounds/1.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size:cover;
+    background-position: center;
+    animation: kenburns 10s infinite; /* adjust time as needed */
+}
+
+@keyframes kenburns {
+    0% {
+        
+        background-position: top left;
+    }
+    50% {
+     
+        background-position: center;
+    }
+    100% {
+        
+        background-position: bottom right;
+    }
 }
         .container {
             display: flex;
@@ -37,6 +58,15 @@ body {
         <div class="column left">
             <!-- Insert your left column content here -->
             Playlist Column
+            <!-- oooo -->
+            <!-- PLAYLIST CODE BABY -->
+            <div class="playlist-container">
+                <h2>Playlists</h2>
+                <input type="text" id="newPlaylistName" placeholder="Playlist name...">
+                <button onclick="createPlaylist()">Create Playlist</button>
+                <div id="playlists"></div>
+            </div>
+            <!-- oooo -->
         </div>
         <div class="column middle">
             <!-- Insert your middle column content here -->
@@ -51,8 +81,8 @@ body {
                         <tr>
                             <th>Artist</th>
                             <th>Song Title</th>
-                            <th>Artist Thumbnail</th>
-                            <th>Album Artwork</th>
+                            <!--<th>Artist Thumbnail</th>-->
+                            <!--<th>Album Artwork</th>-->
                             <th>Play</th>
                         </tr>
                     </thead>
@@ -73,9 +103,31 @@ body {
         <div class="column right">
             <!-- Insert your right column content here -->
             Now Playing
+            <!-- ooo -->
+            <!-- SUPER AUDIO - NOW PLAYING -->
+            <div class="superAudio">
+			  <audio id="audioPlayer">
+				<source src="path_to_audio_file.mp3" type="audio/mpeg">
+				Your browser does not support the audio element.
+			  </audio>
+			  <div class="controls" style="display: flex; align-items: center;">
+				<div>Now Playing:</div>
+				<div><h2>Artist Name /</h2></div>
+				<div><h3>Song Name</h3></div>
+				<button id="playPauseBtn">Play</button>
+				<div class="progress-container" style="flex-grow: 1;">
+				  <div class="progress"></div>
+				</div>
+				<div><button>Add to Playlist </button></div>
+			  </div>
+			</div>
+		  </div>
+          <!-- ooo -->
+
         </div>
     </div>
-    <script src="songSearch.js"></script>
+    <!-- SCRIPTS -->
+    <!-- LIBRARY IMPORT --><script src="songSearch.js"></script>
     <script src="./script_backgroundChange.js"></script>
 </body>
 </html>

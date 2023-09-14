@@ -98,14 +98,7 @@ new Vue({
           mp3url: 'https://ahoycollection.s3.us-east-2.amazonaws.com/Justin+Arena+-+Oceans.mp3',
           play: false
       },
-      {
-        artist: 'Justin Arena',
-        songTitle: 'Oceans',
-        artistThumbnail: 'UNSPLASH_URL_FOR_ARTIST_6',
-        albumArtwork: 'UNSPLASH_URL_FOR_ALBUM_6',
-        mp3url: 'https://ahoycollection.s3.us-east-2.amazonaws.com/Justin+Arena+-+Oceans.mp3',
-        play: false
-    },
+
               
       ],
       searchTerm: '',
