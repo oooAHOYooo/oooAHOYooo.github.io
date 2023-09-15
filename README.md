@@ -91,6 +91,8 @@ Code independence allows us to tailor our platform to meet our specific business
 
 Relying heavily on external software introduces inherent risks that can impact the stability and continuity of our platform. Potential service disruptions, such as downtime or outages from third-party providers, can have severe consequences for our operations and customer satisfaction. Additionally, changes in terms of use or pricing models imposed by these providers can significantly impact our costs or limit our access to critical features. By reducing our dependence on external software, we mitigate these risks and gain more control over the reliability and availability of our platform. We can ensure seamless service delivery to our customers, reducing the potential for disruptions that could harm our reputation or business performance.
 
+![Ahoy-Indie-Media---The-Rob-Show---Season-2---Episode-2---2023](https://github.com/oooAHOYooo/oooAHOYooo.github.io/assets/112486736/45d84554-5f33-4850-9eaa-b06a3f7b93f8)
+
 ## Keeping the Lights On: Our Strategy for Sustainable Growth
 
 We are committed to providing a seamless and uninterrupted experience for our users. As part of our dedication to enhancing your journey on our platform, we have made it a top priority to maintain an ad-free environment. However, in order to achieve this goal, we require the necessary financial resources to cover our operational costs and sustain our ongoing operations.
