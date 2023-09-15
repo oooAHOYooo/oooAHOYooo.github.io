@@ -85,42 +85,153 @@
             <div class="progress-container" style="flex-grow: 1;">
                 <div class="progress"></div>
             </div>
-            <div>
-                <button>Add to Playlist </button>
-				<!-- VOLUME CONTROLLER -->
-				<div class="volume-control">
-					<label for="volume">Volume:</label>
-					<input type="range" id="volume" name="volume" min="0" max="1" step="0.01" value="1" oninput="setVolume(this.value)">
-				</div>
+            <div id="musicTweakerController">
+				<button>Add to Playlist </button>
 
+             <!-- Audio Controls -->
+<button onclick="playAudio()">Play</button>
+<button onclick="pauseAudio()">Pause</button>
+<button onclick="stopAudio()">Stop</button>
+
+<div style="display: flex; flex-direction: column;">
+    <label for="gain">Gain:</label>
+    <input type="range" id="gain" min="0" max="2" step="0.01" value="1" onchange="changeGain(this.value)">
+
+    <label for="pan">Pan:</label>
+    <input type="range" id="pan" min="-1" max="1" step="0.01" value="0" onchange="changePan(this.value)">
+
+    <label for="delay">Delay:</label>
+    <input type="range" id="delay" min="0" max="2" step="0.1" value="0" onchange="changeDelay(this.value)">
+	<!-- VOLUME CONTROLLER -->
+	<div class="volume-control">
+		<label for="volume">Volume:</label>
+		<input type="range" id="volume" name="volume" min="0" max="1" step="0.01" value="1" oninput="setVolume(this.value)">
+	</div>
+
+</div>
+			
+				<!-- BASS CONTROLLER -->
+			</div>
             </div>
 			</div>
 		</div>
           <!-- ooo -->
 
         </div>
-	<div id="memberApp">
-		<style>
-			.memberIcon {
-				width:50px;
-				height:50px;
-				background-color: white;
-				border-style:solid;
-				border-color:blue;
-			}
-		</style>
-		<div class="memberIcon">
-			MemberName
-		</div>
-	</div>
+		<!-- START OF MEMBER APP -->
+		<div id="memberApp">
+			<style>
+
+				#memberApp {
+					position: fixed; 
+					bottom: 0; 
+					left: 0;
+					margin:10px;
+				}
+						.memberIcon {
+							width:50px;
+							height:50px;
+							background-color: rgba(255, 255, 255, 0.081);
+							border-style:solid;
+							border-color:rgba(0, 174, 255, 0.226);
+							font-size:6px;
+							text-align:center;
+							display:flex;
+							align-items:center;
+							justify-content: center;
+						}
+
+						.memberIcon:hover {
+							border-color:aqua;
+							cursor: pointer;
+						}
+					</style>
+					<div class="memberIcon">
+						MemberName
+					</div>
+				</div>
+	<!-- END OF MEMBER APP-->
+
+
+
+<!-- END OF TOTAL HTML APP -->
     </div>
 
     <!-- SCRIPTS -->
+
+<script>
+	// Audio context
+	const audioContext = new AudioContext();
+	
+	// Audio source
+	let audioSource = null;
+  
+	// Gain node
+	const gainNode = audioContext.createGain();
+	gainNode.connect(audioContext.destination);
+  
+	// Stereo Panner
+	const pannerNode = audioContext.createStereoPanner();
+	pannerNode.connect(gainNode);
+  
+	// Delay node
+	const delayNode = audioContext.createDelay(5.0);
+	delayNode.delayTime.value = 0;
+	delayNode.connect(pannerNode);
+  
+	// Play audio
+	function playAudio() {
+	  if(audioSource) {
+		audioSource.disconnect();
+	  }
+	  audioSource = audioContext.createBufferSource();
+	  fetch('path/to/audio/file.mp3') // replace with your audio file
+		.then(response => response.arrayBuffer())
+		.then(data => audioContext.decodeAudioData(data))
+		.then(buffer => {
+		  audioSource.buffer = buffer;
+		  audioSource.connect(delayNode);
+		  audioSource.start();
+		})
+		.catch(err => console.error(err));
+	}
+  
+	// Pause audio
+	function pauseAudio() {
+	  // Pause functionality is a bit more complicated in Web Audio API
+	  // You might have to implement custom logic to pause and resume
+	}
+  
+	// Stop audio
+	function stopAudio() {
+	  if(audioSource) {
+		audioSource.stop();
+	  }
+	}
+  
+	// Change gain
+	function changeGain(value) {
+	  gainNode.gain.value = value;
+	}
+  
+	// Change pan
+	function changePan(value) {
+	  pannerNode.pan.value = value;
+	}
+  
+	// Change delay
+	function changeDelay(value) {
+	  delayNode.delayTime.value = value;
+	}
+  
+	// ... (Other features like Pitch Shifting, Time Stretching, Filtering, etc., can be added in a similar manner)
+  </script>
 	<script>
 		function setVolume(volume) {
 			var audioPlayer = document.getElementById('audioPlayer');
 			audioPlayer.volume = volume;
 		}
+
 	</script>
     <!-- LIBRARY IMPORT --><script src="songSearch.js"></script>
     <!--BACKGROUND CHANGE --><script src="./script_backgroundChange.js"></script>

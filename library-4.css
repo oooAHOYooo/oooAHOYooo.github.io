@@ -75,3 +75,31 @@ body {
         .search-input:focus {
             box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.203);
         }
+
+
+
+		#memberApp {
+			position: fixed; 
+			bottom: 0; 
+			left: 0;
+			margin:10px;
+		}
+				.memberIcon {
+					width:50px;
+					height:50px;
+					background-color: rgba(255, 255, 255, 0.081);
+					border-style:solid;
+					border-width: thin;
+					border-color:rgba(0, 174, 255, 0.226);
+					font-size:7.2px;
+					text-align:center;
+					display:flex;
+					align-items:center;
+					justify-content: center;
+				}
+
+				.memberIcon:hover {
+					border-color:aqua;
+					cursor: pointer;
+					font-size:7.4px;
+				}
