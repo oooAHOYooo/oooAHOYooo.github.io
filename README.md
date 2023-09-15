@@ -36,6 +36,7 @@ Gain access to a growing library of on-demand content, including exclusive inter
 # Project Roadmap
 
 ## Phase 1: Initial Release (v1.0):
+<img width="1659" alt="Screenshot 2023-09-15 at 10 32 21 AM" src="https://github.com/oooAHOYooo/oooAHOYooo.github.io/assets/112486736/04643524-bcc6-40d3-8eba-c0bc241a7819">
 
 Implement the live radio feature, allowing users to tune in to the broadcast.
 Develop the cable TV alternative, providing a selection of independent shows and films.
