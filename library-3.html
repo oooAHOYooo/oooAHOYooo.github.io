@@ -2,72 +2,35 @@
 <html>
 <head>
     <title>Three Column Layout</title>
-    <style>
-
-html {
-    color:white;
-}
-
-body {
-    background-image: url(/images/backgrounds/1.jpg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size:cover;
-    background-position: center;
-    animation: kenburns 10s infinite; /* adjust time as needed */
-}
-
-@keyframes kenburns {
-    0% {
-        
-        background-position: top left;
-    }
-    50% {
-     
-        background-position: center;
-    }
-    100% {
-        
-        background-position: bottom right;
-    }
-}
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-        }
-        .column {
-            padding: 10px;
-            box-sizing: border-box;
-        }
-        .left, .right {
-            flex: 25%;
-        }
-        .middle {
-            flex: 50%;
-        }
-        @media (max-width: 600px) {
-            .column {
-                flex: 100%;
-            }
-        }
-    </style>
+  <link rel="stylesheet" href="library-3.css".css">
     		<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 </head>
 <body>
+    <div id="songSearchApp">
     <div class="container">
         <div class="column left">
             <!-- Insert your left column content here -->
             Playlist Column
             <!-- oooo -->
             <!-- PLAYLIST CODE BABY -->
+
             <div class="playlist-container">
-                <h2>Playlists</h2>
-                <input type="text" id="newPlaylistName" placeholder="Playlist name...">
-                <button onclick="createPlaylist()">Create Playlist</button>
-                <select id="playlistSelect"></select>
-                <button onclick="playPlaylist()">Play Playlist</button>
-                <div id="playlists"></div>
-            </div>
+    <h2>Playlists</h2>
+    <input type="text" id="newPlaylistName" placeholder="Playlist name...">
+    <button @click="createPlaylist()">Create Playlist</button>
+    <select v-model="selectedPlaylist" id="playlistSelect">
+        <option v-for="(value, key) in playlists" :value="key">{{key}}</option>
+    </select>
+    <button @click="playPlaylist()">Play Playlist</button>
+    <div id="playlists">
+      <div v-for="(playlist, playlistName) in playlists">
+        <h3>{{playlistName}}</h3>
+        <ul>
+          <li v-for="song in playlist">{{song.songTitle}} by {{song.artist}}</li>
+        </ul>
+      </div>
+    </div>
+
             <!-- oooo -->
         </div>
         <div class="column middle">
@@ -75,7 +38,7 @@ body {
             Library
             <br>
             <!-- CONTENT -->
-            <div id="songSearchApp">
+
                 <input type="text" v-model="searchTerm" @input="searchSongs" placeholder="Search the library for songs..." class="glass-input">
             
                 <table>
@@ -127,41 +90,7 @@ body {
 
         </div>
     </div>
-    <!-- CODE FOR PLAYLIST -->
-    <script>
-        // JavaScript
-let playlists = [];
 
-function createPlaylist() {
-    let playlistName = document.getElementById('newPlaylistName').value;
-    if (playlistName) {
-        playlists.push({
-            name: playlistName,
-            songs: []
-        });
-        document.getElementById('newPlaylistName').value = '';
-        displayPlaylists();
-    }
-}
-
-function addSongToPlaylist(song, playlistName) {
-    let playlist = playlists.find(pl => pl.name === playlistName);
-    if (playlist) {
-        playlist.songs.push(song);
-        displayPlaylists();
-    }
-}
-
-function displayPlaylists() {
-    let playlistsDiv = document.getElementById('playlists');
-    playlistsDiv.innerHTML = '';
-    for (let playlist of playlists) {
-        let playlistDiv = document.createElement('div');
-        playlistDiv.textContent = playlist.name + ': ' + playlist.songs.join(', ');
-        playlistsDiv.appendChild(playlistDiv);
-    }
-}
-    </script>
     <!-- SCRIPTS -->
     <!-- LIBRARY IMPORT --><script src="songSearch.js"></script>
     <script src="./script_backgroundChange.js"></script>

@@ -100,9 +100,10 @@ new Vue({
       },
 
               
-      ],
-      searchTerm: '',
-      filteredSongs: []
+      ],   searchTerm: '',
+      filteredSongs: [],
+      playlists: {}, // Initialize empty playlists object
+      selectedPlaylist: null, // Initialize selectedPlaylist to null
     },
     mounted() {
       this.filteredSongs = this.songs;
@@ -123,14 +124,43 @@ new Vue({
       togglePlay(song) {
         const audioPlayer = document.getElementById('audioPlayer');
         const source = audioPlayer.querySelector('source');
-        source.src = song.mp3url; // assuming song.mp3url contains the URL of the song
+        source.src = song.mp3url;
         audioPlayer.load();
         audioPlayer.play();
       },
-
+      createPlaylist() {
+        const newPlaylistName = document.getElementById("newPlaylistName").value;
+        if (newPlaylistName.trim() !== '') {
+            Vue.set(this.playlists, newPlaylistName, []);
+            this.selectedPlaylist = newPlaylistName;  // Automatically select the newly created playlist
+        }
+    },
     addToPlaylist(song) {
-      addSongToPlaylist(song, 'Your Playlist Name'); // replace 'Your Playlist Name' with the actual playlist name
+        if (this.selectedPlaylist) {
+            if (!this.playlists[this.selectedPlaylist]) {
+                this.playlists[this.selectedPlaylist] = []; // Initialize if not already
+            }
+            this.playlists[this.selectedPlaylist].push(song);
+        }
+    },
+    // ... (other parts remain unchanged)
+},
+watch: {
+    playlists: {
+        deep: true, // Watch object deeply
+        handler() {
+            this.selectedPlaylist = Object.keys(this.playlists)[0] || null; // Automatically set to first playlist if not selected
+        }
     }
-  }
+}
 });
 
+
+
+
+  
+  
+  
+  
+  
+  
