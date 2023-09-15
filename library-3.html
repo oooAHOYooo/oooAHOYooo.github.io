@@ -33,13 +33,14 @@
 
             <!-- oooo -->
         </div>
+        </div>
         <div class="column middle">
             <!-- Insert your middle column content here -->
             Library
             <br>
             <!-- CONTENT -->
 
-                <input type="text" v-model="searchTerm" @input="searchSongs" placeholder="Search the library for songs..." class="glass-input">
+                <input type="text" v-model="searchTerm" @input="searchSongs" placeholder="Search the library for songs..." class="search-input">
             
                 <table>
                     <thead>
@@ -61,12 +62,9 @@
                             <td><button @click="addToPlaylist(song)">Add</button></td>                        </tr>
                     </tbody>
                 </table>
-            </div>
-    
         </div>
         <div class="column right">
             <!-- Insert your right column content here -->
-            Now Playing
             <!-- ooo -->
             <!-- SUPER AUDIO - NOW PLAYING -->
             <div class="superAudio">
@@ -74,16 +72,22 @@
 				<source src="path_to_audio_file.mp3" type="audio/mpeg">
 				Your browser does not support the audio element.
 			  </audio>
-			  <div class="controls" style="display: flex; align-items: center;">
-				<div>Now Playing:</div>
-				<div><h2>Artist Name /</h2></div>
-				<div><h3>Song Name</h3></div>
-				<button id="playPauseBtn">Play</button>
-				<div class="progress-container" style="flex-grow: 1;">
-				  <div class="progress"></div>
-				</div>
-				<div><button>Add to Playlist </button></div>
-			  </div>
+              <div class="controls" style="display: flex; align-items: center;">
+                <div>Now Playing:</div>
+            </div>
+            <div>
+                <h2>Artist Name /</h2>
+            </div>
+            <div>
+                <h2>currentSong.artist</h2>
+            </div>
+            <button id="playPauseBtn">Play</button>
+            <div class="progress-container" style="flex-grow: 1;">
+                <div class="progress"></div>
+            </div>
+            <div>
+                <button>Add to Playlist </button>
+            </div>
 			</div>
 		  </div>
           <!-- ooo -->

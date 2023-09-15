@@ -2,7 +2,6 @@
 
 * {
     font-family: 'Barlow', sans-serif;
-    color: white;
 }
 
 
@@ -51,4 +50,28 @@ body {
             .column {
                 flex: 100%;
             }
+        }
+
+
+        .search-input {
+            width: 400px;
+            height: 40px;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+            outline: none;
+            color: white;
+            box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.079);
+        }
+        
+        .search-input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .search-input:focus {
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.203);
         }

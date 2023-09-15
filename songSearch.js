@@ -1,6 +1,7 @@
 new Vue({
     el: '#songSearchApp',
     data: {
+      currentSong: null,
       songs: [
         {
             artist: 'Samuel Dylan Witch',
@@ -98,9 +99,10 @@ new Vue({
           mp3url: 'https://ahoycollection.s3.us-east-2.amazonaws.com/Justin+Arena+-+Oceans.mp3',
           play: false
       },
-
+        
               
-      ],   searchTerm: '',
+      ],   
+      searchTerm: '',
       filteredSongs: [],
       playlists: {}, // Initialize empty playlists object
       selectedPlaylist: null, // Initialize selectedPlaylist to null
