@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&display=swap');
+
+* {
+    font-family: 'Barlow', sans-serif;
+}
+
+
+html {
+    color:white;
+}
+
+body {
+    background-image: url(/images/backgrounds/1.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size:cover;
+    background-position: center;
+    animation: kenburns 10s infinite; /* adjust time as needed */
+}
+
+@keyframes kenburns {
+    0% {
+        
+        background-position: top left;
+    }
+    50% {
+     
+        background-position: center;
+    }
+    100% {
+        
+        background-position: bottom right;
+    }
+}
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .column {
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .left, .right {
+            flex: 25%;
+        }
+        .middle {
+            flex: 50%;
+        }
+        @media (max-width: 600px) {
+            .column {
+                flex: 100%;
+            }
+        }
+
+
+        .search-input {
+            width: 400px;
+            height: 40px;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+            outline: none;
+            color: white;
+            box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.079);
+        }
+        
+        .search-input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .search-input:focus {
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.203);
+        }

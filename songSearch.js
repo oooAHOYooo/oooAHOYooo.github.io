@@ -2,6 +2,7 @@ new Vue({
     el: '#songSearchApp',
     data: {
       currentSong: null,
+      currentArtist: '',
       songs: [
         {
             artist: 'Samuel Dylan Witch',
@@ -104,6 +105,9 @@ new Vue({
       ],   
       searchTerm: '',
       filteredSongs: [],
+      currentSong: null,
+      currentSongTitle: '', // New property for song title
+      currentArtist: '',
       playlists: {}, // Initialize empty playlists object
       selectedPlaylist: null, // Initialize selectedPlaylist to null
     },
@@ -126,10 +130,27 @@ new Vue({
       togglePlay(song) {
         const audioPlayer = document.getElementById('audioPlayer');
         const source = audioPlayer.querySelector('source');
-        source.src = song.mp3url;
-        audioPlayer.load();
-        audioPlayer.play();
-      },
+        if (this.currentSong === song.mp3url) {
+            if (audioPlayer.paused) {
+                audioPlayer.play();
+                song.play = true;
+                this.currentSong.play = true;
+            } else {
+                audioPlayer.pause();
+                song.play = false;
+                this.currentSong.play = false;
+            }
+        } else {
+            source.src = song.mp3url;
+            audioPlayer.load();
+            audioPlayer.play();
+            this.currentSong = song.mp3url; // Change the current song to the clicked one
+            this.currentArtist = song.artist; // Update the current artist
+            this.currentSongTitle = song.songTitle; // Update the current song title
+            song.play = true;
+        }
+        
+    }, // Closing brace for togglePlay method
       createPlaylist() {
         const newPlaylistName = document.getElementById("newPlaylistName").value;
         if (newPlaylistName.trim() !== '') {
