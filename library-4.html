@@ -87,7 +87,12 @@
             </div>
             <div>
                 <button>Add to Playlist </button>
-				
+				<!-- VOLUME CONTROLLER -->
+				<div class="volume-control">
+					<label for="volume">Volume:</label>
+					<input type="range" id="volume" name="volume" min="0" max="1" step="0.01" value="1" oninput="setVolume(this.value)">
+				</div>
+
             </div>
 			</div>
 		</div>
@@ -111,6 +116,12 @@
     </div>
 
     <!-- SCRIPTS -->
+	<script>
+		function setVolume(volume) {
+			var audioPlayer = document.getElementById('audioPlayer');
+			audioPlayer.volume = volume;
+		}
+	</script>
     <!-- LIBRARY IMPORT --><script src="songSearch.js"></script>
     <!--BACKGROUND CHANGE --><script src="./script_backgroundChange.js"></script>
 </body>
