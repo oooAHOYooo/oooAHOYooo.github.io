@@ -104,3 +104,72 @@ body {
 					cursor: pointer;
 					font-size:7.4px;
 				}
+
+      .library-table {
+
+      }
+
+      .song-title {
+    font-size: 16px; /* Increase the font size as needed */
+    overflow-y: auto; /* Add a vertical scrollbar if the content overflows */
+    width: 100%; /* Adjust the width as needed */
+    height: 35px; /* Adjust the height as needed */
+    padding: 0px;
+    padding-left:7.5px;
+    display:flex;
+    align-items: center;
+        overflow-y:scroll;
+    background: rgba(255, 255, 255, 0.1); /* Glass-like background */
+    border-radius: 10px; /* Rounded corners */
+    backdrop-filter: blur(10px); /* Blur effect for the glass-like appearance */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Border for the glass-like appearance */
+    color: white; /* Font color */
+}
+
+.song-artist {
+    font-size: 15px; /* Increase the font size as needed */
+    overflow-y: auto; /* Add a vertical scrollbar if the content overflows */
+    min-width: 150px; /* Adjust the width as needed */
+    height: 35px; /* Adjust the height as needed */
+    padding: 0px;
+    padding-left:7.5px;
+    display:flex;
+    align-items: center;
+    margin-right:7.5px;
+    background: rgba(200, 200, 200, 0.1); /* Slightly different glass-like background */
+    border-radius: 10px; /* Rounded corners */
+    backdrop-filter: blur(10px); /* Blur effect for the glass-like appearance */
+    border: 1px solid rgba(200, 200, 200, 0.2); /* Slightly different border for the glass-like appearance */
+    color: rgba(255, 255, 255, 0.811); /* Font color */
+}
+
+.play-button, .add-button {
+    display: inline-block;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    outline: none;
+    cursor: pointer;
+}
+
+.play-button:hover, .add-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+#add {
+    background-color:rgba(0, 98, 128, 0.12);
+    margin-right:5px;
+}
+
+#add:hover {
+    background-color: #ff00627c;
+    color:rgb(247, 251, 0);
+}
+
