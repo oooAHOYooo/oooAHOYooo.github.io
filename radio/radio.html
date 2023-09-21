@@ -1,84 +1,51 @@
-<html> <!-- Radio as of 8.5.23 - on branch ->
-    <head>
-     <!-- BASIC META -->
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <!-- META DESCRIPTION -->
-     <meta name="description" content="Ahoy Indie Media - A hand-crafted media company based out of New Haven, Connecticut. Our mission is to provide a homegrown alternative to the way folks consume media. We believe in good media - good indie media - the real stuff. Learn about our strategy for sustainable growth and how we maintain an ad-free environment. Join our subscription-based service to access unique in-house content, including the immensely unpopular 'Rob Show.' Become a part of our indie creator-centric platform.">
-     <!-- PLAUSIBLE -->
-     <script defer data-domain="ahoy.ooo" src="https://plausible.io/js/script.js"></script>
-     <!--FAVICON -->
-     <link rel="icon" type="image/x-icon" href="./assets/ahoyFav.png">
-        <title>Ahoy Indie Media | Radio </title>
-        <!-- IMPORT OF VUE -->
-        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-   
+<html> <!-- Radio as of 9.21.23 - on branch -->
 
-        <!-- CSS3 -->
-        <link rel="stylesheet" href="mainStyle.css">
-       <link rel="stylesheet" href="mobile.css">
-     <!-- RADIO GRAIN -->
-       <style>
-#radio-body {
-          height: 100vh;
-          background-color:black;
-        }
+<head>
+  <!-- BASIC META -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- META DESCRIPTION -->
+  <meta name="description"
+    content="Ahoy Indie Media - A hand-crafted media company based out of New Haven, Connecticut. Our mission is to provide a homegrown alternative to the way folks consume media. We believe in good media - good indie media - the real stuff. Learn about our strategy for sustainable growth and how we maintain an ad-free environment. Join our subscription-based service to access unique in-house content, including the immensely unpopular 'Rob Show.' Become a part of our indie creator-centric platform.">
+  <!-- PLAUSIBLE -->
+  <script defer data-domain="ahoy.ooo" src="https://plausible.io/js/script.js"></script>
+  <!--FAVICON -->
+  <link rel="icon" type="image/x-icon" href="../assets/ahoyFav.png">
+  <title>Ahoy Indie Media | Radio </title>
+  <meta name="keywords" content="Ahoy, Indie, Media, Radio, Music, Indie Music, Online Radio, Ahoy Radio">
+  <meta property="og:title" content="Ahoy Indie Media | Radio">
+  <meta property="og:description"
+    content="Tune in to Ahoy Indie Media's online radio station for a unique blend of indie music.">
+  <meta property="og:image" content="../assets/ahoyFav.png">
+  <meta property="og:url" content="https://ahoy.ooo/radio.html">
+  <meta name="twitter:card" content="summary_large_image">
 
-#radio-body:before {
-  animation: grain 8s steps(10) infinite;
-  background-image: url(./assets/ahoygrain.jpg);
-  content: "";
-  height: 300%;
-  left: -50%;
-  opacity: 0.63;
-  position: fixed;
-  z-index:-1;
-  top: -110%;
-  width: 300%;
-}
+  <!-- CSS3 -->
+  <link rel="stylesheet" href="../mainStyle.css">
+  <link rel="stylesheet" href="../mobile.css">
+  <link rel="stylesheet" href="../css/page-grain.css">
 
-@keyframes grain {
-  0%, 100% { transform:translate(0, 0) }
-  10% { transform:translate(-5%, -10%) }
-  20% { transform:translate(-15%, 5%) }
-  30% { transform:translate(7%, -25%) }
-  40% { transform:translate(-5%, 25%) }
-  50% { transform:translate(-15%, 10%) }
-  60% { transform:translate(15%, 0%) }
-  70% { transform:translate(0%, 15%) }
-  80% { transform:translate(3%, 35%) }
-  90% { transform:translate(-10%, 10%) }
-}
-       </style>
-    </head>
+</head>
 
-    
-  <body id="radio-body"> 
 
-<!-- PART 1 -->
-         <!-- START OF TOPDOG -->
-         <div class="topDog-wrap">
-          <div class="topLogo-wrap">
-            <a href="https://ahoy.ooo"><img src="./assets/u_ahoy23.png" class="topLogo-graphic"></a>
-          </div>
-          
-          <div class="navTippyWrap">
-            <a href="./cable.html"><button class="topNavButton-stream">Cable</button></a>
-            <a href="./updates.html"><button class="topNavButton-stream">Updates</button></a>
-            <a href="./radio.html"><button class="topNavButton-stream">Radio</button></a>
-          </div>
-          </div>
-   
-        <!-- END OF TOP DOG -->
+<body id="radio-body">
 
-        <!-- 
-       
-    <div class="topDog-wrap-mini">
-      <div class="topLogo-wrap-mini">
-        <a href="https://ahoy.ooo"><img src="./assets/u_ahoy23.png" class="topLogo-graphic-mini"></a>
-      </div>
-      
+  <!-- PART 1 -->
+  <!-- START OF TOPDOG -->
+  <div class="topDog-wrap">
+    <div class="topLogo-wrap">
+      <a href="https://ahoy.ooo"><img src="../assets/u_ahoy23.png" class="topLogo-graphic"></a>
     </div>
-  -->
+
+    <div class="navTippyWrap">
+      <a href="../cable.html"><button class="topNavButton-stream">Cable</button></a>
+      <a href="../updates.html"><button class="topNavButton-stream">Updates</button></a>
+      <a href="./radio.html"><button class="topNavButton-stream">Radio</button></a>
+    </div>
+  </div>
+
+  <!-- END OF TOP DOG -->
+
+
 
   <style>
     .radio-test {
@@ -86,122 +53,61 @@
       justify-content: center;
       align-items: center;
       height: auto;
-      margin-top:10px;
-      margin-bottom:10px;
+      margin-top: 10px;
+      margin-bottom: 10px;
     }
   </style>
 
-<div class="radio-test">
-  <script src="https://embed.radio.co/player/0024c4d.js"></script>
-</div>
+  <div class="radio-test">
+    <script src="https://embed.radio.co/player/0024c4d.js"></script>
+  </div>
 
 
-                    <!-- TAB 2 = RADIO -->
-                    <div class="radio" v-show="selectedTab === 'tab2'">
-            
-                        <!-- <div class="audio-player">
-          
-                          <audio controls class="custom-audio-player">
-                            <source src="https://s4.radio.co/saf4aee19b/listen" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                          </audio>
-                          <div class="warning-wrap">
-                            <p style="text-align:center; font-size:12px; max-width:300px;" ><span>Note to the user </span> Please allow up to 30 seconds for the radio to load - it's all live - a real real radio - we're working asap to improve speeds and player function - but it works - you can even click out of the screen on your phone and cast it in your car</p>
-                          </div>
-                        </div> -->
-          
-                        <!-- RADIO SUBHEADER-->
-                        <div class="subHeader">
-                          <div class="subHeaderVert">
-                            <a href="#"><img src="/assets/u_ahoy23.png" class="logo"></a>
-                          </div>
-                          <div class="subHeaderVert content">
-          
-                            <!--<div class="radio-art-wrap">
-                              <script src="https://embed.radio.co/embed/saf4aee19b/artwork.js"></script>
-                            </div>-->
-          
-                            <h2 class="cubano">Live Radio</h2><p>Status = <span>online</span></p>
-                            <div class="audioData">
-                            <p class="audioDisplay">Now Playing</p><script src="https://embed.radio.co/embed/saf4aee19b/song.js"></script>
-                            <p>Up Next</p><script src="https://embed.radio.co/embed/saf4aee19b/next.js"></script>
-                            <p>Recently Played</p><script src="https://embed.radio.co/embed/saf4aee19b/last.js"></script>
-                            
-                           
-          
-                        </div>
-                      </div>
-          
-                        </div><!-- RADIO SUBHEADER-->
-                          <!-- END OF RADIO --></div>
-              <!-- PART 5 - THE BIG ASS GRAPHIC 
-              <div class="basicPadre">
-                <div class="basicHijo">
-                  <img src="./assets/AHOYmarketplace.png">
-                </div>
-              </div>
-           -->
-            
-
-
-           <footer>
-            <a href="https://github.com/oooAHOYooo/oooAHOYooo.github.io">About</a>
-            <a href="./experimental.html">Experimental and In-Progress</a>
-          </footer>
-
-</main>
-
-<!-- SCRIPTS AND CONDITIONAL LOGIC -->
+  <!-- TAB 2 = RADIO -->
+  <div class="radio" v-show="selectedTab === 'tab2'">
 
 
 
-<!-- START OF DAILY BACKGROUND CHANGES -->
+    <!-- RADIO SUBHEADER-->
+    <div class="subHeader">
+      <div class="subHeaderVert">
+        <a href="#"><img src="/assets/u_ahoy23.png" class="logo"></a>
+      </div>
+      <div class="subHeaderVert content">
+        <h2 class="cubano">Live Radio</h2>
+        <p>Status = <span>online</span></p>
+        <div class="audioData">
+          <p class="audioDisplay">Now Playing</p>
+          <script src="https://embed.radio.co/embed/saf4aee19b/song.js"></script>
+          <p>Up Next</p>
+          <script src="https://embed.radio.co/embed/saf4aee19b/next.js"></script>
+          <p>Recently Played</p>
+          <script src="https://embed.radio.co/embed/saf4aee19b/last.js"></script>
+
+
+
+        </div>
+      </div>
+
+    </div><!-- RADIO SUBHEADER-->
+    <!-- END OF RADIO -->
+  </div>
 
 
 
 
+  <footer>
+    <a href="https://github.com/oooAHOYooo/oooAHOYooo.github.io">About</a>
 
-<!--buy button method call?-->
+  </footer>
 
+  </main>
 
+  <!-- BACKGROUND CHANGE IMPORT -->
+  <script src="../script_backgroundChange.js"></script>
+  <!-- END OF CONDITIONAL AND CODE LOGIC -->
+  <!-- HOpe you enjoyed this journey -->
 
-<script>
-  const day = new Date();
-  const hr = day.getHours();
+</body>
 
-  if (window.innerWidth > 600) {
-    document.body.style.backgroundColor = "#acaca3";
-
-    if (hr === 5) {
-      document.body.style.backgroundImage = "url('https://thumbs.gfycat.com/FrayedQuaintAnteater-max-1mb.gif')";
-    } else if (hr === 6 || hr === 12) {
-      document.body.style.backgroundImage = "url('https://www.icegif.com/wp-content/uploads/2022/02/icegif-536.gif')";
-    } else if (hr === 7 || hr === 13 || hr === 14) {
-      document.body.style.backgroundImage = "url('https://thumbs.gfycat.com/BackLankyGangesdolphin-size_restricted.gif')";
-    } else if (hr === 8 || hr === 9 || hr === 10) {
-      document.body.style.backgroundImage = "url('https://media1.giphy.com/media/wkKyBT94rB196/giphy.gif?cid=ecf05e47b9ypgsrn61em96kw5zberiuv0vmdperhn0uq9ch2&rid=giphy.gif&ct=g')";
-    } else if (hr === 11) {
-      document.body.style.backgroundImage = "url('https://i.gifer.com/ARqO.gif')";
-    } else if (hr === 15 || hr === 16) {
-      document.body.style.backgroundImage = "url('https://s.yimg.com/uu/api/res/1.2/rVdUX8eVa31S_5JDCvvp0A--~B/Zmk9ZmlsbDtweW9mZj0wO3c9NjQwO2g9MzYwO3NtPTE7YXBwaWQ9eXRhY2h5b24-/http://media.zenfs.com/en-US/video/video.storyful.com/866362344b92b1cb1d9c3a36db9b0520')";
-    } else if (hr === 17 || hr === 18 || hr === 19 || hr === 20) {
-      document.body.style.backgroundImage = "url('https://media.tenor.com/S8_V9lNMc3oAAAAM/waves-awesome.gif')";
-    } else if (hr === 22) {
-      document.body.style.backgroundImage = "url('https://i.pinimg.com/originals/c6/36/2e/c6362e4ca5fa5e887c6b9ddfcb82c13d.gif')";
-    } else if (hr === 23) {
-      document.body.style.backgroundImage = "url('https://i.pinimg.com/originals/fc/38/97/fc389789c5fbe80b36df05e8ee441c66.gif')";
-    } else if (hr === 24) {
-      document.body.style.backgroundImage = "url('https://c.tenor.com/lWbWfolwJfIAAAAC/ocean-night.gif')";
-    }
-  } else {
-    document.body.style.backgroundColor = "#000f2b85;";
-  }
-</script>
-
-
-
-<!-- END OF CONDITIONAL AND CODE LOGIC -->
-<!-- HOpe you enjoyed this journey -->
-
-    </body>
 </html>
