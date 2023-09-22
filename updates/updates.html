@@ -12,6 +12,7 @@
         <!-- IMPORT OF VUE -->
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
    
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
         <!-- CSS3 -->
         <link rel="stylesheet" href="../css/mainStyle.css">
@@ -45,8 +46,10 @@
     <div class="frontSubHeader">
       <p class="frontSubHeader-text">
       AHOY APP + CONTENT UPDATES + DEV LOG + COMPANY JOURNAL : AS OF September 2023 </p>
-      <a href="https://github.com/oooAHOYooo/oooAHOYooo.github.io"> <p class="frontSubHeader-text-link">Check our Github Repo for nerdy details</p></a>
-      <a href="#githubUpdatesTotal"><p class="frontSubHeader-text-link">View Github Commits</p></a>
+      <div class="section-full-width">
+        <a href="#githubUpdatesTotal"><p class="frontSubHeader-text-link">List of Most Recent Github Commits</p></a>
+      <a href="https://github.com/oooAHOYooo/oooAHOYooo.github.io"> <p class="frontSubHeader-text-link">Branch and Contribute to our open source - public Github Repo </p></a>
+    </div>
     </div>
   
   <!-- content goes here -->
@@ -91,9 +94,35 @@
       }
     });
     </script>
-            <footer>
-              <a href="https://github.com/oooAHOYooo/oooAHOYooo.github.io">About</a>
+            <footer id="updateFooter">
+
+              <a href="https://github.com/oooAHOYooo/oooAHOYooo.github.io" target="_blank">Branch and Contribute to our open source - public Github Repo</a>
+  
             </footer>
+            <!-- SCROLL TO THE TOP -->
+            <button id="scrollToTop" class="scrollToTop">
+              <i class="fas fa-arrow-up"></i>
+            </button>
+            <script>
+
+var mybutton = document.getElementById("scrollToTop");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+mybutton.onclick = function() {
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+            </script>
 </main>
 
 <!-- SCRIPTS AND CONDITIONAL LOGIC -->
