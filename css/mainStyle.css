@@ -885,17 +885,19 @@ audio {
 
 .monthDisplay-text {
   display:flex;
-  flex-direction: row;
-  align-items:center;
-  justify-content: center;
+  flex-direction: column;
+  
+  justify-content: center!important;
   font-family: var(--mainFont);
   font-size:122px;
   font-weight: bold;
   margin:auto;
   text-transform: uppercase;
   text-align:center;
-  color:beige;
+  color:rgb(255, 255, 255);
   margin-top:15px;
+  line-height:80%;
+
 
 }
 
@@ -1646,3 +1648,10 @@ text-align:center!important;
   transform: translateY(0);
 }
 
+/* GLOBAL LAYOUT ADDONS */
+
+.section-full-width {
+  width:100%;
+  display:flex;
+  justify-content: center;
+}

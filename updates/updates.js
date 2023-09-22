@@ -3,6 +3,16 @@ var ahoyUpdates = new Vue({
   data: {
     months: [
       {
+        displayText: "September 2023",
+        updates: [
+          { text: "BETA OUT AND UGLY", superBold: true },
+          { text: "Got cracking on a new beta version of ahoy - taking a break with gathering content - and instead focusing on trying to get this app into tip top shape - as I've realized - i've redone and done this over and over - and so far so good - it gets better - it's software - it gets better over time. The plan as it stands - is to launch this baby Oct 15th - and then begin making a big stink about it all - in the hopes of getting some accounts and art"},
+         
+  
+
+        ]
+      },
+      {
         displayText: "July 2023",
         updates: [
           { text: "Getting Closer to the MVP", superBold: true },
@@ -21,13 +31,13 @@ var ahoyUpdates = new Vue({
           { text: "New Music Added to the Radio ", superBold: true },
           { text: "YouthXL", bold: true },
           { text: "Text your Friends, Summer Bummer, Gypsy Gia, Yoga " },
-          { image: './images/updates/AhoyUpdates-YouthXL.png' },
+          { image: '../images/updates/AhoyUpdates-YouthXL.png' },
           { text: " Riddle M", bold: true },
           { text: " Glued in Nude, Snout, Mustard Seed, Melted Side, Honeydew " },
-          { image: './images/updates/AhoyUpdates-RiddleM.png' },
+          { image: '../images/updates/AhoyUpdates-RiddleM.png' },
           { text: " Justin Arena", bold: true },
           { text: " Crash the Party, When you Wake Up, Oceans" },
-          { image: './images/updates/AhoyUpdates-JustinArena.png' },
+          { image: '../images/updates/AhoyUpdates-JustinArena.png' },
           { text: "Tallboyz Premiere of New Film : Pantalones ", bold: true },
           { text: "Their 4th skate film - and the first of it's kind to organize not by skater name - but by pants"},
           { text: "Major website refactor", bold: true },
@@ -48,12 +58,12 @@ var ahoyUpdates = new Vue({
           { text: "Little Design Tweaks", bold: true },
           { text: "Updated Marketplace on Mobile + You can actually buy an item now on the marketplace (Ahoy Classic Sticker ((as it's the only one we presently have)))" },
           { text: "ROB SHOW EPISODE 2 Featuring Dave Gunn - Out Next Week on Cable!", superBold: true},
-          { image: './images/Ahoy-Indie-Media---The-Rob-Show---Season-2---Episode-2---2023.png' },
+          { image: '../images/Ahoy-Indie-Media---The-Rob-Show---Season-2---Episode-2---2023.png' },
           { text: "Subtle Improvments", bold: true },
           { text: "Mobile Responsiveness + Radio Redesign + Marketplace Improvements + Secret New Features about to be launched" },
           { text: "ROB SHOW EPISODE 1 OUT NOW on Cable!", superBold: true },
           { text: "Rob Show Season 2 - Episode 1 is out Wednesday May 17th - with Guest Tyler and Dave Gunn of the Tallboyz" },
-          { image: './images/Ahoy-Indie-Media---The-Rob-Show---Season-2---Episode-1---2023.png' },
+          { image: '../images/Ahoy-Indie-Media---The-Rob-Show---Season-2---Episode-1---2023.png' },
           { text: "Working on", bold: true },
           { text: "Getting The Marketplace functioning Right" },
           { text: "Getting the App to work on all screen sizes and all devices - but it's a pain in the booty - we at ahoy appreciate the patience." },

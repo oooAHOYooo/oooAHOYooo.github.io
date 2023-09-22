@@ -1,0 +1,19 @@
+  #githubData {
+  background-color: var(--backgroundColor-sub);
+  position:relative;
+  height:auto;
+  padding:10px;
+  padding-bottom:23px;
+  border-style:solid;
+  border-width:.5px;
+  max-width:720px;
+}
+
+
+.githubUpdates h3 {
+  text-align:left;
+  font-size:32px; 
+  text-transform: capitalize;
+  line-height:80%;
+  font-family: monospace;
+}
