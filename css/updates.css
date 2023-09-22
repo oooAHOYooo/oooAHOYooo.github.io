@@ -10,13 +10,21 @@
 }
 
 
+.githubUpdates h2 {
+  font-size:100px;
+  text-align:center;
+  line-height:90%;
+  text-transform: uppercase;
+}
+
 .githubUpdates h3 {
   text-align:left;
-  font-size:32px; 
+  font-size:42px; 
   text-transform: capitalize;
-  line-height:80%;
+  text-align: justify;
+  line-height:90%;
+  font-weight:700;
   
-  font-family: monospace;
 }
 
 #updateFooter {
