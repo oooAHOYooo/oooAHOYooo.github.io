@@ -10,7 +10,7 @@ html {
 }
 
 body {
-    background-image: url(/images/backgrounds/1.jpg);
+    background-color:navy;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size:cover;

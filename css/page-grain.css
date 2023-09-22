@@ -59,3 +59,22 @@
       transform: translate(-10%, 10%)
     }
   }
+
+  #cable-body {
+    height: 100vh;
+    background-color:black;
+  }
+
+#cable-body:before {
+animation: grain 8s steps(10) infinite;
+background-image: url(./assets/ahoygrain.jpg);
+content: "";
+height: 300%;
+left: -50%;
+opacity: 0.63;
+position: fixed;
+z-index:-1;
+top: -110%;
+width: 300%;
+}
+

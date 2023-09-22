@@ -2,6 +2,9 @@
 
 ![alt text](https://oooahoyooo.github.io/assets/u_ahoy23.png)
 
+Ahoy V 1-0-1
+Beta Release Date - 0CT 15 2023
+
 
 Live Preview of Ahoy (Beta) (https://ahoy.ooo)
 
@@ -134,3 +137,7 @@ This code is consists of a HTML document with embedded JavaScript and Vue.js cod
 We are actively seeking investors who share our vision for independent media and are interested in supporting the growth of Ahoy Indie Media. If you are passionate about the project and would like to explore investment opportunities, please reach out to us at invest@ahoy.ooo
 
 Additionally, we welcome contributions from individuals with expertise in media, technology, design, and marketing. If you believe in our mission and would like to contribute to the development and expansion of Ahoy Indie Media, please get in touch with us at contributors@ahoy.ooo
+
+
+# History behind Ahoy
+
