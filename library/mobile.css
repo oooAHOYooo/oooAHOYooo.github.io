@@ -1,0 +1,47 @@
+/*mobile library css*/
+
+@media (max-width: 600px) {
+    body {
+        font-size: 14px; /* adjust as needed */
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .column, .left, .right, .middle {
+        flex: 100%;
+    }
+
+    .search-input {
+        width: 90%; /* adjust as needed */
+        margin: 5px auto; /* center the input field */
+    }
+
+    .song-title, .song-artist {
+        font-size: 14px; /* adjust as needed */
+        width: 90%; /* adjust as needed */
+        margin: 5px auto; /* center the elements */
+    }
+
+    .play-button, .add-button {
+        font-size: 14px; /* adjust as needed */
+        padding: 5px 10px; /* adjust as needed */
+    }
+
+    .memberIcon {
+        width: 40px; /* adjust as needed */
+        height: 40px; /* adjust as needed */
+    }
+}
+
+@media (max-width: 600px) {
+    .mobile-flex-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mobile-flex-item {
+        width: 100%;
+    }
+}

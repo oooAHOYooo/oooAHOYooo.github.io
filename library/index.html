@@ -9,7 +9,7 @@
 	<meta name="keywords" content="Music, Indie, Playlist, Library">
 	<meta name="author" content="Your Name">
 	<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
-
+	<link rel="stylesheet" href="./mobile.css">
 </head>
 <body>
 	<p style="text-align:center;">WARNING THIS FEATURE IS IN ACTIVE DEVELOPMENT AND IN SUPER BETA MODE - WE FIGURED WE MAKE IT LIVE AS IT"S NOT READY</p>
@@ -52,14 +52,13 @@
 			</div>
 			<div class="column middle" id="library-module">
 				<!-- Insert your middle column content here -->
-				Library
-
-				<br>
+				<h2>Library</h2>
 				<!-- CONTENT -->
-
+				<!-- SEARCHBAR -->
+				<div class="search-container">
 				<input type="text" v-model="searchTerm" @input="searchSongs"
 					placeholder="Search the library for songs..." class="search-input">
-
+				</div>
 				<table class="library-table">
 					<thead>
 						<tr>
