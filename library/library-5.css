@@ -7,6 +7,7 @@
 
 html {
     color:white;
+    font-family: 'Barlow', sans-serif;
 }
 
 body {
@@ -16,7 +17,16 @@ body {
     background-size:cover;
     background-position: center;
     animation: kenburns 10s infinite; /* adjust time as needed */
+    font-family: 'Barlow', sans-serif;
+
 }
+
+input {
+    font-family: 'Barlow', sans-serif;
+text-transform:uppercase;
+}
+
+
 
 @keyframes kenburns {
     0% {
@@ -105,11 +115,9 @@ body {
 					font-size:7.4px;
 				}
 
-      .library-table {
+   
 
-      }
-
-      .song-title {
+.song-title {
     font-size: 16px; /* Increase the font size as needed */
     overflow-y: auto; /* Add a vertical scrollbar if the content overflows */
     width: 100%; /* Adjust the width as needed */
@@ -173,3 +181,16 @@ body {
     color:rgb(247, 251, 0);
 }
 
+
+
+/*LOGOS AND SUCH */
+
+.top-logo-left {
+    border-style: solid;
+    border-color: white;
+}
+
+.playlistHeader h2 {
+    font-family: 'Barlow', sans-serif;
+    text-transform:uppercase;
+}

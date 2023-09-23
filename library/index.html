@@ -3,7 +3,6 @@
 
 <head>
 	<title>Ahoy Indie Media</title>
-	<link rel="stylesheet" href="library-5.css">
 	<link rel="stylesheet" href="./library-5.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Ahoy Indie Media is a music library and playlist creator.">
@@ -22,19 +21,14 @@
 				<a href="../index.html"><img class="topYoLogo" src="../assets/u_ahoy23.png" width="100" height="auto;">
 				</a>
 				<style>
-					.top-logo-left {
-						border-style: solid;
-						border-color: white;
-					}
-
-
-					}
+		
+			
 				</style>
 				<!-- oooo -->
 				<!-- PLAYLIST CODE BABY -->
 
-				<div class="playlist-container">
-					<h2>Playlists</h2>
+	<div class="playlist-container">
+					<div class="playlistHeader"><h2>Playlists</h2></div>
 					<input type="text" id="newPlaylistName" placeholder="Playlist name...">
 					<button @click="createPlaylist()">Create Playlist</button>
 					<select v-model="selectedPlaylist" id="playlistSelect">
@@ -51,7 +45,10 @@
 					</div>
 
 					<!-- oooo -->
-				</div>
+	</div>
+
+
+
 			</div>
 			<div class="column middle" id="library-module">
 				<!-- Insert your middle column content here -->
