@@ -45,3 +45,17 @@
         width: 100%;
     }
 }
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    padding: 0 20px; /* Adjust as needed */
+}
+
+.search-input {
+    width: 100%;
+    max-width: 600px; /* Adjust as needed */
+    padding: 10px;
+    box-sizing: border-box;
+}
+

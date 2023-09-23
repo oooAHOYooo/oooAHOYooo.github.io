@@ -10,20 +10,27 @@
 	<meta name="author" content="Your Name">
 	<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 	<link rel="stylesheet" href="./mobile.css">
+	<link rel="stylesheet" href="./library-switch.css">
 </head>
 <body>
 	<p style="text-align:center;">WARNING THIS FEATURE IS IN ACTIVE DEVELOPMENT AND IN SUPER BETA MODE - WE FIGURED WE MAKE IT LIVE AS IT"S NOT READY</p>
 	<div id="songSearchApp">
 		<div class="container">
 			<div class="column left">
-				<!-- Insert your left column content here -->
-
-				<a href="../index.html"><img class="topYoLogo" src="../assets/u_ahoy23.png" width="100" height="auto;">
-				</a>
-				<style>
-		
 			
-				</style>
+				<!-- Insert your left column content here -->
+				<!-- THE START OF SOMETHING GREAT -->
+				<div class="tinyMenu-wrap" style="display:flex;">
+					<a href="../index.html"><img class="topYoLogo" src="../assets/u_ahoy23.png" width="143" height="auto;">
+					</a>
+					<div class="switch-widget-wrapper">
+						<input id="dn" type="checkbox" onclick="muteUnmuteAudio()" />
+						<label class="toggle" for="dn">
+							<span class="toggle--handler"></span>
+						</label>
+					</div>
+				</div>
+			
 				<!-- oooo -->
 				<!-- PLAYLIST CODE BABY -->
 
@@ -173,7 +180,26 @@
 	<!-- END OF TOTAL HTML APP -->
 	</div>
 
+
+
+<!-- NO MORE HTML AFTER THIS POINT -->
+
+
+
+
+
+
+
 	<!-- SCRIPTS -->
+
+
+	<!-- MUTE AUDIO SWITCH CODE -->
+	<script>
+		function muteUnmuteAudio() {
+			var audioPlayer = document.getElementById('audioPlayer');
+			audioPlayer.muted = !audioPlayer.muted;
+		}
+		</script>
 
 	<script>
 		// Audio context
@@ -181,19 +207,6 @@
 
 		// Audio source
 		let audioSource = null;
-
-		// Gain node
-		const gainNode = audioContext.createGain();
-		gainNode.connect(audioContext.destination);
-
-		// Stereo Panner
-		const pannerNode = audioContext.createStereoPanner();
-		pannerNode.connect(gainNode);
-
-		// Delay node
-		const delayNode = audioContext.createDelay(5.0);
-		delayNode.delayTime.value = 0;
-		delayNode.connect(pannerNode);
 
 		// Play audio
 		function playAudio() {
