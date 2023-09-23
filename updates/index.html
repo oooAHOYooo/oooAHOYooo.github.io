@@ -47,15 +47,24 @@
       <p class="frontSubHeader-text">
       AHOY APP + CONTENT UPDATES + DEV LOG + COMPANY JOURNAL : AS OF September 2023 </p>
       <div class="section-full-width">
-        <a href="#githubUpdatesTotal"><p class="frontSubHeader-text-link">List of Most Recent Github Commits</p></a>
-      <a href="https://github.com/oooAHOYooo/oooAHOYooo.github.io"> <p class="frontSubHeader-text-link">Branch and Contribute to our open source - public Github Repo </p></a>
+        <a href="#githubUpdatesTotal"><p class="frontSubHeader-text-link" style="color:rgba(255, 255, 255, 0.724)!important;">List of Most Recent Github Commits</p></a>
+      <a href="https://github.com/oooAHOYooo/oooAHOYooo.github.io"> <p class="frontSubHeader-text-link" style="color:rgba(216, 112, 147, 0.563)!important;">Branch and Contribute to our open source - public Github Repo </p></a>
     </div>
     </div>
-  
+    <div class="section-full-width" id="githubUpdatesTotal">
+      <div class="githubUpdates" id="githubData">
+        <h2>Commits</h2>
+        <div v-for="commit in commits" :key="commit.sha">
+          <h3>{{ commit.commit.message }}</h3>
+          <p>Author: {{ commit.commit.author.name }}</p>
+          <p>Date: {{ commit.commit.author.date }}</p>
+        </div>
+      </div>
+      </div>
+      
   <!-- content goes here -->
 <div class="update-super-wrap">
   <div id="updates-ahoy-app">
-
     <div v-for="month in months" :key="month.displayText">
       <h2 class="monthDisplay-text">{{ month.displayText }}</h2>
       <div class="updates-text-wrap" v-for="update in month.updates" :key="update.text">
@@ -72,17 +81,7 @@
 
 <!-- END OF UPDATE WRAP -->
   <!-- GITHUB COMMIT -->
-  <div class="section-full-width" id="githubUpdatesTotal">
-    <div class="githubUpdates" id="githubData">
-      <h2>Github<br> Commits</h2>
-      <div v-for="commit in commits" :key="commit.sha">
-        <h3>{{ commit.commit.message }}</h3>
-        <p>Author: {{ commit.commit.author.name }}</p>
-        <p>Date: {{ commit.commit.author.date }}</p>
-      </div>
-    </div>
-    </div>
-    
+
     <script>
     new Vue({
       el: '#githubData',
