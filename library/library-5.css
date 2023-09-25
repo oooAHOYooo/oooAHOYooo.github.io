@@ -60,10 +60,16 @@ text-transform:uppercase;
             }
         }
 
+        .search-container {
+            padding-top:20px;
+            padding-bottom:20px;
+            margin-top:50px;
+            margin-bottom:50px;
+        }
 
         .search-input {
             width: 100%;
-    
+            text-transform:capitalize;
             height: 40px;
             border: none;
             border-radius: 20px;
@@ -118,6 +124,7 @@ text-transform:uppercase;
 .song-title {
     font-size: 16px; /* Increase the font size as needed */
     overflow-y: auto; /* Add a vertical scrollbar if the content overflows */
+    min-width:150px;
     width: 100%; /* Adjust the width as needed */
     height: 35px; /* Adjust the height as needed */
     padding: 0px;
@@ -130,7 +137,11 @@ text-transform:uppercase;
     backdrop-filter: blur(10px); /* Blur effect for the glass-like appearance */
     border: 1px solid rgba(255, 255, 255, 0.2); /* Border for the glass-like appearance */
     color: white; /* Font color */
+    margin:0px;
 }
+
+
+
 
 .song-artist {
     font-size: 15px; /* Increase the font size as needed */
@@ -192,6 +203,42 @@ text-transform:uppercase;
     color:rgb(247, 251, 0);
 }
 
+.glass-button {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+.glass-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+}
+
+.player-glass-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: rgba(0, 6, 122, 0.3);
+    border: none;
+    box-shadow: 0 8px 16px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    transition: all 0.3s ease-out;
+}
+
+.player-glass-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-2px);
+}
 
 
 /*LOGOS AND SUCH */
@@ -209,3 +256,13 @@ text-transform:uppercase;
 
 
 
+.now-playing-text {
+    font-family: 'Barlow', sans-serif;
+    text-transform:uppercase;
+    font-size: 1.5vw;
+    color: rgba(255, 255, 255, 0.339);
+    margin-left: 10px;
+    margin-right: 10px;
+    font-weight: 600;
+    text-align:center;
+}

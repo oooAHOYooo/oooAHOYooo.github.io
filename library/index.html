@@ -37,11 +37,11 @@
 	<div class="playlist-container">
 					<div class="playlistHeader"><h2>Playlists</h2></div>
 					<input type="text" id="newPlaylistName" placeholder="Playlist name...">
-					<button @click="createPlaylist()">Create Playlist</button>
+					<button class="glass-button" @click="createPlaylist()">Create Playlist</button>
 					<select v-model="selectedPlaylist" id="playlistSelect">
 						<option v-for="(value, key) in playlists" :value="key">{{key}}</option>
 					</select>
-					<button @click="playPlaylist()">Play Playlist</button>
+					<button class="glass-button" @click="playPlaylist()">Play Playlist</button>
 					<div id="playlists">
 						<div v-for="(playlist, playlistName) in playlists">
 							<h3>{{playlistName}}</h3>
@@ -59,7 +59,7 @@
 			</div>
 			<div class="column middle" id="library-module">
 				<!-- Insert your middle column content here -->
-				<h2>Library</h2>
+				
 				<!-- CONTENT -->
 				<!-- SEARCHBAR -->
 				<div class="search-container">
@@ -67,19 +67,23 @@
 					placeholder="Search the library for songs..." class="search-input">
 				</div>
 				<table class="library-table">
+					<style>
+						.table-header {
+								width: 1fr;
+								text-align: center;
+						}
+					</style>
 					<thead>
 						<tr>
-							<th>Artist</th>
-							<th>Song Title</th>
-							<!--<th>Artist Thumbnail</th>-->
-							<!--<th>Album Artwork</th>-->
-							<th>Play</th>
+							<th class="table-header">Artist</th>
+							<th class="table-header">Song Title</th>
+							<th class="table-header">Play</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr v-for="song in filteredSongs" :key="song.songTitle">
-							<td><p class="song-artist">{{ song.artist }}</p></td>
-							<td><p class="song-title">{{ song.songTitle }}</p></td>
+							<td><p class="song-artist" @click="togglePlay(song)">{{ song.artist }}</p></td>
+							<td><p class="song-title" @click="togglePlay(song)">{{ song.songTitle }}</p></td>
 							<td><!-- <img :src="song.artistThumbnail" alt="Artist Thumbnail">--></td>
 							<td><!-- <img :src="song.albumArtwork" alt="Album Artwork">--></td>
 
@@ -102,7 +106,7 @@
 						issue still persits - use a normal browser like a normie
 					</audio>
 					<div class="controls" style="display: flex; align-items: center;">
-						<div>Now Playing:</div>
+						<div><p class="now-playing-text">Now Playing:</p></div>
 					</div>
 					<div>
 						<h2>{{ currentArtist }}</h2>
@@ -115,12 +119,12 @@
 						<div class="progress"></div>
 					</div>
 					<div id="musicTweakerController">
-						<button>Add to Playlist </button>
+						<button class="player-glass-button" @click="addToPlaylist(song)">Add to Playlist </button>
 
 						<!-- Audio Controls -->
-						<button onclick="playAudio()">Play</button>
-						<button onclick="pauseAudio()">Pause</button>
-						<button onclick="stopAudio()">Stop</button>
+						<button class="player-glass-button" onclick="playAudio()">Play</button>
+						<button class="player-glass-button" onclick="pauseAudio()">Pause</button>
+						<button class="player-glass-button" onclick="stopAudio()">Stop</button>
 
 						<div style="display: flex; flex-direction: column;">
 
@@ -179,16 +183,7 @@
 
 	<!-- END OF TOTAL HTML APP -->
 	</div>
-
-
-
 <!-- NO MORE HTML AFTER THIS POINT -->
-
-
-
-
-
-
 
 	<!-- SCRIPTS -->
 
