@@ -195,7 +195,8 @@ text-transform:uppercase;
 
 #add {
     background-color:rgba(0, 98, 128, 0.12);
-    margin-right:5px;
+    margin-right:7.5px;
+    margin-left:10px;
 }
 
 #add:hover {
