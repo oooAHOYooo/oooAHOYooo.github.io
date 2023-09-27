@@ -1,3 +1,4 @@
+
   #githubData {
   background-color: var(--backgroundColor-sub);
   position:relative;
@@ -7,52 +8,109 @@
   border-style:solid;
   border-width:.5px;
   max-width:720px;
+  padding-left:10px;
+  
 }
 
 
 .githubUpdates h2 {
   font-size:100px;
-  text-align:center;
+  text-align:center!important;
   line-height:90%;
   text-transform: uppercase;
+  margin-bottom:5px;
+  margin-top:5px;
 }
 
 .githubUpdates h3 {
-  text-align:left;
+  text-align:center;
   font-size:42px; 
   text-transform: capitalize;
   text-align: justify;
   line-height:90%;
   font-weight:700;
+  width:97%;
+  padding-left:10px;
+  margin-bottom: 5px;
   
+}
+
+.githubUpdates p {
+  padding-left:10px;
+  line-height: 0.85;
+  margin-bottom: 5px;
+}
+
+.littleAuthor {
+  padding-bottom:10px;
+  margin-bottom:0px;
+  color:rgb(255, 255, 255);
+  font-weight:300;
+  line-height: 0.85;
+  font-size: 14px;
+}
+
+.tinyText {
+  margin-bottom:0px;
+  color:rgba(87, 168, 255, 0.747);
+  padding-left:10px;
+  line-height: 0.85;
+
 }
 
 #updateFooter {
   display: flex;
   flex-direction: column;
   align-items:center;
-z-index:1;
-}
+  z-index:1;
+} 
 
 .scrollToTop {
   display: none; /* Hidden by default */
   position: fixed; /* Fixed/sticky position */
   bottom: 20px; /* Place the button at the bottom of the page */
-  right: 20px; /* Place the button 30px from the right */
+  left: 20px; /* Place the button 30px from the right */
   z-index: 99; /* Make sure it does not overlap */
   border: none; /* Remove borders */
   outline: none; /* Remove outline */
-  background-color: #0051c3; /* Set a background color */
-  color: rgb(2, 2, 2); /* Text color */
+  background-color: #2400795e; 
+  color: rgba(255, 255, 255, 0.376); /* Text color */
   cursor: pointer; /* Add a mouse pointer on hover */
   padding: 15px; /* Some padding */
   border-radius: 10px; /* Rounded corners */
   font-size: 18px; /* Increase font size */
-  border-color:white;
+  border-color:rgb(0, 42, 255);
   border-style:solid;
   border-width:.1px;
 }
 
 .scrollToTop:hover {
-  background-color: #555; /* Add a dark-grey background on hover */
+  background-color: #2400799d; 
+}
+
+@media screen and (max-width: 768px) {
+  #githubData {
+    max-width: 100%;
+    padding: 5px;
+  }
+
+  .githubUpdates h2 {
+    font-size: 50px;
+  }
+
+  .githubUpdates h3 {
+    font-size: 24px;
+  }
+
+  #updateFooter {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .scrollToTop {
+    bottom: 10px;
+    right: 10px;
+    padding: 10px;
+    font-size: 14px;
+  }
 }
