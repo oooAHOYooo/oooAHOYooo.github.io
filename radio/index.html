@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="../css/mainStyle.css">
   <link rel="stylesheet" href="../css/mobile.css">
   <link rel="stylesheet" href="../css/page-grain.css">
+  <link rel="stylesheet" href="../radio/radio.css">
 
 </head>
 
@@ -65,34 +66,29 @@
 
 
   <!-- TAB 2 = RADIO -->
-  <div class="radio" v-show="selectedTab === 'tab2'">
 
 
 
-    <!-- RADIO SUBHEADER-->
-    <div class="subHeader">
-      <div class="subHeaderVert">
-        <a href="#"><img src="/assets/u_ahoy23.png" class="logo"></a>
-      </div>
-      <div class="subHeaderVert content">
-        <h2 class="cubano">Live Radio</h2>
-        <p>Status = <span>online</span></p>
-        <div class="audioData">
-          <p class="audioDisplay">Now Playing</p>
-          <script src="https://embed.radio.co/embed/saf4aee19b/song.js"></script>
-          <p>Up Next</p>
-          <script src="https://embed.radio.co/embed/saf4aee19b/next.js"></script>
-          <p>Recently Played</p>
-          <script src="https://embed.radio.co/embed/saf4aee19b/last.js"></script>
+ <!-- RADIO SUBHEADER-->
+<div class="subHeader glass-effect">
 
-
-
-        </div>
-      </div>
+  <div class="subHeaderVert content glass-content">
+    <h2 class="cubano glass-title">Live Radio</h2>
+    <p class="glass-status">Status = <span class="status-indicator">online</span></p>
+    <div class="audioData glass-audio-data">
+      <p class="audioDisplay glass-audio-display">Now Playing</p>
+      <script src="https://embed.radio.co/embed/saf4aee19b/song.js"></script>
+      <p class="glass-up-next">Up Next</p>
+      <script src="https://embed.radio.co/embed/saf4aee19b/next.js"></script>
+      <p class="glass-recently-played">Recently Played</p>
+      <script src="https://embed.radio.co/embed/saf4aee19b/last.js"></script>
+    </div>
+  </div>
+</div>
 
     </div><!-- RADIO SUBHEADER-->
     <!-- END OF RADIO -->
-  </div>
+ 
 
 
 
