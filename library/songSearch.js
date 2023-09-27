@@ -12,11 +12,9 @@ new Vue({
             play: false
           },
         {
-            artist: 'Artist Name 1',
-            songTitle: 'Song Title 1',
-            artistThumbnail: 'https://unsplash.com/photos/random_person_image2',
-            albumArtwork: 'https://unsplash.com/photos/random_nautical_image2',
-            mp3url: 'https://ahoycollection.s3.us-east-2.amazonaws.com/Campbell+Rice-+From+Here.mp3',
+            artist: 'Coral Reefer',
+            songTitle: 'Watching Her Fly',
+            mp3url: 'https://ahoycollection.s3.amazonaws.com/Coral+Reefer+-+Untitled+(original).mp3',
             play: false
           },
 
@@ -30,18 +28,18 @@ new Vue({
             },
           {
               artist: 'Youth XL',
-              songTitle: 'Another Data',
+              songTitle: 'Summer Bummer',
               artistThumbnail: 'UNSPLASH_URL_FOR_ARTIST_3',
               albumArtwork: 'UNSPLASH_URL_FOR_ALBUM_3',
-              mp3url: 'https://ahoycollection.s3.us-east-2.amazonaws.com/Campbell+Rice-+From+Here.mp3',
+              mp3url: 'https://ahoycollection.s3.amazonaws.com/Youth+XL+-+Summer+Bummer.mp3',
               play: false
             },
             {
-                artist: 'Clones of Clarence',
-                songTitle: 'I Believe in Love',
+                artist: 'Youth XL',
+                songTitle: 'Yoga',
                 artistThumbnail: 'UNSPLASH_URL_FOR_ARTIST_4',
                 albumArtwork: 'UNSPLASH_URL_FOR_ALBUM_4',
-                mp3url: 'https://ahoycollection.s3.us-east-2.amazonaws.com/Campbell+Rice-+From+Here.mp3',
+                mp3url: 'https://ahoycollection.s3.amazonaws.com/Youth+XL+-+Yoga.mp3',
                 play: false
               },
               {
