@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
 	<title>Ahoy Indie Media - Library</title>
 	<link rel="stylesheet" href="./library-5.css">
@@ -13,16 +12,18 @@
 	<link rel="stylesheet" href="./library-switch.css">
 	<link rel="stylesheet" href="../css/membership.css">
 </head>
+
 <body>
 	<p style="text-align:center;">WARNING THIS FEATURE IS IN ACTIVE DEVELOPMENT AND IN SUPER BETA MODE</p>
 	<div id="songSearchApp">
 		<div class="container">
 			<div class="column left">
-			
+
 				<!-- Insert your left column content here -->
 				<!-- THE START OF SOMETHING GREAT -->
 				<div class="tinyMenu-wrap" style="display:flex;">
-					<a href="../index.html"><img class="topYoLogo" src="../assets/u_ahoy23.png" width="143" height="auto;">
+					<a href="../index.html"><img class="topYoLogo" src="../assets/u_ahoy23.png" width="143"
+							height="auto;">
 					</a>
 					<div class="switch-widget-wrapper">
 						<input id="dn" type="checkbox" onclick="muteUnmuteAudio()" />
@@ -31,18 +32,20 @@
 						</label>
 					</div>
 				</div>
-			
+
 				<!-- oooo -->
 				<!-- PLAYLIST CODE BABY -->
 
-	<div class="playlist-container">
-					<div class="playlistHeader"><h2>Playlists</h2></div>
+				<div class="playlist-container">
+					<div class="playlistHeader">
+						<h2>Playlists</h2>
+					</div>
 					<input type="text" id="newPlaylistName" placeholder="Playlist name...">
 					<button class="glass-button" @click="createPlaylist()">Create Playlist</button>
 					<select class="select" v-model="selectedPlaylist" id="playlistSelect">
 						<option v-for="(value, key) in playlists" :value="key">{{key}}</option>
 					</select>
-					
+
 					<div id="playlists">
 						<div v-for="(playlist, playlistName) in playlists">
 							<h3>{{playlistName}}</h3>
@@ -55,26 +58,26 @@
 					</div>
 
 					<!-- oooo -->
-	</div>
+				</div>
 
 
 
 			</div>
 			<div class="column middle" id="library-module">
 				<!-- Insert your middle column content here -->
-				
+
 				<!-- CONTENT -->
 				<!-- SEARCHBAR -->
 				<div class="search-container">
-				<input type="text" v-model="searchTerm" @input="searchSongs"
-					placeholder="Search the library for songs..." class="search-input">
+					<input type="text" v-model="searchTerm" @input="searchSongs"
+						placeholder="Search the library for songs..." class="search-input">
 				</div>
 				<table class="library-table">
 					<style>
 						.table-header {
-								width: 1fr;
-								text-align: left;
-								color:red!important;
+							width: 1fr;
+							text-align: left;
+							color: red !important;
 						}
 					</style>
 					<thead>
@@ -86,15 +89,20 @@
 					</thead>
 					<tbody>
 						<tr v-for="song in filteredSongs" :key="song.songTitle">
-							<td><p class="song-artist" @click="togglePlay(song)">{{ song.artist }}</p></td>
-							<td><p class="song-title" @click="togglePlay(song)">{{ song.songTitle }}</p></td>
+							<td>
+								<p class="song-artist" @click="togglePlay(song)">{{ song.artist }}</p>
+							</td>
+							<td>
+								<p class="song-title" @click="togglePlay(song)">{{ song.songTitle }}</p>
+							</td>
 							<td><!-- <img :src="song.artistThumbnail" alt="Artist Thumbnail">--></td>
 							<td><!-- <img :src="song.albumArtwork" alt="Album Artwork">--></td>
 
 							<td><button id="add" class="add-button" @click="addToPlaylist(song)">Add</button></td>
 
-							<td><button class="play-button" @click="togglePlay(song)">{{ song.play ? 'Pause' : 'Play' }}</button></td>
-			
+							<td><button class="play-button" @click="togglePlay(song)">{{ song.play ? 'Pause' : 'Play'
+									}}</button></td>
+
 						</tr>
 					</tbody>
 				</table>
@@ -110,7 +118,9 @@
 						issue still persits - use a normal browser like a normie
 					</audio>
 					<div class="controls" style="display: flex; align-items: center;">
-						<div><p class="now-playing-text">Now Playing:</p></div>
+						<div>
+							<p class="now-playing-text">Now Playing:</p>
+						</div>
 					</div>
 					<div>
 						<h2>{{ currentArtist }}</h2>
@@ -150,21 +160,19 @@
 
 	</div>
 	<!-- START OF MEMBER APP -->
+	<!-- 
 	<div id="memberApp">
-		<style>
-
-		</style>
 		<div class="memberIcon">
 			MemberName
 		</div>
-	</div>
+	</div>-->
 	<!-- END OF MEMBER APP-->
 
 
 
 	<!-- END OF TOTAL HTML APP -->
 	</div>
-<!-- NO MORE HTML AFTER THIS POINT -->
+	<!-- NO MORE HTML AFTER THIS POINT -->
 
 	<!-- SCRIPTS -->
 
@@ -175,7 +183,7 @@
 			var audioPlayer = document.getElementById('audioPlayer');
 			audioPlayer.muted = !audioPlayer.muted;
 		}
-		</script>
+	</script>
 
 	<script>
 		// Audio context

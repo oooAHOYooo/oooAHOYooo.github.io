@@ -7,7 +7,7 @@ export const songs = [
         play: false
     },
     {
-        artist: 'Coral Reefer',
+        artist: 'Frank Lolillo',
         songTitle: 'Watching Her Fly',
         mp3url: 'https://ahoycollection.s3.amazonaws.com/Coral+Reefer+-+Untitled+(original).mp3',
         play: false

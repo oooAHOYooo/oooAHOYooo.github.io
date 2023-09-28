@@ -94,38 +94,10 @@ input {
 
 
 
-		#memberApp {
-			position: fixed; 
-			bottom: 0; 
-			left: 0;
-			margin:10px;
-		}
-				.memberIcon {
-					width:50px;
-					height:50px;
-					background-color: rgba(255, 255, 255, 0.081);
-					border-style:solid;
-					border-width: thin;
-					border-color:rgba(0, 174, 255, 0.226);
-					font-size:7.2px;
-					text-align:center;
-					display:flex;
-					align-items:center;
-					justify-content: center;
-				}
-
-				.memberIcon:hover {
-					border-color:aqua;
-					cursor: pointer;
-					font-size:7.4px;
-				}
-
-   
-
 .song-title {
     font-size: 16px; /* Increase the font size as needed */
     overflow-y: auto; /* Add a vertical scrollbar if the content overflows */
-    min-width:110px;
+    min-width:150px;
     width: 100%; /* Adjust the width as needed */
     height: 35px; /* Adjust the height as needed */
     padding: 0px;
@@ -139,6 +111,7 @@ input {
     border: 1px solid rgba(255, 255, 255, 0.2); /* Border for the glass-like appearance */
     color: white; /* Font color */
     margin:0px;
+    margin-left:30px;
 }
 
 
