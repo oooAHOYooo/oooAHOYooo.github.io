@@ -124,7 +124,7 @@ text-transform:uppercase;
 .song-title {
     font-size: 16px; /* Increase the font size as needed */
     overflow-y: auto; /* Add a vertical scrollbar if the content overflows */
-    min-width:150px;
+    min-width:110px;
     width: 100%; /* Adjust the width as needed */
     height: 35px; /* Adjust the height as needed */
     padding: 0px;
@@ -267,3 +267,5 @@ text-transform:uppercase;
     font-weight: 600;
     text-align:center;
 }
+
+

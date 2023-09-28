@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<title>Ahoy Indie Media</title>
+	<title>Ahoy Indie Media - Library</title>
 	<link rel="stylesheet" href="./library-5.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Ahoy Indie Media is a music library and playlist creator.">
@@ -11,9 +11,10 @@
 	<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 	<link rel="stylesheet" href="./mobile.css">
 	<link rel="stylesheet" href="./library-switch.css">
+	<link rel="stylesheet" href="../css/membership.css">
 </head>
 <body>
-	<p style="text-align:center;">WARNING THIS FEATURE IS IN ACTIVE DEVELOPMENT AND IN SUPER BETA MODE - WE FIGURED WE MAKE IT LIVE AS IT"S NOT READY</p>
+	<p style="text-align:center;">WARNING THIS FEATURE IS IN ACTIVE DEVELOPMENT AND IN SUPER BETA MODE</p>
 	<div id="songSearchApp">
 		<div class="container">
 			<div class="column left">
@@ -149,30 +150,7 @@
 	<!-- START OF MEMBER APP -->
 	<div id="memberApp">
 		<style>
-			#memberApp {
-				position: fixed;
-				bottom: 0;
-				left: 0;
-				margin: 10px;
-			}
 
-			.memberIcon {
-				width: 50px;
-				height: 50px;
-				background-color: rgba(255, 255, 255, 0.081);
-				border-style: solid;
-				border-color: rgba(0, 174, 255, 0.226);
-				font-size: 6px;
-				text-align: center;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-			}
-
-			.memberIcon:hover {
-				border-color: aqua;
-				cursor: pointer;
-			}
 		</style>
 		<div class="memberIcon">
 			MemberName
@@ -259,7 +237,10 @@
 
 	</script>
 	<!-- LIBRARY IMPORT -->
-	<script src="songSearch.js"></script>
+	<!--<script src="songSearch.js"></script>-->
+	<!-- NEW LIBRARY DATA -->
+	<script type="module" src="./songData.js"></script>
+	<script type="module" src="./songFunction.js"></script>
 	<!--BACKGROUND CHANGE -->
 	<script src="../script_backgroundChange.js"></script>
 </body>

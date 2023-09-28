@@ -1,0 +1,26 @@
+/*MEMBERSHIP CSS*/
+
+			#memberApp {
+				position: fixed;
+				bottom: 0;
+				left: 0;
+				margin: 10px;
+			}
+
+			.memberIcon {
+				width: 50px;
+				height: 50px;
+				background-color: rgba(255, 255, 255, 0.081);
+				border-style: solid;
+				border-color: rgba(0, 174, 255, 0.226);
+				font-size: 6px;
+				text-align: center;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+
+			.memberIcon:hover {
+				border-color: aqua;
+				cursor: pointer;
+			}

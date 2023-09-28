@@ -1,0 +1,86 @@
+
+export const songs = [
+    {
+        artist: 'Samuel Dylan Witch',
+        songTitle: 'Ive Seen Better Days',
+        mp3url: 'https://ahoycollection.s3.us-east-2.amazonaws.com/01%20I%27ve%20Seen%20Better%20Days.mp3',
+        play: false
+    },
+    {
+        artist: 'Coral Reefer',
+        songTitle: 'Watching Her Fly',
+        mp3url: 'https://ahoycollection.s3.amazonaws.com/Coral+Reefer+-+Untitled+(original).mp3',
+        play: false
+      },
+
+      {
+          artist: 'Cambell Rice',
+          songTitle: 'Far From Here',
+          artistThumbnail: 'https://unsplash.com/photos/random_person_image2',
+          albumArtwork: 'https://unsplash.com/photos/random_nautical_image2',
+          mp3url: 'https://ahoycollection.s3.us-east-2.amazonaws.com/Campbell+Rice-+From+Here.mp3',
+          play: false
+        },
+      {
+          artist: 'Youth XL',
+          songTitle: 'Summer Bummer',
+          artistThumbnail: 'UNSPLASH_URL_FOR_ARTIST_3',
+          albumArtwork: 'UNSPLASH_URL_FOR_ALBUM_3',
+          mp3url: 'https://ahoycollection.s3.amazonaws.com/Youth+XL+-+Summer+Bummer.mp3',
+          play: false
+        },
+        {
+            artist: 'Youth XL',
+            songTitle: 'Yoga',
+            artistThumbnail: 'UNSPLASH_URL_FOR_ARTIST_4',
+            albumArtwork: 'UNSPLASH_URL_FOR_ALBUM_4',
+            mp3url: 'https://ahoycollection.s3.amazonaws.com/Youth+XL+-+Yoga.mp3',
+            play: false
+          },
+          {
+            artist: 'Youth XL',
+            songTitle: 'Text Your Friends',
+            artistThumbnail: 'UNSPLASH_URL_FOR_ARTIST_6',
+            albumArtwork: 'UNSPLASH_URL_FOR_ALBUM_6',
+            mp3url: 'https://ahoycollection.s3.us-east-2.amazonaws.com/Youth+XL+-+Text+Your+Friends.mp3',
+            play: false
+        },
+        {
+          artist: 'Youth XL',
+          songTitle: 'Gypsy Gia',
+          artistThumbnail: 'UNSPLASH_URL_FOR_ARTIST_6',
+          albumArtwork: 'UNSPLASH_URL_FOR_ALBUM_6',
+          mp3url: 'https://ahoycollection.s3.us-east-2.amazonaws.com/Youth+XL+-+Gypsy+Gia.mp3',
+          play: false
+      },
+          {
+              artist: 'Fella Gazelle',
+              songTitle: "Reasons",
+              mp3url: 'https://ahoycollection.s3.us-east-2.amazonaws.com/Fella%20Gazelle%20-%20Reasons%20-%20Radio%20Edit.mp3',
+              play: false
+          },
+          {
+            artist: 'Justin Arena',
+            songTitle: "Crash the Party",
+            mp3url: 'https://ahoycollection.s3.us-east-2.amazonaws.com/Justin%20Arena%20-%20Crash%20The%20Party%20(ft.%20Nicole%20Gauthier).mp3',
+            play: false
+        },
+ 
+          {
+            artist: 'Sara-Joy Liebig',
+            songTitle: 'Woman from Waimea',
+            artistThumbnail: 'UNSPLASH_URL_FOR_ARTIST_6',
+            albumArtwork: 'UNSPLASH_URL_FOR_ALBUM_6',
+            mp3url: 'https://ahoycollection.s3.us-east-2.amazonaws.com/Sara-Joy+Liebig+%7C+Woman+from+Waimea+%7C+.mp3',
+            play: false
+        },
+   
+    {
+      artist: 'Justin Arena',
+      songTitle: 'Oceans',
+      artistThumbnail: 'UNSPLASH_URL_FOR_ARTIST_6',
+      albumArtwork: 'UNSPLASH_URL_FOR_ALBUM_6',
+      mp3url: 'https://ahoycollection.s3.us-east-2.amazonaws.com/Justin+Arena+-+Oceans.mp3',
+      play: false
+  },
+];
