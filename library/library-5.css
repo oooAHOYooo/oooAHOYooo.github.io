@@ -23,7 +23,8 @@ body {
 
 input {
     font-family: 'Barlow', sans-serif;
-text-transform:uppercase;
+    text-transform:capitalize;
+    color:white;
 }
 
 @keyframes kenburns {
@@ -269,3 +270,34 @@ text-transform:uppercase;
 }
 
 
+/*CREATE PLAYLIST STYLES */
+.select {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    min-width:50px;
+    min-height:40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+  }
+  
+  .select:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  #newPlaylistName {
+    background: rgba(17, 0, 199, 0);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 2px );
+    border-radius: 10px;
+    border: 1px solid rgba(0, 122, 178, 0.821);
+    padding: 10px 15px;
+    color: #fff;
+}

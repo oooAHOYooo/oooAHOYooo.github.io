@@ -39,16 +39,18 @@
 					<div class="playlistHeader"><h2>Playlists</h2></div>
 					<input type="text" id="newPlaylistName" placeholder="Playlist name...">
 					<button class="glass-button" @click="createPlaylist()">Create Playlist</button>
-					<select v-model="selectedPlaylist" id="playlistSelect">
+					<select class="select" v-model="selectedPlaylist" id="playlistSelect">
 						<option v-for="(value, key) in playlists" :value="key">{{key}}</option>
 					</select>
-					<button class="glass-button" @click="playPlaylist()">Play Playlist</button>
+					
 					<div id="playlists">
 						<div v-for="(playlist, playlistName) in playlists">
 							<h3>{{playlistName}}</h3>
 							<ul>
 								<li v-for="song in playlist">{{song.songTitle}} by {{song.artist}}</li>
 							</ul>
+							<button class="glass-button" @click="playPlaylist()">Play Playlist</button>
+							<button class="glass-button">Burn Playlist to Disc</button>
 						</div>
 					</div>
 
