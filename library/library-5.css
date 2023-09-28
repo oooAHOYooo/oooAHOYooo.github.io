@@ -110,8 +110,7 @@ input {
     backdrop-filter: blur(10px); /* Blur effect for the glass-like appearance */
     border: 1px solid rgba(255, 255, 255, 0.2); /* Border for the glass-like appearance */
     color: white; /* Font color */
-    margin:0px;
-    margin-left:30px;
+    
 }
 
 
