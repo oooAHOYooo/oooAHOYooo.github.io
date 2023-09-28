@@ -19,6 +19,20 @@ body {
     justify-content: space-between;
     padding: 20px;
 }
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10%; /* Adjust this value to increase or decrease padding */
+    box-sizing: border-box;
+}
+
+/* Set a max-width for all major sections to simulate 8x11 aspect ratio */
+header, section, footer, form, .carousel, .cta-button, #agreement-text, .artistAgreement, label, strong, .submit-button, .text-superAGREE, .superCheck, .check-wrap, .text-little-note, .text-additional-details, .text-content-upload, .additionalDetails p, #additionalDetails input[type="text"] {
+    max-width: 600px; /* Adjust this value to fit your needs */
+    margin: auto; /* Center the elements */
+}
 
 h1,h2 {
     text-transform:uppercase;
@@ -37,8 +51,8 @@ header, section, footer {
 header, section, footer {
     border-radius: 15px;
     background: #ff0060;
-    box-shadow: -8px -8px 16px #cc0052, 
-                8px 8px 16px #ff3380;
+    border-style:solid;
+    border-color:rgba(255, 255, 255, 0.153);
 }
 
 /* make the website responsive */
@@ -73,6 +87,7 @@ form input[type="submit"] {
                 -4px -4px 8px #ff3380;
     cursor: pointer;
     transition: 0.3s;
+    color:white;
 }
 
 form input[type="submit"]:active {
@@ -189,10 +204,7 @@ strong {
     text-align:center;
 }
 
-input location {
-    color:white;
-    
-}
+
 
 .check-wrap {
     width:100%;
@@ -204,7 +216,7 @@ input location {
 }
 
 .text-little-note {
-    font-size:10px;
+    font-size:14px;
     text-align:justify;
 }
 
@@ -219,10 +231,23 @@ input location {
 
 }
 
-.additionalDetails p {
+#additionalDetails p {
 
-    margin-top:100px;
+    color:rgb(255, 255, 255);
+    font-size:24px;
+    text-align:center;
+    padding:20px;
+    font-weight:600;
 
+}
+
+#additionalDetails h1 {
+    font-size:62px;
+}
+
+#additionalDetails h4 {
+    font-size:16px;
+    font-weight:500;
 }
 
 /* Add this to your geton.css file */
@@ -230,5 +255,10 @@ input location {
     width: 100%; /* or you can specify a width in px, em, etc. */
     padding: 5px;
     height:100px;
+    color:white;
+    font-size:44px;
+    font-weight:300;
+    text-transform:uppercase;
+    text-align:center;
     box-sizing: border-box; /* ensures padding doesn't increase the width */
 }

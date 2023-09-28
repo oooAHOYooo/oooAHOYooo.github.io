@@ -105,7 +105,10 @@
 						</tr>
 					</tbody>
 				</table>
+	
+				
 			</div>
+
 			<div class="column right">
 				<!-- Insert your right column content here -->
 				<!-- ooo -->
@@ -136,7 +139,7 @@
 
 						<!-- Audio Controls -->
 						<button class="player-glass-button" onclick="playAudio()">Play</button>
-						<button class="player-glass-button" onclick="pauseAudio()">Pause</button>
+					
 						<button class="player-glass-button" onclick="stopAudio()">Stop</button>
 
 						<div style="display: flex; flex-direction: column;">
@@ -158,8 +161,27 @@
 		<!-- ooo -->
 
 	</div>
+	<style>
+		#getOnWrap {
+			position: relative;
+			bottom: 0;
+			left: 0;
+			width:100%;
+			display:flex;
+			justify-content: flex-start;
+			margin-bottom:20px;
+			margin-right:20px;
+		}
+		.glass-button {
+			text-decoration: none;
+		}
+	</style>
+	<!-- GET ON AHOY BUTTON -->
+	<div id="getOnWrap">
+		<a href="../getOn/index.html" class="glass-button">Get on Ahoy</button></a>
+	</div>
 	<!-- START OF MEMBER APP -->
-	<!-- 
+	<!--
 	<div id="memberApp">
 		<div class="memberIcon">
 			MemberName

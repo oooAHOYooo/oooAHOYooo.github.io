@@ -116,6 +116,8 @@ input {
 
 
 
+
+
 .song-artist {
     font-size: 15px; /* Increase the font size as needed */
     overflow-y: auto; /* Add a vertical scrollbar if the content overflows */
@@ -272,4 +274,18 @@ input {
     border: 1px solid rgba(0, 122, 178, 0.821);
     padding: 10px 15px;
     color: #fff;
+}
+
+.getOnWrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style: solid;
+    width:100%;
+    border-color: white;
+    min-width:900px;
+}
+
+.getOnWrap a {
+    text-decoration: none;
 }
