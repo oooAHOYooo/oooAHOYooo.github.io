@@ -3,6 +3,16 @@ var ahoyUpdates = new Vue({
   data: {
     months: [
       {
+        displayText: "October 2023",
+        updates: [
+          { text: "Getting Real", superBold: true },
+          { text: "Began the process of adding our actual music library - with prod ready music library - hicrispy and out of prototype phase"},
+         
+  
+
+        ]
+      },
+      {
         displayText: "September 2023",
         updates: [
           { text: "BETA OUT AND UGLY", superBold: true },
