@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>Ahoy Indie Media - Library</title>
 	<link rel="stylesheet" href="./library-5.css">
@@ -52,7 +53,8 @@
 								<li v-for="song in playlist">{{song.songTitle}} by {{song.artist}}</li>
 							</ul>
 							<button class="glass-button" @click="playPlaylist()">Play Playlist</button>
-							<a href="../burn/index.html"> <button class="glass-button">Burn Playlist to Disc</button></a>
+							<a href="../burn/index.html"> <button class="glass-button">Burn Playlist to
+									Disc</button></a>
 						</div>
 					</div>
 
@@ -105,8 +107,8 @@
 						</tr>
 					</tbody>
 				</table>
-	
-				
+
+
 			</div>
 
 			<div class="column right">
@@ -139,7 +141,7 @@
 
 						<!-- Audio Controls -->
 						<button class="player-glass-button" onclick="playAudio()">Play</button>
-					
+
 						<button class="player-glass-button" onclick="stopAudio()">Stop</button>
 
 						<div style="display: flex; flex-direction: column;">
@@ -150,56 +152,66 @@
 								<input type="range" id="volume" name="volume" min="0" max="1" step="0.01" value="1"
 									oninput="setVolume(this.value)">
 							</div>
-							<div id="progressBarContainer" style="width: 100%; background-color: #f3f3f3;">
-								<div id="progressBar" style="height: 20px; background-color: #4CAF50;"></div>
+							<!-- PROGRESS BAR-->
+							<h6>Progress BAR (BETA)</h6>
+							
+							<div id="progressBarContainer" class="progress-bar-container">
+								<p>{{ remainingTime }}</p>
+								<div id="progressBar" class="progress-bar">
+								
+								</div>
 							</div>
-						</div>
 
-						<!-- BASS CONTROLLER -->
+							<!-- BASS CONTROLLER -->
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		<!-- ooo -->
+			<!-- ooo -->
 
-	</div>
-	<style>
-		#getOnWrap {
-			position: relative;
-			bottom: 0;
-			left: 0;
-			width:100%;
-			display:flex;
-			justify-content: flex-start;
-			margin-bottom:20px;
-			margin-right:20px;
-		}
-		.glass-button {
-			text-decoration: none;
-		}
-	</style>
-	<!-- GET ON AHOY BUTTON -->
-	<div id="getOnWrap">
-		<a href="../getOn/index.html" class="glass-button">Get on Ahoy</button></a>
-	</div>
-	<!-- START OF MEMBER APP -->
-	<!--
+		</div>
+
+		<!-- GET ON AHOY BUTTON -->
+		<div id="getOnWrap">
+			<a href="../getOn/index.html" class="glass-button">Get on Ahoy</button></a>
+		</div>
+		<!-- START OF MEMBER APP -->
+		<!--
 	<div id="memberApp">
 		<div class="memberIcon">
 			MemberName
 		</div>
 	</div>-->
-	<!-- END OF MEMBER APP-->
+		<!-- END OF MEMBER APP-->
 
 
 
-	<!-- END OF TOTAL HTML APP -->
+		<!-- END OF TOTAL HTML APP -->
 	</div>
 	<!-- NO MORE HTML AFTER THIS POINT -->
 
 	<!-- SCRIPTS -->
 
 
+	<!-- PROGRESS BAR SCRIPT -->
+	<script>
+var audioPlayer = document.getElementById('audioPlayer');
+var timeRemaining = document.getElementById('timeRemaining');
+var progressBar = document.getElementById('progressBar'); // Assuming this is the id of your progress bar
+
+audioPlayer.addEventListener('timeupdate', function() {
+    var remaining = audioPlayer.duration - audioPlayer.currentTime;
+    var minutes = Math.floor(remaining / 60);
+    var seconds = Math.floor(remaining % 60);
+    timeRemaining.textContent = minutes + ":" + (seconds < 10 ? "0" + seconds : seconds);
+
+    // Calculate the percentage of the audio that has been played
+    var percentage = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+
+    // Update the width of the progress bar
+    progressBar.style.width = percentage + '%';
+});
+</script>
 	<!-- MUTE AUDIO SWITCH CODE -->
 	<script>
 		function muteUnmuteAudio() {

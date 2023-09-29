@@ -12,6 +12,7 @@ new Vue({
       currentSong: null,
       currentSongTitle: '', // New property for song title
       currentArtist: '',
+      remainingTime: '00:00',
       playlists: {}, // Initialize empty playlists object
       progress: 0, // Initialize progress to 0
       selectedPlaylist: null, // Initialize selectedPlaylist to null
@@ -25,6 +26,12 @@ new Vue({
       const audioPlayer = document.getElementById('audioPlayer');
       audioPlayer.removeEventListener('timeupdate', this.updateProgress);
     },
+
+
+
+
+
+    
     methods: {
       searchSongs() {
         if (this.searchTerm.trim() === '') {
@@ -83,6 +90,12 @@ new Vue({
       if (audioPlayer.duration > 0) {
         this.progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
         document.getElementById('progressBar').style.width = this.progress + '%';
+    
+        // Calculate remaining time
+        var remaining = audioPlayer.duration - audioPlayer.currentTime;
+        var minutes = Math.floor(remaining / 60);
+        var seconds = Math.floor(remaining % 60);
+        this.remainingTime = minutes + ":" + (seconds < 10 ? "0" + seconds : seconds);
       }
     },
   },

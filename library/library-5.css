@@ -288,3 +288,49 @@ input {
 .getOnWrap a {
     text-decoration: none;
 }
+
+/*PROGRESS BAR */
+.progress-bar-container {
+    width: 100%;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: #0f003ba8;
+    width: 50%; /* You can change this value dynamically to represent the actual progress */
+}
+
+#getOnWrap {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+.glass-button {
+    text-decoration: none;
+}
+
+.remainingTime-text {
+    font-family: 'Barlow', sans-serif; /* Sexy font */
+    font-size: 20px; /* Adjust as needed */
+    font-weight: 600; /* Bold for sexiness */
+    text-align:center;
+    color: white; /* Font color */
+    background: rgba(255, 255, 255, 0.1); /* Glass-like background */
+    border-radius: 10px; /* Rounded corners */
+    backdrop-filter: blur(10px); /* Blur effect for the glass-like appearance */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Border for the glass-like appearance */
+    padding: 10px; /* Padding for space around text */
+}
