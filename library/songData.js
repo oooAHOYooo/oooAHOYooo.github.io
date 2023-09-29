@@ -21,6 +21,18 @@ export const songs = [
           mp3url: 'https://ahoycollection.s3.us-east-2.amazonaws.com/Campbell+Rice-+From+Here.mp3',
           play: false
         },
+        {
+          artist: 'Cambell Rice',
+          songTitle: 'Sunflower',
+          mp3url: 'https://ahoycollection.s3.us-east-2.amazonaws.com/Campbell+Rice-Sunflower.mp3',
+          play: false
+        },
+        {
+          artist: 'Cambell Rice',
+          songTitle: 'To Play Guitar in a Huge Room',
+          mp3url: 'https://ahoycollection.s3.us-east-2.amazonaws.com/Campbell+Rice-Trying+to+play+guitar+in+a+huge+room.mp3',
+          play: false
+        },
       {
           artist: 'Youth XL',
           songTitle: 'Summer Bummer',
@@ -65,6 +77,20 @@ export const songs = [
             mp3url: 'https://ahoycollection.s3.us-east-2.amazonaws.com/Justin%20Arena%20-%20Crash%20The%20Party%20(ft.%20Nicole%20Gauthier).mp3',
             play: false
         },
+        {
+          artist: 'Justin Arena',
+          songTitle: "When You Wake Up",
+          mp3url: 'https://ahoycollection.s3.us-east-2.amazonaws.com/Justin+Arena+-+When+You+Wake+Up.mp3',
+          play: false
+      },
+      {
+        artist: 'Justin Arena',
+        songTitle: 'Oceans',
+        artistThumbnail: 'UNSPLASH_URL_FOR_ARTIST_6',
+        albumArtwork: 'UNSPLASH_URL_FOR_ALBUM_6',
+        mp3url: 'https://ahoycollection.s3.us-east-2.amazonaws.com/Justin+Arena+-+Oceans.mp3',
+        play: false
+    },
  
           {
             artist: 'Sara-Joy Liebig',
@@ -75,12 +101,5 @@ export const songs = [
             play: false
         },
    
-    {
-      artist: 'Justin Arena',
-      songTitle: 'Oceans',
-      artistThumbnail: 'UNSPLASH_URL_FOR_ARTIST_6',
-      albumArtwork: 'UNSPLASH_URL_FOR_ALBUM_6',
-      mp3url: 'https://ahoycollection.s3.us-east-2.amazonaws.com/Justin+Arena+-+Oceans.mp3',
-      play: false
-  },
+
 ];

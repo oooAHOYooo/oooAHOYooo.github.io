@@ -97,20 +97,19 @@ input {
 .song-title {
     font-size: 16px; /* Increase the font size as needed */
     overflow-y: auto; /* Add a vertical scrollbar if the content overflows */
-    min-width:150px;
+    min-width:275px;
     width: 100%; /* Adjust the width as needed */
     height: 35px; /* Adjust the height as needed */
     padding: 0px;
     padding-left:7.5px;
     display:flex;
     align-items: center;
-        overflow-y:scroll;
     background: rgba(255, 255, 255, 0.1); /* Glass-like background */
     border-radius: 10px; /* Rounded corners */
     backdrop-filter: blur(10px); /* Blur effect for the glass-like appearance */
     border: 1px solid rgba(255, 255, 255, 0.2); /* Border for the glass-like appearance */
     color: white; /* Font color */
-    
+    overflow:hidden;
 }
 
 

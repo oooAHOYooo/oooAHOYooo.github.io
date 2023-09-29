@@ -13,10 +13,17 @@ new Vue({
       currentSongTitle: '', // New property for song title
       currentArtist: '',
       playlists: {}, // Initialize empty playlists object
+      progress: 0, // Initialize progress to 0
       selectedPlaylist: null, // Initialize selectedPlaylist to null
     },
     mounted() {
       this.filteredSongs = this.songs;
+      const audioPlayer = document.getElementById('audioPlayer');
+      audioPlayer.addEventListener('timeupdate', this.updateProgress);
+    },
+    beforeDestroy() {
+      const audioPlayer = document.getElementById('audioPlayer');
+      audioPlayer.removeEventListener('timeupdate', this.updateProgress);
     },
     methods: {
       searchSongs() {
@@ -71,7 +78,15 @@ new Vue({
         }
     },
     // ... (other parts remain unchanged)
-},
+    updateProgress() {
+      const audioPlayer = document.getElementById('audioPlayer');
+      if (audioPlayer.duration > 0) {
+        this.progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+        document.getElementById('progressBar').style.width = this.progress + '%';
+      }
+    },
+  },
+
 watch: {
     playlists: {
         deep: true, // Watch object deeply
