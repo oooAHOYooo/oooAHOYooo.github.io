@@ -170,13 +170,13 @@ firebase.initializeApp(firebaseConfig);
   // Initialize Firebase here if you haven't already
 
   firebase.auth().onAuthStateChanged((user) => {
-    const userEmailDiv = document.getElementById("userEmail");
-    if (user) {
-      userEmailDiv.textContent = user.email;
-    } else {
-      userEmailDiv.textContent = "Not logged in";
-    }
-  });
+  const userEmailDiv = document.getElementById("userEmail");
+  if (user) {
+    userEmailDiv.innerHTML = `<a href="./account/loginModule.html">${user.email}</a>`; // Replace './account/userAccount.html' with the actual path to the user's account page
+  } else {
+    userEmailDiv.textContent = "Not logged in";
+  }
+});
 </script>
 <!-- Add this script at the bottom of your existing scripts -->
 <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
