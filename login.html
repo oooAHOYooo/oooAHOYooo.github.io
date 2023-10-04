@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Site</title>
+    <!-- Firebase scripts -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-firestore.js"></script>
+    <!-- Link to your JavaScript -->
+    <script defer src="coreScript.js"></script>
+</head>
+<body>
+	<img src="./assets/u_ahoy23.png" style="width:50%; margin: 10px;">
+    <button onclick="signInWithGoogle()">Sign in to Ahoy</button>
+    <a href="/account.html">
+        <img src="path_to_settings_icon.png" alt="Settings" />
+    </a>
+
+	<!-- END OF HTML-->
+	<style>
+		        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ff0060;
+            color: white;
+            font-size: 1em;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        button:hover {
+            background-color: #2a75f3;
+        }
+
+        a img {
+            width: 50px;
+            height: 50px;
+        }
+	</style>
+</body>
+</html>
