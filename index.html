@@ -1,4 +1,4 @@
-<html> <!-- As of 9.28.23 - -->
+<html> <!-- As of 10.4.23 - -->
 <head> 
         <!-- BASIC META -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,9 +15,45 @@
         <link rel="stylesheet" href="./css/mobile.css">
         <link rel="stylesheet" href="./css/grain-and-tweaks.css">
 
+        <!-- FIREBASE AUTH-->
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
 </head>
+<style>
+  .topLogin {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1000; /* This ensures the button stays on top of other elements */
+}
 
+.loginButton {
+  padding: 10px;
+  color: rgb(255, 255, 255);
+  width: 75px;
+  height: 40px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(255, 255, 255, 0.563);
+  background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+  backdrop-filter: blur(5px); /* Blur effect */
+  -webkit-backdrop-filter: blur(5px); /* For Safari */
+  transition: all 0.3s ease; /* Smooth transition */
+}
+
+.loginButton:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Slightly more opaque on hover */
+  backdrop-filter: blur(10px); /* Increased blur on hover */
+  -webkit-backdrop-filter: blur(10px); /* For Safari */
+}
+</style>
   <body id="index-body">
+    <div class="topLogin">
+      <a href="./account/loginModule.html"><button class="loginButton">Login</button></a>
+    </div>
+    <!-- Add this somewhere in your HTML, perhaps near the top of the <body> -->
+<div id="userEmail" style="position: absolute; top: 0; right: 0; padding: 10px;"></div>
+
     <main class="fade-in-zoom">
         <div id="app">
           <!-- START OF TOPDOG -->
@@ -92,6 +128,32 @@
   }
 </script>
 
+<script>
+var firebaseConfig = { 
+  apiKey: "AIzaSyBq_IQRwkjh2o-jUkS8tI8wcEek5yMIwmo", 
+  authDomain: "ahoy-indie-media-da86d.firebaseapp.com", 
+  projectId: "ahoy-indie-media-da86d", 
+  storageBucket: "ahoy-indie-media-da86d.appspot.com", 
+  messagingSenderId: "179901301547", 
+  appId: "1:179901301547:web:599159f9efb826f464bb6e", 
+  measurementId: "G-K3QN161BVX", 
+}; 
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+</script>
+<script>
+  firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    // User is signed in.
+    var displayName = user.displayName;
+    var welcomeMessage = "Welcome, " + displayName;
+    document.querySelector('.topLogin').innerHTML = welcomeMessage;
+  } else {
+    // No user is signed in.
+    document.querySelector('.topLogin').innerHTML = '<a href="./account/loginModule.html"><button class="loginButton">Login</button></a>';
+  }
+});
+</script>
 
 
 <!-- CONTENT FADE IN AND ZOOM CODE -->
@@ -104,6 +166,21 @@
 
 </script>
 
+<script>
+  // Initialize Firebase here if you haven't already
+
+  firebase.auth().onAuthStateChanged((user) => {
+    const userEmailDiv = document.getElementById("userEmail");
+    if (user) {
+      userEmailDiv.textContent = user.email;
+    } else {
+      userEmailDiv.textContent = "Not logged in";
+    }
+  });
+</script>
+<!-- Add this script at the bottom of your existing scripts -->
+<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
 
 <!-- END OF CONDITIONAL AND CODE LOGIC -->
 <!-- HOpe you enjoyed this journey -->

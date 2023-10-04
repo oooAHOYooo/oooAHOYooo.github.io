@@ -1,0 +1,71 @@
+        .small {
+            font-size: 10px;
+        }
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .  .formContainer {
+        background: rgba( 255, 255, 255, 0.25 );
+        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+        backdrop-filter: blur( 4px );
+        -webkit-backdrop-filter: blur( 4px );
+        border-radius: 10px;
+        border: 1px solid rgba( 255, 255, 255, 0.18 );
+        padding: 20px;
+        width: 90%;
+        max-width: 400px;
+    }
+    .formContainer h1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .formContainer input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        font-size:10px;
+        border: 1px solid #ccc;
+    }
+
+    .formContainer button {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #5C6BC0;
+        color: white;
+        cursor: pointer;
+    }
+
+    .formContainer button:hover {
+        background-color: #7986CB;
+    }
+    .formContainer button {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #ff0060;
+        color: white;
+        cursor: pointer;
+        margin:2.5px;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        font-size:12px;
+        
+    }
+
+    .formContainer button:hover {
+        background-color: #7986CB;
+    }
