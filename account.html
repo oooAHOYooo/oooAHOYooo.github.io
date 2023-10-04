@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Account | Ahoy Indie Media</title>
+    <!-- Firebase scripts -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-firestore.js"></script>
+    <!-- Link to your JavaScript -->
+    <script defer src="coreScript.js"></script>
+	<link rel="stylesheet" href="./account.css">
+</head>
+<body>
+
+    
+	
+	<div id="userContent">
+
+
+
+
+
+		<h1>YOUR ACCOUNT IS <span style="color:rgb(0, 255, 85);">ACTIVE</span></h1>
+        <!-- This is where your user-specific content goes, like the settings icon -->
+        
+		<h1>Your Name is</h1>
+		<!-- New div for displaying user's name -->
+<div id="welcomeMessage" style="display: none;">
+    <h1 id="userName"></h1>
+</div>
+<header>
+	<img src="./assets/u_ahoy23.png" style="width:50%; margin: 10px;">
+	<nav style="background: rgba(255, 255, 255, 0.5); backdrop-filter: blur(10px);">
+		<ul>
+			<li><a href="#" style="color: #000;">Home</a></li>
+			<li><a href="#" style="color: #000;">My List</a></li>
+			<li><a href="./account-settings.html" style="color: #000;">Account Settings</a></li>
+		</ul>
+	</nav>
+</header>
+<div class="userProducts">
+
+	<div class="navTippyWrap-index">
+		<a href="./cable/index.html"><button class="topNavButton-stream">Cable</button></a>
+		<a href="./updates/index.html"><button class="topNavButton-stream">Updates</button></a>
+		<a href="./radio/index.html"><button class="topNavButton-stream">Radio</button></a>
+		<a href="./library/index.html"><button class="topNavButton-stream">Library</button></a>
+	  </div>
+
+
+</div>
+
+<div class="userSettings">
+	User Settings
+</div>
+<main>
+	<div class="dashboard">
+	
+		<section id="recentPlaylist">
+			<h3><img src="path_to_your_icon"> Your Recent Playlist</h3>
+			<!-- Recently watched content goes here -->
+		</section>
+		
+	</div>
+	<a href="/login.html">Back to Login Page</a>
+</main>
+    </div>
+
+
+
+
+    <div id="guestContent">
+		<h1>DEVELOPMENT BELOW</h1>
+		<p>SHOW THIS CONTENT - iF A USER IS NOT LOGGED IN </p>
+		<h2>Guest Content</h2>
+		<img src="./assets/u_ahoy23.png" style="width:50%; margin: 10px;">
+        <!-- Content for guests, like the sign-in button -->
+        <button onclick="signInWithGoogle()">Sign in with Google</button>
+    </div>
+    
+
+	<!-- END OF HTML-->
+	<style>
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+		        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ff0060;
+            color: white;
+            font-size: 1em;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        button:hover {
+            background-color: #2a75f3;
+        }
+
+        a img {
+            width: 50px;
+            height: 50px;
+        }
+	</style>
+</body>
+</html>
