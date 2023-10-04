@@ -12,10 +12,14 @@ var firebaseConfig = {
   var db = firebase.firestore();
 var provider = new firebase.auth.GoogleAuthProvider();
 
-// Sign-in function
 function signInWithGoogle() {
     firebase.auth().signInWithPopup(provider).then(function(result) {
         var user = result.user;
+        
+        // Display the user's name
+        document.getElementById('userName').textContent = user.displayName;
+        document.getElementById('welcomeMessage').style.display = 'block';
+
         console.log("User signed in: ", user);
     }).catch(function(error) {
         console.error("Error during sign in: ", error);
