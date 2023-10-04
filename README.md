@@ -26,9 +26,6 @@ Enjoy a curated selection of music, talk shows, interviews, and more, broadcasti
 ## Ad-Free Experience: 
 Say goodbye to annoying commercials and intrusive advertisements. Ahoy Indie Media prioritizes your viewing and listening experience by providing an ad-free environment throughout the platform.
 
-## Marketplace: 
-Connect with local artists, creators, and businesses through our marketplace. Support independent talent by purchasing unique merchandise, art, music, and more, directly from the creators themselves.
-
 ## On-Demand Content: 
 Gain access to a growing library of on-demand content, including exclusive interviews, archived radio shows, documentaries, and original series. Subscribe to unlock premium content and enjoy it at your convenience.
 
@@ -46,7 +43,7 @@ Develop the cable TV alternative, providing a selection of independent shows and
 Set up the marketplace, enabling artists and creators to showcase and sell their work.
 Introduce the on-demand content section, offering a limited selection of free content.
 
-## Phase 2: Enhancements (v2.0):
+## Phase 2: Self containing ecosystem (v2.0):
 
 Expand the live radio with additional channels, genre-specific playlists, and live events coverage.
 Improve the cable TV alternative with more diverse content, including collaborations with local artists and organizations.
@@ -59,7 +56,8 @@ Develop integration with Apple CarPlay, allowing users to access Ahoy Indie Medi
 Optimize the user interface for in-car displays, ensuring a safe and enjoyable listening and viewing experience.
 Enable voice commands for hands-free control of the platform within the Apple CarPlay environment.
 
-
+## Phase 107 : 20 years from now - may this project turn into a database - a library
+A collection, a self contained reporsitory, living on multiple devices, printed hard coded on the ground to be encoded one day a thousand years from now. 
 
 
 
