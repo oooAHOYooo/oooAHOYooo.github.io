@@ -12,6 +12,16 @@
 	<link rel="stylesheet" href="./mobile.css">
 	<link rel="stylesheet" href="./library-switch.css">
 	<link rel="stylesheet" href="../css/membership.css">
+<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+
+<!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+
+<!-- Add Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
 </head>
 
 <body>
@@ -288,6 +298,42 @@ audioPlayer.addEventListener('timeupdate', function() {
 	<script type="module" src="./songFunction.js"></script>
 	<!--BACKGROUND CHANGE -->
 	<script src="../script_backgroundChange.js"></script>
+
+<!-- LIVE FIREBASE CODE -->
+<script src="./liveLib.js"></script>
+
+<script>
+	// Your web app's Firebase configuration
+	var firebaseConfig = {
+	  apiKey: "AIzaSyBq_IQRwkjh2o-jUkS8tI8wcEek5yMIwmo",
+	  authDomain: "ahoy-indie-media-da86d.firebaseapp.com",
+	  projectId: "ahoy-indie-media-da86d",
+	  storageBucket: "ahoy-indie-media-da86d.appspot.com",
+	  messagingSenderId: "179901301547",
+	  appId: "1:179901301547:web:599159f9efb826f464bb6e",
+	  measurementId: "G-K3QN161BVX",
+	};
+  
+	// Initialize Firebase
+	firebase.initializeApp(firebaseConfig);
+  </script>
+
+<script type="module">
+	import { songs } from './songData.js';
+	
+	new Vue({
+	  el: '#songSearchApp',
+	  data: {
+		songs: songs,
+		// ...
+	  },
+	  methods: {
+		// ...
+	  },
+	});
+  </script>
+
+
 </body>
 
 </html>
