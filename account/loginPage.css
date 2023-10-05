@@ -3,7 +3,7 @@
         }
     body {
         font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
+        background-color: #848484;
         margin: 0;
         padding: 0;
         display: flex;
@@ -67,5 +67,35 @@
     }
 
     .formContainer button:hover {
-        background-color: #7986CB;
+        background-color: #30009f;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background: #ededed;
+    }
+
+    .formContainer {
+        max-width: 335px;
+        margin: auto;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        padding: 20px;
+    }
+
+    input[type="email"], input[type="password"] {
+        background: rgba(255, 255, 255, 0.1);
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        width: 92.5%;
+        color: #000000;
+        border-style:solid;
+        border-color:white;
     }

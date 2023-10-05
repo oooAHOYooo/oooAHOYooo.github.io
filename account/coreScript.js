@@ -1,13 +1,15 @@
-var firebaseConfig = {
-	apiKey: "YOUR_API_KEY",
-	authDomain: "YOUR_AUTH_DOMAIN",
-	projectId: "YOUR_PROJECT_ID",
-	storageBucket: "YOUR_STORAGE_BUCKET",
-	messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-	appId: "YOUR_APP_ID"
-  };
-
-  firebase.initializeApp(firebaseConfig);
+var firebaseConfig = { 
+    apiKey: "AIzaSyBq_IQRwkjh2o-jUkS8tI8wcEek5yMIwmo", 
+    authDomain: "ahoy-indie-media-da86d.firebaseapp.com", 
+    projectId: "ahoy-indie-media-da86d", 
+    storageBucket: "ahoy-indie-media-da86d.appspot.com", 
+    messagingSenderId: "179901301547", 
+    appId: "1:179901301547:web:599159f9efb826f464bb6e", 
+    measurementId: "G-K3QN161BVX", 
+  }; 
+    
+  // Initialize Firebase 
+  firebase.initializeApp(firebaseConfig); 
 
   var db = firebase.firestore();
 var provider = new firebase.auth.GoogleAuthProvider();

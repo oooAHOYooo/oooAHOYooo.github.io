@@ -1,4 +1,4 @@
-<html> <!-- As of 10.4.23 - -->
+<html> <!-- As of 10.5.23 - -->
 <head> 
         <!-- BASIC META -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -47,13 +47,16 @@
   -webkit-backdrop-filter: blur(10px); /* For Safari */
 }
 </style>
-  <body id="index-body">
-    <div class="topLogin">
-      <a href="./account/loginModule.html"><button class="loginButton">Login</button></a>
-    </div>
-    <!-- Add this somewhere in your HTML, perhaps near the top of the <body> -->
-<div id="userEmail" style="position: absolute; top: 0; right: 0; padding: 10px;"></div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+ 
 
+
+<body id="index-body">
+    <div class="topLogin">
+      <!-- This will be dynamically updated -->
+  </div>
+    <!-- Add this somewhere in your HTML, perhaps near the top of the <body> -->
+<a href="/account/account.html"><button class="loginButton"><i class="fas fa-home"></i></button></a>
     <main class="fade-in-zoom">
         <div id="app">
           <!-- START OF TOPDOG -->
@@ -153,6 +156,27 @@ firebase.initializeApp(firebaseConfig);
     document.querySelector('.topLogin').innerHTML = '<a href="./account/loginModule.html"><button class="loginButton">Login</button></a>';
   }
 });
+</script>
+
+<script>
+  // Your existing Firebase initialization and other scripts
+
+  // Check for user authentication state
+  firebase.auth().onAuthStateChanged(function(user) {
+      const topLoginDiv = document.querySelector('.topLogin');
+      const userEmailDiv = document.getElementById("userEmail");
+      if (user) {
+          // User is signed in
+          const displayName = user.displayName || user.email; // Use email if displayName is null
+          const welcomeMessage = `Welcome, <a href="./account/loginModule.html">${displayName}</a>`;
+          topLoginDiv.innerHTML = welcomeMessage;
+          userEmailDiv.innerHTML = `<a href="./account/loginModule.html">${displayName}</a>`;
+      } else {
+          // No user is signed in
+          topLoginDiv.innerHTML = '<a href="./account/loginModule.html"><button class="loginButton">Login</button></a>';
+          userEmailDiv.textContent = "Not logged in";
+      }
+  });
 </script>
 
 
