@@ -9,6 +9,12 @@ html {
 	font-family: 'Barlow', sans-serif;
 	padding:200px;
 }
+
+@media (max-width: 768px) {
+	html {
+		padding: 20px;
+	}
+}
 body {
 	display: flex;
 	flex-direction: column;
