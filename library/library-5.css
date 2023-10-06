@@ -197,22 +197,26 @@ input {
 .player-glass-button {
     display: inline-block;
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: 12px;
     text-align: center;
     text-decoration: none;
     color: #ffffff;
     background-color: rgba(0, 6, 122, 0.3);
-    border: none;
+    border-style:solid;
+    border-width:thin;
+    border-color:rgba(255, 255, 255, 0.114);
     box-shadow: 0 8px 16px 0 rgba(31, 38, 135, 0.37);
     backdrop-filter: blur(4px);
     transition: all 0.3s ease-out;
+    font-family: 'Barlow', sans-serif;
+    text-transform:uppercase;
 }
 
 .player-glass-button:hover {
     background-color: rgba(255, 255, 255, 0.1);
-    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    box-shadow: 0px 15px 20px rgba(46, 92, 229, 0.4);
     color: #fff;
-    transform: translateY(-2px);
+    transform: translateY(-.2px);
 }
 
 
@@ -334,3 +338,30 @@ input {
     border: 1px solid rgba(255, 255, 255, 0.2); /* Border for the glass-like appearance */
     padding: 10px; /* Padding for space around text */
 }
+
+.topLogin {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000; /* This ensures the button stays on top of other elements */
+  }
+  
+  .loginButton {
+    padding: 10px;
+    color: rgb(255, 255, 255);
+    width: 75px;
+    height: 40px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(255, 255, 255, 0.563);
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    backdrop-filter: blur(5px); /* Blur effect */
+    -webkit-backdrop-filter: blur(5px); /* For Safari */
+    transition: all 0.3s ease; /* Smooth transition */
+  }
+  
+  .loginButton:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Slightly more opaque on hover */
+    backdrop-filter: blur(10px); /* Increased blur on hover */
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+  }

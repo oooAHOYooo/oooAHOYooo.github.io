@@ -1,5 +1,5 @@
 import { songs } from './songData.js';
-
+import { loadPlaylists, savePlaylists } from './firebaseActions.js';
 
 new Vue({
     el: '#songSearchApp',
@@ -16,6 +16,7 @@ new Vue({
       playlists: {}, // Initialize empty playlists object
       progress: 0, // Initialize progress to 0
       selectedPlaylist: null, // Initialize selectedPlaylist to null
+      sortOrder: 'asc',
     },
     mounted() {
       this.filteredSongs = this.songs;
@@ -25,6 +26,19 @@ new Vue({
     beforeDestroy() {
       const audioPlayer = document.getElementById('audioPlayer');
       audioPlayer.removeEventListener('timeupdate', this.updateProgress);
+    },
+    computed: {
+      sortedSongs: function() {
+        return this.filteredSongs.sort((a, b) => {
+          let comparison = 0;
+          if (a.artist > b.artist) {
+            comparison = 1;
+          } else if (a.artist < b.artist) {
+            comparison = -1;
+          }
+          return this.sortOrder === 'asc' ? comparison : comparison * -1;
+        });
+      },
     },
 
 
@@ -98,8 +112,12 @@ new Vue({
         this.remainingTime = minutes + ":" + (seconds < 10 ? "0" + seconds : seconds);
       }
     },
+    toggleSort: function() {
+      this.sortOrder = this.sortOrder === 'asc' ? 'desc' : 'asc';
+    },
+  
   },
-
+ 
 watch: {
     playlists: {
         deep: true, // Watch object deeply

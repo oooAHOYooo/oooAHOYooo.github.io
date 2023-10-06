@@ -2,10 +2,28 @@
 export const songs = [
     {
         artist: 'Samuel Dylan Witch',
-        songTitle: 'Ive Seen Better Days',
+        songTitle: 'Seen Better Days',
         mp3url: 'https://ahoycollection.s3.us-east-2.amazonaws.com/01%20I%27ve%20Seen%20Better%20Days.mp3',
         play: false
     },
+    {
+      artist: 'Samuel Dylan Witch',
+      songTitle: 'Beneath the Willow Tree',
+      mp3url: 'https://ahoycollection.s3.us-east-2.amazonaws.com/Beneath+the+Willow+Tree.mp3',
+      play: false
+  },
+  {
+    artist: 'Samuel Dylan Witch',
+    songTitle: 'Put Me on the Run',
+    mp3url: 'https://ahoycollection.s3.us-east-2.amazonaws.com/Put+Me+on+the+Run-+Draft+1mp3.mp3',
+    play: false
+},
+{
+  artist: 'Samuel Dylan Witch',
+  songTitle: 'You Know Me',
+  mp3url: 'https://ahoycollection.s3.us-east-2.amazonaws.com/You+Know+Me+Draft+2.mp3',
+  play: false
+},
     {
         artist: 'Frank Lolillo',
         songTitle: 'Watching Her Fly',

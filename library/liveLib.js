@@ -100,3 +100,30 @@ function addSongToPlaylist(playlistId, song) {
       console.error('Error adding song to playlist: ', error);
     });
   }
+
+
+  	<script>
+		var firebaseConfig = {
+			 
+			  apiKey: "AIzaSyBq_IQRwkjh2o-jUkS8tI8wcEek5yMIwmo", 
+			  authDomain: "ahoy-indie-media-da86d.firebaseapp.com", 
+			  projectId: "ahoy-indie-media-da86d", 
+			  storageBucket: "ahoy-indie-media-da86d.appspot.com", 
+			  messagingSenderId: "179901301547", 
+			  appId: "1:179901301547:web:599159f9efb826f464bb6e", 
+			  measurementId: "G-K3QN161BVX", 
+			}; 
+		
+		// Initialize Firebase
+		firebase.initializeApp(firebaseConfig);
+	
+		firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    var email = user.email;
+    var welcomeMessage = "Welcome, " + email;
+    document.querySelector('.topLogin').innerHTML = welcomeMessage;
+  } else {
+    document.querySelector('.topLogin').innerHTML = '<a href="./account/loginModule.html"><button class="loginButton">Login</button></a>';
+  }
+});
+	  </script>
