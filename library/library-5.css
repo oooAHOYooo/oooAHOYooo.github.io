@@ -307,7 +307,7 @@ input {
 
 .progress-bar {
     height: 100%;
-    background-color: #0f003ba8;
+    background-color: #3400ce27;
     width: 50%; /* You can change this value dynamically to represent the actual progress */
 }
 
