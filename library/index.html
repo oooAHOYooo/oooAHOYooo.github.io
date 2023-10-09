@@ -13,55 +13,17 @@
 	<link rel="stylesheet" href="../css/membership.css">
 	<!-- FONT AWESOME -->
 	<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+	<!-- FIREBASE DATABASE SUGAR-->
 	<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-
-
-	<style>
-		.topLogin {
-			text-align: right;
-		}
-	</style>
-
 </head>
 
 <body id="library-body">
-
 	<div class="topLogin">
 		<!-- This will be dynamically updated -->
 	</div>
-
-
-
-
-	<!-- script>
-		var firebaseConfig = { 
-		  apiKey: "AIzaSyBq_IQRwkjh2o-jUkS8tI8wcEek5yMIwmo", 
-		  authDomain: "ahoy-indie-media-da86d.firebaseapp.com", 
-		  projectId: "ahoy-indie-media-da86d", 
-		  storageBucket: "ahoy-indie-media-da86d.appspot.com", 
-		  messagingSenderId: "179901301547", 
-		  appId: "1:179901301547:web:599159f9efb826f464bb6e", 
-		  measurementId: "G-K3QN161BVX", 
-		}; 
-		// Initialize Firebase
-		firebase.initializeApp(firebaseConfig);
-	  
-		firebase.auth().onAuthStateChanged(function(user) {
-		  if (user) {
-			// User is signed in.
-			var displayName = user.displayName;
-			var welcomeMessage = "Welcome, " + displayName;
-			document.querySelector('.topLogin').innerHTML = welcomeMessage;
-		  } else {
-			// No user is signed in.
-			document.querySelector('.topLogin').innerHTML = '<a href="./account/loginModule.html"><button class="loginButton">Login</button></a>';
-		  }
-		});
-	  </script -->
-
 	<a href="../account/loginModule.html">T</a>
 
 
@@ -81,7 +43,7 @@
 							height="auto;">
 					</a>
 					<p style="text-align:center; font-size:10px;">WARNING THIS ALL IS IN SUPER BETA MODE</p>
-		
+
 
 					<div class="switch-widget-wrapper">
 						<input id="dn" type="checkbox" onclick="muteUnmuteAudio()" />
@@ -119,8 +81,6 @@
 					<!-- oooo -->
 				</div>
 
-
-
 			</div>
 			<div class="column middle" id="library-module">
 				<!-- Insert your middle column content here -->
@@ -135,12 +95,10 @@
 						placeholder="Search the library for songs..." class="search-input">
 				</div>
 				<table class="library-table">
-
 					<thead>
 						<tr>
 							<th class="table-header" style="color:rgb(148, 167, 255); text-align:left;">Artist</th>
 							<th class="table-header" style="color:rgb(148, 167, 255); text-align:left;">Song Title</th>
-
 						</tr>
 					</thead>
 					<tbody>
@@ -191,32 +149,20 @@
 					<div>
 						<h2>{{ currentSongTitle }}</h2>
 					</div>
+					<!-- PROGRESS BAR-->
+					<h6>Progress BAR (BETA)</h6>
 
+					<div id="progressBarContainer" class="progress-bar-container">
+						<div id="progressBar" class="progress-bar">
 
-
-					<script>
-						document.getElementById('pauseButton').addEventListener('click', function () {
-							var audioPlayer = document.getElementById('audioPlayer');
-							if (!audioPlayer.paused) {
-								audioPlayer.pause();
-							}
-						});
-					</script>
-						<!-- PROGRESS BAR-->
-						<h6>Progress BAR (BETA)</h6>
-
-						<div id="progressBarContainer" class="progress-bar-container">
-							<div id="progressBar" class="progress-bar">
-
-							</div>
 						</div>
+					</div>
 					<div id="musicTweakerController">
 
 						<!-- Audio Controls -->
 						<button class="player-glass-button" onclick="muteUnmuteAudio()">Stop</button>
-						<!-- button class="player-glass-button" onclick="muteUnmuteAudio()">Play</button -->
-						<button id="2"></button>
-						
+
+
 						<br><br>
 					</div>
 					<div style="display: flex; flex-direction: column;">
@@ -227,9 +173,6 @@
 							<input type="range" id="volume" name="volume" min="0" max="1" step="0.01" value="1"
 								oninput="setVolume(this.value)">
 						</div>
-					
-
-						<!-- BASS CONTROLLER -->
 					</div>
 				</div>
 			</div>
@@ -242,47 +185,43 @@
 	<div id="getOnWrap">
 		<a href="../getOn/index.html" class="glass-button">Get on Ahoy</button></a>
 	</div>
-	<!-- START OF MEMBER APP -->
-	<!--
-	<div id="memberApp">
-		<div class="memberIcon">
-			MemberName
-		</div>
-	</div>-->
-	<!-- END OF MEMBER APP-->
-
-
-
 	<!-- END OF TOTAL HTML APP -->
 	</div>
 	<!-- NO MORE HTML AFTER THIS POINT -->
 
+
+
+
+
+
+
+
+
+
+
+
+	<!-- SCRIPTSAND SUGAR-->
 	<!-- SCRIPTS -->
 
-
+	<script>
+		document.getElementById('pauseButton').addEventListener('click', function () {
+			var audioPlayer = document.getElementById('audioPlayer');
+			if (!audioPlayer.paused) {
+				audioPlayer.pause();
+			}
+		});
+	</script>
 	<!-- PROGRESS BAR SCRIPT -->
 	<script>
 		var audioPlayer = document.getElementById('audioPlayer');
 		var progressBar = document.getElementById('progressBar'); // Assuming this is the id of your progress bar
 
 		audioPlayer.addEventListener('timeupdate', function () {
-    var percentage = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+			var percentage = (audioPlayer.currentTime / audioPlayer.duration) * 100;
 
-    progressBar.style.width = percentage + '%';
-});
-</script>
-<style>
-	.progress-bar-container {
-    width: 100%;
-    overflow: hidden;
-}
-
-#progressBar {
-    height: 20px;
-    background: #02003e43;
-}
-</style>
-			
+			progressBar.style.width = percentage + '%';
+		});
+	</script>
 	<!-- MUTE AUDIO SWITCH CODE -->
 	<script>
 		function muteUnmuteAudio() {
@@ -356,8 +295,8 @@
 	<!-- NEW LIBRARY DATA -->
 	<script type="module" src="./songData.js"></script>
 	<script type="module" src="./songFunction.js"></script>
-
-
+	<!-- AUDIO CONTROL SCRIPTS-->
+	<script type="module" src="./audioControl.js"></script>
 	<!-- LIVE FIREBASE CODE -->
 	<script src="./liveLib.js"></script>
 

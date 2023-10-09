@@ -59,6 +59,11 @@ new Vue({
           );
         });
       },
+
+
+
+
+
       togglePlay(song) {
         const audioPlayer = document.getElementById('audioPlayer');
         const source = audioPlayer.querySelector('source');
@@ -81,8 +86,11 @@ new Vue({
             this.currentSongTitle = song.songTitle; // Update the current song title
             song.play = true;
         }
-        
-    }, // Closing brace for togglePlay method
+            },
+
+
+   
+    // Closing brace for togglePlay method
       createPlaylist() {
         const newPlaylistName = document.getElementById("newPlaylistName").value;
         if (newPlaylistName.trim() !== '') {
@@ -117,6 +125,9 @@ new Vue({
     },
   
   },
+
+
+
  
 watch: {
     playlists: {
