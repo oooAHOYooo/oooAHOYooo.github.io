@@ -55,11 +55,8 @@ input {
         .middle {
             flex: 50%;
         }
-        @media (max-width: 600px) {
-            .column {
-                flex: 100%;
-            }
-        }
+       
+        
 
         .search-container {
             padding-top:20px;

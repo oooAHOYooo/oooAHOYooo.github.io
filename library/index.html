@@ -181,12 +181,12 @@
 						</div>
 					</div>
 					<style>
-						.npCurrentArtist {
+						.npC {
 							color: rgb(148, 167, 255);
 						}
 					</style>
 					<div class="now-playing-container">
-						<p class="npCurrentArtist">{{ currentArtist }}</p>
+						<p class="npC">{{ currentArtist }}</p>
 					</div>
 					<div>
 						<h2>{{ currentSongTitle }}</h2>
@@ -202,14 +202,21 @@
 							}
 						});
 					</script>
-					<div class="progress-container" style="flex-grow: 1;">
-						<div class="progress"></div>
-					</div>
+						<!-- PROGRESS BAR-->
+						<h6>Progress BAR (BETA)</h6>
+
+						<div id="progressBarContainer" class="progress-bar-container">
+							<div id="progressBar" class="progress-bar">
+
+							</div>
+						</div>
 					<div id="musicTweakerController">
 
 						<!-- Audio Controls -->
-						<button class="player-glass-button" onclick="muteUnmuteAudio()">Play</button>
 						<button class="player-glass-button" onclick="muteUnmuteAudio()">Stop</button>
+						<!-- button class="player-glass-button" onclick="muteUnmuteAudio()">Play</button -->
+						<button id="2"></button>
+						
 						<br><br>
 					</div>
 					<div style="display: flex; flex-direction: column;">
@@ -220,14 +227,7 @@
 							<input type="range" id="volume" name="volume" min="0" max="1" step="0.01" value="1"
 								oninput="setVolume(this.value)">
 						</div>
-						<!-- PROGRESS BAR-->
-						<h6>Progress BAR (BETA)</h6>
-
-						<div id="progressBarContainer" class="progress-bar-container">
-							<div id="progressBar" class="progress-bar">
-
-							</div>
-						</div>
+					
 
 						<!-- BASS CONTROLLER -->
 					</div>
