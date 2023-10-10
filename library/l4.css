@@ -1,87 +1,88 @@
-        /* Underwater Nautical Vibe Styles */
-        body {
-            background-image: linear-gradient(to bottom, #0077B6, #023E8A, #001F3F);
-            color: #D1E8E2;
-            font-family: Arial, sans-serif;
-        }
+/* Space Theme Styles with Clean Kodak-like Colors */
+body {
+    background-image: linear-gradient(to bottom, #1E1E2A, #1E1E2A, #0E0E16);
+    color: #FFD700; /* Kodak Gold */
+    font-family: Arial, sans-serif;
+}
 
-        #player {
-            background-color: rgba(1, 50, 67, 0.7);
-            border-radius: 10px;
-            padding: 10px;
-            margin: 20px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        }
+#player {
+    background-color: rgba(46, 49, 65, 0.9); /* Deep Space Blue */
+    border-radius: 10px;
+    padding: 10px;
+    margin: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
 
-        button {
-            background-color: #03045E;
-            color: #D1E8E2;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
+button {
+    background-color: #34344A; /* Space Gray */
+    color: #FFD700;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
 
-        button:hover {
-            background-color: #0077B6;
-        }
+button:hover {
+    background-color: #FFD700;
+    color: #34344A;
+}
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
 
-        table, th, td {
-            border: 1px solid #D1E8E2;
-        }
+table, th, td {
+    border: 1px solid #FFD700;
+}
 
-        th, td {
-            padding: 8px 12px;
-            text-align: left;
-        }
+th, td {
+    padding: 8px 12px;
+    text-align: left;
+}
 
-        th {
-            background-color: #03045E;
-        }
+th {
+    background-color: #34344A;
+}
 
-        td {
-            background-color: rgba(1, 50, 67, 0.7);
-        }
+td {
+    background-color: rgba(46, 49, 65, 0.9);
+}
 
-        section {
-            background-color: rgba(1, 50, 67, 0.5);
-            border-radius: 10px;
-            padding: 10px;
-            margin: 20px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        }
+section {
+    background-color: rgba(46, 49, 65, 0.7);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
 
-        h2 {
-            border-bottom: 2px solid #D1E8E2;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
+h2 {
+    border-bottom: 2px solid #FFD700;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
 
-        input, select {
-            padding: 8px;
-            border-radius: 5px;
-            border: 1px solid #D1E8E2;
-            background-color: #03045E;
-            color: #D1E8E2;
-        }
+input, select {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #FFD700;
+    background-color: #34344A;
+    color: #FFD700;
+}
 
-        #progressBar {
-            height: 20px;
-            background-color: #03045E;
-            border-radius: 10px;
-            position: relative;
-        }
+#progressBar {
+    height: 20px;
+    background-color: #34344A;
+    border-radius: 10px;
+    position: relative;
+}
 
-        #progressBar > div {
-            height: 100%;
-            background-color: #0077B6;
-            border-radius: 10px;
-            width: 0;
-        }
+#progressBar > div {
+    height: 100%;
+    background-color: #FFD700;
+    border-radius: 10px;
+    width: 0;
+}

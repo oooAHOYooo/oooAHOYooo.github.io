@@ -1,9 +1,54 @@
 let currentSongIndex = 0;
 let songs = [];
 let currentPlaylist = [];
+let favorites = [];
 
 const audioPlayer = document.getElementById('audioPlayer');
 const playPauseButton = document.getElementById('playPauseButton');
+
+
+function likeSong(index) {
+    // Check if the song is already in favorites
+    let songIndexInFavorites = favorites.findIndex(favSong => favSong.id === songs[index].id);
+
+    if (songIndexInFavorites === -1) { // Song is not in favorites
+        favorites.push(songs[index]);
+    } else { // Song is already in favorites, so remove it
+        favorites.splice(songIndexInFavorites, 1);
+    }
+    populateSongs();  // Refresh the main song list
+    populateFavorites(); // Refresh the favorite songs list
+}
+
+function populateFavorites() {
+    const favoritesList = document.getElementById('favoritesList');
+    favoritesList.innerHTML = ''; // Clear previous data
+
+    favorites.forEach((song, index) => {
+        const songRow = `
+            <tr>
+                <td>${song.artist}</td>
+                <td>${song.songTitle}</td>
+                <td><button onclick="playSongFromFavorites(${index})">Play</button></td>
+                <td><button onclick="removeFromFavorites(${index})">Remove</button></td>
+                <td><button onclick="addToPlaylistFromFavorites(${index})">Add to Playlist</button></td>
+                <td><button onclick="addToQueueFromFavorites(${index})">Add to Queue</button></td>
+            </tr>
+        `;
+        favoritesList.innerHTML += songRow;
+    });
+}
+
+function playSongFromFavorites(index) {
+    const songIndexInLibrary = songs.findIndex(s => s.id === favorites[index].id);
+    playSong(songIndexInLibrary); // Use your existing playSong function
+}
+
+function removeFromFavorites(index) {
+    favorites.splice(index, 1);
+    populateFavorites();
+}
+
 
 function playPauseSong() {
     if (audioPlayer.paused) {
