@@ -20,7 +20,7 @@
 </div>
 
 <!-- Library -->
-<table>
+<table id="libraryTable">
     <thead>
         <tr>
             <th>Artist</th>
@@ -37,7 +37,7 @@
 </table>
 
 <!-- Favorite Songs -->
-<section id="favoritesSection">
+<section id="favoritesSection card">
     <h2>Favorite Songs</h2>
     <table>
         <thead>
@@ -81,7 +81,52 @@
     </table>
 </section>
 
+<!-- Queue -->
+<section id="queueSection">
+    <h2>Queue</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Artist</th>
+                <th>Song Title</th>
+                <th>Play</th>
+                <th>Remove from Queue</th>
+                <th>Like/Favorite</th>
+            </tr>
+        </thead>
+        <tbody id="queueList">
+            <!-- Songs will be populated from the queue array here -->
+        </tbody>
+    </table>
+</section>
 
+<footer>
+	<a href="https://ahoy.ooo"><img src="../assets/u_ahoy23.png" style="width:300px"></a>
+</footer>
 <script src="l4.js"></script>
+
+<script>
+	// Add an event listener to the progress bar
+const progressBar = document.querySelector("#progressBar div");
+progressBar.addEventListener("click", (e) => {
+  const progressBarRect = progressBar.getBoundingClientRect();
+  const clickX = e.clientX - progressBarRect.left;
+  const progressBarWidth = progressBarRect.width;
+
+  // Calculate the percentage of the clicked position
+  const percentage = (clickX / progressBarWidth) * 100;
+
+  // Update the audio player's current time based on the percentage
+  const newTime = (percentage / 100) * audioPlayer.duration;
+  audioPlayer.currentTime = newTime;
+});
+
+// Update the progress bar continuously
+audioPlayer.addEventListener("timeupdate", updateProgressBar);
+
+// Rest of your code...
+
+</script>
 </body>
 </html>

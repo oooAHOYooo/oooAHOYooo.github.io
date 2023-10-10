@@ -3,6 +3,7 @@ body {
     background-image: linear-gradient(to bottom, #1E1E2A, #1E1E2A, #0E0E16);
     color: #FFD700; /* Kodak Gold */
     font-family: Arial, sans-serif;
+	padding-bottom:200px;
 }
 
 #player {
@@ -75,7 +76,7 @@ input, select {
 
 #progressBar {
     height: 20px;
-    background-color: #34344A;
+    background-color: #2626a8cb;
     border-radius: 10px;
     position: relative;
 }
@@ -116,3 +117,145 @@ input, select {
 }
 
 
+
+
+/* ... [previous CSS remains unchanged] ... */
+
+/* Common Card Styling */
+.card {
+    width: 100%;
+    max-width: 400px; /* Adjust this to your preference */
+    background-color: rgba(46, 49, 65, 0.9); /* Deep Space Blue */
+    border-radius: 10px;
+    padding: 10px;
+    margin: 20px auto; /* Centered cards */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    overflow: hidden; /* Ensures content inside card does not overflow */
+}
+
+/* Apply card class to table */
+table.card {
+    display: block; /* Makes the table behave like a card */
+}
+
+/* Apply card class to sections */
+section.library, 
+section.playlist, 
+section.favorite {
+    display: block; /* Makes the sections behave like a card */
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+    .card {
+        width: 90%; /* Makes the card take up more width on smaller screens */
+    }
+}
+
+/* ... [rest of your CSS remains unchanged] ... */
+
+
+
+
+/* Button Styling */
+#player button {
+    flex: 1;                   /* Allow buttons to grow and take equal space */
+    margin: 0 5px;             /* Some space between buttons */
+    opacity: 0.9;              /* Slight transparency for an elegant look */
+}
+
+/* Now Playing Display Styling */
+#currentSongDisplay {
+    flex: 2;                   /* Allow this section to take more space */
+    text-align: center;        /* Center the text */
+    margin: 0 10px;            /* Some space around */
+}
+
+/* Progress Bar Styling */
+#progressBar {
+    flex: 3;                   /* Allow this section to take more space */
+    height: 30px;               /* Make it thinner for a sleek look */
+    margin: 0 10px;            /* Some space around */
+    overflow: hidden;
+	border-radius:0px;          /* In case child div goes outside the boundary */
+}
+
+#progressBar > div {
+    height: 100%;
+    background-color: #FFD700; /* Kodak Gold */
+}
+
+/* Volume Control Styling */
+#volumeControl {
+    flex: 1;                   /* Allow it to take equal space as buttons */
+    margin: 0 5px;             /* Some space on sides */
+}
+
+
+/* Library Table */
+#libraryTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: rgba(46, 49, 65, 0.7); /* Dark background */
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+#libraryTable th, #libraryTable td {
+    padding: 8px 12px;
+    text-align: left;
+    border: 1px solid #FFD700;
+}
+
+#libraryTable th {
+    background-color: #34344A;
+    color: #FFD700;
+    font-weight: bold;
+}
+
+#libraryTable td {
+    background-color: rgba(46, 49, 65, 0.9);
+    color: #FFD700;
+}
+
+#libraryTable tbody tr:nth-child(even) {
+    background-color: rgba(46, 49, 65, 0.7);
+}
+
+#libraryTable tbody tr:hover {
+    background-color: #2626a8cb; /* Hover effect */
+}
+
+#libraryTable th, #libraryTable td:first-child {
+    border-left: none; /* Remove left border for the first column */
+}
+
+#libraryTable th:last-child, #libraryTable td:last-child {
+    border-right: none; /* Remove right border for the last column */
+}
+
+#libraryTable th:first-child {
+    border-top-left-radius: 10px; /* Rounded corners for the first column header */
+}
+
+#libraryTable th:last-child {
+    border-top-right-radius: 10px; /* Rounded corners for the last column header */
+}
+
+#libraryTable td:first-child {
+    border-bottom-left-radius: 10px; /* Rounded corners for the first column cells */
+}
+
+#libraryTable td:last-child {
+    border-bottom-right-radius: 10px; /* Rounded corners for the last column cells */
+}
+
+#libraryTable thead tr th:first-child {
+    padding-left: 20px; /* Add extra padding to the first column header */
+}
+
+#libraryTable tbody tr td:first-child {
+    padding-left: 20px; /* Add extra padding to the first column cells */
+}

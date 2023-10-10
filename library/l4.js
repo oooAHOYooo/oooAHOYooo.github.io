@@ -2,9 +2,53 @@ let currentSongIndex = 0;
 let songs = [];
 let currentPlaylist = [];
 let favorites = [];
+let queue = [];
+
 
 const audioPlayer = document.getElementById('audioPlayer');
 const playPauseButton = document.getElementById('playPauseButton');
+
+
+
+
+
+
+
+function playSongFromQueue(queueIndex) {
+    const songIndexInLibrary = songs.findIndex(s => s.id === queue[queueIndex].id);
+    playSongFromList(songIndexInLibrary);
+    // Remove the played song from the queue
+    queue.splice(queueIndex, 1);
+    populateQueue();
+}
+
+function removeFromQueue(queueIndex) {
+    queue.splice(queueIndex, 1);
+    populateQueue();
+}
+
+function populateQueue() {
+    const queueList = document.getElementById('queueList');
+    queueList.innerHTML = '';
+    queue.forEach((song, index) => {
+        const songRow = `
+            <tr>
+                <td>${index + 1}</td>
+                <td>${song.artist}</td>
+                <td>${song.songTitle}</td>
+                <td><button onclick="playSongFromQueue(${index})">Play</button></td>
+                <td><button onclick="removeFromQueue(${index})">Remove</button></td>
+                <td><button onclick="likeSongFromQueue(${index})">Like</button></td>
+            </tr>
+        `;
+        queueList.innerHTML += songRow;
+    });
+}
+
+function likeSongFromQueue(index) {
+    const songIndexInLibrary = songs.findIndex(s => s.id === queue[index].id);
+    likeSong(songIndexInLibrary);
+}
 
 
 function likeSong(index) {
