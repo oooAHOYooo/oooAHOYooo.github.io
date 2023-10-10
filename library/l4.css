@@ -86,3 +86,33 @@ input, select {
     border-radius: 10px;
     width: 0;
 }
+
+/* Space Theme Styles with Clean Kodak-like Colors */
+/* ... [rest of your CSS remains unchanged] ... */
+
+#currentSongDisplay {
+    background: rgba(255, 255, 255, 0.1); /* Slight white transparency for the frosted glass effect */
+    backdrop-filter: blur(5px); /* Frosted glass effect */
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px 0;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1em;
+    font-weight: bold;
+    border: 1px solid rgba(255, 215, 0, 0.3); /* Slight Kodak Gold border */
+}
+
+#currentSongDisplay span {
+    margin: 0 5px;
+    color: #FFD700; /* Kodak Gold */
+}
+
+/* This will give a nice hover effect to the current song, making it feel more interactive */
+#currentSongDisplay:hover {
+    background: rgba(255, 215, 0, 0.1); /* Slight Kodak Gold transparency for hover effect */
+}
+
+

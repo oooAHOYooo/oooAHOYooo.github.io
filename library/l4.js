@@ -160,3 +160,61 @@ fetch('l4.json')
 document.addEventListener('DOMContentLoaded', function() {
     populateSongs();
 });
+
+
+// ... your existing variable declarations ...
+
+function likeSong(index) {
+    let songIndexInFavorites = favorites.findIndex(favSong => favSong.id === songs[index].id);
+
+    if (songIndexInFavorites === -1) {
+        favorites.push(songs[index]);
+    } else {
+        favorites.splice(songIndexInFavorites, 1);
+    }
+    populateSongs();
+    populateFavorites();
+}
+
+function populateFavorites() {
+    const favoritesList = document.getElementById('favoritesList');
+    favoritesList.innerHTML = '';
+    favorites.forEach((song, index) => {
+        const songRow = `
+            <tr>
+                <td>${song.artist}</td>
+                <td>${song.songTitle}</td>
+                <td><button onclick="playSongFromFavorites(${index})">Play</button></td>
+                <td><button onclick="removeFromFavorites(${index})">Remove</button></td>
+                <td><button onclick="addToPlaylistFromFavorites(${index})">Add to Playlist</button></td>
+                <td><button onclick="addToQueueFromFavorites(${index})">Add to Queue</button></td>
+            </tr>
+        `;
+        favoritesList.innerHTML += songRow;
+    });
+}
+
+// ... rest of your existing functions ...
+
+function populateSongs() {
+    const songList = document.getElementById('songList');
+    songList.innerHTML = '';
+    songs.forEach((song, index) => {
+        const isLiked = favorites.some(favSong => favSong.id === song.id);
+        const likeButtonText = isLiked ? 'Unlike' : 'Like';
+        const songRow = `
+            <tr>
+                <td>${song.artist}</td>
+                <td>${song.songTitle}</td>
+                <td><button onclick="playSongFromList(${index})">Play</button></td>
+                <td><button onclick="addToPlaylist(${index})">Add to Playlist</button></td>
+                <td><button onclick="addToQueue(${index})">Add to Queue</button></td>
+                <td><button onclick="likeSong(${index})">${likeButtonText}</button></td>
+            </tr>
+        `;
+        songList.innerHTML += songRow;
+    });
+}
+
+// ... your fetch function and event listener ...
+
