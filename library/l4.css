@@ -259,3 +259,34 @@ section.favorite {
 #libraryTable tbody tr td:first-child {
     padding-left: 20px; /* Add extra padding to the first column cells */
 }
+
+
+#progressBar {
+	width: 80;
+	height: 50px;
+	background-color: #cccccc4b;
+	position: relative;
+	cursor: pointer;
+  }
+  
+  #progressThumb {
+	width: 10px;
+	height: 40px;
+	background-color: #007bff!mporta;
+	position: absolute;
+	top: 0px;
+	border-radius: 50%;
+	cursor: pointer;
+	border-style:solid;
+	border-color:rgba(0, 0, 0, 0.373);
+
+  }
+  
+  #progressBar.dragging #progressThumb {
+	transition: none;
+  }
+  
+  #progressThumb:active {
+	transform: scale(1.4);
+  }
+  

@@ -14,7 +14,10 @@
     <button onclick="playPauseSong()" id="playPauseButton">Play</button>
     <button onclick="nextSong()">Next</button>
     <div id="currentSongDisplay">Now Playing: <span id="currentArtist"></span> - <span id="currentSong"></span></div>
-    <div id="progressBar"><div></div></div>
+    <div id="progressBar">
+		<div id="progressThumb"></div>
+	  </div>
+	  
     <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="1" onchange="adjustVolume()">
     <audio id="audioPlayer" src="" ontimeupdate="updateProgressBar()"></audio>
 </div>

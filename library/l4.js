@@ -262,3 +262,45 @@ function populateSongs() {
 
 // ... your fetch function and event listener ...
 
+// Add an event listener to the progress bar for drag-and-drop functionality
+const progressBar = document.querySelector("#progressBar");
+const progressThumb = document.querySelector("#progressThumb");
+let isDragging = false;
+
+progressThumb.addEventListener("mousedown", (e) => {
+  isDragging = true;
+  progressBar.classList.add("dragging");
+  updateProgress(e);
+});
+
+document.addEventListener("mousemove", (e) => {
+  if (isDragging) {
+    updateProgress(e);
+  }
+});
+
+document.addEventListener("mouseup", () => {
+  if (isDragging) {
+    isDragging = false;
+    progressBar.classList.remove("dragging");
+  }
+});
+
+function updateProgress(e) {
+  const progressBarRect = progressBar.getBoundingClientRect();
+  const clickX = e.clientX - progressBarRect.left;
+  const progressBarWidth = progressBarRect.width;
+
+  // Calculate the percentage of the clicked position
+  const percentage = (clickX / progressBarWidth) * 100;
+
+  // Update the visual position of the progress thumb
+  progressThumb.style.left = percentage + "%";
+
+  // Update the audio player's current time based on the percentage
+  const newTime = (percentage / 100) * audioPlayer.duration;
+  audioPlayer.currentTime = newTime;
+}
+
+// Rest of your code...
+
