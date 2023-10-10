@@ -1,5 +1,5 @@
 
-export const songs = [
+const songs = [
     {
         id: 1,
         artist: 'Samuel Dylan Witch',
