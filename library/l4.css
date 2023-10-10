@@ -1,0 +1,87 @@
+        /* Underwater Nautical Vibe Styles */
+        body {
+            background-image: linear-gradient(to bottom, #0077B6, #023E8A, #001F3F);
+            color: #D1E8E2;
+            font-family: Arial, sans-serif;
+        }
+
+        #player {
+            background-color: rgba(1, 50, 67, 0.7);
+            border-radius: 10px;
+            padding: 10px;
+            margin: 20px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            background-color: #03045E;
+            color: #D1E8E2;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0077B6;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table, th, td {
+            border: 1px solid #D1E8E2;
+        }
+
+        th, td {
+            padding: 8px 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #03045E;
+        }
+
+        td {
+            background-color: rgba(1, 50, 67, 0.7);
+        }
+
+        section {
+            background-color: rgba(1, 50, 67, 0.5);
+            border-radius: 10px;
+            padding: 10px;
+            margin: 20px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            border-bottom: 2px solid #D1E8E2;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        input, select {
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #D1E8E2;
+            background-color: #03045E;
+            color: #D1E8E2;
+        }
+
+        #progressBar {
+            height: 20px;
+            background-color: #03045E;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        #progressBar > div {
+            height: 100%;
+            background-color: #0077B6;
+            border-radius: 10px;
+            width: 0;
+        }

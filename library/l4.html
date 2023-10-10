@@ -4,11 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Basic HTML Player</title>
-    <style>
-        table, th, td {
-            border: 1px solid black;
-        }
-    </style>
+<link rel="stylesheet" href="./l4.css">
 </head>
 <body>
 
@@ -17,10 +13,10 @@
     <button onclick="previousSong()">Previous</button>
     <button onclick="playPauseSong()" id="playPauseButton">Play</button>
     <button onclick="nextSong()">Next</button>
-    <div id="currentSong"></div>
+    <div id="currentSongDisplay">Now Playing: <span id="currentArtist"></span> - <span id="currentSong"></span></div>
+    <div id="progressBar"><div></div></div>
     <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="1" onchange="adjustVolume()">
-    <div id="progressBar"></div>
-    <audio id="audioPlayer" src=""></audio>
+    <audio id="audioPlayer" src="" ontimeupdate="updateProgressBar()"></audio>
 </div>
 
 <!-- Library -->
@@ -39,6 +35,52 @@
         <!-- Songs will be populated from JSON here -->
     </tbody>
 </table>
+
+<!-- Favorite Songs -->
+<section id="favoritesSection">
+    <h2>Favorite Songs</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Artist</th>
+                <th>Song Title</th>
+                <th>Play</th>
+                <th>Remove from Favorites</th>
+                <th>Add to Playlist</th>
+                <th>Add to Queue</th>
+            </tr>
+        </thead>
+        <tbody id="favoritesList">
+            <!-- Songs will be populated from the favorites array here -->
+        </tbody>
+    </table>
+</section>
+
+<!-- Playlists -->
+<section id="playlistSection">
+    <h2>Playlists</h2>
+    <input type="text" id="newPlaylistName" placeholder="Enter new playlist name">
+    <button onclick="createNewPlaylist()">Create New Playlist</button>
+    <select id="playlistSelector">
+        <!-- Playlists will be populated from the playlists array here -->
+    </select>
+    <table>
+        <thead>
+            <tr>
+                <th>Artist</th>
+                <th>Song Title</th>
+                <th>Play</th>
+                <th>Remove from Playlist</th>
+                <th>Add to Queue</th>
+                <th>Like/Favorite</th>
+            </tr>
+        </thead>
+        <tbody id="playlistList">
+            <!-- Songs will be populated from the currentPlaylist array here -->
+        </tbody>
+    </table>
+</section>
+
 
 <script src="l4.js"></script>
 </body>
