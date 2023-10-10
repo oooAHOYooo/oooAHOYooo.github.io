@@ -1,0 +1,381 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&display=swap');
+
+* {
+    font-family: 'Barlow', sans-serif;
+}
+
+
+html {
+    color:white;
+    font-family: 'Barlow', sans-serif;
+}
+
+body {
+    background-color:navy;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size:cover;
+    background-position: center;
+    animation: kenburns 10s infinite; /* adjust time as needed */
+    font-family: 'Barlow', sans-serif;
+
+}
+
+input {
+    font-family: 'Barlow', sans-serif;
+    text-transform:capitalize;
+    color:white;
+}
+
+@keyframes kenburns {
+    0% {
+        
+        background-position: top left;
+    }
+    50% {
+     
+        background-position: center;
+    }
+    100% {
+        
+        background-position: bottom right;
+    }
+}
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .column {
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .left, .right {
+            flex: 25%;
+        }
+        .middle {
+            flex: 50%;
+        }
+       
+        
+
+        .search-container {
+            padding-top:20px;
+            padding-bottom:20px;
+            margin-top:50px;
+            margin-bottom:50px;
+        }
+
+        .search-input {
+            width: 80%;
+            text-transform:capitalize;
+            height: 40px;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+            outline: none;
+            color: white;
+            box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.079);
+        }
+        
+        .search-input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .search-input:focus {
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.203);
+        }
+
+
+
+.song-title {
+    font-size: 16px; /* Increase the font size as needed */
+    overflow-y: auto; /* Add a vertical scrollbar if the content overflows */
+    min-width:275px;
+    width: 100%; /* Adjust the width as needed */
+    height: 35px; /* Adjust the height as needed */
+    padding: 0px;
+    padding-left:7.5px;
+    display:flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1); /* Glass-like background */
+    border-radius: 10px; /* Rounded corners */
+    backdrop-filter: blur(10px); /* Blur effect for the glass-like appearance */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Border for the glass-like appearance */
+    color: white; /* Font color */
+    overflow:hidden;
+}
+
+
+
+
+
+
+.song-artist {
+    font-size: 15px; /* Increase the font size as needed */
+    overflow-y: auto; /* Add a vertical scrollbar if the content overflows */
+    min-width: 150px; /* Adjust the width as needed */
+    height: 35px; /* Adjust the height as needed */
+    padding: 0px;
+    padding-left:7.5px;
+    display:flex;
+    align-items: center;
+    margin-right:7.5px;
+    background: rgba(200, 200, 200, 0.1); /* Slightly different glass-like background */
+    border-radius: 10px; /* Rounded corners */
+    backdrop-filter: blur(10px); /* Blur effect for the glass-like appearance */
+    border: 1px solid rgba(200, 200, 200, 0.2); /* Slightly different border for the glass-like appearance */
+    color: rgba(255, 255, 255, 0.811); /* Font color */
+}
+
+/*Buttons */
+
+.muteButton {
+    width:50px;
+    height:50px;
+    border-radius:2px;
+    border-style:solid;
+    border-color:white;
+    background-color:rgba(255, 255, 255, 0.128);
+    color:white;
+    
+}
+
+.play-button, .add-button {
+    display: inline-block;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    outline: none;
+    cursor: pointer;
+}
+
+.play-button:hover, .add-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+#add {
+    background-color:rgba(0, 98, 128, 0.12);
+    margin-right:7.5px;
+    margin-left:10px;
+}
+
+#add:hover {
+    background-color: #ff00627c;
+    color:rgb(247, 251, 0);
+}
+
+.glass-button {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+.glass-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+}
+
+.player-glass-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 12px;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: rgba(0, 6, 122, 0.3);
+    border-style:solid;
+    border-width:thin;
+    border-color:rgba(255, 255, 255, 0.114);
+    box-shadow: 0 8px 16px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    transition: all 0.3s ease-out;
+    font-family: 'Barlow', sans-serif;
+    text-transform:uppercase;
+}
+
+.player-glass-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 15px 20px rgba(46, 92, 229, 0.4);
+    color: #fff;
+    transform: translateY(-.2px);
+}
+
+
+/*LOGOS AND SUCH */
+
+.top-logo-left {
+    border-style: solid;
+    border-color: white;
+}
+
+.playlistHeader h2 {
+    font-family: 'Barlow', sans-serif;
+    text-transform:uppercase;
+}
+
+
+
+
+.now-playing-text {
+    font-family: 'Barlow', sans-serif;
+    text-transform:uppercase;
+    font-size: 1.5vw;
+    color: rgba(255, 255, 255, 0.339);
+    margin-left: 10px;
+    margin-right: 10px;
+    font-weight: 600;
+    text-align:center;
+}
+
+
+/*CREATE PLAYLIST STYLES */
+.select {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    min-width:50px;
+    min-height:40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+  }
+  
+  .select:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  #newPlaylistName {
+    background: rgba(17, 0, 199, 0);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 2px );
+    border-radius: 10px;
+    border: 1px solid rgba(0, 122, 178, 0.821);
+    padding: 10px 15px;
+    color: #fff;
+}
+
+.getOnWrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style: solid;
+    width:100%;
+    border-color: white;
+    min-width:900px;
+}
+
+.getOnWrap a {
+    text-decoration: none;
+}
+
+
+
+#getOnWrap {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+.glass-button {
+    text-decoration: none;
+}
+
+.remainingTime-text {
+    font-family: 'Barlow', sans-serif; /* Sexy font */
+    font-size: 20px; /* Adjust as needed */
+    font-weight: 600; /* Bold for sexiness */
+    text-align:center;
+    color: white; /* Font color */
+    background: rgba(255, 255, 255, 0.1); /* Glass-like background */
+    border-radius: 10px; /* Rounded corners */
+    backdrop-filter: blur(10px); /* Blur effect for the glass-like appearance */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Border for the glass-like appearance */
+    padding: 10px; /* Padding for space around text */
+}
+
+.topLogin {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000; /* This ensures the button stays on top of other elements */
+  }
+  
+  .loginButton {
+    padding: 10px;
+    color: rgb(255, 255, 255);
+    width: 75px;
+    height: 40px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(255, 255, 255, 0.563);
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    backdrop-filter: blur(5px); /* Blur effect */
+    -webkit-backdrop-filter: blur(5px); /* For Safari */
+    transition: all 0.3s ease; /* Smooth transition */
+  }
+  
+  .loginButton:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Slightly more opaque on hover */
+    backdrop-filter: blur(10px); /* Increased blur on hover */
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+  }
+
+  .topLogin {
+    text-align: right;
+}
+
+
+  /*PROGRESS BAR */
+.progress-bar-container {
+    width: 100%;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: #3400ce27;
+    width: 50%; /* You can change this value dynamically to represent the actual progress */
+}
+
+  .progress-bar-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+#progressBar {
+    height: 20px;
+    background: #02003e43;
+}

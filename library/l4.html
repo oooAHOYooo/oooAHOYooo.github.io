@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic HTML Player</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Player Controls -->
+<div id="player">
+    <button onclick="previousSong()">Previous</button>
+    <button onclick="playPauseSong()" id="playPauseButton">Play</button>
+    <button onclick="nextSong()">Next</button>
+    <div id="currentSong"></div>
+    <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="1" onchange="adjustVolume()">
+    <div id="progressBar"></div>
+    <audio id="audioPlayer" src=""></audio>
+</div>
+
+<!-- Library -->
+<table>
+    <thead>
+        <tr>
+            <th>Artist</th>
+            <th>Song Title</th>
+            <th>Play</th>
+            <th>Add to Playlist</th>
+            <th>Add to Queue</th>
+            <th>Like/Favorite</th>
+        </tr>
+    </thead>
+    <tbody id="songList">
+        <!-- Songs will be populated from JSON here -->
+    </tbody>
+</table>
+
+<script src="l4.js"></script>
+</body>
+</html>
