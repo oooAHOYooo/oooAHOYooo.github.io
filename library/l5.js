@@ -593,3 +593,20 @@ function onSessionSuccess(session) {
 document.getElementById('closeCastPopup').addEventListener('click', () => {
     document.getElementById('castPopup').classList.add('hidden');
 });
+
+
+// Get the mute button element
+const muteButton = document.getElementById('muteButton');
+
+// Add event listener to the mute button
+muteButton.addEventListener('click', function() {
+    if (audioPlayer.muted) {
+        // If the audio is currently muted, unmute it and change the button text
+        audioPlayer.muted = false;
+        muteButton.innerText = "Mute";
+    } else {
+        // If the audio is currently unmuted, mute it and change the button text
+        audioPlayer.muted = true;
+        muteButton.innerText = "Unmute";
+    }
+});
