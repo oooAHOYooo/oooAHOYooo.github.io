@@ -1,0 +1,512 @@
+body {
+    /*background-image: linear-gradient(to bottom, #1E1E2A, #1E1E2A, #0E0E16);*/
+    color: #FFD700; /* Kodak Gold */
+    font-family: Arial, sans-serif;
+	padding-bottom:500px;
+	background-color:rgb(9, 0, 27);
+}
+
+.floatPlayer {
+    position:fixed;
+    bottom:20px;
+    left:10px;
+    width:530px;
+    border-style:solid;
+    border-width:1px;
+
+
+}
+
+.floatPlayer button {
+	margin-bottom:10px!important;
+	border-style:solid;
+	border-color:#FFD700;
+	border-width:1px;
+}
+
+.playerStats {
+    position:fixed;
+    bottom:0px;
+    right:20px;
+    background-color: rgba(46, 49, 65, 0.9); /* Deep Space Blue */
+    border-radius: 10px;
+    padding: 10px;
+    margin: 20px;
+    width:420px;
+    height:160px;
+    margin:20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+
+}
+
+#player {
+    background-color: rgba(46, 49, 65, 0.949); /* Deep Space Blue */
+    border-radius: 10px;
+    padding: 10px;
+    margin: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    
+  
+}
+
+button {
+    background-color: #34344A; /* Space Gray */
+    color: #FFD700;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #FFD700;
+    color: #34344A;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table, th, td {
+    border: 1px solid #FFD700;
+}
+
+th, td {
+    padding: 8px 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #34344A;
+}
+
+td {
+    background-color: rgba(46, 49, 65, 0.9);
+}
+
+section {
+    background-color: rgba(46, 49, 65, 0.7);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    border-bottom: 2px solid #FFD700;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+input, select {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #FFD700;
+    background-color: #34344A;
+    color: #FFD700;
+}
+
+#progressBar {
+    height: 20px;
+    background-color: #2626a8cb;
+    border-radius: 10px;
+    position: relative;
+}
+
+#progressBar > div {
+    height: 100%;
+    background-color: #FFD700;
+    border-radius: 10px;
+    width: 0;
+}
+
+/* Space Theme Styles with Clean Kodak-like Colors */
+/* ... [rest of your CSS remains unchanged] ... */
+
+#currentSongDisplay {
+    background: rgba(255, 255, 255, 0.1); /* Slight white transparency for the frosted glass effect */
+    backdrop-filter: blur(5px); /* Frosted glass effect */
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px 0;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1em;
+    font-weight: bold;
+    border: 1px solid rgba(255, 215, 0, 0.3); /* Slight Kodak Gold border */
+}
+
+#currentSongDisplay span {
+    margin: 0 5px;
+    color: #FFD700; /* Kodak Gold */
+}
+
+/* This will give a nice hover effect to the current song, making it feel more interactive */
+#currentSongDisplay:hover {
+    background: rgba(255, 215, 0, 0.1); /* Slight Kodak Gold transparency for hover effect */
+}
+
+
+
+
+/* ... [previous CSS remains unchanged] ... */
+
+/* Common Card Styling */
+.card {
+    width: 100%;
+    max-width: 400px; /* Adjust this to your preference */
+    background-color: rgba(46, 49, 65, 0.9); /* Deep Space Blue */
+    border-radius: 10px;
+    padding: 10px;
+    margin: 20px auto; /* Centered cards */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    overflow: hidden; /* Ensures content inside card does not overflow */
+}
+
+/* Apply card class to table */
+table.card {
+    display: block; /* Makes the table behave like a card */
+}
+
+/* Apply card class to sections */
+section.library, 
+section.playlist, 
+section.favorite {
+    display: block; /* Makes the sections behave like a card */
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+    .card {
+        width: 90%; /* Makes the card take up more width on smaller screens */
+    }
+}
+
+/* ... [rest of your CSS remains unchanged] ... */
+
+
+
+
+/* Button Styling */
+#player button {
+    flex: 1;                   /* Allow buttons to grow and take equal space */
+    margin: 0 5px;             /* Some space between buttons */
+    opacity: 0.9;              /* Slight transparency for an elegant look */
+}
+
+/* Now Playing Display Styling */
+#currentSongDisplay {
+    flex: 2;                   /* Allow this section to take more space */
+    text-align: center;        /* Center the text */
+    margin: 0 10px;            /* Some space around */
+}
+
+/* Progress Bar Styling */
+#progressBar {
+    flex: 3;                   /* Allow this section to take more space */
+    height: 30px;               /* Make it thinner for a sleek look */
+    margin: 0 10px;            /* Some space around */
+    overflow: hidden;
+	border-radius:0px;          /* In case child div goes outside the boundary */
+}
+
+#progressBar > div {
+    height: 100%;
+    background-color: #FFD700; /* Kodak Gold */
+}
+
+/* Volume Control Styling */
+#volumeControl {
+    flex: 1;                   /* Allow it to take equal space as buttons */
+    margin: 0 5px;             /* Some space on sides */
+}
+
+
+/* Library Table */
+#libraryTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: rgba(46, 49, 65, 0.7); /* Dark background */
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+#libraryTable th, #libraryTable td {
+    padding: 8px 12px;
+    text-align: left;
+    border: 1px solid #FFD700;
+}
+
+#libraryTable th {
+    background-color: #34344A;
+    color: #FFD700;
+    font-weight: bold;
+}
+
+#libraryTable td {
+    background-color: rgba(46, 49, 65, 0.9);
+    color: #FFD700;
+}
+
+#libraryTable tbody tr:nth-child(even) {
+    background-color: rgba(46, 49, 65, 0.7);
+}
+
+#libraryTable tbody tr:hover {
+    background-color: #2626a8cb; /* Hover effect */
+}
+
+#libraryTable th, #libraryTable td:first-child {
+    border-left: none; /* Remove left border for the first column */
+}
+
+#libraryTable th:last-child, #libraryTable td:last-child {
+    border-right: none; /* Remove right border for the last column */
+}
+
+#libraryTable th:first-child {
+    border-top-left-radius: 10px; /* Rounded corners for the first column header */
+}
+
+#libraryTable th:last-child {
+    border-top-right-radius: 10px; /* Rounded corners for the last column header */
+}
+
+#libraryTable td:first-child {
+    border-bottom-left-radius: 10px; /* Rounded corners for the first column cells */
+}
+
+#libraryTable td:last-child {
+    border-bottom-right-radius: 10px; /* Rounded corners for the last column cells */
+}
+
+#libraryTable thead tr th:first-child {
+    padding-left: 20px; /* Add extra padding to the first column header */
+}
+
+#libraryTable tbody tr td:first-child {
+    padding-left: 20px; /* Add extra padding to the first column cells */
+}
+
+
+#progressBar {
+	width: 80;
+	height: 50px;
+	background-color: #cccccc4b;
+	position: relative;
+	cursor: pointer;
+  }
+  
+  #progressThumb {
+	width: 10px;
+	height: 40px;
+	background-color: #007bff;
+	position: absolute;
+	top: 0px;
+	border-radius: 50%;
+	cursor: pointer;
+	border-style:solid;
+	border-color:rgba(0, 0, 0, 0.373);
+
+  }
+  
+  #progressBar.dragging #progressThumb {
+	transition: none;
+  }
+  
+  #progressThumb:active {
+	transform: scale(1.4);
+  }
+  
+
+
+  /* Animation for Player */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.floatPlayer {
+    animation: fadeIn 1s ease-in-out;
+}
+
+.playerStats {
+    animation: fadeIn 1s ease-in-out;
+}
+
+
+/* Responsive Player Styling */
+@media only screen and (max-width: 768px) {
+    #player {
+        flex-direction: column; /* Stack controls vertically */
+    }
+
+    #currentSongDisplay,
+    #progressBar,
+    #volumeControl {
+        margin: 10px 0; /* Vertical margin for stacked controls */
+        width: 100%; /* Full width for each control */
+    }
+}
+
+.theme-selector {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* Themes */
+[data-theme="theme1"] {
+    --background-color: #f1f1f1;
+    --text-color: #333;
+}
+
+[data-theme="theme2"] {
+    --background-color: #222;
+    --text-color: #eee;
+}
+
+[data-theme="theme3"] {
+    --background-color: #4a90e2;
+    --text-color: #fff;
+}
+
+/* ... [Your existing CSS remains unchanged] ... */
+
+/* Mobile Responsive Styling */
+@media only screen and (max-width: 500px) {
+    body {
+        font-size: 14px; /* Slightly reduce the font size for better fit */
+    }
+
+    h2 {
+        font-size: 18px; /* Adjust heading size */
+        margin-bottom: 10px; /* Reduce margin */
+    }
+
+    .floatPlayer, .playerStats {
+        width: 100%; /* Full width for player controls */
+        box-sizing: border-box; /* Include padding and border in the width */
+    }
+
+    table, th, td {
+        font-size: 12px; /* Adjust table font size */
+        padding: 4px 6px; /* Adjust table padding */
+    }
+
+    #libraryTable thead tr th:first-child, #libraryTable tbody tr td:first-child {
+        padding-left: 10px; /* Adjust left padding */
+    }
+
+    button, input, select {
+        padding: 6px; /* Reduce padding for form elements */
+    }
+
+    #player {
+        flex-direction: column; /* Stack controls vertically */
+        align-items: center; /* Center align controls */
+    }
+
+    /* Ensure table does not overflow and is scrollable */
+    #libraryTable {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        transform:scale(.78)
+    }
+
+    .card {
+        margin: 10px; /* Reduce margin */
+    }
+
+    /* Center elements on the screen */
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 500px;
+    }
+
+    /* Volume Control Styling */
+#volumeControl {
+display:none;            /* Some space on sides */
+}
+
+#currentSongDisplay {
+    max-width:85%;
+    height:70px;
+    border-radius:2px;
+    text-align:center;
+    display:flex;
+}
+}
+
+
+/* ... [Your existing CSS remains unchanged] ... */
+
+/* Mobile Responsive Styling */
+@media only screen and (max-width: 320px) {
+    body {
+        font-size: 14px; /* Slightly reduce the font size for better fit */
+    }
+
+    h2 {
+        font-size: 18px; /* Adjust heading size */
+        margin-bottom: 10px; /* Reduce margin */
+    }
+
+    .floatPlayer, .playerStats {
+        width: 100%; /* Full width for player controls */
+        box-sizing: border-box; /* Include padding and border in the width */
+    }
+
+    table, th, td {
+        font-size: 12px; /* Adjust table font size */
+        padding: 4px 6px; /* Adjust table padding */
+    }
+
+    #libraryTable thead tr th:first-child, #libraryTable tbody tr td:first-child {
+        padding-left: 10px; /* Adjust left padding */
+    }
+
+    button, input, select {
+        padding: 6px; /* Reduce padding for form elements */
+    }
+
+    #player {
+        flex-direction: column; /* Stack controls vertically */
+        align-items: center; /* Center align controls */
+    }
+
+    /* Ensure table does not overflow and is scrollable */
+    #libraryTable {
+        display: block;
+        overflow-x: auto;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .card {
+        margin: 10px; /* Reduce margin */
+    }
+
+    /* Center elements on the screen */
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* ... [rest of your CSS remains unchanged] ... */
