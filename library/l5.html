@@ -9,6 +9,9 @@
 </head>
 <body>
 
+    <header class="splash-header">
+       <img src="../assets/u_ahoy23.png">
+    </header>
 
 <!-- Library -->
 <section>
@@ -118,6 +121,9 @@
 	<button onclick="toggleSections()">Toggle View</button>
 	<button onclick="rewindAudio()">Rewind 16 seconds</button>
 	<button onclick="fastForwardAudio()">+16 seconds</button>
+    <button onclick="shareCurrentSong()">Share</button>
+
+
 </div>
 <!-- 
 <div id="playerStats" class="playerStats">
@@ -155,6 +161,27 @@ progressBar.addEventListener("click", (e) => {
 audioPlayer.addEventListener("timeupdate", updateProgressBar);
 
 // Rest of your code...
+
+</script>
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {
+    populateSongs();
+
+    // This function will execute after the song list is populated
+    const urlParams = new URLSearchParams(window.location.search);
+    const songId = urlParams.get('songId');
+
+    if (songId) {
+        const songIndex = songs.findIndex(s => s.id == songId);
+        if (songIndex !== -1) {
+            playSongFromList(songIndex);
+        }
+    }
+});
+
+// ... Continue with your remaining existing code...
 
 </script>
 </body>

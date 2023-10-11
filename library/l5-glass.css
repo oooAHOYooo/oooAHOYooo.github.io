@@ -1,0 +1,138 @@
+body {
+    background: linear-gradient(145deg, #8b0000, #4682B4);
+    color: #FFFFFF; /* White for easy reading */
+    font-family: Arial, sans-serif;
+    padding-bottom: 500px;
+    backdrop-filter: blur(10px);
+}
+
+.floatPlayer, .playerStats, #player, section, table, h2, #currentSongDisplay, .card {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px); /* Glassy look */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* White border for the frosted glass effect */
+}
+
+.floatPlayer, .playerStats {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.floatPlayer button {
+    margin-bottom: 10px;
+    border: 1px solid #FFFFFF; /* White border */
+}
+
+button {
+    background-color: rgba(0, 0, 0, 0.3); /* Slightly transparent black */
+    color: #FFFFFF; /* White text */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Light on hover */
+    color: #4682B4; /* Deep pearl blue */
+}
+
+table {
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table, th, td {
+    border: 1px solid #FFFFFF; /* White border for the table */
+}
+
+th, td {
+    padding: 8px 12px;
+    text-align: left;
+}
+
+th {
+    background-color: rgba(0, 0, 0, 0.4); /* Dark background for header */
+}
+
+input, select {
+    border-radius: 5px;
+    border: 1px solid #FFFFFF;
+    background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent black */
+    color: #FFFFFF;
+}
+
+#progressBar {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#progressBar > div {
+    background-color: #4682B4;
+}
+
+#currentSongDisplay span {
+    color: #8b0000; /* Dark red */
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+    .card {
+        width: 90%;
+    }
+}
+
+/* Library Table */
+#libraryTable {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+#libraryTable th, #libraryTable td {
+    border: 1px solid #FFFFFF;
+}
+
+#libraryTable th {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#libraryTable td {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+#libraryTable tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#progressThumb {
+    background-color: #8b0000; /* Dark red */
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* Animation for Player */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.floatPlayer {
+    animation: fadeIn 1s ease-in-out;
+}
+
+.playerStats {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@media only screen and (max-width: 500px) {
+    #volumeControl {
+        display: none;
+    }
+
+    #currentSongDisplay {
+        max-width: 85%;
+    }
+}
+
+/* Other styles remain similar */
+

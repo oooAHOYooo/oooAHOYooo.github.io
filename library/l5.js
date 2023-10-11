@@ -200,7 +200,7 @@ fetch('l5.json')
         populateSongs();
     })
     .catch(error => {
-        console.error("Error fetching songs from l4.json:", error);
+        console.error("Error fetching songs from l5.json:", error);
     });
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -459,3 +459,88 @@ function rewindAudio() {
         audioPlayer.currentTime = 0; // set to the start of the audio
     }
 }
+
+function shareCurrentSong() {
+    const song = songs[currentSongIndex];
+    const baseURL = window.location.href.split('?')[0];  // Get the current base URL without parameters
+    const shareURL = `${baseURL}?songId=${song.id}`;
+    navigator.clipboard.writeText(shareURL).then(function() {
+        alert('Song link copied to clipboard!');
+    }).catch(function(err) {
+        alert('Could not copy text: ', err);
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    populateSongs();
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const songId = urlParams.get('songId');
+
+    if (songId) {
+        const songIndex = songs.findIndex(s => s.id == songId); // Notice we use == for loose comparison as songId from URL is string, while song.id might be number
+        if (songIndex !== -1) {
+            playSongFromList(songIndex);
+            audioPlayer.play().catch(error => {
+                console.warn("Playback was not allowed:", error);
+                // Display a UI element that encourages the user to manually start playback, if needed
+            });
+        }
+    }
+});
+
+audioPlayer.play().catch(error => {
+    console.warn("Playback was not allowed:", error);
+    // Display a UI element that encourages the user to manually start playback, if needed
+});
+
+
+
+// ... Your existing variables and functions ...
+
+// Adds a song to the queue
+function addToQueueByIndex(index) {
+    queue.push(songs[index]);
+    populateQueue();
+    // If no song is currently playing or if the player is paused, play the queued song immediately
+    if (audioPlayer.paused || !audioPlayer.src) {
+        playNextInQueue();
+    }
+}
+
+// Plays the next song in the queue
+function playNextInQueue() {
+    if (queue.length > 0) {
+        const songIndex = songs.findIndex(s => s.id === queue[0].id);
+        playSongFromList(songIndex);
+        queue.shift(); // Remove the song that's currently playing from the queue
+        populateQueue();
+    }
+}
+
+audioPlayer.addEventListener("ended", playNextInQueue);
+
+document.addEventListener('DOMContentLoaded', function() {
+    populateSongs();
+
+    // After songs are populated
+    const urlParams = new URLSearchParams(window.location.search);
+    const songId = urlParams.get('songId');
+
+    if (songId) {
+        const songIndex = songs.findIndex(s => s.id == songId);
+        if (songIndex !== -1) {
+            playSongFromList(songIndex);
+            // Try to auto-play, and handle the potential promise rejection
+            audioPlayer.play().catch(error => {
+                console.warn("Auto-play was not allowed:", error);
+                // Optionally, display a UI element that encourages the user to manually start playback
+            });
+        }
+    }
+});
+
+// ... Continue with your remaining existing code...
+
+
+// ... Your existing variables and functions ...
