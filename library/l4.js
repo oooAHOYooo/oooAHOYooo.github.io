@@ -344,3 +344,76 @@ function likeSongFromQueue(index) {
     const songIndexInLibrary = songs.findIndex(s => s.id === queue[index].id);
     likeSong(songIndexInLibrary);
 }
+
+// ... Existing JavaScript ...
+
+let playingQueue = false; // Flag to determine if we're currently playing from the queue
+
+function playQueue() {
+    if (queue.length > 0) {
+        playingQueue = true;
+        playSongFromQueue(0); // Start playing from the first song in the queue
+        document.getElementById('queueButton').innerText = "Queue Playing";
+    }
+}
+
+function playSongFromQueue(queueIndex) {
+    if (playingQueue) {
+        const songIndexInLibrary = songs.findIndex(s => s.id === queue[queueIndex].id);
+        playSongFromList(songIndexInLibrary);
+    }
+}
+
+audioPlayer.addEventListener("ended", function() {
+    if (playingQueue && queue.length > 1) {
+        queue.shift(); // Remove the song that just finished playing from the queue
+        playQueue(); // Continue playing the next song
+    } else {
+        playingQueue = false; // If no more songs in the queue or not playing from queue, reset the flag
+        document.getElementById('queueButton').innerText = "Play Queue";
+    }
+});
+
+function nextSongInQueue() {
+    if (playingQueue && queue.length > 1) {
+        queue.shift(); // Remove the current song from the queue
+        playQueue(); // Play the next song
+    } else {
+        playingQueue = false; // If no more songs in the queue, reset the flag
+        document.getElementById('queueButton').innerText = "Play Queue";
+    }
+}
+
+
+function populateQueue() {
+    const queueList = document.getElementById('queueList');
+    queueList.innerHTML = '';
+    queue.forEach((song, index) => {
+        const songRow = `
+            <tr>
+                <td><input type="number" value="${index + 1}" onchange="reorderQueue(${index}, this.value)"></td>
+                <td>${song.artist}</td>
+                <td>${song.songTitle}</td>
+                <td><button onclick="playSongFromQueue(${index})">Play</button></td>
+                <td><button onclick="removeFromQueue(${index})">Remove</button></td>
+                
+            </tr>
+        `;
+        queueList.innerHTML += songRow;
+    });
+}
+
+function reorderQueue(currentIndex, newPosition) {
+    if (newPosition <= 0 || newPosition > queue.length) {
+        alert("Invalid position.");
+        populateQueue(); // Refresh queue to reset positions
+        return;
+    }
+    
+    const movedSong = queue[currentIndex];
+    queue.splice(currentIndex, 1); // Remove song from current position
+    queue.splice(newPosition - 1, 0, movedSong); // Insert song at the new position
+    populateQueue();
+}
+
+// ... Rest of your JavaScript ...
