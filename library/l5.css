@@ -530,3 +530,36 @@ display:none;            /* Some space on sides */
 }
 
 
+/* ... Your existing styles ... */
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: black; 
+    border-radius: 10px;
+    padding: 20px;
+    z-index: 1000;
+    width: 80%;
+    max-width: 400px;
+    backdrop-filter: blur(2px); /* Frosted glass effect */
+    border: 1px solid rgba(0, 0, 0, 0.779); /* Light border */
+}
+
+.hidden {
+    display: none;
+}
+
+#castButton {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    border-style:solid;
+    text-transform:uppercase;
+    filter: opacity(.2);
+}
+
+#castButton:hover {
+    filter:opacity(1);
+}

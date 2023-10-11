@@ -544,3 +544,52 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // ... Your existing variables and functions ...
+// ... Your existing JavaScript ...
+
+// Initialize cast API after the page loads
+document.addEventListener('DOMContentLoaded', () => {
+    if (!chrome.cast || !chrome.cast.isAvailable) {
+        setTimeout(initializeCastApi, 1000);
+    }
+});
+
+function initializeCastApi() {
+    const applicationID = 'YOUR_APP_ID';  // Replace with your App ID from the Google Cast SDK Developer Console
+    const sessionRequest = new chrome.cast.SessionRequest(applicationID);
+    const apiConfig = new chrome.cast.ApiConfig(sessionRequest, sessionListener, receiverListener);
+
+    chrome.cast.initialize(apiConfig, onInitSuccess, onError);
+}
+
+function sessionListener(session) {
+    console.log('Session Listener:', session);
+}
+
+function receiverListener(e) {
+    if (e === chrome.cast.ReceiverAvailability.AVAILABLE) {
+        console.log('Receiver available');
+    }
+}
+
+function onInitSuccess() {
+    console.log('Initialization succeeded');
+}
+
+function onError(e) {
+    console.log('Error:', e);
+}
+
+// Display the casting popup and fetch available devices
+document.getElementById('castButton').addEventListener('click', () => {
+    document.getElementById('castPopup').classList.remove('hidden');
+    chrome.cast.requestSession(onSessionSuccess, onError);
+});
+
+function onSessionSuccess(session) {
+    console.log('Successfully created session:', session);
+}
+
+// Close the casting popup
+document.getElementById('closeCastPopup').addEventListener('click', () => {
+    document.getElementById('castPopup').classList.add('hidden');
+});

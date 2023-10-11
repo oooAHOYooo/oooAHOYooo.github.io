@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ahoy Indie Media</title>
+    <script type="text/javascript" src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js"></script>
+
 <link rel="stylesheet" href="./l5.css">
 
 </head>
@@ -132,6 +134,15 @@
 <div id="musicVisualizer" style="display: none;">
     <!-- Your visualizer will go here -->
     Music Visualizer Placeholder
+</div>
+
+<button id="castButton">Cast</button>
+<div id="castPopup" class="popup hidden">
+    <h3>Cast to a device</h3>
+    <p>Choose a device baby</p>
+    <!-- Device list will be populated here -->
+    <ul id="deviceList"></ul>
+    <button id="closeCastPopup">Close</button>
 </div>
 
 
