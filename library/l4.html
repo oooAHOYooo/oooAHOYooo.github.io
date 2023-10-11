@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Basic HTML Player</title>
 <link rel="stylesheet" href="./l4.css">
+
 </head>
 <body>
 
@@ -19,7 +20,7 @@
             <th>Play</th>
             <th>Add to Playlist</th>
             <th>Add to Queue</th>
-            <th>Like/Favorite</th>
+            <th>Fav</th>
         </tr>
     </thead>
     <tbody id="songList">
@@ -48,7 +49,7 @@
 </section>
 
 <!-- Playlists -->
-<section id="playlistSection">
+<section id="playlistSection card">
     <h2>Playlists</h2>
     <input type="text" id="newPlaylistName" placeholder="Enter new playlist name">
     <button onclick="createNewPlaylist()">Create New Playlist</button>
@@ -73,7 +74,7 @@
 </section>
 
 <!-- Queue -->
-<section id="queueSection">
+<section id="queueSection card">
     <h2>Queue</h2>
     <table>
         <thead>
@@ -106,13 +107,18 @@
     <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="1" onchange="adjustVolume()">
     <audio id="audioPlayer" src="" ontimeupdate="updateProgressBar()"></audio>
 </div>
-
+<!-- 
 <div id="playerStats" class="playerStats">
     <p>Player Stats</p>
-</div>
+</div>-->
 
 <footer>
 	<a href="https://ahoy.ooo"><img src="../assets/u_ahoy23.png" style="width:300px"></a>
+<div class="theme-selector">
+    <button onclick="setTheme('theme1')">Theme 1</button>
+    <button onclick="setTheme('theme2')">Theme 2</button>
+    <button onclick="setTheme('theme3')">Theme 3</button>
+</div>
 </footer>
 <script src="l4.js"></script>
 

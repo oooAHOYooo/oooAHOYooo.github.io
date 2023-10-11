@@ -3,6 +3,8 @@ let songs = [];
 let currentPlaylist = [];
 let favorites = [];
 let queue = [];
+let burnedCDs = 5; // Example data, you can update this based on your actual data.
+
 
 
 const audioPlayer = document.getElementById('audioPlayer');
@@ -417,3 +419,59 @@ function reorderQueue(currentIndex, newPosition) {
 }
 
 // ... Rest of your JavaScript ...
+function updatePlayerStats() {
+    const playerStatsDiv = document.getElementById('playerStats');
+    const currentSong = songs[currentSongIndex];
+    const likedSongsCount = favorites.length;
+    const queueCount = queue.length;
+    const playlistCount = currentPlaylist.length;
+
+    let stats = `
+        <strong>Current Song:</strong> ${currentSong.songTitle} by ${currentSong.artist} <br>
+        <strong>Liked Songs:</strong> ${likedSongsCount} <br>
+        <strong>Songs in Queue:</strong> ${queueCount} <br>
+        <strong>Playlists:</strong> ${playlistCount} <br>
+        <strong>Burned CDs:</strong> ${burnedCDs}
+    `;
+
+    playerStatsDiv.innerHTML = stats;
+}
+function updatePlayerStatsTable() {
+    const playerStatsDiv = document.getElementById('playerStats');
+    const currentSong = songs[currentSongIndex];
+    const likedSongsCount = favorites.length;
+    const queueCount = queue.length;
+    const playlistCount = currentPlaylist.length;
+
+    let stats = `
+        <table>
+            <tr><td><strong>Current Song:</strong></td><td>${currentSong.songTitle} by ${currentSong.artist}</td></tr>
+            <tr><td><strong>Liked Songs:</strong></td><td>${likedSongsCount}</td></tr>
+            <tr><td><strong>Songs in Queue:</strong></td><td>${queueCount}</td></tr>
+            <tr><td><strong>Playlists:</strong></td><td>${playlistCount}</td></tr>
+            <tr><td><strong>Burned CDs:</strong></td><td>${burnedCDs}</td></tr>
+        </table>
+    `;
+
+    playerStatsDiv.innerHTML = stats;
+}
+function mockChart() {
+    const playerStatsDiv = document.getElementById('playerStats');
+    const likedSongsCount = favorites.length;
+    const queueCount = queue.length;
+    const playlistCount = currentPlaylist.length;
+
+    let chart = `
+        <div style="height: ${likedSongsCount * 10}px; background-color: red; width: 50px; margin-right: 10px;"></div>
+        <div style="height: ${queueCount * 10}px; background-color: blue; width: 50px; margin-right: 10px;"></div>
+        <div style="height: ${playlistCount * 10}px; background-color: green; width: 50px;"></div>
+    `;
+
+    playerStatsDiv.innerHTML += chart; // Appends the mock chart to the stats
+}
+
+
+// scripts.js
+function setTheme(themeName) {
+    document.documentElement.setAttribute('data-theme', themeName);
+}

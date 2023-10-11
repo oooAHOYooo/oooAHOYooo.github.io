@@ -3,14 +3,16 @@ body {
     background-image: linear-gradient(to bottom, #1E1E2A, #1E1E2A, #0E0E16);
     color: #FFD700; /* Kodak Gold */
     font-family: Arial, sans-serif;
-	padding-bottom:100px;
+	padding-bottom:500px;
 }
 
 .floatPlayer {
     position:fixed;
-    bottom:0px;
-    margin:0px;
-    width:420px;
+    bottom:20px;
+    left:10px;
+    width:460px;
+    border-style:solid;
+    border-width:1px;
 
 
 }
@@ -31,7 +33,7 @@ body {
 }
 
 #player {
-    background-color: rgba(46, 49, 65, 0.9); /* Deep Space Blue */
+    background-color: rgba(46, 49, 65, 0.949); /* Deep Space Blue */
     border-radius: 10px;
     padding: 10px;
     margin: 20px;
@@ -298,7 +300,7 @@ section.favorite {
   #progressThumb {
 	width: 10px;
 	height: 40px;
-	background-color: #007bff!mporta;
+	background-color: #007bff;
 	position: absolute;
 	top: 0px;
 	border-radius: 50%;
@@ -316,3 +318,188 @@ section.favorite {
 	transform: scale(1.4);
   }
   
+
+
+  /* Animation for Player */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.floatPlayer {
+    animation: fadeIn 1s ease-in-out;
+}
+
+.playerStats {
+    animation: fadeIn 1s ease-in-out;
+}
+
+
+/* Responsive Player Styling */
+@media only screen and (max-width: 768px) {
+    #player {
+        flex-direction: column; /* Stack controls vertically */
+    }
+
+    #currentSongDisplay,
+    #progressBar,
+    #volumeControl {
+        margin: 10px 0; /* Vertical margin for stacked controls */
+        width: 100%; /* Full width for each control */
+    }
+}
+
+.theme-selector {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* Themes */
+[data-theme="theme1"] {
+    --background-color: #f1f1f1;
+    --text-color: #333;
+}
+
+[data-theme="theme2"] {
+    --background-color: #222;
+    --text-color: #eee;
+}
+
+[data-theme="theme3"] {
+    --background-color: #4a90e2;
+    --text-color: #fff;
+}
+
+/* ... [Your existing CSS remains unchanged] ... */
+
+/* Mobile Responsive Styling */
+@media only screen and (max-width: 500px) {
+    body {
+        font-size: 14px; /* Slightly reduce the font size for better fit */
+    }
+
+    h2 {
+        font-size: 18px; /* Adjust heading size */
+        margin-bottom: 10px; /* Reduce margin */
+    }
+
+    .floatPlayer, .playerStats {
+        width: 100%; /* Full width for player controls */
+        box-sizing: border-box; /* Include padding and border in the width */
+    }
+
+    table, th, td {
+        font-size: 12px; /* Adjust table font size */
+        padding: 4px 6px; /* Adjust table padding */
+    }
+
+    #libraryTable thead tr th:first-child, #libraryTable tbody tr td:first-child {
+        padding-left: 10px; /* Adjust left padding */
+    }
+
+    button, input, select {
+        padding: 6px; /* Reduce padding for form elements */
+    }
+
+    #player {
+        flex-direction: column; /* Stack controls vertically */
+        align-items: center; /* Center align controls */
+    }
+
+    /* Ensure table does not overflow and is scrollable */
+    #libraryTable {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        transform:scale(.78)
+    }
+
+    .card {
+        margin: 10px; /* Reduce margin */
+    }
+
+    /* Center elements on the screen */
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 500px;
+    }
+
+    /* Volume Control Styling */
+#volumeControl {
+display:none;            /* Some space on sides */
+}
+
+#currentSongDisplay {
+    max-width:85%;
+    height:70px;
+    border-radius:2px;
+    text-align:center;
+    display:flex;
+}
+}
+
+
+/* ... [Your existing CSS remains unchanged] ... */
+
+/* Mobile Responsive Styling */
+@media only screen and (max-width: 320px) {
+    body {
+        font-size: 14px; /* Slightly reduce the font size for better fit */
+    }
+
+    h2 {
+        font-size: 18px; /* Adjust heading size */
+        margin-bottom: 10px; /* Reduce margin */
+    }
+
+    .floatPlayer, .playerStats {
+        width: 100%; /* Full width for player controls */
+        box-sizing: border-box; /* Include padding and border in the width */
+    }
+
+    table, th, td {
+        font-size: 12px; /* Adjust table font size */
+        padding: 4px 6px; /* Adjust table padding */
+    }
+
+    #libraryTable thead tr th:first-child, #libraryTable tbody tr td:first-child {
+        padding-left: 10px; /* Adjust left padding */
+    }
+
+    button, input, select {
+        padding: 6px; /* Reduce padding for form elements */
+    }
+
+    #player {
+        flex-direction: column; /* Stack controls vertically */
+        align-items: center; /* Center align controls */
+    }
+
+    /* Ensure table does not overflow and is scrollable */
+    #libraryTable {
+        display: block;
+        overflow-x: auto;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .card {
+        margin: 10px; /* Reduce margin */
+    }
+
+    /* Center elements on the screen */
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* ... [rest of your CSS remains unchanged] ... */

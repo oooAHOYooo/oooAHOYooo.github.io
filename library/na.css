@@ -1,0 +1,84 @@
+/* Glassy Deep Water Theme */
+body {
+    background-image: linear-gradient(to bottom, #0E0E16, #1E1E2A, #0A1338); /* Deep navy blue gradient */
+    color: #FFD700; /* Gold */
+    font-family: Arial, sans-serif;
+    padding-bottom: 100px;
+}
+
+.floatPlayer {
+    position: fixed;
+    bottom: 0px;
+    margin: 0px;
+    width: 420px;
+}
+
+.playerStats, #player, section, table, td, th, button {
+    background: rgba(25, 35, 55, 0.75); /* Translucent deep water blue */
+    backdrop-filter: blur(8px); /* Glassy effect */
+    border: 1px solid rgba(255, 215, 0, 0.3); /* Thin gold border */
+}
+
+.playerStats, #player, section {
+    border-radius: 10px;
+    padding: 10px;
+    margin: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Darker shadow for depth */
+}
+
+button {
+    color: #FFD700; /* Gold */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05); /* Slight button scale on hover for interaction */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table, th, td {
+    border: 1px solid #FFD700; /* Gold */
+}
+
+th, td {
+    padding: 8px 12px;
+    text-align: left;
+}
+
+h2 {
+    border-bottom: 2px solid #FFD700; /* Gold */
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+input, select {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #FFD700; /* Gold */
+    color: #FFD700; /* Gold */
+    background: rgba(25, 35, 55, 0.75); /* Translucent deep water blue */
+    backdrop-filter: blur(8px); /* Glassy effect */
+}
+
+#progressBar {
+    height: 20px;
+    background-color: rgba(38, 38, 168, 0.8); /* Translucent blue */
+    border-radius: 10px;
+    position: relative;
+}
+
+#progressBar > div {
+    height: 100%;
+    background-color: #FFD700; /* Gold */
+    border-radius: 10px;
+    width: 0;
+}
