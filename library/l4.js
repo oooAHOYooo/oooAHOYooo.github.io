@@ -190,6 +190,7 @@ function addToQueue(index) {
     console.log(`Song ${index + 1} added to Queue`);
 }
 
+// Fetch songs and populate on page load
 fetch('l4.json')
     .then(response => response.json())
     .then(data => {
@@ -200,11 +201,9 @@ fetch('l4.json')
         console.error("Error fetching songs from l4.json:", error);
     });
 
-// On page load
 document.addEventListener('DOMContentLoaded', function() {
     populateSongs();
 });
-
 
 // ... your existing variable declarations ...
 
@@ -304,3 +303,44 @@ function updateProgress(e) {
 
 // Rest of your code...
 
+// ... Rest of your variable and function declarations ...
+
+function addToQueue(index) {
+    queue.push(songs[index]);
+    populateQueue();
+}
+
+function playSongFromQueue(queueIndex) {
+    const songIndexInLibrary = songs.findIndex(s => s.id === queue[queueIndex].id);
+    playSongFromList(songIndexInLibrary);
+    queue.splice(queueIndex, 1); // Remove the played song from the queue
+    populateQueue();
+}
+
+function removeFromQueue(queueIndex) {
+    queue.splice(queueIndex, 1);
+    populateQueue();
+}
+
+function populateQueue() {
+    const queueList = document.getElementById('queueList');
+    queueList.innerHTML = '';
+    queue.forEach((song, index) => {
+        const songRow = `
+            <tr>
+                <td>${index + 1}</td>
+                <td>${song.artist}</td>
+                <td>${song.songTitle}</td>
+                <td><button onclick="playSongFromQueue(${index})">Play</button></td>
+                <td><button onclick="removeFromQueue(${index})">Remove</button></td>
+                <td><button onclick="likeSongFromQueue(${index})">Like</button></td>
+            </tr>
+        `;
+        queueList.innerHTML += songRow;
+    });
+}
+
+function likeSongFromQueue(index) {
+    const songIndexInLibrary = songs.findIndex(s => s.id === queue[index].id);
+    likeSong(songIndexInLibrary);
+}
