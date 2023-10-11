@@ -439,3 +439,23 @@ function toggleSections() {
         visualizer.style.display = "block";
     }
 }
+
+function fastForwardAudio() {
+    const audioPlayer = document.getElementById('audioPlayer');
+    const newTime = audioPlayer.currentTime + 16;
+    if (newTime < audioPlayer.duration) {
+        audioPlayer.currentTime = newTime;
+    } else {
+        audioPlayer.currentTime = audioPlayer.duration; // set to the end of the audio
+    }
+}
+
+function rewindAudio() {
+    const audioPlayer = document.getElementById('audioPlayer');
+    const newTime = audioPlayer.currentTime - 16;
+    if (newTime > 0) {
+        audioPlayer.currentTime = newTime;
+    } else {
+        audioPlayer.currentTime = 0; // set to the start of the audio
+    }
+}
