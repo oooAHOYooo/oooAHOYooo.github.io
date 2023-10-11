@@ -26,12 +26,11 @@
 
     .floatPlayer {
         margin:0px!important;
-        background-color:red!important;
         position:fixed!important;
         height:auto;
         align-items:center;
         padding:25px!important;
-        margin-left:320px!important;
+     
     }
 
     .splash-header img {
