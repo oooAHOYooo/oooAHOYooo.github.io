@@ -73,8 +73,8 @@
 		"songTitle": "Yoga",
 		"artistThumbnail": "UNSPLASH_URL_FOR_ARTIST_4",
 		"albumArtwork": "UNSPLASH_URL_FOR_ALBUM_4",
-		"mp3url": "https://ahoycollection.s3.amazonaws.com/Youth+XL+-+Yoga.mp3",
-		"play": false
+		"mp3url": "https://ahoycollection.s3.amazonaws.com/Youth+XL+-+Yoga.mp3"
+	
 	  },
 	  {
 		"id": 11,
@@ -82,8 +82,8 @@
 		"songTitle": "Text Your Friends",
 		"artistThumbnail": "UNSPLASH_URL_FOR_ARTIST_6",
 		"albumArtwork": "UNSPLASH_URL_FOR_ALBUM_6",
-		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Youth+XL+-+Text+Your+Friends.mp3",
-		"play": false
+		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Youth+XL+-+Text+Your+Friends.mp3"
+		
 	  },
 	  {
 		"id": 12,
@@ -91,15 +91,29 @@
 		"songTitle": "Gypsy Gia",
 		"artistThumbnail": "UNSPLASH_URL_FOR_ARTIST_6",
 		"albumArtwork": "UNSPLASH_URL_FOR_ALBUM_6",
-		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Youth+XL+-+Gypsy+Gia.mp3",
-		"play": false
+		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Youth+XL+-+Gypsy+Gia.mp3"
+		
 	  },
 	  {
 		"id": 13,
 		"artist": "Fella Gazelle",
 		"songTitle": "Reasons",
-		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Fella%20Gazelle%20-%20Reasons%20-%20Radio%20Edit.mp3",
-		"play": false
+		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Fella%20Gazelle%20-%20Reasons%20-%20Radio%20Edit.mp3"
+		
+	  },
+	  {
+		"id": 14,
+		"artist" : "Riddle M",
+		"songTitle": "Glued in the Nude",
+		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Riddle+M+-+Glued+in+Nude.mp3",
+		"new": true
+	  },
+	  {
+		"id": 15,
+		"artist" : "Riddle M",
+		"songTitle": "Honeydew",
+		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Riddle+M+-+Honeydew.mp3",
+		"new": true
 	  }
 	]
   }

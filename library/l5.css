@@ -563,3 +563,7 @@ display:none;            /* Some space on sides */
 #castButton:hover {
     filter:opacity(1);
 }
+
+.new-song {
+    background-color: #ffe02e!important; /* Change this to the color you want */
+}

@@ -247,8 +247,9 @@ function populateSongs() {
     songs.forEach((song, index) => {
         const isLiked = favorites.some(favSong => favSong.id === song.id);
         const likeButtonText = isLiked ? 'Unlike' : 'Like';
+        const isNew = song.new ? 'new-song' : '';
         const songRow = `
-            <tr>
+            <tr class="${isNew}">
                 <td>${song.artist}</td>
                 <td>${song.songTitle}</td>
                 <td><button onclick="playSongFromList(${index})">Play</button></td>
