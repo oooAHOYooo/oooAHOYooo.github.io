@@ -566,3 +566,43 @@ display:none;            /* Some space on sides */
 .new-song {
     background-color: #ffe02e!important; /* Change this to the color you want */
 }
+
+
+/*TOOL TIPS*/
+
+[title] {
+    position: relative;
+  }
+  
+  [title]:hover::after {
+    content: attr(title);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: #fff;
+    padding: .5em;
+    border-radius: .3em;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 3s;
+  }
+  
+  [title]:hover::before {
+    content: '';
+    position: absolute;
+    bottom: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 10px solid transparent;
+    border-top-color: #333;
+    opacity: 0;
+    transition: opacity 3s;
+  }
+  
+  [title]:hover::after,
+  [title]:hover::before {
+    opacity: 1;
+  }
