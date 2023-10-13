@@ -6,6 +6,8 @@
     <script type="text/javascript" src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js"></script>
     <link rel="stylesheet" href="./l5mobile.css">
     <link rel="stylesheet" href="./l5.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
 
 </head>
 <body>
@@ -105,27 +107,30 @@
 		border-color:white;
 	}
 </style>
-<!-- Player Controls -->
+
+
+
 <div id="player" class="floatPlayer ">
-    <button onclick="previousSong()">Previous</button>
-    <button onclick="playPauseSong()" id="playPauseButton">Play</button>
-    <button onclick="nextSong()">Next</button>
-    <button class="lilFloatButton" onclick="addToPlaylist(currentSongIndex)">+ Playlist</button>
-    <button class="lilFloatButton" onclick="likeSong(currentSongIndex)"> + Current Song</button>
-    <div id="currentSongDisplay" onclick="playPauseSong()">Now Playing: <span id="currentArtist"></span> - <span id="currentSong"></span></div>
-    <div id="progressBar">
+    <button onclick="previousSong()" title="Previous Song"><i class="fas fa-step-backward"></i></button>
+    <button onclick="playPauseSong()" id="playPauseButton" title="Play/Pause Song"><i class="fas fa-play"></i></button>
+    <button onclick="nextSong()" title="Next Song"><i class="fas fa-step-forward"></i></button>
+    <button class="lilFloatButton" onclick="addToPlaylist(currentSongIndex)" title="Add to Playlist"><i class="fas fa-plus"></i> Playlist</button>
+    <button class="lilFloatButton" onclick="likeSong(currentSongIndex)" title="Like Current Song"><i class="fas fa-heart"></i> Current Song</button>
+    <div id="currentSongDisplay" onclick="playPauseSong()" title="Play/Pause Song">Now Playing: <span id="currentArtist"></span> - <span id="currentSong"></span></div>
+    <div id="progressBar" title="Song Progress">
         <div id="progressThumb"></div>
     </div>
-    <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="1" onchange="adjustVolume()">
+    <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="1" onchange="adjustVolume()" title="Adjust Volume">
     <audio id="audioPlayer" src="" ontimeupdate="updateProgressBar()"></audio>
-	<br>
-	<button onclick="toggleSections()">Toggle View</button>
-	<button onclick="rewindAudio()">Rewind 16 seconds</button>
-	<button onclick="fastForwardAudio()">+16 seconds</button>
-    <button onclick="shareCurrentSong()">Share</button>
-    <button id="muteButton">Mute</button>
-
+    <button onclick="toggleSections()" title="Toggle Sections"><i class="fas fa-exchange-alt"></i></button>
+    <button onclick="rewindAudio()" title="Rewind 16 seconds"><i class="fas fa-undo"></i> 16 seconds</button>
+    <button onclick="fastForwardAudio()" title="Fast Forward 16 seconds"><i class="fas fa-redo"></i> 16 seconds</button>
+    <button onclick="shareCurrentSong()" title="Share Current Song"><i class="fas fa-share"></i></button>
+    <button id="muteButton" title="Mute/Unmute"><i class="fas fa-volume-mute"></i></button>
 </div>
+
+
+
 <!-- 
 <div id="playerStats" class="playerStats">
     <p>Player Stats</p>
