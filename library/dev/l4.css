@@ -1,28 +1,20 @@
+/* Space Theme Styles with Clean Kodak-like Colors */
 body {
-    /*background-image: linear-gradient(to bottom, #1E1E2A, #1E1E2A, #0E0E16);*/
+    background-image: linear-gradient(to bottom, #1E1E2A, #1E1E2A, #0E0E16);
     color: #FFD700; /* Kodak Gold */
     font-family: Arial, sans-serif;
 	padding-bottom:500px;
-	background-color:rgb(9, 0, 27);
 }
 
 .floatPlayer {
-    position: fixed;
-    bottom: 20px;
-    left: 10px;
-    width: 530px;
-    border-style: solid;
-    border-width: 1px;
-    border-color: #040404; /* Change border color */
-    background: rgba(255, 255, 255, 0.9); /* Change background color */
-    backdrop-filter: blur(5px);
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* Add box shadow */
-}
-.floatPlayer button {
-	margin-bottom:10px!important;
-	border-style:solid;
-	border-color:#FFD700;
-	border-width:1px;
+    position:fixed;
+    bottom:20px;
+    left:10px;
+    width:460px;
+    border-style:solid;
+    border-width:1px;
+
+
 }
 
 .playerStats {
@@ -131,15 +123,14 @@ input, select {
     background: rgba(255, 255, 255, 0.1); /* Slight white transparency for the frosted glass effect */
     backdrop-filter: blur(5px); /* Frosted glass effect */
     padding: 10px;
-    border-radius: 2;
-    margin: 12px 0;
-    height:35px;
+    border-radius: 10px;
+    margin: 10px 0;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.1em;
-    font-weight: 600;
+    font-weight: bold;
     border: 1px solid rgba(255, 215, 0, 0.3); /* Slight Kodak Gold border */
 }
 
@@ -512,57 +503,3 @@ display:none;            /* Some space on sides */
 }
 
 /* ... [rest of your CSS remains unchanged] ... */
-
-.splash-header {
-    background-size: cover;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 3em;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.splash-header img {
-    width:500px;
-}
-
-
-/* ... Your existing styles ... */
-
-.popup {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: black; 
-    border-radius: 10px;
-    padding: 20px;
-    z-index: 1000;
-    width: 80%;
-    max-width: 400px;
-    backdrop-filter: blur(2px); /* Frosted glass effect */
-    border: 1px solid rgba(0, 0, 0, 0.779); /* Light border */
-}
-
-.hidden {
-    display: none;
-}
-
-#castButton {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    border-style:solid;
-    text-transform:uppercase;
-    filter: opacity(.2);
-}
-
-#castButton:hover {
-    filter:opacity(1);
-}
-
-.new-song {
-    background-color: #ffe02e!important; /* Change this to the color you want */
-}

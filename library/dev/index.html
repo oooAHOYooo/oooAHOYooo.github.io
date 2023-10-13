@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Ahoy Indie Media - Library</title>
+	<link rel="stylesheet" href="./library-5.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Ahoy Indie Media is a music library and playlist creator.">
+	<meta name="keywords" content="Music, Indie, Playlist, Library">
+	<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+	<link rel="stylesheet" href="./mobile.css">
+	<link rel="stylesheet" href="./library-switch.css">
+	<link rel="stylesheet" href="../css/membership.css">
+	<!-- FONT AWESOME -->
+	<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+	<!-- FIREBASE DATABASE SUGAR-->
+	<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+</head>
+
+<body id="library-body">
+	<div class="topLogin">
+		<!-- This will be dynamically updated -->
+	</div>
+	<a href="../account/loginModule.html">T</a>
+
+
+
+
+	<!-- END OF LOGIN FUNCTION -->
+
+
+	<div id="songSearchApp">
+
+		<div class="container">
+			<div class="column left">
+				<!-- Insert your left column content here -->
+				<!-- THE START OF SOMETHING GREAT -->
+				<div class="tinyMenu-wrap" style="display:flex;">
+					<a href="../index.html"><img class="topYoLogo" src="../assets/u_ahoy23.png" width="143"
+							height="auto;">
+					</a>
+					<p style="text-align:center; font-size:10px;">WARNING THIS ALL IS IN SUPER BETA MODE</p>
+
+
+					<div class="switch-widget-wrapper">
+						<input id="dn" type="checkbox" onclick="muteUnmuteAudio()" />
+						<label class="toggle" for="dn">
+							<span class="toggle--handler"></span>
+						</label>
+					</div>
+				</div>
+
+				<!-- oooo -->
+				<!-- PLAYLIST CODE BABY -->
+
+				<div class="playlist-container">
+					<div class="playlistHeader">
+						<h2>Playlists</h2>
+					</div>
+					<input type="text" id="newPlaylistName" placeholder="Playlist name...">
+					<button class="glass-button" @click="createPlaylist()">Create Playlist</button>
+					<select class="select" v-model="selectedPlaylist" id="playlistSelect">
+						<option v-for="(value, key) in playlists" :value="key">{{key}}</option>
+					</select>
+
+					<div id="playlists">
+						<div v-for="(playlist, playlistName) in playlists">
+							<h3>{{playlistName}}</h3>
+							<ul>
+								<li v-for="song in playlist">{{song.songTitle}} by {{song.artist}}</li>
+							</ul>
+							<button class="glass-button" @click="playPlaylist()">Play Playlist</button>
+							<a href="../burn/index.html"> <button class="glass-button">Burn Playlist to
+									Disc</button></a>
+						</div>
+					</div>
+
+					<!-- oooo -->
+				</div>
+
+			</div>
+			<div class="column middle" id="library-module">
+				<!-- Insert your middle column content here -->
+
+				<!-- CONTENT -->
+				<!-- SEARCHBAR -->
+				<div class="search-container">
+					<div class="sortTable-container">
+						<button class="sort-button">AZ</button>
+					</div>
+					<input type="text" v-model="searchTerm" @input="searchSongs"
+						placeholder="Search the library for songs..." class="search-input">
+				</div>
+				<table class="library-table">
+					<thead>
+						<tr>
+							<th class="table-header" style="color:rgb(148, 167, 255); text-align:left;">Artist</th>
+							<th class="table-header" style="color:rgb(148, 167, 255); text-align:left;">Song Title</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr v-for="song in filteredSongs" :key="song.songTitle">
+							<td>
+								<p class="song-artist" @click="togglePlay(song)">{{ song.artist }}</p>
+							</td>
+							<td>
+								<p class="song-title" @click="togglePlay(song)">{{ song.songTitle }}</p>
+							</td>
+
+
+							<td><button id="add" class="add-button" @click="addToPlaylist(song)">Add</button></td>
+
+							<td><button class="play-button" @click="togglePlay(song)">{{ song.play ? 'Pause' : 'Play'
+									}}</button></td>
+
+						</tr>
+					</tbody>
+				</table>
+
+
+			</div>
+
+			<div class="column right">
+				<!-- Insert your right column content here -->
+				<!-- ooo -->
+				<!-- SUPER AUDIO - NOW PLAYING -->
+				<div class="superAudio">
+					<audio id="audioPlayer">
+						<source src="path_to_audio_file.mp3" type="audio/mpeg">
+						if this
+						issue still persits - use a normal browser like a normie
+					</audio>
+					<div class="controls" style="display: flex; align-items: center;">
+						<div>
+							<p class="now-playing-text">Now Playing:</p>
+						</div>
+					</div>
+					<style>
+						.npC {
+							color: rgb(148, 167, 255);
+						}
+					</style>
+					<div class="now-playing-container">
+						<p class="npC">{{ currentArtist }}</p>
+					</div>
+					<div>
+						<h2>{{ currentSongTitle }}</h2>
+					</div>
+					<!-- PROGRESS BAR-->
+					<h6>Progress BAR (BETA)</h6>
+
+					<div id="progressBarContainer" class="progress-bar-container">
+						<div id="progressBar" class="progress-bar">
+
+						</div>
+					</div>
+					<div id="musicTweakerController">
+
+						<!-- Audio Controls -->
+						<button class="player-glass-button" onclick="muteUnmuteAudio()">Stop</button>
+
+
+						<br><br>
+					</div>
+					<div style="display: flex; flex-direction: column;">
+
+						<!-- VOLUME CONTROLLER -->
+						<div class="volume-control">
+							<label for="volume">Volume:</label>
+							<input type="range" id="volume" name="volume" min="0" max="1" step="0.01" value="1"
+								oninput="setVolume(this.value)">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- ooo -->
+
+	</div>
+
+	<!-- GET ON AHOY BUTTON -->
+	<div id="getOnWrap">
+		<a href="../getOn/index.html" class="glass-button">Get on Ahoy</button></a>
+	</div>
+	<!-- END OF TOTAL HTML APP -->
+	</div>
+	<!-- NO MORE HTML AFTER THIS POINT -->
+
+
+
+
+
+
+
+
+
+
+
+
+	<!-- SCRIPTSAND SUGAR-->
+	<!-- SCRIPTS -->
+
+	<script>
+		document.getElementById('pauseButton').addEventListener('click', function () {
+			var audioPlayer = document.getElementById('audioPlayer');
+			if (!audioPlayer.paused) {
+				audioPlayer.pause();
+			}
+		});
+	</script>
+	<!-- PROGRESS BAR SCRIPT -->
+	<script>
+		var audioPlayer = document.getElementById('audioPlayer');
+		var progressBar = document.getElementById('progressBar'); // Assuming this is the id of your progress bar
+
+		audioPlayer.addEventListener('timeupdate', function () {
+			var percentage = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+
+			progressBar.style.width = percentage + '%';
+		});
+	</script>
+	<!-- MUTE AUDIO SWITCH CODE -->
+	<script>
+		function muteUnmuteAudio() {
+			var audioPlayer = document.getElementById('audioPlayer');
+			audioPlayer.muted = !audioPlayer.muted;
+		}
+	</script>
+
+	<script>
+		// Audio context
+		const audioContext = new AudioContext();
+
+		// Audio source
+		let audioSource = null;
+
+		// Play audio
+		function playAudio() {
+			if (audioSource) {
+				audioSource.disconnect();
+			}
+			audioSource = audioContext.createBufferSource();
+			fetch('path/to/audio/file.mp3') // replace with your audio file
+				.then(response => response.arrayBuffer())
+				.then(data => audioContext.decodeAudioData(data))
+				.then(buffer => {
+					audioSource.buffer = buffer;
+					audioSource.connect(delayNode);
+					audioSource.start();
+				})
+				.catch(err => console.error(err));
+		}
+
+		// Pause audio
+		function pauseAudio() {
+			// Pause functionality is a bit more complicated in Web Audio API
+			// You might have to implement custom logic to pause and resume
+		}
+
+		// Stop audio
+		function stopAudio() {
+			if (audioSource) {
+				audioSource.stop();
+			}
+		}
+
+		// Change gain
+		function changeGain(value) {
+			gainNode.gain.value = value;
+		}
+
+		// Change pan
+		function changePan(value) {
+			pannerNode.pan.value = value;
+		}
+
+		// Change delay
+		function changeDelay(value) {
+			delayNode.delayTime.value = value;
+		}
+
+	// ... (Other features like Pitch Shifting, Time Stretching, Filtering, etc., can be added in a similar manner)
+	</script>
+	<script>
+		function setVolume(volume) {
+			var audioPlayer = document.getElementById('audioPlayer');
+			audioPlayer.volume = volume;
+		}
+
+	</script>
+	<!-- LIBRARY IMPORT -->
+	<!-- NEW LIBRARY DATA -->
+	<script type="module" src="./songData.js"></script>
+	<script type="module" src="./songFunction.js"></script>
+	<!-- AUDIO CONTROL SCRIPTS-->
+	<script type="module" src="./audioControl.js"></script>
+	<!-- LIVE FIREBASE CODE -->
+	<script src="./liveLib.js"></script>
+
+	<script>
+		var firebaseConfig = {
+
+			apiKey: "AIzaSyBq_IQRwkjh2o-jUkS8tI8wcEek5yMIwmo",
+			authDomain: "ahoy-indie-media-da86d.firebaseapp.com",
+			projectId: "ahoy-indie-media-da86d",
+			storageBucket: "ahoy-indie-media-da86d.appspot.com",
+			messagingSenderId: "179901301547",
+			appId: "1:179901301547:web:599159f9efb826f464bb6e",
+			measurementId: "G-K3QN161BVX",
+		};
+
+		// Initialize Firebase
+		firebase.initializeApp(firebaseConfig);
+
+		firebase.auth().onAuthStateChanged(function (user) {
+			if (user) {
+				var displayName = user.displayName;
+				var welcomeMessage = "Welcome, " + displayName;
+				document.querySelector('.topLogin').innerHTML = welcomeMessage;
+			} else {
+				document.querySelector('.topLogin').innerHTML = '<a href="./account/loginModule.html"><button class="loginButton">Login</button></a>';
+			}
+		});
+	</script>
+
+
+
+
+</body>
+
+</html>

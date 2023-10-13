@@ -7,6 +7,8 @@
     body {
         padding:0px!important;
         margin:0px!important;
+        display:flex;
+        background-color:black!important;
         
     }
     #player {
@@ -14,6 +16,7 @@
         padding:0px!important;
         width: 100%!important;
         max-width:320px!important;
+        left:10px;
        
     }
     
@@ -29,13 +32,52 @@
         position:fixed!important;
         height:auto;
         align-items:center;
-        padding:25px!important;
+        
+        border-color:white!important;
+        
      
+    }
+
+    .floatPlayer button {
+        margin-left: 10px !important;
+        margin-top: 2.5px !important;
+        margin-bottom: 2.5px !important;
+        min-width: 50px !important;
+        padding: 10px 20px; /* Add padding to make the button larger */
+        background-color: #3498db00; /* Change the background color */
+        border: none; /* Remove the border */
+        border-radius: 5px; /* Add rounded corners */
+        text-align: center; /* Center the text */
+        text-decoration: none; /* Remove the underline */
+        display: inline-block;
+        font-size: 16px;
+        transition-duration: 0.4s; /* Add animation when hovering */
+        cursor: pointer;
+    }
+    
+    .floatPlayer button:hover {
+        background-color: #bfff00; /* Change the background color when hovering */
+        color: rgb(0, 0, 0);
+    }
+
+    .splash-header {
+        background-color:transparent!important;
     }
 
     .splash-header img {
         width:300px!important;
         height:auto;
+        mix-blend-mode: lighten;
+    }
+
+    #currentSongDisplay {
+        display:flex;
+        align-items: center;
+        height:65px!important;
+    }
+
+    #currentArtist {
+        color:rgb(63, 255, 149);
     }
 }
 

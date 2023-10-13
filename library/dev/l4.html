@@ -2,17 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Ahoy Indie Media</title>
-    <script type="text/javascript" src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js"></script>
-    <link rel="stylesheet" href="./l5mobile.css">
-    <link rel="stylesheet" href="./l5.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic HTML Player</title>
+<link rel="stylesheet" href="./l4.css">
 
 </head>
 <body>
 
-    <header class="splash-header">
-       <img src="../assets/u_ahoy23.png">
-    </header>
 
 <!-- Library -->
 <section>
@@ -98,59 +94,33 @@
     <button id="queueButton" onclick="playQueue()">Play Queue</button>
     <button onclick="nextSongInQueue()">Next Song</button>
 </section>
-<style>
-	.lilFloatButton {
-		font-size:12px;
-		border-style:solid;
-		border-color:white;
-	}
-</style>
 <!-- Player Controls -->
 <div id="player" class="floatPlayer ">
     <button onclick="previousSong()">Previous</button>
     <button onclick="playPauseSong()" id="playPauseButton">Play</button>
     <button onclick="nextSong()">Next</button>
-    <button class="lilFloatButton" onclick="addToPlaylist(currentSongIndex)">+ Playlist</button>
-    <button class="lilFloatButton" onclick="likeSong(currentSongIndex)"> + Current Song</button>
-    <div id="currentSongDisplay" onclick="playPauseSong()">Now Playing: <span id="currentArtist"></span> - <span id="currentSong"></span></div>
+    <div id="currentSongDisplay">Now Playing: <span id="currentArtist"></span> - <span id="currentSong"></span></div>
     <div id="progressBar">
-        <div id="progressThumb"></div>
-    </div>
+		<div id="progressThumb"></div>
+	  </div>
+	  
     <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="1" onchange="adjustVolume()">
     <audio id="audioPlayer" src="" ontimeupdate="updateProgressBar()"></audio>
-	<br>
-	<button onclick="toggleSections()">Toggle View</button>
-	<button onclick="rewindAudio()">Rewind 16 seconds</button>
-	<button onclick="fastForwardAudio()">+16 seconds</button>
-    <button onclick="shareCurrentSong()">Share</button>
-    <button id="muteButton">Mute</button>
-
 </div>
 <!-- 
 <div id="playerStats" class="playerStats">
     <p>Player Stats</p>
 </div>-->
-<div id="musicVisualizer" style="display: none;">
-    <!-- Your visualizer will go here -->
-    Music Visualizer Placeholder
-    <canvas id="canvas"></canvas>
-</div>
-
-<button id="castButton">Cast</button>
-<div id="castPopup" class="popup hidden">
-    <h3>Cast to a device</h3>
-    <p>Choose a device baby</p>
-    <!-- Device list will be populated here -->
-    <ul id="deviceList"></ul>
-    <button id="closeCastPopup">Close</button>
-</div>
-
 
 <footer>
 	<a href="https://ahoy.ooo"><img src="../assets/u_ahoy23.png" style="width:300px"></a>
-
+<div class="theme-selector">
+    <button onclick="setTheme('theme1')">Theme 1</button>
+    <button onclick="setTheme('theme2')">Theme 2</button>
+    <button onclick="setTheme('theme3')">Theme 3</button>
+</div>
 </footer>
-<script src="l5.js"></script>
+<script src="l4.js"></script>
 
 <script>
 	// Add an event listener to the progress bar
@@ -174,27 +144,5 @@ audioPlayer.addEventListener("timeupdate", updateProgressBar);
 // Rest of your code...
 
 </script>
-
-<script>
-
-document.addEventListener('DOMContentLoaded', function() {
-    populateSongs();
-
-    // This function will execute after the song list is populated
-    const urlParams = new URLSearchParams(window.location.search);
-    const songId = urlParams.get('songId');
-
-    if (songId) {
-        const songIndex = songs.findIndex(s => s.id == songId);
-        if (songIndex !== -1) {
-            playSongFromList(songIndex);
-        }
-    }
-});
-
-// ... Continue with your remaining existing code...
-
-</script>
-<script src="viz2.js"></script>
 </body>
 </html>
