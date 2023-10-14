@@ -111,24 +111,35 @@
 
 
 <div id="player" class="floatPlayer ">
-    <button onclick="previousSong()" title="Previous Song"><i class="fas fa-step-backward"></i></button>
-    <button onclick="playPauseSong()" id="playPauseButton" title="Play/Pause Song"><i class="fas fa-play"></i></button>
-    <button onclick="nextSong()" title="Next Song"><i class="fas fa-step-forward"></i></button>
-    <button class="lilFloatButton" onclick="addToPlaylist(currentSongIndex)" title="Add to Playlist"><i class="fas fa-plus"></i> Playlist</button>
-    <button class="lilFloatButton" onclick="likeSong(currentSongIndex)" title="Like Current Song"><i class="fas fa-heart"></i> Current Song</button>
+    <div>
+        <button onclick="previousSong()" title="Previous Song"><i class="fas fa-step-backward"></i></button>
+        <button onclick="playPauseSong()" id="playPauseButton" title="Play/Pause Song"><i class="fas fa-play"></i></button>
+        <button onclick="nextSong()" title="Next Song"><i class="fas fa-step-forward"></i></button>
+        <button onclick="rewindAudio()" title="Rewind 16 seconds"><i class="fas fa-undo"></i> 16s</button>
+        <button onclick="fastForwardAudio()" title="Fast Forward 16 seconds"><i class="fas fa-redo"></i>16s</button>
+        <button id="muteButton" title="Mute/Unmute"><i class="fas fa-volume-mute"></i></button>
+        </div>
+    
     <div id="currentSongDisplay" onclick="playPauseSong()" title="Play/Pause Song">Now Playing: <span id="currentArtist"></span> - <span id="currentSong"></span></div>
     <div id="progressBar" title="Song Progress">
         <div id="progressThumb"></div>
     </div>
-    <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="1" onchange="adjustVolume()" title="Adjust Volume">
+    
+    <style>
+     #bottomControls {
+    padding-top: 10px; /* Adjust as needed */
+}
+    </style>
+ 
+    <div id="bottomControls">
     <audio id="audioPlayer" src="" ontimeupdate="updateProgressBar()"></audio>
-    <button onclick="toggleSections()" title="Toggle View"><i class="fas fa-exchange-alt"></i></button>
-    <button onclick="rewindAudio()" title="Rewind 16 seconds"><i class="fas fa-undo"></i> 16s</button>
-    <button onclick="fastForwardAudio()" title="Fast Forward 16 seconds"><i class="fas fa-redo"></i>16s</button>
+    <button onclick="toggleSections()" title="Toggle View"><i class="fas fa-exchange-alt"></i> Toggle</button>
 
-    <button id="muteButton" title="Mute/Unmute"><i class="fas fa-volume-mute"></i></button>
-    <button onclick="shareCurrentSong()" title="Share Current Song"><i class="fas fa-share"></i></button>
-    <button id="castB">Cast</button>
+    <button class="lilFloatButton" onclick="addToPlaylist(currentSongIndex)" title="Add to Playlist"><i class="fas fa-plus"></i> Playlist</button>
+    <button class="lilFloatButton" onclick="likeSong(currentSongIndex)" title="Like Current Song"><i class="fas fa-heart"></i> Current Song</button>
+
+    <button onclick="shareCurrentSong()" title="Share Current Song"><i class="fas fa-share"></i> Share</button>
+    <button id="castB"><i class="fas fa-tv"></i></button></div>
 </div>
 
 

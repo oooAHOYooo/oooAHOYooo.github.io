@@ -10,13 +10,15 @@ body {
     position: fixed;
     bottom: 20px;
     left: 10px;
-    width: 530px;
+    width: 520px;
     border-style: solid;
     border-width: 1px;
     border-color: #040404; /* Change border color */
     background: rgba(255, 255, 255, 0.9); /* Change background color */
     backdrop-filter: blur(5px);
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* Add box shadow */
+    padding-left:20px;
+
 }
 .floatPlayer button {
 	margin-bottom:10px!important;
@@ -115,6 +117,7 @@ input, select {
     background-color: #2626a8cb;
     border-radius: 10px;
     position: relative;
+    overflow:hidden;
 }
 
 #progressBar > div {
