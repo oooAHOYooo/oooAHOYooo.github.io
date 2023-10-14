@@ -628,3 +628,15 @@ filter:opacity(.48);
 .new-song {
     background-color: #FFD700; /* Kodak Gold */
 }
+
+#topControlsWrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+#topControls-line-1, #topControls-line-2 {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+    

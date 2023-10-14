@@ -109,17 +109,20 @@
 </style>
 
 
-
 <div id="player" class="floatPlayer ">
-    <div>
+    <!-- MAKE ONE LINE ON DESKTOP + ONE LINE ON MOBILE-->
+    <div id="topControlsWrap">
+    <div id="topControls-line-1">
         <button onclick="previousSong()" title="Previous Song"><i class="fas fa-step-backward"></i></button>
         <button onclick="playPauseSong()" id="playPauseButton" title="Play/Pause Song"><i class="fas fa-play"></i></button>
         <button onclick="nextSong()" title="Next Song"><i class="fas fa-step-forward"></i></button>
+        </div>
+        <div id="topControls-line-2">
         <button onclick="rewindAudio()" title="Rewind 16 seconds"><i class="fas fa-undo"></i> 16s</button>
-        <button onclick="fastForwardAudio()" title="Fast Forward 16 seconds"><i class="fas fa-redo"></i>16s</button>
+        <button onclick="fastForwardAudio()" title="Fast Forward 16 seconds"><i class="fas fa-redo"></i> 16s</button>
         <button id="muteButton" title="Mute/Unmute"><i class="fas fa-volume-mute"></i></button>
         </div>
-    
+    </div>
     <div id="currentSongDisplay" onclick="playPauseSong()" title="Play/Pause Song">Now Playing: <span id="currentArtist"></span> - <span id="currentSong"></span></div>
     <div id="progressBar" title="Song Progress">
         <div id="progressThumb"></div>
