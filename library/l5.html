@@ -122,11 +122,13 @@
     </div>
     <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="1" onchange="adjustVolume()" title="Adjust Volume">
     <audio id="audioPlayer" src="" ontimeupdate="updateProgressBar()"></audio>
-    <button onclick="toggleSections()" title="Toggle Sections"><i class="fas fa-exchange-alt"></i></button>
-    <button onclick="rewindAudio()" title="Rewind 16 seconds"><i class="fas fa-undo"></i> 16 seconds</button>
-    <button onclick="fastForwardAudio()" title="Fast Forward 16 seconds"><i class="fas fa-redo"></i> 16 seconds</button>
-    <button onclick="shareCurrentSong()" title="Share Current Song"><i class="fas fa-share"></i></button>
+    <button onclick="toggleSections()" title="Toggle View"><i class="fas fa-exchange-alt"></i></button>
+    <button onclick="rewindAudio()" title="Rewind 16 seconds"><i class="fas fa-undo"></i> 16s</button>
+    <button onclick="fastForwardAudio()" title="Fast Forward 16 seconds"><i class="fas fa-redo"></i>16s</button>
+
     <button id="muteButton" title="Mute/Unmute"><i class="fas fa-volume-mute"></i></button>
+    <button onclick="shareCurrentSong()" title="Share Current Song"><i class="fas fa-share"></i></button>
+    <button id="castB">Cast</button>
 </div>
 
 
@@ -141,7 +143,7 @@
     <canvas id="canvas"></canvas>
 </div>
 
-<button id="castButton">Cast</button>
+
 <div id="castPopup" class="popup hidden">
     <h3>Cast to a device</h3>
     <p>Choose a device baby</p>
@@ -154,9 +156,23 @@
 <footer>
 	<a href="https://ahoy.ooo"><img src="../assets/u_ahoy23.png" style="width:300px"></a>
 
-</footer>
-<script src="l5.js"></script>
 
+<!-- ADD THE LEGEND -->
+<div class="legend"><p>Legend</p>
+    <div class="legend-item">
+        <span class="legend-color new-song"></span>
+        <span class="legend-label">New Songs</span>
+    </div>
+    <!-- Add more legend items as needed -->
+</div>
+
+</footer>
+
+
+<!-- END OF HTML -->
+<!-- THIS NEEDS TO GO BEFORE PROGRESS BAR (l5.js)-->
+<script src="l5.js"></script>
+<!-- THIS NEEDS TO GO BEFORE PROGRESS BAR (l5.js)-->
 <script>
 	// Add an event listener to the progress bar
 const progressBar = document.querySelector("#progressBar div");
@@ -200,6 +216,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // ... Continue with your remaining existing code...
 
 </script>
+
 <script src="viz2.js"></script>
 </body>
 </html>

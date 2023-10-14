@@ -550,18 +550,7 @@ display:none;            /* Some space on sides */
     display: none;
 }
 
-#castButton {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    border-style:solid;
-    text-transform:uppercase;
-    filter: opacity(.2);
-}
 
-#castButton:hover {
-    filter:opacity(1);
-}
 
 .new-song {
     background-color: #ffe02e!important; /* Change this to the color you want */
@@ -606,3 +595,33 @@ display:none;            /* Some space on sides */
   [title]:hover::before {
     opacity: 1;
   }
+
+  /*LEGEND */
+
+  .legend {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border: 1px solid #ffd90049; /* Kodak Gold */
+    border-radius: 5px;
+    width: 180px;
+    margin: 20px;
+filter:opacity(.48);
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.legend-color {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.new-song {
+    background-color: #FFD700; /* Kodak Gold */
+}
