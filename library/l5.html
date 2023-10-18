@@ -121,7 +121,7 @@
         <button onclick="rewindAudio()" title="Rewind 16 seconds"><i class="fas fa-undo"></i> 16s</button>
         <button onclick="fastForwardAudio()" title="Fast Forward 16 seconds"><i class="fas fa-redo"></i> 16s</button>
         <button id="muteButton" title="Mute/Unmute"><i class="fas fa-volume-mute"></i></button>
-        </div>
+    </div>
     </div>
     <div id="currentSongDisplay" onclick="playPauseSong()" title="Play/Pause Song">Now Playing: <span id="currentArtist"></span> - <span id="currentSong"></span></div>
     <div id="progressBar" title="Song Progress">
@@ -143,9 +143,18 @@
 
     <button onclick="shareCurrentSong()" title="Share Current Song"><i class="fas fa-share"></i> Share</button>
     <button id="castB"><i class="fas fa-tv"></i></button></div>
+    <button onclick="togglePlayer()">Toggle Player</button>    
+
 </div>
 
-
+<!-- MINI PLAYER-->
+<div id="miniPlayer" style="display: none;">
+    <div id="miniSongDisplay">Now Playing: <span id="minicurrentArtist"></span> - <span id="minicurrentSong"></span></div>
+    <button onclick="playPauseSong()" id="miniPlayPauseButton" title="Play/Pause Song"><i class="fas fa-play"></i></button>
+    <button onclick="nextSong()" id="miniNextButton" title="Next Song"><i class="fas fa-forward"></i></button>
+    <button onclick="addToPlaylist()" id="miniAddToPlaylistButton" title="Add to Playlist"><i class="fas fa-plus"></i></button>
+    <button onclick="togglePlayer()">Maximize Player</button>
+</div>
 
 <!-- 
 <div id="playerStats" class="playerStats">
@@ -180,6 +189,7 @@
     <!-- Add more legend items as needed -->
 </div>
 
+
 </footer>
 
 
@@ -206,10 +216,9 @@ progressBar.addEventListener("click", (e) => {
 // Update the progress bar continuously
 audioPlayer.addEventListener("timeupdate", updateProgressBar);
 
-// Rest of your code...
+
 
 </script>
-
 <script>
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -227,7 +236,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// ... Continue with your remaining existing code...
 
 </script>
 

@@ -111,13 +111,31 @@ function playSongFromList(index) {
     audioPlayer.src = songs[currentSongIndex].mp3url;
     audioPlayer.play();
     playPauseButton.innerText = "Pause";
+
+    // Updating Full Player's Song and Artist text
     document.getElementById('currentArtist').textContent = songs[currentSongIndex].artist || "";
     document.getElementById('currentSong').textContent = songs[currentSongIndex].songTitle || songs[currentSongIndex].title || "";
+
+    // Updating Mini Player's Song and Artist text
+    document.getElementById('minicurrentArtist').textContent = songs[currentSongIndex].artist || "";
+    document.getElementById('minicurrentSong').textContent = songs[currentSongIndex].songTitle || songs[currentSongIndex].title || "";
+    document.getElementById('miniSongDisplay').innerHTML = `Now Playing: ${songs[currentSongIndex].artist || ""} - ${songs[currentSongIndex].songTitle || songs[currentSongIndex].title || ""}`;
 }
+
 
 function nextSong() {
     currentSongIndex = (currentSongIndex + 1) % songs.length;
     playSongFromList(currentSongIndex);
+    var nextSong = getNextSong();
+    document.getElementById('currentSong').textContent = nextSong.title;
+    document.getElementById('currentArtist').textContent = nextSong.artist;
+    document.getElementById('minicurrentSong').textContent = nextSong.title;
+    document.getElementById('minicurrentArtist').textContent = nextSong.artist;
+    // Update mini player display
+    document.getElementById('minicurrentArtist').textContent = currentArtist;
+    document.getElementById('minicurrentSong').textContent = currentSong;
+    // Assume playSong function starts playing the song
+    playSong(nextSong);
 }
 
 function previousSong() {
@@ -158,6 +176,14 @@ function addToPlaylist(index) {
     currentPlaylist.push(songs[index]);
     populatePlaylist();
 }
+
+function addToPlaylist() {
+    var currentSong = document.getElementById('currentSong').textContent;
+    var currentArtist = document.getElementById('currentArtist').textContent;
+    // Assuming you have a function to add songs to a playlist
+    addSongToPlaylist(currentArtist, currentSong);
+}
+
 
 function populatePlaylist() {
     const playlistList = document.getElementById('playlistList');
@@ -440,6 +466,25 @@ function toggleSections() {
         visualizer.style.display = "block";
     }
 }
+
+function togglePlayer() {
+    var player = document.getElementById('player');
+    var miniPlayer = document.getElementById('miniPlayer');
+    var currentArtist = document.getElementById('currentArtist').textContent;
+    var currentSong = document.getElementById('currentSong').textContent;
+
+    if (player.style.display === "none") {
+        player.style.display = "block";
+        miniPlayer.style.display = "none";
+    } else {
+        player.style.display = "none";
+        miniPlayer.style.display = "block";
+        document.getElementById('minicurrentArtist').textContent = currentArtist;
+        document.getElementById('minicurrentSong').textContent = currentSong;
+        document.getElementById('miniSongDisplay').innerHTML = `Now Playing: ${currentArtist} - ${currentSong}`;
+    }
+}
+
 
 function fastForwardAudio() {
     const audioPlayer = document.getElementById('audioPlayer');
