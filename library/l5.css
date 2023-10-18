@@ -3,7 +3,7 @@ body {
     color: #FFD700; /* Kodak Gold */
     font-family: Arial, sans-serif;
 	padding-bottom:500px;
-	background-color:rgb(9, 0, 27);
+	background-color:rgb(113, 41, 255);
 }
 
 .floatPlayer {
@@ -518,7 +518,7 @@ display:none;            /* Some space on sides */
 
 .splash-header {
     background-size: cover;
-    height: 100vh;
+    height: 50vh;
     display: flex;
     justify-content: center;
     align-items: center;

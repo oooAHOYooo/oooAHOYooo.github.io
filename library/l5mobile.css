@@ -8,7 +8,8 @@
         padding:0px!important;
         margin:0px!important;
         display:flex;
-        background-color:black!important;
+        background-color:rgb(2, 0, 37)!important;
+        padding-bottom:150vh!important;
         
     }
     #player {
@@ -62,12 +63,14 @@
 
     .splash-header {
         background-color:transparent!important;
+        height:20vh;
     }
 
     .splash-header img {
         width:300px!important;
         height:auto;
         mix-blend-mode: lighten;
+        
     }
 
     #currentSongDisplay {
