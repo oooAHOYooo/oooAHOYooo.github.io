@@ -2,8 +2,9 @@
 
 ![alt text](https://oooahoyooo.github.io/assets/u_ahoy23.png)
 
-Ahoy V 1-0-1
-Beta Release Date - 0CT 15 2023
+Ahoy 
+V 
+0-0-3.1
 
 
 Live Preview of Ahoy (Beta) (https://ahoy.ooo)
@@ -26,7 +27,7 @@ Enjoy a curated selection of music, talk shows, interviews, and more, broadcasti
 ## Ad-Free Experience: 
 Say goodbye to annoying commercials and intrusive advertisements. Ahoy Indie Media prioritizes your viewing and listening experience by providing an ad-free environment throughout the platform.
 
-## On-Demand Content: 
+## Custom Music Library and Hand Selected Indie folk: 
 Gain access to a growing library of on-demand content, including exclusive interviews, archived radio shows, documentaries, and original series. Subscribe to unlock premium content and enjoy it at your convenience.
 
 ![alt text](https://oooahoyooo.github.io/images/Ahoy-Indie-Media---The-Rob-Show---Season-2---Episode-1---2023.jpg)
@@ -125,8 +126,8 @@ In summary, pursuing code independence offers us greater control, flexibility, a
 
 This is the home for the code of Ahoy Indie Media
 This code was hand-written by Alex Gonzalez circa 2023
-This code is consists of a HTML document with embedded JavaScript and Vue.js code. 
 
+# This code is cage free, public, and framework free having the website entirely consist of just html
 
 
 
@@ -137,5 +138,5 @@ We are actively seeking investors who share our vision for independent media and
 Additionally, we welcome contributions from individuals with expertise in media, technology, design, and marketing. If you believe in our mission and would like to contribute to the development and expansion of Ahoy Indie Media, please get in touch with us at contributors@ahoy.ooo
 
 
-# History behind Ahoy
+
 
