@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300&display=swap');
+
+body {
+	background-color:rgb(0, 0, 33);
+}
+
+p {
+	font-size:120px;
+	font-weight:900;
+	font-stretch:extra-expanded;
+}
+
+main {
+	background-color:white;
+	min-height:100vh;
+	max-height:100vh;
+	overflow-y:scroll;
+	border-radius:25px;
+	border-style:solid;
+	border-color:goldenrod;
+}
+
+.full-width {
+	width: 100%;
+	height:50vh;
+
+}
+
+.center {
+	display:flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+.superNav {
+	overflow: hidden;
+	padding: 10px;
+}
+
+.superNav button {
+	background-color: #ffdd3200;
+	border: solid;
+	color: rgb(0, 0, 0);
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+	padding: 10px 24px;
+	border-radius: 12px;
+	transition-duration: 0.4s;
+}
+
+#sortable {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+
+}
+
+.artist-button {
+    margin: 5px;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    background-color: #0f0f0f;
+	color:white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.artist-button:hover {
+    background-color: #eee;
+}
+
+.artist-button:active {
+    background-color: #ddd;
+}

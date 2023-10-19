@@ -1,33 +1,10 @@
 <html>
 	<head>
 		<title>Ahoy Artist</title>
+		<link rel="stylesheet" href="artistStyle.css">
 	</head>
 	<body>
-		<style>
-			p {
-				font-size:120px;
-				font-weight:300;
-				font-stretch:extra-expanded;
-			}
 
-			.full-width {
-				width: 100%;
-				height:50vh;
-
-			}
-
-			.center {
-				display:flex;
-				align-items: center;
-				justify-content: center;
-			}
-		</style>
-		<nav>
-			<button id="artistTemplate">Artist Template</button>
-			<button id="justinArena">Justin Arena</button>
-			<button id="youthXL">Youth XL</button>
-			<button id="samuelDylanWitch">Samuel Dylan Witch</button>
-		</nav>
 		<main>
 			<div class="full-width center"><p id="artistName"></p></div>
 			<div id="artistFeaturedImage"></div>
@@ -37,7 +14,33 @@
 			<div id="supportArtist"></div>
 			<div id="shareArtist"></div>
 			<div id="messageArtist"></div>
+			<a href="../pay/index.html">Tip Artist</a>
 		</main>
+		<footer>
+			
+			<div id="sortable full-width center">
+				<button class="artist-button" id="artistTemplate" onclick="loadArtistData(0);">Artist Template</button>
+				<button class="artist-button" id="justinArena" onclick="loadArtistData(1);">Justin Arena</button>
+				<button class="artist-button" id="youthXL" onclick="loadArtistData(2);">Youth XL</button>
+				<button class="artist-button" id="samuelDylanWitch" onclick="loadArtistData(3);">Samuel Dylan Witch</button>
+				<a href="total/justinArena/justinArena.html" class="artist-button" id="jA">Justin Arena</a>
+			</div>
+			<div id="ahoySuperMenu">
+			<a href="../index.html"><img src="../assets/u_ahoy23.png" style="width:40%;"></a>
+			<div class="navTippyWrap-index">
+				<a href="./cable/index.html"><button class="topNavButton-stream">Cable</button></a>
+				<a href="./updates/index.html"><button class="topNavButton-stream">Updates</button></a>
+				<a href="./radio/index.html"><button class="topNavButton-stream">Radio</button></a>
+				<a href="./library/l5.html"><button class="topNavButton-stream">Library</button></a>
+			  </div>
+			</div>
+			
+			<div class="superNav full-width center">
+				<button>Back to Ahoy</button>
+				<button>Back to Library</button>
+				<button>My Account</button>
+			</div>
+		</footer>
 		<script type="text/javascript">
 			async function loadArtistData(artistIndex) {
 				try {
