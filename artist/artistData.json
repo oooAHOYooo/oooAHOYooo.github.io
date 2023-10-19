@@ -1,0 +1,48 @@
+{
+	"artists": [
+	  {
+		"id": 0,
+		"name": "Artist Name",
+		"featuredImage": "image_url.jpg",
+		"location": "City, Country",
+		"showDates": ["Date1", "Date2", "Date3"],
+		"supportLink": "https://support.link",
+		"shareLink": "https://share.link",
+		"messageLink": "https://message.link",
+		"productSDK": "marketplace_data_for_Artist_Name"
+	  },
+	  {
+		"id": 1,
+		"name": "Justin Arena",
+		"featuredImage": "./total/justinArena/justinArena.jpeg",
+		"location": "Rockport Massachuets",
+		"showDates": ["Date1", "Date2", "Date3"],
+		"supportLink": "https://support.link",
+		"shareLink": "https://share.link",
+		"messageLink": "https://message.link",
+		"productSDK": "marketplace_data_for_Justin_Arena"
+	  },
+	  {
+		"id": 2,
+		"name": "YouthXL",
+		"featuredImage": "./total/justinArena/justinArena.jpeg",
+		"location": "Brooklyn New York",
+		"showDates": ["Date1", "Date2", "Date3"],
+		"supportLink": "https://support.link",
+		"shareLink": "https://share.link",
+		"messageLink": "https://message.link",
+		"productSDK": "marketplace_data_for_Justin_Arena"
+	  },
+	  {
+		"id": 3,
+		"name": "Samuel Dylan Witch",
+		"featuredImage": "./total/justinArena/justinArena.jpeg",
+		"location": "Valhalla New York",
+		"showDates": ["Date1", "Date2", "Date3"],
+		"supportLink": "https://support.link",
+		"shareLink": "https://share.link",
+		"messageLink": "https://message.link",
+		"productSDK": "marketplace_data_for_Justin_Arena"
+	  }
+	]
+  }

@@ -1,0 +1,72 @@
+<html>
+	<head>
+		<title>Ahoy Artist</title>
+	</head>
+	<body>
+		<style>
+			p {
+				font-size:120px;
+				font-weight:300;
+				font-stretch:extra-expanded;
+			}
+
+			.full-width {
+				width: 100%;
+				height:50vh;
+
+			}
+
+			.center {
+				display:flex;
+				align-items: center;
+				justify-content: center;
+			}
+		</style>
+		<nav>
+			<button id="artistTemplate">Artist Template</button>
+			<button id="justinArena">Justin Arena</button>
+			<button id="youthXL">Youth XL</button>
+			<button id="samuelDylanWitch">Samuel Dylan Witch</button>
+		</nav>
+		<main>
+			<div class="full-width center"><p id="artistName"></p></div>
+			<div id="artistFeaturedImage"></div>
+			<div class="center"><h2 id="artistLocation"></h2></div>
+
+			<div id="artistShowDates"></div>
+			<div id="supportArtist"></div>
+			<div id="shareArtist"></div>
+			<div id="messageArtist"></div>
+		</main>
+		<script type="text/javascript">
+			async function loadArtistData(artistIndex) {
+				try {
+					const response = await fetch('artistData.json');
+					if (!response.ok) throw new Error('Network response was not ok ' + response.statusText);
+					const data = await response.json();
+					const artist = data.artists[artistIndex];
+		
+					document.getElementById('artistName').textContent = artist.name;
+					document.getElementById('artistFeaturedImage').style.backgroundImage = 'url(' + artist.featuredImage + ')';
+					document.getElementById('artistLocation').textContent = artist.location;
+					document.getElementById('artistShowDates').textContent = artist.showDates.join(', ');
+					document.getElementById('supportArtist').innerHTML = '<a href="' + artist.supportLink + '">Support</a>';
+					document.getElementById('shareArtist').innerHTML = '<a href="' + artist.shareLink + '">Share</a>';
+					document.getElementById('messageArtist').innerHTML = '<a href="' + artist.messageLink + '">Message</a>';
+		
+				} catch (error) {
+					console.error('There has been a problem with your fetch operation:', error);
+				}
+			}
+		
+			// Add event listeners to the buttons
+			document.getElementById('artistTemplate').addEventListener('click', () => loadArtistData(0));
+			document.getElementById('justinArena').addEventListener('click', () => loadArtistData(1));
+			document.getElementById('youthXL').addEventListener('click', () => loadArtistData(2));
+			document.getElementById('samuelDylanWitch').addEventListener('click', () => loadArtistData(3));
+		
+			// Load the data for the first artist when the page loads
+			window.onload = () => { loadArtistData(1); };
+		</script>
+	</body>
+</html>
