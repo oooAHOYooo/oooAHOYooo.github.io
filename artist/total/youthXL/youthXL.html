@@ -1,29 +1,124 @@
 <html>
 <head>
-	<title>Youth XL</title>
-    <link rel="stylesheet" href="../totalTemplate-Fire.css">
+	<title>YouthXL</title>
+	<link rel="stylesheet" href="../totalTemplate-Fire.css">
+
+    <style>
+        .col1, .col2 {
+            width: 50%;
+            float: left;
+            box-sizing: border-box;
+        }
+    </style>
 </head>
 <body>
-	<main>
+	<nav>
+		<a href="../../index.html">Home</a>
+	</nav>
+<div class="col1">
 		<h1>YouthXL</h1>
 		<img src="justinArena.jpg">
-		<div id="payment-options">
-            <button onclick="pay('Support Artist', 10)">Support Artist ($10)</button>
-            <button onclick="pay('Membership', 20)">Membership ($20)</button>
-            <button onclick="pay('Burn CD', 15)">Burn CD ($15)</button>
-            <button onclick="pay('Artist Merch', 25)">Artist Merch ($25)</button>
-        </div>
+		
 			<div class="full-width center"><p id="artistName"></p></div>
-			<div id="artistFeaturedImage"></div>
-			<div class="center"><h2 id="artistLocation"></h2></div>
+		</div>
+		<div class="col2">
+	<main>
+	
 
-			<div id="artistShowDates"></div>
-			<div id="supportArtist"></div>
-			<div id="shareArtist"></div>
-			<div id="messageArtist"></div>
+						<!-- Upcoming Show Dates -->
+		<h2>Upcoming Show Dates</h2>
+		<table id="show-dates-table">
+			<tr>
+				<th>Date</th>
+				<th>Location</th>
+				<th>Time</th>
+			
+			</tr>
+			<!-- Sample data (Replace this with dynamic data from Songkick or other APIs) -->
+			<tr>
+				<td>Nov 15, 2023</td>
+				<td>New York</td>
+				<td>8:00 PM</td>
+				
+			</tr>
+			<tr>
+				<td>Dec 20, 2023</td>
+				<td>Los Angeles</td>
+				<td>9:00 PM</td>
+				
+			</tr>
+		</table>
+			
+
+			<!-- MARKET -->
+			<!-- Merchandise Listings -->
+			<div id="merchandise-list" class="merch-grid">
+				<!-- Sample merchandise items (you can dynamically populate this section) -->
+				<div class="merch-item">
+					<h2>Merchandise Title 1</h2>
+					<p>Description: This is a cool merch item.</p>
+					<p>Price: $20</p>
+					<button onclick="buyMerchandise('Merchandise Title 1', 20)">Buy</button>
+				</div>
+	
+				<div class="merch-item">
+					<h2>Merchandise Title 2</h2>
+					<p>Description: Another awesome merch item.</p>
+					<p>Price: $15</p>
+					<button onclick="buyMerchandise('Merchandise Title 2', 15)">Buy</button>
+				</div>
+	
+				<!-- You can add more merchandise items here -->
+			</div>
+			
+
+
+
+	</main>
+</div>
+	<footer>
+					<!-- User Account Information (simulated) -->
+					<div id="user-account">
+						<h2>Your User Account</h2>
+						<p>User: John Doe</p>
+						<p>Balance: $100</p>
+					</div>
+					<div id="supportArtist"></div>
+
 			<a href="../../../pay/index.html">Tip Artist</a>
 	
-	</main>
+	</footer>
+	<script>
+	var merchandiseList = document.getElementById('merchandise-list');
 
+	var merchItems = [
+		{ title: 'Merchandise Title 1', description: 'This is a cool merch item.', price: 20 },
+		{ title: 'Merchandise Title 2', description: 'Another awesome merch item.', price: 15 },
+		// Add more items here
+	];
+	
+	merchItems.forEach(function(item) {
+		var merchItemDiv = document.createElement('div');
+		merchItemDiv.className = 'merch-item';
+	
+		var title = document.createElement('h2');
+		title.textContent = item.title;
+		merchItemDiv.appendChild(title);
+	
+		var description = document.createElement('p');
+		description.textContent = 'Description: ' + item.description;
+		merchItemDiv.appendChild(description);
+	
+		var price = document.createElement('p');
+		price.textContent = 'Price: $' + item.price;
+		merchItemDiv.appendChild(price);
+	
+		var button = document.createElement('button');
+		button.textContent = 'Buy';
+		button.onclick = function() { buyMerchandise(item.title, item.price); };
+		merchItemDiv.appendChild(button);
+	
+		merchandiseList.appendChild(merchItemDiv);
+	});</script>
 </body>
 </html>
