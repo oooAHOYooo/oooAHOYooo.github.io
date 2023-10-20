@@ -106,14 +106,41 @@
 		"artist" : "Riddle M",
 		"songTitle": "Glued in the Nude",
 		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Riddle+M+-+Glued+in+Nude.mp3",
-		"new": true
+		"new": false
 	  },
 	  {
 		"id": 15,
 		"artist" : "Riddle M",
 		"songTitle": "Honeydew",
 		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Riddle+M+-+Honeydew.mp3",
-		"new": true
+		"new": false
+	  },
+	  {
+		"id": 16,
+		"artist" : "Justin Arena",
+		"songTitle": "Oceans",
+		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Justin+Arena+-+Oceans.mp3",
+		"artistUrl" : "https://ahoy.ooo/artist/total/justinArena/justinArena.html",
+		"new": true,
+		"artistPage": true 
+	  },
+	  {
+		"id": 17,
+		"artist" : "Justin Arena",
+		"songTitle": "When You Wake Up",
+		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Justin+Arena+-+Oceans.mp3",
+		"artistUrl" : "https://ahoy.ooo/artist/total/justinArena/justinArena.html",
+		"new": true,
+		"artistPage": true 
+	  },
+	  {
+		"id": 18,
+		"artist" : "Justin Arena",
+		"songTitle": "Crash The Party",
+		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Justin%20Arena%20-%20Crash%20The%20Party%20(ft.%20Nicole%20Gauthier).mp3",
+		"artistUrl" : "https://ahoy.ooo/artist/total/justinArena/justinArena.html",
+		"new": true,
+		"artistPage": true 
 	  }
 	]
   }
