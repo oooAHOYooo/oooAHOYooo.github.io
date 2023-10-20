@@ -64,6 +64,7 @@
 		"songTitle": "Summer Bummer",
 		"artistThumbnail": "UNSPLASH_URL_FOR_ARTIST_3",
 		"albumArtwork": "UNSPLASH_URL_FOR_ALBUM_3",
+		"artistUrl" : "https://ahoy.ooo/artist/total/youthXL/youthXL.html",
 		"mp3url": "https://ahoycollection.s3.amazonaws.com/Youth+XL+-+Summer+Bummer.mp3",
 		"play": false
 	  },
@@ -73,6 +74,7 @@
 		"songTitle": "Yoga",
 		"artistThumbnail": "UNSPLASH_URL_FOR_ARTIST_4",
 		"albumArtwork": "UNSPLASH_URL_FOR_ALBUM_4",
+		"artistUrl" : "https://ahoy.ooo/artist/total/youthXL/youthXL.html",
 		"mp3url": "https://ahoycollection.s3.amazonaws.com/Youth+XL+-+Yoga.mp3"
 	
 	  },
@@ -82,6 +84,7 @@
 		"songTitle": "Text Your Friends",
 		"artistThumbnail": "UNSPLASH_URL_FOR_ARTIST_6",
 		"albumArtwork": "UNSPLASH_URL_FOR_ALBUM_6",
+		"artistUrl" : "https://ahoy.ooo/artist/total/youthXL/youthXL.html",
 		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Youth+XL+-+Text+Your+Friends.mp3"
 		
 	  },
@@ -91,6 +94,7 @@
 		"songTitle": "Gypsy Gia",
 		"artistThumbnail": "UNSPLASH_URL_FOR_ARTIST_6",
 		"albumArtwork": "UNSPLASH_URL_FOR_ALBUM_6",
+		"artistUrl" : "https://ahoy.ooo/artist/total/youthXL/youthXL.html",
 		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Youth+XL+-+Gypsy+Gia.mp3"
 		
 	  },
@@ -121,7 +125,7 @@
 		"songTitle": "Oceans",
 		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Justin+Arena+-+Oceans.mp3",
 		"artistUrl" : "https://ahoy.ooo/artist/total/justinArena/justinArena.html",
-		"new": true,
+		"new": false,
 		"artistPage": true 
 	  },
 	  {
@@ -130,7 +134,7 @@
 		"songTitle": "When You Wake Up",
 		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Justin+Arena+-+Oceans.mp3",
 		"artistUrl" : "https://ahoy.ooo/artist/total/justinArena/justinArena.html",
-		"new": true,
+		"new": false,
 		"artistPage": true 
 	  },
 	  {
@@ -139,7 +143,7 @@
 		"songTitle": "Crash The Party",
 		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Justin%20Arena%20-%20Crash%20The%20Party%20(ft.%20Nicole%20Gauthier).mp3",
 		"artistUrl" : "https://ahoy.ooo/artist/total/justinArena/justinArena.html",
-		"new": true,
+		"new": false,
 		"artistPage": true 
 	  }
 	]
