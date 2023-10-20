@@ -143,8 +143,8 @@
 
     <button onclick="shareCurrentSong()" title="Share Current Song"><i class="fas fa-share"></i> Share</button>
     <button id="castB"><i class="fas fa-tv"></i></button></div>
-    <button onclick="togglePlayer()">Toggle Player</button>
-    <button id="artist">Artist Page of "Artist Name"</button>
+    <button onclick="togglePlayer()">Mini Player</button>
+    <button id="artistButton" onclick="goToArtistPage()">Artist Page of "Artist Name"</button>    <button id="saveArtist">Save Artist</button>
 
 </div>
 
@@ -161,12 +161,24 @@
 <div id="playerStats" class="playerStats">
     <p>Player Stats</p>
 </div>-->
+
+<!-- MUSIC VIZ-->
 <div id="musicVisualizer" style="display: none;">
     <!-- Your visualizer will go here -->
     Music Visualizer Placeholder
     <canvas id="canvas"></canvas>
 </div>
+<!-- END OF MUSIC VIZ-->
 
+<!-- ARTIST PREVIEW MODULE -->
+<!-- Add this modal code to your HTML file -->
+<div id="artistModal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal">&times;</span>
+      <iframe id="artistProfile" src="" width="100%" height="500px"></iframe>
+    </div>
+  </div>
+<!-- End of Artist Preview-->
 
 <div id="castPopup" class="popup hidden">
     <h3>Cast to a device</h3>

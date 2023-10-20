@@ -120,6 +120,19 @@ function playSongFromList(index) {
     document.getElementById('minicurrentArtist').textContent = songs[currentSongIndex].artist || "";
     document.getElementById('minicurrentSong').textContent = songs[currentSongIndex].songTitle || songs[currentSongIndex].title || "";
     document.getElementById('miniSongDisplay').innerHTML = `Now Playing: ${songs[currentSongIndex].artist || ""} - ${songs[currentSongIndex].songTitle || songs[currentSongIndex].title || ""}`;
+
+    
+
+      // Set the href attribute of the artist button and the src attribute of the iframe to the artist's URL
+      const artistUrl = songs[currentSongIndex].artistUrl;
+      if (artistUrl) {
+          artistButton.href = artistUrl;
+          artistProfile.src = artistUrl;
+          artistButton.textContent = `${songs[currentSongIndex].artist} Artist Page`; // Update the artist page button text
+      }
+  
+
+
 }
 
 
@@ -656,3 +669,49 @@ muteButton.addEventListener('click', function() {
         muteButton.innerText = "Unmute";
     }
 });
+
+// Get the artist button, modal, and close button elements
+const artistButton = document.getElementById('artist');
+const artistModal = document.getElementById('artistModal');
+const closeModal = document.getElementById('closeModal');
+const artistProfile = document.getElementById('artistProfile');
+
+// Add event listener to the artist button to open the modal
+artistButton.addEventListener('click', function(event) {
+    event.preventDefault();  // Prevent the default action (navigation)
+    artistModal.style.display = "block";
+});
+
+// Add event listener to the close button to close the modal
+closeModal.addEventListener('click', function() {
+    artistModal.style.display = "none";
+});
+
+// Get the save artist button
+const saveArtistButton = document.getElementById('saveArtist');
+
+// Add event listener to the save artist button
+saveArtistButton.addEventListener('click', function() {
+    // Save the current artist to localStorage
+    localStorage.setItem('savedArtist', songs[currentSongIndex].artist);
+    alert(`Artist ${songs[currentSongIndex].artist} has been saved.`);
+});
+
+
+
+
+function goToArtistPage() {
+    // Get the current song index
+    const currentSongIndex = document.getElementById('currentSong').dataset.index;
+
+    // Get the song data from the songs array
+    const songData = songs[currentSongIndex];
+
+    // Check if the song has an artist URL
+    if (songData.artistUrl) {
+        // Navigate to the artist page
+        window.location.href = songData.artistUrl;
+    } else {
+        alert('No artist page available for this song.');
+    }
+}
