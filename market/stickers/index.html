@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sticker Marketplace</title>
+<link rel="stylesheet" href="sM.css">
+<!-- Add the link to Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<!-- Add the link to the Barlow font from Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<div class="content">
+    <div id="sticker-list" class="grid-container"></div>
+
+    <div id="cart">
+        <h2>Your Cart</h2>
+        <div id="cart-items"></div>
+        <div id="total-price"></div>
+        <button id="purchase-button" disabled>Purchase</button>
+    </div>
+</div>
+<!-- ... rest of your HTML ... -->
+
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="lightbox image">
+</div>
+
+<!-- ... rest of your HTML ... -->
+<section id="splash">
+    <h2>Support Us By Buying Stickers</h2>
+    <p>Buying stickers is how we keep the lights on. Check out our special offers:</p>
+    <ul>
+        <li>20 stickers for $30</li>
+        <li>10 stickers for $10</li>
+    </ul>
+</section>
+
+<!-- ... rest of your HTML ... -->
+
+<footer>
+    <p>Thank you for your support!</p>
+    <a href="../../index.html"><img src="/assets/u_ahoy23.png" alt="Logo" class="logo"></a>
+</footer>
+
+<script src="sM.js"></script>
+</body>
+</html>
