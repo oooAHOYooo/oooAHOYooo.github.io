@@ -12,6 +12,7 @@
 		"id": 2,
 		"artist": "Samuel Dylan Witch",
 		"songTitle": "Beneath the Willow Tree",
+		"artistUrl" : "https://ahoy.ooo/artist/total/sdw/sdw.html",
 		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Beneath+the+Willow+Tree.mp3",
 		"play": false
 	  },
