@@ -243,6 +243,10 @@ section.favorite {
     overflow: hidden;
 }
 
+#libraryTable a {
+    color: #FFD700; /* Kodak Gold */
+}
+
 #libraryTable th, #libraryTable td {
     padding: 8px 12px;
     text-align: left;

@@ -289,7 +289,7 @@ function populateSongs() {
         const isNew = song.new ? 'new-song' : '';
         const songRow = `
             <tr class="${isNew}">
-                <td>${song.artist}</td>
+                <td><a href="${song.artistUrl}" target="_blank">${song.artist}</a></td>
                 <td>${song.songTitle}</td>
                 <td><button onclick="playSongFromList(${index})">Play</button></td>
                 <td><button onclick="addToPlaylist(${index})">Add to Playlist</button></td>
@@ -300,7 +300,6 @@ function populateSongs() {
         songList.innerHTML += songRow;
     });
 }
-
 // ... your fetch function and event listener ...
 
 // Add an event listener to the progress bar for drag-and-drop functionality
@@ -717,9 +716,4 @@ function goToArtistPage() {
 }
 
 
-    document.addEventListener('DOMContentLoaded', function() {
-        if(window.innerWidth <= 768) {
-            document.getElementById('player').style.display = 'none';
-            document.getElementById('miniPlayer').style.display = 'block';
-        }
-    });
+ 
