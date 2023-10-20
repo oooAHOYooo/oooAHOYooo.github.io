@@ -715,3 +715,11 @@ function goToArtistPage() {
         alert('No artist page available for this song.');
     }
 }
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+        if(window.innerWidth <= 768) {
+            document.getElementById('player').style.display = 'none';
+            document.getElementById('miniPlayer').style.display = 'block';
+        }
+    });

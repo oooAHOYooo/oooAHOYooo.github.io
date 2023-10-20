@@ -252,7 +252,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 </script>
-
+<!-- DISPLAY MINI PLAYER BY DEFAULT ON MOBILE-->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        if(window.innerWidth <= 768) {
+            document.getElementById('player').style.display = 'none';
+            document.getElementById('miniPlayer').style.display = 'block';
+        }
+    });
+</script>
 <script src="viz2.js"></script>
 </body>
 </html>
