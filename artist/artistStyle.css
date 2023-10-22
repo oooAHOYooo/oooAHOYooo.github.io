@@ -10,15 +10,6 @@ p {
 	font-stretch:extra-expanded;
 }
 
-main {
-	background-color:white;
-	min-height:100vh;
-	max-height:100vh;
-	overflow-y:scroll;
-	border-radius:25px;
-	border-style:solid;
-	border-color:goldenrod;
-}
 
 .full-width {
 	width: 100%;
@@ -41,7 +32,7 @@ main {
 .superNav button {
 	background-color: #ffdd3200;
 	border: solid;
-	color: rgb(0, 0, 0);
+	color: rgb(255, 255, 255);
 	text-align: center;
 	text-decoration: none;
 	display: inline-block;
@@ -53,30 +44,66 @@ main {
 	transition-duration: 0.4s;
 }
 
-#sortable {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-
-
+.superNav button:hover {
+	background-color: #ffdd32;
+	border-color: #ffdd32;
+	color: black;
 }
 
-.artist-button {
-    margin: 5px;
-    padding: 10px;
-    font-size: 16px;
-    border: 2px solid #333;
-    border-radius: 5px;
-    background-color: #0f0f0f;
-	color:white;
+
+
+  
+#artistGrid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	gap: 20px;
+	justify-items: center;
+	max-width:600px;
+	border-style:solid;
+	border-color:white;
+	width: 90%;
+}
+  
+  .artistItem {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	cursor: pointer;
+	aspect-ratio: 1 / 1; /* This makes the grid items square */
+  }
+  
+  .artistItem img {
+	width:125px;
+	height: 125px;
+	border-style:solid;
+	border-color:white;
+	object-fit: cover; /* This will ensure the image covers the entire square */
+  }
+
+  .artistItem img:hover {
+	opacity: 0.5;
+  }
+  
+  .artistItem .artistName {
+	text-align: center;
+  }
+
+  #artistGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.artistItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     cursor: pointer;
-    transition: background-color 0.3s;
 }
 
-.artist-button:hover {
-    background-color: #eee;
-}
-
-.artist-button:active {
-    background-color: #ddd;
+.artistName {
+    margin-top: 10px;
 }

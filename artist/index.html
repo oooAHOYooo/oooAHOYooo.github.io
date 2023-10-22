@@ -5,26 +5,85 @@
 	</head>
 	<body>
 
-		<main>
-			<div class="full-width center"><p id="artistName"></p></div>
-			<div id="artistFeaturedImage"></div>
-			<div class="center"><h2 id="artistLocation"></h2></div>
+<style>
+	.fullGridWrap {
+		width:100%;
+		height:100%;
+		background-color: #000;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
 
-			<div id="artistShowDates"></div>
-			<div id="supportArtist"></div>
-			<div id="shareArtist"></div>
-			<div id="messageArtist"></div>
-			<a href="../pay/index.html">Tip Artist</a>
-		</main>
+	.gridMenuButtons {
+		display:flex;
+		flex-direction: row;
+	}
+
+	.gridMenuButtons button {
+		margin: 10px;
+		background-color: #000;
+		color: #fff;
+		border: 1px solid #fff;
+		padding: 10px;
+		min-width: 200px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+	}
+
+	.gridMenuButtons button:hover {
+		opacity: 0.5;
+cursor: pointer;	}
+</style>
+<div class="fullGridWrap">
+	<!-- GRID FOR ARTIST -->
+	<div class="gridMenuButtons">
+	<button id="sortAlphabetically">Sort Alphabetically</button>
+<button id="reverseOrder">Reverse Order</button>
+</div>
+
+	<div id="artistGrid"></div>
+</div>
 		<footer>
 			
-			<div id="sortable full-width center">
-				<button class="artist-button" id="artistTemplate" onclick="loadArtistData(0);">Artist Template</button>
-				<button class="artist-button" id="justinArena" onclick="loadArtistData(1);">Justin Arena</button>
-				<button class="artist-button" id="youthXL" onclick="loadArtistData(2);">Youth XL</button>
-				<button class="artist-button" id="samuelDylanWitch" onclick="loadArtistData(3);">Samuel Dylan Witch</button>
-				<a href="total/justinArena/justinArena.html" class="artist-button" id="jA">Justin Arena</a>
-			</div>
+			<style>
+				.topNavButton-stream {
+  color: #fff;
+  max-width: 220px;
+  transition: background-color 0.3s; /* Add a transition for smooth color change */
+}
+
+.topNavButton-stream:hover {
+	
+  color: navy!important;
+  background-color: rgba(0, 0, 0, 0.689) !important;
+  animation: liquidBackground 0.8s infinite; 
+  animation: pulse 1s infinite;
+}
+
+
+/* ANIMATIONS */
+@keyframes liquidBackground {
+  0% {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0); /* Add a box shadow effect */
+  }
+  50% {
+    background-color: rgba(255, 255, 255, 0.8) !important;
+    box-shadow: 0 0 10px rgba(0, 191, 255, 0.3); /* Modify the box shadow effect */
+  }
+  100% {
+    background-color: rgba(12, 192, 174, 0.685) !important;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.326); /* Add a box shadow effect */
+  }
+}
+
+			</style>
+		
+
 			<div id="ahoySuperMenu">
 			<a href="../index.html"><img src="../assets/u_ahoy23.png" style="width:40%;"></a>
 			<div class="navTippyWrap-index">
@@ -32,6 +91,7 @@
 				<a href="./updates/index.html"><button class="topNavButton-stream">Updates</button></a>
 				<a href="./radio/index.html"><button class="topNavButton-stream">Radio</button></a>
 				<a href="./library/l5.html"><button class="topNavButton-stream">Library</button></a>
+				<a href="./artist/index.html"><button class="topNavButton-stream">Artist</button></a>
 			  </div>
 			</div>
 			
@@ -42,34 +102,55 @@
 			</div>
 		</footer>
 		<script type="text/javascript">
-			async function loadArtistData(artistIndex) {
+			async function loadArtists() {
 				try {
 					const response = await fetch('artistData.json');
 					if (!response.ok) throw new Error('Network response was not ok ' + response.statusText);
 					const data = await response.json();
-					const artist = data.artists[artistIndex];
-		
-					document.getElementById('artistName').textContent = artist.name;
-					document.getElementById('artistFeaturedImage').style.backgroundImage = 'url(' + artist.featuredImage + ')';
-					document.getElementById('artistLocation').textContent = artist.location;
-					document.getElementById('artistShowDates').textContent = artist.showDates.join(', ');
-					document.getElementById('supportArtist').innerHTML = '<a href="' + artist.supportLink + '">Support</a>';
-					document.getElementById('shareArtist').innerHTML = '<a href="' + artist.shareLink + '">Share</a>';
-					document.getElementById('messageArtist').innerHTML = '<a href="' + artist.messageLink + '">Message</a>';
-		
+					const artistGrid = document.getElementById('artistGrid');
+
+					data.artists.forEach(artist => {
+						const artistItem = document.createElement('div');
+						artistItem.classList.add('artistItem');
+						artistItem.addEventListener('click', () => window.location.href = artist.artistUrl);
+
+						const artistImage = document.createElement('img');
+						artistImage.src = artist.featuredImage;
+						artistItem.appendChild(artistImage);
+
+						const artistName = document.createElement('div');
+						artistName.classList.add('artistName');
+						artistName.textContent = artist.name;
+						artistItem.appendChild(artistName);
+
+						artistGrid.appendChild(artistItem);
+					});
 				} catch (error) {
 					console.error('There has been a problem with your fetch operation:', error);
 				}
 			}
-		
-			// Add event listeners to the buttons
-			document.getElementById('artistTemplate').addEventListener('click', () => loadArtistData(0));
-			document.getElementById('justinArena').addEventListener('click', () => loadArtistData(1));
-			document.getElementById('youthXL').addEventListener('click', () => loadArtistData(2));
-			document.getElementById('samuelDylanWitch').addEventListener('click', () => loadArtistData(3));
-		
-			// Load the data for the first artist when the page loads
-			window.onload = () => { loadArtistData(1); };
+
+			document.getElementById('sortAlphabetically').addEventListener('click', () => {
+    sortArtists(true);
+});
+
+document.getElementById('reverseOrder').addEventListener('click', () => {
+    sortArtists(false);
+});
+
+function sortArtists(asc = true) {
+    const artistGrid = document.getElementById('artistGrid');
+    const sortedArtists = Array.from(artistGrid.children).sort((a, b) => {
+        const artistA = a.querySelector('.artistName').textContent;
+        const artistB = b.querySelector('.artistName').textContent;
+        return asc ? artistA.localeCompare(artistB) : artistB.localeCompare(artistA);
+    });
+    sortedArtists.forEach(artist => artistGrid.appendChild(artist));
+}
+
+
+			// Load the artists when the page loads
+			window.onload = loadArtists;
 		</script>
 	</body>
 </html>
