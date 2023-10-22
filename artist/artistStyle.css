@@ -55,14 +55,13 @@ p {
   
 #artistGrid {
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+	grid-template-columns: repeat(2, 1fr); /* Changed from 3 to 2 */
 	grid-template-rows: repeat(3, 1fr);
 	gap: 20px;
 	justify-items: center;
-	max-width:600px;
 	border-style:solid;
 	border-color:white;
-	width: 90%;
+width:70%;	height:100%;
 }
   
   .artistItem {
@@ -74,8 +73,8 @@ p {
   }
   
   .artistItem img {
-	width:125px;
-	height: 125px;
+	width:525px;
+	height: 525px;
 	border-style:solid;
 	border-color:white;
 	object-fit: cover; /* This will ensure the image covers the entire square */
