@@ -1,7 +1,9 @@
 <html>
 <head>
 	<title>Justin Arena</title>
-	<link rel="stylesheet" href="../totalTemplate-Fire.css">
+	<link rel="stylesheet" href="../totalTemplate-Wind.css">
+	<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
 
     <style>
         .col1, .col2 {
@@ -73,52 +75,18 @@
 			
 
 
-
+<!-- Insert the missing divs -->
+<div id="user-account"></div>
+<div id="supportArtist"></div>
 	</main>
 </div>
 	<footer>
-					<!-- User Account Information (simulated) -->
-					<div id="user-account">
-						<h2>Your User Account</h2>
-						<p>User: John Doe</p>
-						<p>Balance: $100</p>
-					</div>
-					<div id="supportArtist"></div>
-
+					
 			<a href="../../../pay/index.html">Tip Artist</a>
 	
 	</footer>
-	<script>
-	var merchandiseList = document.getElementById('merchandise-list');
 
-	var merchItems = [
-		{ title: 'Merchandise Title 1', description: 'This is a cool merch item.', price: 20 },
-		{ title: 'Merchandise Title 2', description: 'Another awesome merch item.', price: 15 },
-		// Add more items here
-	];
+	<script src="../../artistFire.js"></script>
 	
-	merchItems.forEach(function(item) {
-		var merchItemDiv = document.createElement('div');
-		merchItemDiv.className = 'merch-item';
-	
-		var title = document.createElement('h2');
-		title.textContent = item.title;
-		merchItemDiv.appendChild(title);
-	
-		var description = document.createElement('p');
-		description.textContent = 'Description: ' + item.description;
-		merchItemDiv.appendChild(description);
-	
-		var price = document.createElement('p');
-		price.textContent = 'Price: $' + item.price;
-		merchItemDiv.appendChild(price);
-	
-		var button = document.createElement('button');
-		button.textContent = 'Buy';
-		button.onclick = function() { buyMerchandise(item.title, item.price); };
-		merchItemDiv.appendChild(button);
-	
-		merchandiseList.appendChild(merchItemDiv);
-	});</script>
 </body>
 </html>

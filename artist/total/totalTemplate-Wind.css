@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300&display=swap');
+
+body {
+    font-family: 'Barlow', sans-serif;
+    background-color: rgb(0, 0, 33);
+    color: rgb(255, 255, 255);
+}
+
+.container {
+    width: 80vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    width: 100%;
+    background-color: #000;
+    border: 1px solid #fff;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+}
+
+.card-section {
+    padding: 20px;
+}
+
+h1 {
+    font-size: 120px;
+    margin-top: 0;
+    text-align: center;
+    color: #fff;
+    line-height:80%;
+    font-weight:900;
+    font-stretch:extra-expanded;
+}
+
+img {
+    max-width: 50%;
+    display: block;
+    margin: 20px auto;
+}
+
+#show-dates-table {
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+#show-dates-table th, #show-dates-table td {
+    padding: 10px;
+    border-bottom: 1px solid #fff;
+}
+
+#merchandise-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+#merchandise-list .merch-item {
+    border: 1px solid #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+footer {
+    /* Your footer styles */
+}
+
+/* Media queries for mobile devices */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        width: 100vw;
+    }
+
+    h1 {
+        font-size: 50px;
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    #merchandise-list {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
