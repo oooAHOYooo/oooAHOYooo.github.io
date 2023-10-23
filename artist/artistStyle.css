@@ -13,7 +13,7 @@ p {
 
 .full-width {
 	width: 100%;
-	height:50vh;
+	height:auto;
 
 }
 
@@ -106,3 +106,96 @@ width:70%;	height:100%;
 .artistName {
     margin-top: 10px;
 }
+
+
+.fullGridWrap {
+	width:100%;
+	background-color: #000;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position:fixed;
+	top:0;
+	
+}
+
+.gridMenuButtons {
+	display:flex;
+	flex-direction: row;
+}
+
+.gridMenuButtons button {
+	margin: 10px;
+	background-color: #000;
+	color: #fff;
+	border: 1px solid #fff;
+	padding: 10px;
+	min-width: 200px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+
+.gridMenuButtons button:hover {
+	opacity: 0.5;
+}
+
+.fluidWrap { 
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    
+	width:100%;
+}
+
+	.grid-container {
+		display: grid;
+		grid-template-columns: repeat(3, 375px);
+		grid-gap: 10px;
+	}
+	
+	.grid-item {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 375px;
+		width: 375px;
+		border: 1px solid rgba(255, 255, 255, 0.19);
+		text-align: center;
+		text-decoration: none;
+		color: rgb(255, 255, 255);
+		font-size: 18px;
+		transition: background-color 0.3s;
+	}
+	
+	.grid-item:hover {
+		background-color: rgba(0, 0, 0, 0.521);
+		border-color:white;
+	}
+
+	.grid-item a {
+		color:white;
+		text-decoration:none;
+		font-family: 'Courier New', monospace;
+		font-size: 16px;
+		kerning: 1px;
+		line-height: .85;
+
+	}
+	
+	/* Mobile Responsive */
+	@media (max-width: 768px) {
+		.grid-container {
+			grid-template-columns: repeat(4, 125px);
+		}
+	
+		.grid-item {
+			height: 125px;
+			width: 125px;
+		}
+	}
+
+	
+	
