@@ -22,7 +22,6 @@
 			<button id="reverseOrder">Reverse Order</button>
 		</div>
 
-		
 	</div>
 
 
@@ -48,33 +47,7 @@
 			<button>My Account</button>
 		</div>
 	</footer>
-	<script type="text/javascript">
-window.onload = function() {
-    fetch('artist/artistData.json')
-        .then(response => response.json())
-        .then(data => {
-            const gridContainer = document.getElementById('grid-container');
-            data.artists.forEach(artist => {
-                const gridItem = document.createElement('div');
-                gridItem.className = 'grid-item';
-
-                const artistLink = document.createElement('a');
-                artistLink.href = artist.artistUrl;
-                artistLink.innerHTML = artist.name.split(' ').join('<br>');
-                gridItem.appendChild(artistLink);
-
-                const artistImage = document.createElement('img');
-                artistImage.src = artist.featuredImage;
-                artistImage.alt = artist.name;
-                gridItem.appendChild(artistImage);
-
-                gridContainer.appendChild(gridItem);
-            });
-        })
-        .catch(error => console.error('Error:', error));
-};
-
-	</script>
+<script src="artistScript.js"></script>
 </body>
 
 </html>
