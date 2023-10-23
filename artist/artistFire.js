@@ -15,11 +15,12 @@ firebase.auth().onAuthStateChanged((user) => {
 	const supportArtistDiv = document.getElementById("supportArtist");
 	if (user) {
 		userAccountDiv.innerHTML = `
+        <div class="userBox">
 			<h2>Your User Account</h2>
 			<p>User: ${user.email}</p>
-			<p>Balance: $100</p>
+			<p>Balance: $100</p></div>
 		`;
-		supportArtistDiv.innerHTML = '<a href="../../../pay/index.html">Tip Artist</a>';
+		
 	} else {
 		userAccountDiv.innerHTML = `
 			Please log in to view your account information.
