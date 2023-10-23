@@ -4,6 +4,7 @@ body {
     font-family: 'Barlow', sans-serif;
     background-color: rgb(0, 0, 33);
     color: rgb(255, 255, 255);
+    padding:20px;
 }
 
 .container {
@@ -62,6 +63,15 @@ img {
     border-bottom: 1px solid #fff;
 }
 
+table {
+    margin: 30px auto;
+    margin-right:30px;
+}
+
+.merch-grid {
+    margin:20px;
+}
+
 #merchandise-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -90,7 +100,9 @@ img {
     }
 
     #merchandise-list {
+        margin-top:20px;
         grid-template-columns: repeat(1, 1fr);
+        
     }
 }
 
