@@ -74,10 +74,6 @@ img {
     text-align: center;
 }
 
-footer {
-    /* Your footer styles */
-}
-
 /* Media queries for mobile devices */
 @media screen and (max-width: 768px) {
     .container {
@@ -112,11 +108,12 @@ footer {
         padding: 10px 20px;
         color: #fff;
         text-decoration: none;
-        background-color: rgba(0, 123, 255, 0.6);
+        background-color: rgba(0, 123, 255, 0.5);
         border: 2px solid #007bff;
         border-radius: 15px;
         transition: background-color 0.2s ease;
         margin:5px;
+
     }
 
     footer a:hover {
@@ -134,4 +131,55 @@ footer {
         font-size: 18px; /* Text size */
         width: 300px; /* Width of the box */
         margin: 0 auto; /* Center the box */
+    }
+
+
+    @media screen and (max-width: 768px) {
+        body, .container, .col1, .col2, .card, .card-section, h1, img, #show-dates-table, #merchandise-list, footer, .userBox {
+            width: 90%; /* Adjust as needed */
+            margin: 0 auto;
+            padding: 5%; /* Adjust as needed */
+        }
+    
+        .container {
+            flex-direction: column;
+        }
+    
+        .col1, .col2 {
+            width: 100%;
+            float: none;
+        }
+    
+        h1 {
+            font-size: 50px;
+        }
+    
+        img {
+            max-width: 100%;
+        }
+    
+        #merchandise-list {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    
+        footer a {
+            width: 100%;
+            box-sizing: border-box;
+        }
+    
+        .userBox {
+            width: 100%;
+        }
+
+        .userBox {
+            width: 90%; /* Adjust as needed */
+            padding: 5%; /* Adjust as needed */
+            margin: 0 auto;
+        }
+
+        footer a {
+            min-width:200px;
+            display:flex;
+            justify-content:center;
+        }
     }
