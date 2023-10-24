@@ -55,7 +55,7 @@
 	},
 	{
 		"id": 5,
-		"name": "Artist One",
+		"name": "Clones of Clarence",
 		"featuredImage": "./total/artistOne/artistOne.jpg",
 		"location": "Location One",
 		"showDates": ["Date1", "Date2", "Date3"],
