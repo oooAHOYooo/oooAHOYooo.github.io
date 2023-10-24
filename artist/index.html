@@ -26,28 +26,18 @@
 
 <div class="fluidWrap">
 	<div id="grid-container" class="grid-container"></div>
-
-   
 </div>
-	<!-- 
-	<div id="artistGrid"></div>-->
+
 	<div class="fullGridWrap">
 		<!-- GRID FOR ARTIST -->
-		<div class="gridMenuButtons">
-			<button id="sortAlphabetically">Sort A-Z</button>
-			<button id="reverseOrder">Recently Added</button>
-			<button id="myArtists">Saved Artists</button>
-			
-		</div>
-
+	
 	</div>
-
-
-
+	<div class="gridMenuButtons">
+		<button id="sortAlphabetically">Sort A-Z</button>
+		<button id="reverseOrder">Recently Added</button>
+		<button id="myArtists">Saved Artists</button>	
+	</div>
 	<footer>
-
-		
-
 		<div id="ahoySuperMenu">
 			<a href="../index.html"><img src="../assets/u_ahoy23.png" style="width:40%;"></a>
 			<div class="navTippyWrap-index">
@@ -66,47 +56,7 @@
 		</div>
 	</footer>
 	<script src="featureSearch.js"></script>
-<!--script src="artistScript.js"></script>
-<script>
-	// Fetch the data from the JSON file
-fetch('artistData.json')
-  .then(response => response.json())
-  .then(data => {
-    // Save the artists data in a variable
-    let artists = data.artists;
 
-    // Get the search input element
-    let searchInput = document.querySelector('.search-input');
-
-    // Add an event listener to the search input
-    searchInput.addEventListener('input', function() {
-      // Get the search term
-      let searchTerm = this.value;
-
-      // Filter the artists based on the search term
-      let filteredArtists = artists.filter(artist => artist.name.toLowerCase().includes(searchTerm.toLowerCase()));
-
-      // Update the grid with the filtered artists
-      updateGrid(filteredArtists);
-    });
-  });
-
-// Function to update the grid
-function updateGrid(artists) {
-  // Get the grid container element
-  let gridContainer = document.querySelector('#grid-container');
-
-  // Clear the grid
-  gridContainer.innerHTML = '';
-
-  // Add the filtered artists to the grid
-  artists.forEach(artist => {
-    let artistElement = document.createElement('div');
-    artistElement.textContent = artist.name;
-    gridContainer.appendChild(artistElement);
-  });
-}
-</script>
 </body>
 
 </html>
