@@ -152,7 +152,44 @@
 		"artistUrl" : "https://ahoy.ooo/artist/total/justinArena/justinArena.html",
 		"new": false,
 		"artistPage": true 
+	  },
+	  {
+		"id": 19,
+		"artist" : "Clones of Clarence",
+		"songTitle": "Lost Time",
+		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Clones+of+Clarence+-+Lost+Time+(I+miss+you).mp3",
+		"artistUrl" : "https://ahoy.ooo/artist/total/clonesofclarence/clonesofclarence.html",
+		"new": true,
+		"artistPage": true 
+	  },
+	  {
+		"id": 20,
+		"artist" : "Clones of Clarence",
+		"songTitle": "Salty Salsa",
+		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Clones+of+Clarence+-+Salty+Salsa.mp3",
+		"artistUrl" : "https://ahoy.ooo/artist/total/clonesofclarence/clonesofclarence.html",
+		"new": true,
+		"artistPage": true 
+	  },
+	  {
+		"id": 21,
+		"artist" : "Clones of Clarence",
+		"songTitle": "Proj 17",
+		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Clones+of+Clarence+-+Proj+17.mp3",
+		"artistUrl" : "https://ahoy.ooo/artist/total/clonesofclarence/clonesofclarence.html",
+		"new": true,
+		"artistPage": true 
+	  },
+	  {
+		"id": 22,
+		"artist" : "Clones of Clarence",
+		"songTitle": "3AM",
+		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Clones+of+Clarence+-+3+AM.mp3",
+		"artistUrl" : "https://ahoy.ooo/artist/total/clonesofclarence/clonesofclarence.html",
+		"new": true,
+		"artistPage": true 
 	  }
+	
 	]
   }
   
