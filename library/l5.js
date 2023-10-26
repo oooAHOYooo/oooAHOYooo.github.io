@@ -278,7 +278,7 @@ function populateFavorites() {
     });
 }
 
-// ... rest of your existing functions ...
+
 
 function populateSongs() {
     const songList = document.getElementById('songList');
@@ -289,11 +289,12 @@ function populateSongs() {
         const isNew = song.new ? 'new-song' : '';
         const songRow = `
             <tr class="${isNew}">
+                <td><button onclick="addToQueue(${index})">Add to Queue</button></td>
                 <td><a href="${song.artistUrl}" target="_blank">${song.artist}</a></td>
                 <td>${song.songTitle}</td>
                 <td><button onclick="playSongFromList(${index})">Play</button></td>
                 <td><button onclick="addToPlaylist(${index})">Add to Playlist</button></td>
-                <td><button onclick="addToQueue(${index})">Add to Queue</button></td>
+                
                 <td><button onclick="likeSong(${index})">${likeButtonText}</button></td>
             </tr>
         `;

@@ -17,6 +17,7 @@
 
     <header class="splash-header">
         <img src="../assets/u_ahoy23.png">
+
     </header>
 
     <!-- Library -->
@@ -147,18 +148,19 @@
             <button onclick="toggleSections()" title="Toggle View"><i class="fas fa-exchange-alt"></i> Toggle</button>
 
             <button class="lilFloatButton" onclick="addToPlaylist(currentSongIndex)" title="Add to Playlist"><i
-                    class="fas fa-plus"></i> Playlist</button>
+                    class="fas fa-plus"></i></button>
             <button class="lilFloatButton" onclick="likeSong(currentSongIndex)" title="Like Current Song"><i
-                    class="fas fa-heart"></i> Current Song</button>
+                    class="fas fa-heart"></i></button>
 
             <button onclick="shareCurrentSong()" title="Share Current Song"><i class="fas fa-share"></i> Share</button>
             <button id="castB"><i class="fas fa-tv"></i></button>
             <button onclick="toggleGames()" title="Toggle Games">Toggle Games</button>
 
         </div>
-        <button onclick="togglePlayer()">Mini Player</button>
-        <button id="artistButton" onclick="goToArtistPage()">Artist Page of "Artist Name"</button> <button
-            id="saveArtist">Save Artist</button>
+        
+        <button id="queueButton1" onclick="playQueue()">Play Queue</button>
+         <button
+            id="saveArtist">Save Artist</button><button onclick="togglePlayer()">Mini Player</button>
 
     </div>
 
@@ -250,7 +252,11 @@ function toggleGames() {
         <button id="closeCastPopup">Close</button>
     </div>
 
-
+    <div class="themeButtons">
+        <button onclick="changeTheme('dark')">Dark Theme</button>
+        <button onclick="changeTheme('white')">White Theme</button>
+        <button onclick="changeTheme('blue')">Blue Theme</button>
+    </div>
     <footer>
         <div style="display: flex; justify-content: center;">
             <a href="https://ahoy.ooo"><img src="../assets/u_ahoy23.png" style="width:300px"></a>
@@ -267,6 +273,7 @@ function toggleGames() {
 
 
     </footer>
+
 
 
     <!-- END OF HTML -->
@@ -324,7 +331,7 @@ function toggleGames() {
         });
     </script>
 
-  
+    <script src="function_changeTheme.js"></script>
     <script src="viz2.js"></script>
 </body>
 

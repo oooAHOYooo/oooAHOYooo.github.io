@@ -20,11 +20,12 @@ body {
     position: fixed;
     bottom: 20px;
     left: 10px;
-    width: 520px;
+    width: 540px;
     border-style: solid;
     border-width: 1px;
     border-color: var(--border-color);
-    background-color: var(--background-color);    backdrop-filter: blur(5px);
+    background-color: var(--background-color);    
+    backdrop-filter: blur(5px);
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* Add box shadow */
     padding-left:20px;
 
@@ -71,8 +72,8 @@ button {
 }
 
 button:hover {
-    background-color: #00ffa2;
-    color: #34344A;
+    background-color: #00000b;
+    color: #ffffff;
 }
 
 table {
@@ -162,19 +163,16 @@ input, select {
 
 /* This will give a nice hover effect to the current song, making it feel more interactive */
 #currentSongDisplay:hover {
-    background: rgba(255, 215, 0, 0.1); /* Slight Kodak Gold transparency for hover effect */
+    background: rgba(255, 255, 255, 0.1); /* Slight Kodak Gold transparency for hover effect */
 }
 
 
-
-
-/* ... [previous CSS remains unchanged] ... */
 
 /* Common Card Styling */
 .card {
     width: 100%;
     max-width: 400px; /* Adjust this to your preference */
-    background-color: rgba(46, 49, 65, 0.9); /* Deep Space Blue */
+    background-color: var(--background-color);    
     border-radius: 10px;
     padding: 10px;
     margin: 20px auto; /* Centered cards */
@@ -208,14 +206,14 @@ section.favorite {
 
 /* Button Styling */
 #player button {
-    flex: 1;                   /* Allow buttons to grow and take equal space */
+    flex: 2;                   /* Allow buttons to grow and take equal space */
     margin: 0 5px;             /* Some space between buttons */
     opacity: 0.9;              /* Slight transparency for an elegant look */
 }
 
 /* Now Playing Display Styling */
 #currentSongDisplay {
-    flex: 2;                   /* Allow this section to take more space */
+    flex: 1;                   /* Allow this section to take more space */
     text-align: center;        /* Center the text */
     margin: 0 10px;            /* Some space around */
 }
@@ -231,7 +229,7 @@ section.favorite {
 
 #progressBar > div {
     height: 100%;
-    background-color: #FFD700; /* Kodak Gold */
+    background-color: var(--background-color);    
 }
 
 /* Volume Control Styling */
@@ -246,7 +244,7 @@ section.favorite {
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
-    background-color: rgba(46, 49, 65, 0.7); /* Dark background */
+    background-color: var(--background-color);    
     border-radius: 10px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
     overflow: hidden;
@@ -701,3 +699,8 @@ filter:opacity(.48);
     text-decoration: none;
     cursor: pointer;
   }
+
+
+  .themeButtons {
+    float: right;
+}
