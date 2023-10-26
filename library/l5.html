@@ -15,9 +15,9 @@
 
 <body>
 
-    <header class="splash-header">
+    <header class="splash-header full-width">
         <img src="../assets/u_ahoy23.png">
-
+        <button id="shuffleButton"><i class="fas fa-dice"></i></button>
     </header>
 
     <!-- Library -->
@@ -39,6 +39,25 @@
         </table>
     </section>
 
+
+<style>
+    .dragon {
+        width:100%;
+        display:flex;
+
+    }
+
+    @media only screen and (max-width: 600px) {
+        .dragon {
+            width:100%;
+            display:flex;
+            flex-direction: row;
+        }
+    }
+</style>
+
+
+<div class="dragon">
     <!-- Favorite Songs -->
     <section id="favoritesSection card">
         <h2>Favorite Songs</h2>
@@ -58,6 +77,9 @@
             </tbody>
         </table>
     </section>
+
+
+
 
     <!-- Playlists -->
     <section id="playlistSection card">
@@ -83,6 +105,8 @@
             </tbody>
         </table>
     </section>
+</div>
+
 
     <!-- Queue -->
     <section id="queueSection card">

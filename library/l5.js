@@ -716,5 +716,11 @@ function goToArtistPage() {
     }
 }
 
+document.getElementById('shuffleButton').addEventListener('click', playRandomSong);
+function playRandomSong() {
+    // Select a random index from the songs array
+    const randomIndex = Math.floor(Math.random() * songs.length);
 
- 
+    // Play the song at the random index
+    playSongFromList(randomIndex);
+}
