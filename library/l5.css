@@ -1,9 +1,19 @@
+:root {
+    --background-color: #000026;
+    --text-color: #ffffff;
+    --border-color: #006aff;
+    --secondary-color: #9e945c63;
+    --button-color:#5d5dff2d;
+    /* Add more variables as needed */
+}
+
 body {
     /*background-image: linear-gradient(to bottom, #1E1E2A, #1E1E2A, #0E0E16);*/
-    color: #FFD700; /* Kodak Gold */
+    color: var(--text-color);
     font-family: Arial, sans-serif;
 	padding-bottom:500px;
-	background-color:rgb(4, 0, 60);
+	background-color: var(--background-color);
+    
 }
 
 .floatPlayer {
@@ -13,9 +23,8 @@ body {
     width: 520px;
     border-style: solid;
     border-width: 1px;
-    border-color: #040404; /* Change border color */
-    background: rgba(255, 255, 255, 0.9); /* Change background color */
-    backdrop-filter: blur(5px);
+    border-color: var(--border-color);
+    background-color: var(--background-color);    backdrop-filter: blur(5px);
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* Add box shadow */
     padding-left:20px;
 
@@ -23,7 +32,7 @@ body {
 .floatPlayer button {
 	margin-bottom:10px!important;
 	border-style:solid;
-	border-color:#FFD700;
+    border-color: var(--border-color);
 	border-width:1px;
 }
 
@@ -31,8 +40,7 @@ body {
     position:fixed;
     bottom:0px;
     right:20px;
-    background-color: rgba(46, 49, 65, 0.9); /* Deep Space Blue */
-    border-radius: 10px;
+    background-color: var(--background-color);    border-radius: 10px;
     padding: 10px;
     margin: 20px;
     width:420px;
@@ -53,8 +61,8 @@ body {
 }
 
 button {
-    background-color: #34344A; /* Space Gray */
-    color: #FFD700;
+    background-color: #3333fc2d; /* Space Gray */
+    color: var(--text-color);
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
@@ -63,7 +71,7 @@ button {
 }
 
 button:hover {
-    background-color: #FFD700;
+    background-color: #00ffa2;
     color: #34344A;
 }
 
@@ -74,7 +82,8 @@ table {
 }
 
 table, th, td {
-    border: 1px solid #FFD700;
+    border: 1px solid var(--secondary-color);
+
 }
 
 th, td {
@@ -148,7 +157,7 @@ input, select {
 
 #currentSongDisplay span {
     margin: 0 5px;
-    color: #FFD700; /* Kodak Gold */
+    color: var(--text-color);
 }
 
 /* This will give a nice hover effect to the current song, making it feel more interactive */
@@ -244,7 +253,7 @@ section.favorite {
 }
 
 #libraryTable a {
-    color: #FFD700; /* Kodak Gold */
+    color: var(--text-color);
 }
 
 #libraryTable th, #libraryTable td {
@@ -255,13 +264,13 @@ section.favorite {
 
 #libraryTable th {
     background-color: #34344A;
-    color: #FFD700;
+    color: var(--text-color);
     font-weight: bold;
 }
 
 #libraryTable td {
     background-color: rgba(46, 49, 65, 0.9);
-    color: #FFD700;
+    color: var(--text-color);
 }
 
 #libraryTable tbody tr:nth-child(even) {
@@ -560,7 +569,7 @@ display:none;            /* Some space on sides */
 
 
 .new-song {
-    background-color: #ffe02e!important; /* Change this to the color you want */
+    background-color: var(--background-color);
 }
 
 
@@ -576,7 +585,7 @@ display:none;            /* Some space on sides */
     bottom: 100%;
     left: 50%;
     transform: translateX(-50%);
-    background: #333;
+    background-color: var(--background-color);
     color: #fff;
     padding: .5em;
     border-radius: .3em;
@@ -630,7 +639,7 @@ filter:opacity(.48);
 }
 
 .new-song {
-    background-color: #FFD700; /* Kodak Gold */
+    background-color: var(--background-color);
 }
 
 #topControlsWrap {
