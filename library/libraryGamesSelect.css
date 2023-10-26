@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ahoy Indie Games</title>
-	<link rel="stylesheet" href="gameSelect.css">
-
-<style>
-	
 	.game-select-container {
 		display:flex;
 		flex-direction:row;
@@ -49,21 +39,21 @@
 	}
 
 	#game1 {
-		background-image: url(console/gameThumbnails/g3.png);
+		background-image: url(../games/console/gameThumbnails/g3.png);
 		background-size: cover;
 		background-repeat: no-repeat;
 		object-fit: cover;
 	}
 
 	#game2 {
-		background-image: url(console/gameThumbnails/g1.png);
+		background-image: url(../games/console/gameThumbnails/g1.png);
 		background-size: cover;
 		background-repeat: no-repeat;
 		object-fit: cover;
 	}
 
 	#game3 {
-		background-image: url(console/gameThumbnails/g2.png);
+		background-image: url(../games/console/gameThumbnails/g2.png);
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: right;
@@ -87,30 +77,3 @@
 
 
 
-
-
-
-</style>
-
-
-	</head>
-
-	<body>
-		<div class="game-module-full">
-		<div class="game-select-container">
-
-			<div class="gameItem" id="game1" onclick="location.href='/console/tetrist/tetris.html';">
-
-	<h1>Tetris</h1>
-
-</div>
-<div class="gameItem" id="game2">
-	<h1>Galaga</h1>
-</div>
-<div class="gameItem" id="game3">
-	<h1>Frogger</h1>
-</div>
-
-		</div></div>
-	</body>
-</html>
