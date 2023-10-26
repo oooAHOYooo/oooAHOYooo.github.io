@@ -14,6 +14,10 @@ p {
 	font-stretch:extra-expanded;
 }
 
+header {
+	background-color:red;
+}
+
 input {
     font-family: 'Barlow', sans-serif;
     text-transform:capitalize;
@@ -24,6 +28,9 @@ input {
 .full-width {
 	width: 100%;
 	height:auto;
+	display:flex;
+	align-items:center;
+	justify-content: center;
 
 }
 
@@ -159,6 +166,7 @@ width:70%;	height:100%;
     align-items: center;
     
 	width:100%;
+	
 }
 
 	.grid-container {
@@ -209,8 +217,9 @@ width:70%;	height:100%;
 		  }
 	
 		.grid-item {
-			height: 200px;
-			width: 225px;
+			
+			width: 325px;
+			height: 130px;
 		}
 
 		.grid-item:hover {
@@ -225,10 +234,11 @@ width:70%;	height:100%;
 			margin-top: 10px;
 			width: 100%;
 			margin: 0px;
+			padding-bottom:40px;
 		}
 		
 		.gridMenuButtons button {
-			box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+			box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.128);
 			backdrop-filter: blur( 4px );
 			-webkit-backdrop-filter: blur( 4px );
 			border-radius: 10px;
@@ -245,7 +255,51 @@ width:70%;	height:100%;
 			-webkit-backdrop-filter: blur( 4px );
 			border: 1px solid rgba( 255, 255, 255, 0.3 );
 			opacity: 1;
+			cursor: pointer;
 		}
+
+
+/* SEARCH BAR */
+
+.search-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	margin-top:20px;
+	width: 100%;
+	height: 100px;
+	z-index: 1000; /* To ensure the search bar stays on top */
+}
+
+.search-input {
+	width: 95%;
+	max-width: 600px; /* Prevent the input from becoming too wide on large screens */
+	text-transform: capitalize;
+	height: 40px;
+	border: none;
+	border-radius: 20px;
+	padding: 10px 20px;
+	font-size: 16px;
+	background: rgba(255, 255, 255, 0.1);
+	backdrop-filter: blur(5px);
+	transition: all 0.3s ease;
+	outline: none;
+	color: white;
+	box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.079);
+}
+
+.search-input::placeholder {
+	color: rgba(255, 255, 255, 0.5);
+}
+
+.search-input:focus {
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.203);
+}
+
+
+
+
 	}
 
 	/* SEARCH BAR */
@@ -255,6 +309,7 @@ width:70%;	height:100%;
 		justify-content: center;
 		align-items: center;
 		position: fixed;
+		margin:0px;
 		margin-top:20px;
 		width: 100%;
 		height: 100px;
@@ -286,21 +341,57 @@ width:70%;	height:100%;
 		box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.203);
 	}
 	
-	/* Mobile Responsive */
-	@media (max-width: 768px) {
-		.search-container {
-			top: 120;
-			height: 60px; /* Reduce the height on small screens */
-		}
-	
-		.search-input {
-			width: 90%; /* Reduce the width on small screens */
-			height: 30px; /* Reduce the height on small screens */
-			font-size: 14px; /* Reduce the font size on small screens */
-		}
-	}
+
 
 #myArtists {
 	color:rgb(255, 255, 255);
-	border-color:goldenrod;
+	border-color:rgba(218, 165, 32, 0.638);
+}
+
+.gridMenuButtons button {
+	margin: 10px;
+	background: rgba(255, 255, 255, 0.1);
+	backdrop-filter: blur(10px);
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	color: #fff;
+	padding: 10px;
+	min-width: 200px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: all 0.3s ease;
+}
+
+.gridMenuButtons button:hover {
+	background: rgba(255, 255, 255, 0.2);
+	border-color: rgba(255, 255, 255, 0.5);
+	opacity: 0.8;
+}
+
+.navTippyWrap-index {
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+    backdrop-filter: blur(10px); /* Blur the elements behind the div */
+    border-radius: 10px; /* Rounded corners */
+    border: 1px solid rgba(255, 255, 255, 0.18); /* Semi-transparent white border */
+    display: flex; /* Flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+.navTippyWrap-index button {
+    background: rgba(255, 255, 255, 0); /* Semi-transparent white */
+    backdrop-filter: blur(10px); /* Blur the elements behind the button */
+    border: 1px solid rgba(255, 255, 255, 0.18); /* Semi-transparent white border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 10px 20px; /* Padding around text */
+    font-size: 16px; /* Text size */
+    color: white; /* Text color */
+    cursor: pointer; /* Cursor style */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+	margin:5px;
+}
+
+.navTippyWrap-index button:hover {
+    background: rgba(255, 255, 255, 0.019); /* Change background on hover */
+    border-color: rgba(255, 255, 255, 0.5); /* Change border color on hover */
 }

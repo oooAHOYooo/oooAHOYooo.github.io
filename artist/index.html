@@ -11,35 +11,41 @@
 	 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
 
-	
+
 </head>
 
 <body>
-
+<header>
 <!-- SEARCHBAR -->
 <div class="search-container">
 
 	<input type="text" v-model="searchTerm" @input="searchArtists"
 		placeholder="Search for Artist" class="search-input">
 </div>
-
+</header>
 
 <div class="fluidWrap">
 	<div id="grid-container" class="grid-container"></div>
 </div>
 
-	<div class="fullGridWrap">
+
 		<!-- GRID FOR ARTIST -->
 	
-	</div>
+<div class="full-width">
 	<div class="gridMenuButtons">
 		<button id="sortAlphabetically">Sort A-Z</button>
 		<button id="reverseOrder">Recently Added</button>
 		<button id="myArtists">Saved Artists</button>	
 	</div>
+</div>
+
+<div class="full-width">
+	<a href="../index.html"><img src="../assets/u_ahoy23.png" style="width:400px;"></a>
+</div>
+
 	<footer>
 		<div id="ahoySuperMenu">
-			<a href="../index.html"><img src="../assets/u_ahoy23.png" style="width:40%;"></a>
+			
 			<div class="navTippyWrap-index">
 				<a href="./cable/index.html"><button class="topNavButton-stream">Cable</button></a>
 				<a href="./updates/index.html"><button class="topNavButton-stream">Updates</button></a>
