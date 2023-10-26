@@ -4,21 +4,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ahoy Indie Games</title>
+	<link rel="stylesheet" href="gameSelect.css">
+
+<style>
+	
+	.game-select-container {
+		display:flex;
+		grid-gap: 20px;
+		min-width:90%;
+	}
+	
+	.gameItem {
+		width:33%;
+		min-height:400px;
+		border-style:solid;
+	}
+
+	.gameItem h1 {
+		color:white;
+		text-align:center;
+
+	}
+
+	#game1 {
+		background-image: url(console/gameThumbnails/g3.png);
+		background-size: cover;
+		background-repeat: no-repeat;
+		object-fit: cover;
+	}
+
+	#game2 {
+		background-image: url(console/gameThumbnails/g1.png);
+		background-size: cover;
+		background-repeat: no-repeat;
+		object-fit: cover;
+	}
+
+	#game3 {
+		background-image: url(console/gameThumbnails/g2.png);
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: right;
+		object-fit: cover;
+	}
+
+.game-module-full {
+	width:100%;
+	height:100%;
+	display:flex;
+	align-items: center;
+	justify-content: center;
+}
+
+	
+
+
+
+
+
+
+</style>
+
 
 	</head>
+
 	<body>
+		<div class="game-module-full">
 		<div class="game-select-container">
 
-<div class="gameItem" id="game1">
-	Tetris
+			<div class="gameItem" id="game1" onclick="location.href='/console/tetrist/tetris.html';">
+
+	<h1>Tetris</h1>
+
 </div>
 <div class="gameItem" id="game2">
-	Galaga
+	<h1>Galaga</h1>
 </div>
 <div class="gameItem" id="game3">
-	Frogger
+	<h1>Frogger</h1>
 </div>
 
-		</div>
+		</div></div>
 	</body>
 </html>
