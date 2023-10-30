@@ -1,0 +1,22 @@
+const { GoogleSpreadsheet } = require('google-spreadsheet');
+
+async function fetchSheetData() {
+  const doc = new GoogleSpreadsheet('YOUR_SHEET_ID');
+  await doc.useServiceAccountAuth(require('./credentials.json'));
+  await doc.loadInfo();
+  const sheet = doc.sheetsByIndex[0];
+  const rows = await sheet.getRows();
+  
+  const songs = rows.map(row => ({
+    id: row.ID,
+    artist: row.Artist,
+    songTitle: row.SongTitle,
+    artistUrl: row.ArtistUrl,
+    mp3url: row.Mp3Url,
+    play: row.Play.toLowerCase() === 'true'
+  }));
+  
+  require('fs').writeFileSync('data.json', JSON.stringify({ songs }, null, 2));
+}
+
+fetchSheetData().catch(console.error);
