@@ -2,6 +2,13 @@ var ahoyUpdates = new Vue({
   el: '#updates-ahoy-app',
   data: {
     months: [
+      { 
+        displayText: "Octobere",
+        updates: [
+          { text: "Worked like wild towards making it work - feeling humbled - feeling hopeful"},
+          { text: "Added Clones of Clarence to the mix"},
+          ]
+      },
       {
         displayText: "October 2023",
         updates: [
