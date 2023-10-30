@@ -1,7 +1,7 @@
 const { GoogleSpreadsheet } = require('google-spreadsheet');
 
 async function fetchSheetData() {
-  const doc = new GoogleSpreadsheet('YOUR_SHEET_ID');
+  const doc = new GoogleSpreadsheet('1xMgQudp8DRhV2umiFS-zSu6-tAr-4evTtjLjbFVgSQA');
   await doc.useServiceAccountAuth(require('./credentials.json'));
   await doc.loadInfo();
   const sheet = doc.sheetsByIndex[0];
@@ -16,7 +16,7 @@ async function fetchSheetData() {
     play: row.Play.toLowerCase() === 'true'
   }));
   
-  require('fs').writeFileSync('data.json', JSON.stringify({ songs }, null, 2));
+  require('fs').writeFileSync('/library/l5.json', JSON.stringify({ songs }, null, 2));
 }
 
 fetchSheetData().catch(console.error);
