@@ -17,21 +17,34 @@
 
     <header class="splash-header full-width">
         <img src="../assets/u_ahoy23.png">
-        <button id="shuffleButton"><i class="fas fa-dice"></i></button>
     </header>
 
+    <style>
+        .tablePlayButton {
+            color: rgb(255, 255, 255);
+            width: 100%;
+            text-transform: uppercase;
+            background: linear-gradient(to right, #12c2e9, #c471ed, #f64f59); /* gradient background */
+            background-size: 200% auto; /* for animation */
+            transition: all 0.5s ease-out; /* transition effect */
+        }
+    
+        .tablePlayButton:hover {
+            color: white; /* change text color on hover */
+            background-position: right center; /* change background position on hover */
+        }
+    </style>
 <!-- FEATURED SONGS -->
 <section>
-    <p>Featured Songs of the Month</p>
+    <div class="sectionHeader">
+    <p>Featured Songs of the Month</p></div>
     <table id="FeaturedSongs">
         <thead>
             <tr>
                 <th>Artist</th>
                 <th>Song Title</th>
                 <th>Play</th>
-                <th>Add to Playlist</th>
-                <th>Add to Queue</th>
-                <th>Fav</th>
+                
             </tr>
             <tbody id="featuredSongs">
 
@@ -42,6 +55,8 @@
 
     <!-- Library -->
     <section>
+        <div class="sectionHeader">
+        <p>All Songs</p></div>
         <table id="libraryTable">
             <thead>
                 <tr>
@@ -198,10 +213,11 @@
 
             <button onclick="shareCurrentSong()" title="Share Current Song"><i class="fas fa-share"></i> Share</button>
             <button id="castB"><i class="fas fa-tv"></i></button>
-            <button onclick="toggleGames()" title="Toggle Games">Toggle Games</button>
+            <button onclick="toggleGames()" title="Toggle Games">Games</button>
 
         </div>
-        
+        <button id="shuffleButton"><i class="fas fa-dice"></i></button>
+
         <button id="queueButton1" onclick="playQueue()">Play Queue</button>
          <button
             id="saveArtist">Save Artist</button><button onclick="togglePlayer()">Mini Player</button>
@@ -374,7 +390,7 @@ function toggleGames() {
             }
         });
     </script>
-
+    <script src="feature_featureSongTable.js"></script>
     <script src="function_changeTheme.js"></script>
     <script src="viz2.js"></script>
 </body>

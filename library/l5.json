@@ -51,6 +51,7 @@
 	  },
 	  {
 		"id": 7,
+		"featured" : true,
 		"artist": "Cambell Rice",
 		"songTitle": "Sunflower",
 		"artistUrl" : "https://ahoy.ooo/artist/total/cambellRice/cambellRice.html",
@@ -66,6 +67,7 @@
 		"play": false
 	  },
 	  {
+		"featured" : true,
 		"id": 9,
 		"artist": "Youth XL",
 		"songTitle": "Summer Bummer",
@@ -90,6 +92,7 @@
 		"artist": "Youth XL",
 		"songTitle": "Text Your Friends",
 		"artistThumbnail": "UNSPLASH_URL_FOR_ARTIST_6",
+		"featured" : true,
 		"albumArtwork": "UNSPLASH_URL_FOR_ALBUM_6",
 		"artistUrl" : "https://ahoy.ooo/artist/total/youthXL/youthXL.html",
 		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Youth+XL+-+Text+Your+Friends.mp3"
@@ -178,6 +181,7 @@
 		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Clones+of+Clarence+-+Proj+17.mp3",
 		"artistUrl" : "https://ahoy.ooo/artist/total/clonesofclarence/clonesofclarence.html",
 		"new": true,
+		"featured" : true,
 		"artistPage": true 
 	  },
 	  {

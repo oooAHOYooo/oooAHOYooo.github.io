@@ -106,6 +106,16 @@ section {
     padding: 10px;
     margin: 20px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    border-style:solid;
+    border-color:black;
+
+}
+
+section p {
+    text-align:Center;
+    padding: 0px;
+    margin: 0px;
+
 }
 
 h2 {
@@ -166,7 +176,16 @@ input, select {
     background: rgba(255, 255, 255, 0.1); /* Slight Kodak Gold transparency for hover effect */
 }
 
-
+.sectionHeader {
+    width: 100%;
+    box-sizing: border-box;
+    border-style: solid;
+    border-color: var(--text-color);
+    text-transform: uppercase;
+    text-align:justify;
+    padding:10px;
+    color:rgba(255, 255, 255, 0.453);
+}
 
 /* Common Card Styling */
 .card {
