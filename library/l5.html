@@ -16,23 +16,11 @@
 <body>
 
     <header class="splash-header full-width">
-        <img src="../assets/u_ahoy23.png">
+        <a href="https://ahoy.ooo"><img src="../assets/u_ahoy23.png"></a>
     </header>
 
     <style>
-        .tablePlayButton {
-            color: rgb(255, 255, 255);
-            width: 100%;
-            text-transform: uppercase;
-            background: linear-gradient(to right, #12c2e9, #c471ed, #f64f59); /* gradient background */
-            background-size: 200% auto; /* for animation */
-            transition: all 0.5s ease-out; /* transition effect */
-        }
-    
-        .tablePlayButton:hover {
-            color: white; /* change text color on hover */
-            background-position: right center; /* change background position on hover */
-        }
+
     </style>
 <!-- FEATURED SONGS -->
 <section>
@@ -79,6 +67,7 @@
     .dragon {
         width:100%;
         display:flex;
+        flex-direction:column;
 
     }
 
@@ -118,9 +107,10 @@
 
     <!-- Playlists -->
     <section id="playlistSection card">
-        <h2>Playlists</h2>
+        <h2>Your Playlist</h2>
         <input type="text" id="newPlaylistName" placeholder="Enter new playlist name">
         <button onclick="createNewPlaylist()">Create New Playlist</button>
+        <button>Save Playlist</button>
         <select id="playlistSelector">
             <!-- Playlists will be populated from the playlists array here -->
         </select>

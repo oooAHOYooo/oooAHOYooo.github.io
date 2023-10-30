@@ -1,8 +1,8 @@
 :root {
-    --background-color:	rgb(0, 0, 33);
+    --background-color:	rgb(0, 0, 19);
     --text-color: #ffffff;
     --border-color: #006aff;
-    --secondary-color: #9e945c63;
+    --secondary-color: #0fb3ffba;
     --button-color:#5d5dff2d;
     /* Add more variables as needed */
 }
@@ -187,16 +187,16 @@ input, select {
     color:rgba(255, 255, 255, 0.453);
 }
 
-/* Common Card Styling */
 .card {
     width: 100%;
     max-width: 400px; /* Adjust this to your preference */
-    background-color: var(--background-color);    
+    background-color: rgba(0, 0, 0, 0.7); /* Adjust the color and opacity to your liking */
     border-radius: 10px;
     padding: 10px;
     margin: 20px auto; /* Centered cards */
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
     overflow: hidden; /* Ensures content inside card does not overflow */
+    backdrop-filter: blur(10px); /* Add this line for the glass effect */
 }
 
 /* Apply card class to table */
@@ -678,7 +678,7 @@ filter:opacity(.48);
     border-width: 1px;
     border-color: #040404; /* Change border color */
     background: rgba(0, 0, 0, 0.9); /* Change background color */
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(10px); /* Add this line for the glass effect */
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* Add box shadow */
     padding-left:20px;
 }
@@ -698,12 +698,13 @@ filter:opacity(.48);
   }
   
   .modal-content {
-    background-color: #fefefe;
+    background-color: rgba(255, 255, 255, 0.7); /* Adjust the color and opacity to your liking */
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
-  }
+    backdrop-filter: blur(10px); /* Add this line for the glass effect */
+}
   
   .close {
     color: #aaaaaa;
@@ -723,3 +724,24 @@ filter:opacity(.48);
   .themeButtons {
     float: right;
 }
+
+
+.tablePlayButton {
+    color: rgb(255, 255, 255);
+    border-style:solid;
+    border-width:.51px;
+    border-color:white;
+    width: 100%;
+    text-transform: uppercase;
+    background-size: 200% auto; /* for animation */
+    transition: all 0.5s ease-out; /* transition effect */
+    backdrop-filter: blur(10px); /* Add this line for the glass effect */
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+    background-color: rgba(255, 255, 255, 0.1); /* You might need to adjust the color and opacity to your liking */
+}
+
+.tablePlayButton:hover {
+    color: white; /* change text color on hover */
+    background-position: right center; /* change background position on hover */
+}
+

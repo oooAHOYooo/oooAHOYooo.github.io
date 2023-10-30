@@ -1,0 +1,19 @@
+ID,Artist,Song Title,Artist URL,MP3 URL,Play,Artist Thumbnail,Album Artwork
+4,Samuel Dylan Witch,You Know Me,https://ahoy.ooo/artist/total/sdw/sdw.html,https://ahoycollection.s3.us-east-2.amazonaws.com/You+Know+Me+Draft+2.mp3,FALSE,,
+5,Samuel Dylan Witch,Watching Her Fly,,https://ahoycollection.s3.amazonaws.com/Coral+Reefer+-+Untitled+(original).mp3,FALSE,,
+6,Cambell Rice,Far From Here,https://ahoy.ooo/artist/total/cambellRice/cambellRice.html,https://ahoycollection.s3.us-east-2.amazonaws.com/Campbell+Rice-+From+Here.mp3,FALSE,https://unsplash.com/photos/random_person_image2,https://unsplash.com/photos/random_nautical_image2
+7,Cambell Rice,Sunflower,https://ahoy.ooo/artist/total/cambellRice/cambellRice.html,https://ahoycollection.s3.us-east-2.amazonaws.com/Campbell+Rice-Sunflower.mp3,FALSE,,
+8,Cambell Rice,To Play Guitar in a Huge Room,https://ahoy.ooo/artist/total/cambellRice/cambellRice.html,https://ahoycollection.s3.us-east-2.amazonaws.com/Campbell+Rice-Trying+to+play+guitar+in+a+huge+room.mp3,FALSE,,
+9,Youth XL,Summer Bummer,https://ahoy.ooo/artist/total/youthXL/youthXL.html,https://ahoycollection.s3.amazonaws.com/Youth+XL+-+Summer+Bummer.mp3,FALSE,UNSPLASH_URL_FOR_ARTIST_3,UNSPLASH_URL_FOR_ALBUM_3
+10,Youth XL,Yoga,https://ahoy.ooo/artist/total/youthXL/youthXL.html,https://ahoycollection.s3.amazonaws.com/Youth+XL+-+Yoga.mp3,,UNSPLASH_URL_FOR_ARTIST_4,UNSPLASH_URL_FOR_ALBUM_4
+11,Youth XL,Text Your Friends,UNSPLASH_URL_FOR_ARTIST_6,TRUE,UNSPLASH_URL_FOR_ALBUM_6,https://ahoy.ooo/artist/total/youthXL/youthXL.html,https://ahoycollection.s3.us-east-2.amazonaws.com/Youth+XL+-+Text+Your+Friends.mp3,,
+12,Youth XL,Gypsy Gia,UNSPLASH_URL_FOR_ARTIST_6,UNSPLASH_URL_FOR_ALBUM_6,https://ahoy.ooo/artist/total/youthXL/youthXL.html,https://ahoycollection.s3.us-east-2.amazonaws.com/Youth+XL+-+Gypsy+Gia.mp3,,
+13,Fella Gazelle,Reasons,,,https://ahoycollection.s3.us-east-2.amazonaws.com/Fella%20Gazelle%20-%20Reasons%20-%20Radio%20Edit.mp3,,
+14,Riddle M,Glued in the Nude,,,https://ahoycollection.s3.us-east-2.amazonaws.com/Riddle+M+-+Glued+in+Nude.mp3,FALSE,
+15,Riddle M,Honeydew,,,https://ahoycollection.s3.us-east-2.amazonaws.com/Riddle+M+-+Honeydew.mp3,FALSE,
+16,Justin Arena,Oceans,,,https://ahoy.ooo/artist/total/justinArena/justinArena.html,https://ahoycollection.s3.us-east-2.amazonaws.com/Justin+Arena+-+Oceans.mp3,FALSE,TRUE
+17,Justin Arena,When You Wake Up,,,https://ahoy.ooo/artist/total/justinArena/justinArena.html,https://ahoycollection.s3.us-east-2.amazonaws.com/Justin+Arena+-+Oceans.mp3,FALSE,TRUE
+18,Justin Arena,Crash The Party,,,https://ahoy.ooo/artist/total/justinArena/justinArena.html,https://ahoycollection.s3.us-east-2.amazonaws.com/Justin%20Arena%20-%20Crash%20The%20Party%20(ft.%20Nicole%20Gauthier).mp3,FALSE,TRUE
+19,Clones of Clarence,Lost Time,,,https://ahoy.ooo/artist/total/clonesofclarence/clonesofclarence.html,https://ahoycollection.s3.us-east-2.amazonaws.com/Clones+of+Clarence+-+Lost+Time+(I+miss+you).mp3,TRUE,TRUE
+20,Clones of Clarence,Salty Salsa,,,https://ahoy.ooo/artist/total/clonesofclarence/clonesofclarence.html,https://ahoycollection.s3.us-east-2.amazonaws.com/Clones+of+Clarence+-+Salty+Salsa.mp3,TRUE,TRUE
+21,Clones of Clarence,Proj 17,,,https://ahoy.ooo/artist/total/clonesofclarence/clonesofclarence.html,https://ahoycollection.s3.us-east-2.amazonaws.com/Clones+of+Clarence+-+Proj+17.mp3,TRUE,TRUE
