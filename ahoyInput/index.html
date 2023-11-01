@@ -9,11 +9,25 @@
 <body>
 
 <div style="display: flex; justify-content: center;">
-    <img src="./ahoyInputLogo.png" alt="Ahoy Input Logo">
+    <div class="screen-effect">
+        <img src="./ahoyInputLogo.png" alt="Ahoy Input Logo">
+    </div>
 </div>
 
-<input type="file" id="jsonFile" accept=".json" style="background-color: white!important; color: black;">
-<button onclick="handleFile()">Load JSON</button>
+<div class="menu">
+    <ul>
+        <li>
+            <!-- DOWNLOAD CURRENT L5 JSON -->
+            <a href="https://ahoy.ooo/oooAHOYooo.github.io/library/l5.json" download>
+                <button>Download the latest - l5.json</button>
+            </a>
+        </li>
+        <li>
+            <input type="file" id="jsonFile" accept=".json" style="background-color: white!important; color: black;">
+            <button onclick="handleFile()" target="_blank">Load JSON</button>
+        </li>
+    </ul>
+</div>
 <br><br>
 
 <form id="songForm" class="hidden">

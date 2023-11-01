@@ -81,3 +81,21 @@
             cursor: pointer;
             border-color:white;
         }
+
+        .menu ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            width:100%;
+            border-style:solid;
+            border-color:black;
+            overflow: hidden;
+        }
+        
+        .menu li {
+            float: left;
+            margin:5px;
+        }
