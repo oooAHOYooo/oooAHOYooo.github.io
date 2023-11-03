@@ -222,7 +222,7 @@ display:none;            /* Some space on sides */
     }
 
     .card {
-        margin: 10px; /* Reduce margin */
+        margin: 5px; /* Reduce margin */
     }
 
     /* Center elements on the screen */
