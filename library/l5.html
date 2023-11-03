@@ -25,7 +25,7 @@
 <!-- FEATURED SONGS -->
 <section>
     <div class="sectionHeader">
-    <p>Featured Songs of the Month</p></div>
+    <p>Featured Monthly</p></div>
     <table id="FeaturedSongs">
         <thead>
             <tr>
@@ -48,12 +48,11 @@
         <table id="libraryTable">
             <thead>
                 <tr>
-                    <th><a href="/artist/{artistName}">Artist</a></th>
+                    <th>+ Que</a></th>
+                    <th>Artist</th>
                     <th>Song Title</th>
+                    <th>Like</th>
                     <th>Play</th>
-                    <th>Add to Playlist</th>
-                    <th>Add to Queue</th>
-                    <th>Fav</th>
                 </tr>
             </thead>
             <tbody id="songList">
@@ -108,6 +107,7 @@
     <!-- Playlists -->
     <section id="playlistSection card">
         <h2>Your Playlist</h2>
+        <p>Add songs to a playlist and then burn them to a cd!</p>
         <input type="text" id="newPlaylistName" placeholder="Enter new playlist name">
         <button onclick="createNewPlaylist()">Create New Playlist</button>
         <button>Save Playlist</button>

@@ -11,13 +11,13 @@ function changeTheme(theme) {
         root.style.setProperty('--background-color', '#ffffff');
         root.style.setProperty('--text-color', '#000000');
         root.style.setProperty('--border-color', '#000000');
-        root.style.setProperty('--secondary-color', '#000000');
+        root.style.setProperty('--secondary-color', '#ffffff');
         root.style.setProperty('--button-color', '#000000');
     } else if (theme === 'blue') {
-        root.style.setProperty('--background-color', '#0000ff');
+        root.style.setProperty('--background-color', 'rgb(0, 157, 255)');
         root.style.setProperty('--text-color', '#ffffff');
         root.style.setProperty('--border-color', '#0000ff');
-        root.style.setProperty('--secondary-color', '#0000ff');
-        root.style.setProperty('--button-color', '#0000ff');
+        root.style.setProperty('--secondary-color', 'rgb(0, 157, 255)');
+        root.style.setProperty('--button-color', 'rgb(0, 157, 255)');
     }
 }

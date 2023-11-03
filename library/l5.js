@@ -289,11 +289,11 @@ function populateSongs() {
         const isNew = song.new ? 'new-song' : '';
         const songRow = `
             <tr class="${isNew}">
-                <td><button onclick="addToQueue(${index})">Add to Queue</button></td>
+                <td><button class="library-que-button" onclick="addToQueue(${index})">Add to Queue</button></td>
                 <td><a href="${song.artistUrl}" target="_blank">${song.artist}</a></td>
                 <td>${song.songTitle}</td>
-                <td><button onclick="playSongFromList(${index})">Play</button></td>
-                <td><button onclick="addToPlaylist(${index})">Add to Playlist</button></td>
+                <td><button class="library-play-button" class="testA" onclick="playSongFromList(${index})">Play</button></td>
+                <td><button class="library-add-button" onclick="addToPlaylist(${index})">+ Playlist</button></td>
                 
                 <td><button onclick="likeSong(${index})">${likeButtonText}</button></td>
             </tr>
@@ -436,7 +436,7 @@ function populateQueue() {
                 <td><input type="number" value="${index + 1}" onchange="reorderQueue(${index}, this.value)"></td>
                 <td>${song.artist}</td>
                 <td>${song.songTitle}</td>
-                <td><button onclick="playSongFromQueue(${index})">Play</button></td>
+                <td><button class="lib-button" onclick="playSongFromQueue(${index})">Play</button></td>
                 <td><button onclick="removeFromQueue(${index})">Remove</button></td>
                 
             </tr>
