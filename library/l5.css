@@ -419,130 +419,12 @@ section.favorite {
 
 /* ... [Your existing CSS remains unchanged] ... */
 
-/* Mobile Responsive Styling */
-@media only screen and (max-width: 500px) {
-    body {
-        font-size: 14px; /* Slightly reduce the font size for better fit */
-    }
 
-    h2 {
-        font-size: 18px; /* Adjust heading size */
-        margin-bottom: 10px; /* Reduce margin */
-    }
-
-    .floatPlayer, .playerStats {
-        width: 100%; /* Full width for player controls */
-        box-sizing: border-box; /* Include padding and border in the width */
-    }
-
-    table, th, td {
-        font-size: 12px; /* Adjust table font size */
-        padding: 4px 6px; /* Adjust table padding */
-    }
-
-    #libraryTable thead tr th:first-child, #libraryTable tbody tr td:first-child {
-        padding-left: 10px; /* Adjust left padding */
-    }
-
-    button, input, select {
-        padding: 6px; /* Reduce padding for form elements */
-    }
-
-    #player {
-        flex-direction: column; /* Stack controls vertically */
-        align-items: center; /* Center align controls */
-    }
-
-    /* Ensure table does not overflow and is scrollable */
-    #libraryTable {
-        display: block;
-        width: 100%;
-        max-width: 100%;
-        transform:scale(.78)
-    }
-
-    .card {
-        margin: 10px; /* Reduce margin */
-    }
-
-    /* Center elements on the screen */
-    body {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding-bottom: 500px;
-    }
-
-    /* Volume Control Styling */
-#volumeControl {
-display:none;            /* Some space on sides */
-}
-
-#currentSongDisplay {
-    max-width:85%;
-    height:70px;
-    border-radius:2px;
-    text-align:center;
-    display:flex;
-}
-}
 
 
 /* ... [Your existing CSS remains unchanged] ... */
 
-/* Mobile Responsive Styling */
-@media only screen and (max-width: 320px) {
-    body {
-        font-size: 14px; /* Slightly reduce the font size for better fit */
-    }
 
-    h2 {
-        font-size: 18px; /* Adjust heading size */
-        margin-bottom: 10px; /* Reduce margin */
-    }
-
-    .floatPlayer, .playerStats {
-        width: 100%; /* Full width for player controls */
-        box-sizing: border-box; /* Include padding and border in the width */
-    }
-
-    table, th, td {
-        font-size: 12px; /* Adjust table font size */
-        padding: 4px 6px; /* Adjust table padding */
-    }
-
-    #libraryTable thead tr th:first-child, #libraryTable tbody tr td:first-child {
-        padding-left: 10px; /* Adjust left padding */
-    }
-
-    button, input, select {
-        padding: 6px; /* Reduce padding for form elements */
-    }
-
-    #player {
-        flex-direction: column; /* Stack controls vertically */
-        align-items: center; /* Center align controls */
-    }
-
-    /* Ensure table does not overflow and is scrollable */
-    #libraryTable {
-        display: block;
-        overflow-x: auto;
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .card {
-        margin: 10px; /* Reduce margin */
-    }
-
-    /* Center elements on the screen */
-    body {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-}
 
 /* ... [rest of your CSS remains unchanged] ... */
 
@@ -727,17 +609,18 @@ filter:opacity(.48);
 
 
 .tablePlayButton {
-    color: rgb(255, 255, 255);
+    color:white;
     border-style:solid;
     border-width:.51px;
-    border-color:white;
+    border-color:var(--secondary-color);
     width: 100%;
     text-transform: uppercase;
     background-size: 200% auto; /* for animation */
-    transition: all 0.5s ease-out; /* transition effect */
+    transition: all 0.15s ease-out; /* transition effect */
     backdrop-filter: blur(10px); /* Add this line for the glass effect */
     -webkit-backdrop-filter: blur(10px); /* For Safari */
-    background-color: rgba(255, 255, 255, 0.1); /* You might need to adjust the color and opacity to your liking */
+    background-color: var (--background-color);
+
 }
 
 .tablePlayButton:hover {
@@ -745,18 +628,6 @@ filter:opacity(.48);
     background-position: right center; /* change background position on hover */
 }
 
-.lib-play-button {
-    width:200px!important;
-    height:auto;
-    background-color:red!important;
-    background-color: #3333fc2d; /* Space Gray */
-    color: var(--text-color);
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
 
 /*LIBRARY STYLES AND BUTTONS */
 
@@ -778,6 +649,33 @@ filter:opacity(.48);
     
 }
 
+.library-artist-button {
+    color: var(--text-color);
+    border-style:solid;
+    border-width:.51px;
+    border-color: var(--secondary-color);
+    width: 100%;
+    text-transform: uppercase;
+    background-size: 200% auto; /* for animation */
+    background-color:var(--button-color);
+    font-size:12px;
+    min-height:40px;
+
+}
+
+.library-song-button {
+    color: var(--text-color);
+    border-style:solid;
+    border-width:.51px;
+    border-color: var(--secondary-color);
+    width: 100%;
+    text-transform: uppercase;
+    background-size: 200% auto; /* for animation */
+    backdrop-filter: blur(10px); /* Add this line for the glass effect */
+    font-size:12px;
+    min-height:40px;
+}
+
 .library-playlist-button {
     width:100%;
     background-color:var(--button-color);
@@ -788,12 +686,17 @@ filter:opacity(.48);
 }
 
 .library-que-button {
-    width:100%;
-    background-color:var(--button-color);
     color: var(--text-color);
     border-style:solid;
+    border-width:.51px;
     border-color: var(--secondary-color);
-    
+    width: 100%;
+    text-transform: uppercase;
+    background-size: 200% auto; /* for animation */
+    transition: all 0.5s ease-out; /* transition effect */
+    backdrop-filter: blur(10px); /* Add this line for the glass effect */
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+    background-color:var(--button-color);
 }
 
 .library-like-button {
@@ -804,6 +707,11 @@ filter:opacity(.48);
     border-color: var(--secondary-color);
     
 
+}
+
+.borderBlue {
+    border-style:solid;
+    width:100%;
 }
 
 

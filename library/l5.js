@@ -290,10 +290,10 @@ function populateSongs() {
         const songRow = `
             <tr class="${isNew}">
                 <td><button class="library-que-button" onclick="addToQueue(${index})">+Q</button></td>
-                <td><a href="${song.artistUrl}" target="_blank">${song.artist}</a></td>
-                <td onclick="playSongFromList(${index})">${song.songTitle}</td>
+                <td><a href="${song.artistUrl}" target="_blank"><button class="library-artist-button">${song.artist}</button></a></td>
+                <td onclick="playSongFromList(${index})"><button class="library-song-button">${song.songTitle}</button></td>
                 <td><button class="library-like-button" onclick="likeSong(${index})">${likeButtonText}</button></td>
-                <td><button class="fas fa-play" onclick="playSongFromList(${index})"></button></td>
+                <td><button class="fas fa-play borderBlue" onclick="playSongFromList(${index})"></button></td>
 
             </tr>
         `;
