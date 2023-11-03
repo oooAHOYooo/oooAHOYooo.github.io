@@ -766,7 +766,7 @@ filter:opacity(.48);
     color: var(--text-color);
     border-style:solid;
     border-color: var(--secondary-color);
-    color: rgb(0, 157, 255);
+    
 }
 
 .library-add-button {
@@ -775,7 +775,7 @@ filter:opacity(.48);
     color: var(--text-color);
     border-style:solid;
     border-color: var(--secondary-color);
-    color: rgb(0, 157, 255);
+    
 }
 
 .library-playlist-button {
@@ -784,7 +784,7 @@ filter:opacity(.48);
     color: var(--text-color);
     border-style:solid;
     border-color: var(--secondary-color);
-    color: rgb(0, 157, 255);
+    
 }
 
 .library-que-button {
@@ -793,11 +793,16 @@ filter:opacity(.48);
     color: var(--text-color);
     border-style:solid;
     border-color: var(--secondary-color);
-    color: rgb(0, 157, 255);
+    
 }
 
 .library-like-button {
     width:100%;
+    background-color:var(--button-color);
+    color: var(--text-color);
+    border-style:solid;
+    border-color: var(--secondary-color);
+    
 
 }
 

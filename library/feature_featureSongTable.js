@@ -13,9 +13,8 @@ fetch('l5.json')
             const row = document.createElement('tr');
 
             row.innerHTML = `
-                <td>${song.artist}</td>
-                <td>${song.songTitle}</td>
-                <td><button class="tablePlayButton" onclick="playSongAndAddToQueue('${song.mp3url}', '${song.id}')">Play</button></td>
+                <td><a href="${song.artistUrl}" target="_blank"><button class="tablePlayButton">${song.artist}</td>
+                <td><button class="tablePlayButton" onclick="playSongAndAddToQueue('${song.mp3url}', '${song.id}')">${song.songTitle}</td>
             `;
 
             // Append the row to the table body

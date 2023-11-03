@@ -289,13 +289,12 @@ function populateSongs() {
         const isNew = song.new ? 'new-song' : '';
         const songRow = `
             <tr class="${isNew}">
-                <td><button class="library-que-button" onclick="addToQueue(${index})">Add to Queue</button></td>
+                <td><button class="library-que-button" onclick="addToQueue(${index})">+Q</button></td>
                 <td><a href="${song.artistUrl}" target="_blank">${song.artist}</a></td>
-                <td>${song.songTitle}</td>
-                <td><button class="library-play-button" class="testA" onclick="playSongFromList(${index})">Play</button></td>
-                <td><button class="library-add-button" onclick="addToPlaylist(${index})">+ Playlist</button></td>
-                
-                <td><button onclick="likeSong(${index})">${likeButtonText}</button></td>
+                <td onclick="playSongFromList(${index})">${song.songTitle}</td>
+                <td><button class="library-like-button" onclick="likeSong(${index})">${likeButtonText}</button></td>
+                <td><button class="fas fa-play" onclick="playSongFromList(${index})"></button></td>
+
             </tr>
         `;
         songList.innerHTML += songRow;
