@@ -101,13 +101,12 @@ td {
 }
 
 section {
-    background-color: rgba(46, 49, 65, 0.7);
     border-radius: 10px;
     padding: 10px;
     margin: 20px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
     border-style:solid;
-    border-color:black;
+    border-color:var(--secondary-color);
 
 }
 
@@ -184,7 +183,7 @@ input, select {
     text-transform: uppercase;
     text-align:justify;
     padding:10px;
-    color:rgba(255, 255, 255, 0.453);
+    color:var(--text-color); 
 }
 
 .card {
@@ -558,8 +557,9 @@ filter:opacity(.48);
     width: 520px;
     border-style: solid;
     border-width: 1px;
-    border-color: #040404; /* Change border color */
-    background: rgba(0, 0, 0, 0.9); /* Change background color */
+    border-color: var(--secondary-color);
+
+    background: rgba(0, 0, 0, 0.6); /* Change background color */
     backdrop-filter: blur(10px); /* Add this line for the glass effect */
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* Add box shadow */
     padding-left:20px;
