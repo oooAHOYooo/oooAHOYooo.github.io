@@ -225,15 +225,42 @@
         <button id="closeCastPopup">Close</button>
     </div>
 
-    <div class="themeButtons">
+    <style>
+        #settings {
+            display:flex;
+        }
+
+        #settings div {
+            border-style:solid;
+            padding:20px;
+        }
+
+        #settings h2 {}
+    </style>
+
+<div style="display: flex; justify-content: center;">
+    <a href="https://ahoy.ooo"><img src="../assets/u_ahoy23.png" style="width:300px"></a>
+</div>
+    <section id="settings">
+    <div>
+        <h2>Settings</h2>
+    </div>
+    <div>
+        <h3>Change Theme</h3>
         <button onclick="changeTheme('dark')">Dark Theme</button>
         <button onclick="changeTheme('white')">White Theme</button>
         <button onclick="changeTheme('blue')">Blue Theme</button>
     </div>
+    <div>
+        <h3>Change Position of Player</h3>
+        <button id="topLeft">Top Left</button>
+<button id="topRight">Top Right</button>
+<button id="bottomLeft">Bottom Left</button>
+<button id="bottomRight">Bottom Right</button>
+    </div>
+</section>
     <footer>
-        <div style="display: flex; justify-content: center;">
-            <a href="https://ahoy.ooo"><img src="../assets/u_ahoy23.png" style="width:300px"></a>
-        </div>
+
 
      
 
@@ -293,8 +320,8 @@
         }
     }
         </script>
- 
-    <script src="feature_featureSongTable.js"></script>
+<script src="feature_movePlayerPosition.js"></script>
+<script src="feature_featureSongTable.js"></script>
     <script src="function_changeTheme.js"></script>
 </body>
 
