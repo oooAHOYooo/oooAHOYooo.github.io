@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
+<!-- GOALS OF THE HOUR -->
+<!-- MAKE SEPERATE MOBILE VERSION OF SITE -->
+<!-- 
+    
+    1. Add radio
+    2. Add overlay of games 
+    3. increase size of cable - add verbage 
+    4. Featured Monthly - song - Add Q
+
+-->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,9 +27,10 @@
 
 <body>
 
+    <!-- TEMP DISABLE LOADING SCREEN
 <div id="loading-screen" class="loading-screen">
     Loading...
-</div>
+</div> -->
 
     <header class="splash-header full-width">
         <a href="https://ahoy.ooo"><img src="../assets/u_ahoy23.png"></a>
@@ -239,24 +251,7 @@
 <div style="display: flex; justify-content: center;">
     <a href="https://ahoy.ooo"><img src="../assets/u_ahoy23.png" style="width:300px"></a>
 </div>
-    <section id="settings">
-    <div>
-        <h2>Settings</h2>
-    </div>
-    <div>
-        <h3>Change Theme</h3>
-        <button onclick="changeTheme('dark')">Dark Theme</button>
-        <button onclick="changeTheme('white')">White Theme</button>
-        <button onclick="changeTheme('blue')">Blue Theme</button>
-    </div>
-    <div>
-        <h3>Change Position of Player</h3>
-        <button id="topLeft">Top Left</button>
-<button id="topRight">Top Right</button>
-<button id="bottomLeft">Bottom Left</button>
-<button id="bottomRight">Bottom Right</button>
-    </div>
-</section>
+   
 
 <style>
     .miniIframe {
@@ -277,16 +272,109 @@
         height: 50vh; /* Adjust this value as needed */
     }
 </style>
-
-<section class="center-content">
+<!-- CABLE -->
+<section id="cable" class="center-content">
+   <div class="sectionHeader">
     <h3>Cable TV</h3>
+   </div> 
   
         <iframe src='https://cdn.jwplayer.com/players/QI6O3pW7-9Gtk2B1J.html' id="playerFrame" class="miniIframe" width="100%" height="100%" frameborder="0" scrolling="auto" title="Untitled Manual Playlist" style="position:absolute;" allowfullscreen></iframe>
 
   
 </section>
 
+<style>
+    .radio-widget {
+      
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: auto;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    
+    }
 
+    .sectionHeader {
+        display:flex;
+        align-items: center;
+        text-align:center;
+    }
+
+    .sectionHeader h3 {
+ 
+        text-align:center;
+    }
+</style>
+<!-- RADIO -->
+<section id="radio">
+    <div class="sectionHeader"><h3>Live Radio</h3></div>
+    <div class="radio-widget">
+        <script src="https://embed.radio.co/player/0024c4d.js"></script>
+      </div>
+
+      <style>
+          .subHeaderVert {
+    flex-basis: 50%; /* set the width of each column */
+    padding: 20px;
+    box-sizing: border-box;
+
+  }
+
+  .glass-status {
+  color: rgba(255, 255, 255, 0.5);
+  display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.status-indicator {
+  color: rgba(0, 255, 234, 0.461);
+  padding-left:10px;
+}
+      </style>
+<!-- RADIO SUBHEADER-->
+<div class="radio-subheader">
+    <div>
+        <h2>Live Radio</h2>
+        <table class="audioData glass-audio-data">
+            <tr>
+                <th>Now Playing</th>
+                <td><script src="https://embed.radio.co/embed/saf4aee19b/song.js"></script></td>
+            </tr>
+            <tr>
+                <th>Up Next</th>
+                <td><script src="https://embed.radio.co/embed/saf4aee19b/next.js"></script></td>
+            </tr>
+            
+        </table>
+
+    </div>        <p class="glass-status">Status = <span class="status-indicator">online</span></p>
+
+</div>
+  
+      </div><!-- RADIO SUBHEADER-->
+
+</section>
+
+<section id="settings">
+    <div>
+        <h2>Settings</h2>
+    </div>
+    <div>
+        <h3>Change Theme</h3>
+        <button onclick="changeTheme('dark')">Dark Theme</button>
+        <button onclick="changeTheme('white')">White Theme</button>
+        <button onclick="changeTheme('blue')">Blue Theme</button>
+    </div>
+    <div>
+        <h3>Change Position of Player</h3>
+        <button id="topLeft">Top Left</button>
+<button id="topRight">Top Right</button>
+<button id="bottomLeft">Bottom Left</button>
+<button id="bottomRight">Bottom Right</button>
+    </div>
+</section>
     <script>
     
 document.getElementById('playerFrame').addEventListener('click', function() {
@@ -360,6 +448,7 @@ document.getElementById('playerFrame').addEventListener('click', function() {
 <script src="feature_featureSongTable.js"></script>
     <script src="function_changeTheme.js"></script>
 
+    <!-- TEMP KILL LOADING SCREEN 
     <script>
         window.addEventListener('load', function() {
             var loadingScreen = document.getElementById('loading-screen');
@@ -367,7 +456,7 @@ document.getElementById('playerFrame').addEventListener('click', function() {
                 loadingScreen.style.display = 'none';
             }, 3000); // 3000 milliseconds = 4 seconds
         });
-    </script>
+    </script>-->
 
 
 </body>
