@@ -209,3 +209,25 @@ table {
             justify-content:center;
         }
     }
+
+    .top-back-buttons {
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding: 10px;
+        z-index: 1000;
+        
+    }
+    .top-back-buttons a {
+        margin-right: 10px;
+        text-decoration: none;
+        color: white;
+        border-style:solid;
+        border-color:transparent;
+        padding-left:5px;
+        padding-right:5px;
+    }
+
+    .top-back-buttons a:hover {
+        border-color:white;
+    }
