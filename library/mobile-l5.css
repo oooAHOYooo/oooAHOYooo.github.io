@@ -1,86 +1,102 @@
-  body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #121212;
-            color: white;
-        }
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .tab-content {
-            display: none;
-        }
-        .tab-content.active {
-            display: block;
-        }
-        .list {
-            list-style-type: none;
-            padding: 0;
-        }
-        .list-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 10px 0;
-            border-bottom: 1px solid #333;
-        }
-        .bottom-nav {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            background-color: #333;
-            color: white;
-            display: flex;
-            justify-content: space-around;
-            padding: 10px 0;
-        }
-        .bottom-nav a {
-            color: white;
-            text-decoration: none;
-        }
+:root {
+    --background-color:	rgb(0, 0, 29);
+    --text-color:  #00f2ff;
+    --border-color: #00e5ff;
+    --secondary-color: #000000ba;
+    --button-color:#ffffff2d;
+    --gold : #ffd90049;
+}
 
-        .player {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            background-color: #333;
-            color: white;
-            padding: 50px 0;
-            margin-bottom:20px;
-        }
-        
-        .player-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-        }
-        
-        .player-info {
-            flex: 1;
-        }
-        
-        .player-link {
-            color: white;
-            text-decoration: none;
-            display: block;
-        }
-        
-        .player-controls, .player-actions {
-            display: flex;
-            align-items: center;
-        }
-        
-        .player-button {
-            color: white;
-            background: none;
-            border: none;
-            margin: 0 10px;
-            font-size: 20px;
-        }
-        
-        .player-button:focus {
-            outline: none;
-        }
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.list-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+}
+
+.bottom-nav a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.player {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    padding: 50px 0;
+    margin-bottom:20px;
+}
+
+.player-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.player-info {
+    flex: 1;
+}
+
+.player-link {
+    color: var(--text-color);
+    text-decoration: none;
+    display: block;
+}
+
+.player-controls, .player-actions {
+    display: flex;
+    align-items: center;
+}
+
+.player-button {
+    color: var(--text-color);
+    background: none;
+    border: none;
+    margin: 0 10px;
+    font-size: 20px;
+}
+
+.player-button:focus {
+    outline: none;
+}
