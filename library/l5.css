@@ -71,10 +71,7 @@ button {
     transition: background-color 0.3s;
 }
 
-button:hover {
-    background-color: #00000b;
-    color: #ffffff;
-}
+
 
 table {
     width: 100%;
@@ -92,9 +89,7 @@ th, td {
     text-align: left;
 }
 
-th {
-    background-color: #ae0c0c;
-}
+
 
 td {
     background-color: rgba(46, 49, 65, 0.9);
@@ -104,7 +99,6 @@ section {
     border-radius: 10px;
     padding: 10px;
     margin: 20px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
     border-style:solid;
     border-color:var(--secondary-color);
 
@@ -146,8 +140,6 @@ input, select {
     width: 0;
 }
 
-/* Space Theme Styles with Clean Kodak-like Colors */
-/* ... [rest of your CSS remains unchanged] ... */
 
 #currentSongDisplay {
     background: rgba(255, 255, 255, 0.1); /* Slight white transparency for the frosted glass effect */
@@ -168,11 +160,6 @@ input, select {
 #currentSongDisplay span {
     margin: 0 5px;
     color: var(--text-color);
-}
-
-/* This will give a nice hover effect to the current song, making it feel more interactive */
-#currentSongDisplay:hover {
-    background: rgba(255, 255, 255, 0.1); /* Slight Kodak Gold transparency for hover effect */
 }
 
 .sectionHeader {
@@ -264,7 +251,6 @@ section.favorite {
     margin: 20px 0;
     background-color: var(--background-color);    
     border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
     overflow: hidden;
 }
 
@@ -279,7 +265,6 @@ section.favorite {
 }
 
 #libraryTable th {
-    background-color: #34344A;
     color: var(--text-color);
     font-weight: bold;
 }
@@ -293,9 +278,7 @@ section.favorite {
     background-color: rgba(46, 49, 65, 0.7);
 }
 
-#libraryTable tbody tr:hover {
-    background-color: #2626a8cb; /* Hover effect */
-}
+
 
 #libraryTable th, #libraryTable td:first-child {
     border-left: none; /* Remove left border for the first column */
@@ -360,26 +343,6 @@ section.favorite {
   }
   
 
-
-  /* Animation for Player */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-.floatPlayer {
-    animation: fadeIn 1s ease-in-out;
-}
-
-.playerStats {
-    animation: fadeIn 1s ease-in-out;
-}
-
-
 /* Responsive Player Styling */
 @media only screen and (max-width: 768px) {
     #player {
@@ -416,16 +379,7 @@ section.favorite {
     --text-color: #fff;
 }
 
-/* ... [Your existing CSS remains unchanged] ... */
 
-
-
-
-/* ... [Your existing CSS remains unchanged] ... */
-
-
-
-/* ... [rest of your CSS remains unchanged] ... */
 
 .splash-header {
     background-size: cover;
@@ -553,15 +507,14 @@ filter:opacity(.48);
 #miniPlayer {
     position: fixed;
     bottom: 20px;
-    left: 10px;
-    width: 520px;
+    width: 50%;
+    height:50px;
     border-style: solid;
     border-width: 1px;
     border-color: var(--secondary-color);
 
     background: rgba(0, 0, 0, 0.6); /* Change background color */
     backdrop-filter: blur(10px); /* Add this line for the glass effect */
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* Add box shadow */
     padding-left:20px;
 }
 
@@ -623,10 +576,7 @@ filter:opacity(.48);
 
 }
 
-.tablePlayButton:hover {
-    color: white; /* change text color on hover */
-    background-position: right center; /* change background position on hover */
-}
+
 
 
 /*LIBRARY STYLES AND BUTTONS */
