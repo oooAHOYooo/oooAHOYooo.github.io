@@ -8,6 +8,9 @@
 </head>
 <body>
     <div class="container">
+        <header>
+            This is where the header would go
+        </header>
         <h1>Welcome to Ahoy Indie Media</h1>
         <div id="songs-tab" class="tab-content active">
             <ul class="list" id="song-list"></ul>
@@ -44,7 +47,7 @@
             <div class="player-controls">
                 <button id="prev" class="player-button"><i class="fas fa-step-backward"></i></button>
                 <button id="play" class="player-button"><i class="fas fa-play"></i></button>
-                <button id="next" class="player-button"><i class="fas fa-step-forward"></i></button>
+                <button id="next" class="player-button onclick="nextSong"><i class="fas fa-step-forward"></i></button>
             </div>
             <div class="player-actions">
                 <button id="like" class="player-button"><i class="fas fa-heart"></i></button>
@@ -216,8 +219,17 @@
     }
 
     function nextSong() {
-        // Code to play the next song
+    // Increment the current song index
+    currentSongIndex++;
+
+    // If it's the last song, loop back to the first one
+    if (currentSongIndex >= songs.length) {
+        currentSongIndex = 0;
     }
+
+    // Play the next song
+    playSong(songs[currentSongIndex].artist, songs[currentSongIndex].songTitle, songs[currentSongIndex].mp3url);
+}
 
     function likeSong() {
         // Code to like the current song
@@ -227,7 +239,25 @@
         // Code to add the current song to the playlist
     }
 
-    // Existing code...
+    let currentSongIndex = 0; // Assuming you have a global variable to keep track of the current song
+const songs = []; // Assuming you have a global array of songs
+
+
+
+let likedSongs = []; // Assuming you have a global array to store liked songs
+
+function likeSong() {
+    // Add the current song to the liked songs array
+    likedSongs.push(songs[currentSongIndex]);
+
+    // Update the like button to reflect the change
+    likeButton.innerHTML = '<i class="fas fa-heart"></i>';
+}
+
+function addToPlaylistButton() {
+    // Add the current song to the selected playlist
+    addToPlaylist(songs[currentSongIndex], document.getElementById('playlist-selector').value);
+}
     </script>
 
 
