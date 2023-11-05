@@ -3,6 +3,7 @@
 <head>
     <title>Ahoy Indie Media</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -16,11 +17,17 @@
             margin: 0 auto;
             padding: 20px;
         }
-        .song-list {
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .list {
             list-style-type: none;
             padding: 0;
         }
-        .song-item {
+        .list-item {
             display: flex;
             justify-content: space-between;
             padding: 10px 0;
@@ -45,22 +52,54 @@
 <body>
     <div class="container">
         <h1>Welcome to Ahoy Indie Media</h1>
-        <ul class="song-list" id="song-list"></ul>
+        <div id="songs-tab" class="tab-content active">
+            <ul class="list" id="song-list"></ul>
+        </div>
+        <div id="artists-tab" class="tab-content">
+            <!-- Artists content goes here -->
+            <ul class="list" id="artist-list"></ul>
+        </div>
+        <div id="playlists-tab" class="tab-content">
+            <!-- Playlists content goes here -->
+            <div id="playlists-tab" class="tab-content">
+                <input type="text" id="playlist-name" placeholder="New Playlist Name">
+                <button onclick="createPlaylist()">Create Playlist</button>
+                <select id="playlist-selector" onchange="showPlaylist()">
+                    <!-- Playlist options will be populated here -->
+                </select>
+                <ul class="list" id="playlist-songs">
+                    <!-- Playlist songs will be populated here -->
+                </ul>
+                <ul class="list" id="all-songs">
+                    <!-- All songs will be populated here with an "Add to Playlist" button -->
+                </ul>
+            </div>
+        </div>
     </div>
     <div class="bottom-nav">
-        <a href="#">Home</a>
-        <a href="#">Search</a>
-        <a href="#">Your Library</a>
+        <a href="#" onclick="switchTab('songs')">Songs <i class="fas fa-music"></i></a>
+        <a href="#" onclick="switchTab('artists')">Artists <i class="fas fa-user"></i></a>
+        <a href="#" onclick="switchTab('playlists')">Playlists <i class="fas fa-list"></i></a>
     </div>
     <script>
+        function switchTab(tabName) {
+            const contents = document.querySelectorAll('.tab-content');
+            for (const content of contents) {
+                content.classList.remove('active');
+            }
+            const activeTab = document.getElementById(`${tabName}-tab`);
+            activeTab.classList.add('active');
+        }
+
         fetch('l5.json')
         .then(response => response.json())
-        .then(songs => {
+        .then(data => {
+            const songs = data.songs;
             const songList = document.getElementById('song-list');
     
             songs.forEach(song => {
                 const songItem = document.createElement('li');
-                songItem.className = 'song-item';
+                songItem.className = 'list-item';
                 songItem.innerHTML = `
                     <div>
                         <strong>${song.songTitle}</strong><br>
@@ -74,6 +113,110 @@
             });
         })
         .catch(error => console.error('Error:', error));
+    
+    
+    // Function to fetch and populate artist data
+    function loadArtists() {
+            fetch('artistData.json')  // assuming your artist data is in a file named artists.json
+            .then(response => response.json())
+            .then(data => {
+                const artists = data.artists;
+                const artistList = document.getElementById('artist-list');
+        
+                artists.forEach(artist => {
+                    const artistItem = document.createElement('li');
+                    artistItem.className = 'list-item';
+                    artistItem.innerHTML = `
+                        <div class="artist-item">
+                            <img src="${artist.featuredImage}" alt="${artist.name}">
+                            <div class="artist-info">
+                                <strong><a href="${artist.artistUrl}">${artist.name}</a></strong><br>
+                                Location: ${artist.location}<br>
+                                <a href="${artist.supportLink}">Support</a> | 
+                                <a href="${artist.shareLink}">Share</a> | 
+                                <a href="${artist.messageLink}">Message</a>
+                            </div>
+                        </div>
+                    `;
+                    artistList.appendChild(artistItem);
+                });
+            })
+            .catch(error => console.error('Error:', error));
+        }
+        
+        // Initial data load
+        loadArtists();
+    
+    
+    
+    
+    
+    
     </script>
+
+<script>
+    const playlists = {};  // Object to hold playlists
+
+    function createPlaylist() {
+        const playlistName = document.getElementById('playlist-name').value;
+        if (playlistName) {
+            playlists[playlistName] = [];
+            const selector = document.getElementById('playlist-selector');
+            const option = document.createElement('option');
+            option.value = playlistName;
+            option.textContent = playlistName;
+            selector.appendChild(option);
+        }
+    }
+
+    function addToPlaylist(song, playlistName) {
+        if (playlists[playlistName]) {
+            playlists[playlistName].push(song);
+            showPlaylist();
+        }
+    }
+
+    function showPlaylist() {
+        const playlistName = document.getElementById('playlist-selector').value;
+        const playlistSongs = document.getElementById('playlist-songs');
+        playlistSongs.innerHTML = '';
+        playlists[playlistName].forEach(song => {
+            const songItem = document.createElement('li');
+            songItem.className = 'list-item';
+            songItem.innerHTML = `
+                <div>
+                    <strong>${song.songTitle}</strong><br>
+                    ${song.artist}
+                </div>
+            `;
+            playlistSongs.appendChild(songItem);
+        });
+    }
+
+    // ... rest of your script content ...
+
+    fetch('l5.json')
+    .then(response => response.json())
+    .then(data => {
+        const songs = data.songs;
+        const allSongsList = document.getElementById('all-songs');
+
+        songs.forEach(song => {
+            const songItem = document.createElement('li');
+            songItem.className = 'list-item';
+            songItem.innerHTML = `
+                <div>
+                    <strong>${song.songTitle}</strong><br>
+                    ${song.artist}
+                </div>
+                <button onclick="addToPlaylist(${JSON.stringify(song)}, '${document.getElementById('playlist-selector').value}')">Add to Playlist</button>
+            `;
+            allSongsList.appendChild(songItem);
+        });
+    })
+    .catch(error => console.error('Error:', error));
+
+    // ... rest of your script content ...
+</script>
 </body>
 </html>
