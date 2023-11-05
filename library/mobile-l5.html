@@ -10,6 +10,8 @@
     <div class="container">
         <header>
 <img src="../assets/u_ahoy23.png" style="max-width: 20%;"> 
+<button>Playlist</button>
+<button>My Account</button>
        </header>
         <h1>Welcome to Ahoy Indie Media</h1>
         <div id="songs-tab" class="tab-content active">
@@ -57,11 +59,21 @@
         <audio id="audio-player" src=""></audio>
     </section>
 
+    <section class="cable">
+        <div class="cable-content">
+Yooo
+
+            <div id="playerContainer" style="position:relative;overflow:hidden;padding-bottom:56.25%">
+                <div id="playerPlaceholder"></div>
+            </div>
+    </section>
+
 
     <div class="bottom-nav">
         <a href="#" onclick="switchTab('songs')">Songs <i class="fas fa-music"></i></a>
         <a href="#" onclick="switchTab('artists')">Artists <i class="fas fa-user"></i></a>
         <a href="#" onclick="switchTab('playlists')">Playlists <i class="fas fa-list"></i></a>
+        <a href="#" onclick="switchTab('cable')">Cable <i class="fas fa-list"></i></a>
     </div>
 
 
@@ -260,6 +272,43 @@ function addToPlaylistButton() {
 }
     </script>
 
+<script>
+    function loadCablePlayer() {
+    const playerPlaceholder = document.getElementById('playerPlaceholder');
+    
+    // Check if the player is already loaded
+    if (playerPlaceholder.children.length > 0) return;
 
+    const iframe = document.createElement('iframe');
+    iframe.src = 'https://cdn.jwplayer.com/players/QI6O3pW7-9Gtk2B1J.html';
+    iframe.id = 'playerFrame';
+    iframe.width = '100%';
+    iframe.height = '100%';
+    iframe.frameBorder = '0';
+    iframe.scrolling = 'auto';
+    iframe.title = 'Untitled Manual Playlist';
+    iframe.style.position = 'absolute';
+    iframe.allowFullscreen = true;
+
+    playerPlaceholder.appendChild(iframe);
+}
+
+document.getElementById('cableButton').addEventListener('click', loadCablePlayer);
+
+
+function switchTab(tabName) {
+    const contents = document.querySelectorAll('.tab-content');
+    for (const content of contents) {
+        content.classList.remove('active');
+    }
+    const activeTab = document.getElementById(`${tabName}-tab`);
+    activeTab.classList.add('active');
+
+    // Check if the tab is 'cable' and load the cable player
+    if (tabName === 'cable') {
+        loadCablePlayer();
+    }
+}
+</script>
 </body>
 </html>
