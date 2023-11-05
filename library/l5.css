@@ -668,6 +668,7 @@ filter:opacity(.48);
 
 #settings {
     display:flex;
+    width:100%;
 }
 
 #settings div {
@@ -687,8 +688,8 @@ filter:opacity(.48);
     justify-content: center;
     align-items: center;
     font-size: 2em;
-    animation: fadeInOut-loading 2s linear infinite; /* Apply the animation */
-
+    animation: fadeInOut-loading 4s linear infinite; /* Apply the animation */
+    opacity: 0.1;
     z-index: 2000; /* Ensure it's above other content */
 }
 
@@ -703,3 +704,4 @@ filter:opacity(.48);
         opacity: 0;
     }
 }
+
