@@ -79,7 +79,7 @@ button {
 table {
     width: 100%;
     border-collapse: collapse;
-    margin: 20px 0;
+    margin: 18px 0;
 }
 
 table, th, td {
@@ -252,7 +252,6 @@ section.favorite {
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
-    background-color: var(--background-color);    
     border-radius: 10px;
     overflow: hidden;
 }
@@ -273,13 +272,10 @@ section.favorite {
 }
 
 #libraryTable td {
-    background-color: rgba(46, 49, 65, 0.9);
     color: var(--text-color);
 }
 
-#libraryTable tbody tr:nth-child(even) {
-    background-color: rgba(46, 49, 65, 0.7);
-}
+
 
 
 
@@ -573,7 +569,6 @@ filter:opacity(.48);
     text-transform: uppercase;
     background-size: 200% auto; /* for animation */
     transition: all 0.15s ease-out; /* transition effect */
-    background-color: var (--background-color);
 
 }
 
@@ -584,7 +579,6 @@ filter:opacity(.48);
 
 .library-play-button {
     width:100%;
-    background-color:var(--button-color);
     color: var(--text-color);
     border-style:solid;
     border-color: var(--secondary-color);
@@ -593,7 +587,6 @@ filter:opacity(.48);
 
 .library-add-button {
     width:100%;
-    background-color:var(--button-color);
     color: var(--text-color);
     border-style:solid;
     border-color: var(--secondary-color);
@@ -608,7 +601,6 @@ filter:opacity(.48);
     width: 100%;
     text-transform: uppercase;
     background-size: 200% auto; /* for animation */
-    background-color:var(--button-color);
     font-size:12px;
     min-height:40px;
 
@@ -647,12 +639,10 @@ filter:opacity(.48);
     transition: all 0.5s ease-out; /* transition effect */
     backdrop-filter: blur(10px); /* Add this line for the glass effect */
     -webkit-backdrop-filter: blur(10px); /* For Safari */
-    background-color:var(--button-color);
 }
 
 .library-like-button {
     width:100%;
-    background-color:var(--button-color);
     color: var(--text-color);
     border-style:solid;
     border-color: var(--secondary-color);
@@ -688,7 +678,8 @@ filter:opacity(.48);
     justify-content: center;
     align-items: center;
     font-size: 2em;
-    animation: fadeInOut-loading 4s linear infinite; /* Apply the animation */
+    text-transform: uppercase;
+    animation: fadeInOut-loading 2.5s linear infinite; /* Apply the animation */
     opacity: 0.1;
     z-index: 2000; /* Ensure it's above other content */
 }
