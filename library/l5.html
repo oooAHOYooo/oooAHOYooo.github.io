@@ -168,8 +168,16 @@
     </div>
 
 
+    <div id="cableWidget" style="display:none;">
+        <div id="playerContainer" style="position:relative;overflow:hidden;padding-bottom:56.25%">
+           <!-- THIS IS WHERE THE CABLE WILL GO -->
+            </div></div>
+
     <!-- GAMES BABY GAMES -->
       <!-- DISPLAY THE GAME MODULES-->
+
+
+  
 
 
     <div id="gameWidget" style="display: none;">
@@ -191,7 +199,6 @@
 
 
 </div>
-
 
 
 
@@ -250,6 +257,44 @@
 <button id="bottomRight">Bottom Right</button>
     </div>
 </section>
+
+<style>
+    .miniIframe {
+        width: 500px; /* Adjust as needed */
+        height: 290px; /* Adjust as needed */
+        transition: all 0.5s ease; /* Optional: animate the size change */
+    }
+    .fullIframe {
+        width: 100%;
+        height: auto;
+    }
+    </style>
+<style>
+    .center-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50vh; /* Adjust this value as needed */
+    }
+</style>
+
+<section class="center-content">
+    <h3>Cable TV</h3>
+  
+        <iframe src='https://cdn.jwplayer.com/players/QI6O3pW7-9Gtk2B1J.html' id="playerFrame" class="miniIframe" width="100%" height="100%" frameborder="0" scrolling="auto" title="Untitled Manual Playlist" style="position:absolute;" allowfullscreen></iframe>
+
+  
+</section>
+
+
+    <script>
+    
+document.getElementById('playerFrame').addEventListener('click', function() {
+    this.classList.remove('miniIframe');
+    this.classList.add('fullIframe');
+});
+</script>
+    </script>
     <footer>
 
 
