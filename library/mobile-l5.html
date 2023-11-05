@@ -76,6 +76,72 @@
             </div>
         </div>
     </div>
+
+    <style>
+        .player {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 50px 0;
+}
+
+.player-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.player-info {
+    flex: 1;
+}
+
+.player-link {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+.player-controls, .player-actions {
+    display: flex;
+    align-items: center;
+}
+
+.player-button {
+    color: white;
+    background: none;
+    border: none;
+    margin: 0 10px;
+    font-size: 20px;
+}
+
+.player-button:focus {
+    outline: none;
+}
+    </style>
+
+    <section class="player">
+        <div class="player-content">
+            <div class="player-info">
+                <a href="#" id="artist-name" class="player-link">Artist Name</a>
+                <a href="#" id="song-title" class="player-link">Song Title</a>
+            </div>
+            <div class="player-controls">
+                <button id="prev" class="player-button"><i class="fas fa-step-backward"></i></button>
+                <button id="play" class="player-button"><i class="fas fa-play"></i></button>
+                <button id="next" class="player-button"><i class="fas fa-step-forward"></i></button>
+            </div>
+            <div class="player-actions">
+                <button id="like" class="player-button"><i class="fas fa-heart"></i></button>
+                <button id="playlist" class="player-button"><i class="fas fa-plus"></i></button>
+            </div>
+        </div>
+        <audio id="audio-player" src=""></audio>
+    </section>
+
+
     <div class="bottom-nav">
         <a href="#" onclick="switchTab('songs')">Songs <i class="fas fa-music"></i></a>
         <a href="#" onclick="switchTab('artists')">Artists <i class="fas fa-user"></i></a>
