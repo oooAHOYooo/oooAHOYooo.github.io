@@ -1,112 +1,109 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&display=swap');
 
-* {
-    font-family: 'Barlow', sans-serif;
-}
-
 
 html {
-    color:white;
+    color: white;
     font-family: 'Barlow', sans-serif;
 }
 
 body {
-    background-color:navy;
+    background-color: navy;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size:cover;
+    background-size: cover;
     background-position: center;
-    animation: kenburns 10s infinite; /* adjust time as needed */
+  
+    /* adjust time as needed */
     font-family: 'Barlow', sans-serif;
 
 }
 
 input {
     font-family: 'Barlow', sans-serif;
-    text-transform:capitalize;
-    color:white;
+    text-transform: capitalize;
+    color: white;
 }
 
-@keyframes kenburns {
-    0% {
-        
-        background-position: top left;
-    }
-    50% {
-     
-        background-position: center;
-    }
-    100% {
-        
-        background-position: bottom right;
-    }
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
 }
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-        }
-        .column {
-            padding: 10px;
-            box-sizing: border-box;
-        }
-        .left, .right {
-            flex: 25%;
-        }
-        .middle {
-            flex: 50%;
-        }
-       
-        
 
-        .search-container {
-            padding-top:20px;
-            padding-bottom:20px;
-            margin-top:50px;
-            margin-bottom:50px;
-        }
+.column {
+    padding: 10px;
+    box-sizing: border-box;
+}
 
-        .search-input {
-            width: 100%;
-            text-transform:capitalize;
-            height: 40px;
-            border: none;
-            border-radius: 20px;
-            padding: 10px 20px;
-            font-size: 16px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(5px);
-            transition: all 0.3s ease;
-            outline: none;
-            color: white;
-            box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.079);
-        }
-        
-        .search-input::placeholder {
-            color: rgba(255, 255, 255, 0.5);
-        }
-        
-        .search-input:focus {
-            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.203);
-        }
+.left,
+.right {
+    flex: 25%;
+}
+
+.middle {
+    flex: 50%;
+}
+
+
+
+.search-container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.search-input {
+    width: 100%;
+    text-transform: capitalize;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+    outline: none;
+    color: white;
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.079);
+}
+
+.search-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.search-input:focus {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.203);
+}
 
 
 
 .song-title {
-    font-size: 16px; /* Increase the font size as needed */
-    overflow-y: auto; /* Add a vertical scrollbar if the content overflows */
-    min-width:275px;
-    width: 100%; /* Adjust the width as needed */
-    height: 35px; /* Adjust the height as needed */
+    font-size: 16px;
+    /* Increase the font size as needed */
+    overflow-y: auto;
+    /* Add a vertical scrollbar if the content overflows */
+    min-width: 275px;
+    width: 100%;
+    /* Adjust the width as needed */
+    height: 35px;
+    /* Adjust the height as needed */
     padding: 0px;
-    padding-left:7.5px;
-    display:flex;
+    padding-left: 7.5px;
+    display: flex;
     align-items: center;
-    background: rgba(255, 255, 255, 0.1); /* Glass-like background */
-    border-radius: 10px; /* Rounded corners */
-    backdrop-filter: blur(10px); /* Blur effect for the glass-like appearance */
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Border for the glass-like appearance */
-    color: white; /* Font color */
-    overflow:hidden;
+    background: rgba(255, 255, 255, 0.1);
+    /* Glass-like background */
+    border-radius: 10px;
+    /* Rounded corners */
+    backdrop-filter: blur(10px);
+    /* Blur effect for the glass-like appearance */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    /* Border for the glass-like appearance */
+    color: white;
+    /* Font color */
+    overflow: hidden;
 }
 
 
@@ -115,36 +112,46 @@ input {
 
 
 .song-artist {
-    font-size: 15px; /* Increase the font size as needed */
-    overflow-y: auto; /* Add a vertical scrollbar if the content overflows */
-    min-width: 150px; /* Adjust the width as needed */
-    height: 35px; /* Adjust the height as needed */
+    font-size: 15px;
+    /* Increase the font size as needed */
+    overflow-y: auto;
+    /* Add a vertical scrollbar if the content overflows */
+    min-width: 150px;
+    /* Adjust the width as needed */
+    height: 35px;
+    /* Adjust the height as needed */
     padding: 0px;
-    padding-left:7.5px;
-    display:flex;
+    padding-left: 7.5px;
+    display: flex;
     align-items: center;
-    margin-right:7.5px;
-    background: rgba(200, 200, 200, 0.1); /* Slightly different glass-like background */
-    border-radius: 10px; /* Rounded corners */
-    backdrop-filter: blur(10px); /* Blur effect for the glass-like appearance */
-    border: 1px solid rgba(200, 200, 200, 0.2); /* Slightly different border for the glass-like appearance */
-    color: rgba(255, 255, 255, 0.811); /* Font color */
+    margin-right: 7.5px;
+    background: rgba(200, 200, 200, 0.1);
+    /* Slightly different glass-like background */
+    border-radius: 10px;
+    /* Rounded corners */
+    backdrop-filter: blur(10px);
+    /* Blur effect for the glass-like appearance */
+    border: 1px solid rgba(200, 200, 200, 0.2);
+    /* Slightly different border for the glass-like appearance */
+    color: rgba(255, 255, 255, 0.811);
+    /* Font color */
 }
 
 /*Buttons */
 
 .muteButton {
-    width:50px;
-    height:50px;
-    border-radius:2px;
-    border-style:solid;
-    border-color:white;
-    background-color:rgba(255, 255, 255, 0.128);
-    color:white;
-    
+    width: 50px;
+    height: 50px;
+    border-radius: 2px;
+    border-style: solid;
+    border-color: white;
+    background-color: rgba(255, 255, 255, 0.128);
+    color: white;
+
 }
 
-.play-button, .add-button {
+.play-button,
+.add-button {
     display: inline-block;
     font-size: 16px;
     padding: 10px 20px;
@@ -159,20 +166,21 @@ input {
     cursor: pointer;
 }
 
-.play-button:hover, .add-button:hover {
+.play-button:hover,
+.add-button:hover {
     background: rgba(255, 255, 255, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 #add {
-    background-color:rgba(0, 98, 128, 0.12);
-    margin-right:7.5px;
-    margin-left:10px;
+    background-color: rgba(0, 98, 128, 0.12);
+    margin-right: 7.5px;
+    margin-left: 10px;
 }
 
 #add:hover {
     background-color: #ff00627c;
-    color:rgb(247, 251, 0);
+    color: rgb(247, 251, 0);
 }
 
 .glass-button {
@@ -199,21 +207,11 @@ input {
     text-decoration: none;
     color: #ffffff;
     background-color: rgba(0, 6, 122, 0.3);
-    border-style:solid;
-    border-width:thin;
-    border-color:rgba(255, 255, 255, 0.114);
-    box-shadow: 0 8px 16px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(4px);
-    transition: all 0.3s ease-out;
+    border-style: solid;
+    border-width: thin;
+    border-color: rgba(255, 255, 255, 0.114);
     font-family: 'Barlow', sans-serif;
-    text-transform:uppercase;
-}
-
-.player-glass-button:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    box-shadow: 0px 15px 20px rgba(46, 92, 229, 0.4);
-    color: #fff;
-    transform: translateY(-.2px);
+    text-transform: uppercase;
 }
 
 
@@ -226,7 +224,7 @@ input {
 
 .playlistHeader h2 {
     font-family: 'Barlow', sans-serif;
-    text-transform:uppercase;
+    text-transform: uppercase;
 }
 
 
@@ -234,13 +232,13 @@ input {
 
 .now-playing-text {
     font-family: 'Barlow', sans-serif;
-    text-transform:uppercase;
+    text-transform: uppercase;
     font-size: 1.5vw;
     color: rgba(255, 255, 255, 0.339);
     margin-left: 10px;
     margin-right: 10px;
     font-weight: 600;
-    text-align:center;
+    text-align: center;
 }
 
 
@@ -249,27 +247,26 @@ input {
     background-color: rgba(255, 255, 255, 0.1);
     border: none;
     color: white;
-    min-width:50px;
-    min-height:40px;
+    min-width: 50px;
+    min-height: 40px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 12px;
     margin: 4px 2px;
-    transition-duration: 0.4s;
     cursor: pointer;
     backdrop-filter: blur(10px);
-  }
-  
-  .select:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-  }
+}
 
-  #newPlaylistName {
+.select:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+#newPlaylistName {
     background: rgba(17, 0, 199, 0);
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 4px );
-    -webkit-backdrop-filter: blur( 2px );
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(2px);
     border-radius: 10px;
     border: 1px solid rgba(0, 122, 178, 0.821);
     padding: 10px 15px;
@@ -281,9 +278,9 @@ input {
     justify-content: center;
     align-items: center;
     border-style: solid;
-    width:100%;
+    width: 100%;
     border-color: white;
-    min-width:900px;
+    min-width: 900px;
 }
 
 .getOnWrap a {
@@ -308,26 +305,36 @@ input {
 }
 
 .remainingTime-text {
-    font-family: 'Barlow', sans-serif; /* Sexy font */
-    font-size: 20px; /* Adjust as needed */
-    font-weight: 600; /* Bold for sexiness */
-    text-align:center;
-    color: white; /* Font color */
-    background: rgba(255, 255, 255, 0.1); /* Glass-like background */
-    border-radius: 10px; /* Rounded corners */
-    backdrop-filter: blur(10px); /* Blur effect for the glass-like appearance */
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Border for the glass-like appearance */
-    padding: 10px; /* Padding for space around text */
+    font-family: 'Barlow', sans-serif;
+    /* Sexy font */
+    font-size: 20px;
+    /* Adjust as needed */
+    font-weight: 600;
+    /* Bold for sexiness */
+    text-align: center;
+    color: white;
+    /* Font color */
+    background: rgba(255, 255, 255, 0.1);
+    /* Glass-like background */
+    border-radius: 10px;
+    /* Rounded corners */
+    backdrop-filter: blur(10px);
+    /* Blur effect for the glass-like appearance */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    /* Border for the glass-like appearance */
+    padding: 10px;
+    /* Padding for space around text */
 }
 
 .topLogin {
     position: fixed;
     top: 10px;
     right: 10px;
-    z-index: 1000; /* This ensures the button stays on top of other elements */
-  }
-  
-  .loginButton {
+    z-index: 1000;
+    /* This ensures the button stays on top of other elements */
+}
+
+.loginButton {
     padding: 10px;
     color: rgb(255, 255, 255);
     width: 75px;
@@ -335,24 +342,31 @@ input {
     border-style: solid;
     border-width: 1px;
     border-color: rgba(255, 255, 255, 0.563);
-    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
-    backdrop-filter: blur(5px); /* Blur effect */
-    -webkit-backdrop-filter: blur(5px); /* For Safari */
-    transition: all 0.3s ease; /* Smooth transition */
-  }
-  
-  .loginButton:hover {
-    background-color: rgba(255, 255, 255, 0.2); /* Slightly more opaque on hover */
-    backdrop-filter: blur(10px); /* Increased blur on hover */
-    -webkit-backdrop-filter: blur(10px); /* For Safari */
-  }
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Semi-transparent background */
+    backdrop-filter: blur(5px);
+    /* Blur effect */
+    -webkit-backdrop-filter: blur(5px);
+    /* For Safari */
+    transition: all 0.3s ease;
+    /* Smooth transition */
+}
 
-  .topLogin {
+.loginButton:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    /* Slightly more opaque on hover */
+    backdrop-filter: blur(10px);
+    /* Increased blur on hover */
+    -webkit-backdrop-filter: blur(10px);
+    /* For Safari */
+}
+
+.topLogin {
     text-align: right;
 }
 
 
-  /*PROGRESS BAR */
+/*PROGRESS BAR */
 .progress-bar-container {
     width: 100%;
     height: 20px;
@@ -367,10 +381,11 @@ input {
 .progress-bar {
     height: 100%;
     background-color: #3400ce27;
-    width: 50%; /* You can change this value dynamically to represent the actual progress */
+    width: 50%;
+    /* You can change this value dynamically to represent the actual progress */
 }
 
-  .progress-bar-container {
+.progress-bar-container {
     width: 100%;
     overflow: hidden;
 }
@@ -378,4 +393,30 @@ input {
 #progressBar {
     height: 20px;
     background: #02003e43;
+}
+
+#bottomControls {
+    padding-top: 10px;
+    /* Adjust as needed */
+}
+
+.lilFloatButton {
+    font-size: 12px;
+    border-style: solid;
+    border-color: white;
+}
+
+.dragon {
+    width:100%;
+    display:flex;
+    flex-direction:column;
+
+}
+
+@media only screen and (max-width: 600px) {
+    .dragon {
+        width:100%;
+        display:flex;
+        flex-direction: row;
+    }
 }

@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ahoy Indie Media</title>
+    <title>Ahoy Indie Media - Library</title>
+    <meta name="description" content="This is Ahoy's library of indie media.">
     <script type="text/javascript" src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js"></script>
     <link rel="stylesheet" href="./l5mobile.css">
     <link rel="stylesheet" href="./l5.css">
@@ -19,9 +20,6 @@
         <a href="https://ahoy.ooo"><img src="../assets/u_ahoy23.png"></a>
     </header>
 
-    <style>
-
-    </style>
 <!-- FEATURED SONGS -->
 <section>
     <div class="sectionHeader">
@@ -60,25 +58,6 @@
         </table>
     </section>
 
-
-<style>
-    .dragon {
-        width:100%;
-        display:flex;
-        flex-direction:column;
-
-    }
-
-    @media only screen and (max-width: 600px) {
-        .dragon {
-            width:100%;
-            display:flex;
-            flex-direction: row;
-        }
-    }
-</style>
-
-
 <div class="dragon">
     <!-- Favorite Songs -->
     <section id="favoritesSection card">
@@ -103,33 +82,7 @@
 
 
 
-    <!-- Playlists -->
-    <!-- 
-    <section id="playlistSection card">
-        <h2>Your Playlist</h2>
-        <p>Add songs to a playlist and then burn them to a cd!</p>
-        <input type="text" id="newPlaylistName" placeholder="Enter new playlist name">
-        <button onclick="createNewPlaylist()">Create New Playlist</button>
-        <button>Save Playlist</button>
-        <select id="playlistSelector">
-            
-        </select>
-        <table>
-            <thead>
-                <tr>
-                    <th>Artist</th>
-                    <th>Song Title</th>
-                    <th>Play</th>
-                    <th>Remove from Playlist</th>
-                    <th>Add to Queue</th>
-                    <th>Like/Favorite</th>
-                </tr>
-            </thead>
-            <tbody id="playlistList">
-                
-            </tbody>
-        </table>
-    </section>-->
+
 </div>
 
 
@@ -155,11 +108,7 @@
         <button onclick="nextSongInQueue()">Next Song</button>
     </section>
     <style>
-        .lilFloatButton {
-            font-size: 12px;
-            border-style: solid;
-            border-color: white;
-        }
+
     </style>
 
 
@@ -184,13 +133,6 @@
         <div id="progressBar" title="Song Progress">
             <div id="progressThumb"></div>
         </div>
-
-        <style>
-            #bottomControls {
-                padding-top: 10px;
-                /* Adjust as needed */
-            }
-        </style>
 
         <div id="bottomControls">
             <audio id="audioPlayer" src="" ontimeupdate="updateProgressBar()"></audio>
@@ -231,20 +173,6 @@
       <!-- DISPLAY THE GAME MODULES-->
 
 
-      <script>
-function toggleGames() {
-    const gameWidget = document.getElementById('gameWidget');
-    const toggleSections = document.querySelectorAll('.toggle-section');
-
-    if (gameWidget.style.display === "none") {
-        gameWidget.style.display = "block";
-        toggleSections.forEach(section => section.style.display = "none");
-    } else {
-        gameWidget.style.display = "none";
-        toggleSections.forEach(section => section.style.display = "block");
-    }
-}
-    </script>
     <div id="gameWidget" style="display: none;">
         <!-- Your games HTML goes here -->
  
@@ -312,15 +240,7 @@ function toggleGames() {
             <a href="https://ahoy.ooo"><img src="../assets/u_ahoy23.png" style="width:300px"></a>
         </div>
 
-        <!-- ADD THE LEGEND -->
-        <!-- <div class="legend"><p>Legend</p>
-    <div class="legend-item">
-        <span class="legend-color new-song"></span>
-        <span class="legend-label">New Songs</span>
-    </div>
-
-</div>-->
-
+     
 
     </footer>
 
@@ -352,25 +272,7 @@ function toggleGames() {
 
 
     </script>
-    <script>
-
-        document.addEventListener('DOMContentLoaded', function () {
-            populateSongs();
-
-            // This function will execute after the song list is populated
-            const urlParams = new URLSearchParams(window.location.search);
-            const songId = urlParams.get('songId');
-
-            if (songId) {
-                const songIndex = songs.findIndex(s => s.id == songId);
-                if (songIndex !== -1) {
-                    playSongFromList(songIndex);
-                }
-            }
-        });
-
-
-    </script>
+ 
     <!-- DISPLAY MINI PLAYER BY DEFAULT ON MOBILE-->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -380,9 +282,25 @@ function toggleGames() {
             }
         });
     </script>
+
+
+<script>
+    function toggleGames() {
+        const gameWidget = document.getElementById('gameWidget');
+        const toggleSections = document.querySelectorAll('.toggle-section');
+    
+        if (gameWidget.style.display === "none") {
+            gameWidget.style.display = "block";
+            toggleSections.forEach(section => section.style.display = "none");
+        } else {
+            gameWidget.style.display = "none";
+            toggleSections.forEach(section => section.style.display = "block");
+        }
+    }
+        </script>
+ 
     <script src="feature_featureSongTable.js"></script>
     <script src="function_changeTheme.js"></script>
-    <script src="viz2.js"></script>
 </body>
 
 </html>
