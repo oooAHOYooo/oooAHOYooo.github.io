@@ -570,8 +570,6 @@ filter:opacity(.48);
     text-transform: uppercase;
     background-size: 200% auto; /* for animation */
     transition: all 0.15s ease-out; /* transition effect */
-    backdrop-filter: blur(10px); /* Add this line for the glass effect */
-    -webkit-backdrop-filter: blur(10px); /* For Safari */
     background-color: var (--background-color);
 
 }
