@@ -666,3 +666,40 @@ filter:opacity(.48);
 }
 
 
+#settings {
+    display:flex;
+}
+
+#settings div {
+    border-style:solid;
+    padding:20px;
+}
+
+
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    animation: fadeInOut-loading 2s linear infinite; /* Apply the animation */
+
+    z-index: 2000; /* Ensure it's above other content */
+}
+
+@keyframes fadeInOut-loading {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}

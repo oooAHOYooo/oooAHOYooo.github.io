@@ -16,6 +16,10 @@
 
 <body>
 
+<div id="loading-screen" class="loading-screen">
+    Loading...
+</div>
+
     <header class="splash-header full-width">
         <a href="https://ahoy.ooo"><img src="../assets/u_ahoy23.png"></a>
     </header>
@@ -225,19 +229,6 @@
         <button id="closeCastPopup">Close</button>
     </div>
 
-    <style>
-        #settings {
-            display:flex;
-        }
-
-        #settings div {
-            border-style:solid;
-            padding:20px;
-        }
-
-        #settings h2 {}
-    </style>
-
 <div style="display: flex; justify-content: center;">
     <a href="https://ahoy.ooo"><img src="../assets/u_ahoy23.png" style="width:300px"></a>
 </div>
@@ -323,6 +314,15 @@
 <script src="feature_movePlayerPosition.js"></script>
 <script src="feature_featureSongTable.js"></script>
     <script src="function_changeTheme.js"></script>
+
+    <script>
+        window.addEventListener('load', function() {
+            var loadingScreen = document.getElementById('loading-screen');
+            setTimeout(function() {
+                loadingScreen.style.display = 'none';
+            }, 2000); // 2000 milliseconds = 2 seconds
+        });
+    </script>
 </body>
 
 </html>
