@@ -167,23 +167,7 @@ function updateProgressBar() {
     progressBar.style.width = percentage + "%";
 }
 
-function populateSongs() {
-    const songList = document.getElementById('songList');
-    songList.innerHTML = '';
-    songs.forEach((song, index) => {
-        const songRow = `
-            <tr>
-                <td>${song.artist}</td>
-                <td>${song.songTitle}</td>
-                <td><button onclick="playSongFromList(${index})">Play</button></td>
-                <td><button onclick="addToPlaylist(${index})">Add to Playlist</button></td>
-                <td><button onclick="addToQueue(${index})">Add to Queue</button></td>
-                <td><button onclick="likeSong(${index})">${song.liked ? 'Liked' : 'Like'}</button></td>
-            </tr>
-        `;
-        songList.innerHTML += songRow;
-    });
-}
+
 
 function addToPlaylist(index) {
     currentPlaylist.push(songs[index]);

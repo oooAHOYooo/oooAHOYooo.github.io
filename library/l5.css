@@ -26,8 +26,6 @@ body {
     max-height:320px;
     border-color: var(--border-color);
     background-color: var(--background-color);    
-    backdrop-filter: blur(5px);
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* Add box shadow */
     padding-left: 20px;
     cursor: move; /* Added to indicate the element is movable */
     z-index: 1000; /* Ensure it's above other elements */
@@ -83,7 +81,6 @@ table {
 }
 
 table, th, td {
-    border: 1px solid var(--secondary-color);
 
 }
 
@@ -94,9 +91,7 @@ th, td {
 
 
 
-td {
-    background-color: rgba(46, 49, 65, 0.9);
-}
+
 
 section {
     border-radius: 10px;
@@ -146,7 +141,6 @@ input, select {
 
 #currentSongDisplay {
     background: rgba(255, 255, 255, 0.1); /* Slight white transparency for the frosted glass effect */
-    backdrop-filter: blur(5px); /* Frosted glass effect */
     padding: 10px;
     border-radius: 2;
     margin: 12px 0;
@@ -179,13 +173,11 @@ input, select {
 .card {
     width: 100%;
     max-width: 400px; /* Adjust this to your preference */
-    background-color: rgba(0, 0, 0, 0.7); /* Adjust the color and opacity to your liking */
     border-radius: 10px;
     padding: 10px;
     margin: 20px auto; /* Centered cards */
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
     overflow: hidden; /* Ensures content inside card does not overflow */
-    backdrop-filter: blur(10px); /* Add this line for the glass effect */
 }
 
 /* Apply card class to table */
@@ -613,8 +605,6 @@ filter:opacity(.48);
     border-color: var(--secondary-color);
     width: 100%;
     text-transform: uppercase;
-    background-size: 200% auto; /* for animation */
-    backdrop-filter: blur(10px); /* Add this line for the glass effect */
     font-size:12px;
     min-height:40px;
 }
