@@ -1,10 +1,10 @@
 :root {
-    --background-color:	rgb(0, 0, 29);
+    --background-color:	rgb(0, 14, 19);
     --text-color:  #00f2ff;
     --border-color: #00e5ff;
     --secondary-color: #000000ba;
     --button-color:#ffffff2d;
-    --gold : #ffd90049;
+    --gold : #ffd900;
 }
 
 body {
@@ -39,6 +39,11 @@ body {
     justify-content: space-between;
     padding: 10px 0;
     border-bottom: 1px solid var(--border-color);
+}
+
+.list-item:hover {
+    border-bottom: 1px solid var(--gold);
+    cursor: pointer;
 }
 
 .bottom-nav {
