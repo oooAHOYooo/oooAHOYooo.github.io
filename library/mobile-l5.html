@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ahoy Indie Media</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: white;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .song-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .song-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #333;
+        }
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+        }
+        .bottom-nav a {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Ahoy Indie Media</h1>
+        <ul class="song-list" id="song-list"></ul>
+    </div>
+    <div class="bottom-nav">
+        <a href="#">Home</a>
+        <a href="#">Search</a>
+        <a href="#">Your Library</a>
+    </div>
+    <script>
+        fetch('l5.json')
+        .then(response => response.json())
+        .then(songs => {
+            const songList = document.getElementById('song-list');
+    
+            songs.forEach(song => {
+                const songItem = document.createElement('li');
+                songItem.className = 'song-item';
+                songItem.innerHTML = `
+                    <div>
+                        <strong>${song.songTitle}</strong><br>
+                        ${song.artist}
+                    </div>
+                    <audio controls>
+                        <source src="${song.mp3url}" type="audio/mp3">
+                    </audio>
+                `;
+                songList.appendChild(songItem);
+            });
+        })
+        .catch(error => console.error('Error:', error));
+    </script>
+</body>
+</html>
