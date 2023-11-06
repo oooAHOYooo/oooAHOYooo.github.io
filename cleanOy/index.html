@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="src/foundational.css">
+<script src="https://cdn.jwplayer.com/libraries/your-jwplayer-key.js"></script>
 </head>
 <body>
     <div class="container">
@@ -118,18 +119,15 @@
 
 <div id="media-tab" class="tab-content">
     <!-- Media content goes here -->
-    This is the MEDDIA
-    <video id="videoPlayer" controls style="display: block;">
-        <source id="videoSource" src="" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+    This is media - the MEDDIA
+    <script src="https://cdn.jwplayer.com/players/s8ETfT0u-9Gtk2B1J.js"></script>
     <table id="mediaTable" class="list">
         <thead>
             <tr>
+                <th>Thumbnail</th>
                 <th>Title</th>
                 <th>Artist</th>
                 <th>Duration</th>
-                <th>Link</th>
             </tr>
         </thead>
         <tbody>
@@ -640,14 +638,20 @@ function loadCommits() {
 
 <script>
 fetch('data/mediaCollection.json')
-    .then(response => response.json())
+.then(response => response.json())
     .then(data => {
         const tableBody = document.querySelector('#mediaTable tbody');
-        const videoPlayer = document.querySelector('#videoPlayer');
-        const videoSource = document.querySelector('#videoSource');
 
         data.forEach(item => {
             const row = document.createElement('tr');
+
+            const thumbnailCell = document.createElement('td');
+            const thumbnail = document.createElement('img');
+            thumbnail.src = item.thumbnail_link;
+            thumbnail.alt = item.display_title;
+            thumbnail.style.width = '50px'; // You can adjust the size as needed
+            thumbnailCell.appendChild(thumbnail);
+            row.appendChild(thumbnailCell);
 
             const titleCell = document.createElement('td');
             titleCell.textContent = item.display_title;
@@ -660,19 +664,6 @@ fetch('data/mediaCollection.json')
             const durationCell = document.createElement('td');
             durationCell.textContent = item.duration;
             row.appendChild(durationCell);
-
-            const linkCell = document.createElement('td');
-            const link = document.createElement('a');
-            link.href = item.mp4_link;
-            link.textContent = 'Link';
-            linkCell.appendChild(link);
-            row.appendChild(linkCell);
-
-            row.addEventListener('click', () => {
-                videoPlayer.style.display = 'block';
-                videoSource.src = item.mp4_link;
-                videoPlayer.load();
-            });
 
             tableBody.appendChild(row);
         });
