@@ -76,33 +76,18 @@
                 <iframe src='https://cdn.jwplayer.com/players/QI6O3pW7-9Gtk2B1J.html' id="playerFrame" width="100%" height="100%" frameborder="0" scrolling="auto" title="Untitled Manual Playlist" style="position:absolute;" allowfullscreen></iframe>
                 </div>
                 <h3>Cable Content Schedule</h3>
-<table>
-<tr>
-<td style="text-align:left;">Time (EST)</td>
-<td style="text-align:left;">Block Name</td>
-<td style="text-align:left;">Description</td>
-</tr>
-<tr>
-<td>8 - 10AM</td>
-<td>Morning Mix</td>
-<td>A blend of and indie music videos to start the day.</td>
-</tr>
-<tr>
-<td>1PM-3pm</td>
-<td>Afternoon Acoustics</td>
-<td>Unplug and relax with acoustic performances from indie artists.</td>
-</tr>
-<tr>
-<td>6:00 PM - 8:00 PM</td>
-<td>Indie Spotlight</td>
-<td>Get to know a featured indie artist and their work.</td>
-</tr>
-<tr>
-<td>10:00 PM - 12:00 AM</td>
-<td>Late Night Jams</td>
-<td>Groove to a mix of indie films and videos and tracks to end your day.</td>
-</tr>
-</table>
+                <table id="cable-schedule-table">
+                    <thead>
+                        <tr>
+                            <td style="text-align:left;">Time (EST)</td>
+                            <td style="text-align:left;">Block Name</td>
+                            <td style="text-align:left;">Description</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Schedule data will be inserted here -->
+                    </tbody>
+                </table>
         </div>
 
 
@@ -621,6 +606,32 @@ function loadCommits() {
 
     // Load commits when the page loads
     window.onload = loadCommits;
+</script>
+
+<script>
+    fetch('data/cableSchedule.json')
+    .then(response => response.json())
+    .then(data => {
+        const table = document.querySelector('#cable-schedule-table tbody');
+        data.forEach(item => {
+            const row = document.createElement('tr');
+
+            const timeCell = document.createElement('td');
+            timeCell.textContent = item.time;
+            row.appendChild(timeCell);
+
+            const blockNameCell = document.createElement('td');
+            blockNameCell.textContent = item.blockName;
+            row.appendChild(blockNameCell);
+
+            const descriptionCell = document.createElement('td');
+            descriptionCell.textContent = item.description;
+            row.appendChild(descriptionCell);
+
+            table.appendChild(row);
+        });
+    })
+    .catch(error => console.error('Error:', error));
 </script>
 
 </body>

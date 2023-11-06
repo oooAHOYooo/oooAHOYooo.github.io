@@ -22,43 +22,6 @@
     "artist": "Unknown Artist",
     "duration": "00:03:26",
     "mp4_link": "sample_link_to_mp4"
-  },
-
-  {
-    "display_title": "The Rob Show - Episode 12 - Josh Kebabian - Clip 4",
-    "artist": "Josh Kebabian",
-    "duration": "00:18:10",
-    "mp4_link": "sample_link_to_mp4"
-  },
-  {
-    "display_title": "The Rob Show - Episode 12 - Josh Kebabian - Clip 5",
-    "artist": "Josh Kebabian",
-    "duration": "00:09:50",
-    "mp4_link": "sample_link_to_mp4"
-  },
-  {
-    "display_title": "Ocean",
-    "artist": "Campbell Rice",
-    "duration": "00:03:17",
-    "mp4_link": "sample_link_to_mp4"
-  },
-  {
-    "display_title": "From Here",
-    "artist": "Campbell Rice",
-    "duration": "00:05:00",
-    "mp4_link": "sample_link_to_mp4"
-  },
-  {
-    "display_title": "Sunflower",
-    "artist": "Campbell Rice",
-    "duration": "00:02:09",
-    "mp4_link": "sample_link_to_mp4"
-  },
-  {
-    "display_title": "Luv U",
-    "artist": "Campbell Rice",
-    "duration": "00:04:48",
-    "mp4_link": "sample_link_to_mp4"
   }
-  // ... any additional entries ...
+
 ]

@@ -22,7 +22,7 @@ body {
     padding: 0;
     background-color: var(--background-color);
     color: var(--text-color);
-padding-bottom:22.5vh;}
+    padding-bottom:20.5vh;}
 
 
 button {
@@ -238,4 +238,46 @@ color:var(--text-color);}
 
 .control-button:focus {
     outline: none;
+}
+
+/* Add this to your foundational.css file */
+
+#cable-tab {
+    color: var(--text-color);
+}
+
+#playerContainer {
+    background-color: var(--secondary-color);
+    border: 2px solid var(--border-color);
+    border-radius: 2.5px;
+    
+}
+
+#cable-schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#cable-schedule-table thead {
+    background-color: var(--secondary-color);
+    
+}
+
+#cable-schedule-table td {
+    
+    padding: 2.5px;
+    font-size:16px;
+    border-bottom: 1px solid var(--border-color);
+
+}
+
+
+
+#cable-schedule-table tr:nth-child(even) {
+    background-color: var(--background-color);
+}
+
+#cable-schedule-table tr:nth-child(odd) {
+    background-color: var(--secondary-color);
 }
