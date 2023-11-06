@@ -17,9 +17,53 @@
 <button>My Account</button> -->
        </header>
 
+<style>
+.now-playing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    color: var(--text-color);
+}
 
+#album-art {
+    width: 200px; /* Adjust this to change the size of the album art */
+    height: 200px; /* Adjust this to change the size of the album art */
+    object-fit: cover; /* This will make sure the image scales nicely */
+    margin-bottom: 20px; /* Space between the album art and the song title */
+}
+
+.song-info {
+    text-align: center;
+}
+
+.song-info h2, .song-info h3 {
+    margin: 0;
+}
+
+.song-controls {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.control-button {
+    color: var(--text-color);
+    background: var(--background-color);
+    border: none;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+.control-button:focus {
+    outline: none;
+}
+</style>
        <div id="nowplaying-tab" class="tab-content">
         <div class="now-playing">
+            <img id="album-art" src="path_to_your_album_art.jpg" alt="Album Art">
             <div class="song-info">
                 <h2 id="current-song-title">Song Title</h2>
                 <h3 id="current-song-artist">Artist Name</h3>
@@ -161,7 +205,7 @@
 
 function nextTab() {
     currentTabIndex++;
-    if (currentTabIndex > 9) { // Reset to the first tab if we've gone past the last one
+    if (currentTabIndex > 8) { // Reset to the first tab if we've gone past the last one
         currentTabIndex = 0;
     }
     switchTabByIndex(currentTabIndex);
@@ -170,7 +214,7 @@ function nextTab() {
 function prevTab() {
     currentTabIndex--;
     if (currentTabIndex < 0) { // Loop back to the last tab if we've gone past the first one
-        currentTabIndex = 9;
+        currentTabIndex = 8;
     }
     switchTabByIndex(currentTabIndex);
 }
