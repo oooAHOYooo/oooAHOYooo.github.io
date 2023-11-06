@@ -1,0 +1,69 @@
+{
+	"artists": [
+	
+	  {
+		"id": 1,
+		"name": "Justin Arena",
+		"featuredImage": "./total/justinArena/justinArena.jpg",
+		"location": "Rockport Massachuets",
+		"showDates": ["Date1", "Date2", "Date3"],
+		"supportLink": "https://support.link",
+		"shareLink": "https://share.link",
+		"messageLink": "https://message.link",
+		"productSDK": "marketplace_data_for_Justin_Arena",
+		"artistUrl": "https://ahoy.ooo/artist/total/justinArena/justinArena.html"
+
+	  },
+	  {
+		"id": 2,
+		"name": "YouthXL",
+		"featuredImage": "./total/youthXL/youthXL.png",
+		"location": "Brooklyn New York",
+		"showDates": ["Date1", "Date2", "Date3"],
+		"supportLink": "https://support.link",
+		"shareLink": "https://share.link",
+		"messageLink": "https://message.link",
+		"productSDK": "marketplace_data_for_Justin_Arena",
+		"artistUrl": "https://ahoy.ooo/artist/total/youthXL/youthXL.html"
+
+	  },
+	  {
+		"id": 3,
+		"name": "Samuel Dylan Witch",
+		"featuredImage": "./total/sdw/sdw.jpg",
+		"location": "Valhalla New York",
+		"showDates": ["Date1", "Date2", "Date3"],
+		"supportLink": "https://support.link",
+		"shareLink": "https://share.link",
+		"messageLink": "https://message.link",
+		"productSDK": "marketplace_data_for_Justin_Arena",
+		"artistUrl": "https://ahoy.ooo/artist/total/sdw/sdw.html"
+  
+	},
+	{
+		"id": 4,
+		"name": "Cambell Rice",
+		"featuredImage": "./total/sdw/sdw.jpg",
+		"location": "Valhalla New York",
+		"showDates": ["Date1", "Date2", "Date3"],
+		"supportLink": "https://support.link",
+		"shareLink": "https://share.link",
+		"messageLink": "https://message.link",
+		"productSDK": "marketplace_data_for_Justin_Arena",
+		"artistUrl": "https://ahoy.ooo/artist/total/cambellRice/cambellRice.html"
+  
+	},
+	{
+		"id": 5,
+		"name": "Clones of Clarence",
+		"featuredImage": "./total/clonesOfClarence/clonesOfClarence.html",
+		"location": "Location One",
+		"showDates": ["Date1", "Date2", "Date3"],
+		"supportLink": "https://support.link",
+		"shareLink": "https://share.link",
+		"messageLink": "https://message.link",
+		"productSDK": "marketplace_data_for_Artist_One",
+		"artistUrl": "https://ahoy.ooo/artist/total/clonesOfClarence/clonesOfClarence.html"
+	  }
+	]
+  }
