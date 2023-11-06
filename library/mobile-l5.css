@@ -64,12 +64,12 @@ body {
 
 .player {
     position: fixed;
-    bottom: 0;
+    bottom: 8%;
     width: 100%;
     background-color: var(--secondary-color);
     color: var(--text-color);
     padding: 50px 0;
-    margin-bottom:20px;
+    margin-bottom:10px;
 }
 
 .player-content {
@@ -104,4 +104,44 @@ body {
 
 .player-button:focus {
     outline: none;
+}
+
+
+.bottom-controller {
+    position:fixed;
+    bottom:0;
+    height :10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Add your styles here (padding, background, etc.) */
+}
+
+.bottom-controller {
+    padding: 10px 0;
+    background-color: var(--background-color);
+}
+
+.bottom-controller button {
+    color: var(--text-color);
+    background: var(--background-color);
+    border: none;
+    font-size: 32px;
+    cursor: pointer;
+    border-style:solid;
+    padding:30px;
+    
+}
+
+#tab-indicator {
+    color: var(--text-color);
+    font-size: 20px;
+}
+
+
+.fixed-bottom {
+    position: fixed;
+    bottom: 5%; /* Adjust this value based on the height of your bottom navigation */
+    width: 100%;
+    z-index: 999; /* To make sure it's above other elements */
 }

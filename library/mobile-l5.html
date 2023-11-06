@@ -13,7 +13,6 @@
 <button>Playlist</button>
 <button>My Account</button>
        </header>
-        <h1>Welcome to Ahoy Indie Media</h1>
         <div id="songs-tab" class="tab-content active">
             <ul class="list" id="song-list"></ul>
         </div>
@@ -66,13 +65,20 @@
 
 
 
+    <div class="bottom-controller fixed-bottom">
+        <button id="left-arrow" onclick="prevTab()"><i class="fas fa-arrow-left"></i></button>
+        <span id="tab-indicator">Songs</span> <!-- Default text for the first tab -->
+        <button id="right-arrow" onclick="nextTab()"><i class="fas fa-arrow-right"></i></button>
+    </div>
 
+
+    <!-- 
     <div class="bottom-nav">
         <a href="#" onclick="switchTab('songs')">Songs <i class="fas fa-music"></i></a>
         <a href="#" onclick="switchTab('artists')">Artists <i class="fas fa-user"></i></a>
         <a href="#" onclick="switchTab('playlists')">Playlists <i class="fas fa-list"></i></a>
         <a href="#" onclick="switchTab('cable')">Cable <i class="fas fa-tv"></i></a>
-    </div>
+    </div>-->
 
 
     <script>
@@ -86,6 +92,41 @@
             const activeTab = document.getElementById(`${tabName}-tab`);
             activeTab.classList.add('active');
         }
+
+
+        let currentTabIndex = 0; // Assuming you have a global variable to keep track of the current tab
+
+function nextTab() {
+    currentTabIndex++;
+    if (currentTabIndex > 3) { // Reset to the first tab if we've gone past the last one
+        currentTabIndex = 0;
+    }
+    switchTabByIndex(currentTabIndex);
+}
+
+function prevTab() {
+    currentTabIndex--;
+    if (currentTabIndex < 0) { // Loop back to the last tab if we've gone past the first one
+        currentTabIndex = 3;
+    }
+    switchTabByIndex(currentTabIndex);
+}
+
+// Extend the existing switchTab function to accept an index
+function switchTabByIndex(tabIndex) {
+    const tabs = ['songs', 'artists', 'playlists', 'cable']; // Add or update the id names of your tabs in order
+    const tabIndicator = document.getElementById('tab-indicator');
+    if (tabIndex >= 0 && tabIndex < tabs.length) {
+        switchTab(tabs[tabIndex]);
+        // Update the tab indicator text
+        tabIndicator.textContent = tabs[tabIndex].charAt(0).toUpperCase() + tabs[tabIndex].slice(1); // Capitalize the first letter
+    }
+}
+
+// You might need to call the switchTabByIndex function once at the start to initialize the correct tab name
+switchTabByIndex(currentTabIndex);
+
+
 
         function playSong(artist, title, url) {
             document.getElementById('artist-name').textContent = artist;
@@ -307,6 +348,20 @@ function switchTab(tabName) {
         loadCablePlayer();
     }
 }
+
+// Extend the existing switchTab function to accept an index
+function switchTabByIndex(tabIndex) {
+    const tabs = ['songs', 'artists', 'playlists', 'cable']; // Add or update the id names of your tabs in order
+    const tabIndicator = document.getElementById('tab-indicator');
+    if (tabIndex >= 0 && tabIndex < tabs.length) {
+        switchTab(tabs[tabIndex]);
+        // Update the tab indicator text
+        tabIndicator.textContent = tabs[tabIndex].charAt(0).toUpperCase() + tabs[tabIndex].slice(1); // Capitalize the first letter
+    }
+}
+
+// You might need to call the switchTabByIndex function once at the start to initialize the correct tab name
+switchTabByIndex(currentTabIndex);
 </script>
 </body>
 </html>
