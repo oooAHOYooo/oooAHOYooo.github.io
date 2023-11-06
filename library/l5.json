@@ -44,7 +44,7 @@
 		"artist": "Cambell Rice",
 		"songTitle": "Far From Here",
 		"artistThumbnail": "https://unsplash.com/photos/random_person_image2",
-		"albumArtwork": "https://unsplash.com/photos/random_nautical_image2",
+		"albumArtwork": "./artist/total/cambellRice/cambellRice.jpg",
 		"artistUrl" : "https://ahoy.ooo/artist/total/cambellRice/cambellRice.html",
 		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Campbell+Rice-+From+Here.mp3",
 		"play": false

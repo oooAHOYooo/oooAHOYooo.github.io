@@ -1,10 +1,19 @@
 :root {
+    /* Dark theme */
     --background-color:	rgb(0, 14, 19);
     --text-color:  #00f2ff;
     --border-color: #00e5ff;
     --secondary-color: #000000ba;
     --button-color:#ffffff2d;
     --gold : #ffd900;
+
+    /* Light theme */
+    --light-background-color: #ffffff;
+    --light-text-color:  #000000;
+    --light-border-color: #e0e0e0;
+    --light-secondary-color: #f2f2f2;
+    --light-button-color: #d9d9d9;
+    --light-gold : #ffd900;
 }
 
 body {
@@ -14,6 +23,25 @@ body {
     background-color: var(--background-color);
     color: var(--text-color);
 padding-bottom:22.5vh;}
+
+
+button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    color: var(--text-color);
+    border: solid;
+    border-radius: 5px;
+    background-color:var(--background-color);
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+   border-color: var(--gold);
+   color: var(--gold);
+}
 
 .artist-info a {
 color:var(--text-color);}

@@ -18,52 +18,11 @@
        </header>
 
 <style>
-.now-playing {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    color: var(--text-color);
-}
 
-#album-art {
-    width: 200px; /* Adjust this to change the size of the album art */
-    height: 200px; /* Adjust this to change the size of the album art */
-    object-fit: cover; /* This will make sure the image scales nicely */
-    margin-bottom: 20px; /* Space between the album art and the song title */
-}
-
-.song-info {
-    text-align: center;
-}
-
-.song-info h2, .song-info h3 {
-    margin: 0;
-}
-
-.song-controls {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    margin-top: 20px;
-}
-
-.control-button {
-    color: var(--text-color);
-    background: var(--background-color);
-    border: none;
-    font-size: 32px;
-    cursor: pointer;
-}
-
-.control-button:focus {
-    outline: none;
-}
 </style>
        <div id="nowplaying-tab" class="tab-content">
         <div class="now-playing">
-            <img id="album-art" src="path_to_your_album_art.jpg" alt="Album Art">
+            <!-- <img id="album-art" src="path_to_your_album_art.jpg" alt="Album Art">-->
             <div class="song-info">
                 <h2 id="current-song-title">Song Title</h2>
                 <h3 id="current-song-artist">Artist Name</h3>
@@ -116,17 +75,48 @@
             <div id="playerContainer" style="position:relative;overflow:hidden;padding-bottom:56.25%">
                 <iframe src='https://cdn.jwplayer.com/players/QI6O3pW7-9Gtk2B1J.html' id="playerFrame" width="100%" height="100%" frameborder="0" scrolling="auto" title="Untitled Manual Playlist" style="position:absolute;" allowfullscreen></iframe>
                 </div>
+                <h3>Cable Content Schedule</h3>
+<table>
+<tr>
+<td style="text-align:left;">Time (EST)</td>
+<td style="text-align:left;">Block Name</td>
+<td style="text-align:left;">Description</td>
+</tr>
+<tr>
+<td>8 - 10AM</td>
+<td>Morning Mix</td>
+<td>A blend of and indie music videos to start the day.</td>
+</tr>
+<tr>
+<td>1PM-3pm</td>
+<td>Afternoon Acoustics</td>
+<td>Unplug and relax with acoustic performances from indie artists.</td>
+</tr>
+<tr>
+<td>6:00 PM - 8:00 PM</td>
+<td>Indie Spotlight</td>
+<td>Get to know a featured indie artist and their work.</td>
+</tr>
+<tr>
+<td>10:00 PM - 12:00 AM</td>
+<td>Late Night Jams</td>
+<td>Groove to a mix of indie films and videos and tracks to end your day.</td>
+</tr>
+</table>
         </div>
 
+
+        <!-- UPDATES -->
         <div id="updates-tab" class="tab-content">
             This is where the updates will go
             <div id="commits-list"></div>
                 </div>
 
+                <!-- ACCOUNT -->
         <div id="account-tab" class="tab-content">
-            This is where the account data will go 
-            <h3>change theme</h3>
-
+            <h2>Settings</h2>
+            <br>
+            <button onclick="switchTheme()">change theme</button>
 
         </div>
 
@@ -144,7 +134,21 @@
 
 <div id="media-tab" class="tab-content">
     <!-- Media content goes here -->
-    MEDDIA
+    This is the MEDDIA
+    <table id="mediaTable" class="list">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Artist</th>
+                <th>Duration</th>
+                <th>Link</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Table data will be inserted here -->
+        </tbody>
+    </table>
+
 </div>
     </div>
 
@@ -181,7 +185,9 @@
 
 
 
+<script>
 
+</script>
 
 
 
@@ -233,7 +239,28 @@ function switchTabByIndex(tabIndex) {
 // You might need to call the switchTabByIndex function once at the start to initialize the correct tab name
 switchTabByIndex(currentTabIndex);
 
+function loadMedia() {
+    fetch('./library/media.json')
+        .then(response => response.json())
+        .then(mediaItems => {
+            const mediaList = document.getElementById('media-list');
+            mediaItems.forEach(media => {
+                const mediaItem = document.createElement('div');
+                mediaItem.className = 'media-item';
+                mediaItem.innerHTML = `
+                    <h3>${media.display_title}</h3>
+                    <p>Artist: ${media.artist}</p>
+                    <p>Duration: ${media.duration}</p>
+                    <a href="${media.mp4_link}">Watch</a>
+                `;
+                mediaList.appendChild(mediaItem);
+            });
+        })
+        .catch(error => console.error('Error:', error));
+}
 
+// Initial data load
+loadMedia();
 
 function playSong(artist, title, url) {
     // Update Now Playing section
@@ -487,7 +514,71 @@ function loadCommits() {
 
 </script>
 
+<!-- SWITCH THEME -->
+<script>
+    function switchTheme() {
+    const root = document.documentElement;
+    const bgColor = getComputedStyle(root).getPropertyValue('--background-color');
+    const lightBgColor = getComputedStyle(root).getPropertyValue('--light-background-color');
 
+    if (bgColor.trim() === lightBgColor.trim()) {
+        // If the current theme is light, switch to dark
+        root.style.setProperty('--background-color', 'rgb(0, 14, 19)');
+        root.style.setProperty('--text-color', '#00f2ff');
+        root.style.setProperty('--border-color', '#00e5ff');
+        root.style.setProperty('--secondary-color', '#000000ba');
+        root.style.setProperty('--button-color', '#ffffff2d');
+        root.style.setProperty('--gold', '#ffd900');
+    } else {
+        // If the current theme is dark, switch to light
+        root.style.setProperty('--background-color', '#ffffff');
+        root.style.setProperty('--text-color', '#000000');
+        root.style.setProperty('--border-color', '#e0e0e0');
+        root.style.setProperty('--secondary-color', '#f2f2f2');
+        root.style.setProperty('--button-color', '#d9d9d9');
+        root.style.setProperty('--gold', '#ffd900');
+    }
+}
+</script>
 
+<script>
+    fetch('/library/media.json')
+        .then(response => response.json())
+        .then(data => {
+            // Get the table body
+            var tbody = document.querySelector("#mediaTable tbody");
+    
+            // Loop through the data and add rows to the table
+            for (var i = 0; i < data.length; i++) {
+                var tr = document.createElement("tr");
+                tr.id = 'row-' + i;  // Assign unique id to the row
+    
+                var tdTitle = document.createElement("td");
+                tdTitle.id = 'title-' + i;  // Assign unique id to the title cell
+                tdTitle.textContent = data[i].display_title;
+                tr.appendChild(tdTitle);
+    
+                var tdArtist = document.createElement("td");
+                tdArtist.id = 'artist-' + i;  // Assign unique id to the artist cell
+                tdArtist.textContent = data[i].artist;
+                tr.appendChild(tdArtist);
+    
+                var tdDuration = document.createElement("td");
+                tdDuration.id = 'duration-' + i;  // Assign unique id to the duration cell
+                tdDuration.textContent = data[i].duration;
+                tr.appendChild(tdDuration);
+    
+                var tdLink = document.createElement("td");
+                var aLink = document.createElement("a");
+                aLink.href = data[i].mp4_link;
+                aLink.textContent = "Link";
+                tdLink.appendChild(aLink);
+                tr.appendChild(tdLink);
+    
+                tbody.appendChild(tr);
+            }
+        })
+        .catch(error => console.error('Error:', error));
+</script>
 </body>
 </html>
