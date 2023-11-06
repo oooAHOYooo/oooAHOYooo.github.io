@@ -3,6 +3,8 @@
 <head>
     <title>Ahoy Indie Media</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="./assets/ahoyFav.png">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="mobile-l5.css">
 </head>
@@ -10,9 +12,28 @@
     <div class="container">
         <header>
 <img src="../assets/u_ahoy23.png" style="max-width: 20%;"> 
+<!--
 <button>Playlist</button>
-<button>My Account</button>
+<button>My Account</button> -->
        </header>
+
+
+       <div id="nowplaying-tab" class="tab-content">
+        <div class="now-playing">
+            <div class="song-info">
+                <h2 id="current-song-title">Song Title</h2>
+                <h3 id="current-song-artist">Artist Name</h3>
+            </div>
+            <div class="song-controls">
+                <button id="prev" class="control-button"><i class="fas fa-step-backward"></i></button>
+                <button id="play-pause" class="control-button"><i class="fas fa-play"></i></button>
+                <button id="next" class="control-button"><i class="fas fa-step-forward"></i></button>
+            </div>
+        </div>
+       </div>
+
+
+
         <div id="songs-tab" class="tab-content active">
             <ul class="list" id="song-list"></ul>
 
@@ -54,17 +75,33 @@
         </div>
 
         <div id="updates-tab" class="tab-content">
+            This is where the updates will go
             <div id="commits-list"></div>
                 </div>
+
+        <div id="account-tab" class="tab-content">
+            This is where the account data will go 
+            <h3>change theme</h3>
+
+
+        </div>
 
         <!-- GAMES -->
         <!-- Add this in your HTML where you want the games tab to appear -->
 <div id="games-tab" class="tab-content">
     THIS IS WHERE THE GAME CONTENT WILL GO 
+    <div id="games-tab" class="tab-content">
+        <iframe id="tetris-frame" src="../games/console/tetris/tetris.html" style="width:100%; height:100%; border:none;"></iframe>
+    </div>
     <!-- Games content goes here -->
 </div>
 
+<!-- MEEEEDIIAA -->
 
+<div id="media-tab" class="tab-content">
+    <!-- Media content goes here -->
+    MEDDIA
+</div>
     </div>
 
 
@@ -115,17 +152,16 @@
             const activeTab = document.getElementById(`${tabName}-tab`);
             activeTab.classList.add('active');
 
-            if (tabName === 'updates') {
-        loadCommits();
-    }
+          
         }
+
 
 
         let currentTabIndex = 0; // Assuming you have a global variable to keep track of the current tab
 
 function nextTab() {
     currentTabIndex++;
-    if (currentTabIndex > 5) { // Reset to the first tab if we've gone past the last one
+    if (currentTabIndex > 9) { // Reset to the first tab if we've gone past the last one
         currentTabIndex = 0;
     }
     switchTabByIndex(currentTabIndex);
@@ -134,7 +170,7 @@ function nextTab() {
 function prevTab() {
     currentTabIndex--;
     if (currentTabIndex < 0) { // Loop back to the last tab if we've gone past the first one
-        currentTabIndex = 5;
+        currentTabIndex = 9;
     }
     switchTabByIndex(currentTabIndex);
 }
@@ -155,13 +191,26 @@ switchTabByIndex(currentTabIndex);
 
 
 
-        function playSong(artist, title, url) {
-            document.getElementById('artist-name').textContent = artist;
-            document.getElementById('song-title').textContent = title;
-            const audioPlayer = document.getElementById('audio-player');
-            audioPlayer.src = url;
-            audioPlayer.play();
-        }
+function playSong(artist, title, url) {
+    document.getElementById('current-song-artist').textContent = artist;
+    document.getElementById('current-song-title').textContent = title;
+    const audioPlayer = document.getElementById('audio-player');
+    audioPlayer.src = url;
+    audioPlayer.play();
+}
+
+
+        document.getElementById('play-pause').addEventListener('click', function() {
+    const audioPlayer = document.getElementById('audio-player');
+    const playPauseIcon = document.getElementById('play-pause').firstChild;
+    if (audioPlayer.paused) {
+        audioPlayer.play();
+        playPauseIcon.className = 'fas fa-pause';
+    } else {
+        audioPlayer.pause();
+        playPauseIcon.className = 'fas fa-play';
+    }
+});
 
         function createPlaylist() {
             const playlistName = document.getElementById('playlist-name').value;
@@ -378,7 +427,7 @@ function switchTab(tabName) {
 
 // Extend the existing switchTab function to accept an index
 function switchTabByIndex(tabIndex) {
-    const tabs = ['songs', 'artists', 'playlists', 'cable', 'updates', 'games']; // Add "games" to the tabs array
+    const tabs = ['nowplaying','songs', 'artists', 'playlists', 'cable', 'updates', 'games', 'media', 'account']; // Add "games" to the tabs array
     const tabIndicator = document.getElementById('tab-indicator');
     if (tabIndex >= 0 && tabIndex < tabs.length) {
         switchTab(tabs[tabIndex]);
@@ -386,6 +435,8 @@ function switchTabByIndex(tabIndex) {
         tabIndicator.textContent = tabs[tabIndex].charAt(0).toUpperCase() + tabs[tabIndex].slice(1); // Capitalize the first letter
     }
 }
+
+
 
 
 
@@ -418,6 +469,8 @@ function loadCommits() {
         })
         .catch(error => console.error('Error:', error));
 }
+
+
 </script>
 
 
