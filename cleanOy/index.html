@@ -119,6 +119,10 @@
 <div id="media-tab" class="tab-content">
     <!-- Media content goes here -->
     This is the MEDDIA
+    <video id="videoPlayer" controls style="display: block;">
+        <source id="videoSource" src="" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
     <table id="mediaTable" class="list">
         <thead>
             <tr>
@@ -629,6 +633,48 @@ function loadCommits() {
             row.appendChild(descriptionCell);
 
             table.appendChild(row);
+        });
+    })
+    .catch(error => console.error('Error:', error));
+</script>
+
+<script>
+fetch('data/mediaCollection.json')
+    .then(response => response.json())
+    .then(data => {
+        const tableBody = document.querySelector('#mediaTable tbody');
+        const videoPlayer = document.querySelector('#videoPlayer');
+        const videoSource = document.querySelector('#videoSource');
+
+        data.forEach(item => {
+            const row = document.createElement('tr');
+
+            const titleCell = document.createElement('td');
+            titleCell.textContent = item.display_title;
+            row.appendChild(titleCell);
+
+            const artistCell = document.createElement('td');
+            artistCell.textContent = item.artist;
+            row.appendChild(artistCell);
+
+            const durationCell = document.createElement('td');
+            durationCell.textContent = item.duration;
+            row.appendChild(durationCell);
+
+            const linkCell = document.createElement('td');
+            const link = document.createElement('a');
+            link.href = item.mp4_link;
+            link.textContent = 'Link';
+            linkCell.appendChild(link);
+            row.appendChild(linkCell);
+
+            row.addEventListener('click', () => {
+                videoPlayer.style.display = 'block';
+                videoSource.src = item.mp4_link;
+                videoPlayer.load();
+            });
+
+            tableBody.appendChild(row);
         });
     })
     .catch(error => console.error('Error:', error));
