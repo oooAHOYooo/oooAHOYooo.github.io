@@ -13,6 +13,17 @@ body {
     padding: 0;
     background-color: var(--background-color);
     color: var(--text-color);
+padding-bottom:22.5vh;}
+
+.artist-info a {
+color:var(--text-color);}
+
+.artist-info a:hover {
+    color:var(--gold);
+}
+
+.artist-info strong {
+    font-size:1.45rem;
 }
 
 .container {
@@ -120,6 +131,8 @@ body {
 .bottom-controller {
     padding: 10px 0;
     background-color: var(--background-color);
+    overflow:hidden;
+    height:50px;
 }
 
 .bottom-controller button {
@@ -129,7 +142,7 @@ body {
     font-size: 32px;
     cursor: pointer;
     border-style:solid;
-    padding:30px;
+    padding:25px;
     
 }
 
