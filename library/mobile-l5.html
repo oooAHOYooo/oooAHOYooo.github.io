@@ -15,6 +15,18 @@
        </header>
         <div id="songs-tab" class="tab-content active">
             <ul class="list" id="song-list"></ul>
+
+<!-- RADIO -->
+<style>
+
+  </style>
+
+  <div class="radio-wrap">
+    <script src="https://embed.radio.co/player/0024c4d.js"></script><br>
+    <p> Live Radio</p> = <div class="blinker"><span>Active</span></div>
+
+  </div>
+
         </div>
         <div id="artists-tab" class="tab-content">
             <!-- Artists content goes here -->
@@ -72,13 +84,12 @@
     </div>
 
 
-    <!-- 
-    <div class="bottom-nav">
-        <a href="#" onclick="switchTab('songs')">Songs <i class="fas fa-music"></i></a>
-        <a href="#" onclick="switchTab('artists')">Artists <i class="fas fa-user"></i></a>
-        <a href="#" onclick="switchTab('playlists')">Playlists <i class="fas fa-list"></i></a>
-        <a href="#" onclick="switchTab('cable')">Cable <i class="fas fa-tv"></i></a>
-    </div>-->
+  
+
+
+
+
+
 
 
     <script>
@@ -183,7 +194,7 @@ switchTabByIndex(currentTabIndex);
                     artistItem.className = 'list-item';
                     artistItem.innerHTML = `
                         <div class="artist-item">
-                            <img src="${artist.featuredImage}" alt="${artist.name}">
+                 
                             <div class="artist-info">
                                 <strong><a href="${artist.artistUrl}">${artist.name}</a></strong><br>
                                 Location: ${artist.location}<br>

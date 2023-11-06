@@ -75,12 +75,12 @@ color:var(--text-color);}
 
 .player {
     position: fixed;
-    bottom: 8%;
+    bottom: 51px;
     width: 100%;
-    background-color: var(--secondary-color);
+    background-color: var(--background-color);
     color: var(--text-color);
-    padding: 50px 0;
-    margin-bottom:10px;
+    padding: 35px 0;
+ 
 }
 
 .player-content {
@@ -154,7 +154,17 @@ color:var(--text-color);}
 
 .fixed-bottom {
     position: fixed;
-    bottom: 5%; /* Adjust this value based on the height of your bottom navigation */
+    bottom: 0%; /* Adjust this value based on the height of your bottom navigation */
     width: 100%;
     z-index: 999; /* To make sure it's above other elements */
 }
+
+.radio-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column;
+    height: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
