@@ -169,3 +169,45 @@ color:var(--text-color);}
     margin-bottom: 10px;
   }
 
+  .now-playing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    color: var(--text-color);
+}
+
+#album-art {
+    width: 200px; /* Adjust this to change the size of the album art */
+    height: 200px; /* Adjust this to change the size of the album art */
+    object-fit: cover; /* This will make sure the image scales nicely */
+    margin-bottom: 20px; /* Space between the album art and the song title */
+}
+
+.song-info {
+    text-align: center;
+}
+
+.song-info h2, .song-info h3 {
+    margin: 0;
+}
+
+.song-controls {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.control-button {
+    color: var(--text-color);
+    background: var(--background-color);
+    border: none;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+.control-button:focus {
+    outline: none;
+}
