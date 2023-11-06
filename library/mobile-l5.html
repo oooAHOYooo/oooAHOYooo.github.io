@@ -106,11 +106,10 @@
         </div>
 
 
-        <!-- UPDATES -->
         <div id="updates-tab" class="tab-content">
-            This is where the updates will go
+            <h2>Updates</h2>
             <div id="commits-list"></div>
-                </div>
+        </div>
 
                 <!-- ACCOUNT -->
         <div id="account-tab" class="tab-content">
@@ -433,7 +432,18 @@ function playSong(artist, title, url) {
     // Play the next song
     playSong(songs[currentSongIndex].artist, songs[currentSongIndex].songTitle, songs[currentSongIndex].mp3url);
 }
+function prevSong() {
+    // Decrement the current song index
+    currentSongIndex--;
 
+    // If it's the first song, loop back to the last one
+    if (currentSongIndex < 0) {
+        currentSongIndex = songs.length - 1;
+    }
+
+    // Play the previous song
+    playSong(songs[currentSongIndex].artist, songs[currentSongIndex].songTitle, songs[currentSongIndex].mp3url);
+}
     function likeSong() {
         // Code to like the current song
     }
@@ -580,5 +590,38 @@ function loadCommits() {
         })
         .catch(error => console.error('Error:', error));
 </script>
+
+
+    <script>
+    function loadCommits() {
+        fetch('https://api.github.com/repos/oooAHOYooo/oooAHOYooo.github.io/commits')
+            .then(response => response.json())
+            .then(commits => {
+                const commitsList = document.getElementById('commits-list');
+                commitsList.innerHTML = ''; // Clear the list
+
+                commits.forEach(commit => {
+                    const commitItem = document.createElement('div');
+                    commitItem.className = 'commit-item';
+
+                    const date = new Date(commit.commit.author.date);
+                    const formattedDate = `${date.getDate()}-${date.getMonth()+1}-${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}`;
+
+                    commitItem.innerHTML = `
+                        <h3>${commit.commit.message}</h3>
+                        <p>Author: ${commit.commit.author.name}</p>
+                        <p>Date: ${formattedDate}</p>
+                    `;
+
+                    commitsList.appendChild(commitItem);
+                });
+            })
+            .catch(error => console.error('Error:', error));
+    }
+
+    // Load commits when the page loads
+    window.onload = loadCommits;
+</script>
+
 </body>
 </html>
