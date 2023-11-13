@@ -59,6 +59,21 @@
             <ul class="list" id="artist-list"></ul>
         </div>
 
+<!-- LIKED SONGS -->
+
+
+
+<div id="liked-tab" class="tab-content">
+    <h1>My Liked Songs</h1>
+
+<ul>This will be a dynamic list similar to the songs that will show my liked songs when someone hits the heart button on a given present song</ul>
+    <ul id="liked-songs-list">
+        <!-- Liked songs will be populated here by the JavaScript function -->
+    </ul>
+</div>
+
+
+
 <!-- PLAYLIST -->
         <div id="playlists-tab" class="tab-content">
             <!-- Playlists content goes here -->
@@ -145,7 +160,7 @@
 </div>
     </div>
 
-
+<!-- BOTTOM PLAYER -->
     <section class="player">
         <div class="player-content">
             <div class="player-info">
@@ -204,7 +219,7 @@
 
 function nextTab() {
     currentTabIndex++;
-    if (currentTabIndex > 8) { // Reset to the first tab if we've gone past the last one
+    if (currentTabIndex > 9) { // Reset to the first tab if we've gone past the last one
         currentTabIndex = 0;
     }
     switchTabByIndex(currentTabIndex);
@@ -213,14 +228,14 @@ function nextTab() {
 function prevTab() {
     currentTabIndex--;
     if (currentTabIndex < 0) { // Loop back to the last tab if we've gone past the first one
-        currentTabIndex = 8;
+        currentTabIndex = 10;
     }
     switchTabByIndex(currentTabIndex);
 }
 
 // Extend the existing switchTab function to accept an index
 function switchTabByIndex(tabIndex) {
-    const tabs = ['songs', 'artists', 'playlists', 'cable']; // Add or update the id names of your tabs in order
+    const tabs = ['nowplaying','songs', 'liked', 'artists', 'playlists', 'cable', 'updates', 'games', 'media', 'account']; // Add "liked" to the tabs array
     const tabIndicator = document.getElementById('tab-indicator');
     if (tabIndex >= 0 && tabIndex < tabs.length) {
         switchTab(tabs[tabIndex]);
@@ -228,6 +243,38 @@ function switchTabByIndex(tabIndex) {
         tabIndicator.textContent = tabs[tabIndex].charAt(0).toUpperCase() + tabs[tabIndex].slice(1); // Capitalize the first letter
     }
 }
+function updateLikedSongsPlaylist() {
+    // Get the playlist element for liked songs
+    const likedSongsList = document.getElementById('liked-songs-list'); // Ensure this is the correct ID for your liked songs list
+
+    // Clear the current playlist
+    likedSongsList.innerHTML = '';
+
+    // Add each liked song to the list
+    likedSongs.forEach((song, index) => {
+        const songItem = document.createElement('li');
+        songItem.className = 'list-item';
+        songItem.innerHTML = `
+            <div>
+                <strong>${song.title}</strong><br>
+                ${song.artist}
+            </div>
+            <button onclick="playSong('${song.artist}', '${song.title}', '${song.url}')">Play</button>
+        `;
+        likedSongsList.appendChild(songItem);
+    });
+}
+
+// Ensure the likeSong function calls updateLikedSongsPlaylist
+function likeSong() {
+    // [existing likeSong function code...]
+
+    // Update the liked songs playlist
+    updateLikedSongsPlaylist();
+}
+
+// Ensure this function is called when the page loads or when the liked songs tab is opened
+document.addEventListener('DOMContentLoaded', updateLikedSongsPlaylist);
 
 // You might need to call the switchTabByIndex function once at the start to initialize the correct tab name
 switchTabByIndex(currentTabIndex);
@@ -475,7 +522,7 @@ function addToPlaylistButton() {
 
 // Extend the existing switchTab function to accept an index
 function switchTabByIndex(tabIndex) {
-    const tabs = ['nowplaying','songs', 'artists', 'playlists', 'cable', 'updates', 'games', 'media', 'account']; // Add "games" to the tabs array
+    const tabs = ['nowplaying','songs', 'liked', 'artists', 'playlists', 'cable', 'updates', 'games', 'media', 'account']; // Add "games" to the tabs array
     const tabIndicator = document.getElementById('tab-indicator');
     if (tabIndex >= 0 && tabIndex < tabs.length) {
         switchTab(tabs[tabIndex]);
@@ -679,6 +726,171 @@ fetch('data/mediaCollection.json')
         });
     })
     .catch(error => console.error('Error:', error));
+</script>
+
+
+
+
+<!-- ScRIPTS FOR LIKING SONGS TO PLAYLISTS -->
+
+<script>
+    // Assuming you have a global array to store liked songs
+let likedSongs = [];
+
+// Function to handle liking a song
+function likeSong() {
+    // Get the current song details
+    const currentSongArtist = document.getElementById('current-song-artist').textContent;
+    const currentSongTitle = document.getElementById('current-song-title').textContent;
+    const audioPlayer = document.getElementById('audio-player');
+    const currentSongUrl = audioPlayer.src;
+
+    // Create a song object
+    const song = {
+        artist: currentSongArtist,
+        title: currentSongTitle,
+        url: currentSongUrl
+    };
+
+    // Add the song to the likedSongs array
+    likedSongs.push(song);
+
+    // Update the liked songs playlist
+    updateLikedSongsPlaylist();
+}
+
+// Function to update the liked songs playlist in the "playlists" tab
+function updateLikedSongsPlaylist() {
+    // Get the playlist element
+    const playlist = document.getElementById('playlist-songs');
+
+    // Clear the current playlist
+    playlist.innerHTML = '';
+
+    // Add each liked song to the playlist
+    likedSongs.forEach((song, index) => {
+        const songItem = document.createElement('li');
+        songItem.className = 'list-item';
+        songItem.innerHTML = `
+            <div>
+                <strong>${song.title}</strong><br>
+                ${song.artist}
+            </div>
+            <button onclick="playSong('${song.artist}', '${song.title}', '${song.url}')">Play</button>
+        `;
+        playlist.appendChild(songItem);
+    });
+}
+
+// Add the likeSong function as an event listener to the "like" button
+document.getElementById('like').addEventListener('click', likeSong);
+</script>
+
+<script>
+    // Assuming you have a global array to store liked songs
+let likedSongs = [];
+
+// Function to handle liking a song
+function likeSong() {
+    // Get the current song details
+    const currentSongArtist = document.getElementById('current-song-artist').textContent;
+    const currentSongTitle = document.getElementById('current-song-title').textContent;
+    const audioPlayer = document.getElementById('audio-player');
+    const currentSongUrl = audioPlayer.src;
+
+    // Create a song object
+    const song = {
+        artist: currentSongArtist,
+        title: currentSongTitle,
+        url: currentSongUrl
+    };
+
+    // Add the song to the likedSongs array
+    likedSongs.push(song);
+
+    // Update the liked songs playlist
+    updateLikedSongsPlaylist();
+}
+
+document.getElementById('like').addEventListener('click', likeSong);
+
+
+// Function to update the liked songs playlist in the "playlists" tab
+function updateLikedSongsPlaylist() {
+    // Get the playlist element
+    const playlist = document.getElementById('playlist-songs');
+
+    // Clear the current playlist
+    playlist.innerHTML = '';
+
+    // Add each liked song to the playlist
+    likedSongs.forEach((song, index) => {
+        const songItem = document.createElement('li');
+        songItem.className = 'list-item';
+        songItem.innerHTML = `
+            <div>
+                <strong>${song.title}</strong><br>
+                ${song.artist}
+            </div>
+            <button onclick="playSong('${song.artist}', '${song.title}', '${song.url}')">Play</button>
+        `;
+        playlist.appendChild(songItem);
+    });
+}
+
+// Add the likeSong function as an event listener to the "like" button
+document.getElementById('like').addEventListener('click', likeSong);
+</script>
+
+<script>
+    // Global array to store songs
+    let songs = []; // Load this array with your song data
+    let currentSongIndex = 0;
+
+    // Function to play the next song
+    function nextSong() {
+        // Increment the current song index
+        currentSongIndex = (currentSongIndex + 1) % songs.length;
+
+        // Play the next song
+        playSong(songs[currentSongIndex].artist, songs[currentSongIndex].songTitle, songs[currentSongIndex].mp3url);
+    }
+
+    // Function to play a specific song
+    function playSong(artist, title, url) {
+        // Update Now Playing section
+        document.getElementById('current-song-artist').textContent = artist;
+        document.getElementById('current-song-title').textContent = title;
+
+        // Update bottom player section
+        document.getElementById('artist-name').textContent = artist;
+        document.getElementById('song-title').textContent = title;
+
+        // Update and play the song
+        const audioPlayer = document.getElementById('audio-player');
+        audioPlayer.src = url;
+        audioPlayer.play();
+    }
+
+    // Load songs data and initialize
+    function loadSongsAndPlaylists() {
+        fetch('data/songCollection.json')
+            .then(response => response.json())
+            .then(data => {
+                songs = data.songs;
+                if(songs.length > 0) {
+                    playSong(songs[0].artist, songs[0].songTitle, songs[0].mp3url);
+                }
+            })
+            .catch(error => console.error('Error:', error));
+    }
+
+    document.addEventListener('DOMContentLoaded', (event) => {
+        loadSongsAndPlaylists();
+    });
+
+    // Add event listener to the next button
+    document.getElementById('next').addEventListener('click', nextSong);
 </script>
 
 </body>
