@@ -52,10 +52,14 @@
 </div>
 
         </div>
+
+<!-- ARTIST -->
         <div id="artists-tab" class="tab-content">
             <!-- Artists content goes here -->
             <ul class="list" id="artist-list"></ul>
         </div>
+
+<!-- PLAYLIST -->
         <div id="playlists-tab" class="tab-content">
             <!-- Playlists content goes here -->
             <div id="playlists-tab" class="tab-content">
@@ -72,6 +76,7 @@
                 </ul>
             </div>
         </div>
+<!-- CABLE -->
         <div id="cable-tab" class="tab-content">
             <div id="playerContainer" style="position:relative;overflow:hidden;padding-bottom:56.25%">
                 <iframe src='https://cdn.jwplayer.com/players/QI6O3pW7-9Gtk2B1J.html' id="playerFrame" width="100%" height="100%" frameborder="0" scrolling="auto" title="Untitled Manual Playlist" style="position:absolute;" allowfullscreen></iframe>
@@ -91,13 +96,13 @@
                 </table>
         </div>
 
-
+<!-- UPDATES-->
         <div id="updates-tab" class="tab-content">
             <h2>Updates</h2>
             <div id="commits-list"></div>
         </div>
 
-                <!-- ACCOUNT -->
+<!-- ACCOUNT -->
         <div id="account-tab" class="tab-content">
             <h2>Settings</h2>
             <br>
@@ -105,7 +110,7 @@
 
         </div>
 
-        <!-- GAMES -->
+<!-- GAMES -->
         <!-- Add this in your HTML where you want the games tab to appear -->
 <div id="games-tab" class="tab-content">
     THIS IS WHERE THE GAME CONTENT WILL GO 
@@ -311,31 +316,34 @@ function playSong(artist, title, url) {
         }
 
         function loadArtists() {
-            fetch('artistData.json')
-            .then(response => response.json())
-            .then(data => {
-                const artists = data.artists;
-                const artistList = document.getElementById('artist-list');
-                artists.forEach(artist => {
-                    const artistItem = document.createElement('li');
-                    artistItem.className = 'list-item';
-                    artistItem.innerHTML = `
-                        <div class="artist-item">
-                 
-                            <div class="artist-info">
-                                <strong><a href="${artist.artistUrl}">${artist.name}</a></strong><br>
-                                Location: ${artist.location}<br>
-                                <a href="${artist.supportLink}">Support</a> |
-                                <a href="${artist.shareLink}">Share</a> |
-                                <a href="${artist.messageLink}">Message</a>
-                            </div>
-                        </div>
-                    `;
-                    artistList.appendChild(artistItem);
-                });
-            })
-            .catch(error => console.error('Error:', error));
-        }
+    fetch('data/artistCollection.json') // Changed from 'artistData.json' to 'artistCollection.json'
+    .then(response => response.json())
+    .then(data => {
+        const artists = data.artists;
+        const artistList = document.getElementById('artist-list');
+        artists.forEach(artist => {
+            const artistItem = document.createElement('li');
+            artistItem.className = 'list-item';
+            artistItem.innerHTML = `
+                <div class="artist-item">
+                    <div class="artist-info">
+                        <strong><a href="${artist.artistUrl}">${artist.name}</a></strong><br>
+                        Location: ${artist.location}<br>
+                        <a href="${artist.supportLink}">Support</a> |
+                        <a href="${artist.shareLink}">Share</a> |
+                        <a href="${artist.messageLink}">Message</a>
+                    </div>
+                </div>
+            `;
+            artistList.appendChild(artistItem);
+        });
+    })
+    .catch(error => console.error('Error:', error));
+}
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    loadArtists();
+});
 
         function loadSongsAndPlaylists() {
             fetch('data/songCollection.json')
