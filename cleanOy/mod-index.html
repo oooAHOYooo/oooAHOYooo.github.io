@@ -1,0 +1,104 @@
+<!DOCTYPE html><!-- CLEAN AHOY -->
+<html>
+<head>
+    <title>Ahoy Indie Media</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="./assets/ahoyFav.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./src/foundational.css">
+    <script src="https://cdn.jwplayer.com/libraries/your-jwplayer-key.js"></script>
+</head>
+<body>
+    <!-- Content here: tabs, player, lists, etc. -->
+    <!-- Avoid duplicating HTML content -->
+
+    <!-- Scripts -->
+    <script>
+        let currentSongIndex = 0;
+        let likedSongs = [];
+        let songs = [];
+        const playlists = {};
+
+        function switchTab(tabName) {
+            // Code to switch tabs
+        }
+
+        function switchTabByIndex(tabIndex) {
+            // Code to switch tabs by index
+        }
+
+        function loadContent(type) {
+            let url = '';
+            switch (type) {
+                case 'artists':
+                    url = 'data/artistCollection.json';
+                    break;
+                case 'songs':
+                    url = 'data/songCollection.json';
+                    break;
+                case 'podcasts':
+                    url = './data/podcastCollection.json';
+                    break;
+                // Add other cases as needed
+            }
+
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    // Handle different types of content
+                })
+                .catch(error => console.error('Error:', error));
+        }
+
+        function playSong(artist, title, url) {
+            // Code to play a song
+        }
+
+        function controlPlayer(event) {
+            const action = event.target.id;
+            switch (action) {
+                case 'play':
+                case 'pause':
+                    // Play or pause the song
+                    break;
+                case 'next':
+                    nextSong();
+                    break;
+                case 'prev':
+                    prevSong();
+                    break;
+                // Add other cases as needed
+            }
+        }
+
+        function nextSong() {
+            // Code to play the next song
+        }
+
+        function prevSong() {
+            // Code to play the previous song
+        }
+
+        function likeSong() {
+            // Code to like a song
+        }
+
+        function updateLikedSongsPlaylist() {
+            // Code to update liked songs playlist
+        }
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            loadContent('artists');
+            loadContent('songs');
+            switchTabByIndex(currentTabIndex);
+        });
+
+        // Attach event listeners to player controls
+        document.getElementById('play').addEventListener('click', controlPlayer);
+        document.getElementById('pause').addEventListener('click', controlPlayer);
+        document.getElementById('next').addEventListener('click', controlPlayer);
+        document.getElementById('prev').addEventListener('click', controlPlayer);
+        document.getElementById('like').addEventListener('click', likeSong);
+    </script>
+</body>
+</html>

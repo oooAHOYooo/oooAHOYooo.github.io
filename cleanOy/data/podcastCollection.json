@@ -1,0 +1,20 @@
+{
+	"podcasts": [
+	  {
+		"id": 1,
+		"title": "Podcast Episode 1",
+		"description": "Description of Podcast Episode 1",
+		"mp3url": "https://link_to_podcast_episode_1.mp3",
+		"thumbnail": "https://link_to_thumbnail_for_episode_1.jpg"
+	  },
+	  {
+		"id": 2,
+		"title": "Podcast Episode 2",
+		"description": "Description of Podcast Episode 2",
+		"mp3url": "https://link_to_podcast_episode_2.mp3",
+		"thumbnail": "https://link_to_thumbnail_for_episode_2.jpg"
+	  }
+
+	]
+  }
+  

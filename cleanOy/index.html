@@ -78,8 +78,21 @@
 <!-- PODCASTS -->
 <div id="podcasts-tab" class="tab-content">
     <h1>Podcasts</h1>
-    <!-- A DYNAMIC TABLE WITH AN AUDIO PLAYER PULLING FROM A UNIQUE JSON + AMAZON BUCKET -->
+    <table id="podcast-table">
+     
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Podcast data will be inserted here -->
+        </tbody>
+    </table>
+    <audio id="podcast-player" controls></audio>
 </div>
+
 
 <!-- PLAYLIST -->
         <div id="playlists-tab" class="tab-content">
@@ -228,7 +241,7 @@
 
 function nextTab() {
     currentTabIndex++;
-    if (currentTabIndex > 9) { // Reset to the first tab if we've gone past the last one
+    if (currentTabIndex > 10) { // Reset to the first tab if we've gone past the last one
         currentTabIndex = 0;
     }
     switchTabByIndex(currentTabIndex);
@@ -244,8 +257,7 @@ function prevTab() {
 
 // Extend the existing switchTab function to accept an index
 function switchTabByIndex(tabIndex) {
-    const tabs = ['nowplaying','songs', 'liked', 'artists', 'playlists', 'cable', 'updates', 'games', 'media', 'account']; // Add "liked" to the tabs array
-    const tabIndicator = document.getElementById('tab-indicator');
+    const tabs = ['nowplaying','songs', 'liked', 'artists', 'playlists', 'cable', 'updates', 'games', 'media', 'account', 'podcasts'];     const tabIndicator = document.getElementById('tab-indicator');
     if (tabIndex >= 0 && tabIndex < tabs.length) {
         switchTab(tabs[tabIndex]);
         // Update the tab indicator text
@@ -526,13 +538,14 @@ function addToPlaylistButton() {
 }
     </script>
 
+
+<!-- SWITCH TAB FUNCITON -->
 <script>
  
 
 // Extend the existing switchTab function to accept an index
 function switchTabByIndex(tabIndex) {
-    const tabs = ['nowplaying','songs', 'liked', 'artists', 'playlists', 'cable', 'updates', 'games', 'media', 'account']; // Add "games" to the tabs array
-    const tabIndicator = document.getElementById('tab-indicator');
+    const tabs = ['nowplaying','songs', 'liked', 'podcasts', 'artists', 'playlists', 'cable', 'updates', 'games', 'media', 'account'];     const tabIndicator = document.getElementById('tab-indicator');
     if (tabIndex >= 0 && tabIndex < tabs.length) {
         switchTab(tabs[tabIndex]);
         // Update the tab indicator text
@@ -901,6 +914,32 @@ document.getElementById('like').addEventListener('click', likeSong);
     // Add event listener to the next button
     document.getElementById('next').addEventListener('click', nextSong);
 </script>
+<!-- PODCAST SCRIPTS -->
+<script>
+    function loadPodcasts() {
+    fetch('./data/podcastCollection.json')
+        .then(response => response.json())
+        .then(data => {
+            const tableBody = document.getElementById('podcast-table').querySelector('tbody');
+            data.podcasts.forEach(podcast => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${podcast.title}</td>
+                    <td>${podcast.description}</td>
+                `;
+                row.addEventListener('click', () => {
+                    document.getElementById('podcast-player').src = podcast.mp3url;
+                    document.getElementById('podcast-player').play();
+                });
+                tableBody.appendChild(row);
+            });
+        })
+        .catch(error => console.error('Error:', error));
+}
 
+// Call the function to load podcasts when the page loads
+window.onload = loadPodcasts;
+
+</script>
 </body>
 </html>
