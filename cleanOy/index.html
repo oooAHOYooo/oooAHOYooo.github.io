@@ -98,7 +98,23 @@
         </div>
 
 
-
+        <!-- PLAYLIST -->
+        <div id="playlists-tab" class="tab-content">
+            <!-- Playlists content goes here -->
+            <div id="playlists-tab" class="tab-content">
+                <input type="text" id="playlist-name" placeholder="New Playlist Name">
+                <button onclick="createPlaylist()">Create Playlist</button>
+                <select id="playlist-selector" onchange="showPlaylist()">
+                    <!-- Playlist options will be populated here -->
+                </select>
+                <ul class="list" id="playlist-songs">
+                    <!-- Playlist songs will be populated here -->
+                </ul>
+                <ul class="list" id="all-songs">
+                    <!-- All songs will be populated here with an "Add to Playlist" button -->
+                </ul>
+            </div>
+        </div>
         <!-- CABLE -->
         <div id="cable-tab" class="tab-content">
             <h1>Cable</h1>
@@ -206,13 +222,6 @@
 
 
 
-
-    <script>
-
-    </script>
-
-
-
     <script>
         const playlists = {};  // Object to hold playlists
 
@@ -233,7 +242,7 @@
 
         function nextTab() {
             currentTabIndex++;
-            if (currentTabIndex > 10) { // Reset to the first tab if we've gone past the last one
+            if (currentTabIndex > 9) { // Reset to the first tab if we've gone past the last one
                 currentTabIndex = 0;
             }
             switchTabByIndex(currentTabIndex);
@@ -242,14 +251,15 @@
         function prevTab() {
             currentTabIndex--;
             if (currentTabIndex < 0) { // Loop back to the last tab if we've gone past the first one
-                currentTabIndex = 10;
+                currentTabIndex = 9;
             }
             switchTabByIndex(currentTabIndex);
         }
 
-        // Extend the existing switchTab function to accept an index
-        function switchTabByIndex(tabIndex) {
-            const tabs = ['nowplaying', 'songs', 'liked', 'artists', 'playlists', 'cable', 'updates', 'games', 'media', 'account', 'podcasts']; const tabIndicator = document.getElementById('tab-indicator');
+     // Extend the existing switchTab function to accept an index
+     function switchTabByIndex(tabIndex) {
+            const tabs = ['nowplaying', 'songs', 'liked', 'podcasts', 'artists', 'cable', 'updates', 'games', 'media', 'account']; // Removed 'playlists' from the array
+            const tabIndicator = document.getElementById('tab-indicator');
             if (tabIndex >= 0 && tabIndex < tabs.length) {
                 switchTab(tabs[tabIndex]);
                 // Update the tab indicator text
@@ -517,7 +527,7 @@
 
         // Extend the existing switchTab function to accept an index
         function switchTabByIndex(tabIndex) {
-            const tabs = ['nowplaying', 'songs', 'liked', 'podcasts', 'artists', 'playlists', 'cable', 'updates', 'games', 'media', 'account']; const tabIndicator = document.getElementById('tab-indicator');
+            const tabs = ['nowplaying', 'songs', 'liked', 'podcasts', 'artists', 'cable', 'updates', 'games', 'media', 'account']; const tabIndicator = document.getElementById('tab-indicator');
             if (tabIndex >= 0 && tabIndex < tabs.length) {
                 switchTab(tabs[tabIndex]);
                 // Update the tab indicator text
