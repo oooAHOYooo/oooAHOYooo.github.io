@@ -43,24 +43,17 @@
 
             </div>
         </div>
-        <style>
-            .radio-wrap {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-            }
-        </style>
+
         <!-- RADIO TAB -->
         <div id="radio-tab" class="tab-content">
             <h1>Radio</h1>
             <div class="radio-wrap">
                 <script src="https://embed.radio.co/player/0024c4d.js"></script><br>
-                
+
             </div>
         </div>
 
-<!-- SONGS TAB -->
+        <!-- SONGS TAB -->
         <div id="songs-tab" class="tab-content active">
             <h1>Songs</h1>
             <ul class="list" id="song-list"></ul>
@@ -70,7 +63,7 @@
 
             </style>
 
-           
+
 
         </div>
 
@@ -95,23 +88,23 @@
             </ul>
         </div>
 
-      <!-- PODCASTS -->
-<div id="podcasts-tab" class="tab-content">
-    <h1>Podcasts</h1>
-    <table id="podcast-table">
-        <thead>
-            <tr>
-                
-                <th>Play</th>
-                <th>Title</th>
-                <th>Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Podcast data will be inserted here -->
-        </tbody>
-    </table>
-</div>
+        <!-- PODCASTS -->
+        <div id="podcasts-tab" class="tab-content">
+            <h1>Podcasts</h1>
+            <table id="podcast-table">
+                <thead>
+                    <tr>
+
+                        <th>Play</th>
+                        <th>Title</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Podcast data will be inserted here -->
+                </tbody>
+            </table>
+        </div>
 
 
         <!-- PLAYLIST -->
@@ -226,17 +219,11 @@
         <audio id="audio-player" src=""></audio>
     </section>
 
-
-
     <div class="bottom-controller fixed-bottom">
         <button id="left-arrow" onclick="prevTab()"><i class="fas fa-arrow-left"></i></button>
         <span id="tab-indicator">Songs</span> <!-- Default text for the first tab -->
         <button id="right-arrow" onclick="nextTab()"><i class="fas fa-arrow-right"></i></button>
     </div>
-
-
-
-
 
     <script>
         const playlists = {};  // Object to hold playlists
@@ -272,37 +259,17 @@
             switchTabByIndex(currentTabIndex);
         }
 
-     // Extend the existing switchTab function to accept an index
-     function switchTabByIndex(tabIndex) {
-    const tabs = ['nowplaying', 'radio', 'songs', 'liked', 'podcasts', 'artists', 'cable', 'updates', 'games', 'media', 'account'];
-    const tabIndicator = document.getElementById('tab-indicator');
-    if (tabIndex >= 0 && tabIndex < tabs.length) {
-        switchTab(tabs[tabIndex]);
-        // Update the tab indicator text
-        tabIndicator.textContent = tabs[tabIndex].charAt(0).toUpperCase() + tabs[tabIndex].slice(1); // Capitalize the first letter
-    }
-}
-        function updateLikedSongsPlaylist() {
-            // Get the playlist element for liked songs
-            const likedSongsList = document.getElementById('liked-songs-list'); // Ensure this is the correct ID for your liked songs list
-
-            // Clear the current playlist
-            likedSongsList.innerHTML = '';
-
-            // Add each liked song to the list
-            likedSongs.forEach((song, index) => {
-                const songItem = document.createElement('li');
-                songItem.className = 'list-item';
-                songItem.innerHTML = `
-            <div>
-                <strong>${song.title}</strong><br>
-                ${song.artist}
-            </div>
-            <button onclick="playSong('${song.artist}', '${song.title}', '${song.url}')">Play</button>
-        `;
-                likedSongsList.appendChild(songItem);
-            });
+        // Extend the existing switchTab function to accept an index
+        function switchTabByIndex(tabIndex) {
+            const tabs = ['nowplaying', 'radio', 'songs', 'liked', 'podcasts', 'artists', 'cable', 'updates', 'games', 'media', 'account'];
+            const tabIndicator = document.getElementById('tab-indicator');
+            if (tabIndex >= 0 && tabIndex < tabs.length) {
+                switchTab(tabs[tabIndex]);
+                // Update the tab indicator text
+                tabIndicator.textContent = tabs[tabIndex].charAt(0).toUpperCase() + tabs[tabIndex].slice(1); // Capitalize the first letter
+            }
         }
+
 
 
 
@@ -360,42 +327,6 @@
                 playPauseIcon.className = 'fas fa-play';
             }
         });
-
-        function createPlaylist() {
-            const playlistName = document.getElementById('playlist-name').value;
-            if (playlistName) {
-                playlists[playlistName] = [];
-                const selector = document.getElementById('playlist-selector');
-                const option = document.createElement('option');
-                option.value = playlistName;
-                option.textContent = playlistName;
-                selector.appendChild(option);
-            }
-        }
-
-        function addToPlaylist(song, playlistName) {
-            if (playlists[playlistName]) {
-                playlists[playlistName].push(song);
-                showPlaylist();
-            }
-        }
-
-        function showPlaylist() {
-            const playlistName = document.getElementById('playlist-selector').value;
-            const playlistSongs = document.getElementById('playlist-songs');
-            playlistSongs.innerHTML = '';
-            playlists[playlistName].forEach(song => {
-                const songItem = document.createElement('li');
-                songItem.className = 'list-item';
-                songItem.innerHTML = `
-                    <div>
-                        <strong>${song.songTitle}</strong><br>
-                        ${song.artist}
-                    </div>
-                `;
-                playlistSongs.appendChild(songItem);
-            });
-        }
 
         function loadArtists() {
             fetch('data/artistCollection.json') // Changed from 'artistData.json' to 'artistCollection.json'
@@ -543,7 +474,7 @@
 
         // Extend the existing switchTab function to accept an index
         function switchTabByIndex(tabIndex) {
-            const tabs = ['nowplaying', 'songs', 'liked', 'podcasts', 'radio','artists', 'cable', 'updates', 'games', 'media', 'account']; const tabIndicator = document.getElementById('tab-indicator');
+            const tabs = ['nowplaying', 'songs', 'liked', 'podcasts', 'radio', 'artists', 'cable', 'updates', 'games', 'media', 'account']; const tabIndicator = document.getElementById('tab-indicator');
             if (tabIndex >= 0 && tabIndex < tabs.length) {
                 switchTab(tabs[tabIndex]);
                 // Update the tab indicator text
@@ -775,35 +706,34 @@
 
     <!-- PODCAST SCRIPTS -->
     <script>
-  function loadPodcasts() {
-    fetch('./data/podcastCollection.json')
-        .then(response => response.json())
-        .then(data => {
-            const tableBody = document.getElementById('podcast-table').querySelector('tbody');
-            data.podcasts.forEach(podcast => {
-                const row = document.createElement('tr');
-                row.innerHTML = `
+        function loadPodcasts() {
+            fetch('./data/podcastCollection.json')
+                .then(response => response.json())
+                .then(data => {
+                    const tableBody = document.getElementById('podcast-table').querySelector('tbody');
+                    data.podcasts.forEach(podcast => {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
                     <td><button class="control-button" onclick="playPodcast('${podcast.mp3url}')"><i class="fas fa-play"></i></button></td> 
                     <td>${podcast.title}</td>
                     <td>${podcast.description}</td>
                 `;
-                tableBody.appendChild(row);
-            });
-        })
-        .catch(error => console.error('Error:', error));
-}
+                        tableBody.appendChild(row);
+                    });
+                })
+                .catch(error => console.error('Error:', error));
+        }
 
-function playPodcast(url) {
-    const audioPlayer = document.getElementById('audio-player');
-    audioPlayer.src = url;
-    audioPlayer.play();
-}
+        function playPodcast(url) {
+            const audioPlayer = document.getElementById('audio-player');
+            audioPlayer.src = url;
+            audioPlayer.play();
+        }
 
-// Call the function to load podcasts when the page loads
-window.onload = loadPodcasts;
+        // Call the function to load podcasts when the page loads
+        window.onload = loadPodcasts;
     </script>
 
 
 </body>
-
 </html>
