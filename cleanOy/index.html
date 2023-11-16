@@ -36,11 +36,31 @@
                     <button id="play-pause" class="control-button"><i class="fas fa-play"></i></button>
                     <button id="next" class="control-button"><i class="fas fa-step-forward"></i></button>
                 </div>
+
+
+
+
+
+            </div>
+        </div>
+        <style>
+            .radio-wrap {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        </style>
+        <!-- RADIO TAB -->
+        <div id="radio-tab" class="tab-content">
+            <h1>Radio</h1>
+            <div class="radio-wrap">
+                <script src="https://embed.radio.co/player/0024c4d.js"></script><br>
+                
             </div>
         </div>
 
-
-
+<!-- SONGS TAB -->
         <div id="songs-tab" class="tab-content active">
             <h1>Songs</h1>
             <ul class="list" id="song-list"></ul>
@@ -50,11 +70,7 @@
 
             </style>
 
-            <div class="radio-wrap">
-                <script src="https://embed.radio.co/player/0024c4d.js"></script><br>
-                <p><i class="fas fa-broadcast-tower"></i> = <i class="fas fa-circle"
-                        style="color:rgb(0, 255, 221);"></i> </p>
-            </div>
+           
 
         </div>
 
@@ -242,7 +258,7 @@
 
         function nextTab() {
             currentTabIndex++;
-            if (currentTabIndex > 9) { // Reset to the first tab if we've gone past the last one
+            if (currentTabIndex > 10) { // Reset to the first tab if we've gone past the last one
                 currentTabIndex = 0;
             }
             switchTabByIndex(currentTabIndex);
@@ -251,21 +267,21 @@
         function prevTab() {
             currentTabIndex--;
             if (currentTabIndex < 0) { // Loop back to the last tab if we've gone past the first one
-                currentTabIndex = 9;
+                currentTabIndex = 10;
             }
             switchTabByIndex(currentTabIndex);
         }
 
      // Extend the existing switchTab function to accept an index
      function switchTabByIndex(tabIndex) {
-            const tabs = ['nowplaying', 'songs', 'liked', 'podcasts', 'artists', 'cable', 'updates', 'games', 'media', 'account']; // Removed 'playlists' from the array
-            const tabIndicator = document.getElementById('tab-indicator');
-            if (tabIndex >= 0 && tabIndex < tabs.length) {
-                switchTab(tabs[tabIndex]);
-                // Update the tab indicator text
-                tabIndicator.textContent = tabs[tabIndex].charAt(0).toUpperCase() + tabs[tabIndex].slice(1); // Capitalize the first letter
-            }
-        }
+    const tabs = ['nowplaying', 'radio', 'songs', 'liked', 'podcasts', 'artists', 'cable', 'updates', 'games', 'media', 'account'];
+    const tabIndicator = document.getElementById('tab-indicator');
+    if (tabIndex >= 0 && tabIndex < tabs.length) {
+        switchTab(tabs[tabIndex]);
+        // Update the tab indicator text
+        tabIndicator.textContent = tabs[tabIndex].charAt(0).toUpperCase() + tabs[tabIndex].slice(1); // Capitalize the first letter
+    }
+}
         function updateLikedSongsPlaylist() {
             // Get the playlist element for liked songs
             const likedSongsList = document.getElementById('liked-songs-list'); // Ensure this is the correct ID for your liked songs list
@@ -527,16 +543,13 @@
 
         // Extend the existing switchTab function to accept an index
         function switchTabByIndex(tabIndex) {
-            const tabs = ['nowplaying', 'songs', 'liked', 'podcasts', 'artists', 'cable', 'updates', 'games', 'media', 'account']; const tabIndicator = document.getElementById('tab-indicator');
+            const tabs = ['nowplaying', 'songs', 'liked', 'podcasts', 'radio','artists', 'cable', 'updates', 'games', 'media', 'account']; const tabIndicator = document.getElementById('tab-indicator');
             if (tabIndex >= 0 && tabIndex < tabs.length) {
                 switchTab(tabs[tabIndex]);
                 // Update the tab indicator text
                 tabIndicator.textContent = tabs[tabIndex].charAt(0).toUpperCase() + tabs[tabIndex].slice(1); // Capitalize the first letter
             }
         }
-
-
-
 
 
 
