@@ -79,22 +79,23 @@
             </ul>
         </div>
 
-        <!-- PODCASTS -->
-        <div id="podcasts-tab" class="tab-content">
-            <h1>Podcasts</h1>
-            <table id="podcast-table">
-
-                <thead>
-                    <tr>
-                        <th>Title</th>
-                        <th>Description</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Podcast data will be inserted here -->
-                </tbody>
-            </table>
-        </div>
+      <!-- PODCASTS -->
+<div id="podcasts-tab" class="tab-content">
+    <h1>Podcasts</h1>
+    <table id="podcast-table">
+        <thead>
+            <tr>
+                
+                <th>Play</th>
+                <th>Title</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Podcast data will be inserted here -->
+        </tbody>
+    </table>
+</div>
 
 
         <!-- PLAYLIST -->
@@ -761,7 +762,7 @@
 
     <!-- PODCAST SCRIPTS -->
     <script>
-      function loadPodcasts() {
+  function loadPodcasts() {
     fetch('./data/podcastCollection.json')
         .then(response => response.json())
         .then(data => {
@@ -769,18 +770,20 @@
             data.podcasts.forEach(podcast => {
                 const row = document.createElement('tr');
                 row.innerHTML = `
-            <td>${podcast.title}</td>
-            <td>${podcast.description}</td>
-        `;
-                row.addEventListener('click', () => {
-                    const audioPlayer = document.getElementById('audio-player');
-                    audioPlayer.src = podcast.mp3url;
-                    audioPlayer.play();
-                });
+                    <td><button class="control-button" onclick="playPodcast('${podcast.mp3url}')"><i class="fas fa-play"></i></button></td> 
+                    <td>${podcast.title}</td>
+                    <td>${podcast.description}</td>
+                `;
                 tableBody.appendChild(row);
             });
         })
         .catch(error => console.error('Error:', error));
+}
+
+function playPodcast(url) {
+    const audioPlayer = document.getElementById('audio-player');
+    audioPlayer.src = url;
+    audioPlayer.play();
 }
 
 // Call the function to load podcasts when the page loads
