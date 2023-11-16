@@ -94,7 +94,6 @@
                     <!-- Podcast data will be inserted here -->
                 </tbody>
             </table>
-            <audio id="podcast-player" controls></audio>
         </div>
 
 
@@ -762,30 +761,30 @@
 
     <!-- PODCAST SCRIPTS -->
     <script>
-        function loadPodcasts() {
-            fetch('./data/podcastCollection.json')
-                .then(response => response.json())
-                .then(data => {
-                    const tableBody = document.getElementById('podcast-table').querySelector('tbody');
-                    data.podcasts.forEach(podcast => {
-                        const row = document.createElement('tr');
-                        row.innerHTML = `
-                    <td>${podcast.title}</td>
-                    <td>${podcast.description}</td>
-                `;
-                        row.addEventListener('click', () => {
-                            document.getElementById('podcast-player').src = podcast.mp3url;
-                            document.getElementById('podcast-player').play();
-                        });
-                        tableBody.appendChild(row);
-                    });
-                })
-                .catch(error => console.error('Error:', error));
-        }
+      function loadPodcasts() {
+    fetch('./data/podcastCollection.json')
+        .then(response => response.json())
+        .then(data => {
+            const tableBody = document.getElementById('podcast-table').querySelector('tbody');
+            data.podcasts.forEach(podcast => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+            <td>${podcast.title}</td>
+            <td>${podcast.description}</td>
+        `;
+                row.addEventListener('click', () => {
+                    const audioPlayer = document.getElementById('audio-player');
+                    audioPlayer.src = podcast.mp3url;
+                    audioPlayer.play();
+                });
+                tableBody.appendChild(row);
+            });
+        })
+        .catch(error => console.error('Error:', error));
+}
 
-        // Call the function to load podcasts when the page loads
-        window.onload = loadPodcasts;
-
+// Call the function to load podcasts when the page loads
+window.onload = loadPodcasts;
     </script>
 
 
