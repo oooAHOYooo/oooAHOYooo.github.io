@@ -13,9 +13,7 @@
     <div class="container">
         <header>
 <img src="../assets/u_ahoy23.png" style="max-width: 20%;"> 
-<!--
-<button>Playlist</button>
-<button>My Account</button> -->
+
        </header>
 
 <style>
@@ -286,13 +284,7 @@ function updateLikedSongsPlaylist() {
     });
 }
 
-// Ensure the likeSong function calls updateLikedSongsPlaylist
-function likeSong() {
-    // [existing likeSong function code...]
 
-    // Update the liked songs playlist
-    updateLikedSongsPlaylist();
-}
 
 // Ensure this function is called when the page loads or when the liked songs tab is opened
 document.addEventListener('DOMContentLoaded', updateLikedSongsPlaylist);
@@ -509,33 +501,19 @@ function prevSong() {
     // Play the previous song
     playSong(songs[currentSongIndex].artist, songs[currentSongIndex].songTitle, songs[currentSongIndex].mp3url);
 }
-    function likeSong() {
-        // Code to like the current song
-    }
+
 
     function addToPlaylistButton() {
         // Code to add the current song to the playlist
     }
 
-    let currentSongIndex = 0; // Assuming you have a global variable to keep track of the current song
+    let currentSongIndex = 0; 
 const songs = []; // Assuming you have a global array of songs
 
 
 
-let likedSongs = []; // Assuming you have a global array to store liked songs
 
-function likeSong() {
-    // Add the current song to the liked songs array
-    likedSongs.push(songs[currentSongIndex]);
 
-    // Update the like button to reflect the change
-    likeButton.innerHTML = '<i class="fas fa-heart"></i>';
-}
-
-function addToPlaylistButton() {
-    // Add the current song to the selected playlist
-    addToPlaylist(songs[currentSongIndex], document.getElementById('playlist-selector').value);
-}
     </script>
 
 
@@ -561,31 +539,7 @@ function switchTabByIndex(tabIndex) {
 // You might need to call the switchTabByIndex function once at the start to initialize the correct tab name
 switchTabByIndex(currentTabIndex);
 
-function loadCommits() {
-    fetch('https://api.github.com/repos/oooAHOYooo/oooAHOYooo.github.io/commits')
-        .then(response => response.json())
-        .then(commits => {
-            const commitsList = document.getElementById('commits-list');
-            commitsList.innerHTML = ''; // Clear the list
 
-            commits.forEach(commit => {
-                const commitItem = document.createElement('div');
-                commitItem.className = 'commit-item';
-
-                const date = new Date(commit.commit.author.date);
-                const formattedDate = `${date.getDate()}-${date.getMonth()+1}-${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}`;
-
-                commitItem.innerHTML = `
-                    <h3>${commit.commit.message}</h3>
-                    <p>Author: ${commit.commit.author.name}</p>
-                    <p>Date: ${formattedDate}</p>
-                `;
-
-                commitsList.appendChild(commitItem);
-            });
-        })
-        .catch(error => console.error('Error:', error));
-}
 
 
 </script>
@@ -753,116 +707,9 @@ fetch('data/mediaCollection.json')
 
 
 
-<!-- ScRIPTS FOR LIKING SONGS TO PLAYLISTS -->
-
-<script>
-    // Assuming you have a global array to store liked songs
-let likedSongs = [];
-
-// Function to handle liking a song
-function likeSong() {
-    // Get the current song details
-    const currentSongArtist = document.getElementById('current-song-artist').textContent;
-    const currentSongTitle = document.getElementById('current-song-title').textContent;
-    const audioPlayer = document.getElementById('audio-player');
-    const currentSongUrl = audioPlayer.src;
-
-    // Create a song object
-    const song = {
-        artist: currentSongArtist,
-        title: currentSongTitle,
-        url: currentSongUrl
-    };
-
-    // Add the song to the likedSongs array
-    likedSongs.push(song);
-
-    // Update the liked songs playlist
-    updateLikedSongsPlaylist();
-}
-
-// Function to update the liked songs playlist in the "playlists" tab
-function updateLikedSongsPlaylist() {
-    // Get the playlist element
-    const playlist = document.getElementById('playlist-songs');
-
-    // Clear the current playlist
-    playlist.innerHTML = '';
-
-    // Add each liked song to the playlist
-    likedSongs.forEach((song, index) => {
-        const songItem = document.createElement('li');
-        songItem.className = 'list-item';
-        songItem.innerHTML = `
-            <div>
-                <strong>${song.title}</strong><br>
-                ${song.artist}
-            </div>
-            <button onclick="playSong('${song.artist}', '${song.title}', '${song.url}')">Play</button>
-        `;
-        playlist.appendChild(songItem);
-    });
-}
-
-// Add the likeSong function as an event listener to the "like" button
-document.getElementById('like').addEventListener('click', likeSong);
-</script>
-
-<script>
-    // Assuming you have a global array to store liked songs
-let likedSongs = [];
-
-// Function to handle liking a song
-function likeSong() {
-    // Get the current song details
-    const currentSongArtist = document.getElementById('current-song-artist').textContent;
-    const currentSongTitle = document.getElementById('current-song-title').textContent;
-    const audioPlayer = document.getElementById('audio-player');
-    const currentSongUrl = audioPlayer.src;
-
-    // Create a song object
-    const song = {
-        artist: currentSongArtist,
-        title: currentSongTitle,
-        url: currentSongUrl
-    };
-
-    // Add the song to the likedSongs array
-    likedSongs.push(song);
-
-    // Update the liked songs playlist
-    updateLikedSongsPlaylist();
-}
-
-document.getElementById('like').addEventListener('click', likeSong);
 
 
-// Function to update the liked songs playlist in the "playlists" tab
-function updateLikedSongsPlaylist() {
-    // Get the playlist element
-    const playlist = document.getElementById('playlist-songs');
 
-    // Clear the current playlist
-    playlist.innerHTML = '';
-
-    // Add each liked song to the playlist
-    likedSongs.forEach((song, index) => {
-        const songItem = document.createElement('li');
-        songItem.className = 'list-item';
-        songItem.innerHTML = `
-            <div>
-                <strong>${song.title}</strong><br>
-                ${song.artist}
-            </div>
-            <button onclick="playSong('${song.artist}', '${song.title}', '${song.url}')">Play</button>
-        `;
-        playlist.appendChild(songItem);
-    });
-}
-
-// Add the likeSong function as an event listener to the "like" button
-document.getElementById('like').addEventListener('click', likeSong);
-</script>
 
 <script>
     // Global array to store songs
