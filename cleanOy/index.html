@@ -17,7 +17,6 @@
     <div class="container">
         <header>
             <img src="../assets/u_ahoy23.png" style="max-width: 20%;">
-
         </header>
 
         <style>
@@ -266,133 +265,62 @@
 
         </script>
 
-<script>
-        // Initial data load
-        loadArtists();
-
-        // Get player buttons
-        const prevButton = document.getElementById('prev');
-        const playButton = document.getElementById('play');
-        const nextButton = document.getElementById('next');
-        const likeButton = document.getElementById('like');
-        const playlistButton = document.getElementById('playlist');
-
-        // Add event listeners
-        prevButton.addEventListener('click', prevSong);
-        playButton.addEventListener('click', togglePlay);
-        nextButton.addEventListener('click', nextSong);
-        likeButton.addEventListener('click', likeSong);
-        playlistButton.addEventListener('click', addToPlaylistButton);
-
-        // Define functions
-        function prevSong() {
-            // Code to play the previous song
-        }
-
-        function togglePlay() {
-            // Code to play/pause the song
-            const audioPlayer = document.getElementById('audio-player');
-            if (audioPlayer.paused) {
-                audioPlayer.play();
-                playButton.innerHTML = '<i class="fas fa-pause"></i>';
-            } else {
-                audioPlayer.pause();
-                playButton.innerHTML = '<i class="fas fa-play"></i>';
-            }
-        }
-
-        function nextSong() {
-            // Increment the current song index
-            currentSongIndex++;
-
-            // If it's the last song, loop back to the first one
-            if (currentSongIndex >= songs.length) {
-                currentSongIndex = 0;
-            }
-
-            // Play the next song
-            playSong(songs[currentSongIndex].artist, songs[currentSongIndex].songTitle, songs[currentSongIndex].mp3url);
-        }
-        function prevSong() {
-            // Decrement the current song index
-            currentSongIndex--;
-
-            // If it's the first song, loop back to the last one
-            if (currentSongIndex < 0) {
-                currentSongIndex = songs.length - 1;
-            }
-
-            // Play the previous song
-            playSong(songs[currentSongIndex].artist, songs[currentSongIndex].songTitle, songs[currentSongIndex].mp3url);
-        }
-
-
-        function addToPlaylistButton() {
-            // Code to add the current song to the playlist
-        }
-
-
-
-
-
-
-    </script>
 
 
   
 
 
 
-    <script>
-        // Global array to store songs
-        let songs = []; // Load this array with your song data
-        let currentSongIndex = 0;
+<script>
+    // Global array to store songs
+    let songs = []; // Load this array with your song data
+    let currentSongIndex = 0;
 
-        // Function to play the next song
-        function nextSong() {
-            // Increment the current song index
-            currentSongIndex = (currentSongIndex + 1) % songs.length;
+    // Function to play the next song
+    function nextSong() {
+        // Increment the current song index
+        currentSongIndex = (currentSongIndex + 1) % songs.length;
 
-            // Play the next song
-            playSong(songs[currentSongIndex].artist, songs[currentSongIndex].songTitle, songs[currentSongIndex].mp3url);
-        }
+        // Play the next song
+        playSong(songs[currentSongIndex].artist, songs[currentSongIndex].songTitle, songs[currentSongIndex].mp3url);
+    }
 
-        // Function to play a specific song
-        function playSong(artist, title, url) {
-            // Update Now Playing section
-            document.getElementById('current-song-artist').textContent = artist;
-            document.getElementById('current-song-title').textContent = title;
+    // Function to play a specific song
+    function playSong(artist, title, url) {
+        // Update Now Playing section
+        document.getElementById('current-song-artist').textContent = artist;
+        document.getElementById('current-song-title').textContent = title;
 
-            // Update bottom player section
-            document.getElementById('artist-name').textContent = artist;
-            document.getElementById('song-title').textContent = title;
+        // Update bottom player section
+        document.getElementById('artist-name').textContent = artist;
+        document.getElementById('song-title').textContent = title;
 
-            // Update and play the song
-            const audioPlayer = document.getElementById('audio-player');
-            audioPlayer.src = url;
-            audioPlayer.play();
-        }
+        // Update and play the song
+        const audioPlayer = document.getElementById('audio-player');
+        audioPlayer.src = url;
+        audioPlayer.play();
+    }
 
-        // Load songs data and initialize
-        function loadSongsAndPlaylists() {
-            fetch('./data/songCollection.json')
-                .then(response => response.json())
-                .then(data => {
-                    songs = data.songs;
-                    if (songs.length > 0) {
-                        playSong(songs[0].artist, songs[0].songTitle, songs[0].mp3url);
-                    }
-                })
-                .catch(error => console.error('Error:', error));
-        }
+    // Load songs data and initialize
+    function loadSongsAndPlaylists() {
+        fetch('./data/songCollection.json')
+            .then(response => response.json())
+            .then(data => {
+                songs = data.songs;
+                if (songs.length > 0) {
+                    playSong(songs[0].artist, songs[0].songTitle, songs[0].mp3url);
+                }
+            })
+            .catch(error => console.error('Error:', error));
+    }
 
-        document.addEventListener('DOMContentLoaded', (event) => {
-            loadSongsAndPlaylists();
-        });
+    document.addEventListener('DOMContentLoaded', (event) => {
+        loadSongsAndPlaylists();
+    });
 
-        // Add event listener to the next button
-        document.getElementById('next').addEventListener('click', nextSong);
-    </script>
+    // Add event listener to the next button
+    document.getElementById('next').addEventListener('click', nextSong);
+</script>
 
 
 
