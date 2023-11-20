@@ -229,14 +229,32 @@
         .then(response => response.json())
         .then(data => {
             const songList = document.getElementById('song-list');
+            songList.innerHTML = `
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Artist</th>
+                            <th>Song</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="song-list-body">
+                    </tbody>
+                </table>
+            `;
+
+            const songListBody = document.getElementById('song-list-body');
             data.songs.forEach(song => {
-                const li = document.createElement('li');
-                li.innerHTML = `
-                    <span>${song.artist} - ${song.songTitle}</span>
-                    <button class="play-button" data-url="${song.mp3url}">Play</button>
-                    <button class="like-button">Like</button>
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${song.artist}</td>
+                    <td>${song.songTitle}</td>
+                    <td>
+                        <button class="play-button" data-url="${song.mp3url}" data-artist="${song.artist}" data-title="${song.songTitle}"><i class="fas fa-play"></i></button>
+                        <button class="like-button"><i class="fas fa-heart"></i></button>
+                    </td>
                 `;
-                songList.appendChild(li);
+                songListBody.appendChild(tr);
             });
 
             const audioPlayer = document.getElementById('audio-player');
@@ -244,6 +262,8 @@
             playButtons.forEach(button => {
                 button.addEventListener('click', function() {
                     const url = this.dataset.url;
+                    const artist = this.dataset.artist;
+                    const title = this.dataset.title;
                     if (audioPlayer.src === url) {
                         if (audioPlayer.paused) {
                             audioPlayer.play();
@@ -254,6 +274,12 @@
                         audioPlayer.src = url;
                         audioPlayer.play();
                     }
+
+                    // Update bottom controller and now playing tab
+                    document.getElementById('artist-name').textContent = artist;
+                    document.getElementById('song-title').textContent = title;
+                    document.getElementById('current-song-title').textContent = title;
+                    document.getElementById('current-song-artist').textContent = artist;
                 });
             });
 
@@ -262,13 +288,13 @@
                 button.addEventListener('click', function() {
                     this.classList.toggle('liked');
                     const likedSongsList = document.getElementById('liked-songs-list');
-                    const song = this.parentElement.cloneNode(true);
+                    const song = this.parentElement.parentElement.cloneNode(true);
                     song.querySelector('.like-button').remove();
                     if (this.classList.contains('liked')) {
                         likedSongsList.appendChild(song);
                     } else {
                         const songs = Array.from(likedSongsList.children);
-                        const index = songs.findIndex(li => li.textContent === song.textContent);
+                        const index = songs.findIndex(tr => tr.textContent === song.textContent);
                         likedSongsList.removeChild(songs[index]);
                     }
                 });
