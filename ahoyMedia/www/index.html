@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, please refer to the docs:
+            https://cordova.apache.org/docs/en/latest/
+        Some notes:
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <meta name="color-scheme" content="light dark">
+        <link rel="stylesheet" href="css/index.css">
+        <title>Ahoy Indie Media</title>
+    </head>
+
+        
+        <body>
+            <div class="container">
+                <header>
+                    <img src="../www/img/logo.png" style="max-width: 20%;">
+        
+                </header>
+        
+                <style>
+        
+                </style>
+                <div id="nowplaying-tab" class="tab-content">
+                    <div class="now-playing">
+                        <h1>Now Playing</h1>
+                        <!-- <img id="album-art" src="path_to_your_album_art.jpg" alt="Album Art">-->
+                        <div class="song-info">
+                            <h2 id="current-song-title">Song Title</h2>
+                            <h3 id="current-song-artist">Artist Name</h3>
+                        </div>
+                        <div class="song-controls">
+                            <button id="prev" class="control-button"><i class="fas fa-step-backward"></i></button>
+                            <button id="play-pause" class="control-button"><i class="fas fa-play"></i></button>
+                            <button id="next" class="control-button"><i class="fas fa-step-forward"></i></button>
+                        </div>
+        
+        
+        
+        
+        
+                    </div>
+                </div>
+        
+                <!-- RADIO TAB -->
+                <div id="radio-tab" class="tab-content">
+                    <h1>Radio</h1>
+                    <div class="radio-wrap">
+                        <script src="https://embed.radio.co/player/0024c4d.js"></script><br>
+        
+                    </div>
+                </div>
+        
+                <!-- SONGS TAB -->
+                <div id="songs-tab" class="tab-content active">
+                    <h1>Songs</h1>
+                    <ul class="list" id="song-list"></ul>
+        
+                    <!-- RADIO -->
+                    <style>
+        
+                    </style>
+        
+        
+        
+                </div>
+        
+                <!-- ARTIST -->
+                <div id="artists-tab" class="tab-content">
+                    <h1>Artists</h1>
+                    <!-- Artists content goes here -->
+                    <ul class="list" id="artist-list"></ul>
+                </div>
+        
+                <!-- LIKED SONGS -->
+        
+        
+        
+                <div id="liked-tab" class="tab-content">
+                    <h1>Liked Content</h1>
+        
+                    <ul>This will be a dynamic list similar to the songs that will show my liked songs when someone hits the
+                        heart button on a given present song</ul>
+                    <ul id="liked-songs-list">
+                        <!-- Liked songs will be populated here by the JavaScript function -->
+                    </ul>
+                </div>
+        
+                <!-- PODCASTS -->
+                <div id="podcasts-tab" class="tab-content">
+                    <h1>Podcasts</h1>
+                    <table id="podcast-table">
+                        <thead>
+                            <tr>
+        
+                                <th>Play</th>
+                                <th>Title</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Podcast data will be inserted here -->
+                        </tbody>
+                    </table>
+                </div>
+        
+        
+                <!-- PLAYLIST -->
+                <div id="playlists-tab" class="tab-content">
+                    <!-- Playlists content goes here -->
+                    <div id="playlists-tab" class="tab-content">
+                        <input type="text" id="playlist-name" placeholder="New Playlist Name">
+                        <button onclick="createPlaylist()">Create Playlist</button>
+                        <select id="playlist-selector" onchange="showPlaylist()">
+                            <!-- Playlist options will be populated here -->
+                        </select>
+                        <ul class="list" id="playlist-songs">
+                            <!-- Playlist songs will be populated here -->
+                        </ul>
+                        <ul class="list" id="all-songs">
+                            <!-- All songs will be populated here with an "Add to Playlist" button -->
+                        </ul>
+                    </div>
+                </div>
+                <!-- CABLE -->
+                <div id="cable-tab" class="tab-content">
+                    <h1>Cable</h1>
+                    <div id="playerContainer" style="position:relative;overflow:hidden;padding-bottom:56.25%">
+                        <iframe src='https://cdn.jwplayer.com/players/QI6O3pW7-9Gtk2B1J.html' id="playerFrame" width="100%"
+                            height="100%" frameborder="0" scrolling="auto" title="Untitled Manual Playlist"
+                            style="position:absolute;" allowfullscreen></iframe>
+                    </div>
+                    <h3>Cable Content Schedule</h3>
+                    <table id="cable-schedule-table">
+                        <thead>
+                            <tr>
+                                <td style="text-align:left;">Time (EST)</td>
+                                <td style="text-align:left;">Block Name</td>
+                                <td style="text-align:left;">Description</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Schedule data will be inserted here -->
+                        </tbody>
+                    </table>
+                </div>
+        
+                <!-- UPDATES-->
+                <div id="updates-tab" class="tab-content">
+                    <h1>Updates</h1>
+                    <div id="commits-list"></div>
+                </div>
+        
+                <!-- ACCOUNT -->
+                <div id="account-tab" class="tab-content">
+                    <h1>Your Account</h1>
+                    <a href="./src/login.html"><button>Login to Your Account</button></a>
+                    <h2>Settings</h2>
+                    <br>
+                    <button onclick="switchTheme()">change theme</button>
+        
+                </div>
+        
+                <!-- GAMES -->
+                <!-- Add this in your HTML where you want the games tab to appear -->
+                <div id="games-tab" class="tab-content">
+                    <h1>Games</h1>
+                    <div id="games-tab" class="tab-content">
+                        <iframe id="tetris-frame" src="../games/console/tetris/tetris.html"
+                            style="width:100%; height:100%; border:none;"></iframe>
+                    </div>
+                    <!-- Games content goes here -->
+                </div>
+        
+                <!-- MEEEEDIIAA -->
+        
+                <div id="media-tab" class="tab-content">
+                    <h1>Media</h1>
+                    <!-- Media content goes here -->
+                    <!-- This is media - the MEDDIA -->
+                    <script src="https://cdn.jwplayer.com/players/s8ETfT0u-9Gtk2B1J.js"></script>
+                    <table id="mediaTable" class="list">
+                        <thead>
+                            <tr>
+                                <th>Thumbnail</th>
+                                <th>Title</t>h
+                                <th>Artist</th>
+                                <th>Duration</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Table data will be inserted here -->
+                        </tbody>
+                    </table>
+        
+                </div>
+            </div>
+        
+            <!-- BOTTOM PLAYER -->
+            <section class="player">
+                <div class="player-content">
+                    <div class="player-info">
+                        <a href="#" id="artist-name" class="player-link">Artist Name</a>
+                        <a href="#" id="song-title" class="player-link">Song Title</a>
+                    </div>
+                    <div class="player-controls">
+                        <button id="prev" class="player-button"><i class="fas fa-step-backward"></i></button>
+                        <button id="play" class="player-button"><i class="fas fa-play"></i></button>
+                        <button id="next" class="player-button" onclick="nextSong()"><i
+                                class="fas fa-step-forward"></i></button>
+                    </div>
+                    <div class="player-actions">
+                        <button id="like" class="player-button"><i class="fas fa-heart"></i></button>
+                        <button id="playlist" class="player-button"><i class="fas fa-plus"></i></button>
+                    </div>
+                </div>
+                <audio id="audio-player" src=""></audio>
+            </section>
+        
+            <div class="bottom-controller fixed-bottom">
+                <button id="left-arrow" onclick="prevTab()"><i class="fas fa-arrow-left"></i></button>
+                <span id="tab-indicator">Songs</span> <!-- Default text for the first tab -->
+                <button id="right-arrow" onclick="nextTab()"><i class="fas fa-arrow-right"></i></button>
+            </div>
+        
+            <script>
+                const playlists = {};  // Object to hold playlists
+        
+                function switchTab(tabName) {
+                    const contents = document.querySelectorAll('.tab-content');
+                    for (const content of contents) {
+                        content.classList.remove('active');
+                    }
+                    const activeTab = document.getElementById(`${tabName}-tab`);
+                    activeTab.classList.add('active');
+        
+        
+                }
+        
+        
+        
+                let currentTabIndex = 0; // Assuming you have a global variable to keep track of the current tab
+        
+                function nextTab() {
+                    currentTabIndex++;
+                    if (currentTabIndex > 10) { // Reset to the first tab if we've gone past the last one
+                        currentTabIndex = 0;
+                    }
+                    switchTabByIndex(currentTabIndex);
+                }
+        
+                function prevTab() {
+                    currentTabIndex--;
+                    if (currentTabIndex < 0) { // Loop back to the last tab if we've gone past the first one
+                        currentTabIndex = 10;
+                    }
+                    switchTabByIndex(currentTabIndex);
+                }
+        
+                // Extend the existing switchTab function to accept an index
+                function switchTabByIndex(tabIndex) {
+                    const tabs = ['nowplaying', 'radio', 'songs', 'liked', 'podcasts', 'artists', 'cable', 'updates', 'games', 'media', 'account'];
+                    const tabIndicator = document.getElementById('tab-indicator');
+                    if (tabIndex >= 0 && tabIndex < tabs.length) {
+                        switchTab(tabs[tabIndex]);
+                        // Update the tab indicator text
+                        tabIndicator.textContent = tabs[tabIndex].charAt(0).toUpperCase() + tabs[tabIndex].slice(1); // Capitalize the first letter
+                    }
+                }
+        
+        
+        
+        
+                // Ensure this function is called when the page loads or when the liked songs tab is opened
+                document.addEventListener('DOMContentLoaded', updateLikedSongsPlaylist);
+        
+                // You might need to call the switchTabByIndex function once at the start to initialize the correct tab name
+                switchTabByIndex(currentTabIndex);
+        
+                function loadMedia() {
+                    fetch('./library/media.json')
+                        .then(response => response.json())
+                        .then(mediaItems => {
+                            const mediaList = document.getElementById('media-list');
+                            mediaItems.forEach(media => {
+                                const mediaItem = document.createElement('div');
+                                mediaItem.className = 'media-item';
+                                mediaItem.innerHTML = `
+                            <h3>${media.display_title}</h3>
+                            <p>Artist: ${media.artist}</p>
+                            <p>Duration: ${media.duration}</p>
+                            <a href="${media.mp4_link}">Watch</a>
+                        `;
+                                mediaList.appendChild(mediaItem);
+                            });
+                        })
+                        .catch(error => console.error('Error:', error));
+                }
+        
+                // Initial data load
+                loadMedia();
+        
+                function playSong(artist, title, url) {
+                    // Update Now Playing section
+                    document.getElementById('current-song-artist').textContent = artist;
+                    document.getElementById('current-song-title').textContent = title;
+                    // Update bottom player section
+                    document.getElementById('artist-name').textContent = artist;
+                    document.getElementById('song-title').textContent = title;
+                    // Update and play the song
+                    const audioPlayer = document.getElementById('audio-player');
+                    audioPlayer.src = url;
+                    audioPlayer.play();
+                }
+        
+        
+                document.getElementById('play-pause').addEventListener('click', function () {
+                    const audioPlayer = document.getElementById('audio-player');
+                    const playPauseIcon = document.getElementById('play-pause').firstChild;
+                    if (audioPlayer.paused) {
+                        audioPlayer.play();
+                        playPauseIcon.className = 'fas fa-pause';
+                    } else {
+                        audioPlayer.pause();
+                        playPauseIcon.className = 'fas fa-play';
+                    }
+                });
+        
+                function loadArtists() {
+                    fetch('data/artistCollection.json') // Changed from 'artistData.json' to 'artistCollection.json'
+                        .then(response => response.json())
+                        .then(data => {
+                            const artists = data.artists;
+                            const artistList = document.getElementById('artist-list');
+                            artists.forEach(artist => {
+                                const artistItem = document.createElement('li');
+                                artistItem.className = 'list-item';
+                                artistItem.innerHTML = `
+                        <div class="artist-item">
+                            <div class="artist-info">
+                                <strong><a href="${artist.artistUrl}">${artist.name}</a></strong><br>
+                                Location: ${artist.location}<br>
+                                <a href="${artist.supportLink}">Support</a> |
+                                <a href="${artist.shareLink}">Share</a> |
+                                <a href="${artist.messageLink}">Message</a>
+                            </div>
+                        </div>
+                    `;
+                                artistList.appendChild(artistItem);
+                            });
+                        })
+                        .catch(error => console.error('Error:', error));
+                }
+        
+                document.addEventListener('DOMContentLoaded', (event) => {
+                    loadArtists();
+                });
+        
+                function loadSongsAndPlaylists() {
+            fetch('./data/songCollection.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log(data); // Log the fetched data to see if it's correct
+                    const songs = data.songs;
+                    const songList = document.getElementById('song-list');
+                    if (!songList) {
+                        console.error('Could not find element with ID "song-list"');
+                        return;
+                    }
+                    songs.forEach((song, index) => {
+                        const li = document.createElement('li');
+                        li.textContent = `${song.artist} - ${song.songTitle}`;
+                        li.addEventListener('click', () => {
+                            playSong(song.artist, song.songTitle, song.mp3url);
+                            currentSongIndex = index;
+                        });
+                        songList.appendChild(li);
+                    });
+                })
+                .catch(error => console.error('Error:', error));
+        }
+        
+                // Initial data load
+                loadArtists();
+        
+                // Get player buttons
+                const prevButton = document.getElementById('prev');
+                const playButton = document.getElementById('play');
+                const nextButton = document.getElementById('next');
+                const likeButton = document.getElementById('like');
+                const playlistButton = document.getElementById('playlist');
+        
+                // Add event listeners
+                prevButton.addEventListener('click', prevSong);
+                playButton.addEventListener('click', togglePlay);
+                nextButton.addEventListener('click', nextSong);
+                likeButton.addEventListener('click', likeSong);
+                playlistButton.addEventListener('click', addToPlaylistButton);
+        
+                // Define functions
+                function prevSong() {
+                    // Code to play the previous song
+                }
+        
+                function togglePlay() {
+                    // Code to play/pause the song
+                    const audioPlayer = document.getElementById('audio-player');
+                    if (audioPlayer.paused) {
+                        audioPlayer.play();
+                        playButton.innerHTML = '<i class="fas fa-pause"></i>';
+                    } else {
+                        audioPlayer.pause();
+                        playButton.innerHTML = '<i class="fas fa-play"></i>';
+                    }
+                }
+        
+                function nextSong() {
+                    // Increment the current song index
+                    currentSongIndex++;
+        
+                    // If it's the last song, loop back to the first one
+                    if (currentSongIndex >= songs.length) {
+                        currentSongIndex = 0;
+                    }
+        
+                    // Play the next song
+                    playSong(songs[currentSongIndex].artist, songs[currentSongIndex].songTitle, songs[currentSongIndex].mp3url);
+                }
+                function prevSong() {
+                    // Decrement the current song index
+                    currentSongIndex--;
+        
+                    // If it's the first song, loop back to the last one
+                    if (currentSongIndex < 0) {
+                        currentSongIndex = songs.length - 1;
+                    }
+        
+                    // Play the previous song
+                    playSong(songs[currentSongIndex].artist, songs[currentSongIndex].songTitle, songs[currentSongIndex].mp3url);
+                }
+        
+        
+                function addToPlaylistButton() {
+                    // Code to add the current song to the playlist
+                }
+        
+                let currentSongIndex = 0;
+                const songs = []; // Assuming you have a global array of songs
+        
+        
+        
+        
+        
+            </script>
+        
+        
+            <!-- SWITCH TAB FUNCITON -->
+            <script>
+        
+        
+                // Extend the existing switchTab function to accept an index
+                function switchTabByIndex(tabIndex) {
+                    const tabs = ['nowplaying', 'songs', 'liked', 'podcasts', 'radio', 'artists', 'cable', 'updates', 'games', 'media', 'account']; const tabIndicator = document.getElementById('tab-indicator');
+                    if (tabIndex >= 0 && tabIndex < tabs.length) {
+                        switchTab(tabs[tabIndex]);
+                        // Update the tab indicator text
+                        tabIndicator.textContent = tabs[tabIndex].charAt(0).toUpperCase() + tabs[tabIndex].slice(1); // Capitalize the first letter
+                    }
+                }
+        
+        
+        
+                // You might need to call the switchTabByIndex function once at the start to initialize the correct tab name
+                switchTabByIndex(currentTabIndex);
+        
+        
+        
+        
+            </script>
+        
+            <!-- SWITCH THEME FUNCTION -->
+            <script>
+                function switchTheme() {
+                    const root = document.documentElement;
+                    const bgColor = getComputedStyle(root).getPropertyValue('--background-color');
+                    const lightBgColor = getComputedStyle(root).getPropertyValue('--light-background-color');
+        
+                    if (bgColor.trim() === lightBgColor.trim()) {
+                        // If the current theme is light, switch to dark
+                        root.style.setProperty('--background-color', 'rgb(0, 14, 19)');
+                        root.style.setProperty('--text-color', '#00f2ff');
+                        root.style.setProperty('--border-color', '#00e5ff');
+                        root.style.setProperty('--secondary-color', '#000000ba');
+                        root.style.setProperty('--button-color', '#ffffff2d');
+                        root.style.setProperty('--gold', '#ffd900');
+                    } else {
+                        // If the current theme is dark, switch to light
+                        root.style.setProperty('--background-color', '#ffffff');
+                        root.style.setProperty('--text-color', '#000000');
+                        root.style.setProperty('--border-color', '#e0e0e0');
+                        root.style.setProperty('--secondary-color', '#f2f2f2');
+                        root.style.setProperty('--button-color', '#d9d9d9');
+                        root.style.setProperty('--gold', '#ffd900');
+                    }
+                }
+            </script>
+            <!-- MEDIA LIBRARY SCRIPT -->
+            <script>
+                fetch('/library/media.json')
+                    .then(response => response.json())
+                    .then(data => {
+                        // Get the table body
+                        var tbody = document.querySelector("#mediaTable tbody");
+        
+                        // Loop through the data and add rows to the table
+                        for (var i = 0; i < data.length; i++) {
+                            var tr = document.createElement("tr");
+                            tr.id = 'row-' + i;  // Assign unique id to the row
+        
+                            var tdTitle = document.createElement("td");
+                            tdTitle.id = 'title-' + i;  // Assign unique id to the title cell
+                            tdTitle.textContent = data[i].display_title;
+                            tr.appendChild(tdTitle);
+        
+                            var tdArtist = document.createElement("td");
+                            tdArtist.id = 'artist-' + i;  // Assign unique id to the artist cell
+                            tdArtist.textContent = data[i].artist;
+                            tr.appendChild(tdArtist);
+        
+                            var tdDuration = document.createElement("td");
+                            tdDuration.id = 'duration-' + i;  // Assign unique id to the duration cell
+                            tdDuration.textContent = data[i].duration;
+                            tr.appendChild(tdDuration);
+        
+                            var tdLink = document.createElement("td");
+                            var aLink = document.createElement("a");
+                            aLink.href = data[i].mp4_link;
+                            aLink.textContent = "Link";
+                            tdLink.appendChild(aLink);
+                            tr.appendChild(tdLink);
+        
+                            tbody.appendChild(tr);
+                        }
+                    })
+                    .catch(error => console.error('Error:', error));
+            </script>
+        
+            <!-- LOAD COMMITS FUNCTION-->
+            <script>
+                function loadCommits() {
+                    fetch('https://api.github.com/repos/oooAHOYooo/oooAHOYooo.github.io/commits')
+                        .then(response => response.json())
+                        .then(commits => {
+                            const commitsList = document.getElementById('commits-list');
+                            commitsList.innerHTML = ''; // Clear the list
+        
+                            commits.forEach(commit => {
+                                const commitItem = document.createElement('div');
+                                commitItem.className = 'commit-item';
+        
+                                const date = new Date(commit.commit.author.date);
+                                const formattedDate = `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}`;
+        
+                                commitItem.innerHTML = `
+                                <h3>${commit.commit.message}</h3>
+                                <p>Author: ${commit.commit.author.name}</p>
+                                <p>Date: ${formattedDate}</p>
+                            `;
+        
+                                commitsList.appendChild(commitItem);
+                            });
+                        })
+                        .catch(error => console.error('Error:', error));
+                }
+        
+                // Load commits when the page loads
+                window.onload = loadCommits;
+            </script>
+            <!-- DISPLAY THE CABLES SCHEDULE SCRIPT-->
+            <script>
+                fetch('data/cableSchedule.json')
+                    .then(response => response.json())
+                    .then(data => {
+                        const table = document.querySelector('#cable-schedule-table tbody');
+                        data.forEach(item => {
+                            const row = document.createElement('tr');
+        
+                            const timeCell = document.createElement('td');
+                            timeCell.textContent = item.time;
+                            row.appendChild(timeCell);
+        
+                            const blockNameCell = document.createElement('td');
+                            blockNameCell.textContent = item.blockName;
+                            row.appendChild(blockNameCell);
+        
+                            const descriptionCell = document.createElement('td');
+                            descriptionCell.textContent = item.description;
+                            row.appendChild(descriptionCell);
+        
+                            table.appendChild(row);
+                        });
+                    })
+                    .catch(error => console.error('Error:', error));
+            </script>
+        
+            <script>
+                fetch('data/mediaCollection.json')
+                    .then(response => response.json())
+                    .then(data => {
+                        const tableBody = document.querySelector('#mediaTable tbody');
+        
+                        data.forEach(item => {
+                            const row = document.createElement('tr');
+        
+                            const thumbnailCell = document.createElement('td');
+                            const thumbnail = document.createElement('img');
+                            thumbnail.src = item.thumbnail_link;
+                            thumbnail.alt = item.display_title;
+                            thumbnail.style.width = '50px'; // You can adjust the size as needed
+                            thumbnailCell.appendChild(thumbnail);
+                            row.appendChild(thumbnailCell);
+        
+                            const titleCell = document.createElement('td');
+                            titleCell.textContent = item.display_title;
+                            row.appendChild(titleCell);
+        
+                            const artistCell = document.createElement('td');
+                            artistCell.textContent = item.artist;
+                            row.appendChild(artistCell);
+        
+                            const durationCell = document.createElement('td');
+                            durationCell.textContent = item.duration;
+                            row.appendChild(durationCell);
+        
+                            tableBody.appendChild(row);
+                        });
+                    })
+                    .catch(error => console.error('Error:', error));
+            </script>
+        
+            <script>
+                // Global array to store songs
+                let songs = []; // Load this array with your song data
+                let currentSongIndex = 0;
+        
+                // Function to play the next song
+                function nextSong() {
+                    // Increment the current song index
+                    currentSongIndex = (currentSongIndex + 1) % songs.length;
+        
+                    // Play the next song
+                    playSong(songs[currentSongIndex].artist, songs[currentSongIndex].songTitle, songs[currentSongIndex].mp3url);
+                }
+        
+                // Function to play a specific song
+                function playSong(artist, title, url) {
+                    // Update Now Playing section
+                    document.getElementById('current-song-artist').textContent = artist;
+                    document.getElementById('current-song-title').textContent = title;
+        
+                    // Update bottom player section
+                    document.getElementById('artist-name').textContent = artist;
+                    document.getElementById('song-title').textContent = title;
+        
+                    // Update and play the song
+                    const audioPlayer = document.getElementById('audio-player');
+                    audioPlayer.src = url;
+                    audioPlayer.play();
+                }
+        
+                // Load songs data and initialize
+                function loadSongsAndPlaylists() {
+                    fetch('data/songCollection.json')
+                        .then(response => response.json())
+                        .then(data => {
+                            songs = data.songs;
+                            if (songs.length > 0) {
+                                playSong(songs[0].artist, songs[0].songTitle, songs[0].mp3url);
+                            }
+                        })
+                        .catch(error => console.error('Error:', error));
+                }
+        
+                document.addEventListener('DOMContentLoaded', (event) => {
+                    loadSongsAndPlaylists();
+                });
+        
+                // Add event listener to the next button
+                document.getElementById('next').addEventListener('click', nextSong);
+            </script>
+        
+        
+            <!-- PODCAST SCRIPTS -->
+            <script>
+                function loadPodcasts() {
+                    fetch('./data/podcastCollection.json')
+                        .then(response => response.json())
+                        .then(data => {
+                            const tableBody = document.getElementById('podcast-table').querySelector('tbody');
+                            data.podcasts.forEach(podcast => {
+                                const row = document.createElement('tr');
+                                row.innerHTML = `
+                            <td><button class="control-button" onclick="playPodcast('${podcast.mp3url}')"><i class="fas fa-play"></i></button></td> 
+                            <td>${podcast.title}</td>
+                            <td>${podcast.description}</td>
+                        `;
+                                tableBody.appendChild(row);
+                            });
+                        })
+                        .catch(error => console.error('Error:', error));
+                }
+        
+                function playPodcast(url) {
+                    const audioPlayer = document.getElementById('audio-player');
+                    audioPlayer.src = url;
+                    audioPlayer.play();
+                }
+        
+                // Call the function to load podcasts when the page loads
+                window.onload = loadPodcasts;
+            </script>
+        
+   
+
+
+
+        <script src="cordova.js"></script>
+        <script src="js/index.js"></script>
+    </body>
+</html>

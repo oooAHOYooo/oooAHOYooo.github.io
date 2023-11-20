@@ -1,0 +1,210 @@
+[
+    {
+    "id": 1,
+      "video_id": "4f55y55N",
+      "display_title": "The Rob Show - Ep 8 - The Gypsies - Clip 4",
+      "artist": "Rob Meglio",
+      "duration": "00:06:16",
+      "mp4_link": "https://cdn.jwplayer.com/videos/4f55y55N-GVOzihKP.mp4",
+      "thumbnail_link": "https://cdn.jwplayer.com/v2/media/4f55y55N/poster.jpg?width=720"
+    },
+
+
+    {
+        "id": 2,
+        "video_id": "Y6qyPDg6",
+        "display_title": "The Rob Show - Ep 8 - The Gypsies - Clip 3",
+        "artist": "Rob Meglio",
+        "duration": "00:02:02",
+        "mp4_link": "https://cdn.jwplayer.com/videos/Y6qyPDg6-GVOzihKP.mp4",
+        "thumbnail_link": "https://cdn.jwplayer.com/v2/media/Y6qyPDg6/poster.jpg?width=720"
+      },
+      {
+        "id": 3,
+        "video_id": "e1Ep1mkS",
+        "display_title": "The Rob Show - Ep 8 - The Gypsies - Clip 2",
+        "artist": "Rob Meglio",
+        "duration": "00:03:02",
+        "mp4_link": "https://cdn.jwplayer.com/videos/e1Ep1mkS-GVOzihKP.mp4",
+        "thumbnail_link": "https://cdn.jwplayer.com/v2/media/e1Ep1mkS/poster.jpg?width=720"
+      },
+      {
+        "id": 4,
+        "video_id": "zOcGp9M6",
+        "display_title": "The Rob Show - Ep 8 - The Gypsies - Clip 1",
+        "artist": "Unknown Artist",
+        "duration": "00:02:02",
+        "mp4_link": "https://cdn.jwplayer.com/videos/zOcGp9M6-GVOzihKP.mp4",
+        "thumbnail_link": "https://cdn.jwplayer.com/v2/media/zOcGp9M6/poster.jpg?width=720"
+      },
+      {
+        "id": 5,
+      "video_id": "XYgYgbx1",
+      "display_title": "Rob Previews Rob Is Next",
+      "artist": "Rob Meglio",
+      "duration": "00:00:38",
+      "mp4_link": "https://cdn.jwplayer.com/videos/XYgYgbx1-GVOzihKP.mp4",
+      "thumbnail_link": "https://cdn.jwplayer.com/v2/media/XYgYgbx1/poster.jpg?width=720"
+    },
+    
+        {
+          "id": 6,
+          "video_id": "ZNJ0TBsj",
+          "display_title": "The Rob Show - Episode 11 - Tyler Rice - Clip 5 1",
+          "artist": "Rob Meglio", 
+          "duration": "00:08:28", 
+          "mp4_link": "https://cdn.jwplayer.com/videos/ZNJ0TBsj-GVOzihKP.mp4",
+          "thumbnail_link": "https://cdn.jwplayer.com/v2/media/ZNJ0TBsj/poster.jpg?width=720"
+        },
+        {
+          "id": 7,
+          "video_id": "YZDjBK1U",
+          "display_title": "The Rob Show - Episode 11 - Tyler Rice - Clip 4",
+          "artist": "Rob Meglio",
+          "duration": "00:11:41", 
+          "mp4_link": "https://cdn.jwplayer.com/videos/YZDjBK1U-GVOzihKP.mp4",
+          "thumbnail_link": "https://cdn.jwplayer.com/v2/media/YZDjBK1U/poster.jpg?width=720"
+        },
+        {
+          "id": 8,
+          "video_id": "MmSe2svl",
+          "display_title": "The Rob Show - Episode 11 - Tyler Rice - Clip 1",
+          "artist": "Rob Meglio",
+          "duration": "00:10:42", 
+          "mp4_link": "https://cdn.jwplayer.com/videos/MmSe2svl-GVOzihKP.mp4",
+          "thumbnail_link": "https://cdn.jwplayer.com/v2/media/MmSe2svl/poster.jpg?width=720"
+        },
+        {
+          "id": 9,
+          "video_id": "ObCGhK5f",
+          "display_title": "The Rob Show - Episode 11 - Tyler Rice - Clip 2",
+          "artist": "Rob Meglio",
+          "duration": "00:10:18", 
+          "mp4_link": "https://cdn.jwplayer.com/videos/ObCGhK5f-GVOzihKP.mp4",
+          "thumbnail_link": "https://cdn.jwplayer.com/v2/media/ObCGhK5f/poster.jpg?width=720"
+        },
+        {
+          "id": 10,
+          "video_id": "KDqJX6Dv",
+          "display_title": "The Rob Show - Episode 11 - Tyler Rice - Clip 3",
+          "artist": "Rob Meglio",
+          "duration": "00:12:30", 
+          "mp4_link": "https://cdn.jwplayer.com/videos/KDqJX6Dv-GVOzihKP.mp4",
+          "thumbnail_link": "https://cdn.jwplayer.com/v2/media/KDqJX6Dv/poster.jpg?width=720"
+        },
+        {
+            "id": 11,
+            "video_id": "DX2j4XPb",
+            "display_title": "Justin Arena ft Nicole Gauthier : When You Wake Up",
+            "artist": "Justin Arena", 
+            "duration": "00:04:02", 
+            "mp4_link": "https://cdn.jwplayer.com/videos/DX2j4XPb-GVOzihKP.mp4",
+            "thumbnail_link": "https://cdn.jwplayer.com/v2/media/DX2j4XPb/poster.jpg?width=720"
+          },
+          {
+            "id": 12,
+            "video_id": "sixOxf47",
+            "display_title": "Justin Arena : Space Cadet",
+            "artist": "Justin Arena", 
+            "duration": "00:04:09", 
+            "mp4_link": "https://cdn.jwplayer.com/videos/sixOxf47-GVOzihKP.mp4",
+            "thumbnail_link": "https://cdn.jwplayer.com/v2/media/sixOxf47/poster.jpg?width=720"
+          },
+          {
+            "id": 13,
+            "video_id": "GCZ8M6Tq",
+            "display_title": "Justin Arena : Live From The Xander Zone",
+            "artist": "Justin Arena", 
+            "duration": "01:05:36", 
+            "mp4_link": "https://cdn.jwplayer.com/videos/GCZ8M6Tq-GVOzihKP.mp4",
+            "thumbnail_link": "https://cdn.jwplayer.com/v2/media/GCZ8M6Tq/poster.jpg?width=720"
+          },
+          {
+            "id": 14,
+            "video_id": "9RkLvuNY",
+            "display_title": "Justin Arena : Live From The Spaceship",
+            "artist": "Justin Arena", 
+            "duration": "00:13:12", 
+            "mp4_link": "https://cdn.jwplayer.com/videos/9RkLvuNY-GVOzihKP.mp4",
+            "thumbnail_link": "https://cdn.jwplayer.com/v2/media/9RkLvuNY/poster.jpg?width=720"
+          },
+          {
+            "id": 15,
+            "video_id": "S5lqyJuV",
+            "display_title": "Justin Arena : Beetle In The Bath",
+            "artist": "Justin Arena", 
+            "duration": "00:04:29", 
+            "mp4_link": "https://cdn.jwplayer.com/videos/S5lqyJuV-GVOzihKP.mp4",
+            "thumbnail_link": "https://cdn.jwplayer.com/v2/media/S5lqyJuV/poster.jpg?width=720"
+          },
+          {
+            "id": 16,
+            "video_id": "77fLT1at",
+            "display_title": "Justin Arena- A Song For John Titor Live At The Circus",
+            "artist": "Justin Arena", 
+            "duration": "00:02:53", 
+            "mp4_link": "https://cdn.jwplayer.com/videos/77fLT1at-GVOzihKP.mp4",
+            "thumbnail_link": "https://cdn.jwplayer.com/v2/media/77fLT1at/poster.jpg?width=720"
+          },
+
+        
+            {
+              "id": 17,
+              "video_id": "JcwVrFgH",
+              "display_title": "Always Next Time - Mark",
+              "artist": "The Tallboyz", 
+              "duration": "00:02:59", 
+              "mp4_link": "https://cdn.jwplayer.com/videos/JcwVrFgH-GVOzihKP.mp4",
+              "thumbnail_link": "https://cdn.jwplayer.com/v2/media/JcwVrFgH/poster.jpg?width=720"
+            },
+            {
+              "id": 18,
+              "video_id": "PvJOGPlG",
+              "display_title": "Always Next Time - Drew",
+              "artist": "The Tallboyz", 
+              "duration": "00:03:29", 
+              "mp4_link": "https://cdn.jwplayer.com/videos/PvJOGPlG-GVOzihKP.mp4",
+              "thumbnail_link": "https://cdn.jwplayer.com/v2/media/PvJOGPlG/poster.jpg?width=720"
+            },
+            {
+              "id": 19,
+              "video_id": "srs8Ylol",
+              "display_title": "Always Next Time - Ian",
+              "artist": "The Tallboyz", 
+              "duration": "00:02:16", 
+              "mp4_link": "https://cdn.jwplayer.com/videos/srs8Ylol-GVOzihKP.mp4",
+              "thumbnail_link": "https://cdn.jwplayer.com/v2/media/srs8Ylol/poster.jpg?width=720"
+            },
+            {
+              "id": 20,
+              "video_id": "YwSCX6lx",
+              "display_title": "Always Next Time - Rob",
+              "artist": "The Tallboyz",
+              "duration": "00:04:41", 
+              "mp4_link": "https://cdn.jwplayer.com/videos/YwSCX6lx-GVOzihKP.mp4",
+              "thumbnail_link": "https://cdn.jwplayer.com/v2/media/YwSCX6lx/poster.jpg?width=720"
+            },
+            {
+              "id": 21,
+              "video_id": "jzmnODkO",
+              "display_title": "Always Next Time - Philly Squad",
+              "artist": "The Tallboyz", 
+              "duration": "00:02:53", 
+              "mp4_link": "https://cdn.jwplayer.com/videos/jzmnODkO-GVOzihKP.mp4",
+              "thumbnail_link": "https://cdn.jwplayer.com/v2/media/jzmnODkO/poster.jpg?width=720"
+            },
+            {
+              "id": 22,
+              "video_id": "bobhpUZm",
+              "display_title": "Always Next Time - Dave",
+              "artist": "The Tallboyz", 
+              "duration": "00:03:28", 
+              "mp4_link": "https://cdn.jwplayer.com/videos/bobhpUZm-GVOzihKP.mp4",
+              "thumbnail_link": "https://cdn.jwplayer.com/v2/media/bobhpUZm/poster.jpg?width=720"
+            }
+          ]
+          
+      
+      
+  
+  

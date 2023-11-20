@@ -1,0 +1,13 @@
+{
+	"podcasts": [
+	  {
+		"id": 1,
+		"title": "The Rob Show #14 | Ray Meglio",
+		"description": "The Rob Show is Back at with a very special guest - his father - Ray Meglio",
+		"mp3url": "https://ahoypodcast.s3.us-east-2.amazonaws.com/The+Rob+Show+-+Ep+14+-+Ray+Meglio+-+11_14_23.mp3",
+		"thumbnail": "https://link_to_thumbnail_for_episode_1.jpg"
+	  }
+
+	]
+  }
+  

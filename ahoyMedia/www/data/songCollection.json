@@ -1,0 +1,206 @@
+{
+	"songs": [
+	  {
+		"id": 1,
+		"artist": "Samuel Dylan Witch",
+		"songTitle": "Seen Better Days",
+		"artistUrl" : "https://ahoy.ooo/artist/total/sdw/sdw.html",
+		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/01%20I%27ve%20Seen%20Better%20Days.mp3",
+		"play": false
+	  },
+	  {
+		"id": 2,
+		"artist": "Samuel Dylan Witch",
+		"songTitle": "Beneath the Willow Tree",
+		"artistUrl" : "https://ahoy.ooo/artist/total/sdw/sdw.html",
+		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Beneath+the+Willow+Tree.mp3",
+		"play": false
+	  },
+	  {
+		"id": 3,
+		"artist": "Samuel Dylan Witch",
+		"songTitle": "Put Me on the Run",
+		"artistUrl" : "https://ahoy.ooo/artist/total/sdw/sdw.html",
+		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Put+Me+on+the+Run-+Draft+1mp3.mp3",
+		"play": false
+	  },
+	  {
+		"id": 4,
+		"artist": "Samuel Dylan Witch",
+		"songTitle": "You Know Me",
+		"artistUrl" : "https://ahoy.ooo/artist/total/sdw/sdw.html",
+		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/You+Know+Me+Draft+2.mp3",
+		"play": false
+	  },
+	  {
+		"id": 5,
+		"artist": "Samuel Dylan Witch",
+		"songTitle": "Watching Her Fly",
+		"mp3url": "https://ahoycollection.s3.amazonaws.com/Coral+Reefer+-+Untitled+(original).mp3",
+		"play": false
+	  },
+	  {
+		"id": 6,
+		"artist": "Cambell Rice",
+		"songTitle": "Far From Here",
+		"artistThumbnail": "https://unsplash.com/photos/random_person_image2",
+		"albumArtwork": "./artist/total/cambellRice/cambellRice.jpg",
+		"artistUrl" : "https://ahoy.ooo/artist/total/cambellRice/cambellRice.html",
+		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Campbell+Rice-+From+Here.mp3",
+		"play": false
+	  },
+	  {
+		"id": 7,
+		"featured" : true,
+		"artist": "Cambell Rice",
+		"songTitle": "Sunflower",
+		"artistUrl" : "https://ahoy.ooo/artist/total/cambellRice/cambellRice.html",
+		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Campbell+Rice-Sunflower.mp3",
+		"play": false
+	  },
+	  {
+		"id": 8,
+		"artist": "Cambell Rice",
+		"songTitle": "To Play Guitar in a Huge Room",
+		"artistUrl" : "https://ahoy.ooo/artist/total/cambellRice/cambellRice.html",
+		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Campbell+Rice-Trying+to+play+guitar+in+a+huge+room.mp3",
+		"play": false
+	  },
+	  {
+		"featured" : true,
+		"id": 9,
+		"artist": "Youth XL",
+		"songTitle": "Summer Bummer",
+		"artistThumbnail": "UNSPLASH_URL_FOR_ARTIST_3",
+		"albumArtwork": "UNSPLASH_URL_FOR_ALBUM_3",
+		"artistUrl" : "https://ahoy.ooo/artist/total/youthXL/youthXL.html",
+		"mp3url": "https://ahoycollection.s3.amazonaws.com/Youth+XL+-+Summer+Bummer.mp3",
+		"play": false
+	  },
+	  {
+		"id": 10,
+		"artist": "Youth XL",
+		"songTitle": "Yoga",
+		"artistThumbnail": "UNSPLASH_URL_FOR_ARTIST_4",
+		"albumArtwork": "UNSPLASH_URL_FOR_ALBUM_4",
+		"artistUrl" : "https://ahoy.ooo/artist/total/youthXL/youthXL.html",
+		"mp3url": "https://ahoycollection.s3.amazonaws.com/Youth+XL+-+Yoga.mp3"
+	
+	  },
+	  {
+		"id": 11,
+		"artist": "Youth XL",
+		"songTitle": "Text Your Friends",
+		"artistThumbnail": "UNSPLASH_URL_FOR_ARTIST_6",
+		"featured" : true,
+		"albumArtwork": "UNSPLASH_URL_FOR_ALBUM_6",
+		"artistUrl" : "https://ahoy.ooo/artist/total/youthXL/youthXL.html",
+		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Youth+XL+-+Text+Your+Friends.mp3"
+		
+	  },
+	  {
+		"id": 12,
+		"artist": "Youth XL",
+		"songTitle": "Gypsy Gia",
+		"artistThumbnail": "UNSPLASH_URL_FOR_ARTIST_6",
+		"albumArtwork": "UNSPLASH_URL_FOR_ALBUM_6",
+		"artistUrl" : "https://ahoy.ooo/artist/total/youthXL/youthXL.html",
+		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Youth+XL+-+Gypsy+Gia.mp3"
+		
+	  },
+	  {
+		"id": 13,
+		"artist": "Fella Gazelle",
+		"songTitle": "Reasons",
+		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Fella%20Gazelle%20-%20Reasons%20-%20Radio%20Edit.mp3"
+		
+	  },
+	  {
+		"id": 14,
+		"artist" : "Riddle M",
+		"songTitle": "Glued in the Nude",
+		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Riddle+M+-+Glued+in+Nude.mp3",
+		"new": false
+	  },
+	  {
+		"id": 15,
+		"artist" : "Riddle M",
+		"songTitle": "Honeydew",
+		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Riddle+M+-+Honeydew.mp3",
+		"new": false
+	  },
+	  {
+		"id": 16,
+		"artist" : "Justin Arena",
+		"songTitle": "Oceans",
+		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Justin+Arena+-+Oceans.mp3",
+		"artistUrl" : "https://ahoy.ooo/artist/total/justinArena/justinArena.html",
+		"new": false,
+		"artistPage": true 
+	  },
+	  {
+		"id": 17,
+		"artist" : "Justin Arena",
+		"songTitle": "When You Wake Up",
+		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Justin+Arena+-+Oceans.mp3",
+		"artistUrl" : "https://ahoy.ooo/artist/total/justinArena/justinArena.html",
+		"new": false,
+		"artistPage": true 
+	  },
+	  {
+		"id": 18,
+		"artist" : "Justin Arena",
+		"songTitle": "Crash The Party",
+		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Justin%20Arena%20-%20Crash%20The%20Party%20(ft.%20Nicole%20Gauthier).mp3",
+		"artistUrl" : "https://ahoy.ooo/artist/total/justinArena/justinArena.html",
+		"new": false,
+		"artistPage": true 
+	  },
+	  {
+		"id": 19,
+		"artist" : "Clones of Clarence",
+		"songTitle": "Lost Time",
+		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Clones+of+Clarence+-+Lost+Time+(I+miss+you).mp3",
+		"artistUrl" : "https://ahoy.ooo/artist/total/clonesofclarence/clonesofclarence.html",
+		"new": true,
+		"artistPage": true 
+	  },
+	  {
+		"id": 20,
+		"artist" : "Clones of Clarence",
+		"songTitle": "Salty Salsa",
+		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Clones+of+Clarence+-+Salty+Salsa.mp3",
+		"artistUrl" : "https://ahoy.ooo/artist/total/clonesofclarence/clonesofclarence.html",
+		"new": true,
+		"artistPage": true 
+	  },
+	  {
+		"id": 21,
+		"artist" : "Clones of Clarence",
+		"songTitle": "Proj 17",
+		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Clones+of+Clarence+-+Proj+17.mp3",
+		"artistUrl" : "https://ahoy.ooo/artist/total/clonesofclarence/clonesofclarence.html",
+		"new": true,
+		"featured" : true,
+		"artistPage": true 
+	  },
+	  {
+		"id": 22,
+		"artist" : "Clones of Clarence",
+		"songTitle": "3AM",
+		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Clones+of+Clarence+-+3+AM.mp3",
+		"artistUrl" : "https://ahoy.ooo/artist/total/clonesofclarence/clonesofclarence.html",
+		"new": true,
+		"artistPage": true 
+	  },
+	  {
+		"id": 23,
+		"artist" : "The Rob Show",
+		"songTitle" : "The Rob Show Ep14",
+		"mp3url":"https://ahoycollection.s3.us-east-2.amazonaws.com/The+Rob+Show+-+Ep+14+-+Ray+Meglio+-+11_14_23.logicx.zip",
+		"podcast" : true
+	  }
+	
+	]
+  }
+  

@@ -225,82 +225,16 @@
         <button id="right-arrow" onclick="nextTab()"><i class="fas fa-arrow-right"></i></button>
     </div>
 
-    <script>
-        const playlists = {};  // Object to hold playlists
-
-        function switchTab(tabName) {
-            const contents = document.querySelectorAll('.tab-content');
-            for (const content of contents) {
-                content.classList.remove('active');
-            }
-            const activeTab = document.getElementById(`${tabName}-tab`);
-            activeTab.classList.add('active');
+<!-- CONDITIONAL LOGIC BITCH -->
 
 
-        }
-
-
-
-        let currentTabIndex = 0; // Assuming you have a global variable to keep track of the current tab
-
-        function nextTab() {
-            currentTabIndex++;
-            if (currentTabIndex > 10) { // Reset to the first tab if we've gone past the last one
-                currentTabIndex = 0;
-            }
-            switchTabByIndex(currentTabIndex);
-        }
-
-        function prevTab() {
-            currentTabIndex--;
-            if (currentTabIndex < 0) { // Loop back to the last tab if we've gone past the first one
-                currentTabIndex = 10;
-            }
-            switchTabByIndex(currentTabIndex);
-        }
-
-        // Extend the existing switchTab function to accept an index
-        function switchTabByIndex(tabIndex) {
-            const tabs = ['nowplaying', 'radio', 'songs', 'liked', 'podcasts', 'artists', 'cable', 'updates', 'games', 'media', 'account'];
-            const tabIndicator = document.getElementById('tab-indicator');
-            if (tabIndex >= 0 && tabIndex < tabs.length) {
-                switchTab(tabs[tabIndex]);
-                // Update the tab indicator text
-                tabIndicator.textContent = tabs[tabIndex].charAt(0).toUpperCase() + tabs[tabIndex].slice(1); // Capitalize the first letter
-            }
-        }
-
-
-
+<script>
 
         // Ensure this function is called when the page loads or when the liked songs tab is opened
         document.addEventListener('DOMContentLoaded', updateLikedSongsPlaylist);
 
-        // You might need to call the switchTabByIndex function once at the start to initialize the correct tab name
-        switchTabByIndex(currentTabIndex);
-
-        function loadMedia() {
-            fetch('./library/media.json')
-                .then(response => response.json())
-                .then(mediaItems => {
-                    const mediaList = document.getElementById('media-list');
-                    mediaItems.forEach(media => {
-                        const mediaItem = document.createElement('div');
-                        mediaItem.className = 'media-item';
-                        mediaItem.innerHTML = `
-                    <h3>${media.display_title}</h3>
-                    <p>Artist: ${media.artist}</p>
-                    <p>Duration: ${media.duration}</p>
-                    <a href="${media.mp4_link}">Watch</a>
-                `;
-                        mediaList.appendChild(mediaItem);
-                    });
-                })
-                .catch(error => console.error('Error:', error));
-        }
-
-        // Initial data load
-        loadMedia();
+     
+   
 
         function playSong(artist, title, url) {
             // Update Now Playing section
@@ -328,74 +262,13 @@
             }
         });
 
-        function loadArtists() {
-            fetch('data/artistCollection.json') // Changed from 'artistData.json' to 'artistCollection.json'
-                .then(response => response.json())
-                .then(data => {
-                    const artists = data.artists;
-                    const artistList = document.getElementById('artist-list');
-                    artists.forEach(artist => {
-                        const artistItem = document.createElement('li');
-                        artistItem.className = 'list-item';
-                        artistItem.innerHTML = `
-                <div class="artist-item">
-                    <div class="artist-info">
-                        <strong><a href="${artist.artistUrl}">${artist.name}</a></strong><br>
-                        Location: ${artist.location}<br>
-                        <a href="${artist.supportLink}">Support</a> |
-                        <a href="${artist.shareLink}">Share</a> |
-                        <a href="${artist.messageLink}">Message</a>
-                    </div>
-                </div>
-            `;
-                        artistList.appendChild(artistItem);
-                    });
-                })
-                .catch(error => console.error('Error:', error));
-        }
 
-        document.addEventListener('DOMContentLoaded', (event) => {
-            loadArtists();
-        });
 
-        function loadSongsAndPlaylists() {
-            fetch('data/songCollection.json')
-                .then(response => response.json())
-                .then(data => {
-                    const songs = data.songs;
-                    const songList = document.getElementById('song-list');
-                    const allSongsList = document.getElementById('all-songs');
+        </script>
 
-                    songs.forEach(song => {
-                        const songItem = document.createElement('li');
-                        songItem.className = 'list-item';
-                        songItem.innerHTML = `
-                        <div onclick="playSong('${song.artist}', '${song.songTitle}', '${song.mp3url}')">
-                            <strong>${song.songTitle}</strong><br>
-                            ${song.artist}
-                        </div>
-               
-                    `;
-                        songList.appendChild(songItem);
-
-                        const allSongItem = document.createElement('li');
-                        allSongItem.className = 'list-item';
-                        allSongItem.innerHTML = `
-                        <div>
-                            <strong>${song.songTitle}</strong><br>
-                            ${song.artist}
-                        </div>
-                        <button onclick="addToPlaylist(${JSON.stringify(song)}, '${document.getElementById('playlist-selector').value}')">Add to Playlist</button>
-                    `;
-                        allSongsList.appendChild(allSongItem);
-                    });
-                })
-                .catch(error => console.error('Error:', error));
-        }
-
+<script>
         // Initial data load
         loadArtists();
-        loadSongsAndPlaylists();
 
         // Get player buttons
         const prevButton = document.getElementById('prev');
@@ -458,8 +331,6 @@
             // Code to add the current song to the playlist
         }
 
-        let currentSongIndex = 0;
-        const songs = []; // Assuming you have a global array of songs
 
 
 
@@ -468,189 +339,9 @@
     </script>
 
 
-    <!-- SWITCH TAB FUNCITON -->
-    <script>
+  
 
 
-        // Extend the existing switchTab function to accept an index
-        function switchTabByIndex(tabIndex) {
-            const tabs = ['nowplaying', 'songs', 'liked', 'podcasts', 'radio', 'artists', 'cable', 'updates', 'games', 'media', 'account']; const tabIndicator = document.getElementById('tab-indicator');
-            if (tabIndex >= 0 && tabIndex < tabs.length) {
-                switchTab(tabs[tabIndex]);
-                // Update the tab indicator text
-                tabIndicator.textContent = tabs[tabIndex].charAt(0).toUpperCase() + tabs[tabIndex].slice(1); // Capitalize the first letter
-            }
-        }
-
-
-
-        // You might need to call the switchTabByIndex function once at the start to initialize the correct tab name
-        switchTabByIndex(currentTabIndex);
-
-
-
-
-    </script>
-
-    <!-- SWITCH THEME FUNCTION -->
-    <script>
-        function switchTheme() {
-            const root = document.documentElement;
-            const bgColor = getComputedStyle(root).getPropertyValue('--background-color');
-            const lightBgColor = getComputedStyle(root).getPropertyValue('--light-background-color');
-
-            if (bgColor.trim() === lightBgColor.trim()) {
-                // If the current theme is light, switch to dark
-                root.style.setProperty('--background-color', 'rgb(0, 14, 19)');
-                root.style.setProperty('--text-color', '#00f2ff');
-                root.style.setProperty('--border-color', '#00e5ff');
-                root.style.setProperty('--secondary-color', '#000000ba');
-                root.style.setProperty('--button-color', '#ffffff2d');
-                root.style.setProperty('--gold', '#ffd900');
-            } else {
-                // If the current theme is dark, switch to light
-                root.style.setProperty('--background-color', '#ffffff');
-                root.style.setProperty('--text-color', '#000000');
-                root.style.setProperty('--border-color', '#e0e0e0');
-                root.style.setProperty('--secondary-color', '#f2f2f2');
-                root.style.setProperty('--button-color', '#d9d9d9');
-                root.style.setProperty('--gold', '#ffd900');
-            }
-        }
-    </script>
-    <!-- MEDIA LIBRARY SCRIPT -->
-    <script>
-        fetch('/library/media.json')
-            .then(response => response.json())
-            .then(data => {
-                // Get the table body
-                var tbody = document.querySelector("#mediaTable tbody");
-
-                // Loop through the data and add rows to the table
-                for (var i = 0; i < data.length; i++) {
-                    var tr = document.createElement("tr");
-                    tr.id = 'row-' + i;  // Assign unique id to the row
-
-                    var tdTitle = document.createElement("td");
-                    tdTitle.id = 'title-' + i;  // Assign unique id to the title cell
-                    tdTitle.textContent = data[i].display_title;
-                    tr.appendChild(tdTitle);
-
-                    var tdArtist = document.createElement("td");
-                    tdArtist.id = 'artist-' + i;  // Assign unique id to the artist cell
-                    tdArtist.textContent = data[i].artist;
-                    tr.appendChild(tdArtist);
-
-                    var tdDuration = document.createElement("td");
-                    tdDuration.id = 'duration-' + i;  // Assign unique id to the duration cell
-                    tdDuration.textContent = data[i].duration;
-                    tr.appendChild(tdDuration);
-
-                    var tdLink = document.createElement("td");
-                    var aLink = document.createElement("a");
-                    aLink.href = data[i].mp4_link;
-                    aLink.textContent = "Link";
-                    tdLink.appendChild(aLink);
-                    tr.appendChild(tdLink);
-
-                    tbody.appendChild(tr);
-                }
-            })
-            .catch(error => console.error('Error:', error));
-    </script>
-
-    <!-- LOAD COMMITS FUNCTION-->
-    <script>
-        function loadCommits() {
-            fetch('https://api.github.com/repos/oooAHOYooo/oooAHOYooo.github.io/commits')
-                .then(response => response.json())
-                .then(commits => {
-                    const commitsList = document.getElementById('commits-list');
-                    commitsList.innerHTML = ''; // Clear the list
-
-                    commits.forEach(commit => {
-                        const commitItem = document.createElement('div');
-                        commitItem.className = 'commit-item';
-
-                        const date = new Date(commit.commit.author.date);
-                        const formattedDate = `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}`;
-
-                        commitItem.innerHTML = `
-                        <h3>${commit.commit.message}</h3>
-                        <p>Author: ${commit.commit.author.name}</p>
-                        <p>Date: ${formattedDate}</p>
-                    `;
-
-                        commitsList.appendChild(commitItem);
-                    });
-                })
-                .catch(error => console.error('Error:', error));
-        }
-
-        // Load commits when the page loads
-        window.onload = loadCommits;
-    </script>
-    <!-- DISPLAY THE CABLES SCHEDULE SCRIPT-->
-    <script>
-        fetch('data/cableSchedule.json')
-            .then(response => response.json())
-            .then(data => {
-                const table = document.querySelector('#cable-schedule-table tbody');
-                data.forEach(item => {
-                    const row = document.createElement('tr');
-
-                    const timeCell = document.createElement('td');
-                    timeCell.textContent = item.time;
-                    row.appendChild(timeCell);
-
-                    const blockNameCell = document.createElement('td');
-                    blockNameCell.textContent = item.blockName;
-                    row.appendChild(blockNameCell);
-
-                    const descriptionCell = document.createElement('td');
-                    descriptionCell.textContent = item.description;
-                    row.appendChild(descriptionCell);
-
-                    table.appendChild(row);
-                });
-            })
-            .catch(error => console.error('Error:', error));
-    </script>
-
-    <script>
-        fetch('data/mediaCollection.json')
-            .then(response => response.json())
-            .then(data => {
-                const tableBody = document.querySelector('#mediaTable tbody');
-
-                data.forEach(item => {
-                    const row = document.createElement('tr');
-
-                    const thumbnailCell = document.createElement('td');
-                    const thumbnail = document.createElement('img');
-                    thumbnail.src = item.thumbnail_link;
-                    thumbnail.alt = item.display_title;
-                    thumbnail.style.width = '50px'; // You can adjust the size as needed
-                    thumbnailCell.appendChild(thumbnail);
-                    row.appendChild(thumbnailCell);
-
-                    const titleCell = document.createElement('td');
-                    titleCell.textContent = item.display_title;
-                    row.appendChild(titleCell);
-
-                    const artistCell = document.createElement('td');
-                    artistCell.textContent = item.artist;
-                    row.appendChild(artistCell);
-
-                    const durationCell = document.createElement('td');
-                    durationCell.textContent = item.duration;
-                    row.appendChild(durationCell);
-
-                    tableBody.appendChild(row);
-                });
-            })
-            .catch(error => console.error('Error:', error));
-    </script>
 
     <script>
         // Global array to store songs
@@ -684,7 +375,7 @@
 
         // Load songs data and initialize
         function loadSongsAndPlaylists() {
-            fetch('data/songCollection.json')
+            fetch('./data/songCollection.json')
                 .then(response => response.json())
                 .then(data => {
                     songs = data.songs;
@@ -704,36 +395,15 @@
     </script>
 
 
-    <!-- PODCAST SCRIPTS -->
-    <script>
-        function loadPodcasts() {
-            fetch('./data/podcastCollection.json')
-                .then(response => response.json())
-                .then(data => {
-                    const tableBody = document.getElementById('podcast-table').querySelector('tbody');
-                    data.podcasts.forEach(podcast => {
-                        const row = document.createElement('tr');
-                        row.innerHTML = `
-                    <td><button class="control-button" onclick="playPodcast('${podcast.mp3url}')"><i class="fas fa-play"></i></button></td> 
-                    <td>${podcast.title}</td>
-                    <td>${podcast.description}</td>
-                `;
-                        tableBody.appendChild(row);
-                    });
-                })
-                .catch(error => console.error('Error:', error));
-        }
-
-        function playPodcast(url) {
-            const audioPlayer = document.getElementById('audio-player');
-            audioPlayer.src = url;
-            audioPlayer.play();
-        }
-
-        // Call the function to load podcasts when the page loads
-        window.onload = loadPodcasts;
-    </script>
 
 
+<!-- WORKING SOURCE JAVASCRIPTS -->
+<script src="./src/artists.js"></script>
+<script src="./src/updates-commits.js"></script>
+<script src="./src/function-switchTheme.js"></script>
+<script src="./src/cable.js"></script>
+<script src="./src/media.js"></script>
+<script src="./src/podcast.js"></script>
+<script src="./src/tab.js"></script>
 </body>
 </html>
