@@ -227,102 +227,27 @@
 <!-- CONDITIONAL LOGIC BITCH -->
 
 
-<script>
-
-        // Ensure this function is called when the page loads or when the liked songs tab is opened
-        document.addEventListener('DOMContentLoaded', updateLikedSongsPlaylist);
-
-     
-   
-
-        function playSong(artist, title, url) {
-            // Update Now Playing section
-            document.getElementById('current-song-artist').textContent = artist;
-            document.getElementById('current-song-title').textContent = title;
-            // Update bottom player section
-            document.getElementById('artist-name').textContent = artist;
-            document.getElementById('song-title').textContent = title;
-            // Update and play the song
-            const audioPlayer = document.getElementById('audio-player');
-            audioPlayer.src = url;
-            audioPlayer.play();
-        }
-
-
-        document.getElementById('play-pause').addEventListener('click', function () {
-            const audioPlayer = document.getElementById('audio-player');
-            const playPauseIcon = document.getElementById('play-pause').firstChild;
-            if (audioPlayer.paused) {
-                audioPlayer.play();
-                playPauseIcon.className = 'fas fa-pause';
-            } else {
-                audioPlayer.pause();
-                playPauseIcon.className = 'fas fa-play';
-            }
-        });
-
-
-
-        </script>
-
-
-
-  
-
 
 
 <script>
-    // Global array to store songs
-    let songs = []; // Load this array with your song data
-    let currentSongIndex = 0;
-
-    // Function to play the next song
-    function nextSong() {
-        // Increment the current song index
-        currentSongIndex = (currentSongIndex + 1) % songs.length;
-
-        // Play the next song
-        playSong(songs[currentSongIndex].artist, songs[currentSongIndex].songTitle, songs[currentSongIndex].mp3url);
-    }
-
-    // Function to play a specific song
-    function playSong(artist, title, url) {
-        // Update Now Playing section
-        document.getElementById('current-song-artist').textContent = artist;
-        document.getElementById('current-song-title').textContent = title;
-
-        // Update bottom player section
-        document.getElementById('artist-name').textContent = artist;
-        document.getElementById('song-title').textContent = title;
-
-        // Update and play the song
-        const audioPlayer = document.getElementById('audio-player');
-        audioPlayer.src = url;
-        audioPlayer.play();
-    }
-
-    // Load songs data and initialize
     function loadSongsAndPlaylists() {
-        fetch('./data/songCollection.json')
-            .then(response => response.json())
-            .then(data => {
-                songs = data.songs;
-                if (songs.length > 0) {
-                    playSong(songs[0].artist, songs[0].songTitle, songs[0].mp3url);
-                }
-            })
-            .catch(error => console.error('Error:', error));
-    }
+    fetch('./data/songCollection.json')
+        .then(response => response.json())
+        .then(data => {
+            songs = data.songs;
+            if (songs.length > 0) {
+                playSong(songs[0].artist, songs[0].songTitle, songs[0].mp3url);
+            }
+        })
+        .catch(error => console.error('Error:', error));
 
-    document.addEventListener('DOMContentLoaded', (event) => {
-        loadSongsAndPlaylists();
-    });
-
-    // Add event listener to the next button
-    document.getElementById('next').addEventListener('click', nextSong);
+        document.addEventListener('DOMContentLoaded', (event) => {
+    loadSongsAndPlaylists();
+});
+}
 </script>
 
-
+  
 
 
 <!-- WORKING SOURCE JAVASCRIPTS -->
