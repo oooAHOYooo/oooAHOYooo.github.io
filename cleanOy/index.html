@@ -57,10 +57,6 @@
             <h1>Songs</h1>
             <ul class="list" id="song-list"></ul>
 
-            <!-- RADIO -->
-            <style>
-
-            </style>
 
 
 
@@ -227,25 +223,60 @@
 <!-- CONDITIONAL LOGIC BITCH -->
 
 
-
-
 <script>
-    function loadSongsAndPlaylists() {
+    document.addEventListener('DOMContentLoaded', function() {
     fetch('./data/songCollection.json')
         .then(response => response.json())
         .then(data => {
-            songs = data.songs;
-            if (songs.length > 0) {
-                playSong(songs[0].artist, songs[0].songTitle, songs[0].mp3url);
-            }
-        })
-        .catch(error => console.error('Error:', error));
+            const songList = document.getElementById('song-list');
+            data.songs.forEach(song => {
+                const li = document.createElement('li');
+                li.innerHTML = `
+                    <span>${song.artist} - ${song.songTitle}</span>
+                    <button class="play-button" data-url="${song.mp3url}">Play</button>
+                    <button class="like-button">Like</button>
+                `;
+                songList.appendChild(li);
+            });
 
-        document.addEventListener('DOMContentLoaded', (event) => {
-    loadSongsAndPlaylists();
+            const audioPlayer = document.getElementById('audio-player');
+            const playButtons = document.querySelectorAll('.play-button');
+            playButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const url = this.dataset.url;
+                    if (audioPlayer.src === url) {
+                        if (audioPlayer.paused) {
+                            audioPlayer.play();
+                        } else {
+                            audioPlayer.pause();
+                        }
+                    } else {
+                        audioPlayer.src = url;
+                        audioPlayer.play();
+                    }
+                });
+            });
+
+            const likeButtons = document.querySelectorAll('.like-button');
+            likeButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    this.classList.toggle('liked');
+                    const likedSongsList = document.getElementById('liked-songs-list');
+                    const song = this.parentElement.cloneNode(true);
+                    song.querySelector('.like-button').remove();
+                    if (this.classList.contains('liked')) {
+                        likedSongsList.appendChild(song);
+                    } else {
+                        const songs = Array.from(likedSongsList.children);
+                        const index = songs.findIndex(li => li.textContent === song.textContent);
+                        likedSongsList.removeChild(songs[index]);
+                    }
+                });
+            });
+        });
 });
-}
 </script>
+
 
   
 
