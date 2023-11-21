@@ -403,3 +403,9 @@ color:var(--text-color);}
 .like-button.liked {
     color: var(--gold);
 }
+
+
+.like-button.liked {
+    color: #9999992d; /* This will make the button appear faded */
+    cursor: default; /* This will remove the hand cursor when hovering over the button */
+}
