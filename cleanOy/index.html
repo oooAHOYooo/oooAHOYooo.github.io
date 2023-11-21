@@ -178,12 +178,32 @@
         <!-- Add this in your HTML where you want the games tab to appear -->
         <div id="games-tab" class="tab-content">
             <h1>Games</h1>
-            <div id="games-tab" class="tab-content">
-                <iframe id="tetris-frame" src="../games/console/tetris/tetris.html"
-                    style="width:100%; height:100%; border:none;"></iframe>
+            <div class="tabs">
+                <button class="tablinks" onclick="openGame(event, 'GameA')">Attach by Marco Worms</button>
+                <button class="tablinks" onclick="openGame(event, 'GameB')">Game B</button>
+                <!-- Add more tabs as needed -->
             </div>
-            <!-- Games content goes here -->
+        
+            <div id="GameA" class="tabcontent">
+                <button id="load-game-a">Load "Attach"</button>
+                <iframe id="game-frame-a" style="width: 100%; height: 500px; border: none;"></iframe>
+
+                <h2>Game by Marco Worms</h2>
+                <p>For more information about Marco Worms and his projects, visit his <a href="https://marcoworms.github.io/" target="_blank">website</a>.</p>
+        
+            </div>
+        
+            <div id="GameB" class="tabcontent" style="display: none;">
+                <button id="load-game-b">Load Game B</button>
+                <iframe id="game-frame-b" style="width: 100%; height: 500px; border: none;"></iframe>
+            </div>
+        
+            <!-- Add more game containers as needed -->
         </div>
+
+
+
+
 
         <!-- MEEEEDIIAA -->
 
@@ -237,6 +257,33 @@
     </div>
 
 <!-- CONDITIONAL LOGIC BITCH -->
+
+
+<script>
+    document.getElementById('load-game-a').addEventListener('click', function() {
+    this.style.display = 'none';
+});
+function openGame(evt, gameName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(gameName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+document.getElementById('load-game-a').addEventListener('click', function() {
+    document.getElementById('game-frame-a').src = "https://marcoworms.github.io/attach/";
+});
+
+// Add similar event listeners for other games
+</script>
+
 
 
 <!-- THE WORK IN PROGRESS LIKE FEATURE -->

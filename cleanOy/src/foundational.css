@@ -477,3 +477,12 @@ color:var(--text-color);}
 .remove-button:hover {
     color: var(--gold);
 }
+
+
+.tabcontent {
+    display: none;
+}
+
+.tablinks {
+    cursor: pointer;
+}
