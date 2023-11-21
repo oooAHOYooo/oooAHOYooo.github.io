@@ -192,13 +192,6 @@
 		"artistUrl" : "https://ahoy.ooo/artist/total/clonesofclarence/clonesofclarence.html",
 		"new": true,
 		"artistPage": true 
-	  },
-	  {
-		"id": 23,
-		"artist" : "The Rob Show",
-		"songTitle" : "The Rob Show Ep14",
-		"mp3url":"https://ahoycollection.s3.us-east-2.amazonaws.com/The+Rob+Show+-+Ep+14+-+Ray+Meglio+-+11_14_23.logicx.zip",
-		"podcast" : true
 	  }
 	
 	]
