@@ -342,12 +342,23 @@ songTitles.forEach(title => {
 // Add event listener to bottom controller play button
 const bottomPlayButton = document.querySelector('#play');
 bottomPlayButton.addEventListener('click', function() {
+    const playButtons = document.querySelectorAll('.play-button');
     if (audioPlayer.paused) {
         audioPlayer.play();
         this.querySelector('i').className = 'fas fa-pause';
+        playButtons.forEach(button => {
+            if (button.dataset.url === audioPlayer.src) {
+                button.querySelector('i').className = 'fas fa-pause';
+            }
+        });
     } else {
         audioPlayer.pause();
         this.querySelector('i').className = 'fas fa-play';
+        playButtons.forEach(button => {
+            if (button.dataset.url === audioPlayer.src) {
+                button.querySelector('i').className = 'fas fa-play';
+            }
+        });
     }
 });
 
