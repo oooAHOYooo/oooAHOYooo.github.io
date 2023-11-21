@@ -1,7 +1,0 @@
-{
-  "songs": [
-    { "id": 1, "name": "Sunset Days", "artist": "YouthXL", "url": "https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3", "length": "3:00" },
-    { "id": 2, "name": "Dreamy Roads", "artist": "YouthXL", "url": "http://techslides.com/demos/samples/sample.mp3", "length": "4:15" },
-    //... Add all the songs here
-  ]
-}
