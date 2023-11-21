@@ -405,7 +405,62 @@ color:var(--text-color);}
 }
 
 
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
 .like-button.liked {
     color: #9999992d; /* This will make the button appear faded */
     cursor: default; /* This will remove the hand cursor when hovering over the button */
+    animation: pulse 1s ease-in-out;
+}
+
+/* Style the liked songs table */
+#liked-songs-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#liked-songs-table thead {
+    background-color: var(--secondary-color);
+}
+
+#liked-songs-table th, #liked-songs-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+#liked-songs-table tr:nth-child(even) {
+    background-color: var(--background-color);
+}
+
+#liked-songs-table tr:nth-child(odd) {
+    background-color: var(--secondary-color);
+}
+
+/* Style the remove button */
+.remove-button {
+    color: var(--text-color);
+    background: var(--background-color);
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.remove-button:focus {
+    outline: none;
+}
+
+.remove-button:hover {
+    color: var(--gold);
 }
