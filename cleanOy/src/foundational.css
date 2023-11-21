@@ -486,3 +486,21 @@ color:var(--text-color);}
 .tablinks {
     cursor: pointer;
 }
+
+/* Style for Games Tab */
+#games-tab h1 {
+    font-size: 1.5rem; /* Adjust as needed */
+    margin-bottom: 10px; /* Adjust as needed */
+}
+
+#games-tab .tabcontent h1 {
+    font-size: 1.2rem; /* Adjust as needed */
+    margin-top: 10px; /* Adjust as needed */
+    margin-bottom: 5px; /* Adjust as needed */
+}
+
+#games-tab .tabcontent h2 {
+    font-size: 1rem; /* Adjust as needed */
+    margin-top: 5px; /* Adjust as needed */
+    margin-bottom: 5px; /* Adjust as needed */
+}

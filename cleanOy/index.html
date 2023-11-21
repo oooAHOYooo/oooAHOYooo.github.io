@@ -179,23 +179,26 @@
         <div id="games-tab" class="tab-content">
             <h1>Games</h1>
             <div class="tabs">
-                <button class="tablinks" onclick="openGame(event, 'GameA')">Attach by Marco Worms</button>
-                <button class="tablinks" onclick="openGame(event, 'GameB')">Game B</button>
+                <button class="tablinks" onclick="openGame(event, 'GameA')">Vanca</button>
+                <button class="tablinks" onclick="openGame(event, 'GameB')">Attach</button>
                 <!-- Add more tabs as needed -->
             </div>
         
             <div id="GameA" class="tabcontent">
-                <button id="load-game-a">Load "Attach"</button>
+                <button id="load-game-a">Load "Vanca"</button>
                 <iframe id="game-frame-a" style="width: 100%; height: 500px; border: none;"></iframe>
-
+                <h1>Vanca</h1>
                 <h2>Game by Marco Worms</h2>
                 <p>For more information about Marco Worms and his projects, visit his <a href="https://marcoworms.github.io/" target="_blank">website</a>.</p>
         
             </div>
         
             <div id="GameB" class="tabcontent" style="display: none;">
-                <button id="load-game-b">Load Game B</button>
+                <button id="load-game-b">Load "Attach""</button>
                 <iframe id="game-frame-b" style="width: 100%; height: 500px; border: none;"></iframe>
+                <h1>Attach</h1>
+                <h2>Game by Marco Worms</h2>
+                <p>For more information about Marco Worms and his projects, visit his <a href="https://marcoworms.github.io/" target="_blank">website</a>.</p>
             </div>
         
             <!-- Add more game containers as needed -->
@@ -262,6 +265,14 @@
 <script>
     document.getElementById('load-game-a').addEventListener('click', function() {
     this.style.display = 'none';
+
+    
+});
+
+document.getElementById('load-game-b').addEventListener('click', function() {
+    this.style.display = 'none';
+
+    
 });
 function openGame(evt, gameName) {
     var i, tabcontent, tablinks;
@@ -278,7 +289,11 @@ function openGame(evt, gameName) {
 }
 
 document.getElementById('load-game-a').addEventListener('click', function() {
-    document.getElementById('game-frame-a').src = "https://marcoworms.github.io/attach/";
+    document.getElementById('game-frame-a').src = "https://marcoworms.github.io/vanca/";
+});
+
+document.getElementById('load-game-b').addEventListener('click', function() {
+    document.getElementById('game-frame-b').src = "https://marcoworms.github.io/attach/";
 });
 
 // Add similar event listeners for other games
