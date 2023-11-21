@@ -110,6 +110,7 @@
                         <th>Play</th>
                         <th>Title</th>
                         <th>Description</th>
+                        <th>Like</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -276,41 +277,96 @@
             const playButtons = document.querySelectorAll('.play-button');
             const songTitles = document.querySelectorAll('.song-title');
 
-            const playSong = function() {
-                const url = this.dataset.url;
-                const artist = this.dataset.artist;
-                const title = this.dataset.title;
-                if (audioPlayer.src === url) {
-                    if (audioPlayer.paused) {
-                        audioPlayer.play();
-                    } else {
-                        audioPlayer.pause();
-                    }
-                } else {
-                    audioPlayer.src = url;
-                    audioPlayer.play();
-                }
 
-                // Update bottom controller and now playing tab
-                document.getElementById('artist-name').textContent = artist;
-                document.getElementById('song-title').textContent = title;
-                document.getElementById('current-song-title').textContent = title;
-                document.getElementById('current-song-artist').textContent = artist;
-            };
 
+//THE PLAY FUNCTION 
+const playSong = function() {
+    const url = this.dataset.url;
+    const artist = this.dataset.artist;
+    const title = this.dataset.title;
+    const playButtons = document.querySelectorAll('.play-button');
+    const bottomPlayButton = document.querySelector('#play');
+    const bottomPlayIcon = bottomPlayButton.querySelector('i');
+
+    if (audioPlayer.src === url) {
+        if (audioPlayer.paused) {
+            audioPlayer.play();
             playButtons.forEach(button => {
-                button.addEventListener('click', playSong);
+                if (button.dataset.url === url) {
+                    button.querySelector('i').className = 'fas fa-pause';
+                }
             });
-
-            songTitles.forEach(title => {
-                title.addEventListener('click', playSong);
-                title.addEventListener('dblclick', function() {
-                    if (!audioPlayer.paused) {
-                        audioPlayer.pause();
-                    }
-                });
+            bottomPlayIcon.className = 'fas fa-pause';
+        } else {
+            audioPlayer.pause();
+            playButtons.forEach(button => {
+                if (button.dataset.url === url) {
+                    button.querySelector('i').className = 'fas fa-play';
+                }
             });
+            bottomPlayIcon.className = 'fas fa-play';
+        }
+    } else {
+        audioPlayer.src = url;
+        audioPlayer.play();
+        playButtons.forEach(button => {
+            if (button.dataset.url === url) {
+                button.querySelector('i').className = 'fas fa-pause';
+            } else {
+                button.querySelector('i').className = 'fas fa-play';
+            }
+        });
+        bottomPlayIcon.className = 'fas fa-pause';
+    }
 
+    // Update bottom controller and now playing tab
+    document.getElementById('artist-name').textContent = artist;
+    document.getElementById('song-title').textContent = title;
+    document.getElementById('current-song-title').textContent = title;
+    document.getElementById('current-song-artist').textContent = artist;
+};
+
+playButtons.forEach(button => {
+    button.addEventListener('click', playSong);
+});
+
+songTitles.forEach(title => {
+    title.addEventListener('click', playSong);
+    title.addEventListener('dblclick', function() {
+        if (!audioPlayer.paused) {
+            audioPlayer.pause();
+        }
+    });
+});
+
+// Add event listener to bottom controller play button
+const bottomPlayButton = document.querySelector('#play');
+bottomPlayButton.addEventListener('click', function() {
+    if (audioPlayer.paused) {
+        audioPlayer.play();
+        this.querySelector('i').className = 'fas fa-pause';
+    } else {
+        audioPlayer.pause();
+        this.querySelector('i').className = 'fas fa-play';
+    }
+});
+
+// Add event listener for when the song ends
+audioPlayer.addEventListener('ended', function() {
+    const playButtons = document.querySelectorAll('.play-button');
+    const bottomPlayButton = document.querySelector('#play');
+    const bottomPlayIcon = bottomPlayButton.querySelector('i');
+
+    // Change all play button icons in the song list to 'play'
+    playButtons.forEach(button => {
+        button.querySelector('i').className = 'fas fa-play';
+    });
+
+    // Change the bottom controller play button icon to 'play'
+    bottomPlayIcon.className = 'fas fa-play';
+});
+
+            //END OF PLAY FEATURE 
 
 //liked feature
 
@@ -369,12 +425,6 @@ likeButtons.forEach(button => {
 
 
   
-
-<script>
-
-</script>
-
-
 
 
 
