@@ -245,6 +245,13 @@
     fetch('./data/songCollection.json')
         .then(response => response.json())
         .then(data => {
+
+
+
+
+
+
+            
             const songList = document.getElementById('song-list');
             songList.innerHTML = `
                 <table>
@@ -377,7 +384,7 @@ audioPlayer.addEventListener('ended', function() {
     bottomPlayIcon.className = 'fas fa-play';
 });
 
-            //END OF PLAY FEATURE 
+//END OF PLAY FEATURE 
 
 //liked feature
 
@@ -417,9 +424,30 @@ likeButtons.forEach(button => {
 
 //end of liked feature
 
+//NOW PLAYING STUFF//
+
+
+// Get the buttons from the "Now Playing" tab
+const nowPlayingPrevButton = document.querySelector('#nowplaying-tab .control-button#prev');
+const nowPlayingPlayPauseButton = document.querySelector('#nowplaying-tab .control-button#play-pause');
+const nowPlayingNextButton = document.querySelector('#nowplaying-tab .control-button#next');
+
+// Get the buttons from the bottom play controller
+const bottomPrevButton = document.querySelector('.player-button#prev');
+const bottomPlayPauseButton = document.querySelector('.player-button#play');
+const bottomNextButton = document.querySelector('.player-button#next');
+
+// Add event listeners to the "Now Playing" buttons that trigger the click events of the corresponding bottom play controller buttons
+nowPlayingPrevButton.addEventListener('click', () => bottomPrevButton.click());
+nowPlayingPlayPauseButton.addEventListener('click', () => bottomPlayPauseButton.click());
+nowPlayingNextButton.addEventListener('click', () => bottomNextButton.click());
 
 
 
+       
+
+
+//TIMELINE FEATURE (Needs work)
 
             // Display the timeline and time remaining on songs
             audioPlayer.addEventListener('timeupdate', function() {
@@ -432,6 +460,13 @@ likeButtons.forEach(button => {
             });
         });
 });
+
+
+//PREVIOUS AND NEXT FEATURE //
+
+
+
+
     </script>
 
 
