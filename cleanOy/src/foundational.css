@@ -514,3 +514,11 @@ color:var(--text-color);}
     opacity: 1;
 
 }
+
+#cable-schedule-table,
+#mediaTable,
+#podcast-table,
+#song-list,
+#liked-songs-table {
+    background-color: transparent;
+}
