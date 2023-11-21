@@ -282,6 +282,8 @@
                 });
     
                 const likeButtons = document.querySelectorAll('.like-button');
+               
+               
                 likeButtons.forEach(button => {
                     button.addEventListener('click', function() {
                         this.classList.toggle('liked');
@@ -311,8 +313,22 @@
     });
     </script>
 
-
+<style>
+    .like-button.liked {
+    color: #999; /* This will make the button appear faded */
+    cursor: default; /* This will remove the hand cursor when hovering over the button */
+}
+</style>
   
+
+<script>
+
+</script>
+
+
+
+
+
 
 
 <!-- WORKING SOURCE JAVASCRIPTS -->

@@ -358,3 +358,48 @@ color:var(--text-color);}
     transform: translate(-50%, -50%);
 }
 
+
+/* Add this to your foundational.css file */
+
+/* Style the song list table */
+#song-list {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#song-list thead {
+    background-color: var(--secondary-color);
+}
+
+#song-list th, #song-list td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+#song-list tr:nth-child(even) {
+    background-color: var(--background-color);
+}
+
+#song-list tr:nth-child(odd) {
+    background-color: var(--secondary-color);
+}
+
+/* Style the play and like buttons */
+.play-button, .like-button {
+    color: var(--text-color);
+    background: var(--background-color);
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.play-button:focus, .like-button:focus {
+    outline: none;
+}
+
+/* Style the liked button */
+.like-button.liked {
+    color: var(--gold);
+}

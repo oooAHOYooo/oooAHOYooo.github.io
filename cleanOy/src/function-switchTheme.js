@@ -14,7 +14,7 @@ function switchTheme() {
         theme = 'dark';
     } else if (theme === 'dark') {
         // If the current theme is dark, switch to bright pink
-        root.style.setProperty('--background-color', '#ff69b4');
+        root.style.setProperty('--background-color', '#ff69be');
         root.style.setProperty('--text-color', '#ffffff');
         root.style.setProperty('--border-color', '#ff1493');
         root.style.setProperty('--secondary-color', '#ff69b4');
