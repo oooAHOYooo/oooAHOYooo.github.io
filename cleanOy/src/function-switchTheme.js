@@ -19,8 +19,6 @@ function switchTheme() {
     }
 
     themeTitle.innerText = theme;
-    themeTitle.classList.add('fade');
-    setTimeout(() => themeTitle.classList.remove('fade'), 2000);
 }
 
 function setThemeProperties(root, backgroundColor, textColor, borderColor, secondaryColor, buttonColor, goldColor) {
@@ -31,5 +29,3 @@ function setThemeProperties(root, backgroundColor, textColor, borderColor, secon
     root.style.setProperty('--button-color', buttonColor);
     root.style.setProperty('--gold', goldColor);
 }
-
-
