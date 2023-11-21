@@ -504,3 +504,13 @@ color:var(--text-color);}
     margin-top: 5px; /* Adjust as needed */
     margin-bottom: 5px; /* Adjust as needed */
 }
+
+#theme-title {
+    opacity: 0;
+    transition: opacity 1s ease-in-out; /* Adjust as needed */
+}
+
+#theme-title.fade {
+    opacity: 1;
+
+}
