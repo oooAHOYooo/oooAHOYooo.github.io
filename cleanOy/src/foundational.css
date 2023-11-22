@@ -505,20 +505,19 @@ color:var(--text-color);}
     margin-bottom: 5px; /* Adjust as needed */
 }
 
-#theme-title {
-    opacity: 0;
-    transition: opacity 1s ease-in-out; /* Adjust as needed */
+
+/* Style the commits list */
+.commit-item {
+    border-bottom: 1px solid var(--border-color);
+    padding: 10px;
+    margin-bottom: 10px;
 }
 
-#theme-title.fade {
-    opacity: 1;
-
+.commit-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
 }
 
-#cable-schedule-table,
-#mediaTable,
-#podcast-table,
-#song-list,
-#liked-songs-table {
-    background-color: transparent;
+.commit-item p {
+    margin-bottom: 5px;
 }
