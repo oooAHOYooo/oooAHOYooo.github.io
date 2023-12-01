@@ -521,3 +521,37 @@ color:var(--text-color);}
 .commit-item p {
     margin-bottom: 5px;
 }
+
+
+.home-tab {
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items:center;
+    min-width:100%;
+}
+
+
+#home-logo-div img {
+width: 100%;
+animation: hue-rotate 5s infinite linear;
+filter: brightness(0.8); /* Adjust brightness, 0 is completely dark, 1 is no change, and values above 1 increase brightness */
+}
+
+@keyframes hue-rotate {
+0% { filter: hue-rotate(0deg) brightness(0.8); }
+100% { filter: hue-rotate(360deg) brightness(0.98); }
+}
+
+.home-tab-learn-more-wrap {
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.home-tab-learn-more-wrap a {
+    margin: 5px;
+    margin-left: 5px;
+}
