@@ -555,3 +555,32 @@ filter: brightness(0.8); /* Adjust brightness, 0 is completely dark, 1 is no cha
     margin: 5px;
     margin-left: 5px;
 }
+
+.get-started-wrap {
+    width:100%;
+    height:auto;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    flex-direction: row;
+
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 242, 255, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(0, 242, 255, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 242, 255, 0);
+    }
+}
+
+.get-started-button {
+    margin: 20px;
+    font-size: 34px;
+    border: 2px solid #00f2ff;
+    animation: pulse 2s infinite;
+}

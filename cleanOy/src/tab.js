@@ -37,3 +37,11 @@ function switchTabByIndex(tabIndex) {
         tabIndicator.textContent = tabs[tabIndex].charAt(0).toUpperCase() + tabs[tabIndex].slice(1); // Capitalize the first letter
     }
 }
+
+function getStarted() {
+    // alert("There are many available tabs. You are now being redirected to the Podcasts tab.");
+    // document.getElementById('podcasts-tab').scrollIntoView();
+    switchTab('podcasts');
+}
+
+window.switchTab = switchTab;
