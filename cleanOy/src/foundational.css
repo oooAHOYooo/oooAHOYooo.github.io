@@ -209,7 +209,7 @@ color:var(--text-color);}
     height: auto;
     margin-top: 10px;
     margin-bottom: 10px;
-    padding-bottom:190px;
+    padding-bottom:90px;
   }
 
   .now-playing {
@@ -581,9 +581,13 @@ filter: brightness(0.8); /* Adjust brightness, 0 is completely dark, 1 is no cha
 
 .get-started-button {
     margin: 20px;
-    font-size: 34px;
+    width:250px;
+    height:40px;
+    font-size: 16px;
     border: 2px solid #00f2ff;
     animation: pulse 2s infinite;
+    text-transform:uppercase;
+    line-height:80%;
 }
 
 
@@ -601,8 +605,8 @@ filter: brightness(0.8); /* Adjust brightness, 0 is completely dark, 1 is no cha
 
 /* Style the search bar */
 #search-bar {
-    padding: 10px;
-    font-size: 16px;
+    padding: 12px;
+    font-size: 12px;
     border: 1px solid var(--border-color);
     border-radius: 5px;
     background-color: var(--background-color);
@@ -681,3 +685,51 @@ filter: brightness(0.8); /* Adjust brightness, 0 is completely dark, 1 is no cha
         padding-left: 10px;
         padding-right: 10px;
     }
+
+    .sort-buttons {
+        margin-left:5px;
+        display: flex;
+        justify-content: center;
+        flex-direction:row;
+        align-items: center;
+    }
+    
+    .sort-buttons button {
+        font-size: 10px; /* Adjust this value to make the text smaller or larger */
+        padding: 5px 10px; /* Adjust these values to make the button smaller or larger */
+        text-align: center; /* This will center the text */
+        border-width:1px;
+        margin-right:5px;
+    }
+
+    .common-button {
+        width: 90px; /* Adjust as needed */
+        height: 50px; /* Adjust as needed */
+        font-size: 10px; /* Adjust as needed */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        color: var(--text-color); /* Use the color variable defined in :root or replace with any color */
+        border: 1px solid var(--border-color); /* Use the color variable defined in :root or replace with any color */
+        border-radius: 5px; /* Rounded corners */
+        transition: all 0.3s ease; /* Smooth transition for hover effects */
+        line-height:90%;
+        text-transform: uppercase;
+    }
+    
+    .common-button a {
+        text-decoration: none;
+    }
+    
+    .common-button:hover {
+        background-color: var(--gold); /* Use the color variable defined in :root or replace with any color */
+        border-color: var(--gold); /* Use the color variable defined in :root or replace with any color */
+        color: var(--background-color); /* Use the color variable defined in :root or replace with any color */
+    }
+
+    .home-tab-learn-more-wrap a {
+        text-decoration: none;
+    }
+
+   
