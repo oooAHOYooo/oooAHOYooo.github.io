@@ -125,6 +125,8 @@
             </table>
         </div>
 
+
+
         <!-- PODCASTS -->
         <div id="podcasts-tab" class="tab-content">
             <h1>Podcasts</h1>
@@ -186,8 +188,29 @@
 
         <!-- UPDATES-->
         <div id="updates-tab" class="tab-content">
-            <h1>Updates</h1>
+            <h1>Updates</h1>            <!-- NEWSLETTER -->
+            <div id="newsletter-tab" class="tab-content-b">
+                <h1>Newsletter</h1>
+                <div id="newsletter-list"></div>
+            </div>
+
+            <h2>Commits</h2>
             <div id="commits-list"></div>
+            <script>
+                const commitsList = document.getElementById('commits-list');
+            
+                fetch('https://api.github.com/repos/oooAHOYooo/oooAHOYooo.github.io/commits?per_page=100')
+                    .then(response => response.json())
+                    .then(commits => {
+                        commits.forEach(commit => {
+                            const listItem = document.createElement('li');
+                            listItem.textContent = commit.commit.message;
+                            commitsList.appendChild(listItem);
+                        });
+                    })
+                    .catch(error => console.error(error));
+            </script>
+      
         </div>
 
         <!-- ACCOUNT -->
@@ -199,8 +222,7 @@
             <h2 id="theme-title"></h2> 
             <button onclick="switchTheme()">change theme</button>
             <br>
-            <h2>Get on Ahoy</h2>
-            <a href="./src/getOn/index.html"><button>Get on Ahoy</button></a>
+           
 
         </div>
 
@@ -539,7 +561,11 @@
     <!-- LIKE CODE -->
 
 
+<script src="./src/newsletter.js"></script>
+
+
     <!-- WORKING SOURCE JAVASCRIPTS -->
+    
     <script src="./src/games.js"></script>
     <script src="./src/artists.js"></script>
     <script src="./src/updates-commits.js"></script>
