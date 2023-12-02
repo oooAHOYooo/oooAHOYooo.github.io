@@ -31,7 +31,7 @@
         <!-- NOW PLAYING TAB (Home)-->
         <div id="nowplaying-tab" class="tab-content">
             <div class="now-playing">
-                
+
                 <h1>Now Playing</h1>
                 <!-- <img id="album-art" src="path_to_your_album_art.jpg" alt="Album Art">-->
                 <div class="song-info">
@@ -47,21 +47,22 @@
         </div>
 
 
-     <!-- HOME TAB -->
-    <div id="home-tab" class="tab-content active">
-        <div id="home-logo-div">
-            <img src="../cleanOy/assets/u_ahoy23.png">
+        <!-- HOME TAB -->
+        <div id="home-tab" class="tab-content active">
+            <div id="home-logo-div">
+                <img src="../cleanOy/assets/u_ahoy23.png">
+            </div>
+            <br>
+            <div class="home-tab-learn-more-wrap">
+                <a href="https://github.com/oooAHOYooo/oooAHOYooo.github.io"><button class="common-button">Learn
+                        More</button></a>
+                <a href="./src/getOn/index.html"><button class="common-button">Get On ahoy</button></a>
+                <a href="https://7ufdbpnl2tt.typeform.com/to/OKeXjt6z"><button class="common-button">Leave Feedback</button></a>
+            </div>
+            <div class="get-started-wrap">
+                <a href="./src/started.html"><button class="get-started-button">Get Started</button></a>
+            </div>
         </div>
-        <br>
-        <div class="home-tab-learn-more-wrap">
-            <a href="https://github.com/oooAHOYooo/oooAHOYooo.github.io"><button class="common-button">Learn More</button></a>
-            <a href="./src/getOn/index.html"><button class="common-button">Get On ahoy</button></a>
-            <a href="#"><button class="common-button">Leave Feedback</button></a>
-        </div>
-        <div class="get-started-wrap">
-            <a href="./src/started.html" ><button class="get-started-button">Get Started</button></a>
-        </div>
-    </div>
 
 
         <!-- RADIO TAB -->
@@ -73,7 +74,7 @@
             </div>
         </div>
         <!-- SONGS TAB -->
-   
+
         <div id="songs-tab" class="tab-content">
             <h1>Songs</h1>
             <!-- Control Panel -->
@@ -86,20 +87,20 @@
             </div>
             <ul class="list" id="song-list"></ul>
         </div>
-<script>
-    document.getElementById('search-bar').addEventListener('input', function(e) {
-    const searchTerm = e.target.value.toLowerCase();
-    const songs = document.querySelectorAll('#song-list li');
-    songs.forEach(song => {
-        const title = song.textContent.toLowerCase();
-        if (title.includes(searchTerm)) {
-            song.style.display = '';
-        } else {
-            song.style.display = 'none';
-        }
-    });
-});
-</script>
+        <script>
+            document.getElementById('search-bar').addEventListener('input', function (e) {
+                const searchTerm = e.target.value.toLowerCase();
+                const songs = document.querySelectorAll('#song-list li');
+                songs.forEach(song => {
+                    const title = song.textContent.toLowerCase();
+                    if (title.includes(searchTerm)) {
+                        song.style.display = '';
+                    } else {
+                        song.style.display = 'none';
+                    }
+                });
+            });
+        </script>
         <!-- ARTIST -->
         <div id="artists-tab" class="tab-content">
             <h1>Artists</h1>
@@ -190,7 +191,7 @@
 
         <!-- UPDATES-->
         <div id="updates-tab" class="tab-content">
-            <h1>Updates</h1>            <!-- NEWSLETTER -->
+            <h1>Updates</h1> <!-- NEWSLETTER -->
             <div id="newsletter-tab" class="tab-content-b">
                 <h1>Newsletter</h1>
                 <div id="newsletter-list"></div>
@@ -200,7 +201,7 @@
             <div id="commits-list"></div>
             <script>
                 const commitsList = document.getElementById('commits-list');
-            
+
                 fetch('https://api.github.com/repos/oooAHOYooo/oooAHOYooo.github.io/commits?per_page=100')
                     .then(response => response.json())
                     .then(commits => {
@@ -212,7 +213,7 @@
                     })
                     .catch(error => console.error(error));
             </script>
-      
+
         </div>
 
         <!-- ACCOUNT -->
@@ -221,10 +222,10 @@
             <a href="./src/login.html"><button>Login to Your Account</button></a>
             <h2>Settings</h2>
             <br>
-            <h2 id="theme-title"></h2> 
+            <h2 id="theme-title"></h2>
             <button onclick="switchTheme()">change theme</button>
             <br>
-           
+
 
         </div>
 
@@ -264,14 +265,15 @@
 
         <div id="media-tab" class="tab-content">
             <h1>Media</h1>
-            <!-- Media content goes here -->
-            <!-- This is media - the MEDDIA -->
-            <script src="https://cdn.jwplayer.com/players/s8ETfT0u-9Gtk2B1J.js"></script>
+            <div id="jw-player-container"></div>
+
+            <!-- Media Table -->
             <table id="mediaTable" class="list">
                 <thead>
                     <tr>
                         <th>Thumbnail</th>
-                        <th>Title</t>h
+                        <th>Title</th>
+                        <th>Play</th>
                         <th>Artist</th>
                         <th>Duration</th>
                     </tr>
@@ -280,20 +282,30 @@
                     <!-- Table data will be inserted here -->
                 </tbody>
             </table>
-
         </div>
-    </div>
+
+        <!-- END OF MEDIA -->
+
+
+
+
+
+
+
+    </div><!--END OF TAB-->
 
     <style>
         #progress-bar-container {
-            width: calc(100% - 20px); /* Subtract 20px (10px left and 10px right) from the total width */
-            margin: 0 10px; /* Add 10px margin to the left and right */
+            width: calc(100% - 20px);
+            /* Subtract 20px (10px left and 10px right) from the total width */
+            margin: 0 10px;
+            /* Add 10px margin to the left and right */
             background-color: rgba(255, 255, 255, 0.1);
             border-color: var(--border-color);
             border-style: solid;
             backdrop-filter: blur(10px);
         }
-    
+
         #progress-bar {
             height: 20px;
             background-color: var(--button-color);
@@ -311,9 +323,9 @@
             <div id="progress-bar"></div>
             <div id="playhead"></div>
         </div>
-        
-        
-        
+
+
+
 
 
 
@@ -323,8 +335,8 @@
         </div>
 
         <div class="player-content">
-           
-            
+
+
             <div class="player-controls">
                 <button id="prev" class="player-button"><i class="fas fa-step-backward"></i></button>
                 <button id="play" class="player-button"><i class="fas fa-play"></i></button>
@@ -592,25 +604,25 @@
             const currentTimeDisplay = document.getElementById('current-time');
             const totalDurationDisplay = document.getElementById('total-duration');
             let isDragging = false;
-        
+
             function formatTime(seconds) {
                 const minutes = Math.floor(seconds / 60);
                 const secondsPart = Math.floor(seconds % 60);
                 return minutes + ':' + (secondsPart < 10 ? '0' : '') + secondsPart;
             }
-        
+
             function updateProgressBar() {
                 const currentTime = audioPlayer.currentTime;
                 const duration = audioPlayer.duration || 0;
                 const progressPercentage = (currentTime / duration) * 100;
                 progressBar.style.width = progressPercentage + '%';
                 playhead.style.left = progressPercentage + '%';
-        
+
                 // Update time displays
                 currentTimeDisplay.textContent = formatTime(currentTime);
                 totalDurationDisplay.textContent = formatTime(duration);
             }
-        
+
             function seek(event) {
                 const bounds = progressBarContainer.getBoundingClientRect();
                 const x = event.clientX - bounds.left;
@@ -619,38 +631,38 @@
                 audioPlayer.currentTime = clickTime;
                 updateProgressBar(); // Ensure the progress bar and playhead are updated
             }
-        
-            progressBarContainer.addEventListener('mousedown', function(event) {
+
+            progressBarContainer.addEventListener('mousedown', function (event) {
                 isDragging = true;
                 seek(event);
             });
-        
-            window.addEventListener('mouseup', function() {
+
+            window.addEventListener('mouseup', function () {
                 isDragging = false;
             });
-        
-            window.addEventListener('mousemove', function(event) {
+
+            window.addEventListener('mousemove', function (event) {
                 if (isDragging) {
                     seek(event);
                 }
             });
-        
+
             audioPlayer.addEventListener('timeupdate', updateProgressBar);
-        
-            audioPlayer.addEventListener('loadedmetadata', function() {
+
+            audioPlayer.addEventListener('loadedmetadata', function () {
                 totalDurationDisplay.textContent = formatTime(audioPlayer.duration);
             });
-        
+
             // Rest of your JavaScript code...
         });
-        </script>
-        
+    </script>
 
-<script src="./src/newsletter.js"></script>
+
+    <script src="./src/newsletter.js"></script>
 
 
     <!-- WORKING SOURCE JAVASCRIPTS -->
-    
+
     <script src="./src/games.js"></script>
     <script src="./src/artists.js"></script>
     <script src="./src/updates-commits.js"></script>
