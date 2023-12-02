@@ -656,7 +656,6 @@ filter: brightness(0.8); /* Adjust brightness, 0 is completely dark, 1 is no cha
     top: 50%;
     transform: translateY(-50%);
     z-index: 3; /* Ensures the time is above the progress bar and playhead */
-    padding:  5px;
     background-color: var(--background-color);
     border-radius: 4px;
     color: var(--text-color);
