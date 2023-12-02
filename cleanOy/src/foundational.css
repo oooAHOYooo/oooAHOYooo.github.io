@@ -618,3 +618,54 @@ filter: brightness(0.8); /* Adjust brightness, 0 is completely dark, 1 is no cha
     outline: none;
     border-color: var(--gold);
 }
+
+
+#progress-bar-container {
+    position: relative;
+    height: 20px; /* Adjust as needed */
+    background-color: var(--light-border-color); /* Background of the progress bar */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#progress-bar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background-color: var(--light-border-color); /* Background of the progress bar */
+    z-index: 1;
+}
+
+#playhead {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 20px;
+    background-color: var(--light-border-color); /* Background of the progress bar */
+    border-radius: 0%;
+    cursor: pointer;
+    z-index: 2; /* Ensures the playhead is above the progress bar */
+}
+
+#current-time, #total-duration {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3; /* Ensures the time is above the progress bar and playhead */
+    padding:  5px;
+    background-color: var(--background-color);
+    border-radius: 4px;
+    color: var(--text-color);
+}
+
+#current-time {
+    left: 10px; /* Spacing from the left edge */
+}
+
+#total-duration {
+    right: 10px; /* Spacing from the right edge */
+}
