@@ -209,6 +209,7 @@ color:var(--text-color);}
     height: auto;
     margin-top: 10px;
     margin-bottom: 10px;
+    padding-bottom:190px;
   }
 
   .now-playing {
