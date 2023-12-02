@@ -73,14 +73,31 @@
 
             </div>
         </div>
-
         <!-- SONGS TAB -->
         <div id="songs-tab" class="tab-content">
             <h1>Songs</h1>
+            <!-- Control Panel -->
+            <div id="control-panel">
+                <input type="text" id="search-bar" placeholder="Search songs...">
+                <button id="sort-az">A-Z</button>
+                <button id="sort-recent">Recently Added</button>
+            </div>
             <ul class="list" id="song-list"></ul>
-
         </div>
-
+<script>
+    document.getElementById('search-bar').addEventListener('input', function(e) {
+    const searchTerm = e.target.value.toLowerCase();
+    const songs = document.querySelectorAll('#song-list li');
+    songs.forEach(song => {
+        const title = song.textContent.toLowerCase();
+        if (title.includes(searchTerm)) {
+            song.style.display = '';
+        } else {
+            song.style.display = 'none';
+        }
+    });
+});
+</script>
         <!-- ARTIST -->
         <div id="artists-tab" class="tab-content">
             <h1>Artists</h1>

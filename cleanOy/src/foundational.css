@@ -584,3 +584,37 @@ filter: brightness(0.8); /* Adjust brightness, 0 is completely dark, 1 is no cha
     border: 2px solid #00f2ff;
     animation: pulse 2s infinite;
 }
+
+
+#control-panel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#control-panel button {
+    width: 80px; /* adjust as needed */
+    height: 40px; /* adjust as needed */
+    font-size:10px;
+}
+
+/* Style the search bar */
+#search-bar {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+#search-bar::placeholder {
+    color: var(--text-color);
+}
+
+#search-bar:focus {
+    outline: none;
+    border-color: var(--gold);
+}
