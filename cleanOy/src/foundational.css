@@ -668,3 +668,15 @@ filter: brightness(0.8); /* Adjust brightness, 0 is completely dark, 1 is no cha
 #total-duration {
     right: 10px; /* Spacing from the right edge */
 }
+
+    /* Default font size for larger screens */
+    .player-link {
+        font-size: 10px;
+    }
+
+    .player-info {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
