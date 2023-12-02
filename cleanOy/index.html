@@ -301,9 +301,17 @@
 
     <!-- BOTTOM PLAYER -->
     <section class="player">
+
+
+
         <div id="progress-bar-container">
             <div id="progress-bar">Progress</div>
         </div>
+
+
+
+
+
         <div class="player-content">
            
             <div class="player-info">
@@ -581,6 +589,60 @@
     </script>
     <!-- LIKE CODE -->
 
+
+
+
+
+    <!-- AUDIO PROGRESS BAR FEATURE-->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Existing code to fetch and handle songs...
+    
+            // New additions for the progress bar
+            const audioPlayer = document.getElementById('audio-player');
+            const progressBar = document.getElementById('progress-bar');
+            const progressBarContainer = document.getElementById('progress-bar-container');
+            const currentTimeDisplay = document.getElementById('current-time');
+            const durationTimeDisplay = document.getElementById('duration-time');
+    
+            // Function to format time in minutes and seconds
+            function formatTime(seconds) {
+                const minutes = Math.floor(seconds / 60);
+                const secondsPart = Math.floor(seconds % 60);
+                return minutes + ':' + (secondsPart < 10 ? '0' : '') + secondsPart;
+            }
+    
+            // Update progress bar and time display as the song plays
+            audioPlayer.addEventListener('timeupdate', function () {
+                const currentTime = audioPlayer.currentTime;
+                const duration = audioPlayer.duration || 0;
+    
+                // Update the progress bar width
+                const progressPercentage = (currentTime / duration) * 100;
+                progressBar.style.width = progressPercentage + '%';
+    
+                // Update the current time and duration displays
+                currentTimeDisplay.textContent = formatTime(currentTime);
+                durationTimeDisplay.textContent = formatTime(duration);
+            });
+    
+            // Update duration display when the song metadata loads
+            audioPlayer.addEventListener('loadedmetadata', function() {
+                durationTimeDisplay.textContent = formatTime(audioPlayer.duration);
+            });
+    
+            // Allow users to seek within the song
+            progressBarContainer.addEventListener('click', function(event) {
+                const clickX = event.offsetX;
+                const totalWidth = this.offsetWidth;
+                const clickTime = (clickX / totalWidth) * audioPlayer.duration;
+                audioPlayer.currentTime = clickTime;
+            });
+    
+            // Rest of your existing JavaScript code...
+        });
+    </script>
+    
 
 <script src="./src/newsletter.js"></script>
 
