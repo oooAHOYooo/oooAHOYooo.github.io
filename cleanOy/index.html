@@ -282,9 +282,30 @@
         </div>
     </div>
 
+    <style>
+        #progress-bar-container {
+            width: calc(100% - 20px); /* Subtract 20px (10px left and 10px right) from the total width */
+            margin: 0 10px; /* Add 10px margin to the left and right */
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: var(--border-color);
+            border-style: solid;
+            backdrop-filter: blur(10px);
+        }
+    
+        #progress-bar {
+            height: 20px;
+            background-color: var(--button-color);
+            width: 0%;
+        }
+    </style>
+
     <!-- BOTTOM PLAYER -->
     <section class="player">
+        <div id="progress-bar-container">
+            <div id="progress-bar">Progress</div>
+        </div>
         <div class="player-content">
+           
             <div class="player-info">
                 <a href="#" id="artist-name" class="player-link">Artist Name</a>
                 <a href="#" id="song-title" class="player-link">Song Title</a>

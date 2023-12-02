@@ -28,4 +28,10 @@ function setThemeProperties(root, backgroundColor, textColor, borderColor, secon
     root.style.setProperty('--secondary-color', secondaryColor);
     root.style.setProperty('--button-color', buttonColor);
     root.style.setProperty('--gold', goldColor);
+
+    // Set the colors of the progress bar
+    const progressBarContainer = document.getElementById('progress-bar-container');
+    const progressBar = document.getElementById('progress-bar');
+    progressBarContainer.style.borderColor = borderColor;
+    progressBar.style.backgroundColor = buttonColor;
 }
