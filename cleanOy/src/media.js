@@ -1,12 +1,14 @@
 document.addEventListener('DOMContentLoaded', function () {
     function playMedia(videoUrl) {
-        const playerContainer = document.getElementById('jw-player-container');
-        if (playerContainer) {
-            playerContainer.innerHTML = ''; // Clear any existing player
-            const script = document.createElement('script');
-            script.src = `https://cdn.jwplayer.com/players/${videoUrl}-9Gtk2B1J.js`;
-            playerContainer.appendChild(script);
-        }
+        const playerContainer = document.querySelector('#media-tab video');
+        const source = document.querySelector('#media-tab video > source');
+
+        // Update the source element's src attribute
+        source.src = videoUrl;
+
+        // Load the new source into the video element
+        playerContainer.load();
+        playerContainer.play();
     }
 
     fetch('data/mediaCollection.json')
