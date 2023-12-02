@@ -305,8 +305,12 @@
 
 
         <div id="progress-bar-container">
-            <div id="progress-bar">Progress</div>
+            <span id="current-time">0:00</span> / <span id="total-duration">0:00</span>
+            <div id="progress-bar"></div>
+            <div id="playhead" style="..."></div> <!-- your existing playhead styles -->
         </div>
+        
+        
 
 
 
@@ -593,55 +597,69 @@
 
 
 
-    <!-- AUDIO PROGRESS BAR FEATURE-->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // Existing code to fetch and handle songs...
-    
-            // New additions for the progress bar
             const audioPlayer = document.getElementById('audio-player');
             const progressBar = document.getElementById('progress-bar');
             const progressBarContainer = document.getElementById('progress-bar-container');
+            const playhead = document.getElementById('playhead');
             const currentTimeDisplay = document.getElementById('current-time');
-            const durationTimeDisplay = document.getElementById('duration-time');
-    
-            // Function to format time in minutes and seconds
+            const totalDurationDisplay = document.getElementById('total-duration');
+            let isDragging = false;
+        
             function formatTime(seconds) {
                 const minutes = Math.floor(seconds / 60);
                 const secondsPart = Math.floor(seconds % 60);
                 return minutes + ':' + (secondsPart < 10 ? '0' : '') + secondsPart;
             }
-    
-            // Update progress bar and time display as the song plays
-            audioPlayer.addEventListener('timeupdate', function () {
+        
+            function updateProgressBar() {
                 const currentTime = audioPlayer.currentTime;
                 const duration = audioPlayer.duration || 0;
-    
-                // Update the progress bar width
                 const progressPercentage = (currentTime / duration) * 100;
                 progressBar.style.width = progressPercentage + '%';
-    
-                // Update the current time and duration displays
+                playhead.style.left = progressPercentage + '%';
+        
+                // Update time displays
                 currentTimeDisplay.textContent = formatTime(currentTime);
-                durationTimeDisplay.textContent = formatTime(duration);
-            });
-    
-            // Update duration display when the song metadata loads
-            audioPlayer.addEventListener('loadedmetadata', function() {
-                durationTimeDisplay.textContent = formatTime(audioPlayer.duration);
-            });
-    
-            // Allow users to seek within the song
-            progressBarContainer.addEventListener('click', function(event) {
-                const clickX = event.offsetX;
-                const totalWidth = this.offsetWidth;
-                const clickTime = (clickX / totalWidth) * audioPlayer.duration;
+                totalDurationDisplay.textContent = formatTime(duration);
+            }
+        
+            function seek(event) {
+                const bounds = progressBarContainer.getBoundingClientRect();
+                const x = event.clientX - bounds.left;
+                const totalWidth = bounds.width;
+                const clickTime = (x / totalWidth) * audioPlayer.duration;
                 audioPlayer.currentTime = clickTime;
+                updateProgressBar(); // Ensure the progress bar and playhead are updated
+            }
+        
+            progressBarContainer.addEventListener('mousedown', function(event) {
+                isDragging = true;
+                seek(event);
             });
-    
-            // Rest of your existing JavaScript code...
+        
+            window.addEventListener('mouseup', function() {
+                isDragging = false;
+            });
+        
+            window.addEventListener('mousemove', function(event) {
+                if (isDragging) {
+                    seek(event);
+                }
+            });
+        
+            audioPlayer.addEventListener('timeupdate', updateProgressBar);
+        
+            audioPlayer.addEventListener('loadedmetadata', function() {
+                totalDurationDisplay.textContent = formatTime(audioPlayer.duration);
+            });
+        
+            // Rest of your JavaScript code...
         });
-    </script>
+        </script>
+        
+    
     
 
 <script src="./src/newsletter.js"></script>
