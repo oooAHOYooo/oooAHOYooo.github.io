@@ -773,7 +773,7 @@ button:hover {
 }
 
 /* Style the media container */
-#featured-media {
+#featured-media-container {
   display: flex;
   flex-direction: column;
 
@@ -782,7 +782,7 @@ button:hover {
   align-items: center;
 }
 
-#featured-media h2 {
+#featured-media-container h2 {
   font-weight: 300;
 }
 

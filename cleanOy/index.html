@@ -64,22 +64,19 @@
             </div>
 
 <!-- FEATURED MEDIA -->
-<div id="featured-media" class="media-container">
-    <h2>featured media</h2><br>
-    <div class="media-item">
-        <img src="/images/Ahoy-Indie-Media---The-Rob-Show---Season-2---Episode-1---2023.png" alt="Artist 1">
-        <p>Artist 1 <span class="media-description">Description for Artist 1</span></p>
-    </div>
-    <div class="media-item">
-        <img src="/images/getOn/jackgalvin.png" alt="Artist 2">
-        <p>Artist 2 <span class="media-description">Description for Artist 2</span></p>
-    </div>
-    <div class="media-item">
-        <img src="/images/getOn/cambellrice.png" alt="Artist 3">
-        <p>Artist 3 <span class="media-description">Description for Artist 3</span></p>
+<div id="featured-media-container" class="media-container">
+    <h2>Featured Media</h2><br>
+    <div id="featured-media">
+        <!-- Media items will be inserted here by the JavaScript code -->
     </div>
 </div>
 <!-- END OF FEATURED MEDIA -->
+
+<!-- END OF FEATURED MEDIA -->
+<!-- FEATURED MEDIA JS -->
+
+
+
 
         </div>
 
@@ -684,11 +681,66 @@
     </script>
 
 
-    <script src="./src/newsletter.js"></script>
+<script>
+    // Function to get 'n' random elements from an array
+    function getRandom(arr, n) {
+        const result = new Array(n);
+        let len = arr.length;
+        const taken = new Array(len);
+
+        if (n > len) {
+            throw new RangeError("getRandom: more elements taken than available");
+        }
+
+        while (n--) {
+            const x = Math.floor(Math.random() * len);
+            result[n] = arr[x in taken ? taken[x] : x];
+            taken[x] = --len in taken ? taken[len] : len;
+        }
+
+        return result;
+    }
+
+    // Function to load and display featured media
+    function loadFeaturedMedia() {
+        fetch('data/featuredMedia.json')  // Make sure the path is correct
+            .then(response => response.json())
+            .then(data => {
+                const container = document.getElementById('featured-media');
+                container.innerHTML = '';  // Clear previous content
+
+                // Get 3 random items
+                const randomData = getRandom(data, 3);
+
+                // Add the random items to the DOM
+                randomData.forEach(item => {
+                    const mediaItem = document.createElement('div');
+                    mediaItem.className = 'media-item';
+                    mediaItem.innerHTML = `
+                        <img src="${item.imgSrc}" alt="${item.altText}">
+                        <p>${item.description}</p>
+                    `;
+                    container.appendChild(mediaItem);
+                });
+            })
+            .catch(error => console.error('Failed to load featured media:', error));
+    }
+
+    // Execute when the DOM is fully loaded
+    document.addEventListener('DOMContentLoaded', loadFeaturedMedia);
+</script>
+
+
+<!-- END OF FEATURED MEDIA JS -->
+
+
+
+
+
 
 
     <!-- WORKING SOURCE JAVASCRIPTS -->
-
+    <script src="./src/newsletter.js"></script>
     <script src="./src/games.js"></script>
     <script src="./src/artists.js"></script>
     <script src="./src/updates-commits.js"></script>
