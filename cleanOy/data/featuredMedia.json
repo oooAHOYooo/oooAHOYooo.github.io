@@ -2,26 +2,26 @@
   {
     "imgSrc": "/images/Ahoy-Indie-Media---The-Rob-Show---Season-2---Episode-1---2023.png",
     "altText": "Artist 1",
-    "description": "Description for Artiaaast 1"
+    "description": "Dave and Tyler on the Rob Show"
   },
   {
     "imgSrc": "/images/getOn/jackgalvin.png",
     "altText": "Artist 2",
-    "description": "Description for Artist 2"
+    "description": "Jack Galvin's Alive on Central"
   },
   {
     "imgSrc": "/images/getOn/cambellrice.png",
     "altText": "Artist 3",
-    "description": "Description for Artist 3"
+    "description": "Cambell Rice"
   },
   {
     "imgSrc": "/images/getOn/samueldylanwitch.png",
     "altText": "Artist 4",
-    "description": "Description for Artist 4"
+    "description": "Samuel Dylan Witch"
   },
   {
     "imgSrc": "/images/getOn/youthxl.png",
     "altText": "Artist 5",
-    "description": "Description for Artist 5"
+    "description": "YouthXL"
   }
 ]
