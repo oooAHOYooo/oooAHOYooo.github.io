@@ -1,742 +1,773 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap");
 
 :root {
-    /* Dark theme */
-    --background-color:	rgb(0, 14, 19);
-    --text-color:  #00f2ff;
-    --border-color: #00e5ff;
-    --secondary-color: #000000ba;
-    --button-color:#ffffff2d;
-    --gold : #ffd900;
+  /* Dark theme */
+  --background-color: rgb(0, 14, 19);
+  --text-color: #00f2ff;
+  --border-color: #00e5ff;
+  --secondary-color: #000000ba;
+  --button-color: #ffffff2d;
+  --gold: #ffd900;
 
-
-    /* Light theme */
-    --light-background-color: #ffffff;
-    --light-text-color:  #000000;
-    --light-border-color: #e0e0e0;
-    --light-secondary-color: #f2f2f2;
-    --light-button-color: #d9d9d9;
-    --light-gold : #ffd900;
+  /* Light theme */
+  --light-background-color: #ffffff;
+  --light-text-color: #000000;
+  --light-border-color: #e0e0e0;
+  --light-secondary-color: #f2f2f2;
+  --light-button-color: #d9d9d9;
+  --light-gold: #ffd900;
 }
-
-
 
 body {
-    font-family: 'Barlow', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    padding-bottom:20.5vh;
+  font-family: "Barlow", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding-bottom: 20.5vh;
 }
 
-h1,h2,h3,h4,h5,h6 {
-    font-family: 'Barlow', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Barlow", sans-serif;
 }
 
 h1 {
-    text-align:center;
+  text-align: center;
 }
 
 button {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
-    text-align: center;
-    cursor: pointer;
-    color: var(--text-color);
-    border: solid;
-    border-radius: 5px;
-    background-color:var(--background-color);
-    transition: background-color 0.3s ease;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  text-align: center;
+  cursor: pointer;
+  color: var(--text-color);
+  border: solid;
+  border-radius: 5px;
+  background-color: var(--background-color);
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
-   border-color: var(--gold);
-   color: var(--gold);
+  border-color: var(--gold);
+  color: var(--gold);
 }
 
 .artist-info a {
-color:var(--text-color);}
+  color: var(--text-color);
+}
 
 .artist-info a:hover {
-    color:var(--gold);
+  color: var(--gold);
 }
 
 .artist-info strong {
-    font-size:1.45rem;
+  font-size: 1.45rem;
 }
 
 .container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 .tab-content {
-    display: none;
+  display: none;
 }
 
 .tab-content.active {
-    display: block;
+  display: block;
 }
 
 .list {
-    list-style-type: none;
-    padding: 0;
+  list-style-type: none;
+  padding: 0;
 }
 
 .list-item {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 0;
-    border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .list-item:hover {
-    border-bottom: 1px solid var(--gold);
-    cursor: pointer;
+  border-bottom: 1px solid var(--gold);
+  cursor: pointer;
 }
 
 .bottom-nav {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: var(--secondary-color);
-    color: var(--text-color);
-    display: flex;
-    justify-content: space-around;
-    padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
 }
 
 .bottom-nav a {
-    color: var(--text-color);
-    text-decoration: none;
+  color: var(--text-color);
+  text-decoration: none;
 }
 
 .player {
-    position: fixed;
-    bottom: 51px;
-    width: 100%;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    padding: 35px 0;
- 
+  position: fixed;
+  bottom: 51px;
+  width: 100%;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding: 35px 0;
 }
 
 .player-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
 }
 
 .player-info {
-    flex: 1;
+  flex: 1;
 }
 
 .player-link {
-    color: var(--text-color);
-    text-decoration: none;
-    display: block;
+  color: var(--text-color);
+  text-decoration: none;
+  display: block;
 }
 
-.player-controls, .player-actions {
-    display: flex;
-    align-items: center;
+.player-controls,
+.player-actions {
+  display: flex;
+  align-items: center;
 }
 
 .player-button {
-    color: var(--text-color);
-    background: none;
-    border: none;
-    margin: 0 10px;
-    font-size: 20px;
+  color: var(--text-color);
+  background: none;
+  border: none;
+  margin: 0 10px;
+  font-size: 20px;
 }
 
 .player-button:focus {
-    outline: none;
-}
-
-
-.bottom-controller {
-    position:fixed;
-    bottom:0;
-    height :10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /* Add your styles here (padding, background, etc.) */
+  outline: none;
 }
 
 .bottom-controller {
-    padding: 10px 0;
-    background-color: var(--background-color);
-    overflow:hidden;
-    height:50px;
+  position: fixed;
+  bottom: 0;
+  height: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* Add your styles here (padding, background, etc.) */
+}
+
+.bottom-controller {
+  padding: 10px 0;
+  background-color: var(--background-color);
+  overflow: hidden;
+  height: 50px;
 }
 
 .bottom-controller button {
-    color: var(--text-color);
-    background: var(--background-color);
-    border: none;
-    font-size: 32px;
-    cursor: pointer;
-    border-style:solid;
-    padding:25px;
-    
+  color: var(--text-color);
+  background: var(--background-color);
+  border: none;
+  font-size: 32px;
+  cursor: pointer;
+  border-style: solid;
+  padding: 25px;
 }
 
 #tab-indicator {
-    color: var(--text-color);
-    font-size: 20px;
+  color: var(--text-color);
+  font-size: 20px;
 }
 
-
 .fixed-bottom {
-    position: fixed;
-    bottom: 0%; /* Adjust this value based on the height of your bottom navigation */
-    width: 100%;
-    z-index: 999; /* To make sure it's above other elements */
+  position: fixed;
+  bottom: 0%; /* Adjust this value based on the height of your bottom navigation */
+  width: 100%;
+  z-index: 999; /* To make sure it's above other elements */
 }
 
 .radio-wrap {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction:column;
-    height: auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding-bottom:90px;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-bottom: 90px;
+}
 
-  .now-playing {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    color: var(--text-color);
+.now-playing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  color: var(--text-color);
 }
 
 #album-art {
-    width: 200px; /* Adjust this to change the size of the album art */
-    height: 200px; /* Adjust this to change the size of the album art */
-    object-fit: cover; /* This will make sure the image scales nicely */
-    margin-bottom: 20px; /* Space between the album art and the song title */
+  width: 200px; /* Adjust this to change the size of the album art */
+  height: 200px; /* Adjust this to change the size of the album art */
+  object-fit: cover; /* This will make sure the image scales nicely */
+  margin-bottom: 20px; /* Space between the album art and the song title */
 }
 
 .song-info {
-    text-align: center;
+  text-align: center;
 }
 
-.song-info h2, .song-info h3 {
-    margin: 0;
+.song-info h2,
+.song-info h3 {
+  margin: 0;
 }
 
 .song-controls {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 20px;
 }
 
 .control-button {
-    color: var(--text-color);
-    background: var(--background-color);
-    border: none;
-    font-size: 32px;
-    cursor: pointer;
+  color: var(--text-color);
+  background: var(--background-color);
+  border: none;
+  font-size: 32px;
+  cursor: pointer;
 }
 
 .control-button:focus {
-    outline: none;
+  outline: none;
 }
 
 /* Add this to your foundational.css file */
 
 #cable-tab {
-    color: var(--text-color);
+  color: var(--text-color);
 }
 
 #playerContainer {
-    background-color: var(--secondary-color);
-    border: 2px solid var(--border-color);
-    border-radius: 2.5px;
-    
+  background-color: var(--secondary-color);
+  border: 2px solid var(--border-color);
+  border-radius: 2.5px;
 }
 
 #cable-schedule-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
 }
 
 #cable-schedule-table thead {
-    background-color: var(--secondary-color);
-    
+  background-color: var(--secondary-color);
 }
 
 #cable-schedule-table td {
-    
-    padding: 2.5px;
-    font-size:16px;
-    border-bottom: 1px solid var(--border-color);
-
+  padding: 2.5px;
+  font-size: 16px;
+  border-bottom: 1px solid var(--border-color);
 }
 
-
-
 #cable-schedule-table tr:nth-child(even) {
-    background-color: var(--background-color);
+  background-color: var(--background-color);
 }
 
 #cable-schedule-table tr:nth-child(odd) {
-    background-color: var(--secondary-color);
+  background-color: var(--secondary-color);
 }
 
 #mediaTable {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
 }
 
 #mediaTable thead {
-    background-color: var(--secondary-color);
+  background-color: var(--secondary-color);
 }
 
-#mediaTable th, #mediaTable td {
-    padding: 10px;
-    text-align: left;
-    border-bottom: 1px solid var(--border-color);
+#mediaTable th,
+#mediaTable td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
 }
 
 #mediaTable tr:nth-child(even) {
-    background-color: var(--background-color);
+  background-color: var(--background-color);
 }
 
 #mediaTable tr:nth-child(odd) {
-    background-color: var(--secondary-color);
+  background-color: var(--secondary-color);
 }
 
 #mediaTable a {
-    color: var(--text-color);
-    text-decoration: none;
+  color: var(--text-color);
+  text-decoration: none;
 }
 
 #mediaTable td:hover {
-    color: var(--gold);
-    border-bottom: 1px solid var(--gold);
-
+  color: var(--gold);
+  border-bottom: 1px solid var(--gold);
 }
 
 #podcasts-tab {
-    color: var(--text-color);
+  color: var(--text-color);
 }
 
 #podcast-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
 }
 
 #podcast-table thead {
-    background-color: var(--secondary-color);
+  background-color: var(--secondary-color);
 }
 
-#podcast-table th, #podcast-table td {
-    padding: 10px;
-    text-align: left;
-    border-bottom: 1px solid var(--border-color);
+#podcast-table th,
+#podcast-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
 }
 
 #podcast-table tr:nth-child(even) {
-    background-color: var(--background-color);
+  background-color: var(--background-color);
 }
 
 #podcast-table tr:nth-child(odd) {
-    background-color: var(--secondary-color);
+  background-color: var(--secondary-color);
 }
 
 #podcast-player {
-    width: 100%;
-    margin-top: 20px;
+  width: 100%;
+  margin-top: 20px;
 }
 
 .radio-wrap {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-
 
 /* Add this to your foundational.css file */
 
 /* Style the song list table */
 #song-list {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
 }
 
 #song-list thead {
-    background-color: var(--secondary-color);
+  background-color: var(--secondary-color);
 }
 
-#song-list th, #song-list td {
-    padding: 10px;
-    text-align: left;
-    border-bottom: 1px solid var(--border-color);
+#song-list th,
+#song-list td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
 }
 
 #song-list tr:nth-child(even) {
-    background-color: var(--background-color);
+  background-color: var(--background-color);
 }
 
 #song-list tr:nth-child(odd) {
-    background-color: var(--secondary-color);
+  background-color: var(--secondary-color);
 }
 
 /* Style the play and like buttons */
-.play-button, .like-button {
-    color: var(--text-color);
-    background: var(--background-color);
-    border: none;
-    font-size: 20px;
-    cursor: pointer;
+.play-button,
+.like-button {
+  color: var(--text-color);
+  background: var(--background-color);
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
 }
 
-.play-button:focus, .like-button:focus {
-    outline: none;
+.play-button:focus,
+.like-button:focus {
+  outline: none;
 }
 
 /* Style the liked button */
 .like-button.liked {
-    color: var(--gold);
+  color: var(--gold);
 }
 
-
 @keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .like-button.liked {
-    color: #9999992d; /* This will make the button appear faded */
-    cursor: default; /* This will remove the hand cursor when hovering over the button */
-    animation: pulse 1s ease-in-out;
+  color: #9999992d; /* This will make the button appear faded */
+  cursor: default; /* This will remove the hand cursor when hovering over the button */
+  animation: pulse 1s ease-in-out;
 }
 
 /* Style the liked songs table */
 #liked-songs-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
 }
 
 #liked-songs-table thead {
-    background-color: var(--secondary-color);
+  background-color: var(--secondary-color);
 }
 
-#liked-songs-table th, #liked-songs-table td {
-    padding: 10px;
-    text-align: left;
-    border-bottom: 1px solid var(--border-color);
+#liked-songs-table th,
+#liked-songs-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
 }
 
 #liked-songs-table tr:nth-child(even) {
-    background-color: var(--background-color);
+  background-color: var(--background-color);
 }
 
 #liked-songs-table tr:nth-child(odd) {
-    background-color: var(--secondary-color);
+  background-color: var(--secondary-color);
 }
 
 /* Style the remove button */
 .remove-button {
-    color: var(--text-color);
-    background: var(--background-color);
-    border: none;
-    font-size: 20px;
-    cursor: pointer;
+  color: var(--text-color);
+  background: var(--background-color);
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
 }
 
 .remove-button:focus {
-    outline: none;
+  outline: none;
 }
 
 .remove-button:hover {
-    color: var(--gold);
+  color: var(--gold);
 }
 
-
 .tabcontent {
-    display: none;
+  display: none;
 }
 
 .tablinks {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 /* Style for Games Tab */
 #games-tab h1 {
-    font-size: 1.5rem; /* Adjust as needed */
-    margin-bottom: 10px; /* Adjust as needed */
+  font-size: 1.5rem; /* Adjust as needed */
+  margin-bottom: 10px; /* Adjust as needed */
 }
 
 #games-tab .tabcontent h1 {
-    font-size: 1.2rem; /* Adjust as needed */
-    margin-top: 10px; /* Adjust as needed */
-    margin-bottom: 5px; /* Adjust as needed */
+  font-size: 1.2rem; /* Adjust as needed */
+  margin-top: 10px; /* Adjust as needed */
+  margin-bottom: 5px; /* Adjust as needed */
 }
 
 #games-tab .tabcontent h2 {
-    font-size: 1rem; /* Adjust as needed */
-    margin-top: 5px; /* Adjust as needed */
-    margin-bottom: 5px; /* Adjust as needed */
+  font-size: 1rem; /* Adjust as needed */
+  margin-top: 5px; /* Adjust as needed */
+  margin-bottom: 5px; /* Adjust as needed */
 }
-
 
 /* Style the commits list */
 .commit-item {
-    border-bottom: 1px solid var(--border-color);
-    padding: 10px;
-    margin-bottom: 10px;
+  border-bottom: 1px solid var(--border-color);
+  padding: 10px;
+  margin-bottom: 10px;
 }
 
 .commit-item h3 {
-    font-size: 1.2rem;
-    margin-bottom: 5px;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
 }
 
 .commit-item p {
-    margin-bottom: 5px;
+  margin-bottom: 5px;
 }
-
 
 .home-tab {
-    display:flex;
-    flex-direction:column;
-    justify-content: center;
-    align-items:center;
-    min-width:100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 100%;
 }
 
-
 #home-logo-div img {
-width: 100%;
-animation: hue-rotate 5s infinite linear;
-filter: brightness(0.8); /* Adjust brightness, 0 is completely dark, 1 is no change, and values above 1 increase brightness */
+  width: 100%;
+  animation: hue-rotate 5s infinite linear;
+  filter: brightness(
+    0.8
+  ); /* Adjust brightness, 0 is completely dark, 1 is no change, and values above 1 increase brightness */
 }
 
 @keyframes hue-rotate {
-0% { filter: hue-rotate(0deg) brightness(0.8); }
-100% { filter: hue-rotate(360deg) brightness(0.98); }
+  0% {
+    filter: hue-rotate(0deg) brightness(0.8);
+  }
+  100% {
+    filter: hue-rotate(360deg) brightness(0.98);
+  }
 }
 
 .home-tab-learn-more-wrap {
-    width:100%;
-    display:flex;
-    align-items:center;
-    justify-content: center;
-    flex-direction: row;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
 }
 
 .home-tab-learn-more-wrap a {
-    margin: 5px;
-    margin-left: 5px;
+  margin: 5px;
+  margin-left: 5px;
 }
 
 .get-started-wrap {
-    width:100%;
-    height:auto;
-    display:flex;
-    align-items:center;
-    justify-content: center;
-    flex-direction: row;
-
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
 }
 
 @keyframes pulse {
-    0% {
-        box-shadow: 0 0 0 0 rgba(0, 242, 255, 0.7);
-    }
-    70% {
-        box-shadow: 0 0 0 10px rgba(0, 242, 255, 0);
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(0, 242, 255, 0);
-    }
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 242, 255, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(0, 242, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 242, 255, 0);
+  }
 }
 
 .get-started-button {
-    margin: 20px;
-    width:250px;
-    height:40px;
-    font-size: 16px;
-    border: 2px solid #00f2ff;
-    animation: pulse 2s infinite;
-    text-transform:uppercase;
-    line-height:80%;
+  margin: 20px;
+  width: 250px;
+  height: 40px;
+  font-size: 16px;
+  border: 2px solid #00f2ff;
+  animation: pulse 2s infinite;
+  text-transform: uppercase;
+  line-height: 80%;
 }
 
-
 #control-panel {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 #control-panel button {
-    width: 80px; /* adjust as needed */
-    height: 40px; /* adjust as needed */
-    font-size:10px;
+  width: 80px; /* adjust as needed */
+  height: 40px; /* adjust as needed */
+  font-size: 10px;
 }
 
 /* Style the search bar */
 #search-bar {
-    padding: 12px;
-    font-size: 12px;
-    border: 1px solid var(--border-color);
-    border-radius: 5px;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    width: 100%;
-    transition: all 0.3s ease;
+  padding: 12px;
+  font-size: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  width: 100%;
+  transition: all 0.3s ease;
 }
 
 #search-bar::placeholder {
-    color: var(--text-color);
+  color: var(--text-color);
 }
 
 #search-bar:focus {
-    outline: none;
-    border-color: var(--gold);
+  outline: none;
+  border-color: var(--gold);
 }
 
-
 #progress-bar-container {
-    position: relative;
-    height: 20px; /* Adjust as needed */
-    background-color: var(--light-border-color); /* Background of the progress bar */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  position: relative;
+  height: 20px; /* Adjust as needed */
+  background-color: var(
+    --light-border-color
+  ); /* Background of the progress bar */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #progress-bar {
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    background-color: var(--light-border-color); /* Background of the progress bar */
-    z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background-color: var(
+    --light-border-color
+  ); /* Background of the progress bar */
+  z-index: 1;
 }
 
 #playhead {
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 12px;
-    height: 20px;
-    background-color: var(--light-border-color); /* Background of the progress bar */
-    border-radius: 0%;
-    cursor: pointer;
-    z-index: 2; /* Ensures the playhead is above the progress bar */
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 20px;
+  background-color: var(
+    --light-border-color
+  ); /* Background of the progress bar */
+  border-radius: 0%;
+  cursor: pointer;
+  z-index: 2; /* Ensures the playhead is above the progress bar */
 }
 
-#current-time, #total-duration {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 3; /* Ensures the time is above the progress bar and playhead */
-    background-color: var(--background-color);
-    border-radius: 4px;
-    color: var(--text-color);
+#current-time,
+#total-duration {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3; /* Ensures the time is above the progress bar and playhead */
+  background-color: var(--background-color);
+  border-radius: 4px;
+  color: var(--text-color);
 }
 
 #current-time {
-    left: 10px; /* Spacing from the left edge */
+  left: 10px; /* Spacing from the left edge */
 }
 
 #total-duration {
-    right: 10px; /* Spacing from the right edge */
+  right: 10px; /* Spacing from the right edge */
 }
 
-    /* Default font size for larger screens */
-    .player-link {
-        font-size: 10px;
-    }
+/* Default font size for larger screens */
+.player-link {
+  font-size: 10px;
+}
 
-    .player-info {
-        display: flex;
-        justify-content: space-between;
-        padding-left: 10px;
-        padding-right: 10px;
-    }
+.player-info {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
+}
 
-    .sort-buttons {
-        margin-left:5px;
-        display: flex;
-        justify-content: center;
-        flex-direction:row;
-        align-items: center;
-    }
-    
-    .sort-buttons button {
-        font-size: 10px; /* Adjust this value to make the text smaller or larger */
-        padding: 5px 10px; /* Adjust these values to make the button smaller or larger */
-        text-align: center; /* This will center the text */
-        border-width:1px;
-        margin-right:5px;
-    }
+.sort-buttons {
+  margin-left: 5px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+}
 
-    .common-button {
-        width: 90px; /* Adjust as needed */
-        height: 50px; /* Adjust as needed */
-        font-size: 10px; /* Adjust as needed */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-decoration: none;
-        color: var(--text-color); /* Use the color variable defined in :root or replace with any color */
-        border: 1px solid var(--border-color); /* Use the color variable defined in :root or replace with any color */
-        border-radius: 5px; /* Rounded corners */
-        transition: all 0.3s ease; /* Smooth transition for hover effects */
-        line-height:90%;
-        text-transform: uppercase;
-    }
-    
-    .common-button a {
-        text-decoration: none;
-    }
-    
-    .common-button:hover {
-        background-color: var(--gold); /* Use the color variable defined in :root or replace with any color */
-        border-color: var(--gold); /* Use the color variable defined in :root or replace with any color */
-        color: var(--background-color); /* Use the color variable defined in :root or replace with any color */
-    }
+.sort-buttons button {
+  font-size: 10px; /* Adjust this value to make the text smaller or larger */
+  padding: 5px 10px; /* Adjust these values to make the button smaller or larger */
+  text-align: center; /* This will center the text */
+  border-width: 1px;
+  margin-right: 5px;
+}
 
-    .home-tab-learn-more-wrap a {
-        text-decoration: none;
-    }
+.common-button {
+  width: 90px; /* Adjust as needed */
+  height: 50px; /* Adjust as needed */
+  font-size: 10px; /* Adjust as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: var(
+    --text-color
+  ); /* Use the color variable defined in :root or replace with any color */
+  border: 1px solid var(--border-color); /* Use the color variable defined in :root or replace with any color */
+  border-radius: 5px; /* Rounded corners */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  line-height: 90%;
+  text-transform: uppercase;
+}
 
-    .compact-play-button {
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
-        font-size: 1rem; /* Adjust size as needed */
-        padding: 0;
-    }
-    
+.common-button a {
+  text-decoration: none;
+}
+
+.common-button:hover {
+  background-color: var(
+    --gold
+  ); /* Use the color variable defined in :root or replace with any color */
+  border-color: var(
+    --gold
+  ); /* Use the color variable defined in :root or replace with any color */
+  color: var(
+    --background-color
+  ); /* Use the color variable defined in :root or replace with any color */
+}
+
+.home-tab-learn-more-wrap a {
+  text-decoration: none;
+}
+
+.compact-play-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem; /* Adjust size as needed */
+  padding: 0;
+}
+
+#radio-tab {
+  position: relative;
+  z-index: -1;
+  overflow: hidden;
+  min-height: 75vh;
+  background-image: url("https://media.tenor.com/S8_V9lNMc3oAAAAM/waves-awesome.gif");
+  background-size: cover; /* This will make sure the image covers the entire element */
+  background-position: center; /* This will center the image in the element */
+}
+
+#radio-tab::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Adjust the color and opacity as needed */
+  z-index: -1;
+}
