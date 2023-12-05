@@ -15,18 +15,13 @@
     "description": "Description for Artist 3"
   },
   {
-    "imgSrc": "/images/getOn/artist5.png",
+    "imgSrc": "/images/getOn/samueldylanwitch.png",
     "altText": "Artist 4",
     "description": "Description for Artist 4"
   },
   {
-    "imgSrc": "/images/getOn/artist5.png",
+    "imgSrc": "/images/getOn/youthxl.png",
     "altText": "Artist 5",
     "description": "Description for Artist 5"
-  },
-  {
-    "imgSrc": "/images/getOn/artist6.png",
-    "altText": "Artist 6",
-    "description": "Description for Artist 6"
   }
 ]
