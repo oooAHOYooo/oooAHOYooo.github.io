@@ -701,33 +701,35 @@
         return result;
     }
 
-    // Function to load and display featured media
-    function loadFeaturedMedia() {
-        fetch('data/featuredMedia.json')  // Make sure the path is correct
-            .then(response => response.json())
-            .then(data => {
-                const container = document.getElementById('featured-media');
-                container.innerHTML = '';  // Clear previous content
+    / Function to load and display featured media
+function loadFeaturedMedia() {
+    fetch('data/featuredMedia.json')  // Make sure the path is correct
+        .then(response => response.json())
+        .then(data => {
+            const container = document.getElementById('featured-media');
+            container.innerHTML = '';  // Clear previous content
 
-                // Get 3 random items
-                const randomData = getRandom(data, 3);
+            // Get 3 random items
+            const randomData = getRandom(data, 3);
 
-                // Add the random items to the DOM
-                randomData.forEach(item => {
-                    const mediaItem = document.createElement('div');
-                    mediaItem.className = 'media-item';
-                    mediaItem.innerHTML = `
+            // Add the random items to the DOM
+            randomData.forEach(item => {
+                const mediaItem = document.createElement('div');
+                mediaItem.className = 'media-item';
+                mediaItem.innerHTML = `
+                    <div class="media-img">
                         <img src="${item.imgSrc}" alt="${item.altText}">
-                        <p>${item.description}</p>
-                    `;
-                    container.appendChild(mediaItem);
-                });
-            })
-            .catch(error => console.error('Failed to load featured media:', error));
-    }
+                    </div>
+                    <p class="description">${item.description}</p>
+                `;
+                container.appendChild(mediaItem);
+            });
+        })
+        .catch(error => console.error('Failed to load featured media:', error));
+}
 
-    // Execute when the DOM is fully loaded
-    document.addEventListener('DOMContentLoaded', loadFeaturedMedia);
+// Execute when the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', loadFeaturedMedia);
 </script>
 
 

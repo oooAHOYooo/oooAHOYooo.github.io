@@ -780,6 +780,7 @@ button:hover {
   width: 100%;
   justify-content: center;
   align-items: center;
+  padding-bottom: 100px;
 }
 
 #featured-media-container h2 {
