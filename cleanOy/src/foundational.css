@@ -775,9 +775,15 @@ button:hover {
 /* Style the media container */
 #featured-media {
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  margin-top: 20px;
+  flex-direction: column;
+
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+#featured-media h2 {
+  font-weight: 300;
 }
 
 /* Style each media item */
@@ -786,9 +792,15 @@ button:hover {
   text-align: center;
   margin-bottom: 20px;
   position: relative;
+  overflow: hidden; /* Ensures the image doesn't overflow the container */
 }
 
-/* Style the media item image */
+.media-item::before {
+  content: "";
+  display: block;
+  padding-top: 56.25%; /* Maintain a 16:9 aspect ratio */
+}
+
 .media-item img {
   position: absolute;
   top: 0;
@@ -797,18 +809,17 @@ button:hover {
   height: 100%;
   object-fit: cover;
   border-radius: 5px; /* Adjust as needed */
+  filter: grayscale(100%);
 }
 
-/* Maintain 16:9 aspect ratio */
-.media-item::before {
-  content: "";
-  display: block;
-  padding-top: 56.25%; /* 9/16 * 100% = 56.25% */
-}
-
-/* Style the media item text */
-.media-item p {
-  margin-top: 10px;
-  color: var(--text-color);
-  font-size: 16px; /* Adjust as needed */
+.media-description {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black */
+  color: white;
+  font-size: 10px;
+  text-align: center;
 }
