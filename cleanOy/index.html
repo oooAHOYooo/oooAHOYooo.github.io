@@ -758,6 +758,27 @@ document.addEventListener('DOMContentLoaded', loadFeaturedMedia);
 </script>
 
 
+
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+    fetch('./data/superMarket.json')
+        .then(response => response.json())
+        .then(data => {
+            const tableBody = document.querySelector('#market-table tbody');
+            data.forEach(item => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${item.product}</td>
+                    <td>${item.description}</td>
+                    <td>${item.price}</td>
+                    <td><a href="${item.buyLink}" class="buy-button">Buy</a></td>
+                `;
+                tableBody.appendChild(row);
+            });
+        });
+});
+</script>
+
 <!-- END OF FEATURED MEDIA JS -->
 
 

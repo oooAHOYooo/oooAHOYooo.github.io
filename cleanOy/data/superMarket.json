@@ -1,0 +1,37 @@
+[
+  {
+    "product": "Product 1",
+    "description": "This is product 1",
+    "price": "$10",
+    "buyLink": "https://buy.product1.com",
+    "image": "https://image.product1.com"
+  },
+  {
+    "product": "Product 2",
+    "description": "This is product 2",
+    "price": "$20",
+    "buyLink": "https://buy.product2.com",
+    "image": "https://image.product2.com"
+  },
+  {
+    "product": "Product 3",
+    "description": "This is product 3",
+    "price": "$30",
+    "buyLink": "https://buy.product3.com",
+    "image": "https://image.product3.com"
+  },
+  {
+    "product": "Product 4",
+    "description": "This is product 4",
+    "price": "$40",
+    "buyLink": "https://buy.product4.com",
+    "image": "https://image.product4.com"
+  },
+  {
+    "product": "Product 5",
+    "description": "This is product 5",
+    "price": "$50",
+    "buyLink": "https://buy.product5.com",
+    "image": "https://image.product5.com"
+  }
+]
