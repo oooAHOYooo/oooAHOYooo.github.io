@@ -824,3 +824,47 @@ button:hover {
   font-size: 10px;
   text-align: center;
 }
+
+
+/* Style the market table */
+#market-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+#market-table thead {
+  background-color: var(--secondary-color);
+}
+
+#market-table th,
+#market-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+#market-table tr:nth-child(even) {
+  background-color: var(--background-color);
+}
+
+#market-table tr:nth-child(odd) {
+  background-color: var(--secondary-color);
+}
+
+/* Style the buy button */
+.buy-button {
+  color: var(--text-color);
+  background: var(--background-color);
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.buy-button:focus {
+  outline: none;
+}
+
+.buy-button:hover {
+  color: var(--gold);
+}
