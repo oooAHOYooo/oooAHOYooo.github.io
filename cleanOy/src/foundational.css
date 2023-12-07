@@ -329,12 +329,23 @@ button:hover {
 #podcasts-tab {
   color: var(--text-color);
   padding-bottom: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 #podcast-table {
   width: 100%;
+  max-width: 300px;
+  font-size: 0.8em; /* Adjust as needed to make the text smaller */
   border-collapse: collapse;
+  margin: auto; /* This will center the table */
   margin-top: 20px;
+}
+
+#podcast-table img {
+  border: 1px solid var(--border-color);
 }
 
 #podcast-table thead {
