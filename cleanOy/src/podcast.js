@@ -41,7 +41,6 @@ function loadPodcasts() {
           fullCover.style.width = "100%";
           fullCover.style.height = "auto";
           fullCover.style.maxWidth = "80%";
-          fullCover.style.maxHeight = "80%";
 
           lightbox.appendChild(fullCover);
           document.body.appendChild(lightbox);
