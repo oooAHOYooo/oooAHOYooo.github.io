@@ -21,12 +21,35 @@ function loadPodcasts() {
       const thumbnails = document.querySelectorAll(".thumbnail");
       thumbnails.forEach((thumbnail) => {
         thumbnail.addEventListener("click", function () {
+          // Create a lightbox
+          const lightbox = document.createElement("div");
+          lightbox.style.position = "fixed";
+          lightbox.style.top = "0";
+          lightbox.style.right = "0";
+          lightbox.style.bottom = "0";
+          lightbox.style.left = "0";
+          lightbox.style.backgroundColor = "rgba(0, 0, 0, 0.7)";
+          lightbox.style.display = "flex";
+          lightbox.style.justifyContent = "center";
+          lightbox.style.alignItems = "center";
+          lightbox.style.zIndex = "1000";
+
           // Show the full podcast cover
           const fullCover = new Image();
           fullCover.src = this.src;
           fullCover.alt = this.alt;
           fullCover.style.width = "100%";
-          document.body.appendChild(fullCover);
+          fullCover.style.height = "auto";
+          fullCover.style.maxWidth = "80%";
+          fullCover.style.maxHeight = "80%";
+
+          lightbox.appendChild(fullCover);
+          document.body.appendChild(lightbox);
+
+          // Remove the lightbox when clicked
+          lightbox.addEventListener("click", function () {
+            document.body.removeChild(lightbox);
+          });
         });
       });
 
@@ -63,41 +86,6 @@ function loadPodcasts() {
     })
     .catch((error) => console.error("Error:", error));
 }
-
-// Add event listener to thumbnails
-const thumbnails = document.querySelectorAll(".thumbnail");
-thumbnails.forEach((thumbnail) => {
-  thumbnail.addEventListener("mouseover", function () {
-    // Create a hover box
-    const hoverBox = document.createElement("div");
-    hoverBox.style.position = "absolute";
-    hoverBox.style.width = "200px";
-    hoverBox.style.height = "200px";
-    hoverBox.style.backgroundColor = "#fff";
-    hoverBox.style.border = "1px solid #000";
-    hoverBox.style.zIndex = "1000";
-
-    // Show the full podcast cover
-    const fullCover = new Image();
-    fullCover.src = this.src;
-    fullCover.alt = this.alt;
-    fullCover.style.width = "100%";
-    fullCover.style.height = "100%";
-
-    hoverBox.appendChild(fullCover);
-    document.body.appendChild(hoverBox);
-
-    // Position the hover box
-    const rect = this.getBoundingClientRect();
-    hoverBox.style.left = `${rect.left}px`;
-    hoverBox.style.top = `${rect.bottom}px`;
-
-    // Remove the hover box when the mouse leaves
-    this.addEventListener("mouseout", function () {
-      document.body.removeChild(hoverBox);
-    });
-  });
-});
 
 function playPodcast(url, title) {
   const audioPlayer = document.getElementById("audio-player");
