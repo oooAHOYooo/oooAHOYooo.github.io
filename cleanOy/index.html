@@ -729,33 +729,39 @@
                 // Initialize Stripe
                 const stripe = Stripe('your-publishable-key');
 
-                // Add event listener to "Buy" buttons
-                document.querySelectorAll('.buy-button').forEach(button => {
-                    button.addEventListener('click', async (event) => {
-                        event.preventDefault(); // Prevent the default action
+           // Add event listener to "Buy" buttons
+document.querySelectorAll('.buy-button').forEach(button => {
+    button.addEventListener('click', (event) => {
+        event.preventDefault(); // Prevent the default action
 
-                        // Get product details
-                        const productId = button.dataset.id;
-                        const productRow = button.parentElement.parentElement;
-                        const product = {
-                            id: productId,
-                            name: productRow.children[0].textContent,
-                            description: productRow.children[1].textContent,
-                            price: productRow.children[2].textContent
-                        };
+  // Get product details
+  const productId = button.dataset.id;
+        const productRow = button.parentElement.parentElement;
+        const product = {
+            id: productId,
+            name: productRow.children[0].textContent,
+            description: productRow.children[1].textContent,
+            price: productRow.children[2].textContent
+        };
+ // Create a dynamic viewport or popup
+ const popup = document.createElement('div');
+        popup.style.position = 'fixed';
+        popup.style.top = '50%';
+        popup.style.left = '50%';
+        popup.style.transform = 'translate(-50%, -50%)';
+        popup.style.backgroundColor = '#fff';
+        popup.style.padding = '20px';
+        popup.style.borderRadius = '10px';
+        popup.style.zIndex = '1000';
+        popup.innerHTML = `
+            <h2>${product.name}</h2>
+            <p>${product.description}</p>
+            <p>${product.price}</p>
+            <button class="confirm-buy-button" data-id="${product.id}">Confirm Buy</button>
+            <button class="close-popup">Close</button>
+        `;
 
-                        // Create overlay
-                        const overlay = document.createElement('div');
-                        overlay.style.position = 'fixed';
-                        overlay.style.top = '0';
-                        overlay.style.right = '0';
-                        overlay.style.bottom = '0';
-                        overlay.style.left = '0';
-                        overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-                        overlay.style.display = 'flex';
-                        overlay.style.justifyContent = 'center';
-                        overlay.style.alignItems = 'center';
-                        overlay.style.zIndex = '1000';
+        
 
                         // Create product info
                         const productInfo = document.createElement('div');
