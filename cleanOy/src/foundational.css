@@ -328,6 +328,7 @@ button:hover {
 
 #podcasts-tab {
   color: var(--text-color);
+  padding-bottom: 200px;
 }
 
 #podcast-table {
@@ -824,7 +825,6 @@ button:hover {
   font-size: 10px;
   text-align: center;
 }
-
 
 /* Style the market table */
 #market-table {
