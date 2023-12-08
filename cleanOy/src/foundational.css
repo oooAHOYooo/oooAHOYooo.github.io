@@ -220,6 +220,10 @@ button:hover {
   color: var(--text-color);
 }
 
+.now-playing h1 {
+  margin: 0;
+}
+
 #album-art {
   width: 200px; /* Adjust this to change the size of the album art */
   height: 200px; /* Adjust this to change the size of the album art */

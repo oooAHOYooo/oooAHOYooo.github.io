@@ -37,8 +37,6 @@
       </header>
 
       <div id="tabSortz">
-        <!-- NOW PLAYING TAB (Home)-->
-        <div id="nowplaying-tab" class="tab-content">Kill this tab</div>
         <!-- HOME TAB -->
         <div id="home-tab" class="tab-content active">
           <div id="home-logo-div">
@@ -767,6 +765,30 @@
 
           nextButton.addEventListener("click", nextSong);
           prevButton.addEventListener("click", previousSong);
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+          // Get the play button from the "Now Playing" tab
+          const nowPlayingPlayButton = document.querySelector("#play-pause");
+
+          // Get the play button from the bottom play controller
+          const bottomPlayButton = document.querySelector("#play");
+
+          // Get the audio player
+          const audioPlayer = document.getElementById("audio-player");
+
+          // Add a click event listener to the "Now Playing" play button
+          nowPlayingPlayButton.addEventListener("click", function () {
+            // Trigger the click event of the bottom play button
+            bottomPlayButton.click();
+
+            // Toggle the play/pause icon of the "Now Playing" play button
+            if (audioPlayer.paused) {
+              nowPlayingPlayButton.querySelector("i").className = "fas fa-play";
+            } else {
+              nowPlayingPlayButton.querySelector("i").className =
+                "fas fa-pause";
+            }
+          });
         });
       </script>
 
