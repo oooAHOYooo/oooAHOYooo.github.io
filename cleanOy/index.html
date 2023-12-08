@@ -181,26 +181,14 @@
         <div id="updates-tab" class="tab-content">
             <h1>Updates</h1> <!-- NEWSLETTER -->
             <div id="newsletter-tab" class="tab-content-b">
-                <h1>Newsletter</h1>
-                <div id="newsletter-list"></div>
+                <!-- h1>Newsletter</h1 -->
+                <!-- div id="newsletter-list"></div -->
             </div>
 
-            <h2>Commits</h2>
+            <h2> Present Beta State = 0.2.2</h2>
+            <h3>Last 100 Commits to our open source Repo</h3>
             <div id="commits-list"></div>
-            <script>
-                const commitsList = document.getElementById('commits-list');
 
-                fetch('https://api.github.com/repos/oooAHOYooo/oooAHOYooo.github.io/commits?per_page=100')
-                    .then(response => response.json())
-                    .then(commits => {
-                        commits.forEach(commit => {
-                            const listItem = document.createElement('li');
-                            listItem.textContent = commit.commit.message;
-                            commitsList.appendChild(listItem);
-                        });
-                    })
-                    .catch(error => console.error(error));
-            </script>
 
         </div>
         <!-- ACCOUNT -->
@@ -676,6 +664,22 @@ document.addEventListener('DOMContentLoaded', loadFeaturedMedia);
     });
 </script>
 
+
+<!-- PULL THAT GITHUB COMMIT -->
+<script>
+    const commitsList = document.getElementById('commits-list');
+
+    fetch('https://api.github.com/repos/oooAHOYooo/oooAHOYooo.github.io/commits?per_page=100')
+        .then(response => response.json())
+        .then(commits => {
+            commits.forEach(commit => {
+                const listItem = document.createElement('li');
+                listItem.textContent = commit.commit.message;
+                commitsList.appendChild(listItem);
+            });
+        })
+        .catch(error => console.error(error));
+</script>
 
 <!-- END OF SCRIPT DIV --></div ><!-- ENDFOSCRIPT-->
 

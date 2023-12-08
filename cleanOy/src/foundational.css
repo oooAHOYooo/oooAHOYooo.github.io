@@ -845,3 +845,9 @@ button:hover {
   background-color: var(--button-color);
   width: 0%;
 }
+
+/*Update Styles*/
+
+#updates-tab h2 {
+  text-align:center;
+}
