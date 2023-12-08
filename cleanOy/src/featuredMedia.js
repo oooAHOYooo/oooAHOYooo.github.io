@@ -33,11 +33,11 @@ function loadFeaturedMedia() {
         const mediaItem = document.createElement("div");
         mediaItem.className = "media-item";
         mediaItem.innerHTML = `
-                      <div class="media-img">
-                          <img src="${item.imgSrc}" alt="${item.altText}" class="thumbnail">
-                          <p class="media-description">${item.description}</p>
-                      </div>
-                  `;
+                        <div class="media-img">
+                            <img src="${item.imgSrc}" alt="${item.altText}" class="thumbnail">
+                            <p class="media-description">${item.description}</p>
+                        </div>
+                    `;
         container.appendChild(mediaItem);
       });
 
@@ -47,7 +47,7 @@ function loadFeaturedMedia() {
         thumbnail.addEventListener("click", function () {
           // Create a lightbox
           const lightbox = document.createElement("div");
-          lightbox.style.position = "relative";
+          lightbox.style.position = "fixed";
           lightbox.style.top = "0";
           lightbox.style.right = "0";
           lightbox.style.bottom = "0";
@@ -65,6 +65,11 @@ function loadFeaturedMedia() {
           fullCover.style.width = "100%";
           fullCover.style.height = "auto";
           fullCover.style.maxWidth = "80%";
+
+          // Stop propagation of click event on the fullCover
+          fullCover.addEventListener("click", function (event) {
+            event.stopPropagation();
+          });
 
           lightbox.appendChild(fullCover);
           document.body.appendChild(lightbox);
