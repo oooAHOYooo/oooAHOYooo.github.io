@@ -62,3 +62,14 @@ function getStarted() {
 }
 
 window.switchTab = switchTab;
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Attach an event listener to the account button
+  const accountButton = document.getElementById("account");
+  if (accountButton) {
+    accountButton.addEventListener("click", function () {
+      // Switch to the account tab
+      switchTab("account");
+    });
+  }
+});
