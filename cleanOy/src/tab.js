@@ -13,7 +13,8 @@ let currentTabIndex = 0; // Assuming you have a global variable to keep track of
 
 function nextTab() {
   currentTabIndex++;
-  if (currentTabIndex > 13) {
+  if (currentTabIndex > 12) {
+    // Adjusted to match the new length of the tabs array
     // Reset to the first tab if we've gone past the last one
     currentTabIndex = 0;
   }
@@ -24,7 +25,7 @@ function prevTab() {
   currentTabIndex--;
   if (currentTabIndex < 0) {
     // Loop back to the last tab if we've gone past the first one
-    currentTabIndex = 13;
+    currentTabIndex = 12; // Adjusted to match the new length of the tabs array
   }
   switchTabByIndex(currentTabIndex);
 }
@@ -36,7 +37,7 @@ function switchTabByIndex(tabIndex) {
     "nowplaying",
     "radio",
     "songs",
-    "liked",
+    // "liked", // Removed "liked" from the tabs array
     "podcasts",
     "artists",
     "cable",
