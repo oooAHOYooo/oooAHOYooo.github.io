@@ -13,9 +13,8 @@ let currentTabIndex = 0; // Assuming you have a global variable to keep track of
 
 function nextTab() {
   currentTabIndex++;
-  if (currentTabIndex > 12) {
+  if (currentTabIndex > 10) {
     // Adjusted to match the new length of the tabs array
-    // Reset to the first tab if we've gone past the last one
     currentTabIndex = 0;
   }
   switchTabByIndex(currentTabIndex);
@@ -24,8 +23,7 @@ function nextTab() {
 function prevTab() {
   currentTabIndex--;
   if (currentTabIndex < 0) {
-    // Loop back to the last tab if we've gone past the first one
-    currentTabIndex = 12; // Adjusted to match the new length of the tabs array
+    currentTabIndex = 10; // Adjusted to match the new length of the tabs array
   }
   switchTabByIndex(currentTabIndex);
 }
@@ -34,7 +32,7 @@ function prevTab() {
 function switchTabByIndex(tabIndex) {
   const tabs = [
     "home",
-    "nowplaying",
+    // "nowplaying", // Removed "nowplaying" from the tabs array
     "radio",
     "songs",
     // "liked", // Removed "liked" from the tabs array
@@ -45,31 +43,25 @@ function switchTabByIndex(tabIndex) {
     "games",
     "media",
     "account",
-    "nowplaying",
   ];
   const tabIndicator = document.getElementById("tab-indicator");
   if (tabIndex >= 0 && tabIndex < tabs.length) {
     switchTab(tabs[tabIndex]);
-    // Update the tab indicator text
     tabIndicator.textContent =
       tabs[tabIndex].charAt(0).toUpperCase() + tabs[tabIndex].slice(1); // Capitalize the first letter
   }
 }
 
 function getStarted() {
-  // alert("There are many available tabs. You are now being redirected to the Podcasts tab.");
-  // document.getElementById('podcasts-tab').scrollIntoView();
   switchTab("podcasts");
 }
 
 window.switchTab = switchTab;
 
 document.addEventListener("DOMContentLoaded", function () {
-  // Attach an event listener to the account button
   const accountButton = document.getElementById("account");
   if (accountButton) {
     accountButton.addEventListener("click", function () {
-      // Switch to the account tab
       switchTab("account");
     });
   }
