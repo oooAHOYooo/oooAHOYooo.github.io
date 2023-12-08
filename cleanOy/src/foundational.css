@@ -358,7 +358,7 @@ button:hover {
 }
 
 #podcast-table tr:nth-child(odd) {
-  background-color: var(--secondary-color);
+  background-color: var(--secondary-color);ß
 }
 
 #podcast-player {
@@ -823,7 +823,7 @@ button:hover {
   left: 0;
   width: 100%;
   padding: 10px;
-  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black */
+  background-color: rgba(0, 0, 0, 0.5); 
   color: white;
   font-size: 10px;
   text-align: center;
