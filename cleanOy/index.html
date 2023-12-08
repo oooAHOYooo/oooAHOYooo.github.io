@@ -699,6 +699,77 @@
           .catch((error) => console.error(error));
       </script>
 
+      <script>
+        let currentSongIndex = 0;
+        let songs = [];
+
+        // Function to load all songs and set a random one to play
+        function initializeSongsAndSetRandom() {
+          fetch("./data/songCollection.json")
+            .then((response) => response.json())
+            .then((data) => {
+              songs = data.songs;
+              // Set a random song as the current song
+              currentSongIndex = Math.floor(Math.random() * songs.length);
+              setSongToPlayer(currentSongIndex, false); // Pass false to not play the song
+            })
+            .catch((error) => console.error("Error loading songs:", error));
+        }
+
+        // Function to set a song to the player
+        function setSongToPlayer(index, play = true) {
+          const song = songs[index];
+          const audioPlayer = document.getElementById("audio-player");
+          const songTitleElement = document.getElementById("song-title");
+          const artistNameElement = document.getElementById("artist-name");
+          const currentSongTitleElement =
+            document.getElementById("current-song-title");
+          const currentSongArtistElement = document.getElementById(
+            "current-song-artist"
+          );
+
+          if (song && audioPlayer && songTitleElement && artistNameElement) {
+            audioPlayer.src = song.mp3url; // Assuming you have a valid URL to the song file
+            songTitleElement.textContent = song.songTitle;
+            artistNameElement.textContent = song.artist;
+
+            // Update the Now Playing tab
+            if (currentSongTitleElement && currentSongArtistElement) {
+              currentSongTitleElement.textContent = song.songTitle;
+              currentSongArtistElement.textContent = song.artist;
+            }
+
+            // If `play` is true, play the song, otherwise just load it
+            if (play) {
+              audioPlayer.play();
+            }
+          }
+        }
+
+        // Functions for next and previous song actions
+        function nextSong() {
+          currentSongIndex = (currentSongIndex + 1) % songs.length;
+          setSongToPlayer(currentSongIndex, false); // Autoload the next song without playing
+        }
+
+        function previousSong() {
+          currentSongIndex =
+            (currentSongIndex - 1 + songs.length) % songs.length;
+          setSongToPlayer(currentSongIndex, false); // Autoload the previous song without playing
+        }
+
+        // Attach event listeners to the bottom controller arrows
+        document.addEventListener("DOMContentLoaded", function () {
+          initializeSongsAndSetRandom(); // Initialize songs and set a random one to play
+
+          const nextButton = document.getElementById("right-arrow"); // Assuming this is the ID for the next button
+          const prevButton = document.getElementById("left-arrow"); // Assuming this is the ID for the previous button
+
+          nextButton.addEventListener("click", nextSong);
+          prevButton.addEventListener("click", previousSong);
+        });
+      </script>
+
       <!-- END OF SCRIPT DIV -->
     </div>
     <!-- ENDFOSCRIPT-->
