@@ -8,8 +8,8 @@ function loadPodcasts() {
       data.podcasts.forEach((podcast) => {
         const row = document.createElement("tr");
         row.innerHTML = `
-            <td><button class="control-button" onclick="playPodcast('${podcast.mp3url}', '${podcast.title}')"><i class="fas fa-play"></i></button></td> 
-            <td><img src="${podcast.thumbnail}" alt="${podcast.title}" class="thumbnail" style="width: 32px; height: 32px;"></td>
+        <td><button class="control-button" style="width: 75%; height: 75%;" onclick="playPodcast('${podcast.mp3url}', '${podcast.title}')"><i class="fas fa-play"></i></button></td> 
+        <td><img src="${podcast.thumbnail}" alt="${podcast.title}" class="thumbnail" style="width: 62px; height: 62px;"></td>
             <td>${podcast.title}</td>
             <td>${podcast.description}</td>
             <td><button class="like-button"><i class="fas fa-heart"></i></button></td>

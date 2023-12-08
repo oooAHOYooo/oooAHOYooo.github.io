@@ -851,3 +851,7 @@ button:hover {
 #updates-tab h2 {
   text-align:center;
 }
+
+.thumbnail:hover {
+  cursor: pointer;
+}
