@@ -1,317 +1,367 @@
-<!DOCTYPE html><!-- CLEAN AHOY -->
+<!DOCTYPE html>
+<!-- CLEAN AHOY -->
 <html lang="en">
-
-
-<head>
+  <head>
     <title>Ahoy Indie Media</title>
-    <meta charset="UTF-8">
-    <meta name="description" content="Ahoy Indie Media is a platform for indie music, podcasts, games, and more.">
-    <meta name="keywords" content="Indie, Music, Podcasts, Games, Media">
-    <meta name="author" content="Ahoy Indie Media">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/x-icon" href="./assets/ahoyFav.png">
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Ahoy Indie Media is a platform for indie music, podcasts, games, and more."
+    />
+    <meta name="keywords" content="Indie, Music, Podcasts, Games, Media" />
+    <meta name="author" content="Ahoy Indie Media" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="./assets/ahoyFav.png" />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
-        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="src/foundational.css">
-    <script defer data-domain="ahoy.ooo" src="https://plausible.io/js/script.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+      integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="src/foundational.css" />
+    <script
+      defer
+      data-domain="ahoy.ooo"
+      src="https://plausible.io/js/script.js"
+    ></script>
+  </head>
 
-
-</head>
-
-<body>
- 
+  <body>
     <div class="container">
-        <header>
-            <a href="./index.html"></a><img src="./assets/u_ahoy23.png" style="max-width: 20%;"></a>
-        </header>
+      <header>
+        <a href="./index.html"
+          ><img src="./assets/u_ahoy23.png" style="max-width: 20%"
+        /></a>
+      </header>
 
-<div id="tabSortz">
+      <div id="tabSortz">
         <!-- NOW PLAYING TAB (Home)-->
         <div id="nowplaying-tab" class="tab-content">
-            <div class="now-playing">
-
-                <h1>Now Playing</h1>
-                <!-- <img id="album-art" src="path_to_your_album_art.jpg" alt="Album Art">-->
-                <div class="song-info">
-                    <h2 id="current-song-title">Song Title</h2>
-                    <h3 id="current-song-artist">Artist Name</h3>
-                </div>
-                <div class="song-controls">
-                    <button id="prev" class="control-button"><i class="fas fa-step-backward"></i></button>
-                    <button id="play-pause" class="control-button"><i class="fas fa-play"></i></button>
-                    <button id="next" class="control-button"><i class="fas fa-step-forward"></i></button>
-                </div>
+          <div class="now-playing">
+            <h1>Now Playing</h1>
+            <!-- <img id="album-art" src="path_to_your_album_art.jpg" alt="Album Art">-->
+            <div class="song-info">
+              <h2 id="current-song-title">Song Title</h2>
+              <h3 id="current-song-artist">Artist Name</h3>
             </div>
+            <div class="song-controls">
+              <button id="prev" class="control-button">
+                <i class="fas fa-step-backward"></i>
+              </button>
+              <button id="play-pause" class="control-button">
+                <i class="fas fa-play"></i>
+              </button>
+              <button id="next" class="control-button">
+                <i class="fas fa-step-forward"></i>
+              </button>
+            </div>
+          </div>
         </div>
         <!-- HOME TAB -->
         <div id="home-tab" class="tab-content active">
-            <div id="home-logo-div">
-                <img src="../cleanOy/assets/u_ahoy23.png">
+          <div id="home-logo-div">
+            <img src="../cleanOy/assets/u_ahoy23.png" />
+          </div>
+          <br />
+          <div class="home-tab-learn-more-wrap">
+            <a href="https://github.com/oooAHOYooo/oooAHOYooo.github.io"
+              ><button class="common-button">Learn More</button></a
+            >
+            <a href="./src/getOn/index.html"
+              ><button class="common-button">Get On ahoy</button></a
+            >
+            <a href="https://7ufdbpnl2tt.typeform.com/to/OKeXjt6z"
+              ><button class="common-button">Leave Feedback</button></a
+            >
+          </div>
+          <div class="get-started-wrap">
+            <a href="./src/started.html"
+              ><button class="get-started-button">Get Started</button></a
+            >
+          </div>
+
+          <!-- FEATURED MEDIA -->
+          <div id="featured-media-container" class="media-container">
+            <h2>Featured Media</h2>
+            <br />
+            <div id="featured-media">
+              <!-- Media items will be inserted here by the JavaScript code -->
             </div>
-            <br>
-            <div class="home-tab-learn-more-wrap">
-                <a href="https://github.com/oooAHOYooo/oooAHOYooo.github.io"><button class="common-button">Learn
-                        More</button></a>
-                <a href="./src/getOn/index.html"><button class="common-button">Get On ahoy</button></a>
-                <a href="https://7ufdbpnl2tt.typeform.com/to/OKeXjt6z"><button class="common-button">Leave Feedback</button></a>
-            </div>
-            <div class="get-started-wrap">
-                <a href="./src/started.html"><button class="get-started-button">Get Started</button></a>
-            </div>
+          </div>
+          <!-- END OF FEATURED MEDIA -->
 
-<!-- FEATURED MEDIA -->
-<div id="featured-media-container" class="media-container">
-    <h2>Featured Media</h2><br>
-    <div id="featured-media">
-        <!-- Media items will be inserted here by the JavaScript code -->
-    </div>
-</div>
-<!-- END OF FEATURED MEDIA -->
-
-<!-- END OF FEATURED MEDIA -->
-<!-- FEATURED MEDIA JS -->
-
-
-
+          <!-- END OF FEATURED MEDIA -->
+          <!-- FEATURED MEDIA JS -->
         </div>
         <!-- RADIO TAB -->
         <div id="radio-tab" class="tab-content">
-        <h1>Radio</h1>
-        <div class="radio-wrap">
-            <script src="https://embed.radio.co/player/0024c4d.js"></script><br>
-        </div>
-
+          <h1>Radio</h1>
+          <div class="radio-wrap">
+            <script src="https://embed.radio.co/player/0024c4d.js"></script>
+            <br />
+          </div>
         </div>
         <!-- SONGS TAB -->
         <div id="songs-tab" class="tab-content">
-            <h1>Songs</h1>
-            <!-- Control Panel -->
-            <div id="control-panel">
-                <input type="text" id="search-bar" placeholder="Search songs...">
-                <div class="sort-buttons">
-                    <button id="sort-az">A-Z</button>
-                    <button id="sort-recent">Recently Added</button>
-                </div>
+          <h1>Songs</h1>
+          <!-- Control Panel -->
+          <div id="control-panel">
+            <input type="text" id="search-bar" placeholder="Search songs..." />
+            <div class="sort-buttons">
+              <button id="sort-az">A-Z</button>
+              <button id="sort-recent">Recently Added</button>
             </div>
-            <ul class="list" id="song-list"></ul>
+          </div>
+          <ul class="list" id="song-list"></ul>
         </div>
         <!-- ARTIST -->
         <div id="artists-tab" class="tab-content">
-            <h1>Artists</h1>
-            <!-- Artists content goes here -->
-            <ul class="list" id="artist-list"></ul>
+          <h1>Artists</h1>
+          <!-- Artists content goes here -->
+          <ul class="list" id="artist-list"></ul>
         </div>
         <!-- LIKED SONGS -->
         <div id="liked-tab" class="tab-content">
-            <h1>Liked Content</h1>
+          <h1>Liked Content</h1>
 
-            <table id="liked-songs-table">
-                <thead>
-                    <tr>
-                        <th>Artist</th>
-                        <th>Song</th>
-                        <th>Play</th>
-                        <th>Remove</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Liked songs will be populated here by the JavaScript function -->
-                </tbody>
-            </table>
-        </div>
-       <!-- PODCASTS -->
-       <div id="podcasts-tab" class="tab-content">
-        <h1>Podcasts</h1>
-        <table id="podcast-table">
+          <table id="liked-songs-table">
             <thead>
-                <tr>
-                    <th>Play</th>
-                    <th>Thumbnail</th>
-                    <th>Title</th>
-                    <th>Description</th>
-                    <th>Like</th>
-                </tr>
+              <tr>
+                <th>Artist</th>
+                <th>Song</th>
+                <th>Play</th>
+                <th>Remove</th>
+              </tr>
             </thead>
             <tbody>
+              <!-- Liked songs will be populated here by the JavaScript function -->
             </tbody>
-        </table>
+          </table>
+        </div>
+        <!-- PODCASTS -->
+        <div id="podcasts-tab" class="tab-content">
+          <h1>Podcasts</h1>
+          <table id="podcast-table">
+            <thead>
+              <tr>
+                <th>Play</th>
+                <th>Thumbnail</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Like</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
         </div>
         <!-- PLAYLIST -->
         <div id="playlists-tab" class="tab-content">
-            <!-- Playlists content goes here -->
-            <div id="playlists-tab" class="tab-content">
-                <input type="text" id="playlist-name" placeholder="New Playlist Name">
-                <button onclick="createPlaylist()">Create Playlist</button>
-                <select id="playlist-selector" onchange="showPlaylist()">
-                    <!-- Playlist options will be populated here -->
-                </select>
-                <ul class="list" id="playlist-songs">
-                    <!-- Playlist songs will be populated here -->
-                </ul>
-                <ul class="list" id="all-songs">
-                    <!-- All songs will be populated here with an "Add to Playlist" button -->
-                </ul>
-            </div>
+          <!-- Playlists content goes here -->
+          <div id="playlists-tab" class="tab-content">
+            <input
+              type="text"
+              id="playlist-name"
+              placeholder="New Playlist Name"
+            />
+            <button onclick="createPlaylist()">Create Playlist</button>
+            <select id="playlist-selector" onchange="showPlaylist()">
+              <!-- Playlist options will be populated here -->
+            </select>
+            <ul class="list" id="playlist-songs">
+              <!-- Playlist songs will be populated here -->
+            </ul>
+            <ul class="list" id="all-songs">
+              <!-- All songs will be populated here with an "Add to Playlist" button -->
+            </ul>
+          </div>
         </div>
         <!-- CABLE -->
         <div id="cable-tab" class="tab-content">
-            <h1>Cable</h1>
-            <div id="playerContainer" style="position:relative;overflow:hidden;padding-bottom:56.25%">
-                <iframe src='https://cdn.jwplayer.com/players/QI6O3pW7-9Gtk2B1J.html' id="playerFrame" width="100%"
-                    height="100%" frameborder="0" scrolling="auto" title="Untitled Manual Playlist"
-                    style="position:absolute;" allowfullscreen></iframe>
-            </div>
-            <h3>Cable Content Schedule</h3>
-            <table id="cable-schedule-table">
-                <thead>
-                    <tr>
-                        <td style="text-align:left;">Time (EST)</td>
-                        <td style="text-align:left;">Block Name</td>
-                        <td style="text-align:left;">Description</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Schedule data will be inserted here -->
-                </tbody>
-            </table>
+          <h1>Cable</h1>
+          <div
+            id="playerContainer"
+            style="position: relative; overflow: hidden; padding-bottom: 56.25%"
+          >
+            <iframe
+              src="https://cdn.jwplayer.com/players/QI6O3pW7-9Gtk2B1J.html"
+              id="playerFrame"
+              width="100%"
+              height="100%"
+              frameborder="0"
+              scrolling="auto"
+              title="Untitled Manual Playlist"
+              style="position: absolute"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <h3>Cable Content Schedule</h3>
+          <table id="cable-schedule-table">
+            <thead>
+              <tr>
+                <td style="text-align: left">Time (EST)</td>
+                <td style="text-align: left">Block Name</td>
+                <td style="text-align: left">Description</td>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Schedule data will be inserted here -->
+            </tbody>
+          </table>
         </div>
         <!-- UPDATES-->
         <div id="updates-tab" class="tab-content">
-            <h1>Updates</h1> <!-- NEWSLETTER -->
-            <div id="newsletter-tab" class="tab-content-b">
-                <!-- h1>Newsletter</h1 -->
-                <!-- div id="newsletter-list"></div -->
-            </div>
+          <h1>Updates</h1>
+          <!-- NEWSLETTER -->
+          <div id="newsletter-tab" class="tab-content-b">
+            <!-- h1>Newsletter</h1 -->
+            <!-- div id="newsletter-list"></div -->
+          </div>
 
-            <h2> Present Beta State = 0.2.2</h2>
-            <h3>Last 100 Commits to our open source Repo</h3>
-            <div id="commits-list"></div>
-
-
+          <h2>Present Beta State = 0.2.2</h2>
+          <h3>Last 100 Commits to our open source Repo</h3>
+          <div id="commits-list"></div>
         </div>
         <!-- ACCOUNT -->
         <div id="account-tab" class="tab-content">
-            <h1>Your Account</h1>
-            <a href="./src/login.html"><button>Login to Your Account</button></a>
-            <h2>Settings</h2>
-            <br>
-            <h2 id="theme-title"></h2>
-            <button onclick="switchTheme()">change theme</button>
-            <br>
-
-
+          <h1>Your Account</h1>
+          <a href="./src/login.html"><button>Login to Your Account</button></a>
+          <h2>Settings</h2>
+          <br />
+          <h2 id="theme-title"></h2>
+          <button onclick="switchTheme()">change theme</button>
+          <br />
         </div>
         <!-- GAMES -->
         <!-- Add this in your HTML where you want the games tab to appear -->
         <div id="games-tab" class="tab-content">
-            <h1>Games</h1>
-            <div class="tabs">
-                <button class="tablinks" onclick="openGame(event, 'GameA')">Vanca</button>
-                <button class="tablinks" onclick="openGame(event, 'GameB')">Attach</button>
-                <!-- Add more tabs as needed -->
-            </div>
+          <h1>Games</h1>
+          <div class="tabs">
+            <button class="tablinks" onclick="openGame(event, 'GameA')">
+              Vanca
+            </button>
+            <button class="tablinks" onclick="openGame(event, 'GameB')">
+              Attach
+            </button>
+            <!-- Add more tabs as needed -->
+          </div>
 
-            <div id="GameA" class="tabcontent">
-                <button id="load-game-a">Load "Vanca"</button>
-                <iframe id="game-frame-a" style="width: 100%; height: 500px; border: none;"></iframe>
-                <h1>Vanca</h1>
-                <h2>Game by Marco Worms</h2>
-                <p>For more information about Marco Worms and his projects, visit his <a
-                        href="https://marcoworms.github.io/" target="_blank">website</a>.</p>
+          <div id="GameA" class="tabcontent">
+            <button id="load-game-a">Load "Vanca"</button>
+            <iframe
+              id="game-frame-a"
+              style="width: 100%; height: 500px; border: none"
+            ></iframe>
+            <h1>Vanca</h1>
+            <h2>Game by Marco Worms</h2>
+            <p>
+              For more information about Marco Worms and his projects, visit his
+              <a href="https://marcoworms.github.io/" target="_blank">website</a
+              >.
+            </p>
+          </div>
 
-            </div>
+          <div id="GameB" class="tabcontent" style="display: none">
+            <button id="load-game-b">Load "Attach""</button>
+            <iframe
+              id="game-frame-b"
+              style="width: 100%; height: 500px; border: none"
+            ></iframe>
+            <h1>Attach</h1>
+            <h2>Game by Marco Worms</h2>
+            <p>
+              For more information about Marco Worms and his projects, visit his
+              <a href="https://marcoworms.github.io/" target="_blank">website</a
+              >.
+            </p>
+          </div>
 
-            <div id="GameB" class="tabcontent" style="display: none;">
-                <button id="load-game-b">Load "Attach""</button>
-                <iframe id="game-frame-b" style="width: 100%; height: 500px; border: none;"></iframe>
-                <h1>Attach</h1>
-                <h2>Game by Marco Worms</h2>
-                <p>For more information about Marco Worms and his projects, visit his <a
-                        href="https://marcoworms.github.io/" target="_blank">website</a>.</p>
-            </div>
-
-            <!-- Add more game containers as needed -->
+          <!-- Add more game containers as needed -->
         </div>
         <!-- MEEEEDIIAA -->
         <div id="media-tab" class="tab-content">
-            <h1>Media</h1>
-            <div id="jw-player-container" style="width: 100%; height: auto;"></div>
-            <!-- Media Table -->
-            <table id="mediaTable" class="list">
-                <thead>
-                    <tr>
-                        <th>Thumbnail</th>
-                        <th>Title</th>
-                        <th>Play</th>
-                        <th>Artist</th>
-                        <th>Duration</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Table data will be inserted here -->
-                </tbody>
-            </table>
+          <h1>Media</h1>
+          <div id="jw-player-container" style="width: 100%; height: auto"></div>
+          <!-- Media Table -->
+          <table id="mediaTable" class="list">
+            <thead>
+              <tr>
+                <th>Thumbnail</th>
+                <th>Title</th>
+                <th>Play</th>
+                <th>Artist</th>
+                <th>Duration</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Table data will be inserted here -->
+            </tbody>
+          </table>
         </div>
         <!-- END OF MEDIA -->
+      </div>
+      <!--END OF TABS-->
     </div>
-    <!--END OF TABS--></div><!--END OF TABS-->
+    <!--END OF TABS-->
 
     <!-- BOTTOM PLAYER -->
     <section class="player">
+      <div id="progress-bar-container">
+        <span id="current-time">0:00</span> /
+        <span id="total-duration">0:00</span>
+        <div id="progress-bar"></div>
+        <div id="playhead"></div>
+      </div>
 
-        <div id="progress-bar-container">
-            <span id="current-time">0:00</span> / <span id="total-duration">0:00</span>
-            <div id="progress-bar"></div>
-            <div id="playhead"></div>
+      <div class="player-info">
+        <a href="#" id="artist-name" class="player-link">Artist Name</a>
+        <a href="#" id="song-title" class="player-link">Song Title</a>
+      </div>
+
+      <div class="player-content">
+        <div class="player-controls">
+          <button id="prev" class="player-button">
+            <i class="fas fa-step-backward"></i>
+          </button>
+          <button id="play" class="player-button">
+            <i class="fas fa-play"></i>
+          </button>
+          <button id="next" class="player-button" onclick="nextSong()">
+            <i class="fas fa-step-forward"></i>
+          </button>
         </div>
-
-        <div class="player-info">
-            <a href="#" id="artist-name" class="player-link">Artist Name</a>
-            <a href="#" id="song-title" class="player-link">Song Title</a>
+        <div class="player-actions">
+          <button id="like" class="player-button">
+            <i class="fas fa-heart"></i>
+          </button>
         </div>
-
-        <div class="player-content">
-
-            <div class="player-controls">
-                <button id="prev" class="player-button"><i class="fas fa-step-backward"></i></button>
-                <button id="play" class="player-button"><i class="fas fa-play"></i></button>
-                <button id="next" class="player-button" onclick="nextSong()"><i
-                        class="fas fa-step-forward"></i></button>
-            </div>
-            <div class="player-actions">
-                <button id="like" class="player-button"><i class="fas fa-heart"></i></button>
-                
-            </div>
-        </div>
-        <audio id="audio-player" src=""></audio>
+      </div>
+      <audio id="audio-player" src=""></audio>
     </section>
 
     <div class="bottom-controller fixed-bottom">
-        <button id="left-arrow" onclick="prevTab()"><i class="fas fa-arrow-left"></i></button>
-        <span id="tab-indicator">Songs</span> <!-- Default text for the first tab -->
-        <button id="right-arrow" onclick="nextTab()"><i class="fas fa-arrow-right"></i></button>
+      <button id="left-arrow" onclick="prevTab()">
+        <i class="fas fa-arrow-left"></i>
+      </button>
+      <span id="tab-indicator">Songs</span>
+      <!-- Default text for the first tab -->
+      <button id="right-arrow" onclick="nextTab()">
+        <i class="fas fa-arrow-right"></i>
+      </button>
     </div>
 
     <!-- CONDITIONAL LOGIC BITCH -->
 
-<div id="theScripts">
-    <!-- THE WORK IN PROGRESS LIKE FEATURE -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            fetch('./data/songCollection.json')
-                .then(response => response.json())
-                .then(data => {
-
-
-
-
-
-
-
-                    const songList = document.getElementById('song-list');
-                    songList.innerHTML = `
+    <div id="theScripts">
+      <!-- THE WORK IN PROGRESS LIKE FEATURE -->
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          fetch("./data/songCollection.json")
+            .then((response) => response.json())
+            .then((data) => {
+              const songList = document.getElementById("song-list");
+              songList.innerHTML = `
                 <table>
                     <thead>
                         <tr>
@@ -326,309 +376,329 @@
                 </table>
             `;
 
-                    const songListBody = document.getElementById('song-list-body');
-                    data.songs.forEach(song => {
-                        const tr = document.createElement('tr');
-                        tr.innerHTML = `
+              const songListBody = document.getElementById("song-list-body");
+              data.songs.forEach((song) => {
+                const tr = document.createElement("tr");
+                tr.innerHTML = `
                     <td>${song.artist}</td>
                     <td class="song-title" data-url="${song.mp3url}" data-artist="${song.artist}" data-title="${song.songTitle}">${song.songTitle}</td>
                     <td><button class="play-button" data-url="${song.mp3url}" data-artist="${song.artist}" data-title="${song.songTitle}"><i class="fas fa-play"></i></button></td>
                     <td><button class="like-button"><i class="fas fa-heart"></i></button></td>
                 `;
-                        songListBody.appendChild(tr);
+                songListBody.appendChild(tr);
+              });
+
+              const audioPlayer = document.getElementById("audio-player");
+              const playButtons = document.querySelectorAll(".play-button");
+              const songTitles = document.querySelectorAll(".song-title");
+
+              //THE PLAY FUNCTION
+              const playSong = function () {
+                const url = this.dataset.url;
+                const artist = this.dataset.artist;
+                const title = this.dataset.title;
+                const playButtons = document.querySelectorAll(".play-button");
+                const bottomPlayButton = document.querySelector("#play");
+                const bottomPlayIcon = bottomPlayButton.querySelector("i");
+
+                if (audioPlayer.src === url) {
+                  if (audioPlayer.paused) {
+                    audioPlayer.play();
+                    playButtons.forEach((button) => {
+                      if (button.dataset.url === url) {
+                        button.querySelector("i").className = "fas fa-pause";
+                      }
                     });
-
-                    const audioPlayer = document.getElementById('audio-player');
-                    const playButtons = document.querySelectorAll('.play-button');
-                    const songTitles = document.querySelectorAll('.song-title');
-
-
-
-                    //THE PLAY FUNCTION 
-                    const playSong = function () {
-                        const url = this.dataset.url;
-                        const artist = this.dataset.artist;
-                        const title = this.dataset.title;
-                        const playButtons = document.querySelectorAll('.play-button');
-                        const bottomPlayButton = document.querySelector('#play');
-                        const bottomPlayIcon = bottomPlayButton.querySelector('i');
-
-                        if (audioPlayer.src === url) {
-                            if (audioPlayer.paused) {
-                                audioPlayer.play();
-                                playButtons.forEach(button => {
-                                    if (button.dataset.url === url) {
-                                        button.querySelector('i').className = 'fas fa-pause';
-                                    }
-                                });
-                                bottomPlayIcon.className = 'fas fa-pause';
-                            } else {
-                                audioPlayer.pause();
-                                playButtons.forEach(button => {
-                                    if (button.dataset.url === url) {
-                                        button.querySelector('i').className = 'fas fa-play';
-                                    }
-                                });
-                                bottomPlayIcon.className = 'fas fa-play';
-                            }
-                        } else {
-                            audioPlayer.src = url;
-                            audioPlayer.play();
-                            playButtons.forEach(button => {
-                                if (button.dataset.url === url) {
-                                    button.querySelector('i').className = 'fas fa-pause';
-                                } else {
-                                    button.querySelector('i').className = 'fas fa-play';
-                                }
-                            });
-                            bottomPlayIcon.className = 'fas fa-pause';
-                        }
-
-                        // Update bottom controller and now playing tab
-                        document.getElementById('artist-name').textContent = artist;
-                        document.getElementById('song-title').textContent = title;
-                        document.getElementById('current-song-title').textContent = title;
-                        document.getElementById('current-song-artist').textContent = artist;
-                    };
-
-                    playButtons.forEach(button => {
-                        button.addEventListener('click', playSong);
+                    bottomPlayIcon.className = "fas fa-pause";
+                  } else {
+                    audioPlayer.pause();
+                    playButtons.forEach((button) => {
+                      if (button.dataset.url === url) {
+                        button.querySelector("i").className = "fas fa-play";
+                      }
                     });
+                    bottomPlayIcon.className = "fas fa-play";
+                  }
+                } else {
+                  audioPlayer.src = url;
+                  audioPlayer.play();
+                  playButtons.forEach((button) => {
+                    if (button.dataset.url === url) {
+                      button.querySelector("i").className = "fas fa-pause";
+                    } else {
+                      button.querySelector("i").className = "fas fa-play";
+                    }
+                  });
+                  bottomPlayIcon.className = "fas fa-pause";
+                }
 
-                    songTitles.forEach(title => {
-                        title.addEventListener('click', playSong);
-                        title.addEventListener('dblclick', function () {
-                            if (!audioPlayer.paused) {
-                                audioPlayer.pause();
-                            }
-                        });
-                    });
+                // Update bottom controller and now playing tab
+                document.getElementById("artist-name").textContent = artist;
+                document.getElementById("song-title").textContent = title;
+                document.getElementById("current-song-title").textContent =
+                  title;
+                document.getElementById("current-song-artist").textContent =
+                  artist;
+              };
 
-                    // Add event listener to bottom controller play button
-                    const bottomPlayButton = document.querySelector('#play');
-                    bottomPlayButton.addEventListener('click', function () {
-                        const playButtons = document.querySelectorAll('.play-button');
-                        if (audioPlayer.paused) {
-                            audioPlayer.play();
-                            this.querySelector('i').className = 'fas fa-pause';
-                            playButtons.forEach(button => {
-                                if (button.dataset.url === audioPlayer.src) {
-                                    button.querySelector('i').className = 'fas fa-pause';
-                                }
-                            });
-                        } else {
-                            audioPlayer.pause();
-                            this.querySelector('i').className = 'fas fa-play';
-                            playButtons.forEach(button => {
-                                if (button.dataset.url === audioPlayer.src) {
-                                    button.querySelector('i').className = 'fas fa-play';
-                                }
-                            });
-                        }
-                    });
+              playButtons.forEach((button) => {
+                button.addEventListener("click", playSong);
+              });
 
-                    // Add event listener for when the song ends
-                    audioPlayer.addEventListener('ended', function () {
-                        const playButtons = document.querySelectorAll('.play-button');
-                        const bottomPlayButton = document.querySelector('#play');
-                        const bottomPlayIcon = bottomPlayButton.querySelector('i');
-
-                        // Change all play button icons in the song list to 'play'
-                        playButtons.forEach(button => {
-                            button.querySelector('i').className = 'fas fa-play';
-                        });
-
-                        // Change the bottom controller play button icon to 'play'
-                        bottomPlayIcon.className = 'fas fa-play';
-                    });
-
-                    //END OF PLAY FEATURE 
-
-
-
-                    //NOW PLAYING STUFF//
-
-
-                    // Get the buttons from the "Now Playing" tab
-                    const nowPlayingPrevButton = document.querySelector('#nowplaying-tab .control-button#prev');
-                    const nowPlayingPlayPauseButton = document.querySelector('#nowplaying-tab .control-button#play-pause');
-                    const nowPlayingNextButton = document.querySelector('#nowplaying-tab .control-button#next');
-
-                    // Get the buttons from the bottom play controller
-                    const bottomPrevButton = document.querySelector('.player-button#prev');
-                    const bottomPlayPauseButton = document.querySelector('.player-button#play');
-                    const bottomNextButton = document.querySelector('.player-button#next');
-
-                    // Add event listeners to the "Now Playing" buttons that trigger the click events of the corresponding bottom play controller buttons
-                    nowPlayingPrevButton.addEventListener('click', () => bottomPrevButton.click());
-                    nowPlayingPlayPauseButton.addEventListener('click', () => bottomPlayPauseButton.click());
-                    nowPlayingNextButton.addEventListener('click', () => bottomNextButton.click());
-
-
-
-
-
-
-                    //TIMELINE FEATURE (Needs work)
-
-                    // Display the timeline and time remaining on songs
-                    audioPlayer.addEventListener('timeupdate', function () {
-                        const currentTime = audioPlayer.currentTime;
-                        const duration = audioPlayer.duration;
-                        const timeRemaining = duration - currentTime;
-                        // Display the timeline and time remaining
-                        document.getElementById('current-time').textContent = currentTime;
-                        document.getElementById('time-remaining').textContent = timeRemaining;
-                    });
+              songTitles.forEach((title) => {
+                title.addEventListener("click", playSong);
+                title.addEventListener("dblclick", function () {
+                  if (!audioPlayer.paused) {
+                    audioPlayer.pause();
+                  }
                 });
+              });
+
+              // Add event listener to bottom controller play button
+              const bottomPlayButton = document.querySelector("#play");
+              bottomPlayButton.addEventListener("click", function () {
+                const playButtons = document.querySelectorAll(".play-button");
+                if (audioPlayer.paused) {
+                  audioPlayer.play();
+                  this.querySelector("i").className = "fas fa-pause";
+                  playButtons.forEach((button) => {
+                    if (button.dataset.url === audioPlayer.src) {
+                      button.querySelector("i").className = "fas fa-pause";
+                    }
+                  });
+                } else {
+                  audioPlayer.pause();
+                  this.querySelector("i").className = "fas fa-play";
+                  playButtons.forEach((button) => {
+                    if (button.dataset.url === audioPlayer.src) {
+                      button.querySelector("i").className = "fas fa-play";
+                    }
+                  });
+                }
+              });
+
+              // Add event listener for when the song ends
+              audioPlayer.addEventListener("ended", function () {
+                const playButtons = document.querySelectorAll(".play-button");
+                const bottomPlayButton = document.querySelector("#play");
+                const bottomPlayIcon = bottomPlayButton.querySelector("i");
+
+                // Change all play button icons in the song list to 'play'
+                playButtons.forEach((button) => {
+                  button.querySelector("i").className = "fas fa-play";
+                });
+
+                // Change the bottom controller play button icon to 'play'
+                bottomPlayIcon.className = "fas fa-play";
+              });
+
+              //END OF PLAY FEATURE
+
+              //NOW PLAYING STUFF//
+
+              // Get the buttons from the "Now Playing" tab
+              const nowPlayingPrevButton = document.querySelector(
+                "#nowplaying-tab .control-button#prev"
+              );
+              const nowPlayingPlayPauseButton = document.querySelector(
+                "#nowplaying-tab .control-button#play-pause"
+              );
+              const nowPlayingNextButton = document.querySelector(
+                "#nowplaying-tab .control-button#next"
+              );
+
+              // Get the buttons from the bottom play controller
+              const bottomPrevButton = document.querySelector(
+                ".player-button#prev"
+              );
+              const bottomPlayPauseButton = document.querySelector(
+                ".player-button#play"
+              );
+              const bottomNextButton = document.querySelector(
+                ".player-button#next"
+              );
+
+              // Add event listeners to the "Now Playing" buttons that trigger the click events of the corresponding bottom play controller buttons
+              nowPlayingPrevButton.addEventListener("click", () =>
+                bottomPrevButton.click()
+              );
+              nowPlayingPlayPauseButton.addEventListener("click", () =>
+                bottomPlayPauseButton.click()
+              );
+              nowPlayingNextButton.addEventListener("click", () =>
+                bottomNextButton.click()
+              );
+
+              //TIMELINE FEATURE (Needs work)
+
+              // Display the timeline and time remaining on songs
+              audioPlayer.addEventListener("timeupdate", function () {
+                const currentTime = audioPlayer.currentTime;
+                const duration = audioPlayer.duration;
+                const timeRemaining = duration - currentTime;
+                // Display the timeline and time remaining
+                document.getElementById("current-time").textContent =
+                  currentTime;
+                document.getElementById("time-remaining").textContent =
+                  timeRemaining;
+              });
+            });
         });
 
-
         //PREVIOUS AND NEXT FEATURE //
-
 
         //LIKE FEATURE //
 
         // Select like buttons from both song and podcast tables
-        const songLikeButtons = document.querySelectorAll('#song-list .like-button');
-        const podcastLikeButtons = document.querySelectorAll('#podcast-table .like-button');
+        const songLikeButtons = document.querySelectorAll(
+          "#song-list .like-button"
+        );
+        const podcastLikeButtons = document.querySelectorAll(
+          "#podcast-table .like-button"
+        );
 
         // Combine both NodeLists into an array
         const likeButtons = [...songLikeButtons, ...podcastLikeButtons];
 
-        likeButtons.forEach(button => {
-            button.addEventListener('click', function () {
-                this.classList.toggle('liked');
-                const likedSongsTable = document.getElementById('liked-songs-table');
-                const songRow = this.parentElement.parentElement.cloneNode(true);
-                songRow.querySelector('.like-button').remove();
-                if (this.classList.contains('liked')) {
-                    // Add a remove button
-                    const removeButton = document.createElement('button');
-                    removeButton.innerHTML = '<i class="fas fa-trash"></i>';
-                    removeButton.classList.add('remove-button');
-                    removeButton.addEventListener('click', function () {
-                        this.parentElement.parentElement.remove();
-                    });
-                    const removeCell = document.createElement('td');
-                    removeCell.appendChild(removeButton);
-                    songRow.appendChild(removeCell);
-                    likedSongsTable.appendChild(songRow);
+        likeButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            this.classList.toggle("liked");
+            const likedSongsTable =
+              document.getElementById("liked-songs-table");
+            const songRow = this.parentElement.parentElement.cloneNode(true);
+            songRow.querySelector(".like-button").remove();
+            if (this.classList.contains("liked")) {
+              // Add a remove button
+              const removeButton = document.createElement("button");
+              removeButton.innerHTML = '<i class="fas fa-trash"></i>';
+              removeButton.classList.add("remove-button");
+              removeButton.addEventListener("click", function () {
+                this.parentElement.parentElement.remove();
+              });
+              const removeCell = document.createElement("td");
+              removeCell.appendChild(removeButton);
+              songRow.appendChild(removeCell);
+              likedSongsTable.appendChild(songRow);
 
-                    // Add event listener to play button in the cloned row
-                    const playButton = songRow.querySelector('.play-button');
-                    playButton.addEventListener('click', playSong);
-                } else {
-                    const rows = Array.from(likedSongsTable.children);
-                    const index = rows.findIndex(tr => tr.textContent === songRow.textContent);
-                    likedSongsTable.removeChild(rows[index]);
-                }
-            });
+              // Add event listener to play button in the cloned row
+              const playButton = songRow.querySelector(".play-button");
+              playButton.addEventListener("click", playSong);
+            } else {
+              const rows = Array.from(likedSongsTable.children);
+              const index = rows.findIndex(
+                (tr) => tr.textContent === songRow.textContent
+              );
+              likedSongsTable.removeChild(rows[index]);
+            }
+          });
         });
 
-        //END OF LIKE FEATURE 
+        //END OF LIKE FEATURE
+      </script>
+      <!-- LIKE CODE -->
 
-    </script>
-    <!-- LIKE CODE -->
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const audioPlayer = document.getElementById("audio-player");
+          const progressBar = document.getElementById("progress-bar");
+          const progressBarContainer = document.getElementById(
+            "progress-bar-container"
+          );
+          const playhead = document.getElementById("playhead");
+          const currentTimeDisplay = document.getElementById("current-time");
+          const totalDurationDisplay =
+            document.getElementById("total-duration");
+          let isDragging = false;
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const audioPlayer = document.getElementById('audio-player');
-            const progressBar = document.getElementById('progress-bar');
-            const progressBarContainer = document.getElementById('progress-bar-container');
-            const playhead = document.getElementById('playhead');
-            const currentTimeDisplay = document.getElementById('current-time');
-            const totalDurationDisplay = document.getElementById('total-duration');
-            let isDragging = false;
+          function formatTime(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            const secondsPart = Math.floor(seconds % 60);
+            return minutes + ":" + (secondsPart < 10 ? "0" : "") + secondsPart;
+          }
 
-            function formatTime(seconds) {
-                const minutes = Math.floor(seconds / 60);
-                const secondsPart = Math.floor(seconds % 60);
-                return minutes + ':' + (secondsPart < 10 ? '0' : '') + secondsPart;
+          function updateProgressBar() {
+            const currentTime = audioPlayer.currentTime;
+            const duration = audioPlayer.duration || 0;
+            const progressPercentage = (currentTime / duration) * 100;
+            progressBar.style.width = progressPercentage + "%";
+            playhead.style.left = progressPercentage + "%";
+
+            // Update time displays
+            currentTimeDisplay.textContent = formatTime(currentTime);
+            totalDurationDisplay.textContent = formatTime(duration);
+          }
+
+          function seek(event) {
+            const bounds = progressBarContainer.getBoundingClientRect();
+            const x = event.clientX - bounds.left;
+            const totalWidth = bounds.width;
+            const clickTime = (x / totalWidth) * audioPlayer.duration;
+            audioPlayer.currentTime = clickTime;
+            updateProgressBar(); // Ensure the progress bar and playhead are updated
+          }
+
+          progressBarContainer.addEventListener("mousedown", function (event) {
+            isDragging = true;
+            seek(event);
+          });
+
+          window.addEventListener("mouseup", function () {
+            isDragging = false;
+          });
+
+          window.addEventListener("mousemove", function (event) {
+            if (isDragging) {
+              seek(event);
             }
+          });
 
-            function updateProgressBar() {
-                const currentTime = audioPlayer.currentTime;
-                const duration = audioPlayer.duration || 0;
-                const progressPercentage = (currentTime / duration) * 100;
-                progressBar.style.width = progressPercentage + '%';
-                playhead.style.left = progressPercentage + '%';
+          audioPlayer.addEventListener("timeupdate", updateProgressBar);
 
-                // Update time displays
-                currentTimeDisplay.textContent = formatTime(currentTime);
-                totalDurationDisplay.textContent = formatTime(duration);
-            }
+          audioPlayer.addEventListener("loadedmetadata", function () {
+            totalDurationDisplay.textContent = formatTime(audioPlayer.duration);
+          });
 
-            function seek(event) {
-                const bounds = progressBarContainer.getBoundingClientRect();
-                const x = event.clientX - bounds.left;
-                const totalWidth = bounds.width;
-                const clickTime = (x / totalWidth) * audioPlayer.duration;
-                audioPlayer.currentTime = clickTime;
-                updateProgressBar(); // Ensure the progress bar and playhead are updated
-            }
-
-            progressBarContainer.addEventListener('mousedown', function (event) {
-                isDragging = true;
-                seek(event);
-            });
-
-            window.addEventListener('mouseup', function () {
-                isDragging = false;
-            });
-
-            window.addEventListener('mousemove', function (event) {
-                if (isDragging) {
-                    seek(event);
-                }
-            });
-
-            audioPlayer.addEventListener('timeupdate', updateProgressBar);
-
-            audioPlayer.addEventListener('loadedmetadata', function () {
-                totalDurationDisplay.textContent = formatTime(audioPlayer.duration);
-            });
-
-            // Rest of your JavaScript code...
+          // Rest of your JavaScript code...
         });
-    </script>
+      </script>
 
+      <script>
+        // Function to get 'n' random elements from an array
+        function getRandom(arr, n) {
+          const result = new Array(n);
+          let len = arr.length;
+          const taken = new Array(len);
 
-<script>
-    // Function to get 'n' random elements from an array
-    function getRandom(arr, n) {
-        const result = new Array(n);
-        let len = arr.length;
-        const taken = new Array(len);
+          if (n > len) {
+            throw new RangeError(
+              "getRandom: more elements taken than available"
+            );
+          }
 
-        if (n > len) {
-            throw new RangeError("getRandom: more elements taken than available");
-        }
-
-        while (n--) {
+          while (n--) {
             const x = Math.floor(Math.random() * len);
             result[n] = arr[x in taken ? taken[x] : x];
             taken[x] = --len in taken ? taken[len] : len;
+          }
+
+          return result;
         }
 
-        return result;
-    }
+        // Function to load and display featured media
+        function loadFeaturedMedia() {
+          fetch("data/featuredMedia.json") // Make sure the path is correct
+            .then((response) => response.json())
+            .then((data) => {
+              const container = document.getElementById("featured-media");
+              container.innerHTML = ""; // Clear previous content
 
-   // Function to load and display featured media
-function loadFeaturedMedia() {
-    fetch('data/featuredMedia.json')  // Make sure the path is correct
-        .then(response => response.json())
-        .then(data => {
-            const container = document.getElementById('featured-media');
-            container.innerHTML = '';  // Clear previous content
+              // Get 3 random items
+              const randomData = getRandom(data, 3);
 
-            // Get 3 random items
-            const randomData = getRandom(data, 3);
-
-            // Add the random items to the DOM
-            randomData.forEach(item => {
-                const mediaItem = document.createElement('div');
-                mediaItem.className = 'media-item';
+              // Add the random items to the DOM
+              randomData.forEach((item) => {
+                const mediaItem = document.createElement("div");
+                mediaItem.className = "media-item";
                 mediaItem.innerHTML = `
                     <div class="media-img">
                         <img src="${item.imgSrc}" alt="${item.altText}">
@@ -636,58 +706,60 @@ function loadFeaturedMedia() {
                     </div>
                 `;
                 container.appendChild(mediaItem);
+              });
+            })
+            .catch((error) =>
+              console.error("Failed to load featured media:", error)
+            );
+        }
+
+        // Execute when the DOM is fully loaded
+        document.addEventListener("DOMContentLoaded", loadFeaturedMedia);
+      </script>
+
+      <!-- END OF FEATURED MEDIA JS -->
+
+      <!-- SONG SEARCH SCRIPT -->
+      <script>
+        document
+          .getElementById("search-bar")
+          .addEventListener("input", function (e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const songs = document.querySelectorAll("#song-list li");
+            songs.forEach((song) => {
+              const title = song.textContent.toLowerCase();
+              if (title.includes(searchTerm)) {
+                song.style.display = "";
+              } else {
+                song.style.display = "none";
+              }
             });
-        })
-        .catch(error => console.error('Failed to load featured media:', error));
-}
+          });
+      </script>
 
-// Execute when the DOM is fully loaded
-document.addEventListener('DOMContentLoaded', loadFeaturedMedia);
-</script>
+      <!-- PULL THAT GITHUB COMMIT -->
+      <script>
+        const commitsList = document.getElementById("commits-list");
 
-
-<!-- END OF FEATURED MEDIA JS -->
-
-<!-- SONG SEARCH SCRIPT -->
-<script>
-    document.getElementById('search-bar').addEventListener('input', function (e) {
-        const searchTerm = e.target.value.toLowerCase();
-        const songs = document.querySelectorAll('#song-list li');
-        songs.forEach(song => {
-            const title = song.textContent.toLowerCase();
-            if (title.includes(searchTerm)) {
-                song.style.display = '';
-            } else {
-                song.style.display = 'none';
-            }
-        });
-    });
-</script>
-
-
-<!-- PULL THAT GITHUB COMMIT -->
-<script>
-    const commitsList = document.getElementById('commits-list');
-
-    fetch('https://api.github.com/repos/oooAHOYooo/oooAHOYooo.github.io/commits?per_page=100')
-        .then(response => response.json())
-        .then(commits => {
-            commits.forEach(commit => {
-                const listItem = document.createElement('li');
-                listItem.textContent = commit.commit.message;
-                commitsList.appendChild(listItem);
+        fetch(
+          "https://api.github.com/repos/oooAHOYooo/oooAHOYooo.github.io/commits?per_page=100"
+        )
+          .then((response) => response.json())
+          .then((commits) => {
+            commits.forEach((commit) => {
+              const listItem = document.createElement("li");
+              listItem.textContent = commit.commit.message;
+              commitsList.appendChild(listItem);
             });
-        })
-        .catch(error => console.error(error));
-</script>
+          })
+          .catch((error) => console.error(error));
+      </script>
 
-<!-- END OF SCRIPT DIV --></div ><!-- ENDFOSCRIPT-->
+      <!-- END OF SCRIPT DIV -->
+    </div>
+    <!-- ENDFOSCRIPT-->
 
-
-<!-- END OF DRAFTY SCRIPTS -->
-
-
-
+    <!-- END OF DRAFTY SCRIPTS -->
 
     <!-- WORKING SOURCE JAVASCRIPTS -->
     <script src="./src/newsletter.js"></script>
@@ -699,6 +771,5 @@ document.addEventListener('DOMContentLoaded', loadFeaturedMedia);
     <script src="./src/media.js"></script>
     <script src="./src/podcast.js"></script>
     <script src="./src/tab.js"></script>
-</body>
-
+  </body>
 </html>
