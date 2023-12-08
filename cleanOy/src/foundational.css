@@ -328,17 +328,10 @@ button:hover {
 
 #podcasts-tab {
   color: var(--text-color);
-  padding-bottom: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  width: 100%;
 }
 
 #podcast-table {
   width: 100%;
-  max-width: 300px;
   font-size: 0.8em; /* Adjust as needed to make the text smaller */
   border-collapse: collapse;
   margin: auto; /* This will center the table */
@@ -379,8 +372,6 @@ button:hover {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
-/* Add this to your foundational.css file */
 
 /* Style the song list table */
 #song-list {
@@ -836,4 +827,21 @@ button:hover {
   color: white;
   font-size: 10px;
   text-align: center;
+}
+
+#progress-bar-container {
+  width: calc(100% - 20px);
+  /* Subtract 20px (10px left and 10px right) from the total width */
+  margin: 0 10px;
+  /* Add 10px margin to the left and right */
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: var(--border-color);
+  border-style: solid;
+  backdrop-filter: blur(10px);
+}
+
+#progress-bar {
+  height: 20px;
+  background-color: var(--button-color);
+  width: 0%;
 }

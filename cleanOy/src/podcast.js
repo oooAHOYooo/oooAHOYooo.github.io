@@ -98,5 +98,8 @@ function playPodcast(url, title) {
   document.getElementById("artist-name").textContent = "";
 }
 
-// Call the function to load podcasts when the page loads
-window.onload = loadPodcasts;
+window.onload = function () {
+  if (document.getElementById("podcast-table")) {
+    loadPodcasts();
+  }
+};
