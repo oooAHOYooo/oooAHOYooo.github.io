@@ -1,0 +1,76 @@
+:root {
+    --background-color: #f8f9fa; /* Lighter background for a fresher look */
+    --text-color: #343a40; /* Darker text for better readability */
+    --border-color: #ced4da; /* Softer border color */
+    --button-color: #17a2b8; /* Vibrant button color for emphasis */
+    --button-hover-color: #138496; /* Darker shade for button hover state */
+    --container-width: 80%; 
+    --input-padding: 12px; /* Slightly larger padding for input fields */
+    --input-margin: 12px; /* Uniform margin with padding */
+    --button-padding: 12px 25px; /* Larger button padding for a better click area */
+    --list-background: #e9ecef; /* Light background for list items */
+    --list-item-border-radius: 8px; /* Increased border radius for a softer look */
+    --list-item-margin-bottom: 15px; /* More space between list items */
+    --font-size-large: 1.25rem; /* Larger font size for headings */
+}
+
+body, html {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color); /* Apply text color */
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.container {
+    width: var(--container-width);
+    margin: 20px auto; /* Added top and bottom margin for spacing */
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+}
+
+.container img {
+    width: 200px;
+    height: auto;
+    padding: 10px;
+}
+
+.input-area {
+    margin-bottom: 30px; /* Increased margin for better separation */
+}
+
+input[type="text"], select {
+    padding: var(--input-padding);
+    margin: var(--input-margin);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1rem; /* Standard font size for readability */
+}
+
+button {
+    padding: var(--button-padding);
+    border: none;
+    border-radius: 5px;
+    background-color: var(--button-color);
+    color: white;
+    cursor: pointer;
+    font-size: 1rem; /* Standard font size for buttons */
+}
+
+button:hover {
+    background-color: var(--button-hover-color);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background: var(--list-background);
+    padding: 10px;
+    margin-bottom: var(--list-item-margin-bottom);
+    border-radius: var(--list-item-border-radius);
+    border: 1px solid var(--border-color);
+    font-size: 0.9rem; /* Slightly smaller font size for
