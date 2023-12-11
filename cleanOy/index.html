@@ -119,14 +119,18 @@
 
           <!-- FEATURED MEDIA JS -->
         </div>
+        <!-- MARKET TAB-->
+        <div id="market-tab" class="tab-content">
+          Markett Tab 
+        </div>
         <!-- RADIO TAB -->
-        <div id="radio-tab" class="tab-content">
+        <!--div id="radio-tab" class="tab-content">
           <h1>Radio</h1>
           <div class="radio-wrap">
             <script src="https://embed.radio.co/player/0024c4d.js"></script>
             <br />
           </div>
-        </div>
+        </div-->
         <!-- SONGS TAB -->
         <div id="songs-tab" class="tab-content">
           <h1>Songs</h1>
@@ -140,13 +144,26 @@
           </div>
           <ul class="list" id="song-list"></ul>
         </div>
-        <!-- ARTIST -->
-        <div id="artists-tab" class="tab-content">
-          <h1>Artists</h1>
-          <!-- Artists content goes here -->
-          <ul class="list" id="artist-list"></ul>
+        <!-- MEEEEDIIAA -->
+        <div id="media-tab" class="tab-content">
+          <h1>Media</h1>
+          <div id="jw-player-container" style="width: 100%; height: auto"></div>
+          <!-- Media Table -->
+          <table id="mediaTable" class="list">
+            <thead>
+              <tr>
+                <th>Thumbnail</th>
+                <th>Title</th>
+                <th>Play</th>
+                <th>Artist</th>
+                <th>Duration</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Table data will be inserted here -->
+            </tbody>
+          </table>
         </div>
-
         <!-- PODCASTS -->
         <div id="podcasts-tab" class="tab-content">
           <h1>Podcasts</h1>
@@ -163,100 +180,11 @@
             <tbody></tbody>
           </table>
         </div>
-        <!-- PLAYLIST -->
-        <div id="playlists-tab" class="tab-content">
-          <!-- Playlists content goes here -->
-          <div id="playlists-tab" class="tab-content">
-            <input
-              type="text"
-              id="playlist-name"
-              placeholder="New Playlist Name"
-            />
-            <button onclick="createPlaylist()">Create Playlist</button>
-            <select id="playlist-selector" onchange="showPlaylist()">
-              <!-- Playlist options will be populated here -->
-            </select>
-            <ul class="list" id="playlist-songs">
-              <!-- Playlist songs will be populated here -->
-            </ul>
-            <ul class="list" id="all-songs">
-              <!-- All songs will be populated here with an "Add to Playlist" button -->
-            </ul>
-          </div>
-        </div>
-        <!-- CABLE -->
-        <div id="cable-tab" class="tab-content">
-          <h1>Cable</h1>
-          <div
-            id="playerContainer"
-            style="position: relative; overflow: hidden; padding-bottom: 56.25%"
-          >
-            <iframe
-              src="https://cdn.jwplayer.com/players/QI6O3pW7-9Gtk2B1J.html"
-              id="playerFrame"
-              width="100%"
-              height="100%"
-              frameborder="0"
-              scrolling="auto"
-              title="Untitled Manual Playlist"
-              style="position: absolute"
-              allowfullscreen
-            ></iframe>
-          </div>
-          <h3>Cable Content Schedule</h3>
-          <table id="cable-schedule-table">
-            <thead>
-              <tr>
-                <td style="text-align: left">Time (EST)</td>
-                <td style="text-align: left">Block Name</td>
-                <td style="text-align: left">Description</td>
-              </tr>
-            </thead>
-            <tbody>
-              <!-- Schedule data will be inserted here -->
-            </tbody>
-          </table>
-        </div>
-        <!-- UPDATES-->
-        <div id="updates-tab" class="tab-content">
-          <h1>Updates</h1>
-          <!-- NEWSLETTER -->
-          <div id="newsletter-tab" class="tab-content-b">
-            <!-- h1>Newsletter</h1 -->
-            <!-- div id="newsletter-list"></div -->
-          </div>
-
-          <h2>Present Beta State = 0.2.2</h2>
-          <h3>Last 100 Commits to our open source Repo</h3>
-          <div id="commits-list"></div>
-        </div>
-        <!-- ACCOUNT -->
-        <div id="account-tab" class="tab-content">
-          <h1>Your Account</h1>
-          <a href="./src/login.html"><button>Login to Your Account</button></a>
-          <h2>Settings</h2>
-          <br />
-          <h2 id="theme-title"></h2>
-          <button onclick="switchTheme()">change theme</button>
-          <br />
-          <h1>Your Liked Content</h1>
-
-          <table id="liked-songs-table">
-            <thead>
-              <tr>
-                <th>Artist</th>
-                <th>Song</th>
-                <th>Play</th>
-                <th>Remove</th>
-              </tr>
-            </thead>
-            <tbody>
-              <!-- Liked songs will be populated here by the JavaScript function -->
-            </tbody>
-          </table>
+        <!-- AUDIOBOOKS -->
+        <div id="audiobooks-tab" class="tab-content">
+          <h1>Audiobooks</h1>
         </div>
         <!-- GAMES -->
-        <!-- Add this in your HTML where you want the games tab to appear -->
         <div id="games-tab" class="tab-content">
           <h1>Games</h1>
           <div class="tabs">
@@ -301,32 +229,121 @@
 
           <!-- Add more game containers as needed -->
         </div>
-        <!-- MEEEEDIIAA -->
-        <div id="media-tab" class="tab-content">
-          <h1>Media</h1>
-          <div id="jw-player-container" style="width: 100%; height: auto"></div>
-          <!-- Media Table -->
-          <table id="mediaTable" class="list">
+        <!-- ARTIST -->
+        <div id="artists-tab" class="tab-content">
+          <h1>Artists</h1>
+          <!-- Artists content goes here -->
+          <ul class="list" id="artist-list"></ul>
+        </div>
+        <!-- UPDATES-->
+        <div id="updates-tab" class="tab-content">
+          <h1>Updates</h1>
+          <!-- NEWSLETTER -->
+          <div id="newsletter-tab" class="tab-content-b">
+            <!-- h1>Newsletter</h1 -->
+            <!-- div id="newsletter-list"></div -->
+          </div>
+
+          <h2>Present Beta State = 0.2.2</h2>
+          <h3>Last 100 Commits to our open source Repo</h3>
+          <div id="commits-list"></div>
+        </div>
+        <!-- ACCOUNT -->
+        <div id="account-tab" class="tab-content">
+          <h1>Your Account</h1>
+          <a href="./src/login.html"><button>Login to Your Account</button></a>
+          <h2>Settings</h2>
+          <br />
+          <h2 id="theme-title"></h2>
+          <button onclick="switchTheme()">change theme</button>
+          <br />
+          <h1>Your Liked Content</h1>
+
+          <table id="liked-songs-table">
             <thead>
               <tr>
-                <th>Thumbnail</th>
-                <th>Title</th>
-                <th>Play</th>
                 <th>Artist</th>
-                <th>Duration</th>
+                <th>Song</th>
+                <th>Play</th>
+                <th>Remove</th>
               </tr>
             </thead>
             <tbody>
-              <!-- Table data will be inserted here -->
+              <!-- Liked songs will be populated here by the JavaScript function -->
             </tbody>
           </table>
         </div>
-        <!-- END OF MEDIA -->
+
+
+
+
+
+
+
+
+        
+        <!-- PLAYLIST -->
+        <div id="playlists-tab" class="tab-content">
+          <!-- Playlists content goes here -->
+          <div id="playlists-tab" class="tab-content">
+            <input
+              type="text"
+              id="playlist-name"
+              placeholder="New Playlist Name"
+            />
+            <button onclick="createPlaylist()">Create Playlist</button>
+            <select id="playlist-selector" onchange="showPlaylist()">
+              <!-- Playlist options will be populated here -->
+            </select>
+            <ul class="list" id="playlist-songs">
+              <!-- Playlist songs will be populated here -->
+            </ul>
+            <ul class="list" id="all-songs">
+              <!-- All songs will be populated here with an "Add to Playlist" button -->
+            </ul>
+          </div>
+        </div>
+
+
+
+
       </div>
       <!--END OF TABS-->
     </div>
     <!--END OF TABS-->
-
+        <!-- CABLE -->
+        <!-- div id="cable-tab" class="tab-content">
+          <h1>Cable</h1>
+          <div
+            id="playerContainer"
+            style="position: relative; overflow: hidden; padding-bottom: 56.25%"
+          >
+            <iframe
+              src="https://cdn.jwplayer.com/players/QI6O3pW7-9Gtk2B1J.html"
+              id="playerFrame"
+              width="100%"
+              height="100%"
+              frameborder="0"
+              scrolling="auto"
+              title="Untitled Manual Playlist"
+              style="position: absolute"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <h3>Cable Content Schedule</h3>
+          <table id="cable-schedule-table">
+            <thead>
+              <tr>
+                <td style="text-align: left">Time (EST)</td>
+                <td style="text-align: left">Block Name</td>
+                <td style="text-align: left">Description</td>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Schedule data will be inserted here -->
+          <!--  </tbody>
+          </table>
+        </div -->
     <!-- BOTTOM PLAYER -->
     <section class="player">
       <div id="progress-bar-container">

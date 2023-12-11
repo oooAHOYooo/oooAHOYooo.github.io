@@ -13,8 +13,7 @@ let currentTabIndex = 0; // Assuming you have a global variable to keep track of
 
 function nextTab() {
   currentTabIndex++;
-  if (currentTabIndex > 10) {
-    // Adjusted to match the new length of the tabs array
+  if (currentTabIndex > 9) { // Adjusted to match the new length of the tabs array
     currentTabIndex = 0;
   }
   switchTabByIndex(currentTabIndex);
@@ -23,7 +22,7 @@ function nextTab() {
 function prevTab() {
   currentTabIndex--;
   if (currentTabIndex < 0) {
-    currentTabIndex = 10; // Adjusted to match the new length of the tabs array
+    currentTabIndex = 9; // Adjusted to match the new length of the tabs array
   }
   switchTabByIndex(currentTabIndex);
 }
@@ -32,16 +31,14 @@ function prevTab() {
 function switchTabByIndex(tabIndex) {
   const tabs = [
     "home",
-    // "nowplaying", // Removed "nowplaying" from the tabs array
-    "radio",
+    "market", // Added "market" to the tabs array
     "songs",
-    // "liked", // Removed "liked" from the tabs array
-    "podcasts",
-    "artists",
-    "cable",
-    "updates",
-    "games",
     "media",
+    "podcasts",
+    "audiobooks", // Added "audiobooks" to the tabs array
+    "games",
+    "artists",
+    "updates",
     "account",
   ];
   const tabIndicator = document.getElementById("tab-indicator");
