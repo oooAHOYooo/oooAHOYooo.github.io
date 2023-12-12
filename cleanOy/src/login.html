@@ -6,14 +6,38 @@
     <title>Login - Ahoy Indie Media</title>
     <link rel="stylesheet" href="path_to_your_stylesheet.css" />
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.28.5/dist/supabase.min.js"></script>
+
+    <style>
+      .login-container {
+        display: flex;
+        flex-direction: column;
+      }
+      .login__menu-container {
+        display: flex;
+        flex-direction: column;
+      }
+
+      input {
+        height: 100px;
+        background-color: aquamarine;
+        text-align: center;
+        color: black;
+        font-size: 22px;
+        color: darkgreen;
+      }
+    </style>
   </head>
   <body>
     <div class="login-container">
-      <img src="../assets/u_ahoy23.png" style="width: 100%" />
+      <a href="../index.html"
+        ><img src="../assets/u_ahoy23.png" style="width: 100%"
+      /></a>
       <input type="email" id="email" placeholder="Email" />
       <input type="password" id="password" placeholder="Password" />
-      <button onclick="login()">Login</button>
-      <button onclick="signup()">Sign Up</button>
+      <div class="login__menu-container">
+        <button onclick="login()">Login</button>
+        <button onclick="signup()">Sign Up</button>
+      </div>
       <p id="message"></p>
     </div>
 
