@@ -17,17 +17,22 @@
         flex-direction: column;
       }
 
-      input {
+      #login-email,
+      #login-password {
         height: 100px;
-        background-color: rgba(255, 255, 255, 0.364);
+        background-color: var(--background-color);
         backdrop-filter: blur(10px);
         border-radius: 10px;
-        border: 1px solid rgba(255, 255, 255, 0.872);
+        border: 1px solid var(--border-color);
         text-align: center;
-        color: black;
-        font-size: 22px;
+        color: var(--text-color);
+        font-size: 39px;
         font-family: "Barlow", sans-serif;
-        color: darkgreen;
+        font-weight: 900;
+      }
+
+      #login-e-mail {
+        text-transform: uppercase !important;
       }
     </style>
   </head>
@@ -36,8 +41,8 @@
       <a href="../index.html"
         ><img src="../assets/u_ahoy23.png" style="width: 100%"
       /></a>
-      <input type="email" id="email" placeholder="Email" />
-      <input type="password" id="password" placeholder="Password" />
+      <input type="email" id="login-email" placeholder="Email" />
+      <input type="password" id="login-password" placeholder="Password" />
       <div class="login__menu-container">
         <button onclick="login()">Login</button>
         <button onclick="signup()">Sign Up</button>
