@@ -21,6 +21,10 @@
 - [ ] Parse everything into separate JavaScript `FileSaver` before v23
 - [ ] Consider this version for folks to test
 
+
+## Notes of v23
+- Decided to use SupaBase for Ids and what not 
+
 ### Version 0.2.4
 
 **User Journey:**
