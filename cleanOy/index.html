@@ -59,11 +59,19 @@
   </head>
 
   <body>
-    <form id="login-form">
-      <input type="email" id="email" placeholder="Email" />
-      <input type="password" id="password" placeholder="Password" />
-      <button type="submit">Login</button>
-    </form>
+    <!-- Login Button -->
+    <button id="login-btn">Login</button>
+
+    <!-- Login Form Container -->
+    <div id="login-container" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>
+          Don't have an account?
+          <a href="./src/create-account.html">Create one</a>
+        </p>
+      </div>
+    </div>
 
     <div class="container">
       <header>

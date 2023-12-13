@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sign Up - Ahoy Indie Media</title>
+    <!-- Add relevant CSS and JS links -->
+    <link rel="stylesheet" href="foundational.css" />
+  </head>
+  <body>
+    <h1>Sign Up for Ahoy Indie Media</h1>
+    <form id="signup-form">
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="password" id="password" placeholder="Password" required />
+
+      <h3>Choose Your Plan:</h3>
+      <div>
+        <input type="radio" id="free" name="plan" value="free" checked />
+        <label for="free">Free Plan</label>
+      </div>
+      <div>
+        <input type="radio" id="basic" name="plan" value="basic" />
+        <label for="basic">$5/Month Basic Plan</label>
+      </div>
+      <div>
+        <input type="radio" id="premium" name="plan" value="premium" />
+        <label for="premium">$10/Month Premium Plan</label>
+      </div>
+
+      <button type="submit">Sign Up</button>
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js/dist/supabase.min.js"></script>
+    <script src="signup.js"></script>
+    <!-- Link to your JavaScript file -->
+  </body>
+</html>
