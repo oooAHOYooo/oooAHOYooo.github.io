@@ -877,3 +877,23 @@ button:hover {
   padding: 10px;
   z-index: 1000;
 }
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.theme-link {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.theme-link:hover {
+  color: var(--gold);
+}
+
+#loginLink {
+  text-align:center!important;
+}

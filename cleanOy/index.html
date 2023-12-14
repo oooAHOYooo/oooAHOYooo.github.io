@@ -59,25 +59,12 @@
   </head>
 
   <body>
-    <!-- Login Button -->
-    <button id="login-btn">Login</button>
-
-    <!-- Login Form Container -->
-    <div id="login-container" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <p>
-          Don't have an account?
-          <a href="./src/create-account.html">Create one</a>
-        </p>
-      </div>
-    </div>
-
     <div class="container">
       <header>
         <a href="./index.html"
-          ><img src="./assets/u_ahoy23.png" style="max-width: 20%"
-        /></a>
+          ><img src="./assets/u_ahoy23.png" style="max-width: 20%" /></a
+        ><!-- Login Button -->
+        <button id="login-btn">Login</button>
         <span id="usernameDisplay"></span>
         <!-- Placeholder for the username -->
       </header>
@@ -885,39 +872,12 @@
           });
       </script -->
 
+      <!-- CHECK IF A USER IS LOGGED IN -->
       <script>
-        // Ensure this script is after Supabase initialization
-        async function signIn(email, password) {
-          const { user, error } = await supabase.auth.signIn({
-            email: email,
-            password: password,
-          });
-
-          if (error) console.error("Error logging in:", error);
-          else console.log("User logged in:", user);
-        }
-
-        const updateUIForLoggedInUser = (user) => {
-          if (user) {
-            document.getElementById(
-              "usernameDisplay"
-            ).textContent = `Welcome, ${user.email}`;
-          } else {
-            // Update UI for logged out state
-          }
-        };
-
-        supabase.auth.onAuthStateChange((event, session) => {
-          updateUIForLoggedInUser(session?.user);
-        });
-
         document
-          .getElementById("login-form")
-          .addEventListener("submit", async (e) => {
-            e.preventDefault();
-            const email = document.getElementById("email").value;
-            const password = document.getElementById("password").value;
-            await signIn(email, password);
+          .getElementById("login-btn")
+          .addEventListener("click", function () {
+            window.location.href = "./src/login.html";
           });
       </script>
     </div>

@@ -4,10 +4,55 @@
     <meta charset="UTF-8" />
     <title>Sign Up - Ahoy Indie Media</title>
     <!-- Add relevant CSS and JS links -->
-    <link rel="stylesheet" href="foundational.css" />
+    <link rel="stylesheet" href="./foundational.css" />
+    <style>
+      body {
+        background: url("https://i.gifer.com/RzdU.gif") no-repeat center center
+          fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 90vh;
+      }
+
+      body img {
+        width: 300px;
+        height: auto;
+      }
+
+      #signup-form {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        padding: 20px;
+        width: 300px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(10px);
+      }
+
+      #signup-form input,
+      #signup-form button {
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        border: none;
+        border-radius: 5px;
+      }
+
+      #signup-form button {
+        background: dodgerblue;
+        color: white;
+      }
+    </style>
   </head>
   <body>
-    <h1>Sign Up for Ahoy Indie Media</h1>
+    <a href="../index.html"><img src="../assets/u_ahoy23.png" /></a>
+    <h1>Create an Account for Ahoy Indie Media</h1>
     <form id="signup-form">
       <input type="email" id="email" placeholder="Email" required />
       <input type="password" id="password" placeholder="Password" required />
@@ -27,8 +72,12 @@
       </div>
 
       <button type="submit">Sign Up</button>
-    </form>
 
+      <br />
+      <a href="login.html" class="theme-link" id="loginLink"
+        >Already Have an account? Login Baby</a
+      >
+    </form>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js/dist/supabase.min.js"></script>
     <script src="signup.js"></script>
     <!-- Link to your JavaScript file -->
