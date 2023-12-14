@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <title>Sign Up - Ahoy Indie Media</title>
-    <!-- Add relevant CSS and JS links -->
     <link rel="stylesheet" href="./foundational.css" />
     <style>
       body {
@@ -19,17 +18,14 @@
         justify-content: center;
         height: 90vh;
       }
-
       .text-outline {
         color: black;
         text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
       }
-
       body img {
         width: 300px;
         height: auto;
       }
-
       #signup-form {
         background: rgba(255, 255, 255, 0.1);
         border-radius: 10px;
@@ -38,7 +34,6 @@
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         backdrop-filter: blur(10px);
       }
-
       #signup-form input,
       #signup-form button {
         width: 100%;
@@ -48,7 +43,6 @@
         border: none;
         border-radius: 5px;
       }
-
       #signup-form button {
         background: dodgerblue;
         color: white;
@@ -68,13 +62,7 @@
         <label for="free">Free Plan</label>
       </div>
       <div>
-        <input
-          class="text-outline"
-          type="radio"
-          id="basic"
-          name="plan"
-          value="basic"
-        />
+        <input type="radio" id="basic" name="plan" value="basic" />
         <label for="basic">$5/Month Basic Plan</label>
       </div>
       <div>
@@ -83,7 +71,6 @@
       </div>
 
       <button type="submit">Sign Up</button>
-
       <br />
       <a href="login.html" class="theme-link" id="loginLink"
         >Already Have an account? Login Baby</a
@@ -91,6 +78,5 @@
     </form>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js/dist/supabase.min.js"></script>
     <script src="signup.js"></script>
-    <!-- Link to your JavaScript file -->
   </body>
 </html>
