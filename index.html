@@ -1,210 +1,161 @@
-<html> <!-- As of 11.5.23 - -->
-<head> 
-        <!-- BASIC META -->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- META DESCRIPTION -->
-        <meta name="description" content="Ahoy Indie Media - A hand-crafted media company based out of New Haven, Connecticut. Our mission is to provide a homegrown alternative to the way folks consume media. We believe in good media - good indie media - the real stuff. Learn about our strategy for sustainable growth and how we maintain an ad-free environment. Join our subscription-based service to access unique in-house content, including the immensely unpopular 'Rob Show.' Become a part of our indie creator-centric platform.">
-        <!-- PLAUSIBLE -->
-        <script defer data-domain="ahoy.ooo" src="https://plausible.io/js/script.js"></script>
-        <!--FAVICON -->
-        <link rel="icon" type="image/x-icon" href="./assets/ahoyFav.png">
-        <!-- SITE TITLE -->
-        <title>Ahoy Indie Media</title>
-        <!-- CSS3 -->
-        <link rel="stylesheet" href="./css/mainStyle.css">
-        <link rel="stylesheet" href="./css/mobile.css">
-        <link rel="stylesheet" href="./css/grain-and-tweaks.css">
+<html>
+  <head>
+    <!-- BASIC META -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- META DESCRIPTION -->
+    <meta
+      name="description"
+      content="Ahoy Indie Media - A hand-crafted media company based out of New Haven, Connecticut. Our mission is to provide a homegrown alternative to the way folks consume media. We believe in good media - good indie media - the real stuff. Learn about our strategy for sustainable growth and how we maintain an ad-free environment. Join our subscription-based service to access unique in-house content, including the immensely unpopular 'Rob Show.' Become a part of our indie creator-centric platform."
+    />
+    <!-- PLAUSIBLE -->
+    <script
+      defer
+      data-domain="ahoy.ooo"
+      src="https://plausible.io/js/script.js"
+    ></script>
+    <!--FAVICON -->
+    <link rel="icon" type="image/x-icon" href="./assets/ahoyFav.png" />
+    <!-- SITE TITLE -->
+    <title>Ahoy Indie Media</title>
+    <!-- CSS3 -->
+    <link rel="stylesheet" href="./css/mainStyle.css" />
+    <link rel="stylesheet" href="./css/mobile.css" />
+    <link rel="stylesheet" href="./css/grain-and-tweaks.css" />
+  </head>
+  <style>
+    .topLogin {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      z-index: 1000; /* This ensures the button stays on top of other elements */
+    }
 
-        <!-- FIREBASE AUTH-->
-        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-</head>
-<style>
-  .topLogin {
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  z-index: 1000; /* This ensures the button stays on top of other elements */
-}
+    .loginButton {
+      padding: 10px;
+      color: rgb(255, 255, 255);
+      width: 75px;
+      height: 40px;
+      border-style: solid;
+      border-width: 1px;
+      border-color: rgba(255, 255, 255, 0.563);
+      background-color: rgba(
+        255,
+        255,
+        255,
+        0.1
+      ); /* Semi-transparent background */
+      backdrop-filter: blur(5px); /* Blur effect */
+      -webkit-backdrop-filter: blur(5px); /* For Safari */
+      transition: all 0.3s ease; /* Smooth transition */
+    }
 
-.loginButton {
-  padding: 10px;
-  color: rgb(255, 255, 255);
-  width: 75px;
-  height: 40px;
-  border-style: solid;
-  border-width: 1px;
-  border-color: rgba(255, 255, 255, 0.563);
-  background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
-  backdrop-filter: blur(5px); /* Blur effect */
-  -webkit-backdrop-filter: blur(5px); /* For Safari */
-  transition: all 0.3s ease; /* Smooth transition */
-}
+    .loginButton:hover {
+      background-color: rgba(
+        255,
+        255,
+        255,
+        0.2
+      ); /* Slightly more opaque on hover */
+      backdrop-filter: blur(10px); /* Increased blur on hover */
+      -webkit-backdrop-filter: blur(10px); /* For Safari */
+    }
+  </style>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  />
 
-.loginButton:hover {
-  background-color: rgba(255, 255, 255, 0.2); /* Slightly more opaque on hover */
-  backdrop-filter: blur(10px); /* Increased blur on hover */
-  -webkit-backdrop-filter: blur(10px); /* For Safari */
-}
-</style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
- 
-
-
-<body id="index-body">
-    <div class="topLogin">
-      <!-- This will be dynamically updated -->
-  </div>
-    <!-- Add this somewhere in your HTML, perhaps near the top of the <body> -->
-<a href="/account/account.html"><button class="loginButton"><i class="fas fa-home"></i></button></a>
+  <body id="index-body">
     <main class="fade-in-zoom">
-        <div id="app">
-          <!-- START OF TOPDOG -->
-  
-          <div class="full-width-total-super-wrap-index">
+      <div id="app">
+        <!-- START OF TOPDOG -->
+
+        <div class="full-width-total-super-wrap-index">
           <div class="topDog-wrap-index">
             <div class="topLogo-wrap">
-              <a href="./index.html"><img src="./cleanOy/assets/u_ahoy23.png" class="topLogo-graphic"></a>
+              <a href="./index.html"
+                ><img
+                  src="./cleanOy/assets/u_ahoy23.png"
+                  class="topLogo-graphic"
+              /></a>
             </div>
             <div class="navTippyWrap-index">
-              <a href="./cleanOy/index.html"><button class="topNavButton-stream">Beta - v0.2.2</button></a>
-    
+              <a href="./cleanOy/index.html"
+                ><button class="topNavButton-stream">Beta - v0.2.2</button></a
+              >
             </div>
           </div>
         </div>
-          <!-- END OF TOP DOG -->
-             
- <!-- END OF APP TABS -->
-          </div>
-          
-          <!-- END OF APP -->
+        <!-- END OF TOP DOG -->
 
+        <!-- END OF APP TABS -->
+      </div>
 
-<footer>
-  
+      <!-- END OF APP -->
 
- 
-  
-  <a href="./todo/index.html">Ahoy Todo</a>
-</footer>
+      <footer>
+        <a href="./todo/index.html">Ahoy Todo</a>
+      </footer>
+    </main>
 
-</main>
+    <!-- SCRIPTS AND CONDITIONAL LOGIC -->
+    <!-- SCRIPTS AND CONDITIONAL LOGIC -->
+    <!-- SCRIPTS AND CONDITIONAL LOGIC -->
 
+    <!-- CODE = BACKGROUND CHANGES DEPENDING ON Page Refresh - or Hour -->
+    <script>
+      const day = new Date();
+      const hr = day.getHours();
 
-<!-- SCRIPTS AND CONDITIONAL LOGIC -->
-<!-- SCRIPTS AND CONDITIONAL LOGIC -->
-<!-- SCRIPTS AND CONDITIONAL LOGIC -->
+      if (window.innerWidth > 300) {
+        document.body.style.backgroundColor = "#acaca3";
 
-
-<!-- CODE = BACKGROUND CHANGES DEPENDING ON Page Refresh - or Hour -->
-<script>
-  const day = new Date();
-  const hr = day.getHours();
-
-  if (window.innerWidth > 300) {
-    document.body.style.backgroundColor = "#acaca3";
-
-    if (hr === 5) {
-      document.body.style.backgroundImage = "url('https://thumbs.gfycat.com/FrayedQuaintAnteater-max-1mb.gif')";
-    } else if (hr === 6 || hr === 12) {
-      document.body.style.backgroundImage = "url('https://www.icegif.com/wp-content/uploads/2022/02/icegif-536.gif')";
-    } else if (hr === 7 || hr === 13 || hr === 14) {
-      document.body.style.backgroundImage = "url('https://thumbs.gfycat.com/BackLankyGangesdolphin-size_restricted.gif')";
-    } else if (hr === 8 || hr === 9 || hr === 10) {
-      document.body.style.backgroundImage = "url('https://media1.giphy.com/media/wkKyBT94rB196/giphy.gif?cid=ecf05e47b9ypgsrn61em96kw5zberiuv0vmdperhn0uq9ch2&rid=giphy.gif&ct=g')";
-    } else if (hr === 11) {
-      document.body.style.backgroundImage = "url('https://i.gifer.com/ARqO.gif')";
-    } else if (hr === 15 || hr === 16) {
-      document.body.style.backgroundImage = "url('https://s.yimg.com/uu/api/res/1.2/rVdUX8eVa31S_5JDCvvp0A--~B/Zmk9ZmlsbDtweW9mZj0wO3c9NjQwO2g9MzYwO3NtPTE7YXBwaWQ9eXRhY2h5b24-/http://media.zenfs.com/en-US/video/video.storyful.com/866362344b92b1cb1d9c3a36db9b0520')";
-    } else if (hr === 17 || hr === 18 || hr === 19 || hr === 20) {
-      document.body.style.backgroundImage = "url('https://media.tenor.com/S8_V9lNMc3oAAAAM/waves-awesome.gif')";
-    } else if (hr === 22) {
-      document.body.style.backgroundImage = "url('https://i.pinimg.com/originals/c6/36/2e/c6362e4ca5fa5e887c6b9ddfcb82c13d.gif')";
-    } else if (hr === 23) {
-      document.body.style.backgroundImage = "url('https://i.pinimg.com/originals/fc/38/97/fc389789c5fbe80b36df05e8ee441c66.gif')";
-    } else if (hr === 24) {
-      document.body.style.backgroundImage = "url('https://c.tenor.com/lWbWfolwJfIAAAAC/ocean-night.gif')";
-    }
-  } else {
-    document.body.style.backgroundColor = "#000f2b85;";
-  }
-</script>
-
-<script>
-var firebaseConfig = { 
-  apiKey: "AIzaSyBq_IQRwkjh2o-jUkS8tI8wcEek5yMIwmo", 
-  authDomain: "ahoy-indie-media-da86d.firebaseapp.com", 
-  projectId: "ahoy-indie-media-da86d", 
-  storageBucket: "ahoy-indie-media-da86d.appspot.com", 
-  messagingSenderId: "179901301547", 
-  appId: "1:179901301547:web:599159f9efb826f464bb6e", 
-  measurementId: "G-K3QN161BVX", 
-}; 
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-</script>
-<script>
-  firebase.auth().onAuthStateChanged(function(user) {
-  if (user) {
-    // User is signed in.
-    var displayName = user.displayName;
-    var welcomeMessage = "Welcome, " + displayName;
-    document.querySelector('.topLogin').innerHTML = welcomeMessage;
-  } else {
-    // No user is signed in.
-    document.querySelector('.topLogin').innerHTML = '<a href="./account/loginModule.html"><button class="loginButton">Login</button></a>';
-  }
-});
-</script>
-
-<script>
-  // Your existing Firebase initialization and other scripts
-
-  // Check for user authentication state
-  firebase.auth().onAuthStateChanged(function(user) {
-      const topLoginDiv = document.querySelector('.topLogin');
-      const userEmailDiv = document.getElementById("userEmail");
-      if (user) {
-          // User is signed in
-          const displayName = user.displayName || user.email; // Use email if displayName is null
-          const welcomeMessage = `Welcome, <a href="./account/loginModule.html">${displayName}</a>`;
-          topLoginDiv.innerHTML = welcomeMessage;
-          userEmailDiv.innerHTML = `<a href="./account/loginModule.html">${displayName}</a>`;
+        if (hr === 5) {
+          document.body.style.backgroundImage =
+            "url('https://thumbs.gfycat.com/FrayedQuaintAnteater-max-1mb.gif')";
+        } else if (hr === 6 || hr === 12) {
+          document.body.style.backgroundImage =
+            "url('https://www.icegif.com/wp-content/uploads/2022/02/icegif-536.gif')";
+        } else if (hr === 7 || hr === 13 || hr === 14) {
+          document.body.style.backgroundImage =
+            "url('https://thumbs.gfycat.com/BackLankyGangesdolphin-size_restricted.gif')";
+        } else if (hr === 8 || hr === 9 || hr === 10) {
+          document.body.style.backgroundImage =
+            "url('https://media1.giphy.com/media/wkKyBT94rB196/giphy.gif?cid=ecf05e47b9ypgsrn61em96kw5zberiuv0vmdperhn0uq9ch2&rid=giphy.gif&ct=g')";
+        } else if (hr === 11) {
+          document.body.style.backgroundImage =
+            "url('https://i.gifer.com/ARqO.gif')";
+        } else if (hr === 15 || hr === 16) {
+          document.body.style.backgroundImage =
+            "url('https://s.yimg.com/uu/api/res/1.2/rVdUX8eVa31S_5JDCvvp0A--~B/Zmk9ZmlsbDtweW9mZj0wO3c9NjQwO2g9MzYwO3NtPTE7YXBwaWQ9eXRhY2h5b24-/http://media.zenfs.com/en-US/video/video.storyful.com/866362344b92b1cb1d9c3a36db9b0520')";
+        } else if (hr === 17 || hr === 18 || hr === 19 || hr === 20) {
+          document.body.style.backgroundImage =
+            "url('https://media.tenor.com/S8_V9lNMc3oAAAAM/waves-awesome.gif')";
+        } else if (hr === 22) {
+          document.body.style.backgroundImage =
+            "url('https://i.pinimg.com/originals/c6/36/2e/c6362e4ca5fa5e887c6b9ddfcb82c13d.gif')";
+        } else if (hr === 23) {
+          document.body.style.backgroundImage =
+            "url('https://i.pinimg.com/originals/fc/38/97/fc389789c5fbe80b36df05e8ee441c66.gif')";
+        } else if (hr === 24) {
+          document.body.style.backgroundImage =
+            "url('https://c.tenor.com/lWbWfolwJfIAAAAC/ocean-night.gif')";
+        }
       } else {
-          // No user is signed in
-          topLoginDiv.innerHTML = '<a href="./account/loginModule.html"><button class="loginButton">Login</button></a>';
-          userEmailDiv.textContent = "Not logged in";
+        document.body.style.backgroundColor = "#000f2b85;";
       }
-  });
-</script>
+    </script>
 
+    <!-- CONTENT FADE IN AND ZOOM CODE -->
+    <script>
+      window.addEventListener("load", function () {
+        var loadingScreen = document.getElementById("loading-screen");
+        var content = document.querySelector(".fade-in-zoom");
+        content.classList.add("show");
+      });
+    </script>
 
-<!-- CONTENT FADE IN AND ZOOM CODE -->
-<script>
-  window.addEventListener("load", function () {
-  var loadingScreen = document.getElementById("loading-screen");
-  var content = document.querySelector(".fade-in-zoom");
-  content.classList.add("show");
-});
-
-</script>
-
-<script>
-  // Initialize Firebase here if you haven't already
-
-  firebase.auth().onAuthStateChanged((user) => {
-  const userEmailDiv = document.getElementById("userEmail");
-  if (user) {
-    userEmailDiv.innerHTML = `<a href="./account/loginModule.html">${user.email}</a>`; // Replace './account/userAccount.html' with the actual path to the user's account page
-  } else {
-    userEmailDiv.textContent = "Not logged in";
-  }
-});
-</script>
-
-
-<!-- END OF CONDITIONAL AND CODE LOGIC -->
-<!-- HOpe you enjoyed this journey -->
-
-</body>
+    <!-- END OF CONDITIONAL AND CODE LOGIC -->
+    <!-- HOpe you enjoyed this journey -->
+  </body>
 </html>
