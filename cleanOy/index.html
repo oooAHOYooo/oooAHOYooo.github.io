@@ -68,6 +68,10 @@
         <span id="usernameDisplay"></span>
         <!-- Placeholder for the username -->
       </header>
+<!-- Place this somewhere appropriate in your layout -->
+<div id="user-info" style="position: absolute; top: 10px; right: 10px;">
+  <!-- User info will be displayed here -->
+</div>
 
       <div id="tabSortz">
         <!-- HOME TAB -->
@@ -304,8 +308,6 @@
       <!--END OF TABS-->
     </div>
     <!--END OF TABS-->
-    <!-- CABLE -->
-    <!-- div id="cable-tab" class="tab-content">
           <h1>Cable</h1>
           <div
             id="playerContainer"
@@ -333,8 +335,7 @@
               </tr>
             </thead>
             <tbody>
-              <!-- Schedule data will be inserted here -->
-    <!--  </tbody>
+
           </table>
         </div -->
     <!-- BOTTOM PLAYER -->
@@ -860,6 +861,26 @@
           updateUIForLoggedInUser(session?.user);
         });
       </script -->
+<!-- SCRIPT TO SEE IF A USER IS LOGGED IN - WORKING WITH THE LOGIN PAGE -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const urlParams = new URLSearchParams(window.location.search);
+  const userEmail = urlParams.get('user');
+
+  if (userEmail) {
+    // Display user's email in the top right corner
+    // You'll need to have an HTML element to show this information
+    document.getElementById('user-info').textContent = `Logged in as: ${userEmail}`;
+  }
+});
+
+
+</script>
+
+
+
+
+
 
       <!-- script>
         document

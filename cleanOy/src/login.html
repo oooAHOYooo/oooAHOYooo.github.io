@@ -109,7 +109,7 @@
         text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
       }
       .text-outline {
-        color: black;
+        color: rgb(255, 255, 255);
         text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
       }
       /* Define the pulse animation */
@@ -133,7 +133,12 @@
           ><img src="../assets/u_ahoy23.png" style="width: 300px"
         /></a>
       </div>
-      <input type="email" id="login-email" placeholder="Email" />
+      <input
+        type="email"
+        id="login-email"
+        placeholder="Email"
+        style="color: white !important"
+      />
       <input type="password" id="login-password" placeholder="Password" />
       <div class="login__menu-container">
         <button onclick="login()">Login</button>
@@ -146,77 +151,64 @@
     </p>
 
     <script>
-      // Initialize Supabase client
-      const supabaseUrl = "https://ornjxycoizoybvdhhowp.supabase.co";
-      const supabaseAnonKey = "your-supabase-anon-key";
-      const supabase = Supabase.createClient(supabaseUrl, supabaseAnonKey);
+            // Initialize Supabase client
+            const supabaseUrl = "https://ornjxycoizoybvdhhowp.supabase.co";
+            const supabaseAnonKey = "your-supabase-anon-key";
+            const supabase = Supabase.createClient(supabaseUrl, supabaseAnonKey);
 
-      // Login function
-      async function login() {
-        const email = document.getElementById("login-email").value;
-        const password = document.getElementById("login-password").value;
-        const loginButton = document.getElementById("login-button");
+            // Login function
+            async function login() {
+              const email = document.getElementById("login-email").value;
+              const password = document.getElementById("login-password").value;
+              const loginButton = document.getElementById("login-button");
 
-        if (!email || !password) {
-          setMessage("Email and password are required", "error");
-          return;
-        }
+              if (!email || !password) {
+                setMessage("Email and password are required", "error");
+                return;
+              }
 
-        loginButton.classList.add("button-clicked");
+              loginButton.classList.add("button-clicked");
 
-        const { user, error } = await supabase.auth.signIn({ email, password });
+              const { user, error } = await supabase.auth.signIn({ email, password });
 
-        if (error) {
-          setMessage(error.message, "error");
-          loginButton.classList.remove("button-clicked");
-        } else {
-          localStorage.setItem("user", JSON.stringify(user));
-          setMessage("Login successful! Redirecting...", "success");
-          setTimeout(() => (window.location.href = "../index.html"), 2000); // Redirect to the index page after 2 seconds
-        }
+              if (error) {
+                setMessage(error.message, "error");
+                loginButton.classList.remove("button-clicked");
+              } else {
+                localStorage.setItem("user", JSON.stringify(user));
+                setMessage("Login successful! Redirecting...", "success");
+                setTimeout(() => (window.location.href = "../index.html"), 2000); // Redirect to the index page after 2 seconds
+              }
+            }
+
+            // Inside your login function, after successful login
+      const { user, error } = await supabase.auth.signIn({ email, password });
+
+      if (error) {
+        setMessage(error.message, "error");
+        loginButton.classList.remove("button-clicked");
+      } else {
+        localStorage.setItem("user", JSON.stringify(user));
+        setMessage("Login successful! Redirecting...", "success");
+        // Add user's email or identifier to the URL as a query parameter
+        setTimeout(() => {
+          window.location.href = `../index.html?user=${encodeURIComponent(user.email)}`;
+        }, 2000);
       }
 
-      // Signup function
-      async function signup() {
-        const email = document.getElementById("login-email").value;
-        const password = document.getElementById("login-password").value;
-        const signupButton = document.getElementById("signup-button");
+            // Utility function to display messages
+            function setMessage(message, type) {
+              const messageElement = document.getElementById("message");
+              messageElement.textContent = message;
+              messageElement.className = type; // Use this class to style your message (e.g., error, success)
+            }
 
-        if (!email || !password) {
-          setMessage("Email and password are required", "error");
-          return;
-        }
-
-        signupButton.classList.add("button-clicked");
-
-        const { user, error } = await supabase.auth.signUp({ email, password });
-
-        if (error) {
-          setMessage(error.message, "error");
-          signupButton.classList.remove("button-clicked");
-        } else {
-          localStorage.setItem("user", JSON.stringify(user));
-          setMessage(
-            "Signup successful! Check your email for a confirmation link.",
-            "success"
-          );
-          setTimeout(() => (window.location.href = "../index.html"), 2000); // Redirect to the index page after 2 seconds
-        }
-      }
-
-      // Utility function to display messages
-      function setMessage(message, type) {
-        const messageElement = document.getElementById("message");
-        messageElement.textContent = message;
-        messageElement.className = type; // Use this class to style your message (e.g., error, success)
-      }
-
-      document.addEventListener("DOMContentLoaded", function () {
-        const user = JSON.parse(localStorage.getItem("user"));
-        if (user) {
-          // Handle user session if needed
-        }
-      });
+            document.addEventListener("DOMContentLoaded", function () {
+              const user = JSON.parse(localStorage.getItem("user"));
+              if (user) {
+                // Handle user session if needed
+              }
+            });
     </script>
     <!-- FOCUS ON HOVER -->
     <script>
