@@ -26,7 +26,12 @@
   },
   {
     "imgSrc": "https://ahoypodcast.s3.us-east-2.amazonaws.com/The+Rob+Show+-+Ep15+-+Ellen+Martin.png",
-    "altText": "Artist 5",
+    "altText": "The Rob Show - Ep 15 - Ellen Martin",
     "description": "Ellen Martin on The Rob Show"
+  },
+  {
+    "imgSrc": "https://ahoypodcast.s3.us-east-2.amazonaws.com/The+Rob+Show+-+Ep16+-+Josh+Sanders+copy.png",
+    "altText": "The Rob Show - Ep 16 - Joshua Sanders",
+    "description": "Joshua Sanders on the Rob Show"
   }
 ]
