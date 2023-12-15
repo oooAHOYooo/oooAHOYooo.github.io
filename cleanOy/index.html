@@ -239,29 +239,29 @@
           </div>
       </div>
       <script>
-      
-document.addEventListener('DOMContentLoaded', function() {
-    fetch('./data/artistCollection.json')
-        .then(response => response.json())
-        .then(data => {
-            const artistList = document.getElementById('artist-list');
-            data.artists.forEach(artist => {
-                const li = document.createElement('li');
-                const a = document.createElement('a');
-                a.href = '#';
-                a.textContent = artist.name;
-                a.onclick = function() {
-                    document.getElementById('artist-iframe').src = `artist.html?name=${encodeURIComponent(artist.name)}`;
-                    document.getElementById('artist-iframe-container').style.display = 'block';
-                    return false; // Prevent default link behavior
-                };
-                li.appendChild(a);
-                artistList.appendChild(li);
-            });
-        })
-        .catch(error => console.error('Error loading artist data:', error));
-});
-</script>
+      document.addEventListener('DOMContentLoaded', function() {
+        fetch('./data/artistCollection.json')
+            .then(response => response.json())
+            .then(data => {
+                const artistList = document.getElementById('artist-list');
+                
+                data.artists.forEach(artist => {
+                    const li = document.createElement('li');
+                    const a = document.createElement('a');
+                    a.href = '#';
+                    a.textContent = artist.name;
+                    a.onclick = function() {
+                        document.getElementById('artist-iframe').src = artist.artistUrl;
+                        document.getElementById('artist-iframe-container').style.display = 'block';
+                        return false; // Prevent default link behavior
+                    };
+                    li.appendChild(a);
+                    artistList.appendChild(li);
+                });
+            })
+            .catch(error => console.error('Error loading artist data:', error));
+    });</script>
+    
 
 
           <!-- Dynamic artist content will be loaded here -->
