@@ -233,12 +233,36 @@
         <!-- ARTIST -->
         <div id="artists-tab" class="tab-content">
           <h1>Artists</h1>
-          <button
-            class="share-button"
-            data-url="https://your-artist-page-url.com"
-          >
-            Share
-          </button>
+          <ul id="artist-list"></ul> <!-- Container for the artist list -->
+          <div id="artist-iframe-container" style="display:none;">
+              <iframe id="artist-iframe" src="" frameborder="0" style="width:100%; height:600px;"></iframe>
+          </div>
+      </div>
+      <script>
+      
+document.addEventListener('DOMContentLoaded', function() {
+    fetch('./data/artistCollection.json')
+        .then(response => response.json())
+        .then(data => {
+            const artistList = document.getElementById('artist-list');
+            data.artists.forEach(artist => {
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = '#';
+                a.textContent = artist.name;
+                a.onclick = function() {
+                    document.getElementById('artist-iframe').src = `artist.html?name=${encodeURIComponent(artist.name)}`;
+                    document.getElementById('artist-iframe-container').style.display = 'block';
+                    return false; // Prevent default link behavior
+                };
+                li.appendChild(a);
+                artistList.appendChild(li);
+            });
+        })
+        .catch(error => console.error('Error loading artist data:', error));
+});
+</script>
+
 
           <!-- Dynamic artist content will be loaded here -->
         </div>
@@ -870,7 +894,7 @@
     <!-- DYNAMIC SHARE TEST -->
     <script src="./src/share.js"></script>
     <!-- DYANMIC ARTIST TEST -->
-    <script src="./src/dynamicArtist.js"></script>
+    <!--script src="./src/dynamicArtist.js"></script-->
     <script src="./src/login.js"></script>
     <script src="./src/siteCounter.js"></script>
     <!-- END OF DRAFTY SCRIPTS -->
