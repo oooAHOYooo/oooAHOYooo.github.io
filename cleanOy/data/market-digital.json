@@ -1,0 +1,149 @@
+{
+  "digitalProducts": [
+    {
+      "id": "d001",
+      "artist": "Samuel Dylan Witch",
+      "songTitle": "Seen Better Days",
+      "description": "A soulful track by Samuel Dylan Witch.",
+      "genre": "Soul",
+      "category": "Music",
+      "album": "Album Name",
+      "trackNumber": 1,
+      "previewUrl": "https://ahoycollection.s3.us-east-2.amazonaws.com/preview/01%20I%27ve%20Seen%20Better%20Days.mp3",
+      "fileSize": "5MB",
+      "releaseDate": "2023-01-01",
+      "exclusive": true,
+      "tags": ["soulful", "melodic", "deep"],
+      "relatedProductIds": ["d002", "d003"],
+      "artistSocialLinks": {
+        "website": "https://ahoy.ooo/artist/total/sdw/sdw.html",
+        "instagram": "https://instagram.com/samuel_dylan_witch"
+      },
+      "purchaseCount": 150,
+      "price": 1.99,
+      "artistUrl": "https://ahoy.ooo/artist/total/sdw/sdw.html",
+      "mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/01%20I%27ve%20Seen%20Better%20Days.mp3",
+      "inCart": false,
+      "discount": {
+        "available": false,
+        "discountedPrice": 0
+      }
+    },
+    {
+      "id": "d006",
+      "artist": "Justin Arena",
+      "songTitle": "Oceans",
+      "description": "A serene and beautiful melody by Justin Arena.",
+      "genre": "Pop",
+      "category": "Music",
+      "album": "Oceanic Waves",
+      "trackNumber": 3,
+      "previewUrl": "https://ahoycollection.s3.us-east-2.amazonaws.com/preview/Justin+Arena+-+Oceans.mp3",
+      "fileSize": "6MB",
+      "releaseDate": "2023-02-15",
+      "exclusive": false,
+      "tags": ["pop", "relaxing", "ocean"],
+      "relatedProductIds": ["d004", "d005"],
+      "artistSocialLinks": {
+        "website": "https://ahoy.ooo/artist/total/justinArena/justinArena.html",
+        "instagram": "https://instagram.com/justin_arena"
+      },
+      "purchaseCount": 200,
+      "price": 1.99,
+      "artistUrl": "https://ahoy.ooo/artist/total/justinArena/justinArena.html",
+      "mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Justin+Arena+-+Oceans.mp3",
+      "inCart": false,
+      "discount": {
+        "available": false,
+        "discountedPrice": 0
+      }
+    },
+    {
+      "id": "d007",
+      "artist": "Samuel Dylan Witch",
+      "songTitle": "Beneath the Willow Tree",
+      "description": "A soulful track by Samuel Dylan Witch.",
+      "genre": "Soul",
+      "category": "Music",
+      "album": "Album Name",
+      "trackNumber": 2,
+      "previewUrl": "https://ahoycollection.s3.us-east-2.amazonaws.com/Beneath+the+Willow+Tree.mp3",
+      "fileSize": "5MB",
+      "releaseDate": "2023-01-01",
+      "exclusive": true,
+      "tags": ["soulful", "melodic", "deep"],
+      "relatedProductIds": ["d002", "d003"],
+      "artistSocialLinks": {
+        "website": "https://ahoy.ooo/artist/total/sdw/sdw.html",
+        "instagram": "https://instagram.com/samuel_dylan_witch"
+      },
+      "purchaseCount": 150,
+      "price": 1.99,
+      "artistUrl": "https://ahoy.ooo/artist/total/sdw/sdw.html",
+      "mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Beneath+the+Willow+Tree.mp3",
+      "inCart": false,
+      "discount": {
+        "available": false,
+        "discountedPrice": 0
+      }
+    },
+    {
+      "id": "d008",
+      "artist": "Samuel Dylan Witch",
+      "songTitle": "Put Me on the Run",
+      "description": "A soulful track by Samuel Dylan Witch.",
+      "genre": "Soul",
+      "category": "Music",
+      "album": "Album Name",
+      "trackNumber": 3,
+      "previewUrl": "https://ahoycollection.s3.us-east-2.amazonaws.com/Put+Me+on+the+Run-+Draft+1mp3.mp3",
+      "fileSize": "5MB",
+      "releaseDate": "2023-01-01",
+      "exclusive": true,
+      "tags": ["soulful", "melodic", "deep"],
+      "relatedProductIds": ["d002", "d003"],
+      "artistSocialLinks": {
+        "website": "https://ahoy.ooo/artist/total/sdw/sdw.html",
+        "instagram": "https://instagram.com/samuel_dylan_witch"
+      },
+      "purchaseCount": 150,
+      "price": 1.99,
+      "artistUrl": "https://ahoy.ooo/artist/total/sdw/sdw.html",
+      "mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Put+Me+on+the+Run-+Draft+1mp3.mp3",
+      "inCart": false,
+      "discount": {
+        "available": false,
+        "discountedPrice": 0
+      }
+    },
+    {
+      "id": "d009",
+      "artist": "Samuel Dylan Witch",
+      "songTitle": "You Know Me",
+      "description": "A soulful track by Samuel Dylan Witch.",
+      "genre": "Soul",
+      "category": "Music",
+      "album": "Album Name",
+      "trackNumber": 4,
+      "previewUrl": "https://ahoycollection.s3.us-east-2.amazonaws.com/You+Know+Me+Draft+2.mp3",
+      "fileSize": "5MB",
+      "releaseDate": "2023-01-01",
+      "exclusive": true,
+      "tags": ["soulful", "melodic", "deep"],
+      "relatedProductIds": ["d002", "d003"],
+      "artistSocialLinks": {
+        "website": "https://ahoy.ooo/artist/total/sdw/sdw.html",
+        "instagram": "https://instagram.com/samuel_dylan_witch"
+      },
+      "purchaseCount": 150,
+      "price": 1.99,
+      "artistUrl": "https://ahoy.ooo/artist/total/sdw/sdw.html",
+      "mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/You+Know+Me+Draft+2.mp3",
+      "inCart": false,
+      "discount": {
+        "available": false,
+        "discountedPrice": 0
+      }
+    }
+  ]
+}

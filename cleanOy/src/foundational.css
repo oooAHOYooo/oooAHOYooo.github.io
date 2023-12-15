@@ -897,3 +897,58 @@ header {
 #loginLink {
   text-align:center!important;
 }
+
+
+/*DIGITAL MARKET*/
+
+/* Style the table */
+#digitalMarketTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+#digitalMarketTable thead {
+  background-color: var(--secondary-color);
+}
+
+#digitalMarketTable th,
+#digitalMarketTable td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+#digitalMarketTable tr:nth-child(even) {
+  background-color: var(--background-color);
+}
+
+#digitalMarketTable tr:nth-child(odd) {
+  background-color: var(--secondary-color);
+}
+
+/* Style the preview link */
+#digitalMarketTable a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+#digitalMarketTable a:hover {
+  color: var(--gold);
+}
+
+/* Style the add to cart button */
+#digitalMarketTable button {
+  color: var(--text-color);
+  background: var(--background-color);
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-style: solid;
+  padding: 10px;
+}
+
+#digitalMarketTable button:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
