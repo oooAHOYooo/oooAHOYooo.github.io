@@ -952,3 +952,10 @@ header {
   border-color: var(--gold);
   color: var(--gold);
 }
+
+
+/*Market Tab Layout */
+
+#market-tab {
+  padding-bottom: 200px;
+}
