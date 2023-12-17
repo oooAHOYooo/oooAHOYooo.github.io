@@ -57,7 +57,6 @@
       src="https://plausible.io/js/script.js"
     ></script>
   </head>
-
   <body>
     <div class="container">
       <header>
@@ -152,7 +151,15 @@
           </div>
           <div id="physicalMarket">
             <h2>Physical Market</h2>
-
+            <div id="physicalMarket">
+              <h2>Physical Market</h2>
+              <div id="productGrid"></div>
+              <div id="cart">
+                <h2>Cart</h2>
+                <div id="cartItems"></div>
+                <div id="totalPrice"></div>
+              </div>
+            </div>
           </div>
         
 
@@ -264,34 +271,7 @@
           <div id="artist-iframe-container" style="display:none;">
               <iframe id="artist-iframe" src="" frameborder="0" style="width:100%; height:600px;"></iframe>
           </div>
-      </div>
-      <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        fetch('./data/artistCollection.json')
-            .then(response => response.json())
-            .then(data => {
-                const artistList = document.getElementById('artist-list');
-                
-                data.artists.forEach(artist => {
-                    const li = document.createElement('li');
-                    const a = document.createElement('a');
-                    a.href = '#';
-                    a.textContent = artist.name;
-                    a.onclick = function() {
-                        document.getElementById('artist-iframe').src = artist.artistUrl;
-                        document.getElementById('artist-iframe-container').style.display = 'block';
-                        return false; // Prevent default link behavior
-                    };
-                    li.appendChild(a);
-                    artistList.appendChild(li);
-                });
-            })
-            .catch(error => console.error('Error loading artist data:', error));
-    });</script>
-    
-
-
-          <!-- Dynamic artist content will be loaded here -->
+      
         </div>
         <!-- UPDATES-->
         <div id="updates-tab" class="tab-content">
@@ -305,31 +285,39 @@
           <h2>Present Beta State = 0.2.2</h2>
           <h3>Last 100 Commits to our open source Repo</h3>
           <div id="commits-list"></div>
-        </div>
-        <!-- ACCOUNT -->
-        <div id="account-tab" class="tab-content">
-          <h1>Your Account</h1>
-        
-          <h2>Your Liked Content</h2>
+        </div>        
+      <!-- ACCOUNT -->
+      <div id="account-tab" class="tab-content">
+        <h1>Your Account</h1>
 
-          <table id="liked-songs-table">
-            <thead>
-              <tr>
-                <th>Artist</th>
-                <th>Song</th>
-                <th>Play</th>
-                <th>Remove</th>
-              </tr>
-            </thead>
-            <tbody>
-              <!-- Liked songs will be populated here by the JavaScript function -->
-            </tbody>
-          </table>
-          <h2>Settings</h2>
-          <br />
-          <h2 id="theme-title"></h2>
-          <button onclick="switchTheme()">change theme</button>
-          <br />
+        <h2>Your Liked Content</h2>
+
+        <table id="liked-songs-table">
+          <thead>
+            <tr>
+              <th>Artist</th>
+              <th>Song</th>
+              <th>Play</th>
+              <th>Remove</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Liked songs will be populated here by the JavaScript function -->
+          </tbody>
+        </table>
+        <h2>Your Cart</h2>
+        <div id="cart-items">
+          <!-- Items will be dynamically inserted here -->
+        </div>
+        <h2>Settings</h2>
+        <br />
+        <h2 id="theme-title"></h2>
+        <button onclick="switchTheme()">change theme</button>
+        <br />
+      </div>
+
+
+<!-- END OF TABS ? CHECK -->
         </div>
 
         <!-- PLAYLIST -->
@@ -403,9 +391,9 @@
         <i class="fas fa-arrow-right"></i>
       </button>
     </div>
-    <!-- div id="visitor-counter">
-      Visitors: <span id="visitor-count">Loading...</span>
-    </div -->
+    <!-- END OF BOTTOM PLAYER -->
+
+
     <!-- CONDITIONAL LOGIC BITCH -->
 
     <div id="theScripts">
@@ -916,10 +904,57 @@
             window.location.href = "./src/login.html";
           });
       </script>
+
+
+
+      <!-- SCRIPT THAT LOADS ARTIST LIST-->
+      <script>
+        
+        document.addEventListener('DOMContentLoaded', function() {
+          fetch('./data/artistCollection.json')
+              .then(response => response.json())
+              .then(data => {
+                  const artistList = document.getElementById('artist-list');
+                  
+                  data.artists.forEach(artist => {
+                      const li = document.createElement('li');
+                      const a = document.createElement('a');
+                      a.href = '#';
+                      a.textContent = artist.name;
+                      a.onclick = function() {
+                          document.getElementById('artist-iframe').src = artist.artistUrl;
+                          document.getElementById('artist-iframe-container').style.display = 'block';
+                          return false; // Prevent default link behavior
+                      };
+                      li.appendChild(a);
+                      artistList.appendChild(li);
+                  });
+              })
+              .catch(error => console.error('Error loading artist data:', error));
+      });</script>
+      <!-- END OF SCRIPT THAT LOADS ARTIST LIST -->
+      
+
+
+
+
+    </div>
+
+
+    <div id="cartStuff">
+      <script>
+        // This is just a placeholder for your actual add to cart function
+function addToCart(item) {
+  const cartItemsDiv = document.getElementById('cart-items');
+  const itemElement = document.createElement('p');
+  itemElement.textContent = item.name + ' - ' + item.price;
+  cartItemsDiv.appendChild(itemElement);
+}
+      </script>
     </div>
     <!-- ENDFOSCRIPT-->
     <!-- DIGITAL MARKET TEST-->
-    <script src="./src/market-digital.js"></script>
+  
     <!-- DYNAMIC SHARE TEST -->
     <script src="./src/share.js"></script>
     <!-- DYANMIC ARTIST TEST -->
@@ -928,15 +963,33 @@
     <script src="./src/siteCounter.js"></script>
     <!-- END OF DRAFTY SCRIPTS -->
     <script src="./src/featuredMedia.js"></script>
+
+
     <!-- WORKING SOURCE JAVASCRIPTS -->
-    <script src="./src/newsletter.js"></script>
+
+    <!-- MARKET JAVASCRIPTS -->
+    <script src="./src/market-physical.js"></script>
+    <script src="./src/market-digital.js"></script>
+    <!-- PODCAST JAVASCRIPTS -->
+    <script src="./src/podcast.js"></script>
+    <!-- GAMES JAVASCRIPT -->
     <script src="./src/games.js"></script>
-    <!-- script src="./src/artists.js"></script -->
+
+    <script src="./src/newsletter.js"></script>
+   
     <script src="./src/updates-commits.js"></script>
     <script src="./src/function-switchTheme.js"></script>
-    <!--script src="./src/cable.js"></script-->
     <script src="./src/media.js"></script>
-    <script src="./src/podcast.js"></script>
+ 
     <script src="./src/tab.js"></script>
+
+
+    <!-- OMMITED SCRIPTS -->
+        <!-- script src="./src/artists.js"></script -->
+        <!--script src="./src/cable.js"></script-->
+<!-- CODE TO OMITT + DOUBLE CHECK BEFORE OMITTED -->
+    <!-- div id="visitor-counter">
+      Visitors: <span id="visitor-count">Loading...</span>
+    </div -->
   </body>
 </html>
