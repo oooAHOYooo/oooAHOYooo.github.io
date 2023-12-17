@@ -954,6 +954,30 @@ header {
 }
 
 
+/*Physical Market*/
+
+#productGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.product {
+  position: relative;
+  padding: 20px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+.checkmark {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 24px;
+  color: green;
+}
+
 /*Market Tab Layout */
 
 #market-tab {
@@ -966,3 +990,5 @@ header {
 #account-tab {
   padding-bottom: 200px;
 }
+
+
