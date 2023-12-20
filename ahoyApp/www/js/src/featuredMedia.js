@@ -19,7 +19,7 @@ function getRandom(arr, n) {
 
 // Function to load and display featured media
 function loadFeaturedMedia() {
-  fetch("data/featuredMedia.json") // Make sure the path is correct
+  fetch("./data/featuredMedia.json") 
     .then((response) => response.json())
     .then((data) => {
       const container = document.getElementById("featured-media");

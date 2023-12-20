@@ -63,3 +63,14 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+// Attach event listeners to the arrow buttons
+document.getElementById('super-right-arrow').addEventListener('click', () => {
+  currentTabIndex = (currentTabIndex + 1) % tabs.length; // Go to the next tab, loop back to the first tab if at the end
+  switchTabByIndex(currentTabIndex);
+});
+
+document.getElementById('super-left-arrow').addEventListener('click', () => {
+  currentTabIndex = (currentTabIndex - 1 + tabs.length) % tabs.length; // Go to the previous tab, loop back to the last tab if at the beginning
+  switchTabByIndex(currentTabIndex);
+});
