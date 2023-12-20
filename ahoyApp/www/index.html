@@ -20,7 +20,38 @@
 <html>
     <head>
         <!-- AG ADDITIONS TO HEAD -->
+        <!-- Favicon -->
+  <link rel="icon" type="image/png" href="./assets/ahoyFav.png" />
+  <!-- Apple Touch Icon (used for iOS) -->
+  <link rel="apple-touch-icon" href="./assets/ahoyFav.png" />
+  <!-- Manifest for Android devices -->
+  <link rel="manifest" href="path_to_your_manifest.json" />
+  <!-- Meta tags for mobile devices -->
+  <meta name="theme-color" content="#000000" />
+  <!-- Sets the toolbar color in Chrome for Android -->
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <!-- iOS app mode -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <!-- Status bar appearance -->
+  <meta name="apple-mobile-web-app-title" content="Ahoy Indie Media" />
+  <!-- Title for iOS app mode -->
+  <!-- SUPA INSTALLATION -->
+  <script>
+    const supabaseUrl = "https://ornjxycoizoybvdhhowp.supabase.co";
+    const supabaseKey =
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9ybmp4eWNvaXpveWJ2ZGhob3dwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDIzNTA4ODEsImV4cCI6MjAxNzkyNjg4MX0.SIgYEybVeKQ5xGnplA-elTOw0oC5tZIv5nGRUZf-vS8";
+    const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+  </script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+    integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="src/foundational.css" />
+  <script defer data-domain="ahoy.ooo" src="https://plausible.io/js/script.js"></script>
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; media-src *; img-src 'self' data: content:;">
         <link rel="stylesheet" href="./js/src/foundational.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
         <!-- END OF AG ADDITIONS TO HEAD -->
         <meta charset="utf-8">
         <!--
