@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  fetch("./data/market-digital.json")
+  fetch("data/market-digital.json")
     .then((response) => response.json())
     .then((data) => populateTable(data.digitalProducts));
 });
@@ -27,7 +27,7 @@ function populateTable(products) {
   });
 }
 
-function playAudio(url) {
-  const audio = document.getElementById(`audio-${url}`);
+function playAudio(id) {
+  const audio = document.getElementById(`audio-${id}`);
   audio.play();
 }
