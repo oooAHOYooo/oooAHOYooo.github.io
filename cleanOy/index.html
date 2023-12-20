@@ -314,12 +314,7 @@
 
 
 <!-- END OF TABS ? CHECK -->
-        </div>
-
-
-      </div>
-      <!--END OF TABS-->
-
+        </div><!-- YES --></div><!-- WHAT ABOUT THIS? UNSURE -->
     <!--END OF TABS-->
 
     <!-- BOTTOM PLAYER -->
@@ -368,7 +363,6 @@
       </button>
     </div>
     <!-- END OF BOTTOM PLAYER -->
-
 
     <!-- CONDITIONAL LOGIC BITCH -->
 
@@ -684,7 +678,7 @@
       <!-- END OF FEATURED MEDIA JS -->
 
       <!-- SONG SEARCH SCRIPT -->
-      <script>
+      <script id="searchScript">
         document
           .getElementById("search-bar")
           .addEventListener("input", function (e) {
@@ -700,26 +694,8 @@
             });
           });
       </script>
-
-      <!-- PULL THAT GITHUB COMMIT -->
-      <script>
-        const commitsList = document.getElementById("commits-list");
-
-        fetch(
-          "https://api.github.com/repos/oooAHOYooo/oooAHOYooo.github.io/commits?per_page=100"
-        )
-          .then((response) => response.json())
-          .then((commits) => {
-            commits.forEach((commit) => {
-              const listItem = document.createElement("li");
-              listItem.textContent = commit.commit.message;
-              commitsList.appendChild(listItem);
-            });
-          })
-          .catch((error) => console.error(error));
-      </script>
-
-      <script>
+      <!-- SONG LOADER-->
+      <script id="songLoader">
         let currentSongIndex = 0;
         let songs = [];
 
@@ -815,7 +791,7 @@
       </script>
 
       <!-- END OF SCRIPT DIV -->
-    </div>
+ 
 
     <div id="supaStuff">
       <!-- script>
@@ -960,12 +936,6 @@ function addToCart(item) {
     <script src="./src/tab.js"></script>
 
 
-    <!-- OMMITED SCRIPTS -->
-        <!-- script src="./src/artists.js"></script -->
-        <!--script src="./src/cable.js"></script-->
-<!-- CODE TO OMITT + DOUBLE CHECK BEFORE OMITTED -->
-    <!-- div id="visitor-counter">
-      Visitors: <span id="visitor-count">Loading...</span>
-    </div -->
+
   </body>
 </html>
