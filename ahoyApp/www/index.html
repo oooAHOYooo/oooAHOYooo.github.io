@@ -62,7 +62,7 @@
                 <a href="./index.html">
                   <img src="./img/assets/u_ahoy23.png" style="max-width: 20%" />
                 </a>
-                <button id="login-btn">Login</button>
+                <a href="js/src/login.html"><button id=#login-btn>Login</button></a>
                 <span id="usernameDisplay"></span>
                 <div id="user-info" style="position: absolute; top: 10px; right: 10px">
                   <!-- User info will be displayed here -->
@@ -451,22 +451,7 @@
           else console.log("User logged in:", user);
         }
       </script -->
-      <!-- script>
-        const updateUIForLoggedInUser = (user) => {
-          if (user) {
-            document.getElementById(
-              "usernameDisplay"
-            ).textContent = `Welcome, ${user.email}`;
-            // Hide login button, show logout button, etc.
-          } else {
-            // Show login button, hide logout button, etc.
-          }
-        };
 
-        supabase.auth.onAuthStateChange((event, session) => {
-          updateUIForLoggedInUser(session?.user);
-        });
-      </script -->
       <!-- SCRIPT TO SEE IF A USER IS LOGGED IN - WORKING WITH THE LOGIN PAGE -->
       <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -490,7 +475,7 @@
         document
           .getElementById("login-btn")
           .addEventListener("click", function () {
-            window.location.href = "./src/login.html";
+            window.location.href = "./js/src/login.html";
           });
       </script>
 
@@ -530,45 +515,39 @@
     </div>
     <!-- ENDOFSCRIPT-->
 
-    <!-- DYNAMIC SHARE TEST -->
-    <script src="./src/share.js"></script>
-    <!-- DYANMIC ARTIST TEST -->
-    <!--script src="./src/dynamicArtist.js"></script-->
-    <script src="./src/login.js"></script>
-    <script src="./src/siteCounter.js"></script>
-    <!-- END OF DRAFTY SCRIPTS -->
+  <!-- DYNAMIC SHARE TEST -->
+<script src="js/src/share.js"></script>
+<!-- DYANMIC ARTIST TEST -->
+<!--script src="js/src/dynamicArtist.js"></script-->
+<script src="js/src/login.js"></script>
+<script src="js/src/siteCounter.js"></script>
+<!-- END OF DRAFTY SCRIPTS -->
 
+<!-- WORKING SOURCE JAVASCRIPTS -->
 
-    <!-- WORKING SOURCE JAVASCRIPTS -->
+<!-- USER CONTROLS-->
+<script src="js/src/controls-timeline.js"></script>
 
-    <!-- USER CONTROLS-->
-    <script src="./js/src/controls-timeline.js"></script>
-
-    <!-- USER JAVASCRIPTS -->
-    <script src="./src/user-cart.js"></script>
-    <!-- MARKET JAVASCRIPTS -->
-    <script src="./src/market-physical.js"></script>
-    <script src="./src/market-digital.js"></script>
-    <!-- SONG JAVASCRIPT -->
-    <script src="./js/src/song-loader.js"></script>
-    <script src="./js/src/search-songs.js"></script>
-    <!-- PODCAST JAVASCRIPTS -->
-    <script src="./src/podcast.js"></script>
-    <!-- MEDIA JAVASCRIPT -->
-    <script src="./src/media.js"></script>
-    <!-- GAMES JAVASCRIPT -->
-    <script src="./src/games.js"></script>
-    <!-- NEWSLETTER + UDPATES-->
-    <script src="./js/src/newsletter.js"></script>
-    <script src="./js/src/updates-commits.js"></script>
-    <!-- USER SETTINGS -->
-    <script src="./www/js/src/function-switchTheme.js"></script>
-    <!-- CORE PAGE-->
-    <script src="./js/src/tab.js"></script>
-
-
-        </div>
-        <script src="./js/src/featuredMedia.js"></script>
-
+<!-- USER JAVASCRIPTS -->
+<script src="js/src/user-cart.js"></script>
+<!-- MARKET JAVASCRIPTS -->
+<script src="js/src/market-physical.js"></script>
+<script src="js/src/market-digital.js"></script>
+<!-- SONG JAVASCRIPT -->
+<script src="js/src/song-loader.js"></script>
+<script src="js/src/search-songs.js"></script>
+<!-- PODCAST JAVASCRIPTS -->
+<script src="js/src/podcast.js"></script>
+<!-- MEDIA JAVASCRIPT -->
+<script src="js/src/media.js"></script>
+<!-- GAMES JAVASCRIPT -->
+<script src="js/src/games.js"></script>
+<!-- NEWSLETTER + UDPATES-->
+<script src="js/src/newsletter.js"></script>
+<script src="js/src/updates-commits.js"></script>
+<!-- USER SETTINGS -->
+<script src="js/src/function-switchTheme.js"></script>
+<!-- CORE PAGE-->
+<script src="js/src/tab.js"></script>
     </body>
 </html>
