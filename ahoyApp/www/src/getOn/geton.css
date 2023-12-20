@@ -1,0 +1,264 @@
+/* reset some default styles */
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100;300;400;500;600;700;800;900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Barlow', sans-serif;
+}
+
+body {
+    font-family: 'Barlow', sans-serif;
+    background-color: #ff0060; /* neon pink background */
+    color: #fff; /* white text */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10%; /* Adjust this value to increase or decrease padding */
+    box-sizing: border-box;
+}
+
+/* Set a max-width for all major sections to simulate 8x11 aspect ratio */
+header, section, footer, form, .carousel, .cta-button, #agreement-text, .artistAgreement, label, strong, .submit-button, .text-superAGREE, .superCheck, .check-wrap, .text-little-note, .text-additional-details, .text-content-upload, .additionalDetails p, #additionalDetails input[type="text"] {
+    max-width: 600px; /* Adjust this value to fit your needs */
+    margin: auto; /* Center the elements */
+}
+
+h1,h2 {
+    text-transform:uppercase;
+}
+
+/* make the main elements take up the whole width and center the text */
+header, section, footer {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    margin: 20px 0;
+  
+}
+
+/* create the neuromorphic effect */
+header, section, footer {
+    border-radius: 15px;
+    background: #ff0060;
+    border-style:solid;
+    border-color:rgba(255, 255, 255, 0.153);
+}
+
+/* make the website responsive */
+@media (min-width: 768px) {
+    header, section, footer {
+        width: 70%;
+    }
+}
+
+/* styling for the form */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form input[type="text"], form input[type="file"] {
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+    background: #ff0060;
+    box-shadow: inset 4px 4px 8px #cc0052, 
+                inset -4px -4px 8px #ff3380;
+}
+
+form input[type="submit"] {
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+    background: #ff0060;
+    box-shadow: 4px 4px 8px #cc0052, 
+                -4px -4px 8px #ff3380;
+    cursor: pointer;
+    transition: 0.3s;
+    color:white;
+}
+
+form input[type="submit"]:active {
+    box-shadow: inset 4px 4px 8px #cc0052, 
+                inset -4px -4px 8px #ff3380;
+}
+
+.cta-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 15px;
+    background: #ff0060;
+    box-shadow: 4px 4px 8px #cc0052, 
+                -4px -4px 8px #ff3380;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+    color: #fff;
+}
+
+.cta-button:active {
+    box-shadow: inset 4px 4px 8px #cc0052, 
+                inset -4px -4px 8px #ff3380;
+}
+
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.carousel .item {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    width: 100%;
+    height: 200px;
+    margin-right: 20px;
+    border-radius: 10px;
+    background: #ff0060;
+    transition: transform 0.3s;
+    box-shadow: -8px -8px 16px #cc0052, 
+                8px 8px 16px #ff3380;
+}
+
+.carousel .item:last-child {
+    margin-right: 0;
+}
+
+.carousel .item:focus, .carousel .item:hover {
+    transform: scale(0.9);
+}
+
+.logo {
+    width:300px;
+    height:auto;
+    margin:10px;
+}
+
+.artist-logo {
+    width:100px;
+    height:auto;
+    margin:10px;
+}
+
+a {
+    color:white;
+}
+
+
+#agreement-text {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.artistAgreement {
+    font-size:30px;
+    text-align:center;
+    text-transform:uppercase;
+    font-weight:600;
+}
+
+label {
+    font-size:20px;
+    text-transform:uppercase;
+    font-weight:600;
+    text-align:center;
+}
+
+strong {
+    text-align:center;
+}
+
+.submit-button {
+    color:white;
+    font-size:20px;
+    font-weight:900;
+    text-transform:uppercase;
+}
+
+.text-superAGREE {
+    font-size:100px;
+    text-align:center;
+    line-height: .8;
+}
+
+.superCheck {
+    width:62px;
+    height:62px;
+    text-align:center;
+}
+
+
+
+.check-wrap {
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    margin:20px;
+
+}
+
+.text-little-note {
+    font-size:14px;
+    text-align:justify;
+}
+
+.text-additional-details {
+    margin-bottom:20px;
+    margin-top:20px;
+}
+
+.text-content-upload {
+    margin-bottom:20px;
+    margin-top:20px;
+
+}
+
+#additionalDetails p {
+
+    color:rgb(255, 255, 255);
+    font-size:24px;
+    text-align:center;
+    padding:20px;
+    font-weight:600;
+
+}
+
+#additionalDetails h1 {
+    font-size:62px;
+}
+
+#additionalDetails h4 {
+    font-size:16px;
+    font-weight:500;
+}
+
+/* Add this to your geton.css file */
+#additionalDetails input[type="text"] {
+    width: 100%; /* or you can specify a width in px, em, etc. */
+    padding: 5px;
+    height:100px;
+    color:white;
+    font-size:44px;
+    font-weight:300;
+    text-transform:uppercase;
+    text-align:center;
+    box-sizing: border-box; /* ensures padding doesn't increase the width */
+}

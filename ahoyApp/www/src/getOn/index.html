@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Get on Ahoy</title>
+    <link rel="stylesheet" type="text/css" href="./geton.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="signup.js"></script>
+
+</head>
+<body>
+
+
+
+    <header>
+        <a href="/index.html"><img src="./u_ahoy23.png" alt="Ahoy Logo" class="logo"></a>
+    </header>
+    <section id="ourMission"><div>
+        <h2>Our Mission</h2>
+<p>Ahoy Indie Media is a hand-crafted media company based out of New Haven, Connecticut. Our mission is to provide a homegrown alternative to the way folks consume media. We believe in good media - good indie media - the real deal sort of stuff.
+</p>
+
+</div></section>
+    <form id="signup-form" action="submit.php" method="post">
+        <label for="name">Legal Full Name:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" required>
+
+        <label class="artistAgreement" for="agreement">
+            <h1>Artist Agreement:</h1></label>
+       
+        
+        <p id="agreement-text">
+        </p>
+        <h1 class="text-superAGREE">I agree to the above terms</h1>
+
+        <div class="check-wrap">
+        <input class="superCheck" type="checkbox" id="agreement" name="agreement" required>
+    </div>
+
+
+        <div id="contentUpload">
+                <label for="content">
+                    <h1 class="text-content-upload">Content Upload:</h1></label>
+                <p>Album Artwork:</p>
+                <input type="file" id="content" name="content" required>
+                <p>Zip file of Files</p>
+                <input type="file" id="content" name="content" required>
+
+        </div>
+
+        <div id="additionalDetails">
+            
+            
+                <h1 class="text-additional-details">Additional Details</h1>
+            
+                <h4>Give us as much as you'd like - we use this data to sort out our artist library - and it helps us have to not e-mail you - think of us like a wikipedia - this is where the fast stats of who you are is - we don't have the crew to go on and on about a bio - but if you have a bio - feel free - but keep it link free people - robots are all over the place - how we display and organize the site - we want to know basic sugar like, how many years you've been a band - so we can do things as we add features - imagine our own wikipedia style content source for artists</h4>
+                <p>How many years have you been at it? </p>
+            <input type="text" id="years at it" name="name" required>
+            <p>What is the size of your crew</p>
+            <input type="text" id="size of crew" name="name" required>
+            <p>Where are you playing next?</p>
+            <input type="text" id="where play next" name="name" required>
+            <p>Bio</p>
+            <input type="text" id="name" name="name" required>
+
+</div>
+</div>
+      
+
+            <input type="submit" value="Submit" class="submit-button">
+    </div>
+    </form>
+
+<section>
+    <p>We'll get back to you in 2-3 weeks and notify you if you are on Ahoy</p></section>
+</section>
+    <section>
+        <a href="../../index.html" class="cta-button">back to ahoy</a>
+    </section>
+    <script>
+        $(document).ready(function() {
+            var date = new Date();
+            var dateString = date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate();
+            var agreementText = `
+            
+            <strong><p>You've made some good sugar, and you're okay with Ahoy playing them on our platform.</p></strong><br>
+           
+            <p>This friendly agreement (let's call it the "Agreement") is made as of ${dateString} between you, [Your Name] (the "Music Provider") and us, Ahoy Indie Media.</p>
+            
+                <br>
+                
+                <p>So, let's put this into friendly terms:</p>
+                <br>
+                <p><strong>Music Sharing.</strong></p>
+                <p>You're giving Ahoy permission to play your content on the Radio and/or Cable. We don't own them, we can't give this permission to anyone else, we're just playing them.</p><br>
+                
+                <p><strong>No Money Involved.</strong></p>
+                <p>Just to be super clear, Ahoy won't pay you any money for playing your content. This is all about sharing your content and getting it out there!</p><br>
+                
+                <p><strong>Time Period.</strong></p>
+                <p>This Agreement will last for [15 months] from today's date, unless either of us wants to end it sooner. If that's the case, we just need to give [insert notice period] days' notice to each other.</p><br>
+                
+                <p><strong>Promises.</strong></p>
+                <p>You're promising Ahoy that you own the content and have the right to let us play them. Also, you're assuring us that your content aren't stepping on anyone else's toes (meaning, they don't infringe any third-party rights).</p><br>
+                
+                <p><strong>Taking Responsibility.</strong></p>
+                <p>If something goes wrong, like someone makes a claim against Ahoy related to your content, you'll have Ahoy's back. This means you'll cover any costs or damages we might face.</p><br>
+                
+                <p><strong>Legal Bits.</strong></p>
+                <p>This Agreement is under the laws of [insert state], without any complications from other laws.</p><br>
+                
+                <p><strong>This is It!</strong> This Agreement is the whole deal between us. It replaces any previous chats or agreements we've had.</p><br>
+                
+                <p>This Agreement is valid and applies to both of us.</p>`;
+        
+            $('#agreement-text').html(agreementText); // Use .html() instead of .text() to parse the HTML tags
+        
+            $('#name').on('input', function() {
+                var artistName = $(this).val();
+                var updatedText = agreementText.replace('[Your Name]', artistName);
+                $('#agreement-text').html(updatedText); // Use .html() instead of .text() to parse the HTML tags
+            });
+        });
+        </script>
+</body>
+
+    
+</html>

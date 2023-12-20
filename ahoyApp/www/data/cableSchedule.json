@@ -1,0 +1,24 @@
+[
+    {
+        "time": "8AM",
+        "blockName": "Morning Hype",
+        "description": "Start the day with a blend of new short content and music."
+    },
+    {
+        "time": "1PM",
+        "blockName": "Afternoon Acoustic",
+        "description": "Focus on work while music videos are playing in the background."
+    },
+    {
+        "time": "5PM",
+        "blockName": "Classics",
+        "description": "Fine aged content"
+    },
+    {
+        "time": "8PM",
+        "blockName": "Latest and Greatest",
+        "description": "Latest Content"
+    }
+
+  
+]
