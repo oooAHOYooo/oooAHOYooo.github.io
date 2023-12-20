@@ -494,16 +494,34 @@
         });
       </script>
 
-      <!-- script>
-        document
-          .getElementById("login-form")
-          .addEventListener("submit", async (e) => {
-            e.preventDefault();
-            const email = document.getElementById("email").value;
-            const password = document.getElementById("password").value;
-            await signIn(email, password);
-          });
-      </script -->
+<script>
+  let currentTabIndex = 0; // Start from the first tab
+const tabs = document.querySelectorAll('.tab-content'); // Assuming your tabs have the class 'tab-content'
+
+function switchTab(index) {
+  // Hide all tabs
+  tabs.forEach(tab => {
+    tab.style.display = 'none';
+  });
+
+  // Show the selected tab
+  tabs[index].style.display = 'block';
+}
+
+// Initial setup: show the first tab
+switchTab(currentTabIndex);
+
+// Attach event listeners to the arrow buttons
+document.getElementById('right-arrow').addEventListener('click', () => {
+  currentTabIndex = (currentTabIndex + 1) % tabs.length; // Go to the next tab, loop back to the first tab if at the end
+  switchTab(currentTabIndex);
+});
+
+document.getElementById('left-arrow').addEventListener('click', () => {
+  currentTabIndex = (currentTabIndex - 1 + tabs.length) % tabs.length; // Go to the previous tab, loop back to the last tab if at the beginning
+  switchTab(currentTabIndex);
+});
+</script>
 
       <!-- CHECK IF A USER IS LOGGED IN -->
       <script>
@@ -548,7 +566,7 @@
 
 
     </div>
-    <!-- ENDFOSCRIPT-->
+    <!-- ENDOFSCRIPT-->
 
     <!-- DYNAMIC SHARE TEST -->
     <script src="./src/share.js"></script>
