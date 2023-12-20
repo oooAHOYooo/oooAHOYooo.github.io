@@ -79,12 +79,12 @@
                   <div class="home-tab-learn-more-wrap">
                     <a href="https://github.com/oooAHOYooo/oooAHOYooo.github.io"><button class="common-button">Learn
                         More</button></a>
-                    <a href="./src/getOn/index.html"><button class="common-button">Get On ahoy</button></a>
+                    <a href="./js/src/getOn/index.html"><button class="common-button">Get On ahoy</button></a>
                     <a href="https://7ufdbpnl2tt.typeform.com/to/OKeXjt6z"><button class="common-button">Leave
                         Feedback</button></a>
                   </div>
                   <div class="get-started-wrap">
-                    <a href="./src/started.html"><button class="get-started-button">Get Started</button></a>
+                    <a href="./js/src/started.html"><button class="get-started-button">Get Started</button></a>
                   </div>
                   <!-- NOW PLAYING -->
                   <div class="now-playing">
@@ -483,34 +483,7 @@
         });
       </script>
 
-<script>
-let currentTabIndex = 0; // Start from the first tab
-const tabs = document.querySelectorAll('.tab-content'); // Assuming your tabs have the class 'tab-content'
 
-function switchTab(index) {
-  // Hide all tabs
-  tabs.forEach(tab => {
-    tab.style.display = 'none';
-  });
-
-  // Show the selected tab
-  tabs[index].style.display = 'block';
-}
-
-// Initial setup: show the first tab
-switchTab(currentTabIndex);
-
-// Attach event listeners to the arrow buttons
-document.getElementById('right-arrow').addEventListener('click', () => {
-  currentTabIndex = (currentTabIndex + 1) % tabs.length; // Go to the next tab, loop back to the first tab if at the end
-  switchTab(currentTabIndex);
-});
-
-document.getElementById('left-arrow').addEventListener('click', () => {
-  currentTabIndex = (currentTabIndex - 1 + tabs.length) % tabs.length; // Go to the previous tab, loop back to the last tab if at the beginning
-  switchTab(currentTabIndex);
-});
-</script>
 
       <!-- CHECK IF A USER IS LOGGED IN -->
       <script>
@@ -569,7 +542,7 @@ document.getElementById('left-arrow').addEventListener('click', () => {
     <!-- WORKING SOURCE JAVASCRIPTS -->
 
     <!-- USER CONTROLS-->
-    <script src="./src/controls-timeline.js"></script>
+    <script src="./js/src/controls-timeline.js"></script>
 
     <!-- USER JAVASCRIPTS -->
     <script src="./src/user-cart.js"></script>
