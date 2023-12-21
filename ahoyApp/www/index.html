@@ -24,6 +24,7 @@
  
   <!-- Title for iOS app mode -->
   <!-- SUPA INSTALLATION -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js/dist/supabase.min.js"></script>
   <script>
     const supabaseUrl = "https://ornjxycoizoybvdhhowp.supabase.co";
     const supabaseKey =
@@ -203,7 +204,8 @@
                 </div>
                 <!-- AUDIOBOOKS -->
                 <div id="audiobooks-tab" class="tab-content">
-                  <h1>Audiobooks</h1>
+                  <h1>Song List (temp)</h1>
+               
                   <!-- TABLE OF AUDIOBOOKS COMING FROM A JSON FILE AND WORKS MUCH THE SAME PODCAST WOULD WORK -->
                 </div>
                 <!-- GAMES -->
@@ -515,6 +517,47 @@
     </div>
     <!-- ENDOFSCRIPT-->
 
+
+    <!-- TEST SCRIPTS-->
+<script>
+  document.addEventListener('DOMContentLoaded', async () => {
+  const { data, error } = await supabase
+    .from('songs')
+    .select('*');
+
+  if (error) {
+    console.error('Error fetching songs:', error);
+    return;
+  }
+
+  // Assuming you have a container with the id 'song-list' where you want to display the songs
+  const songListContainer = document.getElementById('song-list');
+
+  // Clear existing content
+  songListContainer.innerHTML = '';
+
+  // Create and append songs to the container
+  data.forEach(song => {
+    const songElement = document.createElement('div');
+    songElement.classList.add('song');
+    songElement.innerHTML = `
+      <div class="song-thumbnail">
+        <img src="${song.thumbnail_url}" alt="${song.songTitle}">
+      </div>
+      <div class="song-details">
+        <h3>${song.songTitle}</h3>
+        <p>Artist: ${song.artist}</p>
+        <p><a href="${song.artistUrl}" target="_blank">Artist Page</a></p>
+        <p><a href="${song.mp3url}" target="_blank">Listen</a></p>
+        <p>Duration: ${song.duration}</p>
+        ${song.available_for_purchase ? `<a href="${song.buy_url}" class="buy-song" target="_blank">Buy</a>` : ''}
+      </div>
+    `;
+    songListContainer.appendChild(songElement);
+  });
+});
+
+</script>
   <!-- DYNAMIC SHARE TEST -->
 <script src="js/src/share.js"></script>
 <!-- DYANMIC ARTIST TEST -->
@@ -549,5 +592,21 @@
 <script src="js/src/function-switchTheme.js"></script>
 <!-- CORE PAGE-->
 <script src="js/src/tab.js"></script>
+
+<!-- LOG ERRORS -->
+<script>
+  document.addEventListener('DOMContentLoaded', async () => {
+  console.log('Fetching songs...');
+  const { data, error } = await supabase
+    .from('songs')
+    .select('*');
+
+  console.log('Songs fetched:', data);
+  console.log('Fetch error:', error);
+
+  // ... (rest of your code)
+});
+
+</script>
     </body>
 </html>

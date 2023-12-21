@@ -1,14 +1,8 @@
  document.addEventListener('DOMContentLoaded', function() {
-    fetch('./data/songCollection.json')
+    fetch('js/data/songCollection.json')
         .then(response => response.json())
         .then(data => {
 
-
-
-
-
-
-            
             const songList = document.getElementById('song-list');
             songList.innerHTML = `
                 <table>
