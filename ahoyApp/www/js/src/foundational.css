@@ -325,9 +325,9 @@ button:hover {
   text-decoration: none;
 }
 
-#mediaTable td:hover {
-  color: var(--gold);
-  border-bottom: 1px solid var(--gold);
+#mediaTable tr:hover {
+  color: var(--text-color);
+  background-color: var(--secondary-color);
 }
 
 #podcasts-tab {
@@ -352,7 +352,6 @@ button:hover {
 
 #podcast-table th,
 #podcast-table td {
-  padding: 10px;
   text-align: left;
   border-bottom: 1px solid var(--border-color);
 }
@@ -362,7 +361,7 @@ button:hover {
 }
 
 #podcast-table tr:nth-child(odd) {
-  background-color: var(--secondary-color);ß
+  background-color: var(--secondary-color);
 }
 
 #podcast-player {
@@ -493,10 +492,6 @@ button:hover {
 }
 
 /* Style for Games Tab */
-#games-tab h1 {
-  font-size: 1.5rem; /* Adjust as needed */
-  margin-bottom: 10px; /* Adjust as needed */
-}
 
 #games-tab .tabcontent h1 {
   font-size: 1.2rem; /* Adjust as needed */
@@ -534,15 +529,15 @@ button:hover {
 }
 
 #home-logo-div {
-  width:100%;
-  display:flex;
-  align-items:center;
+  width: 100%;
+  display: flex;
+  align-items: center;
   justify-content: center;
 }
 #home-logo-div img {
   width: 100%;
-  max-width:500px;
-  height:auto;
+  max-width: 500px;
+  height: auto;
   animation: hue-rotate 5s infinite linear;
   filter: brightness(
     0.8
@@ -834,7 +829,7 @@ button:hover {
   left: 0;
   width: 100%;
   padding: 10px;
-  background-color: rgba(0, 0, 0, 0.5); 
+  background-color: rgba(0, 0, 0, 0.5);
   color: white;
   font-size: 10px;
   text-align: center;
@@ -860,7 +855,7 @@ button:hover {
 /*Update Styles*/
 
 #updates-tab h2 {
-  text-align:center;
+  text-align: center;
 }
 
 .thumbnail:hover {
@@ -902,14 +897,13 @@ header {
 }
 
 #loginLink {
-  text-align:center!important;
+  text-align: center !important;
 }
-
 
 /*DIGITAL MARKET*/
 
 #digitalMarket {
-  text-align:center;
+  text-align: center;
 }
 
 /* Style the table */
@@ -960,7 +954,7 @@ header {
   cursor: pointer;
   border-style: solid;
   padding: 8.5px;
-  height:45px;
+  height: 45px;
   border-width: 1px;
   border-color: var(--border-color);
 }
@@ -969,7 +963,6 @@ header {
   border-color: var(--gold);
   color: var(--gold);
 }
-
 
 /*Physical Market*/
 
@@ -1006,7 +999,7 @@ header {
   border-radius: 5px; /* Optional: add border radius for a smoother look */
   padding: 10px; /* Optional: add some padding */
   border-color: var(--border-color);
-  border-style:solid;
+  border-style: solid;
   border-width: 1px;
 }
 
@@ -1016,13 +1009,11 @@ header {
   padding-bottom: 200px;
 }
 
-
 /* ACCOUNT TAB LAYOUT */
 
 #account-tab {
   padding-bottom: 200px;
 }
-
 
 /* SONG TAB */
 
@@ -1036,14 +1027,27 @@ header {
 #media-tab {
   margin-left: auto;
   margin-right: auto;
-  min-width:320px;
+  min-width: 320px;
   max-width: 600px;
   width: 100%;
-  background-color:green;
 }
 
 #media-tab h1 {
   position: relative;
   z-index: 3;
   color: var(--text-color);
+}
+
+#songs-tab,
+#media-tab,
+#artists-tab,
+#games-tab,
+#podcasts-tab,
+#updates-tab,
+#account-tab {
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 320px;
+  max-width: 600px;
+  width: 100%;
 }

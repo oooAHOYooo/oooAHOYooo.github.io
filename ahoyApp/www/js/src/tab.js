@@ -13,7 +13,8 @@ let currentTabIndex = 0; // Assuming you have a global variable to keep track of
 
 function nextTab() {
   currentTabIndex++;
-  if (currentTabIndex > 9) { // Adjusted to match the new length of the tabs array
+  if (currentTabIndex > 8) {
+    // Adjusted to match the new length of the tabs array
     currentTabIndex = 0;
   }
   switchTabByIndex(currentTabIndex);
@@ -22,7 +23,7 @@ function nextTab() {
 function prevTab() {
   currentTabIndex--;
   if (currentTabIndex < 0) {
-    currentTabIndex = 9; // Adjusted to match the new length of the tabs array
+    currentTabIndex = 8; // Adjusted to match the new length of the tabs array
   }
   switchTabByIndex(currentTabIndex);
 }
@@ -35,7 +36,7 @@ function switchTabByIndex(tabIndex) {
     "songs",
     "media",
     "podcasts",
-    "audiobooks", // Added "audiobooks" to the tabs array
+
     "games",
     "artists",
     "updates",
@@ -65,12 +66,12 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Attach event listeners to the arrow buttons
-document.getElementById('super-right-arrow').addEventListener('click', () => {
+document.getElementById("super-right-arrow").addEventListener("click", () => {
   currentTabIndex = (currentTabIndex + 1) % tabs.length; // Go to the next tab, loop back to the first tab if at the end
   switchTabByIndex(currentTabIndex);
 });
 
-document.getElementById('super-left-arrow').addEventListener('click', () => {
+document.getElementById("super-left-arrow").addEventListener("click", () => {
   currentTabIndex = (currentTabIndex - 1 + tabs.length) % tabs.length; // Go to the previous tab, loop back to the last tab if at the beginning
   switchTabByIndex(currentTabIndex);
 });
