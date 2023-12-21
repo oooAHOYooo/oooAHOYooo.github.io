@@ -80,5 +80,5 @@ document.addEventListener("DOMContentLoaded", function () {
     playerContainer.appendChild(videoElement);
   }
 
-  // ... rest of your code ...
+
 });
