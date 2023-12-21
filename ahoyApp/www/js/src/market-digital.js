@@ -16,13 +16,17 @@ function populateTable(products) {
                 <td>${product.genre}</td>
                 <td>$${product.price}</td>
                 <td>
-                    <button onclick="playAudio('${product.previewUrl}')">Play Preview</button>
+                    <button onclick="playAudio('${
+                      product.previewUrl
+                    }')">Preview</button>
                     <audio id="audio-${product.id}" style="display: none;">
                         <source src="${product.previewUrl}" type="audio/mpeg">
                         Your browser does not support the audio element.
                     </audio>
                 </td>
-                <td><button onclick="addToCart('${product.id}')">Add to Cart</button></td>
+                <td><button onclick="addToCart(${JSON.stringify(
+                  product
+                )})">Add to Cart</button></td>
             `;
   });
 }
@@ -30,4 +34,11 @@ function populateTable(products) {
 function playAudio(id) {
   const audio = document.getElementById(`audio-${id}`);
   audio.play();
+}
+
+function addToCart(product) {
+  const cartItemsDiv = document.getElementById("cart-items");
+  const itemElement = document.createElement("p");
+  itemElement.textContent = product.artist + " - " + product.price;
+  cartItemsDiv.appendChild(itemElement);
 }
