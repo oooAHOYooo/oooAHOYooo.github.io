@@ -1,8 +1,4 @@
-// Initialize Supabase client
-const supabaseUrl = "https://ornjxycoizoybvdhhowp.supabase.co";
-const supabaseAnonKey =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9ybmp4eWNvaXpveWJ2ZGhob3dwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDIzNTA4ODEsImV4cCI6MjAxNzkyNjg4MX0.SIgYEybVeKQ5xGnplA-elTOw0oC5tZIv5nGRUZf-vS8"; // Replace with your Supabase anon key
-const supabase = Supabase.createClient(supabaseUrl, supabaseAnonKey);
+
 // Login function
 async function login() {
   const email = document.getElementById("email").value;
