@@ -972,7 +972,7 @@ header {
 .product {
   position: relative;
   padding: 20px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border-color);
   text-align: center;
 }
 
@@ -980,13 +980,16 @@ header {
   position: absolute;
   top: 20px;
   right: 20px;
-  font-size: 52px;
-  color: var(--background-color);
+  font-size: 50px;
+  color: var(--button-color);
   background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
   backdrop-filter: blur(10px); /* Apply blur to the background */
   -webkit-backdrop-filter: blur(10px); /* For Safari */
   border-radius: 5px; /* Optional: add border radius for a smoother look */
   padding: 10px; /* Optional: add some padding */
+  border-color: var(--border-color);
+  border-style:solid;
+  border-width: 1px;
 }
 
 /*Market Tab Layout */
