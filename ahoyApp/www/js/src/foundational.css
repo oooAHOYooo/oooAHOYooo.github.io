@@ -296,7 +296,7 @@ button:hover {
 }
 
 #mediaTable {
-  width: 50%;
+  width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
 }
@@ -1031,4 +1031,19 @@ header {
   margin-right: auto;
   max-width: 600px;
   width: 100%;
+}
+
+#media-tab {
+  margin-left: auto;
+  margin-right: auto;
+  min-width:320px;
+  max-width: 600px;
+  width: 100%;
+  background-color:green;
+}
+
+#media-tab h1 {
+  position: relative;
+  z-index: 3;
+  color: var(--text-color);
 }
