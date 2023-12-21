@@ -531,11 +531,18 @@ button:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-width: 100%;
 }
 
+#home-logo-div {
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content: center;
+}
 #home-logo-div img {
   width: 100%;
+  max-width:500px;
+  height:auto;
   animation: hue-rotate 5s infinite linear;
   filter: brightness(
     0.8
