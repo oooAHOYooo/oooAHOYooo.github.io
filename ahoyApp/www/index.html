@@ -567,19 +567,6 @@
 <script src="js/src/tab.js"></script>
 
 <!-- LOG ERRORS -->
-<script>
-  document.addEventListener('DOMContentLoaded', async () => {
-  console.log('Fetching songs...');
-  const { data, error } = await supabase
-    .from('songs')
-    .select('*');
 
-  console.log('Songs fetched:', data);
-  console.log('Fetch error:', error);
-
-  // ... (rest of your code)
-});
-
-</script>
     </body>
 </html>

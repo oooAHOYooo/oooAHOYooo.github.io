@@ -910,7 +910,6 @@ header {
 
 /* Style the table */
 #digitalMarketTable {
-  width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
 }
@@ -981,8 +980,13 @@ header {
   position: absolute;
   top: 20px;
   right: 20px;
-  font-size: 24px;
-  color: green;
+  font-size: 52px;
+  color: var(--background-color);
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+  backdrop-filter: blur(10px); /* Apply blur to the background */
+  -webkit-backdrop-filter: blur(10px); /* For Safari */
+  border-radius: 5px; /* Optional: add border radius for a smoother look */
+  padding: 10px; /* Optional: add some padding */
 }
 
 /*Market Tab Layout */
