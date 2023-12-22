@@ -533,7 +533,7 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top:30px;
+  margin-top: 30px;
 }
 #home-logo-div img {
   width: 100%;
@@ -553,7 +553,8 @@ button:hover {
 }
 
 @keyframes vhs-flicker {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
   }
   50% {
@@ -1063,8 +1064,8 @@ header {
 /*Media and TV code*/
 
 .tv-wrap {
-  position: sticky;
-  top: 10; /* Adjust this value as needed */
+  /*position: sticky;*/
+  top: 0; /* Adjust this value as needed */
   z-index: 3;
   width: 100%;
   height: auto;

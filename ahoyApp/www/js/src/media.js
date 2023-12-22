@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
       file: videoUrl,
       image: thumbnailUrl,
       width: "100%",
-      aspectratio: "16:9"
+      aspectratio: "16:9",
     });
   }
 

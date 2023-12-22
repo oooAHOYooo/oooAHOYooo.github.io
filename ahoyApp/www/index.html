@@ -1,11 +1,7 @@
 <!DOCTYPE html>
 <!-- APP AHOY -->
 <html>
-  <head>
-        <!-- AG ADDITIONS TO HEAD -->
-        <!-- Favicon -->
- 
-  <!-- Title for iOS app mode -->
+  <head> 
       <!-- SUPA INSTALLATION -->
       <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@latest"></script>
       <script>
@@ -18,11 +14,10 @@
       integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
       crossorigin="anonymous" referrerpolicy="no-referrer" />
       <script defer data-domain="ahoy.ooo" src="https://plausible.io/js/script.js"></script>
-
-        <link rel="stylesheet" href="./js/src/foundational.css">
-       <link rel="stylesheet" href="./css/mobileOS-addons.css">
-        <!-- END OF AG ADDITIONS TO HEAD -->
-        <meta charset="utf-8">
+      <link rel="stylesheet" href="./js/src/foundational.css">
+      <link rel="stylesheet" href="./css/mobileOS-addons.css">
+      <!-- END OF AG ADDITIONS TO HEAD -->
+      <meta charset="utf-8">
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
@@ -100,7 +95,15 @@
                 <!-- MARKET TAB-->
                 <div id="market-tab" class="tab-content">
                   <h1>Market</h1>
-                  
+                  <div id="physicalMarket">
+                    <h2>Physical Market</h2>
+                    <div id="productGrid"></div>
+                    <div id="cart">
+                      <h3>Your Physical Product Cart</h3>
+                      <div id="cartItems"></div>
+                      <div id="totalPrice"></div>
+                    </div>
+                  </div>
                   <div id="digitalMarket">
                     <h2 style="text-align: center;">Digital Market</h2>
                     <table id="digitalMarketTable">
@@ -119,15 +122,7 @@
                       </tbody>
                     </table>
                   </div>
-                  <div id="physicalMarket">
-                    <h2>Physical Market</h2>
-                    <div id="productGrid"></div>
-                    <div id="cart">
-                      <h3>Your Physical Product Cart</h3>
-                      <div id="cartItems"></div>
-                      <div id="totalPrice"></div>
-                    </div>
-                  </div>
+                  
                   <!-- END OF PHYSICAL MARKET -->
                   <!-- END OF MARKET -->
                 </div><!-- END OF MARKET -->
