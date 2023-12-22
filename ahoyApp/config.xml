@@ -1,11 +1,35 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.cordova.ahoyApp" version=".0.22" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="io.cordova.ahoyApp" version="0.23" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Ahoy Indie Media</name>
     <description>Sample Apache Cordova App</description>
     <author email="alex@ahoy.ooo" href="https://ahoy.ooo">
-        Apache Cordova Team
+        Ahoy Indie Media Team
     </author>
     <content src="index.html" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
+
+    <!-- Splash Screen Preferences -->
+    <preference name="SplashScreen" value="screen" />
+    <preference name="SplashScreenDelay" value="3000" />
+
+    <!-- Status Bar Preferences -->
+    <preference name="StatusBarOverlaysWebView" value="false" />
+    <preference name="StatusBarBackgroundColor" value="#003366" /> <!-- Nautical theme dark blue color -->
+    <preference name="StatusBarStyle" value="lightcontent" />
+
+    <!-- Splash Screen Images for Android -->
+    <platform name="android">
+        <splash src="res/screen/android/splash-mdpi.png" density="mdpi"/>
+        <splash src="res/screen/android/splash-hdpi.png" density="hdpi"/>
+        <!-- Add more densities as needed -->
+    </platform>
+
+    <!-- Splash Screen Images for iOS -->
+    <platform name="ios">
+        <splash src="res/screen/ios/splash-320x480.png" width="320" height="480"/>
+        <splash src="res/screen/ios/splash-640x960.png" width="640" height="960"/>
+        <!-- Add more sizes as needed -->
+    </platform>
+
 </widget>
