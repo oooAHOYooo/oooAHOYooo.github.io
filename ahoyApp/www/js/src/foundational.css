@@ -533,15 +533,14 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top:30px;
 }
 #home-logo-div img {
   width: 100%;
   max-width: 500px;
   height: auto;
-  animation: hue-rotate 5s infinite linear;
-  filter: brightness(
-    0.8
-  ); /* Adjust brightness, 0 is completely dark, 1 is no change, and values above 1 increase brightness */
+  animation: hue-rotate 5s infinite linear, vhs-flicker 3.11s infinite;
+  filter: brightness(0.8) contrast(1.5);
 }
 
 @keyframes hue-rotate {
@@ -549,7 +548,16 @@ button:hover {
     filter: hue-rotate(0deg) brightness(0.8);
   }
   100% {
-    filter: hue-rotate(360deg) brightness(0.98);
+    filter: hue-rotate(360deg) brightness(0.8);
+  }
+}
+
+@keyframes vhs-flicker {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
   }
 }
 

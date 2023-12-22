@@ -29,6 +29,9 @@
         <meta name="color-scheme" content="light dark">
 
         <title>Ahoy Indie Media</title>
+        <!-- JWPLAYER INSTALLATION-->
+        <script src="https://cdn.jwplayer.com/libraries/9Gtk2B1J.js"></script>
+
   </head>
   <body>
         <div class="app">
@@ -83,16 +86,16 @@
                   </div>
                   <!-- END OF NOW PLAYING -->
                   <!-- FEATURED MEDIA -->
+                  <!-- 
                   <div id="featured-media-container" class="media-container">
                     <h2>Featured Media</h2>
                     <br />
                     <div id="featured-media">
-                      <!-- Media items will be inserted here by the JavaScript code -->
+                     
                     </div>
-                  </div>
-                  <!-- END OF FEATURED MEDIA -->
+                  </div>-->
+                 
           
-                  <!-- FEATURED MEDIA JS -->
                 </div>
                 <!-- MARKET TAB-->
                 <div id="market-tab" class="tab-content">
@@ -144,9 +147,17 @@
                   </div>
                 </div>
                 <!-- MEDIA TAB -->
+                <!-- JW PLAYER ID
+                
+                https://cdn.jwplayer.com/libraries/9Gtk2B1J.js
+                player id = 9Gtk2B1J
+                -->
                 <div id="media-tab" class="tab-content">
                   <h1>Media</h1>
-                  <div id="jw-player-container" style="width: 100%; height: auto"></div>
+                  <div id="jw-player-container"></div>
+        
+
+
                   <!-- Media Table -->
                   <table id="mediaTable" class="list">
                     <thead>

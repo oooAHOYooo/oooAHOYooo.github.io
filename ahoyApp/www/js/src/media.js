@@ -1,16 +1,16 @@
 document.addEventListener("DOMContentLoaded", function () {
-  function playMedia(videoUrl) {
-    const playerContainer = document.querySelector("#media-tab video");
-    const source = document.querySelector("#media-tab video > source");
-
-    // Update the source element's src attribute
-    source.src = videoUrl;
-
-    // Load the new source into the video element
-    playerContainer.load();
-    playerContainer.play();
+  // Function to load video in JW Player
+  function loadVideoInJWPlayer(videoUrl, thumbnailUrl) {
+    jwplayer("jw-player-container").setup({
+      autostart: true,
+      file: videoUrl,
+      image: thumbnailUrl,
+      width: "100%",
+      aspectratio: "16:9"
+    });
   }
 
+  // Fetch and display media data
   fetch("data/mediaCollection.json")
     .then((response) => response.json())
     .then((data) => {
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
         playButton.textContent = "▶";
         playButton.classList.add("compact-play-button");
         playButton.onclick = function () {
-          playMedia(item.video_url);
+          loadVideoInJWPlayer(item.mp4_link, item.thumbnail_link);
         };
         playButtonCell.appendChild(playButton);
         row.appendChild(playButtonCell);
@@ -59,26 +59,4 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     })
     .catch((error) => console.error("Error:", error));
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  function playMedia(videoUrl) {
-    const playerContainer = document.querySelector("#jw-player-container");
-
-    // Remove any existing video elements
-    while (playerContainer.firstChild) {
-      playerContainer.firstChild.remove();
-    }
-
-    // Create a new video element
-    const videoElement = document.createElement("video");
-    videoElement.src = videoUrl;
-    videoElement.controls = true;
-    videoElement.autoplay = true;
-
-    // Append the new video element to the player container
-    playerContainer.appendChild(videoElement);
-  }
-
-
 });

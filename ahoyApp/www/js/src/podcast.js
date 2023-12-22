@@ -1,5 +1,5 @@
 function loadPodcasts() {
-  fetch("./data/podcastCollection.json")
+  fetch("data/podcastCollection.json")
     .then((response) => response.json())
     .then((data) => {
       const tableBody = document
