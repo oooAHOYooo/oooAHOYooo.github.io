@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="io.cordova.ahoyApp" version="0.23" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Ahoy Indie Media</name>
-    <description>Sample Apache Cordova App</description>
+    <description>Ahoy Indie Media is a handcrafted indie media platform - dashing out sugar you could find anywhere else</description>
     <author email="alex@ahoy.ooo" href="https://ahoy.ooo">
         Ahoy Indie Media Team
     </author>
@@ -18,18 +18,31 @@
     <preference name="StatusBarBackgroundColor" value="#003366" /> <!-- Nautical theme dark blue color -->
     <preference name="StatusBarStyle" value="lightcontent" />
 
-    <!-- Splash Screen Images for Android -->
+    <!-- Custom Splash Screen Images -->
     <platform name="android">
-        <splash src="res/screen/android/splash-mdpi.png" density="mdpi"/>
-        <splash src="res/screen/android/splash-hdpi.png" density="hdpi"/>
+        <splash src="www/img/assets/splash-screens/splash-mdpi.png" density="mdpi"/>
+        <splash src="www/img/assets/splash-screens/splash-hdpi.png" density="hdpi"/>
+        <splash src="www/img/assets/splash-screens/splash-xhdpi.png" density="xhdpi"/>
+        <splash src="www/img/assets/splash-screens/splash-xxhdpi.png" density="xxhdpi"/>
+        <splash src="www/img/assets/splash-screens/splash-xxxhdpi.png" density="xxxhdpi"/>
         <!-- Add more densities as needed -->
     </platform>
-
-    <!-- Splash Screen Images for iOS -->
     <platform name="ios">
-        <splash src="res/screen/ios/splash-320x480.png" width="320" height="480"/>
-        <splash src="res/screen/ios/splash-640x960.png" width="640" height="960"/>
+        <splash src="www/img/assets/splash-screens/splash-320x480.png" width="320" height="480"/>
+        <splash src="www/img/assets/splash-screens/splash-640x960.png" width="640" height="960"/>
         <!-- Add more sizes as needed -->
+    </platform>
+
+    <!-- Icon Configuration for Android -->
+    <platform name="android">
+        <icon src="www/img/logo.png" />
+        <!-- Add specific icons per density if necessary -->
+    </platform>
+    
+    <!-- Icon Configuration for iOS -->
+    <platform name="ios">
+        <icon src="www/img/logo.png" width="180" height="180"/>
+        <!-- Add specific icons per size if necessary -->
     </platform>
 
 </widget>
