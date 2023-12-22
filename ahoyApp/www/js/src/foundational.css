@@ -1059,3 +1059,14 @@ header {
   max-width: 600px;
   width: 100%;
 }
+
+/*Media and TV code*/
+
+.tv-wrap {
+  position: sticky;
+  top: 10; /* Adjust this value as needed */
+  z-index: 3;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
