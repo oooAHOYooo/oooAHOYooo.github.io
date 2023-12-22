@@ -35,8 +35,20 @@
         width: 300px;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         backdrop-filter: blur(10px);
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: left;
       }
-      #signup-form input,
+
+      #signup-form input {
+        width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: row;
+      }
+
       #signup-form button {
         width: 100%;
         padding: 10px;
@@ -54,9 +66,24 @@
         margin-top: 10px;
       }
     </style>
+    <style>
+      /* ... existing styles ... */
+
+      /* Add or modify these styles */
+      #signup-form input[type="email"],
+      #signup-form input[type="password"] {
+        width: 80%; /* Adjust as needed */
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+    </style>
   </head>
   <body>
-    <a href="../index.html"><img src="../assets/u_ahoy23.png" /></a>
+    <a href="../../index.html"
+      ><img src="../../img/assets/u_ahoy23.png" style="width: 300px"
+    /></a>
     <h1>Create an Account for Ahoy Indie Media</h1>
     <form id="signup-form">
       <input type="email" id="email" placeholder="Email" required />

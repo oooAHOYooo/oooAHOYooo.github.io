@@ -27,6 +27,8 @@
         <!-- JWPLAYER INSTALLATION-->
         <script src="https://cdn.jwplayer.com/libraries/9Gtk2B1J.js"></script>
 
+        <!-- -->
+
   </head>
   <body>
         <div class="app">
@@ -120,27 +122,33 @@
                       <tbody>
                         <!-- JavaScript will populate table rows here -->
                       </tbody>
+
                     </table>
+                    <div id="digitalCart">
+                      <h3>Your Digital Product Cart</h3>
+                      <div id="digitalCartItems"></div>
+                      <div id="digitalTotalPrice"></div>
+                    </div>
                   </div>
                   
                   <!-- END OF PHYSICAL MARKET -->
                   <!-- END OF MARKET -->
                 </div><!-- END OF MARKET -->
-                <!-- SONGS TAB -->
-                <div id="songs-tab" class="tab-content">
-                  <h1>Songs</h1>
-                  <!-- Song Control Panel -->
-                  <div id="control-panel">
-                    <input type="text" id="search-bar" placeholder="Search songs..." />
-                    <div class="sort-buttons">
-                      <button id="sort-az">A-Z</button>
-                      <button id="sort-recent">Recently Added</button>
-                    </div>
-                  </div>
-                  <div id="song-wrap-list">
-                    <ul class="list" id="song-list"></ul>
-                  </div>
-                </div>
+               <!-- SONGS TAB -->
+<div id="songs-tab" class="tab-content">
+  <h1>Songs</h1>
+  <!-- Song Control Panel -->
+  <div id="control-panel">
+    <input type="text" id="search-bar" placeholder="Search songs..." />
+    <div class="sort-buttons">
+      <button id="sort-az">A-Z</button>
+      <button id="sort-recent">Recently Added</button>
+    </div>
+  </div>
+  <div id="song-wrap-list">
+    <ul class="list" id="song-list"></ul>
+  </div>
+</div>
                 <!-- MEDIA TAB -->
                 <!-- JW PLAYER ID
                 
@@ -170,22 +178,24 @@
                     </tbody>
                   </table>
                 </div>
-                <!-- PODCASTS -->
-                <div id="podcasts-tab" class="tab-content">
-                  <h1>Podcasts</h1>
-                  <table id="podcast-table">
-                    <thead>
-                      <tr>
-                        <th>Play</th>
-                        <th>Thumbnail</th>
-                        <th>Title</th>
-                        <th>Description</th>
-                        <th>Like</th>
-                      </tr>
-                    </thead>
-                    <tbody></tbody>
-                  </table>
-                </div>
+              <!-- PODCASTS -->
+<div id="podcasts-tab" class="tab-content">
+  <h1>Podcasts</h1>
+  <div class="podcast-container">
+    <table id="podcast-table" class="full-width-table">
+      <thead>
+        <tr>
+          <th>Play</th>
+          <th>Thumbnail</th>
+          <th>Title</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</div>
+
                 <!-- AUDIOBOOKS -->
                 <!-- div id="audiobooks-tab" class="tab-content">
                   <h1>Song List (temp)</h1>

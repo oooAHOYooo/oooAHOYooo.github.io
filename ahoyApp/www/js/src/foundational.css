@@ -259,8 +259,6 @@ button:hover {
   outline: none;
 }
 
-/* Add this to your foundational.css file */
-
 #cable-tab {
   color: var(--text-color);
 }
@@ -340,6 +338,8 @@ button:hover {
   border-collapse: collapse;
   margin: auto; /* This will center the table */
   margin-top: 20px;
+  position: relative;
+  z-index: 5;
 }
 
 #podcast-table img {
@@ -973,6 +973,32 @@ header {
   color: var(--gold);
 }
 
+#digitalProductGrid,
+#productGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+#digitalCart,
+#cart {
+  margin-top: 20px;
+  border-top: 1px solid var(--border-color);
+}
+
+#digitalCartItems,
+#cartItems {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#digitalTotalPrice,
+#totalPrice {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
 /*Physical Market*/
 
 #physicalMarket {
@@ -1070,4 +1096,14 @@ header {
   width: 100%;
   height: auto;
   overflow: hidden;
+}
+
+#song-wrap-list {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto; /* This will center the div if its width is less than 600px */
+}
+
+#login-btn {
+  margin-right: 30px;
 }

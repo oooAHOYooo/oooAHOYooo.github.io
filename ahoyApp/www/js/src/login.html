@@ -5,7 +5,23 @@
     <title>Login - Ahoy Indie Media</title>
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.28.5/dist/supabase.min.js"></script>
+    <style>
+      .hipster-text {
+        color: #ff6b6b; /* Sunset red color */
+        font-size: 16px;
+        font-weight: 900;
+        font-family: "Barlow", sans-serif;
+      }
 
+      .hipster-link {
+        color: #fbd786; /* Sunset yellow color */
+        text-decoration: none;
+      }
+
+      .hipster-link:hover {
+        color: #f7797d; /* Sunset pink color */
+      }
+    </style>
     <style>
       /* Other styles remain the same */
 
@@ -17,13 +33,12 @@
 
       #login-email::placeholder,
       #login-password::placeholder {
-        color: black;
+        color: rgb(255, 255, 255);
       }
 
       #login-email:hover,
       #login-password:hover {
         backdrop-filter: blur(10px);
-        background-color: rgba(255, 255, 255, 0.196);
       }
       body {
         background: url("https://i.gifer.com/n4V.gif") no-repeat center center
@@ -41,43 +56,40 @@
       .login-container {
         display: flex;
         flex-direction: column;
+        width: 100%;
       }
-      .login__menu-container {
-        display: flex;
+
+      #login__logo-container {
         flex-direction: column;
       }
 
       #login-email,
       #login-password {
-        width: 500px;
+        width: 300px;
         height: 100px;
         background-color: var(--background-color);
         backdrop-filter: blur(10px);
         border-radius: 10px;
-        border: 1px solid black;
+        border: 1px solid rgb(255, 255, 255);
         text-align: center;
         color: var(--text-color);
-        font-size: 22px;
+        font-size: 16px;
         font-family: "Barlow", sans-serif;
         font-weight: 900;
         margin: 5px;
-        color: black;
-      }
-
-      #login-e-mail {
-        text-transform: capitalize !important;
+        color: rgb(255, 255, 255);
       }
 
       .login__logo-container {
         display: flex;
         align-items: center;
-
+        flex-direction: column;
         justify-content: center;
       }
 
       /* Add styles for the login button */
       .login__menu-container button {
-        width: 500px;
+        width: 300px;
         height: 100px;
         background-color: var(--background-color);
         backdrop-filter: blur(10px);
@@ -89,7 +101,7 @@
         font-family: "Barlow", sans-serif;
         font-weight: 900;
         margin: 5px;
-        color: black;
+        color: rgb(255, 255, 255);
         cursor: pointer;
         transition: all 0.3s ease;
       }
@@ -101,7 +113,7 @@
 
       .login__menu-container button:hover {
         /* Change the background color on hover */
-        background-color: #ffffff79;
+        background-color: #493f3f79;
         color: white;
         /* Start the pulse animation on hover */
         animation: pulse 2s infinite;
@@ -125,29 +137,46 @@
         }
       }
     </style>
+    <style>
+      #login-email,
+      #login-password {
+        /* Other styles remain the same */
+        background-color: rgba(
+          255,
+          255,
+          255,
+          0.1
+        ) !important; /* Semi-transparent white */
+        border: 1px solid rgba(255, 255, 255, 0.2); /* Semi-transparent white border */
+        backdrop-filter: blur(10px); /* Apply blur to the background */
+        -webkit-backdrop-filter: blur(10px); /* For Safari */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add some shadow for depth */
+        color: white; /* White text color */
+      }
+    </style>
   </head>
   <body>
     <div class="login-container">
       <div class="login__logo-container">
-        <a href="../index.html"
-          ><img src="" style="width: 300px"
+        <a href="../../index.html"
+          ><img src="../../img/assets/u_ahoy23.png" style="width: 300px"
         /></a>
+        <input
+          type="email"
+          id="login-email"
+          placeholder="Email"
+          style="color: white !important"
+        />
+        <input type="password" id="login-password" placeholder="Password" />
+        <div class="login__menu-container">
+          <button onclick="login()">Login</button>
+        </div>
+        <p id="message"></p>
       </div>
-      <input
-        type="email"
-        id="login-email"
-        placeholder="Email"
-        style="color: white !important"
-      />
-      <input type="password" id="login-password" placeholder="Password" />
-      <div class="login__menu-container">
-        <button onclick="login()">Login</button>
-      </div>
-      <p id="message"></p>
     </div>
-    <p>
+    <p class="hipster-text">
       Don't have an account?
-      <a href="./create-account.html">Create One</a>
+      <a href="./create-account.html" class="hipster-link">Create One</a>
     </p>
 
     <script>

@@ -9,7 +9,12 @@
         align-items: center;
         height: 100vh;
         margin: 0;
-        background-color: #f0f0f0;
+        background: url("https://media.giphy.com/media/fvSRe1p3pC7YHFQXZd/giphy.gif")
+          no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
         font-family: Arial, sans-serif;
       }
 
@@ -40,15 +45,61 @@
         }
       }
     </style>
+    <style>
+      /* ... existing styles ... */
+
+      /* Add styles for the Go Go Go button */
+      button {
+        width: 300px;
+        height: 100px;
+        background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+        backdrop-filter: blur(10px); /* Apply blur to the background */
+        -webkit-backdrop-filter: blur(10px); /* For Safari */
+        border: 1px solid rgba(255, 255, 255, 0.2); /* Semi-transparent white border */
+        border-radius: 10px;
+        text-align: center;
+        color: white; /* White text color */
+        font-size: 22px;
+        font-family: "Barlow", sans-serif;
+        font-weight: 900;
+        margin: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      button:hover {
+        /* Change the background color on hover */
+        background-color: #493f3f79;
+        color: white;
+        /* Start the pulse animation on hover */
+        animation: pulse 2s infinite;
+        /* Add a black outline to the text */
+        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+      }
+
+      /* Define the pulse animation */
+      @keyframes pulse {
+        0% {
+          border-width: 1px;
+        }
+        50% {
+          border-width: 3px;
+        }
+        100% {
+          border-width: 1px;
+        }
+      }
+    </style>
   </head>
   <body>
-    <h1>Oooo, you are new here!</h1>
+    <img src="../../img/assets/u_ahoy23.png" style="max-width: 200px" />
+    <h1>oy oy, you are new here!</h1>
     <ul>
       <li><a href="./login.html">Sign Up/Login</a></li>
       <li>Sit back</li>
       <li>Share with ya mates</li>
       <li>Help artists</li>
     </ul>
-    <a href="../../cleanOy/index.html"><button>Go Go Go</button></a>
+    <a href="../../index.html"><button>Go Go Go</button></a>
   </body>
 </html>
