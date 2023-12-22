@@ -1107,3 +1107,29 @@ header {
 #login-btn {
   margin-right: 30px;
 }
+
+.version-movie-poster-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+
+.full-height-image {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  border-style: solid;
+  border-color: var(--border-color);
+}
+
+#lightbox-image {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: auto;
+  display: block;
+  width: 90%;
+  max-width: 700px;
+}

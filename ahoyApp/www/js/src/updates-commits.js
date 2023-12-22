@@ -27,3 +27,18 @@ function loadCommits() {
 
 // Load commits when the page loads
 window.onload = loadCommits;
+
+document.addEventListener('DOMContentLoaded', function () {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightbox-image');
+    const lightboxTrigger = document.getElementById('lightbox-trigger');
+  
+    lightboxTrigger.addEventListener('click', function () {
+      lightboxImage.src = this.src;
+      lightbox.style.display = 'block';
+    });
+  
+    lightbox.addEventListener('click', function () {
+      lightbox.style.display = 'none';
+    });
+  });
