@@ -1,0 +1,18 @@
+{
+  "games": [
+    {
+      "id": "GameA",
+      "name": "Vanca",
+      "url": "https://marcoworms.github.io/vanca/",
+      "description": "Game by Marco Worms",
+      "infoUrl": "https://marcoworms.github.io/"
+    },
+    {
+      "id": "GameB",
+      "name": "Attach",
+      "url": "https://marcoworms.github.io/attach/",
+      "description": "Game by Marco Worms",
+      "infoUrl": "https://marcoworms.github.io/"
+    }
+  ]
+}

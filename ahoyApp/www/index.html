@@ -30,18 +30,18 @@
 
   </head>
   <body>
-        <div class="app">
-            <header>
-                <a href="./index.html">
-                  <img src="./img/assets/u_ahoy23.png" style="max-width: 20%" />
-                </a>
-                <a href="js/src/login.html"><button id=#login-btn>Login</button></a>
-                <span id="usernameDisplay"></span>
-                <div id="user-info" style="position: absolute; top: 10px; right: 10px">
-                  <!-- User info will be displayed here -->
-                </div>
-                <!-- Placeholder for the username -->
-              </header>
+      <div class="app">
+        <header>
+              <a href="./index.html">
+                <img src="./img/assets/u_ahoy23.png" style="max-width: 20%" />
+              </a>
+              <a href="js/src/login.html"><button id=#login-btn>Login</button></a>
+              <span id="usernameDisplay"></span>
+              <div id="user-info" style="position: absolute; top: 10px; right: 10px">
+              <!-- User info will be displayed here -->
+              </div>
+              <!-- Placeholder for the username -->
+        </header>
               <div id="tabSortz">
                 <!-- HOME TAB -->
                 <div id="home-tab" class="tab-content active">
@@ -194,48 +194,22 @@
     </table>
   </div>
 </div>
-
                 <!-- AUDIOBOOKS -->
                 <!-- div id="audiobooks-tab" class="tab-content">
                   <h1>Song List (temp)</h1>
                 </div -->
-                <!-- GAMES -->
-                <div id="games-tab" class="tab-content">
-                  <h1>Games</h1>
-                  <div class="tabs">
-                    <button class="tablinks" onclick="openGame(event, 'GameA')">
-                      Vanca
-                    </button>
-                    <button class="tablinks" onclick="openGame(event, 'GameB')">
-                      Attach
-                    </button>
-                    <!-- Add more tabs as needed -->
-                  </div>
-          
-                  <div id="GameA" class="tabcontent">
-                    <button id="load-game-a">Load "Vanca"</button>
-                    <iframe id="game-frame-a" style="width: 100%; height: 500px; border: none"></iframe>
-                    <h1>Vanca</h1>
-                    <h2>Game by Marco Worms</h2>
-                    <p>
-                      For more information about Marco Worms and his projects, visit his
-                      <a href="https://marcoworms.github.io/" target="_blank">website</a>.
-                    </p>
-                  </div>
-          
-                  <div id="GameB" class="tabcontent" style="display: none">
-                    <button id="load-game-b">Load "Attach""</button>
-                    <iframe id="game-frame-b" style="width: 100%; height: 500px; border: none"></iframe>
-                    <h1>Attach</h1>
-                    <h2>Game by Marco Worms</h2>
-                    <p>
-                      For more information about Marco Worms and his projects, visit his
-                      <a href="https://marcoworms.github.io/" target="_blank">website</a>.
-                    </p>
-                  </div>
-          
-                  <!-- Add more game containers as needed -->
-                </div>
+<!-- GAMES -->
+<div id="games-tab" class="tab-content">
+  <h1>Games</h1>
+  <div class="game-tabs"> <!-- Updated class name -->
+      <!-- Tabs will be dynamically added here by the JavaScript -->
+  </div>
+  <!-- Game content will also be dynamically added here by the JavaScript -->
+</div>
+
+
+  <!-- Game content will be dynamically added here -->
+</div>
                 <!-- ARTIST -->
                 <div id="artists-tab" class="tab-content">
                   <h1>Artists</h1>
@@ -243,7 +217,6 @@
                   <div id="artist-iframe-container" style="display:none;">
                     <iframe id="artist-iframe" src="" frameborder="0" style="width:100%; height:600px;"></iframe>
                   </div>
-          
                 </div>
                 <!-- UPDATES-->
                 <div id="updates-tab" class="tab-content">
