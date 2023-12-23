@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function loadGames() {
-  // Example JSON structure. Replace this with the fetch from your actual JSON file
   const games = [
     {
       id: "GameA",
@@ -11,6 +10,7 @@ function loadGames() {
       url: "https://marcoworms.github.io/vanca/",
       description: "Game by Marco Worms",
       infoUrl: "https://marcoworms.github.io/",
+      cover: "img/assets/game-covers/Vanca.png",
     },
     {
       id: "GameB",
@@ -18,32 +18,58 @@ function loadGames() {
       url: "https://marcoworms.github.io/attach/",
       description: "Game by Marco Worms",
       infoUrl: "https://marcoworms.github.io/",
+      cover: "img/assets/game-covers/Attach.png",
     },
-    // Add more games as needed
   ];
 
+  createGameMenu(games);
   createGameTabs(games);
 }
 
+function createGameMenu(games) {
+  const menuContainer = document.getElementById("games-tab");
+
+  // Create a container for the game menu
+  const gameMenu = document.createElement("div");
+  gameMenu.className = "game-menu";
+  menuContainer.appendChild(gameMenu);
+
+  games.forEach((game) => {
+    // Create each game item
+    const gameItem = document.createElement("div");
+    gameItem.className = "game-item";
+    gameItem.style.width = "45%";
+    gameItem.innerHTML = `
+            <img src="${game.cover}" alt="${game.name}" class="game-cover" onclick="openGameCover('${game.id}')">
+            <div class="game-info">
+                <h2>${game.name}</h2>
+                <p>${game.description}</p>
+                <a href="${game.infoUrl}" target="_blank">More Info</a>
+            </div>
+        `;
+    gameMenu.appendChild(gameItem);
+  });
+}
+
 function createGameTabs(games) {
-  const tabsContainer = document.querySelector(".game-tabs"); // Updated class name
+  const tabsContainer = document.querySelector(".game-tabs");
   const tabContentContainer = document.getElementById("games-tab");
 
   games.forEach((game) => {
     // Create tab button
     const tabButton = document.createElement("button");
-    tabButton.className = "game-tablinks"; // Updated class name
+    tabButton.className = "game-tablinks";
     tabButton.textContent = game.name;
     tabButton.onclick = function (event) {
-      openGame(event, game.id);
+      openGameTab(event, game.id);
     };
     tabsContainer.appendChild(tabButton);
 
     // Create tab content
     const tabContent = document.createElement("div");
     tabContent.id = game.id;
-    tabContent.className = "game-tabcontent"; // Updated class name
-    tabContent.style.display = "none"; // Start with hidden content
+    tabContent.className = "game-tabcontent";
+    tabContent.style.display = "none";
     tabContent.innerHTML = `
             <button class="load-game" data-url="${game.url}">Load "${game.name}"</button>
             <iframe style="width: 100%; height: 500px; border: none"></iframe>
@@ -63,13 +89,18 @@ function createGameTabs(games) {
   });
 }
 
-function openGame(evt, gameName) {
+function openGameCover(gameId) {
+  console.log("Game selected from cover:", gameId);
+  // Implement logic for game selection from cover
+}
+
+function openGameTab(evt, gameName) {
   var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("game-tabcontent"); // Updated class name
+  tabcontent = document.getElementsByClassName("game-tabcontent");
   for (i = 0; i < tabcontent.length; i++) {
     tabcontent[i].style.display = "none";
   }
-  tablinks = document.getElementsByClassName("game-tablinks"); // Updated class name
+  tablinks = document.getElementsByClassName("game-tablinks");
   for (i = 0; i < tablinks.length; i++) {
     tablinks[i].className = tablinks[i].className.replace(" active", "");
   }

@@ -1146,7 +1146,8 @@ header {
   background-color: #333;
   color: white;
   border: none;
-  padding: 10px 20px;
+
+  height: auto;
   margin: 0 5px;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -1161,7 +1162,7 @@ header {
 .game-tabcontent {
   display: none;
   padding: 20px;
-  background-color: #f4f4f4;
+  background-color: #f4f4f425;
   border-radius: 10px;
 }
 
@@ -1195,4 +1196,28 @@ header {
 
 .game-tabcontent p {
   color: #666;
+}
+
+.game-menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.game-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.game-cover {
+  cursor: pointer;
+  width: 100%; /* Adjust this as needed */
+  margin-bottom: 10px;
+}
+
+.game-info {
+  text-align: center;
 }
