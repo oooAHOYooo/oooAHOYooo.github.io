@@ -34,10 +34,10 @@
     </platform>
 
     <!-- Icon Configuration for Android -->
-    <platform name="android">
-        <icon src="www/img/logo.png width="180" height="180" />
-        <!-- Add specific icons per density if necessary -->
-    </platform>
+<platform name="android">
+    <icon src="www/img/logo.png"/>
+    <!-- Add specific icons per density if necessary -->
+</platform>
     
     <!-- Icon Configuration for iOS -->
     <platform name="ios">
