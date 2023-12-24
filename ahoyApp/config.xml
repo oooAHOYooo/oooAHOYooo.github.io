@@ -35,7 +35,7 @@
 
     <!-- Icon Configuration for Android -->
     <platform name="android">
-        <icon src="www/img/assets/splash-screens/splash-640x960.png" />
+        <icon src="www/img/logo.png width="180" height="180" />
         <!-- Add specific icons per density if necessary -->
     </platform>
     

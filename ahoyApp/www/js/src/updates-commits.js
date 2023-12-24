@@ -14,6 +14,7 @@ function loadCommits() {
 
                 commitItem.innerHTML = `
                 <h3>${commit.commit.message}</h3>
+           
                 <p>Time: ${formattedDate}</p>
         
                 `;
