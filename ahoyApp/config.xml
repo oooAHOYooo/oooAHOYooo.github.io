@@ -20,11 +20,11 @@
 
     <!-- Custom Splash Screen Images -->
     <platform name="android">
-        <splash src="www/img/assets/splash-screens/splash-mdpi.png" density="mdpi"/>
+        <splash src="www/img/assets/splash-screens/splash-hdpi.png" density="mdpi"/>
         <splash src="www/img/assets/splash-screens/splash-hdpi.png" density="hdpi"/>
-        <splash src="www/img/assets/splash-screens/splash-xhdpi.png" density="xhdpi"/>
-        <splash src="www/img/assets/splash-screens/splash-xxhdpi.png" density="xxhdpi"/>
-        <splash src="www/img/assets/splash-screens/splash-xxxhdpi.png" density="xxxhdpi"/>
+        <splash src="www/img/assets/splash-screens/splash-hdpi.png" density="xhdpi"/>
+        <splash src="www/img/assets/splash-screens/splash-hdpi.png" density="xxhdpi"/>
+        <splash src="www/img/assets/splash-screens/splash-hdpi.png" density="xxxhdpi"/>
         <!-- Add more densities as needed -->
     </platform>
     <platform name="ios">
@@ -35,7 +35,7 @@
 
     <!-- Icon Configuration for Android -->
     <platform name="android">
-        <icon src="www/img/logo.png" />
+        <icon src="www/img/assets/splash-screens/splash-640x960.png" />
         <!-- Add specific icons per density if necessary -->
     </platform>
     
