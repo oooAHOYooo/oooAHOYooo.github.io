@@ -222,29 +222,10 @@
                 <div id="updates-tab" class="tab-content active">
 
 <style>
-  .h1-background {
-    position: fixed;
-    z-index:-10;
-    color: rgba(255, 0, 0, 0.13);
-    font-size: 20vw;
-    text-align: center;
-    width:100%;
-  }
 
-  .h1-background-faded {
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-}
 </style>
 <script>
-  window.addEventListener('scroll', function() {
-    const updatesHeader = document.querySelector('.h1-background');
-    if (window.scrollY > 0) {
-      updatesHeader.classList.add('h1-background-faded');
-    } else {
-      updatesHeader.classList.remove('h1-background-faded');
-    }
-  });
+
 </script>
 
                   <h1 class="h1-background">Updates</h1>
@@ -263,7 +244,7 @@
                     <!-- div id="newsletter-list"></div -->
                   </div>
           
-                  <h3>Present Beta State = 0.2.3
+                  <h3>Present Beta State = 0.2.3a
              
                     <h4>Present Focus</h4>
                     <p>Working towards a unified codebase for both Android and Web app - targeted launch by New Years Dec 31 2023.</p>                 
@@ -569,7 +550,15 @@
 <script src="js/src/login.js"></script>
 <script src="js/src/siteCounter.js"></script>
 <!-- END OF DRAFTY SCRIPTS -->
+<!-- CRAFT DRAFTY-->
 
+<!-- H1 effects - Scroll -->
+<script src="js/src/h1-effects-scroll.js"></script>
+
+<!-- END OF CRAFTY -->
+
+
+<!-- TEST TO SEE IF WORK SCRIPTS -->
 <!-- WORKING SOURCE JAVASCRIPTS -->
 
 <!-- USER CONTROLS-->

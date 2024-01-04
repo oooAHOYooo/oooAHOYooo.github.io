@@ -40,6 +40,23 @@ h1 {
   text-align: center;
 }
 
+.h1-background, .h1-background-faded {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index:-10;
+  color: rgba(255, 0, 0, 0.13);
+  font-size: 20vw;
+  text-align: center;
+  width:100%;
+}
+
+.h1-background-faded {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
 button {
   display: inline-block;
   padding: 10px 20px;
