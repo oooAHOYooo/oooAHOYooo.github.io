@@ -43,7 +43,7 @@ function switchTheme(selectedTheme) {
       "#3eb489",
       "#98ff98",
       "#3eb489",
-      "#ffd900"
+      "#ffd300"
     );
     theme = "ellie";
   } else {
