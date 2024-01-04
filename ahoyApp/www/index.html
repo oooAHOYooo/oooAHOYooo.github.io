@@ -14,7 +14,7 @@
       integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
       crossorigin="anonymous" referrerpolicy="no-referrer" />
       <script defer data-domain="ahoy.ooo" src="https://plausible.io/js/script.js"></script>
-      <link rel="stylesheet" href="./js/src/foundational.css">
+      <link rel="stylesheet" href="./css/foundational.css">
       <link rel="stylesheet" href="./css/mobileOS-addons.css">
       <!-- END OF AG ADDITIONS TO HEAD -->
       <meta charset="utf-8">
@@ -44,7 +44,7 @@
         </header>
               <div id="tabSortz">
                 <!-- HOME TAB -->
-                <div id="home-tab" class="tab-content active">
+                <div id="home-tab" class="tab-content">
                   <div id="home-logo-div">
                     <a href="./index.html"><img src="./img/assets/u_ahoy23.png" />
                     </a>
@@ -219,8 +219,38 @@
                   </div>
                 </div>
                 <!-- UPDATES-->
-                <div id="updates-tab" class="tab-content">
-                  <h1>Updates</h1>
+                <div id="updates-tab" class="tab-content active">
+
+<style>
+  .h1-background {
+    position: fixed;
+    z-index:-10;
+    color: rgba(255, 0, 0, 0.13);
+    font-size: 20vw;
+    text-align: center;
+    width:100%;
+  }
+
+  .h1-background-faded {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+</style>
+<script>
+  window.addEventListener('scroll', function() {
+    const updatesHeader = document.querySelector('.h1-background');
+    if (window.scrollY > 0) {
+      updatesHeader.classList.add('h1-background-faded');
+    } else {
+      updatesHeader.classList.remove('h1-background-faded');
+    }
+  });
+</script>
+
+                  <h1 class="h1-background">Updates</h1>
+
+
+
                   <div class="version-movie-poster-wrap">
                     <img id="lightbox-trigger" src="./img/assets/splash-screens/splash-640x960.png" class="full-height-image">
                   </div>
