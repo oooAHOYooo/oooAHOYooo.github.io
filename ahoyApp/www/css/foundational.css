@@ -938,11 +938,14 @@ header {
 /*MARKET-GLOBAL */
 
 .market-nav {
+  position: sticky;
+  top: 0;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
+  z-index: 100; /* Adjust as needed to ensure it sits on top of other elements */
 }
 
 /*DIGITAL MARKET*/
