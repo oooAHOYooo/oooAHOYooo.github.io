@@ -340,6 +340,22 @@ button:hover {
 }
 
 /*MEDIA SEECTION*/
+/* Existing CSS */
+#mediaTable th,
+#mediaTable td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+  font-size: clamp(10px, 5%, 20px);
+}
+
+/* Add this media query for iPhone 8 (375px x 667px) */
+@media screen and (max-width: 375px) {
+  #mediaTable th,
+  #mediaTable td {
+    padding: 2.5px; /* Adjust this value to decrease the space */
+  }
+}
 
 #mediaTable {
   width: 100%;
