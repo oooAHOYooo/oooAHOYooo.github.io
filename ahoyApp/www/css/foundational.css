@@ -948,6 +948,44 @@ header {
   z-index: 100; /* Adjust as needed to ensure it sits on top of other elements */
 }
 
+/*NEW PHYSICAL MARKET UPDATES WITH NEW CLASSES ON JAVASCRIPT */
+/* Physical Market Product Items */
+.physical-market-product-items {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 20px;
+  white-space: nowrap;
+}
+
+.physical-market-product-items .product {
+  flex: 0 0 auto;
+  border: 1px solid var(--border-color);
+  text-align: center;
+  padding: 20px;
+}
+
+.physical-market-product-items .product .checkmark {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 50px;
+  color: var(--button-color);
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+  backdrop-filter: blur(10px); /* Apply blur to the background */
+  -webkit-backdrop-filter: blur(10px); /* For Safari */
+  border-radius: 5px; /* Optional: add border radius for a smoother look */
+  padding: 10px; /* Optional: add some padding */
+  border-color: var(--border-color);
+  border-style: solid;
+  border-width: 1px;
+}
+
+.physical-market-product-items .product img.physical-product-image {
+  width: 128px;
+  height: 128px;
+}
+
 /*DIGITAL MARKET*/
 
 #digitalMarket {

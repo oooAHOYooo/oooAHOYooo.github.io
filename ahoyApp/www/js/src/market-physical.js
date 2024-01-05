@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .then((response) => response.json())
     .then((data) => {
       const productGrid = document.getElementById("productGrid");
+      productGrid.className = "physical-market-product-items"; // Add this line
       const cartItems = document.getElementById("cartItems");
       const totalPrice = document.getElementById("totalPrice");
       let cart = [];
@@ -11,15 +12,15 @@ document.addEventListener("DOMContentLoaded", function () {
         const div = document.createElement("div");
         div.className = "product";
         div.innerHTML = `
-			<div class="checkmark" style="display: none;">✓</div>
-			<img class="physical-product-image" src="${product.image}" alt="${
+			  <div class="checkmark" style="display: none;">✓</div>
+			  <img class="physical-product-image" src="${product.image}" alt="${
           product.title
         }" /> 
-			<h3>${product.title}</h3>
-			<p>${product.description}</p>
-			<p>$${product.price.toFixed(2)}</p>
-			<button>Add to Cart</button>
-		  `;
+			  <h3>${product.title}</h3>
+			  <p>${product.description}</p>
+			  <p>$${product.price.toFixed(2)}</p>
+			  <button>Add to Cart</button>
+			`;
         const button = div.querySelector("button");
         const checkmark = div.querySelector(".checkmark");
         button.addEventListener("click", () => {
