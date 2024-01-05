@@ -1,0 +1,5 @@
+#songs-control-panel {
+  position: sticky;
+  top: 0; /* Adjust this value to change the point at which the element becomes sticky */
+  z-index: 10; /* Adjust this value to ensure the element is above other elements */
+}

@@ -47,7 +47,7 @@ h1 {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: -10;
-  font-size: 120px;
+  font-size: 82px;
   text-align: center;
   width: 100%;
   margin: 0;
@@ -64,6 +64,26 @@ h1 {
 .h1-background-faded {
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
+}
+
+.h1-background-a {
+  position: relative;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -10;
+  font-size: 82px;
+  text-align: center;
+  width: 100%;
+  margin: 0;
+  color: var(--border-color);
+  margin-top: 8.5%;
+  opacity: 90%;
+  line-height: 60%;
+  border-color: var(--button-color);
+  text-shadow: -1px 0 var(--border-color), 0 1px var(--border-color),
+    1px 0 var(--border-color), 0 -1px var(--border-color);
+  font-weight: 900;
 }
 
 button {
@@ -319,6 +339,8 @@ button:hover {
   background-color: var(--secondary-color);
 }
 
+/*MEDIA SEECTION*/
+
 #mediaTable {
   width: 100%;
   border-collapse: collapse;
@@ -334,6 +356,7 @@ button:hover {
   padding: 10px;
   text-align: left;
   border-bottom: 1px solid var(--border-color);
+  font-size: clamp(10px, 5%, 20px);
 }
 
 #mediaTable tr:nth-child(even) {
@@ -353,6 +376,10 @@ button:hover {
   color: var(--text-color);
   background-color: var(--secondary-color);
 }
+
+/*END OF MEDIA SECTION */
+
+/*PODCAST SECTION*/
 
 #podcasts-tab {
   color: var(--text-color);
