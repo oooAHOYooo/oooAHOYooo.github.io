@@ -40,7 +40,8 @@ h1 {
   text-align: center;
 }
 
-.h1-background, .h1-background-faded {
+.h1-background,
+.h1-background-faded {
   position: relative;
   top: 10%;
   left: 50%;
@@ -48,16 +49,16 @@ h1 {
   z-index: -10;
   font-size: 120px;
   text-align: center;
-  width:100%;
+  width: 100%;
   margin: 0;
   color: var(--border-color);
-  margin-top:8.5%;
+  margin-top: 8.5%;
   opacity: 90%;
   line-height: 60%;
   border-color: var(--button-color);
-  text-shadow: -1px 0 var(--border-color), 0 1px var(--border-color), 1px 0 var(--border-color), 0 -1px var(--border-color);
+  text-shadow: -1px 0 var(--border-color), 0 1px var(--border-color),
+    1px 0 var(--border-color), 0 -1px var(--border-color);
   font-weight: 900;
-
 }
 
 .h1-background-faded {
@@ -1038,6 +1039,11 @@ header {
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   padding: 20px;
+}
+
+.physical-product-image {
+  width: 128px;
+  height: 128px;
 }
 
 .product {
