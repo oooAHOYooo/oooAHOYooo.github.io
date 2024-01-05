@@ -29,6 +29,17 @@ document.addEventListener("DOMContentLoaded", function () {
       data.forEach((item) => {
         const row = document.createElement("tr");
 
+        // Play Button Cell
+        const playButtonCell = document.createElement("td");
+        const playButton = document.createElement("button");
+        playButton.textContent = "▶";
+        playButton.classList.add("compact-play-button");
+        playButton.onclick = function () {
+          loadVideoInJWPlayer(item.mp4_link, item.thumbnail_link);
+        };
+        playButtonCell.appendChild(playButton);
+        row.appendChild(playButtonCell);
+
         // Thumbnail Cell
         const thumbnailCell = document.createElement("td");
         const thumbnail = document.createElement("img");
@@ -44,17 +55,6 @@ document.addEventListener("DOMContentLoaded", function () {
         titleCell.classList.add("media-title");
         row.appendChild(titleCell);
 
-        // Play Button Cell
-        const playButtonCell = document.createElement("td");
-        const playButton = document.createElement("button");
-        playButton.textContent = "▶";
-        playButton.classList.add("compact-play-button");
-        playButton.onclick = function () {
-          loadVideoInJWPlayer(item.mp4_link, item.thumbnail_link);
-        };
-        playButtonCell.appendChild(playButton);
-        row.appendChild(playButtonCell);
-
         // Artist Cell
         const artistCell = document.createElement("td");
         artistCell.textContent = item.artist;
@@ -62,7 +62,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Duration Cell
         const durationCell = document.createElement("td");
-        durationCell.textContent = item.duration;
+        // Remove the hour from the duration
+        const durationWithoutHour = item.duration.split(":")[1];
+        durationCell.textContent = durationWithoutHour;
         row.appendChild(durationCell);
 
         tableBody.appendChild(row);

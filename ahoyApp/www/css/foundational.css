@@ -823,26 +823,7 @@ button:hover {
   padding: 0;
 }
 
-#radio-tab {
-  position: relative;
-  z-index: -1;
-  overflow: hidden;
-  min-height: 75vh;
-  background-image: url("https://media.tenor.com/S8_V9lNMc3oAAAAM/waves-awesome.gif");
-  background-size: cover; /* This will make sure the image covers the entire element */
-  background-position: center; /* This will center the image in the element */
-}
-
-#radio-tab::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Adjust the color and opacity as needed */
-  z-index: -1;
-}
+/*Media and TV code*/
 
 /* Style the media container */
 #featured-media-container {
@@ -1196,17 +1177,6 @@ header {
   width: 100%;
 }
 
-/*Media and TV code*/
-
-.tv-wrap {
-  /*position: sticky;*/
-  top: 0; /* Adjust this value as needed */
-  z-index: 3;
-  width: 100%;
-  height: auto;
-  overflow: hidden;
-}
-
 #song-wrap-list {
   width: 100%;
   max-width: 600px;
@@ -1350,4 +1320,65 @@ header {
 
 .product {
   flex: 0 0 auto;
+}
+
+/* CSS for media.js */
+
+/* Play Button Cell */
+.play-button {
+  font-size: 1.5rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--border-color);
+  transition: transform 0.3s ease;
+}
+
+.play-button:hover {
+  transform: scale(1.2);
+}
+
+/* Thumbnail Cell */
+.thumbnail {
+  width: 50px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.thumbnail:hover {
+  transform: scale(1.1);
+}
+
+/* Artist Cell */
+.artist {
+  font-size: 1rem;
+  color: var(--text-color);
+}
+
+/* Title Cell */
+.media-title {
+  font-size: 1rem;
+  color: var(--text-color);
+  font-weight: bold;
+}
+
+/* Duration Cell */
+.duration {
+  font-size: 1rem;
+  color: var(--text-color);
+}
+
+/* Save Button Cell */
+.save-button {
+  font-size: 1rem;
+  background-color: var(--border-color);
+  border: none;
+  cursor: pointer;
+  color: var(--background-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.save-button:hover {
+  background-color: var(--background-color);
+  color: var(--gold);
 }
