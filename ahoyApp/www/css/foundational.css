@@ -1340,7 +1340,7 @@ header {
 
 /* Thumbnail Cell */
 .thumbnail {
-  width: 50px;
+  width: 49px;
   cursor: pointer;
   transition: transform 0.3s ease;
 }
@@ -1368,17 +1368,19 @@ header {
   color: var(--text-color);
 }
 
-/* Save Button Cell */
+.save-button::before {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
 .save-button {
   font-size: 1rem;
   background-color: var(--border-color);
   border: none;
-  cursor: pointer;
   color: var(--background-color);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .save-button:hover {
-  background-color: var(--background-color);
   color: var(--gold);
 }
