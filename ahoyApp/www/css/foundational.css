@@ -935,6 +935,16 @@ header {
   text-align: center !important;
 }
 
+/*MARKET-GLOBAL */
+
+.market-nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
 /*DIGITAL MARKET*/
 
 #digitalMarket {
@@ -1251,4 +1261,25 @@ header {
 
 .game-info {
   text-align: center;
+}
+
+@media (max-width: 600px) {
+  #productGrid {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    width: 100%;
+  }
+}
+
+#productGrid {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 20px;
+  white-space: nowrap;
+}
+
+.product {
+  flex: 0 0 auto;
 }

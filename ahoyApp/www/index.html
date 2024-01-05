@@ -95,10 +95,27 @@
                 </div>
                 <!-- MARKET TAB-->
                 <div id="market-tab" class="tab-content active">
+          <style>
+            .market-nav {
+              width:100%;
+              display:flex;
+              align-items: center;
+              justify-content: center;
+              gap: 10px;
+            }
+          </style>
                   <h1 class="h1-background">Market</h1>
+                          <nav class="market-nav">
+                    <button>Physical Market</button>
+                    <button>Digital Market</button>
+                  </nav>
                   <div id="physicalMarket">
                     <h2>Physical Market</h2>
-                    <div id="productGrid"></div>
+                    <div class="physical-market-row">
+                      <div id="productGridContainer">
+                        <div id="productGrid"></div>
+                      </div>
+                    </div>
                     <div id="cart">
                       <h3>Your Physical Product Cart</h3>
                       <div id="cartItems"></div>
