@@ -280,12 +280,22 @@
       }
     </style>
   <div class="userActionBar">
+    <style>
+      .userActionBar {
+        width: 180px;
+      }
+    </style>
     <div class="userActionBar-topMenu">
-      <div class="userActionBar-menuWrap">
-        <button>Home</button>
-        <button>Settings</button>
-        <button>New</button>
-      </div>
+      <style>
+        .userActionBar-menuWrap {
+          display:flex;
+        }
+      </style>
+<div class="userActionBar-menuWrap">
+  <button><i class="fas fa-home"></i></button>
+  <button><i class="fas fa-cog"></i> </button>
+  <button><i class="fas fa-plus"></i> </button>
+</div>
     </div>
     <div class="userActionBar-middleMenu">
     <style>
@@ -295,7 +305,11 @@
       }
 
       .userActionBar-middleMenu button {
-        width:238px;
+        width:178px;
+        height: 30px;
+        padding: 0;
+        margin-top: 1.5px;
+        margin-bottom: 1.5px;
       }
     </style>
       <div class="userActionBar-middleMenu">
@@ -310,14 +324,30 @@
 
   </div>
   <div class="userContentPortal">
+    <style>
+      .userContentPortal-tab-container {
+        border-style: solid;
+        border-color: rgb(1, 1, 1);
+        background-color: rgba(0, 0, 0, 0.023);
+        min-width: 394px;
+        min-height: 300px;
+      }
+    </style>
     <div class="userContentPortal-tab-container">
-      <div id="1_tracks">Track Grid
+      <div class="collection-header">
+        <div class="collection-title">
+          Your Collection Title
+        </div>
       </div>
-      <div id="2_podcasts">Podcast Grid</div>
-      <div id="3_media">Media</div>
-      <div id="4_artist">Artist</div>
-      <div id="5_market">Market</div>
-    </div>
+<!--
+<div id="1_tracks">Track Grid
+</div>
+<div id="2_podcasts">Podcast Grid</div>
+<div id="3_media">Media</div>
+<div id="4_artist">Artist</div>
+<div id="5_market">Market</div>
+</div>
+-->
   </div>
 </div>
 </div>
