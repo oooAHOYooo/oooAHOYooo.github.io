@@ -312,14 +312,13 @@
         margin-bottom: 1.5px;
       }
     </style>
-      <div class="userActionBar-middleMenu">
-     
-        <button>Tracks</button>
-        <button>Podcasts</button>
-        <button>Media</button>
-        <button>Artist</button>
-        <button>Market</button>
-      </div>
+ <div class="userActionBar-middleMenu">
+  <button data-target="tab-1">Tracks</button>
+  <button data-target="tab-2">Podcasts</button>
+  <button data-target="tab-3">Media</button>
+  <button data-target="tab-4">Artist</button>
+  <button data-target="tab-5">Market</button>
+</div>
 
       <div class="userActionBar-bottomList">
         <div class="listApp">
@@ -416,41 +415,44 @@
         <div id="tab-5" style="display: none;">Market</div>
       </div>
       
-      <div class="collection-header">
-        <div class="collection-title">
-          Your Collection Title
-        </div>
-      </div>
+   <!-- 
+<div class="collection-header">
+  <div class="collection-title">
+    Your Collection Title
+  </div>
+-->
 
  
         <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    // Select all buttons in the middle menu
-    var buttons = document.querySelectorAll('.userActionBar-middleMenu button');
+document.addEventListener('DOMContentLoaded', function () {
+  // Select all buttons in the middle menu
+  var buttons = document.querySelectorAll('.userActionBar-middleMenu button');
 
-    // Function to hide all tab content
-    function hideAllTabs() {
-      var tabs = document.querySelectorAll('.userContentPortal-tab-container > div');
-      tabs.forEach(function(tab) {
-        tab.style.display = 'none';
-      });
-    }
-
-    // Add click event listener to each button
-    buttons.forEach(function(button, index) {
-      button.addEventListener('click', function() {
-        hideAllTabs(); // Hide all tabs
-        var tabId = 'tab-' + (index + 1); // Generate tab id based on button index
-        var tab = document.getElementById(tabId);
-        if (tab) {
-          tab.style.display = 'block'; // Show the clicked tab
-        }
-      });
+  // Function to hide all tab content
+  function hideAllTabs() {
+    var tabs = document.querySelectorAll('.userContentPortal-tab-container > div');
+    tabs.forEach(function(tab) {
+      tab.style.display = 'none';
     });
+  }
 
-    // Hide all tabs initially
-    hideAllTabs();
+  // Add click event listener to each button
+  buttons.forEach(function(button) {
+    button.addEventListener('click', function() {
+      hideAllTabs(); // Hide all tabs
+      var tabId = button.getAttribute('data-target'); // Get the target tab id from the button's data-target attribute
+      var tab = document.getElementById(tabId);
+      if (tab) {
+        tab.style.display = 'block'; // Show the clicked tab
+      }
+    });
   });
+
+  // Hide all tabs initially and show the first tab by default
+  hideAllTabs();
+  document.getElementById('tab-1').style.display = 'block';
+});
+
 </script>
 
     
