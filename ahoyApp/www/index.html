@@ -408,11 +408,52 @@
       }
     </style>
     <div class="userContentPortal-tab-container">
+      <div class="userContentPortal-tab-container">
+        <div id="tab-1" style="display: none;">Track Grid</div>
+        <div id="tab-2" style="display: none;">Podcast Grid</div>
+        <div id="tab-3" style="display: none;">Media</div>
+        <div id="tab-4" style="display: none;">Artist</div>
+        <div id="tab-5" style="display: none;">Market</div>
+      </div>
+      
       <div class="collection-header">
         <div class="collection-title">
           Your Collection Title
         </div>
       </div>
+
+ 
+        <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Select all buttons in the middle menu
+    var buttons = document.querySelectorAll('.userActionBar-middleMenu button');
+
+    // Function to hide all tab content
+    function hideAllTabs() {
+      var tabs = document.querySelectorAll('.userContentPortal-tab-container > div');
+      tabs.forEach(function(tab) {
+        tab.style.display = 'none';
+      });
+    }
+
+    // Add click event listener to each button
+    buttons.forEach(function(button, index) {
+      button.addEventListener('click', function() {
+        hideAllTabs(); // Hide all tabs
+        var tabId = 'tab-' + (index + 1); // Generate tab id based on button index
+        var tab = document.getElementById(tabId);
+        if (tab) {
+          tab.style.display = 'block'; // Show the clicked tab
+        }
+      });
+    });
+
+    // Hide all tabs initially
+    hideAllTabs();
+  });
+</script>
+
+    
 <!--
 <div id="1_tracks">Track Grid
 </div>
