@@ -167,7 +167,7 @@
         </div>
         <!-- MEDIA TAB -->
 
-        <div id="media-tab" class="tab-content active">
+        <div id="media-tab" class="tab-content">
           <div class="media-header">
           <h1 class="h1-background-a">Media</h1>
           </div>
@@ -267,8 +267,63 @@
           <div id="commits-list"></div>
         </div>
         <!-- ACCOUNT -->
-        <div id="account-tab" class="tab-content">
+        <div id="account-tab" class="tab-content active">
           <h1 class="h1-background">Your Account</h1>
+
+<div class="library-mainFrame">
+
+  <div class="library-mainFrame-windowWrap">
+    <style>
+      .library-mainFrame-windowWrap {
+        display:flex;
+        width: 100%;
+      }
+    </style>
+  <div class="userActionBar">
+    <div class="userActionBar-topMenu">
+      <div class="userActionBar-menuWrap">
+        <button>Home</button>
+        <button>Settings</button>
+        <button>New</button>
+      </div>
+    </div>
+    <div class="userActionBar-middleMenu">
+    <style>
+      .userActionBar-middleMenu {
+        display:flex;
+        flex-direction: column;
+      }
+
+      .userActionBar-middleMenu button {
+        width:238px;
+      }
+    </style>
+      <div class="userActionBar-middleMenu">
+     
+        <button>Tracks</button>
+        <button>Podcasts</button>
+        <button>Media</button>
+        <button>Artist</button>
+        <button>Market</button>
+      </div>
+    </div>
+
+  </div>
+  <div class="userContentPortal">
+    <div class="userContentPortal-tab-container">
+      <div id="1_tracks">Track Grid
+      </div>
+      <div id="2_podcasts">Podcast Grid</div>
+      <div id="3_media">Media</div>
+      <div id="4_artist">Artist</div>
+      <div id="5_market">Market</div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
           <h2>Your Liked Content</h2>
           <table id="liked-songs-table">
             <thead>
@@ -342,6 +397,8 @@
       </div>
       <!-- END OF BOTTOM PLAYER -->
       <!-- CONDITIONAL LOGIC BITCH -->
+
+      <!-- END OF HTML -->
       <div id="theScripts">
         <!-- SONG LOADER-->
         <script id="songLoader">
