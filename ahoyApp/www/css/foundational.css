@@ -483,25 +483,41 @@ button:hover {
   background-color: var(--secondary-color);
 }
 
+.userContentPortal-tab-container {
+  border-style: solid;
+  border-color: var(--border-color);
+  min-width: 394px;
+  min-height: 300px;
+  max-width: 400px;
+  margin-left: 5px;
+  overflow-x: auto;
+  position: relative;
+  z-index: 0;
+}
+
 #liked-songs-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Creates a 4-column grid */
+  grid-template-columns: repeat(3, 1fr); /* Creates a 4-column grid */
   grid-gap: 10px; /* Space between grid items */
   margin: 10px; /* Margin around the grid */
 }
 
 .song-card {
-  border: 1px solid #ccc; /* Border for each card */
+  border: 1px solid var(--border-color); /* Border for each card */
   padding: 5px; /* Padding inside each card */
   text-align: center; /* Center the text and content */
-  background-color: #f9f9f9; /* Background color for the cards */
+  background-color: #f9f9f900; /* Background color for the cards */
   position: relative; /* For positioning the remove button */
+  width: 100px; /* Fixed width */
+  height: 120px; /* Fixed height */
+  color: var(--gold);
+  overflow: hidden; /* Ensures the content doesn't overflow */
 }
 
 .song-card img {
-  width: 100px;
-  height: 120px;
-  object-fit: cover; /* Ensures the image covers the area */
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This will make sure the image scales nicely */
 }
 
 .song-card p {

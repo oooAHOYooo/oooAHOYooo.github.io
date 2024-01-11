@@ -6,7 +6,10 @@
 		"songTitle": "Seen Better Days",
 		"artistUrl" : "https://ahoy.ooo/artist/total/sdw/sdw.html",
 		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/01%20I%27ve%20Seen%20Better%20Days.mp3",
-		"play": false
+		"play": false,
+		"thumbnail": "https://i.ytimg.com/vi/XDH0X-dF4GM/maxresdefault.jpg",
+		"coverArt" : "https://i.ytimg.com/vi/XDH0X-dF4GM/maxresdefault.jpg"
+
 	  },
 	  {
 		"id": 2,

@@ -91,13 +91,14 @@ function addSongToLibrary(songData) {
   songCard.classList.add("song-card");
   songCard.dataset.url = songData.url;
   songCard.innerHTML = `
-      <img src="path/to/image.jpg" alt="${songData.title}" style="width:100px; height:120px;">
+      <img src="${songData.thumbnail}" alt="${songData.title}" style="width:100px; height:120px;">
       <p>${songData.artist}</p>
       <p>${songData.title}</p>
       <button class="play-button" data-url="${songData.url}"><i class="fas fa-play"></i></button>
       <button class="remove-button" style="display: none;"><i class="fas fa-times"></i></button>
   `;
   libraryGrid.appendChild(songCard);
+
 
   songCard.addEventListener("mouseenter", function() {
       this.querySelector(".remove-button").style.display = "block";
