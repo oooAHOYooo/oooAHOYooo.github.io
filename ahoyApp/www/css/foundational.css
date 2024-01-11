@@ -40,6 +40,13 @@ h1 {
   text-align: center;
 }
 
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
 .h1-background,
 .h1-background-faded {
   position: relative;
@@ -990,11 +997,7 @@ button:hover {
   z-index: 1000;
 }
 
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+
 
 .theme-link {
   color: var(--text-color);
@@ -1251,7 +1254,7 @@ header {
 }
 
 #login-btn {
-  margin-right: 30px;
+ margin-right: 10px;
 }
 
 .version-movie-poster-wrap {

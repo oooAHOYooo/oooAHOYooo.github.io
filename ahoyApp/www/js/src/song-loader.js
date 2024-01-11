@@ -87,7 +87,6 @@ function addSongToLibrary(songData) {
   if (Array.from(libraryGrid.children).some(card => card.dataset.url === songData.url)) {
       return;
   }
-
   const songCard = document.createElement("div");
   songCard.classList.add("song-card");
   songCard.dataset.url = songData.url;
@@ -95,9 +94,9 @@ function addSongToLibrary(songData) {
       <img src="path/to/image.jpg" alt="${songData.title}" style="width:100px; height:120px;">
       <p>${songData.artist}</p>
       <p>${songData.title}</p>
+      <button class="play-button" data-url="${songData.url}"><i class="fas fa-play"></i></button>
       <button class="remove-button" style="display: none;"><i class="fas fa-times"></i></button>
   `;
-
   libraryGrid.appendChild(songCard);
 
   songCard.addEventListener("mouseenter", function() {
@@ -110,6 +109,19 @@ function addSongToLibrary(songData) {
 
   songCard.querySelector(".remove-button").addEventListener("click", function() {
       removeSongFromLibrary(songData.url);
+  });
+
+  songCard.querySelector(".play-button").addEventListener("click", function() {
+      const audioPlayer = document.getElementById("audio-player");
+      const url = this.dataset.url;
+      if (audioPlayer.src !== url) {
+          audioPlayer.src = url;
+      }
+      if (audioPlayer.paused) {
+          audioPlayer.play();
+      } else {
+          audioPlayer.pause();
+      }
   });
 }
 
