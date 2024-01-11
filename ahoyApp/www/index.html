@@ -257,12 +257,11 @@
           <!-- div id="newsletter-list"></div -->
         </div>
 
-        <h3>Present Beta State = 0.2.3a
+        <h3>Present Beta State = 0.2.3b
 
           <h4>Present Focus</h4>
-          <p>Working towards a unified codebase for both Android and Web app -
-            targeted launch by New Years Dec 31 2023.</p>
-          <h1>Last 100 Updates to our beloved Repo</h1>
+          <p>Working towards a robust "User Account" library</p>
+          <h1>Last 100 Updates to our Repo</h1>
           <hr>
           <div id="commits-list"></div>
         </div>
@@ -398,19 +397,21 @@
   </div>
   <div class="userContentPortal">
     <style>
-      .userContentPortal-tab-container {
+      /*.userContentPortal-tab-container {
         border-style: solid;
         border-color: rgb(1, 1, 1);
-        background-color: rgba(0, 0, 0, 0.023);
+        background-color: rgba(255, 64, 64, 0.896);
         min-width: 394px;
         min-height: 300px;
-      }
+        position: relative;
+        z-index: 1;
+      }*/
     </style>
-    <div class="userContentPortal-tab-container">
+
       <div class="userContentPortal-tab-container">
-        <div id="tab-1" style="display: none;">Track Grid</div>
+        <div id="tab-1" style="display: none;">Tracks</div>
         <div id="tab-2" style="display: none;">Podcast Grid</div>
-        <div id="tab-3" style="display: none;">Media</div>
+        <div id="tab-3" style="display: none;"><h1>YOO</h1>Media</div>
         <div id="tab-4" style="display: none;">Artist</div>
         <div id="tab-5" style="display: none;">Market</div>
       </div>
@@ -469,22 +470,11 @@ document.addEventListener('DOMContentLoaded', function () {
 </div>
 </div>
 
+</div>
 
 
           <h2>Your Liked Content</h2>
-          <table id="liked-songs-table">
-            <thead>
-              <tr>
-                <th>Artist</th>
-                <th>Song</th>
-                <th>Play</th>
-                <th>Remove</th>
-              </tr>
-            </thead>
-            <tbody>
-              <!-- Liked songs will be populated here by the JavaScript function -->
-            </tbody>
-          </table>
+
           <h2>Your Cart</h2>
           <div id="cart-items">
             <!-- Items will be dynamically inserted here -->
