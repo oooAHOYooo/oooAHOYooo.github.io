@@ -27,12 +27,12 @@ function switchTheme(selectedTheme) {
   } else if (theme === "dark") {
     setThemeProperties(
       root,
-      "#ff69be",
+      "#FF5D84",
       "#ffffff",
-      "#ff1493",
-      "#ff69b4",
-      "#ff1493",
-      "#ffd900"
+      "#ff0060",
+      "#ff0060",
+      "#ff0060",
+      "#ffee"
     );
     theme = "pink";
   } else if (theme === "pink") {
