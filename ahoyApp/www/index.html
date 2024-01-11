@@ -39,6 +39,20 @@
       <header>
         <a href="./index.html">
           <img class="main-top-logo-img" src="./img/assets/u_ahoy23.png" style="max-width: 20%" />
+          <img class="main-top-logo-img" src="your_image_source" alt="logo">
+  <script>
+    const logo = document.querySelector('.main-top-logo-img');
+    const transforms = ['rotate(20deg)', 'scale(1.2)', 'skew(10deg, 20deg)', 'translateX(20px)'];
+
+    logo.addEventListener('mouseover', () => {
+      const randomTransform = transforms[Math.floor(Math.random() * transforms.length)];
+      logo.style.transform = randomTransform;
+    });
+
+    logo.addEventListener('mouseout', () => {
+      logo.style.transform = 'none';
+    });
+  </script>
         </a>
         <a href="js/src/login.html"><button id=#login-btn>Login</button></a>
         <span id="usernameDisplay"></span>
