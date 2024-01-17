@@ -138,6 +138,11 @@ button:hover {
   display: none;
 }
 
+.tab-content {
+  border-style: solid;
+  border-color: var(--border-color);
+}
+
 .tab-content.active {
   display: block;
 }
@@ -826,6 +831,7 @@ button:hover {
   background-color: var(--background-color);
   color: var(--text-color);
   width: 100%;
+  min-width: 120px;
   transition: all 0.3s ease;
 }
 
@@ -1306,12 +1312,7 @@ button:hover {
 
 /* SONG TAB */
 
-#songs-tab {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 600px;
-  width: 100%;
-}
+
 
 #media-tab {
   margin-left: auto;
@@ -1341,24 +1342,9 @@ button:hover {
   width: 100%;
 }
 
-#songs-tab {
-  background-color: yellow;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
 
-#song-wrap-list {
-  width: 100%;
-  /*max-width: 600px;*/
-  margin: 0 auto;
-  /* This will center the div if its width is less than 600px */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
+
+
 
 #login-btn {
   margin-right: 10px;
