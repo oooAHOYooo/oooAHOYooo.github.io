@@ -3,30 +3,44 @@
 <html>
   <head>
     <!-- SUPA INSTALLATION -->
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@latest"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@latest"></script>
     <script>
-        const supabaseUrl = "https://ornjxycoizoybvdhhowp.supabase.co";
-        const supabaseKey =
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9ybmp4eWNvaXpveWJ2ZGhob3dwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDIzNTA4ODEsImV4cCI6MjAxNzkyNjg4MX0.SIgYEybVeKQ5xGnplA-elTOw0oC5tZIv5nGRUZf-vS8";
-        const supabase = supabase.createClient(supabaseUrl, supabaseKey);
-      </script>
+    const supabaseUrl = "https://ornjxycoizoybvdhhowp.supabase.co";
+    const supabaseKey =
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9ybmp4eWNvaXpveWJ2ZGhob3dwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDIzNTA4ODEsImV4cCI6MjAxNzkyNjg4MX0.SIgYEybVeKQ5xGnplA-elTOw0oC5tZIv5nGRUZf-vS8";
+    const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+  </script>
     <link rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
       integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
       crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script defer data-domain="ahoy.ooo" src="https://plausible.io/js/script.js"></script>
+    <script defer data-domain="ahoy.ooo"
+      src="https://plausible.io/js/script.js"></script>
     <link rel="stylesheet" href="./css/foundational.css">
     <link rel="stylesheet" href="./css/mobileOS-addons.css">
     <link rel="stylesheet" href="./css/section-songs.css">
     <link rel="stylesheet" href="./css/section-media.css">
     <!-- END OF AG ADDITIONS TO HEAD -->
     <meta charset="utf-8">
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Ahoy Indie Media">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#color_code">
+    <meta
+      name="description"
+      content="Ahoy Indie Media - A hand-crafted media company based out of New Haven, Connecticut. Our mission is to provide a homegrown alternative to the way folks consume media. We believe in good media - good indie media - the real stuff. Learn about our strategy for sustainable growth and how we maintain an ad-free environment. Join our subscription-based service to access unique in-house content, including the immensely unpopular 'Rob Show.' Become a part of our indie creator-centric platform." />
+    <meta name="keywords"
+      content="Indie Media, Independent Artists, Indie Music, Podcasts, Indie Games, Digital Market, Indie Creators, Indie Culture, Ahoy Indie Media">
+    <meta name="robots" content="index, follow">
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
-    <meta name="viewport"
-      content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <meta name="MobileOptimized" content="320">
     <meta name="color-scheme" content="light dark">
-
     <title>Ahoy Indie Media</title>
     <!-- JWPLAYER INSTALLATION-->
     <script src="https://cdn.jwplayer.com/libraries/9Gtk2B1J.js"></script>
@@ -34,24 +48,26 @@
     <!-- -->
 
   </head>
+
   <body>
     <div class="app">
       <header>
         <a href="./index.html">
-          <img class="main-top-logo-img" src="./img/assets/u_ahoy23.png" style="max-width: 20%" />
-  <script>
-    const logo = document.querySelector('.main-top-logo-img');
-    const transforms = ['rotate(20deg)', 'scale(1.2)', 'skew(10deg, 20deg)', 'translateX(20px)'];
+          <img class="main-top-logo-img" src="./img/assets/u_ahoy23.png"
+            style="max-width: 20%" />
+          <script>
+          const logo = document.querySelector('.main-top-logo-img');
+          const transforms = ['rotate(20deg)', 'scale(1.2)', 'skew(10deg, 20deg)', 'translateX(20px)'];
 
-    logo.addEventListener('mouseover', () => {
-      const randomTransform = transforms[Math.floor(Math.random() * transforms.length)];
-      logo.style.transform = randomTransform;
-    });
+          logo.addEventListener('mouseover', () => {
+            const randomTransform = transforms[Math.floor(Math.random() * transforms.length)];
+            logo.style.transform = randomTransform;
+          });
 
-    logo.addEventListener('mouseout', () => {
-      logo.style.transform = 'none';
-    });
-  </script>
+          logo.addEventListener('mouseout', () => {
+            logo.style.transform = 'none';
+          });
+        </script>
         </a>
         <a href="js/src/login.html"><button id=#login-btn>Login</button></a>
         <span id="usernameDisplay"></span>
@@ -72,14 +88,16 @@
             <a href="https://github.com/oooAHOYooo/oooAHOYooo.github.io"><button
                 class="common-button">Learn
                 More</button></a>
-            <a href="./js/src/getOn/index.html"><button class="common-button">Get
+            <a href="./js/src/getOn/index.html"><button
+                class="common-button">Get
                 On ahoy</button></a>
             <a href="https://7ufdbpnl2tt.typeform.com/to/OKeXjt6z"><button
                 class="common-button">Leave
                 Feedback</button></a>
           </div>
           <div class="get-started-wrap">
-            <a href="./js/src/started.html"><button class="get-started-button">Get
+            <a href="./js/src/started.html"><button
+                class="get-started-button">Get
                 Started</button></a>
           </div>
           <!-- NOW PLAYING -->
@@ -182,12 +200,11 @@
 
         <div id="media-tab" class="tab-content">
           <div class="media-header">
-          <h1 class="h1-background-a">Media</h1>
+            <h1 class="h1-background-a">Media</h1>
           </div>
           <div class="tv-wrap">
             <div id="jw-player-container"></div>
           </div>
-
 
           <!-- Media Table -->
           <table id="mediaTable" class="list">
@@ -197,8 +214,7 @@
                 <th>Cover</th>
                 <th>Artist</th>
                 <th>Title</th>
-               
-                
+
                 <th>Duration</th>
                 <th>Save</th>
               </tr>
@@ -282,175 +298,176 @@
         <div id="account-tab" class="tab-content active">
           <h1 class="h1-background">Your Account</h1>
 
-<div class="library-mainFrame">
+          <div class="library-mainFrame">
 
-  <div class="library-mainFrame-windowWrap">
-    <style>
-      .library-mainFrame-windowWrap {
-        display:flex;
-        width: 100%;
-      }
-    </style>
-  <div class="userActionBar">
-    <style>
-      .userActionBar {
-        width: 180px;
-      }
-    </style>
-    <div class="userActionBar-topMenu">
-      <style>
-        .userActionBar-menuWrap {
-          display:flex;
-        }
-      </style>
-<div class="userActionBar-menuWrap">
-  <button><i class="fas fa-home"></i></button>
-  <button><i class="fas fa-cog"></i> </button>
-  <button><i class="fas fa-plus"></i> </button>
-</div>
-    </div>
-    <div class="userActionBar-middleMenu">
-    <style>
-      .userActionBar-middleMenu {
-        display:flex;
-        flex-direction: column;
-      }
-
-      .userActionBar-middleMenu button {
-        width:178px;
-        height: 30px;
-        padding: 0;
-        margin-top: 1.5px;
-        margin-bottom: 1.5px;
-      }
-    </style>
- <div class="userActionBar-middleMenu">
-  <button data-target="tab-1">Tracks</button>
-  <button data-target="tab-2">Podcasts</button>
-  <button data-target="tab-3">Media</button>
-  <button data-target="tab-4">Artist</button>
-  <button data-target="tab-5">Market</button>
-</div>
-
-      <div class="userActionBar-bottomList">
-        <div class="listApp">
-          <div class="filter-input">
-            <style>
-              .filter-input {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: 100%;
-                margin-top: 5px;
-              }
-              input {
-                border-color: white;
-                border-style: solid;
-                width: 90%;
-                background-color: transparent;
-
+            <div class="library-mainFrame-windowWrap">
+              <style>
+            .library-mainFrame-windowWrap {
+              display: flex;
+              width: 100%;
+            }
+          </style>
+              <div class="userActionBar">
+                <style>
+              .userActionBar {
+                width: 180px;
               }
             </style>
-            <input>
-          </div>
-          <div class="userPlaylist-window">
-            <style>
-              .userPlaylist-window  {
-                overflow-y: auto;
-                height: 200px;
-              }
+                <div class="userActionBar-topMenu">
+                  <style>
+                .userActionBar-menuWrap {
+                  display: flex;
+                }
+              </style>
+                  <div class="userActionBar-menuWrap">
+                    <button><i class="fas fa-home"></i></button>
+                    <button><i class="fas fa-cog"></i> </button>
+                    <button><i class="fas fa-plus"></i> </button>
+                  </div>
+                </div>
+                <div class="userActionBar-middleMenu">
+                  <style>
+                .userActionBar-middleMenu {
+                  display: flex;
+                  flex-direction: column;
+                }
+
+                .userActionBar-middleMenu button {
+                  width: 178px;
+                  height: 30px;
+                  padding: 0;
+                  margin-top: 1.5px;
+                  margin-bottom: 1.5px;
+                }
+              </style>
+                  <div class="userActionBar-middleMenu">
+                    <button data-target="tab-1">Tracks</button>
+                    <button data-target="tab-2">Podcasts</button>
+                    <button data-target="tab-3">Media</button>
+                    <button data-target="tab-4">Artist</button>
+                    <button data-target="tab-5">Market</button>
+                  </div>
+
+                  <div class="userActionBar-bottomList">
+                    <div class="listApp">
+                      <div class="filter-input">
+                        <style>
+                      .filter-input {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 100%;
+                        margin-top: 5px;
+                      }
+
+                      input {
+                        border-color: white;
+                        border-style: solid;
+                        width: 90%;
+                        background-color: transparent;
+
+                      }
+                    </style>
+                        <input>
+                      </div>
+                      <div class="userPlaylist-window">
+                        <style>
+                      .userPlaylist-window {
+                        overflow-y: auto;
+                        height: 200px;
+                      }
+                    </style>
+                        <div class="userCreated">
+                          <style>
+                        ul {
+                          display: block;
+
+                        }
+                      </style>
+                          <ul>
+                            <o>User Data</o>
+                            <o>User Entry</o>
+                            <o>User Media Playlist</o>
+                            <o>User Data</o>
+                            <o>User Entry</o>
+                            <o>User Media Playlist</o>
+                            <o>User Data</o>
+                            <o>User Entry</o>
+                            <o>User Media Playlist</o>
+                            <o>User Data</o>
+                            <o>User Entry</o>
+                            <o>User Media Playlist</o>
+                            <o>User Data</o>
+                            <o>User Entry</o>
+                            <o>User Media Playlist</o>
+
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+              <div class="userContentPortal">
+                <style>
+
             </style>
-          <div class="userCreated">
-            <style>
-              ul {
-                display:block;
-                
-              }
-            </style>
-            <ul>
-              <o>User Data</o>
-              <o>User Entry</o>
-              <o>User Media Playlist</o>
-              <o>User Data</o>
-              <o>User Entry</o>
-              <o>User Media Playlist</o>
-              <o>User Data</o>
-              <o>User Entry</o>
-              <o>User Media Playlist</o>
-              <o>User Data</o>
-              <o>User Entry</o>
-              <o>User Media Playlist</o>
-              <o>User Data</o>
-              <o>User Entry</o>
-              <o>User Media Playlist</o>
-         
-            </ul>
-          </div>
-        </div>
-        </div>
-      </div>
 
+                <div class="userContentPortal-tab-container">
+                  <div id="tab-1" style="display: none;">Tracks
+                    <div id="liked-songs-grid" class="grid-container"></div>
+                  </div>
+                  <div id="tab-2" style="display: none;">Podcast Grid</div>
+                  <div id="tab-3" style="display: none;">
+                    <h1>YOO</h1>Media
+                  </div>
+                  <div id="tab-4" style="display: none;">Artist</div>
+                  <div id="tab-5" style="display: none;">Market</div>
+                </div>
 
-    </div>
-
-  </div>
-  <div class="userContentPortal">
-    <style>
-   
-    </style>
-
-      <div class="userContentPortal-tab-container">
-        <div id="tab-1" style="display: none;">Tracks  
-          <div id="liked-songs-grid" class="grid-container"></div>
-      </div>
-        <div id="tab-2" style="display: none;">Podcast Grid</div>
-        <div id="tab-3" style="display: none;"><h1>YOO</h1>Media</div>
-        <div id="tab-4" style="display: none;">Artist</div>
-        <div id="tab-5" style="display: none;">Market</div>
-      </div>
-      
-   <!-- 
+                <!-- 
 <div class="collection-header">
   <div class="collection-title">
     Your Collection Title
   </div>
 -->
 
- <!-- ACCOUNT _ TAB NAV SCRIPT -->
-        <script>
-document.addEventListener('DOMContentLoaded', function () {
-  // Select all buttons in the middle menu
-  var buttons = document.querySelectorAll('.userActionBar-middleMenu button');
+                <!-- ACCOUNT _ TAB NAV SCRIPT -->
+                <script>
+              document.addEventListener('DOMContentLoaded', function () {
+                // Select all buttons in the middle menu
+                var buttons = document.querySelectorAll('.userActionBar-middleMenu button');
 
-  // Function to hide all tab content
-  function hideAllTabs() {
-    var tabs = document.querySelectorAll('.userContentPortal-tab-container > div');
-    tabs.forEach(function(tab) {
-      tab.style.display = 'none';
-    });
-  }
+                // Function to hide all tab content
+                function hideAllTabs() {
+                  var tabs = document.querySelectorAll('.userContentPortal-tab-container > div');
+                  tabs.forEach(function (tab) {
+                    tab.style.display = 'none';
+                  });
+                }
 
-  // Add click event listener to each button
-  buttons.forEach(function(button) {
-    button.addEventListener('click', function() {
-      hideAllTabs(); // Hide all tabs
-      var tabId = button.getAttribute('data-target'); // Get the target tab id from the button's data-target attribute
-      var tab = document.getElementById(tabId);
-      if (tab) {
-        tab.style.display = 'block'; // Show the clicked tab
-      }
-    });
-  });
+                // Add click event listener to each button
+                buttons.forEach(function (button) {
+                  button.addEventListener('click', function () {
+                    hideAllTabs(); // Hide all tabs
+                    var tabId = button.getAttribute('data-target'); // Get the target tab id from the button's data-target attribute
+                    var tab = document.getElementById(tabId);
+                    if (tab) {
+                      tab.style.display = 'block'; // Show the clicked tab
+                    }
+                  });
+                });
 
-  // Hide all tabs initially and show the first tab by default
-  hideAllTabs();
-  document.getElementById('tab-1').style.display = 'block';
-});
+                // Hide all tabs initially and show the first tab by default
+                hideAllTabs();
+                document.getElementById('tab-1').style.display = 'block';
+              });
 
-</script>
+            </script>
 
-    
-<!--
+                <!--
 <div id="1_tracks">Track Grid
 </div>
 <div id="2_podcasts">Podcast Grid</div>
@@ -459,79 +476,78 @@ document.addEventListener('DOMContentLoaded', function () {
 <div id="5_market">Market</div>
 </div>
 -->
-  </div>
-</div>
-</div>
-
-</div>
-
-
-          <h2>Your Liked Content</h2>
-
-          <h2>Your Cart</h2>
-          <div id="cart-items">
-            <!-- Items will be dynamically inserted here -->
+              </div>
+            </div>
           </div>
-          <h3>Settings</h3>
-          <h4 id="theme-title"></h4>
-          <button onclick="switchTheme()">change theme</button>
-          <br />
+
         </div>
 
-        <!-- END OF TABS ? CHECK -->
-      </div><!-- YES -->
-      <!-- BOTTOM PLAYER -->
-      <section class="player">
-        <div id="progress-bar-container">
-          <span id="current-time">0:00</span> /
-          <span id="total-duration">0:00</span>
-          <div id="progress-bar"></div>
-          <div id="playhead"></div>
+        <h2>Your Liked Content</h2>
+
+        <h2>Your Cart</h2>
+        <div id="cart-items">
+          <!-- Items will be dynamically inserted here -->
         </div>
-        <div class="player-info">
-          <a href="#" id="artist-name" class="player-link">Artist Name</a>
-          <a href="#" id="song-title" class="player-link">Song Title</a>
-        </div>
-        <div class="player-content">
-          <div class="player-controls">
-            <button id="prev" class="player-button">
-              <i class="fas fa-step-backward"></i>
-            </button>
-            <button id="play" class="player-button">
-              <i class="fas fa-play"></i>
-            </button>
-            <button id="next" class="player-button" onclick="nextSong()">
-              <i class="fas fa-step-forward"></i>
-            </button>
-          </div>
-          <div class="player-actions">
-            <button id="account" class="player-button">
-              <i class="fas fa-user"></i>
-            </button>
-          </div>
-        </div>
-        <audio id="audio-player" src></audio>
-      </section>
-      <div class="bottom-controller fixed-bottom">
-        <button id="super-left-arrow" onclick="prevTab()">
-          <i class="fas fa-arrow-left"></i>
-        </button>
-        <span id="tab-indicator">Songs</span>
-        <!-- Default text for the first tab -->
-        <button id="super-right-arrow" onclick="nextTab()">
-          <i class="fas fa-arrow-right"></i>
-        </button>
-        <script>
-      
-    </script>
+        <h3>Settings</h3>
+        <h4 id="theme-title"></h4>
+        <button onclick="switchTheme()">change theme</button>
+        <br />
       </div>
-      <!-- END OF BOTTOM PLAYER -->
-      <!-- CONDITIONAL LOGIC BITCH -->
 
-      <!-- END OF HTML -->
-      <div id="theScripts">
-        <!-- SONG LOADER-->
-        <script id="songLoader">
+      <!-- END OF TABS ? CHECK -->
+    </div><!-- YES -->
+    <!-- BOTTOM PLAYER -->
+    <section class="player">
+      <div id="progress-bar-container">
+        <span id="current-time">0:00</span> /
+        <span id="total-duration">0:00</span>
+        <div id="progress-bar"></div>
+        <div id="playhead"></div>
+      </div>
+      <div class="player-info">
+        <a href="#" id="artist-name" class="player-link">Artist Name</a>
+        <a href="#" id="song-title" class="player-link">Song Title</a>
+      </div>
+      <div class="player-content">
+        <div class="player-controls">
+          <button id="prev" class="player-button">
+            <i class="fas fa-step-backward"></i>
+          </button>
+          <button id="play" class="player-button">
+            <i class="fas fa-play"></i>
+          </button>
+          <button id="next" class="player-button" onclick="nextSong()">
+            <i class="fas fa-step-forward"></i>
+          </button>
+        </div>
+        <div class="player-actions">
+          <button id="account" class="player-button">
+            <i class="fas fa-user"></i>
+          </button>
+        </div>
+      </div>
+      <audio id="audio-player" src></audio>
+    </section>
+    <div class="bottom-controller fixed-bottom">
+      <button id="super-left-arrow" onclick="prevTab()">
+        <i class="fas fa-arrow-left"></i>
+      </button>
+      <span id="tab-indicator">Songs</span>
+      <!-- Default text for the first tab -->
+      <button id="super-right-arrow" onclick="nextTab()">
+        <i class="fas fa-arrow-right"></i>
+      </button>
+      <script>
+
+    </script>
+    </div>
+    <!-- END OF BOTTOM PLAYER -->
+    <!-- CONDITIONAL LOGIC BITCH -->
+
+    <!-- END OF HTML -->
+    <div id="theScripts">
+      <!-- SONG LOADER-->
+      <script id="songLoader">
       let currentSongIndex = 0;
       let songs = [];
 
@@ -625,9 +641,9 @@ document.addEventListener('DOMContentLoaded', function () {
         });
       });
     </script>
-        <!-- END OF SCRIPT DIV -->
-        <div id="supaStuff">
-          <!-- script>
+      <!-- END OF SCRIPT DIV -->
+      <div id="supaStuff">
+        <!-- script>
         async function signIn(email, password) {
           const { user, error } = await supabase.auth.signIn({
             email: email,
@@ -639,8 +655,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       </script -->
 
-          <!-- SCRIPT TO SEE IF A USER IS LOGGED IN - WORKING WITH THE LOGIN PAGE -->
-          <script>
+        <!-- SCRIPT TO SEE IF A USER IS LOGGED IN - WORKING WITH THE LOGIN PAGE -->
+        <script>
         document.addEventListener("DOMContentLoaded", function () {
           const urlParams = new URLSearchParams(window.location.search);
           const userEmail = urlParams.get("user");
@@ -655,8 +671,8 @@ document.addEventListener('DOMContentLoaded', function () {
         });
       </script>
 
-          <!-- CHECK IF A USER IS LOGGED IN -->
-          <script>
+        <!-- CHECK IF A USER IS LOGGED IN -->
+        <script>
         document
           .getElementById("login-btn")
           .addEventListener("click", function () {
@@ -664,8 +680,8 @@ document.addEventListener('DOMContentLoaded', function () {
           });
       </script>
 
-          <!-- SCRIPT THAT LOADS ARTIST LIST-->
-          <script>
+        <!-- SCRIPT THAT LOADS ARTIST LIST-->
+        <script>
 
         document.addEventListener('DOMContentLoaded', function () {
           fetch('/data/artistCollection.json')
@@ -689,34 +705,34 @@ document.addEventListener('DOMContentLoaded', function () {
             })
             .catch(error => console.error('Error loading artist data:', error));
         });</script>
-          <!-- END OF SCRIPT THAT LOADS ARTIST LIST -->
+        <!-- END OF SCRIPT THAT LOADS ARTIST LIST -->
 
-        </div>
-        <!-- ENDOFSCRIPT-->
+      </div>
+      <!-- ENDOFSCRIPT-->
 
-        <!-- TEST SCRIPTS-->
-        <script>
-  document.addEventListener('DOMContentLoaded', async () => {
-  const { data, error } = await supabase
-    .from('songs')
-    .select('*');
+      <!-- TEST SCRIPTS-->
+      <script>
+      document.addEventListener('DOMContentLoaded', async () => {
+        const { data, error } = await supabase
+          .from('songs')
+          .select('*');
 
-  if (error) {
-    console.error('Error fetching songs:', error);
-    return;
-  }
+        if (error) {
+          console.error('Error fetching songs:', error);
+          return;
+        }
 
-  // Assuming you have a container with the id 'song-list' where you want to display the songs
-  const songListContainer = document.getElementById('song-list');
+        // Assuming you have a container with the id 'song-list' where you want to display the songs
+        const songListContainer = document.getElementById('song-list');
 
-  // Clear existing content
-  songListContainer.innerHTML = '';
+        // Clear existing content
+        songListContainer.innerHTML = '';
 
-  // Create and append songs to the container
-  data.forEach(song => {
-    const songElement = document.createElement('div');
-    songElement.classList.add('song');
-    songElement.innerHTML = `
+        // Create and append songs to the container
+        data.forEach(song => {
+          const songElement = document.createElement('div');
+          songElement.classList.add('song');
+          songElement.innerHTML = `
       <div class="song-thumbnail">
         <img src="${song.thumbnail_url}" alt="${song.songTitle}">
       </div>
@@ -729,60 +745,61 @@ document.addEventListener('DOMContentLoaded', function () {
         ${song.available_for_purchase ? `<a href="${song.buy_url}" class="buy-song" target="_blank">Buy</a>` : ''}
       </div>
     `;
-    songListContainer.appendChild(songElement);
-  });
-});
+          songListContainer.appendChild(songElement);
+        });
+      });
 
-</script><!-- END OF SONG SCRIPT-->
-        <!-- DYNAMIC SHARE TEST -->
-        <script src="js/src/share.js"></script>
-        <!-- DYANMIC ARTIST TEST -->
-        <!--script src="js/src/dynamicArtist.js"></script-->
-        <script src="js/src/login.js"></script>
-        <script src="js/src/siteCounter.js"></script>
-        <!-- END OF DRAFTY SCRIPTS -->
-        <!-- CRAFT DRAFTY-->
+    </script><!-- END OF SONG SCRIPT-->
+      <!-- DYNAMIC SHARE TEST -->
+      <script src="js/src/share.js"></script>
+      <!-- DYANMIC ARTIST TEST -->
+      <!--script src="js/src/dynamicArtist.js"></script-->
+      <script src="js/src/login.js"></script>
+      <script src="js/src/siteCounter.js"></script>
+      <!-- END OF DRAFTY SCRIPTS -->
+      <!-- CRAFT DRAFTY-->
 
-        <!-- H1 effects - Scroll -->
-        <script src="js/src/h1-effects-scroll.js"></script>
+      <!-- H1 effects - Scroll -->
+      <script src="js/src/h1-effects-scroll.js"></script>
 
-        <!-- END OF CRAFTY -->
+      <!-- END OF CRAFTY -->
 
-        <!-- TEST TO SEE IF WORK SCRIPTS -->
-        <!-- WORKING SOURCE JAVASCRIPTS -->
+      <!-- TEST TO SEE IF WORK SCRIPTS -->
+      <!-- WORKING SOURCE JAVASCRIPTS -->
 
-        <!-- USER CONTROLS-->
-        <script src="js/src/controls-timeline.js"></script>
+      <!-- USER CONTROLS-->
+      <script src="js/src/controls-timeline.js"></script>
 
-        <!-- USER JAVASCRIPTS -->
-        <script src="js/src/user-cart.js"></script>
-        <!-- MARKET JAVASCRIPTS -->
-        <script src="js/src/market-physical.js"></script>
-        <script src="js/src/market-digital.js"></script>
-        <!-- SONG JAVASCRIPT -->
-        <script src="js/src/song-loader.js"></script>
-        <script src="js/src/search-songs.js"></script>
-        <!-- PODCAST JAVASCRIPTS -->
-        <script src="js/src/podcast.js"></script>
-        <!-- MEDIA JAVASCRIPT -->
-        <script src="js/src/media.js"></script>
-        <script src="js/src/media-layout-effects.js"></script>
-        <!-- GAMES JAVASCRIPT -->
-        <script src="js/src/games.js"></script>
-        <!-- NEWSLETTER + UDPATES-->
-        <script src="js/src/newsletter.js"></script>
-        <script src="js/src/updates-commits.js"></script>
-        <!-- USER SETTINGS -->
-        <script src="js/src/function-switchTheme.js"></script>
-        <!-- CORE PAGE-->
-        <script src="js/src/tab.js"></script>
+      <!-- USER JAVASCRIPTS -->
+      <script src="js/src/user-cart.js"></script>
+      <!-- MARKET JAVASCRIPTS -->
+      <script src="js/src/market-physical.js"></script>
+      <script src="js/src/market-digital.js"></script>
+      <!-- SONG JAVASCRIPT -->
+      <script src="js/src/song-loader.js"></script>
+      <script src="js/src/search-songs.js"></script>
+      <!-- PODCAST JAVASCRIPTS -->
+      <script src="js/src/podcast.js"></script>
+      <!-- MEDIA JAVASCRIPT -->
+      <script src="js/src/media.js"></script>
+      <script src="js/src/media-layout-effects.js"></script>
+      <!-- GAMES JAVASCRIPT -->
+      <script src="js/src/games.js"></script>
+      <!-- NEWSLETTER + UDPATES-->
+      <script src="js/src/newsletter.js"></script>
+      <script src="js/src/updates-commits.js"></script>
+      <!-- USER SETTINGS -->
+      <script src="js/src/function-switchTheme.js"></script>
+      <!-- CORE PAGE-->
+      <script src="js/src/tab.js"></script>
 
-        <!-- LOG ERRORS -->
+      <!-- LOG ERRORS -->
 
-        <!-- CORDOVA PLUGINS -->
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript"
-          src="js/cordova-scripts/cordova-musicControls.js"></script>
+      <!-- CORDOVA PLUGINS -->
+      <script type="text/javascript" src="cordova.js"></script>
+      <script type="text/javascript"
+        src="js/cordova-scripts/cordova-musicControls.js"></script>
 
-  </body>
-</html>
+    </body>
+
+  </html>
