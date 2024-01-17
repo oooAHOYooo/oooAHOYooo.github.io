@@ -182,7 +182,7 @@
           <!-- END OF MARKET -->
         </div><!-- END OF MARKET -->
         <!-- SONGS TAB -->
-        <div id="songs-tab" class="tab-content">
+        <div id="songs-tab" class="tab-content active">
           <h1 class="h1-background">Songs</h1>
           <!-- Song Control Panel -->
           <div id="songs-control-panel">
@@ -197,7 +197,6 @@
           </div>
         </div>
         <!-- MEDIA TAB -->
-
         <div id="media-tab" class="tab-content">
           <div class="media-header">
             <h1 class="h1-background-a">Media</h1>
@@ -253,7 +252,6 @@
           </div>
           <!-- Game content will also be dynamically added here by the JavaScript -->
         </div>
-
         <!-- Game content will be dynamically added here -->
       </div>
       <!-- ARTIST -->
@@ -295,7 +293,7 @@
           <div id="commits-list"></div>
         </div>
         <!-- ACCOUNT -->
-        <div id="account-tab" class="tab-content active">
+        <div id="account-tab" class="tab-content">
           <h1 class="h1-background">Your Account</h1>
 
           <div class="library-mainFrame">
@@ -480,74 +478,72 @@
             </div>
           </div>
 
+          <h2>Your Liked Content</h2>
+
+          <h2>Your Cart</h2>
+          <div id="cart-items">
+            <!-- Items will be dynamically inserted here -->
+          </div>
+          <h3>Settings</h3>
+          <h4 id="theme-title"></h4>
+          <button onclick="switchTheme()">change theme</button>
+          <br />
         </div>
 
-        <h2>Your Liked Content</h2>
-
-        <h2>Your Cart</h2>
-        <div id="cart-items">
-          <!-- Items will be dynamically inserted here -->
+        <!-- END OF TABS ? CHECK -->
+      </div><!-- YES -->
+      <!-- BOTTOM PLAYER -->
+      <section class="player">
+        <div id="progress-bar-container">
+          <span id="current-time">0:00</span> /
+          <span id="total-duration">0:00</span>
+          <div id="progress-bar"></div>
+          <div id="playhead"></div>
         </div>
-        <h3>Settings</h3>
-        <h4 id="theme-title"></h4>
-        <button onclick="switchTheme()">change theme</button>
-        <br />
-      </div>
-
-      <!-- END OF TABS ? CHECK -->
-    </div><!-- YES -->
-    <!-- BOTTOM PLAYER -->
-    <section class="player">
-      <div id="progress-bar-container">
-        <span id="current-time">0:00</span> /
-        <span id="total-duration">0:00</span>
-        <div id="progress-bar"></div>
-        <div id="playhead"></div>
-      </div>
-      <div class="player-info">
-        <a href="#" id="artist-name" class="player-link">Artist Name</a>
-        <a href="#" id="song-title" class="player-link">Song Title</a>
-      </div>
-      <div class="player-content">
-        <div class="player-controls">
-          <button id="prev" class="player-button">
-            <i class="fas fa-step-backward"></i>
-          </button>
-          <button id="play" class="player-button">
-            <i class="fas fa-play"></i>
-          </button>
-          <button id="next" class="player-button" onclick="nextSong()">
-            <i class="fas fa-step-forward"></i>
-          </button>
+        <div class="player-info">
+          <a href="#" id="artist-name" class="player-link">Artist Name</a>
+          <a href="#" id="song-title" class="player-link">Song Title</a>
         </div>
-        <div class="player-actions">
-          <button id="account" class="player-button">
-            <i class="fas fa-user"></i>
-          </button>
+        <div class="player-content">
+          <div class="player-controls">
+            <button id="prev" class="player-button">
+              <i class="fas fa-step-backward"></i>
+            </button>
+            <button id="play" class="player-button">
+              <i class="fas fa-play"></i>
+            </button>
+            <button id="next" class="player-button" onclick="nextSong()">
+              <i class="fas fa-step-forward"></i>
+            </button>
+          </div>
+          <div class="player-actions">
+            <button id="account" class="player-button">
+              <i class="fas fa-user"></i>
+            </button>
+          </div>
         </div>
-      </div>
-      <audio id="audio-player" src></audio>
-    </section>
-    <div class="bottom-controller fixed-bottom">
-      <button id="super-left-arrow" onclick="prevTab()">
-        <i class="fas fa-arrow-left"></i>
-      </button>
-      <span id="tab-indicator">Songs</span>
-      <!-- Default text for the first tab -->
-      <button id="super-right-arrow" onclick="nextTab()">
-        <i class="fas fa-arrow-right"></i>
-      </button>
-      <script>
+        <audio id="audio-player" src></audio>
+      </section>
+      <div class="bottom-controller fixed-bottom">
+        <button id="super-left-arrow" onclick="prevTab()">
+          <i class="fas fa-arrow-left"></i>
+        </button>
+        <span id="tab-indicator">Songs</span>
+        <!-- Default text for the first tab -->
+        <button id="super-right-arrow" onclick="nextTab()">
+          <i class="fas fa-arrow-right"></i>
+        </button>
+        <script>
 
     </script>
-    </div>
-    <!-- END OF BOTTOM PLAYER -->
-    <!-- CONDITIONAL LOGIC BITCH -->
+      </div>
+      <!-- END OF BOTTOM PLAYER -->
+      <!-- CONDITIONAL LOGIC BITCH -->
 
-    <!-- END OF HTML -->
-    <div id="theScripts">
-      <!-- SONG LOADER-->
-      <script id="songLoader">
+      <!-- END OF HTML -->
+      <div id="theScripts">
+        <!-- SONG LOADER-->
+        <script id="songLoader">
       let currentSongIndex = 0;
       let songs = [];
 
@@ -641,9 +637,9 @@
         });
       });
     </script>
-      <!-- END OF SCRIPT DIV -->
-      <div id="supaStuff">
-        <!-- script>
+        <!-- END OF SCRIPT DIV -->
+        <div id="supaStuff">
+          <!-- script>
         async function signIn(email, password) {
           const { user, error } = await supabase.auth.signIn({
             email: email,
@@ -655,8 +651,8 @@
         }
       </script -->
 
-        <!-- SCRIPT TO SEE IF A USER IS LOGGED IN - WORKING WITH THE LOGIN PAGE -->
-        <script>
+          <!-- SCRIPT TO SEE IF A USER IS LOGGED IN - WORKING WITH THE LOGIN PAGE -->
+          <script>
         document.addEventListener("DOMContentLoaded", function () {
           const urlParams = new URLSearchParams(window.location.search);
           const userEmail = urlParams.get("user");
@@ -671,8 +667,8 @@
         });
       </script>
 
-        <!-- CHECK IF A USER IS LOGGED IN -->
-        <script>
+          <!-- CHECK IF A USER IS LOGGED IN -->
+          <script>
         document
           .getElementById("login-btn")
           .addEventListener("click", function () {
@@ -680,8 +676,8 @@
           });
       </script>
 
-        <!-- SCRIPT THAT LOADS ARTIST LIST-->
-        <script>
+          <!-- SCRIPT THAT LOADS ARTIST LIST-->
+          <script>
 
         document.addEventListener('DOMContentLoaded', function () {
           fetch('/data/artistCollection.json')
@@ -705,13 +701,13 @@
             })
             .catch(error => console.error('Error loading artist data:', error));
         });</script>
-        <!-- END OF SCRIPT THAT LOADS ARTIST LIST -->
+          <!-- END OF SCRIPT THAT LOADS ARTIST LIST -->
 
-      </div>
-      <!-- ENDOFSCRIPT-->
+        </div>
+        <!-- ENDOFSCRIPT-->
 
-      <!-- TEST SCRIPTS-->
-      <script>
+        <!-- TEST SCRIPTS-->
+        <script>
       document.addEventListener('DOMContentLoaded', async () => {
         const { data, error } = await supabase
           .from('songs')
@@ -750,56 +746,56 @@
       });
 
     </script><!-- END OF SONG SCRIPT-->
-      <!-- DYNAMIC SHARE TEST -->
-      <script src="js/src/share.js"></script>
-      <!-- DYANMIC ARTIST TEST -->
-      <!--script src="js/src/dynamicArtist.js"></script-->
-      <script src="js/src/login.js"></script>
-      <script src="js/src/siteCounter.js"></script>
-      <!-- END OF DRAFTY SCRIPTS -->
-      <!-- CRAFT DRAFTY-->
+        <!-- DYNAMIC SHARE TEST -->
+        <script src="js/src/share.js"></script>
+        <!-- DYANMIC ARTIST TEST -->
+        <!--script src="js/src/dynamicArtist.js"></script-->
+        <script src="js/src/login.js"></script>
+        <script src="js/src/siteCounter.js"></script>
+        <!-- END OF DRAFTY SCRIPTS -->
+        <!-- CRAFT DRAFTY-->
 
-      <!-- H1 effects - Scroll -->
-      <script src="js/src/h1-effects-scroll.js"></script>
+        <!-- H1 effects - Scroll -->
+        <script src="js/src/h1-effects-scroll.js"></script>
 
-      <!-- END OF CRAFTY -->
+        <!-- END OF CRAFTY -->
 
-      <!-- TEST TO SEE IF WORK SCRIPTS -->
-      <!-- WORKING SOURCE JAVASCRIPTS -->
+        <!-- TEST TO SEE IF WORK SCRIPTS -->
+        <!-- WORKING SOURCE JAVASCRIPTS -->
 
-      <!-- USER CONTROLS-->
-      <script src="js/src/controls-timeline.js"></script>
+        <!-- USER CONTROLS-->
+        <script src="js/src/controls-timeline.js"></script>
 
-      <!-- USER JAVASCRIPTS -->
-      <script src="js/src/user-cart.js"></script>
-      <!-- MARKET JAVASCRIPTS -->
-      <script src="js/src/market-physical.js"></script>
-      <script src="js/src/market-digital.js"></script>
-      <!-- SONG JAVASCRIPT -->
-      <script src="js/src/song-loader.js"></script>
-      <script src="js/src/search-songs.js"></script>
-      <!-- PODCAST JAVASCRIPTS -->
-      <script src="js/src/podcast.js"></script>
-      <!-- MEDIA JAVASCRIPT -->
-      <script src="js/src/media.js"></script>
-      <script src="js/src/media-layout-effects.js"></script>
-      <!-- GAMES JAVASCRIPT -->
-      <script src="js/src/games.js"></script>
-      <!-- NEWSLETTER + UDPATES-->
-      <script src="js/src/newsletter.js"></script>
-      <script src="js/src/updates-commits.js"></script>
-      <!-- USER SETTINGS -->
-      <script src="js/src/function-switchTheme.js"></script>
-      <!-- CORE PAGE-->
-      <script src="js/src/tab.js"></script>
+        <!-- USER JAVASCRIPTS -->
+        <script src="js/src/user-cart.js"></script>
+        <!-- MARKET JAVASCRIPTS -->
+        <script src="js/src/market-physical.js"></script>
+        <script src="js/src/market-digital.js"></script>
+        <!-- SONG JAVASCRIPT -->
+        <script src="js/src/song-loader.js"></script>
+        <script src="js/src/search-songs.js"></script>
+        <!-- PODCAST JAVASCRIPTS -->
+        <script src="js/src/podcast.js"></script>
+        <!-- MEDIA JAVASCRIPT -->
+        <script src="js/src/media.js"></script>
+        <script src="js/src/media-layout-effects.js"></script>
+        <!-- GAMES JAVASCRIPT -->
+        <script src="js/src/games.js"></script>
+        <!-- NEWSLETTER + UDPATES-->
+        <script src="js/src/newsletter.js"></script>
+        <script src="js/src/updates-commits.js"></script>
+        <!-- USER SETTINGS -->
+        <script src="js/src/function-switchTheme.js"></script>
+        <!-- CORE PAGE-->
+        <script src="js/src/tab.js"></script>
 
-      <!-- LOG ERRORS -->
+        <!-- LOG ERRORS -->
 
-      <!-- CORDOVA PLUGINS -->
-      <script type="text/javascript" src="cordova.js"></script>
-      <script type="text/javascript"
-        src="js/cordova-scripts/cordova-musicControls.js"></script>
+        <!-- CORDOVA PLUGINS -->
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript"
+          src="js/cordova-scripts/cordova-musicControls.js"></script>
 
-    </body>
+      </body>
 
-  </html>
+    </html>

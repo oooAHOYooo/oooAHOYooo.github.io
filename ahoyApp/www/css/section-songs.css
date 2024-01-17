@@ -1,5 +1,31 @@
 #songs-control-panel {
   position: sticky;
-  top: 0; /* Adjust this value to change the point at which the element becomes sticky */
-  z-index: 10; /* Adjust this value to ensure the element is above other elements */
+  top: 0;
+  /* Adjust this value to change the point at which the element becomes sticky */
+  z-index: 10;
+  /* Adjust this value to ensure the element is above other elements */
+}
+
+.song-table {
+  margin: auto;
+  width: 100%;
+  /* Adjust this value to make the table more or less compact */
+}
+
+.song-table-header {
+  background-color: var(--secondary-color);
+}
+
+.song-table-body {
+  background-color: var(--background-color);
+  max-height: 20px;
+}
+
+.song-row {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.song-artist,
+.song-title {
+  text-align: left;
 }

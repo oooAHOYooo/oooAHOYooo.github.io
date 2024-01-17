@@ -112,8 +112,8 @@ button:hover {
 }
 
 .main-top-logo-img {
-  padding:5px;
-  max-width:150px;
+  padding: 5px;
+  max-width: 150px;
 }
 
 .artist-info a {
@@ -253,9 +253,11 @@ button:hover {
 
 .fixed-bottom {
   position: fixed;
-  bottom: 0%; /* Adjust this value based on the height of your bottom navigation */
+  bottom: 0%;
+  /* Adjust this value based on the height of your bottom navigation */
   width: 100%;
-  z-index: 999; /* To make sure it's above other elements */
+  z-index: 999;
+  /* To make sure it's above other elements */
 }
 
 .radio-wrap {
@@ -283,10 +285,14 @@ button:hover {
 }
 
 #album-art {
-  width: 200px; /* Adjust this to change the size of the album art */
-  height: 200px; /* Adjust this to change the size of the album art */
-  object-fit: cover; /* This will make sure the image scales nicely */
-  margin-bottom: 20px; /* Space between the album art and the song title */
+  width: 200px;
+  /* Adjust this to change the size of the album art */
+  height: 200px;
+  /* Adjust this to change the size of the album art */
+  object-fit: cover;
+  /* This will make sure the image scales nicely */
+  margin-bottom: 20px;
+  /* Space between the album art and the song title */
 }
 
 .song-info {
@@ -363,9 +369,11 @@ button:hover {
 
 /* Add this media query for iPhone 8 (375px x 667px) */
 @media screen and (max-width: 375px) {
+
   #mediaTable th,
   #mediaTable td {
-    padding: 2.5px; /* Adjust this value to decrease the space */
+    padding: 2.5px;
+    /* Adjust this value to decrease the space */
   }
 }
 
@@ -415,9 +423,11 @@ button:hover {
 
 #podcast-table {
   width: 100%;
-  font-size: 0.8em; /* Adjust as needed to make the text smaller */
+  font-size: 0.8em;
+  /* Adjust as needed to make the text smaller */
   border-collapse: collapse;
-  margin: auto; /* This will center the table */
+  margin: auto;
+  /* This will center the table */
   margin-top: 20px;
   position: relative;
   z-index: 5;
@@ -497,51 +507,78 @@ button:hover {
 
 #liked-songs-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Creates a 4-column grid */
-  grid-gap: 10px; /* Space between grid items */
-  margin: 10px; /* Margin around the grid */
+  grid-template-columns: repeat(3, 1fr);
+  /* Creates a 4-column grid */
+  grid-gap: 10px;
+  /* Space between grid items */
+  margin: 10px;
+  /* Margin around the grid */
 }
 
 .song-card {
-  border: 1px solid var(--border-color); /* Border for each card */
-  padding: 5px; /* Padding inside each card */
-  text-align: center; /* Center the text and content */
-  background-color: #f9f9f900; /* Background color for the cards */
-  position: relative; /* For positioning the remove button */
-  width: 100px; /* Fixed width */
-  height: 120px; /* Fixed height */
+  border: 1px solid var(--border-color);
+  /* Border for each card */
+  padding: 5px;
+  /* Padding inside each card */
+  text-align: center;
+  /* Center the text and content */
+  background-color: #f9f9f900;
+  /* Background color for the cards */
+  position: relative;
+  /* For positioning the remove button */
+  width: 100px;
+  /* Fixed width */
+  height: 120px;
+  /* Fixed height */
   color: var(--gold);
-  overflow: hidden; /* Ensures the content doesn't overflow */
+  overflow: hidden;
+  /* Ensures the content doesn't overflow */
 }
 
 .song-card img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* This will make sure the image scales nicely */
+  object-fit: cover;
+  /* This will make sure the image scales nicely */
 }
 
 .song-card p {
-  margin: 5px 0; /* Margin for paragraph for spacing */
-  overflow: hidden; /* Ensures the text doesn't overflow */
-  text-overflow: ellipsis; /* Adds an ellipsis for overflowed text */
-  white-space: nowrap; /* Keeps the text in a single line */
+  margin: 5px 0;
+  /* Margin for paragraph for spacing */
+  overflow: hidden;
+  /* Ensures the text doesn't overflow */
+  text-overflow: ellipsis;
+  /* Adds an ellipsis for overflowed text */
+  white-space: nowrap;
+  /* Keeps the text in a single line */
 }
 
 .remove-button {
-  position: absolute; /* Position it relative to the song-card */
-  top: 5px; /* Position from the top inside the card */
-  right: 5px; /* Position from the right inside the card */
-  background-color: #ff4d4d; /* Background color of the button */
-  color: white; /* Text color */
-  border: none; /* Removes the border */
-  cursor: pointer; /* Cursor pointer to indicate it's clickable */
-  border-radius: 50%; /* Makes it circular */
-  padding: 5px; /* Padding inside the button */
-  display: none; /* Hides the button by default */
+  position: absolute;
+  /* Position it relative to the song-card */
+  top: 5px;
+  /* Position from the top inside the card */
+  right: 5px;
+  /* Position from the right inside the card */
+  background-color: #ff4d4d;
+  /* Background color of the button */
+  color: white;
+  /* Text color */
+  border: none;
+  /* Removes the border */
+  cursor: pointer;
+  /* Cursor pointer to indicate it's clickable */
+  border-radius: 50%;
+  /* Makes it circular */
+  padding: 5px;
+  /* Padding inside the button */
+  display: none;
+  /* Hides the button by default */
 }
 
 .song-card:hover .remove-button {
-  display: block; /* Shows the button on hover */
+  display: block;
+  /* Shows the button on hover */
 }
 
 
@@ -569,17 +606,21 @@ button:hover {
   0% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(1.1);
   }
+
   100% {
     transform: scale(1);
   }
 }
 
 .like-button.liked {
-  color: #9999992d; /* This will make the button appear faded */
-  cursor: default; /* This will remove the hand cursor when hovering over the button */
+  color: #9999992d;
+  /* This will make the button appear faded */
+  cursor: default;
+  /* This will remove the hand cursor when hovering over the button */
   animation: pulse 1s ease-in-out;
 }
 
@@ -637,15 +678,21 @@ button:hover {
 /* Style for Games Tab */
 
 #games-tab .tabcontent h1 {
-  font-size: 1.2rem; /* Adjust as needed */
-  margin-top: 10px; /* Adjust as needed */
-  margin-bottom: 5px; /* Adjust as needed */
+  font-size: 1.2rem;
+  /* Adjust as needed */
+  margin-top: 10px;
+  /* Adjust as needed */
+  margin-bottom: 5px;
+  /* Adjust as needed */
 }
 
 #games-tab .tabcontent h2 {
-  font-size: 1rem; /* Adjust as needed */
-  margin-top: 5px; /* Adjust as needed */
-  margin-bottom: 5px; /* Adjust as needed */
+  font-size: 1rem;
+  /* Adjust as needed */
+  margin-top: 5px;
+  /* Adjust as needed */
+  margin-bottom: 5px;
+  /* Adjust as needed */
 }
 
 /* Style the commits list */
@@ -678,6 +725,7 @@ button:hover {
   justify-content: center;
   margin-top: 30px;
 }
+
 #home-logo-div img {
   width: 100%;
   max-width: 500px;
@@ -690,16 +738,19 @@ button:hover {
   0% {
     filter: hue-rotate(0deg) brightness(0.8);
   }
+
   100% {
     filter: hue-rotate(360deg) brightness(0.8);
   }
 }
 
 @keyframes vhs-flicker {
+
   0%,
   100% {
     opacity: 1;
   }
+
   50% {
     opacity: 0.8;
   }
@@ -731,9 +782,11 @@ button:hover {
   0% {
     box-shadow: 0 0 0 0 rgba(0, 242, 255, 0.7);
   }
+
   70% {
     box-shadow: 0 0 0 10px rgba(0, 242, 255, 0);
   }
+
   100% {
     box-shadow: 0 0 0 0 rgba(0, 242, 255, 0);
   }
@@ -757,8 +810,10 @@ button:hover {
 }
 
 #control-panel button {
-  width: 80px; /* adjust as needed */
-  height: 40px; /* adjust as needed */
+  width: 80px;
+  /* adjust as needed */
+  height: 40px;
+  /* adjust as needed */
   font-size: 10px;
 }
 
@@ -785,10 +840,10 @@ button:hover {
 
 #progress-bar-container {
   position: relative;
-  height: 20px; /* Adjust as needed */
-  background-color: var(
-    --light-border-color
-  ); /* Background of the progress bar */
+  height: 20px;
+  /* Adjust as needed */
+  background-color: var(--light-border-color);
+  /* Background of the progress bar */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -799,9 +854,8 @@ button:hover {
   left: 0;
   top: 0;
   height: 100%;
-  background-color: var(
-    --light-border-color
-  ); /* Background of the progress bar */
+  background-color: var(--light-border-color);
+  /* Background of the progress bar */
   z-index: 1;
 }
 
@@ -812,12 +866,12 @@ button:hover {
   transform: translateY(-50%);
   width: 12px;
   height: 20px;
-  background-color: var(
-    --light-border-color
-  ); /* Background of the progress bar */
+  background-color: var(--light-border-color);
+  /* Background of the progress bar */
   border-radius: 0%;
   cursor: pointer;
-  z-index: 2; /* Ensures the playhead is above the progress bar */
+  z-index: 2;
+  /* Ensures the playhead is above the progress bar */
 }
 
 #current-time,
@@ -825,18 +879,21 @@ button:hover {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 3; /* Ensures the time is above the progress bar and playhead */
+  z-index: 3;
+  /* Ensures the time is above the progress bar and playhead */
   background-color: var(--background-color);
   border-radius: 4px;
   color: var(--text-color);
 }
 
 #current-time {
-  left: 10px; /* Spacing from the left edge */
+  left: 10px;
+  /* Spacing from the left edge */
 }
 
 #total-duration {
-  right: 10px; /* Spacing from the right edge */
+  right: 10px;
+  /* Spacing from the right edge */
 }
 
 /* Default font size for larger screens */
@@ -860,27 +917,35 @@ button:hover {
 }
 
 .sort-buttons button {
-  font-size: 10px; /* Adjust this value to make the text smaller or larger */
-  padding: 5px 10px; /* Adjust these values to make the button smaller or larger */
-  text-align: center; /* This will center the text */
+  font-size: 10px;
+  /* Adjust this value to make the text smaller or larger */
+  padding: 5px 10px;
+  /* Adjust these values to make the button smaller or larger */
+  text-align: center;
+  /* This will center the text */
   border-width: 1px;
   margin-right: 5px;
 }
 
 .common-button {
-  width: 90px; /* Adjust as needed */
-  height: 50px; /* Adjust as needed */
-  font-size: 10px; /* Adjust as needed */
+  width: 90px;
+  /* Adjust as needed */
+  height: 50px;
+  /* Adjust as needed */
+  font-size: 10px;
+  /* Adjust as needed */
   display: flex;
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  color: var(
-    --text-color
-  ); /* Use the color variable defined in :root or replace with any color */
-  border: 1px solid var(--border-color); /* Use the color variable defined in :root or replace with any color */
-  border-radius: 5px; /* Rounded corners */
-  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  color: var(--text-color);
+  /* Use the color variable defined in :root or replace with any color */
+  border: 1px solid var(--border-color);
+  /* Use the color variable defined in :root or replace with any color */
+  border-radius: 5px;
+  /* Rounded corners */
+  transition: all 0.3s ease;
+  /* Smooth transition for hover effects */
   line-height: 90%;
   text-transform: uppercase;
 }
@@ -890,15 +955,12 @@ button:hover {
 }
 
 .common-button:hover {
-  background-color: var(
-    --gold
-  ); /* Use the color variable defined in :root or replace with any color */
-  border-color: var(
-    --gold
-  ); /* Use the color variable defined in :root or replace with any color */
-  color: var(
-    --background-color
-  ); /* Use the color variable defined in :root or replace with any color */
+  background-color: var(--gold);
+  /* Use the color variable defined in :root or replace with any color */
+  border-color: var(--gold);
+  /* Use the color variable defined in :root or replace with any color */
+  color: var(--background-color);
+  /* Use the color variable defined in :root or replace with any color */
 }
 
 .home-tab-learn-more-wrap a {
@@ -909,7 +971,8 @@ button:hover {
   background-color: transparent;
   border: none;
   cursor: pointer;
-  font-size: 1rem; /* Adjust size as needed */
+  font-size: 1rem;
+  /* Adjust size as needed */
   padding: 0;
 }
 
@@ -932,17 +995,20 @@ button:hover {
 
 /* Style each media item */
 .media-item {
-  width: 200px; /* Adjust as needed */
+  width: 200px;
+  /* Adjust as needed */
   text-align: center;
   margin-bottom: 20px;
   position: relative;
-  overflow: hidden; /* Ensures the image doesn't overflow the container */
+  overflow: hidden;
+  /* Ensures the image doesn't overflow the container */
 }
 
 .media-item::before {
   content: "";
   display: block;
-  padding-top: 56.25%; /* Maintain a 16:9 aspect ratio */
+  padding-top: 56.25%;
+  /* Maintain a 16:9 aspect ratio */
 }
 
 .media-item img {
@@ -952,7 +1018,8 @@ button:hover {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 5px; /* Adjust as needed */
+  border-radius: 5px;
+  /* Adjust as needed */
   filter: grayscale(100%);
 }
 
@@ -1039,7 +1106,8 @@ button:hover {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  z-index: 100; /* Adjust as needed to ensure it sits on top of other elements */
+  z-index: 100;
+  /* Adjust as needed to ensure it sits on top of other elements */
 }
 
 /*NEW PHYSICAL MARKET UPDATES WITH NEW CLASSES ON JAVASCRIPT */
@@ -1065,11 +1133,16 @@ button:hover {
   right: 20px;
   font-size: 50px;
   color: var(--button-color);
-  background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
-  backdrop-filter: blur(10px); /* Apply blur to the background */
-  -webkit-backdrop-filter: blur(10px); /* For Safari */
-  border-radius: 5px; /* Optional: add border radius for a smoother look */
-  padding: 10px; /* Optional: add some padding */
+  background: rgba(255, 255, 255, 0.1);
+  /* Semi-transparent white */
+  backdrop-filter: blur(10px);
+  /* Apply blur to the background */
+  -webkit-backdrop-filter: blur(10px);
+  /* For Safari */
+  border-radius: 5px;
+  /* Optional: add border radius for a smoother look */
+  padding: 10px;
+  /* Optional: add some padding */
   border-color: var(--border-color);
   border-style: solid;
   border-width: 1px;
@@ -1204,11 +1277,16 @@ button:hover {
   right: 20px;
   font-size: 50px;
   color: var(--button-color);
-  background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
-  backdrop-filter: blur(10px); /* Apply blur to the background */
-  -webkit-backdrop-filter: blur(10px); /* For Safari */
-  border-radius: 5px; /* Optional: add border radius for a smoother look */
-  padding: 10px; /* Optional: add some padding */
+  background: rgba(255, 255, 255, 0.1);
+  /* Semi-transparent white */
+  backdrop-filter: blur(10px);
+  /* Apply blur to the background */
+  -webkit-backdrop-filter: blur(10px);
+  /* For Safari */
+  border-radius: 5px;
+  /* Optional: add border radius for a smoother look */
+  padding: 10px;
+  /* Optional: add some padding */
   border-color: var(--border-color);
   border-style: solid;
   border-width: 1px;
@@ -1263,14 +1341,27 @@ button:hover {
   width: 100%;
 }
 
+#songs-tab {
+  background-color: yellow;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 #song-wrap-list {
   width: 100%;
-  max-width: 600px;
-  margin: 0 auto; /* This will center the div if its width is less than 600px */
+  /*max-width: 600px;*/
+  margin: 0 auto;
+  /* This will center the div if its width is less than 600px */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 #login-btn {
- margin-right: 10px;
+  margin-right: 10px;
 }
 
 .version-movie-poster-wrap {
@@ -1320,7 +1411,8 @@ button:hover {
 
 .game-tablinks:hover,
 .game-tablinks.active {
-  background-color: #0078f2; /* PlayStation blue */
+  background-color: #0078f2;
+  /* PlayStation blue */
 }
 
 /* Game tab content styling */
@@ -1333,13 +1425,15 @@ button:hover {
 
 .game-tabcontent iframe {
   width: 100%;
-  height: 300px; /* Adjust as needed */
+  height: 300px;
+  /* Adjust as needed */
   border: none;
 }
 
 /* Load game button styling */
 .load-game {
-  background-color: #0078f2; /* PlayStation blue */
+  background-color: #0078f2;
+  /* PlayStation blue */
   color: white;
   border: none;
   padding: 10px 15px;
@@ -1379,7 +1473,8 @@ button:hover {
 
 .game-cover {
   cursor: pointer;
-  width: 100%; /* Adjust this as needed */
+  width: 100%;
+  /* Adjust this as needed */
   margin-bottom: 10px;
 }
 

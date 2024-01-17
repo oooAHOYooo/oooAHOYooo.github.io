@@ -1,39 +1,40 @@
 document.addEventListener("DOMContentLoaded", function () {
-  fetch("./data/songCollection.json")
-      .then((response) => response.json())
-      .then((data) => {
-          const songList = document.getElementById("song-list");
-          songList.innerHTML = `
-              <table>
-                  <thead>
-                      <tr>
-                          <th>Artist</th>
-                          <th>Song</th>
-                          <th>Play</th>
-                          <th>Like</th>
-                      </tr>
-                  </thead>
-                  <tbody id="song-list-body">
-                  </tbody>
-              </table>
-          `;
-
-          const songListBody = document.getElementById("song-list-body");
-          data.songs.forEach((song) => {
-              const tr = document.createElement("tr");
-              tr.innerHTML = `
-                  <td>${song.artist}</td>
-                  <td class="song-title" data-url="${song.mp3url}" data-artist="${song.artist}" data-title="${song.songTitle}">${song.songTitle}</td>
-                  <td><button class="play-button" data-url="${song.mp3url}"><i class="fas fa-play"></i></button></td>
-                  <td><button class="like-button" data-url="${song.mp3url}" data-artist="${song.artist}" data-title="${song.songTitle}"><i class="fas fa-heart"></i></button></td>
-              `;
-              songListBody.appendChild(tr);
-          });
-
-          setupPlayButtons();
-          setupLikeButtons();
-      });
-});
+    fetch("./data/songCollection.json")
+        .then((response) => response.json())
+        .then((data) => {
+            const songList = document.getElementById("song-list");
+            songList.innerHTML = `
+                <table class="song-table">
+                    <thead>
+                        <tr class="song-table-header">
+                            <th>Play</th>
+                            <th>Artist</th>
+                            <th>Song</th>
+                            <th>Like</th>
+                        </tr>
+                    </thead>
+                    <tbody id="song-list-body" class="song-table-body">
+                    </tbody>
+                </table>
+            `;
+  
+            const songListBody = document.getElementById("song-list-body");
+            data.songs.forEach((song) => {
+                const tr = document.createElement("tr");
+                tr.className = "song-row";
+                tr.innerHTML = `
+                    <td><button class="play-button" data-url="${song.mp3url}"><i class="fas fa-play"></i></button></td>
+                    <td class="song-artist">${song.artist}</td>
+                    <td class="song-title" data-url="${song.mp3url}" data-artist="${song.artist}" data-title="${song.songTitle}">${song.songTitle}</td>
+                    <td><button class="like-button" data-url="${song.mp3url}" data-artist="${song.artist}" data-title="${song.songTitle}"><i class="fas fa-heart"></i></button></td>
+                `;
+                songListBody.appendChild(tr);
+            });
+  
+            setupPlayButtons();
+            setupLikeButtons();
+        });
+  });
 
 function setupPlayButtons() {
   const audioPlayer = document.getElementById("audio-player");
