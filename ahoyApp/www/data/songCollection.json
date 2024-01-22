@@ -9,7 +9,7 @@
 			"play": false,
 			"thumbnail": "https://i.ytimg.com/vi/XDH0X-dF4GM/maxresdefault.jpg",
 			"coverArt" : "https://i.ytimg.com/vi/XDH0X-dF4GM/maxresdefault.jpg",
-			"backgroundImageUrl": "https://i.ytimg.com/vi/XDH0X-dF4GM/maxresdefault.jpg"
+			"backgroundImageUrl": "https://uploads-ssl.webflow.com/61faaa991e210610a2f55291/61fd3eb3d31bab0a69794969_Ahoy-Indie-Media---Live-from-the-Garage-p-500.png"
 		},
 	  {
 		"id": 2,
@@ -17,7 +17,7 @@
 		"songTitle": "Beneath the Willow Tree",
 		"artistUrl" : "https://ahoy.ooo/artist/total/sdw/sdw.html",
 		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Beneath+the+Willow+Tree.mp3",
-		"backgroundImageUrl": "https://i.ytimg.com/vi/XDH0X-dF4GM/maxresdefault.jpg",
+		"backgroundImageUrl": "https://i.ytimg.com/vi/koPyEhqksBk/maxresdefault.jpg",
 		"play": false
 	  },
 	  {
@@ -26,7 +26,7 @@
 		"songTitle": "Put Me on the Run",
 		"artistUrl" : "https://ahoy.ooo/artist/total/sdw/sdw.html",
 		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Put+Me+on+the+Run-+Draft+1mp3.mp3",
-		"backgroundImageUrl": "https://i.ytimg.com/vi/XDH0X-dF4GM/maxresdefault.jpg",
+		"backgroundImageUrl": "https://i.ytimg.com/vi/uEqMlBsKYpQ/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLABNZs86_3-knu6Zq78I43Am1eLWA",
 		"play": false
 	  },
 	  {
