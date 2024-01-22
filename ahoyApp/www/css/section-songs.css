@@ -48,6 +48,16 @@
   border: none;
 }
 
+
+.song-row:hover {
+  background-color: #f2f2f2; /* Or any other color for hover effect */
+}
+
+.song-row.clicked {
+  background-color: yellow; /* Or any other color for clicked effect */
+}
+
+
 .song-row.clicked {
   animation: highlight 1s ease-in-out;
   background-color: yellow;
@@ -74,18 +84,21 @@ box-sizing: border-box;
 }
 
 #song-col-2 {
+  position:fixed;
+
 position: relative; /* This is the parent element of #song-Featured-Art */
 overflow: auto; /* This allows the content to scroll */
 }
 
 #song-Featured-Art {
-top: 0; /* This makes the element stick to the top of the parent */
-width: 100%;
-height: 0;
-padding-bottom: 100%;
-background-position: center;
-background-repeat: no-repeat;
-background-size: cover;
-overflow: hidden;
-background-color: black;
+  position: relative;
+  top: 0;
+  width: auto;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  background-color: rgb(112, 112, 112);
+  background-image: url(/images/Ahoy-Indie-Media---The-Rob-Show---Season-2---Episode-1---2023.png);
 }

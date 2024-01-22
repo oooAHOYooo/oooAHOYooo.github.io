@@ -25,10 +25,20 @@ document.addEventListener("DOMContentLoaded", function () {
                 tr.innerHTML = `
                     <td><button class="play-button" data-url="${song.mp3url}"><i class="fas fa-play"></i></button></td>
                     <td class="song-artist">${song.artist}</td>
-                    <td class="song-title" data-url="${song.mp3url}" data-artist="${song.artist}" data-title="${song.songTitle}">${song.songTitle}</td>
+                    <td class="song-title">${song.songTitle}</td>
                     <td><button class="like-button" data-url="${song.mp3url}" data-artist="${song.artist}" data-title="${song.songTitle}"><i class="fas fa-heart"></i></button></td>
                 `;
                 songListBody.appendChild(tr);
+
+                // Add event listener to each song row for playing the song
+                tr.addEventListener('click', function (event) {
+                    if (!event.target.classList.contains('like-button') && !event.target.classList.contains('play-button')) {
+                        const audioPlayer = document.getElementById("audio-player");
+                        audioPlayer.src = song.mp3url;
+                        audioPlayer.play();
+                        updatePlayButtonIcons(song.mp3url, "fas fa-pause");
+                    }
+                });
             });
   
             setupPlayButtons();
