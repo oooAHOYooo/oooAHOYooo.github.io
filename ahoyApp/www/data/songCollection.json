@@ -54,7 +54,8 @@
 		"albumArtwork": "./artist/total/cambellRice/cambellRice.jpg",
 		"artistUrl" : "https://ahoy.ooo/artist/total/cambellRice/cambellRice.html",
 		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Campbell+Rice-+From+Here.mp3",
-		"play": false
+		"play": false,
+		"backgroundImageUrl": "https://i.scdn.co/image/ab6761610000e5eb8a195cc3e15993e4527d42f4"
 	  },
 	  {
 		"id": 7,
@@ -125,7 +126,8 @@
 		"id": 13,
 		"artist": "Fella Gazelle",
 		"songTitle": "Reasons",
-		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Fella%20Gazelle%20-%20Reasons%20-%20Radio%20Edit.mp3"
+		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Fella%20Gazelle%20-%20Reasons%20-%20Radio%20Edit.mp3",
+			"backgroundImageUrl": "https://m.media-amazon.com/images/I/61NpQ4vCxOL._UXNaN_FMjpg_QL85_.jpg"
 		
 	  },
 	  {
@@ -133,14 +135,16 @@
 		"artist" : "Riddle M",
 		"songTitle": "Glued in the Nude",
 		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Riddle+M+-+Glued+in+Nude.mp3",
-		"new": false
+		"new": false,
+		"backgroundImageUrl": "https://i.ytimg.com/vi/O2SV8BikOjA/maxresdefault.jpg"
 	  },
 	  {
 		"id": 15,
 		"artist" : "Riddle M",
 		"songTitle": "Honeydew",
 		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Riddle+M+-+Honeydew.mp3",
-		"new": false
+		"new": false,
+		"backgroundImageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFYDGZSSHnPgwLfJ5HEssYeEnCH95mEuKTfw&usqp=CAU"
 	  },
 	  {
 		"id": 16,
@@ -149,7 +153,8 @@
 		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Justin+Arena+-+Oceans.mp3",
 		"artistUrl" : "https://ahoy.ooo/artist/total/justinArena/justinArena.html",
 		"new": false,
-		"artistPage": true 
+		"artistPage": true,
+		"backgroundImageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/ef/9c/aa/ef9caad8-3001-3554-ff16-a8caf4863e91/artwork.jpg/592x592bf.webp" 
 	  },
 	  {
 		"id": 17,
@@ -158,7 +163,8 @@
 		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Justin+Arena+-+Oceans.mp3",
 		"artistUrl" : "https://ahoy.ooo/artist/total/justinArena/justinArena.html",
 		"new": false,
-		"artistPage": true 
+		"artistPage": true,
+		"backgroundImageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/ff/4e/ab/ff4eab95-c8c9-2c77-8289-3598672e7a74/artwork.jpg/592x592bf.webp" 
 	  },
 	  {
 		"id": 18,
@@ -167,7 +173,8 @@
 		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Justin%20Arena%20-%20Crash%20The%20Party%20(ft.%20Nicole%20Gauthier).mp3",
 		"artistUrl" : "https://ahoy.ooo/artist/total/justinArena/justinArena.html",
 		"new": false,
-		"artistPage": true 
+		"artistPage": true,
+		"backgroundImageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/89/ea/c8/89eac83d-378c-f272-10e9-f0a67eb0503d/artwork.jpg/592x592bf.webp"  
 	  },
 	  {
 		"id": 19,
@@ -176,7 +183,8 @@
 		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Clones+of+Clarence+-+Lost+Time+(I+miss+you).mp3",
 		"artistUrl" : "https://ahoy.ooo/artist/total/clonesofclarence/clonesofclarence.html",
 		"new": true,
-		"artistPage": true 
+		"artistPage": true,
+		"backgroundImageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/8b/4d/cc/8b4dcc19-b47c-5478-b2de-18587dc0c4b3/artwork.jpg/592x592bf.webp"   
 	  },
 	  {
 		"id": 20,
@@ -185,7 +193,8 @@
 		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Clones+of+Clarence+-+Salty+Salsa.mp3",
 		"artistUrl" : "https://ahoy.ooo/artist/total/clonesofclarence/clonesofclarence.html",
 		"new": true,
-		"artistPage": true 
+		"artistPage": true,
+		"backgroundImageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/e8/54/85/e854859f-5173-591b-766f-605268a026f1/artwork.jpg/592x592bf.webp"    
 	  },
 	  {
 		"id": 21,
@@ -195,7 +204,8 @@
 		"artistUrl" : "https://ahoy.ooo/artist/total/clonesofclarence/clonesofclarence.html",
 		"new": true,
 		"featured" : true,
-		"artistPage": true 
+		"artistPage": true,
+		"backgroundImageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/e8/54/85/e854859f-5173-591b-766f-605268a026f1/artwork.jpg/592x592bf.webp"    
 	  },
 	  {
 		"id": 22,
@@ -204,7 +214,8 @@
 		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Clones+of+Clarence+-+3+AM.mp3",
 		"artistUrl" : "https://ahoy.ooo/artist/total/clonesofclarence/clonesofclarence.html",
 		"new": true,
-		"artistPage": true 
+		"artistPage": true,
+		"backgroundImageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/98/ce/d0/98ced048-e086-a5ed-4581-9a60daee20b0/artwork.jpg/592x592bf.webp"     
 	  }
 	
 	]
