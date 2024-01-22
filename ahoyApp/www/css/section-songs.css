@@ -106,6 +106,7 @@ overflow: auto; /* This allows the content to scroll */
 
 #song-col-2 {
   flex: 1 0 320px;
+  min-height:900px;
   box-sizing: border-box;
   position: relative;
   overflow: auto;
@@ -113,7 +114,6 @@ overflow: auto; /* This allows the content to scroll */
   background-attachment: fixed;
   background-position: left;
   background-repeat: repeat;  
-  background-size: contain;  /* or use 'contain' depending on your needs */
   overflow: hidden;
 
 }
