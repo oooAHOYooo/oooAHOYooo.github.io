@@ -100,6 +100,20 @@ overflow: auto; /* This allows the content to scroll */
   background-repeat: no-repeat;
   background-size: cover;
   overflow: hidden;
-  background-color: rgb(112, 112, 112);
-  background-image: url(/images/Ahoy-Indie-Media---The-Rob-Show---Season-2---Episode-1---2023.png);
+  
+}
+
+
+#song-col-2 {
+  flex: 1 0 320px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: auto;
+  background-image: url('/images/Ahoy-Indie-Media-DEFAULT-COVER-A-8.jpg');
+  background-attachment: fixed;
+  background-position: left;
+  background-repeat: repeat;  
+  background-size: contain;  /* or use 'contain' depending on your needs */
+  overflow: hidden;
+
 }

@@ -169,43 +169,4 @@ document.addEventListener("DOMContentLoaded", function () {
     // ... rest of your code
   });
 
-  document.addEventListener("DOMContentLoaded", function () {
-    fetch("./data/songCollection.json")
-        .then((response) => response.json())
-        .then((data) => {
-            const songListBody = document.getElementById("song-list-body");
-            data.songs.forEach((song) => {
-                const tr = document.createElement("tr");
-                tr.className = "song-row";
-                tr.innerHTML = `
-                    <td><button class="play-button" data-url="${song.mp3url}"><i class="fas fa-play"></i></button></td>
-                    <td class="song-artist">${song.artist}</td>
-                    <td class="song-title">${song.songTitle}</td>
-                    <td><button class="like-button" data-url="${song.mp3url}" data-artist="${song.artist}" data-title="${song.songTitle}"><i class="fas fa-heart"></i></button></td>
-                `;
-                songListBody.appendChild(tr);
-
-                tr.addEventListener('click', function (event) {
-                    if (!event.target.classList.contains('like-button') && !event.target.classList.contains('play-button')) {
-                        const audioPlayer = document.getElementById("audio-player");
-                        resetPlayButtonIcons(); // Reset all play button icons
-                        audioPlayer.src = song.mp3url;
-                        audioPlayer.play();
-                        updatePlayButtonIcons(song.mp3url, "fas fa-pause");
-
-                        // Update the background of #song-col-2
-                        const songCol2 = document.getElementById("song-col-2");
-                        songCol2.style.backgroundImage = `url(${song.backgroundImageUrl})`;
-                    }
-                });
-            });
-
-            // ... rest of your existing code ...
-        });
-});
-
-// ... rest of your existing functions ...
-
-function resetPlayButtonIcons() {
-    // ... your existing function code ...
-}
+  

@@ -63,7 +63,8 @@
 		"songTitle": "Sunflower",
 		"artistUrl" : "https://ahoy.ooo/artist/total/cambellRice/cambellRice.html",
 		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Campbell+Rice-Sunflower.mp3",
-		"play": false
+		"play": false,
+		"backgroundImageUrl": "https://catapultlakeland.com/wp-content/uploads/2020/09/Untitled-design-2.jpg"
 	  },
 	  {
 		"id": 8,
@@ -71,7 +72,8 @@
 		"songTitle": "To Play Guitar in a Huge Room",
 		"artistUrl" : "https://ahoy.ooo/artist/total/cambellRice/cambellRice.html",
 		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Campbell+Rice-Trying+to+play+guitar+in+a+huge+room.mp3",
-		"play": false
+		"play": false,
+		"backgroundImageUrl": "https://m.media-amazon.com/images/I/61APLxryThL._UXNaN_FMjpg_QL85_.jpg"
 	  },
 	  {
 		"featured" : true,
@@ -82,6 +84,7 @@
 		"albumArtwork": "UNSPLASH_URL_FOR_ALBUM_3",
 		"artistUrl" : "https://ahoy.ooo/artist/total/youthXL/youthXL.html",
 		"mp3url": "https://ahoycollection.s3.amazonaws.com/Youth+XL+-+Summer+Bummer.mp3",
+		"backgroundImageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyBXIMTxuYsGbaO23UEDr-TeH57LhPKid4ohwt85HyZgtprWiecvV_iFk0dYCMMJnT3ys&usqp=CAU",
 		"play": false
 	  },
 	  {
@@ -91,7 +94,8 @@
 		"artistThumbnail": "UNSPLASH_URL_FOR_ARTIST_4",
 		"albumArtwork": "UNSPLASH_URL_FOR_ALBUM_4",
 		"artistUrl" : "https://ahoy.ooo/artist/total/youthXL/youthXL.html",
-		"mp3url": "https://ahoycollection.s3.amazonaws.com/Youth+XL+-+Yoga.mp3"
+		"mp3url": "https://ahoycollection.s3.amazonaws.com/Youth+XL+-+Yoga.mp3",
+		"backgroundImageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwxXTk37iEbLqFEa5QZWImJbtIqoBi88rgTrfpWKfckiC3UWuODDcuVjPkUIbqzkADylo&usqp=CAU"
 	
 	  },
 	  {
@@ -102,7 +106,8 @@
 		"featured" : true,
 		"albumArtwork": "UNSPLASH_URL_FOR_ALBUM_6",
 		"artistUrl" : "https://ahoy.ooo/artist/total/youthXL/youthXL.html",
-		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Youth+XL+-+Text+Your+Friends.mp3"
+		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Youth+XL+-+Text+Your+Friends.mp3",
+		"backgroundImageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSow7Comi15tPYB3O0QzhiYwcuzAZzYelN4I9eF_S8TaBClkoWBFP02jWx3PCiQe3xTKnM&usqp=CAU"
 		
 	  },
 	  {
@@ -112,7 +117,8 @@
 		"artistThumbnail": "UNSPLASH_URL_FOR_ARTIST_6",
 		"albumArtwork": "UNSPLASH_URL_FOR_ALBUM_6",
 		"artistUrl" : "https://ahoy.ooo/artist/total/youthXL/youthXL.html",
-		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Youth+XL+-+Gypsy+Gia.mp3"
+		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Youth+XL+-+Gypsy+Gia.mp3",
+		"backgroundImageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRBzrIX_zhK-rHOqss8IxUE40tCnlx9YOi2nwVX3bamUCD1uh8SFyqaOdzU2xoeogVoGw&usqp=CAU"
 		
 	  },
 	  {
