@@ -1328,7 +1328,7 @@ button:hover {
   color: var(--text-color);
 }
 
-#songs-tab,
+/*#songs-tab,*/
 #media-tab,
 #artists-tab,
 #games-tab,
