@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 </table>
             `;
   
-            const songListBody = document.getElementById("song-list-body");
+           const songListBody = document.getElementById("song-list-body");
             data.songs.forEach((song) => {
                 const tr = document.createElement("tr");
                 tr.className = "song-row";
@@ -30,16 +30,20 @@ document.addEventListener("DOMContentLoaded", function () {
                 `;
                 songListBody.appendChild(tr);
 
-                // Add event listener to each song row for playing the song
                 tr.addEventListener('click', function (event) {
                     if (!event.target.classList.contains('like-button') && !event.target.classList.contains('play-button')) {
                         const audioPlayer = document.getElementById("audio-player");
+                        resetPlayButtonIcons(); // Reset all play button icons
                         audioPlayer.src = song.mp3url;
                         audioPlayer.play();
                         updatePlayButtonIcons(song.mp3url, "fas fa-pause");
+                     // Update the background of #song-col-2
+                     const songCol2 = document.getElementById("song-col-2");
+                     songCol2.style.backgroundImage = `url(${song.backgroundImageUrl})`; // Assuming song object has a property 'backgroundImageUrl'
                     }
                 });
             });
+
   
             setupPlayButtons();
             setupLikeButtons();
@@ -145,3 +149,22 @@ function removeSongFromLibrary(songUrl) {
       }
   });
 }
+
+function resetPlayButtonIcons() {
+    document.querySelectorAll(".play-button i").forEach(icon => {
+        icon.className = "fas fa-play";
+    });
+}
+document.addEventListener("DOMContentLoaded", function () {
+    const featuredArt = document.getElementById("song-Featured-Art");
+  
+    featuredArt.addEventListener('mouseover', () => {
+      featuredArt.style.backgroundPosition = '0 0'; // Change the position to the top left corner
+    });
+  
+    featuredArt.addEventListener('mouseout', () => {
+      featuredArt.style.backgroundPosition = 'center'; // Change the position back to the center
+    });
+  
+    // ... rest of your code
+  });

@@ -53,6 +53,7 @@
   background-color: #f2f2f2; /* Or any other color for hover effect */
 }
 
+
 .song-row.clicked {
   background-color: yellow; /* Or any other color for clicked effect */
 }
@@ -84,16 +85,16 @@ box-sizing: border-box;
 }
 
 #song-col-2 {
-  position:fixed;
 
 position: relative; /* This is the parent element of #song-Featured-Art */
 overflow: auto; /* This allows the content to scroll */
 }
 
 #song-Featured-Art {
-  position: relative;
-  top: 0;
-  width: auto;
+  position: sticky;
+  right: 20;
+  top: 20;
+  width: 100%;
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;

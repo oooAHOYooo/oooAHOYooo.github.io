@@ -1,22 +1,23 @@
 {
 	"songs": [
-	  {
-		"id": 1,
-		"artist": "Samuel Dylan Witch",
-		"songTitle": "Seen Better Days",
-		"artistUrl" : "https://ahoy.ooo/artist/total/sdw/sdw.html",
-		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/01%20I%27ve%20Seen%20Better%20Days.mp3",
-		"play": false,
-		"thumbnail": "https://i.ytimg.com/vi/XDH0X-dF4GM/maxresdefault.jpg",
-		"coverArt" : "https://i.ytimg.com/vi/XDH0X-dF4GM/maxresdefault.jpg"
-
-	  },
+		{
+			"id": 1,
+			"artist": "Samuel Dylan Witch",
+			"songTitle": "Seen Better Days",
+			"artistUrl" : "https://ahoy.ooo/artist/total/sdw/sdw.html",
+			"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/01%20I%27ve%20Seen%20Better%20Days.mp3",
+			"play": false,
+			"thumbnail": "https://i.ytimg.com/vi/XDH0X-dF4GM/maxresdefault.jpg",
+			"coverArt" : "https://i.ytimg.com/vi/XDH0X-dF4GM/maxresdefault.jpg",
+			"backgroundImageUrl": "https://i.ytimg.com/vi/XDH0X-dF4GM/maxresdefault.jpg"
+		},
 	  {
 		"id": 2,
 		"artist": "Samuel Dylan Witch",
 		"songTitle": "Beneath the Willow Tree",
 		"artistUrl" : "https://ahoy.ooo/artist/total/sdw/sdw.html",
 		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Beneath+the+Willow+Tree.mp3",
+		"backgroundImageUrl": "https://i.ytimg.com/vi/XDH0X-dF4GM/maxresdefault.jpg",
 		"play": false
 	  },
 	  {
@@ -25,6 +26,7 @@
 		"songTitle": "Put Me on the Run",
 		"artistUrl" : "https://ahoy.ooo/artist/total/sdw/sdw.html",
 		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Put+Me+on+the+Run-+Draft+1mp3.mp3",
+		"backgroundImageUrl": "https://i.ytimg.com/vi/XDH0X-dF4GM/maxresdefault.jpg",
 		"play": false
 	  },
 	  {
@@ -33,6 +35,7 @@
 		"songTitle": "You Know Me",
 		"artistUrl" : "https://ahoy.ooo/artist/total/sdw/sdw.html",
 		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/You+Know+Me+Draft+2.mp3",
+		"backgroundImageUrl": "https://i.ytimg.com/vi/XDH0X-dF4GM/maxresdefault.jpg",
 		"play": false
 	  },
 	  {
@@ -40,6 +43,7 @@
 		"artist": "Samuel Dylan Witch",
 		"songTitle": "Watching Her Fly",
 		"mp3url": "https://ahoycollection.s3.amazonaws.com/Coral+Reefer+-+Untitled+(original).mp3",
+		"backgroundImageUrl": "https://i.ytimg.com/vi/XDH0X-dF4GM/maxresdefault.jpg",
 		"play": false
 	  },
 	  {
