@@ -1318,9 +1318,6 @@ button:hover {
 #media-tab {
   margin-left: auto;
   margin-right: auto;
-  min-width: 320px;
-  max-width: 600px;
-  width: 100%;
 }
 
 #media-tab h1 {
@@ -1329,8 +1326,58 @@ button:hover {
   color: var(--text-color);
 }
 
+.media-cols {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.media-col-1,
+.media-col-2 {
+  flex: 1;
+  /* This will ensure that both columns take up equal space */
+  min-width: 50%;
+  /* This will ensure that each column takes at least half of the viewport width */
+}
+
+/* Ensure that the table does not overflow its container */
+#mediaTable {
+  width: 100%;
+  max-width: 100%;
+  /* Add this to ensure the table is responsive and fits within its parent */
+  table-layout: fixed;
+  /* This helps in managing the layout of the table even when the content is too wide */
+}
+
+/* Add responsive design for smaller screens */
+@media screen and (max-width: 768px) {
+  .media-cols {
+    flex-direction: column;
+  }
+
+  .media-col-1,
+  .media-col-2 {
+    min-width: 100%;
+  }
+
+  .media-col-2 {
+    position: fixed;
+    top: 0;
+  }
+
+  .media-col-1 {
+    padding-top: 350px;
+    padding-bottom: 150px;
+  }
+
+  .tv-wrap {
+    top: 0;
+  }
+
+}
+
 /*#songs-tab,*/
-#media-tab,
+/*#media-tab,*/
 #artists-tab,
 #games-tab,
 #podcasts-tab,
@@ -1342,6 +1389,8 @@ button:hover {
   max-width: 600px;
   width: 100%;
 }
+
+
 
 
 
