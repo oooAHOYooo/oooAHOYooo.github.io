@@ -91,6 +91,7 @@ header {
   text-shadow: -1px 0 var(--border-color), 0 1px var(--border-color),
     1px 0 var(--border-color), 0 -1px var(--border-color);
   font-weight: 900;
+  mix-blend-mode: difference;
 }
 
 button {
@@ -328,38 +329,11 @@ button:hover {
   outline: none;
 }
 
-#cable-tab {
-  color: var(--text-color);
-}
 
 #playerContainer {
   background-color: var(--secondary-color);
   border: 2px solid var(--border-color);
   border-radius: 2.5px;
-}
-
-#cable-schedule-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-}
-
-#cable-schedule-table thead {
-  background-color: var(--secondary-color);
-}
-
-#cable-schedule-table td {
-  padding: 2.5px;
-  font-size: 16px;
-  border-bottom: 1px solid var(--border-color);
-}
-
-#cable-schedule-table tr:nth-child(even) {
-  background-color: var(--background-color);
-}
-
-#cable-schedule-table tr:nth-child(odd) {
-  background-color: var(--secondary-color);
 }
 
 /*MEDIA SEECTION*/
@@ -378,7 +352,48 @@ button:hover {
   #mediaTable th,
   #mediaTable td {
     padding: 2.5px;
-    /* Adjust this value to decrease the space */
+  }
+
+
+}
+
+#media-display-text {
+  background-color: var(--background-color);
+}
+
+
+/* Desktop styles */
+#media-artist-name p {
+  font-weight:900;
+  font-size: 64px; /* Adjust as needed */
+  margin: 0;
+  line-height: 85%;
+}
+
+#media-title-name p {
+  font-size: 16px; /* Adjust as needed */
+  margin: 0;
+}
+
+@media screen and (max-width: 600px) {
+  #media-display-text {
+    background: var(--background-color);
+    padding: 10px;
+    border-bottom: 1px solid var(--border-color); /* Add this line */
+  }
+}
+
+  #media-artist-name p {
+    font-weight:900;
+    font-size: 24px; /* Adjust as needed */
+    margin: 0;
+    text-align:center;
+  }
+
+  #media-title-name p {
+    font-size: 16px; /* Adjust as needed */
+    margin: 0;
+    text-align:center;
   }
 }
 
@@ -394,10 +409,11 @@ button:hover {
 
 #mediaTable th,
 #mediaTable td {
-  padding: 10px;
+  padding: 7.5px;
   text-align: left;
   border-bottom: 1px solid var(--border-color);
   font-size: clamp(10px, 5%, 20px);
+  overflow:hidden;
 }
 
 #mediaTable tr:nth-child(even) {
