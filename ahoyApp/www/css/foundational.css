@@ -1365,15 +1365,51 @@ button:hover {
     top: 0;
   }
 
+
   .media-col-1 {
     padding-top: 350px;
     padding-bottom: 150px;
   }
 
-  .tv-wrap {
-    top: 0;
+
+}
+
+.media-display-titles {
+  position: fixed;
+  padding: 10px;
+  background-color: var(--background-color);
+
+}
+
+.media-display-titles h1 {
+  font-size: 7vh;
+  margin: 5px;
+  text-align: left;
+  font-weight: 900;
+  line-height: 85%;
+}
+
+.media-display-titles h2 {
+  font-size: 2.5vh;
+  margin: 5px;
+  font-weight: 600;
+}
+
+
+@media screen and (max-width: 600px) {
+  .media-display-titles {
+    padding: 5px;
   }
 
+  .media-display-titles h1 {
+    font-size: 5vh;
+    margin: 2.5px;
+  }
+
+  .media-display-titles h2 {
+    font-size: 2vh;
+    margin: 2.5px;
+  }
 }
 
 /*#songs-tab,*/
@@ -1568,15 +1604,17 @@ button:hover {
 
 /* Artist Cell */
 .artist {
-  font-size: 1rem;
+  font-size: 16px !important;
+  font-weight: 600;
+  text-transform: uppercase !important;
   color: var(--text-color);
 }
 
 /* Title Cell */
 .media-title {
-  font-size: 1rem;
+  font-size: 12px !important;
   color: var(--text-color);
-  font-weight: bold;
+  font-weight: 400;
 }
 
 /* Duration Cell */

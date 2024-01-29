@@ -37,14 +37,18 @@ document.addEventListener("DOMContentLoaded", function () {
       data.forEach((item) => {
         const row = document.createElement("tr");
 
+        // Add click event to the entire row
+        row.onclick = function () {
+          loadVideoInJWPlayer(item.mp4_link, item.thumbnail_link);
+          document.querySelector("#media-artist-name h1").textContent = item.artist;
+          document.querySelector("#media-title-name h2").textContent = item.display_title;
+        };
+
         // Play Button Cell
         const playButtonCell = document.createElement("td");
         const playButton = document.createElement("button");
         playButton.textContent = "▶";
         playButton.classList.add("compact-play-button", "play-button");
-        playButton.onclick = function () {
-          loadVideoInJWPlayer(item.mp4_link, item.thumbnail_link);
-        };
         playButtonCell.appendChild(playButton);
         row.appendChild(playButtonCell);
 
@@ -55,9 +59,6 @@ document.addEventListener("DOMContentLoaded", function () {
         thumbnail.alt = item.display_title;
         thumbnail.style.width = "50px";
         thumbnail.classList.add("thumbnail");
-        thumbnail.onclick = function () {
-          loadVideoInJWPlayer(item.mp4_link, item.thumbnail_link);
-        };
         thumbnailCell.appendChild(thumbnail);
         row.appendChild(thumbnailCell);
 
