@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Function to load video in JW Player
-  function loadVideoInJWPlayer(videoUrl, thumbnailUrl) {
+  function loadVideoInJWPlayer(videoUrl, thumbnailUrl, artistName, titleName) {
     jwplayer("jw-player-container").setup({
       autostart: false, // Autoplay disabled
       file: videoUrl,
@@ -8,6 +8,10 @@ document.addEventListener("DOMContentLoaded", function () {
       width: "100%",
       aspectratio: "16:9",
     });
+
+    // Update the artist name and title name
+    document.querySelector("#media-artist-name p").textContent = artistName;
+    document.querySelector("#media-title-name p").textContent = titleName;
   }
 
   // Function to select a random video
@@ -30,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .then((data) => {
       // Select and load a random video
       const randomVideo = selectRandomVideo(data);
-      loadVideoInJWPlayer(randomVideo.mp4_link, randomVideo.thumbnail_link);
+      loadVideoInJWPlayer(randomVideo.mp4_link, randomVideo.thumbnail_link, randomVideo.artist, randomVideo.display_title);
 
       const tableBody = document.querySelector("#mediaTable tbody");
 
@@ -39,9 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Add click event to the entire row
         row.onclick = function () {
-          loadVideoInJWPlayer(item.mp4_link, item.thumbnail_link);
-          document.querySelector("#media-artist-name h1").textContent = item.artist;
-          document.querySelector("#media-title-name h2").textContent = item.display_title;
+          loadVideoInJWPlayer(item.mp4_link, item.thumbnail_link, item.artist, item.display_title);
         };
 
         // Play Button Cell
