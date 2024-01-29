@@ -395,7 +395,7 @@ button:hover {
     margin: 0;
     text-align:center;
   }
-}
+
 
 #mediaTable {
   width: 100%;
@@ -1342,18 +1342,20 @@ button:hover {
   color: var(--text-color);
 }
 
-.media-cols {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
+@media screen and (min-width: 768px) {
+  .media-cols {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 
-.media-col-1,
-.media-col-2 {
-  flex: 1;
-  /* This will ensure that both columns take up equal space */
-  min-width: 50%;
-  /* This will ensure that each column takes at least half of the viewport width */
+  .media-col-1,
+  .media-col-2 {
+    flex: 1;
+    /* This will ensure that both columns take up equal space */
+    min-width: 50%;
+    /* This will ensure that each column takes at least half of the viewport width */
+  }
 }
 
 /* Ensure that the table does not overflow its container */
