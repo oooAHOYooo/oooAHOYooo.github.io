@@ -364,14 +364,16 @@ button:hover {
 
 /* Desktop styles */
 #media-artist-name p {
-  font-weight:900;
-  font-size: 64px; /* Adjust as needed */
+  font-weight: 900;
+  font-size: 64px;
+  /* Adjust as needed */
   margin: 0;
   line-height: 85%;
 }
 
 #media-title-name p {
-  font-size: 16px; /* Adjust as needed */
+  font-size: 16px;
+  /* Adjust as needed */
   margin: 0;
 }
 
@@ -379,22 +381,25 @@ button:hover {
   #media-display-text {
     background: var(--background-color);
     padding: 10px;
-    border-bottom: 1px solid var(--border-color); /* Add this line */
+    border-bottom: 1px solid var(--border-color);
+    /* Add this line */
   }
 }
 
-  #media-artist-name p {
-    font-weight:900;
-    font-size: 24px; /* Adjust as needed */
-    margin: 0;
-    text-align:center;
-  }
+#media-artist-name p {
+  font-weight: 900;
+  font-size: 24px;
+  /* Adjust as needed */
+  margin: 0;
+  text-align: center;
+}
 
-  #media-title-name p {
-    font-size: 16px; /* Adjust as needed */
-    margin: 0;
-    text-align:center;
-  }
+#media-title-name p {
+  font-size: 16px;
+  /* Adjust as needed */
+  margin: 0;
+  text-align: center;
+}
 
 
 #mediaTable {
@@ -413,7 +418,7 @@ button:hover {
   text-align: left;
   border-bottom: 1px solid var(--border-color);
   font-size: clamp(10px, 5%, 20px);
-  overflow:hidden;
+  overflow: hidden;
 }
 
 #mediaTable tr:nth-child(even) {
@@ -1000,20 +1005,7 @@ button:hover {
 
 /*Media and TV code*/
 
-/* Style the media container */
-#featured-media-container {
-  display: flex;
-  flex-direction: column;
 
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 100px;
-}
-
-#featured-media-container h2 {
-  font-weight: 300;
-}
 
 /* Style each media item */
 .media-item {
@@ -1336,11 +1328,21 @@ button:hover {
   margin-right: auto;
 }
 
-#media-tab h1 {
-  position: relative;
-  z-index: 3;
-  color: var(--text-color);
+/* Media Columns Layout */
+.media-cols {
+  display: flex !important;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
+
+.media-col-1,
+.media-col-2 {
+  flex: 1 !important;
+  min-width: 300px;
+  /* Minimum width of each column */
+}
+
 
 @media screen and (min-width: 768px) {
   .media-cols {
@@ -1349,23 +1351,14 @@ button:hover {
     justify-content: space-between;
   }
 
-  .media-col-1,
-  .media-col-2 {
-    flex: 1;
-    /* This will ensure that both columns take up equal space */
-    min-width: 50%;
-    /* This will ensure that each column takes at least half of the viewport width */
-  }
+
 }
 
-/* Ensure that the table does not overflow its container */
-#mediaTable {
-  width: 100%;
-  max-width: 100%;
-  /* Add this to ensure the table is responsive and fits within its parent */
-  table-layout: fixed;
-  /* This helps in managing the layout of the table even when the content is too wide */
-}
+
+
+
+
+
 
 /* Add responsive design for smaller screens */
 @media screen and (max-width: 768px) {
@@ -1412,6 +1405,8 @@ button:hover {
   margin: 5px;
   font-weight: 600;
 }
+
+
 
 
 @media screen and (max-width: 600px) {
@@ -1633,6 +1628,8 @@ button:hover {
   font-size: 12px !important;
   color: var(--text-color);
   font-weight: 400;
+  letter-spacing: .055em;
+  text-align: justify;
 }
 
 /* Duration Cell */
