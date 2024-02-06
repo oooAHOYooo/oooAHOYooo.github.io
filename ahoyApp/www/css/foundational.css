@@ -137,6 +137,9 @@ button:hover {
 
 .tab-content {
   display: none;
+  margin-left: 60px;
+  /* Adjusted margin to avoid interference with left-dashboard */
+
 }
 
 .tab-content {
@@ -146,6 +149,9 @@ button:hover {
 
 .tab-content.active {
   display: block;
+  margin-left: 60px;
+  /* Adjusted margin to avoid interference with left-dashboard */
+
 }
 
 .list {
@@ -1427,9 +1433,10 @@ button:hover {
 
 /*#songs-tab,*/
 /*#media-tab,*/
+/*#podcasts-tab,*/
 #artists-tab,
 #games-tab,
-#podcasts-tab,
+
 #updates-tab,
 #account-tab {
   margin-left: auto;
