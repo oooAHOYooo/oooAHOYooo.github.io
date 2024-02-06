@@ -51,33 +51,18 @@
 
   <body>
     <div class="app">
-      <!-- 
-      <header>
-        <a href="./index.html">
-          <img class="main-top-logo-img" src="./img/assets/u_ahoy23.png"
-            style="max-width: 20%" />
-          <script>
-          const logo = document.querySelector('.main-top-logo-img');
-          const transforms = ['rotate(20deg)', 'scale(1.2)', 'skew(10deg, 20deg)', 'translateX(20px)'];
-
-          logo.addEventListener('mouseover', () => {
-            const randomTransform = transforms[Math.floor(Math.random() * transforms.length)];
-            logo.style.transform = randomTransform;
-          });
-
-          logo.addEventListener('mouseout', () => {
-            logo.style.transform = 'none';
-          });
-        </script>
-        </a>
-        <a href="js/src/login.html"><button id=#login-btn>Login</button></a>
-        <span id="usernameDisplay"></span>
-        <div id="user-info" style="position: absolute; top: 10px; right: 10px">
-     
-        </div>
-    
-      </header> -->
-
+      <div class="left-dashboard">
+        <button onclick="navigateToTab('home-tab')">Home</button>
+        <button onclick="navigateToTab('market-tab')">Market</button>
+        <button onclick="navigateToTab('songs-tab')">Songs</button>
+        <button onclick="navigateToTab('media-tab')">Media</button>
+        <button onclick="navigateToTab('podcasts-tab')">Podcasts</button>
+        <button onclick="navigateToTab('games-tab')">Games</button>
+        <button onclick="navigateToTab('artists-tab')">Artists</button>
+        <button onclick="navigateToTab('updates-tab')">Updates</button>
+        <button onclick="navigateToTab('account-tab')">Account</button>
+        <!-- Additional buttons for other tabs can be added here -->
+      </div>
       <div id="tabSortz">
         <!-- HOME TAB -->
         <div id="home-tab" class="tab-content">
@@ -807,6 +792,7 @@
     <script src="js/src/function-switchTheme.js"></script>
     <!-- CORE PAGE-->
     <script src="js/src/tab.js"></script>
+    <script src="js/src/nav-leftDash.js"></script>
 
     <!-- LOG ERRORS -->
 
