@@ -6,3 +6,4 @@
       // Show the selected tab
       document.getElementById(tabId).style.display = 'block';
     }
+
