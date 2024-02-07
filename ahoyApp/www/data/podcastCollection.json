@@ -1,6 +1,13 @@
 {
   "podcasts": [
     {
+      "id": 6,
+      "title": "The Rob Show #17 | Aidan Bauer",
+      "description": "In episode 17 of The Rob Show, Aidan Bauer, a game designer, programmer, and artist, delves into gaming, climbing, and life in New Haven",
+      "mp3url": "https://ahoypodcast.s3.us-east-2.amazonaws.com/ready_The+Rob+Show+-+Ep+17+-+Aidan+Baur++-+2_7_23.mp3",
+      "thumbnail": "https://ahoypodcast.s3.us-east-2.amazonaws.com/The+Rob+Show+-+Ep17+-+Aidan+Bauer.png"
+    },
+    {
       "id": 5,
       "title": "The Rob Show #16 | Joshua Sanders",
       "description": "The Rob Show is Back with ever festive Joshua Sanders, a former Califorian/Texian who loves Christmas.",
