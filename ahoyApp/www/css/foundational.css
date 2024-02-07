@@ -1342,15 +1342,14 @@ button:hover {
 .media-cols {
   display: flex !important;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   gap: 20px;
 }
 
 .media-col-1,
 .media-col-2 {
   flex: 1 !important;
-  min-width: 300px;
-  /* Minimum width of each column */
+
 }
 
 
