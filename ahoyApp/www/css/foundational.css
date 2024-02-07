@@ -462,7 +462,7 @@ button:hover {
   /* This will center the table */
   margin-top: 20px;
   position: relative;
-  z-index: 5;
+  z-index: 2;
 }
 
 #podcast-table img {
@@ -473,7 +473,11 @@ button:hover {
   background-color: var(--secondary-color);
 }
 
-#podcast-table th,
+#podcast-table th {
+  text-align: center;
+}
+
+
 #podcast-table td {
   text-align: left;
   border-bottom: 1px solid var(--border-color);
