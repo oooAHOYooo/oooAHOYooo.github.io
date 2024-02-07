@@ -6,13 +6,11 @@ function loadPodcasts() {
       const tableBody = document
         .getElementById("podcast-table")
         .querySelector("tbody");
-      const featuredImageColumn = document
-        .getElementById("featured-image-column");
       
       data.podcasts.forEach((podcast, index) => {
         const row = document.createElement("tr");
         row.innerHTML = `
-          <td><button class="control-button" onclick="playPodcast('${podcast.mp3url}', '${podcast.title}', ${index})"><i class="fas fa-play"></i></button></td>
+          <td><button class="control-button" id="play-pause-${index}" onclick="togglePlayPause('${podcast.mp3url}', '${podcast.title}', ${index})"><i class="fas fa-play"></i></button></td>
           <td><img src="${podcast.thumbnail}" alt="${podcast.title}" class="thumbnail" style="width: 62px; height: 62px;"></td>
           <td>${podcast.title}</td>
           <td>${podcast.description}</td>
@@ -23,26 +21,41 @@ function loadPodcasts() {
     .catch((error) => console.error("Error loading podcasts:", error));
 }
 
-// This function plays the selected podcast and updates the featured image
-function playPodcast(url, title, index) {
+// This function toggles play/pause on the selected podcast and updates the featured image
+function togglePlayPause(url, title, index) {
   const audioPlayer = document.getElementById("audio-player");
-  audioPlayer.src = url;
-  audioPlayer.play();
+  const playPauseButton = document.getElementById(`play-pause-${index}`);
+  const playPauseIcon = playPauseButton.querySelector("i");
+  const featuredImageElement = document.querySelector("#podcasts-tab .media-col-2");
 
-  // Update now playing information
-  document.getElementById("song-title").textContent = title;
-  document.getElementById("current-song-title").textContent = title;
-  document.getElementById("current-song-artist").textContent = "Podcast";
-  document.getElementById("artist-name").textContent = "Podcast";
-
-  // Update the featured image
-  fetch("data/podcastCollection.json")
-    .then((response) => response.json())
-    .then((data) => {
-      const featuredImage = data.podcasts[index].thumbnail;
-      const featuredImageElement = document.getElementById("featured-image");
-      featuredImageElement.src = featuredImage;
+  if (audioPlayer.src === url && !audioPlayer.paused) {
+    audioPlayer.pause();
+    playPauseIcon.className = "fas fa-play";
+  } else {
+    // Update all play buttons to show the play icon
+    document.querySelectorAll('.control-button i').forEach(icon => {
+      icon.className = "fas fa-play";
     });
+    // Then update the clicked button to show the pause icon
+    playPauseIcon.className = "fas fa-pause";
+
+    audioPlayer.src = url;
+    audioPlayer.play();
+
+    // Update now playing information
+    document.getElementById("song-title").textContent = title;
+    document.getElementById("current-song-title").textContent = title;
+    document.getElementById("current-song-artist").textContent = "Podcast";
+    document.getElementById("artist-name").textContent = "Podcast";
+
+    // Update the featured image
+    fetch("data/podcastCollection.json")
+      .then((response) => response.json())
+      .then((data) => {
+        const featuredImage = data.podcasts[index].thumbnail;
+        featuredImageElement.innerHTML = `<img src="${featuredImage}" alt="${title}" class="featured-podcast-image" style="width: 100%;">`;
+      });
+  }
 }
 
 // Load podcasts when the DOM content is fully loaded

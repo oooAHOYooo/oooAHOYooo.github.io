@@ -468,7 +468,7 @@ button:hover {
   /* This will center the table */
   margin-top: 20px;
   position: relative;
-  z-index: 2;
+  z-index: 0;
 }
 
 #podcast-table img {
@@ -596,7 +596,7 @@ button:hover {
   /* Position from the top inside the card */
   right: 5px;
   /* Position from the right inside the card */
-  background-color: #ff4d4d;
+  background-color: var(--border-color);
   /* Background color of the button */
   color: white;
   /* Text color */
