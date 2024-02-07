@@ -142,11 +142,6 @@ button:hover {
 
 }
 
-.tab-content {
-  border-style: solid;
-  border-color: var(--border-color);
-}
-
 .tab-content.active {
   display: block;
   margin-left: 60px;
