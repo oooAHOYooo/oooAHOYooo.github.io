@@ -130,7 +130,7 @@ button:hover {
 }
 
 .container {
-  max-width: 600px;
+  /*max-width: 600px;*/
   margin: 0 auto;
   padding: 20px;
 }
@@ -530,7 +530,7 @@ button:hover {
   border-color: var(--border-color);
   min-width: 394px;
   min-height: 300px;
-  max-width: 400px;
+  /*max-width: 400px;*/
   margin-left: 5px;
   overflow-x: auto;
   position: relative;
@@ -1185,7 +1185,7 @@ button:hover {
   margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
-  max-width: 600px;
+  /*max-width: 600px;*/
   width: 100%;
 }
 
@@ -1268,7 +1268,7 @@ button:hover {
 #physicalMarket {
   margin-left: auto;
   margin-right: auto;
-  max-width: 600px;
+  /*max-width: 600px; */
   width: 100%;
 }
 
@@ -1434,7 +1434,7 @@ button:hover {
 /*#songs-tab,*/
 /*#media-tab,*/
 /*#podcasts-tab,*/
-#artists-tab,
+/* #artists-tab,
 #games-tab,
 
 #updates-tab,
@@ -1445,7 +1445,7 @@ button:hover {
   max-width: 600px;
   width: 100%;
 }
-
+*/
 
 
 
