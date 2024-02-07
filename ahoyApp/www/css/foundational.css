@@ -486,7 +486,7 @@ button:hover {
 
 #podcast-table td {
   text-align: left;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: .51px solid var(--border-color);
 }
 
 #podcast-table tr:nth-child(even) {
@@ -500,6 +500,27 @@ button:hover {
 #podcast-player {
   width: 100%;
   margin-top: 20px;
+}
+
+#podcast-featured-image-big {
+  overflow: hidden;
+  max-width: 80%;
+  max-height: 80%;
+
+
+}
+
+@media screen and (max-width: 600px) {
+  #podcast-featured-image-big {
+    max-width: 70%;
+    max-height: 70%;
+    /* Adds space below the image */
+    max-height: 400px !important;
+  }
+
+  .podcast-container {
+    margin-top: 55px;
+  }
 }
 
 
