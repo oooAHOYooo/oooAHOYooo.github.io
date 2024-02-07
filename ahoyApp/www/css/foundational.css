@@ -1687,7 +1687,7 @@ button:hover {
 .left-dashboard button {
   background: none;
   border: none;
-  color: var(--border-color);
+  color: var(--text-color);
   font-size: 16px;
   margin: 5px 0;
   cursor: pointer;
@@ -1706,7 +1706,7 @@ button:hover {
 }
 
 .button-label {
-  font-size: 10px !important;
+  font-size: 12px !important;
   display: none;
   /* Initially hidden */
   white-space: nowrap;
