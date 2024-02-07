@@ -137,14 +137,14 @@ button:hover {
 
 .tab-content {
   display: none;
-  margin-left: 60px;
+  margin-left: 72.5px;
   /* Adjusted margin to avoid interference with left-dashboard */
 
 }
 
 .tab-content.active {
   display: block;
-  margin-left: 60px;
+  margin-left: 72.5px;
   /* Adjusted margin to avoid interference with left-dashboard */
 
 }
@@ -1501,7 +1501,7 @@ button:hover {
 
 .game-tablinks:hover,
 .game-tablinks.active {
-  background-color: #0078f2;
+  background-color: var(--background-color);
   /* PlayStation blue */
 }
 
@@ -1522,7 +1522,7 @@ button:hover {
 
 /* Load game button styling */
 .load-game {
-  background-color: #0078f2;
+  background-color: var(--background-color);
   /* PlayStation blue */
   color: white;
   border: none;
@@ -1534,18 +1534,60 @@ button:hover {
 }
 
 .load-game:hover {
-  background-color: #0056a2;
+  background-color: var(--background-color);
 }
 
 /* Game details styling */
 .game-tabcontent h1,
 .game-tabcontent h2 {
-  color: #333;
+  color: var(--border-color);
 }
 
 .game-tabcontent p {
-  color: #666;
+  color: var(--border-color);
 }
+
+.game-menu-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.game-menu-table td,
+.game-menu-table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.game-menu-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.game-menu-table tr:hover {
+  background-color: #ddd;
+}
+
+.game-menu-table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+
+.game-cover-cell img {
+  width: 62px;
+  /* Adjust as needed */
+  height: 62px;
+  /* Adjust as needed */
+}
+
+.game-info h2,
+.game-info p,
+.game-info a {
+  margin: 5px 0;
+  /* Adjust spacing as needed */
+}
+
 
 .game-menu {
   display: flex;
