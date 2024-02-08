@@ -552,6 +552,24 @@ button:hover {
   background-color: var(--secondary-color);
 }
 
+@media screen and (max-width: 600px) {
+  #song-list {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  #song-list th,
+  #song-list td {
+    padding: 5px;
+    font-size: 12px;
+    /* Adjust font size for compactness */
+  }
+
+  #song-list th {
+    text-align: center;
+  }
+}
+
 .userContentPortal-tab-container {
   border-style: solid;
   border-color: var(--border-color);
