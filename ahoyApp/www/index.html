@@ -51,6 +51,7 @@
 
   <body>
     <div class="app">
+
       <div class="left-dashboard">
         <button onclick="navigateToTab('home-tab')"><i
             class="fas fa-home"></i><span
@@ -73,13 +74,33 @@
         <button onclick="navigateToTab('artists-tab')"><i
             class="fas fa-paint-brush"></i><span
             class="button-label">Artists</span></button>
-        <button onclick="navigateToTab('updates-tab')"><i
-            class="fas fa-sync-alt"></i><span
-            class="button-label">Updates</span></button>
+
+      </div>
+      <div class="right-dashboard">
         <button onclick="navigateToTab('account-tab')"><i
             class="fas fa-user"></i><span
-            class="button-label">Account</span></button>
+            class="right-button-label">Account</span></button>
+        <button onclick="navigateToTab('updates-tab')"><i
+            class="fas fa-sync-alt"></i><span
+            class="right-button-label">Updates</span></button>
+
+        <button onclick="navigateToTab('settings-tab')"><i
+            class="fas fa-cog"></i><span
+            class="right-button-label">Settings</span></button>
+        <button onclick="navigateToTab('help-tab')"><i
+            class="fas fa-question-circle"></i><span
+            class="right-button-label">Help</span></button>
+        <button onclick="navigateToTab('feedback-tab')"><i
+            class="fas fa-comment-dots"></i><span
+            class="right-button-label">Feedback</span></button>
+        <button onclick="navigateToTab('donate-tab')"><i
+            class="fas fa-donate"></i><span
+            class="right-button-label">Donate</span></button>
+        <button onclick="navigateToTab('about-tab')"><i
+            class="fas fa-info-circle"></i><span
+            class="right-button-label">About</span></button>
       </div>
+
       <div id="tabSortz">
         <!-- HOME TAB -->
         <div id="home-tab" class="tab-content active">
