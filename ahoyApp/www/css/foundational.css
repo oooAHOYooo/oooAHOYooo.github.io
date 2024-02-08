@@ -396,8 +396,25 @@ button:hover {
     background: var(--background-color);
     padding: 10px;
     border-bottom: 1px solid var(--border-color);
-    /* Add this line */
+
   }
+
+  #media-title-name p {
+    font-weight: 300 !important;
+    font-size: 16px !important;
+    /* Adjust as needed */
+    line-height: 1.2;
+    /* Compact line height */
+    letter-spacing: -0.05em;
+    /* Compact character spacing */
+    font-family: 'Courier New', Courier, monospace;
+    /* Monospace font */
+    margin: 0;
+    text-transform: uppercase;
+    text-align: center !important;
+  }
+
+
 }
 
 #media-artist-name p {
@@ -1933,4 +1950,72 @@ button:hover {
 .right-dashboard:hover button i {
   margin-right: 10px;
   /* Add space before icon when hovered */
+}
+
+@media screen and (max-width: 600px) {
+
+  #mediaTable th,
+  #mediaTable td {
+    padding: 2.5px;
+    /* Reduced padding for compactness */
+    font-size: 12px;
+    /* Smaller font size for compactness */
+  }
+
+  #mediaTable {
+    margin-left: 0;
+    margin-right: 0;
+    width: calc(100% + 20px);
+    /* Adjust width to allow for full-width plus a bit extra for scrolling */
+    overflow-x: auto;
+    /* Allow horizontal scrolling */
+  }
+
+  .media-item img {
+    width: 100px;
+    /* Adjust image size for compactness */
+    height: auto;
+    /* Maintain aspect ratio */
+  }
+
+  .media-description {
+    font-size: 8px;
+    /* Smaller font size for descriptions */
+  }
+}
+
+/* Ensure left and right dashboards are always visible */
+.left-dashboard,
+.right-dashboard {
+  z-index: 1000;
+  /* High z-index to ensure visibility */
+}
+
+/* Adjust left dashboard for visibility on mobile */
+@media screen and (max-width: 600px) {
+  .left-dashboard {
+    width: 50px;
+    max-height: 400px !important;
+    /* Slightly reduce width for more screen space */
+  }
+
+  .left-dashboard:hover {
+    width: 120px;
+    max-height: 300px !important;
+    /* Allow expansion on hover */
+  }
+}
+
+/* Adjust right dashboard for visibility on mobile */
+@media screen and (max-width: 600px) {
+  .right-dashboard {
+    width: 50px;
+    max-height: 400px !important;
+    /* Slightly reduce width for more screen space */
+  }
+
+  .right-dashboard:hover {
+    width: 120px;
+    /* Allow expansion on hover */
+  }
 }
