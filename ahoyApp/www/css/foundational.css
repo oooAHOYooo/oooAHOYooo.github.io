@@ -1837,12 +1837,12 @@ button:hover {
 }
 
 .right-dashboard button i {
-  margin-left: 0;
-  /* Initially no space */
+  margin-left: 10px;
+  /* Adjusted space for icons in right dashboard buttons */
   transition: margin-left 0.3s ease;
 }
 
-.right-dashboard .button-label {
+.right-dashboard .right-button-label {
   font-size: 12px !important;
   display: none;
   /* Initially hidden */
@@ -1853,6 +1853,10 @@ button:hover {
   /* Hide overflow */
   text-overflow: ellipsis;
   /* Add ellipsis for overflowed text */
+}
+
+.right-button-label {
+  color: var(--border-color);
 }
 
 .right-dashboard:hover .button-label {
