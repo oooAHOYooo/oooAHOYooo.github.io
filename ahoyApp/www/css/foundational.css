@@ -1799,14 +1799,14 @@ button:hover {
 
 /*The RIGHT dashboard*/
 
-/*RIGHT DASHBOARD STYLING*/
+/*RIGHT DASHBOARD LOGIC*/
 .right-dashboard {
   position: fixed;
   right: 0;
   top: 0;
   bottom: 0;
   width: 50px;
-  /* Match the initial width of the left dashboard */
+  /* Initial width */
   background-color: var(--background-color);
   overflow-y: auto;
   box-sizing: border-box;
@@ -1818,7 +1818,7 @@ button:hover {
 
 .right-dashboard:hover {
   width: 120px;
-  /* Match the expanded width of the left dashboard */
+  /* Expanded width */
 }
 
 .right-dashboard button {
@@ -1837,12 +1837,12 @@ button:hover {
 }
 
 .right-dashboard button i {
-  margin-left: 10px;
-  /* Adjusted space for icons in right dashboard buttons */
+  margin-left: 0;
+  /* Initially no space */
   transition: margin-left 0.3s ease;
 }
 
-.right-dashboard .right-button-label {
+.right-button-label {
   font-size: 12px !important;
   display: none;
   /* Initially hidden */
@@ -1855,11 +1855,7 @@ button:hover {
   /* Add ellipsis for overflowed text */
 }
 
-.right-button-label {
-  color: var(--border-color);
-}
-
-.right-dashboard:hover .button-label {
+.right-dashboard:hover .right-button-label {
   display: inline;
   /* Show label on hover */
   margin-right: 10px;
@@ -1869,4 +1865,34 @@ button:hover {
 .right-dashboard:hover button i {
   margin-left: 5px;
   /* Add space when dashboard is hovered */
+}
+
+/* Adjusted RIGHT DASHBOARD LOGIC for label first then icon on hover */
+.right-dashboard button {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  /* Adjust alignment to right */
+  padding-right: 10px;
+  /* Ensure padding for text */
+}
+
+.right-dashboard:hover button {
+  justify-content: space-between;
+  /* Adjust space between label and icon */
+}
+
+/* Adjust icon and label order with flex-direction */
+.right-dashboard button {
+  flex-direction: row-reverse;
+  /* Reverse the order of elements */
+}
+
+.right-dashboard button i {
+  transition: margin-right 0.3s ease;
+}
+
+.right-dashboard:hover button i {
+  margin-right: 10px;
+  /* Add space before icon when hovered */
 }
