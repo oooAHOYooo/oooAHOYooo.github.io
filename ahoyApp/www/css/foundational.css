@@ -242,7 +242,7 @@ button:hover {
   padding: 10px 0;
   background-color: var(--background-color);
   overflow: hidden;
-  height: 50px;
+  height: 40px;
 }
 
 .bottom-controller button {
@@ -1109,26 +1109,6 @@ button:hover {
   cursor: pointer;
 }
 
-/*site counter*/
-#visitor-counter {
-  text-align: right;
-  color: #666;
-  font-size: 0.2em;
-  margin-top: 20px;
-}
-
-#visitor-counter {
-  position: fixed;
-  top: 0;
-  right: 0;
-  background-color: black;
-  color: white;
-  padding: 10px;
-  z-index: 1000;
-}
-
-
-
 .theme-link {
   color: var(--text-color);
   text-decoration: none;
@@ -1744,6 +1724,7 @@ button:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-height: 400px !important;
 }
 
 .left-dashboard:hover {
@@ -1814,6 +1795,8 @@ button:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 300;
+  max-height: 400px !important;
 }
 
 .right-dashboard:hover {
@@ -1834,6 +1817,7 @@ button:hover {
   /* Align to the right */
   width: 100%;
   transition: justify-content 0.3s ease;
+
 }
 
 .right-dashboard button i {
