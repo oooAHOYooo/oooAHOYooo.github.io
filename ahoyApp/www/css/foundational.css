@@ -1288,6 +1288,42 @@ button:hover {
   font-weight: bold;
 }
 
+/* Mobile Version Adjustments */
+@media screen and (max-width: 600px) {
+
+  #digitalMarketTable th,
+  #digitalMarketTable td {
+    padding: 5px;
+    font-size: 14px;
+  }
+
+  #digitalMarketTable button {
+    font-size: 14px;
+    padding: 5px;
+    height: 35px;
+  }
+
+  #digitalProductGrid,
+  #productGrid {
+    justify-content: center;
+  }
+
+  #digitalCart,
+  #cart {
+    margin-top: 10px;
+  }
+
+  #digitalCartItems,
+  #cartItems {
+    align-items: stretch;
+  }
+
+  #digitalTotalPrice,
+  #totalPrice {
+    font-size: 14px;
+  }
+}
+
 /*Physical Market*/
 
 #physicalMarket {
