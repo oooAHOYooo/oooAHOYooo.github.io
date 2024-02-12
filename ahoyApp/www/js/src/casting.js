@@ -1,20 +1,31 @@
 function castToApple() {
-  // Implementation for casting to Apple devices
-  console.log("Casting to Apple device...");
-  // Add your casting logic here, possibly using Apple's AirPlay SDK
-}
+    // Check if the browser supports AirPlay
+    if (window.WebKitPlaybackTargetAvailabilityEvent) {
+      const videoElement = document.querySelector('video');
+      // Trigger the native AirPlay picker
+      videoElement.webkitShowPlaybackTargetPicker();
+    } else {
+      alert('AirPlay is not supported in this browser.');
+    }
+  }
 
-function castToGoogle() {
-  // Implementation for casting to Google devices
-  console.log("Casting to Google device...");
-  // Add your casting logic here, possibly using Google Cast SDK
-}
+  function castToGoogle() {
+    const context = cast.framework.CastContext.getInstance();
+    context.requestSession().then(() => {
+      // Session established, now you can cast media
+      const player = new cast.framework.RemotePlayer();
+      const controller = new cast.framework.RemotePlayerController(player);
+      player.mediaInfo = new chrome.cast.media.MediaInfo('YOUR_MEDIA_URL', 'video/mp4');
+      controller.playOrPause();
+    }).catch((error) => {
+      console.error('Error casting to Google device:', error);
+    });
+  }
 
-function castToOther() {
-  // Implementation for casting to other devices
-  console.log("Casting to other devices...");
-  // Add your casting logic here, possibly using a generic casting protocol or SDK
-}
+  function castToOther() {
+    // Implement device discovery and control protocols as per the target device specifications
+    alert('Casting to other devices is not implemented.');
+  }
 
 // Event listeners for casting buttons
 document.getElementById('cast-apple').addEventListener('click', castToApple);
