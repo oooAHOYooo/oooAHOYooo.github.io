@@ -291,14 +291,22 @@
           <!-- Game content will also be dynamically added here by the JavaScript -->
         </div>
 
-        <!-- ARTIST -->
+        <!-- ARTISTS TAB -->
         <div id="artists-tab" class="tab-content">
-
-          <ul id="artist-list"></ul> <!-- Container for the artist list -->
-          <div id="artist-iframe-container" style="display:none;">
-            <iframe id="artist-iframe" src frameborder="0"
-              style="width:100%; height:600px;"></iframe>
-          </div>
+          <h2>Artists</h2>
+          <table id="artists-table">
+            <thead>
+              <tr>
+                <th id="artist-tab-artist-name-header">Artist Name</th>
+                <th id="artist-tab-location-header">Location</th>
+                <th id="artist-tab-show-dates-header">Show Dates</th>
+                <th id="artist-tab-support-header">Support</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Artist data will be inserted here -->
+            </tbody>
+          </table>
         </div>
 
         <!-- Donation Tab-->
@@ -333,16 +341,13 @@
             - good indie media - the real stuff.</p>
           <p>Our platform is dedicated to supporting independent artists,
             musicians, podcasters, and creators by providing them with a space
-            to share their work and connect with audiences. We are committed to
-            maintaining an ad-free environment, focusing on quality content over
-            quantity.</p>
-          <p>We sustain our operations through a modest surcharge on merchandise
+            to share their work and connect with audiences.</p>
+          <p>We sustain our operations through a surcharge on merchandise
             sold through our store and through monthly membership donations.
             This model allows us to support our artists while keeping the
             platform accessible and ad-free.</p>
           <p>Every piece of music on our platform is here with the express
-            permission of the artists involved, ensuring that creators are
-            fairly recognized and rewarded for their work.</p>
+            permission of the artists involved.</p>
           <h3>Our Team</h3>
           <p>Alex Gonzalez - Founder</p>
           <p>Rob Meglio - Movie Star</p>
@@ -374,6 +379,7 @@
         <!-- CASTING TAB -->
         <div id="casting-tab" class="tab-content">
           <h2>Casting Options</h2>
+          <p>This feature is being actively developed</p>
           <div class="casting-options">
             <div class="casting-option">
               <button id="cast-apple" onclick="castToApple()">Cast to Apple

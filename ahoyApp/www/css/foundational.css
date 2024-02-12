@@ -2021,13 +2021,26 @@ button:hover {
 }
 
 
+/*Artist Tab*/
+#artist-tab-artist-name-header,
+#artist-tab-location-header,
+#artist-tab-show-dates-header,
+#artist-tab-support-header {
+  font-size: 10px;
+  text-align: center;
+  /* Adjust the size as needed */
+}
+
+
 /*ABOUT TAB*/
 
 #about-tab {
   padding-bottom: 200px;
 }
 
+
+
 /*DONATION TAB*/
-#donation-tab {
+#donate-tab {
   padding-bottom: 200px;
 }
