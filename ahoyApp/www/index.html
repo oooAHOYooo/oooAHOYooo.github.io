@@ -95,6 +95,9 @@
         <button onclick="navigateToTab('about-tab')"><i
             class="fas fa-info-circle"></i><span
             class="right-button-label">About</span></button>
+        <button onclick="navigateToTab('casting-tab')"><i
+            class="fas fa-broadcast-tower"></i><span
+            class="right-button-label">Casting</span></button>
       </div>
 
       <div id="tabSortz">
@@ -322,7 +325,6 @@
         </div>
 
         <!-- ABOUT TAB -->
-        <!-- ABOUT TAB -->
         <div id="about-tab" class="tab-content">
           <h2>About Ahoy Indie Media</h2>
           <p>Ahoy Indie Media is a hand-crafted media company based out of New
@@ -334,8 +336,14 @@
             to share their work and connect with audiences. We are committed to
             maintaining an ad-free environment, focusing on quality content over
             quantity.</p>
+          <p>We sustain our operations through a modest surcharge on merchandise
+            sold through our store and through monthly membership donations.
+            This model allows us to support our artists while keeping the
+            platform accessible and ad-free.</p>
+          <p>Every piece of music on our platform is here with the express
+            permission of the artists involved, ensuring that creators are
+            fairly recognized and rewarded for their work.</p>
           <h3>Our Team</h3>
-
           <p>Alex Gonzalez - Founder</p>
           <p>Rob Meglio - Movie Star</p>
           <h3>Contact Us</h3>
@@ -343,6 +351,43 @@
             feel free to reach out to us at <a
               href="mailto:contact@ahoyindiemedia.com">contact@ahoyindiemedia.com</a>.</p>
 
+        </div>
+
+        <!-- SETTINGS TAB-->
+        <!-- SETTINGS TAB -->
+        <!-- SETTINGS TAB -->
+        <div id="settings-tab" class="tab-content">
+          <h2>Settings</h2>
+          <div class="settings-options">
+            <div class="setting">
+              <button id="theme-switch-button" onclick="switchTheme()">Switch
+                Theme</button>
+            </div>
+            <div class="setting">
+              <button id="notification-switch-button"
+                onclick="toggleNotifications()">Toggle Notifications</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- CASTING TAB -->
+        <!-- CASTING TAB -->
+        <div id="casting-tab" class="tab-content">
+          <h2>Casting Options</h2>
+          <div class="casting-options">
+            <div class="casting-option">
+              <button id="cast-apple" onclick="castToApple()">Cast to Apple
+                Device</button>
+            </div>
+            <div class="casting-option">
+              <button id="cast-google" onclick="castToGoogle()">Cast to Google
+                Device</button>
+            </div>
+            <div class="casting-option">
+              <button id="cast-other" onclick="castToOther()">Cast to Other
+                Devices</button>
+            </div>
+          </div>
         </div>
         <!-- UPDATES-->
         <div id="updates-tab" class="tab-content">

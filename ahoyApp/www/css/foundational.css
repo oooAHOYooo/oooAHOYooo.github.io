@@ -2019,3 +2019,15 @@ button:hover {
     /* Allow expansion on hover */
   }
 }
+
+
+/*ABOUT TAB*/
+
+#about-tab {
+  padding-bottom: 200px;
+}
+
+/*DONATION TAB*/
+#donation-tab {
+  padding-bottom: 200px;
+}
