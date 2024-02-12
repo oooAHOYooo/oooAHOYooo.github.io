@@ -297,6 +297,53 @@
               style="width:100%; height:600px;"></iframe>
           </div>
         </div>
+
+        <!-- Donation Tab-->
+        <!-- DONATE TAB -->
+        <div id="donate-tab" class="tab-content">
+          <h2>Support Our Mission</h2>
+          <p>Your donations help us keep the indie spirit alive by supporting
+            our artists and maintaining an ad-free platform.</p>
+          <div class="donation-options">
+            <button onclick="makeDonation('5')">Donate $5</button>
+            <button onclick="makeDonation('10')">Donate $10</button>
+            <button onclick="makeDonation('20')">Donate $20</button>
+            <button onclick="makeDonation('custom')">Custom Amount</button>
+          </div>
+          <p>Or, become a monthly supporter:</p>
+          <div class="monthly-support-options">
+            <button onclick="subscribeMonthly('5')">Support with
+              $5/month</button>
+            <button onclick="subscribeMonthly('10')">Support with
+              $10/month</button>
+            <button onclick="subscribeMonthly('20')">Support with
+              $20/month</button>
+          </div>
+        </div>
+
+        <!-- ABOUT TAB -->
+        <!-- ABOUT TAB -->
+        <div id="about-tab" class="tab-content">
+          <h2>About Ahoy Indie Media</h2>
+          <p>Ahoy Indie Media is a hand-crafted media company based out of New
+            Haven, Connecticut. Our mission is to provide a homegrown
+            alternative to the way folks consume media. We believe in good media
+            - good indie media - the real stuff.</p>
+          <p>Our platform is dedicated to supporting independent artists,
+            musicians, podcasters, and creators by providing them with a space
+            to share their work and connect with audiences. We are committed to
+            maintaining an ad-free environment, focusing on quality content over
+            quantity.</p>
+          <h3>Our Team</h3>
+
+          <p>Alex Gonzalez - Founder</p>
+          <p>Rob Meglio - Movie Star</p>
+          <h3>Contact Us</h3>
+          <p>If you have any questions, suggestions, or just want to say hi,
+            feel free to reach out to us at <a
+              href="mailto:contact@ahoyindiemedia.com">contact@ahoyindiemedia.com</a>.</p>
+
+        </div>
         <!-- UPDATES-->
         <div id="updates-tab" class="tab-content">
 
@@ -783,6 +830,8 @@
           <!-- NEWSLETTER + UDPATES-->
           <script src="js/src/newsletter.js"></script>
           <script src="js/src/updates-commits.js"></script>
+          <!-- DONATION SCRIPTS -->
+          <script src="js/src/donation.js"></script>
           <!-- USER SETTINGS -->
           <script src="js/src/function-switchTheme.js"></script>
           <!-- CORE PAGE-->
