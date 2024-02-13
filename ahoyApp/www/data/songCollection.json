@@ -216,6 +216,16 @@
 		"new": true,
 		"artistPage": true,
 		"backgroundImageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/98/ce/d0/98ced048-e086-a5ed-4581-9a60daee20b0/artwork.jpg/592x592bf.webp"     
+	  },
+	  {
+		"id": 23,
+		"artist": "Coral Reefer",
+		"songTitle": "Electro",
+		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Coral+Reefer+-+elec+(original).mp3",
+		"artistUrl": "https://ahoy.ooo/artist/total/coralReefer/coralReefer.html",
+		"new": true,
+		"artistPage": true,
+		"backgroundImageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music/v4/your-image-path.jpg/592x592bf.webp"
 	  }
 	
 	]
