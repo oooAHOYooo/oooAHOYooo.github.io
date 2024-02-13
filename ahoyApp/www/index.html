@@ -79,7 +79,7 @@
             class="fas fa-newspaper"></i><span
             class="button-label">News</span></button>
         <button onclick="navigateToTab('shows-tab')"><i
-            class="fas fa-tv"></i><span
+            class="fas fa-calendar-alt"></i><span
             class="button-label">Shows</span></button>
 
       </div>
@@ -107,6 +107,15 @@
         <button onclick="navigateToTab('chat-tab')"><i
             class="fas fa-comments"></i><span
             class="right-button-label">Chat</span></button>
+        <button onclick="navigateToTab('playlist-tab')"><i
+            class="fas fa-th-list"></i><span
+            class="button-label">Playlist</span></button>
+        <button onclick="navigateToTab('review-tab')"><i
+            class="fas fa-star"></i><span
+            class="button-label">Reviews</span></button>
+        <button onclick="navigateToTab('share-tab')"><i
+            class="fas fa-share-alt"></i><span
+            class="button-label">Share</span></button>
 
       </div>
 
@@ -342,6 +351,28 @@
           </div>
         </div>
 
+        <!-- PLAYLIST TAB -->
+        <!-- PLAYLIST TAB -->
+        <div id="playlist-tab" class="tab-content">
+          <h2>User-Created Playlists</h2>
+          <p>Create and share your giant playlists, including podcasts, music,
+            and videos, all in one place.</p>
+          <div class="playlist-grid">
+            <!-- Dynamic content will be loaded here -->
+          </div>
+          <button onclick="createPlaylist()">Create Playlist</button>
+        </div>
+        <!-- PLAYLIST TAB -->
+
+        <!-- REVIEW TAB -->
+        <!-- REVIEW TAB CONTENT -->
+        <div id="review-tab" class="tab-content">
+          <h2>Reviews</h2>
+          <p>Read and share reviews on your favorite indie media content.</p>
+          <!-- Review content will be dynamically added here -->
+        </div>
+        <!-- REVIEW TAB -->
+
         <!-- ABOUT TAB -->
         <div id="about-tab" class="tab-content">
           <h2>About Ahoy Indie Media</h2>
@@ -421,6 +452,16 @@
           </div>
         </div>
 
+        <!-- SHARE TAB -->
+        <!-- SHARE TAB CONTENT -->
+        <div id="share-tab" class="tab-content">
+          <h2>Share Your Favorites</h2>
+          <p>Share your favorite playlists, songs, podcasts, and more with
+            friends and the Ahoy community.</p>
+          <!-- Share functionality and content will be dynamically added here -->
+        </div>
+
+        <!-- SHARE TAB -->
         <!-- CASTING TAB -->
         <!-- CASTING TAB -->
         <div id="casting-tab" class="tab-content">

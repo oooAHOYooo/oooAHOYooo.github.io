@@ -2075,3 +2075,19 @@ button:hover {
   width: 100%;
   box-sizing: border-box;
 }
+
+
+/* USER PLAYLIST FEATURE */
+
+.playlist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.playlist-grid div {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
