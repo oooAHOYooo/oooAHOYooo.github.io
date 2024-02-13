@@ -78,6 +78,9 @@
         <button onclick="navigateToTab('news-tab')"><i
             class="fas fa-newspaper"></i><span
             class="button-label">News</span></button>
+        <button onclick="navigateToTab('shows-tab')"><i
+            class="fas fa-tv"></i><span
+            class="button-label">Shows</span></button>
 
       </div>
       <div class="right-dashboard">
@@ -101,6 +104,10 @@
         <button onclick="navigateToTab('casting-tab')"><i
             class="fas fa-broadcast-tower"></i><span
             class="right-button-label">Casting</span></button>
+        <button onclick="navigateToTab('chat-tab')"><i
+            class="fas fa-comments"></i><span
+            class="right-button-label">Chat</span></button>
+
       </div>
 
       <div id="tabSortz">
@@ -386,6 +393,33 @@
         </div>
 
         <!-- NEWS TAB -->
+
+        <!-- SHOWS TAB -->
+        <!-- SHOWS TAB -->
+        <div id="shows-tab" class="tab-content">
+          <h2>Shows</h2>
+          <p>Welcome to the Shows section. Here you can find all the latest and
+            greatest shows provided by Ahoy Indie Media.</p>
+          <!-- Content for shows will be dynamically added here -->
+        </div>
+        <!--SHOWS TAB-->
+
+        <!-- CHAT TAB CHAT TAB CHAT TAB -->
+        <!-- CHAT TAB -->
+        <div id="chat-tab" class="tab-content">
+          <h2>Chat with Friends</h2>
+          <div id="chat-container">
+            <div id="friend-list">
+              <!-- Friend list will be populated here -->
+            </div>
+            <div id="chat-window">
+              <div id="messages"></div>
+              <textarea id="chat-input"
+                placeholder="Type a message..."></textarea>
+              <button onclick="sendMessage()">Send</button>
+            </div>
+          </div>
+        </div>
 
         <!-- CASTING TAB -->
         <!-- CASTING TAB -->
@@ -900,6 +934,9 @@
           <!-- CORE PAGE-->
           <script src="js/src/tab.js"></script>
           <script src="js/src/nav-leftDash.js"></script>
+
+          <!-- CHAT LOGIC -->
+          <script src="/js/src/chat-logic.js"></script>
 
           <!-- Mobile Logic -->
           <script src="/js/src/dashboard-mobile-logic.js"></script>

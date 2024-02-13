@@ -2044,3 +2044,34 @@ button:hover {
 #donate-tab {
   padding-bottom: 200px;
 }
+
+
+
+/* CHAT FEATURES */
+
+#chat-container {
+  display: flex;
+  height: 400px;
+}
+
+#friend-list {
+  width: 30%;
+  border-right: 1px solid #ccc;
+  overflow-y: auto;
+}
+
+#chat-window {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+#messages {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+#chat-input {
+  width: 100%;
+  box-sizing: border-box;
+}
