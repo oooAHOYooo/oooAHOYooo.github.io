@@ -1795,7 +1795,7 @@ button:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-height: 400px !important;
+  max-height: 100vh !important;
 }
 
 .left-dashboard:hover {
@@ -1866,8 +1866,8 @@ button:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: 300;
-  max-height: 400px !important;
+  z-index: 1300;
+  max-height: 100vh !important;
 }
 
 .right-dashboard:hover {
@@ -1979,7 +1979,7 @@ button:hover {
   }
 
   .media-description {
-    font-size: 8px;
+    font-size: 10px;
     /* Smaller font size for descriptions */
   }
 }
@@ -2001,7 +2001,7 @@ button:hover {
 
   .left-dashboard:hover {
     width: 120px;
-    max-height: 300px !important;
+    max-height: 500px !important;
     /* Allow expansion on hover */
   }
 }
@@ -2010,7 +2010,7 @@ button:hover {
 @media screen and (max-width: 600px) {
   .right-dashboard {
     width: 50px;
-    max-height: 400px !important;
+    max-height: 500px !important;
     /* Slightly reduce width for more screen space */
   }
 
