@@ -28,6 +28,17 @@ document.addEventListener("DOMContentLoaded", function () {
     return minutes + "min " + seconds + "sec";
   }
 
+  // Function to copy video link to clipboard and show a popup
+  function copyToClipboardAndShowPopup(text, title, artist) {
+    navigator.clipboard.writeText(text).then(() => {
+      // Create and show the popup
+      const popupContent = `Oy Oy Oy! You have a media item almost ready to share -  ${title} by ${artist} - ${text} is now in your clipboard and ready to share `;
+      alert(popupContent);
+    }).catch(err => {
+      console.error('Could not copy text: ', err);
+    });
+  }
+
   // Fetch and display media data
   fetch("data/mediaCollection.json")
     .then((response) => response.json())
@@ -51,6 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const playButton = document.createElement("button");
         playButton.textContent = "▶";
         playButton.classList.add("compact-play-button", "play-button");
+        playButton.style.fontSize = "0.8em"; // Make buttons a tiny bit smaller
         playButtonCell.appendChild(playButton);
         row.appendChild(playButtonCell);
 
@@ -74,6 +86,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const titleCell = document.createElement("td");
         titleCell.textContent = item.display_title;
         titleCell.classList.add("media-title");
+        titleCell.style.width = "200px"; // Fixed width
+        titleCell.style.overflowX = "auto"; // Overflow for long titles
         row.appendChild(titleCell);
 
         // Duration Cell
@@ -86,14 +100,26 @@ document.addEventListener("DOMContentLoaded", function () {
         const saveButtonCell = document.createElement("td");
         const saveButton = document.createElement("button");
         saveButton.classList.add("save-button");
-
-        // Create Font Awesome save icon and append it to the save button
+        saveButton.style.fontSize = "0.8em"; // Make buttons a tiny bit smaller
         const saveIcon = document.createElement("i");
         saveIcon.classList.add("fas", "fa-save");
         saveButton.appendChild(saveIcon);
-
         saveButtonCell.appendChild(saveButton);
         row.appendChild(saveButtonCell);
+
+        // Share Button Cell
+        const shareButtonCell = document.createElement("td");
+        const shareButton = document.createElement("button");
+        shareButton.classList.add("share-button", "unique-share-button"); // Added unique CSS identifier
+        shareButton.style.fontSize = "0.8em"; // Make buttons a tiny bit smaller
+        const shareIcon = document.createElement("i");
+        shareIcon.classList.add("fas", "fa-share-alt");
+        shareButton.appendChild(shareIcon);
+        shareButton.onclick = function () {
+          copyToClipboardAndShowPopup(item.mp4_link, item.display_title, item.artist);
+        };
+        shareButtonCell.appendChild(shareButton);
+        row.appendChild(shareButtonCell);
 
         tableBody.appendChild(row);
       });
