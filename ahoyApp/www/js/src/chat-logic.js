@@ -15,7 +15,13 @@ function populateFriendList(filter = '') {
   friends
     .filter(friend => friend.name.toLowerCase().includes(filter.toLowerCase()))
     .forEach(friend => {
-      // Function body remains unchanged
+      const friendElement = document.createElement('div');
+      friendElement.className = 'friend';
+      friendElement.innerHTML = `
+        <div class="friend-name">${friend.name}</div>
+        <div class="friend-status">${friend.online ? 'Online' : 'Offline'}</div>
+      `;
+      friendListElement.appendChild(friendElement);
     });
 }
 
