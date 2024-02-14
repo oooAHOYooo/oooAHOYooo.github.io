@@ -216,6 +216,16 @@ button:hover {
   align-items: center;
 }
 
+.player-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  background-color: var(--background-color);
+  height: 30px; /* Changed height */
+}
+
+
 .player-button {
   color: var(--text-color);
   background: none;
@@ -239,10 +249,11 @@ button:hover {
 }
 
 .bottom-controller {
-  padding: 10px 0;
+  padding: 20px 0;
+  margin: 0px;
   background-color: var(--background-color);
   overflow: hidden;
-  height: 40px;
+  height: 35px;
 }
 
 .bottom-controller button {
@@ -1987,7 +1998,7 @@ button:hover {
 /* Ensure left and right dashboards are always visible */
 .left-dashboard,
 .right-dashboard {
-  z-index: 1000;
+  z-index: 0;
   /* High z-index to ensure visibility */
 }
 

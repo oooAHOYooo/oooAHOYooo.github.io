@@ -6,21 +6,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const playhead = document.getElementById("playhead");
   const currentTimeDisplay = document.getElementById("current-time");
   const totalDurationDisplay = document.getElementById("total-duration");
-  const playPauseButton = document.getElementById("play-pause");
-  const playPauseIcon = document.getElementById("play-pause-icon");
-  const prevButton = document.getElementById("prev");
-  const nextButton = document.getElementById("next");
-
-  // Media array (example structure, replace with actual media URLs)
-  const mediaArray = [
-    { type: "song", url: "path/to/song1.mp3" },
-    { type: "podcast", url: "path/to/podcast1.mp3" },
-    // Add more media objects as needed
-  ];
-  let currentMediaIndex = 0; // Index of the currently playing media
-
-  // Flag to track dragging state
+  const playPauseButton = document.getElementById("play-pause-button"); // Assuming the ID of the global play/pause button
+  // Flag to track dragging state and play state
   let isDragging = false;
+  let isPlaying = false;
 
   // Helper function to format time in MM:SS
   function formatTime(seconds) {
@@ -50,38 +39,14 @@ document.addEventListener("DOMContentLoaded", function () {
     updateProgressBar();
   }
 
-  // Toggles play/pause state and icon
+  // Toggles play/pause state
   function togglePlayPause() {
-    if (audioPlayer.paused) {
-      audioPlayer.play();
-      playPauseIcon.className = "fas fa-pause";
-    } else {
+    if (isPlaying) {
       audioPlayer.pause();
-      playPauseIcon.className = "fas fa-play";
-    }
-  }
-
-  // Load and play media
-  function loadMedia(index) {
-    if (index >= 0 && index < mediaArray.length) {
-      audioPlayer.src = mediaArray[index].url;
-      audioPlayer.load();
+    } else {
       audioPlayer.play();
-      currentMediaIndex = index;
-      playPauseIcon.className = "fas fa-pause"; // Update play/pause icon to show pause icon
     }
-  }
-
-  // Play the next media in the array
-  function nextMedia() {
-    const nextIndex = (currentMediaIndex + 1) % mediaArray.length;
-    loadMedia(nextIndex);
-  }
-
-  // Play the previous media in the array
-  function previousMedia() {
-    const prevIndex = (currentMediaIndex - 1 + mediaArray.length) % mediaArray.length;
-    loadMedia(prevIndex);
+    isPlaying = !isPlaying;
   }
 
   // Event listeners for user interactions
@@ -91,9 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   window.addEventListener("mouseup", function () {
-    if (isDragging) {
-      isDragging = false;
-    }
+    isDragging = false;
   });
 
   window.addEventListener("mousemove", function (event) {
@@ -102,20 +65,19 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  playPauseButton.addEventListener("click", togglePlayPause);
-  prevButton.addEventListener("click", previousMedia);
-  nextButton.addEventListener("click", nextMedia);
+  // Listen for play/pause button clicks
+  playPauseButton.addEventListener("click", function () {
+    togglePlayPause();
+  });
 
   // Update progress bar as the media plays
   audioPlayer.addEventListener("timeupdate", updateProgressBar);
 
   // When media metadata is loaded, update the duration display
-  audioPlayer.addEventListener("loadedmetadata", updateProgressBar);
+  audioPlayer.addEventListener("loadedmetadata", function () {
+    totalDurationDisplay.textContent = formatTime(audioPlayer.duration);
+  });
 
-  // Automatically go to the next media when the current one ends
-  audioPlayer.addEventListener("ended", nextMedia);
-
-  // Load the first media in the array
-  // Load the first media in the array
-  loadMedia(currentMediaIndex);
+  // Additional features or event listeners can be added here
+  // For example, handling different media types, updating media titles, etc.
 });

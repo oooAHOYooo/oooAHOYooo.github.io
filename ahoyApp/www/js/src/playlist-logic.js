@@ -1,8 +1,7 @@
 // Initialize Supabase client (Make sure to replace with your actual Supabase URL and Anon Key)
-const supabaseUrl = 'your_supabase_url';
-const supabaseKey = 'your_supabase_anon_key';
+const supabaseUrl = 'https://ornjxycoizoybvdhhowp.supabase.co';
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9ybmp4eWNvaXpveWJ2ZGhob3dwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDIzNTA4ODEsImV4cCI6MjAxNzkyNjg4MX0.SIgYEybVeKQ5xGnplA-elTOw0oC5tZIv5nGRUZf-vS8';
 const supabase = supabase.createClient(supabaseUrl, supabaseKey);
-
 // Function to create a new playlist in Supabase
 async function createPlaylistInSupabase(name, items) {
     const { data, error } = await supabase
@@ -94,8 +93,7 @@ function sharePlaylist(playlistName) {
 
 // Function to generate a shareable link for a playlist
 function generatePlaylistShareLink(playlist) {
-    // Implement your link generation logic here
-    return `https://yourwebsite.com/playlists/${encodeURIComponent(playlist.name)}`;
+    return `https://ahoy.ooo/playlists/${encodeURIComponent(playlist.name)}`;
 }
 
 // Load and display playlists on page load
@@ -106,6 +104,77 @@ document.addEventListener('DOMContentLoaded', async () => {
     } catch (error) {
         console.error('Failed to load playlists:', error);
     }
+
+    // Function to create a form for playlist creation
+    async function createPlaylistForm() {
+        const musicCollection = await fetch('../../data/songCollection.json').then(res => res.json());
+        const podcastCollection = await fetch('../../data/podcastCollection.json').then(res => res.json());
+        const mediaCollection = await fetch('../../data/mediaCollection.json').then(res => res.json());
+
+        const allItems = [
+            ...musicCollection.songs.map(song => ({ ...song, type: 'music' })),
+            ...podcastCollection.podcasts.map(podcast => ({ ...podcast, type: 'podcast' })),
+            ...mediaCollection.map(media => ({ ...media, type: 'media' }))
+        ];
+
+        const form = document.createElement('form');
+        form.id = 'playlistCreationForm';
+        form.innerHTML = `
+            <input type="text" id="playlistName" placeholder="Playlist Name" required>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Select</th>
+                        <th>Title</th>
+                        <th>Type</th>
+                        <th>Artist</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    ${allItems.map(item => `
+                        <tr>
+                            <td><input type="checkbox" name="item" value="${item.id}" data-type="${item.type}"></td>
+                            <td>${item.songTitle || item.title || item.display_title}</td>
+                            <td>${item.type}</td>
+                            <td>${item.artist || 'N/A'}</td>
+                        </tr>
+                    `).join('')}
+                </tbody>
+            </table>
+            <button type="submit">Create Playlist</button>
+        `;
+
+        form.onsubmit = async (e) => {
+            e.preventDefault();
+            const name = document.getElementById('playlistName').value;
+            const selectedItems = Array.from(form.querySelectorAll('input[name="item"]:checked')).map(input => ({
+                id: input.value,
+                type: input.dataset.type
+            }));
+
+            await createPlaylistInSupabase(name, selectedItems);
+            alert('Playlist created successfully!');
+            form.reset(); // Reset form after submission
+            // Refresh or update the playlist display
+            const playlists = await fetchPlaylistsFromSupabase();
+            displayPlaylists(playlists);
+        };
+
+        document.body.appendChild(form); // Append form to the body or to a specific div if needed
+    }
+
+    // Attach event listener to the "Create Playlist" button
+    document.getElementById('createPlaylistButton').addEventListener('click', createPlaylistForm);
+
+    // Initial call to load and display existing playlists
+    const playlists = await fetchPlaylistsFromSupabase();
+    displayPlaylists(playlists);
 });
 
-// Make sure to handle user interaction events such as form submissions to call these functions
+
+async function testDisplayPlaylists() {
+    const playlists = await fetchPlaylistsFromSupabase();
+    console.log(playlists); // Check if playlists are fetched correctly
+    displayPlaylists(playlists);
+    alert('Display Playlists function works correctly!');
+}

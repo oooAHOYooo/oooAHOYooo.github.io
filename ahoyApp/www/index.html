@@ -360,12 +360,13 @@
           <h2>User-Created Playlists</h2>
           <p>Create and share your giant playlists, including podcasts, music,
             and videos, all in one place.</p>
-          <div class="playlist-grid">
-            <!-- Dynamic content will be loaded here -->
+          <div id="playlist-grid" class="playlist-grid">
+            <!-- Dynamic content will be loaded here by playlist-logic.js -->
           </div>
-          <button onclick="createPlaylist()">Create Playlist</button>
+          <button onclick="createPlaylistForm()">Create Playlist</button>
+          <button onclick="testDisplayPlaylists()">Test Display
+            Playlists</button>
         </div>
-        <!-- PLAYLIST TAB -->
 
         <!-- REVIEW TAB -->
         <!-- REVIEW TAB CONTENT -->
@@ -416,7 +417,7 @@
           <h3>Contact Us</h3>
           <p>If you have any questions, suggestions, or just want to say hi,
             feel free to reach out to us at <a
-              href="mailto:contact@ahoyindiemedia.com">contact@ahoyindiemedia.com</a>.</p>
+              href="mailto:alex@ahoy.ooo">alex@ahoy.ooo</a>.</p>
 
         </div>
 
@@ -986,6 +987,8 @@
           <!-- NEWSLETTER + UDPATES-->
           <script src="js/src/newsletter.js"></script>
           <script src="js/src/updates-commits.js"></script>
+          <!-- SHOW UPDATES -->
+          <script src="js/src/show-data-logic.js"></script>
           <!-- DONATION SCRIPTS -->
           <script src="js/src/donation.js"></script>
           <!-- USER SETTINGS -->
