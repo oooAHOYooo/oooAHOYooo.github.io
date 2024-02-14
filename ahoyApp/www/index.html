@@ -6,12 +6,7 @@
     <link rel="icon" type="image/png" href="./img/favicon_ahoy.png">
     <script
       src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@latest"></script>
-    <script>
-    const supabaseUrl = "https://ornjxycoizoybvdhhowp.supabase.co";
-    const supabaseKey =
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9ybmp4eWNvaXpveWJ2ZGhob3dwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDIzNTA4ODEsImV4cCI6MjAxNzkyNjg4MX0.SIgYEybVeKQ5xGnplA-elTOw0oC5tZIv5nGRUZf-vS8";
-    const supabase = supabase.createClient(supabaseUrl, supabaseKey);
-  </script>
+
     <link rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
       integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
@@ -51,6 +46,14 @@
   </head>
 
   <body>
+
+    <script>
+      const supabaseUrl = "https://ornjxycoizoybvdhhowp.supabase.co";
+      const supabaseKey =
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9ybmp4eWNvaXpveWJ2ZGhob3dwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDIzNTA4ODEsImV4cCI6MjAxNzkyNjg4MX0.SIgYEybVeKQ5xGnplA-elTOw0oC5tZIv5nGRUZf-vS8";
+      const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+    </script>
+
     <div class="app">
 
       <div class="left-dashboard">
@@ -990,7 +993,7 @@
           <!-- CORE PAGE-->
           <script src="js/src/tab.js"></script>
           <script src="js/src/nav-leftDash.js"></script>
-
+          <script src="js/src/playlist-logic.js"></script>
           <!-- CHAT LOGIC -->
           <script src="/js/src/chat-logic.js"></script>
 

@@ -1867,7 +1867,7 @@ button:hover {
   flex-direction: column;
   align-items: center;
   z-index: 1300;
-  max-height: 100vh !important;
+  max-height: 500px !important;
 }
 
 .right-dashboard:hover {
@@ -1995,7 +1995,7 @@ button:hover {
 @media screen and (max-width: 600px) {
   .left-dashboard {
     width: 50px;
-    max-height: 400px !important;
+    max-height: 420px !important;
     /* Slightly reduce width for more screen space */
   }
 
