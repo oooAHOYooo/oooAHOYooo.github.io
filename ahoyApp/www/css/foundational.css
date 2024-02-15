@@ -536,47 +536,22 @@ button:hover {
   margin-top: 20px;
 }
 
-.featured-podcast-image {
-  border-radius: 25px;
-  width: 250px !important;
-  height: 250px;
-}
 
-#podcast-featured-image-big {
-  width: 150px;
-  /* Adjusted width for smaller size */
-  height: 150px;
-  /* Adjusted height for smaller size */
-  object-fit: cover;
-  margin: 0 auto;
-  /* Centers the image */
-  display: block;
-  /* Ensures the image is block level for margin auto to work */
+.podcast-featured-image-container:hover {
+  cursor: pointer;
 }
 
 
 
-@media screen and (max-width: 600px) {
-  #podcast-featured-image-big {
-    width: 150px;
-    /* Adjusted width for smaller size */
-    height: 150px;
-    /* Adjusted height for smaller size */
-    object-fit: cover;
-    margin: 0 auto;
-    /* Centers the image */
-    display: block;
-    /* Ensures the image is block level for margin auto to work */
-  }
 
 
-}
+
 
 .podcast-container {
   position: relative;
   display: flex;
   flex-direction: column;
-  z-index: -10;
+  z-index: 0;
   width: 90%;
   display: flex;
   text-align: center;
@@ -587,6 +562,11 @@ button:hover {
   background-color: var(--background-color);
   min-width: 100%;
 }
+
+
+
+
+
 
 /* Style the song list table */
 #song-list {
