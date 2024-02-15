@@ -535,8 +535,9 @@ button:hover {
 }
 
 .featured-podcast-image {
-  border-radius: 5px;
+  border-radius: 25px;
   width: 250px !important;
+  height: 250px;
 }
 
 #podcast-featured-image-big {
@@ -566,20 +567,22 @@ button:hover {
     /* Ensures the image is block level for margin auto to work */
   }
 
-  .podcast-container {
-    position: relative;
-    z-index: 10;
-    width: 100%;
-    display: flex;
-    text-align: center;
-    align-items: center;
-    /* Centers the container's content */
-    margin-top: 20px;
-    /* Reduced top margin */
-    background-color: yellow;
-  }
+
 }
 
+.podcast-container {
+  position: relative;
+  z-index: 40;
+  width: 100%;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  /* Centers the container's content */
+
+  /* Reduced top margin */
+  background-color: yellow;
+  min-width: 100%;
+}
 
 /* Style the song list table */
 #song-list {
@@ -1461,8 +1464,17 @@ button:hover {
 }
 
 .media-col-2 {
+  margin: auto;
+  /* This centers the element horizontally if it has a defined width */
   position: relative;
-  z-index: -2;
+  z-index: -4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: red;
+  width: 100%;
+  /* For full width, auto margins on the sides won't have an effect unless width is less than 100% */
+
 }
 
 .media-col-1 {
@@ -1470,6 +1482,11 @@ button:hover {
   min-width: 120%;
   position: relative;
   z-index: -1;
+}
+
+#podcast-table {
+  position: relative;
+  z-index: 30 !important;
 }
 
 @media screen and (min-width: 768px) {
