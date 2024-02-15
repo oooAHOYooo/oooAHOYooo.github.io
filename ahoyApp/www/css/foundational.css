@@ -145,11 +145,16 @@ button:hover {
 
 .tab-content {
   padding: 10px;
-  border: 1px solid #ddd;
+  border-left: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+  border-top: 1px solid var(--border-color);
   margin-top: 10px;
   overflow: hidden;
   position: relative;
   z-index: 0;
+  border-radius: 10px;
+  margin-top: 10px !important;
+  /* Adds border-radius to the right side */
 }
 
 /* Responsive adjustments */
@@ -1455,11 +1460,7 @@ button:hover {
   padding-bottom: 200px;
 }
 
-/* SONG TAB */
-#media-tab {
-  margin-left: auto;
-  margin-right: auto;
-}
+
 
 /* Media Columns Layout */
 .media-cols {
