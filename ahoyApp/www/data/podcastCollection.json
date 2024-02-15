@@ -1,6 +1,13 @@
 {
   "podcasts": [
     {
+      "id": 7,
+      "title": "The Rob Show #18 | My Own Gernade",
+      "description": "My own grenade has been around since the 90s. What started as a highschool friendship has led to a lifetime of music.",
+      "mp3url": "https://ahoypodcast.s3.us-east-2.amazonaws.com/ready_The+Rob+Show+-+Ep+18+-+My+Own+Gernade.mp3",
+      "thumbnail": "https://ahoypodcast.s3.us-east-2.amazonaws.com/The+Rob+Show+-+Ep18+-+My+Own+Gernade.png"
+    },
+    {
       "id": 6,
       "title": "The Rob Show #17 | Aidan Bauer",
       "description": "In episode 17 of The Rob Show, Aidan Bauer, a game designer, programmer, and artist, delves into gaming, climbing, and life in New Haven",

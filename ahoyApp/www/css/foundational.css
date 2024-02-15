@@ -1810,9 +1810,11 @@ button:hover {
   max-height: 100vh !important;
 }
 
-.left-dashboard:hover {
-  width: 120px;
-  /* Expanded width */
+@media (hover: hover) and (pointer: fine) and (min-width: 600px) {
+  .left-dashboard:hover {
+    width: 120px;
+    /* Expanded width */
+  }
 }
 
 .left-dashboard button {
@@ -1963,6 +1965,14 @@ button:hover {
   margin-right: 10px;
   /* Add space before icon when hovered */
 }
+
+
+/* Mobile Specific Rules for Left Dash */
+@media screen and (max-width: 600px) {}
+
+
+
+/*MEDIA TABLE MOBILE RULES*/
 
 @media screen and (max-width: 600px) {
 
