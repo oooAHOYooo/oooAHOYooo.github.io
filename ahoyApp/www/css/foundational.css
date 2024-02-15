@@ -1852,7 +1852,7 @@ button:hover {
   left: 0;
   top: 0;
   bottom: 0;
-  width: 50px;
+  width: 40px;
   /* Initial width */
   background-color: var(--background-color);
   overflow-y: auto;
@@ -1939,10 +1939,10 @@ button:hover {
   max-height: 500px !important;
 }
 
+/*
 .right-dashboard:hover {
   width: 120px;
-  /* Expanded width */
-}
+}*/
 
 .right-dashboard button {
   background: none;
