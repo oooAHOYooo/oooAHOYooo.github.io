@@ -1891,9 +1891,7 @@ button:hover {
   max-height: 400px !important;
 }
 
-.left-dashboard:hover button i {
-  margin-left: 5px;
-}
+
 
 .left-dashboard button {
   background: none;
@@ -1998,22 +1996,11 @@ button:hover {
   /* Add ellipsis for overflowed text */
 }
 
-.right-dashboard:hover .right-button-label {
-  display: inline;
-  transition: display 0.93s ease;
-  /* Show label on hover */
-  margin-right: 10px;
-  /* Space between icon and text */
-}
 
-.right-dashboard:hover button i {
-  margin-left: 5px;
-  /* Add space when dashboard is hovered */
-}
 
-.right-dashboard button:hover {
-  transform: translateY(-2px) scale(1.05);
-}
+
+
+
 
 /* Adjust icon and label order with flex-direction */
 .right-dashboard button {
@@ -2025,10 +2012,7 @@ button:hover {
   transition: margin-right 0.3s ease;
 }
 
-.right-dashboard:hover button i {
-  margin-right: 10px;
-  /* Add space before icon when hovered */
-}
+
 
 /* Mobile Specific Rules for Left Dash */
 @media screen and (max-width: 600px) {}
