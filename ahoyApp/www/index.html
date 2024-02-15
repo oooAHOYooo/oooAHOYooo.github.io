@@ -752,42 +752,29 @@
             <a href="#" id="artist-name" class="player-link">Artist Name</a>
             <a href="#" id="song-title" class="player-link">Song Title</a>
           </div>
-          <!--
-            <div class="player-content">
-            <div class="player-controls">
-              <button id="prev" class="player-button">
-                <i class="fas fa-step-backward"></i>
-              </button>
-              <button id="play" class="player-button">
-                <i class="fas fa-play"></i>
-              </button>
-              <button id="next" class="player-button" onclick="nextSong()">
-                <i class="fas fa-step-forward"></i>
-              </button>
-            </div>
-          -->
 
         </div>
         <audio id="audio-player" src></audio>
       </section>
       <div class="bottom-controller fixed-bottom">
-        <button id="super-left-arrow" onclick="prevTab()">
-          <i class="fas fa-arrow-left"></i>
+        <button id="menu-A" onclick="toggleLeftDashboard()">
+          <i class="fas fa-bars"></i><span></span>
         </button>
-        <span id="tab-indicator">Current Tab</span>
+        <span id="tab-indicator">Home</span>
         <!-- Default text for the first tab -->
-        <button id="super-right-arrow" onclick="nextTab()">
-          <i class="fas fa-arrow-right"></i>
+        <button id="menu-B" onclick="toggleRightDashboard()">
+          <i class="fas fa-bars"></i><span></span>
         </button>
+      </button>
 
-      </div>
-      <!-- END OF BOTTOM PLAYER -->
-      <!-- CONDITIONAL LOGIC BITCH -->
+    </div>
+    <!-- END OF BOTTOM PLAYER -->
+    <!-- CONDITIONAL LOGIC BITCH -->
 
-      <!-- END OF HTML -->
-      <div id="theScripts">
-        <!-- SONG LOADER-->
-        <script id="songLoader">
+    <!-- END OF HTML -->
+    <div id="theScripts">
+      <!-- SONG LOADER-->
+      <script id="songLoader">
       let currentSongIndex = 0;
       let songs = [];
 
@@ -881,110 +868,72 @@
         });
       });
     </script>
-        <!-- END OF SCRIPT DIV -->
-        <div id="supaStuff">
-          <!-- script>
-        async function signIn(email, password) {
-          const { user, error } = await supabase.auth.signIn({
-            email: email,
-            password: password,
-          });
+      <!-- END OF SCRIPT DIV -->
 
-          if (error) console.error("Error logging in:", error);
-          else console.log("User logged in:", user);
-        }
-      </script -->
+      <!-- ENDOFSCRIPT-->
 
-          <!-- SCRIPT THAT LOADS ARTIST LIST-->
-          <script>
+      <!-- DYNAMIC SHARE TEST -->
+      <script src="js/src/share.js"></script>
+      <!-- DYANMIC ARTIST TEST -->
+      <!--script src="js/src/dynamicArtist.js"></script-->
+      <script src="js/src/login.js"></script>
+      <script src="js/src/siteCounter.js"></script>
+      <!-- END OF DRAFTY SCRIPTS -->
+      <!-- CRAFT DRAFTY-->
 
-        document.addEventListener('DOMContentLoaded', function () {
-          fetch('/data/artistCollection.json')
-            .then(response => response.json())
-            .then(data => {
-              const artistList = document.getElementById('artist-list');
+      <!-- H1 effects - Scroll -->
+      <script src="js/src/h1-effects-scroll.js"></script>
 
-              data.artists.forEach(artist => {
-                const li = document.createElement('li');
-                const a = document.createElement('a');
-                a.href = '#';
-                a.textContent = artist.name;
-                a.onclick = function () {
-                  document.getElementById('artist-iframe').src = artist.artistUrl;
-                  document.getElementById('artist-iframe-container').style.display = 'block';
-                  return false; // Prevent default link behavior
-                };
-                li.appendChild(a);
-                artistList.appendChild(li);
-              });
-            })
-            .catch(error => console.error('Error loading artist data:', error));
-        });</script>
-          <!-- END OF SCRIPT THAT LOADS ARTIST LIST -->
+      <!-- END OF CRAFTY -->
 
-        </div>
-        <!-- ENDOFSCRIPT-->
+      <!-- TEST TO SEE IF WORK SCRIPTS -->
+      <!-- WORKING SOURCE JAVASCRIPTS -->
 
-        <!-- DYNAMIC SHARE TEST -->
-        <script src="js/src/share.js"></script>
-        <!-- DYANMIC ARTIST TEST -->
-        <!--script src="js/src/dynamicArtist.js"></script-->
-        <script src="js/src/login.js"></script>
-        <script src="js/src/siteCounter.js"></script>
-        <!-- END OF DRAFTY SCRIPTS -->
-        <!-- CRAFT DRAFTY-->
+      <!-- USER CONTROLS-->
+      <script src="js/src/controls-timeline.js"></script>
+      <!-- USER NAV -->
+      <script src="js/src/function-toggle-dash.js"></script>
 
-        <!-- H1 effects - Scroll -->
-        <script src="js/src/h1-effects-scroll.js"></script>
+      <!-- USER JAVASCRIPTS -->
+      <script src="js/src/user-cart.js"></script>
+      <!-- MARKET JAVASCRIPTS -->
+      <script src="js/src/market-physical.js"></script>
+      <script src="js/src/market-digital.js"></script>
+      <!-- SONG JAVASCRIPT -->
+      <script src="js/src/song-loader.js"></script>
+      <script src="js/src/search-songs.js"></script>
+      <!-- PODCAST JAVASCRIPTS -->
+      <script src="js/src/podcast.js"></script>
+      <!-- MEDIA JAVASCRIPT -->
+      <script src="js/src/media.js"></script>
+      <script src="js/src/media-layout-effects.js"></script>
+      <!-- GAMES JAVASCRIPT -->
+      <script src="js/src/games.js"></script>
+      <!-- NEWSLETTER + UDPATES-->
+      <script src="js/src/newsletter.js"></script>
+      <script src="js/src/updates-commits.js"></script>
+      <!-- SHOW UPDATES -->
+      <script src="js/src/show-data-logic.js"></script>
+      <!-- DONATION SCRIPTS -->
+      <script src="js/src/donation.js"></script>
+      <!-- USER SETTINGS -->
+      <script src="js/src/function-switchTheme.js"></script>
+      <!-- CORE PAGE-->
+      <!-- script src="js/src/tab.js"></script -->
+      <script src="js/src/nav-leftDash.js"></script>
+      <script src="js/src/playlist-logic.js"></script>
+      <!-- CHAT LOGIC -->
+      <script src="/js/src/chat-logic.js"></script>
 
-        <!-- END OF CRAFTY -->
+      <!-- Mobile Logic -->
+      <!-- script src="/js/src/dashboard-mobile-logic.js"></script -->
+      <!-- LOG ERRORS -->
 
-        <!-- TEST TO SEE IF WORK SCRIPTS -->
-        <!-- WORKING SOURCE JAVASCRIPTS -->
+      <!-- CORDOVA PLUGINS -->
+      <script type="text/javascript" src="cordova.js"></script>
+      <script type="text/javascript"
+        src="js/cordova-scripts/cordova-musicControls.js"></script>
 
-        <!-- USER CONTROLS-->
-        <script src="js/src/controls-timeline.js"></script>
+    </body>
 
-        <!-- USER JAVASCRIPTS -->
-        <script src="js/src/user-cart.js"></script>
-        <!-- MARKET JAVASCRIPTS -->
-        <script src="js/src/market-physical.js"></script>
-        <script src="js/src/market-digital.js"></script>
-        <!-- SONG JAVASCRIPT -->
-        <script src="js/src/song-loader.js"></script>
-        <script src="js/src/search-songs.js"></script>
-        <!-- PODCAST JAVASCRIPTS -->
-        <script src="js/src/podcast.js"></script>
-        <!-- MEDIA JAVASCRIPT -->
-        <script src="js/src/media.js"></script>
-        <script src="js/src/media-layout-effects.js"></script>
-        <!-- GAMES JAVASCRIPT -->
-        <script src="js/src/games.js"></script>
-        <!-- NEWSLETTER + UDPATES-->
-        <script src="js/src/newsletter.js"></script>
-        <script src="js/src/updates-commits.js"></script>
-        <!-- SHOW UPDATES -->
-        <script src="js/src/show-data-logic.js"></script>
-        <!-- DONATION SCRIPTS -->
-        <script src="js/src/donation.js"></script>
-        <!-- USER SETTINGS -->
-        <script src="js/src/function-switchTheme.js"></script>
-        <!-- CORE PAGE-->
-        <!-- script src="js/src/tab.js"></script -->
-        <script src="js/src/nav-leftDash.js"></script>
-        <script src="js/src/playlist-logic.js"></script>
-        <!-- CHAT LOGIC -->
-        <script src="/js/src/chat-logic.js"></script>
-
-        <!-- Mobile Logic -->
-        <!-- script src="/js/src/dashboard-mobile-logic.js"></script -->
-        <!-- LOG ERRORS -->
-
-        <!-- CORDOVA PLUGINS -->
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript"
-          src="js/cordova-scripts/cordova-musicControls.js"></script>
-
-      </body>
-
-    </html>
+  </html>
