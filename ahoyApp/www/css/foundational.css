@@ -143,6 +143,19 @@ button:hover {
 
 }
 
+.tab-content {
+  padding: 10px;
+  border: 1px solid #ddd;
+  margin-top: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .tab-content {
+    padding: 10px;
+  }
+}
+
 .tab-content.active {
   display: block;
   margin-left: 72.5px;
