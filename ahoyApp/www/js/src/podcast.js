@@ -21,6 +21,12 @@ function loadPodcasts() {
           <td><img src="${podcast.thumbnail}" alt="${podcast.title}" class="thumbnail" style="width: 62px; height: 62px;"></td>
           <td>${podcast.title}</td>
           <td>${podcast.description}</td>
+          <td>
+            <button class="save-button" id="save-${index}"><i class="fas fa-save"></i></button>
+          </td>
+          <td>
+            <button class="share-button" id="share-${index}" onclick="copyToClipboardAndShowPopup('${podcast.mp3url}', '${podcast.title}', 'Podcast')"><i class="fas fa-share-alt"></i></button>
+          </td>
         `;
         tableBody.appendChild(row);
       });
@@ -58,6 +64,17 @@ function togglePlayPause(url, title, index = null) {
     document.getElementById("current-song-artist").textContent = "Podcast";
     document.getElementById("artist-name").textContent = "Podcast";
   }
+}
+
+// Function to copy podcast link to clipboard and show a popup
+function copyToClipboardAndShowPopup(text, title, artist) {
+  navigator.clipboard.writeText(text).then(() => {
+    // Create and show the popup
+    const popupContent = `Link copied! Share ${title} by ${artist} - ${text}`;
+    alert(popupContent);
+  }).catch(err => {
+    console.error('Could not copy text: ', err);
+  });
 }
 
 document.addEventListener("DOMContentLoaded", function () {
