@@ -271,7 +271,10 @@ button:hover {
 
 #tab-indicator {
   color: var(--text-color);
-  font-size: 20px;
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .fixed-bottom {
@@ -316,6 +319,10 @@ button:hover {
   /* This will make sure the image scales nicely */
   margin-bottom: 20px;
   /* Space between the album art and the song title */
+}
+
+#song-Featured-Art {
+  border-radius: 25;
 }
 
 .song-info {
@@ -1187,13 +1194,16 @@ button:hover {
 
 .market-nav {
   position: sticky;
-  top: 0;
+  top: 0.5;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  z-index: 100;
+  z-index: 102;
+
+  border-radius: 20;
+  background-color: var(--background-color);
   /* Adjust as needed to ensure it sits on top of other elements */
 }
 

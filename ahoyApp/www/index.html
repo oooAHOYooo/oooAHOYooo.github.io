@@ -148,7 +148,7 @@
           </div>
           <!-- NOW PLAYING -->
           <div class="now-playing">
-            <h1>Now Playing</h1>
+            <h1>Featured Random Song</h1>
             <!-- <img id="album-art" src="path_to_your_album_art.jpg" alt="Album Art">-->
             <div class="song-info">
               <h2 id="current-song-title">Song Title</h2>
@@ -240,7 +240,7 @@
               </div>
             </div>
             <div id="song-col-2">
-              <div id="song-Featured-Art">Featured Artwork</div>
+              <div id="song-Featured-Art"></div>
             </div>
           </div>
         </div>
@@ -752,7 +752,8 @@
             <a href="#" id="artist-name" class="player-link">Artist Name</a>
             <a href="#" id="song-title" class="player-link">Song Title</a>
           </div>
-          <div class="player-content">
+          <!--
+            <div class="player-content">
             <div class="player-controls">
               <button id="prev" class="player-button">
                 <i class="fas fa-step-backward"></i>
@@ -764,34 +765,35 @@
                 <i class="fas fa-step-forward"></i>
               </button>
             </div>
-            <div class="player-actions">
-              <button id="account" class="player-button">
-                <i class="fas fa-user"></i>
-              </button>
-            </div>
+          -->
+          <div class="player-actions">
+            <button id="account" class="player-button">
+              <i class="fas fa-user"></i>
+            </button>
           </div>
-          <audio id="audio-player" src></audio>
-        </section>
-        <div class="bottom-controller fixed-bottom">
-          <button id="super-left-arrow" onclick="prevTab()">
-            <i class="fas fa-arrow-left"></i>
-          </button>
-          <span id="tab-indicator">Songs</span>
-          <!-- Default text for the first tab -->
-          <button id="super-right-arrow" onclick="nextTab()">
-            <i class="fas fa-arrow-right"></i>
-          </button>
-          <script>
+        </div>
+        <audio id="audio-player" src></audio>
+      </section>
+      <div class="bottom-controller fixed-bottom">
+        <button id="super-left-arrow" onclick="prevTab()">
+          <i class="fas fa-arrow-left"></i>
+        </button>
+        <span id="tab-indicator">Play Button</span>
+        <!-- Default text for the first tab -->
+        <button id="super-right-arrow" onclick="nextTab()">
+          <i class="fas fa-arrow-right"></i>
+        </button>
+        <script>
 
     </script>
-        </div>
-        <!-- END OF BOTTOM PLAYER -->
-        <!-- CONDITIONAL LOGIC BITCH -->
+      </div>
+      <!-- END OF BOTTOM PLAYER -->
+      <!-- CONDITIONAL LOGIC BITCH -->
 
-        <!-- END OF HTML -->
-        <div id="theScripts">
-          <!-- SONG LOADER-->
-          <script id="songLoader">
+      <!-- END OF HTML -->
+      <div id="theScripts">
+        <!-- SONG LOADER-->
+        <script id="songLoader">
       let currentSongIndex = 0;
       let songs = [];
 
@@ -885,9 +887,9 @@
         });
       });
     </script>
-          <!-- END OF SCRIPT DIV -->
-          <div id="supaStuff">
-            <!-- script>
+        <!-- END OF SCRIPT DIV -->
+        <div id="supaStuff">
+          <!-- script>
         async function signIn(email, password) {
           const { user, error } = await supabase.auth.signIn({
             email: email,
@@ -899,8 +901,8 @@
         }
       </script -->
 
-            <!-- SCRIPT THAT LOADS ARTIST LIST-->
-            <script>
+          <!-- SCRIPT THAT LOADS ARTIST LIST-->
+          <script>
 
         document.addEventListener('DOMContentLoaded', function () {
           fetch('/data/artistCollection.json')
@@ -924,71 +926,71 @@
             })
             .catch(error => console.error('Error loading artist data:', error));
         });</script>
-            <!-- END OF SCRIPT THAT LOADS ARTIST LIST -->
+          <!-- END OF SCRIPT THAT LOADS ARTIST LIST -->
 
-          </div>
-          <!-- ENDOFSCRIPT-->
+        </div>
+        <!-- ENDOFSCRIPT-->
 
-          <!-- DYNAMIC SHARE TEST -->
-          <script src="js/src/share.js"></script>
-          <!-- DYANMIC ARTIST TEST -->
-          <!--script src="js/src/dynamicArtist.js"></script-->
-          <script src="js/src/login.js"></script>
-          <script src="js/src/siteCounter.js"></script>
-          <!-- END OF DRAFTY SCRIPTS -->
-          <!-- CRAFT DRAFTY-->
+        <!-- DYNAMIC SHARE TEST -->
+        <script src="js/src/share.js"></script>
+        <!-- DYANMIC ARTIST TEST -->
+        <!--script src="js/src/dynamicArtist.js"></script-->
+        <script src="js/src/login.js"></script>
+        <script src="js/src/siteCounter.js"></script>
+        <!-- END OF DRAFTY SCRIPTS -->
+        <!-- CRAFT DRAFTY-->
 
-          <!-- H1 effects - Scroll -->
-          <script src="js/src/h1-effects-scroll.js"></script>
+        <!-- H1 effects - Scroll -->
+        <script src="js/src/h1-effects-scroll.js"></script>
 
-          <!-- END OF CRAFTY -->
+        <!-- END OF CRAFTY -->
 
-          <!-- TEST TO SEE IF WORK SCRIPTS -->
-          <!-- WORKING SOURCE JAVASCRIPTS -->
+        <!-- TEST TO SEE IF WORK SCRIPTS -->
+        <!-- WORKING SOURCE JAVASCRIPTS -->
 
-          <!-- USER CONTROLS-->
-          <script src="js/src/controls-timeline.js"></script>
+        <!-- USER CONTROLS-->
+        <script src="js/src/controls-timeline.js"></script>
 
-          <!-- USER JAVASCRIPTS -->
-          <script src="js/src/user-cart.js"></script>
-          <!-- MARKET JAVASCRIPTS -->
-          <script src="js/src/market-physical.js"></script>
-          <script src="js/src/market-digital.js"></script>
-          <!-- SONG JAVASCRIPT -->
-          <script src="js/src/song-loader.js"></script>
-          <script src="js/src/search-songs.js"></script>
-          <!-- PODCAST JAVASCRIPTS -->
-          <script src="js/src/podcast.js"></script>
-          <!-- MEDIA JAVASCRIPT -->
-          <script src="js/src/media.js"></script>
-          <script src="js/src/media-layout-effects.js"></script>
-          <!-- GAMES JAVASCRIPT -->
-          <script src="js/src/games.js"></script>
-          <!-- NEWSLETTER + UDPATES-->
-          <script src="js/src/newsletter.js"></script>
-          <script src="js/src/updates-commits.js"></script>
-          <!-- SHOW UPDATES -->
-          <script src="js/src/show-data-logic.js"></script>
-          <!-- DONATION SCRIPTS -->
-          <script src="js/src/donation.js"></script>
-          <!-- USER SETTINGS -->
-          <script src="js/src/function-switchTheme.js"></script>
-          <!-- CORE PAGE-->
-          <!-- script src="js/src/tab.js"></script -->
-          <script src="js/src/nav-leftDash.js"></script>
-          <script src="js/src/playlist-logic.js"></script>
-          <!-- CHAT LOGIC -->
-          <script src="/js/src/chat-logic.js"></script>
+        <!-- USER JAVASCRIPTS -->
+        <script src="js/src/user-cart.js"></script>
+        <!-- MARKET JAVASCRIPTS -->
+        <script src="js/src/market-physical.js"></script>
+        <script src="js/src/market-digital.js"></script>
+        <!-- SONG JAVASCRIPT -->
+        <script src="js/src/song-loader.js"></script>
+        <script src="js/src/search-songs.js"></script>
+        <!-- PODCAST JAVASCRIPTS -->
+        <script src="js/src/podcast.js"></script>
+        <!-- MEDIA JAVASCRIPT -->
+        <script src="js/src/media.js"></script>
+        <script src="js/src/media-layout-effects.js"></script>
+        <!-- GAMES JAVASCRIPT -->
+        <script src="js/src/games.js"></script>
+        <!-- NEWSLETTER + UDPATES-->
+        <script src="js/src/newsletter.js"></script>
+        <script src="js/src/updates-commits.js"></script>
+        <!-- SHOW UPDATES -->
+        <script src="js/src/show-data-logic.js"></script>
+        <!-- DONATION SCRIPTS -->
+        <script src="js/src/donation.js"></script>
+        <!-- USER SETTINGS -->
+        <script src="js/src/function-switchTheme.js"></script>
+        <!-- CORE PAGE-->
+        <!-- script src="js/src/tab.js"></script -->
+        <script src="js/src/nav-leftDash.js"></script>
+        <script src="js/src/playlist-logic.js"></script>
+        <!-- CHAT LOGIC -->
+        <script src="/js/src/chat-logic.js"></script>
 
-          <!-- Mobile Logic -->
-          <!-- script src="/js/src/dashboard-mobile-logic.js"></script -->
-          <!-- LOG ERRORS -->
+        <!-- Mobile Logic -->
+        <!-- script src="/js/src/dashboard-mobile-logic.js"></script -->
+        <!-- LOG ERRORS -->
 
-          <!-- CORDOVA PLUGINS -->
-          <script type="text/javascript" src="cordova.js"></script>
-          <script type="text/javascript"
-            src="js/cordova-scripts/cordova-musicControls.js"></script>
+        <!-- CORDOVA PLUGINS -->
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript"
+          src="js/cordova-scripts/cordova-musicControls.js"></script>
 
-        </body>
+      </body>
 
-      </html>
+    </html>
