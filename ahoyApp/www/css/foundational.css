@@ -492,10 +492,9 @@ button:hover {
 
 #podcast-table {
   width: 100%;
-  font-size: 0.8em;
+  font-size: 0.9em;
   /* Adjust as needed to make the text smaller */
   border-collapse: collapse;
-  margin: auto;
   /* This will center the table */
   margin-top: 20px;
   position: relative;
@@ -503,7 +502,8 @@ button:hover {
 }
 
 #podcast-table img {
-  border: 1px solid var(--border-color);
+
+  border-radius: 5px;
 }
 
 #podcast-table thead {
@@ -518,6 +518,7 @@ button:hover {
 #podcast-table td {
   text-align: left;
   border-bottom: .51px solid var(--border-color);
+  padding-bottom: 10px;
 }
 
 #podcast-table tr:nth-child(even) {
@@ -533,24 +534,48 @@ button:hover {
   margin-top: 20px;
 }
 
-#podcast-featured-image-big {
-  overflow: hidden;
-  max-width: 80%;
-  max-height: 80%;
-
-
+.featured-podcast-image {
+  border-radius: 5px;
+  width: 250px !important;
 }
+
+#podcast-featured-image-big {
+  width: 150px;
+  /* Adjusted width for smaller size */
+  height: 150px;
+  /* Adjusted height for smaller size */
+  object-fit: cover;
+  margin: 0 auto;
+  /* Centers the image */
+  display: block;
+  /* Ensures the image is block level for margin auto to work */
+}
+
+
 
 @media screen and (max-width: 600px) {
   #podcast-featured-image-big {
-    max-width: 70%;
-    max-height: 70%;
-    /* Adds space below the image */
-    max-height: 400px !important;
+    width: 150px;
+    /* Adjusted width for smaller size */
+    height: 150px;
+    /* Adjusted height for smaller size */
+    object-fit: cover;
+    margin: 0 auto;
+    /* Centers the image */
+    display: block;
+    /* Ensures the image is block level for margin auto to work */
   }
 
   .podcast-container {
-    margin-top: 55px;
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    /* Centers the container's content */
+    margin-top: 20px;
+    /* Reduced top margin */
   }
 }
 

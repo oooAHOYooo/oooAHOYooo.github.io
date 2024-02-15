@@ -55,7 +55,7 @@ function togglePlayPause(url, title, index) {
       .then((response) => response.json())
       .then((data) => {
         const featuredImage = data.podcasts[index].thumbnail;
-        featuredImageElement.innerHTML = `<img src="${featuredImage}" alt="${title}" class="featured-podcast-image" style="width: 100%;">`;
+        featuredImageElement.innerHTML = `<img src="${featuredImage}" alt="${title}" class="featured-podcast-image">`;
       });
   }
 }
