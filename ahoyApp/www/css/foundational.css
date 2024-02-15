@@ -185,6 +185,7 @@ button:hover {
 }
 
 .player {
+
   position: fixed;
   bottom: 51px;
   width: 100%;
@@ -194,7 +195,7 @@ button:hover {
 }
 
 .player-content {
-  display: flex;
+  display: none;
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
@@ -223,6 +224,7 @@ button:hover {
   padding: 0 20px;
   background-color: var(--background-color);
   height: 30px;
+  display: none;
   /* Changed height */
 }
 
@@ -572,7 +574,9 @@ button:hover {
 
 .podcast-container {
   position: relative;
-  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  z-index: 0;
   width: 100%;
   display: flex;
   text-align: center;
@@ -580,7 +584,7 @@ button:hover {
   /* Centers the container's content */
 
   /* Reduced top margin */
-  background-color: yellow;
+  background-color: var(--background-color);
   min-width: 100%;
 }
 
@@ -1469,6 +1473,7 @@ button:hover {
   position: relative;
   z-index: -4;
   display: flex;
+  max-width: 1000px;
   align-items: center;
   justify-content: center;
   background-color: red;
@@ -1516,10 +1521,7 @@ button:hover {
     min-width: 100%;
   }
 
-  .media-col-2 {
-    position: fixed;
-    top: 0;
-  }
+
 
 
   .media-col-1 {
