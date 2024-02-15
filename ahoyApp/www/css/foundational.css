@@ -520,7 +520,8 @@ button:hover {
 #podcast-table td {
   text-align: left;
   border-bottom: .51px solid var(--border-color);
-  padding-bottom: 10px;
+  padding-bottom: 5px;
+  padding: 10px;
 }
 
 #podcast-table tr:nth-child(even) {
@@ -1863,12 +1864,13 @@ button:hover {
   max-height: 100vh !important;
 }
 
+/*
 @media (hover: hover) and (pointer: fine) and (min-width: 600px) {
   .left-dashboard:hover {
     width: 120px;
-    /* Expanded width */
-  }
-}
+
+  } 
+}*/
 
 .left-dashboard button {
   background: none;
