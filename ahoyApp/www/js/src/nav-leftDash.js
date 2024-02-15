@@ -29,4 +29,12 @@ function navigateToTab(tabId) {
       label.style.opacity = '0';
     }
   });
+
+  // Update tab indicator
+  const tabIndicator = document.getElementById('tab-indicator');
+  if (tabIndicator) {
+    // Extracting a more readable name from the tabId, assuming the naming convention is 'xxx-tab'
+    const readableName = tabId.replace('-tab', '').replace(/-/g, ' ');
+    tabIndicator.textContent = readableName.charAt(0).toUpperCase() + readableName.slice(1);
+  }
 }

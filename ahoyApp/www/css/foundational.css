@@ -282,7 +282,7 @@ button:hover {
   bottom: 0%;
   /* Adjust this value based on the height of your bottom navigation */
   width: 100%;
-  z-index: 999;
+  z-index: 9;
   /* To make sure it's above other elements */
 }
 
@@ -302,7 +302,7 @@ button:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 10px;
   color: var(--text-color);
 }
 
