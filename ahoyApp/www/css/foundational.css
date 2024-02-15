@@ -1852,7 +1852,7 @@ button:hover {
   left: 0;
   top: 0;
   bottom: 0;
-  width: 40px;
+  width: 50px;
   /* Initial width */
   background-color: var(--background-color);
   overflow-y: auto;
@@ -1864,13 +1864,9 @@ button:hover {
   max-height: 100vh !important;
 }
 
-/*
-@media (hover: hover) and (pointer: fine) and (min-width: 600px) {
-  .left-dashboard:hover {
-    width: 120px;
-
-  } 
-}*/
+.left-dashboard:hover button i {
+  margin-left: 5px;
+}
 
 .left-dashboard button {
   background: none;
@@ -1884,7 +1880,7 @@ button:hover {
   justify-content: left;
   /* Align to the left */
   width: 100%;
-  transition: justify-content 0.3s ease;
+  transition: justify-content 0.3s ease, transform 0.5s ease;
 }
 
 .left-dashboard button i {
@@ -1918,7 +1914,9 @@ button:hover {
   /* Add space when dashboard is hovered */
 }
 
-/*The RIGHT dashboard*/
+.left-dashboard button:hover {
+  transform: translateY(-2px) scale(1.05);
+}
 
 /*RIGHT DASHBOARD LOGIC*/
 .right-dashboard {
@@ -1939,11 +1937,6 @@ button:hover {
   max-height: 500px !important;
 }
 
-/*
-.right-dashboard:hover {
-  width: 120px;
-}*/
-
 .right-dashboard button {
   background: none;
   border: none;
@@ -1956,8 +1949,7 @@ button:hover {
   justify-content: right;
   /* Align to the right */
   width: 100%;
-  transition: justify-content 0.3s ease;
-
+  transition: justify-content 0.3s ease, transform 0.5s ease;
 }
 
 .right-dashboard button i {
@@ -1981,6 +1973,7 @@ button:hover {
 
 .right-dashboard:hover .right-button-label {
   display: inline;
+  transition: display 0.93s ease;
   /* Show label on hover */
   margin-right: 10px;
   /* Space between icon and text */
@@ -1991,19 +1984,8 @@ button:hover {
   /* Add space when dashboard is hovered */
 }
 
-/* Adjusted RIGHT DASHBOARD LOGIC for label first then icon on hover */
-.right-dashboard button {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  /* Adjust alignment to right */
-  padding-right: 10px;
-  /* Ensure padding for text */
-}
-
-.right-dashboard:hover button {
-  justify-content: space-between;
-  /* Adjust space between label and icon */
+.right-dashboard button:hover {
+  transform: translateY(-2px) scale(1.05);
 }
 
 /* Adjust icon and label order with flex-direction */
@@ -2020,7 +2002,6 @@ button:hover {
   margin-right: 10px;
   /* Add space before icon when hovered */
 }
-
 
 /* Mobile Specific Rules for Left Dash */
 @media screen and (max-width: 600px) {}
