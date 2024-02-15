@@ -499,8 +499,7 @@ button:hover {
   border-collapse: collapse;
   /* This will center the table */
   margin-top: 20px;
-  position: relative;
-  z-index: 0;
+
 }
 
 #podcast-table img {
@@ -577,8 +576,8 @@ button:hover {
   position: relative;
   display: flex;
   flex-direction: column;
-  z-index: 0;
-  width: 100%;
+  z-index: -10;
+  width: 90%;
   display: flex;
   text-align: center;
   align-items: center;
@@ -1849,6 +1848,7 @@ button:hover {
 /*LEFT DASHBOARD LOGIC*/
 .left-dashboard {
   position: fixed;
+  z-index: 300;
   left: 0;
   top: 0;
   bottom: 0;
