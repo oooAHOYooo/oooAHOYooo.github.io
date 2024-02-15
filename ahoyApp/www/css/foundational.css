@@ -152,7 +152,8 @@ button:hover {
   overflow: hidden;
   position: relative;
   z-index: 0;
-  border-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   margin-top: 10px !important;
   /* Adds border-radius to the right side */
 }
@@ -515,25 +516,17 @@ button:hover {
 /*END OF MEDIA SECTION */
 
 /*PODCAST SECTION*/
-
-#podcasts-tab {
-  color: var(--text-color);
-}
+/*PODCAST SECTION*/
 
 #podcast-table {
   position: relative;
   width: 100%;
   font-size: 0.9em;
-  /* Adjust as needed to make the text smaller */
   border-collapse: collapse;
-  /* This will center the table */
   margin-top: 20px;
-
 }
 
-
 #podcast-table img {
-
   border-radius: 5px;
 }
 
@@ -544,7 +537,6 @@ button:hover {
 #podcast-table th {
   text-align: center;
 }
-
 
 #podcast-table td {
   text-align: left;
@@ -566,31 +558,57 @@ button:hover {
   margin-top: 20px;
 }
 
+.podcast-featured-image-container {
+  position: relative;
+  width: 100%;
+}
+
+.the-featured-podcast-image {
+  padding: 10px;
+  background-color: var(--border-color);
+  max-width: 85% !important;
+}
 
 .podcast-featured-image-container:hover {
   cursor: pointer;
 }
-
-
-
-
-
-
 
 .podcast-container {
   position: relative;
   display: flex;
   flex-direction: column;
   z-index: 1;
-  width: 90%;
+
   display: flex;
   text-align: center;
   align-items: center;
-  /* Centers the container's content */
+}
 
-  /* Reduced top margin */
-  background-color: var(--background-color);
-  min-width: 100%;
+@media screen and (max-width: 600px) {
+  #podcast-table-container {
+    overflow-x: auto;
+    transform: scale(0.7);
+
+    /* Shrinks the scale for mobile */
+  }
+
+  #podcast-table th,
+  #podcast-table td {
+    padding: 5px;
+    font-size: 12px;
+    /* Adjusted for smaller screens */
+  }
+
+  .podcast-container {
+    padding: 0 5px;
+    margin: 0;
+    transform: scale(0.9);
+    /* Shrinks the scale for mobile */
+  }
+
+  .podcast-featured-image-container {
+    margin: 0;
+  }
 }
 
 
