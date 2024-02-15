@@ -34,7 +34,7 @@ function switchTabByIndex(tabIndex) {
     "home",
     "market", // Added "market" to the tabs array
     "songs",
-    "media",
+    "media-tab-a",
     "podcasts",
 
     "games",

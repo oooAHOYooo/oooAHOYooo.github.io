@@ -2068,34 +2068,8 @@ button:hover {
   /* High z-index to ensure visibility */
 }
 
-/* Adjust left dashboard for visibility on mobile */
-@media screen and (max-width: 600px) {
-  .left-dashboard {
-    width: 50px;
-    max-height: 420px !important;
-    /* Slightly reduce width for more screen space */
-  }
 
-  .left-dashboard:hover {
-    width: 120px;
-    max-height: 500px !important;
-    /* Allow expansion on hover */
-  }
-}
 
-/* Adjust right dashboard for visibility on mobile */
-@media screen and (max-width: 600px) {
-  .right-dashboard {
-    width: 50px;
-    max-height: 500px !important;
-    /* Slightly reduce width for more screen space */
-  }
-
-  .right-dashboard:hover {
-    width: 120px;
-    /* Allow expansion on hover */
-  }
-}
 
 
 /*Artist Tab*/
