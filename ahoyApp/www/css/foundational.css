@@ -2240,6 +2240,10 @@ button:hover {
   text-align:center!important;
 }
 
+#news-tab p {
+  text-align: center!important;
+}
+
 #news-tab h1 {
   text-transform: uppercase;
   font-family: 'Courier New', Courier, monospace;
