@@ -458,9 +458,24 @@
 
         <!-- NEWS TAB-->
         <div id="news-tab" class="tab-content">
-          <h2>Latest News</h2>
+          <h1>News From Ahoy</h1>
+     
           <div id="newsletter-list"></div>
-          <!-- This is where the newsletter content will be injected -->
+          <div class="goals-container">
+            <h2>Updates on Goals</h2>
+            <div class="goal">
+              <div id="song-goal-chart"></div>
+              <h3>Song Goal: 1000</h3>
+              <h4>Present Song Count: <span id="current-song-count">29</span></h4>
+            </div>
+            <div class="goal">
+              <div id="artist-goal-chart"></div>
+              <h3>Artist Goal: 200</h3>
+              <h4>Present Artist Count: <span id="current-artist-count">9</span></h4> <!-- Assuming starting from 0 -->
+            </div>
+            <button id="donate-button" onclick="navigateToTab('donate-tab')">Donate</button>
+            <button id="share-button" onclick="navigateToTab('share-tab')">Share</button>
+          </div>
         </div>
 
         <!-- NEWS TAB -->
@@ -918,6 +933,8 @@
       <script src="js/src/playlist-logic.js"></script>
       <!-- CHAT LOGIC -->
       <script src="/js/src/chat-logic.js"></script>
+      <!-- GOAL CHART LOGIC -->
+      <script src="/js/src/goal-chart.js"></script>
 
       <!-- Mobile Logic -->
       <!-- script src="/js/src/dashboard-mobile-logic.js"></script -->

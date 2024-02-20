@@ -2230,3 +2230,89 @@ button:hover {
     border-bottom: 1px solid var(--border-color);
   }
 }
+
+/*NEWS TAB*/
+
+
+
+#news-tab {
+  padding-bottom: 200px;
+}
+
+#news-tab h1 {
+  text-transform: uppercase;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.newsletter-item {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+}
+
+.newsletter-item h2 {
+  margin-top: 0;
+  text-align: center;
+  font-size: 36px;
+  line-height: 90%; 
+}
+
+.date {
+  font-style: italic;
+  color: var(--text-color);
+}
+
+.newsletter-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 10px 0;
+}
+
+/*Goals Chart */
+
+.goals-container {
+  text-align: center;
+  margin: 20px;
+  padding: 20px;
+  background-color: var(--background-color);
+  border-radius: 10px;
+}
+
+.goal {
+  margin: 20px 0;
+}
+
+.goal div {
+  height: 20px;
+  background-color:var(--background-color);
+  border-radius: 5px;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.goal div::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  border-radius: 5px;
+  background-color: var(--border-color);
+}
+
+#donate-button, #share-button {
+  margin: 10px;
+  padding: 10px 20px;
+  border-style: solid;
+  border: 1px;
+  border-color: var(--border-color);
+  border-radius: 5px;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+#donate-button:hover, #share-button:hover {
+  background-color: var(--secondary-color);
+}
