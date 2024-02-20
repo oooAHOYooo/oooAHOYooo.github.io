@@ -226,7 +226,56 @@
 		"new": true,
 		"artistPage": true,
 		"backgroundImageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music/v4/your-image-path.jpg/592x592bf.webp"
-	  }
+	  },
+	  {
+		"id": 24,
+		"artist": "My Own Grenade",
+		"songTitle": "My Own Grenade",
+		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/My_Own_Grenade_-_34B.mp3",
+		"backgroundImageUrl": "https://ahoycollection.s3.us-east-2.amazonaws.com/my+own+grenade.jpeg",
+		"play": false
+	},
+	{
+		"id": 25,
+		"artist": "My Own Grenade",
+		"songTitle": "Frustrated",
+		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/My_Own_Grenade_-_Frustrated.mp3",
+		"backgroundImageUrl": "https://ahoycollection.s3.us-east-2.amazonaws.com/my+own+grenade.jpeg",
+		"play": false
+	},
+	{
+		"id": 26,
+		"artist": "My Own Grenade",
+		"songTitle": "My Parents' Couch (Live Cut)",
+		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/My_Own_Grenade_-_My_Parents_Couch_live_cut.mp3",
+		"backgroundImageUrl": "https://ahoycollection.s3.us-east-2.amazonaws.com/my+own+grenade.jpeg",
+		"play": false
+	},
+	{
+		"id": 27,
+		"artist": "My Own Grenade",
+		"songTitle": "Spacegirl With A Headset",
+		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/My_Own_Grenade_-_Spacegirl_With_A_Headset.mp3",
+		"backgroundImageUrl": "https://ahoycollection.s3.us-east-2.amazonaws.com/my+own+grenade.jpeg",
+		"play": false
+	},
+	{
+		"id": 28,
+		"artist": "My Own Grenade",
+		"songTitle": "Special",
+		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/My_Own_Grenade_-_Special.mp3",
+		"backgroundImageUrl": "https://ahoycollection.s3.us-east-2.amazonaws.com/my+own+grenade.jpeg",
+		"play": false
+	},
+	{
+		"id": 29,
+		"artist": "My Own Grenade",
+		"songTitle": "Today Is In My Way",
+		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/My_Own_Grenade_-_Today_Is_In_My_Way.mp3",
+		"backgroundImageUrl": "https://ahoycollection.s3.us-east-2.amazonaws.com/my+own+grenade.jpeg",
+		"play": false
+	}
+
 	
 	]
   }
