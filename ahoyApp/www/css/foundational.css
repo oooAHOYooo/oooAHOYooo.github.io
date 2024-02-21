@@ -2447,3 +2447,49 @@ button:hover {
 #donate-button:hover {
   background-color: var(--background-color);
 }
+
+.user-greeting-section {
+  text-align: center;
+  padding: 20px;
+  background-color: var(--background-color);
+  mix-blend-mode: screen;
+  /* Example blend mode, adjust as needed */
+  color: var(--text-color);
+  border-radius: 10px;
+  margin: auto;
+  max-width: 90%;
+}
+
+.user-greeting-section button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: var(--button-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.user-greeting-section button:hover {
+  background-color: var(--gold);
+}
+
+.greeting,
+.user-name {
+  margin: 10px 0;
+  font-size: calc(16px + 2vw);
+  /* Responsive font size */
+  color: var(--text-color);
+  mix-blend-mode: difference;
+  /* For contrast against the background */
+}
+
+@media screen and (max-width: 768px) {
+
+  .greeting,
+  .user-name {
+    font-size: calc(14px + 4vw);
+    /* Adjust font size for smaller screens */
+  }
+}
