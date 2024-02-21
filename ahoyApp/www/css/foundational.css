@@ -2252,18 +2252,30 @@ button:hover {
   white-space: nowrap;
   overflow: hidden;
   display: block;
-  animation: ticker 10s linear infinite;
+
 }
 
-@keyframes ticker {
-  0% {
-    transform: translateX(100%);
-  }
-
-  100% {
-    transform: translateX(-100%);
-  }
+/* Lightbox background specific to the newsletter */
+#newsletter-lightbox-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
 }
+
+/* Style for the image inside the newsletter lightbox */
+#newsletter-lightbox-background .lightbox-img {
+  max-width: 90%;
+  max-height: 80%;
+  margin: auto;
+}
+
 
 .newsletter-image {
   width: 320px;
@@ -2339,6 +2351,62 @@ button:hover {
   height: 100%;
   border-radius: 5px;
   background-color: var(--border-color);
+}
+
+/* Additions for Goal Chart Styling */
+
+.goal-chart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.goal-chart {
+  width: 100px;
+  /* Adjust as needed */
+  height: 100px;
+  /* Adjust as needed */
+  border-radius: 50%;
+  background-color: var(--light-secondary-color);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.goal-chart::before {
+  content: "";
+  position: absolute;
+  background-color: var(--gold);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transform: rotate(0deg);
+  transform-origin: bottom;
+}
+
+.goal-chart-text {
+  position: absolute;
+  z-index: 2;
+  color: var(--text-color);
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Example of using CSS variables for dynamic styling */
+:root {
+  --song-goal-rotation: 0deg;
+  --artist-goal-rotation: 0deg;
+}
+
+#song-goal-chart::before {
+  transform: rotate(var(--song-goal-rotation));
+}
+
+#artist-goal-chart::before {
+  transform: rotate(var(--artist-goal-rotation));
 }
 
 #donate-button,
