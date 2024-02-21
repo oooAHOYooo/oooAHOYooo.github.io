@@ -2425,3 +2425,25 @@ button:hover {
 #share-button:hover {
   background-color: var(--secondary-color);
 }
+
+.donation-container {
+  text-align: center;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px var(--border-color);
+}
+
+#donate-button {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+#donate-button:hover {
+  background-color: var(--background-color);
+}

@@ -42,6 +42,8 @@
     <script src="https://cdn.jwplayer.com/libraries/9Gtk2B1J.js"></script>
 
     <!-- -->
+    <!-- EXTERNAL UNNEED LIBRARIES BUT FOR FUN-->
+    <script src="https://unpkg.com/fireworks-js/dist/index.js"></script>
 
   </head>
 
@@ -343,7 +345,14 @@
           <p
             style="font-family: 'Courier New', Courier, monospace; background-color: #ff0060; color: black; padding: 10px; border: 1px dashed red;">⚠️
             Warning: This feature is in active development.</p>
-
+          <div class="donation-container">
+            <h2>Support Us</h2>
+            <input type="range" id="donation-amount-slider" min="5" max="100"
+              value="20" step="5">
+            <p>Donation Amount: $<span id="donation-amount">20</span></p>
+            <button id="donate-button">Donate</button>
+            <div id="total-donation">Total Donation: $0</div>
+          </div>
           <h2>Support Our Mission</h2>
           <p>Your donations help us keep the indie spirit alive by supporting
             our artists and maintaining an ad-free platform.</p>
@@ -362,6 +371,7 @@
             <button onclick="subscribeMonthly('20')">Support with
               $20/month</button>
           </div>
+
         </div>
 
         <!-- PLAYLIST TAB -->
@@ -933,6 +943,7 @@
       <script src="js/src/show-data-logic.js"></script>
       <!-- DONATION SCRIPTS -->
       <script src="js/src/donation.js"></script>
+      <script src="js/src/donation-slider-a.js"></script>
       <!-- USER SETTINGS -->
       <script src="js/src/function-switchTheme.js"></script>
       <!-- CORE PAGE-->
