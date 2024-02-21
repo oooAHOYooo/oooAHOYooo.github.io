@@ -2237,11 +2237,12 @@ button:hover {
 
 #news-tab {
   padding-bottom: 200px;
-  text-align:center!important;
+  text-align: center !important;
+
 }
 
 #news-tab p {
-  text-align: center!important;
+  text-align: center !important;
 }
 
 #news-tab h1 {
@@ -2249,31 +2250,31 @@ button:hover {
   font-family: 'Courier New', Courier, monospace;
 }
 
-.newsletter-item {
-  margin-bottom: 20px;
-  padding: 15px;
-  border: 1px solid var(--border-color);
-  border-radius: 5px;
-}
-
-.newsletter-item h2 {
-  margin-top: 0;
-  text-align: center;
-  font-size: 36px;
-  line-height: 90%; 
-}
-
-.date {
-  font-style: italic;
-  color: var(--text-color);
-}
-
 .newsletter-image {
   max-width: 100%;
   height: auto;
   display: block;
-  margin: 10px 0;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px;
+  border-color: var(--border-color);
 }
+
+.newsletter-item h2 {
+  margin-top: 0;
+  margin-bottom: 0;
+  text-align: center;
+  font-size: 46px;
+  line-height: 90%;
+  font-weight: 900;
+  color: var(--text-color);
+  text-transform: uppercase;
+
+}
+
+
+
+
 
 /*Goals Chart */
 
@@ -2291,7 +2292,7 @@ button:hover {
 
 .goal div {
   height: 20px;
-  background-color:var(--background-color);
+  background-color: var(--background-color);
   border-radius: 5px;
   position: relative;
   margin-bottom: 10px;
@@ -2307,7 +2308,8 @@ button:hover {
   background-color: var(--border-color);
 }
 
-#donate-button, #share-button {
+#donate-button,
+#share-button {
   margin: 10px;
   padding: 10px 20px;
   border-style: solid;
@@ -2318,6 +2320,7 @@ button:hover {
   cursor: pointer;
 }
 
-#donate-button:hover, #share-button:hover {
+#donate-button:hover,
+#share-button:hover {
   background-color: var(--secondary-color);
 }

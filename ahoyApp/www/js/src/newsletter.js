@@ -8,13 +8,21 @@ window.addEventListener('DOMContentLoaded', (event) => {
             const newsletterList = document.getElementById('newsletter-list');
             sortedData.forEach(newsletter => {
                 const div = document.createElement('div');
-                div.className = 'newsletter-item'; // Add a class for styling
+                div.className = 'newsletter-item'; // Make class name unique for newsletter
+                div.style.textAlign = 'center'; // Center align the content
+
                 let htmlContent = `
+                    <p class="newsletter-date">${newsletter.date}</p>
                     <h2>${newsletter.title}</h2>
-                    <p class="date">${newsletter.date}</p>
+                   
                 `;
                 if (newsletter.imageUrl) {
-                    htmlContent += `<img src="${newsletter.imageUrl}" alt="${newsletter.title}" class="newsletter-image">`;
+                    // Wrap the image in a div and center it
+                    htmlContent += `
+                        <div style="text-align: center;">
+                            <img src="${newsletter.imageUrl}" alt="${newsletter.title}" class="newsletter-image" style="max-width: 100%; height: auto;"> <!-- Kept class "newsletter-image" for uniqueness -->
+                        </div>
+                    `;
                 }
                 htmlContent += `<p>${newsletter.content}</p>`;
                 div.innerHTML = htmlContent;
