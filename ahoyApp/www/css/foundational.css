@@ -2247,22 +2247,41 @@ button:hover {
 
 #news-tab h1 {
   text-transform: uppercase;
+  font-size: 36px;
   font-family: 'Courier New', Courier, monospace;
+  white-space: nowrap;
+  overflow: hidden;
+  display: block;
+  animation: ticker 10s linear infinite;
+}
+
+@keyframes ticker {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 .newsletter-image {
-  max-width: 100%;
-  height: auto;
+  width: 320px;
+  /* Fixed width */
+  height: 320px;
+  /* Fixed height, making it a square */
+  object-fit: cover;
+  /* Ensures the image covers the area, cropping if necessary */
   display: block;
   margin-left: auto;
   margin-right: auto;
-  border: 2px;
-  border-color: var(--border-color);
+  border: 2px solid var(--border-color);
+  /* Ensure border is applied correctly */
 }
 
 .newsletter-item h2 {
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 10px;
   text-align: center;
   font-size: 46px;
   line-height: 90%;
@@ -2270,6 +2289,20 @@ button:hover {
   color: var(--text-color);
   text-transform: uppercase;
 
+}
+
+.newsletter-item {
+  margin-bottom: 20px;
+  /* Space between newsletter items */
+}
+
+.newsletter-divider {
+  border: 0;
+  height: 1px;
+  background: var(--border-color);
+  /* Light grey divider */
+  margin: 20px 0;
+  /* Space above and below the divider */
 }
 
 
