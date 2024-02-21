@@ -464,17 +464,20 @@
           <div class="goals-container">
             <h2>Updates on Goals</h2>
             <div class="goal">
-              <div id="song-goal-chart"></div>
+              <div id="song-goal-chart" class="goal-chart">
+                <span class="goal-chart-text">Songs</span>
+              </div>
               <h3>Song Goal: 1000</h3>
               <h4>Present Song Count: <span
                   id="current-song-count">29</span></h4>
             </div>
             <div class="goal">
-              <div id="artist-goal-chart"></div>
+              <div id="artist-goal-chart" class="goal-chart">
+                <span class="goal-chart-text">Artists</span>
+              </div>
               <h3>Artist Goal: 200</h3>
               <h4>Present Artist Count: <span
                   id="current-artist-count">9</span></h4>
-              <!-- Assuming starting from 0 -->
             </div>
             <button id="donate-button"
               onclick="navigateToTab('donate-tab')">Donate</button>
