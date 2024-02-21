@@ -604,7 +604,17 @@
             <p
               style="font-family: 'Courier New', Courier, monospace; background-color: #ff0060; color: black; padding: 10px; border: 1px dashed red;">⚠️
               Warning: This feature is in active development.</p>
-
+            <!-- User Icon Section -->
+            <div class="user-icon-section">
+              <img id="user-icon" src="./img/default-user-icon.png"
+                alt="User Icon"
+                style="width: 200px; height: 200px; border-radius: 50%;">
+              <input type="file" id="user-icon-input" accept="image/*"
+                style="display: none;">
+              <button
+                onclick="document.getElementById('user-icon-input').click()">UPLOAD
+                FACE PHOTO</button>
+            </div>
             <div class="library-mainFrame">
 
               <div class="library-mainFrame-windowWrap">
@@ -923,6 +933,7 @@
 
       <!-- USER JAVASCRIPTS -->
       <script src="js/src/user-cart.js"></script>
+      <script src="js/src/user-icon-input.js"></script>
       <!-- MARKET JAVASCRIPTS -->
       <script src="js/src/market-physical.js"></script>
       <script src="js/src/market-digital.js"></script>
