@@ -504,17 +504,20 @@
         <!-- NEWS TAB -->
 
         <!-- SHOWS TAB -->
-        <!-- SHOWS TAB -->
         <div id="shows-tab" class="tab-content">
-          <p
-            style="font-family: 'Courier New', Courier, monospace; background-color: #ff0060; color: black; padding: 10px; border: 1px dashed red;">⚠️
-            Warning: This feature is in active development.</p>
-
           <h2>Shows</h2>
-          <p>Welcome to the Shows section. Here you can find all the latest
-            and
-            greatest shows provided by Ahoy Indie Media.</p>
-          <!-- Content for shows will be dynamically added here -->
+          <table id="shows-table">
+            <thead>
+              <tr>
+                <th>Artist Name</th>
+                <th>Location</th>
+                <th>Show Dates</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- JavaScript will populate table rows here -->
+            </tbody>
+          </table>
         </div>
 
         <!-- CHAT TAB CHAT TAB CHAT TAB -->
@@ -649,11 +652,12 @@
                   display: flex;
                 }
               </style>
+                    <!-- 
                     <div class="userActionBar-menuWrap">
                       <button><i class="fas fa-home"></i></button>
                       <button><i class="fas fa-cog"></i> </button>
                       <button><i class="fas fa-plus"></i> </button>
-                    </div>
+                    </div>-->
                   </div>
                   <div class="userActionBar-middleMenu">
                     <style>
@@ -967,7 +971,7 @@
       <!-- ARTSIT TAB AND FEATURES -->
       <script src="js/src/function-fetch-and-populate-artistTable.js"></script>
       <!-- SHOW UPDATES -->
-      <script src="js/src/show-data-logic.js"></script>
+      <script src="js/src/show-logic.js"></script>
       <!-- DONATION SCRIPTS -->
       <script src="js/src/donation.js"></script>
       <script src="js/src/donation-slider-a.js"></script>
