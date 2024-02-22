@@ -2481,7 +2481,6 @@ button:hover {
   font-size: calc(16px + 2vw);
   /* Responsive font size */
   color: var(--text-color);
-  mix-blend-mode: difference;
   /* For contrast against the background */
 }
 

@@ -1,3 +1,5 @@
+let lastBackgroundImageUrl = null; // Store the last background image URL
+
 document.getElementById('user-icon-input').addEventListener('change', function(event) {
   const file = event.target.files[0];
   if (file) {
@@ -5,12 +7,35 @@ document.getElementById('user-icon-input').addEventListener('change', function(e
     reader.onload = function(e) {
       // Set the src attribute for the user icon
       document.getElementById('user-icon').src = e.target.result;
-      // Set the background image of the tab and ensure it fills the screen without repeating
-      document.body.style.backgroundImage = `url('${e.target.result}')`;
-      document.body.style.backgroundSize = 'cover'; // Make the image cover the entire screen
-      document.body.style.backgroundRepeat = 'no-repeat'; // Prevent the image from repeating
-      document.body.style.backgroundPosition = 'center'; // Center the background image
+      // Update the background image
+      updateBackgroundImage(e.target.result);
     };
     reader.readAsDataURL(file);
   }
 });
+
+// Function to update the background image
+function updateBackgroundImage(imageUrl) {
+  lastBackgroundImageUrl = imageUrl; // Store the last image URL
+  document.body.style.backgroundImage = `url('${imageUrl}')`;
+  document.body.style.backgroundSize = 'cover';
+  document.body.style.backgroundRepeat = 'no-repeat';
+  document.body.style.backgroundPosition = 'center';
+}
+
+// Function to toggle the background image
+function toggleBackgroundImage() {
+  if (document.body.style.backgroundImage !== 'none') {
+    // If there's a background image, clear it
+    document.body.style.backgroundImage = 'none';
+  } else if (lastBackgroundImageUrl) {
+    // If there's a stored image URL, reapply it
+    updateBackgroundImage(lastBackgroundImageUrl);
+  } else {
+    // If there's no stored image URL, prompt the user to select an image
+    document.getElementById('user-icon-input').click();
+  }
+}
+
+// Add the toggleBackgroundImage function to the window object to make it accessible from the HTML
+window.toggleBackgroundImage = toggleBackgroundImage;
