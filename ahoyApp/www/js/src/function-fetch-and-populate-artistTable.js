@@ -1,6 +1,5 @@
-
-  // Function to load artist data and populate the table
-  function loadArtistData() {
+ // Function to load artist data and populate the table
+ function loadArtistData() {
     fetch('./data/artistCollection.json')
       .then(response => response.json())
       .then(data => {
@@ -10,7 +9,6 @@
           row.innerHTML = `
             <td><a href="${artist.artistUrl}" target="_blank">${artist.name}</a></td>
             <td>${artist.location}</td>
-            <td>${artist.showDates.join(', ')}</td>
             <td>
               <a href="${artist.supportLink}" target="_blank">Support</a> | 
               <a href="${artist.shareLink}" target="_blank">Share</a> | 
