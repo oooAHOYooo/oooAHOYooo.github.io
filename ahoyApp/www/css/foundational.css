@@ -663,13 +663,42 @@ button:hover {
 .userContentPortal-tab-container {
   border-style: solid;
   border-color: var(--border-color);
-  min-width: 394px;
+  width: 100%;
+  /* Make width dynamic */
   min-height: 300px;
-  /*max-width: 400px;*/
-  margin-left: 5px;
+  margin: 0 auto;
+  /* Center the container */
   overflow-x: auto;
   position: relative;
   z-index: 0;
+  box-sizing: border-box;
+  /* Include padding and border in the element's total width and height */
+  padding: 10px;
+  /* Add some padding */
+}
+
+@media screen and (min-width: 768px) {
+  .userContentPortal-tab-container {
+    width: 80vw;
+    /* Adjust width for larger screens */
+    max-width: 1200px;
+    /* Set a max-width to ensure content remains readable */
+    margin: 0 auto;
+    /* Keep it centered */
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .userContentPortal-tab-container {
+    width: 95vw;
+    /* Increase width on smaller screens for more space */
+    min-height: 200px;
+    /* Adjust height for smaller screens */
+  }
+}
+
+.user-greeting-section h1 {
+  line-height: 70% !important;
 }
 
 #liked-songs-grid {
@@ -2253,7 +2282,9 @@ button:hover {
   background-size: cover;
   background-position: center;
   margin-right: 10px;
-}/* Casting Menu Styles */
+}
+
+/* Casting Menu Styles */
 .casting-menu {
   display: flex;
   flex-direction: column;

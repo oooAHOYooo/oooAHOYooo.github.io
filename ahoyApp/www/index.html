@@ -553,11 +553,18 @@
         </div>
 
         <!-- SHARE TAB -->
+
+        <!-- CASTING TAB -->
         <!-- CASTING TAB -->
         <div id="casting-tab" class="tab-content">
           <div class="casting-menu">
             <h2>Casting Options</h2>
-            <button id="cast-tv" onclick="forceCast()">Cast to TV</button>
+            <button id="castButton">Cast to TV</button>
+            <div id="lastPlayedMediaInfo">
+              <h3>Last Played Media</h3>
+              <p id="lastPlayedTitle">Title: None</p>
+              <p id="lastPlayedType">Type: None</p>
+            </div>
           </div>
         </div>
         <script>
@@ -985,6 +992,9 @@
       <script type="text/javascript" src="cordova.js"></script>
       <script type="text/javascript"
         src="js/cordova-scripts/cordova-musicControls.js"></script>
+
+      <!-- CASTING FUNCTION -->
+      <script src="js/src/function-superCast.js"></script>
 
     </body>
 
