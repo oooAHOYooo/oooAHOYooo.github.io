@@ -1,11 +1,35 @@
-let friends = [ // Initial friends list
-  { name: 'Demo Account 1', online: true },
-  { name: 'Demo Account 2', online: false },
-  { name: 'Demo Account 3', online: true },
+let friends = [
+  { name: 'Alice Johnson', online: true },
+  { name: 'Bob Smith', online: false },
+  { name: 'Charlie Davis', online: true },
+  { name: 'Dana Lee', online: true },
+  { name: 'Evan Green', online: false },
+  { name: 'Fiona Black', online: true },
+  // Add more friends here
+  { name: 'Grace Hall', online: true },
+  { name: 'Henry Ford', online: false },
+  { name: 'Ivy White', online: true },
+  { name: 'Jack Brown', online: true }
 ];
 
 function sendMessage() {
-  // Function body remains unchanged
+  const input = document.getElementById('chat-input');
+  const message = input.value.trim();
+  const messagesContainer = document.getElementById('messages');
+
+  if (message) {
+    console.log(`Sending message: ${message}`);
+    // Create a div for the new message and append it to the messages container
+    const messageDiv = document.createElement('div');
+    messageDiv.className = 'message';
+    messageDiv.textContent = message; // Assuming plain text messages for simplicity
+    messagesContainer.appendChild(messageDiv);
+
+    // Scroll to the bottom of the messages container
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
+    input.value = ''; // Clear the input after sending
+  }
 }
 
 function populateFriendList(filter = '') {
@@ -14,12 +38,17 @@ function populateFriendList(filter = '') {
   
   friends
     .filter(friend => friend.name.toLowerCase().includes(filter.toLowerCase()))
-    .forEach(friend => {
+    .forEach((friend, index) => {
       const friendElement = document.createElement('div');
       friendElement.className = 'friend';
       friendElement.innerHTML = `
-        <div class="friend-name">${friend.name}</div>
-        <div class="friend-status">${friend.online ? 'Online' : 'Offline'}</div>
+        <div class="friend-profile">
+          <img src="https://placekitten.com/${50 + index}/${50 + index}" alt="Profile Picture" class="friend-picture">
+        </div>
+        <div class="friend-info">
+          <div class="friend-name">${friend.name}</div>
+          <div class="friend-status">${friend.online ? 'Online' : 'Offline'}</div>
+        </div>
       `;
       friendListElement.appendChild(friendElement);
     });
@@ -38,9 +67,19 @@ function addFriend(name, online = true) {
 document.addEventListener('DOMContentLoaded', function () {
   populateFriendList();
   
-  document.getElementById('search-input').addEventListener('keyup', function() {
+  const searchInput = document.getElementById('search-input');
+  searchInput.addEventListener('keyup', function() {
     populateFriendList(this.value);
   });
-});
 
-// The rest of the script remains unchanged
+  const sendMessageButton = document.getElementById('send-message');
+  sendMessageButton.addEventListener('click', sendMessage);
+
+  const chatInput = document.getElementById('chat-input');
+  chatInput.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault(); // Prevent the default action to avoid line break in textarea
+      sendMessage();
+    }
+  });
+});

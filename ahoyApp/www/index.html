@@ -319,26 +319,24 @@
 
         <!-- ARTISTS TAB -->
         <div id="artists-tab" class="tab-content">
-          <p
-            style="font-family: 'Courier New', Courier, monospace; background-color: #ff0060; color: black; padding: 10px; border: 1px dashed red;">⚠️
-            Warning: This feature is in active development.</p>
-
           <h2>Artists</h2>
           <table id="artists-table">
             <thead>
               <tr>
-                <th id="artist-tab-artist-name-header">Artist Name</th>
-                <th id="artist-tab-location-header">Location</th>
-                <th id="artist-tab-show-dates-header">Show Dates</th>
-                <th id="artist-tab-support-header">Support</th>
+                <th>Artist Name</th>
+                <th>Location</th>
+                <th>Show Dates</th>
+                <th>Support</th>
               </tr>
             </thead>
             <tbody>
-              <!-- Artist data will be inserted here -->
+              <!-- Artist data will be inserted here by JavaScript -->
             </tbody>
           </table>
         </div>
+        <!-- END OF ARTIST -->
 
+        <!-- NEEDS TO BE DYNAMIC AND HOOKED UP TO THE STRIPES -->
         <!-- Donation Tab-->
         <!-- DONATE TAB -->
         <div id="donate-tab" class="tab-content">
@@ -527,6 +525,7 @@
 
           <h2>Chat with Friends</h2>
           <div id="chat-container">
+
             <div id="friend-list">
               <!-- Friend list will be populated here -->
             </div>
@@ -534,7 +533,7 @@
               <div id="messages"></div>
               <textarea id="chat-input"
                 placeholder="Type a message..."></textarea>
-              <button onclick="sendMessage()">Send</button>
+              <button id="send-message">Send</button>
             </div>
           </div>
         </div>
@@ -964,6 +963,8 @@
       <!-- NEWSLETTER + UDPATES-->
       <script src="js/src/newsletter.js"></script>
       <script src="js/src/updates-commits.js"></script>
+      <!-- ARTSIT TAB AND FEATURES -->
+      <script src="js/src/function-fetch-and-populate-artistTable.js"></script>
       <!-- SHOW UPDATES -->
       <script src="js/src/show-data-logic.js"></script>
       <!-- DONATION SCRIPTS -->
