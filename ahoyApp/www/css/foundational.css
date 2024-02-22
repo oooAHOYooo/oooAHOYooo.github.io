@@ -2441,3 +2441,100 @@ button:hover {
     overflow-x: auto;
   }
 }
+
+
+.newsletter {
+  max-width: 60ch;
+  margin: auto;
+  padding: 20px;
+  background-color: var(--light-secondary-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  text-transform: uppercase;
+}
+
+/* Adjusting media-title for better readability */
+.media-title {
+  font-size: clamp(2ch, 4vw, 4ch) !important;
+  /* Adjusted for dynamic sizing */
+  color: var(--text-color);
+  font-weight: 400;
+  letter-spacing: .055em;
+  text-align: justify;
+}
+
+/* Adjusting podcast titles for better readability */
+#podcast-table td {
+  font-size: clamp(2ch, 4vw, 3ch);
+  /* Adjusted for dynamic sizing */
+}
+
+/* Adjusting artist names for better readability */
+.artist {
+  font-size: clamp(2ch, 4vw, 3ch) !important;
+  /* Adjusted for dynamic sizing */
+  font-weight: 600;
+  text-transform: uppercase !important;
+  color: var(--text-color);
+}
+
+/* Adjusting song list for better readability */
+#song-list td {
+  font-size: clamp(2ch, 4vw, 3ch);
+  /* Adjusted for dynamic sizing */
+}
+
+/* Adjusting chat input for better usability */
+#chat-input {
+  font-size: clamp(2ch, 4vw, 3ch);
+  /* Adjusted for dynamic sizing */
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+/* Adjusting search bar for better usability */
+#search-bar {
+  font-size: clamp(2ch, 4vw, 3ch);
+  /* Adjusted for dynamic sizing */
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+/* Adjusting game info for better readability */
+.game-info h2,
+.game-info p,
+.game-info a {
+  font-size: clamp(2ch, 4vw, 3ch);
+  /* Adjusted for dynamic sizing */
+  margin: 5px 0;
+}
+
+/* Adjusting media item descriptions for better readability */
+.media-description {
+  font-size: clamp(2ch, 4vw, 3ch);
+  /* Adjusted for dynamic sizing */
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  text-align: center;
+}
+
+.newsletter-item {
+  max-width: 60ch;
+  margin: auto;
+  /* Center the div if you want */
+  padding: 10px;
+  text-align: left !important;
+  /* Optional: for some spacing */
+}
