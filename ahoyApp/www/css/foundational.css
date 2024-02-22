@@ -2330,13 +2330,7 @@ button:hover {
   border-bottom: 1px solid var(--border-color);
 }
 
-#shows-table tr:nth-child(even) {
-  background-color: var(--background-color);
-}
 
-#shows-table tr:nth-child(odd) {
-  background-color: var(--secondary-color);
-}
 
 #shows-table th {
   color: var(--text-color);
@@ -2344,4 +2338,106 @@ button:hover {
 
 #shows-table td {
   color: var(--text-color);
+}
+
+/* Adjustments for the artist-tab for responsiveness and full width */
+#artist-tab {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#artist-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+#artist-table thead {
+  background-color: var(--secondary-color);
+}
+
+#artist-table th,
+#artist-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+#artist-table tr:nth-child(even) {
+  background-color: var(--background-color);
+}
+
+#artist-table tr:nth-child(odd) {
+  background-color: var(--secondary-color);
+}
+
+#artist-table th {
+  color: var(--text-color);
+}
+
+#artist-table td {
+  color: var(--text-color);
+}
+
+/* Responsive adjustments for artist-table on smaller screens */
+@media screen and (max-width: 600px) {
+
+  #artist-table th,
+  #artist-table td {
+    padding: 5px;
+    font-size: 12px;
+  }
+
+  #artist-table {
+    margin-left: 0;
+    margin-right: 0;
+    width: calc(100% + 20px);
+    overflow-x: auto;
+  }
+}
+
+/* Artists Table Styling to Match Shows Table */
+#artists-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+#artists-table thead {
+  background-color: var(--secondary-color);
+}
+
+#artists-table th,
+#artists-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+
+
+#artists-table th {
+  color: var(--text-color);
+}
+
+#artists-table td {
+  color: var(--text-color);
+}
+
+/* Responsive adjustments for artists-table on smaller screens */
+@media screen and (max-width: 600px) {
+
+  #artists-table th,
+  #artists-table td {
+    padding: 5px;
+    font-size: 12px;
+  }
+
+  #artists-table {
+    margin-left: 0;
+    margin-right: 0;
+    width: calc(100% + 20px);
+    overflow-x: auto;
+  }
 }
