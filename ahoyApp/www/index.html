@@ -552,28 +552,19 @@
 
         <!-- SHARE TAB -->
         <!-- CASTING TAB -->
-        <!-- CASTING TAB -->
         <div id="casting-tab" class="tab-content">
-          <p
-            style="font-family: 'Courier New', Courier, monospace; background-color: #ff0060; color: black; padding: 10px; border: 1px dashed red;">⚠️
-            Warning: This feature is in active development.</p>
-
-          <h2>Casting Options</h2>
-          <div class="casting-options">
-            <div class="casting-option">
-              <button id="cast-apple" onclick="castToApple()">Cast to Apple
-                Device</button>
-            </div>
-            <div class="casting-option">
-              <button id="cast-google" onclick="castToGoogle()">Cast to Google
-                Device</button>
-            </div>
-            <div class="casting-option">
-              <button id="cast-other" onclick="castToOther()">Cast to Other
-                Devices</button>
-            </div>
+          <div class="casting-menu">
+            <h2>Casting Options</h2>
+            <button id="cast-tv" onclick="forceCast()">Cast to TV</button>
           </div>
         </div>
+        <script>
+          function forceCast() {
+            // Simulate a force cast action
+            console.log("Attempting to cast to available devices...");
+            // Implement actual casting logic here using appropriate APIs
+          }
+        </script>
         <!-- UPDATES-->
         <div id="updates-tab" class="tab-content">
 
