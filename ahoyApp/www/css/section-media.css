@@ -1,6 +1,7 @@
 .tv-wrap {
   position: sticky;
-  top: clamp(10px, 2vw, 100px); /* Adjust these values as needed */
+  top: clamp(10px, 2vw, 100px);
+  /* Adjust these values as needed */
   z-index: 3;
   width: 100%;
   height: auto;

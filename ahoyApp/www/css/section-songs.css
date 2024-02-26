@@ -1,119 +1,52 @@
-#songs-control-panel {
-  position: sticky;
-  top: 0;
-  /* Adjust this value to change the point at which the element becomes sticky */
-  z-index: 10;
-  max-width:300px;
-  margin-left:20px;
-  /* Adjust this value to ensure the element is above other elements */
+#song-list td {
+  color: var(--text-color);
 }
 
-.song-table {
-  margin: auto;
+@media screen and (max-width: 600px) {
+
+  #song-list th,
+  #song-list td {
+    padding: 5px;
+    font-size: 12px;
+  }
+
+  #song-list {
+    margin-left: 0;
+    margin-right: 0;
+    width: calc(100% + 20px);
+    overflow-x: auto;
+  }
+}
+
+.song-info {
+  text-align: center;
+}
+
+.song-info h2,
+.song-info h3 {
+  margin: 0;
+}
+
+.song-controls {
+  display: flex;
+  justify-content: space-around;
   width: 100%;
-  /* Adjust this value to make the table more or less compact */
+  margin-top: 20px;
 }
 
-.song-table-header {
+#song-list {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+#song-list thead {
   background-color: var(--secondary-color);
 }
 
-.song-table-body {
-  background-color: var(--background-color);
-  max-height: 20px;
-}
-
-.song-row {
-  border-bottom: 1px solid var(--border-color);
-}
-
-.song-artist,
-.song-title {
+#song-list th,
+#song-list td {
+  padding: 10px;
   text-align: left;
-}
-
-
-
-#song-wrap-list {
-  width: 100%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.song-row:first-child,
-.song-row:last-child {
-  border: none;
-}
-
-
-.song-row:hover {
-  background-color: #f2f2f2; /* Or any other color for hover effect */
-}
-
-
-.song-row.clicked {
-  background-color: yellow; /* Or any other color for clicked effect */
-}
-
-
-.song-row.clicked {
-  animation: highlight 1s ease-in-out;
-  background-color: yellow;
-}
-
-@keyframes highlight {
-  0% { background-color: white; }
-  50% { background-color: yellow; }
-  100% { background-color: white; }
-}
-
-#song-col-wrap {
-  display: flex;
-}
-
-#song-col-wrap {
-display: flex;
-flex-wrap: wrap;
-}
-
-#song-col-1, #song-col-2 {
-flex: 1 0 320px;
-box-sizing: border-box;
-}
-
-#song-col-2 {
-
-position: relative; /* This is the parent element of #song-Featured-Art */
-overflow: auto; /* This allows the content to scroll */
-}
-
-#song-Featured-Art {
-  position: sticky;
-  right: 20;
-  top: 20;
-  width: 100%;
-  height: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  overflow: hidden;
-  
-}
-
-
-#song-col-2 {
-  flex: 1 0 320px;
-  min-height:900px;
-  box-sizing: border-box;
-  position: relative;
-  overflow: auto;
-  background-image: url('/images/Ahoy-Indie-Media-DEFAULT-COVER-A-8.jpg');
-  background-attachment: fixed;
-  background-position: left;
-  background-repeat: repeat;  
-  overflow: hidden;
-
+  border-bottom: 1px solid var(--border-color);
 }

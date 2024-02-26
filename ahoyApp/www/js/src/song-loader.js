@@ -106,7 +106,7 @@ function addSongToLibrary(songData) {
   songCard.classList.add("song-card");
   songCard.dataset.url = songData.url;
   songCard.innerHTML = `
-      <img src="${songData.thumbnail}" alt="${songData.title}" style="width:100px; height:120px;">
+      <img src="${songData.thumbnail}" alt="${songData.title}">
       <p>${songData.artist}</p>
       <p>${songData.title}</p>
       <button class="play-button" data-url="${songData.url}"><i class="fas fa-play"></i></button>
@@ -166,7 +166,7 @@ document.addEventListener("DOMContentLoaded", function () {
       featuredArt.style.backgroundPosition = 'center'; // Change the position back to the center
     });
   
-    // ... rest of your code
+
   });
 
   
