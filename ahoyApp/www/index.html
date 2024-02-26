@@ -744,37 +744,6 @@
                   </div>
 
                   <!-- ACCOUNT _ TAB NAV SCRIPT -->
-                  <script>
-              document.addEventListener('DOMContentLoaded', function () {
-                // Select all buttons in the middle menu
-                var buttons = document.querySelectorAll('.userActionBar-middleMenu button');
-
-                // Function to hide all tab content
-                function hideAllTabs() {
-                  var tabs = document.querySelectorAll('.userContentPortal-tab-container > div');
-                  tabs.forEach(function (tab) {
-                    tab.style.display = 'none';
-                  });
-                }
-
-                // Add click event listener to each button
-                buttons.forEach(function (button) {
-                  button.addEventListener('click', function () {
-                    hideAllTabs(); // Hide all tabs
-                    var tabId = button.getAttribute('data-target'); // Get the target tab id from the button's data-target attribute
-                    var tab = document.getElementById(tabId);
-                    if (tab) {
-                      tab.style.display = 'block'; // Show the clicked tab
-                    }
-                  });
-                });
-
-                // Hide all tabs initially and show the first tab by default
-                hideAllTabs();
-                document.getElementById('tab-1').style.display = 'block';
-              });
-
-            </script>
 
                 </div>
               </div>
