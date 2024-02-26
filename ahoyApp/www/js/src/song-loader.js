@@ -3,22 +3,28 @@ document.addEventListener("DOMContentLoaded", function () {
         .then((response) => response.json())
         .then((data) => {
             const songList = document.getElementById("song-list");
-            songList.innerHTML = `
-                <table class="song-table">
-                    <thead>
-                        <tr class="song-table-header">
-                            <th>Play</th>
-                            <th>Artist</th>
-                            <th>Song</th>
-                            <th>Like</th>
-                        </tr>
-                    </thead>
-                    <tbody id="song-list-body" class="song-table-body">
-                    </tbody>
-                </table>
-            `;
+            let htmlContent = `<table class="song-table full-width">
+                                <thead>
+                                    <tr>
+                                        <th>Play</th>
+                                        <th>Artist</th>
+                                        <th>Song</th>
+                                        <th>Like</th>
+                                    </tr>
+                                </thead>
+                                <tbody>`;
+            data.songs.forEach((song) => {
+                htmlContent += `<tr>
+                                    <td><button class="play-button" data-url="${song.mp3url}"><i class="fas fa-play"></i></button></td>
+                                    <td class="song-artist">${song.artist}</td>
+                                    <td class="song-title">${song.songTitle}</td>
+                                    <td><button class="like-button" data-url="${song.mp3url}" data-artist="${song.artist}" data-title="${song.songTitle}"><i class="fas fa-heart"></i></button></td>
+                                </tr>`;
+            });
+            htmlContent += `</tbody></table>`;
+            songList.innerHTML = htmlContent;
   
-           const songListBody = document.getElementById("song-list-body");
+            const songListBody = document.getElementById("song-list-body");
             data.songs.forEach((song) => {
                 const tr = document.createElement("tr");
                 tr.className = "song-row";

@@ -1,22 +1,10 @@
 #song-list td {
   color: var(--text-color);
+  font-size: clamp(2ch, 1vw, 3ch);
+  /* Responsive font size using ch units */
 }
 
-@media screen and (max-width: 600px) {
 
-  #song-list th,
-  #song-list td {
-    padding: 5px;
-    font-size: 12px;
-  }
-
-  #song-list {
-    margin-left: 0;
-    margin-right: 0;
-    width: calc(100% + 20px);
-    overflow-x: auto;
-  }
-}
 
 .song-info {
   text-align: center;
@@ -36,7 +24,13 @@
 
 #song-list {
   width: 100%;
+  /* Full width */
+  max-width: 100%;
+  /* Ensure it doesn't exceed the parent container */
+  margin: 0 auto;
+  /* Centering if needed */
   border-collapse: collapse;
+  min-width: 100%;
   margin-top: 20px;
 }
 
@@ -49,4 +43,20 @@
   padding: 10px;
   text-align: left;
   border-bottom: 1px solid var(--border-color);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+
+  #song-list td,
+  #song-list th {
+    padding: 4px;
+    /* Smaller padding on smaller screens */
+    font-size: smaller;
+    /* Smaller font size on smaller screens */
+  }
+}
+
+border-bottom: 1px solid var(--border-color);
+}
 }
