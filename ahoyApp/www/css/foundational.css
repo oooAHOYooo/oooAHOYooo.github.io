@@ -2541,3 +2541,52 @@ button:hover {
 #shows-table td {
   color: var(--text-color);
 }
+
+#song-list {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+#song-list thead {
+  background-color: var(--secondary-color);
+}
+
+#song-list th,
+#song-list td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+#song-list tr:nth-child(even) {
+  background-color: var(--background-color);
+}
+
+#song-list tr:nth-child(odd) {
+  background-color: var(--secondary-color);
+}
+
+#song-list th {
+  color: var(--text-color);
+}
+
+#song-list td {
+  color: var(--text-color);
+}
+
+@media screen and (max-width: 600px) {
+
+  #song-list th,
+  #song-list td {
+    padding: 5px;
+    font-size: 12px;
+  }
+
+  #song-list {
+    margin-left: 0;
+    margin-right: 0;
+    width: calc(100% + 20px);
+    overflow-x: auto;
+  }
+}
