@@ -1,4 +1,9 @@
 {
-    "liveServer.settings.port": 5501,
-    "livePreview.defaultPreviewPath": "/radio/radio.html"
+
+    "editor.tabSize": 4, // Sets the tab size to 2 spaces for better readability
+    "files.autoSave": "onFocusChange", // Automatically saves files when focus is changed
+    "editor.wordWrap": "on", // Enables word wrap for easier editing
+   
+    "python.linting.enabled": true, // Enables linting for Python files to catch errors early
+    "javascript.validate.enable": true // Enables JavaScript validation
 }
