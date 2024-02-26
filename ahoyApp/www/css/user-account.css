@@ -1,3 +1,12 @@
            .userActionBar {
                width: 180px;
            }
+
+           .userPlaylist-window {
+               overflow-y: auto;
+               height: 200px;
+           }
+
+           .userActionBar-menuWrap {
+               display: flex;
+           }

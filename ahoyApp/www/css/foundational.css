@@ -2313,32 +2313,6 @@ button:hover {
   color: var(--background-color);
 }
 
-#shows-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-}
-
-#shows-table thead {
-  background-color: var(--secondary-color);
-}
-
-#shows-table th,
-#shows-table td {
-  padding: 10px;
-  text-align: left;
-  border-bottom: 1px solid var(--border-color);
-}
-
-
-
-#shows-table th {
-  color: var(--text-color);
-}
-
-#shows-table td {
-  color: var(--text-color);
-}
 
 /* Adjustments for the artist-tab for responsiveness and full width */
 #artist-tab {
@@ -2537,4 +2511,33 @@ button:hover {
   padding: 10px;
   text-align: left !important;
   /* Optional: for some spacing */
+}
+
+
+
+#shows-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+#shows-table thead {
+  background-color: var(--secondary-color);
+}
+
+#shows-table th,
+#shows-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+
+
+#shows-table th {
+  color: var(--text-color);
+}
+
+#shows-table td {
+  color: var(--text-color);
 }

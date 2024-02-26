@@ -51,7 +51,7 @@
   </head>
 
   <body>
-
+    <audio id="audio-player" src></audio>
     <script>
       const supabaseUrl = "https://ornjxycoizoybvdhhowp.supabase.co";
       const supabaseKey =
@@ -637,15 +637,9 @@
               <div class="library-mainFrame-windowWrap">
 
                 <div class="userActionBar">
-                  <style>
-   
-            </style>
+
                   <div class="userActionBar-topMenu">
-                    <style>
-                .userActionBar-menuWrap {
-                  display: flex;
-                }
-              </style>
+
                     <!-- 
                     <div class="userActionBar-menuWrap">
                       <button><i class="fas fa-home"></i></button>
@@ -671,18 +665,10 @@
                         </div>
                         <div class="userPlaylist-window">
                           <style>
-                      .userPlaylist-window {
-                        overflow-y: auto;
-                        height: 200px;
-                      }
+  
                     </style>
                           <div class="userCreated">
-                            <style>
-                        ul {
-                          display: block;
 
-                        }
-                      </style>
                             <ul>
                               <o>User Data</o>
                               <o>User Entry</o>
@@ -743,31 +729,21 @@
           </div>
 
         </div>
-        <audio id="audio-player" src></audio>
-      </section>
-      <div class="bottom-controller fixed-bottom">
-        <button id="menu-A" onclick="toggleLeftDashboard()">
-          <i class="fas fa-bars"></i><span></span>
+
+        <div class="bottom-controller fixed-bottom">
+          <button id="menu-A" onclick="toggleLeftDashboard()">
+            <i class="fas fa-bars"></i><span></span>
+          </button>
+          <span id="tab-indicator">Home</span>
+          <!-- Default text for the first tab -->
+          <button id="menu-B" onclick="toggleRightDashboard()">
+            <i class="fas fa-bars"></i><span></span>
+          </button>
         </button>
-        <span id="tab-indicator">Home</span>
-        <!-- Default text for the first tab -->
-        <button id="menu-B" onclick="toggleRightDashboard()">
-          <i class="fas fa-bars"></i><span></span>
-        </button>
-      </button>
 
-    </div>
-    <!-- END OF BOTTOM PLAYER -->
-    <!-- CONDITIONAL LOGIC BITCH -->
-
-    <!-- END OF HTML -->
-    <div id="theScripts">
-      <!-- SONG LOADER-->
-
-      <!-- END OF SCRIPT DIV -->
-
-      <!-- ENDOFSCRIPT-->
-
+      </div>
+      <!-- END OF BOTTOM PLAYER -->
+      <!-- CONDITIONAL LOGIC BITCH -->
       <!-- DYNAMIC SHARE TEST -->
       <script src="js/src/share.js"></script>
       <!-- DYANMIC ARTIST TEST -->
@@ -776,15 +752,8 @@
       <script src="js/src/siteCounter.js"></script>
       <!-- END OF DRAFTY SCRIPTS -->
       <!-- CRAFT DRAFTY-->
-
       <!-- H1 effects - Scroll -->
       <script src="js/src/h1-effects-scroll.js"></script>
-
-      <!-- END OF CRAFTY -->
-
-      <!-- TEST TO SEE IF WORK SCRIPTS -->
-      <!-- WORKING SOURCE JAVASCRIPTS -->
-
       <!-- USER CONTROLS-->
       <script src="js/src/controls-timeline.js"></script>
       <!-- USER NAV -->
@@ -828,11 +797,6 @@
       <script src="/js/src/goal-chart.js"></script>
       <!-- SUPPORT AHOY LOGIC -->
       <script src="/js/src/support-artist-individual.js"></script>
-
-      <!-- Mobile Logic -->
-      <!-- script src="/js/src/dashboard-mobile-logic.js"></script -->
-      <!-- LOG ERRORS -->
-
       <!-- CORDOVA PLUGINS -->
       <script type="text/javascript" src="cordova.js"></script>
       <script type="text/javascript"
