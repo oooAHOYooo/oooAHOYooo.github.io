@@ -2559,13 +2559,7 @@ button:hover {
   border-bottom: 1px solid var(--border-color);
 }
 
-#song-list tr:nth-child(even) {
-  background-color: var(--background-color);
-}
 
-#song-list tr:nth-child(odd) {
-  background-color: var(--secondary-color);
-}
 
 #song-list th {
   color: var(--text-color);
