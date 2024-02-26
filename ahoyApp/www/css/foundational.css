@@ -1861,7 +1861,7 @@ button:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-height: 400px !important;
+  max-height: 4520px !important;
 }
 
 
@@ -2484,4 +2484,10 @@ button:hover {
 
 #shows-table td {
   color: var(--text-color);
+}
+
+.experience {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
 }

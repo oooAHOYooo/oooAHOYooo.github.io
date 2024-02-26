@@ -89,6 +89,9 @@
         <button onclick="navigateToTab('shows-tab')"><i
             class="fas fa-calendar-alt"></i><span
             class="button-label">Shows</span></button>
+        <button onclick="navigateToTab('experience-tab')"><i
+            class="fas fa-vr-cardboard"></i><span
+            class="button-label">Experience</span></button>
 
       </div>
       <div class="right-dashboard">
@@ -129,7 +132,7 @@
 
       <div id="tabSortz">
         <!-- HOME TAB -->
-        <div id="home-tab" class="tab-content">
+        <div id="home-tab" class="tab-content active">
           <div id="home-logo-div">
             <a href="./index.html"><img src="./img/assets/u_ahoy23.png" />
             </a>
@@ -222,7 +225,7 @@
           <!-- END OF MARKET -->
         </div><!-- END OF MARKET -->
         <!-- SONGS TAB -->
-        <div id="songs-tab" class="tab-content active">
+        <div id="songs-tab" class="tab-content">
           <p
             style="font-family: 'Courier New', Courier, monospace; background-color: #ff0060; color: black; padding: 10px; border: 1px dashed red;">⚠️
             Warning: This feature is in active development.</p>
@@ -259,6 +262,11 @@
       -->
         </div>
         <!-- TAB -->
+        <!-- MUSIC VIZ -->
+        <div id="experience-tab" class="tab-content">
+          <div class="experience"></div>
+
+        </div>
         <!-- MEDIA TAB -->
         <div id="media-tab-a" class="tab-content">
           <p
@@ -821,6 +829,9 @@
 
       <!-- CASTING FUNCTION -->
       <script src="js/src/function-superCast.js"></script>
+
+      <!-- MUSIC VIZ -->
+      <script src="js/src/experience.js"></script>
 
     </body>
 
