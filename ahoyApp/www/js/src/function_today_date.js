@@ -22,7 +22,6 @@
           // Display the current date and year in Roman Numerals
           document.addEventListener('DOMContentLoaded', (event) => {
             const currentDate = new Date();
-            document.getElementById('current-date').textContent = formatDate(currentDate);
-            document.getElementById('calendar-date').textContent = currentDate.toDateString();
+            document.getElementById('calendar-date').textContent = formatDate(currentDate);
             document.getElementById('year-roman').textContent = "Year " + romanize(currentDate.getFullYear());
           });

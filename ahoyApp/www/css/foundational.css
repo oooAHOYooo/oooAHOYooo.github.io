@@ -1861,7 +1861,7 @@ button:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-height: 4520px !important;
+  max-height: 452px !important;
 }
 
 
@@ -1938,7 +1938,7 @@ button:hover {
   flex-direction: column;
   align-items: center;
   z-index: 3000 !important;
-  max-height: 460px !important;
+  max-height: 471px !important;
 }
 
 .right-dashboard button {
@@ -1976,11 +1976,6 @@ button:hover {
 }
 
 
-
-
-
-
-
 /* Adjust icon and label order with flex-direction */
 .right-dashboard button {
   flex-direction: row-reverse;
@@ -1990,8 +1985,6 @@ button:hover {
 .right-dashboard button i {
   transition: margin-right 0.3s ease;
 }
-
-
 
 /* Mobile Specific Rules for Left Dash */
 @media screen and (max-width: 600px) {}
