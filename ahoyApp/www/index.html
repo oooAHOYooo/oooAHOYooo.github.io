@@ -172,11 +172,9 @@
               <h3 id="current-song-artist">S.G. Carlson</h3>
             </div>
             <div class="song-controls">
-
-              <button id="play-pause" class="control-button">
+              <button id="recently-added-homepage-song" class="control-button">
                 <i class="fas fa-play"></i>
               </button>
-
             </div>
           </div>
         </div>
@@ -842,7 +840,36 @@
       <!-- MUSIC VIZ -->
       <script src="js/src/experience.js"></script>
       <!-- TODAYS DATE -->
+      <script src="js/src/function_pull_LatestSong.js"></script>
       <script src="js/src/function_today_date.js"></script>
+      <script src="js/src/load-recently-added-song.js"></script>
+      <script>
+        // Function to play or pause the song
+        function togglePlayPause() {
+          var audio = document.getElementById('audio-player');
+          var playPauseBtn = document.getElementById('recently-added-homepage-song'); // Assuming this is your play/pause button
+          if (audio.paused) {
+            audio.play();
+            playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>'; // Change to pause icon
+          } else {
+            audio.pause();
+            playPauseBtn.innerHTML = '<i class="fas fa-play"></i>'; // Change to play icon
+          }
+        }
+      
+        // Function to load a song into the player and play it
+        function loadAndPlaySong(songUrl) {
+          var audio = document.getElementById('audio-player');
+          audio.src = songUrl; // Set the source of the song
+          audio.play(); // Play the song
+          document.getElementById('recently-added-homepage-song').innerHTML = '<i class="fas fa-pause"></i>'; // Change to pause icon
+        }
+      
+        // Example usage: Load and play a song when the page loads
+        window.onload = function() {
+          loadAndPlaySong('path_to_your_song.mp3'); // Replace 'path_to_your_song.mp3' with the actual path to your song
+        };
+      </script>
     </body>
 
   </html>
