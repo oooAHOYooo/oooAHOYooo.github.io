@@ -5,7 +5,7 @@
     <!-- META DESCRIPTION -->
     <meta
       name="description"
-      content="Ahoy Indie Media - A hand-crafted media company based out of New Haven, Connecticut. Our mission is to provide a homegrown alternative to the way folks consume media. We believe in good media - good indie media - the real stuff. Learn about our strategy for sustainable growth and how we maintain an ad-free environment. Join our subscription-based service to access unique in-house content, including the immensely unpopular 'Rob Show.' Become a part of our indie creator-centric platform." />
+      content="Ahoy Indie Media - A hand-crafted media company based out of New Haven, Connecticut. Our mission is to provide a homegrown alternative to the way folks consume media. We believe in good media - good indie media - the real stuff. Learn about our strategy for growth and how we hope to maintain an ad-free environment. Become a member to access unique in-house content, including the 'Rob Show.' Become a part of our indie creator-centric platform." />
     <link rel="icon" type="image/x-icon"
       href="./ahoyApp/www/img/favicon_ahoy.png" />
     <meta property="og:image" content="./ahoyApp/www/img/favicon_ahoy.png" />
@@ -19,85 +19,41 @@
       href="./ahoyApp/www/img/favicon_ahoy.png" />
     <!-- SITE TITLE -->
     <title>Ahoy Indie Media</title>
+    <link rel="stylesheet" href="index.css">
     <!-- CSS3 -->
-    <link rel="stylesheet" href="./css/mainStyle.css" />
-    <link rel="stylesheet" href="./css/mobile.css" />
-    <link rel="stylesheet" href="./css/grain-and-tweaks.css" />
+    <!--link rel="stylesheet" href="./css/mainStyle.css" /-->
+    <!-- link rel="stylesheet" href="./css/mobile.css" /-->
+    <!--link rel="stylesheet" href="./css/grain-and-tweaks.css" /-->
   </head>
-  <style>
-    .topLogin {
-      position: fixed;
-      top: 10px;
-      right: 10px;
-      z-index: 1000; /* This ensures the button stays on top of other elements */
-    }
 
-    .loginButton {
-      padding: 10px;
-      color: rgb(255, 255, 255);
-      width: 75px;
-      height: 40px;
-      border-style: solid;
-      border-width: 1px;
-      border-color: rgba(255, 255, 255, 0.563);
-      background-color: rgba(
-        255,
-        255,
-        255,
-        0.1
-      ); /* Semi-transparent background */
-      backdrop-filter: blur(5px); /* Blur effect */
-      -webkit-backdrop-filter: blur(5px); /* For Safari */
-      transition: all 0.3s ease; /* Smooth transition */
-    }
-
-    .loginButton:hover {
-      background-color: rgba(
-        255,
-        255,
-        255,
-        0.2
-      ); /* Slightly more opaque on hover */
-      backdrop-filter: blur(10px); /* Increased blur on hover */
-      -webkit-backdrop-filter: blur(10px); /* For Safari */
-    }
-  </style>
-  <link
+  <!--link
     rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" /-->
 
   <body id="index-body">
-    <main class="fade-in-zoom">
-      <div id="app">
-        <!-- START OF TOPDOG -->
 
-        <div class="full-width-total-super-wrap-index">
-          <div class="topDog-wrap-index">
-            <div class="topLogo-wrap">
-              <a href="./index.html"><img
-                  src="./cleanOy/assets/u_ahoy23.png"
-                  class="topLogo-graphic" /></a>
-            </div>
-            <div class="navTippyWrap-index">
 
-              <a href="./ahoyApp/www/index.html"><button
-                  class="topNavButton-stream">
-                  preview Beta - v0.2.3e
-                </button></a>
-            </div>
-          </div>
-        </div>
-        <!-- END OF TOP DOG -->
+<div class="full-monte">
+<div class="splash-container">
+  <div class="logo-container">
+    <a href=.ahoyApp/www/index.html"><img src="./images/Ahoy-Indie-Media-DEFAULT-COVER-A-8.jpg" style="max-width: 320px;"></a>
+  </div>
+  <div class="splash-beta-menu-container">
+    <a href="./ahoyApp/www/index.html"><button>Enter Beta v.0.2.3.F</button></a>
+  </div>
 
-        <!-- END OF APP TABS -->
-      </div>
+  <p class="year-copy">&copy; MMXXIV</p>
+</footer>
+</div>
+</div>
+
+
+
 
       <!-- END OF APP -->
 
       <footer>
 
-        <p>&copy; MMXXIV</p>
-      </footer>
     </main>
 
     <!-- SCRIPTS AND CONDITIONAL LOGIC -->
@@ -108,10 +64,12 @@
     <script>
       const day = new Date();
       const hr = day.getHours();
-
+    
       if (window.innerWidth > 300) {
         document.body.style.backgroundColor = "#acaca3";
-
+        document.body.style.backgroundSize = "cover"; // Ensure the background covers the whole page
+        document.body.style.backgroundPosition = "center"; // Center the background image
+    
         if (hr === 5) {
           document.body.style.backgroundImage =
             "url('https://thumbs.gfycat.com/FrayedQuaintAnteater-max-1mb.gif')";
