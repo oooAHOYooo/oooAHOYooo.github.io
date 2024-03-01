@@ -274,6 +274,12 @@
 		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/My_Own_Grenade_-_Today_Is_In_My_Way.mp3",
 		"backgroundImageUrl": "https://ahoycollection.s3.us-east-2.amazonaws.com/my+own+grenade.jpeg",
 		"play": false
+	},
+	{
+		"id": 30,
+		"artist": "S.G. Carlson",
+		"songTitle": "How I Got Fat While Living Skinny",
+		"url": "https://ahoycollection.s3.us-east-2.amazonaws.com/S.G.+Carlson+-+How+I+Got+Fat+While+Living+Skinny.mp3"
 	}
 
 	
