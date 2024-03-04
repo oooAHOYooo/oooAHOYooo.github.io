@@ -1,44 +1,67 @@
 .song-progress-container {
     width: 100%;
-    /* Ensures the container spans the full width */
+    position: relative;
     padding: 10px 0;
-    /* Optional: Adds some vertical padding for visual spacing */
+    display: flex;
+    align-items: center;
 }
 
-progress#song-progress {
+#song-progress {
     width: 100%;
-    /* Makes the progress bar span the full width of its container */
-    height: 20px;
-    /* Adjusts the height of the progress bar */
+    cursor: pointer;
     -webkit-appearance: none;
-    /* Removes default styling for WebKit browsers */
     appearance: none;
-    /* Removes default styling */
+    height: 20px;
+    background: transparent;
+}
+
+#current-time {
+    position: absolute;
+    width: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+/* Adjust the thumb */
+#song-progress::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #007bff;
+    cursor: pointer;
+}
+
+#song-progress::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #007bff;
+    cursor: pointer;
+}
+
+/* Adjust the track */
+#song-progress::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 20px;
+    background: linear-gradient(90deg, rgba(0, 123, 255, 0.8), rgba(255, 255, 255, 0.8) 70%);
+    filter: blur(5px);
+}
+
+#song-progress::-moz-range-track {
+    width: 100%;
+    height: 20px;
+    background: linear-gradient(90deg, rgba(0, 123, 255, 0.8), rgba(255, 255, 255, 0.8) 70%);
+    filter: blur(5px);
+}
+
+.song-info {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
     color: #007bff;
-    /* Changes the progress bar color (example color) */
-}
-
-/* Styles for WebKit browsers */
-progress#song-progress::-webkit-progress-bar {
-    background-color: #eee;
-    /* Background of the progress bar */
-    border-style: solid;
-    border-color: black;
-    /* Optional: Rounds the corners */
-}
-
-progress#song-progress::-webkit-progress-value {
-    background-color: #007bff;
-    /* Color of the progress */
-    border-radius: 10px;
-    /* Optional: Rounds the corners */
-}
-
-/* Styles for Firefox */
-progress#song-progress::-moz-progress-bar {
-    background-color: #007bff;
-    /* Color of the progress */
-    border-style: solid;
-    border-color: black;
-    /* Optional: Rounds the corners */
+    font-size: 16px;
 }

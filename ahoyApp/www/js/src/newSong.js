@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                 <tbody>`;
             data.songs.forEach((song) => {
                 htmlContent += `<tr>
-                                    <td><button class="play-button" data-url="${song.mp3url}"><i class="fas fa-play"></i></button></td>
+                                    <td><button class="play-button" data-url="${song.mp3url}" data-artist="${song.artist}" data-title="${song.songTitle}"><i class="fas fa-play"></i></button></td>
                                     <td class="song-artist">${song.artist}</td>
                                     <td class="song-title">${song.songTitle}</td>
                                 </tr>`;
@@ -30,10 +30,18 @@ document.addEventListener("DOMContentLoaded", function () {
 function setupPlayButtons() {
     const audioPlayer = document.getElementById("audio-player");
     const playButtons = document.querySelectorAll(".play-button");
+    const songInfoDisplay = document.getElementById("song-info"); // Element to display song info
+
     playButtons.forEach((button) => {
         button.addEventListener("click", function (event) {
             event.stopPropagation(); // Prevent triggering row click
             const url = this.dataset.url;
+            const artist = this.dataset.artist;
+            const title = this.dataset.title;
+
+            // Update song info display
+            songInfoDisplay.textContent = `${artist} - ${title}`;
+
             if (audioPlayer.src !== url) {
                 audioPlayer.src = url;
             }
