@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <!-- APP AHOY -->
+<!-- PRAISE GOD -->
 <html>
   <head>
-    <!-- SUPA INSTALLATION -->
     <link rel="icon" type="image/png" href="./img/favicon_ahoy.png">
     <script
       src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@latest"></script>
@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="./css/user-account.css">
     <link rel="stylesheet" href="./css/section-songs.css">
     <link rel="stylesheet" href="./css/section-media.css">
+    <link rel="stylesheet" href="./css/songBar.css">
     <!-- END OF AG ADDITIONS TO HEAD -->
     <meta charset="utf-8">
     <meta name="viewport"
@@ -51,7 +52,7 @@
   </head>
 
   <body>
-    <audio id="audio-player" src></audio>
+
     <script>
       const supabaseUrl = "https://ornjxycoizoybvdhhowp.supabase.co";
       const supabaseKey =
@@ -132,7 +133,7 @@
 
       <div id="tabSortz">
         <!-- HOME TAB -->
-        <div id="home-tab" class="tab-content active">
+        <div id="home-tab" class="tab-content">
 
           <div id="home-logo-div">
             <a href="./index.html"><img src="./img/assets/u_ahoy23.png" />
@@ -231,7 +232,7 @@
           <!-- END OF MARKET -->
         </div><!-- END OF MARKET -->
         <!-- SONGS TAB -->
-        <div id="songs-tab" class="tab-content">
+        <div id="songs-tab" class="tab-content active">
           <p
             style="font-family: 'Courier New', Courier, monospace; background-color: #ff0060; color: black; padding: 10px; border: 1px dashed red;">⚠️
             Warning: This feature is in active development.</p>
@@ -369,8 +370,6 @@
           </table>
         </div>
         <!-- END OF ARTIST -->
-
-        <!-- NEEDS TO BE DYNAMIC AND HOOKED UP TO THE STRIPES -->
         <!-- Donation Tab-->
         <!-- DONATE TAB -->
         <div id="donate-tab" class="tab-content">
@@ -483,9 +482,6 @@
               href="mailto:alex@ahoy.ooo">alex@ahoy.ooo</a>.</p>
 
         </div>
-
-        <!-- SETTINGS TAB-->
-        <!-- SETTINGS TAB -->
         <!-- SETTINGS TAB -->
         <div id="settings-tab" class="tab-content">
           <h2>Settings</h2>
@@ -588,8 +584,6 @@
         </div>
 
         <!-- SHARE TAB -->
-
-        <!-- CASTING TAB -->
         <!-- CASTING TAB -->
         <div id="casting-tab" class="tab-content">
           <div class="casting-menu">
@@ -602,14 +596,6 @@
             </div>
           </div>
         </div>
-        <script>
-          function forceCast() {
-            // Simulate a force cast action
-            console.log("Attempting to cast to available devices...");
-            // Implement actual casting logic here using appropriate APIs
-          }
-        </script>
-
         <!-- UPDATES-->
         <!-- UPDATES-->
         <div id="updates-tab" class="tab-content">
@@ -748,11 +734,15 @@
         </div><!-- YES -->
         <!-- BOTTOM PLAYER -->
         <div class="player">
+          <audio id="audio-player" src></audio>
           <div id="progress-bar-container">
             <span id="current-time">0:00</span> /
             <span id="total-duration">0:00</span>
             <div id="progress-bar"></div>
             <div id="playhead"></div>
+          </div>
+          <div class="song-progress-container">
+            <progress id="song-progress" value="0" max="100"></progress>
           </div>
           <div class="player-info">
             <a href="#" id="artist-name" class="player-link">Artist Name</a>
@@ -797,7 +787,7 @@
       <script src="js/src/market-physical.js"></script>
       <script src="js/src/market-digital.js"></script>
       <!-- SONG JAVASCRIPT -->
-      <script src="js/src/song-loader.js"></script>
+      <!--script src="js/src/song-loader.js"></script-->
       <script src="js/src/search-songs.js"></script>
       <!-- PODCAST JAVASCRIPTS -->
       <script src="js/src/podcast.js"></script>
@@ -814,6 +804,8 @@
         src="js/src/function-fetch-and-populate-artistTable.js"></script>
       <!-- SHOW UPDATES -->
       <script src="js/src/show-logic.js"></script>
+      <script src="js/src/newSong.js"></script>
+      <script src="js/src/audioPlayerControls.js"></script>
       <!-- DONATION SCRIPTS -->
       <script src="js/src/donation.js"></script>
       <script src="js/src/donation-slider-a.js"></script>

@@ -2277,6 +2277,10 @@ button:hover {
   margin-top: 20px;
 }
 
+#artist-table a {
+  color: var(--text-color);
+}
+
 #artist-table thead {
   background-color: var(--secondary-color);
 }
@@ -2403,6 +2407,10 @@ button:hover {
   color: var(--text-color);
 }
 
+.artist a {
+  color: var(--border-color);
+}
+
 /* Adjusting song list for better readability */
 #song-list td {
   font-size: clamp(2ch, 4vw, 3ch);
@@ -2422,7 +2430,6 @@ button:hover {
   transition: all 0.3s ease;
 }
 
-/* Adjusting search bar for better usability */
 #search-bar {
   font-size: clamp(2ch, 4vw, 3ch);
   /* Adjusted for dynamic sizing */
@@ -2435,19 +2442,15 @@ button:hover {
   transition: all 0.3s ease;
 }
 
-/* Adjusting game info for better readability */
 .game-info h2,
 .game-info p,
 .game-info a {
   font-size: clamp(2ch, 4vw, 3ch);
-  /* Adjusted for dynamic sizing */
   margin: 5px 0;
 }
 
-/* Adjusting media item descriptions for better readability */
 .media-description {
   font-size: clamp(2ch, 4vw, 3ch);
-  /* Adjusted for dynamic sizing */
   padding: 10px;
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
@@ -2457,13 +2460,9 @@ button:hover {
 .newsletter-item {
   max-width: 60ch;
   margin: auto;
-  /* Center the div if you want */
   padding: 10px;
   text-align: left !important;
-  /* Optional: for some spacing */
 }
-
-
 
 #shows-table {
   width: 100%;
@@ -2482,8 +2481,6 @@ button:hover {
   border-bottom: 1px solid var(--border-color);
 }
 
-
-
 #shows-table th {
   color: var(--text-color);
 }
@@ -2496,4 +2493,29 @@ button:hover {
   position: fixed;
   width: 100%;
   height: 100vh;
+}
+
+.full-width-song-table {
+  width: 100%;
+  margin: 0 auto;
+  /* Center the table */
+  border-collapse: collapse;
+}
+
+.full-width-song-table th,
+.full-width-song-table td {
+  text-align: left;
+  padding: 10px;
+  border-bottom: 1px solid var(--border-color);
+
+}
+
+.full-width-song-table thead {
+  background-color: var(--secondary-color);
+  /* Background color for the table header */
+}
+
+.full-width-song-table tbody tr:hover {
+  background-color: #0000001a;
+  cursor: pointer;
 }

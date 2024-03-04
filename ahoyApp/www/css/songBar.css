@@ -1,0 +1,44 @@
+.song-progress-container {
+    width: 100%;
+    /* Ensures the container spans the full width */
+    padding: 10px 0;
+    /* Optional: Adds some vertical padding for visual spacing */
+}
+
+progress#song-progress {
+    width: 100%;
+    /* Makes the progress bar span the full width of its container */
+    height: 20px;
+    /* Adjusts the height of the progress bar */
+    -webkit-appearance: none;
+    /* Removes default styling for WebKit browsers */
+    appearance: none;
+    /* Removes default styling */
+    color: #007bff;
+    /* Changes the progress bar color (example color) */
+}
+
+/* Styles for WebKit browsers */
+progress#song-progress::-webkit-progress-bar {
+    background-color: #eee;
+    /* Background of the progress bar */
+    border-style: solid;
+    border-color: black;
+    /* Optional: Rounds the corners */
+}
+
+progress#song-progress::-webkit-progress-value {
+    background-color: #007bff;
+    /* Color of the progress */
+    border-radius: 10px;
+    /* Optional: Rounds the corners */
+}
+
+/* Styles for Firefox */
+progress#song-progress::-moz-progress-bar {
+    background-color: #007bff;
+    /* Color of the progress */
+    border-style: solid;
+    border-color: black;
+    /* Optional: Rounds the corners */
+}

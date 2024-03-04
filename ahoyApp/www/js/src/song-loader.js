@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .then((response) => response.json())
         .then((data) => {
             const songList = document.getElementById("song-list");
-            let htmlContent = `<table class="song-table full-width">
+            let htmlContent = `<table class="song-table full-width-song-table">
                                 <thead>
                                     <tr>
                                         <th>Play</th>
@@ -60,7 +60,8 @@ function setupPlayButtons() {
   const audioPlayer = document.getElementById("audio-player");
   const playButtons = document.querySelectorAll(".play-button");
   playButtons.forEach((button) => {
-      button.addEventListener("click", function () {
+      button.addEventListener("click", function (event) {
+          event.stopPropagation(); // Prevent triggering row click
           const url = this.dataset.url;
           if (audioPlayer.src !== url) {
               audioPlayer.src = url;
