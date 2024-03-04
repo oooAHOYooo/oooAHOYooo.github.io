@@ -55,10 +55,43 @@ window.addEventListener('DOMContentLoaded', (event) => {
                             </div>
                         `;
                     }
+                    if (newsletter.songLink && newsletter.songLink.playButton) {
+                        htmlContent += `
+                            <div style="text-align: center; margin-top: 20px;">
+                                <button onclick="playSong('${newsletter.songLink.mp3url}', '${newsletter.title}', 'S.G. Carlson')" class="play-button">Play</button>
+                            </div>
+                        `;
+                    }
                     htmlContent += `<p>${newsletter.content}</p>`;
                     div.innerHTML = htmlContent;
                     newsletterList.appendChild(div);
                 });
+
+                // Global audio player
+                let globalAudio = new Audio();
+
+                // Function to play the song and update the song display
+                window.playSong = (src, songTitle, artistName) => {
+                    if (globalAudio.src !== src) {
+                        globalAudio.src = src; // Change the song if a different one is clicked
+                    }
+                    if (globalAudio.paused) {
+                        globalAudio.play();
+                        updateSongDisplay(songTitle, artistName, true);
+                    } else {
+                        globalAudio.pause();
+                        updateSongDisplay(songTitle, artistName, false);
+                    }
+                };
+
+                // Function to update the song display and play/pause icon
+                function updateSongDisplay(songTitle, artistName, isPlaying) {
+                    const songInfoDiv = document.getElementById('song-info');
+                // Function to play the song
+                window.playSong = (src) => {
+                    const audio = new Audio(src);
+                    audio.play();
+                };
             }
         });
 });
