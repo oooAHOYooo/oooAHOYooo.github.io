@@ -31,6 +31,10 @@ function setupPlayButtons() {
     const audioPlayer = document.getElementById("audio-player");
     const playButtons = document.querySelectorAll(".play-button");
     const songInfoDisplay = document.getElementById("song-info"); // Element to display song info
+    const songDisplay = document.querySelector(".song-display"); // Get the song display container
+
+    // Initially hide the song display
+    songDisplay.style.display = 'none';
 
     playButtons.forEach((button) => {
         button.addEventListener("click", function (event) {
@@ -42,6 +46,9 @@ function setupPlayButtons() {
             // Update song info display
             songInfoDisplay.textContent = `${artist} - ${title}`;
 
+            // Show the song display when a song is selected
+            songDisplay.style.display = 'flex'; // Make sure to use 'flex' to keep the flexbox layout
+
             if (audioPlayer.src !== url) {
                 audioPlayer.src = url;
             }
@@ -51,8 +58,15 @@ function setupPlayButtons() {
             } else {
                 audioPlayer.pause();
                 updatePlayButtonIcon(this, "fas fa-play");
+                // Optionally hide the song display when no song is playing
+                // songDisplay.style.display = 'none';
             }
         });
+    });
+
+    // Optionally, listen to the audioPlayer's 'ended' event to hide the song display when the song finishes
+    audioPlayer.addEventListener('ended', function() {
+        songDisplay.style.display = 'none'; // Hide the song display when the song ends
     });
 }
 

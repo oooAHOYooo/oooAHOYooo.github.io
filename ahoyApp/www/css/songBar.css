@@ -81,16 +81,13 @@
 
 .song-display {
     display: flex;
-    /* Use flexbox */
     justify-content: center;
-    /* Center horizontally */
     align-items: center;
     position: relative;
     width: 100%;
     left: 0;
     transform: translateY(-50%);
     z-index: 100;
-
 }
 
 .song-info {
