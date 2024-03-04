@@ -58,5 +58,25 @@
 }
 
 border-bottom: 1px solid var(--border-color);
+
+
+/* Daily Shuffle Table Styles */
+.daily-shuffle-table {
+  font-weight: bold;
+  /* Make text bold */
+  font-size: 0.9em;
+  /* Slightly smaller font size for compactness */
 }
+
+.daily-shuffle-table th,
+.daily-shuffle-table td {
+  padding: 8px 10px;
+  /* Adjust padding for compactness */
 }
+
+.daily-shuffle-table .play-button {
+  font-size: 1.2em;
+  /* Larger play button */
+}
+
+/* You might want to add more styles here to fit the "Daily Shuffle" into your design theme */
