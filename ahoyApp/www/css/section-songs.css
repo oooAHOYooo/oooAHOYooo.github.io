@@ -77,15 +77,15 @@
   from {
     box-shadow:
       0 0 0 1px var(--border-color),
-      0 0 0 2px var(--border-color),
-      0 0 0 3px var(--border-color);
+      0 0 0 1.5px var(--border-color),
+      0 0 0 2px var(--border-color);
   }
 
   to {
     box-shadow:
       0 0 0 2px var(--border-color),
-      0 0 0 4px var(--border-color),
-      0 0 0 6px var(--border-color);
+      0 0 0 3px var(--border-color),
+      0 0 0 5px var(--border-color);
   }
 }
 
@@ -124,7 +124,7 @@
 /* Glow Effect on Play Button Hover */
 .daily-shuffle-table .play-button:hover {
   animation: glow 1.5s infinite alternate;
-  color: #12c2e9;
+  color: var(--border-color);
   /* Bright color for the icon itself */
 }
 

@@ -46,25 +46,26 @@ document.addEventListener("DOMContentLoaded", function () {
                             <tbody>`;
         songs.forEach((song, index) => {
             htmlContent += `<tr>
-                                <td><button class="play-button" onclick="playSongAtIndex(${index})"><i class="fas fa-play"></i></button></td>
+                                <td><button class="play-button" data-index="${index}" data-url="${song.mp3url}" data-artist="${song.artist}" data-title="${song.songTitle}"><i class="fas fa-play"></i></button></td>
                                 <td class="song-artist">${song.artist}</td>
                                 <td class="song-title">${song.songTitle}</td>
                             </tr>`;
         });
         htmlContent += `</tbody></table>`;
         dailyShuffleList.innerHTML = htmlContent;
+
+        setupPlayButtons(); // Call this function after populating the list
     }
 
     function playSongAtIndex(index) {
         if (index < shuffledSongs.length) {
-            playSong(shuffledSongs[index]);
+            const song = shuffledSongs[index];
+            audioPlayer.src = song.mp3url;
+            audioPlayer.play();
             currentSongIndex = index;
+            // Update play button icon to pause for the current song
+            updatePlayButtonIcon(document.querySelector(`.play-button[data-index="${index}"]`), "fas fa-pause");
         }
-    }
-
-    function playSong(song) {
-        audioPlayer.src = song.mp3url;
-        audioPlayer.play();
     }
 
     fetch("./data/songCollection.json")
@@ -91,4 +92,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Expose playSongAtIndex globally to be accessible from the inline onclick handler
     window.playSongAtIndex = playSongAtIndex;
+    window.updatePlayButtonIcon = updatePlayButtonIcon; // Assuming this function is global
 });
