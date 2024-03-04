@@ -279,7 +279,9 @@
 		"id": 30,
 		"artist": "S.G. Carlson",
 		"songTitle": "How I Got Fat While Living Skinny",
-		"url": "https://ahoycollection.s3.us-east-2.amazonaws.com/S.G.+Carlson+-+How+I+Got+Fat+While+Living+Skinny.mp3"
+		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/S.G.+Carlson+-+How+I+Got+Fat+While+Living+Skinny.mp3",
+		"backgroundImageUrl": "https://ahoycollection.s3.us-east-2.amazonaws.com/SGCarlson-AhoyIndieMedia.png",
+		"play": false
 	}
 
 	
