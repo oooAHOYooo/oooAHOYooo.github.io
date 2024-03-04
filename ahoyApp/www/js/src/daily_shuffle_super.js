@@ -21,6 +21,17 @@
       shuffledSongs.forEach(song => {
         const listItem = document.createElement('li');
         listItem.textContent = `${song.artist} - ${song.songTitle}`;
+
+        // Create a play button for each song
+        const playButton = document.createElement('button');
+        playButton.textContent = 'Play';
+        playButton.className = 'play-daily-shuffle'; // Assign the video game-like button class
+        playButton.onclick = function() {
+          // Placeholder for play action
+          console.log(`Playing ${song.songTitle} by ${song.artist}`);
+        };
+
+        listItem.appendChild(playButton); // Append the play button to the list item
         listElement.appendChild(listItem);
       });
     } catch (error) {

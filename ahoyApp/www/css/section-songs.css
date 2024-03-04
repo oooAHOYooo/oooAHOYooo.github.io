@@ -57,7 +57,6 @@
   }
 }
 
-border-bottom: 1px solid var(--border-color);
 
 
 /* Daily Shuffle Table Styles */
@@ -65,6 +64,9 @@ border-bottom: 1px solid var(--border-color);
   font-weight: bold;
   /* Make text bold */
   font-size: 0.9em;
+  background: #000000;
+  margin-top: 10px;
+
   /* Slightly smaller font size for compactness */
 }
 
@@ -79,4 +81,68 @@ border-bottom: 1px solid var(--border-color);
   /* Larger play button */
 }
 
-/* You might want to add more styles here to fit the "Daily Shuffle" into your design theme */
+
+#daily-shuffle-super-mix ul {
+  list-style-type: none;
+  /* Remove default list styling */
+  padding: 0;
+}
+
+#daily-shuffle-super-mix li {
+  background: rgba(255, 255, 255, 0.5);
+  /* Slightly transparent white for each list item */
+  margin-bottom: 10px;
+  /* Space between songs */
+  padding: 10px;
+  border-radius: 5px;
+  /* Rounded corners for list items */
+}
+
+/* Glow Effect on Play Button Hover */
+.daily-shuffle-table .play-button:hover {
+  animation: glow 1.5s infinite alternate;
+  color: #12c2e9;
+  /* Bright color for the icon itself */
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
+
+/* Video Game-like Button for Playing Daily Shuffle */
+.daily-shuffle-table .play-daily-shuffle {
+  background-color: #4CAF50;
+  /* Green background */
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  /* Rounded corners for the button */
+  box-shadow: 0 9px #999;
+  /* Adds depth to the button */
+  transition: all 0.3s;
+}
+
+.daily-shuffle-table .play-daily-shuffle:hover {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.daily-shuffle-table .play-daily-shuffle:active {
+  background-color: #3e8e41;
+  box-shadow: 0 2px #666;
+  transform: translateY(4px);
+}
