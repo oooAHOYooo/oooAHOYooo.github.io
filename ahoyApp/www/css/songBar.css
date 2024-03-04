@@ -79,17 +79,35 @@
     /* Apply the animation to Mozilla as well */
 }
 
-.song-info {
-    position: absolute;
+.song-display {
+    display: flex;
+    /* Use flexbox */
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    position: relative;
     width: 100%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: #007bff;
-    font-size: 16px;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: 100;
+
 }
 
-color: #007bff;
-font-size: 16px;
+.song-info {
+    background-color: rgba(255, 255, 255, 0.5);
+    /* Semi-transparent white background */
+    backdrop-filter: blur(10px);
+    /* Blur effect for the glass-like appearance */
+    border-radius: 10px;
+    /* Rounded corners */
+    padding: 10px;
+    /* Padding inside the box */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    /* Subtle border */
+    color: #007bff;
+    /* Text color */
+    font-size: 16px;
+    /* Text size */
 }
