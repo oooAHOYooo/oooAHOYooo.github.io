@@ -34,6 +34,15 @@ function togglePlayPausePodcast(url, thumbnail, title, description, index) {
     audioPlayer.pause();
     playPauseBtn.innerHTML = '<i class="fas fa-play"></i>'; // Change to play icon
   } else {
+    // If another podcast is playing, pause it and change its icon
+    const currentlyPlaying = document.querySelector('.fa-pause');
+    if (currentlyPlaying) {
+      const currentButton = currentlyPlaying.closest('button');
+      if (currentButton && currentButton !== playPauseBtn) {
+        currentButton.click(); // Simulate a click to toggle off the currently playing podcast
+      }
+    }
+
     // Play the selected podcast
     audioPlayer.src = url;
     audioPlayer.play();
@@ -47,13 +56,6 @@ function togglePlayPausePodcast(url, thumbnail, title, description, index) {
     songArtist.textContent = description; // Assuming you want to show the description as the artist
     songInfo.textContent = `${title} - ${description}`; // Update the bottom song display with title and description
   }
-
-  // Update play/pause icons for all podcasts
-  document.querySelectorAll('.control-button').forEach((button, btnIndex) => {
-    if (btnIndex !== index) {
-      button.innerHTML = '<i class="fas fa-play"></i>'; // Reset other buttons to play icon
-    }
-  });
 }
 
 document.addEventListener("DOMContentLoaded", function () {
