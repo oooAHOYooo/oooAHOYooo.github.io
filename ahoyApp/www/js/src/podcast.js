@@ -8,7 +8,7 @@ function loadPodcasts() {
       data.podcasts.forEach((podcast, index) => {
         const row = document.createElement("tr");
         row.innerHTML = `
-          <td><button class="control-button" onclick="playPodcast('${podcast.mp3url}', '${podcast.thumbnail}', '${podcast.title}', '${podcast.description}')"><i class="fas fa-play"></i></button></td>
+          <td><button class="control-button" id="podcast-play-${index}" onclick="togglePlayPausePodcast('${podcast.mp3url}', '${podcast.thumbnail}', '${podcast.title}', '${podcast.description}', ${index})"><i class="fas fa-play"></i></button></td>
           <td><img src="${podcast.thumbnail}" alt="${podcast.title}" class="thumbnail"></td>
           <td>${podcast.title}</td>
           <td>${podcast.description}</td>
@@ -19,23 +19,41 @@ function loadPodcasts() {
     .catch(error => console.error("Error loading podcasts:", error));
 }
 
-// Function to play the selected podcast and update the UI accordingly
-function playPodcast(url, thumbnail, title, description) {
+// Function to toggle play/pause for the selected podcast and update the UI accordingly
+function togglePlayPausePodcast(url, thumbnail, title, description, index) {
   const audioPlayer = document.getElementById("audio-player");
+  const playPauseBtn = document.getElementById(`podcast-play-${index}`);
   const featuredImageContainer = document.getElementById("podcast-featured-image-container");
   const songTitle = document.getElementById("current-song-title");
   const songArtist = document.getElementById("current-song-artist");
+  const songInfo = document.getElementById("song-info");
 
-  // Update the audio source and play
-  audioPlayer.src = url;
-  audioPlayer.play();
+  // Check if the selected podcast is already playing
+  if (audioPlayer.src === url && !audioPlayer.paused) {
+    // Pause the podcast
+    audioPlayer.pause();
+    playPauseBtn.innerHTML = '<i class="fas fa-play"></i>'; // Change to play icon
+  } else {
+    // Play the selected podcast
+    audioPlayer.src = url;
+    audioPlayer.play();
+    playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>'; // Change to pause icon
 
-  // Update the featured image
-  featuredImageContainer.innerHTML = `<img src="${thumbnail}" alt="${title}" class="the-featured-podcast-image">`;
+    // Update the featured image
+    featuredImageContainer.innerHTML = `<img src="${thumbnail}" alt="${title}" class="the-featured-podcast-image">`;
 
-  // Update song title and artist (description in this case)
-  songTitle.textContent = title;
-  songArtist.textContent = description; // Assuming you want to show the description as the artist
+    // Update song title, artist (description in this case), and additional info
+    songTitle.textContent = title;
+    songArtist.textContent = description; // Assuming you want to show the description as the artist
+    songInfo.textContent = `${title} - ${description}`; // Update the bottom song display with title and description
+  }
+
+  // Update play/pause icons for all podcasts
+  document.querySelectorAll('.control-button').forEach((button, btnIndex) => {
+    if (btnIndex !== index) {
+      button.innerHTML = '<i class="fas fa-play"></i>'; // Reset other buttons to play icon
+    }
+  });
 }
 
 document.addEventListener("DOMContentLoaded", function () {
