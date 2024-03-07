@@ -28,21 +28,23 @@ function togglePlayPausePodcast(url, thumbnail, title, description, index) {
   const songArtist = document.getElementById("current-song-artist");
   const songInfo = document.getElementById("song-info");
 
+  // If another podcast is playing or paused, reset its icon to play
+  if (audioPlayer.src && audioPlayer.src !== url) {
+    const allButtons = document.querySelectorAll('.control-button i');
+    allButtons.forEach(icon => {
+      if (icon.classList.contains('fa-pause')) {
+        icon.classList.remove('fa-pause');
+        icon.classList.add('fa-play');
+      }
+    });
+  }
+
   // Check if the selected podcast is already playing
   if (audioPlayer.src === url && !audioPlayer.paused) {
     // Pause the podcast
     audioPlayer.pause();
     playPauseBtn.innerHTML = '<i class="fas fa-play"></i>'; // Change to play icon
   } else {
-    // If another podcast is playing, pause it and change its icon
-    const currentlyPlaying = document.querySelector('.fa-pause');
-    if (currentlyPlaying) {
-      const currentButton = currentlyPlaying.closest('button');
-      if (currentButton && currentButton !== playPauseBtn) {
-        currentButton.click(); // Simulate a click to toggle off the currently playing podcast
-      }
-    }
-
     // Play the selected podcast
     audioPlayer.src = url;
     audioPlayer.play();
