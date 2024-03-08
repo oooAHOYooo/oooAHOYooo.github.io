@@ -30,6 +30,16 @@
             "mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/S.G.+Carlson+-+How+I+Got+Fat+While+Living+Skinny.mp3",
             "backgroundImageUrl": "https://ahoycollection.s3.us-east-2.amazonaws.com/SGCarlson-AhoyIndieMedia.png"
         }
+    },
+    {
+          
+        "date": "2024-03-08",
+        "title": "The Rob Show - Ep 19 - Paul Wildy",
+        "imageUrl": "https://ahoypodcast.s3.us-east-2.amazonaws.com/The+Rob+Show+-+Ep19+-+Paul+Wildy.jpg",
+        "content": "Dive into the latest episode of The Rob Show featuring Paul Wildy. Get ready for an engaging conversation filled with insights and entertainment. Listen now!",
+        "mp3Url": "https://ahoypodcast.s3.us-east-2.amazonaws.com/ready+The+Rob+Show+-+Ep+19+-+Paul+Wildly.mp3",
+        "backgroundImageUrl": "https://ahoycollection.s3.us-east-2.amazonaws.com/SGCarlson-AhoyIndieMedia.png"
+    
     }
 
 

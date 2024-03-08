@@ -1,6 +1,13 @@
 {
   "podcasts": [
     {
+      "id": 8,
+      "title": "The Rob Show #19 | Paul Wildy",
+      "description": "Paul Wildy, a 20+ year cab driver in New Haven, shares his experiences from working on the Carter campaign to witnessing the city's evolution over decades.",
+      "mp3url": "https://ahoypodcast.s3.us-east-2.amazonaws.com/ready+The+Rob+Show+-+Ep+19+-+Paul+Wildly.mp3",
+      "thumbnail": "https://ahoypodcast.s3.us-east-2.amazonaws.com/The+Rob+Show+-+Ep19+-+Paul+Wildy.jpg"
+    },
+    {
       "id": 7,
       "title": "The Rob Show #18 | My Own Grenade",
       "description": "My own grenade has been around since the 90s. What started as a highschool friendship has led to a lifetime of music.",
