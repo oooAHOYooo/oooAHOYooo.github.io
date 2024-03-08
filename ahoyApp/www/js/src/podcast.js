@@ -5,10 +5,10 @@ function loadPodcasts() {
     .then(data => {
       const tableBody = document.getElementById("podcast-table").querySelector("tbody");
 
-      data.podcasts.forEach((podcast, index) => {
+      data.podcasts.forEach((podcast) => {
         const row = document.createElement("tr");
         row.innerHTML = `
-          <td><button class="control-button" id="podcast-play-${index}" onclick="togglePlayPausePodcast('${podcast.mp3url}', '${podcast.thumbnail}', '${podcast.title}', '${podcast.description}', ${index})"><i class="fas fa-play"></i></button></td>
+          <td><button class="control-button" id="podcast-play-${podcast.id}" onclick="togglePlayPausePodcast('${podcast.mp3url}', '${podcast.thumbnail}', '${podcast.title}', '${podcast.description}', ${podcast.id})"><i class="fas fa-play"></i></button></td>
           <td><img src="${podcast.thumbnail}" alt="${podcast.title}" class="thumbnail"></td>
           <td>${podcast.title}</td>
           <td>${podcast.description}</td>
@@ -19,10 +19,10 @@ function loadPodcasts() {
     .catch(error => console.error("Error loading podcasts:", error));
 }
 
-// Function to toggle play/pause for the selected podcast and update the UI accordingly
-function togglePlayPausePodcast(url, thumbnail, title, description, index) {
+// Adjust the togglePlayPausePodcast function to use podcast.id instead of index
+function togglePlayPausePodcast(url, thumbnail, title, description, id) {
   const audioPlayer = document.getElementById("audio-player");
-  const playPauseBtn = document.getElementById(`podcast-play-${index}`);
+  const playPauseBtn = document.getElementById(`podcast-play-${id}`);
   const featuredImageContainer = document.getElementById("podcast-featured-image-container");
   const songTitle = document.getElementById("current-song-title");
   const songArtist = document.getElementById("current-song-artist");
