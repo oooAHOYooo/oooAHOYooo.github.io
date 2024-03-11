@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                     <td><button class="play-button" data-url="${song.mp3url}" data-artist="${song.artist}" data-title="${song.songTitle}"><i class="fas fa-play"></i></button></td>
                                     <td class="song-artist">${song.artist}</td>
                                     <td class="song-title">${song.songTitle}</td>
-                                    <td><button class="burn-button" data-song-id="${song.id}">Burn</button></td> <!-- Added Burn button -->
+                                    <td><button class="burn-button" data-song-id="${song.id}"><i class="fas fa-fire"></i></button></td> <!-- Added Burn button -->
                                 </tr>`;
             });
             htmlContent += `</tbody></table>`;
