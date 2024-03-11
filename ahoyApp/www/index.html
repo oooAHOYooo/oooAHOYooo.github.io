@@ -134,12 +134,12 @@
         <button onclick="navigateToTab('playlist-tab')"><i
             class="fas fa-th-list"></i><span
             class="right-button-label">Playlist</span></button>
-        <button onclick="navigateToTab('review-tab')"><i
-            class="fas fa-star"></i><span
-            class="right-button-label">Reviews</span></button>
         <button onclick="navigateToTab('share-tab')"><i
             class="fas fa-share-alt"></i><span
             class="right-button-label">Share</span></button>
+        <button onclick="navigateToTab('burn-tab')"><i
+            class="fas fa-compact-disc"></i><span class="right-button-label">CD
+            Burn</span></button>
 
       </div>
 
@@ -754,6 +754,14 @@
           <br />
 
         </div>
+        <!-- BURN TAB -->
+        <div id="burn-tab" class="tab-content">
+          <h2>Burn CD</h2>
+          <p>Create a physical CD from your playlist for $10. Up to 15
+            songs.</p>
+          <button id="burn-cd-button">Burn CD</button>
+          <div id="burn-status"></div>
+        </div>
 
         <!-- END OF TABS ? CHECK -->
       </div><!-- YES -->
@@ -870,6 +878,8 @@
     <script src="js/src/function_pull_LatestSong.js"></script>
     <script src="js/src/function_today_date.js"></script>
     <script src="js/src/load-recently-added-song.js"></script>
+    <!-- BURN CD Script-->
+    <script src="js/src/burnCd.js"></script>
     <script>
         // Function to play or pause the song
         function togglePlayPause() {
