@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                         <th>Play</th>
                                         <th>Artist</th>
                                         <th>Song</th>
+                                        <th>Burn</th> <!-- Added Burn column -->
                                     </tr>
                                 </thead>
                                 <tbody>`;
@@ -17,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                     <td><button class="play-button" data-url="${song.mp3url}" data-artist="${song.artist}" data-title="${song.songTitle}"><i class="fas fa-play"></i></button></td>
                                     <td class="song-artist">${song.artist}</td>
                                     <td class="song-title">${song.songTitle}</td>
+                                    <td><button class="burn-button" data-song-id="${song.id}">Burn</button></td> <!-- Added Burn button -->
                                 </tr>`;
             });
             htmlContent += `</tbody></table>`;
@@ -24,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             setupPlayButtons();
             setupProgressBar();
+            setupBurnButtons(data); // Setup burn buttons
         });
 });
 
@@ -35,8 +38,7 @@ function setupPlayButtons() {
     const songInfoDisplay = document.getElementById("song-info");
     const songDisplay = document.querySelector(".song-display");
 
-    // Initially hide the song display
-    songDisplay.style.display = 'none';
+    songDisplay.style.display = 'none'; // Initially hide the song display
 
     playButtons.forEach((button) => {
         button.addEventListener("click", function () {
@@ -44,7 +46,6 @@ function setupPlayButtons() {
             const artist = this.dataset.artist;
             const title = this.dataset.title;
 
-            // Check if another song is playing, if so, stop it and reset its icon
             if (currentPlayingButton && currentPlayingButton !== this) {
                 updatePlayButtonIcon(currentPlayingButton, "fas fa-play");
             }
@@ -56,20 +57,20 @@ function setupPlayButtons() {
                 audioPlayer.src = url;
                 audioPlayer.play();
                 updatePlayButtonIcon(this, "fas fa-pause");
-                currentPlayingButton = this; // Update the currently playing button
+                currentPlayingButton = this;
             } else {
                 audioPlayer.pause();
                 updatePlayButtonIcon(this, "fas fa-play");
-                currentPlayingButton = null; // Reset the currently playing button
+                currentPlayingButton = null;
             }
         });
     });
 
     audioPlayer.addEventListener('ended', function() {
-        songDisplay.style.display = 'none'; // Hide the song display when the song ends
+        songDisplay.style.display = 'none';
         if (currentPlayingButton) {
-            updatePlayButtonIcon(currentPlayingButton, "fas fa-play"); // Reset the play button icon
-            currentPlayingButton = null; // Reset the currently playing button
+            updatePlayButtonIcon(currentPlayingButton, "fas fa-play");
+            currentPlayingButton = null;
         }
     });
 }
@@ -89,4 +90,21 @@ function setupProgressBar() {
 
 function updatePlayButtonIcon(button, iconClass) {
     button.querySelector("i").className = iconClass;
+}
+
+function setupBurnButtons(data) {
+    document.querySelectorAll('.burn-button').forEach(button => {
+        button.addEventListener('click', function() {
+            const songId = this.getAttribute('data-song-id');
+            const song = data.songs.find(s => s.id == songId);
+            addToBurnList(song);
+        });
+    });
+}
+
+function addToBurnList(song) {
+    const burnList = document.getElementById('burn-list');
+    const item = document.createElement('div');
+    item.textContent = `${song.artist} - ${song.songTitle}`;
+    burnList.appendChild(item);
 }
