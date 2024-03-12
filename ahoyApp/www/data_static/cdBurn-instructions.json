@@ -1,0 +1,11 @@
+{
+  "instructions": [
+    "Select the songs you want to include in your CD. You can choose up to 15 songs or up to 70 minutes total.",
+    "Rearrange your playlist by dragging the songs into your preferred order.",
+    "Give your CD a unique name.",
+    "Review your playlist. You can remove songs or add more as long as you stay within the limit.",
+    "Submit your CD burn request. Rob Meglio will personally curate your playlist, write a personalized note, and design the CD cover with a sharpie.",
+    "Your CD will be mailed to your house within 2-4 weeks. You will be contacted for payment and shipping details shortly."
+  ],
+  "confirmation": "Are you ready to submit your CD burn request?"
+}
