@@ -1,9 +1,53 @@
-.tv-wrap {
-  position: sticky;
-  top: clamp(10px, 2vw, 100px);
-  /* Adjust these values as needed */
-  z-index: 3;
+/* General Table Styles */
+#media-tab-a .table {
   width: 100%;
-  height: auto;
-  overflow: hidden;
+  margin: 0 auto;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+#media-tab-a .table thead {
+  background-color: var(--secondary-color);
+}
+
+#media-tab-a .table th,
+#media-tab-a .table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+
+  #media-tab-a .table td,
+  #media-tab-a .table th {
+    padding: 4px;
+    font-size: smaller;
+  }
+}
+
+
+#media-tab-a #mediaTable td {
+  color: var(--text-color);
+  font-size: clamp(2ch, 1vw, 3ch);
+}
+
+#media-tab-a .media-info {
+  text-align: center;
+}
+
+#media-tab-a .media-info h2,
+#media-tab-a .media-info h3 {
+  margin: 0;
+}
+
+#media-tab-a .media-controls {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 20px;
+}
+
+overflow: hidden;
 }

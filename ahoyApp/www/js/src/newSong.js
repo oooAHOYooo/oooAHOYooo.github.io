@@ -91,20 +91,3 @@ function setupProgressBar() {
 function updatePlayButtonIcon(button, iconClass) {
     button.querySelector("i").className = iconClass;
 }
-
-function setupBurnButtons(data) {
-    document.querySelectorAll('.burn-button').forEach(button => {
-        button.addEventListener('click', function() {
-            const songId = this.getAttribute('data-song-id');
-            const song = data.songs.find(s => s.id == songId);
-            addToBurnList(song);
-        });
-    });
-}
-
-function addToBurnList(song) {
-    const burnList = document.getElementById('burn-list');
-    const item = document.createElement('div');
-    item.textContent = `${song.artist} - ${song.songTitle}`;
-    burnList.appendChild(item);
-}
