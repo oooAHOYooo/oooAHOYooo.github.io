@@ -154,37 +154,8 @@
           <!-- DATE DISPLAY -->
           <!-- DATE DISPLAY -->
           <div class="date-display">
-            <h1 id="calendar-date"></h1>
-            <script>
-            // Function to format time in 00:00 AM/PM format
-            function formatTime(date) {
-              let hours = date.getHours();
-              let minutes = date.getMinutes();
-              let ampm = hours >= 12 ? 'PM' : 'AM';
-              hours = hours % 12;
-              hours = hours ? hours : 12; // the hour '0' should be '12'
-              minutes = minutes < 10 ? '0' + minutes : minutes;
-              let strTime = hours + ':' + minutes + ' ' + ampm;
-              return strTime;
-            }
-
-            // Function to display today's time in EST (GMT-5) for Connecticut
-            function displayESTTime() {
-              // Create a date object for the current time in UTC
-              let now = new Date();
-              // Convert it to EST time (GMT-5)
-              let estTime = new Date(now.getTime() - (5 * 60 * 60 * 1000));
-              // Format the time
-              let formattedTime = formatTime(estTime);
-              // Display the time
-              document.getElementById('calendar-date').innerHTML = 'Current Time (EST): ' + formattedTime;
-            }
-
-            // Call the function to display the time
-            displayESTTime();
-            // Set interval to update the time every minute
-            setInterval(displayESTTime, 60000);
-          </script>
+            <h1 id="calendar-time"></h1> <!-- New element for time -->
+            <h2 id="calendar-date"></h2>
           </div>
           <br />
           <br />
@@ -670,7 +641,7 @@
           <!-- div id="newsletter-list"></div -->
         </div>
 
-        <h3>Present Beta State = 0.2.3G
+        <h3>Present Beta State = 0.2.3H
 
           <h4>Present Focus</h4>
           <p>Redesigning the entire layout - stay tuned - really going for
@@ -910,6 +881,8 @@
     <script src="js/src/load-recently-added-song.js"></script>
     <!-- BURN CD Script-->
     <script src="js/src/burnCd.js"></script>
+    <!--Display Time-->
+    <script src="js/src/function_DisplayTime.js"></script>
     <script>
         // Function to play or pause the song
         function togglePlayPause() {
@@ -940,6 +913,11 @@
 
     <!-- Written by Alex Gonzalez - of Sleepy Hollow, NY - out and around the Havens, CT. this has seen hand coded - a thousand million times over - since the start of the roaring 20s.  -->
     <!-- Please print this code for historical purposes --><!-- As of 3.7.24 -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+          displayESTDateTime(); // Call the function to display the date and time
+      });
+  </script>
   </body>
 
 </html>

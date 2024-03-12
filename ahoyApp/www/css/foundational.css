@@ -2437,3 +2437,28 @@ button:hover {
 #burn-cd-button:hover {
   background-color: var(--gold);
 }
+
+.date-display {
+  text-align: center;
+  color: var(--text-color);
+}
+
+#calendar-time {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  color: var(--text-color);
+  font-weight: 300;
+  margin: 0;
+  transform: scale(1.0);
+  /* Stretch to 100% scale */
+}
+
+#calendar-date {
+  font-size: 1.5em;
+  margin: 0;
+  color: var(--border-color);
+  font-weight: 400;
+  transform: scale(1.0);
+  /* Stretch to 100% scale */
+}
