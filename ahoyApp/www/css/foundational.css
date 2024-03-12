@@ -2450,7 +2450,7 @@ button:hover {
   color: var(--text-color);
   font-weight: 300;
   margin: 0;
-  transform: scale(1.0);
+  transform: scale(1.01);
   /* Stretch to 100% scale */
 }
 
