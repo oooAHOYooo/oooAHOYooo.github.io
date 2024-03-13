@@ -9,16 +9,16 @@ document.addEventListener("DOMContentLoaded", function () {
                                         <th>Play</th>
                                         <th>Artist</th>
                                         <th>Song</th>
-                                        <th>Burn</th> <!-- Added Burn column -->
+                                        <th>Burn</th>
                                     </tr>
                                 </thead>
                                 <tbody>`;
             data.songs.forEach((song) => {
                 htmlContent += `<tr>
-                                    <td><button class="play-button" data-url="${song.mp3url}" data-artist="${song.artist}" data-title="${song.songTitle}"><i class="fas fa-play"></i></button></td>
+                                    <td><button class="play-button" data-url="${song.mp3url}" data-artist="${song.artist}" data-title="${song.songTitle}" data-album-art="${song.albumArt}"><i class="fas fa-play"></i></button></td>
                                     <td class="song-artist">${song.artist}</td>
                                     <td class="song-title">${song.songTitle}</td>
-                                    <td><button class="burn-button" data-song-id="${song.id}"><i class="fas fa-fire"></i></button></td> <!-- Added Burn button -->
+                                    <td><button class="burn-button" data-song-id="${song.id}"><i class="fas fa-fire"></i></button></td>
                                 </tr>`;
             });
             htmlContent += `</tbody></table>`;
@@ -26,7 +26,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
             setupPlayButtons();
             setupProgressBar();
-            setupBurnButtons(data); // Setup burn buttons
+            // Assuming setupBurnButtons function exists and is relevant
+            // setupBurnButtons(data);
         });
 });
 
@@ -35,23 +36,24 @@ let currentPlayingButton = null; // Keep track of the currently playing button
 function setupPlayButtons() {
     const audioPlayer = document.getElementById("audio-player");
     const playButtons = document.querySelectorAll(".play-button");
-    const songInfoDisplay = document.getElementById("song-info");
-    const songDisplay = document.querySelector(".song-display");
-
-    songDisplay.style.display = 'none'; // Initially hide the song display
+    const nowPlayingAlbumArt = document.getElementById("now-playing-album-art");
+    const nowPlayingSongTitle = document.getElementById("now-playing-song-title");
+    const nowPlayingSongArtist = document.getElementById("now-playing-song-artist");
 
     playButtons.forEach((button) => {
         button.addEventListener("click", function () {
             const url = this.dataset.url;
             const artist = this.dataset.artist;
             const title = this.dataset.title;
+            const albumArt = this.dataset.albumArt;
 
             if (currentPlayingButton && currentPlayingButton !== this) {
                 updatePlayButtonIcon(currentPlayingButton, "fas fa-play");
             }
 
-            songInfoDisplay.textContent = `${artist} - ${title}`;
-            songDisplay.style.display = 'flex'; // Show the song display
+            nowPlayingAlbumArt.src = albumArt;
+            nowPlayingSongTitle.textContent = title;
+            nowPlayingSongArtist.textContent = artist;
 
             if (audioPlayer.src !== url || audioPlayer.paused) {
                 audioPlayer.src = url;
@@ -67,7 +69,6 @@ function setupPlayButtons() {
     });
 
     audioPlayer.addEventListener('ended', function() {
-        songDisplay.style.display = 'none';
         if (currentPlayingButton) {
             updatePlayButtonIcon(currentPlayingButton, "fas fa-play");
             currentPlayingButton = null;

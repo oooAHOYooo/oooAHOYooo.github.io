@@ -259,10 +259,18 @@
           <!-- END OF MARKET -->
         </div>
         <!-- SONGS TAB -->
-        <div id="songs-tab" class="tab-content">
+        <div id="songs-tab" class="tab-content active">
           <p
             style="font-family: 'Courier New', Courier, monospace; background-color: #ff0060; color: black; padding: 10px; border: 1px dashed red;">⚠️
             Warning: This feature is in active development.</p>
+          <!-- Inside the "Songs" tab, before the <div id="daily-shuffle-super-mix"> -->
+          <div id="now-playing-song-container" class="now-playing-song">
+            <img id="now-playing-album-art" src alt="Album Art">
+            <div id="now-playing-song-details">
+              <h3 id="now-playing-song-title">Song Title</h3>
+              <p id="now-playing-song-artist">Artist Name</p>
+            </div>
+          </div>
           <div id="daily-shuffle-super-mix"></div>
           <div id="daily-shuffle">
             <div class="daily-shuffle-headline">
@@ -293,27 +301,8 @@
           <div id="song-wrap-list">
             <ul class="list" id="song-list"></ul>
           </div>
-          <!-- Song Control Panel -->
-          <!--div id="song-col-wrap">
-          </div>
-            <div id="song-col-1">
-              <div id="songs-control-panel">
-                <input type="text" id="search-bar"
-                  placeholder="Search songs..." />
-                <div class="sort-buttons">
-           
-                  <button id="sort-recent">Recently Added</button>
-                </div>
-              </div>
-   
-            </div>
-            <div id="song-col-2">
-              <div id="song-Featured-Art"></div>
-            </div>
-          </div>
         </div>
-      -->
-        </div>
+        <!-- END OF SONGS TAB -->
         <!-- TAB -->
         <!-- Experience VIZ -->
         <div id="experience-tab" class="tab-content">
@@ -321,7 +310,7 @@
 
         </div>
         <!-- MEDIA TAB -->
-        <div id="media-tab-a" class="tab-content active">
+        <div id="media-tab-a" class="tab-content">
           <p
             style="font-family: 'Courier New', Courier, monospace; background-color: #ff0060; color: black; padding: 10px; border: 1px dashed red;">⚠️
             Warning: This feature is in active development.</p>
