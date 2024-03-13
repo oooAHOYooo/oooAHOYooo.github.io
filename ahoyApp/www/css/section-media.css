@@ -1,17 +1,17 @@
 /* General Table Styles */
-#media-tab-a .table {
+#media-tab-a .ahoy-table {
   width: 100%;
   margin: 0 auto;
   border-collapse: collapse;
   margin-top: 20px;
 }
 
-#media-tab-a .table thead {
+#media-tab-a .ahoy-table thead {
   background-color: var(--secondary-color);
 }
 
-#media-tab-a .table th,
-#media-tab-a .table td {
+#media-tab-a .ahoy-table th,
+#media-tab-a .ahoy-table td {
   padding: 10px;
   text-align: left;
   border-bottom: 1px solid var(--border-color);
@@ -20,34 +20,142 @@
 /* Responsive adjustments */
 @media screen and (max-width: 768px) {
 
-  #media-tab-a .table td,
-  #media-tab-a .table th {
+  #media-tab-a .ahoy-table td,
+  #media-tab-a .ahoy-table th {
     padding: 4px;
     font-size: smaller;
   }
 }
 
-
-#media-tab-a #mediaTable td {
+#media-tab-a #ahoy-mediaTable td {
   color: var(--text-color);
   font-size: clamp(2ch, 1vw, 3ch);
 }
 
-#media-tab-a .media-info {
+#media-tab-a .ahoy-media-info {
   text-align: center;
 }
 
-#media-tab-a .media-info h2,
-#media-tab-a .media-info h3 {
+#media-tab-a .ahoy-media-info h2,
+#media-tab-a .ahoy-media-info h3 {
   margin: 0;
 }
 
-#media-tab-a .media-controls {
+#media-tab-a .ahoy-media-controls {
   display: flex;
   justify-content: space-around;
   width: 100%;
   margin-top: 20px;
 }
 
-overflow: hidden;
+/*MEDIA SECTION*/
+#ahoy-mediaTable th,
+#ahoy-mediaTable td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+  font-size: clamp(10px, 5%, 20px);
+}
+
+/* Add this media query for iPhone 8 (375px x 667px) */
+@media screen and (max-width: 375px) {
+
+  #ahoy-mediaTable th,
+  #ahoy-mediaTable td {
+    padding: 2.5px;
+  }
+}
+
+#ahoy-media-display-text {
+  background-color: var(--background-color);
+}
+
+/* Desktop styles */
+#ahoy-media-artist-name p {
+  font-weight: 900 !important;
+  font-size: 64px !important;
+  margin: 0;
+  line-height: 85%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#ahoy-media-title-name p {
+  font-weight: 300 !important;
+  font-size: 32px !important;
+  line-height: 1.2;
+  letter-spacing: -0.05em;
+  font-family: 'Courier New', Courier, monospace;
+  margin: 0;
+  text-transform: uppercase;
+  text-align: left !important;
+}
+
+@media screen and (max-width: 600px) {
+  #ahoy-media-display-text {
+    background: var(--background-color);
+    padding: 10px;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  #ahoy-media-title-name p {
+    font-weight: 300 !important;
+    font-size: 18px !important;
+    line-height: 1.2;
+    letter-spacing: -0.05em;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    text-transform: uppercase;
+    text-align: center !important;
+  }
+}
+
+#ahoy-media-artist-name p {
+  font-weight: 900;
+  font-size: 24px;
+  margin: 0;
+  text-align: center;
+}
+
+#ahoy-media-title-name p {
+  font-size: 16px;
+  margin: 0;
+  text-align: center;
+}
+
+#ahoy-mediaTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+#ahoy-mediaTable thead {
+  background-color: var(--secondary-color);
+}
+
+#ahoy-mediaTable th,
+#ahoy-mediaTable td {
+  padding: 7.5px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+  font-size: clamp(10px, 5%, 20px);
+  overflow: hidden;
+}
+
+#ahoy-mediaTable tr:nth-child(even) {
+  background-color: var(--background-color);
+}
+
+#ahoy-mediaTable tr:nth-child(odd) {
+  background-color: var(--secondary-color);
+}
+
+#ahoy-mediaTable a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+#ahoy-mediaTable tr:hover {
+  color: var(--text-color);
+  background-color: var(--secondary-color);
 }
