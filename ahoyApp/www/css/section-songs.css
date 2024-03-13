@@ -169,3 +169,73 @@
   box-shadow: 0 2px #666;
   transform: translateY(4px);
 }
+
+
+.image-and-play-button {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  /* Maximum size */
+  min-width: 320px;
+  /* Minimum size */
+  padding-top: 100%;
+  /* This creates a square aspect ratio */
+  margin: auto;
+  /* Center the container */
+  overflow: hidden;
+  /* Ensures nothing spills out of the container */
+}
+
+#now-playing-album-art {
+  width: 100%;
+  height: 100%;
+  max-width: 500px;
+  max-height: 500px;
+  min-width: 320px;
+  min-height: 320px;
+  object-fit: cover;
+  /* This will cover the area of the container without distorting the aspect ratio */
+  display: block;
+  margin: 0 auto;
+  /* Center the image horizontally */
+  position: relative;
+
+}
+
+.play-pause {
+  position: relative;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2em;
+  /* Adjust the size of the icon as needed */
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Semi-transparent background */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 5px;
+
+}
+
+#now-playing-song-title,
+#now-playing-song-artist {
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  text-shadow: 1px 1px 2px #000;
+  margin: 10px 0;
+}
+
+#now-playing-song-title {
+  font-size: 1.4em;
+  margin: 0px;
+}
+
+#now-playing-song-artist {
+  font-size: 1.2em;
+  margin: 0px;
+}

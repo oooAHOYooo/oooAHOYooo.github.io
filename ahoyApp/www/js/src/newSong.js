@@ -26,8 +26,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
             setupPlayButtons();
             setupProgressBar();
-            // Assuming setupBurnButtons function exists and is relevant
-            // setupBurnButtons(data);
+
+            // Load a random song into the "now playing song container"
+            const randomSong = selectRandomSong(data.songs);
+            updateNowPlaying(randomSong);
         });
 });
 
@@ -91,4 +93,60 @@ function setupProgressBar() {
 
 function updatePlayButtonIcon(button, iconClass) {
     button.querySelector("i").className = iconClass;
+}
+function selectRandomSong(songs) {
+    const randomIndex = Math.floor(Math.random() * songs.length);
+    return songs[randomIndex];
+}
+
+function updateNowPlaying(song) {
+    const nowPlayingAlbumArt = document.getElementById("now-playing-album-art");
+    const nowPlayingSongTitle = document.getElementById("now-playing-song-title");
+    const nowPlayingSongArtist = document.getElementById("now-playing-song-artist");
+    const featuredPlayPauseButton = document.getElementById("featured-play-pause-button"); // Assuming this is the ID of your play/pause button for the featured song
+
+    nowPlayingAlbumArt.src = song.backgroundImageUrl;
+    nowPlayingSongTitle.textContent = song.songTitle;
+    nowPlayingSongArtist.textContent = song.artist;
+
+    // Set up the play/pause button for the featured song
+    featuredPlayPauseButton.dataset.url = song.mp3url; // Assuming the song object has an mp3url property
+    featuredPlayPauseButton.dataset.artist = song.artist;
+    featuredPlayPauseButton.dataset.title = song.songTitle;
+    featuredPlayPauseButton.dataset.albumArt = song.backgroundImageUrl; // Assuming the song object has a backgroundImageUrl property
+
+    // Ensure the button has the correct icon (play or pause) based on the audio player's state
+    const audioPlayer = document.getElementById("audio-player");
+    if (audioPlayer.src === song.mp3url && !audioPlayer.paused) {
+        updatePlayButtonIcon(featuredPlayPauseButton, "fas fa-pause");
+    } else {
+        updatePlayButtonIcon(featuredPlayPauseButton, "fas fa-play");
+    }
+
+    // Add click event listener to toggle play/pause
+    featuredPlayPauseButton.onclick = function() {
+        const url = this.dataset.url;
+        const artist = this.dataset.artist;
+        const title = this.dataset.title;
+        const albumArt = this.dataset.albumArt;
+
+        if (currentPlayingButton && currentPlayingButton !== this) {
+            updatePlayButtonIcon(currentPlayingButton, "fas fa-play");
+        }
+
+        nowPlayingAlbumArt.src = albumArt;
+        nowPlayingSongTitle.textContent = title;
+        nowPlayingSongArtist.textContent = artist;
+
+        if (audioPlayer.src !== url || audioPlayer.paused) {
+            audioPlayer.src = url;
+            audioPlayer.play();
+            updatePlayButtonIcon(this, "fas fa-pause");
+            currentPlayingButton = this;
+        } else {
+            audioPlayer.pause();
+            updatePlayButtonIcon(this, "fas fa-play");
+            currentPlayingButton = null;
+        }
+    };
 }

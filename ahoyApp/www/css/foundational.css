@@ -2333,3 +2333,12 @@ button:hover {
   transform: scale(1.0);
   /* Stretch to 100% scale */
 }
+
+.divider-bar {
+  height: 10px;
+  /* Increased height for a more pronounced effect */
+  background: var(--background-color);
+  /* Soft shadow for depth */
+  border-radius: 2px;
+  /* Slightly rounded edges for a modern look */
+}

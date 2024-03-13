@@ -265,12 +265,18 @@
             Warning: This feature is in active development.</p>
           <!-- Inside the "Songs" tab, before the <div id="daily-shuffle-super-mix"> -->
           <div id="now-playing-song-container" class="now-playing-song">
+     
             <img id="now-playing-album-art" src alt="Album Art">
+            <button id="recently-added-homepage-song" class="control-button" onclick="togglePlayPause()">
+              <i class="fas fa-play"></i>
+          </button>
+              </div>
+
             <div id="now-playing-song-details">
               <h3 id="now-playing-song-title">Song Title</h3>
               <p id="now-playing-song-artist">Artist Name</p>
             </div>
-          </div>
+            <div class="divider-bar"></div>
           <div id="daily-shuffle-super-mix"></div>
           <div id="daily-shuffle">
             <div class="daily-shuffle-headline">
@@ -302,6 +308,7 @@
             <ul class="list" id="song-list"></ul>
           </div>
         </div>
+      </div>
         <!-- END OF SONGS TAB -->
         <!-- TAB -->
         <!-- Experience VIZ -->
