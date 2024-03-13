@@ -72,21 +72,6 @@ document.addEventListener("DOMContentLoaded", function () {
         durationCell.textContent = formatDuration(item.duration);
         row.appendChild(durationCell);
 
-        const saveButtonCell = document.createElement("td");
-        const saveButton = document.createElement("button");
-        saveButton.textContent = "Save";
-        saveButtonCell.appendChild(saveButton);
-        row.appendChild(saveButtonCell);
-
-        const shareButtonCell = document.createElement("td");
-        const shareButton = document.createElement("button");
-        shareButton.textContent = "Share";
-        shareButton.onclick = function () {
-          copyToClipboardAndShowPopup(item.mp4_link, item.display_title, item.artist);
-        };
-        shareButtonCell.appendChild(shareButton);
-        row.appendChild(shareButtonCell);
-
         tableBody.appendChild(row);
       });
     })
