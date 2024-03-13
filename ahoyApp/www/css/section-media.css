@@ -22,6 +22,7 @@
   text-align: center;
 }
 
+
 #mediaTable img {
   border-radius: 5px;
   width: auto;
@@ -68,4 +69,42 @@
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#media-display-text {
+  background-color: #000;
+  /* Black background for retro feel */
+  color: #fff;
+  /* White text color */
+  padding: 20px;
+  text-align: center;
+  border-radius: 0 0 20px 20px;
+  /* Rounded bottom corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+  /* Shadow for depth */
+  margin-top: -5px;
+  /* Adjust as needed to fit under your video player */
+  font-family: 'Courier New', Courier, monospace;
+  /* Retro font */
+}
+
+/* Styling for the artist name and title */
+#media-artist-name p,
+#media-title-name p {
+  margin: 10px 0;
+  /* Spacing between artist name and title */
+  font-size: 1.2em;
+  text-align: left;
+  /* Adjust font size as needed */
+}
+
+/* Additional retro effect for the text */
+#media-artist-name p,
+#media-title-name p {
+  text-shadow: 1px 1px 2px #000;
+  /* Text shadow for depth */
+}
+
+#media-artist-name p {
+  font-size: .8em;
 }
