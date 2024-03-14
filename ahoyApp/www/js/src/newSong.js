@@ -57,6 +57,10 @@ function setupPlayButtons() {
             nowPlayingSongTitle.textContent = title;
             nowPlayingSongArtist.textContent = artist;
 
+            // Update the bottom display with the current song's artist and title
+            const songInfoDisplay = document.getElementById("song-info");
+            songInfoDisplay.textContent = `${artist} - ${title}`;
+
             if (audioPlayer.src !== url || audioPlayer.paused) {
                 audioPlayer.src = url;
                 audioPlayer.play();
@@ -140,6 +144,10 @@ function updateNowPlaying(song) {
         nowPlayingAlbumArt.src = albumArt;
         nowPlayingSongTitle.textContent = title;
         nowPlayingSongArtist.textContent = artist;
+
+        // Update the bottom display with the current song's artist and title
+        const songInfoDisplay = document.getElementById("song-info");
+        songInfoDisplay.textContent = `${artist} - ${title}`;
 
         if (audioPlayer.src !== url || audioPlayer.paused) {
             audioPlayer.src = url;
