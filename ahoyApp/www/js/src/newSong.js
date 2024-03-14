@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                 <tbody>`;
             data.songs.forEach((song) => {
                 htmlContent += `<tr>
-                                    <td><button class="play-button" data-url="${song.mp3url}" data-artist="${song.artist}" data-title="${song.songTitle}" data-album-art="${song.albumArt}"><i class="fas fa-play"></i></button></td>
+                                    <td><button class="play-button" data-url="${song.mp3url}" data-artist="${song.artist}" data-title="${song.songTitle}" data-album-art="${song.coverArt || 'https://via.placeholder.com/500'}"><i class="fas fa-play"></i></button></td>
                                     <td class="song-artist">${song.artist}</td>
                                     <td class="song-title">${song.songTitle}</td>
                                     <td><button class="burn-button" data-song-id="${song.id}"><i class="fas fa-fire"></i></button></td>
@@ -47,7 +47,7 @@ function setupPlayButtons() {
             const url = this.dataset.url;
             const artist = this.dataset.artist;
             const title = this.dataset.title;
-            const albumArt = this.dataset.albumArt;
+            const albumArt = this.dataset.albumArt || 'https://via.placeholder.com/500';
 
             if (currentPlayingButton && currentPlayingButton !== this) {
                 updatePlayButtonIcon(currentPlayingButton, "fas fa-play");
@@ -103,17 +103,20 @@ function updateNowPlaying(song) {
     const nowPlayingAlbumArt = document.getElementById("now-playing-album-art");
     const nowPlayingSongTitle = document.getElementById("now-playing-song-title");
     const nowPlayingSongArtist = document.getElementById("now-playing-song-artist");
-    const featuredPlayPauseButton = document.getElementById("featured-play-pause-button"); // Assuming this is the ID of your play/pause button for the featured song
+    const featuredPlayPauseButton = document.getElementById("featured-play-pause-button");
 
-    nowPlayingAlbumArt.src = song.backgroundImageUrl;
+    // Use coverArt if available, otherwise use a default placeholder image
+    const albumArtSrc = song.coverArt || 'https://via.placeholder.com/500';
+
+    nowPlayingAlbumArt.src = albumArtSrc;
     nowPlayingSongTitle.textContent = song.songTitle;
     nowPlayingSongArtist.textContent = song.artist;
 
     // Set up the play/pause button for the featured song
-    featuredPlayPauseButton.dataset.url = song.mp3url; // Assuming the song object has an mp3url property
+    featuredPlayPauseButton.dataset.url = song.mp3url;
     featuredPlayPauseButton.dataset.artist = song.artist;
     featuredPlayPauseButton.dataset.title = song.songTitle;
-    featuredPlayPauseButton.dataset.albumArt = song.backgroundImageUrl; // Assuming the song object has a backgroundImageUrl property
+    featuredPlayPauseButton.dataset.albumArt = albumArtSrc;
 
     // Ensure the button has the correct icon (play or pause) based on the audio player's state
     const audioPlayer = document.getElementById("audio-player");
