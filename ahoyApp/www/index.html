@@ -774,25 +774,46 @@
         <!-- END OF TABS ? CHECK -->
       </div><!-- YES -->
       <!-- BOTTOM PLAYER -->
-      <div class="player">
+      <div class="player" style="position: fixed; bottom: 0; width: 100%; z-index: 1000; background: rgba(0, 0, 0, 0.7); color: white;">
         <audio id="audio-player" src></audio>
-        <!--
-          <div id="progress-bar-container">
-            <span id="current-time">0:00</span> /
-            <span id="total-duration">0:00</span>
-            <div id="progress-bar"></div>
-            <div id="playhead"></div>
-          </div> -->
         <div class="audio-player-controls">
           <div class="song-display">
             <div id="song-info">Artist - Song Title</div>
           </div>
           <div class="song-progress-container">
-            <input type="range" id="song-progress" value="0" min="0" max="100"
-              step="1">
+            <input type="range" id="song-progress" value="0" min="0" max="100" step="1">
           </div>
           <div id="current-time">0:00</div>
+          <!-- Play/Pause Button -->
+          <button id="play-pause-button" onclick="togglePlayPause()" class="control-button">
+            <i class="fas fa-play" id="play-pause-icon"></i>
+          </button>
         </div>
+      </div></div>
+<!-- TEMPSCRIPT - TRYING TO MAKE A UNIVERSAL BUTTON-->
+        <script>
+          // Function to toggle play/pause for the audio player
+          function togglePlayPause() {
+            var audio = document.getElementById('audio-player');
+            var playPauseIcon = document.getElementById('play-pause-icon');
+            if (audio.paused) {
+              audio.play();
+              playPauseIcon.className = 'fas fa-pause'; // Change to pause icon
+            } else {
+              audio.pause();
+              playPauseIcon.className = 'fas fa-play'; // Change to play icon
+            }
+          }
+
+          // Event listener to update the play/pause icon based on the audio state
+          document.getElementById('audio-player').addEventListener('play', function() {
+            document.getElementById('play-pause-icon').className = 'fas fa-pause';
+          });
+
+          document.getElementById('audio-player').addEventListener('pause', function() {
+            document.getElementById('play-pause-icon').className = 'fas fa-play';
+          });
+        </script>
 
       </div>
       <div>
