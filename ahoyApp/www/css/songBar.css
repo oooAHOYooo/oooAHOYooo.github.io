@@ -87,7 +87,10 @@
     left: 0;
     transform: translateY(-50%);
     z-index: 100;
-    border-style: solid;
+    height: 30px;
+    padding: 0;
+    margin: 0 !important;
+
 }
 
 .song-info {
@@ -106,7 +109,7 @@
     bottom: 73.5px;
     width: 100%;
     z-index: 51000;
-    background: rgb(133, 133, 133);
+    background: linear-gradient(90deg, #98ff9835, rgba(0, 119, 97, 0.805), #3eb489, #98ff9828, #3eb489, #ffd5009f);
     color: white;
     height: 102px;
 
@@ -118,7 +121,3 @@
 
 /*BG OPTIONS
  background: rgba(61, 61, 61, 0.7);
-
- */
-
-.audio-controls
