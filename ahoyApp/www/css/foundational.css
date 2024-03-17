@@ -164,7 +164,7 @@ button:hover {
   margin-top: 10px;
   overflow: hidden;
   position: relative;
-  z-index: 0;
+  z-index: 10;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   margin-top: 10px !important;
@@ -180,8 +180,9 @@ button:hover {
 
 .tab-content.active {
   display: block;
-  margin-left: 52.5px;
-  margin-right: 52.5px;
+
+
+
   /* Adjusted margin to avoid interference with left-dashboard */
 
 }
