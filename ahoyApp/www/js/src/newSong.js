@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     fetch("./data/songCollection.json")
         .then((response) => response.json())
         .then((data) => {
+            songsArray = data.songs; // Store the fetched songs in the global array
             const songList = document.getElementById("song-list");
             let htmlContent = `<table class="song-table full-width-song-table">
                                 <thead>
@@ -13,9 +14,9 @@ document.addEventListener("DOMContentLoaded", function () {
                                     </tr>
                                 </thead>
                                 <tbody>`;
-            data.songs.forEach((song) => {
+            songsArray.forEach((song, index) => {
                 htmlContent += `<tr>
-                                    <td><button class="play-button" data-url="${song.mp3url}" data-artist="${song.artist}" data-title="${song.songTitle}" data-album-art="${song.coverArt || 'https://via.placeholder.com/500'}"><i class="fas fa-play"></i></button></td>
+                                    <td><button class="play-button" data-url="${song.mp3url}" data-artist="${song.artist}" data-title="${song.songTitle}" data-album-art="${song.coverArt || 'https://via.placeholder.com/500'}" data-index="${index}"><i class="fas fa-play"></i></button></td>
                                     <td class="song-artist">${song.artist}</td>
                                     <td class="song-title">${song.songTitle}</td>
                                     <td><button class="burn-button" data-song-id="${song.id}"><i class="fas fa-fire"></i></button></td>
@@ -28,10 +29,25 @@ document.addEventListener("DOMContentLoaded", function () {
             setupProgressBar();
 
             // Load a random song into the "now playing song container"
-            const randomSong = selectRandomSong(data.songs);
+            const randomSong = selectRandomSong(songsArray);
             updateNowPlaying(randomSong);
         });
 });
+
+// Global variable to keep track of the current song index
+let currentSongIndex = 0;
+let songsArray = []; // This will hold the fetched songs array
+
+// Function to play the next song
+function playNextSong() {
+    currentSongIndex = (currentSongIndex + 1) % songsArray.length; // Increment the index or loop back to the start
+    const nextSong = songsArray[currentSongIndex];
+    updateNowPlaying(nextSong); // Update the UI with the next song details
+    const audioPlayer = document.getElementById("audio-player");
+    audioPlayer.src = nextSong.mp3url; // Set the source of the next song
+    audioPlayer.play(); // Play the song
+    updatePlayButtonIcon(document.getElementById("featured-play-pause-button"), "fas fa-pause"); // Update the play/pause button to show the pause icon
+}
 
 let currentPlayingButton = null; // Keep track of the currently playing button
 
