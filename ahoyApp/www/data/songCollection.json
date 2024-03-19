@@ -282,6 +282,30 @@
 		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/S.G.+Carlson+-+How+I+Got+Fat+While+Living+Skinny.mp3",
 		"coverArt": "https://ahoycollection.s3.us-east-2.amazonaws.com/SGCarlson-AhoyIndieMedia.png",
 		"play": false
+	},
+	{
+		"id": 31,
+		"artist": "Justin Arena",
+		"songTitle": "Framework",
+		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Justin+Arena+-+Framework.mp3",
+		"coverArt": "https://f4.bcbits.com/img/a3851680380_16.jpg",
+		"play": false
+	},
+	{
+		"id": 32,
+		"artist": "Justin Arena",
+		"songTitle": "Fruit In The Shower",
+		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Justin+Arena+-+Fruit+in+The+Shower.mp3",
+		"coverArt": "https://f4.bcbits.com/img/a3851680380_16.jpg",
+		"play": false
+	},
+	{
+		"id": 33,
+		"artist": "Justin Arena",
+		"songTitle": "No 1",
+		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Justin+Arena+-+No+1.mp3",
+		"coverArt": "https://f4.bcbits.com/img/a2804283483_16.jpg",
+		"play": false
 	}
 
 	
