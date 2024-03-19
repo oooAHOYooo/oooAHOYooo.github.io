@@ -90,7 +90,8 @@
     height: 30px;
     padding: 0;
     margin: 0 !important;
-
+    background: var(--background-color);
+    color: var(--text-color);
 }
 
 .song-info {
@@ -109,7 +110,7 @@
     bottom: 73.5px;
     width: 100%;
     z-index: 5100;
-    background: var(--background-color);
+    background: #acacac97;
     color: white;
     height: 102px;
 
