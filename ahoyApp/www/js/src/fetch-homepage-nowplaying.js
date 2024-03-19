@@ -45,28 +45,33 @@ function populateNowPlaying() {
 
 // Implement navigateToTag function if not already done
 function navigateToTag(tag) {
-    // Assuming there are predefined tags that correspond to specific tabs in the UI
-    switch(tag) {
-      case 'pop':
-        window.location.href = '#pop';
-        break;
-      case 'rock':
-        window.location.href = '#rock';
-        break;
-      case 'jazz':
-        window.location.href = '#jazz';
-        break;
-      case 'classical':
-        window.location.href = '#classical';
-        break;
-      // Add more cases as needed for other music genres or tags
-      default:
-        console.log('Unknown tag:', tag);
-        // Optionally, navigate to a default tab
-        window.location.href = '#default';
-        break;
-    }
-  }
+    // Map tags to tab IDs
+    const tagToTabId = {
+        'pop': '#songs-tab', // Assuming 'pop' songs go under the general 'songs-tab'
+        'rock': '#songs-tab', // Assuming 'rock' songs also go under 'songs-tab'
+        'jazz': '#songs-tab', // Assuming 'jazz' songs also go under 'songs-tab'
+        'classical': '#songs-tab', // Assuming 'classical' songs also go under 'songs-tab'
+        'new song': '#songs-tab', // Direct 'new song' tag to 'songs-tab'
+        'podcast': '#podcasts-tab' // Direct 'podcast' tag to 'podcasts-tab'
+        // Add more mappings as necessary
+    };
+
+    // Default tab if the tag is not found
+    const defaultTab = '#home-tab';
+
+    // Find the tab ID based on the tag or fallback to default
+    const tabId = tagToTabId[tag] || defaultTab;
+
+    // Navigate to the tab
+    navigateToTab(tabId.substring(1)); // Remove '#' for navigateToTab function
+}
+
+// Assuming navigateToTab function exists and works like this:
+function navigateToTab(tabName) {
+    // Logic to navigate to the specified tab by tabName
+    // This is just a placeholder. Implement the actual logic based on your app's structure.
+    console.log(`Navigating to tab: ${tabName}`);
+}
 
 // Call the function to populate now playing when the page loads
 document.addEventListener('DOMContentLoaded', populateNowPlaying);
