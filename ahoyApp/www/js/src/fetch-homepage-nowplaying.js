@@ -35,7 +35,7 @@ function populateNowPlaying() {
           playButton.innerHTML = '<i class="fas fa-play"></i>';
           // Fetch and set the correct MP3 URL for the play button
           getMp3Url(item).then(mp3Url => {
-            playButton.onclick = function() { loadAndPlaySong(mp3Url); };
+            playButton.onclick = function() { loadAndPlaySong(mp3Url, item); }; // Adjusted to pass the item object
           });
 
           songInfoDiv.appendChild(albumArtImg);
@@ -59,7 +59,24 @@ async function getMp3Url(item) {
   return foundItem ? foundItem.mp3url : null;
 }
 
-// Existing navigateToTag and loadAndPlaySong functions remain unchanged
+// Adjusted loadAndPlaySong function to accept item object and update the song display
+function loadAndPlaySong(songUrl, item) {
+  var audio = document.getElementById('audio-player'); // Ensure you have an audio element with this ID in your HTML
+  audio.src = songUrl;
+  audio.play();
+
+  // Update the song display with the item's information
+  // Assuming you have elements with these IDs to display the song info
+  document.getElementById('current-song-title').textContent = item.songTitle;
+  document.getElementById('current-song-artist').textContent = item.artist;
+  document.getElementById('recently-added-homepage-song').innerHTML = '<i class="fas fa-pause"></i>'; // Change to pause icon
+}
+
+// Implement navigateToTag function if not already done
+function navigateToTag(tag) {
+  // Logic to navigate to the correct tab based on the tag
+  // This might involve showing/hiding elements or changing the window location
+}
 
 // Call the function to populate now playing when the page loads
 document.addEventListener('DOMContentLoaded', populateNowPlaying);
