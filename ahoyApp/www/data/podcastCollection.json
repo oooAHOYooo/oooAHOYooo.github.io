@@ -1,6 +1,14 @@
 {
   "podcasts": [
     {
+      "id":9,
+      "title": "THe Rob Show #20 | Pat Clendenen",
+      "description": "Pat Clendenen is a New Haven native, who, after spending 25 years in Boston - is back in the havens. Pat is a local lawyer, power lifter, and soon to be skateboarder",
+      "mp3url": "https://ahoypodcast.s3.us-east-2.amazonaws.com/SUPERready+The+Rob+Show+-+Ep+20+-+Pat+Clendenen.mp3",
+      "thumbnail" : "https://ahoypodcast.s3.us-east-2.amazonaws.com/The+Rob+Show+-+Ep20+-+Pat+Clendenen.jpg"
+
+    },
+    {
       "id": 8,
       "title": "The Rob Show #19 | Paul Wildy",
       "description": "Paul Wildy, a 20 plus year cab driver in New Haven, shares his experiences from working on the Carter campaign to witnessing the citys evolution over the decades",
