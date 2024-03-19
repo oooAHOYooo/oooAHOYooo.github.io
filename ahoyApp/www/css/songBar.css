@@ -108,8 +108,8 @@
     position: fixed;
     bottom: 73.5px;
     width: 100%;
-    z-index: 51000;
-    background: linear-gradient(90deg, #1111111f, rgba(35, 35, 35, 0.805), #2d2d2d32, #2b2b2b28, #2c2c2c49, #2d2d2d6a);
+    z-index: 5100;
+    background: var(--background-color);
     color: white;
     height: 102px;
 
