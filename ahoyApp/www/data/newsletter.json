@@ -40,6 +40,14 @@
         "mp3Url": "https://ahoypodcast.s3.us-east-2.amazonaws.com/ready+The+Rob+Show+-+Ep+19+-+Paul+Wildly.mp3",
         "backgroundImageUrl": "https://ahoycollection.s3.us-east-2.amazonaws.com/SGCarlson-AhoyIndieMedia.png"
     
+    },
+    {
+          
+        "date": "2024-03-19",
+        "title": "The Rob Show - Ep 20 - Pat Clendenen",
+        "imageUrl": "https://ahoypodcast.s3.us-east-2.amazonaws.com/The+Rob+Show+-+Ep20+-+Pat+Clendenen.jpg",
+        "content": "Pat Clendenen, originally from New Haven, returns after 25 years in Boston. A local lawyer and power lifter, Pat is also venturing into skateboarding.",
+        "mp3Url": "https://ahoypodcast.s3.us-east-2.amazonaws.com/SUPERready+The+Rob+Show+-+Ep+20+-+Pat+Clendenen.mp3"
     }
 
 

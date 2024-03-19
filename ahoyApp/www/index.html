@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="./css/section-songs.css">
     <link rel="stylesheet" href="./css/section-podcast.css">
     <link rel="stylesheet" href="./css/section-media.css">
+    <link rel="stylesheet" href="./css/section-homepage-featured.css">
     <link rel="stylesheet" href="./css/songBar.css">
     <!-- END OF AG ADDITIONS TO HEAD -->
     <meta charset="utf-8">
@@ -176,36 +177,18 @@
                 Started</button></a>
           </div>
 
-          <!-- NOW PLAYING -->
-          <div class="now-playing">
-            <h1>Recently Added</h1>
-            <br>
-            <div class="song-info" id="newSC">
-              <img id="album-art"
-                src="https://ahoycollection.s3.us-east-2.amazonaws.com/SGCarlson-AhoyIndieMedia.png"
-                alt="Album Art">
-              <h2
-                id="current-song-title">"How I Got Fat While Living Skinny"</h2>
-              <h3 id="current-song-artist">S.G. Carlson</h3>
-              <button id="recently-added-homepage-song" class="control-button">
-                <i class="fas fa-play"></i>
-              </button>
+<!-- NOW PLAYING -->
+<div class="now-playing">
+  <h1>Recently Added</h1>
+  <br>
+  <div id="now-playing-container">
+    <!-- Dynamic content will be loaded here -->
+  </div>
+</div>
 
-            </div>
-            <div class="song-controls">
-            </div>
+</div>
 
-            <div class="song-info" id="rs19">
-              <img id="album-art"
-                src="https://ahoypodcast.s3.us-east-2.amazonaws.com/The+Rob+Show+-+Ep19+-+Paul+Wildy.jpg"
-                alt="Album Art">
-              <h2
-                id="current-song-title">"The Rob Show - Ep 19 - Paul Wildy"</h2>
-              <h3 id="current-song-artist">Paul Wildy</h3>
-            </div>
-
-          </div>
-        </div>
+      
         <!-- END OF NOW PLAYING -->
         <!-- MARKET TAB-->
         <div id="market-tab" class="tab-content">
@@ -534,18 +517,15 @@
       <!-- NEWS TAB-->
       <div id="news-tab" class="tab-content">
         <h1>News From Ahoy</h1>
-
         <div id="newsletter-list"></div>
         <div class="goals-container">
           <h2>Updates on Goals</h2>
           <div class="goal">
-
             <h3>Song Goal: 800</h3>
             <h4>Present Song Count: <span
                 id="current-song-count">30</span></h4>
           </div>
           <div class="goal">
-
             <h3>Artist Goal: 120</h3>
             <h4>Present Artist Count: <span
                 id="current-artist-count">9</span></h4>
@@ -854,6 +834,10 @@
     <!-- USER JAVASCRIPTS -->
     <script src="js/src/user-cart.js"></script>
     <script src="js/src/user-icon-input.js"></script>
+
+
+    <!-- HOMEPAGE JAVASCRIPT -->
+    <script src="js/src/fetch-homepage-nowplaying.js"></script>
     <!-- MARKET JAVASCRIPTS -->
     <script src="js/src/market-physical.js"></script>
     <script src="js/src/market-digital.js"></script>
@@ -944,7 +928,7 @@
       </script>
 
     <!-- Written by Alex Gonzalez - of Sleepy Hollow, NY - out and around the Havens, CT. this has seen hand coded - a thousand million times over - since the start of the roaring 20s.  -->
-    <!-- Please print this code for historical purposes --><!-- As of 3.7.24 -->
+    <!-- Please print this code for historical purposes --><!-- As of 3.19.24 -->
     <script>
       document.addEventListener('DOMContentLoaded', function() {
           displayESTDateTime(); // Call the function to display the date and time

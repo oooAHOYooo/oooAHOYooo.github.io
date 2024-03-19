@@ -1,0 +1,19 @@
+{
+    "nowPlaying": [
+      {
+        "id": "newSC",
+        "albumArt": "https://ahoycollection.s3.us-east-2.amazonaws.com/SGCarlson-AhoyIndieMedia.png",
+        "songTitle": "How I Got Fat While Living Skinny",
+        "artist": "S.G. Carlson",
+        "tag": "new song"
+      },
+   
+      {
+        "id": "9",
+        "albumArt": "https://ahoypodcast.s3.us-east-2.amazonaws.com/The+Rob+Show+-+Ep20+-+Pat+Clendenen.jpg",
+        "songTitle": "THe Rob Show #20 | Pat Clendenen",
+        "artist": "Pat Clendenen",
+        "tag": "podcast"
+      }
+    ]
+  }
