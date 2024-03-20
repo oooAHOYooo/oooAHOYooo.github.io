@@ -32,6 +32,7 @@
   border-collapse: collapse;
   min-width: 100%;
   margin-top: 20px;
+  margin-bottom: 180px;
 }
 
 #song-list thead {
