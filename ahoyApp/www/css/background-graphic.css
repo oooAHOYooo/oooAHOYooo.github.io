@@ -1,0 +1,18 @@
+/* Adding a background layer for future graphics or colors */
+.app-background-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: #f0f0f0;
+    background-image: url('https://64.media.tumblr.com/8b6af4181447c710007ed289fe259c71/tumblr_nvgf8yVTx71sp6lajo1_500.gifv');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Ensure the .app container is relative to position children absolutely within it */
+.app {
+    position: relative;
+}
