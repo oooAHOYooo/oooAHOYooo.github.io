@@ -32,11 +32,24 @@ function loadMessages() {
 
 // Example function to load a daily question (could be enhanced to fetch from a server or rotate questions)
 function loadDailyQuestion() {
-  const questions = [
-    "What's your favorite indie game and why?",
-    "How does indie media influence your daily life?",
-    "What indie artist deserves more recognition?"
-  ];
+    const questions = [
+        // Original questions
+        "What's one hobby you've always wanted to try but haven't yet?",
+        "How does indie media influence your daily life?",
+        "What indie artist deserves more recognition?",
+        
+        // Added icebreaker questions
+        "If you could only listen to one indie album for the rest of your life, what would it be?",
+        "What's an underrated movie or series that you think more people should know about?",
+        "Share a piece of indie media (book, music, movie) that changed your perspective.",
+        "What's the last indie film you saw and what did you think of it?",
+        "If you could collaborate with any indie artist, who would it be and why?",
+        "What indie game are you looking forward to the most and why?",
+        "Describe an indie project you're working on or dream of creating.",
+        "Who is your indie hero and how have they inspired you?",
+        "What's a hidden gem in the indie scene that you've recently discovered?",
+        "Tell us about an indie event or festival you attended and what made it memorable."
+      ];
   const dailyQuestion = document.getElementById('daily-question');
   // Simple rotation based on the day of the year
   const dayOfYear = new Date().getDay();
@@ -67,3 +80,4 @@ window.addEventListener('DOMContentLoaded', function() {
   loadDailyQuestion();
   loadMessages();
 });
+

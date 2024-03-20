@@ -19,3 +19,10 @@
 button {
     margin-top: 10px;
 }
+
+.timestamp {
+    display: block;
+    font-size: 0.8em;
+    color: #777;
+    margin-top: 5px;
+}
