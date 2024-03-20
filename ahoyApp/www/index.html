@@ -130,9 +130,8 @@
         <button onclick="navigateToTab('casting-tab')"><i
             class="fas fa-broadcast-tower"></i><span
             class="right-button-label">Casting</span></button>
-        <button onclick="navigateToTab('chat-tab')"><i
-            class="fas fa-comments"></i><span
-            class="right-button-label">Chat</span></button>
+            <button onclick="navigateToTab('message-board-tab')"><i class="fas fa-chalkboard"></i><span class="right-button-label">Message Board</span></button>
+
         <button onclick="navigateToTab('playlist-tab')"><i
             class="fas fa-th-list"></i><span
             class="right-button-label">Playlist</span></button>
@@ -177,7 +176,13 @@
                 class="get-started-button">Get
                 Started</button></a>
           </div>
-
+<!-- Inside the "home-tab" div, right after the "get-started-wrap" div and before the "now-playing" div -->
+<div class="home-tab-question">
+  <h2>Today's Question</h2>
+  <p id="home-daily-question">What's your favorite indie game and why?</p>
+  <textarea id="home-message-input" placeholder="Your answer..."></textarea>
+  <button onclick="postHomeMessage()">Post</button>
+</div>
 <!-- NOW PLAYING -->
 <div class="now-playing">
   <h1>Recently Added</h1>
@@ -187,7 +192,7 @@
   </div>
 </div>
 
-</div>
+        </div>
 
       
         <!-- END OF NOW PLAYING -->
@@ -588,6 +593,20 @@
       </div>
 
       <!-- SHARE TAB -->
+
+      <!-- MESSAGEBOARD -->
+      <!-- Add this new div inside the <div id="tabSortz"> to create the content area for the Message Board tab -->
+      <div id="message-board-tab" class="tab-content">
+        <h2>Today's Question</h2>
+        <p id="daily-question">What's your favorite indie game and why?</p>
+        <div id="message-board">
+          <!-- Messages will be dynamically inserted here -->
+        </div>
+        <textarea id="message-input" placeholder="Leave your note..."></textarea>
+        <button onclick="postMessage()">Post</button>
+      </div>
+
+
       <!-- CASTING TAB -->
       <div id="casting-tab" class="tab-content">
         <div class="casting-menu">
@@ -878,6 +897,8 @@
     <script src="js/src/playlist-logic.js"></script>
     <!-- CHAT LOGIC -->
     <script src="/js/src/chat-logic.js"></script>
+    <!-- MESSAGE BOARD LOGIC -->
+    <script src="js/src/message-board-logic.js"></script>
     <!-- GOAL CHART LOGIC -->
     <!--script src="/js/src/goal-chart.js"></script-->
     <!-- SUPPORT AHOY LOGIC -->

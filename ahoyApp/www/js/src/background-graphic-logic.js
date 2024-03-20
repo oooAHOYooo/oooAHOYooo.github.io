@@ -11,16 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'https://i.pinimg.com/originals/fc/38/97/fc389789c5fbe80b36df05e8ee441c66.gif',
         'https://c.tenor.com/lWbWfolwJfIAAAAC/ocean-night.gif',
         // Newly added images
-        'https://media4.giphy.com/media/26BRuo6sLetdllPAQ/giphy.gif',
-        'https://media2.giphy.com/media/3o7TKRwpns23QMNNiE/giphy.gif',
-        'https://media3.giphy.com/media/l3vRfNA1p0rvhMSvS/giphy.gif',
-        'https://media0.giphy.com/media/xT9IgG50Fb7Mi0prBC/giphy.gif',
-        'https://media1.giphy.com/media/2xPPojqe3mraUXS6dk/giphy.gif',
-        'https://media2.giphy.com/media/26n6WywJyh39n1pBu/giphy.gif',
-        'https://media3.giphy.com/media/3o7aCTPPm4OHfRLSH6/giphy.gif',
-        'https://media4.giphy.com/media/l1J9u3TZfpmeDLkD6/giphy.gif',
-        'https://media0.giphy.com/media/l378BzHA5FwWFXVSg/giphy.gif',
-        'https://media1.giphy.com/media/xUA7aQOxkz00lvCAOY/giphy.gif'
+       
     ];
     let currentImageIndex = 0;
 
