@@ -16,11 +16,12 @@
     <link rel="stylesheet" href="./css/foundational.css">
     <link rel="stylesheet" href="./css/mobileOS-addons.css">
     <link rel="stylesheet" href="./css/user-account.css">
+    <link rel="stylesheet" href="./css/section-homepage-featured.css">
     <link rel="stylesheet" href="./css/section-songs.css">
     <link rel="stylesheet" href="./css/section-podcast.css">
     <link rel="stylesheet" href="./css/section-media.css">
     <link rel="stylesheet" href="./css/background-graphic.css">
-    <link rel="stylesheet" href="./css/section-homepage-featured.css">
+    <link rel="stylesheet" href="./css/section-home.css">
     <link rel="stylesheet" href="./css/songBar.css">
     <!-- END OF AG ADDITIONS TO HEAD -->
     <meta charset="utf-8">
@@ -176,12 +177,15 @@
                 class="get-started-button">Get
                 Started</button></a>
           </div>
-<!-- Inside the "home-tab" div, right after the "get-started-wrap" div and before the "now-playing" div -->
+<!-- Inside the "home-tab" div, in the "home-tab-question" section -->
 <div class="home-tab-question">
   <h2>Today's Question</h2>
   <p id="home-daily-question">What's your favorite indie game and why?</p>
   <textarea id="home-message-input" placeholder="Your answer..."></textarea>
-  <button onclick="postHomeMessage()">Post</button>
+  <div class="question-buttons">
+    <button onclick="postHomeMessage()">Post</button>
+    <button onclick="navigateToTab('message-board-tab')">View Answers</button>
+  </div>
 </div>
 <!-- NOW PLAYING -->
 <div class="now-playing">

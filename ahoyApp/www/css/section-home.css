@@ -1,0 +1,26 @@
+.home-tab-question {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.home-tab-question textarea {
+    width: 80%;
+    margin: 10px 0;
+}
+
+.question-buttons {
+    display: flex;
+    /* This will place all child elements (the buttons) in a row */
+    justify-content: center;
+    /* Center the buttons container */
+    gap: 10px;
+    /* Add some space between the buttons */
+}
+
+.home-tab-question button {
+    padding: 10px 20px;
+}
