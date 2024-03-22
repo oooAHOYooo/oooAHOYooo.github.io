@@ -306,9 +306,55 @@
 		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Justin+Arena+-+No+1.mp3",
 		"coverArt": "https://f4.bcbits.com/img/a2804283483_16.jpg",
 		"play": false
+	},
+	{
+		"id": 34,
+		"artist": "Riddle M",
+		"songTitle": "Daisies",
+		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Riddle+M+-+Daisies.mp3",
+		"backgroundImageUrl": "https://f4.bcbits.com/img/a1273412504_16.jpg",
+		"play": false
+	},
+	{
+		"id": 35,
+		"artist": "Riddle M",
+		"songTitle": "Garden Girl",
+		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Riddle+M+-+Garden+Girl.mp3",
+		"backgroundImageUrl": "https://f4.bcbits.com/img/a1303332007_16.jpg",
+		"play": false
+	},
+	{
+		"id": 36,
+		"artist": "Riddle M",
+		"songTitle": "Magic Man",
+		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Riddle+M+-+Magic+Man.mp3",
+		"backgroundImageUrl": "https://f4.bcbits.com/img/a1303332007_16.jpg",
+		"play": false
+	},
+	{
+		"id": 37,
+		"artist": "Riddle M",
+		"songTitle": "Melted Side",
+		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Riddle+M+-+Melted+Side.mp3",
+		"backgroundImageUrl": "https://f4.bcbits.com/img/a2037135100_16.jpg",
+		"play": false
+	},
+	{
+		"id": 38,
+		"artist": "Riddle M",
+		"songTitle": "Snout",
+		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Riddle+M+-+Snout.mp3",
+		"backgroundImageUrl": "https://f4.bcbits.com/img/a3669668101_16.jpg",
+		"play": false
+	},
+	{
+		"id": 39,
+		"artist": "Riddle M",
+		"songTitle": "Mustard Seed",
+		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Riddle+M+-+Mustard+Seed.mp3",
+		"backgroundImageUrl": "https://f4.bcbits.com/img/a2186804885_16.jpg",
+		"play": false
 	}
-
-	
 	]
   }
   
