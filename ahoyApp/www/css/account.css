@@ -9,10 +9,11 @@ body {
     align-items: center;
     justify-content: center;
     height: 90vh;
+    color: white !important;
 }
 
 .text-outline {
-    color: black;
+    color: rgb(255, 255, 255);
     text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 }
 
@@ -51,7 +52,7 @@ body img {
 }
 
 #notification {
-    color: red;
+    color: #ff0060;
     margin-top: 10px;
 }
 

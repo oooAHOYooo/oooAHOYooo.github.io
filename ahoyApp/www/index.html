@@ -707,8 +707,8 @@
           <hr>
           <div id="commits-list"></div>
         </div>
-        <!-- ACCOUNT -->
-        <div id="account-tab" class="tab-content">
+    <!-- ACCOUNT -->
+    <div id="account-tab" class="tab-content">
           <p
             style="font-family: 'Courier New', Courier, monospace; background-color: #ff0060; color: black; padding: 10px; border: 1px dashed red;">⚠️
             Warning: This feature is in active development.But give it a shot anyway</p>
@@ -737,7 +737,19 @@
                 onclick="document.getElementById('user-icon-input').click()">UPLOAD
                 FACE PHOTO</button>
               <h1 class="greeting">HOWDY HOWDY MR.</h1>
-              <h1 class="user-name">"YOUR ACTUAL REAL LIFE NAME"</h1>
+              <script>
+                // Assuming Firebase is correctly initialized earlier in your code
+                firebase.auth().onAuthStateChanged(function(user) {
+                  if (user) {
+                    // User is signed in, display the user's name or email
+                    var name = user.displayName || user.email; // Use displayName if available, otherwise email
+                    document.querySelector('.user-name').textContent = name; // Update the content
+                  } else {
+                    // No user is signed in.
+                    document.querySelector('.user-name').textContent = '"YOUR ACTUAL REAL LIFE NAME"';
+                  }
+                });
+              </script>
             </div>
           </div>
 
