@@ -3,81 +3,52 @@
   <head>
     <meta charset="UTF-8" />
     <title>Sign Up - Ahoy Indie Media</title>
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <link rel="stylesheet" href="./css/account.css">
+    <script
+      src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js"></script>
+    <script
+      src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js"></script>
 
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+      import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js";
+      
+      const firebaseConfig = {
+          apiKey: "AIzaSyBq_IQRwkjh2o-jUkS8tI8wcEek5yMIwmo",
+          authDomain: "ahoy-indie-media-da86d.firebaseapp.com",
+          projectId: "ahoy-indie-media-da86d",
+          storageBucket: "ahoy-indie-media-da86d.appspot.com",
+          messagingSenderId: "179901301547",
+          appId: "1:179901301547:web:599159f9efb826f464bb6e",
+          measurementId: "G-K3QN161BVX"
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+
+      document.getElementById("signup-form").addEventListener("submit", async (e) => {
+          e.preventDefault();
+
+          const email = document.getElementById("email").value;
+          const password = document.getElementById("password").value;
+          const notificationEl = document.getElementById("notification");
+
+          try {
+              const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+              notificationEl.textContent = "Signup successful! Please verify your email.";
+              notificationEl.style.color = "green";
+              // You might want to send an email verification here with sendEmailVerification(userCredential.user)
+          } catch (error) {
+              notificationEl.textContent = `Signup failed: ${error.message}`;
+              notificationEl.style.color = "red";
+          }
+      });
+    </script>
     <link rel="stylesheet" href="./foundational.css" />
-    <style>
-      body {
-        background: url("https://i.gifer.com/RzdU.gif") no-repeat center center
-          fixed;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 90vh;
-      }
-      .text-outline {
-        color: black;
-        text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
-      }
-      body img {
-        width: 300px;
-        height: auto;
-      }
-      #signup-form {
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 10px;
-        padding: 20px;
-        width: 300px;
-        box-shadow: 0 5px 15px rgba(255, 34, 34, 0.2);
-        backdrop-filter: blur(10px);
-
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: left;
-      }
-
-      #signup-form input,
-      #signup-form button {
-        width: 100%;
-        padding: 10px;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        border: none;
-        border-radius: 5px;
-      }
-      #signup-form button {
-        background: dodgerblue;
-        color: white;
-      }
-      #notification {
-        color: red;
-        margin-top: 10px;
-      }
-    </style>
-    <style>
-      /* ... existing styles ... */
-
-      /* Add or modify these styles */
-      #signup-form input[type="email"],
-      #signup-form input[type="password"] {
-        width: 80%; /* Adjust as needed */
-        background: rgba(255, 255, 255, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        backdrop-filter: blur(10px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-      }
-    </style>
   </head>
   <body>
-    <a href="../../index.html"
-      ><img src="../../img/assets/u_ahoy23.png" style="width: 300px"
-    /></a>
+    <a href="../../index.html"><img src="../../img/assets/u_ahoy23.png"
+        style="width: 300px" /></a>
     <h1>Create an Account for Ahoy Indie Media</h1>
     <form id="signup-form">
       <input type="email" id="email" placeholder="Email" required />
@@ -100,51 +71,8 @@
       <button type="submit">Sign Up</button>
       <div id="notification"></div>
       <br />
-      <a href="login.html" class="theme-link" id="loginLink"
-        >Already Have an account? Login Baby</a
-      >
+      <a href="login.html" class="theme-link" id="loginLink">Already Have an
+        account? Login Baby</a>
     </form>
-    <script>
-      // Initialize Supabase client
-      const supabaseUrl = "https://ornjxycoizoybvdhhowp.supabase.co";
-      const supabaseAnonKey =
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9ybmp4eWNvaXpveWJ2ZGhob3dwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDIzNTA4ODEsImV4cCI6MjAxNzkyNjg4MX0.SIgYEybVeKQ5xGnplA-elTOw0oC5tZIv5nGRUZf-vS8";
-      const supabase = Supabase.createClient(supabaseUrl, supabaseAnonKey);
-
-      document
-        .getElementById("signup-form")
-        .addEventListener("submit", async (e) => {
-          e.preventDefault();
-
-          // Retrieve user input
-          const email = document.getElementById("email").value;
-          const password = document.getElementById("password").value;
-          const plan = document.querySelector(
-            'input[name="plan"]:checked'
-          ).value;
-
-          // Reference to the notification element
-          const notificationEl = document.getElementById("notification");
-
-          try {
-            // Attempt to create a new user
-            const { user, error } = await supabase.auth.signUp({
-              email,
-              password,
-            });
-
-            if (error) throw error;
-
-            // Update the notification element on success
-            notificationEl.textContent =
-              "Signup successful! Please check your email for a confirmation link.";
-            notificationEl.style.color = "green";
-          } catch (error) {
-            // Update the notification element on failure
-            notificationEl.textContent = `Signup failed: ${error.message}`;
-            notificationEl.style.color = "red";
-          }
-        });
-    </script>
   </body>
 </html>

@@ -3,6 +3,60 @@
 <!-- PRAISE GOD -->
 <html>
   <head>
+
+
+<!-- FIREEEEE -->
+
+
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js"></script>
+
+    <!-- Firebase SDK -->
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+      import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js";
+      
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+          apiKey: "AIzaSyBq_IQRwkjh2o-jUkS8tI8wcEek5yMIwmo",
+          authDomain: "ahoy-indie-media-da86d.firebaseapp.com",
+          projectId: "ahoy-indie-media-da86d",
+          storageBucket: "ahoy-indie-media-da86d.appspot.com",
+          messagingSenderId: "179901301547",
+          appId: "1:179901301547:web:599159f9efb826f464bb6e",
+          measurementId: "G-K3QN161BVX"
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+
+      window.login = async function() {
+          const email = document.getElementById("login-email").value;
+          const password = document.getElementById("login-password").value;
+
+          try {
+              const userCredential = await signInWithEmailAndPassword(auth, email, password);
+              // Login successful
+              setMessage("Login successful! Redirecting...", "success");
+              setTimeout(() => {
+                  window.location.href = "../index.html"; // Adjust this path as needed
+              }, 2000);
+          } catch (error) {
+              setMessage(error.message, "error");
+          }
+      }
+
+      window.setMessage = function(message, type) {
+          const messageElement = document.getElementById("message");
+          messageElement.textContent = message;
+          messageElement.className = type;
+      }
+  </script>
+
+  <!-- END OF FIREEEE -->
+
     <link rel="icon" type="image/png" href="./img/favicon_ahoy.png">
     <script
       src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@latest"></script>
@@ -643,7 +697,7 @@
           <!-- div id="newsletter-list"></div -->
         </div>
 
-        <h3>Present Beta State = 0.2.3H
+        <h3>Present Beta State = 0.2.3G
 
           <h4>Present Focus</h4>
           <p>Redesigning the entire layout - stay tuned - really going for
