@@ -657,7 +657,7 @@
         <div id="account-tab" class="tab-content">
           <p
             style="font-family: 'Courier New', Courier, monospace; background-color: #ff0060; color: black; padding: 10px; border: 1px dashed red;">⚠️
-            Warning: This feature is in active development.</p>
+            Warning: This feature is in active development.But give it a shot anyway</p>
           <!-- User Icon Section -->
           <div class="user-icon-section">
             <img id="user-icon" src="./img/default-user-icon.png"
@@ -665,6 +665,18 @@
               style="width: 200px; height: 200px; border-radius: 50%; visibility: hidden;">
             <input type="file" id="user-icon-input" accept="image/*"
               style="display: none;">
+              <!-- User Icon Upload and Default Selection -->
+<div class="icon-selection">
+  <input type="file" id="icon-upload" hidden onchange="uploadIcon()">
+  <label for="icon-upload" class="icon-upload-btn">Upload Icon</label>
+  <div class="default-icons">
+    <!-- Example of default icons -->
+    <img src="path/to/default/icon1.png" onclick="setDefaultIcon('path/to/default/icon1.png')">
+    <img src="path/to/default/icon2.png" onclick="setDefaultIcon('path/to/default/icon2.png')">
+    <!-- Add more default icons as needed -->
+  </div>
+</div>
+   <!-- End of User Icon Upload and Default Selection -->
             <!-- Responsive User Greeting Section -->
             <div class="user-greeting-section">
               <button
@@ -844,12 +856,12 @@
     <script src="js/src/share.js"></script>
     <!-- DYANMIC ARTIST TEST -->
     <!--script src="js/src/dynamicArtist.js"></script-->
-    <script src="js/src/login.js"></script>
+   
     <script src="js/src/siteCounter.js"></script>
     <!-- END OF DRAFTY SCRIPTS -->
     <!-- CRAFT DRAFTY-->
     <!-- H1 effects - Scroll -->
-    <script src="js/src/h1-effects-scroll.js"></script>
+    <!--script src="js/src/h1-effects-scroll.js"></script-->
     <!-- USER CONTROLS-->
     <script src="js/src/controls-timeline.js"></script>
     <!-- USER NAV -->
@@ -858,6 +870,7 @@
     <!-- USER JAVASCRIPTS -->
     <script src="js/src/user-cart.js"></script>
     <script src="js/src/user-icon-input.js"></script>
+    <script src="js/src/login.js"></script>
 
 
     <!-- HOMEPAGE JAVASCRIPT -->
