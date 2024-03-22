@@ -1,0 +1,158 @@
+.hipster-text {
+    color: #ff6b6b;
+    /* Sunset red color */
+    font-size: 16px;
+    font-weight: 900;
+    font-family: "Barlow", sans-serif;
+}
+
+.hipster-link {
+    color: #fbd786;
+    /* Sunset yellow color */
+    text-decoration: none;
+}
+
+.hipster-link:hover {
+    color: #f7797d;
+    /* Sunset pink color */
+}
+
+/* Other styles remain the same */
+
+#login-email,
+#login-password {
+    /* Other styles remain the same */
+    color: black;
+}
+
+#login-email::placeholder,
+#login-password::placeholder {
+    color: rgb(255, 255, 255);
+}
+
+#login-email:hover,
+#login-password:hover {
+    backdrop-filter: blur(10px);
+}
+
+body {
+    background-color: black !important;
+    background: url("https://i.gifer.com/n4V.gif") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#login__logo-container {
+    flex-direction: column;
+}
+
+#login-email,
+#login-password {
+    width: 300px;
+    height: 100px;
+    background-color: var(--background-color);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border: 1px solid rgb(255, 255, 255);
+    text-align: center;
+    color: var(--text-color);
+    font-size: 16px;
+    font-family: "Barlow", sans-serif;
+    font-weight: 900;
+    margin: 5px;
+    color: rgb(255, 255, 255);
+}
+
+.login__logo-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Add styles for the login button */
+.login__menu-container button {
+    width: 300px;
+    height: 100px;
+    background-color: var(--background-color);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border: 1px solid black;
+    text-align: center;
+    color: var(--text-color);
+    font-size: 22px;
+    font-family: "Barlow", sans-serif;
+    font-weight: 900;
+    margin: 5px;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.login__menu-container button {
+    /* Add a transition for the background-color */
+    transition: background-color 2s ease;
+}
+
+.login__menu-container button:hover {
+    /* Change the background color on hover */
+    background-color: #493f3f79;
+    color: white;
+    /* Start the pulse animation on hover */
+    animation: pulse 2s infinite;
+    /* Add a black outline to the text */
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.text-outline {
+    color: rgb(255, 255, 255);
+    text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
+}
+
+/* Define the pulse animation */
+@keyframes pulse {
+    0% {
+        border-width: 1px;
+    }
+
+    50% {
+        border-width: 3px;
+    }
+
+    100% {
+        border-width: 1px;
+    }
+}
+
+#login-email,
+#login-password {
+    /* Other styles remain the same */
+    background-color: rgba(255,
+            255,
+            255,
+            0.1) !important;
+    /* Semi-transparent white */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    /* Semi-transparent white border */
+    backdrop-filter: blur(10px);
+    /* Apply blur to the background */
+    -webkit-backdrop-filter: blur(10px);
+    /* For Safari */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Add some shadow for depth */
+    color: white;
+    /* White text color */
+}
