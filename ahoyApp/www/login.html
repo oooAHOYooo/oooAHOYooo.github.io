@@ -1,32 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Ahoy Indie Media</title>
     <link rel="stylesheet" href="./css/login.css">
-
     <!-- Firebase SDK -->
-    <script
-      src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
-    <script
-      src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
-    <script>
-      // Your web app's Firebase configuration
-      const firebaseConfig = {
-        // Your Firebase config object
-      };
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+        import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js";
+        
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBq_IQRwkjh2o-jUkS8tI8wcEek5yMIwmo",
+            authDomain: "ahoy-indie-media-da86d.firebaseapp.com",
+            projectId: "ahoy-indie-media-da86d",
+            storageBucket: "ahoy-indie-media-da86d.appspot.com",
+            messagingSenderId: "179901301547",
+            appId: "1:179901301547:web:599159f9efb826f464bb6e",
+            measurementId: "G-K3QN161BVX"
+        };
 
-      // Initialize Firebase
-      const app = firebase.initializeApp(firebaseConfig);
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        window.login = async function() {
+            const email = document.getElementById("login-email").value;
+            const password = document.getElementById("login-password").value;
+
+            try {
+                const userCredential = await signInWithEmailAndPassword(auth, email, password);
+                // Login successful
+                setMessage("Login successful! Redirecting...", "success");
+                setTimeout(() => {
+                    window.location.href = "../index.html"; // Adjust this path as needed
+                }, 2000);
+            } catch (error) {
+                setMessage(error.message, "error");
+            }
+        }
+
+        window.setMessage = function(message, type) {
+            const messageElement = document.getElementById("message");
+            messageElement.textContent = message;
+            messageElement.className = type;
+        }
     </script>
   </head>
   <body>
     <div class="login-container">
       <div class="login__logo-container">
-        <a href="../../index.html"><img src="../../img/assets/u_ahoy23.png"
+        <a href="../index.html"><img src="./img/assets/u_ahoy23.png"
             style="width: 300px" /></a>
-        <input type="email" id="login-email" placeholder="Email"
-          style="color: white !important" />
+        <input type="email" id="login-email" placeholder="Email" />
         <input type="password" id="login-password" placeholder="Password" />
         <div class="login__menu-container">
           <button onclick="login()">Login</button>
@@ -38,42 +66,5 @@
       Don't have an account? <a href="./create-account.html"
         class="hipster-link">Create One</a>
     </p>
-
-    <script>
-        async function login() {
-            const email = document.getElementById("login-email").value;
-            const password = document.getElementById("login-password").value;
-            
-            if (!email || !password) {
-                setMessage("Email and password are required", "error");
-                return;
-            }
-
-            try {
-                const userCredential = await firebase.auth().signInWithEmailAndPassword(email, password);
-                const user = userCredential.user;
-                setMessage("Login successful! Redirecting...", "success");
-                setTimeout(() => {
-                    window.location.href = `../index.html?user=${encodeURIComponent(user.email)}`;
-                }, 2000);
-            } catch (error) {
-                setMessage(error.message, "error");
-            }
-        }
-
-        function setMessage(message, type) {
-            const messageElement = document.getElementById("message");
-            messageElement.textContent = message;
-            messageElement.className = type; // Use this class to style your message (e.g., error, success)
-        }
-
-        document.getElementById("login-email").addEventListener("mouseover", function () {
-            this.focus();
-        });
-
-        document.getElementById("login-password").addEventListener("mouseover", function () {
-            this.focus();
-        });
-    </script>
   </body>
 </html>
