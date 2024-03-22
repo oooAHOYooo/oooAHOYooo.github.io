@@ -24,6 +24,14 @@
         "artist": "Justin Arena",
         "tag": "new song",
         "dateAdded": "03-20-24"
+      },
+      {
+        "id": "RiddleM",
+        "albumArt": "https://f4.bcbits.com/img/a1273412504_16.jpg",
+        "songTitle": "Daisies + Garden Girl + Magic Man + Melted Side + Snout + Mustard Seed",
+        "artist": "Riddle M",
+        "tag": "new song",
+        "dateAdded": "03-21-24"
       }
     ]
   }
