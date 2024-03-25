@@ -227,7 +227,7 @@
                 Feedback</button></a>
           </div>
           <div class="get-started-wrap">
-            <a href="./js/src/started.html"><button
+            <a href="./create-account.html"><button
                 class="get-started-button">Get
                 Started</button></a>
           </div>
@@ -711,11 +711,48 @@
     <div id="account-tab" class="tab-content">
 
     <!-- User Login Section -->
-<div class="center-frame" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 50vh;">
+<div id="login-section" class="center-frame" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 50vh;">
   <img src="./img/assets/u_ahoy23.png" style="max-width: 90%; height: auto;">
   <h1>Already a member?</h1><br>
   <a href="./login.html"><button>Login to Ahoy</button></a>
 </div>
+<div class="user-info">
+  <span class="account-user-name">User Name Here</span>
+</div>
+
+<!-- Logged-in Message Section -->
+<div id="logged-in-message" class="center-frame" style="display: none; flex-direction: column; justify-content: center; align-items: center; height: 50vh; background-color: #f0f0f0;">
+  <h1>Congrats, you are already logged in!</h1>
+  <button onclick="logout()">Log Out</button>
+</div>
+
+<script>
+  // This script checks if a user is logged in and updates the UI accordingly
+  window.onload = function() {
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        // User is logged in
+        document.getElementById('login-section').style.display = 'none'; // Hide the login section
+        document.getElementById('logged-in-message').style.display = 'block'; // Show the logged-in message
+      } else {
+        // No user is logged in
+        document.getElementById('login-section').style.display = 'block'; // Show the login section
+        document.getElementById('logged-in-message').style.display = 'none'; // Hide the logged-in message
+      }
+    });
+  };
+
+  // Function to log out the user
+  function logout() {
+    firebase.auth().signOut().then(function() {
+      // Sign-out successful.
+      window.location.reload(); // Reload the page to show the login section again
+    }).catch(function(error) {
+      // An error happened.
+      console.error('Sign Out Error', error);
+    });
+  }
+</script>
 
   <!-- The Grandfather Surprise Section -->
   <div class="grandfather-surprise-section">
@@ -770,23 +807,105 @@ Warning: This feature is in active development.But give it a shot anyway</p>
                 onclick="document.getElementById('user-icon-input').click()">UPLOAD
                 FACE PHOTO</button>
               <h1 class="greeting">HOWDY HOWDY MR.</h1>
-              <script>
-                // Assuming Firebase is correctly initialized earlier in your code
-                firebase.auth().onAuthStateChanged(function(user) {
-                  if (user) {
-                    // User is signed in, display the user's name or email
-                    var name = user.displayName || user.email; // Use displayName if available, otherwise email
-                    document.querySelector('.user-name').textContent = name; // Update the content
-                  } else {
-                    // No user is signed in.
-                    document.querySelector('.user-name').textContent = '"YOUR ACTUAL REAL LIFE NAME"';
-                  }
-                });
-              </script>
+
             </div>
           </div>
-
+    
+          <div id="user-back-pack">
+            <!-- USER BACKPACK-->
+            <h1>Your Liked Tracks</h1>
+            <button data-target="tab-1">Tracks</button>
+            <div id="user-liked-tracks">
+              <table id="liked-tracks">
+                <thead>
+                  <tr>
+                    <th>Track</th>
+                    <th>Artist</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Track 1</td>
+                    <td>Artist A</td>
+                    <td><button class="play-button" data-track="track1.mp3">Play</button></td>
+                  </tr>
+                  <tr>
+                    <td>Track 2</td>
+                    <td>Artist B</td>
+                    <td><button class="play-button" data-track="track2.mp3">Play</button></td>
+                  </tr>
+                  <tr>
+                    <td>Track 3</td>
+                    <td>Artist C</td>
+                    <td><button class="play-button" data-track="track3.mp3">Play</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <h1>Your Liked Artists</h1>
+            <table id="liked-artists">
+              <thead>
+                <tr>
+                  <th>Artist</th>
+                  <th>Sample Track</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Artist A</td>
+                  <td>Popular Track 1</td>
+                  <td><button class="play-button" data-track="artistA_track.mp3">Play</button></td>
+                </tr>
+                <tr>
+                  <td>Artist B</td>
+                  <td>Popular Track 2</td>
+                  <td><button class="play-button" data-track="artistB_track.mp3">Play</button></td>
+                </tr>
+                <tr>
+                  <td>Artist C</td>
+                  <td>Popular Track 3</td>
+                  <td><button class="play-button" data-track="artistC_track.mp3">Play</button></td>
+                </tr>
+              </tbody>
+            </table>
+            <h1>Your Liked Media Items</h1>
+            <div id="liked-media-items">
+              <ul>
+                <li>Media Item 1</li>
+                <li>Media Item 2</li>
+                <li>Media Item 3</li>
+              </ul>
+            </div>
+            <h1>Your Liked Podcasts</h1>
+            <div id="liked-podcasts">
+              <ul>
+                <li>Podcast 1</li>
+                <li>Podcast 2</li>
+                <li>Podcast 3</li>
+              </ul>
+            </div>
+            <h1>Your Burned CDs</h1>
+            <div id="burned-cds">
+              <ul>
+                <li>CD 1 - Mix of 2023</li>
+                <li>CD 2 - Road Trip Mix</li>
+                <li>CD 3 - Workout Tunes</li>
+              </ul>
+            </div>
+            <h1>Your Merchstore Spoils</h1>
+            <div id="merchstore-spoils">
+              <ul>
+                <li>T-Shirt - Band A</li>
+                <li>Poster - Artist B</li>
+                <li>Vinyl - Album C</li>
+              </ul>
+            </div>
+          </div>
           <!-- USER LIBRARY -->
+          <!-- SHUT OFF THE LIBRARY MAIN FRAME I've been clinging on to so much -->
+         
           <div class="library-mainFrame">
 
             <div class="library-mainFrame-windowWrap">
@@ -958,8 +1077,6 @@ Warning: This feature is in active development.But give it a shot anyway</p>
    
     <script src="js/src/siteCounter.js"></script>
     <!-- END OF DRAFTY SCRIPTS -->
-    <!-- CRAFT DRAFTY-->
-    <!-- H1 effects - Scroll -->
     <!--script src="js/src/h1-effects-scroll.js"></script-->
     <!-- USER CONTROLS-->
     <script src="js/src/controls-timeline.js"></script>
@@ -970,8 +1087,10 @@ Warning: This feature is in active development.But give it a shot anyway</p>
     <script src="js/src/user-cart.js"></script>
     <script src="js/src/user-icon-input.js"></script>
     <script src="js/src/login.js"></script>
-
-
+    <script src="js/src/user-liked-everything.js"></script>
+    <!-- USER PREF SAVED -->
+    <script src="js/src/user-userSesh.js"></script>
+    <!-- USER - DISPLAY USER INFO -->
     <!-- HOMEPAGE JAVASCRIPT -->
     <script src="js/src/fetch-homepage-nowplaying.js"></script>
     <!-- MARKET JAVASCRIPTS -->
@@ -1070,7 +1189,7 @@ Warning: This feature is in active development.But give it a shot anyway</p>
       </script>
 
     <!-- Written by Alex Gonzalez - of Sleepy Hollow, NY - out and around the Havens, CT. this has seen hand coded - a thousand million times over - since the start of the roaring 20s.  -->
-    <!-- Please print this code for historical purposes --><!-- As of 3.19.24 -->
+    <!-- Please print this code for historical purposes --><!-- As of 3.25.24 -->
     <script>
       document.addEventListener('DOMContentLoaded', function() {
           displayESTDateTime(); // Call the function to display the date and time
