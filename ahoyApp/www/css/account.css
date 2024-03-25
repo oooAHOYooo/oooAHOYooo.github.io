@@ -1,3 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;600&display=swap');
+
+body,
+input,
+button,
+#notification,
+.text-outline {
+    font-family: 'Barlow', sans-serif;
+}
+
 body {
     background: url("https://i.gifer.com/RzdU.gif") no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -20,6 +30,8 @@ body {
 body img {
     width: 300px;
     height: auto;
+    margin-top: 10px;
+    /* Added a tiny bit of margin to the top of the logo */
 }
 
 #signup-form {
@@ -62,7 +74,6 @@ body img {
 #signup-form input[type="email"],
 #signup-form input[type="password"] {
     width: 80%;
-    /* Adjust as needed */
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(10px);
