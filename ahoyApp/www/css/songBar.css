@@ -110,10 +110,10 @@
     bottom: 73.5px;
     width: 100%;
     z-index: 5100;
-    background: #acacac97;
+    background: var(--background-color);
     color: white;
-    height: 102px;
-
+    height: 82px;
+    overflow-y: hidden;
     border-style: solid;
     border-color: var(--border-color);
 }
