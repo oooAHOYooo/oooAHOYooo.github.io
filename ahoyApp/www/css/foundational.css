@@ -150,8 +150,7 @@ button:hover {
 
 .tab-content {
   display: none;
-  margin-left: 52.5px;
-  margin-right: 52.5px;
+
   /* Adjusted margin to avoid interference with left-dashboard */
 
 }
@@ -168,6 +167,8 @@ button:hover {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   margin-top: 10px !important;
+  margin-left: 52.5px !important;
+  margin-right: 52.5px !important;
   /* Adds border-radius to the right side */
 }
 
@@ -181,32 +182,18 @@ button:hover {
 .tab-content.active {
   display: block;
 
-
-
-  /* Adjusted margin to avoid interference with left-dashboard */
-
 }
 
 
 /* Centering .tab-content with max-width for desktop view */
 .tab-content {
-  max-width: 720px;
+
   margin: 0 auto;
   position: relative;
   z-index: 2;
   background-color: var(--background-color);
   /* Ensures .tab-content is above the background layer */
 }
-
-
-
-/* Example media query for desktop view adjustments */
-@media screen and (min-width: 1024px) {
-  /* Adjustments for desktop view can be added here */
-}
-
-
-
 
 
 .list {
@@ -449,7 +436,7 @@ button:hover {
 
 @media screen and (max-width: 767px) {
   .userContentPortal-tab-container {
-    width: 95vw;
+    width: 80vw;
     /* Increase width on smaller screens for more space */
     min-height: 200px;
     /* Adjust height for smaller screens */
