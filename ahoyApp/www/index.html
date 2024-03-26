@@ -247,10 +247,7 @@
   <h2>Today's Question</h2>
   <p id="home-daily-question">What's one hobby you've always wanted to try but haven't yet?</p>
   <textarea id="home-message-input" placeholder="Your answer..."></textarea>
-  <div class="question-buttons">
-    <button onclick="postHomeMessage()">Post</button>
-    <button onclick="navigateToTab('message-board-tab')">View Answers</button>
-  </div>
+  <button onclick="postHomeMessage()">Post</button>
 </div>
 <!-- NOW PLAYING -->
 <div class="now-playing">
@@ -1143,6 +1140,68 @@ Warning: This feature is in active development. The following is sample DUMMY da
     <!-- USER PREF SAVED -->
     <script src="js/src/user-userSesh.js"></script>
     <!-- USER - DISPLAY USER INFO -->
+
+
+
+
+    <!-- TESTSCRPT = USER MESSAGEBOARD-->
+    <script>
+      // Assuming you have already initialized Firebase and Firestore
+      const db = firebase.firestore();
+    
+      window.onload = function() {
+        firebase.auth().onAuthStateChanged(function(user) {
+          if (user) {
+            // User is logged in, show the message input
+            document.getElementById('home-message-input').style.display = 'block';
+            loadMessages(); // Load and display messages from Firestore
+          } else {
+            // No user is logged in, hide the message input
+            document.getElementById('home-message-input').style.display = 'none';
+          }
+        });
+      };
+    
+      function postHomeMessage() {
+        const messageInput = document.getElementById('home-message-input');
+        const message = messageInput.value.trim();
+        if (message) {
+          // Get the current user
+          const user = firebase.auth().currentUser;
+          if (user) {
+            // Add the message to Firestore
+            db.collection('messages').add({
+              text: message,
+              timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+              uid: user.uid,
+              displayName: user.displayName || 'Anonymous'
+            }).then(() => {
+              messageInput.value = ''; // Clear the input field
+              loadMessages(); // Reload messages
+            }).catch(error => {
+              console.error("Error adding message: ", error);
+            });
+          } else {
+            alert('You must be logged in to post a message.');
+          }
+        }
+      }
+    
+      function loadMessages() {
+        db.collection('messages').orderBy('timestamp', 'desc').get().then(querySnapshot => {
+          const messagesDiv = document.getElementById('message-board'); // Assuming you have a div with this id for displaying messages
+          messagesDiv.innerHTML = ''; // Clear existing messages
+          querySnapshot.forEach(doc => {
+            const message = doc.data();
+            const messageElement = document.createElement('p');
+            messageElement.textContent = `${message.displayName}: ${message.text}`;
+            messagesDiv.appendChild(messageElement);
+          });
+        }).catch(error => {
+          console.error("Error loading messages: ", error);
+        });
+      }
+    </script>
        <!-- END OF USER JAVASCRIPTS -->
               <!-- END OF USER JAVASCRIPTS -->
                      <!-- END OF USER JAVASCRIPTS -->
