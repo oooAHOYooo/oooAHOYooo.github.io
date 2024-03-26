@@ -11,21 +11,7 @@
                display: flex;
            }
 
-           #user-info-display {
-               position: absolute;
-               top: 50%;
-               left: 50%;
-               transform: translate(-50%, -50%);
-               font-size: 4vw;
-               /* Responsive font size */
-               text-align: center;
-               width: 80%;
-               /* Adjust based on your preference */
-               /* Additional styling */
-               padding: 20px;
-               box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-               border-radius: 10px;
-           }
+
 
            #user-back-pack table {
                width: 100%;
@@ -84,4 +70,17 @@
 
            #user-back-pack tr:hover .play-button {
                display: inline-block;
+           }
+
+
+           #ahoy-account-name-display {
+               background: rgba(255, 255, 255, 0.2);
+               border-radius: 10px;
+               padding: 10px;
+               text-align: center;
+               color: #fff;
+               backdrop-filter: blur(10px);
+               border: 1px solid rgba(255, 255, 255, 0.3);
+               max-width: 300px;
+               margin: 20px auto;
            }

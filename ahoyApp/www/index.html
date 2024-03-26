@@ -201,12 +201,23 @@
 
       <div id="tabSortz">
         <!-- HOME TAB -->
-        <div id="home-tab" class="tab-content">
+        <div id="home-tab" class="tab-content active">
 
           <div id="home-logo-div">
             <a href="./index.html"><img src="./img/assets/u_ahoy23.png" />
             </a>
           </div>
+<!-- Somewhere within the body tag -->
+<div id="ahoy-account-name-display"></div>
+
+<script>
+  window.onload = function() {
+    const ahoyAccountName = localStorage.getItem('ahoyAccountName');
+    if (ahoyAccountName) {
+      document.getElementById('ahoy-account-name-display').textContent = ahoyAccountName;
+    }
+  };
+</script>
           <!-- DATE DISPLAY -->
           <!-- DATE DISPLAY -->
           <div class="date-display">
@@ -708,7 +719,7 @@
           <div id="commits-list"></div>
         </div>
     <!-- ACCOUNT -->
-    <div id="account-tab" class="tab-content active">
+    <div id="account-tab" class="tab-content">
 
     <!-- User Login Section -->
 <div id="login-section" class="center-frame" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 50vh;">
@@ -770,8 +781,8 @@
     <button onclick="window.location.href='create-account.html'">Sign Up Now Before It's Too Late - to Join Ahoy For Life </button>
 
   <!-- Additional benefits of being a member -->
-  <h3>User Features in the Pipeline</h3>
-  <p>As a member of Ahoy Indie Media, you'll enjoy unique features actively being developed for an enhanced experience:</p>
+  <h3>User Features in next Pipeline of Updates</h3>
+  <p>As a member of Ahoy Indie Media, you'll enjoy unique features actively being developed.</p>
   <ul>
     <li><strong>Songs and Podcasts Remember Where You Left Off:</strong> Easily pick up where you left off in your favorite songs and podcasts.</li>
     <li><strong>Create and Save Burned CDs:</strong> Mix and save your favorite tracks into virtual burned CDs for easy listening.</li>
