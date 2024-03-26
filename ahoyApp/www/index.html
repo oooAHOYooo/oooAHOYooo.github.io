@@ -201,7 +201,7 @@
 
       <div id="tabSortz">
         <!-- HOME TAB -->
-        <div id="home-tab" class="tab-content active">
+        <div id="home-tab" class="tab-content">
 
           <div id="home-logo-div">
             <a href="./index.html"><img src="./img/assets/u_ahoy23.png" />
@@ -697,7 +697,7 @@
           <!-- div id="newsletter-list"></div -->
         </div>
 
-        <h3>Present Beta State = 0.2.3G
+        <h3>Present Beta State = 0.2.3H
 
           <h4>Present Focus</h4>
           <p>Redesigning the entire layout - stay tuned - really going for
@@ -708,7 +708,7 @@
           <div id="commits-list"></div>
         </div>
     <!-- ACCOUNT -->
-    <div id="account-tab" class="tab-content">
+    <div id="account-tab" class="tab-content active">
 
     <!-- User Login Section -->
 <div id="login-section" class="center-frame" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 50vh;">
@@ -767,7 +767,15 @@
     <p>Don't miss your chance to be immortalized in Ahoy's history. Sign up now and receive a special certificate of membership via Rob Meglio, designed to commemorate your pioneering spirit.</p>
     <button onclick="window.location.href='create-account.html'">Sign Up Now Before It's Too Late - to Join Ahoy For Life </button>
 
-  <!-- Existing content -->
+  <!-- Additional benefits of being a member -->
+  <h3>User Features in the Pipeline</h3>
+  <p>As a member of Ahoy Indie Media, you'll enjoy unique features actively being developed for an enhanced experience:</p>
+  <ul>
+    <li><strong>Songs and Podcasts Remember Where You Left Off:</strong> Easily pick up where you left off in your favorite songs and podcasts.</li>
+    <li><strong>Create and Save Burned CDs:</strong> Mix and save your favorite tracks into virtual burned CDs for easy listening.</li>
+    <li><strong>Personalized Greeting:</strong> Be welcomed by your name each time you visit</li>
+    <li><strong>Anonymous Posting on the Message Board:</strong> Share your thoughts and interact with the community anonymously on our daily message board.</li>
+  </ul>
 </div>
 <script>
   function signUpForGrandfatherSurprise() {
@@ -779,7 +787,7 @@
 
 <p
 style="font-family: 'Courier New', Courier, monospace; background-color: #ff0060; color: black; padding: 10px; border: 1px dashed red;">⚠️
-Warning: This feature is in active development.But give it a shot anyway</p>
+Warning: This feature is in active development. The following is sample DUMMY data - used for devin this baby into existence</p>
 
 
 
@@ -803,16 +811,14 @@ Warning: This feature is in active development.But give it a shot anyway</p>
    <!-- End of User Icon Upload and Default Selection -->
             <!-- Responsive User Greeting Section -->
             <div class="user-greeting-section">
-              <button
-                onclick="document.getElementById('user-icon-input').click()">UPLOAD
-                FACE PHOTO</button>
+         
               <h1 class="greeting">HOWDY HOWDY MR.</h1>
 
             </div>
           </div>
-    
+      <!-- USER BACKPACK-->
           <div id="user-back-pack">
-            <!-- USER BACKPACK-->
+          
             <h1>Your Liked Tracks</h1>
             <button data-target="tab-1">Tracks</button>
             <div id="user-liked-tracks">
@@ -925,107 +931,85 @@ Warning: This feature is in active development.But give it a shot anyway</p>
                 </tr>
               </tbody>
             </table>
-            </div>
+           
             <h1>Your Burned CDs</h1>
             <div id="burned-cds">
-              <ul>
-                <li>CD 1 - Mix of 2023</li>
-                <li>CD 2 - Road Trip Mix</li>
-                <li>CD 3 - Workout Tunes</li>
-              </ul>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Title</th>
+                    <th>Date Burned</th>
+                    <th>Amount of Tracks</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>CD 1 - Mix of 2023</td>
+                    <td>2023-05-01</td>
+                    <td>15</td>
+                  </tr>
+                  <tr>
+                    <td>CD 2 - Road Trip Mix</td>
+                    <td>2023-04-20</td>
+                    <td>20</td>
+                  </tr>
+                  <tr>
+                    <td>CD 3 - Workout Tunes</td>
+                    <td>2023-03-15</td>
+                    <td>12</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-            <h1>Your Merchstore Spoils</h1>
+            <h1>Your Merchstore Orders</h1>
             <div id="merchstore-spoils">
-              <ul>
-                <li>T-Shirt - Band A</li>
-                <li>Poster - Artist B</li>
-                <li>Vinyl - Album C</li>
-              </ul>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Item</th>
+                    <th>Date Shipped</th>
+                    <th>Merit Badges Earned</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>T-Shirt - Band A</td>
+                    <td>2023-04-15</td>
+                    <td>5</td>
+                  </tr>
+                  <tr>
+                    <td>Poster - Artist B</td>
+                    <td>2023-03-22</td>
+                    <td>3</td>
+                  </tr>
+                  <tr>
+                    <td>Vinyl - Album C</td>
+                    <td>2023-02-10</td>
+                    <td>8</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
+            <!-- END OF LIKED CONTENT SECTION -->
           </div>
-          <!-- USER LIBRARY -->
-          <!-- SHUT OFF THE LIBRARY MAIN FRAME I've been clinging on to so much -->
-         
-          <div class="library-mainFrame">
-
-            <div class="library-mainFrame-windowWrap">
-
-              <div class="userActionBar">
-
-                <div class="userActionBar-topMenu">
-
-                  <!-- 
-                    <div class="userActionBar-menuWrap">
-                      <button><i class="fas fa-home"></i></button>
-                      <button><i class="fas fa-cog"></i> </button>
-                      <button><i class="fas fa-plus"></i> </button>
-                    </div>-->
-                </div>
-                <div class="userActionBar-middleMenu">
-
-                  <div class="userActionBar-middleMenu">
-                    <button data-target="tab-1">Tracks</button>
-                    <button data-target="tab-2">Podcasts</button>
-                    <button data-target="tab-3">Media</button>
-                    <button data-target="tab-4">Artist</button>
-                    <button data-target="tab-5">Market</button>
-                  </div>
-
-                  <div class="userActionBar-bottomList">
-                    <div class="listApp">
-                      <div class="filter-input">
-
-                        <input>
-                      </div>
-                      <div class="userPlaylist-window">
-                        <style>
-  
-                    </style>
-                        <div class="userCreated">
-
-                          <ul>
-                            <o>User Data</o>
-                            <o>User Entry</o>
-                            <o>User Media Playlist</o>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="userContentPortal">
-
-                <div class="userContentPortal-tab-container">
-                  <div id="tab-1" style="display: none;">Tracks
-                    <div id="liked-songs-grid" class="grid-container"></div>
-                  </div>
-                  <div id="tab-2" style="display: none;">Podcast Grid</div>
-                  <div id="tab-3" style="display: none;">
-                    <h1>YOO</h1>Media
-                  </div>
-                  <div id="tab-4" style="display: none;">Artist</div>
-                  <div id="tab-5" style="display: none;">Market</div>
-                </div>
-
-                <!-- ACCOUNT _ TAB NAV SCRIPT -->
-
-              </div>
-            </div>
-          </div>
-
-          <h2>Your Liked Content</h2>
+ 
 
           <h2>Your Cart</h2>
           <div id="cart-items">
             <!-- Items will be dynamically inserted here -->
           </div>
-          <h3>Settings</h3>
+          <h3>UserSettings</h3>
+          <button
+          onclick="document.getElementById('user-icon-input').click()">UPLOAD
+          FACE PHOTO</button>
           <h4 id="theme-title"></h4>
           <button onclick="switchTheme()">change theme</button>
           <br />
 
         </div>
+
+
+        <!-- BURN TAB-->
         <div id="burn-tab" class="tab-content">
           <p
             style="font-family: 'Courier New', Courier, monospace; background-color: #ff0060; color: black; padding: 10px; border: 1px dashed red;">⚠️
