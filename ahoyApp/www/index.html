@@ -245,9 +245,31 @@
 <!-- Inside the "home-tab" div, in the "home-tab-question" section -->
 <div class="home-tab-question">
   <h2>Today's Question</h2>
-  <p id="home-daily-question">What's one hobby you've always wanted to try but haven't yet?</p>
-  <textarea id="home-message-input" placeholder="Your answer..."></textarea>
-  <button onclick="postHomeMessage()">Post</button>
+
+<p>The New Question App </p>
+<!-- Question of the Day Display -->
+<div id="question-of-the-day-display">
+  <!-- Question of the day will be loaded here -->
+  <h2 id="daily-question"></h2>
+</div>
+
+<!-- Answer Submission Form -->
+<form id="answer-submission-form">
+  <textarea id="answer-input" placeholder="Your answer..."></textarea>
+  <button type="submit">Submit Answer</button>
+</form>
+
+<!-- Area to Display Posted Answers -->
+<div id="answers-display">
+  <!-- Answers will be loaded and displayed here -->
+</div>
+
+
+
+
+
+
+
 </div>
 <!-- NOW PLAYING -->
 <div class="now-playing">
@@ -1141,67 +1163,12 @@ Warning: This feature is in active development. The following is sample DUMMY da
     <script src="js/src/user-userSesh.js"></script>
     <!-- USER - DISPLAY USER INFO -->
 
+<!-- NEW QUESTION APP -->
+<!-- LIVE DATA -->
+<script src="js/src/live-answers-logic.js"></script>
 
 
-
-    <!-- TESTSCRPT = USER MESSAGEBOARD-->
-    <script>
-      // Assuming you have already initialized Firebase and Firestore
-      const db = firebase.firestore();
-    
-      window.onload = function() {
-        firebase.auth().onAuthStateChanged(function(user) {
-          if (user) {
-            // User is logged in, show the message input
-            document.getElementById('home-message-input').style.display = 'block';
-            loadMessages(); // Load and display messages from Firestore
-          } else {
-            // No user is logged in, hide the message input
-            document.getElementById('home-message-input').style.display = 'none';
-          }
-        });
-      };
-    
-      function postHomeMessage() {
-        const messageInput = document.getElementById('home-message-input');
-        const message = messageInput.value.trim();
-        if (message) {
-          // Get the current user
-          const user = firebase.auth().currentUser;
-          if (user) {
-            // Add the message to Firestore
-            db.collection('messages').add({
-              text: message,
-              timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-              uid: user.uid,
-              displayName: user.displayName || 'Anonymous'
-            }).then(() => {
-              messageInput.value = ''; // Clear the input field
-              loadMessages(); // Reload messages
-            }).catch(error => {
-              console.error("Error adding message: ", error);
-            });
-          } else {
-            alert('You must be logged in to post a message.');
-          }
-        }
-      }
-    
-      function loadMessages() {
-        db.collection('messages').orderBy('timestamp', 'desc').get().then(querySnapshot => {
-          const messagesDiv = document.getElementById('message-board'); // Assuming you have a div with this id for displaying messages
-          messagesDiv.innerHTML = ''; // Clear existing messages
-          querySnapshot.forEach(doc => {
-            const message = doc.data();
-            const messageElement = document.createElement('p');
-            messageElement.textContent = `${message.displayName}: ${message.text}`;
-            messagesDiv.appendChild(messageElement);
-          });
-        }).catch(error => {
-          console.error("Error loading messages: ", error);
-        });
-      }
-    </script>
+  
        <!-- END OF USER JAVASCRIPTS -->
               <!-- END OF USER JAVASCRIPTS -->
                      <!-- END OF USER JAVASCRIPTS -->
