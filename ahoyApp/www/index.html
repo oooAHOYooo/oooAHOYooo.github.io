@@ -210,7 +210,7 @@
 
       <div id="tabSortz">
         <!-- HOME TAB -->
-        <div id="home-tab" class="tab-content active">
+        <div id="home-tab" class="tab-content">
 
           <div id="home-logo-div">
             <a href="./index.html"><img src="./img/assets/u_ahoy23.png" />
@@ -704,14 +704,24 @@
 
       <!-- MESSAGEBOARD -->
       <!-- Add this new div inside the <div id="tabSortz"> to create the content area for the Message Board tab -->
-      <div id="message-board-tab" class="tab-content">
-        <h2>Today's Question</h2>
-        <p id="daily-question">What's your favorite indie game and why?</p>
-        <div id="message-board">
-          <!-- Messages will be dynamically inserted here -->
+      <div id="message-board-tab" class="tab-content active">
+
+        <div id="question-of-the-day-display">
+          <!-- Question of the day will be loaded here -->
+          <h2 id="daily-question"></h2>
         </div>
-        <textarea id="message-input" placeholder="Leave your note..."></textarea>
-        <button onclick="postMessage()">Post</button>
+        
+        <!-- Answer Submission Form -->
+        <form id="answer-submission-form">
+          <textarea id="answer-input" class="responsive-input glass-effect" placeholder="Your answer..."></textarea>
+        
+          <button type="submit">Submit Answer</button>
+        </form>
+        
+        <!-- Area to Display Posted Answers -->
+        <div id="answers-display">
+          <!-- Answers will be loaded and displayed here -->
+        </div>
       </div>
 
 
