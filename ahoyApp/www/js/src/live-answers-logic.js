@@ -8,14 +8,17 @@ function loadQuestionOfTheDay() {
             const dailyQuestion = data[today]; // Assuming your JSON is an object with dates as keys
             if (dailyQuestion) { // Check if there's a question for today
                 document.getElementById('daily-question').textContent = dailyQuestion;
+                document.getElementById('daily-question').className = 'glass-effect'; // Apply glass effect
             } else {
                 // Handle the case where there's no question for today
                 document.getElementById('daily-question').textContent = "No question for today.";
+                document.getElementById('daily-question').className = 'glass-effect'; // Apply glass effect
             }
         }).catch(error => {
             console.error('Error loading the question of the day: ', error);
             // Handle errors, for example, show a default message
             document.getElementById('daily-question').textContent = "Could not load the question for today.";
+            document.getElementById('daily-question').className = 'glass-effect'; // Apply glass effect
         });
 }
 
@@ -33,6 +36,7 @@ document.getElementById('answer-submission-form').addEventListener('submit', fun
     }).then(() => {
         console.log('Answer submitted!');
         document.getElementById('answer-input').value = ''; // Clear the input
+        document.getElementById('answer-input').className = 'responsive-input glass-effect'; // Apply glass effect
     }).catch(error => {
         console.error('Error submitting answer: ', error);
     });
@@ -50,6 +54,7 @@ function loadAnswersForTheDay() {
             snapshot.forEach(doc => {
                 const post = doc.data();
                 const postElement = document.createElement('div');
+                postElement.className = 'answer glass-effect'; // Apply glass effect
                 postElement.textContent = post.answer; // Assuming you want to show the answer
                 answersDisplay.appendChild(postElement);
             });

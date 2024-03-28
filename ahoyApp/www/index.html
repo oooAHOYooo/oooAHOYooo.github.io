@@ -77,6 +77,7 @@
     <link rel="stylesheet" href="./css/background-graphic.css">
     <link rel="stylesheet" href="./css/section-home.css">
     <link rel="stylesheet" href="./css/songBar.css">
+    <link rel="stylesheet" href="./css/user-loginModal.css">
     <!-- END OF AG ADDITIONS TO HEAD -->
     <meta charset="utf-8">
     <meta name="viewport"
@@ -121,6 +122,14 @@
   </head>
 
   <body>
+
+    <!-- Add this HTML for the modal somewhere in your body tag -->
+<div id="loginModal" class="modal" style="display:none;">
+  <div class="modal-content">
+    <p>Hey, you're not logged in!</p>
+    <button id="goToLogin">Login</button>
+  </div>
+</div>
 
     <script>
       const supabaseUrl = "https://ornjxycoizoybvdhhowp.supabase.co";
@@ -255,7 +264,8 @@
 
 <!-- Answer Submission Form -->
 <form id="answer-submission-form">
-  <textarea id="answer-input" placeholder="Your answer..."></textarea>
+  <textarea id="answer-input" class="responsive-input glass-effect" placeholder="Your answer..."></textarea>
+
   <button type="submit">Submit Answer</button>
 </form>
 
@@ -1272,12 +1282,28 @@ Warning: This feature is in active development. The following is sample DUMMY da
       </script>
 
     <!-- Written by Alex Gonzalez - of Sleepy Hollow, NY - out and around the Havens, CT. this has seen hand coded - a thousand million times over - since the start of the roaring 20s.  -->
-    <!-- Please print this code for historical purposes --><!-- As of 3.25.24 -->
+    <!-- Please print this code for historical purposes --><!-- As of 3.28.24 -->
     <script>
       document.addEventListener('DOMContentLoaded', function() {
           displayESTDateTime(); // Call the function to display the date and time
       });
   </script>
+
+
+
+<!-- LOGIN MODULE TEST-->
+<script>
+  document.addEventListener('DOMContentLoaded', (event) => {
+    const auth = firebase.auth();
+    auth.onAuthStateChanged(user => {
+      if (!user) {
+        // User is not logged in, show the modal
+        document.getElementById('loginModal').style.display = 'block';
+        document.getElementById('goToLogin').onclick = () => window.location.href = './login.html';
+      }
+    });
+  });
+</script>
   </body>
 
 </html>

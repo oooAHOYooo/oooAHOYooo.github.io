@@ -26,3 +26,40 @@ button {
     color: #777;
     margin-top: 5px;
 }
+
+/* Glass effect for question and input */
+.glass-effect {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(5px);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* Responsive input with max width */
+.responsive-input {
+    width: 100%;
+    max-width: 50vw;
+    /* Responsive width, up to 50% of the viewport width */
+    border: none;
+    padding: 10px;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+}
+
+/* Style for the answers display */
+.answers-display {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.answer {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 10px;
+    backdrop-filter: blur(5px);
+}
