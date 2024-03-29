@@ -108,3 +108,7 @@
 #media-artist-name p {
   font-size: .8em;
 }
+
+#jw-player-container {
+  max-height: 452px !important;
+}

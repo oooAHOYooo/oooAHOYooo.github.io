@@ -130,13 +130,27 @@
     <button id="goToLogin">Login</button>
   </div>
 </div>
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+  import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js";
+  
+  // Check if firebaseConfig is already declared
+  if (typeof firebaseConfig === 'undefined') {
+    const firebaseConfig = {
+        apiKey: "AIzaSyBq_IQRwkjh2o-jUkS8tI8wcEek5yMIwmo",
+        authDomain: "ahoy-indie-media-da86d.firebaseapp.com",
+        projectId: "ahoy-indie-media-da86d",
+        storageBucket: "ahoy-indie-media-da86d.appspot.com",
+        messagingSenderId: "179901301547",
+        appId: "1:179901301547:web:599159f9efb826f464bb6e",
+        measurementId: "G-K3QN161BVX"
+    };
 
-    <script>
-      const supabaseUrl = "https://ornjxycoizoybvdhhowp.supabase.co";
-      const supabaseKey =
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9ybmp4eWNvaXpveWJ2ZGhob3dwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDIzNTA4ODEsImV4cCI6MjAxNzkyNjg4MX0.SIgYEybVeKQ5xGnplA-elTOw0oC5tZIv5nGRUZf-vS8";
-      const supabase = supabase.createClient(supabaseUrl, supabaseKey);
-    </script>
+    // Initialize Firebase with different constant names
+    const firebaseApp = initializeApp(firebaseConfig);
+    const firebaseAuth = getAuth(firebaseApp);
+  }
+</script>
 
     <div class="app">
       <div class="app-background-layer"></div>
@@ -404,7 +418,7 @@
 
         </div>
         <!-- MEDIA TAB -->
-        <div id="media-tab-a" class="tab-content">
+        <div id="media-tab-a" class="tab-content active">
           <p
             style="font-family: 'Courier New', Courier, monospace; background-color: #ff0060; color: black; padding: 10px; border: 1px dashed red;">⚠️
             Warning: This feature is in active development.</p>
@@ -687,7 +701,6 @@
           </div>
         </div>
       </div>
-      <!-- SHARE TAB -->
       <!-- SHARE TAB CONTENT -->
       <div id="share-tab" class="tab-content">
         <p
@@ -704,7 +717,7 @@
 
       <!-- MESSAGEBOARD -->
       <!-- Add this new div inside the <div id="tabSortz"> to create the content area for the Message Board tab -->
-      <div id="message-board-tab" class="tab-content active">
+      <div id="message-board-tab" class="tab-content">
 
         <h2>Question of the Day</h2>
   <!-- Question of the Day Display -->
