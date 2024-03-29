@@ -706,22 +706,27 @@
       <!-- Add this new div inside the <div id="tabSortz"> to create the content area for the Message Board tab -->
       <div id="message-board-tab" class="tab-content active">
 
-        <div id="question-of-the-day-display">
-          <!-- Question of the day will be loaded here -->
-          <h2 id="daily-question"></h2>
-        </div>
-        
-        <!-- Answer Submission Form -->
-        <form id="answer-submission-form">
-          <textarea id="answer-input" class="responsive-input glass-effect" placeholder="Your answer..."></textarea>
-        
-          <button type="submit">Submit Answer</button>
-        </form>
-        
-        <!-- Area to Display Posted Answers -->
-        <div id="answers-display">
-          <!-- Answers will be loaded and displayed here -->
-        </div>
+        <h2>Question of the Day</h2>
+  <!-- Question of the Day Display -->
+  <!-- Add this inside the appropriate tab content where you want to display the questions -->
+<div id="questions-display" class="questions-container">
+  <!-- Questions with timestamps will be displayed here -->
+</div>
+  <div id="question-of-the-day-display">
+    <!-- Question of the day will be loaded here -->
+    <h3 id="daily-question" class="glass-effect"></h3>
+  </div>
+
+  <!-- Answer Submission Form -->
+  <form id="answer-submission-form" class="glass-effect">
+    <textarea id="answer-input" class="responsive-input" placeholder="Your answer..."></textarea>
+    <button type="submit" class="submit-answer-button">Submit Answer</button>
+  </form>
+
+  <!-- Area to Display Posted Answers -->
+  <div id="answers-display" class="answers-display">
+    <!-- Answers will be loaded and displayed here -->
+  </div>
       </div>
 
 
@@ -1199,7 +1204,8 @@ Warning: This feature is in active development. The following is sample DUMMY da
     <!-- MARKET JAVASCRIPTS -->
     <script src="js/src/market-physical.js"></script>
     <script src="js/src/market-digital.js"></script>
-
+    <!-- DISPLAY LIVE ANSWERS-->
+    <script src="js/src/display-live-answers.js"></script>
     <!-- MUSIC BABY-->
     <!-- SONG JAVASCRIPT -->
     <!--script src="js/src/song-loader.js"></script-->

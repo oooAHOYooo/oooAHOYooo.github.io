@@ -63,3 +63,25 @@ button {
     padding: 10px;
     backdrop-filter: blur(5px);
 }
+
+.answer {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.answer-content {
+    font-size: 1em;
+    color: #333;
+}
+
+.answer-timestamp {
+    font-size: 0.8em;
+    color: #666;
+}
+
+.answer-userId {
+    font-size: 0.8em;
+    color: #666;
+}
