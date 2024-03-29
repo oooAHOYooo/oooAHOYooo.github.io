@@ -51,7 +51,7 @@ function displayQuestionsWithTimestamps() {
   questionsDisplay.innerHTML = ''; // Clear any existing content
 
   // Load the questions from the JSON file
-  fetch('js/src/monthlyQuestions.json')
+  fetch('/js/src/monthlyQuestions.json')
     .then(response => response.json())
     .then(questions => {
       for (const [date, question] of Object.entries(questions)) {
