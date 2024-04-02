@@ -188,6 +188,10 @@
             class="fas fa-vr-cardboard"></i><span
             class="button-label">Experience</span></button>
 
+
+            <button id="menu-A" onclick="toggleLeftDashboard()">
+              <i class="fas fa-bars"></i><span></span>
+            </button>
       </div>
       <div class="right-dashboard">
         <button onclick="navigateToTab('account-tab')"><i
@@ -221,6 +225,10 @@
         <button onclick="navigateToTab('burn-tab')"><i
             class="fas fa-compact-disc"></i><span class="right-button-label">CD
             Burn</span></button>
+              <!-- Default text for the first tab -->
+              <button id="menu-B" onclick="toggleRightDashboard()">
+                <i class="fas fa-bars"></i><span></span>
+              </button>
 
       </div>
 
@@ -1138,17 +1146,20 @@ Warning: This feature is in active development. The following is sample DUMMY da
             <input type="range" id="song-progress" value="0" min="0" max="100" step="1">
           </div>
           <div id="current-time">0:00</div>
+
+
+
           <!-- Play/Pause Button -->
           <div class="superPlayerButtonMash">
             <button id="play-pause-button" onclick="togglePlayPause()" class="control-button">
               <i class="fas fa-play" id="play-pause-icon"></i>
             </button>
+          
+            <span id="tab-indicator">Home</span>
+      
            
           </div>
-          
-
-
-        </div>
+         
       </div></div>
 <!-- TEMPSCRIPT - TRYING TO MAKE A UNIVERSAL BUTTON-->
         <script>
@@ -1177,18 +1188,7 @@ Warning: This feature is in active development. The following is sample DUMMY da
 
       </div>
       <div>
-        <div class="bottom-controller fixed-bottom">
-          <button id="menu-A" onclick="toggleLeftDashboard()">
-            <i class="fas fa-bars"></i><span></span>
-          </button>
-          <span id="tab-indicator">Home</span>
-          <!-- Default text for the first tab -->
-          <button id="menu-B" onclick="toggleRightDashboard()">
-            <i class="fas fa-bars"></i><span></span>
-          </button>
-        </button>
-
-      </div>
+        
     </div>
     <!-- END OF BOTTOM PLAYER -->
     <!-- CONDITIONAL LOGIC BITCH -->
