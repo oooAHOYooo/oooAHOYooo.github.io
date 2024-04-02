@@ -1154,10 +1154,47 @@ Warning: This feature is in active development. The following is sample DUMMY da
             <button id="play-pause-button" onclick="togglePlayPause()" class="control-button">
               <i class="fas fa-play" id="play-pause-icon"></i>
             </button>
-           <!-- Mute Button -->
-           <button id="mute-button" onclick="toggleMute()" class="control-button">  
-            <i class="fas fa-volume-up" id="mute-icon"></i>
-          </button>
+          <input type="text" id="global-search-input" placeholder="Global Search..." class="control-button">
+          <div id="search-results-tab" class="tab-content" style="display: none;">
+            <ul id="search-results-list"></ul>
+          </div>
+          <script>
+            document.getElementById('global-search-input').addEventListener('input', function(e) {
+              const searchQuery = e.target.value.toLowerCase();
+              const tabs = ['home-tab', 'burn-tab', 'other-tab']; // Add other tab IDs here
+              let resultsFound = false;
+              document.getElementById('search-results-list').innerHTML = ''; // Clear previous results
+              
+              tabs.forEach(tabId => {
+                const tabContent = document.getElementById(tabId);
+                const links = tabContent.querySelectorAll('a');
+                links.forEach(link => {
+                  if (link.textContent.toLowerCase().includes(searchQuery)) {
+                    document.getElementById('search-results-list').innerHTML += `<li><a href="#${tabId}" onclick="showTab('${tabId}')">${link.textContent}</a></li>`;
+                    resultsFound = true;
+                  }
+                });
+              });
+              
+              if (resultsFound) {
+                document.getElementById('search-results-tab').style.display = 'block';
+              } else {
+                document.getElementById('search-results-tab').style.display = 'none';
+              }
+            });
+
+            function showTab(tabId) {
+              const tabs = document.querySelectorAll('.tab-content');
+              tabs.forEach(tab => {
+                if (tab.id === tabId) {
+                  tab.style.display = 'block';
+                } else {
+                  tab.style.display = 'none';
+                }
+              });
+            }
+          </script>
+
       
            
           </div>
