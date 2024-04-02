@@ -14,7 +14,7 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px);
     border-radius: 10px;
-    color: #fff;
+    color: var(--text-color);
     transition: all 0.3s ease;
 }
 

@@ -631,14 +631,17 @@
         <h2>Settings</h2>
         <div class="settings-options">
           <div class="setting">
+
+          <!-- Mute Button -->
+          <button id="mute-button" onclick="toggleMute()" class="control-button">Mute  
+            <i class="fas fa-volume-up" id="mute-icon">Audio</i>
+          </button>
+
             <button id="theme-switch-button" onclick="switchTheme()">Switch
               Theme</button>
           
 
-           <!-- Mute Button -->
-           <button id="mute-button" onclick="toggleMute()" class="control-button">
-            <i class="fas fa-volume-up" id="mute-icon"></i>
-          </button>
+ 
           </div>
           <!-- Add button to clear the background user image -->
           <div class="setting">
@@ -1102,6 +1105,7 @@ Warning: This feature is in active development. The following is sample DUMMY da
           <p
             style="font-family: 'Courier New', Courier, monospace; background-color: #ff0060; color: black; padding: 10px; border: 1px dashed red;">⚠️
             Warning: This feature is in active development.</p>
+            <h2>Burn CD</h2>
           <ul id="burn-instructions"></ul>
           <div id="burn-list-name-container">
             <input type="text" id="burn-list-name"
@@ -1109,7 +1113,7 @@ Warning: This feature is in active development. The following is sample DUMMY da
             <button id="save-burn-list-name">Save Name</button>
           </div>
           <div id="burn-list"></div>
-          <h2>Burn CD</h2>
+          
 
           <!-- Element to display instructions -->
           <!-- Add elements for queue management here, such as a list for the songs, input for the CD name, etc. -->
