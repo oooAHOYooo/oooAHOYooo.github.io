@@ -1,9 +1,6 @@
 /* Base Variables */
 :root {
-    --border-color: #ffd3f800;
-    /* Soft Pink, for a touch of whimsy */
-    --background-color: #222222;
-    /* Deep, rich black for a strong contrast */
+
     --text-color: #FCE043;
     /* Bright Yellow, for standout readability */
     --button-background: #8D86C9;
@@ -92,6 +89,9 @@
 /* Player */
 #v24ahoyPlayer {
     position: fixed;
+    z-index: 100000;
+    /* Adjusted to ensure it's on the very top */
+
     bottom: 0;
     width: 100%;
     height: auto;
@@ -100,6 +100,10 @@
     background-size: cover;
     animation: neurophoricEffect 30s linear infinite;
     padding: 15px 0;
+    border-style: solid !important;
+    border-color: var(--border-color);
+    box-shadow: inset 0 -10px 8px -8px rgba(0, 0, 0, 0.5);
+    /* Inner shadow for pronounced bottom border */
 }
 
 /* Control Button */
@@ -111,7 +115,7 @@
     animation: neurophoricEffect 4s ease infinite;
     color: var(--text-color);
     border: none;
-    border-radius: 20px;
+    border-radius: 22px;
     cursor: pointer;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
@@ -155,6 +159,9 @@
     cursor: pointer;
     transition: background-color 0.2s, color 0.2s;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 100001;
+    /* Ensure super player buttons are also on top */
+
 }
 
 .superPlayerButtonMash:hover {

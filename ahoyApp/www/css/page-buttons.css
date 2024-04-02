@@ -1,12 +1,12 @@
 /* Base Variables for Hipster Theme */
 :root {
-    --hipster-primary: #ff6;
+    --hipster-primary: rgb(0, 0, 0);
     /* Rich purple */
     --hipster-secondary: #E0A96D;
     /* Warm tan */
     --hipster-accent: #C1E1C1;
     /* Soft mint */
-    --hipster-hover: #F4E1D2;
+    --hipster-hover: #0000001c;
     /* Pale peach */
     --font-family: 'Courier New', Courier, monospace;
     /* Classic typewriter font */
