@@ -8,7 +8,7 @@ function loadPodcasts() {
       data.podcasts.forEach((podcast) => {
         const row = document.createElement("tr");
         row.innerHTML = `
-          <td><button class="control-button" id="podcast-play-${podcast.id}" onclick="togglePlayPausePodcast('${podcast.mp3url}', '${podcast.thumbnail}', '${podcast.title}', '${podcast.description}', ${podcast.id})"><i class="fas fa-play"></i></button></td>
+          <td><button class="control-button-a" id="podcast-play-${podcast.id}" onclick="togglePlayPausePodcast('${podcast.mp3url}', '${podcast.thumbnail}', '${podcast.title}', '${podcast.description}', ${podcast.id})"><i class="fas fa-play"></i></button></td>
           <td><img src="${podcast.thumbnail}" alt="${podcast.title}" class="thumbnail"></td>
           <td>${podcast.title}</td>
           <td>${podcast.description}</td>

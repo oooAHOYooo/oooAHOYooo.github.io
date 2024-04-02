@@ -79,6 +79,7 @@
     <link rel="stylesheet" href="./css/songBar.css">
     <link rel="stylesheet" href="./css/user-loginModal.css">
     <link rel="stylesheet" href="./css/section-settings.css">
+    <link rel="stylesheet" href="./css/page-buttons.css">
     <!-- END OF AG ADDITIONS TO HEAD -->
     <meta charset="utf-8">
     <meta name="viewport"
@@ -369,7 +370,7 @@
           <div id="now-playing-song-container" class="now-playing-song">
      
             <img id="now-playing-album-art" src alt="Album Art">
-            <button id="recently-added-homepage-song" class="control-button" onclick="togglePlayPause()">
+            <button id="recently-added-homepage-song" class="control-button-a" onclick="togglePlayPause()">
               <i class="fas fa-play"></i>
           </button>
               </div>
@@ -462,21 +463,21 @@
             <div id="podcast-featured-image-container"></div>
 
             <table class="standard-table" id="podcast-table">
-              <thead>
+              <!--thead>
                 <tr>
                   <th>Play</th>
                   <th>Thumbnail</th>
                   <th>Title</th>
                   <th>Description</th>
                 </tr>
-              </thead>
+              </the -->
               <tbody>
                 <!-- Podcast rows will be dynamically inserted here -->
               </tbody>
             </table>
           </div>
           <div id="podcast-review-section">
-            <h2>Podcast Reviews</h2>
+            <!--h2>Podcast Reviews</h2-->
             <div id="user-review-input-section" style="display: none;">
                 <textarea id="podcast-review-input" placeholder="Write your review here..."></textarea>
                 <button onclick="submitPodcastReview()">Submit Review</button>
@@ -785,7 +786,7 @@
           <!-- div id="newsletter-list"></div -->
         </div>
 
-        <h3>Present Beta State = 0.2.3H
+        <h3>Present Beta State = 0.2.3G
 
           <h4>Present Focus</h4>
           <p>Redesigning the entire layout - stay tuned - really going for
@@ -1123,6 +1124,9 @@ Warning: This feature is in active development. The following is sample DUMMY da
 
         <!-- END OF TABS ? CHECK -->
       </div><!-- YES -->
+
+
+
       <!-- BOTTOM PLAYER -->
       <div id="v24ahoyPlayer" class="player">
         <audio id="audio-player" src></audio>
@@ -1142,19 +1146,7 @@ Warning: This feature is in active development. The following is sample DUMMY da
            
           </div>
           
-          <script>
-            // Function to toggle mute for the audio player
-            function toggleMute() {
-              var audio = document.getElementById('audio-player');
-              var muteIcon = document.getElementById('mute-icon');
-              audio.muted = !audio.muted; // Toggle mute
-              if (audio.muted) {
-                muteIcon.className = 'fas fa-volume-mute'; // Change to mute icon
-              } else {
-                muteIcon.className = 'fas fa-volume-up'; // Change to volume up icon
-              }
-            }
-          </script>
+
 
         </div>
       </div></div>
@@ -1358,6 +1350,22 @@ Warning: This feature is in active development. The following is sample DUMMY da
       }
     });
   });
+</script>
+
+
+
+<script>
+  // Function to toggle mute for the audio player
+  function toggleMute() {
+    var audio = document.getElementById('audio-player');
+    var muteIcon = document.getElementById('mute-icon');
+    audio.muted = !audio.muted; // Toggle mute
+    if (audio.muted) {
+      muteIcon.className = 'fas fa-volume-mute'; // Change to mute icon
+    } else {
+      muteIcon.className = 'fas fa-volume-up'; // Change to volume up icon
+    }
+  }
 </script>
   </body>
 
