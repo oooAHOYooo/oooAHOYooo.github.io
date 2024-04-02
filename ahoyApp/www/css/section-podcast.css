@@ -135,3 +135,17 @@
         font-size: 10px;
     }
 }
+
+
+@media (max-width: 768px) {
+
+    /* Hide the description column header */
+    #podcast-table th:nth-child(3) {
+        display: none;
+    }
+
+    /* Hide the description column cells */
+    #podcast-table td:nth-child(0) {
+        display: none;
+    }
+}

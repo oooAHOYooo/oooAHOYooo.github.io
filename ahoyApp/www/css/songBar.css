@@ -1,208 +1,149 @@
-.song-progress-container {
-    width: 100%;
-    position: relative;
-    padding: 10px 0;
-    display: flex;
-    align-items: center;
-    border-style: solid;
-    border-color: var(--border-color);
+/* Base Variables */
+:root {
+    --border-color: #b3b3b3;
+    /* Light grey for subtlety */
+    --background-color: #121212;
+    /* Dark background for contrast */
+    --text-color: #FFFFFF;
+    /* White text for readability */
+    --button-background: #ffffff;
+    /* Spotify green for accents */
+    --progress-bar-color: #535353;
+    /* Darker grey for progress bar */
+    --control-button-color: #282828;
+    /* Slightly lighter than background for buttons */
+    --hover-background-color: #d1d71e4b;
+    /* Brighter green for hover states */
 }
 
+
+
+/* Song Progress Container */
+.song-progress-container {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border-color);
+    /* Solid for a cleaner look */
+}
+
+/* Song Progress Bar */
 #song-progress {
     width: 100%;
+    height: 4px;
+    /* Thinner for a sleek appearance */
+    background: var(--progress-bar-color);
     cursor: pointer;
-    -webkit-appearance: none;
     appearance: none;
-    height: 20px;
-    background: transparent;
+    border-radius: 2px;
 }
 
-#current-time {
-    position: absolute;
-    width: 50px;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-}
-
-/* Adjust the thumb */
-#song-progress::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 30px;
-    height: 20px;
-    border-style: solid;
-    background: var(--border-color);
-
-    cursor: pointer;
-}
-
+/* Slider Thumb */
+#song-progress::-webkit-slider-thumb,
 #song-progress::-moz-range-thumb {
-    width: 20px;
-    height: 20px;
-    background: var(--background-color);
+    width: 16px;
+    /* Smaller for refinement */
+    height: 16px;
+    /* Smaller for refinement */
+    background: var(--button-background);
+    border: none;
+    border-radius: 50%;
     cursor: pointer;
-    border-style: solid;
-    border-color: var(--border-color);
 }
 
-/* Define the pulsing effect using keyframes */
-@keyframes pulseAnimation {
-    0% {
-        background-color: rgba(255, 0, 212, 0.5);
-    }
-
-    50% {
-        background-color: rgba(0, 123, 255, 0.8);
-    }
-
-    100% {
-        background-color: rgba(0, 123, 255, 0.5);
-    }
-}
-
-/* Adjust the track */
-#song-progress::-webkit-slider-runnable-track {
-    width: 100%;
-    height: 22.5px;
-    filter: blur(.5px);
-    background-color: var(--border-color);
-    animation: pulseAnimation 2s infinite;
-}
-
+/* Slider Track */
+#song-progress::-webkit-slider-runnable-track,
 #song-progress::-moz-range-track {
-    width: 100%;
-    height: 20px;
-    background: linear-gradient(90deg, rgba(0, 123, 255, 0.613), rgba(255, 255, 255, 0.8) 70%);
-    filter: blur(2.5px);
-    animation: pulseAnimation 2s infinite;
+    background: var(--progress-bar-color);
+    border-radius: 2px;
 }
 
-.song-display {
-    padding: 22px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    width: 100%;
-    max-width: 50ch;
-    /* Set maximum width to 50 characters */
-    left: 0;
-    transform: translateY(-40%);
-    z-index: 100;
-    height: 32px;
-    padding: 27.5px;
-    margin-bottom: 10px;
-}
-
-.song-info {
-    background-color: var(--background-color);
-    backdrop-filter: blur(5px);
-    border-radius: 10px;
-    padding: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.052);
-    border: 1px solid rgba(255, 255, 255, 0.18);
+/* Current Time Indicator */
+#current-time {
+    margin-top: 5px;
+    /* Less space for a compact look */
+    font-size: 0.9em;
+    /* Smaller for sophistication */
     color: var(--text-color);
-    font-size: 16px;
 }
 
+/* Song Display & Info */
+.song-display,
+.song-info {
+    justify-content: center;
+    width: 90%;
+    padding: 10px;
+    margin: 20px auto;
+    background-color: var(--control-button-color);
+    color: var(--text-color);
+    font-size: 0.95em;
+    border-radius: 4px;
+    /* Rounded edges for a modern look */
+}
+
+/* Player */
 #v24ahoyPlayer {
     position: fixed;
-
-    bottom: 80px !important;
+    bottom: 0;
     width: 100%;
+    height: auto;
     z-index: 5100;
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
-    height: 85px !important;
-    overflow-y: hidden;
-    backdrop-filter: blur(19px);
+    background: var(--background-color);
+    padding: 15px 0;
 }
 
-/* Responsive adjustments for mobile devices */
+/* Control Button */
+.control-button {
+    padding: 8px 15px;
+    font-size: 0.8em;
+    background: var(--control-button-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 20px;
+    /* Circular buttons */
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.control-button:hover {
+    background-color: var(--hover-background-color);
+    transform: translateY(-2px);
+    /* Lift effect */
+}
+
+/* Super Player Button */
+.superPlayerButtonMash {
+    width: auto;
+    padding: 10px 20px;
+    background: var(--button-background);
+    color: var(--background-color);
+    border: none;
+    border-radius: 20px;
+    /* Rounded for consistency */
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.superPlayerButtonMash:hover {
+    background-color: var(--hover-background-color);
+    color: var(--background-color);
+}
+
+/* Responsive Adjustments */
 @media (max-width: 768px) {
-    .song-progress-container {
-        padding: 5px 0;
 
-    }
-
-    #song-progress {
-        height: 15px;
-    }
-
-    #song-progress::-webkit-slider-thumb,
-    #song-progress::-moz-range-thumb {
-        width: 20px;
-        height: 15px;
-    }
-
-    #song-progress::-webkit-slider-runnable-track,
-    #song-progress::-moz-range-track {
-        height: 17.5px;
-    }
-
-    #current-time {
-        width: 40px;
-        font-size: 12px;
-    }
-
-
+    .song-progress-container,
     .song-display,
     .song-info {
-        font-size: 16.5px;
-        overflow: hidden;
-        padding-top: 12.2px;
-        padding-bottom: 10px;
-        text-align: justify;
-        background: rgba(0, 0, 0, 0.624);
+        width: 95%;
     }
 
-    #v24ahoyPlayer {
-        bottom: 50px;
-        height: 70px;
+    .control-button,
+    .superPlayerButtonMash {
+        margin: 5px;
+        font-size: 0.9em;
     }
-}
-
-/* You might want to add more specific media queries for different ranges or orientations */
-@media (max-width: 480px) {
-
-    .song-info {
-        font-size: 14px;
-        background: rgba(255, 255, 255, 0.2);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.18);
-    }
-
-    .control-button {
-        margin: 10px;
-        font-size: 12px;
-        height: 100%;
-        position: relative;
-        display: flex;
-        border-color: rgba(255, 255, 255, 0.18);
-        background: rgba(255, 255, 255, 0.2);
-        backdrop-filter: blur(10px);
-    }
-}
-
-.control-button {
-    margin: 10px;
-    font-size: 16px;
-    height: 100%;
-    position: relative;
-    display: flex;
-    border-color: rgba(255, 255, 255, 0.18);
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-}
-
-.superPlayerButtonMash {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 200px !important;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
 }
