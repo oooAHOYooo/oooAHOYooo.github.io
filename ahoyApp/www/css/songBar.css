@@ -85,13 +85,15 @@
     position: relative;
     width: 100%;
     left: 0;
-    transform: translateY(-50%);
+    transform: translateY(-40%);
     z-index: 100;
-    height: 30px;
-    padding: 0;
+    height: 32px;
+    padding: 7.5px;
+    overflow-x: auto;
+    /* Adjusted padding here */
     margin: 0 !important;
-    background: var(--background-color);
     color: var(--text-color);
+    margin-bottom: 10px;
 }
 
 .song-info {
@@ -107,12 +109,14 @@
 
 #v24ahoyPlayer {
     position: fixed;
-    bottom: 50px;
+    background-color: yellow;
+
+    bottom: 80px !important;
     width: 100%;
     z-index: 5100;
     background: rgba(255, 255, 255, 0.2);
     color: white;
-    height: 70px;
+    height: 85px !important;
     overflow-y: hidden;
     border-style: solid;
     border-color: rgba(255, 255, 255, 0.18);
@@ -123,7 +127,7 @@
 @media (max-width: 768px) {
     .song-progress-container {
         padding: 5px 0;
-        overflow: hidden;
+
     }
 
     #song-progress {
@@ -149,11 +153,12 @@
 
     .song-display,
     .song-info {
-        font-size: 14px;
+        font-size: 16.5px;
         overflow: hidden;
         padding-top: 12.2px;
         padding-bottom: 10px;
         text-align: justify;
+        background: rgba(0, 0, 0, 0.624);
     }
 
     #v24ahoyPlayer {
@@ -186,7 +191,7 @@
 
 .control-button {
     margin: 10px;
-    font-size: 12px;
+    font-size: 16px;
     height: 100%;
     position: relative;
     display: flex;

@@ -2308,7 +2308,7 @@ button:hover {
 
 #burn-cd-button {
   background-color: var(--button-color);
-  color: var(--text-color);
+  color: #FFFFF0;
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
