@@ -1,21 +1,22 @@
 /* Base Variables */
 :root {
-    --border-color: #b3b3b3;
-    /* Light grey for subtlety */
-    --background-color: #121212;
-    /* Dark background for contrast */
-    --text-color: #FFFFFF;
-    /* White text for readability */
-    --button-background: #ffffff;
-    /* Spotify green for accents */
-    --progress-bar-color: #535353;
-    /* Darker grey for progress bar */
-    --control-button-color: #282828;
-    /* Slightly lighter than background for buttons */
-    --hover-background-color: #d1d71e4b;
-    /* Brighter green for hover states */
+    --border-color: #e8e8e80;
+    /* Soft, nearly white grey for a light, airy feel */
+    --background-color: #282828;
+    /* Deep, rich background for contrast */
+    --text-color: #f0f0f0;
+    /* Soft white for readability */
+    --button-background: #7c7c7c1d;
+    /* Light background for buttons */
+    --progress-bar-color: #a8a8a86c;
+    /* Muted grey for the progress bar */
+    --control-button-color: #383838;
+    /* Dark, but not too harsh, for buttons */
+    --hover-background-color: #1ed7b54b;
+    /* Subtle pastel for hover states */
+    --font-family: 'Courier New', Courier, monospace;
+    /* Hipster-approved typography */
 }
-
 
 
 /* Song Progress Container */
@@ -27,14 +28,12 @@
     align-items: center;
     padding: 20px 0;
     border-bottom: 1px solid var(--border-color);
-    /* Solid for a cleaner look */
 }
 
 /* Song Progress Bar */
 #song-progress {
     width: 100%;
     height: 4px;
-    /* Thinner for a sleek appearance */
     background: var(--progress-bar-color);
     cursor: pointer;
     appearance: none;
@@ -45,13 +44,13 @@
 #song-progress::-webkit-slider-thumb,
 #song-progress::-moz-range-thumb {
     width: 16px;
-    /* Smaller for refinement */
     height: 16px;
-    /* Smaller for refinement */
     background: var(--button-background);
     border: none;
     border-radius: 50%;
     cursor: pointer;
+    transition: transform 0.2s ease;
+    /* Smooth transition for a subtle effect */
 }
 
 /* Slider Track */
@@ -64,9 +63,7 @@
 /* Current Time Indicator */
 #current-time {
     margin-top: 5px;
-    /* Less space for a compact look */
     font-size: 0.9em;
-    /* Smaller for sophistication */
     color: var(--text-color);
 }
 
@@ -81,7 +78,10 @@
     color: var(--text-color);
     font-size: 0.95em;
     border-radius: 4px;
-    /* Rounded edges for a modern look */
+}
+
+.song-display {
+    color: white;
 }
 
 /* Player */
@@ -103,33 +103,34 @@
     color: var(--text-color);
     border: none;
     border-radius: 20px;
-    /* Circular buttons */
     cursor: pointer;
-    transition: background-color 0.2s ease, transform 0.2s ease;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
 .control-button:hover {
     background-color: var(--hover-background-color);
+    color: var(--background-color);
+    /* Changing color for a gentle contrast */
     transform: translateY(-2px);
-    /* Lift effect */
+    /* Subtle lift effect */
 }
 
 /* Super Player Button */
 .superPlayerButtonMash {
-    width: auto;
     padding: 10px 20px;
     background: var(--button-background);
-    color: var(--background-color);
+    color: var(--control-button-color);
+    /* Dark text for contrast */
     border: none;
     border-radius: 20px;
-    /* Rounded for consistency */
     cursor: pointer;
-    transition: background-color 0.2s;
+    transition: background-color 0.2s, color 0.2s;
 }
 
 .superPlayerButtonMash:hover {
     background-color: var(--hover-background-color);
     color: var(--background-color);
+    /* Gentle contrast on hover */
 }
 
 /* Responsive Adjustments */
@@ -145,5 +146,6 @@
     .superPlayerButtonMash {
         margin: 5px;
         font-size: 0.9em;
+        /* Slightly larger for touch interactions */
     }
 }
