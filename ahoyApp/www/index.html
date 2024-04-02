@@ -78,6 +78,7 @@
     <link rel="stylesheet" href="./css/section-home.css">
     <link rel="stylesheet" href="./css/songBar.css">
     <link rel="stylesheet" href="./css/user-loginModal.css">
+    <link rel="stylesheet" href="./css/section-settings.css">
     <!-- END OF AG ADDITIONS TO HEAD -->
     <meta charset="utf-8">
     <meta name="viewport"
@@ -632,6 +633,12 @@
           <div class="setting">
             <button id="theme-switch-button" onclick="switchTheme()">Switch
               Theme</button>
+          
+
+           <!-- Mute Button -->
+           <button id="mute-button" onclick="toggleMute()" class="control-button">
+            <i class="fas fa-volume-up" id="mute-icon"></i>
+          </button>
           </div>
           <!-- Add button to clear the background user image -->
           <div class="setting">
@@ -1125,14 +1132,26 @@ Warning: This feature is in active development. The following is sample DUMMY da
           <div id="current-time">0:00</div>
           <!-- Play/Pause Button -->
           <div class="superPlayerButtonMash">
-          <button id="play-pause-button" onclick="togglePlayPause()" class="control-button">
-            <i class="fas fa-play" id="play-pause-icon"></i>
-          </button>
+            <button id="play-pause-button" onclick="togglePlayPause()" class="control-button">
+              <i class="fas fa-play" id="play-pause-icon"></i>
+            </button>
+           
           </div>
-            <!-- Next Button -->
-          <!--button id="next-button" onclick="playNextSong()" class="control-button">
-            <i class="fas fa-forward"></i>
-  </button-->
+          
+          <script>
+            // Function to toggle mute for the audio player
+            function toggleMute() {
+              var audio = document.getElementById('audio-player');
+              var muteIcon = document.getElementById('mute-icon');
+              audio.muted = !audio.muted; // Toggle mute
+              if (audio.muted) {
+                muteIcon.className = 'fas fa-volume-mute'; // Change to mute icon
+              } else {
+                muteIcon.className = 'fas fa-volume-up'; // Change to volume up icon
+              }
+            }
+          </script>
+
         </div>
       </div></div>
 <!-- TEMPSCRIPT - TRYING TO MAKE A UNIVERSAL BUTTON-->
