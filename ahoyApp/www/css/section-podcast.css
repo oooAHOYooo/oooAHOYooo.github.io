@@ -7,6 +7,7 @@
     display: flex;
     text-align: center;
     align-items: center;
+
 }
 
 
@@ -14,11 +15,17 @@
 #podcast-featured-image-container {
     text-align: center;
     margin-bottom: 20px;
+    max-width: 360px !important;
 }
 
 #the-featured-podcast-image img {
-    max-width: 100%;
+    width: 100%;
+    /* Adjusted to ensure width is always 100% of container */
+    max-width: 480px !important;
     height: auto;
+    /* Height is auto to maintain aspect ratio */
+    aspect-ratio: 1 / 1;
+    /* Ensures the image is always a square */
     border-radius: 2px;
 }
 
@@ -103,7 +110,7 @@
 .enlarged-thumbnail {
     width: 100%;
     /* Adjust as needed */
-    max-width: 500px;
+    max-width: 400px;
     /* Adjust as needed */
     height: auto;
     border-radius: 8px;
