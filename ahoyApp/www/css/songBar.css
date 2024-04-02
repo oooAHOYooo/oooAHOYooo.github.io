@@ -109,7 +109,6 @@
 
 #v24ahoyPlayer {
     position: fixed;
-    background-color: yellow;
 
     bottom: 80px !important;
     width: 100%;
@@ -118,9 +117,7 @@
     color: white;
     height: 85px !important;
     overflow-y: hidden;
-    border-style: solid;
-    border-color: rgba(255, 255, 255, 0.18);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(19px);
 }
 
 /* Responsive adjustments for mobile devices */
