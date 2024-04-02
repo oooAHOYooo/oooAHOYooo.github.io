@@ -3,13 +3,12 @@
     display: flex;
     flex-direction: column;
     z-index: 1;
-
     display: flex;
     text-align: center;
     align-items: center;
-
+    background: linear-gradient(145deg, #e6f1fa, #b8d8ef);
+    /* Light sky to ocean gradient */
 }
-
 
 /* Podcast Section Styles */
 #podcast-featured-image-container {
