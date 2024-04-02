@@ -229,90 +229,7 @@ button:hover {
   text-decoration: none;
 }
 
-.player {
 
-  position: fixed;
-  bottom: 51px;
-  width: 100%;
-  background-color: var(--background-color);
-  color: var(--text-color);
-  padding: 35px 0;
-}
-
-.player-content {
-  display: none;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
-}
-
-.player-info {
-  flex: 1;
-}
-
-.player-link {
-  color: var(--text-color);
-  text-decoration: none;
-  display: block;
-}
-
-.player-controls,
-.player-actions {
-  display: flex;
-  align-items: center;
-}
-
-.player-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
-  background-color: var(--background-color);
-  height: 30px;
-  display: none;
-  /* Changed height */
-}
-
-
-.player-button {
-  color: var(--text-color);
-  background: none;
-  border: none;
-  margin: 0 10px;
-  font-size: 20px;
-}
-
-.player-button:focus {
-  outline: none;
-}
-
-.bottom-controller {
-  position: fixed;
-  bottom: 0;
-  height: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  /* Add your styles here (padding, background, etc.) */
-}
-
-.bottom-controller {
-  padding: 20px 0;
-  margin: 0px;
-  background-color: var(--background-color);
-  overflow: hidden;
-  height: 35px;
-}
-
-.bottom-controller button {
-  color: var(--text-color);
-  background: var(--background-color);
-  border: none;
-  font-size: 32px;
-  cursor: pointer;
-  border-style: solid;
-  padding: 25px;
-}
 
 #tab-indicator {
   color: var(--text-color);
@@ -322,14 +239,6 @@ button:hover {
   font-family: 'Courier New', Courier, monospace;
 }
 
-.fixed-bottom {
-  position: fixed;
-  bottom: 0%;
-  /* Adjust this value based on the height of your bottom navigation */
-  width: 100%;
-  z-index: 9;
-  /* To make sure it's above other elements */
-}
 
 .radio-wrap {
   display: flex;
@@ -372,24 +281,7 @@ button:hover {
 
 
 
-.control-button {
-  color: var(--text-color);
-  background: var(--background-color);
-  border: none;
-  font-size: 32px;
-  cursor: pointer;
-}
 
-.control-button:focus {
-  outline: none;
-}
-
-
-#playerContainer {
-  background-color: var(--secondary-color);
-  border: 2px solid var(--border-color);
-  border-radius: 2.5px;
-}
 
 
 
