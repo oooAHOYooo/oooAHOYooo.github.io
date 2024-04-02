@@ -1,3 +1,67 @@
+/* Base Variables for Hipster Theme */
+:root {
+    --hipster-primary: #ff6;
+    /* Rich purple */
+    --hipster-secondary: #E0A96D;
+    /* Warm tan */
+    --hipster-accent: #C1E1C1;
+    /* Soft mint */
+    --hipster-hover: #F4E1D2;
+    /* Pale peach */
+    --font-family: 'Courier New', Courier, monospace;
+    /* Classic typewriter font */
+}
+
+/* Additional Styles for .control-button-a */
 .control-button-a {
-    color: yellow !important;
+    font-family: var(--font-family);
+    font-size: 1em;
+    padding: 10px 20px;
+    border: 2px solid transparent;
+    background-color: var(--hipster-primary);
+    /* Updated to Hipster primary */
+    color: var(--hipster-accent);
+    /* Updated to Hipster accent */
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.control-button-a::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background-color: var(--hipster-hover);
+    /* Updated to Hipster hover */
+    transition: width 0.4s ease, height 0.4s ease, top 0.4s ease, left 0.4s ease;
+    border-radius: 50%;
+    opacity: 0.6;
+    transform: translate(-50%, -50%);
+}
+
+.control-button-a:hover::before {
+    width: 0;
+    height: 0;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+}
+
+.control-button-a:hover {
+    border-color: var(--hipster-accent);
+    /* Updated to Hipster accent */
+    color: var(--hipster-secondary);
+    /* Updated to Hipster secondary */
+}
+
+.control-button-a:focus,
+.control-button-a:active {
+    box-shadow: 0 0 0 4px var(--hipster-accent) inset;
+    /* Updated to Hipster accent */
 }

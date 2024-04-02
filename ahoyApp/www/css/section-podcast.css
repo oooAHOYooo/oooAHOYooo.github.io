@@ -6,6 +6,7 @@
     text-align: center;
     align-items: center;
     color: #f0f8ff;
+    padding-bottom: 150px;
     /* Light coral on dark */
     background: linear-gradient(145deg, #0a3d62, #1e272e);
     /* Dark nautical gradient */
@@ -34,18 +35,7 @@
 
 /* OLD CODE */
 
-.podcast-container {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    z-index: 1;
-    text-align: center;
-    align-items: center;
-    color: #f0f8ff;
-    /* Light coral on dark */
-    background: linear-gradient(145deg, #0a3d62, #1e272e);
-    /* Dark nautical gradient */
-}
+
 
 #podcast-table img {
     border-radius: 5px;

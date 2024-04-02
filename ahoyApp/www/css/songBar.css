@@ -29,6 +29,7 @@
     align-items: center;
     padding: 20px 0;
 
+
 }
 
 /* Song Progress Bar */
@@ -221,6 +222,4 @@
         font-size: 0.9em;
         /* Slightly larger for touch interactions */
     }
-}
-}
 }
