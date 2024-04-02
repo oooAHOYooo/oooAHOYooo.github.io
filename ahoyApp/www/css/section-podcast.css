@@ -79,31 +79,7 @@
 
 
 
-@media screen and (max-width: 600px) {
-    #podcast-table-container {
-        overflow-x: auto;
 
-        /* Shrinks the scale for mobile */
-    }
-
-    #podcast-table th,
-    #podcast-table td {
-        padding: 5px;
-        font-size: 12px;
-        /* Adjusted for smaller screens */
-    }
-
-    .podcast-container {
-        padding: 0 5px;
-        margin: 0;
-        transform: scale(1);
-        /* Shrinks the scale for mobile */
-    }
-
-    .podcast-featured-image-container {
-        margin: 0;
-    }
-}
 
 
 
@@ -133,4 +109,29 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/*Code took from foundtaional */
+@media screen and (max-width: 320px) {
+
+    #podcast-featured-image-container,
+    .podcast-featured-image-container {
+        max-width: 90% !important;
+        margin: 0 auto;
+    }
+
+    #the-featured-podcast-image img,
+    .enlarged-thumbnail {
+        max-width: 100% !important;
+        height: auto;
+    }
+
+    #podcast-table,
+    .podcast-container {
+        width: 100%;
+        transform: scale(0.9);
+    }
+
+    #podcast-table th,
+    #podcast-table td {
+        padding: 4px;
+        font-size: 10px;
+    }
+}
