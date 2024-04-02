@@ -16,8 +16,8 @@
     /* Thistle, for a muted hover effect */
     --font-family: 'Barlow', Helvetica, Arial, sans-serif;
     /* Modern, clean typography */
-    --neurophoric-highlight: linear-gradient(45deg, #355C7D, #6C5B7B, #C06C84, #F8B195);
-    /* A gradient of CMYK-inspired hues for a hipster, neurophoric effect */
+    --neurophoric-highlight: linear-gradient(45deg, rgba(53, 92, 125, 0.8), rgba(108, 91, 123, 0.8), rgba(192, 108, 132, 0.8), rgba(248, 177, 149, 0.8));
+    /* A gradient of CMYK-inspired hues for a hipster, neurophoric effect, now with added translucency */
 }
 
 /* Song Progress Container */
@@ -129,8 +129,6 @@
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
     background-color: var(--progress-bar-color);
     /* Ripple effect color */
-    /* Jelly-like effect */
-    animation: jelly 0.5s ease;
 }
 
 .control-button:active::after {
@@ -169,8 +167,6 @@
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
     background-color: var(--progress-bar-color);
     /* Ripple effect color */
-    /* Jelly-like effect */
-    animation: jelly 0.5s ease;
 }
 
 .superPlayerButtonMash:active::after {
