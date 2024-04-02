@@ -3,11 +3,12 @@
     display: flex;
     flex-direction: column;
     z-index: 1;
-    display: flex;
     text-align: center;
     align-items: center;
-    background: linear-gradient(145deg, #e6f1fa, #b8d8ef);
-    /* Light sky to ocean gradient */
+    color: #f0f8ff;
+    /* Light coral on dark */
+    background: linear-gradient(145deg, #0a3d62, #1e272e);
+    /* Dark nautical gradient */
 }
 
 /* Podcast Section Styles */
@@ -15,6 +16,8 @@
     text-align: center;
     margin-bottom: 20px;
     max-width: 360px !important;
+    background: linear-gradient(145deg, #e6f1fa, #b8d8ef);
+    /* Light sky to ocean gradient */
 }
 
 #the-featured-podcast-image img {
@@ -31,14 +34,17 @@
 
 /* OLD CODE */
 
-
-#podcast-table {
+.podcast-container {
     position: relative;
-    width: 100%;
-    font-size: 0.9em;
-    border-collapse: collapse;
-    margin-top: 20px;
-    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    text-align: center;
+    align-items: center;
+    color: #f0f8ff;
+    /* Light coral on dark */
+    background: linear-gradient(145deg, #0a3d62, #1e272e);
+    /* Dark nautical gradient */
 }
 
 #podcast-table img {

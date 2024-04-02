@@ -1,32 +1,3 @@
 .control-button-a {
-    color: #0077be !important;
-    /* Deep sea blue */
-    background: linear-gradient(145deg, #e6f1fa, #b8d8ef);
-    /* Light sky to ocean gradient */
-    border: 2px solid #005f8b;
-    /* Dark ocean blue for contrast */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), inset 0 1px 2px rgba(255, 255, 255, 0.6);
-    /* Soft outer shadow with a hint of inner light */
-    backdrop-filter: blur(5px);
-    border-radius: 10px;
-    /* Keeping the rounded corners */
-    padding: 10px 20px;
-    /* Adequate padding for better touch */
-    font-weight: bold;
-    /* Make the text stand out more */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-    /* Soft text shadow for depth */
-    transition: all 0.3s ease;
-    /* Smooth transition for interactions */
-}
-
-.control-button-a:hover {
-    background: linear-gradient(145deg, #b8d8ef, #e6f1fa);
-    /* Invert gradient for a subtle hover effect */
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15), inset 0 2px 4px rgba(255, 255, 255, 0.7);
-    /* Enhanced shadow for depth */
-    transform: translateY(-2px);
-    /* Slight raise effect */
-    border-color: #0077be;
-    /* Brighter border on hover */
+    color: yellow !important;
 }
