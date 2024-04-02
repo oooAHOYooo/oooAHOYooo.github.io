@@ -1,6 +1,14 @@
 {
   "podcasts": [
     {
+      "id": 11,
+      "title": "The Rob Show #22 - Sam Carlson - New Haven Musician",
+      "description": "In this episode, Sam Carlson talks about the new construction going on around the Havens and beyond. Also discussing the solar eclipse.",
+      "date": "2024-03-28",
+      "mp3url": "https://ahoypodcast.s3.us-east-2.amazonaws.com/ready+The+Rob+Show+-+Ep+22+-+Sam+Carlson.mp3",
+      "thumbnail": "https://ahoypodcast.s3.us-east-2.amazonaws.com/The+Rob+Show+-+Ep22+-+Sam+Carlson+-+3.28.24.jpg"
+    },
+    {
       "id": 10,
       "title": "The Rob Show #21 - with Tony Rick and Andrew August",
       "description": "In this episode, Tony Rick and Andrew August join the show to discuss their latest projects and insights into their creative processes.",
