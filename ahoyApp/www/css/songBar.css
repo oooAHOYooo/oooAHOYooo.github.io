@@ -24,9 +24,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px 0;
-
-
+    padding: 5px 0;
+    /* Reduced padding for a more compact look */
 }
 
 /* Song Progress Bar */
@@ -51,7 +50,6 @@
     border-radius: 50%;
     cursor: pointer;
     transition: transform .2s ease;
-    /* Smooth transition for a subtle effect */
 }
 
 /* Slider Track */
@@ -73,8 +71,10 @@
 .song-info {
     justify-content: center;
     width: 90%;
-    padding: 10px;
-    margin: 20px auto;
+    padding: 5px;
+    /* Reduced padding for a more compact look */
+    margin: 10px auto;
+    /* Reduced margin for a more compact look */
     background-color: var(--control-button-color);
     color: var(--text-color);
     font-size: 0.95em;
@@ -90,8 +90,6 @@
 #v24ahoyPlayer {
     position: fixed;
     z-index: 100000;
-    /* Adjusted to ensure it's on the very top */
-
     bottom: 0;
     width: 100%;
     height: auto;
@@ -99,16 +97,17 @@
     background-image: var(--neurophoric-highlight);
     background-size: cover;
     animation: neurophoricEffect 30s linear infinite;
-    padding: 15px 0;
+    padding: 10px 0;
+    /* Reduced padding for a more compact look */
     border-style: solid !important;
     border-color: var(--border-color);
     box-shadow: inset 0 -10px 8px -8px rgba(0, 0, 0, 0.5);
-    /* Inner shadow for pronounced bottom border */
 }
 
 /* Control Button */
 .control-button {
-    padding: 8px 15px;
+    padding: 6px 12px;
+    /* Adjusted padding for a more compact look */
     font-size: 0.8em;
     background-image: var(--neurophoric-highlight);
     background-size: 200% 200%;
@@ -149,7 +148,8 @@
 
 /* Super Player Button */
 .superPlayerButtonMash {
-    padding: 10px 20px;
+    padding: 8px 16px;
+    /* Adjusted padding for a more compact look */
     background-image: var(--neurophoric-highlight);
     background-size: 200% 200%;
     animation: neurophoricEffect 4s ease infinite;
@@ -259,22 +259,86 @@
 
 .center-dashboard-buttons button {
     background-image: var(--neurophoric-highlight);
+    /* Retain the unique gradient */
     color: var(--text-color);
-    border: none;
-    border-radius: 20px;
+    border: 2px solid transparent;
+    /* Add a subtle border */
+    border-radius: 30px;
+    /* Increase border-radius for a more pill-like shape */
     cursor: pointer;
-    font-size: 1em;
-    padding: 10px 20px;
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-size: 1.1em;
+    /* Slightly larger font for emphasis */
+    padding: 12px 24px;
+    /* Increase padding for a more substantial touch area */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    /* Smooth transition for all properties */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+    /* More pronounced shadow on hover for a deeper effect */
+    font-family: 'Courier New', Courier, monospace;
+    /* Switch to a typewriter-like font for that hipster vibe */
+    letter-spacing: 0.05em;
+    /* Add letter-spacing to improve readability and style */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    /* Add a subtle text-shadow for better readability over the gradient background */
 }
 
 .center-dashboard-buttons button:hover {
     animation: none;
     background-color: var(--hover-background-color);
     color: var(--background-color);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    transform: translateY(-3px);
+    /* Slightly more lift on hover for a more dynamic interaction */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+    /* More pronounced shadow on hover for a deeper effect */
+    border-color: var(--text-color);
+    /* Introduce a border color change on hover for a subtle highlight */
+}
+
+.center-dashboard-buttons button:active {
+    transform: translateY(-1px);
+    /* Less movement on active to simulate a soft press */
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+    /* Soften the shadow on press for a 'pushed' effect */
+    background-color: var(--progress-bar-color);
+    /* Keep the vibrant color change on active */
+    border-color: var(--hover-background-color);
+    /* Change border color on active for a subtle feedback */
+}
+
+.center-dashboard-buttons i {
+    margin-right: 8px;
+    /* Increase spacing for a more relaxed layout */
+    color: var(--control-button-color);
+    /* Use a different color for icons for contrast and emphasis */
+    transition: transform 0.3s ease;
+    /* Smooth transition for icon transformations */
+}
+
+.center-dashboard-buttons button:hover i {
+    transform: scale(1.1);
+    /* Slightly enlarge icons on hover for an engaging effect */
+}
+
+/* Introduce a border color change on hover for a subtle highlight */
+}
+
+.center-dashboard-buttons button:active {
+    transform: translateY(-1px);
+    /* Less movement on active to simulate a soft press */
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+    /* Soften the shadow on press for a 'pushed' effect */
+    background-color: var(--progress-bar-color);
+    /* Keep the vibrant color change on active */
+    border-color: var(--hover-background-color);
+    /* Change border color on active for a subtle feedback */
+}
+
+.center-dashboard-buttons i {
+    margin-right: 5px;
+}
+
+border-color: var(--text-color);
+/* Introduce a border color change on hover for a subtle highlight */
 }
 
 .center-dashboard-buttons button:active {

@@ -1137,13 +1137,7 @@ Warning: This feature is in active development. The following is sample DUMMY da
 
       <!-- BOTTOM PLAYER -->
       <div id="v24ahoyPlayer" class="player">
-        <div class="center-dashboard-menu">
-          <ul class="center-dashboard-buttons">
-            <li><button onclick="document.getElementById('music-tab').click();"><i class="fas fa-music"></i> Music</button></li>
-            <li><button onclick="document.getElementById('podcast-tab').click();"><i class="fas fa-podcast"></i> Podcast</button></li>
-            <li><button onclick="document.getElementById('media-tab').click();"><i class="fas fa-photo-video"></i> Media</button></li>
-          </ul>
-        </div>
+   
         <audio id="audio-player" src></audio>
         <div class="audio-player-controls">
           <div class="song-display">
@@ -1154,7 +1148,16 @@ Warning: This feature is in active development. The following is sample DUMMY da
           </div>
           <div id="current-time">0:00</div>
 
-
+          <div class="center-dashboard-menu">
+            <ul class="center-dashboard-buttons">
+              <li><button onclick="navigateToTab('songs-tab')"><i class="fas fa-music"></i></button></li>
+              <li><button onclick="navigateToTab('podcasts-tab')"><i class="fas fa-podcast"></i></button></li>
+              <li><button onclick="navigateToTab('media-tab-a')"><i class="fas fa-photo-video"></i></button></li>
+              <button onclick="navigateToTab('news-tab')"><i
+                class="fas fa-newspaper"></i><span
+                class="button-label">News</span></button>
+            </ul>
+          </div>
 
           <!-- Play/Pause Button -->
           <div class="superPlayerButtonMash">
