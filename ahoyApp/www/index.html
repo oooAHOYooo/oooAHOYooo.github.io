@@ -234,7 +234,7 @@
 
       <div id="tabSortz">
         <!-- HOME TAB -->
-        <div id="home-tab" class="tab-content">
+        <div id="home-tab" class="tab-content active">
 
           <div id="home-logo-div">
             <a href="./index.html"><img src="./img/assets/u_ahoy23.png" />
@@ -466,7 +466,7 @@
         </div>
 
         <!-- PODCASTS -->
-        <div id="podcasts-tab" class="tab-content  active">
+        <div id="podcasts-tab" class="tab-content">
           <div class="podcast-container">
             <div id="podcast-featured-image-container"></div>
 
@@ -1141,21 +1141,24 @@ Warning: This feature is in active development. The following is sample DUMMY da
         <audio id="audio-player" src></audio>
         <div class="audio-player-controls">
           <div class="song-display">
-            <div id="song-info">Artist - Song Title</div>
+            <div id="song-info">Artist - Song Title</div><div id="current-time">0:00</div>
           </div>
           <div class="song-progress-container">
-            <input type="range" id="song-progress" value="0" min="0" max="100" step="1">
+            <input type="range" id="song-progress" value="0" min="0" max="100" step="1">  
           </div>
-          <div id="current-time">0:00</div>
+        
 
           <div class="center-dashboard-menu">
             <ul class="center-dashboard-buttons">
               <li><button onclick="navigateToTab('songs-tab')"><i class="fas fa-music"></i></button></li>
               <li><button onclick="navigateToTab('podcasts-tab')"><i class="fas fa-podcast"></i></button></li>
               <li><button onclick="navigateToTab('media-tab-a')"><i class="fas fa-photo-video"></i></button></li>
-              <button onclick="navigateToTab('news-tab')"><i
+              <li><button onclick="navigateToTab('news-tab')"><i
                 class="fas fa-newspaper"></i><span
-                class="button-label">News</span></button>
+                class="button-label"></span></button></li>
+               <li><button onclick="navigateToTab('settings-tab')"><i
+                  class="fas fa-cog"></i><span
+                  class="right-button-label">Settings</span></button></li> 
             </ul>
           </div>
 

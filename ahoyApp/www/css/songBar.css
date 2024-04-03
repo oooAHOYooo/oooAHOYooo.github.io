@@ -61,6 +61,11 @@
 
 /* Current Time Indicator */
 #current-time {
+    position: relative;
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-top: 2px;
     /* More Compact */
     font-size: 0.8em;
@@ -230,7 +235,7 @@
     /* More Compact */
     border-radius: 15px;
     padding: 10px;
-    margin: 20px auto;
+    margin: 12px auto;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -244,7 +249,7 @@
 }
 
 .center-dashboard-buttons li {
-    margin: 0 10px;
+    margin: 0 5px;
 }
 
 .center-dashboard-buttons button {
