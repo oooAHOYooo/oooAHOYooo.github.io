@@ -230,3 +230,59 @@
         /* Slightly larger for touch interactions */
     }
 }
+
+/* Additional CSS for center-dashboard-menu */
+.center-dashboard-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 10px;
+    margin: 20px auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.center-dashboard-buttons {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center-dashboard-buttons li {
+    margin: 0 10px;
+}
+
+.center-dashboard-buttons button {
+    background-image: var(--neurophoric-highlight);
+    color: var(--text-color);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1em;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.center-dashboard-buttons button:hover {
+    animation: none;
+    background-color: var(--hover-background-color);
+    color: var(--background-color);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.center-dashboard-buttons button:active {
+    transform: translateY(1px);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+    background-color: var(--progress-bar-color);
+}
+
+.center-dashboard-buttons i {
+    margin-right: 5px;
+}

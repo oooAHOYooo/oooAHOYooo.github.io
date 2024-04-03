@@ -1137,6 +1137,13 @@ Warning: This feature is in active development. The following is sample DUMMY da
 
       <!-- BOTTOM PLAYER -->
       <div id="v24ahoyPlayer" class="player">
+        <div class="center-dashboard-menu">
+          <ul class="center-dashboard-buttons">
+            <li><button onclick="document.getElementById('music-tab').click();"><i class="fas fa-music"></i> Music</button></li>
+            <li><button onclick="document.getElementById('podcast-tab').click();"><i class="fas fa-podcast"></i> Podcast</button></li>
+            <li><button onclick="document.getElementById('media-tab').click();"><i class="fas fa-photo-video"></i> Media</button></li>
+          </ul>
+        </div>
         <audio id="audio-player" src></audio>
         <div class="audio-player-controls">
           <div class="song-display">
@@ -1154,49 +1161,7 @@ Warning: This feature is in active development. The following is sample DUMMY da
             <button id="play-pause-button" onclick="togglePlayPause()" class="control-button">
               <i class="fas fa-play" id="play-pause-icon"></i>
             </button>
-          <input type="text" id="global-search-input" placeholder="Global Search..." class="control-button">
-          <div id="search-results-tab" class="tab-content" style="display: none;">
-            <ul id="search-results-list"></ul>
-          </div>
-          <script>
-            document.getElementById('global-search-input').addEventListener('input', function(e) {
-              const searchQuery = e.target.value.toLowerCase();
-              const tabs = ['home-tab', 'burn-tab', 'other-tab']; // Add other tab IDs here
-              let resultsFound = false;
-              document.getElementById('search-results-list').innerHTML = ''; // Clear previous results
-              
-              tabs.forEach(tabId => {
-                const tabContent = document.getElementById(tabId);
-                const links = tabContent.querySelectorAll('a');
-                links.forEach(link => {
-                  if (link.textContent.toLowerCase().includes(searchQuery)) {
-                    document.getElementById('search-results-list').innerHTML += `<li><a href="#${tabId}" onclick="showTab('${tabId}')">${link.textContent}</a></li>`;
-                    resultsFound = true;
-                  }
-                });
-              });
-              
-              if (resultsFound) {
-                document.getElementById('search-results-tab').style.display = 'block';
-              } else {
-                document.getElementById('search-results-tab').style.display = 'none';
-              }
-            });
-
-            function showTab(tabId) {
-              const tabs = document.querySelectorAll('.tab-content');
-              tabs.forEach(tab => {
-                if (tab.id === tabId) {
-                  tab.style.display = 'block';
-                } else {
-                  tab.style.display = 'none';
-                }
-              });
-            }
-          </script>
-
-      
-           
+        
           </div>
          
       </div></div>
@@ -1372,7 +1337,7 @@ Warning: This feature is in active development. The following is sample DUMMY da
       </script>
 
     <!-- Written by Alex Gonzalez - of Sleepy Hollow, NY - out and around the Havens, CT. this has seen hand coded - a thousand million times over - since the start of the roaring 20s.  -->
-    <!-- Please print this code for historical purposes --><!-- As of 3.28.24 -->
+    <!-- Please print this code for historical purposes --><!-- As of 4.2.24 -->
     <script>
       document.addEventListener('DOMContentLoaded', function() {
           displayESTDateTime(); // Call the function to display the date and time
