@@ -144,3 +144,18 @@
         display: none;
     }
 }
+
+
+@media (max-width: 768px) {
+
+    /* Hide the description column header */
+    #podcast-table th:nth-child(4) {
+        display: none;
+    }
+
+    /* Hide the description column cells */
+    #podcast-table td:nth-child(4) {
+        /* Corrected the child index to hide the description cells */
+        display: none;
+    }
+}
