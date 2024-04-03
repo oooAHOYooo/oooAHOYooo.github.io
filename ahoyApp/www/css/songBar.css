@@ -1,20 +1,19 @@
 /* Base Variables */
 :root {
-
     --text-color: #FCE043;
-    /* Bright Yellow, for standout readability */
+    /* Bright Yellow */
     --button-background: #8D86C9;
-    /* Muted Lavender, for a vintage feel */
+    /* Muted Lavender */
     --progress-bar-color: #F67280;
-    /* Coral, for a pop of color */
+    /* Coral */
     --control-button-color: #C06C84;
-    /* Dusty Rose, for a subtle touch */
+    /* Dusty Rose */
     --hover-background-color: #6C5B7B;
-    /* Thistle, for a muted hover effect */
+    /* Thistle */
     --font-family: 'Barlow', Helvetica, Arial, sans-serif;
-    /* Modern, clean typography */
+    /* Modern Typography */
     --neurophoric-highlight: linear-gradient(45deg, rgba(53, 92, 125, 0.8), rgba(108, 91, 123, 0.8), rgba(192, 108, 132, 0.8), rgba(248, 177, 149, 0.8));
-    /* A gradient of CMYK-inspired hues for a hipster, neurophoric effect, now with added translucency */
+    /* CMYK-inspired Gradient */
 }
 
 /* Song Progress Container */
@@ -24,8 +23,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 5px 0;
-    /* Reduced padding for a more compact look */
+    padding: 2px 0;
+    /* More Compact */
 }
 
 /* Song Progress Bar */
@@ -43,10 +42,11 @@
 /* Slider Thumb */
 #song-progress::-webkit-slider-thumb,
 #song-progress::-moz-range-thumb {
-    width: 16px;
-    height: 16px;
+    width: 12px;
+    /* Smaller */
+    height: 12px;
+    /* Smaller */
     background: var(--button-background);
-    border: none;
     border-radius: 50%;
     cursor: pointer;
     transition: transform .2s ease;
@@ -61,8 +61,10 @@
 
 /* Current Time Indicator */
 #current-time {
-    margin-top: 5px;
-    font-size: 0.9em;
+    margin-top: 2px;
+    /* More Compact */
+    font-size: 0.8em;
+    /* Smaller */
     color: var(--text-color);
 }
 
@@ -71,13 +73,14 @@
 .song-info {
     justify-content: center;
     width: 90%;
-    padding: 5px;
-    /* Reduced padding for a more compact look */
-    margin: 10px auto;
-    /* Reduced margin for a more compact look */
+    padding: 2px;
+    /* More Compact */
+    margin: 5px auto;
+    /* More Compact */
     background-color: var(--control-button-color);
     color: var(--text-color);
-    font-size: 0.95em;
+    font-size: 0.9em;
+    /* Smaller */
     border-radius: 4px;
 }
 
@@ -89,7 +92,6 @@
 /* Player */
 #v24ahoyPlayer {
     position: fixed;
-    z-index: 100000;
     bottom: 0;
     width: 100%;
     height: auto;
@@ -97,95 +99,80 @@
     background-image: var(--neurophoric-highlight);
     background-size: cover;
     animation: neurophoricEffect 30s linear infinite;
-    padding: 10px 0;
-    /* Reduced padding for a more compact look */
+    padding: 5px 0;
+    /* More Compact */
     border-style: solid !important;
     border-color: var(--border-color);
-    box-shadow: inset 0 -10px 8px -8px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0 -5px 4px -4px rgba(0, 0, 0, 0.5);
+    /* More Subtle */
 }
 
 /* Control Button */
 .control-button {
-    padding: 6px 12px;
-    /* Adjusted padding for a more compact look */
-    font-size: 0.8em;
+    padding: 4px 8px;
+    /* More Compact */
+    font-size: 0.75em;
+    /* Smaller */
     background-image: var(--neurophoric-highlight);
     background-size: 200% 200%;
     animation: neurophoricEffect 4s ease infinite;
     color: var(--text-color);
-    border: none;
-    border-radius: 22px;
+    border-radius: 20px;
+    /* Slightly Rounded */
     cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    /* More Subtle */
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .control-button:hover {
-    animation: none;
-    background-color: var(--hover-background-color);
-    color: var(--background-color);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    transform: translateY(-1px);
+    /* Less Movement */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    /* More Subtle */
 }
 
 .control-button:active {
-    transform: translateY(1px);
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
-    background-color: var(--progress-bar-color);
-    /* Ripple effect color */
-}
-
-.control-button:active::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 20px;
-    top: 0;
-    left: 0;
-    animation: rippleEffect 0.6s ease-out;
+    transform: translateY(0.5px);
+    /* Less Movement */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    /* More Subtle */
 }
 
 /* Super Player Button */
 .superPlayerButtonMash {
-    padding: 8px 16px;
-    /* Adjusted padding for a more compact look */
+    padding: 6px 12px;
+    /* More Compact */
     background-image: var(--neurophoric-highlight);
     background-size: 200% 200%;
     animation: neurophoricEffect 4s ease infinite;
     color: var(--control-button-color);
     border: none;
-    border-radius: 20px;
+    border-radius: 18px;
+    /* Slightly Rounded */
     cursor: pointer;
     transition: background-color 0.2s, color 0.2s;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    /* More Subtle */
     z-index: 100001;
-    /* Ensure super player buttons are also on top */
-
 }
 
 .superPlayerButtonMash:hover {
     animation: none;
     background-color: var(--hover-background-color);
     color: var(--background-color);
+    transform: translateY(-1px);
+    /* Less Movement */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    /* More Subtle */
 }
 
 .superPlayerButtonMash:active {
-    transform: translateY(1px);
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+    transform: translateY(0.5px);
+    /* Less Movement */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    /* More Subtle */
     background-color: var(--progress-bar-color);
-    /* Ripple effect color */
-}
-
-.superPlayerButtonMash:active::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 20px;
-    top: 0;
-    left: 0;
-    animation: rippleEffect 0.6s ease-out;
 }
 
 /* Adding a ripple effect on click */
@@ -225,9 +212,10 @@
 
     .control-button,
     .superPlayerButtonMash {
-        margin: 5px;
-        font-size: 0.9em;
-        /* Slightly larger for touch interactions */
+        margin: 4px;
+        /* More Compact */
+        font-size: 0.7em;
+        /* Smaller */
     }
 }
 
@@ -238,6 +226,8 @@
     align-items: center;
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
+    border-radius: 12px;
+    /* More Compact */
     border-radius: 15px;
     padding: 10px;
     margin: 20px auto;
@@ -258,28 +248,24 @@
 }
 
 .center-dashboard-buttons button {
-    background-image: var(--neurophoric-highlight);
-    /* Retain the unique gradient */
-    color: var(--text-color);
-    border: 2px solid transparent;
-    /* Add a subtle border */
+    background-color: rgba(0, 0, 0, 0.235);
+    color: rgba(255, 255, 255, 0.412);
+    border-color: var(--border-color);
     border-radius: 30px;
-    /* Increase border-radius for a more pill-like shape */
+    /* More Pill-like */
     cursor: pointer;
-    font-size: 1.1em;
-    /* Slightly larger font for emphasis */
-    padding: 12px 24px;
-    /* Increase padding for a more substantial touch area */
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    /* Smooth transition for all properties */
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
-    /* More pronounced shadow on hover for a deeper effect */
+    font-size: 1em;
+    /* Adjusted Size */
+    padding: 10px 20px;
+    /* More Compact */
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    /* More Subtle */
     font-family: 'Courier New', Courier, monospace;
-    /* Switch to a typewriter-like font for that hipster vibe */
-    letter-spacing: 0.05em;
-    /* Add letter-spacing to improve readability and style */
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    /* Add a subtle text-shadow for better readability over the gradient background */
+    letter-spacing: 0.03em;
+    /* Adjusted Spacing */
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    /* More Subtle */
 }
 
 .center-dashboard-buttons button:hover {
@@ -319,8 +305,6 @@
     /* Slightly enlarge icons on hover for an engaging effect */
 }
 
-/* Introduce a border color change on hover for a subtle highlight */
-}
 
 .center-dashboard-buttons button:active {
     transform: translateY(-1px);
@@ -337,14 +321,37 @@
     margin-right: 5px;
 }
 
-border-color: var(--text-color);
-/* Introduce a border color change on hover for a subtle highlight */
-}
+
 
 .center-dashboard-buttons button:active {
     transform: translateY(1px);
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
     background-color: var(--progress-bar-color);
+}
+
+.center-dashboard-buttons i {
+    margin-right: 5px;
+}
+
+.center-dashboard-buttons i {
+    margin-right: 5px;
+}
+
+
+
+.center-dashboard-buttons button:active {
+    transform: translateY(1px);
+
+    background-color: var(--progress-bar-color);
+}
+
+.center-dashboard-buttons i {
+    margin-right: 5px;
+
+
+    transform: translateY(1px);
+
+
 }
 
 .center-dashboard-buttons i {
