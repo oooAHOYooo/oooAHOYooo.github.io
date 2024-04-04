@@ -1140,15 +1140,31 @@ Warning: This feature is in active development. The following is sample DUMMY da
    
         <audio id="audio-player" src></audio>
         <div class="audio-player-controls">
-          <div class="song-display">
-            <div id="song-info">Artist - Song Title</div><div id="current-time">0:00</div>
-          </div>
-          <div class="song-progress-container">
-            <input type="range" id="song-progress" value="0" min="0" max="100" step="1">  
-          </div>
+       
         
 
-          <div class="center-dashboard-menu">
+           <!-- Bar A = Player Music Controls -->
+  <div class="superPlayerButtonMash" id="barA">
+            <button id="play-pause-button" onclick="togglePlayPause()" class="control-button">
+              <i class="fas fa-play" id="play-pause-icon"></i>
+            </button>
+            
+
+                            <!-- INSERT PROGRESS BAR HERE -->
+                  <!-- SONG PROGRESS WIDGET -->
+        <div class="song-progress-container">
+                    <input type="range" id="song-progress" value="0" min="0" max="100" step="1">  
+                    <div id="current-time">0:00</div>
+        </div>  
+        <div class="song-display">
+          <div id="song-info">Artist - Song Title</div>
+        
+          </div>
+        </div>
+  </div>
+        
+          <!-- Bar B = USER Nav Controls-->
+          <div class="center-dashboard-menu" id="barB">
             <ul class="center-dashboard-buttons">
               <li><button onclick="navigateToTab('songs-tab')"><i class="fas fa-music"></i></button></li>
               <li><button onclick="navigateToTab('podcasts-tab')"><i class="fas fa-podcast"></i></button></li>
@@ -1162,13 +1178,7 @@ Warning: This feature is in active development. The following is sample DUMMY da
             </ul>
           </div>
 
-          <!-- Play/Pause Button -->
-          <div class="superPlayerButtonMash">
-            <button id="play-pause-button" onclick="togglePlayPause()" class="control-button">
-              <i class="fas fa-play" id="play-pause-icon"></i>
-            </button>
-        
-          </div>
+         
          
       </div></div>
 <!-- TEMPSCRIPT - TRYING TO MAKE A UNIVERSAL BUTTON-->
