@@ -406,7 +406,7 @@
 /* Ensure the current time and song info are aligned properly */
 #current-time,
 #song-info {
-    white-space: nowrap;
+    white-space: wrap;
 }
 
 #settings-icon-container {
