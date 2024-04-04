@@ -362,3 +362,54 @@
 .center-dashboard-buttons i {
     margin-right: 5px;
 }
+
+
+/* Further adjustments for Bar A to align settings icon with the play button vibe */
+#barA {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 10px;
+}
+
+#barA .song-progress-container {
+    flex-grow: 2;
+    margin: 0 10px;
+    display: flex;
+    align-items: center;
+}
+
+#barA #play-pause-button,
+#barA #settings-icon-button-a {
+    margin-right: 10px;
+    background-color: var(--button-background);
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#barA #play-pause-button:hover,
+#barA #settings-icon-button-a:hover {
+    background-color: var(--hover-background-color);
+}
+
+#barA .song-display {
+    flex-grow: 1;
+    text-align: left;
+}
+
+/* Ensure the current time and song info are aligned properly */
+#current-time,
+#song-info {
+    white-space: nowrap;
+}
+
+#settings-icon-container {
+    display: flex;
+    align-items: center;
+}

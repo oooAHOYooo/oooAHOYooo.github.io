@@ -4,12 +4,12 @@
 <html>
   <head>
 
+    <!-- FIREEEEE -->
 
-<!-- FIREEEEE -->
-
-
-<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js"></script>
+    <script
+      src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js"></script>
+    <script
+      src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js"></script>
 
     <!-- Firebase SDK -->
     <script type="module">
@@ -55,7 +55,7 @@
       }
   </script>
 
-  <!-- END OF FIREEEE -->
+    <!-- END OF FIREEEE -->
 
     <link rel="icon" type="image/png" href="./img/favicon_ahoy.png">
     <script
@@ -126,13 +126,13 @@
   <body>
 
     <!-- Add this HTML for the modal somewhere in your body tag -->
-<div id="loginModal" class="modal" style="display:none;">
-  <div class="modal-content">
-    <p>Hey, you're not logged in!</p>
-    <button id="goToLogin">Login</button>
-  </div>
-</div>
-<script type="module">
+    <div id="loginModal" class="modal" style="display:none;">
+      <div class="modal-content">
+        <p>Hey, you're not logged in!</p>
+        <button id="goToLogin">Login</button>
+      </div>
+    </div>
+    <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
   import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js";
   
@@ -188,10 +188,9 @@
             class="fas fa-vr-cardboard"></i><span
             class="button-label">Experience</span></button>
 
-
-            <button id="menu-A" onclick="toggleLeftDashboard()">
-              <i class="fas fa-bars"></i><span></span>
-            </button>
+        <button id="menu-A" onclick="toggleLeftDashboard()">
+          <i class="fas fa-bars"></i><span></span>
+        </button>
       </div>
       <div class="right-dashboard">
         <button onclick="navigateToTab('account-tab')"><i
@@ -214,7 +213,9 @@
         <button onclick="navigateToTab('casting-tab')"><i
             class="fas fa-broadcast-tower"></i><span
             class="right-button-label">Casting</span></button>
-            <button onclick="navigateToTab('message-board-tab')"><i class="fas fa-chalkboard"></i><span class="right-button-label">Message Board</span></button>
+        <button onclick="navigateToTab('message-board-tab')"><i
+            class="fas fa-chalkboard"></i><span
+            class="right-button-label">Message Board</span></button>
 
         <button onclick="navigateToTab('playlist-tab')"><i
             class="fas fa-th-list"></i><span
@@ -225,10 +226,10 @@
         <button onclick="navigateToTab('burn-tab')"><i
             class="fas fa-compact-disc"></i><span class="right-button-label">CD
             Burn</span></button>
-              <!-- Default text for the first tab -->
-              <button id="menu-B" onclick="toggleRightDashboard()">
-                <i class="fas fa-bars"></i><span></span>
-              </button>
+        <!-- Default text for the first tab -->
+        <button id="menu-B" onclick="toggleRightDashboard()">
+          <i class="fas fa-bars"></i><span></span>
+        </button>
 
       </div>
 
@@ -240,10 +241,10 @@
             <a href="./index.html"><img src="./img/assets/u_ahoy23.png" />
             </a>
           </div>
-<!-- Somewhere within the body tag -->
-<div id="ahoy-account-name-display"></div>
+          <!-- Somewhere within the body tag -->
+          <div id="ahoy-account-name-display"></div>
 
-<script>
+          <script>
   window.onload = function() {
     const ahoyAccountName = localStorage.getItem('ahoyAccountName');
     if (ahoyAccountName) {
@@ -275,50 +276,44 @@
                 class="get-started-button">Get
                 Started</button></a>
           </div>
-<!-- Inside the "home-tab" div, in the "home-tab-question" section -->
+          <!-- Inside the "home-tab" div, in the "home-tab-question" section -->
 
-<!-- NOW PLAYING -->
-<div class="now-playing">
-  <h1>Recently Added</h1>
-  <br>
-  <div id="now-playing-container">
-    <!-- Dynamic content will be loaded here -->
-  </div>
-  <div class="home-tab-question">
-    <h2>Today's Question</h2>
-  
-  <p>The New Question App </p>
-  <!-- Question of the Day Display -->
-  <div id="question-of-the-day-display">
-    <!-- Question of the day will be loaded here -->
-    <h2 id="daily-question"></h2>
-  </div>
-  
-  <!-- Answer Submission Form -->
-  <form id="answer-submission-form">
-    <textarea id="answer-input" class="responsive-input glass-effect" placeholder="Your answer..."></textarea>
-  
-    <button type="submit">Submit Answer</button>
-  </form>
-  
-  <!-- Area to Display Posted Answers -->
-  <div id="answers-display">
-    <!-- Answers will be loaded and displayed here -->
-  </div>
-  
-  
-  
-  
-  
-  
-  
-  </div>
-</div>
+          <!-- NOW PLAYING -->
+          <div class="now-playing">
+            <h1>Recently Added</h1>
+            <br>
+            <div id="now-playing-container">
+              <!-- Dynamic content will be loaded here -->
+            </div>
+            <div class="home-tab-question">
+              <h2>Today's Question</h2>
 
+              <p>The New Question App </p>
+              <!-- Question of the Day Display -->
+              <div id="question-of-the-day-display">
+                <!-- Question of the day will be loaded here -->
+                <h2 id="daily-question"></h2>
+              </div>
+
+              <!-- Answer Submission Form -->
+              <form id="answer-submission-form">
+                <textarea id="answer-input"
+                  class="responsive-input glass-effect"
+                  placeholder="Your answer..."></textarea>
+
+                <button type="submit">Submit Answer</button>
+              </form>
+
+              <!-- Area to Display Posted Answers -->
+              <div id="answers-display">
+                <!-- Answers will be loaded and displayed here -->
+              </div>
+
+            </div>
+          </div>
 
         </div>
 
-      
         <!-- END OF NOW PLAYING -->
         <!-- MARKET TAB-->
         <div id="market-tab" class="tab-content">
@@ -378,18 +373,19 @@
             Warning: This feature is in active development.</p>
           <!-- Inside the "Songs" tab, before the <div id="daily-shuffle-super-mix"> -->
           <div id="now-playing-song-container" class="now-playing-song">
-     
-            <img id="now-playing-album-art" src alt="Album Art">
-            <button id="recently-added-homepage-song" class="control-button-a" onclick="togglePlayPause()">
-              <i class="fas fa-play"></i>
-          </button>
-              </div>
 
-            <div id="now-playing-song-details">
-              <h3 id="now-playing-song-title">Song Title</h3>
-              <p id="now-playing-song-artist">Artist Name</p>
-            </div>
-            <div class="divider-bar"></div>
+            <img id="now-playing-album-art" src alt="Album Art">
+            <button id="recently-added-homepage-song" class="control-button-a"
+              onclick="togglePlayPause()">
+              <i class="fas fa-play"></i>
+            </button>
+          </div>
+
+          <div id="now-playing-song-details">
+            <h3 id="now-playing-song-title">Song Title</h3>
+            <p id="now-playing-song-artist">Artist Name</p>
+          </div>
+          <div class="divider-bar"></div>
           <div id="daily-shuffle-super-mix"></div>
           <div id="daily-shuffle">
             <div class="daily-shuffle-headline">
@@ -422,58 +418,58 @@
           </div>
         </div>
       </div>
-        <!-- END OF SONGS TAB -->
-        <!-- TAB -->
-        <!-- Experience VIZ -->
-        <div id="experience-tab" class="tab-content">
-          <div class="experience"></div>
+      <!-- END OF SONGS TAB -->
+      <!-- TAB -->
+      <!-- Experience VIZ -->
+      <div id="experience-tab" class="tab-content">
+        <div class="experience"></div>
 
-        </div>
-        <!-- MEDIA TAB -->
-        <div id="media-tab-a" class="tab-content">
-          <p
-            style="font-family: 'Courier New', Courier, monospace; background-color: #ff0060; color: black; padding: 10px; border: 1px dashed red;">⚠️
-            Warning: This feature is in active development.</p>
-          <!-- START OF MEDIA-COLS-->
-          <div class="tv-container">
-            <div class="tv-wrap">
-              <div id="jw-player-container"></div>
-              <div id="media-display-text">
-                <div id="media-artist-name">
-                  <p>This is where the Media Artist Name will Go</p></div>
-                <div id="media-title-name">
-                  <p>This is where the Media Title Name will Go</p></div>
-              </div>
+      </div>
+      <!-- MEDIA TAB -->
+      <div id="media-tab-a" class="tab-content">
+        <p
+          style="font-family: 'Courier New', Courier, monospace; background-color: #ff0060; color: black; padding: 10px; border: 1px dashed red;">⚠️
+          Warning: This feature is in active development.</p>
+        <!-- START OF MEDIA-COLS-->
+        <div class="tv-container">
+          <div class="tv-wrap">
+            <div id="jw-player-container"></div>
+            <div id="media-display-text">
+              <div id="media-artist-name">
+                <p>This is where the Media Artist Name will Go</p></div>
+              <div id="media-title-name">
+                <p>This is where the Media Title Name will Go</p></div>
             </div>
           </div>
-          <div class="media-container">
-            <table id="mediaTable" class="list">
-              <thead class="mediaTable-header">
-                <tr>
-                  <th>Play</th>
-                  <th>Cover</th>
-                  <th>Artist</th>
-                  <th>Title</th>
+        </div>
+        <div class="media-container">
+          <table id="mediaTable" class="list">
+            <thead class="mediaTable-header">
+              <tr>
+                <th>Play</th>
+                <th>Cover</th>
+                <th>Artist</th>
+                <th>Title</th>
 
-                  <th>Duration</th>
+                <th>Duration</th>
 
-                </tr>
-              </thead>
-              <tbody>
-                <!-- Table data will be inserted here -->
-              </tbody>
-            </table>
-          </div>
-
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Table data will be inserted here -->
+            </tbody>
+          </table>
         </div>
 
-        <!-- PODCASTS -->
-        <div id="podcasts-tab" class="tab-content">
-          <div class="podcast-container">
-            <div id="podcast-featured-image-container"></div>
+      </div>
 
-            <table class="standard-table" id="podcast-table">
-              <!--thead>
+      <!-- PODCASTS -->
+      <div id="podcasts-tab" class="tab-content">
+        <div class="podcast-container">
+          <div id="podcast-featured-image-container"></div>
+
+          <table class="standard-table" id="podcast-table">
+            <!--thead>
                 <tr>
                   <th>Play</th>
                   <th>Thumbnail</th>
@@ -481,355 +477,359 @@
                   <th>Description</th>
                 </tr>
               </the -->
-              <tbody>
-                <!-- Podcast rows will be dynamically inserted here -->
-              </tbody>
-            </table>
+            <tbody>
+              <!-- Podcast rows will be dynamically inserted here -->
+            </tbody>
+          </table>
+        </div>
+        <div id="podcast-review-section">
+          <!--h2>Podcast Reviews</h2-->
+          <div id="user-review-input-section" style="display: none;">
+            <textarea id="podcast-review-input"
+              placeholder="Write your review here..."></textarea>
+            <button onclick="submitPodcastReview()">Submit Review</button>
           </div>
-          <div id="podcast-review-section">
-            <!--h2>Podcast Reviews</h2-->
-            <div id="user-review-input-section" style="display: none;">
-                <textarea id="podcast-review-input" placeholder="Write your review here..."></textarea>
-                <button onclick="submitPodcastReview()">Submit Review</button>
-            </div>
-            <div id="podcast-reviews-container">
-                <!-- Reviews will be dynamically inserted here -->
-            </div>
-        </div>
+          <div id="podcast-reviews-container">
+            <!-- Reviews will be dynamically inserted here -->
+          </div>
         </div>
       </div>
+    </div>
 
-      <!-- GAMES -->
-      <div id="games-tab" class="tab-content">
-        <p
-          style="font-family: 'Courier New', Courier, monospace; background-color: #ff0060; color: black; padding: 10px; border: 1px dashed red;">⚠️
-          Warning: This feature is in active development.</p>
-
-        <div class="game-tabs"> <!-- Updated class name -->
-          <!-- Tabs will be dynamically added here by the JavaScript -->
-        </div>
-        <!-- Game content will also be dynamically added here by the JavaScript -->
-      </div>
-
-      <!-- ARTISTS TAB -->
-      <div id="artists-tab" class="tab-content">
-        <p
+    <!-- GAMES -->
+    <div id="games-tab" class="tab-content">
+      <p
         style="font-family: 'Courier New', Courier, monospace; background-color: #ff0060; color: black; padding: 10px; border: 1px dashed red;">⚠️
         Warning: This feature is in active development.</p>
-        <h2>Artists</h2>
-        <table id="artists-table">
-          <thead>
-            <tr>
-              <th>Artist Name</th>
-              <th>Location</th>
-              <th>Engage</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- Artist data will be inserted here by JavaScript -->
-          </tbody>
-        </table>
-      </div>
-      <!-- END OF ARTIST -->
-      <!-- Donation Tab-->
-      <!-- DONATE TAB -->
-      <div id="donate-tab" class="tab-content">
-        <p
-          style="font-family: 'Courier New', Courier, monospace; background-color: #ff0060; color: black; padding: 10px; border: 1px dashed red;">⚠️
-          Warning: This feature is in active development.</p>
-        <div class="donation-container">
-          <h2>Support Us</h2>
-          <input type="range" id="donation-amount-slider" min="5" max="100"
-            value="20" step="5">
-          <p>Donation Amount: $<span id="donation-amount">20</span></p>
-          <button id="donate-button">Donate</button>
-          <div id="total-donation">Total Donation: $0</div>
-        </div>
-        <h2>Support Our Mission</h2>
-        <p>Your donations help us keep the indie spirit alive by supporting
-          our artists and maintaining an ad-free platform.</p>
-        <div class="donation-options">
-          <button onclick="makeDonation('5')">Donate $5</button>
-          <button onclick="makeDonation('10')">Donate $10</button>
-          <button onclick="makeDonation('20')">Donate $20</button>
-          <button onclick="makeDonation('custom')">Custom Amount</button>
-        </div>
-        <p>Or, become a monthly supporter:</p>
-        <div class="monthly-support-options">
-          <button onclick="subscribeMonthly('5')">Support with
-            $5/month</button>
-          <button onclick="subscribeMonthly('10')">Support with
-            $10/month</button>
-          <button onclick="subscribeMonthly('20')">Support with
-            $20/month</button>
-        </div>
 
+      <div class="game-tabs"> <!-- Updated class name -->
+        <!-- Tabs will be dynamically added here by the JavaScript -->
       </div>
-      <!-- PLAYLIST TAB -->
-      <div id="playlist-tab" class="tab-content">
-        <p
-          style="font-family: 'Courier New', Courier, monospace; background-color: #ff0060; color: black; padding: 10px; border: 1px dashed red;">⚠️
-          Warning: This feature is in active development.</p>
+      <!-- Game content will also be dynamically added here by the JavaScript -->
+    </div>
 
-        <h2>User-Created Playlists</h2>
-        <p>Create and share your giant playlists, including podcasts, music,
-          and videos, all in one place.</p>
-        <div id="playlist-grid" class="playlist-grid">
-          <!-- Dynamic content will be loaded here by playlist-logic.js -->
-        </div>
-        <button onclick="createPlaylistForm()">Create Playlist</button>
-
+    <!-- ARTISTS TAB -->
+    <div id="artists-tab" class="tab-content">
+      <p
+        style="font-family: 'Courier New', Courier, monospace; background-color: #ff0060; color: black; padding: 10px; border: 1px dashed red;">⚠️
+        Warning: This feature is in active development.</p>
+      <h2>Artists</h2>
+      <table id="artists-table">
+        <thead>
+          <tr>
+            <th>Artist Name</th>
+            <th>Location</th>
+            <th>Engage</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Artist data will be inserted here by JavaScript -->
+        </tbody>
+      </table>
+    </div>
+    <!-- END OF ARTIST -->
+    <!-- Donation Tab-->
+    <!-- DONATE TAB -->
+    <div id="donate-tab" class="tab-content">
+      <p
+        style="font-family: 'Courier New', Courier, monospace; background-color: #ff0060; color: black; padding: 10px; border: 1px dashed red;">⚠️
+        Warning: This feature is in active development.</p>
+      <div class="donation-container">
+        <h2>Support Us</h2>
+        <input type="range" id="donation-amount-slider" min="5" max="100"
+          value="20" step="5">
+        <p>Donation Amount: $<span id="donation-amount">20</span></p>
+        <button id="donate-button">Donate</button>
+        <div id="total-donation">Total Donation: $0</div>
       </div>
-      <!-- REVIEW TAB CONTENT -->
-      <div id="review-tab" class="tab-content">
-        <p
-          style="font-family: 'Courier New', Courier, monospace; background-color: #ff0060; color: black; padding: 10px; border: 1px dashed red;">⚠️
-          Warning: This feature is in active development.</p>
-
-        <h2>Reviews</h2>
-        <p>Read and share reviews on your favorite indie media content.</p>
-        <!-- Review content will be dynamically added here -->
+      <h2>Support Our Mission</h2>
+      <p>Your donations help us keep the indie spirit alive by supporting
+        our artists and maintaining an ad-free platform.</p>
+      <div class="donation-options">
+        <button onclick="makeDonation('5')">Donate $5</button>
+        <button onclick="makeDonation('10')">Donate $10</button>
+        <button onclick="makeDonation('20')">Donate $20</button>
+        <button onclick="makeDonation('custom')">Custom Amount</button>
       </div>
-      <!-- ABOUT TAB -->
-      <div id="about-tab" class="tab-content">
-        <h2>About Ahoy Indie Media</h2>
-        <p>Ahoy Indie Media is a hand-crafted media company based out of New
-          Haven, Connecticut. Our mission is to provide a homegrown
-          alternative to the way folks consume media. We believe in good
-          media
-          - good indie media - the real stuff.</p>
-        <p>Our platform is dedicated to supporting independent artists,
-          musicians, podcasters, and creators by providing them with a space
-          to share their work and connect with audiences.</p>
-        <p>We sustain our operations through a surcharge on merchandise
-          sold through our store and through monthly membership donations.
-          This model allows us to support our artists while keeping the
-          platform accessible and ad-free.</p>
-        <p>Every piece of music on our platform is here with the express
-          permission of the artists involved.</p>
-        <h3>How You Can Participate</h3>
-        <ul>
-          <li><strong>Share a Song or Media:</strong> Have a song or media
-            you
-            think fits Ahoy? Share it with us for a chance to be
-            featured.</li>
-          <li><strong>Review New Releases:</strong> Keep an eye out for new
-            releases and share your thoughts. Coming soon!</li>
-          <li><strong>Chat with Friends:</strong> Join the conversation on
-            Oy
-            Chat and connect with the community. Coming soon!</li>
-          <li><strong>Donate:</strong> Support our mission and help keep the
-            indie spirit alive by donating.</li>
-          <li><strong>Spread the Word:</strong> Help us grow by sharing Ahoy
-            Indie Media with friends and on social media.</li>
-          <li><strong>Join the Dev Team:</strong> Have skills in
-            development?
-            Join our team and contribute to the growth of Ahoy.</li>
-          <li><strong>Help Market Ahoy:</strong> Assist in marketing efforts
-            to help Ahoy reach a wider audience.</li>
-        </ul>
-        <h3>Our Team</h3>
-        <p>Alex Gonzalez - Founder</p>
-        <p>Rob Meglio - Movie Star</p>
-        <h3>Contact Us</h3>
-        <p>If you have any questions, suggestions, or just want to say hi,
-          feel free to reach out to us at <a
-            href="mailto:alex@ahoy.ooo">alex@ahoy.ooo</a>.</p>
-
+      <p>Or, become a monthly supporter:</p>
+      <div class="monthly-support-options">
+        <button onclick="subscribeMonthly('5')">Support with
+          $5/month</button>
+        <button onclick="subscribeMonthly('10')">Support with
+          $10/month</button>
+        <button onclick="subscribeMonthly('20')">Support with
+          $20/month</button>
       </div>
-      <!-- SETTINGS TAB -->
-      <div id="settings-tab" class="tab-content">
-        <h2>Settings</h2>
-        <div class="settings-options">
-          <div class="setting">
+
+    </div>
+    <!-- PLAYLIST TAB -->
+    <div id="playlist-tab" class="tab-content">
+      <p
+        style="font-family: 'Courier New', Courier, monospace; background-color: #ff0060; color: black; padding: 10px; border: 1px dashed red;">⚠️
+        Warning: This feature is in active development.</p>
+
+      <h2>User-Created Playlists</h2>
+      <p>Create and share your giant playlists, including podcasts, music,
+        and videos, all in one place.</p>
+      <div id="playlist-grid" class="playlist-grid">
+        <!-- Dynamic content will be loaded here by playlist-logic.js -->
+      </div>
+      <button onclick="createPlaylistForm()">Create Playlist</button>
+
+    </div>
+    <!-- REVIEW TAB CONTENT -->
+    <div id="review-tab" class="tab-content">
+      <p
+        style="font-family: 'Courier New', Courier, monospace; background-color: #ff0060; color: black; padding: 10px; border: 1px dashed red;">⚠️
+        Warning: This feature is in active development.</p>
+
+      <h2>Reviews</h2>
+      <p>Read and share reviews on your favorite indie media content.</p>
+      <!-- Review content will be dynamically added here -->
+    </div>
+    <!-- ABOUT TAB -->
+    <div id="about-tab" class="tab-content">
+      <h2>About Ahoy Indie Media</h2>
+      <p>Ahoy Indie Media is a hand-crafted media company based out of New
+        Haven, Connecticut. Our mission is to provide a homegrown
+        alternative to the way folks consume media. We believe in good
+        media
+        - good indie media - the real stuff.</p>
+      <p>Our platform is dedicated to supporting independent artists,
+        musicians, podcasters, and creators by providing them with a space
+        to share their work and connect with audiences.</p>
+      <p>We sustain our operations through a surcharge on merchandise
+        sold through our store and through monthly membership donations.
+        This model allows us to support our artists while keeping the
+        platform accessible and ad-free.</p>
+      <p>Every piece of music on our platform is here with the express
+        permission of the artists involved.</p>
+      <h3>How You Can Participate</h3>
+      <ul>
+        <li><strong>Share a Song or Media:</strong> Have a song or media
+          you
+          think fits Ahoy? Share it with us for a chance to be
+          featured.</li>
+        <li><strong>Review New Releases:</strong> Keep an eye out for new
+          releases and share your thoughts. Coming soon!</li>
+        <li><strong>Chat with Friends:</strong> Join the conversation on
+          Oy
+          Chat and connect with the community. Coming soon!</li>
+        <li><strong>Donate:</strong> Support our mission and help keep the
+          indie spirit alive by donating.</li>
+        <li><strong>Spread the Word:</strong> Help us grow by sharing Ahoy
+          Indie Media with friends and on social media.</li>
+        <li><strong>Join the Dev Team:</strong> Have skills in
+          development?
+          Join our team and contribute to the growth of Ahoy.</li>
+        <li><strong>Help Market Ahoy:</strong> Assist in marketing efforts
+          to help Ahoy reach a wider audience.</li>
+      </ul>
+      <h3>Our Team</h3>
+      <p>Alex Gonzalez - Founder</p>
+      <p>Rob Meglio - Movie Star</p>
+      <h3>Contact Us</h3>
+      <p>If you have any questions, suggestions, or just want to say hi,
+        feel free to reach out to us at <a
+          href="mailto:alex@ahoy.ooo">alex@ahoy.ooo</a>.</p>
+
+    </div>
+    <!-- SETTINGS TAB -->
+    <div id="settings-tab" class="tab-content">
+      <h2>Settings</h2>
+      <div class="settings-options">
+        <div class="setting">
 
           <!-- Mute Button -->
-          <button id="mute-button" onclick="toggleMute()" class="control-button">Mute  
+          <button id="mute-button" onclick="toggleMute()"
+            class="control-button">Mute
             <i class="fas fa-volume-up" id="mute-icon">Audio</i>
           </button>
 
-            <button id="theme-switch-button" onclick="switchTheme()">Switch
-              Theme</button>
-          
+          <button id="theme-switch-button" onclick="switchTheme()">Switch
+            Theme</button>
 
- 
-          </div>
-          <!-- Add button to clear the background user image -->
-          <div class="setting">
-            <button id="toggle-background-image-button"
-              onclick="toggleBackgroundImage()">Toggle Background
-              Image</button>
+        </div>
+        <!-- Add button to clear the background user image -->
+        <div class="setting">
+          <button id="toggle-background-image-button"
+            onclick="toggleBackgroundImage()">Toggle Background
+            Image</button>
 
-          </div>
         </div>
       </div>
-      <!-- NEWS TAB-->
-      <div id="news-tab" class="tab-content">
-        <h1>News From Ahoy</h1>
-        <div id="newsletter-list"></div>
-        <div class="goals-container">
-          <h2>Updates on Goals</h2>
-          <div class="goal">
-            <h3>Song Goal: 800</h3>
-            <h4>Present Song Count: <span
-                id="current-song-count">39</span></h4>
-          </div>
-          <div class="goal">
-            <h3>Artist Goal: 120</h3>
-            <h4>Present Artist Count: <span
-                id="current-artist-count">9</span></h4>
-          </div>
-          <button id="donate-button"
-            onclick="navigateToTab('donate-tab')">Donate</button>
-          <button id="share-button"
-            onclick="navigateToTab('share-tab')">Share</button>
+    </div>
+    <!-- NEWS TAB-->
+    <div id="news-tab" class="tab-content">
+      <h1>News From Ahoy</h1>
+      <div id="newsletter-list"></div>
+      <div class="goals-container">
+        <h2>Updates on Goals</h2>
+        <div class="goal">
+          <h3>Song Goal: 800</h3>
+          <h4>Present Song Count: <span
+              id="current-song-count">39</span></h4>
+        </div>
+        <div class="goal">
+          <h3>Artist Goal: 120</h3>
+          <h4>Present Artist Count: <span
+              id="current-artist-count">9</span></h4>
+        </div>
+        <button id="donate-button"
+          onclick="navigateToTab('donate-tab')">Donate</button>
+        <button id="share-button"
+          onclick="navigateToTab('share-tab')">Share</button>
+      </div>
+    </div>
+    <!-- SHOWS TAB -->
+    <div id="shows-tab" class="tab-content">
+      <h2>Shows</h2>
+      <table id="shows-table">
+        <thead>
+          <tr>
+            <th>Artist Name</th>
+            <th>Location</th>
+            <th>Show Dates</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- JavaScript will populate table rows here -->
+        </tbody>
+      </table>
+    </div>
+    <!-- CHAT TAB CHAT TAB CHAT TAB -->
+    <!-- CHAT TAB -->
+    <div id="chat-tab" class="tab-content">
+      <p
+        style="font-family: 'Courier New', Courier, monospace; background-color: #ff0060; color: black; padding: 10px; border: 1px dashed red;">⚠️
+        Warning: This feature is in active development.</p>
+
+      <h2>Chat with Friends</h2>
+      <div id="chat-container">
+
+        <div id="friend-list">
+          <!-- Friend list will be populated here -->
+        </div>
+        <div id="chat-window">
+          <div id="messages"></div>
+          <textarea id="chat-input"
+            placeholder="Type a message..."></textarea>
+          <button id="send-message">Send</button>
         </div>
       </div>
-      <!-- SHOWS TAB -->
-      <div id="shows-tab" class="tab-content">
-        <h2>Shows</h2>
-        <table id="shows-table">
-          <thead>
-            <tr>
-              <th>Artist Name</th>
-              <th>Location</th>
-              <th>Show Dates</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- JavaScript will populate table rows here -->
-          </tbody>
-        </table>
+    </div>
+    <!-- SHARE TAB CONTENT -->
+    <div id="share-tab" class="tab-content">
+      <p
+        style="font-family: 'Courier New', Courier, monospace; background-color: #ff0060; color: black; padding: 10px; border: 1px dashed red;">⚠️
+        Warning: This feature is in active development.</p>
+
+      <h2>Share Your Favorites</h2>
+      <p>Share your favorite playlists, songs, podcasts, and more with
+        friends and the Ahoy community.</p>
+      <!-- Share functionality and content will be dynamically added here -->
+    </div>
+
+    <!-- SHARE TAB -->
+
+    <!-- MESSAGEBOARD -->
+    <!-- Add this new div inside the <div id="tabSortz"> to create the content area for the Message Board tab -->
+    <div id="message-board-tab" class="tab-content">
+
+      <h2>Question of the Day</h2>
+      <!-- Question of the Day Display -->
+      <!-- Add this inside the appropriate tab content where you want to display the questions -->
+      <div id="questions-display" class="questions-container">
+        <!-- Questions with timestamps will be displayed here -->
       </div>
-      <!-- CHAT TAB CHAT TAB CHAT TAB -->
-      <!-- CHAT TAB -->
-      <div id="chat-tab" class="tab-content">
-        <p
-          style="font-family: 'Courier New', Courier, monospace; background-color: #ff0060; color: black; padding: 10px; border: 1px dashed red;">⚠️
-          Warning: This feature is in active development.</p>
-
-        <h2>Chat with Friends</h2>
-        <div id="chat-container">
-
-          <div id="friend-list">
-            <!-- Friend list will be populated here -->
-          </div>
-          <div id="chat-window">
-            <div id="messages"></div>
-            <textarea id="chat-input"
-              placeholder="Type a message..."></textarea>
-            <button id="send-message">Send</button>
-          </div>
-        </div>
-      </div>
-      <!-- SHARE TAB CONTENT -->
-      <div id="share-tab" class="tab-content">
-        <p
-          style="font-family: 'Courier New', Courier, monospace; background-color: #ff0060; color: black; padding: 10px; border: 1px dashed red;">⚠️
-          Warning: This feature is in active development.</p>
-
-        <h2>Share Your Favorites</h2>
-        <p>Share your favorite playlists, songs, podcasts, and more with
-          friends and the Ahoy community.</p>
-        <!-- Share functionality and content will be dynamically added here -->
+      <div id="question-of-the-day-display">
+        <!-- Question of the day will be loaded here -->
+        <h3 id="daily-question" class="glass-effect"></h3>
       </div>
 
-      <!-- SHARE TAB -->
+      <!-- Answer Submission Form -->
+      <form id="answer-submission-form" class="glass-effect">
+        <textarea id="answer-input" class="responsive-input"
+          placeholder="Your answer..."></textarea>
+        <button type="submit" class="submit-answer-button">Submit
+          Answer</button>
+      </form>
 
-      <!-- MESSAGEBOARD -->
-      <!-- Add this new div inside the <div id="tabSortz"> to create the content area for the Message Board tab -->
-      <div id="message-board-tab" class="tab-content">
-
-        <h2>Question of the Day</h2>
-  <!-- Question of the Day Display -->
-  <!-- Add this inside the appropriate tab content where you want to display the questions -->
-<div id="questions-display" class="questions-container">
-  <!-- Questions with timestamps will be displayed here -->
-</div>
-  <div id="question-of-the-day-display">
-    <!-- Question of the day will be loaded here -->
-    <h3 id="daily-question" class="glass-effect"></h3>
-  </div>
-
-  <!-- Answer Submission Form -->
-  <form id="answer-submission-form" class="glass-effect">
-    <textarea id="answer-input" class="responsive-input" placeholder="Your answer..."></textarea>
-    <button type="submit" class="submit-answer-button">Submit Answer</button>
-  </form>
-
-  <!-- Area to Display Posted Answers -->
-  <div id="answers-display" class="answers-display">
-    <!-- Answers will be loaded and displayed here -->
-  </div>
+      <!-- Area to Display Posted Answers -->
+      <div id="answers-display" class="answers-display">
+        <!-- Answers will be loaded and displayed here -->
       </div>
+    </div>
 
-
-      <!-- CASTING TAB -->
-      <div id="casting-tab" class="tab-content">
-        <div class="casting-menu">
-          <h2>Casting Options</h2>
-          <button id="castButton">Cast to TV</button>
-          <div id="lastPlayedMediaInfo">
-            <h3>Last Played Media</h3>
-            <p id="lastPlayedTitle">Title: None</p>
-            <p id="lastPlayedType">Type: None</p>
-          </div>
+    <!-- CASTING TAB -->
+    <div id="casting-tab" class="tab-content">
+      <div class="casting-menu">
+        <h2>Casting Options</h2>
+        <button id="castButton">Cast to TV</button>
+        <div id="lastPlayedMediaInfo">
+          <h3>Last Played Media</h3>
+          <p id="lastPlayedTitle">Title: None</p>
+          <p id="lastPlayedType">Type: None</p>
         </div>
       </div>
-      <!-- UPDATES-->
-      <!-- UPDATES-->
-      <div id="updates-tab" class="tab-content">
+    </div>
+    <!-- UPDATES-->
+    <!-- UPDATES-->
+    <div id="updates-tab" class="tab-content">
 
-        <div class="version-movie-poster-wrap">
-          <img id="lightbox-trigger"
-            src="./img/assets/splash-screens/splash-640x960.png"
-            class="full-height-image">
+      <div class="version-movie-poster-wrap">
+        <img id="lightbox-trigger"
+          src="./img/assets/splash-screens/splash-640x960.png"
+          class="full-height-image">
+      </div>
+      <div id="lightbox"
+        style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.9);">
+        <img id="lightbox-image"
+          style="margin: auto; display: block; width: 80%; max-width: 700px;" />
+      </div>
+      <!-- NEWSLETTER -->
+      <div id="newsletter-tab" class="tab-content-b">
+        <!-- h1>Newsletter</h1 -->
+        <!-- div id="newsletter-list"></div -->
+      </div>
+
+      <h3>Present Beta State = 0.2.3G
+
+        <h4>Present Focus</h4>
+        <p>Redesigning the entire layout - stay tuned - really going for
+          that
+          mvp</p>
+        <h1>Last 100 Updates to our Repo</h1>
+        <hr>
+        <div id="commits-list"></div>
+      </div>
+      <!-- ACCOUNT -->
+      <div id="account-tab" class="tab-content">
+
+        <!-- User Login Section -->
+        <div id="login-section" class="center-frame"
+          style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 50vh;">
+          <img src="./img/assets/u_ahoy23.png"
+            style="max-width: 90%; height: auto;">
+          <h1>Already a member?</h1><br>
+          <a href="./login.html"><button>Login to ahoY</button></a>
+          <br>
+          <a href="./create-account.html"><button>Create Account</button></a>
         </div>
-        <div id="lightbox"
-          style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.9);">
-          <img id="lightbox-image"
-            style="margin: auto; display: block; width: 80%; max-width: 700px;" />
-        </div>
-        <!-- NEWSLETTER -->
-        <div id="newsletter-tab" class="tab-content-b">
-          <!-- h1>Newsletter</h1 -->
-          <!-- div id="newsletter-list"></div -->
+        <div class="user-info">
+          <span class="account-user-name">User Name Here</span>
+          <span id="user-email">User Email Here</span>
+
         </div>
 
-        <h3>Present Beta State = 0.2.3G
-
-          <h4>Present Focus</h4>
-          <p>Redesigning the entire layout - stay tuned - really going for
-            that
-            mvp</p>
-          <h1>Last 100 Updates to our Repo</h1>
-          <hr>
-          <div id="commits-list"></div>
+        <!-- Logged-in Message Section -->
+        <div id="logged-in-message" class="center-frame"
+          style="display: none; flex-direction: column; justify-content: center; align-items: center; height: 50vh; background-color: #f0f0f0;">
+          <h1>Congrats, you are already logged in!</h1>
+          <button onclick="logout()">Log Out</button>
         </div>
-    <!-- ACCOUNT -->
-    <div id="account-tab" class="tab-content">
 
-    <!-- User Login Section -->
-<div id="login-section" class="center-frame" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 50vh;">
-  <img src="./img/assets/u_ahoy23.png" style="max-width: 90%; height: auto;">
-  <h1>Already a member?</h1><br>
-  <a href="./login.html"><button>Login to ahoY</button></a>
-  <br>
-  <a href="./create-account.html"><button>Create Account</button></a>
-</div>
-<div class="user-info">
-  <span class="account-user-name">User Name Here</span>
-  <span id="user-email">User Email Here</span>
-
-</div>
-
-<!-- Logged-in Message Section -->
-<div id="logged-in-message" class="center-frame" style="display: none; flex-direction: column; justify-content: center; align-items: center; height: 50vh; background-color: #f0f0f0;">
-  <h1>Congrats, you are already logged in!</h1>
-  <button onclick="logout()">Log Out</button>
-</div>
-
-<script>
+        <script>
   // This script checks if a user is logged in and updates the UI accordingly
   window.onload = function() {
     firebase.auth().onAuthStateChanged(function(user) {
@@ -857,29 +857,42 @@
   }
 </script>
 
-  <!-- The Grandfather Surprise Section -->
-  <div class="grandfather-surprise-section">
-    <h1>Join Ahoy and become a pioneering Grandpa</h1>
-    <h2>Free Membership for Life - Out now!</h2>
-    <p>Join the pioneering crew of Ahoy Indie Media - Inspired by the "Grandfather Rule" we're offering an opportunity:</p>
-    <ul>
-      <li><strong>Free for Life</strong> for the first 100 registered members and enjoy Ahoy free for life</li>
-      <li><strong>Embedded in the Code:</strong> Your name and username will forever be embedded into the backend code of Ahoy</li>
-    </ul>
-    <p>Don't miss your chance to be immortalized in Ahoy's history. Sign up now and receive a special certificate of membership via Rob Meglio, designed to commemorate the pioneering spirit.</p>
-    <button onclick="window.location.href='create-account.html'">Sign Up Now Before It's Too Late and get Ahoy Free for Life </button>
+        <!-- The Grandfather Surprise Section -->
+        <div class="grandfather-surprise-section">
+          <h1>Join Ahoy and become a pioneering Grandpa</h1>
+          <h2>Free Membership for Life - Out now!</h2>
+          <p>Join the pioneering crew of Ahoy Indie Media - Inspired by the
+            "Grandfather Rule" we're offering an opportunity:</p>
+          <ul>
+            <li><strong>Free for Life</strong> for the first 100 registered
+              members and enjoy Ahoy free for life</li>
+            <li><strong>Embedded in the Code:</strong> Your name and username
+              will forever be embedded into the backend code of Ahoy</li>
+          </ul>
+          <p>Don't miss your chance to be immortalized in Ahoy's history. Sign
+            up now and receive a special certificate of membership via Rob
+            Meglio, designed to commemorate the pioneering spirit.</p>
+          <button onclick="window.location.href='create-account.html'">Sign Up
+            Now Before It's Too Late and get Ahoy Free for Life </button>
 
-  <!-- Additional benefits of being a member -->
-  <h3>User Features in next Pipeline of Updates</h3>
-  <p>As a member of Ahoy Indie Media, you'll enjoy features actively being developed.</p>
-  <ul>
-    <li><strong>Songs and Podcasts Remember Where You Left Off:</strong> Easily pick up where you left off in your favorite songs and podcasts.</li>
-    <li><strong>Create and Save Burned CDs:</strong> Mix and save your favorite tracks into virtual burned CDs for easy listening.</li>
-    <li><strong>Personalized Greeting:</strong> Be welcomed by your name each time you visit</li>
-    <li><strong>Posting on the Message Board:</strong> Share thoughts and interact with the community anonymously on our daily message board.</li>
-  </ul>
-</div>
-<script>
+          <!-- Additional benefits of being a member -->
+          <h3>User Features in next Pipeline of Updates</h3>
+          <p>As a member of Ahoy Indie Media, you'll enjoy features actively
+            being developed.</p>
+          <ul>
+            <li><strong>Songs and Podcasts Remember Where You Left Off:</strong>
+              Easily pick up where you left off in your favorite songs and
+              podcasts.</li>
+            <li><strong>Create and Save Burned CDs:</strong> Mix and save your
+              favorite tracks into virtual burned CDs for easy listening.</li>
+            <li><strong>Personalized Greeting:</strong> Be welcomed by your name
+              each time you visit</li>
+            <li><strong>Posting on the Message Board:</strong> Share thoughts
+              and interact with the community anonymously on our daily message
+              board.</li>
+          </ul>
+        </div>
+        <script>
   function signUpForGrandfatherSurprise() {
     // Implementation for sign-up logic
     // This should include form handling and Mailchimp integration for sending the certificate
@@ -887,299 +900,315 @@
   }
 </script>
 
-<p
-style="font-family: 'Courier New', Courier, monospace; background-color: #ff0060; color: black; padding: 10px; border: 1px dashed red;">⚠️
-Warning: This feature is in active development. The following is sample DUMMY data - used for devin this baby into existence</p>
+        <p
+          style="font-family: 'Courier New', Courier, monospace; background-color: #ff0060; color: black; padding: 10px; border: 1px dashed red;">⚠️
+          Warning: This feature is in active development. The following is
+          sample DUMMY data - used for devin this baby into existence</p>
 
-
-
-          <div class="user-icon-section">
-            <img id="user-icon" src="./img/default-user-icon.png"
-              alt="User Icon"
-              style="width: 200px; height: 200px; border-radius: 50%; visibility: hidden;">
-            <input type="file" id="user-icon-input" accept="image/*"
-              style="display: none;">
-              <!-- User Icon Upload and Default Selection -->
-<div class="icon-selection">
-  <input type="file" id="icon-upload" hidden onchange="uploadIcon()">
-  <label for="icon-upload" class="icon-upload-btn">Upload Icon</label>
-  <div class="default-icons">
-    <!-- Example of default icons -->
-    <img src="path/to/default/icon1.png" onclick="setDefaultIcon('path/to/default/icon1.png')">
-    <img src="path/to/default/icon2.png" onclick="setDefaultIcon('path/to/default/icon2.png')">
-    <!-- Add more default icons as needed -->
-  </div>
-</div>
-   <!-- End of User Icon Upload and Default Selection -->
-            <!-- Responsive User Greeting Section -->
-            <div class="user-greeting-section">
-         
-              <h1 class="greeting">HOWDY HOWDY MR.</h1>
-
+        <div class="user-icon-section">
+          <img id="user-icon" src="./img/default-user-icon.png"
+            alt="User Icon"
+            style="width: 200px; height: 200px; border-radius: 50%; visibility: hidden;">
+          <input type="file" id="user-icon-input" accept="image/*"
+            style="display: none;">
+          <!-- User Icon Upload and Default Selection -->
+          <div class="icon-selection">
+            <input type="file" id="icon-upload" hidden onchange="uploadIcon()">
+            <label for="icon-upload" class="icon-upload-btn">Upload Icon</label>
+            <div class="default-icons">
+              <!-- Example of default icons -->
+              <img src="path/to/default/icon1.png"
+                onclick="setDefaultIcon('path/to/default/icon1.png')">
+              <img src="path/to/default/icon2.png"
+                onclick="setDefaultIcon('path/to/default/icon2.png')">
+              <!-- Add more default icons as needed -->
             </div>
           </div>
-      <!-- USER BACKPACK-->
-          <div id="user-back-pack">
-          
-            <h1>Your Liked Tracks</h1>
-            <button data-target="tab-1">Tracks</button>
-            <div id="user-liked-tracks">
-              <table id="liked-tracks">
-                <thead>
-                  <tr>
-                    <th>Track</th>
-                    <th>Artist</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Track 1</td>
-                    <td>Artist A</td>
-                    <td><button class="play-button" data-track="track1.mp3">Play</button></td>
-                  </tr>
-                  <tr>
-                    <td>Track 2</td>
-                    <td>Artist B</td>
-                    <td><button class="play-button" data-track="track2.mp3">Play</button></td>
-                  </tr>
-                  <tr>
-                    <td>Track 3</td>
-                    <td>Artist C</td>
-                    <td><button class="play-button" data-track="track3.mp3">Play</button></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <h1>Your Liked Artists</h1>
-            <table id="liked-artists">
+          <!-- End of User Icon Upload and Default Selection -->
+          <!-- Responsive User Greeting Section -->
+          <div class="user-greeting-section">
+
+            <h1 class="greeting">HOWDY HOWDY MR.</h1>
+
+          </div>
+        </div>
+        <!-- USER BACKPACK-->
+        <div id="user-back-pack">
+
+          <h1>Your Liked Tracks</h1>
+          <button data-target="tab-1">Tracks</button>
+          <div id="user-liked-tracks">
+            <table id="liked-tracks">
               <thead>
                 <tr>
+                  <th>Track</th>
                   <th>Artist</th>
-                  <th>Sample Track</th>
                   <th>Action</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
+                  <td>Track 1</td>
                   <td>Artist A</td>
-                  <td>Popular Track 1</td>
-                  <td><button class="play-button" data-track="artistA_track.mp3">Play</button></td>
+                  <td><button class="play-button"
+                      data-track="track1.mp3">Play</button></td>
                 </tr>
                 <tr>
+                  <td>Track 2</td>
                   <td>Artist B</td>
-                  <td>Popular Track 2</td>
-                  <td><button class="play-button" data-track="artistB_track.mp3">Play</button></td>
+                  <td><button class="play-button"
+                      data-track="track2.mp3">Play</button></td>
                 </tr>
                 <tr>
+                  <td>Track 3</td>
                   <td>Artist C</td>
-                  <td>Popular Track 3</td>
-                  <td><button class="play-button" data-track="artistC_track.mp3">Play</button></td>
+                  <td><button class="play-button"
+                      data-track="track3.mp3">Play</button></td>
                 </tr>
               </tbody>
             </table>
-            <h1>Your Liked Media Items</h1>
-            <table id="liked-media-items">
+          </div>
+          <h1>Your Liked Artists</h1>
+          <table id="liked-artists">
+            <thead>
+              <tr>
+                <th>Artist</th>
+                <th>Sample Track</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Artist A</td>
+                <td>Popular Track 1</td>
+                <td><button class="play-button"
+                    data-track="artistA_track.mp3">Play</button></td>
+              </tr>
+              <tr>
+                <td>Artist B</td>
+                <td>Popular Track 2</td>
+                <td><button class="play-button"
+                    data-track="artistB_track.mp3">Play</button></td>
+              </tr>
+              <tr>
+                <td>Artist C</td>
+                <td>Popular Track 3</td>
+                <td><button class="play-button"
+                    data-track="artistC_track.mp3">Play</button></td>
+              </tr>
+            </tbody>
+          </table>
+          <h1>Your Liked Media Items</h1>
+          <table id="liked-media-items">
+            <thead>
+              <tr>
+                <th>Media Item</th>
+                <th>Description</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Media Item 1</td>
+                <td>Description of Media Item 1</td>
+                <td><button class="play-button"
+                    data-track="mediaItem1.mp3">Play</button></td>
+              </tr>
+              <tr>
+                <td>Media Item 2</td>
+                <td>Description of Media Item 2</td>
+                <td><button class="play-button"
+                    data-track="mediaItem2.mp3">Play</button></td>
+              </tr>
+              <tr>
+                <td>Media Item 3</td>
+                <td>Description of Media Item 3</td>
+                <td><button class="play-button"
+                    data-track="mediaItem3.mp3">Play</button></td>
+              </tr>
+            </tbody>
+          </table>
+          <h1>Your Liked Podcasts</h1>
+
+          <table id="liked-podcasts">
+            <thead>
+              <tr>
+                <th>Podcast</th>
+                <th>Episode</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Podcast 1</td>
+                <td>Episode A</td>
+                <td><button class="play-button"
+                    data-track="podcast1_episodeA.mp3">Play</button></td>
+              </tr>
+              <tr>
+                <td>Podcast 2</td>
+                <td>Episode B</td>
+                <td><button class="play-button"
+                    data-track="podcast2_episodeB.mp3">Play</button></td>
+              </tr>
+              <tr>
+                <td>Podcast 3</td>
+                <td>Episode C</td>
+                <td><button class="play-button"
+                    data-track="podcast3_episodeC.mp3">Play</button></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h1>Your Burned CDs</h1>
+          <div id="burned-cds">
+            <table>
               <thead>
                 <tr>
-                  <th>Media Item</th>
-                  <th>Description</th>
-                  <th>Action</th>
+                  <th>Title</th>
+                  <th>Date Burned</th>
+                  <th>Amount of Tracks</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>Media Item 1</td>
-                  <td>Description of Media Item 1</td>
-                  <td><button class="play-button" data-track="mediaItem1.mp3">Play</button></td>
+                  <td>CD 1 - Mix of 2023</td>
+                  <td>2023-05-01</td>
+                  <td>15</td>
                 </tr>
                 <tr>
-                  <td>Media Item 2</td>
-                  <td>Description of Media Item 2</td>
-                  <td><button class="play-button" data-track="mediaItem2.mp3">Play</button></td>
+                  <td>CD 2 - Road Trip Mix</td>
+                  <td>2023-04-20</td>
+                  <td>20</td>
                 </tr>
                 <tr>
-                  <td>Media Item 3</td>
-                  <td>Description of Media Item 3</td>
-                  <td><button class="play-button" data-track="mediaItem3.mp3">Play</button></td>
+                  <td>CD 3 - Workout Tunes</td>
+                  <td>2023-03-15</td>
+                  <td>12</td>
                 </tr>
               </tbody>
             </table>
-            <h1>Your Liked Podcasts</h1>
-
-            <table id="liked-podcasts">
+          </div>
+          <h1>Your Merchstore Orders</h1>
+          <div id="merchstore-spoils">
+            <table>
               <thead>
                 <tr>
-                  <th>Podcast</th>
-                  <th>Episode</th>
-                  <th>Action</th>
+                  <th>Item</th>
+                  <th>Date Shipped</th>
+                  <th>Merit Badges Earned</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>Podcast 1</td>
-                  <td>Episode A</td>
-                  <td><button class="play-button" data-track="podcast1_episodeA.mp3">Play</button></td>
+                  <td>T-Shirt - Band A</td>
+                  <td>2023-04-15</td>
+                  <td>5</td>
                 </tr>
                 <tr>
-                  <td>Podcast 2</td>
-                  <td>Episode B</td>
-                  <td><button class="play-button" data-track="podcast2_episodeB.mp3">Play</button></td>
+                  <td>Poster - Artist B</td>
+                  <td>2023-03-22</td>
+                  <td>3</td>
                 </tr>
                 <tr>
-                  <td>Podcast 3</td>
-                  <td>Episode C</td>
-                  <td><button class="play-button" data-track="podcast3_episodeC.mp3">Play</button></td>
+                  <td>Vinyl - Album C</td>
+                  <td>2023-02-10</td>
+                  <td>8</td>
                 </tr>
               </tbody>
             </table>
-           
-            <h1>Your Burned CDs</h1>
-            <div id="burned-cds">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Title</th>
-                    <th>Date Burned</th>
-                    <th>Amount of Tracks</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>CD 1 - Mix of 2023</td>
-                    <td>2023-05-01</td>
-                    <td>15</td>
-                  </tr>
-                  <tr>
-                    <td>CD 2 - Road Trip Mix</td>
-                    <td>2023-04-20</td>
-                    <td>20</td>
-                  </tr>
-                  <tr>
-                    <td>CD 3 - Workout Tunes</td>
-                    <td>2023-03-15</td>
-                    <td>12</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <h1>Your Merchstore Orders</h1>
-            <div id="merchstore-spoils">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Item</th>
-                    <th>Date Shipped</th>
-                    <th>Merit Badges Earned</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>T-Shirt - Band A</td>
-                    <td>2023-04-15</td>
-                    <td>5</td>
-                  </tr>
-                  <tr>
-                    <td>Poster - Artist B</td>
-                    <td>2023-03-22</td>
-                    <td>3</td>
-                  </tr>
-                  <tr>
-                    <td>Vinyl - Album C</td>
-                    <td>2023-02-10</td>
-                    <td>8</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <!-- END OF LIKED CONTENT SECTION -->
           </div>
- 
+          <!-- END OF LIKED CONTENT SECTION -->
+        </div>
 
-          <h2>Your Cart</h2>
-          <div id="cart-items">
-            <!-- Items will be dynamically inserted here -->
-          </div>
-          <h3>UserSettings</h3>
-          <button
+        <h2>Your Cart</h2>
+        <div id="cart-items">
+          <!-- Items will be dynamically inserted here -->
+        </div>
+        <h3>UserSettings</h3>
+        <button
           onclick="document.getElementById('user-icon-input').click()">UPLOAD
           FACE PHOTO</button>
-          <h4 id="theme-title"></h4>
-          <button onclick="switchTheme()">change theme</button>
-          <br />
+        <h4 id="theme-title"></h4>
+        <button onclick="switchTheme()">change theme</button>
+        <br />
 
-        </div>
-
-
-        <!-- BURN TAB-->
-        <div id="burn-tab" class="tab-content">
-          <p
-            style="font-family: 'Courier New', Courier, monospace; background-color: #ff0060; color: black; padding: 10px; border: 1px dashed red;">⚠️
-            Warning: This feature is in active development.</p>
-            <h2>Burn CD</h2>
-          <ul id="burn-instructions"></ul>
-          <div id="burn-list-name-container">
-            <input type="text" id="burn-list-name"
-              placeholder="Enter list name">
-            <button id="save-burn-list-name">Save Name</button>
-          </div>
-          <div id="burn-list"></div>
-          
-
-          <!-- Element to display instructions -->
-          <!-- Add elements for queue management here, such as a list for the songs, input for the CD name, etc. -->
-          <button id="burn-cd-button">Burn CD</button>
-          <div id="burn-status"></div>
-        </div>
-
-        <!-- END OF TABS ? CHECK -->
-      </div><!-- YES -->
-
-      <!-- Start of v24 PLAYER -->
-      <div id="v24ahoyPlayer" class="player">
-        <audio id="audio-player" src></audio>
-        <div class="audio-player-controls">
-      <!-- Bar A = Player Music Controls -->
-      <div class="superPlayerButtonMash" id="barA">
-                <button id="play-pause-button" onclick="togglePlayPause()" class="control-button">
-                  <i class="fas fa-play" id="play-pause-icon"></i>
-                </button>
-                
-
-                                <!-- INSERT PROGRESS BAR HERE -->
-                      <!-- SONG PROGRESS WIDGET -->
-            <div class="song-progress-container">
-                        <input type="range" id="song-progress" value="0" min="0" max="100" step="1">  
-                        <div id="current-time">0:00</div>
-            </div>  
-            <div class="song-display">
-              <div id="song-info">Artist - Song Title</div>
-            
-              </div>
-            </div>
       </div>
-        
-          <!-- Bar B = USER Nav Controls-->
-          <div class="center-dashboard-menu" id="barB">
-            <ul class="center-dashboard-buttons">
-              <li><button onclick="navigateToTab('songs-tab')"><i class="fas fa-music"></i></button></li>
-              <li><button onclick="navigateToTab('podcasts-tab')"><i class="fas fa-podcast"></i></button></li>
-              <li><button onclick="navigateToTab('media-tab-a')"><i class="fas fa-photo-video"></i></button></li>
-              <li><button onclick="navigateToTab('news-tab')"><i
-                class="fas fa-newspaper"></i><span
-                class="button-label"></span></button></li>
-               <li><button onclick="navigateToTab('settings-tab')"><i
-                  class="fas fa-cog"></i><span
-                  class="right-button-label">Settings</span></button></li> 
-            </ul>
-          </div>
 
-         
-         
+      <!-- BURN TAB-->
+      <div id="burn-tab" class="tab-content">
+        <p
+          style="font-family: 'Courier New', Courier, monospace; background-color: #ff0060; color: black; padding: 10px; border: 1px dashed red;">⚠️
+          Warning: This feature is in active development.</p>
+        <h2>Burn CD</h2>
+        <ul id="burn-instructions"></ul>
+        <div id="burn-list-name-container">
+          <input type="text" id="burn-list-name"
+            placeholder="Enter list name">
+          <button id="save-burn-list-name">Save Name</button>
+        </div>
+        <div id="burn-list"></div>
+
+        <!-- Element to display instructions -->
+        <!-- Add elements for queue management here, such as a list for the songs, input for the CD name, etc. -->
+        <button id="burn-cd-button">Burn CD</button>
+        <div id="burn-status"></div>
+      </div>
+
+      <!-- END OF TABS ? CHECK -->
+    </div><!-- YES -->
+
+    <!-- Start of v24 PLAYER -->
+    <div id="v24ahoyPlayer" class="player">
+      <audio id="audio-player" src></audio>
+      <div class="audio-player-controls">
+        <!-- Adjusted Bar A with progress bar, time, play button, display text, and settings icon -->
+        <div class="superPlayerButtonMash" id="barA">
+          <button id="play-pause-button" onclick="togglePlayPause()"
+            class="control-button">
+            <i class="fas fa-play" id="play-pause-icon"></i>
+          </button>
+          <div class="song-display">
+            <div id="song-info">Artist - Song Title</div>
+          </div>
+          <div class="song-progress-container">
+            <input type="range" id="song-progress" value="0" min="0" max="100"
+              step="1">
+            <div id="current-time">0:00</div>
+          </div>
+          <div id="settings-icon-container">
+            <button id="settings-icon-button-a"
+              onclick="navigateToTab('settings-tab')">
+              <i class="fas fa-cog"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Bar B = USER Nav Controls-->
+        <div class="center-dashboard-menu" id="barB">
+          <ul class="center-dashboard-buttons">
+            <li> <button onclick="navigateToTab('home-tab')"><i
+                  class="fas fa-home"></i><span
+                  class="button-label">Home</span></button></li>
+            <li><button onclick="navigateToTab('songs-tab')"><i
+                  class="fas fa-music"></i></button></li>
+            <li><button onclick="navigateToTab('podcasts-tab')"><i
+                  class="fas fa-podcast"></i></button></li>
+            <li><button onclick="navigateToTab('media-tab-a')"><i
+                  class="fas fa-photo-video"></i></button></li>
+            <li><button onclick="navigateToTab('news-tab')"><i
+                  class="fas fa-newspaper"></i><span
+                  class="button-label"></span></button></li>
+            <li><button onclick="navigateToTab('account-tab')"><i
+                  class="fas fa-user"></i><span
+                  class="right-button-label">Account</span></button></li>
+          </ul>
+        </div>
+
       </div>
       <!-- END OF v24 Bottom Player-->
-<!-- TEMPSCRIPT - TRYING TO MAKE A UNIVERSAL BUTTON-->
-        <script>
+      <!-- TEMPSCRIPT - TRYING TO MAKE A UNIVERSAL BUTTON-->
+      <script>
           // Function to toggle play/pause for the audio player
           function togglePlayPause() {
             var audio = document.getElementById('audio-player');
@@ -1203,9 +1232,9 @@ Warning: This feature is in active development. The following is sample DUMMY da
           });
         </script>
 
-      </div>
-      <div>
-        
+    </div>
+    <div>
+
     </div>
     <!-- END OF BOTTOM PLAYER -->
     <!-- CONDITIONAL LOGIC BITCH -->
@@ -1213,7 +1242,7 @@ Warning: This feature is in active development. The following is sample DUMMY da
     <script src="js/src/share.js"></script>
     <!-- DYANMIC ARTIST TEST -->
     <!--script src="js/src/dynamicArtist.js"></script-->
-   
+
     <script src="js/src/siteCounter.js"></script>
     <!-- END OF DRAFTY SCRIPTS -->
     <!--script src="js/src/h1-effects-scroll.js"></script-->
@@ -1223,9 +1252,9 @@ Warning: This feature is in active development. The following is sample DUMMY da
     <script src="js/src/function-toggle-dash.js"></script>
 
     <!-- USER JAVASCRIPTS -->
-       <!-- USER JAVASCRIPTS -->
-          <!-- USER JAVASCRIPTS -->
-             <!-- USER JAVASCRIPTS -->
+    <!-- USER JAVASCRIPTS -->
+    <!-- USER JAVASCRIPTS -->
+    <!-- USER JAVASCRIPTS -->
     <script src="js/src/user-cart.js"></script>
     <script src="js/src/user-icon-input.js"></script>
     <script src="js/src/login.js"></script>
@@ -1236,17 +1265,15 @@ Warning: This feature is in active development. The following is sample DUMMY da
     <script src="js/src/user-userSesh.js"></script>
     <!-- USER - DISPLAY USER INFO -->
 
-<!-- NEW QUESTION APP -->
-<!-- LIVE DATA -->
-<script src="js/src/live-answers-logic.js"></script>
+    <!-- NEW QUESTION APP -->
+    <!-- LIVE DATA -->
+    <script src="js/src/live-answers-logic.js"></script>
 
-
-  
-       <!-- END OF USER JAVASCRIPTS -->
-              <!-- END OF USER JAVASCRIPTS -->
-                     <!-- END OF USER JAVASCRIPTS -->
-                            <!-- END OF USER JAVASCRIPTS -->
-                                   <!-- END OF USER JAVASCRIPTS -->
+    <!-- END OF USER JAVASCRIPTS -->
+    <!-- END OF USER JAVASCRIPTS -->
+    <!-- END OF USER JAVASCRIPTS -->
+    <!-- END OF USER JAVASCRIPTS -->
+    <!-- END OF USER JAVASCRIPTS -->
     <!-- HOMEPAGE JAVASCRIPT -->
     <script src="js/src/fetch-homepage-nowplaying.js"></script>
     <!-- MARKET JAVASCRIPTS -->
@@ -1303,9 +1330,6 @@ Warning: This feature is in active development. The following is sample DUMMY da
     <!-- CASTING FUNCTION -->
     <script src="js/src/function-superCast.js"></script>
 
-
-
-
     <script src="js/src/podcast-mobile-logic.js"></script>
 
     <!-- BACKGROUND GRAPHIC LOGIC -->
@@ -1357,10 +1381,8 @@ Warning: This feature is in active development. The following is sample DUMMY da
       });
   </script>
 
-
-
-<!-- LOGIN MODULE TEST-->
-<script>
+    <!-- LOGIN MODULE TEST-->
+    <script>
   document.addEventListener('DOMContentLoaded', (event) => {
     const auth = firebase.auth();
     auth.onAuthStateChanged(user => {
@@ -1373,9 +1395,7 @@ Warning: This feature is in active development. The following is sample DUMMY da
   });
 </script>
 
-
-
-<script>
+    <script>
   // Function to toggle mute for the audio player
   function toggleMute() {
     var audio = document.getElementById('audio-player');
