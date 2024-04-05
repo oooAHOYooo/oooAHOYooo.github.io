@@ -193,6 +193,15 @@ button:hover {
   /* Ensures .tab-content is above the background layer */
 }
 
+@media (max-width: 600px) {
+  .tab-content {
+    padding: 10px;
+    margin-left: 20px !important;
+    /* Reduced margin for mobile */
+    margin-right: 20px !important;
+    /* Reduced margin for mobile */
+  }
+}
 
 .list {
   list-style-type: none;
