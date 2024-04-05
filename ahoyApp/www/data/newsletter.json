@@ -55,7 +55,21 @@
         "imageUrl": "https://f4.bcbits.com/img/a3851680380_16.jpg",
         "content": "Dive into Justin Arena and enjoy some fresh tunes - We've added 3 new songs to the collection - 'Framework', 'Fruit In The Shower', and 'No 1'. ",
         "mp3Url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Justin+Arena+-+Framework.mp3"
+    },
+    {
+        "date": "2024-04-04",
+        "title": "New Song: 'Moon Views, Know by Feel, Chokecherries' by The Tines",
+        "imageUrl": "https://storage.googleapis.com/ahoy-song-collection/ready_theTinesAlbumArtwork.jpg",
+        "content": "Introducing a new addition to our music collection - 'Moon Views, Know by Feel, Chokecherries' by The Tines."
+    },
+    {
+        "date": "2024-04-05",
+        "title": "New Rob Show: 'Dave Gunn",
+        "imageUrl": "https://storage.googleapis.com/ahoy-podcast-collection/readyThe%20Rob%20Show%20-%20Ep23%20-%20Dave%20Gunn%20-%204.4.24.jpg",
+        "content": "CoFounder of the Tallboyz - Born in Hamden - Pro Rollerblader - Former Hockey Player - Alum of the Rob Show"
     }
+
+
 
 
     

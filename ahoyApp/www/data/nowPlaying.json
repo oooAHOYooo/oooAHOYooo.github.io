@@ -48,6 +48,22 @@
         "artist": "Sam Carlson",
         "tag": "podcast",
         "dateAdded": "03-28-24"
+      },
+      {
+        "id":"12",
+        "albumArt": "https://storage.googleapis.com/ahoy-song-collection/ready_theTinesAlbumArtwork.jpg",
+        "songTitle": "Moon Views, Know by Feel, Chokecherries",
+        "artist" : "The Tines",
+        "tag": "new song",
+        "dateAdded" : "04-03-24"
+      },
+      {
+        "id": "13",
+        "albumArt": "https://ahoypodcast.s3.us-east-2.amazonaws.com/readyThe+Rob+Show+-+Ep23+-+Dave+Gunn+-+4.4.24.jpg",
+        "songTitle": "The Rob Show #23 - Dave Gunn",
+        "artist": "Dave Gunn",
+        "tag": "podcast",
+        "dateAdded": "04-04-24"
       }
     ]
   }
