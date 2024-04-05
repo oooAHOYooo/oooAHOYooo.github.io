@@ -354,6 +354,30 @@
 		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Riddle+M+-+Mustard+Seed.mp3",
 		"coverArt": "https://f4.bcbits.com/img/a2186804885_16.jpg",
 		"play": false
+	},
+	{
+		"id": 40,
+		"artist": "The Tines",
+		"songTitle": "Know By Feel",
+		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/ready_The+Tines+-+The+Tines+-+04+-+Know+By+Feel.mp3",
+		"coverArt": "https://ahoycollection.s3.us-east-2.amazonaws.com/ready_theTinesAlbumArtwork.jpg",
+		"play": false
+	},
+	{
+		"id": 41,
+		"artist": "The Tines",
+		"songTitle": "Chokecherries",
+		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/ready_The+Tines_Chokecherries.mp3",
+		"coverArt": "https://ahoycollection.s3.us-east-2.amazonaws.com/ready_theTinesAlbumArtwork.jpg",
+		"play": false
+	},
+	{
+		"id": 42,
+		"artist": "The Tines",
+		"songTitle": "Moon Views",
+		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/ready_The+Tines+-+The+Tines+-+09+-+Moon+Views.mp3",
+		"coverArt": "https://ahoycollection.s3.us-east-2.amazonaws.com/ready_theTinesAlbumArtwork.jpg",
+		"play": false
 	}
 	]
   }
