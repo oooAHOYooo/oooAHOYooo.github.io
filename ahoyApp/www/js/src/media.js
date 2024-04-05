@@ -18,13 +18,6 @@ document.addEventListener("DOMContentLoaded", function () {
     return videos[randomIndex];
   }
 
-  function formatDuration(duration) {
-    const parts = duration.split(":");
-    const minutes = parts[1];
-    const seconds = parts[2];
-    return minutes + "min " + seconds + "sec";
-  }
-
   function copyToClipboardAndShowPopup(text, title, artist) {
     navigator.clipboard.writeText(text).then(() => {
       alert(`Oy Oy Oy! You have a media item almost ready to share -  ${title} by ${artist} - ${text} is now in your clipboard and ready to share `);
@@ -68,10 +61,6 @@ document.addEventListener("DOMContentLoaded", function () {
         const titleCell = document.createElement("td");
         titleCell.textContent = item.display_title;
         row.appendChild(titleCell);
-
-        const durationCell = document.createElement("td");
-        durationCell.textContent = formatDuration(item.duration);
-        row.appendChild(durationCell);
 
         tableBody.appendChild(row);
       });
