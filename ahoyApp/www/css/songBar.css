@@ -250,7 +250,7 @@
 
     /* Set a minimum width for the list items to ensure only 3 or 4 are visible */
     .center-dashboard-buttons li {
-        min-width: 25%;
+        min-width: 10%;
         /* Adjust this value based on preference for 3 (33.33%) or 4 (25%) items */
         margin: 0 10px;
         /* Adjust margin for spacing between buttons */
