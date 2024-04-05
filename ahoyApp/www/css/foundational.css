@@ -167,9 +167,8 @@ button:hover {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   margin-top: 10px !important;
-  margin-left: 55.5px !important;
-  margin-right: 55.5px !important;
-  /* Adds border-radius to the right side */
+  margin-left: 52.5px !important;
+  margin-right: 52.5px !important;
 }
 
 /* Responsive adjustments */
@@ -187,7 +186,6 @@ button:hover {
 
 /* Centering .tab-content with max-width for desktop view */
 .tab-content {
-
   margin: 0 auto;
   position: relative;
   z-index: 2;

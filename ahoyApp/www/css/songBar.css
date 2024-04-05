@@ -222,6 +222,58 @@
         font-size: 0.7em;
         /* Smaller */
     }
+
+    /* Adjust the container to provide extra wiggle room */
+    .center-dashboard-menu {
+        padding: 15px 0;
+        /* Increased padding for better touch target size */
+        margin: 0 -15px;
+        /* Counteract the padding for edge-to-edge design */
+        justify-content: flex-start;
+        /* Align items to the start for a natural scrolling start point */
+        overflow-x: auto;
+        /* Enable horizontal scrolling */
+        overflow-y: hidden;
+        /* Prevent vertical scrolling */
+        white-space: nowrap;
+        /* Ensure all buttons are in a single line */
+        -webkit-overflow-scrolling: touch;
+        /* Smooth scrolling on iOS devices */
+        scrollbar-width: none;
+        /* Hide scrollbar for Firefox */
+    }
+
+    .center-dashboard-menu::-webkit-scrollbar {
+        display: none;
+        /* Hide scrollbar for WebKit browsers */
+    }
+
+    /* Set a minimum width for the list items to ensure only 3 or 4 are visible */
+    .center-dashboard-buttons li {
+        min-width: 25%;
+        /* Adjust this value based on preference for 3 (33.33%) or 4 (25%) items */
+        margin: 0 10px;
+        /* Adjust margin for spacing between buttons */
+        box-sizing: border-box;
+        /* Include padding and border in the element's total width and height */
+    }
+
+    /* Optional: Adjust button sizes within the list items for better visibility and interaction */
+    .center-dashboard-buttons button {
+        padding: 10px 15px;
+        /* Adjust padding for a larger touch area */
+        font-size: 0.85em;
+        /* Adjust font size for better readability */
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+        /* Subtle tap feedback on iOS */
+        transition: transform 0.1s ease;
+        /* Smooth transition for button press */
+    }
+
+    .center-dashboard-buttons button:active {
+        transform: scale(0.95);
+        /* Slightly shrink button on press for tactile feedback */
+    }
 }
 
 /* Additional CSS for center-dashboard-menu */
@@ -233,10 +285,79 @@
     backdrop-filter: blur(10px);
     border-radius: 12px;
     /* More Compact */
-    border-radius: 15px;
     padding: 10px;
     margin: 12px auto;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+    /* Enable horizontal scrolling */
+    overflow-y: hidden;
+    /* Prevent vertical scrolling */
+    white-space: nowrap;
+    /* Ensure all buttons are in a single line */
+    -webkit-overflow-scrolling: touch;
+    /* Smooth scrolling on iOS devices */
+    scrollbar-width: none;
+    /* Hide scrollbar for Firefox */
+}
+
+.center-dashboard-menu::-webkit-scrollbar {
+    display: none;
+    /* Hide scrollbar for WebKit browsers */
+}
+
+.center-dashboard-buttons li {
+    display: inline-block;
+    /* Display list items inline for horizontal layout */
+    margin: 0 5px;
+    /* Adjust margin for spacing between buttons */
+}
+
+/* Enhancements for touch feedback and visual cues */
+.center-dashboard-buttons button {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+    /* Subtle tap feedback on iOS */
+    transition: transform 0.1s ease;
+    /* Smooth transition for button press */
+}
+
+.center-dashboard-buttons button:active {
+    transform: scale(0.95);
+    /* Slightly shrink button on press for tactile feedback */
+}
+
+/* Additional styling for improved aesthetics and usability */
+.center-dashboard-menu {
+    padding: 10px 0;
+    /* Add padding for better touch target size */
+    margin: 0 -10px;
+    /* Counteract the padding for edge-to-edge design */
+}
+
+/* Ensure the container does not have a visible border or outline */
+.center-dashboard-menu {
+    border: none;
+    outline: none;
+}
+
+/* Optional: Add gradient shadows to indicate scrollable content */
+.center-dashboard-menu:before,
+.center-dashboard-menu:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 20px;
+    height: 100%;
+    z-index: 1;
+}
+
+.center-dashboard-menu:before {
+    left: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.2), transparent);
+}
+
+.center-dashboard-menu:after {
+    right: 0;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.2), transparent);
 }
 
 .center-dashboard-buttons {
