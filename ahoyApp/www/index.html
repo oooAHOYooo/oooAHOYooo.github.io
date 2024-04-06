@@ -228,64 +228,56 @@
             class="fas fa-compact-disc"></i><span class="right-button-label">CD
             Burn</span></button>
  -->
-        <!-- button id="menu-B" onclick="toggleRightDashboard()">
+      <!-- button id="menu-B" onclick="toggleRightDashboard()">
           <i class="fas fa-bars"></i><span></span>
         </button -->
 
-      </div>
+    </div>
 
-      <div id="tabSortz">
-        <!-- HOME TAB -->
-        <div id="home-tab" class="tab-content active">
+    <div id="tabSortz">
+      <!-- HOME TAB -->
+      <div id="home-tab" class="tab-content active">
 
-          <div id="home-logo-div">
-            <a href="./index.html"><img src="./img/assets/u_ahoy23.png" />
-            </a>
-          </div>
-          <!-- Somewhere within the body tag -->
-          <div id="ahoy-account-name-display"></div>
+        <div id="home-logo-div">
+          <a href="./index.html"><img src="./img/assets/u_ahoy23.png" />
+          </a>
+        </div>
+        <!-- Somewhere within the body tag -->
+        <div id="ahoy-account-name-display"></div>
 
-          <script>
-  window.onload = function() {
-    const ahoyAccountName = localStorage.getItem('ahoyAccountName');
-    if (ahoyAccountName) {
-      document.getElementById('ahoy-account-name-display').textContent = ahoyAccountName;
-    }
-  };
-</script>
-          <!-- DATE DISPLAY -->
-          <!-- DATE DISPLAY -->
-          <div class="date-display">
-            <h2 id="calendar-date"></h2>
-          </div>
-          <br />
-          <br />
-          <div class="home-tab-learn-more-wrap">
-            <a href="https://github.com/oooAHOYooo/oooAHOYooo.github.io"><button
-                class="common-button">Learn
-                More</button></a>
-            <a href="./js/src/getOn/index.html"><button
-                class="common-button">Get
-                On ahoy</button></a>
-            <a href="https://7ufdbpnl2tt.typeform.com/to/OKeXjt6z"><button
-                class="common-button">Leave
-                Feedback</button></a>
-          </div>
-          <div class="get-started-wrap">
-            <a href="./create-account.html"><button
-                class="get-started-button">Get
-                Started</button></a>
-          </div>
-          <!-- Inside the "home-tab" div, in the "home-tab-question" section -->
+        <!-- DATE DISPLAY -->
+        <!-- DATE DISPLAY -->
+        <div class="date-display">
+          <h2 id="calendar-date"></h2>
+        </div>
+        <br />
+        <br />
+        <div class="home-tab-learn-more-wrap">
+          <a href="https://github.com/oooAHOYooo/oooAHOYooo.github.io"><button
+              class="common-button">Learn
+              More</button></a>
+          <a href="./js/src/getOn/index.html"><button
+              class="common-button">Get
+              On ahoy</button></a>
+          <a href="https://7ufdbpnl2tt.typeform.com/to/OKeXjt6z"><button
+              class="common-button">Leave
+              Feedback</button></a>
+        </div>
+        <div class="get-started-wrap">
+          <a href="./create-account.html"><button
+              class="get-started-button">Get
+              Started</button></a>
+        </div>
+        <!-- Inside the "home-tab" div, in the "home-tab-question" section -->
 
-          <!-- NOW PLAYING -->
-          <div class="now-playing">
-            <h1>Recently Added</h1>
-            <br>
-            <div id="now-playing-container">
-              <!-- Dynamic content will be loaded here -->
-            </div>
-            <!--div class="home-tab-question">
+        <!-- NOW PLAYING -->
+        <div class="now-playing">
+          <h1>Recently Added</h1>
+          <br>
+          <div id="now-playing-container">
+            <!-- Dynamic content will be loaded here -->
+          </div>
+          <!--div class="home-tab-question">
               <h2>Today's Question</h2>
 
               <p>The New Question App </p>
@@ -310,98 +302,98 @@
               </div>
 
             </div> -->
-          </div>
-
         </div>
 
-        <!-- END OF NOW PLAYING -->
-        <!-- MARKET TAB-->
-        <div id="market-tab" class="tab-content">
+      </div>
 
-          <nav class="market-nav">
-            <a href="#physicalMarket"><button>Physical Market</button></a>
-            <a href="#digitalMarket"><button>Digital Market</button></a>
-          </nav>
-          <div id="physicalMarket">
-      
-            <h2>Physical Market</h2>
-            <div class="physical-market-row">
-              <div id="productGridContainer">
-                <div id="productGrid"></div>
-              </div>
-            </div>
-            <div id="cart">
-              <h3>Your Physical Product Cart</h3>
-              <div id="cartItems"></div>
-              <div id="totalPrice"></div>
+      <!-- END OF NOW PLAYING -->
+      <!-- MARKET TAB-->
+      <div id="market-tab" class="tab-content">
+
+        <nav class="market-nav">
+          <a href="#physicalMarket"><button>Physical Market</button></a>
+          <a href="#digitalMarket"><button>Digital Market</button></a>
+        </nav>
+        <div id="physicalMarket">
+
+          <h2>Physical Market</h2>
+          <div class="physical-market-row">
+            <div id="productGridContainer">
+              <div id="productGrid"></div>
             </div>
           </div>
-          <div id="digitalMarket">
-            <h2 style="text-align: center;">Digital Market</h2>
-            <table id="digitalMarketTable">
-              <thead>
-                <tr>
-                  <th>Artist</th>
-                  <th>Title</th>
-                  <th>Genre</th>
-                  <th>Price</th>
-                  <th>Preview</th>
-                  <th>Add</th>
-                </tr>
-              </thead>
-              <tbody>
-                <!-- JavaScript will populate table rows here -->
-              </tbody>
-
-            </table>
-            <div id="digitalCart">
-              <h3>Your Digital Product Cart</h3>
-              <div id="digitalCartItems"></div>
-              <div id="digitalTotalPrice"></div>
-            </div>
+          <div id="cart">
+            <h3>Your Physical Product Cart</h3>
+            <div id="cartItems"></div>
+            <div id="totalPrice"></div>
           </div>
-
-          <!-- END OF PHYSICAL MARKET -->
-          <!-- END OF MARKET -->
         </div>
-        <!-- SONGS TAB -->
-        <div id="songs-tab" class="tab-content">
-       
-          <!-- Inside the "Songs" tab, before the <div id="daily-shuffle-super-mix"> -->
-          <div id="now-playing-song-container" class="now-playing-song">
+        <div id="digitalMarket">
+          <h2 style="text-align: center;">Digital Market</h2>
+          <table id="digitalMarketTable">
+            <thead>
+              <tr>
+                <th>Artist</th>
+                <th>Title</th>
+                <th>Genre</th>
+                <th>Price</th>
+                <th>Preview</th>
+                <th>Add</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- JavaScript will populate table rows here -->
+            </tbody>
 
-            <img id="now-playing-album-art" src alt="Album Art">
-            <button id="recently-added-homepage-song" class="control-button-a"
-              onclick="togglePlayPause()">
-              <i class="fas fa-play"></i>
-            </button>
+          </table>
+          <div id="digitalCart">
+            <h3>Your Digital Product Cart</h3>
+            <div id="digitalCartItems"></div>
+            <div id="digitalTotalPrice"></div>
           </div>
+        </div>
 
-          <div id="now-playing-song-details">
-            <h3 id="now-playing-song-title">Song Title</h3>
-            <p id="now-playing-song-artist">Artist Name</p>
-          </div>
-          <div class="divider-bar"></div>
-          <div id="daily-shuffle-super-mix"></div>
-          <div id="daily-shuffle">
-            <div class="daily-shuffle-headline">
-              <h2>Daily Shuffle</h2>
-              <p>Our setup creates a "Daily Shuffle" feature that dynamically
-                generates a shuffled list of songs from our Song Collection.We
-                use
-                a daily seed to ensure the shuffle order remains consistent
-                throughout the day for all users.</p></div>
+        <!-- END OF PHYSICAL MARKET -->
+        <!-- END OF MARKET -->
+      </div>
+      <!-- SONGS TAB -->
+      <div id="songs-tab" class="tab-content">
 
-            <button id="play-daily-shuffle"
-              class="play-daily-shuffle-button">Play Daily Shuffle</button>
+        <!-- Inside the "Songs" tab, before the <div id="daily-shuffle-super-mix"> -->
+        <div id="now-playing-song-container" class="now-playing-song">
 
-            <div id="daily-shuffle-list"></div>
-          </div>
+          <img id="now-playing-album-art" src alt="Album Art">
+          <button id="recently-added-homepage-song" class="control-button-a"
+            onclick="togglePlayPause()">
+            <i class="fas fa-play"></i>
+          </button>
+        </div>
 
-          <h2>Full Library</h2>
-          <p>The following songs are homegrown from locals.Sorted in various
-            random ways.</p>
-          <div id="yep">
+        <div id="now-playing-song-details">
+          <h3 id="now-playing-song-title">Song Title</h3>
+          <p id="now-playing-song-artist">Artist Name</p>
+        </div>
+        <div class="divider-bar"></div>
+        <div id="daily-shuffle-super-mix"></div>
+        <div id="daily-shuffle">
+          <div class="daily-shuffle-headline">
+            <h2>Daily Shuffle</h2>
+            <p>Our setup creates a "Daily Shuffle" feature that dynamically
+              generates a shuffled list of songs from our Song Collection.We
+              use
+              a daily seed to ensure the shuffle order remains consistent
+              throughout the day for all users.</p></div>
+
+          <button id="play-daily-shuffle"
+            class="play-daily-shuffle-button">Play Daily Shuffle</button>
+
+          <div id="daily-shuffle-list"></div>
+        </div>
+
+        <h2>Full Library</h2>
+        <p>The following songs are homegrown from locals.Sorted in various
+          random ways.</p>
+        <div id="yep">
             <input type="text" id="search-bar-a"
               placeholder="Search songs..." />
             <button id="mix-button">Mix</button>
@@ -444,8 +436,6 @@
                 <th>Cover</th>
                 <th>Artist</th>
                 <th>Title</th>
-
-     
 
               </tr>
             </thead>
@@ -492,7 +482,6 @@
 
     <!-- GAMES -->
     <div id="games-tab" class="tab-content">
-  
 
       <div class="game-tabs"> <!-- Updated class name -->
         <!-- Tabs will be dynamically added here by the JavaScript -->
@@ -803,21 +792,26 @@
       <!-- ACCOUNT -->
       <div id="account-tab" class="tab-content">
 
-<!-- User Login Section -->
-<div id="login-section" class="center-frame"
-style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 40vh; background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(15px); border-radius: 15px; padding: 20px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); border: 1px solid rgba(255, 255, 255, 0.3);  background: linear-gradient(145deg, rgba(255,255,255,0.1), rgba(255,255,255,0.25));">
-  <img src="./img/assets/u_ahoy23.png"
-    style="max-width: 60%; height: auto; border-radius: 10px;">
-  <h1 style="margin-top: 20px; font-weight: bold;">Already a member?</h1>
-  <div style="margin-top: 20px;">
-    <a href="./login.html" style="text-decoration: none;">
-      <button style="background-color: rgba(255, 255, 255, 0.5); color: #000000; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin-right: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); backdrop-filter: blur(5px); border: 1px solid rgba(255, 255, 255, 0.3);">Login to Ahoy</button>
-    </a>
-    <a href="./create-account.html" style="text-decoration: none;">
-      <button style="background-color: rgba(255, 255, 255, 0.5); color: #000000; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin-left: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); backdrop-filter: blur(5px); border: 1px solid rgba(255, 255, 255, 0.3);">Create Account</button>
-    </a>
-  </div>
-</div>
+        <!-- User Login Section -->
+        <div id="login-section" class="center-frame"
+          style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 40vh; background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(15px); border-radius: 15px; padding: 20px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); border: 1px solid rgba(255, 255, 255, 0.3);  background: linear-gradient(145deg, rgba(255,255,255,0.1), rgba(255,255,255,0.25));">
+          <img src="./img/assets/u_ahoy23.png"
+            style="max-width: 60%; height: auto; border-radius: 10px;">
+          <h1 style="margin-top: 20px; font-weight: bold;">Already a
+            member?</h1>
+          <div style="margin-top: 20px;">
+            <a href="./login.html" style="text-decoration: none;">
+              <button
+                style="background-color: rgba(255, 255, 255, 0.5); color: #000000; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin-right: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); backdrop-filter: blur(5px); border: 1px solid rgba(255, 255, 255, 0.3);">Login
+                to Ahoy</button>
+            </a>
+            <a href="./create-account.html" style="text-decoration: none;">
+              <button
+                style="background-color: rgba(255, 255, 255, 0.5); color: #000000; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin-left: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); backdrop-filter: blur(5px); border: 1px solid rgba(255, 255, 255, 0.3);">Create
+                Account</button>
+            </a>
+          </div>
+        </div>
 
         <!-- Logged-in Message Section -->
         <div id="logged-in-message" class="center-frame"
@@ -856,7 +850,7 @@ style="display: flex; flex-direction: column; justify-content: center; align-ite
 
         <!-- The Grandfather Surprise Section -->
         <div class="grandfather-surprise-section">
-       
+
           <h2>Free Membership for Life - Out now!</h2>
           <p>Join the pioneering crew of Ahoy Indie Media - Inspired by the
             "Grandfather Rule" we're offering an opportunity:</p>
@@ -877,12 +871,14 @@ style="display: flex; flex-direction: column; justify-content: center; align-ite
           <p>As a member of Ahoy Indie Media, you'll enjoy features actively
             being developed.</p>
           <ul>
-            <li><strong>Songs and Podcasts Remember Where You Left Off:</strong>
+            <li><strong>Songs and Podcasts Remember Where You Left
+                Off:</strong>
               Easily pick up where you left off in your favorite songs and
               podcasts.</li>
             <li><strong>Create and Save Burned CDs:</strong> Mix and save your
               favorite tracks into virtual burned CDs for easy listening.</li>
-            <li><strong>Personalized Greeting:</strong> Be welcomed by your name
+            <li><strong>Personalized Greeting:</strong> Be welcomed by your
+              name
               each time you visit</li>
             <li><strong>Posting on the Message Board:</strong> Share thoughts
               and interact with the community anonymously on our daily message
@@ -910,8 +906,10 @@ style="display: flex; flex-direction: column; justify-content: center; align-ite
             style="display: none;">
           <!-- User Icon Upload and Default Selection -->
           <div class="icon-selection">
-            <input type="file" id="icon-upload" hidden onchange="uploadIcon()">
-            <label for="icon-upload" class="icon-upload-btn">Upload Icon</label>
+            <input type="file" id="icon-upload" hidden
+              onchange="uploadIcon()">
+            <label for="icon-upload" class="icon-upload-btn">Upload
+              Icon</label>
             <div class="default-icons">
               <!-- Example of default icons -->
               <img src="path/to/default/icon1.png"
@@ -1306,9 +1304,10 @@ style="display: flex; flex-direction: column; justify-content: center; align-ite
     <!-- ARTSIT TAB AND FEATURES -->
     <script
       src="js/src/function-fetch-and-populate-artistTable.js"></script>
+    <script src="js/src/newSuperSong.js"></script>
     <!-- SHOW UPDATES -->
     <script src="js/src/show-logic.js"></script>
-    <script src="js/src/newSong.js"></script>
+    <!-- script src="js/src/newSong.js"></script-->
     <script src="js/src/audioPlayerControls.js"></script>
     <!-- DONATION SCRIPTS -->
     <script src="js/src/donation.js"></script>

@@ -203,22 +203,7 @@
 
 }
 
-.play-pause {
-  position: relative;
-  top: 0%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 2em;
-  /* Adjust the size of the icon as needed */
-  cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.5);
-  /* Semi-transparent background */
-  color: white;
-  border: none;
-  border-radius: 50%;
-  padding: 5px;
 
-}
 
 #now-playing-song-title,
 #now-playing-song-artist {
@@ -239,4 +224,53 @@
 #now-playing-song-artist {
   font-size: 1.2em;
   margin: 0px;
+}
+
+
+/* Glass effect for the song table */
+.glass-table {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  overflow: hidden;
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+.glass-table th,
+.glass-table td {
+  padding: 10px 20px;
+  text-align: left;
+  color: #fff;
+}
+
+.glass-table th {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.glass-table tbody tr:nth-child(odd) {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Compact and visually appealing design */
+.glass-table img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.control-button-a {
+  background-color: #ff0060;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.control-button-a:hover {
+  background-color: #e60053;
 }

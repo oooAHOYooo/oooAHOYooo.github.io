@@ -57,6 +57,7 @@ function setupPlayButtons() {
     const nowPlayingAlbumArt = document.getElementById("now-playing-album-art");
     const nowPlayingSongTitle = document.getElementById("now-playing-song-title");
     const nowPlayingSongArtist = document.getElementById("now-playing-song-artist");
+    const songInfoDisplay = document.getElementById("song-info"); // Get the song info display element
 
     playButtons.forEach((button) => {
         button.addEventListener("click", function () {
@@ -74,26 +75,26 @@ function setupPlayButtons() {
             nowPlayingSongArtist.textContent = artist;
 
             // Update the bottom display with the current song's artist and title
-            const songInfoDisplay = document.getElementById("song-info");
             songInfoDisplay.textContent = `${artist} - ${title}`;
 
-            if (audioPlayer.src !== url || audioPlayer.paused) {
-                audioPlayer.src = url;
-                audioPlayer.play();
-                updatePlayButtonIcon(this, "fas fa-pause");
-                currentPlayingButton = this;
+            if (audioPlayer.getAttribute('src') !== url || audioPlayer.paused) {
+                audioPlayer.src = url; // Set the new song URL
+                audioPlayer.play(); // Play the song
+                updatePlayButtonIcon(this, "fas fa-pause"); // Update the button icon to pause
+                currentPlayingButton = this; // Update the currently playing button
             } else {
-                audioPlayer.pause();
-                updatePlayButtonIcon(this, "fas fa-play");
-                currentPlayingButton = null;
+                audioPlayer.pause(); // Pause the song
+                updatePlayButtonIcon(this, "fas fa-play"); // Update the button icon to play
+                currentPlayingButton = null; // Clear the currently playing button
             }
         });
     });
 
+    // Listener for when the song ends
     audioPlayer.addEventListener('ended', function() {
         if (currentPlayingButton) {
-            updatePlayButtonIcon(currentPlayingButton, "fas fa-play");
-            currentPlayingButton = null;
+            updatePlayButtonIcon(currentPlayingButton, "fas fa-play"); // Reset the play button icon
+            currentPlayingButton = null; // Clear the currently playing button
         }
     });
 }
@@ -165,15 +166,15 @@ function updateNowPlaying(song) {
         const songInfoDisplay = document.getElementById("song-info");
         songInfoDisplay.textContent = `${artist} - ${title}`;
 
-        if (audioPlayer.src !== url || audioPlayer.paused) {
-            audioPlayer.src = url;
-            audioPlayer.play();
-            updatePlayButtonIcon(this, "fas fa-pause");
-            currentPlayingButton = this;
+        if (audioPlayer.getAttribute('src') !== url || audioPlayer.paused) {
+            audioPlayer.src = url; // Set the new song URL
+            audioPlayer.play(); // Play the song
+            updatePlayButtonIcon(this, "fas fa-pause"); // Update the button icon to pause
+            currentPlayingButton = this; // Update the currently playing button
         } else {
-            audioPlayer.pause();
-            updatePlayButtonIcon(this, "fas fa-play");
-            currentPlayingButton = null;
+            audioPlayer.pause(); // Pause the song
+            updatePlayButtonIcon(this, "fas fa-play"); // Update the button icon to play
+            currentPlayingButton = null; // Clear the currently playing button
         }
     };
 }
