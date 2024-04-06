@@ -1353,65 +1353,54 @@
         // Function to play or pause the song
         function togglePlayPause() {
           var audio = document.getElementById('audio-player');
-          var playPauseBtn = document.getElementById('recently-added-homepage-song'); // Assuming this is your play/pause button
+          var playPauseIcon = document.getElementById('play-pause-icon');
           if (audio.paused) {
             audio.play();
-            playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>'; // Change to pause icon
+            playPauseIcon.className = 'fas fa-pause'; // Change to pause icon
           } else {
             audio.pause();
-            playPauseBtn.innerHTML = '<i class="fas fa-play"></i>'; // Change to play icon
+            playPauseIcon.className = 'fas fa-play'; // Change to play icon
           }
         }
-      
-        // Function to load a song into the player and play it
-        function loadAndPlaySong(songUrl) {
+
+        // Function to toggle play/pause for the audio player
+        function togglePlayPause(songUrl, songTitle, artistName) {
           var audio = document.getElementById('audio-player');
-          audio.src = songUrl; // Set the source of the song
-          audio.play(); // Play the song
-          document.getElementById('recently-added-homepage-song').innerHTML = '<i class="fas fa-pause"></i>'; // Change to pause icon
+          var playPauseIcon = document.getElementById('play-pause-icon');
+          var songInfo = document.getElementById('song-info');
+          if (audio.src !== songUrl) {
+            // Load new song if different
+            audio.src = songUrl;
+            audio.play();
+            playPauseIcon.className = 'fas fa-pause'; // Change to pause icon
+            songInfo.textContent = `${artistName} - ${songTitle}`; // Update song info display
+          } else {
+            // Toggle play/pause if the same song
+            if (audio.paused) {
+              audio.play();
+              playPauseIcon.className = 'fas fa-pause'; // Change to pause icon
+            } else {
+              audio.pause();
+              playPauseIcon.className = 'fas fa-play'; // Change to play icon
+            }
+          }
         }
-      
-        // Example usage: Load and play a song when the page loads
-        window.onload = function() {
-          loadAndPlaySong('path_to_your_song.mp3'); // Replace 'path_to_your_song.mp3' with the actual path to your song
-        };
+
+        // Function to move the clicked song to the top of the list
+        function moveToTop(songElement) {
+          const songList = document.getElementById("song-list");
+          songList.prepend(songElement);
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+          // Update the song info display on the main page when a song is played
+          const audioPlayer = document.getElementById('audio-player');
+          audioPlayer.addEventListener('play', () => {
+            const songInfoDisplay = document.getElementById('now-playing-song-details');
+            songInfoDisplay.querySelector('#now-playing-song-title').textContent = audioPlayer.dataset.songTitle;
+            songInfoDisplay.querySelector('#now-playing-song-artist').textContent = audioPlayer.dataset.artistName;
+          });
+        });
       </script>
-
-    <!-- Written by Alex Gonzalez - of Sleepy Hollow, NY - out and around the Havens, CT. this has seen hand coded - a thousand million times over - since the start of the roaring 20s.  -->
-    <!-- Please print this code for historical purposes --><!-- As of 4.2.24 -->
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-          displayESTDateTime(); // Call the function to display the date and time
-      });
-  </script>
-
-    <!-- LOGIN MODULE TEST-->
-    <script>
-  document.addEventListener('DOMContentLoaded', (event) => {
-    const auth = firebase.auth();
-    auth.onAuthStateChanged(user => {
-      if (!user) {
-        // User is not logged in, show the modal
-        document.getElementById('loginModal').style.display = 'block';
-        document.getElementById('goToLogin').onclick = () => window.location.href = './login.html';
-      }
-    });
-  });
-</script>
-
-    <script>
-  // Function to toggle mute for the audio player
-  function toggleMute() {
-    var audio = document.getElementById('audio-player');
-    var muteIcon = document.getElementById('mute-icon');
-    audio.muted = !audio.muted; // Toggle mute
-    if (audio.muted) {
-      muteIcon.className = 'fas fa-volume-mute'; // Change to mute icon
-    } else {
-      muteIcon.className = 'fas fa-volume-up'; // Change to volume up icon
-    }
-  }
-</script>
-  </body>
-
+    </body>
 </html>

@@ -9,7 +9,7 @@ function loadSongs() {
       data.songs.forEach((song, index) => {
         const row = document.createElement("tr");
         row.innerHTML = `
-          <td><button class="control-button-a" onclick="loadAndPlaySong('${song.mp3url}', '${song.songTitle}', '${song.artist}')">Play</button></td>
+          <td><button class="control-button-a" onclick="playSong('${song.mp3url}', '${song.songTitle}', '${song.artist}', this.parentElement.parentElement)">Play</button></td>
           <td><img src="${song.coverArt}" alt="${song.songTitle}" class="thumbnail"></td>
           <td>${song.artist}</td>
           <td>${song.songTitle}</td>
@@ -21,14 +21,13 @@ function loadSongs() {
     .catch(error => console.error("Error loading songs:", error));
 }
 
-// Function to load a song into the player and play it
-function loadAndPlaySong(songUrl, songTitle, artistName) {
+// Function to play a song, toggle play/pause, and move the song to the top
+function playSong(songUrl, songTitle, artistName, songElement) {
   var audio = document.getElementById('audio-player');
-  var songInfo = document.getElementById('song-info');
-  audio.src = songUrl; // Set the source of the song
-  audio.play(); // Play the song
-  songInfo.textContent = `${artistName} - ${songTitle}`; // Update song info display
-  document.getElementById('play-pause-icon').className = 'fas fa-pause'; // Change to pause icon
+  audio.dataset.songTitle = songTitle; // Store song title
+  audio.dataset.artistName = artistName; // Store artist name
+  togglePlayPause(songUrl, songTitle, artistName); // Use the toggle function defined in index.html
+  moveToTop(songElement); // Move the song element to the top of the list
 }
 
 // Placeholder function for "Burn" functionality
