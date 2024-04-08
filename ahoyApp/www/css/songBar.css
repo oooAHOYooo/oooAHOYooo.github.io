@@ -16,6 +16,16 @@
     /* CMYK-inspired Gradient */
 }
 
+/* Additional CSS for blank div blocks to match the size of v24 buttons */
+.blank-div-block {
+    width: 48px;
+    /* Approximate width of v24 buttons */
+    height: 48px;
+    /* Approximate height of v24 buttons */
+    display: inline-block;
+    /* Ensure it's in line with other elements */
+}
+
 /* Song Progress Container */
 .song-progress-container {
     width: 90%;
