@@ -1,0 +1,35 @@
+#now-playing-container {
+    background-color: rgba(255, 255, 255, 0);
+    /* Semi-transparent white background */
+}
+
+/* Style for each song info div */
+.song-info {
+    background-color: rgba(0, 0, 0, 0);
+    /* Semi-transparent black background */
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+/* Style for album art images */
+#now-playing-container img#album-art {
+    opacity: 0.8;
+    /* Make the album art slightly transparent */
+}
+
+/* Style for song titles */
+#now-playing-container h2#current-song-title {
+    color: #fff;
+    /* White text color */
+    opacity: 0.9;
+    /* Slightly transparent text */
+}
+
+/* Style for artist names */
+#now-playing-container h3#current-song-artist {
+    color: #fff;
+    /* White text color */
+    opacity: 0.7;
+    /* More transparent text */
+}
