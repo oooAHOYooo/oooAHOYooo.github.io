@@ -157,7 +157,7 @@
     <div class="app">
       <div class="app-background-layer"></div>
 
-        </button -->
+      </button -->
     </div>
 
     <div id="tabSortz">
@@ -168,42 +168,38 @@
           <a href="./index.html"><img src="./img/assets/u_ahoy23.png" />
           </a>
         </div>
-        <!-- Somewhere within the body tag -->
-        <div id="ahoy-account-name-display"></div>
 
         <!-- DATE DISPLAY -->
         <!-- DATE DISPLAY -->
         <div class="date-display">
           <h2 id="calendar-date"></h2>
-        </div>
-        <br />
-        <br />
-        <div class="home-tab-learn-more-wrap">
-          <a href="https://github.com/oooAHOYooo/oooAHOYooo.github.io"><button
-              class="common-button">Learn
-              More</button></a>
-          <a href="./js/src/getOn/index.html"><button
-              class="common-button">Get
-              On ahoy</button></a>
-          <a href="https://7ufdbpnl2tt.typeform.com/to/OKeXjt6z"><button
-              class="common-button">Leave
-              Feedback</button></a>
-        </div>
-        <div class="get-started-wrap">
-          <a href="./create-account.html"><button
-              class="get-started-button">Get
-              Started</button></a>
-        </div>
-        <!-- Inside the "home-tab" div, in the "home-tab-question" section -->
 
-        <!-- NOW PLAYING -->
-        <div class="now-playing">
-          <h1>Recently Added</h1>
-          <br>
-          <div id="now-playing-container" class="v25nowPlaying">
-            <!-- Dynamic content will be loaded here -->
+          <div class="home-tab-learn-more-wrap">
+            <a href="https://github.com/oooAHOYooo/oooAHOYooo.github.io"><button
+                class="common-button">Learn
+                More</button></a>
+            <a href="./js/src/getOn/index.html"><button
+                class="common-button">Get
+                On ahoy</button></a>
+            <a href="https://7ufdbpnl2tt.typeform.com/to/OKeXjt6z"><button
+                class="common-button">Leave
+                Feedback</button></a>
           </div>
-          <!--div class="home-tab-question">
+          <div class="get-started-wrap">
+            <a href="./create-account.html"><button
+                class="get-started-button">Get
+                Started</button></a>
+          </div>
+          <!-- Inside the "home-tab" div, in the "home-tab-question" section -->
+
+          <!-- NOW PLAYING -->
+          <div class="now-playing">
+            <h1>Recently Added</h1>
+            <br>
+            <div id="now-playing-container" class="v25nowPlaying">
+              <!-- Dynamic content will be loaded here -->
+            </div>
+            <!--div class="home-tab-question">
               <h2>Today's Question</h2>
 
               <p>The New Question App </p>
@@ -228,98 +224,98 @@
               </div>
 
             </div> -->
+          </div>
+
         </div>
 
-      </div>
+        <!-- END OF NOW PLAYING -->
+        <!-- MARKET TAB-->
+        <div id="market-tab" class="tab-content">
 
-      <!-- END OF NOW PLAYING -->
-      <!-- MARKET TAB-->
-      <div id="market-tab" class="tab-content">
+          <nav class="market-nav">
+            <a href="#physicalMarket"><button>Physical Market</button></a>
+            <a href="#digitalMarket"><button>Digital Market</button></a>
+          </nav>
+          <div id="physicalMarket">
 
-        <nav class="market-nav">
-          <a href="#physicalMarket"><button>Physical Market</button></a>
-          <a href="#digitalMarket"><button>Digital Market</button></a>
-        </nav>
-        <div id="physicalMarket">
-
-          <h2>Physical Market</h2>
-          <div class="physical-market-row">
-            <div id="productGridContainer">
-              <div id="productGrid"></div>
+            <h2>Physical Market</h2>
+            <div class="physical-market-row">
+              <div id="productGridContainer">
+                <div id="productGrid"></div>
+              </div>
+            </div>
+            <div id="cart">
+              <h3>Your Physical Product Cart</h3>
+              <div id="cartItems"></div>
+              <div id="totalPrice"></div>
             </div>
           </div>
-          <div id="cart">
-            <h3>Your Physical Product Cart</h3>
-            <div id="cartItems"></div>
-            <div id="totalPrice"></div>
+          <div id="digitalMarket">
+            <h2 style="text-align: center;">Digital Market</h2>
+            <table id="digitalMarketTable">
+              <thead>
+                <tr>
+                  <th>Artist</th>
+                  <th>Title</th>
+                  <th>Genre</th>
+                  <th>Price</th>
+                  <th>Preview</th>
+                  <th>Add</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- JavaScript will populate table rows here -->
+              </tbody>
+
+            </table>
+            <div id="digitalCart">
+              <h3>Your Digital Product Cart</h3>
+              <div id="digitalCartItems"></div>
+              <div id="digitalTotalPrice"></div>
+            </div>
           </div>
-        </div>
-        <div id="digitalMarket">
-          <h2 style="text-align: center;">Digital Market</h2>
-          <table id="digitalMarketTable">
-            <thead>
-              <tr>
-                <th>Artist</th>
-                <th>Title</th>
-                <th>Genre</th>
-                <th>Price</th>
-                <th>Preview</th>
-                <th>Add</th>
-              </tr>
-            </thead>
-            <tbody>
-              <!-- JavaScript will populate table rows here -->
-            </tbody>
 
-          </table>
-          <div id="digitalCart">
-            <h3>Your Digital Product Cart</h3>
-            <div id="digitalCartItems"></div>
-            <div id="digitalTotalPrice"></div>
+          <!-- END OF PHYSICAL MARKET -->
+          <!-- END OF MARKET -->
+        </div>
+        <!-- SONGS TAB -->
+        <div id="songs-tab" class="tab-content">
+
+          <!-- Inside the "Songs" tab, before the <div id="daily-shuffle-super-mix"> -->
+          <div id="now-playing-song-container" class="now-playing-song">
+
+            <img id="now-playing-album-art" src alt="Album Art">
+            <button id="recently-added-homepage-song" class="control-button-a"
+              onclick="togglePlayPause()">
+              <i class="fas fa-play"></i>
+            </button>
           </div>
-        </div>
 
-        <!-- END OF PHYSICAL MARKET -->
-        <!-- END OF MARKET -->
-      </div>
-      <!-- SONGS TAB -->
-      <div id="songs-tab" class="tab-content">
+          <div id="now-playing-song-details">
+            <h3 id="now-playing-song-title">Song Title</h3>
+            <p id="now-playing-song-artist">Artist Name</p>
+          </div>
+          <div class="divider-bar"></div>
+          <div id="daily-shuffle-super-mix"></div>
+          <div id="daily-shuffle">
+            <div class="daily-shuffle-headline">
+              <h2>Daily Shuffle</h2>
+              <p>Our setup creates a "Daily Shuffle" feature that dynamically
+                generates a shuffled list of songs from our Song Collection.We
+                use
+                a daily seed to ensure the shuffle order remains consistent
+                throughout the day for all users.</p></div>
 
-        <!-- Inside the "Songs" tab, before the <div id="daily-shuffle-super-mix"> -->
-        <div id="now-playing-song-container" class="now-playing-song">
+            <button id="play-daily-shuffle"
+              class="play-daily-shuffle-button">Play Daily Shuffle</button>
 
-          <img id="now-playing-album-art" src alt="Album Art">
-          <button id="recently-added-homepage-song" class="control-button-a"
-            onclick="togglePlayPause()">
-            <i class="fas fa-play"></i>
-          </button>
-        </div>
+            <div id="daily-shuffle-list"></div>
+          </div>
 
-        <div id="now-playing-song-details">
-          <h3 id="now-playing-song-title">Song Title</h3>
-          <p id="now-playing-song-artist">Artist Name</p>
-        </div>
-        <div class="divider-bar"></div>
-        <div id="daily-shuffle-super-mix"></div>
-        <div id="daily-shuffle">
-          <div class="daily-shuffle-headline">
-            <h2>Daily Shuffle</h2>
-            <p>Our setup creates a "Daily Shuffle" feature that dynamically
-              generates a shuffled list of songs from our Song Collection.We
-              use
-              a daily seed to ensure the shuffle order remains consistent
-              throughout the day for all users.</p></div>
-
-          <button id="play-daily-shuffle"
-            class="play-daily-shuffle-button">Play Daily Shuffle</button>
-
-          <div id="daily-shuffle-list"></div>
-        </div>
-
-        <h2>Full Library</h2>
-        <p>The following songs are homegrown from locals.Sorted in various
-          random ways.</p>
-        <div id="yep">
+          <h2>Full Library</h2>
+          <p>The following songs are homegrown from locals.Sorted in various
+            random ways.</p>
+          <div id="yep">
             <input type="text" id="search-bar-a"
               placeholder="Search songs..." />
             <button id="mix-button">Mix</button>
@@ -565,13 +561,15 @@
         <button>Media Added</button>
         <button>Our Goals</button>
 
-        <button id="about-button" onclick="navigateToTab('about-tab')">About</button>
+        <button id="about-button"
+          onclick="navigateToTab('about-tab')">About</button>
         <button id="donate-button"
-            onclick="navigateToTab('donate-tab')">Donate</button>
-          <button id="share-button"
-            onclick="navigateToTab('share-tab')">Share</button>
-    
-          <button id="update-button" onclick="navigateToTab('update-tab')">Tech Updates</button>
+          onclick="navigateToTab('donate-tab')">Donate</button>
+        <button id="share-button"
+          onclick="navigateToTab('share-tab')">Share</button>
+
+        <button id="update-button" onclick="navigateToTab('update-tab')">Tech
+          Updates</button>
       </div>
       <div id="newsletter-list"></div>
       <div class="goals-container">
@@ -591,7 +589,7 @@
           <h4>Present Artist Count: <span
               id="current-artist-count">10</span></h4>
         </div>
-        
+
       </div>
     </div>
     <!-- CHAT TAB CHAT TAB CHAT TAB -->
@@ -699,7 +697,7 @@
         <h1>Last 100 Updates to our Repo</h1>
         <hr>
         <div id="commits-list"></div>
-    </div>
+      </div>
       <!-- ACCOUNT -->
       <div id="account-tab" class="tab-content">
 
@@ -868,7 +866,7 @@
               </tbody>
             </table>
           </div>
-       
+
           <h1>Your Liked Media Items</h1>
           <table id="liked-media-items">
             <thead>
@@ -1010,12 +1008,21 @@
       <div id="burn-tab" class="tab-content">
 
         <h1>Burn a CD : Save the World</h1>
-        <p>Just kidding - but this is a good way Support Musicians - and maybe foster some new industry - stir about the digital - and save physical reality</p>
+        <p>Just kidding - but this is a good way Support Musicians - and maybe
+          foster some new industry - stir about the digital - and save physical
+          reality</p>
         <h2>How it works:</h2>
         <ul id="burn-instructions"></ul>
 
-        <h1>Send Your CD to your house - or your friends house - or coffee shop - or wherever in the contidental united states locked in and ready to be shipped</h1>
-        <p>Getting Started is Easy and Free - and meant to get you to buy often easy and faast - without having ot tink about it - BOOM - cd shipping to your house - feel good vibes - supporting local heroes - and we're giving your favorite host - Rob Meglio - something to do in the process - dude is a big eBay guy and would love this shot at sending you personalized notes </p>
+        <h1>Send Your CD to your house - or your friends house - or coffee shop
+          - or wherever in the contidental united states locked in and ready to
+          be shipped</h1>
+        <p>Getting Started is Easy and Free - and meant to get you to buy often
+          easy and faast - without having ot tink about it - BOOM - cd shipping
+          to your house - feel good vibes - supporting local heroes - and we're
+          giving your favorite host - Rob Meglio - something to do in the
+          process - dude is a big eBay guy and would love this shot at sending
+          you personalized notes </p>
         <div id="burn-list-name-container">
           <input type="text" id="burn-list-name"
             placeholder="Enter list name">
@@ -1064,11 +1071,11 @@
         <div class="center-dashboard-menu" id="barB">
           <ul class="center-dashboard-buttons">
 
-
-
             <div class="blank-div-block"></div>
-            <div class="blank-div-block"></div> <!-- Blank div block at the beginning -->
-                  <div class="blank-div-block"></div> <!-- Blank div block at the beginning -->
+            <div class="blank-div-block"></div>
+            <!-- Blank div block at the beginning -->
+            <div class="blank-div-block"></div>
+            <!-- Blank div block at the beginning -->
             <!-- Blank div block at the beginning -->
             <div class="flex-space"></div>
             <li> <button onclick="navigateToTab('home-tab')"><i
@@ -1094,27 +1101,38 @@
             <li><button onclick="navigateToTab('account-tab')"><i
                   class="fas fa-user"></i><span
                   class="right-button-label">Account</span></button></li>
-                  <div class="blank-div-block"></div> <!-- Blank div block at the beginning -->
-                  <div class="blank-div-block"></div> <!-- Blank div block at the beginning -->
-
-
+            <div class="blank-div-block"></div>
+            <!-- Blank div block at the beginning -->
+            <div class="blank-div-block"></div>
+            <!-- Blank div block at the beginning -->
 
           </ul>
         </div>
         <div id="v25-dock-container">
           <div id="v25-dock">
-              <div id="v25-icon-container" class="scroll-container">
-                  <div class="v25-dock-icon" onclick="navigateToTab('home-tab')"><i class="fas fa-home"></i></div>
-                  <div class="v25-dock-icon" onclick="navigateToTab('news-tab')"><i class="fas fa-newspaper"></i></div>
-                  <div class="v25-dock-icon" onclick="navigateToTab('songs-tab')"><i class="fas fa-music"></i></div>
-                  <div class="v25-dock-icon" onclick="navigateToTab('podcasts-tab')"><i class="fas fa-podcast"></i></div>
-                  <div class="v25-dock-icon" onclick="navigateToTab('media-tab-a')"><i class="fas fa-image"></i></div>
-                  <div class="v25-dock-icon" onclick="navigateToTab('burn-tab')"><i class="fas fa-fire"></i></div>
-                  <div class="v25-dock-icon" onclick="navigateToTab('games-tab')"><i class="fas fa-gamepad"></i></div>
-                  <div class="v25-dock-icon" onclick="navigateToTab('account-tab')"><i class="fas fa-user-circle"></i></div>
-              </div>
+            <div id="v25-icon-container" class="scroll-container">
+              <div class="v25-dock-icon" onclick="navigateToTab('home-tab')"><i
+                  class="fas fa-home"></i></div>
+              <div class="v25-dock-icon" onclick="navigateToTab('news-tab')"><i
+                  class="fas fa-newspaper"></i></div>
+              <div class="v25-dock-icon" onclick="navigateToTab('songs-tab')"><i
+                  class="fas fa-music"></i></div>
+              <div class="v25-dock-icon"
+                onclick="navigateToTab('podcasts-tab')"><i
+                  class="fas fa-podcast"></i></div>
+              <div class="v25-dock-icon"
+                onclick="navigateToTab('media-tab-a')"><i
+                  class="fas fa-image"></i></div>
+              <div class="v25-dock-icon" onclick="navigateToTab('burn-tab')"><i
+                  class="fas fa-fire"></i></div>
+              <div class="v25-dock-icon" onclick="navigateToTab('games-tab')"><i
+                  class="fas fa-gamepad"></i></div>
+              <div class="v25-dock-icon"
+                onclick="navigateToTab('account-tab')"><i
+                  class="fas fa-user-circle"></i></div>
+            </div>
           </div>
-      </div>
+        </div>
 
       </div>
       <!-- END OF v24 Bottom Player-->
@@ -1300,5 +1318,5 @@
           });
         });
       </script>
-    </body>
+  </body>
 </html>
