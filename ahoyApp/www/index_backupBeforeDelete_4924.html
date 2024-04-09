@@ -125,6 +125,7 @@
   </head>
 
   <body>
+
     <!-- Add this HTML for the modal somewhere in your body tag -->
     <div id="loginModal" class="modal" style="display:none;">
       <div class="modal-content">
@@ -156,8 +157,82 @@
 
     <div class="app">
       <div class="app-background-layer"></div>
+      <!-- 
+      <div class="left-dashboard">
+        <button onclick="navigateToTab('home-tab')"><i
+            class="fas fa-home"></i><span
+            class="button-label">Home</span></button>
+        <button onclick="navigateToTab('market-tab')"><i
+            class="fas fa-store"></i><span
+            class="button-label">Market</span></button>
+        <button onclick="navigateToTab('songs-tab')"><i
+            class="fas fa-music"></i><span
+            class="button-label">Songs</span></button>
+        <button onclick="navigateToTab('media-tab-a')"><i
+            class="fas fa-photo-video"></i><span
+            class="button-label">Media</span></button>
+        <button onclick="navigateToTab('podcasts-tab')"><i
+            class="fas fa-podcast"></i><span
+            class="button-label">Podcasts</span></button>
+        <button onclick="navigateToTab('games-tab')"><i
+            class="fas fa-gamepad"></i><span
+            class="button-label">Games</span></button>
+        <button onclick="navigateToTab('artists-tab')"><i
+            class="fas fa-paint-brush"></i><span
+            class="button-label">Artists</span></button>
+        <button onclick="navigateToTab('news-tab')"><i
+            class="fas fa-newspaper"></i><span
+            class="button-label">News</span></button>
+        <button onclick="navigateToTab('shows-tab')"><i
+            class="fas fa-calendar-alt"></i><span
+            class="button-label">Shows</span></button>
+        <button onclick="navigateToTab('experience-tab')"><i
+            class="fas fa-vr-cardboard"></i><span
+            class="button-label">Experience</span></button>
 
+        <button id="menu-A" onclick="toggleLeftDashboard()">
+          <i class="fas fa-bars"></i><span></span>
+        </button>
+      </div>
+      <div class="right-dashboard">
+        <button onclick="navigateToTab('account-tab')"><i
+            class="fas fa-user"></i><span
+            class="right-button-label">Account</span></button>
+        <button onclick="navigateToTab('updates-tab')"><i
+            class="fas fa-sync-alt"></i><span
+            class="right-button-label">Updates</span></button>
+
+        <button onclick="navigateToTab('settings-tab')"><i
+            class="fas fa-cog"></i><span
+            class="right-button-label">Settings</span></button>
+
+        <button onclick="navigateToTab('donate-tab')"><i
+            class="fas fa-donate"></i><span
+            class="right-button-label">Donate</span></button>
+        <button onclick="navigateToTab('about-tab')"><i
+            class="fas fa-info-circle"></i><span
+            class="right-button-label">About</span></button>
+        <button onclick="navigateToTab('casting-tab')"><i
+            class="fas fa-broadcast-tower"></i><span
+            class="right-button-label">Casting</span></button>
+        <button onclick="navigateToTab('message-board-tab')"><i
+            class="fas fa-chalkboard"></i><span
+            class="right-button-label">Message Board</span></button>
+
+        <button onclick="navigateToTab('playlist-tab')"><i
+            class="fas fa-th-list"></i><span
+            class="right-button-label">Playlist</span></button>
+        <button onclick="navigateToTab('share-tab')"><i
+            class="fas fa-share-alt"></i><span
+            class="right-button-label">Share</span></button>
+        <button onclick="navigateToTab('burn-tab')"><i
+            class="fas fa-compact-disc"></i><span class="right-button-label">CD
+            Burn</span></button>
+ -->
+      <!-- button id="menu-B" onclick="toggleRightDashboard()">
+          <i class="fas fa-bars"></i><span></span>
         </button -->
+
     </div>
 
     <div id="tabSortz">
@@ -200,7 +275,7 @@
         <div class="now-playing">
           <h1>Recently Added</h1>
           <br>
-          <div id="now-playing-container" class="v25nowPlaying">
+          <div id="now-playing-container">
             <!-- Dynamic content will be loaded here -->
           </div>
           <!--div class="home-tab-question">
@@ -334,6 +409,11 @@
       </div>
       <!-- END OF SONGS TAB -->
       <!-- TAB -->
+      <!-- Experience VIZ -->
+      <div id="experience-tab" class="tab-content">
+        <div class="experience"></div>
+
+      </div>
       <!-- MEDIA TAB -->
       <div id="media-tab-a" class="tab-content">
 
@@ -410,6 +490,25 @@
       <!-- Game content will also be dynamically added here by the JavaScript -->
     </div>
 
+    <!-- ARTISTS TAB -->
+    <div id="artists-tab" class="tab-content">
+      <p
+        style="font-family: 'Courier New', Courier, monospace; background-color: #ff0060; color: black; padding: 10px; border: 1px dashed red;">⚠️
+        Warning: This feature is in active development.</p>
+      <h2>Artists</h2>
+      <table id="artists-table">
+        <thead>
+          <tr>
+            <th>Artist Name</th>
+            <th>Location</th>
+            <th>Engage</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Artist data will be inserted here by JavaScript -->
+        </tbody>
+      </table>
+    </div>
     <!-- END OF ARTIST -->
     <!-- Donation Tab-->
     <!-- DONATE TAB -->
@@ -459,6 +558,16 @@
       </div>
       <button onclick="createPlaylistForm()">Create Playlist</button>
 
+    </div>
+    <!-- REVIEW TAB CONTENT -->
+    <div id="review-tab" class="tab-content">
+      <p
+        style="font-family: 'Courier New', Courier, monospace; background-color: #ff0060; color: black; padding: 10px; border: 1px dashed red;">⚠️
+        Warning: This feature is in active development.</p>
+
+      <h2>Reviews</h2>
+      <p>Read and share reviews on your favorite indie media content.</p>
+      <!-- Review content will be dynamically added here -->
     </div>
     <!-- ABOUT TAB -->
     <div id="about-tab" class="tab-content">
@@ -534,45 +643,7 @@
     </div>
     <!-- NEWS TAB-->
     <div id="news-tab" class="tab-content">
-      <h1 class="news-text-title">NEWS FROM AHOY</h1>
-      <style>
-        .newsSubHeaderMenu {
-          min-width: 100%;
-          display: flex;
-          -ms-flex-align: center;
-          flex-direction: row;
-          
-        }
-
-        .newsSubHeaderMenu button {
-          text-transform: uppercase;
-          font-size: 8px;
-          margin:5px;
-          color: white;
-        }
-
-        .news-text-title {
-          font-size: 48px;
-          max-width: 50ch;
-          line-height: 30%;
-          font-weight: bold;
-          color: var(--border-color);
-        }
-      </style>
-      <div class="newsSubHeaderMenu">
-        <button>Music Added</button>
-        <button>Pods Added</button>
-        <button>Media Added</button>
-        <button>Our Goals</button>
-
-        <button id="about-button" onclick="navigateToTab('about-tab')">About</button>
-        <button id="donate-button"
-            onclick="navigateToTab('donate-tab')">Donate</button>
-          <button id="share-button"
-            onclick="navigateToTab('share-tab')">Share</button>
-    
-          <button id="update-button" onclick="navigateToTab('update-tab')">Tech Updates</button>
-      </div>
+      <h1>News From Ahoy</h1>
       <div id="newsletter-list"></div>
       <div class="goals-container">
         <h2>Updates on Goals</h2>
@@ -591,8 +662,27 @@
           <h4>Present Artist Count: <span
               id="current-artist-count">10</span></h4>
         </div>
-        
+        <button id="donate-button"
+          onclick="navigateToTab('donate-tab')">Donate</button>
+        <button id="share-button"
+          onclick="navigateToTab('share-tab')">Share</button>
       </div>
+    </div>
+    <!-- SHOWS TAB -->
+    <div id="shows-tab" class="tab-content">
+      <h2>Shows</h2>
+      <table id="shows-table">
+        <thead>
+          <tr>
+            <th>Artist Name</th>
+            <th>Location</th>
+            <th>Show Dates</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- JavaScript will populate table rows here -->
+        </tbody>
+      </table>
     </div>
     <!-- CHAT TAB CHAT TAB CHAT TAB -->
     <!-- CHAT TAB -->
@@ -699,7 +789,7 @@
         <h1>Last 100 Updates to our Repo</h1>
         <hr>
         <div id="commits-list"></div>
-    </div>
+      </div>
       <!-- ACCOUNT -->
       <div id="account-tab" class="tab-content">
 
@@ -804,6 +894,11 @@
   }
 </script>
 
+        <p
+          style="font-family: 'Courier New', Courier, monospace; background-color: #ff0060; color: black; padding: 10px; border: 1px dashed red;">⚠️
+          Warning: This feature is in active development. The following is
+          sample DUMMY data - used for devin this baby into existence</p>
+
         <div class="user-icon-section">
           <img id="user-icon" src="./img/default-user-icon.png"
             alt="User Icon"
@@ -835,6 +930,7 @@
         </div>
         <!-- USER BACKPACK-->
         <div id="user-back-pack">
+
           <h1>Your Liked Tracks</h1>
           <button data-target="tab-1">Tracks</button>
           <div id="user-liked-tracks">
@@ -868,7 +964,36 @@
               </tbody>
             </table>
           </div>
-       
+          <h1>Your Liked Artists</h1>
+          <table id="liked-artists">
+            <thead>
+              <tr>
+                <th>Artist</th>
+                <th>Sample Track</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Artist A</td>
+                <td>Popular Track 1</td>
+                <td><button class="play-button"
+                    data-track="artistA_track.mp3">Play</button></td>
+              </tr>
+              <tr>
+                <td>Artist B</td>
+                <td>Popular Track 2</td>
+                <td><button class="play-button"
+                    data-track="artistB_track.mp3">Play</button></td>
+              </tr>
+              <tr>
+                <td>Artist C</td>
+                <td>Popular Track 3</td>
+                <td><button class="play-button"
+                    data-track="artistC_track.mp3">Play</button></td>
+              </tr>
+            </tbody>
+          </table>
           <h1>Your Liked Media Items</h1>
           <table id="liked-media-items">
             <thead>
@@ -1008,26 +1133,21 @@
 
       <!-- BURN TAB-->
       <div id="burn-tab" class="tab-content">
-
-        <h1>Burn a CD : Save the World</h1>
-        <p>Just kidding - but this is a good way Support Musicians - and maybe foster some new industry - stir about the digital - and save physical reality</p>
-        <h2>How it works:</h2>
+        <p
+          style="font-family: 'Courier New', Courier, monospace; background-color: #ff0060; color: black; padding: 10px; border: 1px dashed red;">⚠️
+          Warning: This feature is in active development.</p>
+        <h2>Burn CD</h2>
         <ul id="burn-instructions"></ul>
-
-        <h1>Send Your CD to your house - or your friends house - or coffee shop - or wherever in the contidental united states locked in and ready to be shipped</h1>
-        <p>Getting Started is Easy and Free - and meant to get you to buy often easy and faast - without having ot tink about it - BOOM - cd shipping to your house - feel good vibes - supporting local heroes - and we're giving your favorite host - Rob Meglio - something to do in the process - dude is a big eBay guy and would love this shot at sending you personalized notes </p>
         <div id="burn-list-name-container">
           <input type="text" id="burn-list-name"
             placeholder="Enter list name">
           <button id="save-burn-list-name">Save Name</button>
-          <h1>$4 Per CD</h1>
         </div>
-
         <div id="burn-list"></div>
 
         <!-- Element to display instructions -->
         <!-- Add elements for queue management here, such as a list for the songs, input for the CD name, etc. -->
-        <button id="burn-cd-button-a">Burn and Ship CD to my house NOW</button>
+        <button id="burn-cd-button">Burn CD</button>
         <div id="burn-status"></div>
       </div>
 
@@ -1154,13 +1274,17 @@
     <!-- DYANMIC ARTIST TEST -->
     <!--script src="js/src/dynamicArtist.js"></script-->
 
-    <!--script src="js/src/siteCounter.js"></script-->
+    <script src="js/src/siteCounter.js"></script>
     <!-- END OF DRAFTY SCRIPTS -->
     <!--script src="js/src/h1-effects-scroll.js"></script-->
     <!-- USER CONTROLS-->
     <script src="js/src/controls-timeline.js"></script>
     <!-- USER NAV -->
     <script src="js/src/function-toggle-dash.js"></script>
+
+    <!-- USER JAVASCRIPTS -->
+    <!-- USER JAVASCRIPTS -->
+    <!-- USER JAVASCRIPTS -->
     <!-- USER JAVASCRIPTS -->
     <script src="js/src/user-cart.js"></script>
     <script src="js/src/user-icon-input.js"></script>
@@ -1176,6 +1300,9 @@
     <!-- LIVE DATA -->
     <script src="js/src/live-answers-logic.js"></script>
 
+    <!-- END OF USER JAVASCRIPTS -->
+    <!-- END OF USER JAVASCRIPTS -->
+    <!-- END OF USER JAVASCRIPTS -->
     <!-- END OF USER JAVASCRIPTS -->
     <!-- END OF USER JAVASCRIPTS -->
     <!-- HOMEPAGE JAVASCRIPT -->
@@ -1202,8 +1329,13 @@
     <!-- NEWSLETTER + UDPATES-->
     <script src="js/src/newsletter.js"></script>
     <script src="js/src/updates-commits.js"></script>
+    <!-- ARTSIT TAB AND FEATURES -->
+    <script
+      src="js/src/function-fetch-and-populate-artistTable.js"></script>
     <script src="js/src/newSuperSong.js"></script>
     <!-- SHOW UPDATES -->
+    <script src="js/src/show-logic.js"></script>
+    <!-- script src="js/src/newSong.js"></script-->
     <script src="js/src/audioPlayerControls.js"></script>
     <!-- DONATION SCRIPTS -->
     <script src="js/src/donation.js"></script>
