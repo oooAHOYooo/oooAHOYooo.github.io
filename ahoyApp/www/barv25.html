@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ahoy Indie Media App Dock</title>
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+            <style>
+                #v25-dock-container {
+                    position: fixed;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    background: #2C3E50; /* Darker background for contrast */
+                    backdrop-filter: blur(10px);
+                    border-top: 2px solid #34495E; /* Slightly darker border for depth */
+                    padding: 10px 0;
+                    display: flex;
+                    justify-content: center;
+                    box-shadow: 0 -2px 5px rgba(0,0,0,0.3); /* Soft shadow for 3D effect */
+                }
+        
+                #v25-dock {
+                    display: flex;
+                    max-width: 600px;
+                    overflow-x: auto;
+                    scrollbar-width: none;
+                }
+        
+                #v25-dock::-webkit-scrollbar {
+                    display: none;
+                }
+        
+                .scroll-container {
+                    display: flex;
+                }
+        
+                .v25-dock-icon {
+                    flex: none;
+                    margin: 0 15px; /* More space between icons */
+                    padding: 12px; /* Larger touch area */
+                    background: #34495E; /* Slightly lighter for contrast */
+                    border-radius: 50%; /* Circular icons */
+                    white-space: nowrap;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transition: transform 0.2s ease, background 0.2s ease; /* Smooth transition for feedback */
+                }
+        
+                .v25-dock-icon:hover, .v25-dock-icon:focus {
+                    background: #4A6572; /* Highlight on hover/focus */
+                    transform: scale(1.1); /* Slight increase in size */
+                }
+        
+                .v25-dock-icon i {
+                    color: #ECF0F1; /* Light icon color for contrast */
+                    font-size: 20px; /* Larger icons */
+                }
+            </style>
+    </head>
+    <body>
+
+        <div id="v25-dock-container">
+            <div id="v25-dock">
+                <div id="v25-icon-container" class="scroll-container">
+                    <!-- Icons with updated FontAwesome icons for a cleaner look -->
+                    <div class="v25-dock-icon" onclick="navigateToTab('home-tab')"><i class="fas fa-home"></i></div>
+                    <div class="v25-dock-icon" onclick="navigateToTab('songs-tab')"><i class="fas fa-music"></i></div>
+                    <div class="v25-dock-icon" onclick="navigateToTab('podcasts-tab')"><i class="fas fa-podcast"></i></div>
+                    <div class="v25-dock-icon" onclick="navigateToTab('media-tab-a')"><i class="fas fa-image"></i></div>
+                    <div class="v25-dock-icon" onclick="navigateToTab('news-tab')"><i class="fas fa-newspaper"></i></div>
+                    <div class="v25-dock-icon" onclick="navigateToTab('games-tab')"><i class="fas fa-gamepad"></i></div>
+                    <div class="v25-dock-icon" onclick="navigateToTab('burn-tab')"><i class="fas fa-fire"></i></div>
+                    <div class="v25-dock-icon" onclick="navigateToTab('account-tab')"><i class="fas fa-user-circle"></i></div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  const iconContainer = document.getElementById('v25-icon-container');
+
+  iconContainer.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  }, false);
+
+  iconContainer.addEventListener('touchmove', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+  }, false);
+
+  iconContainer.addEventListener('touchend', (e) => {
+    if (touchStartX - touchEndX > 50) {
+      // Swipe left
+      iconContainer.scrollBy({ left: 100, behavior: 'smooth' });
+    } else if (touchStartX - touchEndX < -50) {
+      // Swipe right
+      iconContainer.scrollBy({ left: -100, behavior: 'smooth' });
+    }
+  }, false);
+</script>
+
+    </body>
+</html>
+
+
+
+
+    </body>
+</html>
