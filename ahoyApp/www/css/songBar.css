@@ -107,7 +107,7 @@
 /* Player */
 #v24ahoyPlayer {
     position: fixed;
-    bottom: 0;
+    bottom: 82px;
     width: 100%;
     height: auto;
     z-index: 5100;
@@ -233,314 +233,53 @@
         /* Smaller */
     }
 
-    /* Adjust the container to provide extra wiggle room */
-    .center-dashboard-menu {
-        padding: 15px 0;
-        /* Increased padding for better touch target size */
-        margin: 0 -15px;
-        /* Counteract the padding for edge-to-edge design */
-        justify-content: flex-start;
-        /* Align items to the start for a natural scrolling start point */
-        overflow-x: auto;
-        /* Enable horizontal scrolling */
-        overflow-y: hidden;
-        /* Prevent vertical scrolling */
-        white-space: nowrap;
-        /* Ensure all buttons are in a single line */
-        -webkit-overflow-scrolling: touch;
-        /* Smooth scrolling on iOS devices */
-        scrollbar-width: none;
-        /* Hide scrollbar for Firefox */
+
+    /* Further adjustments for Bar A to align settings icon with the play button vibe */
+    #barA {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0 10px;
     }
 
-    .center-dashboard-menu::-webkit-scrollbar {
-        display: none;
-        /* Hide scrollbar for WebKit browsers */
-    }
-
-    /* Set a minimum width for the list items to ensure only 3 or 4 are visible */
-    .center-dashboard-buttons li {
-        min-width: 10%;
-        /* Adjust this value based on preference for 3 (33.33%) or 4 (25%) items */
+    #barA .song-progress-container {
+        flex-grow: 2;
         margin: 0 10px;
-        /* Adjust margin for spacing between buttons */
-        box-sizing: border-box;
-        /* Include padding and border in the element's total width and height */
+        display: flex;
+        align-items: center;
     }
 
-    /* Optional: Adjust button sizes within the list items for better visibility and interaction */
-    .center-dashboard-buttons button {
-        padding: 10px 15px;
-        /* Adjust padding for a larger touch area */
-        font-size: 0.85em;
-        /* Adjust font size for better readability */
-        -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
-        /* Subtle tap feedback on iOS */
-        transition: transform 0.1s ease;
-        /* Smooth transition for button press */
+    #barA #play-pause-button,
+    #barA #settings-icon-button-a {
+        margin-right: 10px;
+        background-color: var(--button-background);
+        border: none;
+        color: white;
+        padding: 10px;
+        border-radius: 50%;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
     }
 
-    .center-dashboard-buttons button:active {
-        transform: scale(0.95);
-        /* Slightly shrink button on press for tactile feedback */
+    #barA #play-pause-button:hover,
+    #barA #settings-icon-button-a:hover {
+        background-color: var(--hover-background-color);
     }
-}
 
-/* Additional CSS for center-dashboard-menu */
-.center-dashboard-menu {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    border-radius: 12px;
-    /* More Compact */
-    padding: 10px;
-    margin: 12px auto;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    overflow-x: auto;
-    /* Enable horizontal scrolling */
-    overflow-y: hidden;
-    /* Prevent vertical scrolling */
-    white-space: nowrap;
-    /* Ensure all buttons are in a single line */
-    -webkit-overflow-scrolling: touch;
-    /* Smooth scrolling on iOS devices */
-    scrollbar-width: none;
-    /* Hide scrollbar for Firefox */
-}
+    #barA .song-display {
+        flex-grow: 1;
+        text-align: left;
+    }
 
-.center-dashboard-menu::-webkit-scrollbar {
-    display: none;
-    /* Hide scrollbar for WebKit browsers */
-}
+    /* Ensure the current time and song info are aligned properly */
+    #current-time,
+    #song-info {
+        white-space: wrap;
+    }
 
-.center-dashboard-buttons li {
-    display: inline-block;
-    /* Display list items inline for horizontal layout */
-    margin: 0 5px;
-    /* Adjust margin for spacing between buttons */
-}
-
-/* Enhancements for touch feedback and visual cues */
-.center-dashboard-buttons button {
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
-    /* Subtle tap feedback on iOS */
-    transition: transform 0.1s ease;
-    /* Smooth transition for button press */
-}
-
-.center-dashboard-buttons button:active {
-    transform: scale(0.95);
-    /* Slightly shrink button on press for tactile feedback */
-}
-
-/* Additional styling for improved aesthetics and usability */
-.center-dashboard-menu {
-    padding: 10px 0;
-    /* Add padding for better touch target size */
-    margin: 0 -10px;
-    /* Counteract the padding for edge-to-edge design */
-}
-
-/* Ensure the container does not have a visible border or outline */
-.center-dashboard-menu {
-    border: none;
-    outline: none;
-}
-
-/* Optional: Add gradient shadows to indicate scrollable content */
-.center-dashboard-menu:before,
-.center-dashboard-menu:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    width: 20px;
-    height: 100%;
-    z-index: 1;
-}
-
-.center-dashboard-menu:before {
-    left: 0;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.2), transparent);
-}
-
-.center-dashboard-menu:after {
-    right: 0;
-    background: linear-gradient(to left, rgba(0, 0, 0, 0.2), transparent);
-}
-
-.center-dashboard-buttons {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.center-dashboard-buttons li {
-    margin: 0 5px;
-}
-
-.center-dashboard-buttons button {
-    background-color: rgba(0, 0, 0, 0.235);
-    color: rgba(255, 255, 255, 0.412);
-    border-color: var(--border-color);
-    border-radius: 30px;
-    /* More Pill-like */
-    cursor: pointer;
-    font-size: 1em;
-    /* Adjusted Size */
-    padding: 10px 20px;
-    /* More Compact */
-    transition: all 0.3s ease;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-    /* More Subtle */
-    font-family: 'Courier New', Courier, monospace;
-    letter-spacing: 0.03em;
-    /* Adjusted Spacing */
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-    /* More Subtle */
-}
-
-.center-dashboard-buttons button:hover {
-    animation: none;
-    background-color: var(--hover-background-color);
-    color: var(--background-color);
-    transform: translateY(-3px);
-    /* Slightly more lift on hover for a more dynamic interaction */
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
-    /* More pronounced shadow on hover for a deeper effect */
-    border-color: var(--text-color);
-    /* Introduce a border color change on hover for a subtle highlight */
-}
-
-.center-dashboard-buttons button:active {
-    transform: translateY(-1px);
-    /* Less movement on active to simulate a soft press */
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
-    /* Soften the shadow on press for a 'pushed' effect */
-    background-color: var(--progress-bar-color);
-    /* Keep the vibrant color change on active */
-    border-color: var(--hover-background-color);
-    /* Change border color on active for a subtle feedback */
-}
-
-.center-dashboard-buttons i {
-    margin-right: 8px;
-    /* Increase spacing for a more relaxed layout */
-    color: var(--control-button-color);
-    /* Use a different color for icons for contrast and emphasis */
-    transition: transform 0.3s ease;
-    /* Smooth transition for icon transformations */
-}
-
-.center-dashboard-buttons button:hover i {
-    transform: scale(1.1);
-    /* Slightly enlarge icons on hover for an engaging effect */
-}
-
-
-.center-dashboard-buttons button:active {
-    transform: translateY(-1px);
-    /* Less movement on active to simulate a soft press */
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
-    /* Soften the shadow on press for a 'pushed' effect */
-    background-color: var(--progress-bar-color);
-    /* Keep the vibrant color change on active */
-    border-color: var(--hover-background-color);
-    /* Change border color on active for a subtle feedback */
-}
-
-.center-dashboard-buttons i {
-    margin-right: 5px;
-}
-
-
-
-.center-dashboard-buttons button:active {
-    transform: translateY(1px);
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
-    background-color: var(--progress-bar-color);
-}
-
-.center-dashboard-buttons i {
-    margin-right: 5px;
-}
-
-.center-dashboard-buttons i {
-    margin-right: 5px;
-}
-
-
-
-.center-dashboard-buttons button:active {
-    transform: translateY(1px);
-
-    background-color: var(--progress-bar-color);
-}
-
-.center-dashboard-buttons i {
-    margin-right: 5px;
-
-
-    transform: translateY(1px);
-
-
-}
-
-.center-dashboard-buttons i {
-    margin-right: 5px;
-}
-
-
-/* Further adjustments for Bar A to align settings icon with the play button vibe */
-#barA {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    padding: 0 10px;
-}
-
-#barA .song-progress-container {
-    flex-grow: 2;
-    margin: 0 10px;
-    display: flex;
-    align-items: center;
-}
-
-#barA #play-pause-button,
-#barA #settings-icon-button-a {
-    margin-right: 10px;
-    background-color: var(--button-background);
-    border: none;
-    color: white;
-    padding: 10px;
-    border-radius: 50%;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-#barA #play-pause-button:hover,
-#barA #settings-icon-button-a:hover {
-    background-color: var(--hover-background-color);
-}
-
-#barA .song-display {
-    flex-grow: 1;
-    text-align: left;
-}
-
-/* Ensure the current time and song info are aligned properly */
-#current-time,
-#song-info {
-    white-space: wrap;
-}
-
-#settings-icon-container {
-    display: flex;
-    align-items: center;
-}
+    #settings-icon-container {
+        display: flex;
+        align-items: center;
+    }
