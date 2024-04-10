@@ -64,6 +64,13 @@
         "artist": "Dave Gunn",
         "tag": "podcast",
         "dateAdded": "04-04-24"
-      }
+      },
+     { "id": "13",
+      "albumArt": "https://cdn.jwplayer.com/thumbs/MS7zwzR2-640.jpg",
+      "songTitle": "Dave Gunn - Raleigh/Durham Footage",
+      "artist": "Dave Gunn",
+      "tag": "media",
+      "dateAdded": "04-09-24" 
+    }     
     ]
   }
