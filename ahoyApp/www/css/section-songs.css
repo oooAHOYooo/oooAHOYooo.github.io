@@ -179,7 +179,6 @@
   /* Maximum size */
   min-width: 320px;
   /* Minimum size */
-  padding-top: 100%;
   /* This creates a square aspect ratio */
   margin: auto;
   /* Center the container */
@@ -189,21 +188,33 @@
 
 #now-playing-album-art {
   width: 100%;
-  height: 100%;
-  max-width: 500px;
-  max-height: 500px;
-  min-width: 320px;
-  min-height: 320px;
-  object-fit: cover;
-  /* This will cover the area of the container without distorting the aspect ratio */
+  height: auto;
   display: block;
   margin: 0 auto;
   /* Center the image horizontally */
-  position: relative;
-
 }
 
+.play-button-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* Center the button */
+  border: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Semi-transparent background */
+  color: white;
+  padding: 10px 20px;
 
+  cursor: pointer;
+  font-size: 1.5em;
+  /* Adjust the size of the icon inside the button */
+}
+
+.play-button-overlay:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+  /* Darker on hover */
+}
 
 #now-playing-song-title,
 #now-playing-song-artist {

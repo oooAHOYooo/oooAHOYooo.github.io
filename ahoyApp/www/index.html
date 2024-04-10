@@ -232,15 +232,16 @@
       </div>
       <!-- SONGS TAB -->
       <div id="songs-tab" class="tab-content">
-
-        <!-- Inside the "Songs" tab, before the <div id="daily-shuffle-super-mix"> -->
         <div id="now-playing-song-container" class="now-playing-song">
 
-          <img id="now-playing-album-art" src alt="Album Art">
-          <button id="recently-added-homepage-song" class="control-button-a"
-            onclick="togglePlayPause()">
-            <i class="fas fa-play"></i>
-          </button>
+          <div class="image-and-play-button">
+            <img id="now-playing-album-art" src="./path/to/your/image.jpg"
+              alt="Album Art">
+            <button id="recently-added-homepage-song"
+              class="play-button-overlay" onclick="togglePlayPause()">
+              <i class="fas fa-play"></i>
+            </button>
+          </div>
         </div>
 
         <div id="now-playing-song-details">
@@ -251,22 +252,29 @@
         <div id="daily-shuffle-super-mix"></div>
         <div id="daily-shuffle">
           <div class="daily-shuffle-headline">
-            <h2>Daily Shuffle</h2>
-            <p>Our setup creates a "Daily Shuffle" feature that dynamically
-              generates a shuffled list of songs from our Song Collection.We
+            <h2 style="text-align:center">The Daily Shuffle</h2>
+            <p>Our setup creates a "Daily Shuffle" feature that
+              randomly generates a shuffled list of songs from our Song
+              Collection. We
               use
-              a daily seed to ensure the shuffle order remains consistent
-              throughout the day for all users.</p></div>
-
-          <button id="play-daily-shuffle"
-            class="play-daily-shuffle-button">Play Daily Shuffle</button>
+              a daily seed to ensure that everyone gets the same daily
+              shuffle.</p></div>
 
           <div id="daily-shuffle-list"></div>
+          <button id="play-daily-shuffle"
+            class="play-daily-shuffle-button">Play Daily Shuffle</button>
         </div>
 
-        <h2>Full Library</h2>
-        <p>The following songs are homegrown from locals.Sorted in various
-          random ways.</p>
+        <h2 style="text-align:center;">Full Song Collection</h2>
+        <p>The following songs are homegrown from local heroes. At the moment
+          they are sorted by the most recent on the bottom. </p>
+        <p style="text-transform:uppercase; text-align:center;">Click Play
+          to Play - Click Burn to add songs to your CD</p>
+        <style>
+            #yep {
+              display:none;
+            }
+          </style>
         <div id="yep">
           <input type="text" id="search-bar-a"
             placeholder="Search songs..." />
@@ -487,8 +495,6 @@
         </div>
       </div>
       <!-- CHAT TAB CHAT TAB CHAT TAB -->
-
-      <!-- SHARE TAB -->
 
       <!-- MESSAGEBOARD -->
       <!-- Add this new div inside the <div id="tabSortz"> to create the content area for the Message Board tab -->
@@ -1096,6 +1102,7 @@
     <script src="js/src/function_DisplayTime.js"></script>
     <!-- v25 Menu Code -->
     <script src="js/src/v25_menuCode.js"></script>
+    <script src="js/src/v25_dailyJukebox.js"></script>
     <script>
         // Function to play or pause the song
         function togglePlayPause() {
