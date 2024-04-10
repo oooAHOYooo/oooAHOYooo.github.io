@@ -20,7 +20,7 @@
 
 /* Style for song titles */
 #now-playing-container h2#current-song-title {
-    color: #fff;
+    color: var(--text-color);
     /* White text color */
     opacity: 0.9;
     /* Slightly transparent text */
@@ -28,7 +28,7 @@
 
 /* Style for artist names */
 #now-playing-container h3#current-song-artist {
-    color: #fff;
+    color: var(--text-color);
     /* White text color */
     opacity: 0.7;
     /* More transparent text */
