@@ -108,69 +108,70 @@
 
 #daily-shuffle-super-mix ul {
   list-style-type: none;
-  /* Remove default list styling */
   padding: 0;
+  margin: 0;
 }
 
 #daily-shuffle-super-mix li {
   background: rgba(255, 255, 255, 0.5);
-  /* Slightly transparent white for each list item */
   margin-bottom: 10px;
-  /* Space between songs */
   padding: 10px;
   border-radius: 5px;
-  /* Rounded corners for list items */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* Adjust content spacing */
 }
 
-/* Glow Effect on Play Button Hover */
-.daily-shuffle-table .play-button:hover {
-  animation: glow 1.5s infinite alternate;
-  color: var(--border-color);
-  /* Bright color for the icon itself */
-}
-
-@keyframes glow {
-  from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
-  }
-
-  to {
-    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
-  }
-}
-
-/* Video Game-like Button for Playing Daily Shuffle */
-.daily-shuffle-table .play-daily-shuffle {
-  background-color: #4CAF50;
-  /* Green background */
+/* Ensure buttons are visually integrated */
+.control-button-a,
+.control-button-b {
+  font-size: 1em;
+  /* Adjust based on your design */
   color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
+  background-color: #4CAF50;
+  /* Play button color */
   border: none;
-  border-radius: 8px;
-  /* Rounded corners for the button */
-  box-shadow: 0 9px #999;
-  /* Adds depth to the button */
-  transition: all 0.3s;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.daily-shuffle-table .play-daily-shuffle:hover {
-  background-color: #3e8e41;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
+.control-button-b {
+  background-color: #ff0050;
+  /* Burn button color */
 }
 
-.daily-shuffle-table .play-daily-shuffle:active {
-  background-color: #3e8e41;
-  box-shadow: 0 2px #666;
-  transform: translateY(4px);
+/* Icon adjustments for better visibility */
+.control-button-a i,
+.control-button-b i {
+  margin-right: 5px;
 }
 
+/* Hover effects for buttons */
+.control-button-a:hover,
+.control-button-b:hover {
+  opacity: 0.8;
+}
+
+/* Responsive adjustments for smaller screens */
+@media screen and (max-width: 768px) {
+  #daily-shuffle-super-mix li {
+    flex-direction: column;
+    /* Stack elements vertically on smaller screens */
+  }
+
+  .control-button-a,
+  .control-button-b {
+    width: 100%;
+    /* Full width buttons on smaller screens */
+    margin-top: 5px;
+    /* Add space between stacked elements */
+  }
+}
 
 .image-and-play-button {
   position: relative;
@@ -222,19 +223,23 @@
   color: #fff;
   padding: 10px;
   text-align: center;
-  font-family: 'Courier New', Courier, monospace;
-  text-shadow: 1px 1px 2px #000;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  /* Modern, readable font */
+  font-weight: bold;
+  /* Make text bold for better legibility */
+  text-shadow: 2px 2px 4px #000;
+  /* Enhanced text shadow for better contrast */
   margin: 10px 0;
 }
 
 #now-playing-song-title {
-  font-size: 1.4em;
-  margin: 0px;
+  font-size: 1.6em;
+  /* Slightly larger font size for the title */
 }
 
 #now-playing-song-artist {
   font-size: 1.2em;
-  margin: 0px;
+  /* Optimal font size for the artist name */
 }
 
 
@@ -266,22 +271,67 @@
 
 /* Compact and visually appealing design */
 .glass-table img {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  /* Slightly larger for better visibility */
+  height: 60px;
   border-radius: 50%;
+  /* Circular thumbnails */
   object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* Soft shadow for depth */
 }
 
-.control-button-a {
-  background-color: #ff0060;
+/* Base icon size */
+.control-button-a i,
+.control-button-b i {
+  font-size: 20px;
   color: white;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  /* Icon color changed to white for better contrast */
 }
 
-.control-button-a:hover {
-  background-color: #e60053;
+.control-button-a,
+.control-button-b {
+  margin: 10px 8px;
+  min-width: 52px;
+  min-height: 52px;
+  background: #ff0050;
+  /* Updated to match the "burn" button color */
+  border: none;
+  /* Removed border to match the "burn" button style */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 90%;
+  transition: transform 0.2s ease, background 0.2s ease;
+  cursor: pointer;
+}
+
+.control-button-a:hover,
+.control-button-b:hover,
+.control-button-a:focus,
+.control-button-b:focus {
+  background: #e60053;
+  /* Slightly darker on hover/focus for a subtle effect */
+  transform: scale(0.9151);
+}
+
+/* Adjust icon size for screens smaller than 768px */
+@media (max-width: 768px) {
+
+  .control-button-a i,
+  .control-button-b i {
+    font-size: 12px;
+    /* Smaller size for mobile devices */
+  }
+}
+
+/* Further adjustments for very small screens */
+@media (max-width: 480px) {
+
+  .control-button-a i,
+  .control-button-b i {
+    font-size: 10px;
+
+    /* Even smaller size for very small devices */
+  }
 }

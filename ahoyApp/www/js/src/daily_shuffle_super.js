@@ -15,6 +15,7 @@
       const shuffledSongs = shuffleArray(data.songs);
 
       const listContainer = document.getElementById('daily-shuffle-super-mix');
+      listContainer.innerHTML = ''; // Clear previous content
       const listElement = document.createElement('ul');
       listContainer.appendChild(listElement);
 
@@ -24,11 +25,17 @@
 
         // Create a play button for each song
         const playButton = document.createElement('button');
-        playButton.textContent = 'Play';
+        playButton.innerHTML = '<i class="fas fa-play"></i>'; // Use Font Awesome play icon
         playButton.className = 'play-daily-shuffle'; // Assign the video game-like button class
         playButton.onclick = function() {
-          // Placeholder for play action
-          console.log(`Playing ${song.songTitle} by ${song.artist}`);
+          // Toggle play/pause icon
+          if (playButton.innerHTML.includes('fa-play')) {
+            playButton.innerHTML = '<i class="fas fa-pause"></i>'; // Change to pause icon
+            console.log(`Playing ${song.songTitle} by ${song.artist}`);
+          } else {
+            playButton.innerHTML = '<i class="fas fa-play"></i>'; // Change back to play icon
+            console.log(`Paused ${song.songTitle} by ${song.artist}`);
+          }
         };
 
         listItem.appendChild(playButton); // Append the play button to the list item

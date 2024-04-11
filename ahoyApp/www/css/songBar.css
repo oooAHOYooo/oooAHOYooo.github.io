@@ -105,25 +105,25 @@
 /* Player */
 #v24ahoyPlayer {
     position: fixed;
-    bottom: 60px;
-    /* Adjusted to sit above the v25dock */
+    bottom: 50px;
+    /* Height of the v25dock to ensure it sits directly above */
     left: 0;
     right: 0;
     max-height: 60px;
+    width: 100%;
+    /* Ensure full width */
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 10px;
     background-color: rgba(0, 0, 0, 0.75);
-    /* Semi-transparent background for visibility */
+    /* Semi-transparent background */
     backdrop-filter: blur(5px);
     /* Soft blur effect */
     z-index: 49999;
     /* Ensure it's below the v25dock but above other content */
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     /* Subtle top border */
-    transition: transform 0.3s ease, background-color 0.3s ease;
-    /* Smooth transitions for interactive elements */
 }
 
 .audio-player-controls {
@@ -192,6 +192,33 @@
     #v24ahoyPlayer {
         bottom: 50px;
         /* Adjust for mobile to ensure visibility above v25dock */
+        flex-direction: column;
+        /* Stack elements vertically on small screens */
+        justify-content: center;
+        padding: 5px 0;
+        /* Adjust padding for smaller screens */
+    }
+
+    .audio-player-controls {
+        flex-direction: column;
+    }
+
+    #song-info,
+    .song-progress-container,
+    #current-time,
+    #settings-icon-container {
+        width: 90%;
+        /* Increase width to utilize available space */
+        margin: 2px auto;
+        /* Center and add a small margin */
+    }
+
+    #play-pause-button,
+    #settings-icon-button-a {
+        align-self: center;
+        /* Center buttons */
+        margin: 5px 0;
+        /* Add margin to separate from other elements */
     }
 }
 
@@ -360,5 +387,4 @@
 #settings-icon-container {
     display: flex;
     align-items: center;
-}
 }
