@@ -4,6 +4,13 @@
                     left: 0;
                     right: 0;
                     backdrop-filter: blur(10px);
+                    -webkit-backdrop-filter: blur(10px);
+                    /* For Safari */
+                    background-color: rgba(0, 0, 0, 0.5);
+                    /* Fallback color */
+                    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                        url('/path/to/your/fallback/background/image.jpg');
+                    /* Fallback image */
                     padding: 10px 0;
                     display: flex;
                     justify-content: center;
