@@ -6,6 +6,7 @@
 }
 
 .tab-content {
+    position: absolute;
     padding: 10px;
     border-left: 1px solid var(--border-color);
     border-right: 1px solid var(--border-color);
@@ -38,7 +39,7 @@
 /* Centering .tab-content with max-width for desktop view */
 .tab-content {
 
-    position: relative;
+
     z-index: 2;
     background-color: var(--background-color);
     /* Ensures .tab-content is above the background layer */
@@ -54,4 +55,20 @@
         margin-right: 20px !important;
         /* Reduced margin for mobile */
     }
+}
+
+#tabSortza {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.tab-content {
+    width: 100%;
+    /* Adjust based on your content's ideal width */
+    max-width: 750px;
+    /* Maximum width of the content */
+    margin: auto;
+    /* Center the content */
 }
