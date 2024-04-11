@@ -41,8 +41,6 @@ function populateNowPlaying() {
       .catch(error => console.error('Error loading now playing data:', error));
 }
 
-
-
 // Implement navigateToTag function if not already done
 function navigateToTag(tag) {
     // Map tags to tab IDs
@@ -52,7 +50,8 @@ function navigateToTag(tag) {
         'jazz': '#songs-tab', // Assuming 'jazz' songs also go under 'songs-tab'
         'classical': '#songs-tab', // Assuming 'classical' songs also go under 'songs-tab'
         'new song': '#songs-tab', // Direct 'new song' tag to 'songs-tab'
-        'podcast': '#podcasts-tab' // Direct 'podcast' tag to 'podcasts-tab'
+        'podcast': '#podcasts-tab', // Direct 'podcast' tag to 'podcasts-tab'
+        'media': '#media-tab-a' // Direct 'media' tag to 'media-tab-a'
         // Add more mappings as necessary
     };
 
