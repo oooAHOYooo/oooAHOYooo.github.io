@@ -51,11 +51,10 @@
 		"artist": "Cambell Rice",
 		"songTitle": "Far From Here",
 		"artistThumbnail": "https://unsplash.com/photos/random_person_image2",
-		"coverArt": "./artist/total/cambellRice/cambellRice.jpg",
+		"coverArt": "https://catapultlakeland.com/wp-content/uploads/2020/09/Untitled-design-2.jpg",
 		"artistUrl" : "https://ahoy.ooo/artist/total/cambellRice/cambellRice.html",
 		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Campbell+Rice-+From+Here.mp3",
-		"play": false,
-		"backgroundImageUrl": "https://i.scdn.co/image/ab6761610000e5eb8a195cc3e15993e4527d42f4"
+		"play": false
 	  },
 	  {
 		"id": 7,
@@ -96,7 +95,7 @@
 		"albumArtwork": "UNSPLASH_URL_FOR_ALBUM_4",
 		"artistUrl" : "https://ahoy.ooo/artist/total/youthXL/youthXL.html",
 		"mp3url": "https://ahoycollection.s3.amazonaws.com/Youth+XL+-+Yoga.mp3",
-		"backgroundImageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwxXTk37iEbLqFEa5QZWImJbtIqoBi88rgTrfpWKfckiC3UWuODDcuVjPkUIbqzkADylo&usqp=CAU"
+		"coverArt": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwxXTk37iEbLqFEa5QZWImJbtIqoBi88rgTrfpWKfckiC3UWuODDcuVjPkUIbqzkADylo&usqp=CAU"
 	
 	  },
 	  {
@@ -136,7 +135,7 @@
 		"songTitle": "Glued in the Nude",
 		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Riddle+M+-+Glued+in+Nude.mp3",
 		"new": false,
-		"backgroundImageUrl": "https://i.ytimg.com/vi/O2SV8BikOjA/maxresdefault.jpg"
+		"coverArt": "https://i.ytimg.com/vi/O2SV8BikOjA/maxresdefault.jpg"
 	  },
 	  {
 		"id": 15,
@@ -144,7 +143,7 @@
 		"songTitle": "Honeydew",
 		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Riddle+M+-+Honeydew.mp3",
 		"new": false,
-		"backgroundImageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFYDGZSSHnPgwLfJ5HEssYeEnCH95mEuKTfw&usqp=CAU"
+		"coverArt": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFYDGZSSHnPgwLfJ5HEssYeEnCH95mEuKTfw&usqp=CAU"
 	  },
 	  {
 		"id": 16,
@@ -224,15 +223,14 @@
 		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Coral+Reefer+-+elec+(original).mp3",
 		"artistUrl": "https://ahoy.ooo/artist/total/coralReefer/coralReefer.html",
 		"new": true,
-		"artistPage": true,
-		"coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music/v4/your-image-path.jpg/592x592bf.webp"
+		"coverArt": "https://i.ytimg.com/vi/XDH0X-dF4GM/maxresdefault.jpg"
 	  },
 	  {
 		"id": 24,
 		"artist": "My Own Grenade",
 		"songTitle": "My Own Grenade",
 		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/My_Own_Grenade_-_34B.mp3",
-		"backgroundImageUrl": "https://ahoycollection.s3.us-east-2.amazonaws.com/my+own+grenade.jpeg",
+		"coverArt": "https://ahoycollection.s3.us-east-2.amazonaws.com/my+own+grenade.jpeg",
 		"play": false
 	},
 	{
