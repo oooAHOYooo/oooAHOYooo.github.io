@@ -21,15 +21,13 @@
 
 #song-list {
   width: 100%;
-  /* Full width */
-  max-width: 100%;
-  /* Ensure it doesn't exceed the parent container */
-  margin: 0 auto;
-  /* Centering if needed */
+  max-width: 600px;
+  /* Adjusted to set a max-width for centering */
+  margin: 20px auto;
+  /* Updated margin for top and bottom spacing, auto for horizontal centering */
   border-collapse: collapse;
-  min-width: 100%;
-  margin-top: 20px;
-  margin-bottom: 180px;
+  min-width: 300px;
+  /* Minimum width to ensure content visibility */
 }
 
 #song-list thead {
@@ -39,7 +37,8 @@
 #song-list th,
 #song-list td {
   padding: 10px;
-  text-align: left;
+  text-align: center;
+  /* Center align the text */
   border-bottom: 1px solid var(--border-color);
 }
 
@@ -196,7 +195,6 @@
   /* Semi-transparent background */
   color: white;
   padding: 0;
-  /* Remove padding to ensure icon size is consistent */
   display: flex;
   justify-content: center;
   align-items: center;

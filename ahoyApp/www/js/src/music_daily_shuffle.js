@@ -77,14 +77,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.getElementById("play-daily-shuffle").addEventListener("click", function() {
         if (shuffledSongs.length > 0 && currentSongIndex < shuffledSongs.length) {
-            playSong(shuffledSongs[currentSongIndex]);
+            playSongAtIndex(currentSongIndex); // Corrected to use the right function
         }
     });
 
     audioPlayer.addEventListener("ended", function() {
         currentSongIndex++;
         if (currentSongIndex < shuffledSongs.length) {
-            playSong(shuffledSongs[currentSongIndex]);
+            playSongAtIndex(currentSongIndex);
         } else {
             currentSongIndex = 0; // Optionally loop the playlist
         }

@@ -1,6 +1,11 @@
-// Function to play a song
+// Function to play a song and update now-playing details including cover art
 function playSong(songUrl, songTitle, artistName, buttonElement) {
   const audioPlayer = document.getElementById("audio-player");
+  const nowPlayingSongDetails = document.getElementById("now-playing-song-details");
+  const nowPlayingSongTitle = document.getElementById("now-playing-song-title");
+  const nowPlayingSongArtist = document.getElementById("now-playing-song-artist");
+  const nowPlayingAlbumArt = document.getElementById("now-playing-album-art"); // Ensure this ID matches your album art img element
+
   // Toggle play/pause based on the current song URL
   if (audioPlayer.src === songUrl && !audioPlayer.paused) {
     audioPlayer.pause();
@@ -9,6 +14,25 @@ function playSong(songUrl, songTitle, artistName, buttonElement) {
     audioPlayer.src = songUrl;
     audioPlayer.play();
     buttonElement.innerHTML = '<i class="fas fa-pause"></i>'; // Change to pause icon
+
+    // Update now-playing song details
+    nowPlayingSongTitle.textContent = songTitle;
+    nowPlayingSongArtist.textContent = artistName;
+
+    // Fetch the song details from songCollection.json to get the coverArt URL
+    fetch("data/songCollection.json")
+      .then(response => response.json())
+      .then(data => {
+        const song = data.songs.find(s => s.mp3url === songUrl);
+        if (song && song.coverArt) {
+          nowPlayingAlbumArt.src = song.coverArt; // Update album art
+          nowPlayingAlbumArt.alt = `Album art for ${songTitle}`;
+        }
+      })
+      .catch(error => console.error("Error loading song details:", error));
+
+    // Scroll the now-playing song details into view
+    nowPlayingSongDetails.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 }
 
