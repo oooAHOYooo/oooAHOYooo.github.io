@@ -1,10 +1,7 @@
 #song-list td {
   color: var(--text-color);
   font-size: clamp(2ch, 1vw, 3ch);
-  /* Responsive font size using ch units */
 }
-
-
 
 .song-info {
   text-align: center;
@@ -159,12 +156,6 @@
   transition: all 0.3s;
 }
 
-.daily-shuffle-table .play-daily-shuffle:hover {
-  background-color: #3e8e41;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
-}
-
 .daily-shuffle-table .play-daily-shuffle:active {
   background-color: #3e8e41;
   box-shadow: 0 2px #666;
@@ -175,9 +166,7 @@
 .image-and-play-button {
   position: relative;
   display: inline-block;
-  width: 100px;
-  /* Adjust based on your design */
-  height: 100px;
+
   /* This ensures the artwork is always a square */
   overflow: hidden;
   /* Ensures the image does not overflow the container */
@@ -186,6 +175,8 @@
 .thumbnail {
   width: 100%;
   height: 100%;
+  width: 120px;
+  height: 120px;
   object-fit: cover;
   /* Ensures the image covers the area without losing aspect ratio */
 }
@@ -337,8 +328,6 @@
   .control-button-a i,
   .control-button-b i {
     font-size: 10px;
-
-    /* Even smaller size for very small devices */
   }
 }
 
@@ -376,3 +365,4 @@
   /* Adjust as needed */
   width: 32px;
   height: 32px;
+}
