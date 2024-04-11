@@ -26,13 +26,17 @@ function loadSongs() {
         row.innerHTML = `
           <td class="image-and-play-button">
             <img src="${song.coverArt}" alt="${song.songTitle}" class="thumbnail">
-            <button class="play-button-overlay" onclick="playSong('${song.mp3url}', '${song.songTitle}', '${song.artist}', this)">
-              <i class="fas fa-play"></i>
-            </button>
+            <div class="overlay-buttons">
+              <button class="play-button-overlay" onclick="playSong('${song.mp3url}', '${song.songTitle}', '${song.artist}', this)">
+                <i class="fas fa-play"></i>
+              </button>
+              <button id="burn-btn-overlay" class="burn-button-overlay" onclick="burnSong('${song.mp3url}', '${song.songTitle}', '${song.artist}', this)">
+                <i class="fas fa-fire"></i>
+              </button>
+            </div>
           </td>
           <td>${song.artist}</td>
           <td>${song.songTitle}</td>
-          <td><button class="control-button-b" onclick="burnSong('${song.mp3url}', '${song.songTitle}', '${song.artist}', this)"><i class="fas fa-fire"></i></button></td>
         `;
         tableBody.appendChild(row);
       });

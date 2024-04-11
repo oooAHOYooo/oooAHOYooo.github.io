@@ -369,3 +369,10 @@
 .control-button-a:hover {
   background-color: #e60053;
 }
+
+#burn-btn-overlay {
+  position: absolute;
+  top: 70%;
+  /* Adjust as needed */
+  width: 32px;
+  height: 32px;
