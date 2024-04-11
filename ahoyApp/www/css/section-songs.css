@@ -360,9 +360,9 @@
 }
 
 #burn-btn-overlay {
-  position: absolute;
-  top: 70%;
-  /* Adjust as needed */
+  /* Removed absolute positioning styles */
   width: 32px;
   height: 32px;
+  cursor: pointer;
+  /* Add more styles here as needed */
 }
