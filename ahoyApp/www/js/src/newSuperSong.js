@@ -30,13 +30,15 @@ function loadSongs() {
               <button class="play-button-overlay" onclick="playSong('${song.mp3url}', '${song.songTitle}', '${song.artist}', this)">
                 <i class="fas fa-play"></i>
               </button>
-              <button id="burn-btn-overlay" class="burn-button-overlay" onclick="burnSong('${song.mp3url}', '${song.songTitle}', '${song.artist}', this)">
-                <i class="fas fa-fire"></i>
-              </button>
             </div>
           </td>
           <td>${song.artist}</td>
           <td>${song.songTitle}</td>
+          <td>
+            <button class="burn-button-overlay" onclick="burnSong('${song.mp3url}', '${song.songTitle}', '${song.artist}', this)">
+              <i class="fas fa-fire"></i>
+            </button>
+          </td>
         `;
         tableBody.appendChild(row);
       });
