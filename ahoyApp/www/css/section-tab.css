@@ -19,6 +19,8 @@
     margin-top: 10px !important;
     margin-left: 52.5px !important;
     margin-right: 52.5px !important;
+    margin: 0, auto;
+    background-color: var(--background-color);
 }
 
 /* Responsive adjustments */
@@ -33,14 +35,15 @@
 
 }
 
-
 /* Centering .tab-content with max-width for desktop view */
 .tab-content {
-    margin: 0 auto;
+
     position: relative;
     z-index: 2;
     background-color: var(--background-color);
     /* Ensures .tab-content is above the background layer */
+    max-width: 750px;
+    /* Set max-width for desktop */
 }
 
 @media (max-width: 600px) {
