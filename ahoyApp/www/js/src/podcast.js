@@ -8,7 +8,7 @@ function loadPodcasts() {
       data.podcasts.forEach((podcast) => {
         const row = document.createElement("tr");
         row.innerHTML = `
-          <td><button class="control-button-a" id="podcast-play-${podcast.id}" onclick="togglePlayPausePodcast('${podcast.mp3url}', '${podcast.thumbnail}', '${podcast.title}', '${podcast.description}', ${podcast.id})"><i class="fas fa-play"></i></button></td>
+          <td><button class="control-button-podcast" id="podcast-play-${podcast.id}" onclick="togglePlayPausePodcast('${podcast.mp3url}', '${podcast.thumbnail}', '${podcast.title}', '${podcast.description}', ${podcast.id})"><i class="fas fa-play"></i></button></td>
           <td><img src="${podcast.thumbnail}" alt="${podcast.title}" class="thumbnail"></td>
           <td>${podcast.title}</td>
           <td>${podcast.description}</td>
@@ -30,7 +30,7 @@ function togglePlayPausePodcast(url, thumbnail, title, description, id) {
 
   // If another podcast is playing or paused, reset its icon to play
   if (audioPlayer.src && audioPlayer.src !== url) {
-    const allButtons = document.querySelectorAll('.control-button i');
+    const allButtons = document.querySelectorAll('.control-button-podcast i');
     allButtons.forEach(icon => {
       if (icon.classList.contains('fa-pause')) {
         icon.classList.remove('fa-pause');
@@ -50,8 +50,8 @@ function togglePlayPausePodcast(url, thumbnail, title, description, id) {
     audioPlayer.play();
     playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>'; // Change to pause icon
 
-    // Update the featured image
-    featuredImageContainer.innerHTML = `<img src="${thumbnail}" alt="${title}" class="the-featured-podcast-image">`;
+    // Update the featured image with unique style and size constraints
+    featuredImageContainer.innerHTML = `<img src="${thumbnail}" alt="${title}" class="the-featured-podcast-image" style="max-width: 300px; max-height: 300px; object-fit: cover;">`;
 
     // Update song title, artist (description in this case), and additional info
     songTitle.textContent = title;

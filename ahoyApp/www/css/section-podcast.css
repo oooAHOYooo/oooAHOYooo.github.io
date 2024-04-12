@@ -6,7 +6,7 @@
     text-align: center;
     align-items: center;
     color: #f0f8ff;
-    padding-bottom: 150px;
+    padding-bottom: 20px;
     /* Light coral on dark */
     background: linear-gradient(145deg, #0a3d62, #1e272e);
     /* Dark nautical gradient */
@@ -16,20 +16,19 @@
 #podcast-featured-image-container {
     text-align: center;
     margin-bottom: 20px;
-    max-width: 360px !important;
-    background: linear-gradient(145deg, #e6f1fa, #b8d8ef);
+    max-width: 90% !important;
     /* Light sky to ocean gradient */
 }
 
 #the-featured-podcast-image img {
     width: 100%;
-    /* Adjusted to ensure width is always 100% of container */
-    max-width: 480px !important;
-    height: auto;
-    /* Height is auto to maintain aspect ratio */
+    height: 100%;
+    object-fit: cover;
+    /* Ensures the image covers the area without losing its aspect ratio */
+    border-radius: 4px;
+    /* Softened edges */
     aspect-ratio: 1 / 1;
-    /* Ensures the image is always a square */
-    border-radius: 2px;
+    /* Maintains square aspect ratio */
 }
 
 
@@ -37,45 +36,14 @@
 
 
 
-#podcast-table img {
-    border-radius: 5px;
-}
 
-#podcast-table thead {
-    background-color: var(--secondary-color);
-}
 
-#podcast-table th {
-    text-align: center;
-}
 
-#podcast-table td {
-    text-align: left;
-    border-bottom: .51px solid var(--border-color);
-    padding-bottom: 5px;
-    padding: 5px;
-}
 
-.podcast-featured-image-container {
-    position: relative;
-    width: 100%;
-}
-
-.the-featured-podcast-image {
-    padding: 10px;
-    background-color: var(--border-color);
-    border-width: 100;
-    max-width: 95% !important;
-}
 
 .podcast-featured-image-container:hover {
     cursor: pointer;
 }
-
-
-
-
-
 
 
 .enlarged-thumbnail {
@@ -90,7 +58,6 @@
 #enlarged-thumbnail-container {
     display: none;
     /* Hidden by default */
-    position: fixed;
     /* Or 'absolute' */
     z-index: 1050;
     /* Ensure it's above other content */
@@ -158,4 +125,33 @@
         /* Corrected the child index to hide the description cells */
         display: none;
     }
+}
+
+.control-button-podcast {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    /* Adjust width here to make it a square */
+    height: 40px;
+    /* Height equals width to form a square */
+    background-color: #007bff;
+    /* Example background color */
+    color: white;
+    /* Icon color */
+    border: none;
+    border-radius: 5px;
+    /* Optional: for rounded corners */
+    cursor: pointer;
+    outline: none;
+}
+
+.control-button-podcast i {
+    font-size: 20px;
+    /* Adjust icon size */
+}
+
+.control-button-podcast i {
+    font-size: 20px;
+    /* Adjust icon size */
 }
