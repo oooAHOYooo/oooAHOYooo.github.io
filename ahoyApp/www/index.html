@@ -76,7 +76,7 @@
     <link rel="stylesheet" href="./css/section-media.css">
     <link rel="stylesheet" href="./css/background-graphic.css">
     <link rel="stylesheet" href="./css/section-home.css">
-    <link rel="stylesheet" href="./css/songBar.css">
+    <!--link rel="stylesheet" href="./css/songBar.css"-->
     <link rel="stylesheet" href="./css/user-loginModal.css">
     <link rel="stylesheet" href="./css/section-settings.css">
     <link rel="stylesheet" href="./css/page-buttons.css">
@@ -197,6 +197,24 @@
             <div id="now-playing-container" class="v25nowPlaying">
               <!-- Dynamic content will be loaded here -->
             </div>
+
+            <div class="divider-bar"></div>
+            <div id="daily-shuffle-super-mix"></div>
+            <div id="daily-shuffle">
+              <div class="daily-shuffle-headline">
+                <h2 style="text-align:center">The Daily Shuffle</h2>
+                <p>Our setup creates a "Daily Shuffle" feature that
+                  randomly generates a shuffled list of songs from our Song
+                  Collection. We
+                  use
+                  a daily seed to ensure that everyone gets the same daily
+                  shuffle.</p></div>
+
+              <div id="daily-shuffle-list"></div>
+              <button id="play-daily-shuffle"
+                class="play-daily-shuffle-button">Play Daily Shuffle</button>
+            </div>
+
             <!--div class="home-tab-question">
               <h2>Today's Question</h2>
 
@@ -246,22 +264,6 @@
 
           <h3 id="now-playing-song-title">Song Title</h3>
           <p id="now-playing-song-artist">Artist Name</p>
-        </div>
-        <div class="divider-bar"></div>
-        <div id="daily-shuffle-super-mix"></div>
-        <div id="daily-shuffle">
-          <div class="daily-shuffle-headline">
-            <h2 style="text-align:center">The Daily Shuffle</h2>
-            <p>Our setup creates a "Daily Shuffle" feature that
-              randomly generates a shuffled list of songs from our Song
-              Collection. We
-              use
-              a daily seed to ensure that everyone gets the same daily
-              shuffle.</p></div>
-
-          <div id="daily-shuffle-list"></div>
-          <button id="play-daily-shuffle"
-            class="play-daily-shuffle-button">Play Daily Shuffle</button>
         </div>
 
         <h2 style="text-align:center;">Full Song Collection</h2>
