@@ -3,18 +3,18 @@
     display: flex;
     flex-direction: column;
     z-index: 1;
-    text-align: center;
+    text-align: left;
     align-items: center;
     color: #f0f8ff;
     padding-bottom: 20px;
     /* Light coral on dark */
-    background: linear-gradient(145deg, #0a3d62, #1e272e);
+    background: linear-gradient(145deg, #0a3d6242, #1e272ea1);
+    padding: 10px;
     /* Dark nautical gradient */
 }
 
 /* Podcast Section Styles */
 #podcast-featured-image-container {
-    text-align: center;
     margin-bottom: 20px;
     max-width: 90% !important;
     /* Light sky to ocean gradient */
@@ -49,7 +49,7 @@
 .enlarged-thumbnail {
     width: 100%;
     /* Adjust as needed */
-    max-width: 400px;
+    width: 400px;
     /* Adjust as needed */
     height: auto;
     border-radius: 8px;
@@ -66,7 +66,7 @@
     transform: translate(-50%, -50%);
     background-color: white;
     /* Or any other background */
-    padding: 20px;
+    padding: 90px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -82,7 +82,7 @@
     #the-featured-podcast-image img,
     .enlarged-thumbnail {
         max-width: 100% !important;
-        height: auto;
+        height: 500px;
     }
 
     #podcast-table,
@@ -91,11 +91,7 @@
         transform: scale(0.9);
     }
 
-    #podcast-table th,
-    #podcast-table td {
-        padding: 4px;
-        font-size: 10px;
-    }
+
 }
 
 
@@ -131,27 +127,34 @@
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 40px;
-    /* Adjust width here to make it a square */
-    height: 40px;
-    /* Height equals width to form a square */
-    background-color: #007bff;
-    /* Example background color */
-    color: white;
-    /* Icon color */
-    border: none;
-    border-radius: 5px;
-    /* Optional: for rounded corners */
+    width: 52px;
+    /* Adjusted to a common play button size */
+    height: 52px;
+    /* Adjusted to a common play button size */
+    background-color: #ffffff;
+    /* Changed to match v25dock.css style */
+    color: #000000;
+    /* Icon color for contrast */
+    border: solid 2px black;
+    /* Added border to match v25dock.css icons */
+    border-radius: 5;
+    /* Circle shape */
     cursor: pointer;
     outline: none;
+    margin-right: 2.5px;
+    transition: transform 0.2s ease, background 0.2s ease;
+    /* Smooth transition for hover effect */
+}
+
+.control-button-podcast:hover,
+.control-button-podcast:focus {
+    background: #ff0050;
+    /* Highlight on hover/focus */
+    transform: scale(1.1);
+    /* Slight increase in size for emphasis */
 }
 
 .control-button-podcast i {
-    font-size: 20px;
-    /* Adjust icon size */
-}
-
-.control-button-podcast i {
-    font-size: 20px;
-    /* Adjust icon size */
+    font-size: 16px;
+    /* Adjust icon size for visibility */
 }

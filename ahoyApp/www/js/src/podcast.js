@@ -51,7 +51,7 @@ function togglePlayPausePodcast(url, thumbnail, title, description, id) {
     playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>'; // Change to pause icon
 
     // Update the featured image with unique style and size constraints
-    featuredImageContainer.innerHTML = `<img src="${thumbnail}" alt="${title}" class="the-featured-podcast-image" style="max-width: 300px; max-height: 300px; object-fit: cover;">`;
+    featuredImageContainer.innerHTML = `<img src="${thumbnail}" alt="${title}" class="the-featured-podcast-image" style="max-width: 400px; max-height: 400px; object-fit: cover;">`;
 
     // Update song title, artist (description in this case), and additional info
     songTitle.textContent = title;
