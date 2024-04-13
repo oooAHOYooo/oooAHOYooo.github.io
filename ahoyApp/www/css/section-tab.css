@@ -24,6 +24,12 @@
     background-color: var(--background-color);
 }
 
+.tab-content {
+    transition: background-color 0.3s ease, padding 0.3s ease;
+    /* Smooth transitions for visual properties */
+}
+
+
 /* Responsive adjustments */
 @media (max-width: 600px) {
     .tab-content {
