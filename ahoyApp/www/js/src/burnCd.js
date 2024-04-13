@@ -54,36 +54,61 @@ function createInputFieldAndSaveButton() {
 }
 
 function setupCdSaveFunctionality() {
-  const saveButton = document.getElementById("save-cd-button");
-  saveButton.addEventListener("click", function() {
-    const cdNameInput = document.getElementById("cd-name-input");
-    const cdName = cdNameInput.value.trim();
-    if (cdName) {
-      const savedCdList = document.getElementById("saved-cd-list");
-      const listItem = document.createElement("li");
-      listItem.textContent = cdName;
-      savedCdList.appendChild(listItem);
-      cdNameInput.value = ''; // Clear input field after saving
-
-      // Display the saved CD list below
-      displaySavedCdList();
-    } else {
-      alert("Please enter a CD name.");
-    }
-  });
+    const saveButton = document.getElementById("save-cd-button");
+    saveButton.addEventListener("click", function() {
+        const cdNameInput = document.getElementById("cd-name-input");
+        const cdName = cdNameInput.value.trim();
+        if (cdName) {
+            // Display the CD name and its contents
+            displayCdAndContents(cdName);
+            cdNameInput.value = ''; // Clear input field after saving
+        } else {
+            alert("Please enter a CD name.");
+        }
+    });
 }
 
-// Function to display the saved CD list
-function displaySavedCdList() {
-    const savedCdList = document.getElementById("saved-cd-list");
-    const displayArea = document.getElementById("cd-display-area"); // Assuming there's a div with id="cd-display-area" in your HTML
+function displayCdAndContents(cdName) {
+    const burnList = document.getElementById("burn-list");
+    const entries = burnList.getElementsByTagName("tr");
+    const displayArea = document.getElementById("cd-display-area"); // Ensure this div exists in your HTML
 
     // Clear the current display
     displayArea.innerHTML = '';
 
-    // Create a copy of the saved CD list to display
-    const listCopy = savedCdList.cloneNode(true);
-    displayArea.appendChild(listCopy);
+    // Create elements to display CD name and its contents
+    const cdNameElement = document.createElement("h3");
+    cdNameElement.textContent = `CD Name: ${cdName}`;
+    displayArea.appendChild(cdNameElement);
+
+    const songListElement = document.createElement("ul");
+    let totalLength = 0;
+
+    for (let i = 0; i < entries.length; i++) {
+        const songTitle = entries[i].querySelector("td:nth-child(4)").textContent;
+        const songLength = parseInt(entries[i].getAttribute("data-length"), 10); // Assuming each entry has a data-length attribute
+        totalLength += songLength;
+
+        const songItem = document.createElement("li");
+        songItem.textContent = songTitle;
+        songListElement.appendChild(songItem);
+    }
+
+    displayArea.appendChild(songListElement);
+
+    // Convert total length from seconds to a more readable format
+    const totalLengthFormatted = formatLength(totalLength);
+    const totalLengthElement = document.createElement("p");
+    totalLengthElement.textContent = `Total Length: ${totalLengthFormatted}`;
+    displayArea.appendChild(totalLengthElement);
+}
+
+function formatLength(totalSeconds) {
+    const hours = Math.floor(totalSeconds / 3600);
+    const minutes = Math.floor((totalSeconds - (hours * 3600)) / 60);
+    const seconds = totalSeconds - (hours * 3600) - (minutes * 60);
+
+    return `${hours}h ${minutes}m ${seconds}s`;
 }
 
 function setupCheckoutFunctionality() {
@@ -102,24 +127,34 @@ function setupCheckoutFunctionality() {
   });
 }
 
-// Function to add song to the burn list
-function addSongToBurnList(songUrl, songTitle, artistName) {
+function addSongToBurnList(songUrl, songTitle, artistName, songLengthInSeconds) {
   const burnList = document.getElementById("burn-list");
   const entry = document.createElement("tr");
   entry.className = "burn-entry";
+  entry.setAttribute("data-length", songLengthInSeconds); // Set the song length in seconds as a data attribute
+  
+  // Convert song length from seconds to "M:SS" format
+  const songLengthFormatted = formatLength(songLengthInSeconds);
   
   entry.innerHTML = `
+    <td style="text-align: left;">${burnList.getElementsByTagName("tr").length + 1}</td>
+    <td style="text-align: left;">${songTitle} by ${artistName} (${songLengthFormatted})</td>
     <td><button onclick="moveSong(this, -1)"><i class="fa fa-arrow-up"></i></button></td>
     <td><button onclick="moveSong(this, 1)"><i class="fa fa-arrow-down"></i></button></td>
-    <td>${burnList.getElementsByTagName("tr").length + 1}</td>
-    <td>${songTitle} by ${artistName}</td>
     <td><button onclick="removeSongFromBurnList(this)"><i class="fa fa-remove"></i></button></td>
   `;
   
   burnList.appendChild(entry);
 }
 
-// Function to move a song up or down
+function formatLength(totalSeconds) {
+    let minutes = Math.floor(totalSeconds / 60);
+    let seconds = totalSeconds % 60;
+    // Pad seconds with leading zero if needed
+    seconds = seconds < 10 ? '0' + seconds : seconds;
+    return `${minutes}:${seconds}`;
+}
+
 function moveSong(button, direction) {
   const currentRow = button.parentNode.parentNode;
   let targetRow;
@@ -137,7 +172,6 @@ function moveSong(button, direction) {
   updateOrderNumbers(); // Update the order numbers after moving
 }
 
-// Function to remove a song from the burn list
 function removeSongFromBurnList(button) {
   const entry = button.parentNode.parentNode;
   entry.parentNode.removeChild(entry);
