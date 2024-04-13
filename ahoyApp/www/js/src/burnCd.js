@@ -1,43 +1,35 @@
 document.addEventListener('DOMContentLoaded', function() {
-  // Correct the path to match the location of the JSON file
-  fetch('data_static/cdBurn-instructions.json')
-    .then(response => response.json())
-    .then(data => {
-      displayInstructions(data.instructions);
-      // Assuming you want to handle the confirmation message as well
-      handleConfirmation(data.confirmation);
-    })
-    .catch(error => console.error('Error loading CD burn instructions:', error));
-
-  // Initialize interactive checkpoints and queue management features
   initInteractiveCheckpoints();
   initQueueManagement();
 });
 
-function displayInstructions(instructions) {
-  const instructionsElement = document.getElementById('burn-instructions');
-  instructions.forEach(instruction => {
-    const step = document.createElement('li');
-    step.textContent = instruction;
-    instructionsElement.appendChild(step);
-  });
-}
-
-function handleConfirmation(confirmationMessage) {
-  // Implement how you want to handle/display the confirmation message
-  const confirmationElement = document.getElementById('burn-confirmation');
-  confirmationElement.textContent = confirmationMessage;
-}
-
 function initInteractiveCheckpoints() {
-  // Implement interactive checkpoints here
+  // This might contain other initializations as needed
 }
 
 function initQueueManagement() {
-  // Implement queue management features here
+  // Other queue management features could go here
 }
 
-// Existing event listener for the "Burn CD" button
+// Function to add song to the burn list
+function addSongToBurnList(songUrl, songTitle, artistName) {
+  const burnList = document.getElementById("burn-list");
+  const entry = document.createElement("div");
+  entry.className = "burn-entry";
+  entry.innerHTML = `<div>${songTitle} by ${artistName}</div><button onclick="removeSongFromBurnList(this)">Remove</button>`;
+  burnList.appendChild(entry);
+}
+
+// Function to remove a song from the burn list
+function removeSongFromBurnList(button) {
+  const entry = button.parentNode;
+  entry.parentNode.removeChild(entry);
+}
+
+// Event listener for the "Burn CD" button
 document.getElementById('burn-cd-button').addEventListener('click', function() {
-  // Implementation for submitting the CD burn request
+  // This would ideally handle the submission process, including emailing
+  // Simulating an email action here with a console log
+  console.log('Preparing to send email...');
+  alert('Congrats! You have sent your playlist.');
 });
