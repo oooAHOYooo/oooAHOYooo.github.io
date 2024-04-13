@@ -181,7 +181,7 @@ function removeSongFromBurnList(button) {
 function updateOrderNumbers() {
   const rows = document.getElementById("burn-list").getElementsByTagName("tr");
   for (let i = 0; i < rows.length; i++) {
-    rows[i].cells[2].innerText = i + 1; // Update the order number, now in the third cell
+    rows[i].cells[0].innerText = i + 1; // Update the order number, now in the first cell
   }
 }
 

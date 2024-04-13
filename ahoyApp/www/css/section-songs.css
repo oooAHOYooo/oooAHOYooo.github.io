@@ -22,12 +22,9 @@
 #song-list {
   width: 100%;
   max-width: 600px;
-  /* Adjusted to set a max-width for centering */
   margin: 20px auto;
-  /* Updated margin for top and bottom spacing, auto for horizontal centering */
   border-collapse: collapse;
   min-width: 300px;
-  /* Minimum width to ensure content visibility */
 }
 
 #song-list thead {
@@ -38,28 +35,20 @@
 #song-list td {
   padding: 10px;
   text-align: center;
-  /* Center align the text */
   border-bottom: 1px solid var(--border-color);
 }
 
-/* Responsive adjustments */
 @media screen and (max-width: 768px) {
 
   #song-list td,
   #song-list th {
     padding: 4px;
-    /* Smaller padding on smaller screens */
     font-size: smaller;
-    /* Smaller font size on smaller screens */
   }
 }
 
-
-
-/* Daily Shuffle Table Styles */
 .daily-shuffle-table {
   font-weight: bold;
-  /* Make text bold */
   font-size: 0.9em;
   background: #000000;
   margin-top: 10px;
@@ -69,20 +58,13 @@
   animation: crisp-glow-animation 2s infinite alternate;
 }
 
-/* Define the keyframes for the crisp glow animation */
 @keyframes crisp-glow-animation {
   from {
-    box-shadow:
-      0 0 0 1px var(--border-color),
-      0 0 0 1.5px var(--border-color),
-      0 0 0 2px var(--border-color);
+    box-shadow: 0 0 0 1px var(--border-color), 0 0 0 1.5px var(--border-color), 0 0 0 2px var(--border-color);
   }
 
   to {
-    box-shadow:
-      0 0 0 2px var(--border-color),
-      0 0 0 3px var(--border-color),
-      0 0 0 5px var(--border-color);
+    box-shadow: 0 0 0 2px var(--border-color), 0 0 0 3px var(--border-color), 0 0 0 5px var(--border-color);
   }
 }
 
@@ -93,36 +75,27 @@
 .daily-shuffle-table th,
 .daily-shuffle-table td {
   padding: 8px 10px;
-  /* Adjust padding for compactness */
 }
 
 .daily-shuffle-table .play-button {
   font-size: 1.2em;
-  /* Larger play button */
 }
-
 
 #daily-shuffle-super-mix ul {
   list-style-type: none;
-  /* Remove default list styling */
   padding: 0;
 }
 
 #daily-shuffle-super-mix li {
   background: rgba(255, 255, 255, 0.5);
-  /* Slightly transparent white for each list item */
   margin-bottom: 10px;
-  /* Space between songs */
   padding: 10px;
   border-radius: 5px;
-  /* Rounded corners for list items */
 }
 
-/* Glow Effect on Play Button Hover */
 .daily-shuffle-table .play-button:hover {
   animation: glow 1.5s infinite alternate;
   color: var(--border-color);
-  /* Bright color for the icon itself */
 }
 
 @keyframes glow {
@@ -135,10 +108,8 @@
   }
 }
 
-/* Video Game-like Button for Playing Daily Shuffle */
 .daily-shuffle-table .play-daily-shuffle {
   background-color: #4CAF50;
-  /* Green background */
   color: white;
   padding: 15px 32px;
   text-align: center;
@@ -149,9 +120,7 @@
   cursor: pointer;
   border: none;
   border-radius: 8px;
-  /* Rounded corners for the button */
   box-shadow: 0 9px #999;
-  /* Adds depth to the button */
   transition: all 0.3s;
 }
 
@@ -161,14 +130,10 @@
   transform: translateY(4px);
 }
 
-
 .image-and-play-button {
   position: relative;
   display: inline-block;
-
-  /* This ensures the artwork is always a square */
   overflow: hidden;
-  /* Ensures the image does not overflow the container */
 }
 
 .thumbnail {
@@ -177,7 +142,6 @@
   width: 48px;
   height: 48px;
   object-fit: cover;
-  /* Ensures the image covers the area without losing aspect ratio */
 }
 
 .play-button-overlay,
@@ -187,31 +151,25 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 32px;
-  /* Set width to 32px */
   height: 32px;
-  /* Set height to 32px */
   border: none;
   background-color: rgba(0, 0, 0, 0.5);
-  /* Semi-transparent background */
   color: white;
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* Optional: Makes the button circular */
   cursor: pointer;
 }
 
 .play-button-overlay i,
 .control-button-b i {
   font-size: 16px;
-  /* Adjust icon size within the button */
 }
 
 .play-button-overlay:hover,
 .control-button-b:hover {
   background-color: rgba(0, 0, 0, 0.7);
-  /* Darker on hover */
 }
 
 #now-playing-album-art {
@@ -219,7 +177,6 @@
   height: auto;
   display: block;
   margin: 0 auto;
-  /* Center the image horizontally */
 }
 
 .play-button-overlay {
@@ -227,10 +184,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  /* Center the button */
   border: none;
   background-color: rgba(0, 0, 0, 0.5);
-  /* Semi-transparent background */
   color: white;
   padding: 10px 20px;
 

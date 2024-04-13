@@ -36,7 +36,7 @@ function playSong(songUrl, songTitle, artistName, buttonElement) {
   }
 }
 
-// Function to load and display songs from songCollection.json
+// Function to load and display songs from songCollection.json with updated table structure
 function loadSongs() {
   fetch("data/songCollection.json")
     .then(response => response.json())
@@ -48,13 +48,13 @@ function loadSongs() {
         const row = document.createElement("tr");
         row.className = 'table-row'; // Add class for styling
         row.innerHTML = `
-          <td class="image-and-play-button">
-            <img src="${song.coverArt}" alt="${song.songTitle}" class="thumbnail">
-            <div class="overlay-buttons">
-              <button class="play-button-overlay" onclick="playSong('${song.mp3url}', '${song.songTitle}', '${song.artist}', this)">
-                <i class="fas fa-play"></i>
-              </button>
-            </div>
+          <td>
+            <button class="play-button-overlay" onclick="playSong('${song.mp3url}', '${song.songTitle}', '${song.artist}', this)">
+              <i class="fas fa-play"></i>
+            </button>
+          </td>
+          <td>
+            <img src="${song.coverArt}" alt="${song.songTitle}" class="thumbnail" onclick="playSong('${song.mp3url}', '${song.songTitle}', '${song.artist}', this)">
           </td>
           <td>${song.artist}</td>
           <td>${song.songTitle}</td>
