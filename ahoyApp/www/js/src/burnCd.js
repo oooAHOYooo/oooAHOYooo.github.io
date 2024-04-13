@@ -1,6 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
   initInteractiveCheckpoints();
   initQueueManagement();
+  document.getElementById("burn-list").style.width = "100%";
+  createInputFieldAndSaveButton();
+  setupCdSaveFunctionality(); // Setup the functionality to save CD names
+  setupCheckoutFunctionality(); // Setup the functionality for checkout
 });
 
 function initInteractiveCheckpoints() {
@@ -9,6 +13,93 @@ function initInteractiveCheckpoints() {
 
 function initQueueManagement() {
   // Other queue management features could go here
+}
+
+function createInputFieldAndSaveButton() {
+  const container = document.getElementById("input-container"); // Assuming there's a div with id="input-container"
+  
+  // Create input field for song URL
+  const songUrlInput = document.createElement("input");
+  songUrlInput.setAttribute("type", "text");
+  songUrlInput.setAttribute("placeholder", "Song URL");
+  songUrlInput.id = "song-url-input";
+  
+  // Create input field for song title
+  const songTitleInput = document.createElement("input");
+  songTitleInput.setAttribute("type", "text");
+  songTitleInput.setAttribute("placeholder", "Song Title");
+  songTitleInput.id = "song-title-input";
+  
+  // Create input field for artist name
+  const artistNameInput = document.createElement("input");
+  artistNameInput.setAttribute("type", "text");
+  artistNameInput.setAttribute("placeholder", "Artist Name");
+  artistNameInput.id = "artist-name-input";
+  
+  // Create save button
+  const saveButton = document.createElement("button");
+  saveButton.innerText = "Save Song";
+  saveButton.addEventListener("click", function() {
+    const songUrl = document.getElementById("song-url-input").value;
+    const songTitle = document.getElementById("song-title-input").value;
+    const artistName = document.getElementById("artist-name-input").value;
+    addSongToBurnList(songUrl, songTitle, artistName);
+  });
+  
+  // Append elements to the container
+  container.appendChild(songUrlInput);
+  container.appendChild(songTitleInput);
+  container.appendChild(artistNameInput);
+  container.appendChild(saveButton);
+}
+
+function setupCdSaveFunctionality() {
+  const saveButton = document.getElementById("save-cd-button");
+  saveButton.addEventListener("click", function() {
+    const cdNameInput = document.getElementById("cd-name-input");
+    const cdName = cdNameInput.value.trim();
+    if (cdName) {
+      const savedCdList = document.getElementById("saved-cd-list");
+      const listItem = document.createElement("li");
+      listItem.textContent = cdName;
+      savedCdList.appendChild(listItem);
+      cdNameInput.value = ''; // Clear input field after saving
+
+      // Display the saved CD list below
+      displaySavedCdList();
+    } else {
+      alert("Please enter a CD name.");
+    }
+  });
+}
+
+// Function to display the saved CD list
+function displaySavedCdList() {
+    const savedCdList = document.getElementById("saved-cd-list");
+    const displayArea = document.getElementById("cd-display-area"); // Assuming there's a div with id="cd-display-area" in your HTML
+
+    // Clear the current display
+    displayArea.innerHTML = '';
+
+    // Create a copy of the saved CD list to display
+    const listCopy = savedCdList.cloneNode(true);
+    displayArea.appendChild(listCopy);
+}
+
+function setupCheckoutFunctionality() {
+  const checkoutButton = document.getElementById("checkout-button");
+  checkoutButton.addEventListener("click", function() {
+    const savedCdList = document.getElementById("saved-cd-list");
+    const cds = [];
+    for (let i = 0; i < savedCdList.children.length; i++) {
+      cds.push(savedCdList.children[i].textContent);
+    }
+    // Here you can handle the checkout process, e.g., sending CD names to a server or redirecting to a payment page
+    console.log("CDs to checkout:", cds);
+    alert("Checkout process initiated for CDs: " + cds.join(", "));
+    // Example: Redirect to a checkout page
+    // window.location.href = '/checkout.html?cds=' + encodeURIComponent(cds.join(","));
+  });
 }
 
 // Function to add song to the burn list

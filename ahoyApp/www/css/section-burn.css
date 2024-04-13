@@ -1,0 +1,23 @@
+#cd-save-section {
+    margin-top: 20px;
+}
+
+#cd-name-input,
+#save-cd-button {
+    margin: 5px;
+}
+
+#saved-cd-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.checkout-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    /* Green */
+    color: white;
+    border: none;
+    cursor: pointer;
+}
