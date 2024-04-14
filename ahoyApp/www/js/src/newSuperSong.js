@@ -33,6 +33,9 @@ function playSong(songUrl, songTitle, artistName, buttonElement) {
 
     // Scroll the now-playing song details into view
     nowPlayingSongDetails.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    // Set currentSongIndex based on the songUrl
+    currentSongIndex = songsArray.findIndex(s => s.mp3url === songUrl);
   }
 }
 
@@ -41,6 +44,7 @@ function loadSongs() {
   fetch("data/songCollection.json")
     .then(response => response.json())
     .then(data => {
+      songsArray = data.songs; // Store the songs array globally
       const tableBody = document.getElementById("song-list"); // Ensure this is a <tbody> inside your table
       tableBody.innerHTML = ''; // Clear existing content
 
@@ -82,3 +86,6 @@ document.addEventListener("DOMContentLoaded", function () {
     loadSongs();
   }
 });
+
+let currentSongIndex = null;
+let songsArray = [];

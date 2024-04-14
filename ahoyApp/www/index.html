@@ -250,15 +250,15 @@
 
       </div>
       <!-- SONGS TAB -->
-      <div id="songs-tab" class="tab-content">
-        <div id="now-playing-song-container" class="now-playing-song">
+      <div id="songs-tab" class="tab-content active">
 
-          <div class="image-and-play-button-a">
+        <div id="now-playing-song-container" class="now-playing-song">
+          <div class="image-and-play-button-aa"
+            style="max-width: 100%; max-height: 300px; display: flex; justify-content: center; align-items: center;">
             <img id="now-playing-album-art" src="./path/to/your/image.jpg"
-              alt="Album Art">
+              alt="Album Art" style="max-width: 100%; max-height: 100%;">
             <button id="recently-added-homepage-song"
               class="play-button-overlay" onclick="togglePlayPause()">
-              <i class="fas fa-play"></i>
             </button>
           </div>
         </div>
@@ -267,7 +267,39 @@
           <h3 id="now-playing-song-title">Song Title</h3>
           <p id="now-playing-song-artist">Artist Name</p>
         </div>
+        <!-- SONG CONTROLLERS -->
+        <!-- Basic Playback Controls with Unique IDs -->
+        <div class="playback-controls" id="unique-playback-controls">
+          <button id="unique-prev-button"
+            onclick="uniquePrevTrack()">Previous</button>
+          <button id="unique-play-pause-button"
+            onclick="uniqueTogglePlayPause()">Play/Pause</button>
+          <button id="unique-next-button"
+            onclick="uniqueNextTrack()">Next</button>
+          <div class="timeline" id="unique-timeline">
+            <input type="range" id="unique-song-timeline" min="0" value="0"
+              step="1">
+            <span id="unique-current-time">0:00</span> / <span
+              id="unique-total-time">0:00</span>
+          </div>
+        </div>
+        <style>
+  #unique-playback-controls .timeline {
+    display: flex;
+    align-items: center;
+  }
 
+  #unique-playback-controls button {
+    margin-right: 10px;
+  }
+
+  #unique-song-timeline {
+    flex-grow: 1;
+    margin: 0 10px;
+  }
+</style>
+        <!-- SONG COLLECTION -->
+        <br><br><br><br><br><br><br><br><br>
         <h2 style="text-align:center;">Full Song Collection</h2>
         <p>The following songs are homegrown from local heroes. At the moment
           they are sorted by the most recent on the bottom. </p>
@@ -290,6 +322,7 @@
           <ul class="list" id="song-list"></ul>
         </div>
       </div>
+
       <!-- MEDIA TAB -->
       <div id="media-tab-a" class="tab-content">
 
@@ -324,7 +357,7 @@
 
       </div>
       <!-- PODCASTS -->
-      <div id="podcasts-tab" class="tab-content active">
+      <div id="podcasts-tab" class="tab-content">
         <div class="podcast-container">
           <div id="podcast-featured-image-container"></div>
 
@@ -590,10 +623,12 @@
               <li><strong>Permanent Recognition:</strong> Your name and username
                 will be permanently embedded in the backend code of Ahoy,
                 immortalizing your contribution.</li>
+              <li><strong>Commemorative Certificate:</strong> Sign up now and
+                you'll receive a
+                special certificate of membership from Rob Meglio, celebrating
+                your pioneering spirit.</li>
             </ul>
-            <p>Commemorative Certificate: Sign up now and you'll receive a
-              special certificate of membership from Rob Meglio, celebrating
-              your pioneering spirit.</p>
+
             <button onclick="window.location.href='create-account.html'">Act
               Fast—Sign Up Now for Lifetime Access!</button>
 
@@ -1068,6 +1103,7 @@
     <!-- v25 Menu Code -->
     <script src="js/src/v25_menuCode.js"></script>
     <script src="js/src/v25_dailyJukebox.js"></script>
+    <script src="js/src/v25_songController.js"></script>
     <script>
         // Function to play or pause the song
         function togglePlayPause() {
