@@ -188,15 +188,12 @@
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
   padding: 10px 20px;
-
   cursor: pointer;
   font-size: 1.5em;
-  /* Adjust the size of the icon inside the button */
 }
 
 .play-button-overlay:hover {
   background-color: rgba(0, 0, 0, 0.7);
-  /* Darker on hover */
 }
 
 #now-playing-song-title,
@@ -220,8 +217,6 @@
   margin: 0px;
 }
 
-
-/* Glass effect for the song table */
 .glass-table {
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
@@ -247,7 +242,6 @@
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Compact and visually appealing design */
 .glass-table img {
   width: 50px;
   height: 50px;
@@ -255,26 +249,21 @@
   object-fit: cover;
 }
 
-/* Base icon size */
 .control-button-a i,
 .control-button-b i {
   font-size: 16px;
   width: 22px;
   height: 32px;
-  /* Adjust base size as needed */
 }
 
-/* Adjust icon size for screens smaller than 768px */
 @media (max-width: 768px) {
 
   .control-button-a i,
   .control-button-b i {
     font-size: 12px;
-    /* Smaller size for mobile devices */
   }
 }
 
-/* Further adjustments for very small screens */
 @media (max-width: 480px) {
 
   .control-button-a i,
@@ -297,24 +286,12 @@
   background-color: #e60053;
 }
 
-.control-button-a {
-  background-color: #ff0060;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.control-button-a:hover {
-  background-color: #e60053;
-}
-
 #burn-btn-overlay {
-  /* Removed absolute positioning styles */
   width: 32px;
   height: 32px;
   cursor: pointer;
-  /* Add more styles here as needed */
+}
+
+cursor: pointer;
+/* Add more styles here as needed */
 }
