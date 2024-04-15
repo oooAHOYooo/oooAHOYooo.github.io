@@ -2,9 +2,9 @@
 function playSong(songUrl, songTitle, artistName, buttonElement) {
   const audioPlayer = document.getElementById("audio-player");
   const nowPlayingSongDetails = document.getElementById("now-playing-song-details");
-  const nowPlayingSongTitle = document.getElementById("bottom-song-title");
-  const nowPlayingSongArtist = document.getElementById("bottom-artist-name");
-  const nowPlayingAlbumArt = document.getElementById("bottom-album-art"); // Ensure this ID matches your album art img element
+  const nowPlayingSongTitle = document.getElementById("now-playing-song-title");
+  const nowPlayingSongArtist = document.getElementById("now-playing-song-artist");
+  const nowPlayingAlbumArt = document.getElementById("now-playing-album-art"); // Ensure this ID matches your album art img element
 
   // Toggle play/pause based on the current song URL
   if (audioPlayer.src === songUrl && !audioPlayer.paused) {
@@ -89,23 +89,3 @@ document.addEventListener("DOMContentLoaded", function () {
 
 let currentSongIndex = null;
 let songsArray = [];
-
-// Add to the existing script
-
-// Function to play the next song
-function playNextSong() {
-  if (currentSongIndex !== null && currentSongIndex < songsArray.length - 1) {
-    currentSongIndex++;
-    const nextSong = songsArray[currentSongIndex];
-    playSong(nextSong.mp3url, nextSong.songTitle, nextSong.artist, document.getElementById('bottom-play-pause-button'));
-  }
-}
-
-// Function to play the previous song
-function playPreviousSong() {
-  if (currentSongIndex > 0) {
-    currentSongIndex--;
-    const prevSong = songsArray[currentSongIndex];
-    playSong(prevSong.mp3url, prevSong.songTitle, prevSong.artist, document.getElementById('bottom-play-pause-button'));
-  }
-}
