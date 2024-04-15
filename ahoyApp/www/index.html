@@ -86,6 +86,7 @@
     <link rel="stylesheet" href="./css/section-tab.css">
     <link rel="stylesheet" href="./css/section-account.css">
     <link rel="stylesheet" href="./css/section-burn.css">
+    <link rel="stylesheet" href="./css/v25player.css">
     <!-- END OF AG ADDITIONS TO HEAD -->
     <meta charset="utf-8">
     <meta name="viewport"
@@ -268,110 +269,42 @@
           <p id="now-playing-song-artist">Artist Name</p>
         </div>
         <!-- SONG CONTROLLERS -->
-        <div class="playback-controls" id="unique-playback-controls">
+        <div class="playback-controls" id="v25-unique-player">
           <button id="unique-prev-button" onclick="uniquePrevTrack()">
             <i class="fas fa-step-backward"></i>
           </button>
-          <button id="unique-play-pause-button"
-            onclick="uniqueTogglePlayPause()">
+          <!-- Rewind Button -->
+          <button id="unique-rewind-button" onclick="uniqueRewind()">
+              <i class="fas fa-backward"></i>
+          </button>
+          <button id="unique-play-pause-button" onclick="uniqueTogglePlayPause()">
             <i class="fas fa-play"></i>/<i class="fas fa-pause"></i>
+          </button>
+          <!-- Fast Forward Button -->
+          <button id="unique-fast-forward-button" onclick="uniqueFastForward()">
+              <i class="fas fa-forward"></i>
           </button>
           <button id="unique-next-button" onclick="uniqueNextTrack()">
             <i class="fas fa-step-forward"></i>
           </button>
           <div class="timeline" id="unique-timeline">
-            <input type="range" id="unique-song-timeline" min="0" value="0"
-              step="1">
-            <span id="unique-current-time">0:00</span> / <span
-              id="unique-total-time">0:00</span>
+            <input type="range" id="unique-song-timeline" min="0" value="0" step="1">
+            <span id="unique-current-time">0:00</span> / <span id="unique-total-time">0:00</span>
           </div>
         </div>
 
-        <style>
-#unique-playback-controls {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent white for glass effect */
-  backdrop-filter: blur(10px); /* Frosted glass effect */
-  -webkit-backdrop-filter: blur(10px); /* For Safari */
-  padding: 5px;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.18); /* Light border for depth */
-  margin-top: 10px; /* Adjust as needed */
-}
-
-#unique-playback-controls button {
-  background: none;
-  border: none;
-  color: #ff0050; /* Accent color */
-  font-size: 16px; /* Adjust based on your design */
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-#unique-playback-controls button:hover {
-  transform: scale(1.1);
-}
-
-#unique-song-timeline {
-  flex-grow: 1;
-  margin: 0 10px;
-  cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent track */
-  -webkit-appearance: none; /* Override default appearance */
-}
-
-#unique-song-timeline::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background: #ff0050; /* Accent color */
-  cursor: pointer;
-}
-
-#unique-song-timeline::-moz-range-thumb {
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background: #ff0050; /* Accent color */
-  cursor: pointer;
-}
-
-.timeline {
-  width: 100%;
-  display: flex;
-  align-items: center;
-}
-
-#unique-current-time, #unique-total-time {
-  color: #000;
-  font-size: 12px;
-}
-
-/* Adjust the size of the icons */
-#unique-playback-controls i {
-  font-size: 20px; /* Larger icons */
-}
-</style>
         <!-- SONG COLLECTION -->
-        <br><br><br><br><br><br><br><br><br>
+        <br><br><br>
         <h2 style="text-align:center;">Full Song Collection</h2>
-        <p>The following songs are homegrown from local heroes. At the moment
-          they are sorted by the most recent on the bottom. </p>
-        <p style="text-transform:uppercase; text-align:center;">Click Play
-          to Play - Click Burn to add songs to your CD</p>
+        <p>The following songs are homegrown from local heroes. At the moment they are sorted by the most recent on the bottom. </p>
+        <p style="text-transform:uppercase; text-align:center;">Click Play to Play - Click Burn to add songs to your CD</p>
         <style>
             #yep {
               display:none;
             }
           </style>
         <div id="yep">
-          <input type="text" id="search-bar-a"
-            placeholder="Search songs..." />
+          <input type="text" id="search-bar-a" placeholder="Search songs..." />
           <button id="mix-button">Mix</button>
           <button>Recently Added</button>
           <button id="sort-az">Sort A-Z</button>
