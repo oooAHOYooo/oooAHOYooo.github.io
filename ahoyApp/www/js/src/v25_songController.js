@@ -32,14 +32,12 @@ function uniqueTogglePlayPause() {
     return; // Early return if no song is loaded
   }
 
-  uniqueIsPlaying = !uniqueIsPlaying;
-
-  if (uniqueIsPlaying) {
+  if (audioPlayer.paused) {
     audioPlayer.play();
-    playPauseButton.textContent = 'Pause'; // Update button text to 'Pause'
+    playPauseButton.innerHTML = '<i class="fas fa-pause"></i>'; // Update button to show pause icon
   } else {
     audioPlayer.pause();
-    playPauseButton.textContent = 'Play'; // Update button text to 'Play'
+    playPauseButton.innerHTML = '<i class="fas fa-play"></i>'; // Update button to show play icon
   }
 }
 

@@ -254,7 +254,7 @@
 
         <div id="now-playing-song-container" class="now-playing-song">
           <div class="image-and-play-button-aa"
-            style="max-width: 100%; max-height: 300px; display: flex; justify-content: center; align-items: center;">
+            style="max-width: 100%; height:auto; max-height: 300px; display: flex; justify-content: center; align-items: center;">
             <img id="now-playing-album-art" src="./path/to/your/image.jpg"
               alt="Album Art" style="max-width: 100%; max-height: 100%;">
             <button id="recently-added-homepage-song"
@@ -268,14 +268,17 @@
           <p id="now-playing-song-artist">Artist Name</p>
         </div>
         <!-- SONG CONTROLLERS -->
-        <!-- Basic Playback Controls with Unique IDs -->
         <div class="playback-controls" id="unique-playback-controls">
-          <button id="unique-prev-button"
-            onclick="uniquePrevTrack()">Previous</button>
+          <button id="unique-prev-button" onclick="uniquePrevTrack()">
+            <i class="fas fa-step-backward"></i>
+          </button>
           <button id="unique-play-pause-button"
-            onclick="uniqueTogglePlayPause()">Play/Pause</button>
-          <button id="unique-next-button"
-            onclick="uniqueNextTrack()">Next</button>
+            onclick="uniqueTogglePlayPause()">
+            <i class="fas fa-play"></i>/<i class="fas fa-pause"></i>
+          </button>
+          <button id="unique-next-button" onclick="uniqueNextTrack()">
+            <i class="fas fa-step-forward"></i>
+          </button>
           <div class="timeline" id="unique-timeline">
             <input type="range" id="unique-song-timeline" min="0" value="0"
               step="1">
@@ -283,20 +286,76 @@
               id="unique-total-time">0:00</span>
           </div>
         </div>
+
         <style>
-  #unique-playback-controls .timeline {
-    display: flex;
-    align-items: center;
-  }
+#unique-playback-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent white for glass effect */
+  backdrop-filter: blur(10px); /* Frosted glass effect */
+  -webkit-backdrop-filter: blur(10px); /* For Safari */
+  padding: 5px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18); /* Light border for depth */
+  margin-top: 10px; /* Adjust as needed */
+}
 
-  #unique-playback-controls button {
-    margin-right: 10px;
-  }
+#unique-playback-controls button {
+  background: none;
+  border: none;
+  color: #ff0050; /* Accent color */
+  font-size: 16px; /* Adjust based on your design */
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
 
-  #unique-song-timeline {
-    flex-grow: 1;
-    margin: 0 10px;
-  }
+#unique-playback-controls button:hover {
+  transform: scale(1.1);
+}
+
+#unique-song-timeline {
+  flex-grow: 1;
+  margin: 0 10px;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent track */
+  -webkit-appearance: none; /* Override default appearance */
+}
+
+#unique-song-timeline::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #ff0050; /* Accent color */
+  cursor: pointer;
+}
+
+#unique-song-timeline::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #ff0050; /* Accent color */
+  cursor: pointer;
+}
+
+.timeline {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+#unique-current-time, #unique-total-time {
+  color: #000;
+  font-size: 12px;
+}
+
+/* Adjust the size of the icons */
+#unique-playback-controls i {
+  font-size: 20px; /* Larger icons */
+}
 </style>
         <!-- SONG COLLECTION -->
         <br><br><br><br><br><br><br><br><br>
@@ -948,6 +1007,31 @@
         </div>
       </div>
       <!-- end of v25 dock -->
+      <div id="v25_BottomAudio"
+        style="height: 42px; position: fixed; bottom: 0; width: 100%; background-color: #282828; display: flex; align-items: center; justify-content: space-between; padding: 0 10px; box-sizing: border-box; color: white;">
+        <div class="song-info" style="display: flex; align-items: center;">
+          <img id="bottom-album-art" src alt="Album Art"
+            style="height: 40px; width: 40px; margin-right: 10px;">
+          <div>
+            <div id="bottom-song-title" style="font-weight: bold;">Song
+              Title</div>
+            <div id="bottom-artist-name">Artist Name</div>
+          </div>
+        </div>
+        <div class="player-controls"
+          style="display: flex; align-items: center;">
+          <button id="bottom-prev-button" onclick="playPreviousSong()"><i
+              class="fas fa-step-backward"></i></button>
+          <button id="bottom-play-pause-button" onclick="togglePlayPause()"><i
+              class="fas fa-play" id="bottom-play-pause-icon"></i></button>
+          <button id="bottom-next-button" onclick="playNextSong()"><i
+              class="fas fa-step-forward"></i></button>
+        </div>
+        <div class="progress-bar" style="flex-grow: 1; margin-left: 10px;">
+          <input type="range" id="bottom-song-progress" value="0" min="0"
+            max="100" step="1" style="width: 100%;">
+        </div>
+      </div>
       <!-- Start of v24 PLAYER -->
       <div id="v24ahoyPlayer" class="player">
         <audio id="audio-player" src></audio>
@@ -1104,58 +1188,6 @@
     <script src="js/src/v25_menuCode.js"></script>
     <script src="js/src/v25_dailyJukebox.js"></script>
     <script src="js/src/v25_songController.js"></script>
-    <script>
-        // Function to play or pause the song
-        function togglePlayPause() {
-          var audio = document.getElementById('audio-player');
-          var playPauseIcon = document.getElementById('play-pause-icon');
-          if (audio.paused) {
-            audio.play();
-            playPauseIcon.className = 'fas fa-pause'; // Change to pause icon
-          } else {
-            audio.pause();
-            playPauseIcon.className = 'fas fa-play'; // Change to play icon
-          }
-        }
-
-        // Function to toggle play/pause for the audio player
-        function togglePlayPause(songUrl, songTitle, artistName) {
-          var audio = document.getElementById('audio-player');
-          var playPauseIcon = document.getElementById('play-pause-icon');
-          var songInfo = document.getElementById('song-info');
-          if (audio.src !== songUrl) {
-            // Load new song if different
-            audio.src = songUrl;
-            audio.play();
-            playPauseIcon.className = 'fas fa-pause'; // Change to pause icon
-            songInfo.textContent = `${artistName} - ${songTitle}`; // Update song info display
-          } else {
-            // Toggle play/pause if the same song
-            if (audio.paused) {
-              audio.play();
-              playPauseIcon.className = 'fas fa-pause'; // Change to pause icon
-            } else {
-              audio.pause();
-              playPauseIcon.className = 'fas fa-play'; // Change to play icon
-            }
-          }
-        }
-
-        // Function to move the clicked song to the top of the list
-        function moveToTop(songElement) {
-          const songList = document.getElementById("song-list");
-          songList.prepend(songElement);
-        }
-
-        document.addEventListener("DOMContentLoaded", function () {
-          // Update the song info display on the main page when a song is played
-          const audioPlayer = document.getElementById('audio-player');
-          audioPlayer.addEventListener('play', () => {
-            const songInfoDisplay = document.getElementById('now-playing-song-details');
-            songInfoDisplay.querySelector('#now-playing-song-title').textContent = audioPlayer.dataset.songTitle;
-            songInfoDisplay.querySelector('#now-playing-song-artist').textContent = audioPlayer.dataset.artistName;
-          });
-        });
-      </script>
+    <!-- END -->
   </body>
 </html>
