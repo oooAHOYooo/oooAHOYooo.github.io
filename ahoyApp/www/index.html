@@ -275,29 +275,34 @@
           </button>
           <!-- Rewind Button -->
           <button id="unique-rewind-button" onclick="uniqueRewind()">
-              <i class="fas fa-backward"></i>
+            <i class="fas fa-backward"></i>
           </button>
-          <button id="unique-play-pause-button" onclick="uniqueTogglePlayPause()">
+          <button id="unique-play-pause-button"
+            onclick="uniqueTogglePlayPause()">
             <i class="fas fa-play"></i>/<i class="fas fa-pause"></i>
           </button>
           <!-- Fast Forward Button -->
           <button id="unique-fast-forward-button" onclick="uniqueFastForward()">
-              <i class="fas fa-forward"></i>
+            <i class="fas fa-forward"></i>
           </button>
           <button id="unique-next-button" onclick="uniqueNextTrack()">
             <i class="fas fa-step-forward"></i>
           </button>
           <div class="timeline" id="unique-timeline">
-            <input type="range" id="unique-song-timeline" min="0" value="0" step="1">
-            <span id="unique-current-time">0:00</span> / <span id="unique-total-time">0:00</span>
+            <input type="range" id="unique-song-timeline" min="0" value="0"
+              step="1">
+            <span id="unique-current-time">0:00</span> / <span
+              id="unique-total-time">0:00</span>
           </div>
         </div>
 
         <!-- SONG COLLECTION -->
         <br><br><br>
         <h2 style="text-align:center;">Full Song Collection</h2>
-        <p>The following songs are homegrown from local heroes. At the moment they are sorted by the most recent on the bottom. </p>
-        <p style="text-transform:uppercase; text-align:center;">Click Play to Play - Click Burn to add songs to your CD</p>
+        <p>The following songs are homegrown from local heroes. At the moment
+          they are sorted by the most recent on the bottom. </p>
+        <p style="text-transform:uppercase; text-align:center;">Click Play to
+          Play - Click Burn to add songs to your CD</p>
         <style>
             #yep {
               display:none;
@@ -399,6 +404,7 @@
 
       <!-- ABOUT TAB -->
       <div id="about-tab" class="tab-content">
+        <img src="./img/favicon_ahoy.png" style="width: 100px; height: auto;"
         <h2>About Ahoy Indie Media</h2>
         <p>Ahoy Indie Media is a hand-crafted media company based out of New
           Haven, Connecticut. Our mission is to provide a homegrown
@@ -473,10 +479,8 @@
       <div id="news-tab" class="tab-content">
         <h1 class="news-text-title">NEWS FROM AHOY</h1>
         <div class="newsSubHeaderMenu">
-          <button>Our Goals</button>
           <button id="about-button"
-            onclick="navigateToTab('about-tab')">About</button>
-
+            onclick="navigateToTab('about-tab')">About Ahoy</button>
         </div>
         <div id="newsletter-list"></div>
         <div class="goals-container">
