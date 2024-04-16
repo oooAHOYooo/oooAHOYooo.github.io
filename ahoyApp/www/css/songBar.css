@@ -188,39 +188,6 @@
     /* Text shadow for better visibility */
 }
 
-@media (max-width: 768px) {
-    #v24ahoyPlayer {
-        bottom: 50px;
-        /* Adjust for mobile to ensure visibility above v25dock */
-        flex-direction: column;
-        /* Stack elements vertically on small screens */
-        justify-content: center;
-        padding: 5px 0;
-        /* Adjust padding for smaller screens */
-    }
-
-    .audio-player-controls {
-        flex-direction: column;
-    }
-
-    #song-info,
-    .song-progress-container,
-    #current-time,
-    #settings-icon-container {
-        width: 90%;
-        /* Increase width to utilize available space */
-        margin: 2px auto;
-        /* Center and add a small margin */
-    }
-
-    #play-pause-button,
-    #settings-icon-button-a {
-        align-self: center;
-        /* Center buttons */
-        margin: 5px 0;
-        /* Add margin to separate from other elements */
-    }
-}
 
 .control-button {
     padding: 4px 8px;
@@ -315,74 +282,73 @@
     }
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-
-    .song-progress-container,
-    .song-display,
-    .song-info {
-        width: 95%;
-    }
-
-    .control-button,
-    .superPlayerButtonMash {
-        margin: 4px;
-        /* More Compact */
-        font-size: 0.7em;
-        /* Smaller */
-    }
 
 
-    /* Further adjustments for Bar A to align settings icon with the play button vibe */
-    #barA {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-        padding: 0 10px;
-    }
-
-    #barA .song-progress-container {
-        flex-grow: 2;
-        margin: 0 10px;
-        display: flex;
-        align-items: center;
-    }
-
-    #barA #play-pause-button,
-    #barA #settings-icon-button-a {
-        margin-right: 10px;
-        background-color: var(--button-background);
-        border: none;
-        color: white;
-        padding: 10px;
-        border-radius: 50%;
-        font-size: 16px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
-
-    #barA #play-pause-button:hover,
-    #barA #settings-icon-button-a:hover {
-        background-color: var(--hover-background-color);
-    }
-
-    #barA .song-display {
-        flex-grow: 1;
-        text-align: left;
-    }
-
-    /* Ensure the current time and song info are aligned properly */
-    #current-time,
-    #song-info {
-        white-space: wrap;
-    }
-
-    #settings-icon-container {
-        display: flex;
-        align-items: center;
-    }
+.song-progress-container,
+.song-display,
+.song-info {
+    width: 95%;
 }
+
+.control-button,
+.superPlayerButtonMash {
+    margin: 4px;
+    /* More Compact */
+    font-size: 0.7em;
+    /* Smaller */
+}
+
+
+/* Further adjustments for Bar A to align settings icon with the play button vibe */
+#barA {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 10px;
+}
+
+#barA .song-progress-container {
+    flex-grow: 2;
+    margin: 0 10px;
+    display: flex;
+    align-items: center;
+}
+
+#barA #play-pause-button,
+#barA #settings-icon-button-a {
+    margin-right: 10px;
+    background-color: var(--button-background);
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#barA #play-pause-button:hover,
+#barA #settings-icon-button-a:hover {
+    background-color: var(--hover-background-color);
+}
+
+#barA .song-display {
+    flex-grow: 1;
+    text-align: left;
+}
+
+/* Ensure the current time and song info are aligned properly */
+#current-time,
+#song-info {
+    white-space: wrap;
+}
+
+#settings-icon-container {
+    display: flex;
+    align-items: center;
+}
+
 
 #settings-icon-container {
     display: flex;
