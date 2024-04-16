@@ -58,7 +58,7 @@
         "dateAdded" : "04-03-24"
       },
       {
-        "id": "13",
+        "id": "12",
         "albumArt": "https://ahoypodcast.s3.us-east-2.amazonaws.com/readyThe+Rob+Show+-+Ep23+-+Dave+Gunn+-+4.4.24.jpg",
         "songTitle": "The Rob Show #23 - Dave Gunn",
         "artist": "Dave Gunn",
@@ -71,6 +71,14 @@
       "artist": "Dave Gunn",
       "tag": "media",
       "dateAdded": "04-09-24" 
-    }     
+    },
+    {
+      "id": "4",
+      "albumArt": "https://storage.googleapis.com/ahoy-podcast-collection/The%20Rob%20Show%20-%20Ep24%20-%20Ellen%20Martin.jpg",
+      "songTitle": "The Rob Show #24 - Ellen Martin",
+      "artist": "Ellen Martin",
+      "tag": "podcast",
+      "dateAdded": "04-15-24"
+    }
     ]
   }
