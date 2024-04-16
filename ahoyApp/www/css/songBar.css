@@ -105,7 +105,7 @@
 /* Player */
 #v24ahoyPlayer {
     position: fixed;
-    bottom: 89px !important;
+    bottom: 92px !important;
     /* Height of the v25dock to ensure it sits directly above */
     left: 0;
     right: 0;
@@ -115,7 +115,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 5px;
+
     background-color: rgba(0, 0, 0, 0.75);
     /* Semi-transparent background */
     backdrop-filter: blur(5px);
@@ -222,14 +222,14 @@
 
 /* Super Player Button */
 .superPlayerButtonMash {
-    padding: 6px 12px;
+
     /* More Compact */
     background-image: var(--neurophoric-highlight);
     background-size: 200% 200%;
     animation: neurophoricEffect 4s ease infinite;
     color: var(--control-button-color);
     border: none;
-    border-radius: 18px;
+    border-radius: 8px;
     /* Slightly Rounded */
     cursor: pointer;
     transition: background-color 0.2s, color 0.2s;
@@ -322,7 +322,7 @@
     border: none;
     color: white;
     padding: 10px;
-    border-radius: 50%;
+    border-radius: 30%;
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease;
