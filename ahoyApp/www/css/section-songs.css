@@ -195,28 +195,52 @@
 .play-button-overlay:hover {
   background-color: rgba(0, 0, 0, 0.7);
 }
+#now-playing-song-details {
+  background: rgba(54, 54, 54, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 20px;
+  text-align: center;
+  margin: 20px auto;
+  max-width: 80%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
 #now-playing-song-title,
 #now-playing-song-artist {
-  background-color: #000;
   color: #fff;
-  padding: 10px;
-  text-align: center;
-  font-family: 'Courier New', Courier, monospace;
-  text-shadow: 1px 1px 2px #000;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   margin: 10px 0;
 }
 
 #now-playing-song-title {
-  font-size: 1.4em;
-  margin: 0px;
+  font-size: clamp(1.5em, 2.5vw, 2em);
+  font-weight: bold;
 }
 
 #now-playing-song-artist {
-  font-size: 1.2em;
-  margin: 0px;
+  font-size: clamp(1em, 1.5vw, 1.5em);
 }
 
+@media (max-width: 768px) {
+  #now-playing-song-details {
+    max-width: 95%;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  #now-playing-song-details {
+    border-radius: 5px;
+    padding: 10px;
+  }
+
+  #now-playing-song-title,
+  #now-playing-song-artist {
+    margin: 5px 0;
+  }
+}
 .glass-table {
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);

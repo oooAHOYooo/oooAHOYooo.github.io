@@ -44,7 +44,7 @@
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     padding: 10px;
-    border-radius: 15px;
+    border-radius: 0 0 15px 15px; /* Bottom left and right border radius set to 15px */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.18);
     margin: 20px auto;
@@ -68,7 +68,7 @@
     margin: 5px; /* Ensure buttons have space around them */
     background: none;
     border: none;
-    color: #ff0050;
+    color: var(--border-color);
     font-size: 16px;
     cursor: pointer;
     transition: transform 0.2s ease;
@@ -92,7 +92,7 @@
     width: 15px;
     height: 15px;
     border-radius: 50%;
-    background: #ff0050;
+    background: var(--border-color);
     cursor: pointer;
 }
 
