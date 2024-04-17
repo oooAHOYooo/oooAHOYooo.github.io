@@ -40,6 +40,8 @@ function uniqueTogglePlayPause() {
   if (audioPlayer.paused) {
     audioPlayer.play();
     playPauseButton.innerHTML = '<i class="fas fa-pause"></i>'; // Update button to show pause icon
+    const v24SongInfo = document.getElementById("song-info"); // Assuming this is the div class for song display on v24 player
+    v24SongInfo.textContent = `${songTitle} - ${artistName}`; // Display song info on v24 player
   } else {
     audioPlayer.pause();
     playPauseButton.innerHTML = '<i class="fas fa-play"></i>'; // Update button to show play icon

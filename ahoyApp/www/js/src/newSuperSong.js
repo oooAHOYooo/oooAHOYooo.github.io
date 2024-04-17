@@ -5,6 +5,7 @@ function playSong(songUrl, songTitle, artistName, buttonElement) {
   const nowPlayingSongTitle = document.getElementById("now-playing-song-title");
   const nowPlayingSongArtist = document.getElementById("now-playing-song-artist");
   const nowPlayingAlbumArt = document.getElementById("now-playing-album-art"); // Ensure this ID matches your album art img element
+  const v24SongInfo = document.getElementById("song-info"); // Add this line
 
   // Toggle play/pause based on the current song URL
   if (audioPlayer.src === songUrl && !audioPlayer.paused) {
@@ -18,6 +19,7 @@ function playSong(songUrl, songTitle, artistName, buttonElement) {
     // Update now-playing song details
     nowPlayingSongTitle.textContent = songTitle;
     nowPlayingSongArtist.textContent = artistName;
+    v24SongInfo.textContent = `${artistName} - ${songTitle}`; // Update this line
 
     // Fetch the song details from songCollection.json to get the coverArt URL
     fetch("data/songCollection.json")
