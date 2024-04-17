@@ -40,8 +40,6 @@ function uniqueTogglePlayPause() {
   if (audioPlayer.paused) {
     audioPlayer.play();
     playPauseButton.innerHTML = '<i class="fas fa-pause"></i>'; // Update button to show pause icon
-    const v24SongInfo = document.getElementById("song-info"); // Assuming this is the div class for song display on v24 player
-    v24SongInfo.textContent = `${songTitle} - ${artistName}`; // Display song info on v24 player
   } else {
     audioPlayer.pause();
     playPauseButton.innerHTML = '<i class="fas fa-play"></i>'; // Update button to show play icon
@@ -89,12 +87,12 @@ timeline.addEventListener('input', function() {
 });
 
 function uniqueFastForward() {
-  audioPlayer.currentTime = Math.min(audioPlayer.currentTime + 10, audioPlayer.duration); // Fast forward by 10 seconds
+  audioPlayer.currentTime = Math.min(audioPlayer.currentTime + 15, audioPlayer.duration); // Fast forward by 15 seconds
   uniqueUpdateTimeline();
 }
 
 function uniqueRewind() {
-  audioPlayer.currentTime = Math.max(audioPlayer.currentTime - 10, 0); // Rewind by 10 seconds
+  audioPlayer.currentTime = Math.max(audioPlayer.currentTime - 15, 0); // Rewind by 15 seconds
   uniqueUpdateTimeline();
 }
 
@@ -106,4 +104,15 @@ function uniqueDoubleFastForward() {
 function uniqueDoubleRewind() {
   audioPlayer.currentTime = Math.max(audioPlayer.currentTime - 20, 0); // Rewind 20 seconds
   uniqueUpdateTimeline();
+}
+
+function uniqueBurnSong() {
+  // Assuming 'currentSongIndex' is the index of the currently playing song
+  if (currentSongIndex !== null) {
+    const burnedSong = songsArray[currentSongIndex];
+    console.log(`Burned song: ${burnedSong.songTitle} by ${burnedSong.artist}`);
+    // Add your actual burn functionality here, such as updating the UI or marking the song in your database
+  } else {
+    console.log("No song is currently selected to burn.");
+  }
 }

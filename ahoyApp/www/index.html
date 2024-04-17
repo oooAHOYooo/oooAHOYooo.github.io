@@ -248,7 +248,7 @@
           </button>
           <!-- Rewind Button -->
           <button id="unique-rewind-button" onclick="uniqueRewind()">
-            <i class="fas fa-backward"></i>
+            <i class="fas fa-backward"></i> 15s
           </button>
           <button id="unique-play-pause-button"
             onclick="uniqueTogglePlayPause()">
@@ -256,7 +256,7 @@
           </button>
           <!-- Fast Forward Button -->
           <button id="unique-fast-forward-button" onclick="uniqueFastForward()">
-            <i class="fas fa-forward"></i>
+            <i class="fas fa-forward"></i> 15s
           </button>
           <button id="unique-next-button" onclick="uniqueNextTrack()">
             <i class="fas fa-step-forward"></i>
@@ -936,6 +936,9 @@
               class="fas fa-play" id="bottom-play-pause-icon"></i></button>
           <button id="bottom-next-button" onclick="playNextSong()"><i
               class="fas fa-step-forward"></i></button>
+              <button id="unique-burn-button" onclick="uniqueBurnSong()">
+                <i class="fas fa-fire"></i>
+              </button>
         </div>
         <div class="progress-bar" style="flex-grow: 1; margin-left: 10px;">
           <input type="range" id="bottom-song-progress" value="0" min="0"
