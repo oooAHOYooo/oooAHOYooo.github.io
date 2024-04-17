@@ -2,7 +2,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    z-index: 1;
+    z-index: -1;
     text-align: left;
     align-items: center;
     color: #f0f8ff;
@@ -13,26 +13,18 @@
     /* Dark nautical gradient */
 }
 
-/* Podcast Section Styles */
-#podcast-featured-image-container {
-    margin-bottom: 20px;
-    max-width: 90% !important;
-    /* Light sky to ocean gradient */
+
+
+.the-featured-podcast-image {
+    width: 400px; /* Fixed width for square shape */
+    height: 400px; /* Fixed height for square shape */
+    object-fit: cover; /* Ensure the image covers the area without losing its aspect ratio */
+    object-position: center; /* Center the image within the element */
+    border-style: solid;
+    border-color: var(--border-color);
+    border-width: 1px;
 }
 
-#the-featured-podcast-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    /* Ensures the image covers the area without losing its aspect ratio */
-    border-radius: 4px;
-    /* Softened edges */
-    aspect-ratio: 1 / 1;
-    /* Maintains square aspect ratio */
-}
-
-
-/* OLD CODE */
 
 
 
@@ -79,17 +71,8 @@
         margin: 0 auto;
     }
 
-    #the-featured-podcast-image img,
-    .enlarged-thumbnail {
-        max-width: 100% !important;
-        height: 500px;
-    }
+   
 
-    #podcast-table,
-    .podcast-container {
-        width: 100%;
-        transform: scale(0.9);
-    }
 
 
 }

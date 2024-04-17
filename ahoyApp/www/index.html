@@ -510,7 +510,7 @@
           <!-- div id="newsletter-list"></div -->
         </div>
 
-        <h3>Present Beta State = 0.2.3H
+        <h3>Present Beta State = 0.2.3J
 
           <h4>Present Focus</h4>
           <p>Redesigning the entire layout - stay tuned - really going for
@@ -544,40 +544,7 @@
             </div>
           </div>
 
-          <!-- Logged-in Message Section -->
-          <div id="logged-in-message" class="center-frame"
-            style="display: none; flex-direction: column; justify-content: center; align-items: center; height: 50vh; background-color: #f0f0f0;">
-            <h1>Congrats, you are already logged in!</h1>
-            <button onclick="logout()">Log Out</button>
-          </div>
-
-          <script>
-  // This script checks if a user is logged in and updates the UI accordingly
-  window.onload = function() {
-    firebase.auth().onAuthStateChanged(function(user) {
-      if (user) {
-        // User is logged in
-        document.getElementById('login-section').style.display = 'none'; // Hide the login section
-        document.getElementById('logged-in-message').style.display = 'block'; // Show the logged-in message
-      } else {
-        // No user is logged in
-        document.getElementById('login-section').style.display = 'block'; // Show the login section
-        document.getElementById('logged-in-message').style.display = 'none'; // Hide the logged-in message
-      }
-    });
-  };
-
-  // Function to log out the user
-  function logout() {
-    firebase.auth().signOut().then(function() {
-      // Sign-out successful.
-      window.location.reload(); // Reload the page to show the login section again
-    }).catch(function(error) {
-      // An error happened.
-      console.error('Sign Out Error', error);
-    });
-  }
-</script>
+        
 
           <!-- The Grandfather Surprise Section -->
           <div class="grandfather-surprise-section">
@@ -628,6 +595,42 @@
   }
 </script>
 
+<!-- USER LOG IN DISPLAY -->
+  <!-- Logged-in Message Section -->
+  <div class="userLOGGEDin">
+  <div id="logged-in-message" class="center-frame"
+  style="display: none; flex-direction: column; justify-content: center; align-items: center; height: 50vh; background-color: #f0f0f0;">
+  <h1>Congrats, you are already logged in!</h1>
+  <button onclick="logout()">Log Out</button>
+</div>
+
+<script>
+// This script checks if a user is logged in and updates the UI accordingly
+window.onload = function() {
+firebase.auth().onAuthStateChanged(function(user) {
+if (user) {
+// User is logged in
+document.getElementById('login-section').style.display = 'none'; // Hide the login section
+document.getElementById('logged-in-message').style.display = 'block'; // Show the logged-in message
+} else {
+// No user is logged in
+document.getElementById('login-section').style.display = 'block'; // Show the login section
+document.getElementById('logged-in-message').style.display = 'none'; // Hide the logged-in message
+}
+});
+};
+
+// Function to log out the user
+function logout() {
+firebase.auth().signOut().then(function() {
+// Sign-out successful.
+window.location.reload(); // Reload the page to show the login section again
+}).catch(function(error) {
+// An error happened.
+console.error('Sign Out Error', error);
+});
+}
+</script>
           <div class="user-icon-section">
             <img id="user-icon" src="./img/default-user-icon.png"
               alt="User Icon"
@@ -827,9 +830,12 @@
           <h4 id="theme-title"></h4>
           <button onclick="switchTheme()">change theme</button>
           <br />
-
         </div>
+<!-- END OF USER LOGGED IN-->
 
+<!-- END OF ACCOUNT TAB DONT TOUCH -->
+        </div>
+<!-- END OF THE ACCOUNT TAB-->
         <!-- BURN TAB-->
         <div id="burn-tab" class="tab-content" style="padding-bottom: 20px;">
 

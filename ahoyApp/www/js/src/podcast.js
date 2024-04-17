@@ -21,6 +21,9 @@ function loadPodcasts() {
 
 // Adjust the togglePlayPausePodcast function to use podcast.id instead of index
 function togglePlayPausePodcast(url, thumbnail, title, description, id) {
+  // Scroll to the top of the page
+  window.scrollTo(0, 0);
+
   const audioPlayer = document.getElementById("audio-player");
   const playPauseBtn = document.getElementById(`podcast-play-${id}`);
   const featuredImageContainer = document.getElementById("podcast-featured-image-container");
