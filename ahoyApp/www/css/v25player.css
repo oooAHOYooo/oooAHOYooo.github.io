@@ -1,111 +1,120 @@
+.player-controls {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 200px;
+    margin-bottom: 5px;
+}
 
-                .player-controls {
-                    display: flex;
-                    justify-content: space-around;
-                    width: 100%;
-                    max-width: 200px;
-                    /* Keep buttons grouped on larger screens */
-                    margin-bottom: 5px;
-                }
+.player-controls button {
+    background: none;
+    border: none;
+    color: #ff4680;
+    font-size: 20px;
+    cursor: pointer;
+}
 
-                .player-controls button {
-                    background: none;
-                    border: none;
-                    color: #ff4680;
-                    /* Accent color */
-                    font-size: 20px;
-                    cursor: pointer;
-                }
+#song-progress {
+    width: 90%;
+    cursor: pointer;
+}
 
-                #song-progress {
-                    width: 90%;
-                    cursor: pointer;
-                }
+.song-info {
+    font-size: 12px;
+    color: #000;
+    text-align: center;
+    margin-top: 5px;
+}
 
-                .song-info {
-                    font-size: 12px;
-                    color: #000;
-                    text-align: center;
-                    margin-top: 5px;
-                }
+#play-pause-btn i.fa-play,
+#play-pause-btn i.fa-pause {
+    transition: transform 0.2s;
+}
 
-                /* Ensure icons change on play/pause */
-                #play-pause-btn i.fa-play,
-                #play-pause-btn i.fa-pause {
-                    transition: transform 0.2s;
-                }
+#play-pause-btn i.fa-pause {
+    transform: scale(1.1);
+}
 
-                #play-pause-btn i.fa-pause {
-                    transform: scale(1.1);
-                    /* Slightly larger pause icon for emphasis */
-                }
+#v25-unique-player {
+    display: flex;
+    flex-direction: column; /* Stack the children vertically */
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    margin: 20px auto;
+    max-width: calc(100% - 40px);
+    overflow: hidden;
+}
 
+.controls-container, .timeline-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
 
-				#unique-playback-controls {
-					display: flex;
-					align-items: center;
-					justify-content: space-around;
-					background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent white for glass effect */
-					backdrop-filter: blur(10px); /* Frosted glass effect */
-					-webkit-backdrop-filter: blur(10px); /* For Safari */
-					padding: 5px;
-					border-radius: 10px;
-					box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-					border: 1px solid rgba(255, 255, 255, 0.18); /* Light border for depth */
-					margin-top: 10px; /* Adjust as needed */
-				  }
-				  
-				  #unique-playback-controls button {
-					background: none;
-					border: none;
-					color: #ff0050; /* Accent color */
-					font-size: 16px; /* Adjust based on your design */
-					cursor: pointer;
-					transition: transform 0.2s ease;
-				  }
-				  
-				  #unique-playback-controls button:hover {
-					transform: scale(1.1);
-				  }
-				  
-				  #unique-song-timeline {
-					flex-grow: 1;
-					margin: 0 10px;
-					cursor: pointer;
-					background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent track */
-					-webkit-appearance: none; /* Override default appearance */
-				  }
-				  
-				  #unique-song-timeline::-webkit-slider-thumb {
-					-webkit-appearance: none;
-					appearance: none;
-					width: 15px;
-					height: 15px;
-					border-radius: 50%;
-					background: #ff0050; /* Accent color */
-					cursor: pointer;
-				  }
-				  
-				  #unique-song-timeline::-moz-range-thumb {
-					width: 15px;
-					height: 15px;
-					border-radius: 50%;
-					background: #ff0050; /* Accent color */
-					cursor: pointer;
-				  }
-				  
-				  .timeline {
-					width: 100%;
-					display: flex;
-					align-items: center;
-				  }
-				  
-				  #unique-current-time, #unique-total-time {
-					color: #000;
-					font-size: 12px;
-				  }
-				  
-				  /* Adjust the size of the icons */
-				  #unique-playback-controls i {
-					font-size: 20px; /* Larger icons */
-				  }
+.controls-container {
+    flex-wrap: wrap; /* Allow controls to wrap if needed */
+    margin-bottom: 10px; /* Space between controls and timeline */
+}
+
+#v25-unique-player button {
+    margin: 5px; /* Ensure buttons have space around them */
+    background: none;
+    border: none;
+    color: #ff0050;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+#v25-unique-player button:hover {
+    transform: scale(1.1);
+}
+
+#unique-song-timeline {
+    flex-grow: 1;
+    margin: 0 10px;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.5);
+    -webkit-appearance: none;
+}
+
+#unique-song-timeline::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #ff0050;
+    cursor: pointer;
+}
+
+#unique-song-timeline::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #ff0050;
+    cursor: pointer;
+}
+
+.timeline {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#unique-current-time, #unique-total-time {
+    color: #000;
+    font-size: 12px;
+}
+
+#v25-unique-player i {
+    font-size: 20px; /* Larger icons */
+}

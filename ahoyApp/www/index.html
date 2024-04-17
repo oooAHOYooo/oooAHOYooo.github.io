@@ -224,16 +224,14 @@
 
       </div>
       <!-- SONGS TAB -->
-      <div id="songs-tab" class="tab-content">
+      <div id="songs-tab" class="tab-content active">
 
         <div id="now-playing-song-container" class="now-playing-song">
           <div class="image-and-play-button-aa"
             style="max-width: 100%; height:auto; max-height: 300px; display: flex; justify-content: center; align-items: center;">
             <img id="now-playing-album-art" src="./path/to/your/image.jpg"
               alt="Album Art" style="max-width: 100%; max-height: 100%;">
-            <button id="recently-added-homepage-song"
-              class="play-button-overlay" onclick="togglePlayPause()">
-            </button>
+           
           </div>
         </div>
         <div id="now-playing-song-details">
@@ -243,29 +241,26 @@
         </div>
         <!-- SONG CONTROLLERS -->
         <div class="playback-controls" id="v25-unique-player">
-          <button id="unique-prev-button" onclick="uniquePrevTrack()">
-            <i class="fas fa-step-backward"></i>
-          </button>
-          <!-- Rewind Button -->
-          <button id="unique-rewind-button" onclick="uniqueRewind()">
-            <i class="fas fa-backward"></i> 15s
-          </button>
-          <button id="unique-play-pause-button"
-            onclick="uniqueTogglePlayPause()">
-            <i class="fas fa-play"></i>/<i class="fas fa-pause"></i>
-          </button>
-          <!-- Fast Forward Button -->
-          <button id="unique-fast-forward-button" onclick="uniqueFastForward()">
-            <i class="fas fa-forward"></i> 15s
-          </button>
-          <button id="unique-next-button" onclick="uniqueNextTrack()">
-            <i class="fas fa-step-forward"></i>
-          </button>
-          <div class="timeline" id="unique-timeline">
-            <input type="range" id="unique-song-timeline" min="0" value="0"
-              step="1">
-            <span id="unique-current-time">0:00</span> / <span
-              id="unique-total-time">0:00</span>
+          <div class="controls-container">
+            <button id="unique-prev-button" onclick="uniquePrevTrack()">
+              <i class="fas fa-step-backward"></i>
+            </button>
+            <button id="unique-rewind-button" onclick="uniqueRewind()">
+              <i class="fas fa-backward"></i> 15s
+            </button>
+            <button id="unique-play-pause-button" onclick="uniqueTogglePlayPause()">
+              <i class="fas fa-play"></i>/<i class="fas fa-pause"></i>
+            </button>
+            <button id="unique-fast-forward-button" onclick="uniqueFastForward()">
+              <i class="fas fa-forward"></i> 15s
+            </button>
+            <button id="unique-next-button" onclick="uniqueNextTrack()">
+              <i class="fas fa-step-forward"></i>
+            </button>
+          </div>
+          <div class="timeline-container">
+            <input type="range" id="unique-song-timeline" min="0" value="0" step="1">
+            <span id="unique-current-time">0:00</span> / <span id="unique-total-time">0:00</span>
           </div>
         </div>
 
@@ -521,7 +516,7 @@
           <div id="commits-list"></div>
         </div>
         <!-- ACCOUNT -->
-        <div id="account-tab" class="tab-content active">
+        <div id="account-tab" class="tab-content">
 
           <!-- User Login Section -->
           <div id="login-section" class="center-frame"
