@@ -43,8 +43,7 @@ function playSong(songUrl, songTitle, artistName, buttonElement) {
       })
       .catch(error => console.error("Error loading song details:", error));
 
-    // Scroll the now-playing song details into view
-    nowPlayingSongDetails.scrollIntoView({ behavior: 'smooth', block: 'start' });
+   
 
     // Set currentSongIndex based on the songUrl
     currentSongIndex = songsArray.findIndex(s => s.mp3url === songUrl);

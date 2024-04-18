@@ -191,6 +191,17 @@
                 class="get-started-button">Get
                 Started</button></a>
           </div>
+          <div class="divider-bar"></div>
+          <div id="daily-shuffle-super-mix"></div>
+          <div id="v25-daily-shuffle">
+            <div class="daily-shuffle-headline">
+              <h2 style="text-align:center">The Daily Shuffle</h2>
+            </div>
+
+            <div id="daily-shuffle-list"></div>
+            <button id="play-daily-shuffle"
+              class="play-daily-shuffle-button">Play Daily Shuffle</button>
+          </div>
           <!-- NOW PLAYING -->
           <div class="now-playing">
             <h1>Recently Added</h1>
@@ -200,22 +211,6 @@
               <!-- Dynamic content will be loaded here -->
             </div>
 
-            <div class="divider-bar"></div>
-            <div id="daily-shuffle-super-mix"></div>
-            <div id="daily-shuffle">
-              <div class="daily-shuffle-headline">
-                <h2 style="text-align:center">The Daily Shuffle</h2>
-                <p>Our setup creates a "Daily Shuffle" feature that
-                  randomly generates a shuffled list of songs from our Song
-                  Collection. We
-                  use
-                  a daily seed to ensure that everyone gets the same daily
-                  shuffle.</p></div>
-
-              <div id="daily-shuffle-list"></div>
-              <button id="play-daily-shuffle"
-                class="play-daily-shuffle-button">Play Daily Shuffle</button>
-            </div>
           </div>
 
         </div>
@@ -623,8 +618,8 @@
 
           <h2>Burn a CD : Save the World</h2>
           <p>Support Local Musicians -
-            foster new industry
-            reality</p>
+            foster a new industry
+          </p>
           <div id="burn-list"></div>
 
           <div id="cd-save-section">
@@ -640,20 +635,23 @@
           <button id="burn-cd-button-a">Burn and Ship CD to my house
             NOW</button>
 
-          <h1>Send Your CD to your house - or your friends house - or coffee
-            shop
-            - or wherever in the continental United States locked in and ready
-            to
-            be shipped</h1>
+          <h1>Burn a CD Mixtape directly to your house or coffee shop of
+            your choosing.
+            - enjoy music not found on big the platforms but instead by local
+            hometown heroes
+            - discover music - and send music to those who you love.
+            (Personalized Notes Add-On)
+          </h1>
           <p>Getting Started is Easy and Free - and meant to get you to buy
             often
             easy and fast - without having to think about it - BOOM - CD
             shipping
-            to your house - feel good vibes - supporting local heroes - and
-            we're
-            giving your favorite host - Rob Meglio - something to do in the
-            process - dude is a big eBay guy and would love this shot at sending
-            you personalized notes </p>
+            to your house - - you got to login to ahoy - and then burn as many
+            cds as you'd like - we'll make them and ship them
+            giving your favorite host - Rob Meglio - something to do in his
+            spare time. He would love a shot at sending
+            personalized notes </p><p>This at the moment is the only way
+            Ahoy makes any money</p>
           <h2>How it works:</h2>
           <ul id="burn-instructions"
             style="text-align:left; list-style-type:none;">
@@ -738,19 +736,15 @@
         <audio id="audio-player" src></audio>
         <div class="audio-player-controls">
           <!-- Adjusted Bar A with progress bar, time, play button, display text, and settings icon -->
-          <div class="superPlayerButtonMash" id="barA">
+          <div class="v25-superPlayerButtonMash" id="barA">
             <button id="play-pause-button" onclick="togglePlayPause()"
               class="control-button">
               <i class="fas fa-play" id="play-pause-icon"></i>
-            </button>
+            </button> <div id="v25-current-time">0:00</div>
             <div class="song-display">
               <div id="song-info">Artist - Song Title</div>
             </div>
-            <div class="song-progress-container">
-              <input type="range" id="song-progress" value="0" min="0" max="100"
-                step="1">
-              <div id="current-time">0:00</div>
-            </div>
+
             <div id="settings-icon-container">
               <button id="settings-icon-button-a"
                 onclick="navigateToTab('settings-tab')">
