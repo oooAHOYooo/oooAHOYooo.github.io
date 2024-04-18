@@ -231,7 +231,7 @@
             style="max-width: 100%; height:auto; max-height: 300px; display: flex; justify-content: center; align-items: center;">
             <img id="now-playing-album-art" src="./path/to/your/image.jpg"
               alt="Album Art" style="max-width: 100%; max-height: 100%;">
-           
+
           </div>
         </div>
         <div id="now-playing-song-details">
@@ -239,6 +239,7 @@
           <h3 id="now-playing-song-title">Song Title</h3>
           <p id="now-playing-song-artist">Artist Name</p>
         </div>
+
         <!-- SONG CONTROLLERS -->
         <div class="playback-controls" id="v25-unique-player">
           <div class="controls-container">
@@ -248,10 +249,12 @@
             <button id="unique-rewind-button" onclick="uniqueRewind()">
               <i class="fas fa-backward"></i>
             </button>
-            <button id="unique-play-pause-button" onclick="uniqueTogglePlayPause()">
-              <i class="fas fa-play"></i>/<i class="fas fa-pause"></i>
+            <button id="unique-play-pause-button"
+              onclick="uniqueTogglePlayPause()">
+              <i class="fas fa-play"></i>
             </button>
-            <button id="unique-fast-forward-button" onclick="uniqueFastForward()">
+            <button id="unique-fast-forward-button"
+              onclick="uniqueFastForward()">
               <i class="fas fa-forward"></i>
             </button>
             <button id="unique-next-button" onclick="uniqueNextTrack()">
@@ -259,86 +262,90 @@
             </button>
           </div>
           <div class="timeline-container">
-            <input type="range" id="unique-song-timeline" min="0" value="0" step="1">
-            <span id="unique-current-time">0:00</span> / <span id="unique-total-time">0:00</span>
+            <input type="range" id="unique-song-timeline" min="0" value="0"
+              step="1">
+            <span id="unique-current-time">0:00<span class="v25dash"> /
+              </span><span
+                id="unique-total-time">0:00</span>
+            </div>
           </div>
-        </div>
 
-        <!-- SONG COLLECTION -->
-        <br><br><br>
-        <h2 style="text-align:center;">Full Song Collection</h2>
-        <p style="text-transform:uppercase; text-align:center;">Click Play to
-          Play - Click Burn to add songs to your CD</p>
-        <p>The following songs are homegrown from local heroes. At the moment
-          they are sorted by the most recent on the bottom. </p>
-      
-        <style>
+          <!-- SONG COLLECTION -->
+          <br><br><br>
+          <h2 style="text-align:center;">Full Song Collection</h2>
+          <p style="text-transform:uppercase; text-align:center;">Click Play to
+            Play - Click Burn to add songs to your CD</p>
+          <p>The following songs are homegrown from local heroes. At the moment
+            they are sorted by the most recent on the bottom. </p>
+
+          <style>
             #yep {
               display:none;
             }
           </style>
-        <div id="yep">
-          <input type="text" id="search-bar-a" placeholder="Search songs..." />
-          <button id="mix-button">Mix</button>
-          <button>Recently Added</button>
-          <button id="sort-az">Sort A-Z</button>
+          <div id="yep">
+            <input type="text" id="search-bar-a"
+              placeholder="Search songs..." />
+            <button id="mix-button">Mix</button>
+            <button>Recently Added</button>
+            <button id="sort-az">Sort A-Z</button>
 
-        </div>
-        <div id="song-wrap-list">
-          <ul class="list" id="song-list"></ul>
-        </div>
-      </div>
-
-      <!-- MEDIA TAB -->
-      <div id="media-tab-a" class="tab-content">
-
-        <!-- START OF MEDIA-COLS-->
-        <div class="tv-container">
-          <div class="tv-wrap">
-            <div id="jw-player-container"></div>
-            <div id="media-display-text">
-              <div id="media-artist-name">
-                <p>This is where the Media Artist Name will Go</p></div>
-              <div id="media-title-name">
-                <p>This is where the Media Title Name will Go</p></div>
-            </div>
+          </div>
+          <div id="song-wrap-list">
+            <ul class="list" id="song-list"></ul>
           </div>
         </div>
-        <div class="media-container">
-          <table id="mediaTable" class="list">
-            <thead class="mediaTable-header">
-              <tr>
-                <th>Play</th>
-                <th>Cover</th>
-                <th>Artist</th>
-                <th>Title</th>
 
-              </tr>
-            </thead>
-            <tbody>
-              <!-- Table data will be inserted here -->
-            </tbody>
-          </table>
+        <!-- MEDIA TAB -->
+        <div id="media-tab-a" class="tab-content">
+
+          <!-- START OF MEDIA-COLS-->
+          <div class="tv-container">
+            <div class="tv-wrap">
+              <div id="jw-player-container"></div>
+              <div id="media-display-text">
+                <div id="media-artist-name">
+                  <p>This is where the Media Artist Name will Go</p></div>
+                <div id="media-title-name">
+                  <p>This is where the Media Title Name will Go</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="media-container">
+            <table id="mediaTable" class="list">
+              <thead class="mediaTable-header">
+                <tr>
+                  <th>Play</th>
+                  <th>Cover</th>
+                  <th>Artist</th>
+                  <th>Title</th>
+
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Table data will be inserted here -->
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+        <!-- PODCASTS -->
+        <div id="podcasts-tab" class="tab-content">
+          <div class="podcast-container">
+            <div id="podcast-featured-image-container"></div>
+
+            <table class="standard-table" id="podcast-table">
+              <tbody>
+                <!-- Podcast rows will be dynamically inserted here -->
+              </tbody>
+            </table>
+          </div>
+
         </div>
 
-      </div>
-      <!-- PODCASTS -->
-      <div id="podcasts-tab" class="tab-content">
-        <div class="podcast-container">
-          <div id="podcast-featured-image-container"></div>
-
-          <table class="standard-table" id="podcast-table">
-            <tbody>
-              <!-- Podcast rows will be dynamically inserted here -->
-            </tbody>
-          </table>
-        </div>
-
-      </div>
-
-      <!-- Donation Tab-->
-      <!-- DONATE TAB -->
-      <!--div id="donate-tab" class="tab-content">
+        <!-- Donation Tab-->
+        <!-- DONATE TAB -->
+        <!--div id="donate-tab" class="tab-content">
         <p
           style="font-family: 'Courier New', Courier, monospace; background-color: #ff0060; color: black; padding: 10px; border: 1px dashed red;">⚠️
           Warning: This feature is in active development.</p>
@@ -371,10 +378,10 @@
 
       </div-->
 
-      <!-- ABOUT TAB -->
-      <div id="about-tab" class="tab-content">
-        <img src="./img/favicon_ahoy.png" style="width: 100px; height: auto;"
-        <h2>About Ahoy Indie Media</h2>
+        <!-- ABOUT TAB -->
+        <div id="about-tab" class="tab-content">
+          <img src="./img/favicon_ahoy.png" style="width: 100px; height: auto;"
+            <h2>About Ahoy Indie Media</h2>
         <p>Ahoy Indie Media is a hand-crafted media company based out of New
           Haven, Connecticut. Our mission is to provide a homegrown
           alternative to the way folks consume media. We believe in good
@@ -540,8 +547,6 @@
             </div>
           </div>
 
-        
-
           <!-- The Grandfather Surprise Section -->
           <div class="grandfather-surprise-section">
 
@@ -591,22 +596,21 @@
   }
 </script>
 
-<!-- USER LOG IN DISPLAY -->
-  <!-- Logged-in Message Section -->
-  <div class="userLOGGEDin">
-  <div id="logged-in-message" class="center-frame"
-  style="display: none; flex-direction: column; justify-content: center; align-items: center; height: 50vh; background-color: #f0f0f0;">
-  <h1>Congrats, you are already logged in!</h1>
-  <button onclick="logout()">Log Out</button>
-</div>
+          <!-- USER LOG IN DISPLAY -->
+          <!-- Logged-in Message Section -->
+          <div class="userLOGGEDin">
+            <div id="logged-in-message" class="center-frame"
+              style="display: none; flex-direction: column; justify-content: center; align-items: center; height: 50vh; background-color: #f0f0f0;">
+              <h1>Congrats, you are already logged in!</h1>
+              <button onclick="logout()">Log Out</button>
+            </div>
 
+          </div>
+          <!-- END OF USER LOGGED IN-->
 
-         </div>
-<!-- END OF USER LOGGED IN-->
-
-<!-- END OF ACCOUNT TAB DONT TOUCH -->
+          <!-- END OF ACCOUNT TAB DONT TOUCH -->
         </div>
-<!-- END OF THE ACCOUNT TAB-->
+        <!-- END OF THE ACCOUNT TAB-->
         <!-- BURN TAB-->
         <div id="burn-tab" class="tab-content" style="padding-bottom: 20px;">
 
@@ -713,9 +717,9 @@
               class="fas fa-play" id="bottom-play-pause-icon"></i></button>
           <button id="bottom-next-button" onclick="playNextSong()"><i
               class="fas fa-step-forward"></i></button>
-              <button id="unique-burn-button" onclick="uniqueBurnSong()">
-                <i class="fas fa-fire"></i>
-              </button>
+          <button id="unique-burn-button" onclick="uniqueBurnSong()">
+            <i class="fas fa-fire"></i>
+          </button>
         </div>
         <div class="progress-bar" style="flex-grow: 1; margin-left: 10px;">
           <input type="range" id="bottom-song-progress" value="0" min="0"
