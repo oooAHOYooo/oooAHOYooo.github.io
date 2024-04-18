@@ -219,8 +219,8 @@
       </div>
       <!-- SONGS TAB -->
       <div id="songs-tab" class="tab-content">
-
         <div id="now-playing-song-container" class="now-playing-song">
+          <img src="./img/ahoy-music.svg" style="width: 100%;">
           <div class="image-and-play-button-aa"
             style="max-width: 100%; height:auto; max-height: 300px; display: flex; justify-content: center; align-items: center;">
             <img id="now-playing-album-art" src="./path/to/your/image.jpg"
@@ -271,10 +271,9 @@
           </div>
 
           <!-- SONG COLLECTION -->
-          <br><br><br>
-          <h2 style="text-align:center;">Full Song Collection</h2>
-          <p style="text-transform:uppercase; text-align:center;">Click Play to
-            Play - Click Burn to add songs to your CD</p>
+          <img src="./img/ahoy-fullSong.svg" style="width: 100%;">
+          <h2 style="text-transform:uppercae; text-align:center;">Click Play to
+            Play - Click Burn to add songs to your CD</h2>
           <p>The following songs are homegrown from local heroes. At the moment
             they are sorted by the most recent on the bottom. </p>
 
@@ -299,7 +298,7 @@
         <!-- ENDOF SONG-->
         <!-- MEDIA TAB -->
         <div id="media-tab-a" class="tab-content">
-
+          <img src="./img/ahoy-media.svg" style="width: 100%;">
           <!-- START OF MEDIA-COLS-->
           <div class="tv-container">
             <div class="tv-wrap">
@@ -332,6 +331,7 @@
         </div>
         <!-- PODCASTS -->
         <div id="podcasts-tab" class="tab-content">
+          <img src="./img/ahoy-podcasts.svg" style="width: 100%;">
           <div class="podcast-container">
             <div id="podcast-featured-image-container"></div>
 
@@ -527,7 +527,7 @@
         </div>
         <!-- ACCOUNT -->
         <div id="account-tab" class="tab-content">
-
+          <img src="./img/ahoy-account.svg" style="width: 100%;">
           <!-- User Login Section -->
           <div id="login-section" class="center-frame"
             style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 40vh; background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(15px); border-radius: 15px; padding: 20px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); border: 1px solid rgba(255, 255, 255, 0.3);  background: linear-gradient(145deg, rgba(255,255,255,0.1), rgba(255,255,255,0.25));">
@@ -622,18 +622,21 @@
           </p>
           <div id="burn-list"></div>
 
-          <div id="cd-save-section">
-            <input type="text" id="cd-name-input" placeholder="Enter CD Name">
-            <button id="save-cd-button">Save CD</button>
-            <ul id="saved-cd-list"></ul>
+          <div id="cd-save-section"
+            style="background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(10px); border-radius: 1px; padding: 20px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+            <input type="text" id="cd-name-input" placeholder="CD Name"
+              style="width: 90%; padding: 10px; margin-bottom: 10px; border: none; border-radius: 10px; background: rgba(255, 255, 255, 0.5); backdrop-filter: blur(5px);">
+            <button id="save-cd-button"
+              style="width: 100%; padding: 10px; border: none; border-radius: 10px; background: rgba(0, 0, 0, 0.8); color: white; cursor: pointer; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);">Save
+              CD</button>
+            <button id="burn-cd-button-a">Burn and Ship CD to my house
+              NOW</button>
+
+            <ul id="saved-cd-list"
+              style="list-style-type: none; padding: 0; margin-top: 20px;"></ul>
             <div id="cd-display-area"></div>
-
           </div>
-
           <h1>$4 Per CD</h1>
-
-          <button id="burn-cd-button-a">Burn and Ship CD to my house
-            NOW</button>
 
           <h1>Burn a CD Mixtape directly to your house or coffee shop of
             your choosing.
