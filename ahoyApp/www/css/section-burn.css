@@ -21,3 +21,7 @@
     border: none;
     cursor: pointer;
 }
+
+#v25-burn-cd-instructions-text p {
+    text-align: left !important;
+}

@@ -87,6 +87,7 @@
     <link rel="stylesheet" href="./css/section-account.css">
     <link rel="stylesheet" href="./css/section-burn.css">
     <link rel="stylesheet" href="./css/v25player.css">
+    <link rel="stylesheet" href="./css/magic-svg.css">
     <!-- END OF AG ADDITIONS TO HEAD -->
     <meta charset="utf-8">
     <meta name="viewport"
@@ -201,7 +202,7 @@
           <div id="daily-shuffle-super-mix"></div>
           <div id="v25-daily-shuffle">
             <div class="daily-shuffle-headline">
-              <img src="./img/ahoy-theDailySHuffle.svg" width="100%">
+              <img src="./img/ahoy-theDailySHuffle.svg" class="svgBlend">
             </div>
 
             <div id="daily-shuffle-list"></div>
@@ -210,7 +211,7 @@
           </div>
           <!-- NOW PLAYING -->
           <div class="now-playing">
-            <img src="./img/ahoy-recentlyAdded.svg" style="width: 100%;">
+            <img src="./img/ahoy-recentlyAdded.svg" style="width: 100%;;"
 
             <div id="now-playing-container" class="v25nowPlaying">
               <!-- Dynamic content will be loaded here -->
@@ -642,42 +643,44 @@
               style="list-style-type: none; padding: 0; margin-top: 20px;"></ul>
             <div id="cd-display-area"></div>
           </div>
-          <h1>$4 Per CD</h1>
+          <div id="v25-burn-cd-instructions-text">
+            <h1>$4 Per CD</h1>
 
-          <h1>Burn a CD Mixtape directly to your house or coffee shop of
-            your choosing.
-            - enjoy music not found on big the platforms but instead by local
-            hometown heroes
-            - discover music - and send music to those who you love.
-            (Personalized Notes Add-On)
-          </h1>
-          <p>Getting Started is Easy and Free - and meant to get you to buy
-            often
-            easy and fast - without having to think about it - BOOM - CD
-            shipping
-            to your house - - you got to login to ahoy - and then burn as many
-            cds as you'd like - we'll make them and ship them
-            giving your favorite host - Rob Meglio - something to do in his
-            spare time. He would love a shot at sending
-            personalized notes </p><p>This at the moment is the only way
-            Ahoy makes any money</p>
-          <h2>How it works:</h2>
-          <ul id="burn-instructions"
-            style="text-align:left; list-style-type:none;">
-            <li>1. Select the songs you want to include in your CD. You can
-              choose up to 15 songs or up to 70 minutes total.</li>
-            <li>2. Rearrange your playlist by dragging the songs into your
-              preferred order.</li>
-            <li>3. Give your CD a unique name.</li>
-            <li>4. Review your playlist. You can remove songs or add more as
-              long as you stay within the limit.</li>
-            <li>5. Submit your CD burn request. Rob Meglio will personally
-              curate your playlist, write a personalized note, and design the CD
-              cover with a sharpie.</li>
-            <li>6. Your CD will be mailed to your house within 2-4 weeks. You
-              will be contacted for payment and shipping details shortly.</li>
-          </ul>
-
+            <p>Burn a CD Mixtape directly to your house or coffee shop of
+              your choosing.
+              - enjoy music not found on big the platforms but instead by local
+              hometown heroes
+              - discover music - and send music to those who you love.
+              (Personalized Notes Add-On)
+            </p>
+            <p>Getting Started is Easy and Free - and meant to get you to buy
+              often
+              easy and fast - without having to think about it - BOOM - CD
+              shipping
+              to your house - - you got to login to ahoy - and then burn as many
+              cds as you'd like - we'll make them and ship them
+              giving your favorite host - Rob Meglio - something to do in his
+              spare time. He would love a shot at sending
+              personalized notes </p><p>This at the moment is the only way
+              Ahoy makes any money</p>
+            <h2>How it works:</h2>
+            <ul id="burn-instructions"
+              style="text-align:left; list-style-type:none;">
+              <li>1. Select the songs you want to include in your CD. You can
+                choose up to 15 songs or up to 70 minutes total.</li>
+              <li>2. Rearrange your playlist by dragging the songs into your
+                preferred order.</li>
+              <li>3. Give your CD a unique name.</li>
+              <li>4. Review your playlist. You can remove songs or add more as
+                long as you stay within the limit.</li>
+              <li>5. Submit your CD burn request. Rob Meglio will personally
+                curate your playlist, write a personalized note, and design the
+                CD
+                cover with a sharpie.</li>
+              <li>6. Your CD will be mailed to your house within 2-4 weeks. You
+                will be contacted for payment and shipping details shortly.</li>
+            </ul>
+          </div>
         </div>
 
         <!-- END OF TABS ? CHECK -->
@@ -892,6 +895,7 @@
     <script src="js/src/v25_menuCode.js"></script>
     <script src="js/src/v25_dailyJukebox.js"></script>
     <script src="js/src/v25_songController.js"></script>
+    <script src="js/src/magic-svg-logic.js"></script>
     <!-- END -->
   </body>
 </html>

@@ -1,0 +1,23 @@
+/* General SVG blend mode */
+img.svgBlend {
+    mix-blend-mode: multiply;
+    max-width: 100%;
+    /* Apply the animation to the filter property */
+    animation: radialWipeAnimation 30s infinite;
+    /* Adjust the duration (3s) and repetition (infinite) as needed */
+}
+
+/* Define the keyframes for the radial wipe animation */
+@keyframes radialWipeAnimation {
+    0% {
+        filter: invert(0);
+    }
+
+    50% {
+        filter: invert(1);
+    }
+
+    100% {
+        filter: invert(0);
+    }
+}
