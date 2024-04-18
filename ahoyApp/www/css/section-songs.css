@@ -50,12 +50,42 @@
 .daily-shuffle-table {
   font-weight: bold;
   font-size: 0.9em;
-  background: #000000;
-  margin-top: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  /* Adjusted for better transparency */
   color: white !important;
   border-style: solid;
   border-color: var(--border-color);
   animation: crisp-glow-animation 2s infinite alternate;
+  width: 90%;
+  /* Adjusted for better fitting */
+  margin: 20px auto;
+  /* Centered with margin */
+  border-radius: 10px;
+  /* Added for rounded corners */
+  overflow: hidden;
+  /* Ensures the content fits within the borders */
+}
+
+.daily-shuffle-table th,
+.daily-shuffle-table td {
+  padding: 8px 10px;
+  color: var(--text-color);
+  /* Ensures text color consistency */
+  background-color: rgba(255, 255, 255, 0.1);
+  /* Slight background for readability */
+}
+
+.daily-shuffle-table th {
+  background-color: rgba(255, 255, 255, 0.2);
+  /* Header slightly more visible */
+}
+
+/* Enhancing responsiveness for smaller screens */
+@media (max-width: 768px) {
+  .daily-shuffle-table {
+    width: 95%;
+    /* Takes more width on smaller screens */
+  }
 }
 
 @keyframes crisp-glow-animation {
@@ -195,6 +225,7 @@
 .play-button-overlay:hover {
   background-color: rgba(0, 0, 0, 0.7);
 }
+
 #now-playing-song-details {
   background: rgba(54, 54, 54, 0.2);
   backdrop-filter: blur(10px);
@@ -241,6 +272,7 @@
     margin: 5px 0;
   }
 }
+
 .glass-table {
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
@@ -305,6 +337,17 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+
+.control-button-a:hover {
+  background-color: #e60053;
+}
+
+#burn-btn-overlay {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
 
 .control-button-a:hover {
   background-color: #e60053;
