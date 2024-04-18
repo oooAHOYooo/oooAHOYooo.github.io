@@ -21,6 +21,16 @@ function playSong(songUrl, songTitle, artistName, buttonElement) {
     nowPlayingSongArtist.textContent = artistName;
     v24SongInfo.textContent = `${artistName} - ${songTitle}`; // Update this line
 
+    // Update or insert the Burn button next to the song title
+    let burnButton = nowPlayingSongDetails.querySelector('.burn-button');
+    if (!burnButton) {
+      burnButton = document.createElement('button');
+      burnButton.className = 'burn-button';
+      burnButton.innerHTML = '<i class="fas fa-fire"></i> Burn';
+      nowPlayingSongDetails.appendChild(burnButton);
+    }
+    burnButton.onclick = () => burnSong(songUrl, songTitle, artistName, burnButton);
+
     // Fetch the song details from songCollection.json to get the coverArt URL
     fetch("data/songCollection.json")
       .then(response => response.json())

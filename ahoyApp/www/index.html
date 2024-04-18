@@ -235,9 +235,15 @@
           </div>
         </div>
         <div id="now-playing-song-details">
-
           <h3 id="now-playing-song-title">Song Title</h3>
           <p id="now-playing-song-artist">Artist Name</p>
+          <button class="burn-button-tiny"
+            onclick="burnSong('songUrl', 'Song Title', 'Artist Name', this)"
+            style="width: 16px; height: 16px; padding: 0; border: none; background: none; cursor: pointer; position: fixed; bottom: 10px; right: 10px;"
+            onmouseover="this.style.width='18px';this.style.height='18px';"
+            onmouseout="this.style.width='16px';this.style.height='16px';">
+            <i class="fas fa-fire" style="font-size: 16px;"></i>
+          </button>
         </div>
 
         <!-- SONG CONTROLLERS -->
@@ -291,11 +297,12 @@
             <button id="sort-az">Sort A-Z</button>
 
           </div>
+
           <div id="song-wrap-list">
             <ul class="list" id="song-list"></ul>
           </div>
         </div>
-
+        <!-- ENDOF SONG-->
         <!-- MEDIA TAB -->
         <div id="media-tab-a" class="tab-content">
 
@@ -614,7 +621,10 @@
         <!-- BURN TAB-->
         <div id="burn-tab" class="tab-content" style="padding-bottom: 20px;">
 
-          <h1>Burn a CD : Save the World</h1>
+          <h2>Burn a CD : Save the World</h2>
+          <p>Support Local Musicians -
+            foster new industry
+            reality</p>
           <div id="burn-list"></div>
 
           <div id="cd-save-section">
@@ -624,9 +634,6 @@
             <div id="cd-display-area"></div>
 
           </div>
-          <p>Support Local Musicians -
-            foster new industry
-            reality</p>
 
           <h1>$4 Per CD</h1>
 
