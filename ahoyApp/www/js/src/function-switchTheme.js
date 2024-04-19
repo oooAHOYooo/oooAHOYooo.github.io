@@ -16,7 +16,7 @@ function switchTheme(selectedTheme) {
   if (theme === "light") {
     setThemeProperties(
       root,
-      "rgb(0, 14, 19)",
+      "rgb(0, 14, 19,0.8)",
       "#00f2ff",
       "#00e5ff",
       "#000000ba",
@@ -27,7 +27,7 @@ function switchTheme(selectedTheme) {
   } else if (theme === "dark") {
     setThemeProperties(
       root,
-      "#FF5D84",
+      "#FF265A93",
       "#ffffff",
       "#ff0060",
       "#ff0060",
@@ -38,7 +38,7 @@ function switchTheme(selectedTheme) {
   } else if (theme === "pink") {
     setThemeProperties(
       root,
-      "#98ff98",
+      "#98ff9895",
       "rgb(0, 119, 97)",
       "#3eb489",
       "#98ff98",
@@ -49,7 +49,7 @@ function switchTheme(selectedTheme) {
   } else {
     setThemeProperties(
       root,
-      "#ffffff",
+      "#ffffff99",
       "#000000",
       "#e0e0e0",
       "#f2f2f2",
