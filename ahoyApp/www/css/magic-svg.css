@@ -1,7 +1,7 @@
 /* General SVG blend mode */
 .svgBlend {
     max-width: 100%;
-    mix-blend-mode: multiply;
+    mix-blend-mode: lighten;
     /* Apply the animation to the filter property */
     /* Adjust the duration (3s) and repetition (infinite) as needed */
 }
