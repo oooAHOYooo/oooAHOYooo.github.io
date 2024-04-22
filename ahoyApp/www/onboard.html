@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ahoy Indie Media - Creator Onboarding Form</title>
+        <style>
+            body {
+                font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+                background-color: #f0f0f0;
+                color: #333;
+                padding: 20px;
+            }
+            form {
+                background-color: #ffffff;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                max-width: 600px;
+                margin: 0 auto;
+            }
+            h1 {
+                color: #2200ff;
+                font-size: 24px;
+            }
+            label {
+                display: block;
+                margin-top: 20px;
+                letter-spacing: 1px;
+            }
+            input[type="text"],
+            input[type="email"],
+            input[type="tel"],
+            textarea {
+                width: 100%;
+                padding: 10px;
+                margin-top: 8px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+                resize: vertical;
+            }
+            input[type="checkbox"] {
+                margin-top: 15px;
+            }
+            button[type="submit"] {
+                background-color: #525bff;
+                color: white;
+                padding: 12px 20px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                margin-top: 20px;
+            }
+            button[type="submit"]:hover {
+                background-color: #ff0060;
+            }
+        </style>
+    </head>
+    <body>
+        <form action="https://formspree.io/f/your-form-endpoint" method="POST">
+            <h1>Creator Onboarding Form</h1>
+
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone">
+
+            <label for="address">Mailing Address:</label>
+            <textarea id="address" name="address"></textarea>
+
+            <label for="content-type">Type of Content:</label>
+            <input type="text" id="content-type" name="content-type" required>
+
+            <label for="genre">Genre/Style:</label>
+            <input type="text" id="genre" name="genre">
+
+            <label for="previous-works">Previous Works:</label>
+            <textarea id="previous-works" name="previous-works"></textarea>
+
+            <label for="username">Desired Username/Profile Name:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="bio">Bio and Description:</label>
+            <textarea id="bio" name="bio"></textarea>
+
+            <label for="file-formats">File Formats:</label>
+            <input type="text" id="file-formats" name="file-formats">
+
+            <label for="special-requirements">Special Requirements:</label>
+            <textarea id="special-requirements"
+                name="special-requirements"></textarea>
+
+            <label for="expectations">Expectations from the Platform:</label>
+            <textarea id="expectations" name="expectations"></textarea>
+
+            <label for="support">Preferred Types of Support:</label>
+            <textarea id="support" name="support"></textarea>
+
+            <label for="impressions">Initial Impressions:</label>
+            <textarea id="impressions" name="impressions"></textarea>
+
+            <label for="suggestions">Suggestions for Improvement:</label>
+            <textarea id="suggestions" name="suggestions"></textarea>
+
+            <label for="terms">Consent to Terms and Conditions:</label>
+            <input type="checkbox" id="terms" name="terms" required> I agree
+
+            <label for="marketing-permissions">Marketing Permissions:</label>
+            <input type="checkbox" id="marketing-permissions"
+                name="marketing-permissions"> I agree to receive communications
+
+            <button type="submit">Submit Form</button>
+        </form>
+    </body>
+</html>
