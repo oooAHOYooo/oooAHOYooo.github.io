@@ -9,40 +9,28 @@
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
 
-    <!-- Splash Screen Preferences -->
+    <preference name="AndroidXEnabled" value="true" />
+
+
+    <!-- Splash Screen Preferences (Updated to new method) -->
     <preference name="SplashScreen" value="screen" />
     <preference name="SplashScreenDelay" value="3000" />
+    <preference name="AndroidWindowSplashScreenAnimatedIcon" value="www/img/assets/splash-screens/splash-hdpi.png" />
 
     <!-- Status Bar Preferences -->
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarBackgroundColor" value="#003366" /> <!-- Nautical theme dark blue color -->
     <preference name="StatusBarStyle" value="lightcontent" />
 
-    <!-- Custom Splash Screen Images -->
-    <platform name="android">
-        <splash src="www/img/assets/splash-screens/splash-hdpi.png" density="mdpi"/>
-        <splash src="www/img/assets/splash-screens/splash-hdpi.png" density="hdpi"/>
-        <splash src="www/img/assets/splash-screens/splash-hdpi.png" density="xhdpi"/>
-        <splash src="www/img/assets/splash-screens/splash-hdpi.png" density="xxhdpi"/>
-        <splash src="www/img/assets/splash-screens/splash-hdpi.png" density="xxxhdpi"/>
-        <!-- Add more densities as needed -->
-    </platform>
-    <platform name="ios">
-        <splash src="www/img/assets/splash-screens/splash-320x480.png" width="320" height="480"/>
-        <splash src="www/img/assets/splash-screens/splash-640x960.png" width="640" height="960"/>
-        <!-- Add more sizes as needed -->
-    </platform>
-
     <!-- Icon Configuration for Android -->
-<platform name="android">
-    <icon src="www/img/logo.png"/>
-    <!-- Add specific icons per density if necessary -->
-</platform>
+    <platform name="android">
+        <icon src="www/img/logo.png"/>
+        <!-- Add specific icons per density if necessary -->
+    </platform>
     
     <!-- Icon Configuration for iOS -->
     <platform name="ios">
         <icon src="www/img/logo.png" width="180" height="180"/>
         <!-- Add specific icons per size if necessary -->
     </platform>
-
 </widget>
