@@ -19,11 +19,8 @@
 /* Additional CSS for blank div blocks to match the size of v24 buttons */
 .blank-div-block {
     width: 48px;
-    /* Approximate width of v24 buttons */
     height: 48px;
-    /* Approximate height of v24 buttons */
     display: inline-block;
-    /* Ensure it's in line with other elements */
 }
 
 /* Song Progress Container */
@@ -87,13 +84,11 @@
     justify-content: center;
     width: 90%;
     padding: 2px;
-    /* More Compact */
+    line-height: 90%;
     margin: 5px auto;
-    /* More Compact */
     background-color: var(--control-button-color);
     color: var(--text-color);
     font-size: 0.9em;
-    /* Smaller */
     border-radius: 4px;
 }
 
@@ -106,7 +101,6 @@
 #v24ahoyPlayer {
     position: fixed;
     bottom: 92px !important;
-    /* Height of the v25dock to ensure it sits directly above */
     left: 0;
     right: 0;
 
