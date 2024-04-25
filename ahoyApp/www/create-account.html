@@ -8,7 +8,30 @@
       src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js"></script>
     <script
       src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js"></script>
+    <style>
+  .cool-button {
+  background-color: #4CAF50; /* Fallback color */
+  background-image: linear-gradient(to right, #44a08d, #093637); /* Gradient background */
+  color: white;
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition: all 0.5s; /* Smooth transition for hover effects */
+  cursor: pointer;
+  outline: none;
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 2.9px #000000; /* Shadow for 3D effect */
+}
 
+.cool-button:hover {
+  background-image: linear-gradient(to right, #093637, #44a08d); /* Gradient hover effect */
+  box-shadow: 0 5px #666; /* Shadow effect on hover */
+  transform: scale(1.1); /* Slightly increase the size */
+}
+</style>
     <script type="module">
       import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
       import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js";
@@ -49,24 +72,17 @@
   <body>
     <a href="../../index.html"><img src="../www/img/logo.png"
         style="width: 300px; margin-top:50px;"></a>
-    <h1>Create Account with Ahoy</h1>
+    <h1>Create Account</h1>
     <form id="signup-form">
-      <h3>The Grandfather Club Offer:<span><p>Sign up today to get a
-            membership for life.</p></span></h3>
 
       <input type="email" id="email" placeholder="Email" required />
       <input type="password" id="password" placeholder="Password" required />
-      <button type="submit">Join Ahoy Now</button>
+      <button type="submit" class="cool-button">CREATE</button>
       <div id="notification"></div>
       <br />
       <a href="login.html" class="theme-link" id="loginLink">Already have an
         account? Login here</a>
-      <p
-        style="color: rgb(255, 255, 255); font-weight: light; text-align: left; font-size: 12px;">Note:
-        Basic and
-        Premium plans
-        are temporarily unavailable during the Grandfather Club promotion.
-        Everything is free - for the first 100.</p>
+
     </form>
   </body>
 </html>

@@ -198,7 +198,7 @@
                 class="get-started-button">Get
                 Started</button></a>
           </div>
-          <div class="divider-bar"></div>
+
           <div id="daily-shuffle-super-mix"></div>
           <div id="v25-daily-shuffle">
             <div class="daily-shuffle-headline">
@@ -448,9 +448,9 @@
           </div>
           <!-- Add button to clear the background user image -->
           <div class="setting">
-            <button id="toggle-background-image-button"
+            <!--button id="toggle-background-image-button"
               onclick="toggleBackgroundImage()">Toggle Background
-              Image</button>
+              Image</button -->
 
           </div>
         </div>
@@ -531,48 +531,27 @@
         <!-- ACCOUNT -->
         <div id="account-tab" class="tab-content">
           <img src="./img/ahoy-account.svg" class="svgBlend">
-          <!-- User Login Section -->
-          <div id="login-section" class="center-frame"
-            style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 40vh; background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(15px); border-radius: 15px; padding: 20px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); border: 1px solid rgba(255, 255, 255, 0.3);  background: linear-gradient(145deg, rgba(255,255,255,0.1), rgba(255,255,255,0.25));">
-            <img src="./img/assets/u_ahoy23.png"
-              style="max-width: 60%; height: auto; border-radius: 10px;">
-            <h1 style="margin-top: 20px; font-weight: bold;">Already a
-              member?</h1>
-            <div style="margin-top: 20px;">
-              <a href="./login.html" style="text-decoration: none;">
-                <button
-                  style="background-color: rgba(255, 255, 255, 0.5); color: #000000; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin-right: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); backdrop-filter: blur(5px); border: 1px solid rgba(255, 255, 255, 0.3);">Login
-                  to Ahoy</button>
-              </a>
-              <a href="./create-account.html" style="text-decoration: none;">
-                <button
-                  style="background-color: rgba(255, 255, 255, 0.5); color: #000000; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin-left: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); backdrop-filter: blur(5px); border: 1px solid rgba(255, 255, 255, 0.3);">Create
-                  Account</button>
-              </a>
-            </div>
-          </div>
 
           <!-- The Grandfather Surprise Section -->
           <div class="grandfather-surprise-section">
-
-            <h2>Lifetime Free Membership Now Available!</h2>
-            <p>Join the pioneering group at Ahoy Indie Media! Inspired by the
-              "Grandfather Rule," we are thrilled to present a unique
-              opportunity:</p>
+            <h2>Lifetime Access Free for Now</h2>
+            <p>We're trying to figure it all out - and want to reward that
+              pioneering group at Ahoy Indie Media
+            </p>
             <ul>
               <li><strong>Lifetime Membership:</strong> The first 100 members to
                 register will receive free lifetime access to Ahoy.</li>
               <li><strong>Permanent Recognition:</strong> Your name and username
                 will be permanently embedded in the backend code of Ahoy,
-                immortalizing your contribution.</li>
+                immortalizing your faith.</li>
               <li><strong>Commemorative Certificate:</strong> Sign up now and
                 you'll receive a
                 special certificate of membership from Rob Meglio, celebrating
                 your pioneering spirit.</li>
             </ul>
 
-            <button onclick="window.location.href='create-account.html'">Act
-              Fast—Sign Up Now for Lifetime Access!</button>
+            <button onclick="window.location.href='create-account.html'">Apply
+              for Lifetime Access</button>
 
             <!-- Additional benefits of being a member -->
             <h3>Upcoming Features for Members</h3>
@@ -593,6 +572,23 @@
             <p>Don't miss this chance to be a part of Ahoy Indie Media's
               future—sign up today!</p>
           </div>
+          <!-- User Login Section -->
+          <div id="login-section" class="center-frame"
+            style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 40vh; background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(15px); border-radius: 15px; padding: 20px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); border: 1px solid rgba(255, 255, 255, 0.3);  background: linear-gradient(145deg, rgba(255,255,255,0.1), rgba(255,255,255,0.25));">
+            <img src="./img/assets/u_ahoy23.png"
+              style="max-width: 60%; height: auto; border-radius: 10px;">
+            <h1 style="margin-top: 20px; font-weight: bold;">Already a
+              member?</h1>
+            <div style="margin-top: 20px;">
+              <a href="./login.html" style="text-decoration: none;">
+                <button
+                  style="background-color: rgba(255, 255, 255, 0.5); color: #000000; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin-right: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); backdrop-filter: blur(5px); border: 1px solid rgba(255, 255, 255, 0.3);">Login
+                </button>
+              </a>
+
+            </div>
+          </div>
+
           <script>
   function signUpForGrandfatherSurprise() {
     // Implementation for sign-up logic
@@ -747,13 +743,21 @@
           <div class="v25-superPlayerButtonMash" id="barA">
             <button id="play-pause-button" onclick="togglePlayPause()"
               class="control-button">
+
               <i class="fas fa-play" id="play-pause-icon"></i>
-            </button> <div id="v25-current-time">0:00</div>
+            </button>
+
+            <button id="next-button"
+              onclick="playSongAtIndex(currentSongIndex + 1)"
+              class="control-button">
+              <i class="fas fa-step-forward"></i>
+            </button>
+            <div id="current-time">0:00</div>
             <div class="song-display">
-              <div id="song-info">Artist - Song Title</div>
+              <div id="song-info-a">Artist - Song Title</div>
             </div>
 
-            <div id="settings-icon-container">
+            <div id="settings-icon-container-a">
               <button id="settings-icon-button-a"
                 onclick="navigateToTab('settings-tab')">
                 <i class="fas fa-cog"></i>

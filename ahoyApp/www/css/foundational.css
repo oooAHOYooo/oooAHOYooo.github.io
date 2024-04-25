@@ -60,53 +60,6 @@ header {
 
 }
 
-.h1-background,
-.h1-background-faded {
-  position: relative;
-  top: 10%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: -10;
-  font-size: 82px;
-  text-align: center;
-  width: 100%;
-  margin: 0;
-  color: var(--border-color);
-  margin-top: 8.5%;
-  opacity: 90%;
-  line-height: 60%;
-  border-color: var(--button-color);
-  text-shadow: -1px 0 var(--border-color), 0 1px var(--border-color),
-    1px 0 var(--border-color), 0 -1px var(--border-color);
-  font-weight: 900;
-}
-
-.h1-background-faded {
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-}
-
-.h1-background-a {
-  position: relative;
-  top: 10%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: -10;
-  font-size: 82px;
-  text-align: center;
-  width: 100%;
-  margin: 0;
-  color: var(--border-color);
-  margin-top: 8.5%;
-  opacity: 90%;
-  line-height: 60%;
-  border-color: var(--button-color);
-  text-shadow: -1px 0 var(--border-color), 0 1px var(--border-color),
-    1px 0 var(--border-color), 0 -1px var(--border-color);
-  font-weight: 900;
-  mix-blend-mode: difference;
-}
-
 button {
   display: inline-block;
   padding: 10px 20px;
@@ -230,7 +183,7 @@ button:hover {
 }
 
 #song-Featured-Art {
-  border-radius: 25;
+  border-radius: 25px;
 }
 
 .userContentPortal-tab-container {
@@ -393,31 +346,7 @@ button:hover {
   animation: pulse 1s ease-in-out;
 }
 
-/* Style the liked songs table */
-#liked-songs-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-}
 
-#liked-songs-table thead {
-  background-color: var(--secondary-color);
-}
-
-#liked-songs-table th,
-#liked-songs-table td {
-  padding: 10px;
-  text-align: left;
-  border-bottom: 1px solid var(--border-color);
-}
-
-#liked-songs-table tr:nth-child(even) {
-  background-color: var(--background-color);
-}
-
-#liked-songs-table tr:nth-child(odd) {
-  background-color: var(--secondary-color);
-}
 
 /* Style the remove button */
 .remove-button {
@@ -2020,11 +1949,7 @@ button:hover {
   color: var(--border-color);
 }
 
-/* Adjusting song list for better readability */
-#song-list td {
-  font-size: clamp(2ch, 4vw, 3ch);
-  /* Adjusted for dynamic sizing */
-}
+
 
 /* Adjusting chat input for better usability */
 #chat-input {
