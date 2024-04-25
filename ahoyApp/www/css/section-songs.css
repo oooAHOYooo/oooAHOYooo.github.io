@@ -51,8 +51,8 @@
   font-weight: bold;
   font-size: 0.9em;
   background: rgba(0, 0, 0, 0.5);
-  /* Adjusted for better transparency */
   color: white !important;
+  /* Adjusted for better transparency */
   border-style: solid;
   border-color: var(--border-color);
   animation: crisp-glow-animation 2s infinite alternate;
@@ -69,8 +69,6 @@
 .daily-shuffle-table th,
 .daily-shuffle-table td {
   padding: 8px 10px;
-  color: var(--text-color);
-  /* Ensures text color consistency */
   background-color: rgba(255, 255, 255, 0.1);
   /* Slight background for readability */
 }

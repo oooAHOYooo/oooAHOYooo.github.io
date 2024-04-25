@@ -38,7 +38,6 @@ document.addEventListener("DOMContentLoaded", function () {
         let htmlContent = `<table class="song-table full-width-song-table daily-shuffle-table">
                             <thead>
                                 <tr>
-                                    <th>Play</th>
                                     <th>Artist</th>
                                     <th>Song</th>
                                 </tr>
@@ -46,7 +45,6 @@ document.addEventListener("DOMContentLoaded", function () {
                             <tbody>`;
         songs.forEach((song, index) => {
             htmlContent += `<tr>
-                                <td><button class="play-button" data-index="${index}" data-url="${song.mp3url}" data-artist="${song.artist}" data-title="${song.songTitle}"><i class="fas fa-play"></i></button></td>
                                 <td class="song-artist">${song.artist}</td>
                                 <td class="song-title">${song.songTitle}</td>
                             </tr>`;

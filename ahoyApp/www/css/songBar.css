@@ -103,7 +103,6 @@
     bottom: 92px !important;
     left: 0;
     right: 0;
-
     width: 100%;
     /* Ensure full width */
     display: flex;
@@ -184,7 +183,7 @@
 
 
 .control-button {
-    padding: 4px 8px;
+    padding: 4px 6px;
     /* More Compact */
     font-size: 0.75em;
     /* Smaller */
