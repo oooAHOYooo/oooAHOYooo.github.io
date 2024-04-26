@@ -38,12 +38,13 @@ document.addEventListener("DOMContentLoaded", function () {
         let htmlContent = `<table class="song-table full-width-song-table daily-shuffle-table">
                             <thead>
                                 <tr>
-                                    <th>Artist</th>
+                                    <th style="text-align: right;">Artist</th>
                                     <th>Song</th>
                                 </tr>
                             </thead>
                             <tbody>`;
         songs.forEach((song, index) => {
+            htmlContent += `<tr style="pointer-events: none; cursor: default;">
             htmlContent += `<tr>
                                 <td class="song-artist" style="text-align: right;">${song.artist}</td>
                                 <td class="song-title">${song.songTitle}</td>
