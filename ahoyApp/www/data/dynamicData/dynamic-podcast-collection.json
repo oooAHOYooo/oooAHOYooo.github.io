@@ -1,0 +1,104 @@
+{
+  "podcasts": [
+    {
+      "id": 14,
+      "title": "The Rob Show #25 - Lizzie Considine",
+      "description": "Lizzie Considine living in the havens while originally from Stamford",
+      "date": "2024-04-26",
+      "mp3url": "https://storage.googleapis.com/ahoy-podcast-collection/ready%20The%20Rob%20Show%20-%20Ep%2025%20-%20Lizzie%20Considine.mp3",
+      "thumbnail": "https://storage.googleapis.com/ahoy-podcast-collection/The%20Rob%20Show%20-%20Ep25%20-%20Lizzie%20Consindine%20_%204.21.24.jpg"
+    },
+    {
+      "id": 13,
+      "title": "The Rob Show #24 - Ellen Martin",
+      "description": "Ellen Martin - neuroscientist from the UK",
+      "date": "2024-04-15",
+      "mp3url": "https://storage.googleapis.com/ahoy-podcast-collection/ready%2BThe%20Rob%20Show%20-%20Ep%2024%20-%20Ellen%20Martin.mp3",
+      "thumbnail": "https://storage.googleapis.com/ahoy-podcast-collection/The%20Rob%20Show%20-%20Ep24%20-%20Ellen%20Martin.jpg"
+    },
+    {
+      "id": 12,
+      "title": "The Rob Show #23 - Dave Gunn",
+      "description": "CoFounder of the Tallboyz - Born in Hamden - Pro Rollerblader - Former Hockey Player - Alum of the Rob Show",
+      "date": "2024-04-04",
+      "mp3url": "https://storage.googleapis.com/ahoy-podcast-collection/ready%20The%20Rob%20Show%20-%20Ep%2023%20-%20Dave%20Gunn.mp3",
+      "thumbnail": "https://storage.googleapis.com/ahoy-podcast-collection/readyThe%20Rob%20Show%20-%20Ep23%20-%20Dave%20Gunn%20-%204.4.24.jpg"
+    },
+    {
+      "id": 11,
+      "title": "The Rob Show #22 - Sam Carlson",
+      "description": "In this episode, Sam Carlson talks about the new construction going on around the Havens and beyond. Also discussing the solar eclipse.",
+      "date": "2024-03-28",
+      "mp3url": "https://ahoypodcast.s3.us-east-2.amazonaws.com/ready+The+Rob+Show+-+Ep+22+-+Sam+Carlson.mp3",
+      "thumbnail": "https://ahoypodcast.s3.us-east-2.amazonaws.com/The+Rob+Show+-+Ep22+-+Sam+Carlson+-+3.28.24.jpg"
+    },
+    {
+      "id": 10,
+      "title": "The Rob Show #21 -  Tony Rick and Andrew August",
+      "description": "In this episode, Tony Rick and Andrew August join the show to discuss their latest projects and insights into their creative processes.",
+      "releaseDate": "Tuesday, March 26",
+      "mp3url": "https://ahoypodcast.s3.us-east-2.amazonaws.com/ready%2BThe+Rob+Show+-+Ep+21+-+Tony+Rick+and+Andrew+August.mp3",
+      "thumbnail": "https://ahoypodcast.s3.us-east-2.amazonaws.com/The+Rob+Show+-+Ep21+-+Tony+Rick+and+Andrew+August.jpg"
+    },
+    {
+      "id":9,
+      "title": "The Rob Show #20 - Pat Clendenen",
+      "description": "Pat Clendenen, originally from New Haven, returns after 25 years in Boston. A local lawyer and power lifter, Pat is also venturing into skateboarding.",
+      "mp3url": "https://ahoypodcast.s3.us-east-2.amazonaws.com/SUPERready+The+Rob+Show+-+Ep+20+-+Pat+Clendenen.mp3",
+      "thumbnail" : "https://ahoypodcast.s3.us-east-2.amazonaws.com/The+Rob+Show+-+Ep20+-+Pat+Clendenen.jpg"
+
+    },
+    {
+      "id": 8,
+      "title": "The Rob Show #19 - Paul Wildy",
+      "description": "Paul Wildy, a 20 plus year cab driver in New Haven, shares his experiences from working on the Carter campaign to witnessing the citys evolution over the decades",
+      "mp3url": "https://ahoypodcast.s3.us-east-2.amazonaws.com/ready+The+Rob+Show+-+Ep+19+-+Paul+Wildly.mp3",
+      "thumbnail": "https://ahoypodcast.s3.us-east-2.amazonaws.com/The+Rob+Show+-+Ep19+-+Paul+Wildy.jpg"
+    },
+    {
+      "id": 7,
+      "title": "The Rob Show #18 - My Own Grenade",
+      "description": "My own grenade has been around since the 90s. What started as a highschool friendship has led to a lifetime of music.",
+      "mp3url": "https://ahoypodcast.s3.us-east-2.amazonaws.com/ready_The+Rob+Show+-+Ep+18+-+My+Own+Gernade.mp3",
+      "thumbnail": "https://ahoypodcast.s3.us-east-2.amazonaws.com/The+Rob+Show+-+Ep18+-+My+Own+Grendade.jpg"
+    },
+    {
+      "id": 6,
+      "title": "The Rob Show #17 - Aidan Bauer",
+      "description": "In episode 17 of The Rob Show, Aidan Bauer, a game designer, programmer, and artist, delves into gaming, climbing, and life in New Haven",
+      "mp3url": "https://ahoypodcast.s3.us-east-2.amazonaws.com/ready_The+Rob+Show+-+Ep+17+-+Aidan+Baur++-+2_7_23.mp3",
+      "thumbnail": "https://ahoypodcast.s3.us-east-2.amazonaws.com/The+Rob+Show+-+Ep17+-+Aidan+Bauer.png"
+    },
+ 
+    {
+      "id": 5,
+      "title": "The Rob Show #16 - Joshua Sanders",
+      "description": "The Rob Show is Back with ever festive Joshua Sanders, a former Califorian/Texian who loves Christmas.",
+      "mp3url": "https://ahoypodcast.s3.us-east-2.amazonaws.com/ready_The+Rob+Show+-+Ep+16+-+Joshua+Sanders.mp3",
+      "thumbnail": "https://ahoypodcast.s3.us-east-2.amazonaws.com/The+Rob+Show+-+Ep16+-+Josh+Sanders+copy.png"
+    },
+
+
+    {
+      "id": 1,
+      "title": "The Rob Show #14 - Ray Meglio",
+      "description": "The Rob Show is Back at with a very special guest - his father - Ray Meglio",
+      "mp3url": "https://ahoypodcast.s3.us-east-2.amazonaws.com/The+Rob+Show+-+Ep+14+-+Ray+Meglio+-+11_14_23.mp3",
+      "thumbnail": "https://ahoypodcast.s3.us-east-2.amazonaws.com/Ahoy+Podcast+Default.png"
+    },
+    {
+      "id": 2,
+      "title": "The Alex and Ellen Show #1 - The Squawk of an Eagle",
+      "description": "Welcome to a new podcast, The Alex and Ellen Show, where Alex and Ellen discuss a wide range of topics, from the canals of New Haven to the squawks of bald eagles.",
+      "mp3url": "https://ahoypodcast.s3.us-east-2.amazonaws.com/ready_Alex+and+Ellen+Show+-+Ep+1+-+The+Sound+of+the+Bald+Eagle.mp3",
+      "thumbnail": "https://ahoypodcast.s3.us-east-2.amazonaws.com/Ahoy+Podcast+Default.png"
+    },
+    {
+      "id": 3,
+      "title": "Found Cassettes - 1",
+      "description": "Old Shin Harmonica - the creation of a lost song",
+      "mp3url": "https://ahoypodcast.s3.us-east-2.amazonaws.com/foundSDW_nov23_1.mp3",
+      "thumbnail": "https://ahoypodcast.s3.us-east-2.amazonaws.com/Ahoy+Podcast+Default.png"
+    }
+  ]
+}
