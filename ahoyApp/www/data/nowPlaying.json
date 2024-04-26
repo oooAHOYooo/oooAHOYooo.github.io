@@ -79,6 +79,14 @@
       "artist": "Ellen Martin",
       "tag": "podcast",
       "dateAdded": "04-15-24"
+    },
+    {
+      "id": "42624",
+      "albumArt": "https://storage.googleapis.com/ahoy-podcast-collection/The%20Rob%20Show%20-%20Ep25%20-%20Lizzie%20Consindine%20_%204.21.24.jpg",
+      "songTitle": "The Rob Show #25 - Lizzie Consindine",
+      "artist": "Lizzie Consindine",
+      "tag": "podcast",
+      "dateAdded": "04-26-24"
     }
     ]
   }
