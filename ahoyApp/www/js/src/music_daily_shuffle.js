@@ -45,7 +45,6 @@ document.addEventListener("DOMContentLoaded", function () {
                             <tbody>`;
         songs.forEach((song, index) => {
             htmlContent += `<tr style="pointer-events: none; cursor: default;">
-            htmlContent += `<tr>
                                 <td class="song-artist" style="text-align: right;">${song.artist}</td>
                                 <td class="song-title">${song.songTitle}</td>
                             </tr>`;
