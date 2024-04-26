@@ -11,7 +11,9 @@ document.addEventListener('DOMContentLoaded', function() {
         'https://c.tenor.com/lWbWfolwJfIAAAAC/ocean-night.gif',
         'https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExMHpvZ2RiazV6d2R1cjBnazl4b3hweHFyNjl0NG9vOXhuaG03ZjNreiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/J1dyoeVpfDCQqOpBNh/giphy.gif',
         "https://www.icegif.com/wp-content/uploads/2023/04/icegif-1410.gif",
-        "https://i.pinimg.com/originals/90/f9/3d/90f93d69410a62b0676b81a4305f01c2.gif"
+        "https://i.pinimg.com/originals/90/f9/3d/90f93d69410a62b0676b81a4305f01c2.gif",
+        "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcjQ1Y3V3MzR5Yzh1Njdhb2t2Z2RmdzgyZXY0bGNvODZxNnJxbms1ayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LMVkZXubrWzcaZNq10/giphy.gif",
+        "https://i.giphy.com/14hS1ZEmSfKdTW.webp"
         // Newly added images
        
     ];
