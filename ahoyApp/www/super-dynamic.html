@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Podcast Table</title>
+        <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+        }
+        .thumbnail {
+            width: 100px;
+            height: auto;
+        }
+    </style>
+    </head>
+    <body>
+        <h1>Podcast List</h1>
+        <table id="podcast-table">
+            <thead>
+                <tr>
+                    <th>Play</th>
+                    <th>Thumbnail</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Podcast rows will be added here dynamically -->
+            </tbody>
+        </table>
+
+        <script>
+        function loadPodcasts() {
+            fetch("https://storage.googleapis.com/ahoy-dynamic-content/dynamic-podcast-collection.json")
+                .then(response => response.json())
+                .then(data => {
+                    const tableBody = document.getElementById("podcast-table").querySelector("tbody");
+                    data.podcasts.forEach(podcast => {
+                        const row = document.createElement("tr");
+                        row.innerHTML = `
+                            <td><button onclick="window.location.href='${podcast.mp3url}'"><i class="fas fa-play"></i> Play</button></td>
+                            <td><img src="${podcast.thumbnail}" alt="Thumbnail" class="thumbnail"></td>
+                            <td>${podcast.title}</td>
+                            <td>${podcast.description}</td>
+                            <td>${podcast.date || 'N/A'}</td>
+                        `;
+                        tableBody.appendChild(row);
+                    });
+                })
+                .catch(error => console.error("Error loading podcasts:", error));
+        }
+
+        document.addEventListener('DOMContentLoaded', loadPodcasts);
+    </script>
+    </body>
+</html>
