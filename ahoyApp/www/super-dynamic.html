@@ -37,8 +37,14 @@
 
         <script>
         function loadPodcasts() {
-            fetch("https://storage.googleapis.com/ahoy-dynamic-content/dynamic-podcast-collection.json")
-                .then(response => response.json())
+            const url = "https://storage.googleapis.com/ahoy-dynamic-content/dynamic-podcast-collection.json";
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
                 .then(data => {
                     const tableBody = document.getElementById("podcast-table").querySelector("tbody");
                     data.podcasts.forEach(podcast => {
@@ -53,10 +59,31 @@
                         tableBody.appendChild(row);
                     });
                 })
-                .catch(error => console.error("Error loading podcasts:", error));
+                .catch(error => {
+                    console.error("Error loading podcasts:", error);
+                    // Fallback to CORS proxy if direct request fails
+                    const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+                    fetch(proxyUrl + url)
+                        .then(response => response.json())
+                        .then(data => {
+                            const tableBody = document.getElementById("podcast-table").querySelector("tbody");
+                            data.podcasts.forEach(podcast => {
+                                const row = document.createElement("tr");
+                                row.innerHTML = `
+                                    <td><button onclick="window.location.href='${podcast.mp3url}'"><i class="fas fa-play"></i> Play</button></td>
+                                    <td><img src="${podcast.thumbnail}" alt="Thumbnail" class="thumbnail"></td>
+                                    <td>${podcast.title}</td>
+                                    <td>${podcast.description}</td>
+                                    <td>${podcast.date || 'N/A'}</td>
+                                `;
+                                tableBody.appendChild(row);
+                            });
+                        })
+                        .catch(proxyError => console.error("Error loading podcasts via proxy:", proxyError));
+                });
         }
 
         document.addEventListener('DOMContentLoaded', loadPodcasts);
-    </script>
+        </script>
     </body>
 </html>
