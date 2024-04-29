@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Music Collection Table</title>
+        <style>
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 10px;
+    }
+    .cover {
+        width: 100px;
+        height: auto;
+    }
+    </style>
+    </head>
+    <body>
+        <h1>Music Collection List</h1>
+        <table id="music-table">
+            <thead>
+                <tr>
+                    <th>Play</th>
+                    <th>Cover</th>
+                    <th>Title</th>
+                    <th>Artist</th>
+                    <th>Release Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Music rows will be added here dynamically -->
+            </tbody>
+        </table>
+
+        <script>
+    function loadMusic() {
+        const url = "https://api.jsonbin.io/v3/b/662f0278acd3cb34a8400e67";
+        const accessKey = '$2a$10$4GRuokwTdv4sRnqIwYDyGOWZ2CZgDkefsKy7OFlmTydfnDvXBomtC'; // Replace this with your actual X-Access-Key with read permission
+
+        fetch(url, {
+            headers: {
+                'X-Access-Key': accessKey
+            }
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+            return response.json();
+        })
+        .then(data => {
+            const tableBody = document.getElementById("music-table").querySelector("tbody");
+            data.record.songs.forEach(track => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td><button onclick="window.location.href='${track.mp3url}'">Play</button></td>
+                    <td><img src="${track.coverArt}" alt="Cover" class="cover"></td>
+                    <td>${track.songTitle}</td>
+                    <td>${track.artist}</td>
+                    <td>${track.releaseDate || 'N/A'}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+        })
+        .catch(error => {
+            console.error("Error loading music:", error);
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', loadMusic);
+    </script>
+    </body>
+</html>
