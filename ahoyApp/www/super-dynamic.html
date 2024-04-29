@@ -37,50 +37,37 @@
 
         <script>
         function loadPodcasts() {
-            const url = "https://storage.googleapis.com/ahoy-dynamic-content/dynamic-podcast-collection.json";
-            fetch(url)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    const tableBody = document.getElementById("podcast-table").querySelector("tbody");
-                    data.podcasts.forEach(podcast => {
-                        const row = document.createElement("tr");
-                        row.innerHTML = `
-                            <td><button onclick="window.location.href='${podcast.mp3url}'"><i class="fas fa-play"></i> Play</button></td>
-                            <td><img src="${podcast.thumbnail}" alt="Thumbnail" class="thumbnail"></td>
-                            <td>${podcast.title}</td>
-                            <td>${podcast.description}</td>
-                            <td>${podcast.date || 'N/A'}</td>
-                        `;
-                        tableBody.appendChild(row);
-                    });
-                })
-                .catch(error => {
-                    console.error("Error loading podcasts:", error);
-                    // Fallback to CORS proxy if direct request fails
-                    const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-                    fetch(proxyUrl + url)
-                        .then(response => response.json())
-                        .then(data => {
-                            const tableBody = document.getElementById("podcast-table").querySelector("tbody");
-                            data.podcasts.forEach(podcast => {
-                                const row = document.createElement("tr");
-                                row.innerHTML = `
-                                    <td><button onclick="window.location.href='${podcast.mp3url}'"><i class="fas fa-play"></i> Play</button></td>
-                                    <td><img src="${podcast.thumbnail}" alt="Thumbnail" class="thumbnail"></td>
-                                    <td>${podcast.title}</td>
-                                    <td>${podcast.description}</td>
-                                    <td>${podcast.date || 'N/A'}</td>
-                                `;
-                                tableBody.appendChild(row);
-                            });
-                        })
-                        .catch(proxyError => console.error("Error loading podcasts via proxy:", proxyError));
+            const url = "https://api.jsonbin.io/v3/b/662f022dacd3cb34a8400e3e";
+            const accessKey = '$2a$10$4GRuokwTdv4sRnqIwYDyGOWZ2CZgDkefsKy7OFlmTydfnDvXBomtC'; // Use your read-only access key here
+
+            fetch(url, {
+                headers: {
+                    'X-Access-Key': accessKey
+                }
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                const tableBody = document.getElementById("podcast-table").querySelector("tbody");
+                data.record.podcasts.forEach(podcast => {
+                    const row = document.createElement("tr");
+                    row.innerHTML = `
+                        <td><button onclick="window.location.href='${podcast.mp3url}'">Play</button></td>
+                        <td><img src="${podcast.thumbnail}" alt="Thumbnail" class="thumbnail"></td>
+                        <td>${podcast.title}</td>
+                        <td>${podcast.description}</td>
+                        <td>${podcast.date || 'N/A'}</td>
+                    `;
+                    tableBody.appendChild(row);
                 });
+            })
+            .catch(error => {
+                console.error("Error loading podcasts:", error);
+            });
         }
 
         document.addEventListener('DOMContentLoaded', loadPodcasts);
