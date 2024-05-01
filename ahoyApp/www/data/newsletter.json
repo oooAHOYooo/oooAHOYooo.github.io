@@ -74,6 +74,13 @@
         "imageUrl": "https://storage.googleapis.com/ahoy-podcast-collection/The%20Rob%20Show%20-%20Ep24%20-%20Ellen%20Martin.jpg",
         "content": "Ellen Martin - neuroscientist from the UK, finally makes it on the Rob show!",
         "mp3Url": "https://storage.googleapis.com/ahoy-podcast-collection/ready%2BThe%20Rob%20Show%20-%20Ep%2024%20-%20Ellen%20Martin.mp3"
+    },
+    {
+        "date": "2024-04-30",
+        "title": "The Rob Show #26 - Dan Carbonella",
+        "imageUrl": "https://storage.googleapis.com/ahoy-podcast-collection/The%20Rob%20Show%20-%20Ep26%20-%20Dan%20Carbonella%20-%204.26.24.jpg",
+        "content": "Dan Carbonella - manager of Koffee? joins the Rob Show - finally",
+        "mp3Url": "https://storage.googleapis.com/ahoy-podcast-collection/readyRobShow_Dan_ep26.mp3"
     }
 
 
