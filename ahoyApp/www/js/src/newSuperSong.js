@@ -31,65 +31,66 @@ function playSong(songUrl, songTitle, artistName, buttonElement) {
     }
     burnButton.onclick = () => burnSong(songUrl, songTitle, artistName, burnButton);
 
-    // Fetch the song details from songCollection.json to get the coverArt URL
-    fetch("data/songCollection.json")
-      .then(response => response.json())
-      .then(data => {
-        const song = data.songs.find(s => s.mp3url === songUrl);
-        if (song && song.coverArt) {
-          nowPlayingAlbumArt.src = song.coverArt; // Update album art
-          nowPlayingAlbumArt.alt = `Album art for ${songTitle}`;
-        }
-      })
-      .catch(error => console.error("Error loading song details:", error));
-
-   
+    // Fetch the song details from JSONBin
+    fetchSongs().then(data => {
+      const song = data.record.songs.find(s => s.mp3url === songUrl);
+      if (song && song.coverArt) {
+        nowPlayingAlbumArt.src = song.coverArt; // Update album art
+        nowPlayingAlbumArt.alt = `Album art for ${songTitle}`;
+      }
+    }).catch(error => console.error("Error loading song details:", error));
 
     // Set currentSongIndex based on the songUrl
     currentSongIndex = songsArray.findIndex(s => s.mp3url === songUrl);
   }
 }
 
-// Function to load and display songs from songCollection.json with updated table structure
+// Function to load and display songs from JSONBin
 function loadSongs() {
-  fetch("data/songCollection.json")
-    .then(response => response.json())
-    .then(data => {
-      songsArray = data.songs; // Store the songs array globally
-      const tableBody = document.getElementById("song-list"); // Ensure this is a <tbody> inside your table
-      tableBody.innerHTML = ''; // Clear existing content
+  fetchSongs().then(data => {
+    songsArray = data.record.songs; // Store the songs array globally
+    const tableBody = document.getElementById("song-list"); // Ensure this is a <tbody> inside your table
+    tableBody.innerHTML = ''; // Clear existing content
 
-      data.songs.forEach((song, index) => {
-        const row = document.createElement("tr");
-        row.className = 'table-row'; // Add class for styling
-        row.innerHTML = `
-          <td>
-            <button onclick="playSong('${song.mp3url}', '${song.songTitle}', '${song.artist}', this)">
-              <i class="fas fa-play"></i>
-            </button>
-          </td>
-          <td>
-            <img src="${song.coverArt}" alt="${song.songTitle}" class="thumbnail">
-          </td>
-          <td>${song.artist}</td>
-          <td>${song.songTitle}</td>
-          <td>
-      
-            <button class="burn-button-overlay" onclick="burnSong('${song.mp3url}', '${song.songTitle}', '${song.artist}', this)">
-              <i class="fas fa-fire"></i>
-            </button>
-          </td>
-        `;
-        tableBody.appendChild(row);
-      });
-    })
-    .catch(error => console.error("Error loading songs:", error));
+    data.record.songs.forEach((song, index) => {
+      const row = document.createElement("tr");
+      row.className = 'table-row'; // Add class for styling
+      row.innerHTML = `
+        <td>
+          <button onclick="playSong('${song.mp3url}', '${song.songTitle}', '${song.artist}', this)">
+            <i class="fas fa-play"></i>
+          </button>
+        </td>
+        <td>
+          <img src="${song.coverArt}" alt="${song.songTitle}" class="thumbnail">
+        </td>
+        <td>${song.artist}</td>
+        <td>${song.songTitle}</td>
+        <td>
+          <button class="burn-button-overlay" onclick="burnSong('${song.mp3url}', '${song.songTitle}', '${song.artist}', this)">
+            <i class="fas fa-fire"></i>
+          </button>
+        </td>
+      `;
+      tableBody.appendChild(row);
+    });
+  }).catch(error => console.error("Error loading songs:", error));
 }
 
-// Adjusted burnSong function
-function burnSong(songUrl, songTitle, artistName, buttonElement) {
-  addSongToBurnList(songUrl, songTitle, artistName);
-  buttonElement.innerHTML = '<i class="fas fa-check"></i>'; // Change to check icon or any icon that indicates "burned"
+// Helper function to fetch songs from JSONBin
+function fetchSongs() {
+  const url = "https://api.jsonbin.io/v3/b/662f0278acd3cb34a8400e67";
+  const accessKey = '$2a$10$4GRuokwTdv4sRnqIwYDyGOWZ2CZgDkefsKy7OFlmTydfnDvXBomtC';
+  return fetch(url, {
+    headers: {
+      'X-Access-Key': accessKey
+    }
+  }).then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok ' + response.statusText);
+    }
+    return response.json();
+  });
 }
 
 document.addEventListener("DOMContentLoaded", function () {
