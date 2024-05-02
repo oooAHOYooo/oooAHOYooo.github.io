@@ -208,10 +208,10 @@
             <div class="daily-shuffle-headline">
               <img src="./img/ahoy-theDailySHuffle.svg" class="svgBlend">
             </div>
-
-            <div id="daily-shuffle-list"></div>
             <button id="play-daily-shuffle"
               class="play-daily-shuffle-button">Play Daily Shuffle</button>
+            <div id="daily-shuffle-list"></div>
+
           </div>
           <!-- NOW PLAYING -->
           <div class="now-playing">
@@ -431,6 +431,8 @@
           <div class="newsSubHeaderMenu">
             <button id="about-button"
               onclick="navigateToTab('about-tab')">About Ahoy</button>
+            <button id="updates-button"
+              onclick="navigateToTab('updates-tab')">Dev Log</button>
           </div>
           <div id="newsletter-list"></div>
           <div class="goals-container">
@@ -481,86 +483,81 @@
             <img id="lightbox-image"
               style="margin: auto; display: block; width: 80%; max-width: 700px;" />
           </div>
-          <!-- NEWSLETTER -->
-          <div id="newsletter-tab" class="tab-content-b">
-            <!-- h1>Newsletter</h1 -->
-            <!-- div id="newsletter-list"></div -->
+
+          <h3>Present App State = v.24.2</h3>
+
+          <h4>Present Focus</h4>
+          <p>Redesigning the entire layout - stay tuned - really going for
+            that
+            mvp</p>
+          <h1>Last 100 Updates to our Repo</h1>
+          <hr>
+          <div id="commits-list"></div>
+        </div>
+        <!-- ACCOUNT -->
+        <div id="account-tab" class="tab-content">
+          <img src="./img/ahoy-account.svg" class="svgBlend">
+
+          <!-- The Grandfather Surprise Section -->
+          <div class="grandfather-surprise-section">
+            <h2>Lifetime Access Free for Now</h2>
+            <p>We're trying to figure it all out - and want to reward that
+              pioneering group at Ahoy Indie Media
+            </p>
+            <ul>
+              <li><strong>Lifetime Membership:</strong> The first 100 members
+                to
+                register will receive free lifetime access to Ahoy.</li>
+              <li><strong>Permanent Recognition:</strong> Your name and
+                username
+                will be permanently embedded in the backend code of Ahoy,
+                immortalizing your faith.</li>
+              <li><strong>Commemorative Certificate:</strong> Sign up now and
+                you'll receive a
+                special certificate of membership from Rob Meglio, celebrating
+                your pioneering spirit.</li>
+            </ul>
+
+            <button onclick="window.location.href='create-account.html'">Apply
+              for Lifetime Access</button>
+
+            <!-- Additional benefits of being a member -->
+            <h3>Upcoming Features for Members</h3>
+            <p>As a member of Ahoy Indie Media, you can look forward to these
+              upcoming features:</p>
+            <ul>
+              <li><strong>Resume Playback:</strong> Automatically resume songs
+                and podcasts right where you left off.</li>
+              <li><strong>Virtual Burned CDs:</strong> Create and save your
+                favorite playlists into virtual burned CDs for seamless
+                listening experiences.</li>
+              <li><strong>Personalized Greetings:</strong> Receive a warm
+                welcome by name every time you visit.</li>
+              <li><strong>Interactive Message Board:</strong> Engage with the
+                community by posting anonymously on our daily message
+                board.</li>
+            </ul>
+            <p>Don't miss this chance to be a part of Ahoy Indie Media's
+              future—sign up today!</p>
+          </div>
+          <!-- User Login Section -->
+          <div id="login-section" class="center-frame"
+            style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 40vh; background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(15px); border-radius: 15px; padding: 20px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); border: 1px solid rgba(255, 255, 255, 0.3);  background: linear-gradient(145deg, rgba(255,255,255,0.1), rgba(255,255,255,0.25));">
+            <img src="./img/assets/u_ahoy23.png"
+              style="max-width: 60%; height: auto; border-radius: 10px;">
+            <h1 style="margin-top: 20px; font-weight: bold;">Already a
+              member?</h1>
+            <div style="margin-top: 20px;">
+              <a href="./login.html" style="text-decoration: none;">
+                <button
+                  style="background-color: rgba(255, 255, 255, 0.5); color: #000000; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin-right: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); backdrop-filter: blur(5px); border: 1px solid rgba(255, 255, 255, 0.3);">Login
+                </button>
+              </a>
+
+            </div>
           </div>
 
-          <h3>Present Beta State = 0.2.3J
-
-            <h4>Present Focus</h4>
-            <p>Redesigning the entire layout - stay tuned - really going for
-              that
-              mvp</p>
-            <h1>Last 100 Updates to our Repo</h1>
-            <hr>
-            <div id="commits-list"></div>
-          </div>
-          <!-- ACCOUNT -->
-          <div id="account-tab" class="tab-content">
-            <img src="./img/ahoy-account.svg" class="svgBlend">
-
-            <!-- The Grandfather Surprise Section -->
-            <div class="grandfather-surprise-section">
-              <h2>Lifetime Access Free for Now</h2>
-              <p>We're trying to figure it all out - and want to reward that
-                pioneering group at Ahoy Indie Media
-              </p>
-              <ul>
-                <li><strong>Lifetime Membership:</strong> The first 100 members
-                  to
-                  register will receive free lifetime access to Ahoy.</li>
-                <li><strong>Permanent Recognition:</strong> Your name and
-                  username
-                  will be permanently embedded in the backend code of Ahoy,
-                  immortalizing your faith.</li>
-                <li><strong>Commemorative Certificate:</strong> Sign up now and
-                  you'll receive a
-                  special certificate of membership from Rob Meglio, celebrating
-                  your pioneering spirit.</li>
-              </ul>
-
-              <button onclick="window.location.href='create-account.html'">Apply
-                for Lifetime Access</button>
-
-              <!-- Additional benefits of being a member -->
-              <h3>Upcoming Features for Members</h3>
-              <p>As a member of Ahoy Indie Media, you can look forward to these
-                upcoming features:</p>
-              <ul>
-                <li><strong>Resume Playback:</strong> Automatically resume songs
-                  and podcasts right where you left off.</li>
-                <li><strong>Virtual Burned CDs:</strong> Create and save your
-                  favorite playlists into virtual burned CDs for seamless
-                  listening experiences.</li>
-                <li><strong>Personalized Greetings:</strong> Receive a warm
-                  welcome by name every time you visit.</li>
-                <li><strong>Interactive Message Board:</strong> Engage with the
-                  community by posting anonymously on our daily message
-                  board.</li>
-              </ul>
-              <p>Don't miss this chance to be a part of Ahoy Indie Media's
-                future—sign up today!</p>
-            </div>
-            <!-- User Login Section -->
-            <div id="login-section" class="center-frame"
-              style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 40vh; background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(15px); border-radius: 15px; padding: 20px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); border: 1px solid rgba(255, 255, 255, 0.3);  background: linear-gradient(145deg, rgba(255,255,255,0.1), rgba(255,255,255,0.25));">
-              <img src="./img/assets/u_ahoy23.png"
-                style="max-width: 60%; height: auto; border-radius: 10px;">
-              <h1 style="margin-top: 20px; font-weight: bold;">Already a
-                member?</h1>
-              <div style="margin-top: 20px;">
-                <a href="./login.html" style="text-decoration: none;">
-                  <button
-                    style="background-color: rgba(255, 255, 255, 0.5); color: #000000; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin-right: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); backdrop-filter: blur(5px); border: 1px solid rgba(255, 255, 255, 0.3);">Login
-                  </button>
-                </a>
-
-              </div>
-            </div>
-
-            <script>
+          <script>
   function signUpForGrandfatherSurprise() {
     // Implementation for sign-up logic
     // This should include form handling and Mailchimp integration for sending the certificate
@@ -568,186 +565,186 @@
   }
 </script>
 
-            <!-- USER LOG IN DISPLAY -->
-            <!-- Logged-in Message Section -->
-            <div class="userLOGGEDin">
-              <div id="logged-in-message" class="center-frame"
-                style="display: none; flex-direction: column; justify-content: center; align-items: center; height: 50vh; background-color: #f0f0f0;">
-                <h1>Congrats, you are already logged in!</h1>
-                <button onclick="logout()">Log Out</button>
-              </div>
-
+          <!-- USER LOG IN DISPLAY -->
+          <!-- Logged-in Message Section -->
+          <div class="userLOGGEDin">
+            <div id="logged-in-message" class="center-frame"
+              style="display: none; flex-direction: column; justify-content: center; align-items: center; height: 50vh; background-color: #f0f0f0;">
+              <h1>Congrats, you are already logged in!</h1>
+              <button onclick="logout()">Log Out</button>
             </div>
-            <!-- END OF USER LOGGED IN-->
 
-            <!-- END OF ACCOUNT TAB DONT TOUCH -->
           </div>
-          <!-- END OF THE ACCOUNT TAB-->
-          <!-- BURN TAB-->
-          <div id="burn-tab" class="tab-content" style="padding-bottom: 20px;">
-            <img src="./img/ahoy-burn.svg" class="svgBlend">
-            <h2 style="margin: 0px;">Burn a CD : Save the World</h2>
-            <p>Support Local Musicians -
-              foster a new industry
+          <!-- END OF USER LOGGED IN-->
+
+          <!-- END OF ACCOUNT TAB DONT TOUCH -->
+        </div>
+        <!-- END OF THE ACCOUNT TAB-->
+        <!-- BURN TAB-->
+        <div id="burn-tab" class="tab-content" style="padding-bottom: 20px;">
+          <img src="./img/ahoy-burn.svg" class="svgBlend">
+          <h2 style="margin: 0px;">Burn a CD : Save the World</h2>
+          <p>Support Local Musicians -
+            foster a new industry
+          </p>
+          <div id="burn-list"></div>
+
+          <div id="cd-save-section"
+            style="background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(10px); border-radius: 1px; padding: 20px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+            <input type="text" id="cd-name-input" placeholder="CD Name"
+              style="width: 90%; padding: 10px; margin-bottom: 10px; border: none; border-radius: 10px; background: rgba(255, 255, 255, 0.5); backdrop-filter: blur(5px);">
+            <button id="save-cd-button"
+              style="width: 100%; padding: 10px; border: none; border-radius: 10px; background: rgba(0, 0, 0, 0.8); color: white; cursor: pointer; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);">Save
+              CD</button>
+            <button id="burn-cd-button-a">Burn and Ship CD to my house
+              NOW</button>
+
+            <ul id="saved-cd-list"
+              style="list-style-type: none; padding: 0; margin-top: 20px;"></ul>
+            <div id="cd-display-area"></div>
+          </div>
+          <div id="v25-burn-cd-instructions-text">
+            <h1>$4 Per CD</h1>
+
+            <p>Burn a CD Mixtape directly to your house or coffee shop of
+              your choosing.
+              - enjoy music not found on big the platforms but instead by
+              local
+              hometown heroes
+              - discover music - and send music to those who you love.
+              (Personalized Notes Add-On)
             </p>
-            <div id="burn-list"></div>
-
-            <div id="cd-save-section"
-              style="background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(10px); border-radius: 1px; padding: 20px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-              <input type="text" id="cd-name-input" placeholder="CD Name"
-                style="width: 90%; padding: 10px; margin-bottom: 10px; border: none; border-radius: 10px; background: rgba(255, 255, 255, 0.5); backdrop-filter: blur(5px);">
-              <button id="save-cd-button"
-                style="width: 100%; padding: 10px; border: none; border-radius: 10px; background: rgba(0, 0, 0, 0.8); color: white; cursor: pointer; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);">Save
-                CD</button>
-              <button id="burn-cd-button-a">Burn and Ship CD to my house
-                NOW</button>
-
-              <ul id="saved-cd-list"
-                style="list-style-type: none; padding: 0; margin-top: 20px;"></ul>
-              <div id="cd-display-area"></div>
-            </div>
-            <div id="v25-burn-cd-instructions-text">
-              <h1>$4 Per CD</h1>
-
-              <p>Burn a CD Mixtape directly to your house or coffee shop of
-                your choosing.
-                - enjoy music not found on big the platforms but instead by
-                local
-                hometown heroes
-                - discover music - and send music to those who you love.
-                (Personalized Notes Add-On)
-              </p>
-              <p>Getting Started is Easy and Free - and meant to get you to buy
-                often
-                easy and fast - without having to think about it - BOOM - CD
-                shipping
-                to your house - - you got to login to ahoy - and then burn as
-                many
-                cds as you'd like - we'll make them and ship them
-                giving your favorite host - Rob Meglio - something to do in his
-                spare time. He would love a shot at sending
-                personalized notes </p><p>This at the moment is the only way
-                Ahoy makes any money</p>
-              <h2>How it works:</h2>
-              <ul id="burn-instructions"
-                style="text-align:left; list-style-type:none;">
-                <li>1. Select the songs you want to include in your CD. You can
-                  choose up to 15 songs or up to 70 minutes total.</li>
-                <li>2. Rearrange your playlist by dragging the songs into your
-                  preferred order.</li>
-                <li>3. Give your CD a unique name.</li>
-                <li>4. Review your playlist. You can remove songs or add more as
-                  long as you stay within the limit.</li>
-                <li>5. Submit your CD burn request. Rob Meglio will personally
-                  curate your playlist, write a personalized note, and design
-                  the
-                  CD
-                  cover with a sharpie.</li>
-                <li>6. Your CD will be mailed to your house within 2-4 weeks.
-                  You
-                  will be contacted for payment and shipping details
-                  shortly.</li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- END OF TABS ? CHECK -->
-        </div><!-- YES -->
-        <!--v25 dock -->
-        <div id="v25-dock-container">
-          <div id="v25-dock">
-            <div id="v25-icon-container" class="scroll-container">
-              <div class="v25-dock-icon"
-                onclick="navigateToTab('home-tab')"><i
-                  class="fas fa-home"></i></div>
-              <div class="v25-dock-icon"
-                onclick="navigateToTab('news-tab')"><i
-                  class="fas fa-newspaper"></i></div>
-              <div class="v25-dock-icon"
-                onclick="navigateToTab('songs-tab')"><i
-                  class="fas fa-music"></i></div>
-              <div class="v25-dock-icon"
-                onclick="navigateToTab('podcasts-tab')"><i
-                  class="fas fa-podcast"></i></div>
-              <div class="v25-dock-icon"
-                onclick="navigateToTab('media-tab-a')"><i
-                  class="fas fa-image"></i></div>
-              <div class="v25-dock-icon"
-                onclick="navigateToTab('burn-tab')"><i
-                  class="fas fa-fire"></i></div>
-              <!-- Omitted the games tab as per instruction -->
-              <div class="v25-dock-icon"
-                onclick="navigateToTab('account-tab')"><i
-                  class="fas fa-user-circle"></i></div>
-            </div>
+            <p>Getting Started is Easy and Free - and meant to get you to buy
+              often
+              easy and fast - without having to think about it - BOOM - CD
+              shipping
+              to your house - - you got to login to ahoy - and then burn as
+              many
+              cds as you'd like - we'll make them and ship them
+              giving your favorite host - Rob Meglio - something to do in his
+              spare time. He would love a shot at sending
+              personalized notes </p><p>This at the moment is the only way
+              Ahoy makes any money</p>
+            <h2>How it works:</h2>
+            <ul id="burn-instructions"
+              style="text-align:left; list-style-type:none;">
+              <li>1. Select the songs you want to include in your CD. You can
+                choose up to 15 songs or up to 70 minutes total.</li>
+              <li>2. Rearrange your playlist by dragging the songs into your
+                preferred order.</li>
+              <li>3. Give your CD a unique name.</li>
+              <li>4. Review your playlist. You can remove songs or add more as
+                long as you stay within the limit.</li>
+              <li>5. Submit your CD burn request. Rob Meglio will personally
+                curate your playlist, write a personalized note, and design
+                the
+                CD
+                cover with a sharpie.</li>
+              <li>6. Your CD will be mailed to your house within 2-4 weeks.
+                You
+                will be contacted for payment and shipping details
+                shortly.</li>
+            </ul>
           </div>
         </div>
-        <!-- end of v25 dock -->
-        <div id="v25_BottomAudio"
-          style="height: 42px; position: fixed; bottom: 0; width: 100%; background-color: #282828; display: flex; align-items: center; justify-content: space-between; padding: 0 10px; box-sizing: border-box; color: white;">
-          <div class="song-info" style="display: flex; align-items: center;">
-            <img id="bottom-album-art" src alt="Album Art"
-              style="height: 40px; width: 40px; margin-right: 10px;">
-            <div>
-              <div id="bottom-song-title" style="font-weight: bold;">Song
-                Title</div>
-              <div id="bottom-artist-name">Artist Name</div>
-            </div>
+
+        <!-- END OF TABS ? CHECK -->
+      </div><!-- YES -->
+      <!--v25 dock -->
+      <div id="v25-dock-container">
+        <div id="v25-dock">
+          <div id="v25-icon-container" class="scroll-container">
+            <div class="v25-dock-icon"
+              onclick="navigateToTab('home-tab')"><i
+                class="fas fa-home"></i></div>
+            <div class="v25-dock-icon"
+              onclick="navigateToTab('news-tab')"><i
+                class="fas fa-newspaper"></i></div>
+            <div class="v25-dock-icon"
+              onclick="navigateToTab('songs-tab')"><i
+                class="fas fa-music"></i></div>
+            <div class="v25-dock-icon"
+              onclick="navigateToTab('podcasts-tab')"><i
+                class="fas fa-podcast"></i></div>
+            <div class="v25-dock-icon"
+              onclick="navigateToTab('media-tab-a')"><i
+                class="fas fa-image"></i></div>
+            <div class="v25-dock-icon"
+              onclick="navigateToTab('burn-tab')"><i
+                class="fas fa-fire"></i></div>
+            <!-- Omitted the games tab as per instruction -->
+            <div class="v25-dock-icon"
+              onclick="navigateToTab('account-tab')"><i
+                class="fas fa-user-circle"></i></div>
           </div>
-          <div class="player-controls"
-            style="display: flex; align-items: center;">
-            <button id="bottom-prev-button" onclick="playPreviousSong()"><i
-                class="fas fa-step-backward"></i></button>
-            <button id="bottom-play-pause-button" onclick="togglePlayPause()"><i
-                class="fas fa-play" id="bottom-play-pause-icon"></i></button>
-            <button id="bottom-next-button" onclick="playNextSong()"><i
-                class="fas fa-step-forward"></i></button>
-            <button id="unique-burn-button" onclick="uniqueBurnSong()">
-              <i class="fas fa-fire"></i>
+        </div>
+      </div>
+      <!-- end of v25 dock -->
+      <div id="v25_BottomAudio"
+        style="height: 42px; position: fixed; bottom: 0; width: 100%; background-color: #282828; display: flex; align-items: center; justify-content: space-between; padding: 0 10px; box-sizing: border-box; color: white;">
+        <div class="song-info" style="display: flex; align-items: center;">
+          <img id="bottom-album-art" src alt="Album Art"
+            style="height: 40px; width: 40px; margin-right: 10px;">
+          <div>
+            <div id="bottom-song-title" style="font-weight: bold;">Song
+              Title</div>
+            <div id="bottom-artist-name">Artist Name</div>
+          </div>
+        </div>
+        <div class="player-controls"
+          style="display: flex; align-items: center;">
+          <button id="bottom-prev-button" onclick="playPreviousSong()"><i
+              class="fas fa-step-backward"></i></button>
+          <button id="bottom-play-pause-button" onclick="togglePlayPause()"><i
+              class="fas fa-play" id="bottom-play-pause-icon"></i></button>
+          <button id="bottom-next-button" onclick="playNextSong()"><i
+              class="fas fa-step-forward"></i></button>
+          <button id="unique-burn-button" onclick="uniqueBurnSong()">
+            <i class="fas fa-fire"></i>
+          </button>
+        </div>
+        <div class="progress-bar" style="flex-grow: 1; margin-left: 10px;">
+          <input type="range" id="bottom-song-progress" value="0" min="0"
+            max="100" step="1" style="width: 100%;">
+        </div>
+      </div>
+      <!-- Start of v24 PLAYER -->
+      <div id="v24ahoyPlayer" class="player">
+        <audio id="audio-player" src></audio>
+        <div class="audio-player-controls">
+          <!-- Adjusted Bar A with progress bar, time, play button, display text, and settings icon -->
+          <div class="v25-superPlayerButtonMash" id="barA">
+            <button id="play-pause-button" onclick="togglePlayPause()"
+              class="control-button">
+
+              <i class="fas fa-play" id="play-pause-icon"></i>
             </button>
-          </div>
-          <div class="progress-bar" style="flex-grow: 1; margin-left: 10px;">
-            <input type="range" id="bottom-song-progress" value="0" min="0"
-              max="100" step="1" style="width: 100%;">
-          </div>
-        </div>
-        <!-- Start of v24 PLAYER -->
-        <div id="v24ahoyPlayer" class="player">
-          <audio id="audio-player" src></audio>
-          <div class="audio-player-controls">
-            <!-- Adjusted Bar A with progress bar, time, play button, display text, and settings icon -->
-            <div class="v25-superPlayerButtonMash" id="barA">
-              <button id="play-pause-button" onclick="togglePlayPause()"
-                class="control-button">
 
-                <i class="fas fa-play" id="play-pause-icon"></i>
-              </button>
-
-              <button id="next-button"
-                onclick="playSongAtIndex(currentSongIndex + 1)"
-                class="control-button">
-                <i class="fas fa-step-forward"></i>
-              </button>
-              <div id="current-time">0:00</div>
-              <div class="song-display">
-                <div id="song-info-a">Artist - Song Title</div>
-              </div>
-
-              <div id="settings-icon-container-a">
-                <button id="settings-icon-button-a"
-                  onclick="navigateToTab('settings-tab')">
-                  <i class="fas fa-cog"></i>
-                </button>
-              </div>
+            <button id="next-button"
+              onclick="playSongAtIndex(currentSongIndex + 1)"
+              class="control-button">
+              <i class="fas fa-step-forward"></i>
+            </button>
+            <div id="current-time-v25">0:00</div>
+            <div class="song-display">
+              <div id="song-info-a">Artist - Song Title</div>
             </div>
 
+            <div id="settings-icon-container-a">
+              <button id="settings-icon-button-a"
+                onclick="navigateToTab('settings-tab')">
+                <i class="fas fa-cog"></i>
+              </button>
+            </div>
           </div>
 
         </div>
-        <!-- END OF v24 Bottom Player-->
 
-        <!-- TEMPSCRIPT - TRYING TO MAKE A UNIVERSAL BUTTON-->
-        <script>
+      </div>
+      <!-- END OF v24 Bottom Player-->
+
+      <!-- TEMPSCRIPT - TRYING TO MAKE A UNIVERSAL BUTTON-->
+      <script>
           // Function to toggle play/pause for the audio player
           function togglePlayPause() {
             var audio = document.getElementById('audio-player');
@@ -771,107 +768,108 @@
           });
         </script>
 
-      </div>
-      <div>
+    </div>
+    <div>
 
-      </div>
-      <!-- END OF BOTTOM PLAYER -->
-      <!-- CONDITIONAL LOGIC BITCH -->
-      <!-- DYNAMIC SHARE TEST -->
-      <!--script src="js/src/share.js"></script-->
-      <!-- DYANMIC ARTIST TEST -->
-      <!--script src="js/src/dynamicArtist.js"></script-->
-      <!--script src="js/src/siteCounter.js"></script-->
-      <!-- END OF DRAFTY SCRIPTS -->
-      <!--script src="js/src/h1-effects-scroll.js"></script-->
-      <!-- USER CONTROLS-->
-      <!--script src="js/src/controls-timeline.js"></script-->
-      <!-- USER NAV -->
-      <script src="js/src/function-toggle-dash.js"></script>
-      <!-- USER JAVASCRIPTS -->
-      <!-- script src="js/src/user-cart.js"></script -->
-      <!-- script src="js/src/user-icon-input.js"></script -->
-      <script src="js/src/login.js"></script>
-      <!--script src="js/src/user-liked-everything.js"></script-->
-      <!-- USER REVIEW PODCAST-->
-      <!--script src="js/src/user-review-podcasts.js"></script-->
-      <!-- USER PREF SAVED -->
-      <script src="js/src/user-userSesh.js"></script>
-      <!-- USER - DISPLAY USER INFO -->
-      <!-- NEW QUESTION APP -->
-      <!-- LIVE DATA -->
-      <!--script src="js/src/live-answers-logic.js"></script-->
-      <!-- END OF USER JAVASCRIPTS -->
-      <!-- END OF USER JAVASCRIPTS -->
-      <!-- HOMEPAGE JAVASCRIPT -->
-      <script src="js/src/fetch-homepage-nowplaying.js"></script>
-      <!-- MARKET JAVASCRIPTS -->
-      <!--script src="js/src/market-physical.js"></script-->
-      <!--script src="js/src/market-digital.js"></script-->
-      <!-- DISPLAY LIVE ANSWERS-->
-      <!--script src="js/src/display-live-answers.js"></script-->
-      <!-- MUSIC BABY-->
-      <!-- SONG JAVASCRIPT -->
-      <!--script src="js/src/song-loader.js"></script-->
-      <!--script src="js/src/search-songs.js"></script-->
-      <!-- SONG _ MUSIC _ DAILY SHUFFLE-->
-      <script src="js/src/music_daily_shuffle.js"></script>
-      <!-- PODCAST JAVASCRIPTS -->
-      <!-- PODCAST JAVASCRIPTS -->
-      <script src="js/src/podcast.js"></script>
-      <!-- MEDIA JAVASCRIPT -->
-      <script src="js/src/media.js"></script>
-      <!--script src="js/src/media-layout-effects.js"></script-->
-      <!-- GAMES JAVASCRIPT -->
-      <!--script src="js/src/games.js"></script-->
-      <!-- NEWSLETTER + UDPATES-->
-      <script src="js/src/newsletter.js"></script>
-      <script src="js/src/updates-commits.js"></script>
-      <script src="js/src/newSuperSong.js"></script>
-      <!-- SHOW UPDATES -->
-      <script src="js/src/audioPlayerControls.js"></script>
-      <!-- DONATION SCRIPTS -->
-      <!--script src="js/src/donation.js"></script-->
-      <!--script src="js/src/donation-slider-a.js"></script-->
-      <!-- USER SETTINGS -->
-      <script src="js/src/function-switchTheme.js"></script>
-      <!-- CORE PAGE-->
-      <script src="js/src/tab.js"></script>
-      <script src="js/src/nav-leftDash.js"></script>
-      <!--script src="js/src/playlist-logic.js"></script-->
-      <!-- CHAT LOGIC -->
-      <!--script src="/js/src/chat-logic.js"></script-->
-      <!-- MESSAGE BOARD LOGIC -->
-      <!--script src="js/src/message-board-logic.js"></script-->
-      <!-- GOAL CHART LOGIC -->
-      <!--script src="/js/src/goal-chart.js"></script-->
-      <!-- SUPPORT AHOY LOGIC -->
-      <!-- script src="/js/src/support-artist-individual.js"></script -->
-      <!-- CORDOVA PLUGINS -->
-      <script type="text/javascript" src="cordova.js"></script>
-      <script type="text/javascript"
-        src="js/cordova-scripts/cordova-musicControls.js"></script>
-      <!-- CASTING FUNCTION -->
-      <!--script src="js/src/function-superCast.js"></script>
-    <!--script src="js/src/podcast-mobile-logic.js"></script-->
-      <!-- BACKGROUND GRAPHIC LOGIC -->
-      <script src="./js/src/background-graphic-logic.js"></script>
-      <!-- MUSIC VIZ -->
-      <!--script src="js/src/experience.js"></script-->
-      <!-- TODAYS DATE -->
-      <script src="js/src/function_pull_LatestSong.js"></script>
-      <script src="js/src/function_today_date.js"></script>
-      <!-- BURN CD Script-->
-      <script src="js/src/burnCd.js"></script>
-      <!--Display Time-->
-      <!--script src="js/src/function_DisplayTime.js"></script-->
-      <!-- v24 Song Bar Image-->
-      <script src="js/src/v24songBarImage.js"></script>
-      <!-- v25 Menu Code -->
-      <script src="js/src/v25_menuCode.js"></script>
-      <script src="js/src/v25_dailyJukebox.js"></script>
-      <script src="js/src/v25_songController.js"></script>
-      <script src="js/src/magic-svg-logic.js"></script>
-      <!-- END -->
-    </body>
-  </html>
+    </div>
+    <!-- END OF BOTTOM PLAYER -->
+    <!-- CONDITIONAL LOGIC BITCH -->
+    <!-- DYNAMIC SHARE TEST -->
+    <!--script src="js/src/share.js"></script-->
+    <!-- DYANMIC ARTIST TEST -->
+    <!--script src="js/src/dynamicArtist.js"></script-->
+    <!--script src="js/src/siteCounter.js"></script-->
+    <!-- END OF DRAFTY SCRIPTS -->
+    <!--script src="js/src/h1-effects-scroll.js"></script-->
+    <!-- USER CONTROLS-->
+    <!--script src="js/src/controls-timeline.js"></script-->
+    <!-- USER NAV -->
+    <script src="js/src/function-toggle-dash.js"></script>
+    <!-- USER JAVASCRIPTS -->
+    <!-- script src="js/src/user-cart.js"></script -->
+    <!-- script src="js/src/user-icon-input.js"></script -->
+    <script src="js/src/login.js"></script>
+    <!--script src="js/src/user-liked-everything.js"></script-->
+    <!-- USER REVIEW PODCAST-->
+    <!--script src="js/src/user-review-podcasts.js"></script-->
+    <!-- USER PREF SAVED -->
+    <script src="js/src/user-userSesh.js"></script>
+    <!-- USER - DISPLAY USER INFO -->
+    <!-- NEW QUESTION APP -->
+    <!-- LIVE DATA -->
+    <!--script src="js/src/live-answers-logic.js"></script-->
+    <!-- END OF USER JAVASCRIPTS -->
+    <!-- END OF USER JAVASCRIPTS -->
+    <!-- HOMEPAGE JAVASCRIPT -->
+    <script src="js/src/fetch-homepage-nowplaying.js"></script>
+    <!-- MARKET JAVASCRIPTS -->
+    <!--script src="js/src/market-physical.js"></script-->
+    <!--script src="js/src/market-digital.js"></script-->
+    <!-- DISPLAY LIVE ANSWERS-->
+    <!--script src="js/src/display-live-answers.js"></script-->
+    <!-- MUSIC BABY-->
+    <!-- SONG JAVASCRIPT -->
+    <!--script src="js/src/song-loader.js"></script-->
+    <!--script src="js/src/search-songs.js"></script-->
+    <!-- SONG _ MUSIC _ DAILY SHUFFLE-->
+    <script src="js/src/music_daily_shuffle.js"></script>
+    <!-- PODCAST JAVASCRIPTS -->
+    <!-- PODCAST JAVASCRIPTS -->
+    <script src="js/src/podcast.js"></script>
+    <!-- MEDIA JAVASCRIPT -->
+    <script src="js/src/media.js"></script>
+    <!--script src="js/src/media-layout-effects.js"></script-->
+    <!-- GAMES JAVASCRIPT -->
+    <!--script src="js/src/games.js"></script-->
+    <!-- NEWSLETTER + UDPATES-->
+    <script src="js/src/newsletter.js"></script>
+    <script src="js/src/updates-commits.js"></script>
+    <script src="js/src/newSuperSong.js"></script>
+    <!-- SHOW UPDATES -->
+    <script src="js/src/audioPlayerControls.js"></script>
+    <!-- DONATION SCRIPTS -->
+    <!--script src="js/src/donation.js"></script-->
+    <!--script src="js/src/donation-slider-a.js"></script-->
+    <!-- USER SETTINGS -->
+    <script src="js/src/function-switchTheme.js"></script>
+    <!-- CORE PAGE-->
+    <script src="js/src/tab.js"></script>
+    <script src="js/src/nav-leftDash.js"></script>
+    <!--script src="js/src/playlist-logic.js"></script-->
+    <!-- CHAT LOGIC -->
+    <!--script src="/js/src/chat-logic.js"></script-->
+    <!-- MESSAGE BOARD LOGIC -->
+    <!--script src="js/src/message-board-logic.js"></script-->
+    <!-- GOAL CHART LOGIC -->
+    <!--script src="/js/src/goal-chart.js"></script-->
+    <!-- SUPPORT AHOY LOGIC -->
+    <!-- script src="/js/src/support-artist-individual.js"></script -->
+    <!-- CORDOVA PLUGINS -->
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript"
+      src="js/cordova-scripts/cordova-musicControls.js"></script>
+    <!-- CASTING FUNCTION -->
+    <!--script src="js/src/function-superCast.js"></script -->
+    <!-- script src="js/src/podcast-mobile-logic.js"></script-->
+    <!-- BACKGROUND GRAPHIC LOGIC -->
+    <script src="./js/src/background-graphic-logic.js"></script>
+    <!-- MUSIC VIZ -->
+    <!--script src="js/src/experience.js"></script-->
+    <!-- TODAYS DATE -->
+    <script src="js/src/function_pull_LatestSong.js"></script>
+    <script src="js/src/function_today_date.js"></script>
+    <!-- BURN CD Script-->
+    <script src="js/src/burnCd.js"></script>
+    <!--Display Time-->
+    <!--script src="js/src/function_DisplayTime.js"></script-->
+    <!-- v24 Song Bar Image-->
+    <script src="js/src/v24songBarImage.js"></script>
+    <!-- v25 Menu Code -->
+    <script src="js/src/v25_menuCode.js"></script>
+    <script src="js/src/v25_dailyJukebox.js"></script>
+    <script src="js/src/v25_songController.js"></script>
+    <script src="js/src/magic-svg-logic.js"></script>
+    <script src="js/src/updates-commits.js"></script>
+    <!-- END -->
+  </body>
+</html>
