@@ -33,6 +33,29 @@
   box-shadow: 0 5px #666; /* Shadow effect on hover */
   transform: scale(1.1); /* Slightly increase the size */
 }
+
+#cbv25 {
+  background-color: #4CAF50; /* Fallback color */
+  background-image: linear-gradient(to right, #44a08d, #093637); /* Gradient background */
+  color: white;
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition: all 0.5s; /* Smooth transition for hover effects */
+  cursor: pointer;
+  outline: none;
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 2.9px #000000; /* Shadow for 3D effect */
+}
+
+#cbv25:hover {
+  background-image: linear-gradient(to right, #09363700, #ff00ae); /* Gradient hover effect */
+  box-shadow: 0 5px #666; /* Shadow effect on hover */
+  transform: scale(1.1); /* Slightly increase the size */
+}
 </style>
     <script type="module">
       import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
@@ -90,19 +113,16 @@
       <input type="email" id="email" placeholder="Email" required />
       <input type="password" id="password" placeholder="Password" required />
       <button type="submit" class="cool-button">CREATE</button>
-      <button class="fa fa-question-circle" style="font-size:24px;"
+      <button id="cbv25" class="fa fa-question-circle" style="font-size:24px;"
         onclick="toggleFAQ()"></button>
       <div id="faqScreen" style="display:none;">
-        <h2>FAQ - Help Screen</h2>
-        <p>Here you can add questions and answers according to best practices in
-          psychoanalysis for 2024.</p>
-        <p><strong>Q: How do I create an account?</strong></p>
-        <p>A: Enter your email and a secure password, then click the 'Create'
-          button.</p>
+        <h2 style="text-align: center;">FAQ & Help</h2>
+
+       
         <p><strong>Q: What's Ahoy Indie Media, you say?</strong></p>
         <p>A: It's the indie hub where creators play! From music to podcasts, oh what a scene, a treasure chest where content's queen!</p>
         <p><strong>Q: How do I join this grand soiree?</strong></p>
-        <p>A: Just hit 'Create' and sail away! Type your email, a password too, verify that link – yo ho, you're through!</p>
+        <p>A: Just hit 'Create' and sail away! <br>Type your email, a password too, verify that link – yo ho, you're through!</p>
         <p><strong>Q: What treasures on Ahoy can I find?</strong></p>
         <p>A: Indie gems of every kind! Tracks and chats from lands afar, exclusive stuff that'll raise the bar!</p>
         <p><strong>Q: How do I subscribe, what’s the trick?</strong></p>
@@ -112,7 +132,7 @@
         <p><strong>Q: Why subscribe? What's in store?</strong></p>
         <p>A: Support the artists you adore!</p>
         <p><strong>Q: Subscription's end, how do I flee?</strong></p>
-        <p>A: 'Cancel Subscription' – as easy as tea! It stays till the bill's last date, no early leave, mate, that's the fate.</p>
+        <p>A: 'Cancel Subscription' – be easy as tea! It stays till the bill's last date, no early leave, mate, that's the fate.</p>
         <p><strong>Q: Need help? Where’s the crew?</strong></p>
         <p>A: Support@ahoy.ooo will rescue you!</p>
       </div>
