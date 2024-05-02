@@ -8,6 +8,8 @@
       src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js"></script>
     <script
       src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js"></script>
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
   .cool-button {
   background-color: #4CAF50; /* Fallback color */
@@ -67,6 +69,16 @@
           }
       });
     </script>
+    <script>
+    function toggleFAQ() {
+        var faqScreen = document.getElementById('faqScreen');
+        if (faqScreen.style.display === 'none') {
+            faqScreen.style.display = 'block';
+        } else {
+            faqScreen.style.display = 'none';
+        }
+    }
+    </script>
     <link rel="stylesheet" href="./foundational.css" />
   </head>
   <body>
@@ -78,6 +90,16 @@
       <input type="email" id="email" placeholder="Email" required />
       <input type="password" id="password" placeholder="Password" required />
       <button type="submit" class="cool-button">CREATE</button>
+      <button class="fa fa-question-circle" style="font-size:24px;"
+        onclick="toggleFAQ()"></button>
+      <div id="faqScreen" style="display:none;">
+        <h2>FAQ - Help Screen</h2>
+        <p>Here you can add questions and answers according to best practices in
+          psychoanalysis for 2024.</p>
+        <p><strong>Q: How do I create an account?</strong></p>
+        <p>A: Enter your email and a secure password, then click the 'Create'
+          button.</p>
+      </div>
       <div id="notification"></div>
       <br />
       <a href="login.html" class="theme-link" id="loginLink">Already have an
