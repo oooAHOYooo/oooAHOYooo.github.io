@@ -3,6 +3,18 @@
     max-width: 100%;
     mix-blend-mode: lighten;
     mix-blend-mode: soft-light;
-    /* Apply the animation to the filter property */
-    /* Adjust the duration (3s) and repetition (infinite) as needed */
+    position: relative;
+    overflow: hidden;
+}
+
+.svgBlend::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mP8//8/AxJgYmD4DwRCoAEDAJyTDwXj8ZIuAAAAAElFTkSuQmCC');
+    opacity: 0.2;
+    mix-blend-mode: soft-light;
 }
