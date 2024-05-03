@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <title>Subscribe - Ahoy Indie Media</title>
         <link rel="stylesheet" href="./css/account.css">
+        <link rel="stylesheet" href="./css/billing.css">
         <link rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet"
@@ -87,7 +88,7 @@
                     <!-- Stripe Elements will go here -->
                 </div>
                 <br>
-                <button type="submit" class="cool-button">Subscribe</button>
+                <button type="submit" class="cool-button-a">Subscribe</button>
             </form>
             <div id="payment-message"></div>
         </div>
@@ -120,8 +121,6 @@
                         document.getElementById('payment-message').textContent = subscriptionResult.error.message;
                     } else {
                         document.getElementById('payment-message').textContent = 'Subscription successful!';
-                        // Redirect to confirmation page with plan name
-                        window.location.href = `confirmation.html?plan=${encodeURIComponent(plan)}`;
                     }
                 });
             }

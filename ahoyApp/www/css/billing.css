@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;600&display=swap');
+
+body,
+input,
+button,
+#notification,
+.text-outline {
+    font-family: 'Barlow', sans-serif;
+}
+
+a {
+    color: white;
+}
+
+body {
+    background: url("https://media.giphy.com/media/fvSRe1p3pC7YHFQXZd/giphy.gif") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    color: white !important;
+}
+
+.text-outline {
+    color: rgb(255, 255, 255);
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+
+body img {
+    width: 300px;
+    height: auto;
+    margin-top: 10px;
+    /* Added a tiny bit of margin to the top of the logo */
+}
+
+#signup-form {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 5px 15px rgba(255, 34, 34, 0.2);
+    backdrop-filter: blur(10px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    border: 2px solid #FFD700;
+    /* Gold border for the form */
+}
+
+#signup-form input,
+#signup-form button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+#signup-form button {
+    background: dodgerblue;
+    color: white;
+}
+
+#notification {
+    color: white;
+    margin-top: 10px;
+}
+
+/* ... existing styles ... */
+
+/* Add or modify these styles */
+#signup-form input[type="email"],
+#signup-form input[type="password"] {
+    width: 80%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Additions for the Grandfather Club promotion */
+h3 {
+    color: #FFD700;
+    /* Gold color for the promotion header */
+    text-align: center;
+}
+
+p {
+    color: #FFFFFF;
+    /* White color for better readability */
+    text-align: center;
+    margin: 10px 0;
+}
