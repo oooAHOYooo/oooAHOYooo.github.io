@@ -100,27 +100,34 @@
         event.preventDefault();
         var email = document.getElementById('email').value;
         var plan = document.getElementById('plan').value;
-        stripe.createPaymentMethod('card', card, {
-            billing_details: { email: email }
-        }).then(function(result) {
-            if (result.error) {
-                document.getElementById('payment-message').textContent = result.error.message;
-            } else {
-                fetch('/create-subscription', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ payment_method_id: result.paymentMethod.id, email: email, plan: plan })
-                }).then(function(response) {
-                    return response.json();
-                }).then(function(subscriptionResult) {
-                    if (subscriptionResult.error) {
-                        document.getElementById('payment-message').textContent = subscriptionResult.error.message;
-                    } else {
-                        document.getElementById('payment-message').textContent = 'Subscription successful!';
-                    }
-                });
-            }
-        });
+
+        // Check if the selected plan is 'basic'
+        if (plan === 'basic') {
+            document.getElementById('payment-message').textContent = 'Subscription successful!';
+            // Optionally, redirect to a confirmation page or perform other actions
+        } else {
+            stripe.createPaymentMethod('card', card, {
+                billing_details: { email: email }
+            }).then(function(result) {
+                if (result.error) {
+                    document.getElementById('payment-message').textContent = result.error.message;
+                } else {
+                    fetch('/create-subscription', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ payment_method_id: result.paymentMethod.id, email: email, plan: plan })
+                    }).then(function(response) {
+                        return response.json();
+                    }).then(function(subscriptionResult) {
+                        if (subscriptionResult.error) {
+                            document.getElementById('payment-message').textContent = subscriptionResult.error.message;
+                        } else {
+                            document.getElementById('payment-message').textContent = 'Subscription successful!';
+                        }
+                    });
+                }
+            });
+        }
     });
     </script>
     </body>
