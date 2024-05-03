@@ -85,7 +85,8 @@
               const userCredential = await createUserWithEmailAndPassword(auth, email, password);
               notificationEl.textContent = "Signup successful! Please verify your email.";
               notificationEl.style.color = "green";
-              // You might want to send an email verification here with sendEmailVerification(userCredential.user)
+              // Redirect to billing page after successful account creation
+              window.location.href = 'billing.html';
           } catch (error) {
               notificationEl.textContent = `Signup failed: ${error.message}`;
               notificationEl.style.color = "red";
@@ -118,21 +119,25 @@
       <div id="faqScreen" style="display:none;">
         <h2 style="text-align: center;">FAQ & Help</h2>
 
-       
         <p><strong>Q: What's Ahoy Indie Media, you say?</strong></p>
-        <p>A: It's the indie hub where creators play! From music to podcasts, oh what a scene, a treasure chest where content's queen!</p>
+        <p>A: It's the indie hub where creators play! From music to podcasts, oh
+          what a scene, a treasure chest where content's queen!</p>
         <p><strong>Q: How do I join this grand soiree?</strong></p>
-        <p>A: Just hit 'Create' and sail away! <br>Type your email, a password too, verify that link – yo ho, you're through!</p>
+        <p>A: Just hit 'Create' and sail away! <br>Type your email, a password
+          too, verify that link – yo ho, you're through!</p>
         <p><strong>Q: What treasures on Ahoy can I find?</strong></p>
-        <p>A: Indie gems of every kind! Tracks and chats from lands afar, exclusive stuff that'll raise the bar!</p>
+        <p>A: Indie gems of every kind! Tracks and chats from lands afar,
+          exclusive stuff that'll raise the bar!</p>
         <p><strong>Q: How do I subscribe, what’s the trick?</strong></p>
-        <p>A: Log in, click 'subscribe' – it’s just one click! Choose your plan, be it big or small, unlimited access, have a ball!</p>
+        <p>A: Log in, click 'subscribe' – it’s just one click! Choose your plan,
+          be it big or small, unlimited access, have a ball!</p>
         <p><strong>Q: Upload my own? Can it be done?</strong></p>
         <p>A: No, my friend, that ship has not begun.</p>
         <p><strong>Q: Why subscribe? What's in store?</strong></p>
         <p>A: Support the artists you adore!</p>
         <p><strong>Q: Subscription's end, how do I flee?</strong></p>
-        <p>A: 'Cancel Subscription' – be easy as tea! It stays till the bill's last date, no early leave, mate, that's the fate.</p>
+        <p>A: 'Cancel Subscription' – be easy as tea! It stays till the bill's
+          last date, no early leave, mate, that's the fate.</p>
         <p><strong>Q: Need help? Where’s the crew?</strong></p>
         <p>A: Support@ahoy.ooo will rescue you!</p>
       </div>
@@ -140,11 +145,6 @@
       <br />
       <a href="login.html" class="theme-link" id="loginLink">Already have an
         account? Login here</a>
-
-    </form>
-  </body>
-</html>
-
 
     </form>
   </body>

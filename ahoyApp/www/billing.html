@@ -87,7 +87,7 @@
                     <!-- Stripe Elements will go here -->
                 </div>
                 <br>
-                <button type="submit" class="cool-button-a">Subscribe</button>
+                <button type="submit" class="cool-button">Subscribe</button>
             </form>
             <div id="payment-message"></div>
         </div>
@@ -120,6 +120,8 @@
                         document.getElementById('payment-message').textContent = subscriptionResult.error.message;
                     } else {
                         document.getElementById('payment-message').textContent = 'Subscription successful!';
+                        // Redirect to confirmation page with plan name
+                        window.location.href = `confirmation.html?plan=${encodeURIComponent(plan)}`;
                     }
                 });
             }
