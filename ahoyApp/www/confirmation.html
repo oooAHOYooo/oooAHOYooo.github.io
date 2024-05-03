@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Subscription Confirmation - Ahoy Indie Media</title>
+        <link rel="stylesheet" href="./css/account.css">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            color: white;
+            text-align: center;
+        }
+        .cool-button {
+            background-color: #4CAF50; /* Fallback color */
+            background-image: linear-gradient(to right, #44a08d, #093637); /* Gradient background */
+            color: white;
+            border: none;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            transition: all 0.5s; /* Smooth transition for hover effects */
+            cursor: pointer;
+            outline: none;
+            border-radius: 5px; /* Rounded corners */
+            box-shadow: 0 2.9px #000000; /* Shadow for 3D effect */
+        }
+        .cool-button:hover {
+            background-image: linear-gradient(to right, #093637, #44a08d); /* Gradient hover effect */
+            box-shadow: 0 5px #666; /* Shadow effect on hover */
+            transform: scale(1.1); /* Slightly increase the size */
+        }
+    </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Subscription Confirmed!</h1>
+            <p>Thank you for subscribing to Ahoy Indie Media. Your subscription
+                to the <span id="plan-name">[Plan Name]</span> plan is now
+                active.</p>
+            <p>You can now enjoy unlimited access to our exclusive content and
+                features.</p>
+            <button class="cool-button"
+                onclick="window.location.href='../../index.html'">Go to
+                Dashboard</button>
+        </div>
+        <script>
+        // Assuming the plan name is passed via URL parameters for simplicity
+        const urlParams = new URLSearchParams(window.location.search);
+        const planName = urlParams.get('plan');
+        document.getElementById('plan-name').textContent = planName || 'selected';
+    </script>
+    </body>
+</html>
