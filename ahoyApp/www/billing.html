@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Subscribe - Ahoy Indie Media</title>
+        <link rel="stylesheet" href="./css/account.css">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+        <link rel="stylesheet"
+            href="https://cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+        <link rel="stylesheet"
+            href="https://cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
+        <script src="https://js.stripe.com/v3/"></script>
+        <style>
+    
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+        .cool-button {
+            background-color: #4CAF50; /* Fallback color */
+            background-image: linear-gradient(to right, #44a08d, #093637); /* Gradient background */
+            color: white;
+            border: none;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            transition: all 0.5s; /* Smooth transition for hover effects */
+            cursor: pointer;
+            outline: none;
+            border-radius: 5px; /* Rounded corners */
+            box-shadow: 0 2.9px #000000; /* Shadow for 3D effect */
+        }
+        .cool-button:hover {
+            background-image: linear-gradient(to right, #093637, #44a08d); /* Gradient hover effect */
+            box-shadow: 0 5px #666; /* Shadow effect on hover */
+            transform: scale(1.1); /* Slightly increase the size */
+        }
+        .step-indicator h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            line-height: 0!important;
+            text-align: center!important;
+        }
+
+        form {
+            color: white!important;
+        }
+
+        option {
+            color: white!important;
+        }
+
+        #plan, input {
+            color: white;
+        }
+
+
+    </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="step-indicator">Step 2 of 3: Choose Your Plan</div>
+            <h1>Subscribe to Ahoy Indie Media</h1>
+            <form id="subscription-form">
+                <div>
+                    <label for="email">Email Address</label>
+                    <input id="email" type="email" required placeholder="Email">
+                </div>
+                <div>
+                    <label for="plan">Select Plan:</label>
+                    <select id="plan" required>
+                        <option value="basic">Basic - $5/month</option>
+                        <option value="premium">Premium - $10/month</option>
+                        <option value="pro">Pro - $15/month</option>
+                    </select>
+                </div>
+                <div id="card-element">
+                    <!-- Stripe Elements will go here -->
+                </div>
+                <br>
+                <button type="submit" class="cool-button-a">Subscribe</button>
+            </form>
+            <div id="payment-message"></div>
+        </div>
+
+        <script>
+    var stripe = Stripe('pk_test_51N3kXJGpN1YPCSA4uSDuuiTPvkF41imnLuhPwiiNPjciX5VgIDpj6seAunapN7e65ZVKIe2oLVKOOsMrZ5ubqpVS00R05enKXO');
+    var elements = stripe.elements();
+    var card = elements.create('card');
+    card.mount('#card-element');
+
+    var form = document.getElementById('subscription-form');
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        var email = document.getElementById('email').value;
+        var plan = document.getElementById('plan').value;
+        stripe.createPaymentMethod('card', card, {
+            billing_details: { email: email }
+        }).then(function(result) {
+            if (result.error) {
+                document.getElementById('payment-message').textContent = result.error.message;
+            } else {
+                fetch('/create-subscription', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ payment_method_id: result.paymentMethod.id, email: email, plan: plan })
+                }).then(function(response) {
+                    return response.json();
+                }).then(function(subscriptionResult) {
+                    if (subscriptionResult.error) {
+                        document.getElementById('payment-message').textContent = subscriptionResult.error.message;
+                    } else {
+                        document.getElementById('payment-message').textContent = 'Subscription successful!';
+                    }
+                });
+            }
+        });
+    });
+    </script>
+    </body>
+</html>
