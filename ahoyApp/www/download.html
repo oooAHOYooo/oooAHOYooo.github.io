@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <style>
+            :root {
+                --background-color: rgb(251, 0, 255)
+                --text-color: #000;
+                --button-color: rgba(255, 255, 255, 0.236);
+                --gold: #ff0060;
+            }
+
+            body {
+                background: linear-gradient(90deg, #000000cd 0, #000000 58%);
+                font-family: 'Inter', sans-serif;
+                margin: 0;
+                padding: 0;
+                backdrop-filter: blur(10px);
+                color: white;
+            }
+
+            .download-container {
+                background-color: var(--background-color);
+                color: var(--text-color);
+                padding: 40px;
+                text-align: center;
+                border-radius: 20px;
+                margin: 50px auto;
+                width: 90%;
+                max-width: 800px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(255, 255, 255, 0.18);
+            }
+
+            .platforms {
+                display: flex;
+                justify-content: space-around;
+                flex-wrap: wrap;
+                margin-top: 40px;
+            }
+
+            .download-link {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                background-color: var(--button-color);
+                color: var(--text-color);
+                padding: 20px 40px;
+                margin: 10px;
+                border-radius: 10px;
+                width: 200px;
+                transition: background-color 0.3s ease, transform 0.3s ease;
+                text-decoration: none;
+                font-size: 20px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            }
+
+            .download-link i {
+                margin-right: 10px;
+            }
+
+            .download-link:hover {
+                background-color: var(--gold);
+                color: var(--background-color);
+                transform: scale(1.1);
+            }
+        </style>
+        <title>Download Beta App</title>
+    </head>
+    <body>
+        <div class="download-container">
+            <img src="../www/img/assets/u_ahoy23.png" alt="Ahoy Logo"
+                style="width: 100%; height: auto; margin:0;">
+            <h1>Beta App Download</h1>
+            <p>v24.3</p>
+            <div class="platforms">
+                <a href="URL_TO_YOUR_IPA_FILE" class="download-link"><i
+                        class="fab fa-apple"></i> </a>
+                <a href="URL_TO_YOUR_APK_FILE" class="download-link"><i
+                        class="fab fa-android"></i> </a>
+                <a href="URL_TO_YOUR_EXE_FILE" class="download-link"><i
+                        class="fab fa-windows"></i> </a>
+                <a href="URL_TO_YOUR_DMG_FILE" class="download-link"><i
+                        class="fab fa-apple"></i> </a>
+
+            </div>
+        </div>
+    </body>
+</html>
