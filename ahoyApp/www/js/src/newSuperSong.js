@@ -45,6 +45,15 @@ function playSong(songUrl, songTitle, artistName, buttonElement) {
 
     // Set currentSongIndex based on the songUrl
     currentSongIndex = songsArray.findIndex(s => s.mp3url === songUrl);
+
+    // Update currentSong object
+    currentSong.url = songUrl;
+    currentSong.title = songTitle;
+    currentSong.artist = artistName;
+    currentSong.albumArt = nowPlayingAlbumArt.src; // Assuming album art is updated here
+    currentSong.duration = audioPlayer.duration; // Assuming duration can be fetched here
+
+    updateUI(); // Call this from v25_updateStatus.js to refresh the UI with new song details
   }
 }
 
