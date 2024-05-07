@@ -4,22 +4,25 @@ function playSong(songUrl, songTitle, artistName, buttonElement) {
   const nowPlayingSongDetails = document.getElementById("now-playing-song-details");
   const nowPlayingSongTitle = document.getElementById("now-playing-song-title");
   const nowPlayingSongArtist = document.getElementById("now-playing-song-artist");
-  const nowPlayingAlbumArt = document.getElementById("now-playing-album-art"); // Ensure this ID matches your album art img element
-  const v24SongInfo = document.getElementById("song-info"); // Add this line
+  const nowPlayingAlbumArt = document.getElementById("now-playing-album-art");
+  const v24SongInfo = document.getElementById("song-info");
+  const playPauseIcon = document.getElementById("play-pause-icon"); // Ensure this ID matches your play/pause toggle icon
 
   // Toggle play/pause based on the current song URL
   if (audioPlayer.src === songUrl && !audioPlayer.paused) {
     audioPlayer.pause();
     buttonElement.innerHTML = '<i class="fas fa-play"></i>'; // Change to play icon
+    playPauseIcon.className = 'fas fa-play'; // Update play/pause icon
   } else {
     audioPlayer.src = songUrl;
     audioPlayer.play();
     buttonElement.innerHTML = '<i class="fas fa-pause"></i>'; // Change to pause icon
+    playPauseIcon.className = 'fas fa-pause'; // Update play/pause icon
 
     // Update now-playing song details
     nowPlayingSongTitle.textContent = songTitle;
     nowPlayingSongArtist.textContent = artistName;
-    v24SongInfo.textContent = `${artistName} - ${songTitle}`; // Update this line
+    v24SongInfo.textContent = `${artistName} - ${songTitle}`;
 
     // Update or insert the Burn button next to the song title
     let burnButton = nowPlayingSongDetails.querySelector('.burn-button');
@@ -43,6 +46,26 @@ function playSong(songUrl, songTitle, artistName, buttonElement) {
     // Set currentSongIndex based on the songUrl
     currentSongIndex = songsArray.findIndex(s => s.mp3url === songUrl);
   }
+}
+
+// Function to update the song progress bar as the song plays
+function updateProgressBar() {
+  const audioPlayer = document.getElementById("audio-player");
+  const progressBar = document.getElementById("song-progress-bar"); // Ensure this ID matches your progress bar element
+
+  audioPlayer.addEventListener('timeupdate', () => {
+    const percentage = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+    progressBar.style.width = `${percentage}%`;
+  });
+}
+
+// Enhanced error handling for audio playback
+function handlePlaybackError() {
+  const audioPlayer = document.getElementById("audio-player");
+  audioPlayer.onerror = () => {
+    console.error("Error occurred during song playback.");
+    // Optionally, display an error message to the user or perform other error handling logic
+  };
 }
 
 // Function to load and display songs from JSONBin
@@ -96,6 +119,8 @@ function fetchSongs() {
 document.addEventListener("DOMContentLoaded", function () {
   if (document.getElementById("song-list")) {
     loadSongs();
+    updateProgressBar();
+    handlePlaybackError();
   }
 });
 

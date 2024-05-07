@@ -180,7 +180,7 @@
         </div>
         <div
           style="width: 100%; background-color: rgba(0, 47, 255, 0.087); text-align: center; padding: 0px; font-weight: bold; color: rgb(255, 255, 255);">
-          <p>AHOY BETA v0.24.2</p>
+          <p>AHOY BETA v0.24.3</p>
         </div>
 
         <!-- DATE DISPLAY -->
@@ -414,9 +414,6 @@
             </div>
             <!-- Add button to clear the background user image -->
             <div class="setting">
-              <!--button id="toggle-background-image-button"
-              onclick="toggleBackgroundImage()">Toggle Background
-              Image</button -->
 
             </div>
           </div>
@@ -713,29 +710,37 @@
       <div id="v24ahoyPlayer" class="player">
         <audio id="audio-player" src></audio>
         <div class="audio-player-controls">
-          <!-- Adjusted Bar A with progress bar, time, play button, display text, and settings icon -->
           <div class="v25-superPlayerButtonMash" id="barA">
             <button id="play-pause-button" onclick="togglePlayPause()"
               class="control-button">
 
               <i class="fas fa-play" id="play-pause-icon"></i>
             </button>
+            <div id="now-playing-song-title" style="font-size: 12px;">Song
+              Title</div>
+            <div id="now-playing-song-artist" style="font-size: 12px;">Artist
+              Name</div>
+            <img id="now-playing-album-art" src alt="Album Art">
+            <div id="current-time-v25">0:00</div>
+            <div id="total-time-v25">0:00</div>
+            <input type="range" id="song-progress-bar" value="0" min="0"
+              max="100">
 
-            <button id="next-button"
-              onclick="playSongAtIndex(currentSongIndex + 1)"
-              class="control-button">
+            <button id="next-button" class="control-button"
+              style="display: none;">
               <i class="fas fa-step-forward"></i>
             </button>
-            <div id="current-time-v25">0:00</div>
-            <div class="song-display">
-              <div id="song-info-a">Artist - Song Title</div>
-            </div>
+            <button id="settings-icon-button-a"
+              onclick="navigateToTab('settings-tab')">
+              <i class="fas fa-cog"></i>
+            </button>
+            <!--div id="current-time-v25">0:00</div -->
+            <!--div class="song-display" -->
+            <!--div id="song-info-a">Artist - Song Title</div>
+            </div -->
 
             <div id="settings-icon-container-a">
-              <button id="settings-icon-button-a"
-                onclick="navigateToTab('settings-tab')">
-                <i class="fas fa-cog"></i>
-              </button>
+
             </div>
           </div>
 
@@ -871,6 +876,7 @@
     <script src="js/src/v25_songController.js"></script>
     <script src="js/src/magic-svg-logic.js"></script>
     <script src="js/src/updates-commits.js"></script>
+    <script src="js/src/v25_updateStatus.js"></script>
     <!-- END -->
   </body>
 </html>
