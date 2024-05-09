@@ -1,9 +1,17 @@
 {
   "podcasts": [
     {
+      "id": 16,
+      "title": "The Rob Show #27 - Dave Gunn + Tyler Mirando",
+      "description": "Tallboyz OG's Tyler and Dave join Rob in a remastered Rob Show Classic -  Originally recorded May 2023",
+      "date": "2024-05-08",
+      "mp3url": "https://storage.googleapis.com/ahoy-podcast-collection/ready_RobShow_classic_Dave%2BTyler_Ep27.mp3",
+      "thumbnail": "https://storage.googleapis.com/ahoy-podcast-collection/The%20Rob%20Show%20-%20Ep27%20-%20Remastered%20Classic%20-5.08.24.jpg"
+    },
+    {
       "id": 15,
       "title": "The Rob Show #26 - Dan Carbonella",
-      "description": "Dan Carbonella is the MGMT of Koffee?",
+      "description": "Dan Carbonella, Manager of Koffee? finally joins the Rob Show",
       "date": "2024-04-29",
       "mp3url": "https://storage.googleapis.com/ahoy-podcast-collection/readyRobShow_Dan_ep26.mp3",
       "thumbnail": "https://storage.googleapis.com/ahoy-podcast-collection/The%20Rob%20Show%20-%20Ep26%20-%20Dan%20Carbonella%20-%204.26.24.jpg"
@@ -49,12 +57,11 @@
       "thumbnail": "https://ahoypodcast.s3.us-east-2.amazonaws.com/The+Rob+Show+-+Ep21+-+Tony+Rick+and+Andrew+August.jpg"
     },
     {
-      "id":9,
+      "id": 9,
       "title": "The Rob Show #20 - Pat Clendenen",
       "description": "Pat Clendenen, originally from New Haven, returns after 25 years in Boston. A local lawyer and power lifter, Pat is also venturing into skateboarding.",
       "mp3url": "https://ahoypodcast.s3.us-east-2.amazonaws.com/SUPERready+The+Rob+Show+-+Ep+20+-+Pat+Clendenen.mp3",
-      "thumbnail" : "https://ahoypodcast.s3.us-east-2.amazonaws.com/The+Rob+Show+-+Ep20+-+Pat+Clendenen.jpg"
-
+      "thumbnail": "https://ahoypodcast.s3.us-east-2.amazonaws.com/The+Rob+Show+-+Ep20+-+Pat+Clendenen.jpg"
     },
     {
       "id": 8,
@@ -77,7 +84,6 @@
       "mp3url": "https://ahoypodcast.s3.us-east-2.amazonaws.com/ready_The+Rob+Show+-+Ep+17+-+Aidan+Baur++-+2_7_23.mp3",
       "thumbnail": "https://ahoypodcast.s3.us-east-2.amazonaws.com/The+Rob+Show+-+Ep17+-+Aidan+Bauer.png"
     },
- 
     {
       "id": 5,
       "title": "The Rob Show #16 - Joshua Sanders",
@@ -85,8 +91,6 @@
       "mp3url": "https://ahoypodcast.s3.us-east-2.amazonaws.com/ready_The+Rob+Show+-+Ep+16+-+Joshua+Sanders.mp3",
       "thumbnail": "https://ahoypodcast.s3.us-east-2.amazonaws.com/The+Rob+Show+-+Ep16+-+Josh+Sanders+copy.png"
     },
-
-
     {
       "id": 1,
       "title": "The Rob Show #14 - Ray Meglio",
@@ -96,14 +100,14 @@
     },
     {
       "id": 2,
-      "title": "The Alex and Ellen Show #1 - The Squawk of an Eagle",
+      "title": "The Alex and Ellen Show #1",
       "description": "Welcome to a new podcast, The Alex and Ellen Show, where Alex and Ellen discuss a wide range of topics, from the canals of New Haven to the squawks of bald eagles.",
       "mp3url": "https://ahoypodcast.s3.us-east-2.amazonaws.com/ready_Alex+and+Ellen+Show+-+Ep+1+-+The+Sound+of+the+Bald+Eagle.mp3",
       "thumbnail": "https://ahoypodcast.s3.us-east-2.amazonaws.com/Ahoy+Podcast+Default.png"
     },
     {
       "id": 3,
-      "title": "Found Cassettes - 1",
+      "title": "Found Cassettes # 1 - Samuel Dylan Witch",
       "description": "Old Shin Harmonica - the creation of a lost song",
       "mp3url": "https://ahoypodcast.s3.us-east-2.amazonaws.com/foundSDW_nov23_1.mp3",
       "thumbnail": "https://ahoypodcast.s3.us-east-2.amazonaws.com/Ahoy+Podcast+Default.png"
