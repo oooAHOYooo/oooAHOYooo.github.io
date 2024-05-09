@@ -1,76 +1,76 @@
 {
-    "nowPlaying": [
-      {
-        "id": "newSC",
-        "albumArt": "https://ahoycollection.s3.us-east-2.amazonaws.com/SGCarlson-AhoyIndieMedia.png",
-        "songTitle": "How I Got Fat While Living Skinny",
-        "artist": "S.G. Carlson",
-        "tag": "new song",
-        "dateAdded": "03-10-24"
-      },
-   
-      {
-        "id": "9",
-        "albumArt": "https://ahoypodcast.s3.us-east-2.amazonaws.com/The+Rob+Show+-+Ep20+-+Pat+Clendenen.jpg",
-        "songTitle": "The Rob Show #20 | Pat Clendenen",
-        "artist": "Pat Clendenen",
-        "tag": "podcast",
-        "dateAdded": "03-19-24"
-      },
-      {
-        "id": "31",
-        "albumArt": "https://f4.bcbits.com/img/a3851680380_16.jpg",
-        "songTitle": "Framework + Fruit in the Shower + No 1",
-        "artist": "Justin Arena",
-        "tag": "new song",
-        "dateAdded": "03-20-24"
-      },
-      {
-        "id": "RiddleM",
-        "albumArt": "https://f4.bcbits.com/img/a1273412504_16.jpg",
-        "songTitle": "Daisies + Garden Girl + Magic Man + Melted Side + Snout + Mustard Seed",
-        "artist": "Riddle M",
-        "tag": "new song",
-        "dateAdded": "03-21-24"
-      },
-      {
-        "id": "10",
-        "albumArt": "https://ahoypodcast.s3.us-east-2.amazonaws.com/The+Rob+Show+-+Ep21+-+Tony+Rick+and+Andrew+August.jpg",
-        "songTitle": "The Rob Show #21",
-        "artist": "Tony Rick and Andrew August",
-        "tag": "podcast",
-        "dateAdded": "03-26-24"
-      },
-      {
-        "id": "11",
-        "albumArt": "https://ahoypodcast.s3.us-east-2.amazonaws.com/The+Rob+Show+-+Ep22+-+Sam+Carlson+-+3.28.24.jpg",
-        "songTitle": "The Rob Show #22 - Sam Carlson - New Haven Musician",
-        "artist": "Sam Carlson",
-        "tag": "podcast",
-        "dateAdded": "03-28-24"
-      },
-      {
-        "id":"12",
-        "albumArt": "https://storage.googleapis.com/ahoy-song-collection/ready_theTinesAlbumArtwork.jpg",
-        "songTitle": "Moon Views, Know by Feel, Chokecherries",
-        "artist" : "The Tines",
-        "tag": "new song",
-        "dateAdded" : "04-03-24"
-      },
-      {
-        "id": "12",
-        "albumArt": "https://ahoypodcast.s3.us-east-2.amazonaws.com/readyThe+Rob+Show+-+Ep23+-+Dave+Gunn+-+4.4.24.jpg",
-        "songTitle": "The Rob Show #23 - Dave Gunn",
-        "artist": "Dave Gunn",
-        "tag": "podcast",
-        "dateAdded": "04-04-24"
-      },
-     { "id": "13",
+  "nowPlaying": [
+    {
+      "id": "newSC",
+      "albumArt": "https://ahoycollection.s3.us-east-2.amazonaws.com/SGCarlson-AhoyIndieMedia.png",
+      "songTitle": "How I Got Fat While Living Skinny",
+      "artist": "S.G. Carlson",
+      "tag": "new song",
+      "dateAdded": "03-10-24"
+    },
+    {
+      "id": "9",
+      "albumArt": "https://ahoypodcast.s3.us-east-2.amazonaws.com/The+Rob+Show+-+Ep20+-+Pat+Clendenen.jpg",
+      "songTitle": "The Rob Show #20 | Pat Clendenen",
+      "artist": "Pat Clendenen",
+      "tag": "podcast",
+      "dateAdded": "03-19-24"
+    },
+    {
+      "id": "31",
+      "albumArt": "https://f4.bcbits.com/img/a3851680380_16.jpg",
+      "songTitle": "Framework + Fruit in the Shower + No 1",
+      "artist": "Justin Arena",
+      "tag": "new song",
+      "dateAdded": "03-20-24"
+    },
+    {
+      "id": "RiddleM",
+      "albumArt": "https://f4.bcbits.com/img/a1273412504_16.jpg",
+      "songTitle": "Daisies + Garden Girl + Magic Man + Melted Side + Snout + Mustard Seed",
+      "artist": "Riddle M",
+      "tag": "new song",
+      "dateAdded": "03-21-24"
+    },
+    {
+      "id": "10",
+      "albumArt": "https://ahoypodcast.s3.us-east-2.amazonaws.com/The+Rob+Show+-+Ep21+-+Tony+Rick+and+Andrew+August.jpg",
+      "songTitle": "The Rob Show #21",
+      "artist": "Tony Rick and Andrew August",
+      "tag": "podcast",
+      "dateAdded": "03-26-24"
+    },
+    {
+      "id": "11",
+      "albumArt": "https://ahoypodcast.s3.us-east-2.amazonaws.com/The+Rob+Show+-+Ep22+-+Sam+Carlson+-+3.28.24.jpg",
+      "songTitle": "The Rob Show #22 - Sam Carlson - New Haven Musician",
+      "artist": "Sam Carlson",
+      "tag": "podcast",
+      "dateAdded": "03-28-24"
+    },
+    {
+      "id": "12",
+      "albumArt": "https://storage.googleapis.com/ahoy-song-collection/ready_theTinesAlbumArtwork.jpg",
+      "songTitle": "Moon Views, Know by Feel, Chokecherries",
+      "artist": "The Tines",
+      "tag": "new song",
+      "dateAdded": "04-03-24"
+    },
+    {
+      "id": "12",
+      "albumArt": "https://ahoypodcast.s3.us-east-2.amazonaws.com/readyThe+Rob+Show+-+Ep23+-+Dave+Gunn+-+4.4.24.jpg",
+      "songTitle": "The Rob Show #23 - Dave Gunn",
+      "artist": "Dave Gunn",
+      "tag": "podcast",
+      "dateAdded": "04-04-24"
+    },
+    {
+      "id": "13",
       "albumArt": "https://cdn.jwplayer.com/thumbs/MS7zwzR2-640.jpg",
       "songTitle": "Dave Gunn - Raleigh/Durham Footage",
       "artist": "Dave Gunn",
       "tag": "media",
-      "dateAdded": "04-09-24" 
+      "dateAdded": "04-09-24"
     },
     {
       "id": "4",
@@ -95,6 +95,14 @@
       "artist": "Dan Carbonella",
       "tag": "podcast",
       "dateAdded": "04-30-24"
+    },
+    {
+      "id": "050824",
+      "albumArt": "https://storage.googleapis.com/ahoy-podcast-collection/The%20Rob%20Show%20-%20Ep27%20-%20Remastered%20Classic%20-5.08.24.jpg",
+      "songTitle": "The Rob Show #27 - Dave Gunn + Tyler Mirando",
+      "artist": "The Tallboyz",
+      "tag": "podcast",
+      "dateAdded": "05-08-24"
     }
-    ]
-  }
+  ]
+}
