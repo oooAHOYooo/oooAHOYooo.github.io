@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "title": "Symphony No. 5",
+        "composer": "Ludwig van Beethoven",
+        "length": "7:35",
+        "year": 1808,
+        "genre": "Classical",
+        "album": "Beethoven: Complete Symphonies",
+        "movements": ["Allegro con brio", "Andante con moto", "Scherzo: Allegro", "Allegro"],
+        "mp3_url": "https://storage.googleapis.com/your-bucket-name/Beethoven-Symphony5.mp3"
+    },
+    {
+        "id": 2,
+        "title": "Canon in D",
+        "composer": "Johann Pachelbel",
+        "length": "6:12",
+        "year": 1680,
+        "genre": "Baroque",
+        "album": "Pachelbel: Canon and Gigue",
+        "mp3_url": "https://storage.googleapis.com/your-bucket-name/Pachelbel-CanonInD.mp3"
+    }
+]

@@ -245,7 +245,9 @@
             <i class="fas fa-fire" style="font-size: 16px;"></i>
           </button>
         </div>
-
+        <button id="classical-mode-button"
+          onclick="navigateToTab('classical-tab')"
+          class="common-button">Classical Mode</button>
         <!-- SONG CONTROLLERS -->
         <div class="playback-controls" id="v25-unique-player">
           <div class="controls-container">
@@ -318,6 +320,7 @@
               </div>
             </div>
           </div>
+
           <div class="media-container">
             <table id="mediaTable" class="list">
               <thead class="mediaTable-header">
@@ -335,6 +338,11 @@
             </table>
           </div>
 
+        </div>
+        <!-- CLASSICAL MUSIC TAB -->
+        <div id="classical-tab" class="tab-content" style="display: none;">
+          <h2>Classical Music Collection</h2>
+          <div id="classical-music-list"></div>
         </div>
         <!-- PODCASTS -->
         <div id="podcasts-tab" class="tab-content">
@@ -877,6 +885,7 @@
     <script src="js/src/magic-svg-logic.js"></script>
     <script src="js/src/updates-commits.js"></script>
     <script src="js/src/v25_updateStatus.js"></script>
+    <script src="js/src/classical_music.js"></script>
     <!-- END -->
   </body>
 </html>
