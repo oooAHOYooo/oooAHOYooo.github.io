@@ -5,28 +5,6 @@ document.addEventListener('DOMContentLoaded', function() {
       .then(itemsForSale => {
         const marketGrid = document.getElementById('market-grid');
   
-        // Create a modal for image zoom
-        const modal = document.createElement('div');
-        modal.style.display = 'none';
-        modal.style.position = 'fixed';
-        modal.style.left = '0';
-        modal.style.top = '0';
-        modal.style.width = '100%';
-        modal.style.height = '100%';
-        modal.style.backgroundColor = 'rgba(0,0,0,0.8)';
-        modal.style.zIndex = '1000';
-        modal.style.justifyContent = 'center';
-        modal.style.alignItems = 'center';
-        modal.style.display = 'flex';
-        document.body.appendChild(modal);
-
-        const zoomedImage = document.createElement('img');
-        modal.appendChild(zoomedImage);
-
-        modal.addEventListener('click', function() {
-            modal.style.display = 'none';
-        });
-
         // Iterate over each item in the JSON array
         itemsForSale.forEach(item => {
           // Create the main item container
@@ -38,12 +16,6 @@ document.addEventListener('DOMContentLoaded', function() {
           img.src = item.image || 'placeholder.jpg'; // Assuming there's a 'image' field in your JSON
           img.alt = item.name;
           img.className = 'item-image';
-          img.style.cursor = 'zoom-in';
-
-          img.addEventListener('click', function() {
-              zoomedImage.src = img.src;
-              modal.style.display = 'flex';
-          });
   
           // Create a container for text content
           const contentDiv = document.createElement('div');
@@ -82,5 +54,4 @@ document.addEventListener('DOMContentLoaded', function() {
         });
       })
       .catch(error => console.error('Failed to load items:', error));
-  });
   });
