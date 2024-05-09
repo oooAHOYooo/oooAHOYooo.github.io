@@ -418,6 +418,9 @@
 
               <button id="theme-switch-button" onclick="switchTheme()">Switch
                 Theme</button>
+              <button id="beta-features"
+                onclick="navigateToTab('beta-tab')">Explore Experimental BETA
+                Features</button>
 
             </div>
             <!-- Add button to clear the background user image -->
@@ -458,6 +461,15 @@
           </div>
         </div>
         <!-- CHAT TAB CHAT TAB CHAT TAB -->
+
+        <!-- BETA TAB -->
+        <div id="beta-tab" class="tab-content">
+          <h2>BETA</h2>
+          <p>This is the beta tab</p>
+          <p>These features are not yet ready for prime time</p>
+          <p>But they are ready for your testing</p>
+          <button onclick="navigateToTab('market-tab')">Go to Market</button>
+        </div>
 
         <!-- CASTING TAB -->
         <div id="casting-tab" class="tab-content">
@@ -584,6 +596,17 @@
           <!-- END OF ACCOUNT TAB DONT TOUCH -->
         </div>
         <!-- END OF THE ACCOUNT TAB-->
+
+        <!-- MARKET TAB-->
+        <div id="market-tab" class="tab-content">
+          <h2>Market</h2>
+          <p>This is the market tab</p>
+          <div id="market-grid"></div>
+          <p>Grid of digital items</p>
+          <div id="your-market-cart"></div>
+
+        </div>
+
         <!-- BURN TAB-->
         <div id="burn-tab" class="tab-content" style="padding-bottom: 20px;">
           <img src="./img/ahoy-burn.svg" class="svgBlend">
