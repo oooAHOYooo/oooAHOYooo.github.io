@@ -1,10 +1,56 @@
 document.addEventListener('DOMContentLoaded', function() {
+    const marketGrid = document.getElementById('market-grid');
+    const cart = []; // Initialize an empty array to hold cart items
+
+    // Function to update cart display
+    function updateCartDisplay() {
+      const cartDiv = document.getElementById('cart');
+      cartDiv.innerHTML = ''; // Clear previous cart display
+      cart.forEach(cartItem => {
+        const cartItemDiv = document.createElement('div');
+        cartItemDiv.textContent = `${cartItem.name} - ${cartItem.price}`;
+        cartDiv.appendChild(cartItemDiv);
+      });
+    }
+
+    // Sign out and purchase button
+    const purchaseButton = document.createElement('button');
+    purchaseButton.textContent = 'Sign out and Purchase';
+    purchaseButton.style.position = 'fixed'; // Fix position at the top
+    purchaseButton.style.top = '10px'; // 10px from the top
+    purchaseButton.style.right = '10px'; // 10px from the right
+    purchaseButton.onclick = function() {
+      // Send notification email to Alex
+      fetch('https://api.emailservice.com/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          to: 'alex@ahoy.ooo',
+          subject: 'Purchase Order',
+          body: `You have made a purchase of ${cart.length} items.`
+        })
+      }).then(response => {
+        if (response.ok) {
+          console.log('Purchase notification sent to alex@ahoy.ooo');
+        } else {
+          console.error('Failed to send purchase notification');
+        }
+      });
+
+      // Clear cart and sign out logic here
+      cart.length = 0;
+      updateCartDisplay();
+      console.log('User signed out and purchase completed');
+    };
+
+    document.body.insertBefore(purchaseButton, document.body.firstChild); // Insert at the top of the body
+
     // Fetch the JSON data from the v25-market.json file
     fetch('data/v25-market.json')
       .then(response => response.json())
       .then(itemsForSale => {
-        const marketGrid = document.getElementById('market-grid');
-  
         // Iterate over each item in the JSON array
         itemsForSale.forEach(item => {
           // Create the main item container
@@ -35,8 +81,10 @@ document.addEventListener('DOMContentLoaded', function() {
           const addToCartButton = document.createElement('button');
           addToCartButton.textContent = 'Add to Cart';
           addToCartButton.onclick = function() {
-            // Functionality to add item to cart
+            // Add item to cart
+            cart.push(item);
             console.log(`${item.name} added to cart`);
+            updateCartDisplay();
           };
   
           // Append elements to the content div
