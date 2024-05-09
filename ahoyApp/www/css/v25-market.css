@@ -1,0 +1,25 @@
+/* Add this to your CSS file */
+.grid-item {
+    margin: 10px;
+    /* Adjust the margin size as needed */
+    display: inline-block;
+    vertical-align: top;
+}
+
+#market-grid {
+    text-align: center;
+    /* Center the items if they don't fill the full width */
+}
+
+/* Add this to your CSS file */
+img.item-image {
+    width: 100%;
+    /* Adjust based on your layout */
+    height: auto;
+    transition: transform 0.25s ease;
+}
+
+img.item-image:hover {
+    transform: scale(1.05);
+    /* Slight zoom effect on hover */
+}
