@@ -3,42 +3,56 @@
         "id": "v25-1",
         "name": "Rob Sticker",
         "price": "Free (Limit 10), $1 after that",
-        "requires_subscription": true
+        "requires_subscription": true,
+        "thumbnail": "https://via.placeholder.com/150",
+        "image": "https://via.placeholder.com/500"
     },
     {
         "id": "v25-2",
         "name": "Ahoy Logo Shirt",
         "price": "$25",
-        "requires_subscription": false
+        "requires_subscription": false,
+        "thumbnail": "https://via.placeholder.com/150",
+        "image": "https://via.placeholder.com/500"
     },
     {
         "id": "v25-3",
         "name": "Ahoy Cheap Fabric Beanie",
         "price": "$10",
-        "requires_subscription": false
+        "requires_subscription": false,
+        "thumbnail": "https://via.placeholder.com/150",
+        "image": "https://via.placeholder.com/500"
     },
     {
         "id": "v25-4",
         "name": "Ahoy Cheap Fabric Shirt",
         "price": "$7",
-        "requires_subscription": false
+        "requires_subscription": false,
+        "thumbnail": "https://via.placeholder.com/150",
+        "image": "https://via.placeholder.com/500"
     },
     {
         "id": "v25-5",
         "name": "Ahoy Great Fabric Shirt",
         "price": "$30",
-        "requires_subscription": false
+        "requires_subscription": false,
+        "thumbnail": "https://via.placeholder.com/150",
+        "image": "https://via.placeholder.com/500"
     },
     {
         "id": "v25-6",
         "name": "Ahoy Patch",
         "price": "Free (Limit 10), $1 after that",
-        "requires_subscription": true
+        "requires_subscription": true,
+        "thumbnail": "https://via.placeholder.com/150",
+        "image": "https://via.placeholder.com/500"
     },
     {
         "id": "v25-7",
         "name": "Ahoy Rob Meglio Facemousepad",
         "price": "Free (Limit 2), $10 after that",
-        "requires_subscription": true
+        "requires_subscription": true,
+        "thumbnail": "https://via.placeholder.com/150",
+        "image": "https://via.placeholder.com/500"
     }
 ]
