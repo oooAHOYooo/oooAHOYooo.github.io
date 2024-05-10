@@ -77,21 +77,19 @@ document.addEventListener('DOMContentLoaded', function() {
           const subscription = document.createElement('p');
           subscription.textContent = `Requires Subscription: ${item.requires_subscription ? 'Yes' : 'No'}`;
   
-          // Add to Cart Button
-          const addToCartButton = document.createElement('button');
-          addToCartButton.textContent = 'Add to Cart';
-          addToCartButton.onclick = function() {
-            // Add item to cart
-            cart.push(item);
-            console.log(`${item.name} added to cart`);
-            updateCartDisplay();
+          // Reserve Button
+          const reserveButton = document.createElement('button');
+          reserveButton.textContent = 'Reserve Yours Now';
+          reserveButton.onclick = function() {
+            alert('This item is coming soon! Your reservation is noted.');
+            // Optionally, add logic to handle reservation here
           };
   
           // Append elements to the content div
           contentDiv.appendChild(name);
           contentDiv.appendChild(price);
           contentDiv.appendChild(subscription);
-          contentDiv.appendChild(addToCartButton);
+          contentDiv.appendChild(reserveButton);
   
           // Append image and content div to the main item div
           itemDiv.appendChild(img);

@@ -1,58 +1,51 @@
 [
     {
-        "id": "v25-1",
-        "name": "Rob Sticker",
-        "price": "Free (Limit 10), $1 after that",
-        "requires_subscription": true,
-        "thumbnail": "https://via.placeholder.com/150",
-        "image": "https://via.placeholder.com/500"
-    },
-    {
         "id": "v25-2",
-        "name": "Ahoy Logo Shirt",
+        "name": "Thumbnail Graphic Tee",
         "price": "$25",
         "requires_subscription": false,
-        "thumbnail": "https://via.placeholder.com/150",
-        "image": "https://via.placeholder.com/500"
+        "thumbnail": "https://storage.googleapis.com/ahoy-dynamic-content/AHOY%20Market%20v25%20-%20Thumbnail%20Graphic%20T.jpg",
+        "image": "https://storage.googleapis.com/ahoy-dynamic-content/AHOY%20Market%20v25%20-%20Thumbnail%20Graphic%20T.jpg",
+        "productImage2": "https://storage.googleapis.com/ahoy-dynamic-content/AHOY%20Market%20v25%20-%20Thumbnail%20Graphic%20T%20-%20img2.jpg"
     },
     {
         "id": "v25-3",
-        "name": "Ahoy Cheap Fabric Beanie",
-        "price": "$10",
+        "name": "YounGonz",
+        "price": "$234",
         "requires_subscription": false,
-        "thumbnail": "https://via.placeholder.com/150",
-        "image": "https://via.placeholder.com/500"
+        "thumbnail": "https://storage.googleapis.com/ahoy-dynamic-content/AHOY%20Market%20v25%20-%20YounGonzjpg.jpg",
+        "image": "https://storage.googleapis.com/ahoy-dynamic-content/AHOY%20Market%20v25%20-%20YounGonzjpg.jpg"
     },
     {
         "id": "v25-4",
-        "name": "Ahoy Cheap Fabric Shirt",
-        "price": "$7",
+        "name": "Rob Classic Sweatshirt",
+        "price": "$27",
         "requires_subscription": false,
-        "thumbnail": "https://via.placeholder.com/150",
-        "image": "https://via.placeholder.com/500"
+        "thumbnail": "https://storage.googleapis.com/ahoy-dynamic-content/AHOY%20Market%20v25%20-%20GRAPHIC%20SWEATSHIRT.jpg",
+        "image": "https://storage.googleapis.com/ahoy-dynamic-content/AHOY%20Market%20v25%20-%20GRAPHIC%20SWEATSHIRT.jpg"
     },
     {
         "id": "v25-5",
-        "name": "Ahoy Great Fabric Shirt",
-        "price": "$30",
+        "name": "Beanie",
+        "price": "$19",
         "requires_subscription": false,
-        "thumbnail": "https://via.placeholder.com/150",
-        "image": "https://via.placeholder.com/500"
+        "thumbnail": "https://storage.googleapis.com/ahoy-dynamic-content/AHOY%20Market%20v25%20-%20Beanie.png",
+        "image": "https://storage.googleapis.com/ahoy-dynamic-content/AHOY%20Market%20v25%20-%20Beanie.png"
     },
     {
         "id": "v25-6",
-        "name": "Ahoy Patch",
+        "name": "Not Square Sticker",
         "price": "Free (Limit 10), $1 after that",
         "requires_subscription": true,
-        "thumbnail": "https://via.placeholder.com/150",
-        "image": "https://via.placeholder.com/500"
+        "thumbnail": "https://storage.googleapis.com/ahoy-dynamic-content/AHOY%20Market%20v25%20-%20Not%20Square%20Sticker.jpg",
+        "image": "https://storage.googleapis.com/ahoy-dynamic-content/AHOY%20Market%20v25%20-%20Not%20Square%20Sticker.jpg"
     },
     {
         "id": "v25-7",
         "name": "Ahoy Rob Meglio Facemousepad",
         "price": "Free (Limit 2), $10 after that",
         "requires_subscription": true,
-        "thumbnail": "https://via.placeholder.com/150",
-        "image": "https://via.placeholder.com/500"
+        "thumbnail": "https://storage.googleapis.com/ahoy-dynamic-content/Ahoy%20Indie%20Media%20-%20v25%20Product%20-%20Rob%20Mousepad%201.png",
+        "image": "https://storage.googleapis.com/ahoy-dynamic-content/Ahoy%20Indie%20Media%20-%20v25%20Product%20-%20Rob%20Mousepad%201.png"
     }
 ]
