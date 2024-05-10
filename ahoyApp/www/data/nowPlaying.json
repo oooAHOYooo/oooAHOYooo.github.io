@@ -103,6 +103,14 @@
       "artist": "The Tallboyz",
       "tag": "podcast",
       "dateAdded": "05-08-24"
+    },
+    {
+      "id": "051024",
+      "albumArt": "https://storage.googleapis.com/ahoy-podcast-collection/The%20Rob%20Show%20-%20Ep28%20-%20Alex%20Gonzalez%20-%205.10.24.jpg",
+      "songTitle": "The Rob Show #28 - Alex Gonzalez",
+      "artist": "Alex Gonzalez",
+      "tag": "podcast",
+      "dateAdded": "05-10-24"
     }
   ]
 }
