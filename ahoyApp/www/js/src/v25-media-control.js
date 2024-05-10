@@ -18,6 +18,12 @@ function seekMedia(value) {
 }
 
 // Update the player controls as the media plays
+document.getElementById('audio-player').addEventListener('loadedmetadata', function() {
+  var audio = this;
+  var totalTimeDisplay = document.getElementById('total-time-v25');
+  totalTimeDisplay.textContent = formatTime(audio.duration);
+});
+
 document.getElementById('audio-player').addEventListener('timeupdate', function() {
   var audio = this;
   var progressBar = document.getElementById('song-progress-bar');

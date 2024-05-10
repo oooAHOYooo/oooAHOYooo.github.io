@@ -3,7 +3,6 @@ let currentSong = {
     url: '',
     title: 'Song Title or Episode Title',
     artist: 'Artist Name or Podcast Host',
-    albumArt: './path/to/album/art.jpg',
     duration: 200, // Duration in seconds
     type: 'music' // or 'podcast'
 };
@@ -11,21 +10,18 @@ let currentSong = {
 function updateUI() {
     const songTitle = document.getElementById('now-playing-song-title');
     const songArtist = document.getElementById('now-playing-song-artist');
-    const albumArt = document.getElementById('now-playing-album-art');
     const totalTime = document.getElementById('total-time-v25');
-    const typeIndicator = document.getElementById('type-indicator'); // Element to indicate if it's music or podcast
+    const typeIndicator = document.getElementById('type-indicator');
 
-    songTitle.textContent = currentSong.title;
-    songArtist.textContent = currentSong.artist;
-    albumArt.src = currentSong.albumArt;
-    albumArt.alt = `Album art for ${currentSong.title}`;
-    totalTime.textContent = formatTime(currentSong.duration);
-    typeIndicator.textContent = currentSong.type === 'music' ? 'Music' : 'Podcast';
+    songTitle.textContent = globalAudioState.currentMedia.title;
+    songArtist.textContent = globalAudioState.currentMedia.artist;
+    totalTime.textContent = formatTime(globalAudioState.currentMedia.duration);
+    typeIndicator.textContent = globalAudioState.currentMedia.type === 'music' ? 'Music' : 'Podcast';
 }
 
 function formatTime(seconds) {
     const min = Math.floor(seconds / 60);
-    const sec = seconds % 60;
+    const sec = Math.floor(seconds % 60);
     return `${min}:${sec < 10 ? '0' : ''}${sec}`;
 }
 

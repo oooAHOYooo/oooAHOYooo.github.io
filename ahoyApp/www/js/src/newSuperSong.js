@@ -57,16 +57,7 @@ function playSong(songUrl, songTitle, artistName, buttonElement) {
   }
 }
 
-// Function to update the song progress bar as the song plays
-function updateProgressBar() {
-  const audioPlayer = document.getElementById("audio-player");
-  const progressBar = document.getElementById("song-progress-bar"); // Ensure this ID matches your progress bar element
 
-  audioPlayer.addEventListener('timeupdate', () => {
-    const percentage = (audioPlayer.currentTime / audioPlayer.duration) * 100;
-    progressBar.style.width = `${percentage}%`;
-  });
-}
 
 // Enhanced error handling for audio playback
 function handlePlaybackError() {
