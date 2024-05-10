@@ -13,11 +13,11 @@ function updateCartDisplay() {
     cartDiv.innerHTML = ''; // Clear previous cart display
     cart.forEach(cartItem => {
         const cartItemDiv = document.createElement('div');
-        cartItemDiv.textContent = `${cartItem.name} - ${cartItem.price}`;
+        const reservationText = cartItem.reserved ? ' - Reserved' : '';
+        cartItemDiv.textContent = `${cartItem.name} - ${cartItem.price}${reservationText}`;
         cartDiv.appendChild(cartItemDiv);
     });
 }
-
 // Function to navigate to the complete order page
 function goToCompleteOrderPage() {
     window.location.href = '/complete-order'; // Assuming '/complete-order' is the URL for the Complete Order page

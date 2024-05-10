@@ -82,7 +82,12 @@ document.addEventListener('DOMContentLoaded', function() {
           reserveButton.textContent = 'Reserve Yours Now';
           reserveButton.onclick = function() {
             alert('This item is coming soon! Your reservation is noted.');
-            // Optionally, add logic to handle reservation here
+            // Add item to cart using the addToCart function from v25-cart-manager.js
+            addToCart({
+              name: item.name,
+              price: item.price,
+              reserved: true // Additional property to indicate it's a reservation
+            });
           };
   
           // Append elements to the content div
