@@ -19,7 +19,7 @@ function loadPodcasts() {
         data.record.podcasts.forEach(podcast => {
             const row = document.createElement("tr");
             row.innerHTML = `
-                <td><button class="control-button-podcast" id="podcast-play-${podcast.id}" onclick="togglePlayPausePodcast('${podcast.mp3url}')"><i class="fas fa-play"></i></button></td>
+                <td><button class="control-button-podcast" id="podcast-play-${podcast.id}" onclick="togglePlayPausePodcast('${podcast.mp3url}', '${podcast.title}', '${podcast.thumbnail}')"><i class="fas fa-play"></i></button></td>
                 <td><img src="${podcast.thumbnail}" alt="${podcast.title}" class="thumbnail"></td>
                 <td>${podcast.title}</td>
                 <td>${podcast.description}</td>
@@ -33,8 +33,11 @@ function loadPodcasts() {
 }
 
 // Adjust the togglePlayPausePodcast function to use podcast.id instead of index
-function togglePlayPausePodcast(url) {
+function togglePlayPausePodcast(url, podcastTitle, podcastThumbnail) {
     AhoyAudioManager.loadMedia(url);
+    // Assuming you have access to podcast details, update the currently playing display
+    document.getElementById('currently-playing-title').textContent = `Podcast: ${podcastTitle}`;
+    document.getElementById('currently-playing-art').src = podcastThumbnail;
 }
 
 document.addEventListener("DOMContentLoaded", function () {

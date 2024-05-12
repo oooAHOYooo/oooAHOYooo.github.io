@@ -24,6 +24,9 @@ function playSong(songUrl, songTitle, artistName, buttonElement) {
     nowPlayingSongArtist.textContent = artistName;
     v24SongInfo.textContent = `${artistName} - ${songTitle}`;
 
+    // Update the currently playing display
+    document.getElementById('currently-playing-title').textContent = `${songTitle} by ${artistName}`;
+
     // Update or insert the Burn button next to the song title
     let burnButton = nowPlayingSongDetails.querySelector('.burn-button');
     if (!burnButton) {

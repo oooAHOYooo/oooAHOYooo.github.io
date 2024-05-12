@@ -14,12 +14,14 @@
     /* Subtle white border */
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1), -4px -4px 10px rgba(255, 255, 255, 0.7);
     /* Neumorphic shadow */
-    width: 90%;
+    width: 100% !important;
+    height: auto;
+    padding-bottom: 30px;
+    ;
     /* Responsive width */
     margin: auto;
     /* Centering */
-    position: fixed;
-    bottom: 20px;
+    position: relative;
     /* Position from bottom */
     z-index: 1000;
 }
@@ -28,25 +30,24 @@
     display: flex;
     justify-content: space-around;
     width: 100%;
-    margin-top: 10px;
 }
 
 #v27-player-controls button {
-    background: rgba(255, 255, 255, 0.5);
+    background: var(--border-color) !important;
     /* Semi-transparent button background */
     border: none;
-    color: #000;
+    color: var(--primary-color) !important;
     cursor: pointer;
-    padding: 10px 20px;
     border-radius: 10px;
     box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.2), inset -2px -2px 5px rgba(255, 255, 255, 0.5);
     /* Inset shadows for neumorphic effect */
     transition: background-color 0.3s ease-in-out;
     /* Smooth transition for hover effect */
+    width: 89px !important;
 }
 
 #v27-player-controls button:hover {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.382) !important;
     /* Lighter background on hover */
 }
 
@@ -58,36 +59,9 @@
     height: 8px;
     border-radius: 5px;
     background: rgba(255, 255, 255, 0.5);
-    /* Semi-transparent track */
     outline: none;
     opacity: 0.7;
     transition: opacity 0.2s;
-}
-
-#v27-player-controls input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: white;
-    cursor: pointer;
-    box-shadow: 0 0 10px #00000050;
-    /* Shadow for thumb */
-}
-
-#v27-player-controls input[type="range"]::-moz-range-thumb {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: white;
-    cursor: pointer;
-    box-shadow: 0 0 10px #00000050;
-    /* Shadow for thumb */
-}
-
-#v27-player-controls input[type="range"]:hover {
-    opacity: 1;
-    /* Full opacity on hover */
-}
+    padding: 0 !important;
+    margin: 0 !important;
 }
