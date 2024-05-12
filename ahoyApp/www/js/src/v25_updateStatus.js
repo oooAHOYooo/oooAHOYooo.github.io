@@ -13,10 +13,11 @@ function updateUI() {
     const totalTime = document.getElementById('total-time-v25');
     const typeIndicator = document.getElementById('type-indicator');
 
-    songTitle.textContent = globalAudioState.currentMedia.title;
-    songArtist.textContent = globalAudioState.currentMedia.artist;
-    totalTime.textContent = formatTime(globalAudioState.currentMedia.duration);
-    typeIndicator.textContent = globalAudioState.currentMedia.type === 'music' ? 'Music' : 'Podcast';
+    // Use currentSong object to update the UI
+    songTitle.textContent = currentSong.title;
+    songArtist.textContent = currentSong.artist;
+    totalTime.textContent = formatTime(currentSong.duration);
+    typeIndicator.textContent = currentSong.type === 'music' ? 'Music' : 'Podcast';
 }
 
 function formatTime(seconds) {
