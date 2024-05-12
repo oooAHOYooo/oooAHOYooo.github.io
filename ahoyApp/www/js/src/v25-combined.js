@@ -48,6 +48,7 @@ function uniqueUpdateTimeline() {
     const currentTimeDisplay = document.getElementById("unique-current-time");
     const totalTimeDisplay = document.getElementById("unique-total-time");
     const timeline = document.getElementById("unique-song-timeline");
+    const progressBar = document.getElementById("sound-timeline-progress"); // Get the progress bar element
 
     if (audioPlayer.duration) {
         const currentTime = audioPlayer.currentTime;
