@@ -499,7 +499,7 @@
               style="margin: auto; display: block; width: 80%; max-width: 700px;" />
           </div>
 
-          <h3>Present App State = v.24.2</h3>
+          <h3>Present App State = v.24.3</h3>
 
           <h4>Present Focus</h4>
           <p>Redesigning the entire layout - stay tuned - really going for
@@ -741,42 +741,7 @@
         </div>
       </div>
       <style>
-        #v27-player {
-          display: flex;
-          z-index: 1000;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          width: 100%;
-          height: 52px;
-          background: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
-          backdrop-filter: blur(10px); /* Frosted glass effect */
-          border-radius: 10px; /* Rounded corners */
-          position: fixed;
-          bottom: 97px; /* Adjusted to include 'px' */
-          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-          border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle white border */
-        }
-      
-        #v27-player-controls {
-          margin: 10px; /* Spacing for better alignment */
-        }
-
-        #v27-player-controls button,
-        #v27-player-controls input[type="range"] {
-          background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent button background */
-          color: #000; /* Text color */
-          border: none;
-          padding: 10px 20px;
-          border-radius: 5px;
-          cursor: pointer;
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-          backdrop-filter: blur(5px); /* Frosted glass effect on button */
-        }
-      
-        #v26-play-pause-button i {
-          margin-right: 5px; /* Space between icon and text */
-        }
+    
       </style>
       
       <div id="v27-player">
@@ -792,8 +757,7 @@
             <button id="v27-prev-button"><i class="fas fa-step-backward"></i></button>
             <button id="v27-play-pause-button"><i class="fas fa-play" id="v27-play-pause-icon"></i></button>
             <button id="v27-next-button"><i class="fas fa-step-forward"></i></button>
-            <button id="v27-repeat-button"><i class="fas fa-redo"></i></button>
-        </div>
+            <button id="v27-settings-button" onclick="navigateToTab('settings-tab')"><i class="fas fa-cog"></i></button>        </div>
        
         <!-- New section for displaying currently playing song or podcast -->
    

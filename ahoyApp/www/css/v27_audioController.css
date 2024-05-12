@@ -1,29 +1,40 @@
 #v27-player {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.803) !important;
-    /* Light translucent background */
-    backdrop-filter: blur(10px);
-    /* Frosted glass effect */
-    border-radius: 15px;
-    /* Rounded corners */
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    /* Subtle white border */
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1), -4px -4px 10px rgba(255, 255, 255, 0.7);
-    /* Neumorphic shadow */
-    width: 100% !important;
+    z-index: 1000;
+
     height: auto;
     padding-bottom: 30px;
     ;
     /* Responsive width */
     margin: auto;
     /* Centering */
-    position: relative;
-    /* Position from bottom */
+
+    bottom: 97px;
+    /* Adjusted to include 'px' */
+    overflow: hidden;
+    overflow-x: scroll;
+    overflow: hidden;
+    overflow-x: scroll;
+
     z-index: 1000;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 52px;
+    background: rgba(255, 255, 255, 0.2);
+    /* Semi-transparent white */
+    backdrop-filter: blur(10px);
+    /* Frosted glass effect */
+    border-radius: 10px;
+    /* Rounded corners */
+
+    position: fixed;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    /* Subtle white border */
+
 }
 
 #v27-player-controls {
@@ -33,7 +44,6 @@
 }
 
 #v27-player-controls button {
-    background: var(--border-color) !important;
     /* Semi-transparent button background */
     border: none;
     color: var(--primary-color) !important;
@@ -44,24 +54,11 @@
     transition: background-color 0.3s ease-in-out;
     /* Smooth transition for hover effect */
     width: 89px !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
 }
 
 #v27-player-controls button:hover {
-    background-color: rgba(255, 255, 255, 0.382) !important;
+    background-color: #ff0060;
     /* Lighter background on hover */
-}
-
-#v27-player-controls input[type="range"] {
-    width: 100%;
-    -webkit-appearance: none;
-    /* Override default appearance */
-    appearance: none;
-    height: 8px;
-    border-radius: 5px;
-    background: rgba(255, 255, 255, 0.5);
-    outline: none;
-    opacity: 0.7;
-    transition: opacity 0.2s;
-    padding: 0 !important;
-    margin: 0 !important;
 }
