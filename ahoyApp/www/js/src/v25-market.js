@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
           // Reserve Button
           const reserveButton = document.createElement('button');
-          reserveButton.textContent = 'Reserve Yours Now';
+          reserveButton.textContent = 'Join Waitlist';
           reserveButton.onclick = function() {
             alert('This item is coming soon! Your reservation is noted.');
             // Add item to cart using the addToCart function from v25-cart-manager.js
@@ -88,6 +88,7 @@ document.addEventListener('DOMContentLoaded', function() {
               price: item.price,
               reserved: true // Additional property to indicate it's a reservation
             });
+            updateCartDisplay(); // Update the cart display immediately after adding the item
           };
   
           // Append elements to the content div
