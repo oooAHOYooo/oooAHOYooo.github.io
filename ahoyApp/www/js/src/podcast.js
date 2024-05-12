@@ -19,7 +19,7 @@ function loadPodcasts() {
         data.record.podcasts.forEach(podcast => {
             const row = document.createElement("tr");
             row.innerHTML = `
-                <td><button class="control-button-podcast" id="podcast-play-${podcast.id}" onclick="togglePlayPausePodcast('${podcast.mp3url}', '${podcast.thumbnail}', '${podcast.title}', '${podcast.description}', ${podcast.id})"><i class="fas fa-play"></i></button></td>
+                <td><button class="control-button-podcast" id="podcast-play-${podcast.id}" onclick="togglePlayPausePodcast('${podcast.mp3url}')"><i class="fas fa-play"></i></button></td>
                 <td><img src="${podcast.thumbnail}" alt="${podcast.title}" class="thumbnail"></td>
                 <td>${podcast.title}</td>
                 <td>${podcast.description}</td>
@@ -33,51 +33,13 @@ function loadPodcasts() {
 }
 
 // Adjust the togglePlayPausePodcast function to use podcast.id instead of index
-function togglePlayPausePodcast(url, thumbnail, title, description, id) {
-  // Scroll to the top of the page
-  window.scrollTo(0, 0);
-
-  const audioPlayer = document.getElementById("audio-player");
-  const playPauseBtn = document.getElementById(`podcast-play-${id}`);
-  const featuredImageContainer = document.getElementById("podcast-featured-image-container");
-  const songTitle = document.getElementById("current-song-title");
-  const songArtist = document.getElementById("current-song-artist");
-  const songInfo = document.getElementById("song-info");
-
-  // If another podcast is playing or paused, reset its icon to play
-  if (audioPlayer.src && audioPlayer.src !== url) {
-    const allButtons = document.querySelectorAll('.control-button-podcast i');
-    allButtons.forEach(icon => {
-      if (icon.classList.contains('fa-pause')) {
-        icon.classList.remove('fa-pause');
-        icon.classList.add('fa-play');
-      }
-    });
-  }
-
-  // Check if the selected podcast is already playing
-  if (audioPlayer.src === url && !audioPlayer.paused) {
-    // Pause the podcast
-    audioPlayer.pause();
-    playPauseBtn.innerHTML = '<i class="fas fa-play"></i>'; // Change to play icon
-  } else {
-    // Play the selected podcast
-    audioPlayer.src = url;
-    audioPlayer.play();
-    playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>'; // Change to pause icon
-
-    // Update the featured image with unique style and size constraints
-    featuredImageContainer.innerHTML = `<img src="${thumbnail}" alt="${title}" class="the-featured-podcast-image" style="max-width: 400px; max-height: 400px; object-fit: cover;">`;
-
-    // Update song title, artist (description in this case), and additional info
-    songTitle.textContent = title;
-    songArtist.textContent = description; // Assuming you want to show the description as the artist
-    songInfo.textContent = `${title} - ${description}`; // Update the bottom song display with title and description
-  }
+function togglePlayPausePodcast(url) {
+    AhoyAudioManager.loadMedia(url);
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  if (document.getElementById("podcast-table")) {
-    loadPodcasts();
-  }
+    if (document.getElementById("podcast-table")) {
+        loadPodcasts();
+    }
 });
+

@@ -57,7 +57,9 @@ function playSong(songUrl, songTitle, artistName, buttonElement) {
   }
 }
 
-
+function playNewSong(songUrl) {
+    AhoyAudioManager.loadMedia(songUrl);
+}
 
 // Enhanced error handling for audio playback
 function handlePlaybackError() {

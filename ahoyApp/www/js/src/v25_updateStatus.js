@@ -26,24 +26,12 @@ function formatTime(seconds) {
 }
 
 function updateProgressBar() {
-    const progressBar = document.getElementById('song-progress-bar');
-    const currentTimeDisplay = document.getElementById('current-time-v25');
+    const progressBar = document.getElementById('bottom-song-progress');
     const audioPlayer = document.getElementById('audio-player');
-
-    // Update progress bar as the audio plays
-    audioPlayer.addEventListener('timeupdate', () => {
-        const currentTime = audioPlayer.currentTime;
-        const progressValue = (currentTime / currentSong.duration) * 100;
-        progressBar.value = progressValue;
-        currentTimeDisplay.textContent = formatTime(currentTime);
-    });
-
-    // Allow user to seek within the audio
-    progressBar.addEventListener('input', () => {
-        const newTime = (progressBar.value / 100) * currentSong.duration;
-        audioPlayer.currentTime = newTime;
-    });
+    progressBar.value = (audioPlayer.currentTime / audioPlayer.duration) * 100;
 }
+
+setInterval(updateProgressBar, 1000); // Update progress every second
 
 function togglePlayPause() {
     const audio = document.getElementById('audio-player');
