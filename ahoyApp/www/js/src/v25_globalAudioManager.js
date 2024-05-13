@@ -1,4 +1,5 @@
-// Encapsulating all functionalities within a namespace
+import GlobalState from './globalState.js';
+
 const AhoyAudioManager = (() => {
     const audioPlayer = document.getElementById('audio-player');
     const playPauseIcon = document.getElementById('play-pause-icon');
@@ -24,9 +25,15 @@ const AhoyAudioManager = (() => {
         togglePlayPause();
     }
 
+    function updateCurrentSong(songDetails) {
+        GlobalState.setCurrentSong(songDetails);
+    }
+
     return {
         togglePlayPause,
-        loadMedia
+        loadMedia,
+        updateCurrentSong
     };
 })();
 
+export default AhoyAudioManager;
