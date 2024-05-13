@@ -1,4 +1,14 @@
+    // Fetch the song details from JSONBin
+    fetchSongs().then(data => {
+      const song = data.record.songs.find(s => s.mp3url === songUrl);
+      if (song && song.coverArt) {
+        nowPlayingAlbumArt.src = song.coverArt; // Update album art
+        nowPlayingAlbumArt.alt = `Album art for ${songTitle}`;
+      }
+    }).catch(error => console.error("Error loading song details:", error));
 // Function to play a song and update now-playing details including cover art
+
+
 function playSong(songUrl, songTitle, artistName, buttonElement) {
   const audioPlayer = document.getElementById("audio-player");
   const nowPlayingSongDetails = document.getElementById("now-playing-song-details");
@@ -7,6 +17,12 @@ function playSong(songUrl, songTitle, artistName, buttonElement) {
   const nowPlayingAlbumArt = document.getElementById("now-playing-album-art");
   const v24SongInfo = document.getElementById("song-info");
   const playPauseIcon = document.getElementById("play-pause-icon"); // Ensure this ID matches your play/pause toggle icon
+  const displayElement = document.getElementById('thisOne'); // Get the element to update
+
+  // Update the display element with the current song title
+  if (displayElement) {
+    displayElement.textContent = songTitle;
+  }
 
   // Toggle play/pause based on the current song URL
   if (audioPlayer.src === songUrl && !audioPlayer.paused) {
@@ -30,8 +46,6 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-    // Update the currently playing display
-    document.getElementById('currently-playing-title').textContent = `${songTitle} by ${artistName}`;
 
     // Update or insert the Burn button next to the song title
     let burnButton = nowPlayingSongDetails.querySelector('.burn-button');
@@ -43,14 +57,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     burnButton.onclick = () => burnSong(songUrl, songTitle, artistName, burnButton);
 
-    // Fetch the song details from JSONBin
-    fetchSongs().then(data => {
-      const song = data.record.songs.find(s => s.mp3url === songUrl);
-      if (song && song.coverArt) {
-        nowPlayingAlbumArt.src = song.coverArt; // Update album art
-        nowPlayingAlbumArt.alt = `Album art for ${songTitle}`;
-      }
-    }).catch(error => console.error("Error loading song details:", error));
 
     // Set currentSongIndex based on the songUrl
     currentSongIndex = songsArray.findIndex(s => s.mp3url === songUrl);
@@ -62,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
     currentSong.albumArt = nowPlayingAlbumArt.src; // Assuming album art is updated here
     currentSong.duration = audioPlayer.duration; // Assuming duration can be fetched here
 
-    updateUI(); // Call this from v25_updateStatus.js to refresh the UI with new song details
+
   }
 }
 
@@ -139,5 +145,3 @@ let currentSongIndex = null;
 let songsArray = [];
 
 
- // Update the currently playing display
- document.getElementById('currently-playing-title').textContent = `${songTitle} by ${artistName}`;

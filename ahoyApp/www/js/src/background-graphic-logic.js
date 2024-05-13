@@ -13,7 +13,8 @@ document.addEventListener('DOMContentLoaded', function() {
         "https://www.icegif.com/wp-content/uploads/2023/04/icegif-1410.gif",
         "https://i.pinimg.com/originals/90/f9/3d/90f93d69410a62b0676b81a4305f01c2.gif",
         "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcjQ1Y3V3MzR5Yzh1Njdhb2t2Z2RmdzgyZXY0bGNvODZxNnJxbms1ayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LMVkZXubrWzcaZNq10/giphy.gif",
-        "https://i.giphy.com/14hS1ZEmSfKdTW.webp"
+        "https://i.giphy.com/14hS1ZEmSfKdTW.webp",
+        "https://i.gifer.com/embedded/download/1g1u.gif"
         // Newly added images
        
     ];
@@ -31,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
     changeBackgroundImage();
 
     // Rotate background images every 2 minutes
-    setInterval(changeBackgroundImage, 120000); // 120000 milliseconds = 2 minutes
+    setInterval(changeBackgroundImage, 9000); // 120000 milliseconds = 2 minutes
 
     // Change background image when the 'o' key is pressed
     document.addEventListener('keydown', function(event) {

@@ -19,7 +19,7 @@ function loadPodcasts() {
         data.record.podcasts.forEach(podcast => {
             const row = document.createElement("tr");
             row.innerHTML = `
-                <td><button class="control-button-podcast" id="podcast-play-${podcast.id}" onclick="togglePlayPausePodcast('${podcast.mp3url}', '${podcast.title}', '${podcast.thumbnail}')"><i class="fas fa-play"></i></button></td>
+                <td><button class="control-button-podcast" id="podcast-play-${podcast.id}" onclick="togglePlayPausePodcast('${podcast.mp3url}', '${podcast.title}')"><i class="fas fa-play"></i></button></td>
                 <td><img src="${podcast.thumbnail}" alt="${podcast.title}" class="thumbnail"></td>
                 <td>${podcast.title}</td>
                 <td>${podcast.description}</td>
@@ -33,11 +33,27 @@ function loadPodcasts() {
 }
 
 // Adjust the togglePlayPausePodcast function to use podcast.id instead of index
-function togglePlayPausePodcast(url, podcastTitle, podcastThumbnail) {
-    AhoyAudioManager.loadMedia(url);
-    // Assuming you have access to podcast details, update the currently playing display
-    document.getElementById('currently-playing-title').textContent = `Podcast: ${podcastTitle}`;
-    document.getElementById('currently-playing-art').src = podcastThumbnail;
+function togglePlayPausePodcast(url, title) {
+    const audioPlayer = document.getElementById('audio-player');
+    const playPauseIcon = document.getElementById('v27-play-pause-icon');
+    const currentPlaying = document.getElementById('thisOne');
+
+    // Update the audio source and play
+    audioPlayer.src = url;
+    audioPlayer.play();
+
+    // Update the UI to reflect the playing status
+    playPauseIcon.className = 'fas fa-pause'; // Change to pause icon
+    currentPlaying.textContent = title; // Update the currently playing title
+
+    // Add event listeners to toggle play/pause icon
+    audioPlayer.addEventListener('play', () => {
+        playPauseIcon.className = 'fas fa-pause';
+    });
+
+    audioPlayer.addEventListener('pause', () => {
+        playPauseIcon.className = 'fas fa-play';
+    });
 }
 
 document.addEventListener("DOMContentLoaded", function () {
