@@ -413,17 +413,19 @@
             <div class="setting">
 
               <!-- Mute Button -->
-              <button id="mute-button" onclick="toggleMute()"
+              <!--button id="mute-button" onclick="toggleMute()"
                 class="control-button">Mute
                 <i class="fas fa-volume-up" id="mute-icon">Audio</i>
-              </button>
+              </button -->
+            <br>
 
               <button id="theme-switch-button" onclick="switchTheme()">Switch
                 Theme</button>
+                <br>
               <button id="beta-features"
                 onclick="navigateToTab('beta-tab')">Explore Experimental BETA
                 Features</button>
-
+                <p>VOLUME</p><input type="range" id="v27-volume-control" min="0" max="100" step="1">
             </div>
             <!-- Add button to clear the background user image -->
             <div class="setting">
@@ -747,10 +749,11 @@
       <div id="v27-player">
         <div style="display: flex; align-items: center;">
           <div id="currently-playing" style="flex-grow: 1;">
-            <p id="currently-playing-title">No media is playing</p>
+            <p id="thisOne">This One</p>
+            <!-- p id="currently-playing-title">No media is playing</p -->
           </div>
           <audio id="audio-player"></audio>
-          <input type="range" id="v27-volume-control" min="0" max="100" step="1">
+         
         </div>
         <div id="v27-player-controls">
             <button id="v27-shuffle-button"><i class="fas fa-random"></i></button>

@@ -19,10 +19,16 @@ function playSong(songUrl, songTitle, artistName, buttonElement) {
     buttonElement.innerHTML = '<i class="fas fa-pause"></i>'; // Change to pause icon
     playPauseIcon.className = 'fas fa-pause'; // Update play/pause icon
 
-    // Update now-playing song details
-    nowPlayingSongTitle.textContent = songTitle;
-    nowPlayingSongArtist.textContent = artistName;
-    v24SongInfo.textContent = `${artistName} - ${songTitle}`;
+// Assuming there's a function or a variable that holds the current song's name
+// For example, let's assume getCurrentMediaFileName() returns the name of the current media file
+
+document.addEventListener('DOMContentLoaded', function() {
+  var currentMediaFileName = getCurrentMediaFileName(); // This function needs to be defined or replaced with actual data retrieval logic
+  var displayElement = document.getElementById('thisOne');
+  if (displayElement) {
+      displayElement.textContent = currentMediaFileName;
+  }
+});
 
     // Update the currently playing display
     document.getElementById('currently-playing-title').textContent = `${songTitle} by ${artistName}`;
@@ -131,3 +137,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 let currentSongIndex = null;
 let songsArray = [];
+
+
+ // Update the currently playing display
+ document.getElementById('currently-playing-title').textContent = `${songTitle} by ${artistName}`;
