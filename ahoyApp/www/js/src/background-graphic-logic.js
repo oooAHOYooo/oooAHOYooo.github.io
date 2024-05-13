@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
     changeBackgroundImage();
 
     // Rotate background images every 2 minutes
-    setInterval(changeBackgroundImage, 9000); // 120000 milliseconds = 2 minutes
+    setInterval(changeBackgroundImage, 12000); // 120000 milliseconds = 2 minutes
 
     // Change background image when the 'o' key is pressed
     document.addEventListener('keydown', function(event) {
