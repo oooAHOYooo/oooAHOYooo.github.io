@@ -14,7 +14,9 @@ document.addEventListener('DOMContentLoaded', function() {
         "https://i.pinimg.com/originals/90/f9/3d/90f93d69410a62b0676b81a4305f01c2.gif",
         "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcjQ1Y3V3MzR5Yzh1Njdhb2t2Z2RmdzgyZXY0bGNvODZxNnJxbms1ayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LMVkZXubrWzcaZNq10/giphy.gif",
         "https://i.giphy.com/14hS1ZEmSfKdTW.webp",
-        "https://i.gifer.com/embedded/download/1g1u.gif"
+        "https://i.gifer.com/embedded/download/1g1u.gif",
+        "https://68.media.tumblr.com/fc5e96885fb8c0e015442c96b2f7c02b/tumblr_otdbyg4ft11ujzdjmo1_400.gif",
+        "https://i.gifer.com/7Ld0.gif"
         // Newly added images
        
     ];
