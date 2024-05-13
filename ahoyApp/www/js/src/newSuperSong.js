@@ -145,3 +145,58 @@ let currentSongIndex = null;
 let songsArray = [];
 
 
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
+
+function updateSongListUI() {
+  const tableBody = document.getElementById("song-list");
+  if (!tableBody) return;
+  tableBody.innerHTML = ''; // Clear existing content
+
+  songsArray.forEach(song => {
+      const row = document.createElement("tr");
+      row.className = 'table-row';
+      row.innerHTML = `
+          <td>
+            <button onclick="playSong('${song.mp3url}', '${song.songTitle}', '${song.artist}', this)">
+              <i class="fas fa-play"></i>
+            </button>
+          </td>
+          <td>
+            <img src="${song.coverArt}" alt="${song.songTitle}" class="thumbnail">
+          </td>
+          <td>${song.artist}</td>
+          <td>${song.songTitle}</td>
+          <td>
+            <button class="burn-button-overlay" onclick="burnSong('${song.mp3url}', '${song.songTitle}', '${song.artist}', this)">
+              <i class="fas fa-fire"></i>
+            </button>
+          </td>
+      `;
+      tableBody.appendChild(row);
+  });
+}
+
+document.getElementById('v27-next-button').addEventListener('click', function() {
+  // Logic to go to the next track
+});
+
+document.getElementById('v27-prev-button').addEventListener('click', function() {
+  // Logic to go to the previous track
+});
+
+document.getElementById('v27-play-pause-button').addEventListener('click', function() {
+  const player = document.getElementById('v27-audio-player');
+  if (player.paused) {
+      player.play();
+      document.getElementById('v27-play-pause-icon').className = 'fas fa-pause';
+  } else {
+      player.pause();
+      document.getElementById('v27-play-pause-icon').className = 'fas fa-play';
+  }
+});
