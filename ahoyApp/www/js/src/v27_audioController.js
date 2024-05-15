@@ -1,22 +1,24 @@
 import GlobalState from './globalState.js';
+import { playSong, shuffleArray, updateSongListUI, songsArray } from './newSuperSong.js'; // Import necessary functions and variables
 
 document.getElementById('v27-play-pause-button').addEventListener('click', function() {
     const player = document.getElementById('v27-audio-player');
+    const playPauseIcon = document.getElementById('v27-play-pause-icon');
+    const currentSong = songsArray[GlobalState.currentSongIndex]; // Use GlobalState to track current song index
+
     if (player.paused) {
         player.play();
-        document.getElementById('v27-play-pause-icon').className = 'fas fa-pause';
+        playPauseIcon.className = 'fas fa-pause';
     } else {
         player.pause();
-        document.getElementById('v27-play-pause-icon').className = 'fas fa-play';
+        playPauseIcon.className = 'fas fa-play';
     }
 });
 
-
-
 document.getElementById('v27-shuffle-button').addEventListener('click', function() {
-    if (typeof songsArray !== 'undefined' && songsArray.length > 0) {
+    if (songsArray.length > 0) {
         shuffleArray(songsArray);
-        updateSongListUI(); // This function should update the UI with the new order
+        updateSongListUI();
     }
 });
 
@@ -31,8 +33,8 @@ document.getElementById('audio-player').addEventListener('timeupdate', function(
     progress.value = value;
 
     // Display current song details
-    const currentSong = GlobalState.getCurrentSong();
-    console.log(`Now playing: ${currentSong.title} by ${currentSong.artist}`);
+    const currentSong = songsArray[GlobalState.currentSongIndex]; // Use GlobalState to track current song
+    console.log(`Now playing: ${currentSong.songTitle} by ${currentSong.artist}`);
 });
 
 document.getElementById('v27-track-progress').addEventListener('input', function() {

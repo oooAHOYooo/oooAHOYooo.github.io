@@ -1,11 +1,15 @@
-    // Fetch the song details from JSONBin
-    fetchSongs().then(data => {
-      const song = data.record.songs.find(s => s.mp3url === songUrl);
-      if (song && song.coverArt) {
-        nowPlayingAlbumArt.src = song.coverArt; // Update album art
-        nowPlayingAlbumArt.alt = `Album art for ${songTitle}`;
-      }
-    }).catch(error => console.error("Error loading song details:", error));
+// Initialize currentSongIndex at the start of the file
+let currentSongIndex = 0;
+
+// Fetch the song details from JSONBin
+fetchSongs().then(data => {
+  songsArray = data.record.songs; // Assuming songsArray is declared globally
+  const song = songsArray[currentSongIndex]; // Start with the first song
+  if (song && song.coverArt) {
+    nowPlayingAlbumArt.src = song.coverArt; // Update album art
+    nowPlayingAlbumArt.alt = `Album art for ${song.songTitle}`;
+  }
+}).catch(error => console.error("Error loading song details:", error));
 // Function to play a song and update now-playing details including cover art
 
 
@@ -15,60 +19,27 @@ function playSong(songUrl, songTitle, artistName, buttonElement) {
   const nowPlayingSongTitle = document.getElementById("now-playing-song-title");
   const nowPlayingSongArtist = document.getElementById("now-playing-song-artist");
   const nowPlayingAlbumArt = document.getElementById("now-playing-album-art");
-  const v24SongInfo = document.getElementById("song-info");
-  const playPauseIcon = document.getElementById("play-pause-icon"); // Ensure this ID matches your play/pause toggle icon
-  const displayElement = document.getElementById('thisOne'); // Get the element to update
+  const playPauseIcon = document.getElementById("play-pause-icon");
+  const displayElement = document.getElementById('thisOne');
 
   // Update the display element with the current song title
   if (displayElement) {
     displayElement.textContent = songTitle;
   }
 
+  // Update the global currentSongIndex
+  currentSongIndex = songsArray.findIndex(s => s.mp3url === songUrl);
+
   // Toggle play/pause based on the current song URL
   if (audioPlayer.src === songUrl && !audioPlayer.paused) {
     audioPlayer.pause();
-    buttonElement.innerHTML = '<i class="fas fa-play"></i>'; // Change to play icon
-    playPauseIcon.className = 'fas fa-play'; // Update play/pause icon
+    buttonElement.innerHTML = '<i class="fas fa-play"></i>';
+    playPauseIcon.className = 'fas fa-play';
   } else {
     audioPlayer.src = songUrl;
     audioPlayer.play();
-    buttonElement.innerHTML = '<i class="fas fa-pause"></i>'; // Change to pause icon
-    playPauseIcon.className = 'fas fa-pause'; // Update play/pause icon
-
-// Assuming there's a function or a variable that holds the current song's name
-// For example, let's assume getCurrentMediaFileName() returns the name of the current media file
-
-document.addEventListener('DOMContentLoaded', function() {
-  var currentMediaFileName = getCurrentMediaFileName(); // This function needs to be defined or replaced with actual data retrieval logic
-  var displayElement = document.getElementById('thisOne');
-  if (displayElement) {
-      displayElement.textContent = currentMediaFileName;
-  }
-});
-
-
-    // Update or insert the Burn button next to the song title
-    let burnButton = nowPlayingSongDetails.querySelector('.burn-button');
-    if (!burnButton) {
-      burnButton = document.createElement('button');
-      burnButton.className = 'burn-button';
-      burnButton.innerHTML = '<i class="fas fa-fire"></i> Burn';
-      nowPlayingSongDetails.appendChild(burnButton);
-    }
-    burnButton.onclick = () => burnSong(songUrl, songTitle, artistName, burnButton);
-
-
-    // Set currentSongIndex based on the songUrl
-    currentSongIndex = songsArray.findIndex(s => s.mp3url === songUrl);
-
-    // Update currentSong object
-    currentSong.url = songUrl;
-    currentSong.title = songTitle;
-    currentSong.artist = artistName;
-    currentSong.albumArt = nowPlayingAlbumArt.src; // Assuming album art is updated here
-    currentSong.duration = audioPlayer.duration; // Assuming duration can be fetched here
-
-
+    buttonElement.innerHTML = '<i class="fas fa-pause"></i>';
+    playPauseIcon.className = 'fas fa-pause';
   }
 }
 
@@ -94,7 +65,7 @@ function loadSongs() {
 
     data.record.songs.forEach((song, index) => {
       const row = document.createElement("tr");
-      row.className = 'table-row'; // Add class for styling
+      row.className = 'table-row-27'; // Add class for styling
       row.innerHTML = `
         <td>
           <button onclick="playSong('${song.mp3url}', '${song.songTitle}', '${song.artist}', this)">
@@ -139,9 +110,19 @@ document.addEventListener("DOMContentLoaded", function () {
     updateProgressBar();
     handlePlaybackError();
   }
+
+  const nextButton = document.getElementById('next-button'); // Ensure this ID matches your next button ID in the HTML
+  const prevButton = document.getElementById('previous-button'); // Ensure this ID matches your previous button ID in the HTML
+
+  if (nextButton) {
+    nextButton.addEventListener('click', playNextSong);
+  }
+
+  if (prevButton) {
+    prevButton.addEventListener('click', playPreviousSong);
+  }
 });
 
-let currentSongIndex = null;
 let songsArray = [];
 
 
@@ -182,21 +163,46 @@ function updateSongListUI() {
   });
 }
 
-document.getElementById('v27-next-button').addEventListener('click', function() {
-  // Logic to go to the next track
-});
+function playNextSong() {
+  // Pause the current song if it is playing
+  const player = document.getElementById('audio-player');
+  const playPauseButton = document.querySelector('.play-pause-button');
+  const playPauseIcon = document.getElementById('play-pause-icon');
 
-document.getElementById('v27-prev-button').addEventListener('click', function() {
-  // Logic to go to the previous track
-});
+  if (!player.paused) {
+    player.pause();
+    playPauseButton.innerHTML = '<i class="fas fa-play"></i>';
+    playPauseIcon.className = 'fas fa-play';
+  }
+
+  // Increment the song index, loop back to the first song if at the end
+  currentSongIndex = (currentSongIndex + 1) % songsArray.length;
+  const nextSong = songsArray[currentSongIndex];
+
+  // Play the next song
+  playSong(nextSong.mp3url, nextSong.songTitle, nextSong.artist, playPauseButton);
+
+  // Update the 'thisOne' element with the new song title
+  const displayElement = document.getElementById('thisOne');
+  if (displayElement) {
+    displayElement.textContent = nextSong.songTitle;
+  }
+}
+
+function playPreviousSong() {
+  // Decrement the song index, loop to the last song if at the beginning
+  currentSongIndex = currentSongIndex - 1 < 0 ? songsArray.length - 1 : currentSongIndex - 1;
+  const prevSong = songsArray[currentSongIndex];
+  playSong(prevSong.mp3url, prevSong.songTitle, prevSong.artist, document.querySelector('.play-pause-button'));
+}
 
 document.getElementById('v27-play-pause-button').addEventListener('click', function() {
   const player = document.getElementById('audio-player'); // Ensure this ID matches your actual player ID in the HTML
   if (player.paused) {
-      player.play();
-      document.getElementById('v27-play-pause-icon').className = 'fas fa-pause';
+    player.play();
+    document.getElementById('v27-play-pause-icon').className = 'fas fa-pause';
   } else {
-      player.pause();
-      document.getElementById('v27-play-pause-icon').className = 'fas fa-play';
+    player.pause();
+    document.getElementById('v27-play-pause-icon').className = 'fas fa-play';
   }
 });

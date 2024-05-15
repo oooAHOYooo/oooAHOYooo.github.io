@@ -327,3 +327,16 @@
   height: 32px;
   cursor: pointer;
 }
+
+
+.table-row-27 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 92px;
+}
+
+.table-row-27 td {
+  width: 100%;
+}
