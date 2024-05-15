@@ -2,14 +2,105 @@
 <!-- APP AHOY -->
 <!-- PRAISE GOD -->
 <html>
-  <head>
 
-    <!-- FIREEEEE -->
+<head>
+  <!-- Basic Meta Tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Ahoy Indie Media">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#000000"> <!-- Change this to your theme color -->
+  <meta name="description" content="Ahoy Indie Media - A hand-crafted media company based out of New Haven, Connecticut. We offer a homegrown alternative to mainstream media consumption.">
+  <meta name="keywords" content="Indie Media, Independent Artists, Indie Music, Podcasts, Indie Games, Digital Market, Indie Creators, Indie Culture, Ahoy Indie Media">
+  <meta name="robots" content="index, follow">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+  <meta name="color-scheme" content="light dark">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-    <script
-      src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js"></script>
-    <script
-      src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js"></script>
+  <title>Ahoy Indie Media</title>
+
+  <!-- DNS Prefetch for External Resources -->
+  <link rel="dns-prefetch" href="//www.gstatic.com">
+  <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+  <link rel="dns-prefetch" href="//cdn.jwplayer.com">
+  <link rel="dns-prefetch" href="//www.googletagmanager.com">
+
+  <!-- SECURITY -->
+  <!-- SECURITY -->
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+<meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=()">
+<meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains">
+<meta http-equiv="X-XSS-Protection" content="1; mode=block">
+<meta http-equiv="Cross-Origin-Embedder-Policy" content="require-corp">
+<meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+  <link rel="stylesheet" href="./css/foundational.css">
+  <link rel="stylesheet" href="./css/mobileOS-addons.css">
+  <link rel="stylesheet" href="./css/user-account.css">
+  <link rel="stylesheet" href="./css/section-homepage-featured.css">
+  <link rel="stylesheet" href="./css/section-songs.css">
+  <link rel="stylesheet" href="./css/section-podcast.css">
+  <link rel="stylesheet" href="./css/section-media.css">
+  <link rel="stylesheet" href="./css/background-graphic.css">
+  <link rel="stylesheet" href="./css/section-home.css">
+  <link rel="stylesheet" href="./css/songBar.css">
+  <link rel="stylesheet" href="./css/user-loginModal.css">
+  <link rel="stylesheet" href="./css/section-settings.css">
+  <link rel="stylesheet" href="./css/page-buttons.css">
+  <link rel="stylesheet" href="./css/v25dock.css">
+  <link rel="stylesheet" href="./css/v25subNewsHeaderMenu.css">
+  <link rel="stylesheet" href="./css/vs25homepage.css">
+  <link rel="stylesheet" href="./css/section-tab.css">
+  <link rel="stylesheet" href="./css/section-account.css">
+  <link rel="stylesheet" href="./css/section-burn.css">
+  <link rel="stylesheet" href="./css/v25player.css">
+  <link rel="stylesheet" href="./css/magic-svg.css">
+  <link rel="stylesheet" href="./css/v25buttons.css">
+  <link rel="stylesheet" href="./css/v25-market.css">
+  <link rel="stylesheet" href="./css/v27_audioController.css">
+
+  <!-- Icons -->
+  <link rel="icon" type="image/png" href="./img/favicon_ahoy.png">
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js"></script>
+
+  <!-- Supabase (Optional: remove if not used) -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@latest"></script>
+
+  <!-- Plausible Analytics (defer loading) -->
+  <script defer src="https://plausible.io/js/script.js" data-domain="ahoy.ooo"></script>
+
+  <!-- JWPlayer -->
+  <script src="https://cdn.jwplayer.com/libraries/9Gtk2B1J.js"></script>
+
+  <!-- Google Cast SDK -->
+  <script src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js?loadCastFramework=1"></script>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-X81RK0SVNS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-X81RK0SVNS');
+  </script>
+
+  <!-- Custom Styles -->
+  <style>
+      svg { mix-blend-mode: screen!important; }
+  </style>
 
     <!-- Firebase SDK -->
     <script type="module">
@@ -27,15 +118,15 @@
           appId: "1:179901301547:web:599159f9efb826f464bb6e",
           measurementId: "G-K3QN161BVX"
       };
-
+  
       // Initialize Firebase
       const app = initializeApp(firebaseConfig);
       const auth = getAuth(app);
-
+  
       window.login = async function() {
           const email = document.getElementById("login-email").value;
           const password = document.getElementById("login-password").value;
-
+  
           try {
               const userCredential = await signInWithEmailAndPassword(auth, email, password);
               // Login successful
@@ -47,97 +138,15 @@
               setMessage(error.message, "error");
           }
       }
-
+  
       window.setMessage = function(message, type) {
           const messageElement = document.getElementById("message");
           messageElement.textContent = message;
           messageElement.className = type;
       }
   </script>
+</head>
 
-    <!-- END OF FIREEEE -->
-
-    <link rel="icon" type="image/png" href="./img/favicon_ahoy.png">
-    <script
-      src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@latest"></script>
-
-    <link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
-      integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
-      crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script defer data-domain="ahoy.ooo"
-      src="https://plausible.io/js/script.js"></script>
-    <link rel="stylesheet" href="./css/foundational.css">
-    <link rel="stylesheet" href="./css/mobileOS-addons.css">
-    <link rel="stylesheet" href="./css/user-account.css">
-    <link rel="stylesheet" href="./css/section-homepage-featured.css">
-    <link rel="stylesheet" href="./css/section-songs.css">
-    <link rel="stylesheet" href="./css/section-podcast.css">
-    <link rel="stylesheet" href="./css/section-media.css">
-    <link rel="stylesheet" href="./css/background-graphic.css">
-    <link rel="stylesheet" href="./css/section-home.css">
-    <link rel="stylesheet" href="./css/songBar.css">
-    <link rel="stylesheet" href="./css/user-loginModal.css">
-    <link rel="stylesheet" href="./css/section-settings.css">
-    <link rel="stylesheet" href="./css/page-buttons.css">
-    <link rel="stylesheet" href="./css/v25dock.css">
-    <link rel="stylesheet" href="./css/v25subNewsHeaderMenu.css">
-    <link rel="stylesheet" href="./css/vs25homepage.css">
-    <link rel="stylesheet" href="./css/section-tab.css">
-    <link rel="stylesheet" href="./css/section-account.css">
-    <link rel="stylesheet" href="./css/section-burn.css">
-    <link rel="stylesheet" href="./css/v25player.css">
-    <link rel="stylesheet" href="./css/magic-svg.css">
-    <link rel="stylesheet" href="./css/v25buttons.css">
-    <link rel="stylesheet" href="./css/v25-market.css">
-    <link rel="stylesheet" href="./css/v27_audioController.css">
-    <!-- END OF AG ADDITIONS TO HEAD -->
-    <meta charset="utf-8">
-    <meta name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=yes">
-    <meta name="HandheldFriendly" content="true">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Ahoy Indie Media">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="theme-color" content="#color_code">
-    <meta
-      name="description"
-      content="Ahoy Indie Media - A hand-crafted media company based out of New Haven, Connecticut. Our mission is to provide a homegrown alternative to the way folks consume media. We believe in good media - that good good indie media - the real stuff. Join our subscription-based service to access in-house content, including the immensely unpopular 'Rob Show.' Become a part of our indie platform." />
-    <meta name="keywords"
-      content="Indie Media, Independent Artists, Indie Music, Podcasts, Indie Games, Digital Market, Indie Creators, Indie Culture, Ahoy Indie Media">
-    <meta name="robots" content="index, follow">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="msapplication-tap-highlight" content="no">
-    <meta name="MobileOptimized" content="320">
-    <meta name="color-scheme" content="light dark">
-    <title>Ahoy Indie Media</title>
-    <!-- JWPLAYER INSTALLATION-->
-    <script src="https://cdn.jwplayer.com/libraries/9Gtk2B1J.js"></script>
-    <!-- GOOGLE CAST SDK -->
-    <script
-      src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js?loadCastFramework=1"></script>
-    <!-- -->
-    <!-- EXTERNAL UNNEED LIBRARIES BUT FOR FUN-->
-    <script src="https://unpkg.com/fireworks-js/dist/index.js"></script>
-    <!-- GOOGLE ANALYTICS -->
-    <!-- Google tag (gtag.js) -->
-    <script async
-      src="https://www.googletagmanager.com/gtag/js?id=G-X81RK0SVNS"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-X81RK0SVNS');
-    </script>
-
-    <style>
-  svg {
-    mix-blend-mode: screen!important;
-  }
-</style>
-  </head>
   <body>
 
     <div id="loginModal" class="modal" style="display:none;">

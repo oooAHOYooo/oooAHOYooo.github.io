@@ -1,10 +1,13 @@
 class SongManager {
     constructor() {
         this.songsArray = [];
+        this.playlists = {};
+        this.currentPlaylist = [];
         this.currentSongIndex = 0;
+        this.isShuffle = false;
         this.audioPlayer = document.getElementById("audio-player");
-        this.initAudioPlayer();
         this.displayElement = document.getElementById('thisOne'); // Element to update with song title
+        this.initAudioPlayer();
     }
 
     fetchSongs() {
@@ -26,14 +29,14 @@ class SongManager {
     }
 
     playSong(index) {
-        const song = this.songsArray[index];
+        const song = this.currentPlaylist.length > 0 ? this.currentPlaylist[index] : this.songsArray[index];
         if (!song) return;
 
         this.audioPlayer.src = song.mp3url;
         this.audioPlayer.play();
         this.updateNowPlayingDetails(song);
         this.currentSongIndex = index;
-        
+
         // Update the display element with the current song title
         if (this.displayElement) {
             this.displayElement.textContent = song.songTitle;
@@ -69,12 +72,39 @@ class SongManager {
     }
 
     burnSong(index) {
-        const song = this.songsArray[index];
+        const song = this.currentPlaylist.length > 0 ? this.currentPlaylist[index] : this.songsArray[index];
         console.log(`Burning song: ${song.songTitle} by ${song.artist}`); // Placeholder for actual burn functionality
+    }
+
+    addPlaylist(name, songIndexes) {
+        this.playlists[name] = songIndexes.map(index => this.songsArray[index]);
+    }
+
+    selectPlaylist(name) {
+        this.currentPlaylist = this.playlists[name] || [];
+        this.currentSongIndex = 0; // Reset index to start of the new playlist
+        this.loadSongsToUI(); // Refresh the UI with the selected playlist
+    }
+
+    toggleShuffle() {
+        this.isShuffle = !this.isShuffle;
+        if (this.isShuffle) {
+            this.shuffleArray(this.currentPlaylist.length > 0 ? this.currentPlaylist : this.songsArray);
+        } else {
+            this.currentPlaylist = this.currentPlaylist.length > 0 ? [...this.playlists['default']] : [...this.songsArray];
+        }
+    }
+
+    shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
     }
 }
 
 const songManager = new SongManager();
 document.addEventListener("DOMContentLoaded", function () {
     songManager.fetchSongs();
+    songManager.addPlaylist('default', [0, 1, 2, 3]); // Default playlist using indices
 });
