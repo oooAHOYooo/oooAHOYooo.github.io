@@ -20,6 +20,7 @@ function playSong(songUrl, songTitle, artistName, buttonElement) {
   const nowPlayingSongArtist = document.getElementById("now-playing-song-artist");
   const nowPlayingAlbumArt = document.getElementById("now-playing-album-art");
   const playPauseIcon = document.getElementById("play-pause-icon");
+  const v27PlayPauseIcon = document.getElementById('v27-play-pause-icon'); // Get the v27 icon element
   const displayElement = document.getElementById('thisOne');
 
   // Update the display element with the current song title
@@ -35,6 +36,7 @@ function playSong(songUrl, songTitle, artistName, buttonElement) {
     audioPlayer.pause();
     buttonElement.innerHTML = '<i class="fas fa-play"></i>';
     playPauseIcon.className = 'fas fa-play';
+    v27PlayPauseIcon.className = 'fas fa-play'; // Update v27 icon to play
   } else {
     audioPlayer.src = songUrl;
     audioPlayer.play();
@@ -75,8 +77,8 @@ function loadSongs() {
         <td>
           <img src="${song.coverArt}" alt="${song.songTitle}" class="thumbnail">
         </td>
-        <td>${song.artist}</td>
-        <td>${song.songTitle}</td>
+        <td><p class="table-row-v27-artist">${song.artist}</p></td>
+        <td><p class="table-row-v27-song-title">${song.songTitle}</p></td>
         <td>
           <button class="burn-button-overlay" onclick="burnSong('${song.mp3url}', '${song.songTitle}', '${song.artist}', this)">
             <i class="fas fa-fire"></i>
@@ -206,3 +208,4 @@ document.getElementById('v27-play-pause-button').addEventListener('click', funct
     document.getElementById('v27-play-pause-icon').className = 'fas fa-play';
   }
 });
+

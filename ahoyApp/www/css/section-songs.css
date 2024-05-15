@@ -340,3 +340,8 @@
 .table-row-27 td {
   width: 100%;
 }
+
+.table-row-v27 p {
+  color: white;
+  font-weight: bold;
+}

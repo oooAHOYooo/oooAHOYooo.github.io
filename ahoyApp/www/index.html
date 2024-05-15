@@ -417,15 +417,16 @@
                 class="control-button">Mute
                 <i class="fas fa-volume-up" id="mute-icon">Audio</i>
               </button -->
-            <br>
+              <br>
 
               <button id="theme-switch-button" onclick="switchTheme()">Switch
                 Theme</button>
-                <br>
+              <br>
               <button id="beta-features"
                 onclick="navigateToTab('beta-tab')">Explore Experimental BETA
                 Features</button>
-                <p>VOLUME</p><input type="range" id="v27-volume-control" min="0" max="100" step="1">
+              <p>VOLUME</p><input type="range" id="v27-volume-control" min="0"
+                max="100" step="1">
             </div>
             <!-- Add button to clear the background user image -->
             <div class="setting">
@@ -745,39 +746,44 @@
       <style>
     
       </style>
-      
+
       <div id="v27-player">
         <div style="display: flex; align-items: center;">
-       
+
           <audio id="audio-player"></audio>
-         
+
         </div>
         <div id="currently-playing" style="flex-grow: 1;">
           <p id="thisOne">DYLM?</p>
           <!-- p id="currently-playing-title">No media is playing</p -->
         </div>
         <div id="v27-player-controls">
-    
-            <!--button id="v27-shuffle-button"><i class="fas fa-random"></i></button -->
-            <button id="v27-prev-button"><i class="fas fa-step-backward"></i></button>
-            <button id="v27-play-pause-button"><i class="fas fa-play" id="v27-play-pause-icon"></i></button>
-         
-            <button id="v27-next-button"><i class="fas fa-step-forward"></i></button>
-            <button id="v27-settings-button" onclick="navigateToTab('settings-tab')"><i class="fas fa-cog"></i></button>        </div>
-       
+
+          <!--button id="v27-shuffle-button"><i class="fas fa-random"></i></button -->
+          <button id="v27-prev-button"><i
+              class="fas fa-step-backward"></i></button>
+          <button id="v27-play-pause-button"><i class="fas fa-play"
+              id="v27-play-pause-icon"></i></button>
+
+          <button id="v27-next-button"><i
+              class="fas fa-step-forward"></i></button>
+          <button id="v27-settings-button"
+            onclick="navigateToTab('settings-tab')"><i
+              class="fas fa-cog"></i></button> </div>
+
         <!-- New section for displaying currently playing song or podcast -->
-   
-    </div>
-        <!-- Add this in your HTML where the audio player UI is defined -->
-<div id="sound-timeline-container">
-  <div id="sound-timeline-progress"></div>
-</div>
-      
-      </div>
 
       </div>
-      <!-- Start of v25 PLAYER -->
-      <!--div id="v24ahoyPlayer" class="player-v25">
+      <!-- Add this in your HTML where the audio player UI is defined -->
+      <div id="sound-timeline-container">
+        <div id="sound-timeline-progress"></div>
+      </div>
+
+    </div>
+
+  </div>
+  <!-- Start of v25 PLAYER -->
+  <!--div id="v24ahoyPlayer" class="player-v25">
         <audio id="audio-player" src></audio>
         <div class="audio-player-controls">
           <div class="v25-superPlayerButtonMash" id="barA">
@@ -812,10 +818,10 @@
         </div>
 
       </div -->
-      <!-- END OF v24 Bottom Player-->
+  <!-- END OF v24 Bottom Player-->
 
-      <!-- TEMPSCRIPT - TRYING TO MAKE A UNIVERSAL BUTTON-->
-      <script>
+  <!-- TEMPSCRIPT - TRYING TO MAKE A UNIVERSAL BUTTON-->
+  <script>
           // Function to toggle play/pause for the audio player
           function togglePlayPause() {
             var audio = document.getElementById('audio-player');
@@ -839,116 +845,117 @@
           });
         </script>
 
-    </div>
-    <div>
+</div>
+<div>
 
-    </div>
-    <!-- END OF BOTTOM PLAYER -->
-    <!-- CONDITIONAL LOGIC BITCH -->
-    <!-- DYNAMIC SHARE TEST -->
-    <!--script src="js/src/share.js"></script-->
-    <!-- DYANMIC ARTIST TEST -->
-    <!--script src="js/src/dynamicArtist.js"></script-->
-    <!--script src="js/src/siteCounter.js"></script-->
-    <!-- END OF DRAFTY SCRIPTS -->
-    <!--script src="js/src/h1-effects-scroll.js"></script-->
-    <!-- USER CONTROLS-->
-    <!--script src="js/src/controls-timeline.js"></script-->
-    <!-- USER NAV -->
-    <script src="js/src/function-toggle-dash.js"></script>
-    <!-- USER JAVASCRIPTS -->
-    <!-- script src="js/src/user-cart.js"></script -->
-    <!-- script src="js/src/user-icon-input.js"></script -->
-    <script src="js/src/login.js"></script>
-    <!--script src="js/src/user-liked-everything.js"></script-->
-    <!-- USER REVIEW PODCAST-->
-    <!--script src="js/src/user-review-podcasts.js"></script-->
-    <!-- USER PREF SAVED -->
-    <script src="js/src/user-userSesh.js"></script>
-    <!-- USER - DISPLAY USER INFO -->
-    <!-- NEW QUESTION APP -->
-    <!-- LIVE DATA -->
-    <!--script src="js/src/live-answers-logic.js"></script-->
-    <!-- END OF USER JAVASCRIPTS -->
-    <!-- END OF USER JAVASCRIPTS -->
-    <!-- HOMEPAGE JAVASCRIPT -->
-    <script src="js/src/fetch-homepage-nowplaying.js"></script>
-    <!-- MARKET JAVASCRIPTS -->
-    <!--script src="js/src/market-physical.js"></script-->
-    <!--script src="js/src/market-digital.js"></script-->
-    <!-- DISPLAY LIVE ANSWERS-->
-    <!--script src="js/src/display-live-answers.js"></script-->
-    <!-- MUSIC BABY-->
-    <!-- SONG JAVASCRIPT -->
-    <!--script src="js/src/song-loader.js"></script-->
-    <!--script src="js/src/search-songs.js"></script-->
-    <!-- SONG _ MUSIC _ DAILY SHUFFLE-->
-    <script src="js/src/music_daily_shuffle.js"></script>
-    <!-- PODCAST JAVASCRIPTS -->
-    <!-- PODCAST JAVASCRIPTS -->
-    <script src="js/src/podcast.js"></script>
-    <!-- MEDIA JAVASCRIPT -->
-    <script src="js/src/media.js"></script>
-    <!--script src="js/src/media-layout-effects.js"></script-->
-    <!-- GAMES JAVASCRIPT -->
-    <!--script src="js/src/games.js"></script-->
-    <!-- NEWSLETTER + UDPATES-->
-    <script src="js/src/newsletter.js"></script>
-    <script src="js/src/updates-commits.js"></script>
-    <script src="js/src/newSuperSong.js"></script>
-    <!-- SHOW UPDATES -->
-    <!--script src="js/src/audioPlayerControls.js"></script -->
-    <!-- DONATION SCRIPTS -->
-    <!--script src="js/src/donation.js"></script-->
-    <!--script src="js/src/donation-slider-a.js"></script-->
-    <!-- USER SETTINGS -->
-    <script src="js/src/function-switchTheme.js"></script>
-    <!-- CORE PAGE-->
-    <script src="js/src/tab.js"></script>
-    <script src="js/src/nav-leftDash.js"></script>
-    <!--script src="js/src/playlist-logic.js"></script-->
-    <!-- CHAT LOGIC -->
-    <!--script src="/js/src/chat-logic.js"></script-->
-    <!-- MESSAGE BOARD LOGIC -->
-    <!--script src="js/src/message-board-logic.js"></script-->
-    <!-- GOAL CHART LOGIC -->
-    <!--script src="/js/src/goal-chart.js"></script-->
-    <!-- SUPPORT AHOY LOGIC -->
-    <!-- script src="/js/src/support-artist-individual.js"></script -->
-    <!-- CORDOVA PLUGINS -->
-    <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript"
-      src="js/cordova-scripts/cordova-musicControls.js"></script>
-    <!-- CASTING FUNCTION -->
-    <!--script src="js/src/function-superCast.js"></script -->
-    <!-- script src="js/src/podcast-mobile-logic.js"></script-->
-    <!-- BACKGROUND GRAPHIC LOGIC -->
-    <script src="./js/src/background-graphic-logic.js"></script>
-    <!-- MUSIC VIZ -->
-    <!--script src="js/src/experience.js"></script-->
-    <!-- TODAYS DATE -->
-    <script src="js/src/function_pull_LatestSong.js"></script>
-    <script src="js/src/function_today_date.js"></script>
-    <!-- BURN CD Script-->
-    <script src="js/src/burnCd.js"></script>
-    <!--Display Time-->
-    <!--script src="js/src/function_DisplayTime.js"></script-->
-    <!-- v24 Song Bar Image-->
-    <!--script src="js/src/v24songBarImage.js"></script -->
-    <!-- v25 Menu Code -->
-    <script src="js/src/v25_menuCode.js"></script>
-    <script src="js/src/v25_dailyJukebox.js"></script>
-    <!-- script src="js/src/v25_songController.js"></script -->
-    <script src="js/src/magic-svg-logic.js"></script>
-    <script src="js/src/updates-commits.js"></script>
-    <!--script src="js/src/v25_updateStatus.js"></script-->
-    <script src="js/src/classical_music.js"></script>
-    <script src="js/src/v25-market.js"></script>
-    <script src="js/src/v25-cart-manager.js"></script>
-    <!--script src="js/src/v25-media-control.js"></script-->
-    <script src="js/src/v25_globalAudioManager.js"></script>
-    <!--script src="js/src/v25-combined.js"></script -->
-    <script src="js/src/v27_audioController.js"></script>
-    <!-- END -->
+</div>
+<!-- END OF BOTTOM PLAYER -->
+<!-- CONDITIONAL LOGIC BITCH -->
+<!-- DYNAMIC SHARE TEST -->
+<!--script src="js/src/share.js"></script-->
+<!-- DYANMIC ARTIST TEST -->
+<!--script src="js/src/dynamicArtist.js"></script-->
+<!--script src="js/src/siteCounter.js"></script-->
+<!-- END OF DRAFTY SCRIPTS -->
+<!--script src="js/src/h1-effects-scroll.js"></script-->
+<!-- USER CONTROLS-->
+<!--script src="js/src/controls-timeline.js"></script-->
+<!-- USER NAV -->
+<script src="js/src/function-toggle-dash.js"></script>
+<!-- USER JAVASCRIPTS -->
+<!-- script src="js/src/user-cart.js"></script -->
+<!-- script src="js/src/user-icon-input.js"></script -->
+<script src="js/src/login.js"></script>
+<!--script src="js/src/user-liked-everything.js"></script-->
+<!-- USER REVIEW PODCAST-->
+<!--script src="js/src/user-review-podcasts.js"></script-->
+<!-- USER PREF SAVED -->
+<script src="js/src/user-userSesh.js"></script>
+<!-- USER - DISPLAY USER INFO -->
+<!-- NEW QUESTION APP -->
+<!-- LIVE DATA -->
+<!--script src="js/src/live-answers-logic.js"></script-->
+<!-- END OF USER JAVASCRIPTS -->
+<!-- END OF USER JAVASCRIPTS -->
+<!-- HOMEPAGE JAVASCRIPT -->
+<script src="js/src/fetch-homepage-nowplaying.js"></script>
+<!-- MARKET JAVASCRIPTS -->
+<!--script src="js/src/market-physical.js"></script-->
+<!--script src="js/src/market-digital.js"></script-->
+<!-- DISPLAY LIVE ANSWERS-->
+<!--script src="js/src/display-live-answers.js"></script-->
+<!-- MUSIC BABY-->
+<!-- SONG JAVASCRIPT -->
+<!--script src="js/src/song-loader.js"></script-->
+<!--script src="js/src/search-songs.js"></script-->
+<!-- SONG _ MUSIC _ DAILY SHUFFLE-->
+<script src="js/src/music_daily_shuffle.js"></script>
+<!-- PODCAST JAVASCRIPTS -->
+<!-- PODCAST JAVASCRIPTS -->
+<script src="js/src/podcast.js"></script>
+<!-- MEDIA JAVASCRIPT -->
+<script src="js/src/media.js"></script>
+<!--script src="js/src/media-layout-effects.js"></script-->
+<!-- GAMES JAVASCRIPT -->
+<!--script src="js/src/games.js"></script-->
+<!-- NEWSLETTER + UDPATES-->
+<script src="js/src/newsletter.js"></script>
+<script src="js/src/updates-commits.js"></script>
+<!--script src="js/src/newSuperSong.js"></script -->
+<!-- SHOW UPDATES -->
+<!--script src="js/src/audioPlayerControls.js"></script -->
+<!-- DONATION SCRIPTS -->
+<!--script src="js/src/donation.js"></script-->
+<!--script src="js/src/donation-slider-a.js"></script-->
+<!-- USER SETTINGS -->
+<script src="js/src/function-switchTheme.js"></script>
+<!-- CORE PAGE-->
+<script src="js/src/tab.js"></script>
+<script src="js/src/nav-leftDash.js"></script>
+<!--script src="js/src/playlist-logic.js"></script-->
+<!-- CHAT LOGIC -->
+<!--script src="/js/src/chat-logic.js"></script-->
+<!-- MESSAGE BOARD LOGIC -->
+<!--script src="js/src/message-board-logic.js"></script-->
+<!-- GOAL CHART LOGIC -->
+<!--script src="/js/src/goal-chart.js"></script-->
+<!-- SUPPORT AHOY LOGIC -->
+<!-- script src="/js/src/support-artist-individual.js"></script -->
+<!-- CORDOVA PLUGINS -->
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript"
+  src="js/cordova-scripts/cordova-musicControls.js"></script>
+<!-- CASTING FUNCTION -->
+<!--script src="js/src/function-superCast.js"></script -->
+<!-- script src="js/src/podcast-mobile-logic.js"></script-->
+<!-- BACKGROUND GRAPHIC LOGIC -->
+<script src="./js/src/background-graphic-logic.js"></script>
+<!-- MUSIC VIZ -->
+<!--script src="js/src/experience.js"></script-->
+<!-- TODAYS DATE -->
+<script src="js/src/function_pull_LatestSong.js"></script>
+<script src="js/src/function_today_date.js"></script>
+<!-- BURN CD Script-->
+<script src="js/src/burnCd.js"></script>
+<!--Display Time-->
+<!--script src="js/src/function_DisplayTime.js"></script-->
+<!-- v24 Song Bar Image-->
+<!--script src="js/src/v24songBarImage.js"></script -->
+<!-- v25 Menu Code -->
+<script src="js/src/v25_menuCode.js"></script>
+<script src="js/src/v25_dailyJukebox.js"></script>
+<!-- script src="js/src/v25_songController.js"></script -->
+<script src="js/src/magic-svg-logic.js"></script>
+<script src="js/src/updates-commits.js"></script>
+<!--script src="js/src/v25_updateStatus.js"></script-->
+<script src="js/src/classical_music.js"></script>
+<script src="js/src/v25-market.js"></script>
+<script src="js/src/v25-cart-manager.js"></script>
+<!--script src="js/src/v25-media-control.js"></script-->
+<script src="js/src/v25_globalAudioManager.js"></script>
+<!--script src="js/src/v25-combined.js"></script -->
+<script src="js/src/v27_audioController.js"></script>
+<script src="js/src/v27-songMgmt.js"></script>
+  <!-- END -->
   </body>
 </html>

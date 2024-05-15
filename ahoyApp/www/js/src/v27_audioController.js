@@ -1,44 +1,54 @@
 import GlobalState from './globalState.js';
-import { playSong, shuffleArray, updateSongListUI, songsArray } from './newSuperSong.js'; // Import necessary functions and variables
+import { playSong, shuffleArray, updateSongListUI, songsArray } from './newSuperSong.js';
 
-document.getElementById('v27-play-pause-button').addEventListener('click', function() {
-    const player = document.getElementById('v27-audio-player');
-    const playPauseIcon = document.getElementById('v27-play-pause-icon');
-    const currentSong = songsArray[GlobalState.currentSongIndex]; // Use GlobalState to track current song index
+// Cached DOM elements
+const player = document.getElementById('audio-player');
+const playPauseIcon = document.getElementById('v27-play-pause-icon');
+const shuffleButton = document.getElementById('v27-shuffle-button');
+const volumeControl = document.getElementById('v27-volume-control');
+const trackProgress = document.getElementById('v27-track-progress');
+const playPauseButton = document.getElementById('v27-play-pause-button');
 
+// Helper function to update play/pause icon
+function updatePlayPauseIcon(isPlaying) {
+    playPauseIcon.className = isPlaying ? 'fas fa-pause' : 'fas fa-play';
+}
+
+// Play/Pause toggle
+playPauseButton.addEventListener('click', function() {
     if (player.paused) {
         player.play();
-        playPauseIcon.className = 'fas fa-pause';
     } else {
         player.pause();
-        playPauseIcon.className = 'fas fa-play';
     }
 });
 
-document.getElementById('v27-shuffle-button').addEventListener('click', function() {
+// Update icon based on player state
+player.addEventListener('play', () => updatePlayPauseIcon(true));
+player.addEventListener('pause', () => updatePlayPauseIcon(false));
+
+// Shuffle songs
+shuffleButton.addEventListener('click', function() {
     if (songsArray.length > 0) {
         shuffleArray(songsArray);
         updateSongListUI();
     }
 });
 
-document.getElementById('v27-volume-control').addEventListener('input', function() {
-    const player = document.getElementById('audio-player');
+// Volume control
+volumeControl.addEventListener('input', function() {
     player.volume = this.value / 100;
 });
 
-document.getElementById('audio-player').addEventListener('timeupdate', function() {
-    const progress = document.getElementById('v27-track-progress');
+// Track progress
+player.addEventListener('timeupdate', function() {
     const value = (this.currentTime / this.duration) * 100;
-    progress.value = value;
-
-    // Display current song details
-    const currentSong = songsArray[GlobalState.currentSongIndex]; // Use GlobalState to track current song
+    trackProgress.value = value;
+    const currentSong = songsArray[GlobalState.currentSongIndex];
     console.log(`Now playing: ${currentSong.songTitle} by ${currentSong.artist}`);
 });
 
-document.getElementById('v27-track-progress').addEventListener('input', function() {
-    const player = document.getElementById('v27-audio-player');
-    const value = (this.value / 100) * player.duration;
-    player.currentTime = value;
+// Seeking
+trackProgress.addEventListener('input', function() {
+    player.currentTime = (this.value / 100) * player.duration;
 });
