@@ -38,15 +38,24 @@ function togglePlayPausePodcast(url, title) {
     const playPauseIcon = document.getElementById('v27-play-pause-icon');
     const currentPlaying = document.getElementById('thisOne');
 
-    // Update the audio source and play
-    audioPlayer.src = url;
-    audioPlayer.play();
+    // Check if the current URL is already loaded
+    if (audioPlayer.src !== url) {
+        audioPlayer.src = url; // Change the source
+        audioPlayer.play(); // Play new podcast
+        playPauseIcon.className = 'fas fa-pause'; // Change to pause icon
+        currentPlaying.textContent = title; // Update the currently playing title
+    } else {
+        // Toggle play/pause on the same podcast
+        if (audioPlayer.paused) {
+            audioPlayer.play();
+            playPauseIcon.className = 'fas fa-pause';
+        } else {
+            audioPlayer.pause();
+            playPauseIcon.className = 'fas fa-play';
+        }
+    }
 
-    // Update the UI to reflect the playing status
-    playPauseIcon.className = 'fas fa-pause'; // Change to pause icon
-    currentPlaying.textContent = title; // Update the currently playing title
-
-    // Add event listeners to toggle play/pause icon
+    // Event listeners to toggle play/pause icon
     audioPlayer.addEventListener('play', () => {
         playPauseIcon.className = 'fas fa-pause';
     });
