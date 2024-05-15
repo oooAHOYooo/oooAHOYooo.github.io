@@ -191,6 +191,17 @@ document.getElementById('v27-prev-button').addEventListener('click', function() 
 });
 
 document.getElementById('v27-play-pause-button').addEventListener('click', function() {
+  const player = document.getElementById('audio-player');
+  if (player.paused) {
+      player.play();
+      document.getElementById('v27-play-pause-icon').className = 'fas fa-pause';
+  } else {
+      player.pause();
+      document.getElementById('v27-play-pause-icon').className = 'fas fa-play';
+  }
+});
+
+document.getElementById('v27-play-pause-button').addEventListener('click', function() {
   const player = document.getElementById('v27-audio-player');
   if (player.paused) {
       player.play();
