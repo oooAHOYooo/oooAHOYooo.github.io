@@ -41,6 +41,8 @@ class SongManager {
         if (this.displayElement) {
             this.displayElement.textContent = song.songTitle;
         }
+
+        this.updatePlayPauseIcon(true);
     }
 
     pauseSong() {
