@@ -734,7 +734,33 @@
 
         </div>
         <div id="currently-playing" style="flex-grow: 1;">
-          <p id="thisOne">DYLM?</p>
+          <p id="thisOne" style="font-family: monospace; font-size: smaller; text-transform: uppercase;">DYLM?</p>
+          <script>
+            const texts = [
+              "hello there - Welcome to Ahoy", // Welcome text
+              "Today's Date is - " + new Date().toLocaleDateString(),
+              "We are an indie media platform", // New text 1
+    "Based out of New Haven CT",      // New text 2
+    "Listen to a song",               // New text 3
+    "Listen to a Podcast",            // New text 4
+    "Burn a CD and change the world", // New text 5
+    "Create an Account to Get Free",  // New text 6
+    "We are Ad Free",                 // New text 7
+    "Homegrown"         // Today's date
+            ];
+            let currentIndex = 0;
+          
+            function updateTextContent() {
+              document.getElementById('thisOne').textContent = texts[currentIndex];
+              currentIndex = (currentIndex + 1) % texts.length; // Cycle through the texts
+            }
+          
+            // Call the function to set initial text
+            updateTextContent();
+          
+            // Update the text every 3 seconds
+            setInterval(updateTextContent, 3000);
+          </script>
           <!-- p id="currently-playing-title">No media is playing</p -->
         </div>
         <div id="v27-player-controls">
