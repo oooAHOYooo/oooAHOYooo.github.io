@@ -43,6 +43,13 @@ class SongManager {
         }
     }
 
+    pauseSong() {
+        if (this.audioPlayer) {
+            this.audioPlayer.pause();
+            this.updatePlayPauseIcon(false);
+        }
+    }
+
     updateNowPlayingDetails(song) {
         document.getElementById("now-playing-album-art").src = song.coverArt;
         document.getElementById("now-playing-song-title").textContent = song.songTitle;
@@ -117,10 +124,22 @@ class SongManager {
             [array[i], array[j]] = [array[j], array[i]];
         }
     }
+
+    updatePlayPauseIcon(isPlaying) {
+        const icon = document.querySelector('#pause-btn i');
+        if (icon) {
+            icon.className = isPlaying ? 'fa fa-pause' : 'fa fa-play';
+        }
+    }
 }
 
 const songManager = new SongManager();
 document.addEventListener("DOMContentLoaded", function () {
     songManager.fetchSongs();
     songManager.addPlaylist('default', [0, 1, 2, 3]); // Default playlist using indices
+
+    const pauseButton = document.getElementById('pause-btn');
+    pauseButton.addEventListener('click', function() {
+        songManager.pauseSong();
+    });
 });
