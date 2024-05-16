@@ -248,25 +248,44 @@
         <div id="now-playing-song-details">
           <h3 id="now-playing-song-title">Song Title</h3>
           <p id="now-playing-song-artist">Artist Name</p>
-          <button class="play-button-tiny"
-          onclick="playCurrentQueue()"
-          style="width: 16px; height: 16px; padding: 0; border: none; background: none; cursor: not-allowed; position: fixed; bottom: 10px; left: 10px; color: #c0c0c0;"
-          onmouseover="this.style.width='18px';this.style.height='18px';"
-          onmouseout="this.style.width='16px';this.style.height='16px';"
-          disabled>
-      <i class="fas fa-play" style="font-size: 16px; color: #c0c0c0;"></i>
-  </button>
-  <button class="burn-button-tiny"
-          onclick="burnSong('songUrl', 'Song Title', 'Artist Name', this)"
-          style="width: 16px; height: 16px; padding: 0; border: none; background: none; cursor: not-allowed; position: fixed; bottom: 10px; right: 10px; color: #c0c0c0;"
-          onmouseover="this.style.width='18px';this.style.height='18px';"
-          onmouseout="this.style.width='16px';this.style.height='16px';"
-          disabled>
-      <i class="fas fa-fire" style="font-size: 16px; color: #c0c0c0;"></i>
-  </button>
+          <button class="burn-button-tiny"
+            onclick="burnSong('songUrl', 'Song Title', 'Artist Name', this)"
+            style="width: 16px; height: 16px; padding: 0; border: none; background: none; cursor: pointer; position: fixed; bottom: 10px; right: 10px;"
+            onmouseover="this.style.width='18px';this.style.height='18px';"
+            onmouseout="this.style.width='16px';this.style.height='16px';">
+            <i class="fas fa-fire" style="font-size: 16px;"></i>
+          </button>
         </div>
 
-  
+        <!-- SONG CONTROLLERS -->
+        <div class="playback-controls" id="v25-unique-player">
+          <div class="controls-container">
+            <button id="unique-prev-button" onclick="uniquePrevTrack()">
+              <i class="fas fa-step-backward"></i>
+            </button>
+            <button id="unique-rewind-button" onclick="uniqueRewind()">
+              <i class="fas fa-backward"></i>
+            </button>
+            <button id="unique-play-pause-button"
+              onclick="uniqueTogglePlayPause()">
+              <i class="fas fa-play"></i>
+            </button>
+            <button id="unique-fast-forward-button"
+              onclick="uniqueFastForward()">
+              <i class="fas fa-forward"></i>
+            </button>
+            <button id="unique-next-button" onclick="uniqueNextTrack()">
+              <i class="fas fa-step-forward"></i>
+            </button>
+          </div>
+          <div class="timeline-container">
+            <input type="range" id="unique-song-timeline" min="0" value="0"
+              step="1">
+            <span id="unique-current-time">0:00<span class="v25dash"> /
+              </span><span
+                id="unique-total-time">0:00</span>
+            </div>
+          </div>
           <button id="classical-mode-button"
             onclick="navigateToTab('classical-tab')"
             class="common-button">Classical Music Mode</button>
