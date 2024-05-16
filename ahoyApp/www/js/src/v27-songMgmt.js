@@ -65,7 +65,7 @@ class SongManager {
                 <td><img src="${song.coverArt}" alt="${song.songTitle}" class="thumbnail"></td>
                 <td>${song.artist}</td>
                 <td>${song.songTitle}</td>
-                <td><button class="burn-button-overlay" onclick="songManager.burnSong(${index})"><i class="fas fa-fire"></i></button></td>
+                <td class="burn-icon"><button class="burn-button-overlay" onclick="songManager.burnSong(${index})"><i class="fa fa-fire"></i></button></td>
             `;
             tableBody.appendChild(row);
         });
@@ -78,7 +78,18 @@ class SongManager {
         // Assuming song object has all the necessary details
         window.addSongToBurnList(song.mp3url, song.songTitle, song.artist, song.lengthInSeconds);
 
-        console.log(`Added to burn list: ${song.songTitle} by ${song.artist}`);
+        // Update UI to replace the burn icon with a checkmark icon
+        const tableBody = document.getElementById("song-list");
+        const rows = tableBody.getElementsByTagName("tr");
+        const burnIconCell = rows[index].getElementsByClassName("burn-icon")[0]; // Ensure you have a class 'burn-icon' on the burn icon element
+        burnIconCell.innerHTML = '<i class="fa fa-check" aria-hidden="true"></i>';
+
+        // Reset the icon back to the burn icon after 1 second
+        setTimeout(() => {
+            burnIconCell.innerHTML = '<i class="fa fa-fire" aria-hidden="true"></i>';
+        }, 1000);
+
+        console.log(`Burned: ${song.songTitle} by ${song.artist}`);
     }
 
     addPlaylist(name, songIndexes) {

@@ -127,11 +127,12 @@ function setupCheckoutFunctionality() {
   });
 }
 
-function addSongToBurnList(songUrl, songTitle, artistName, songLengthInSeconds) {
+function addSongToBurnList(songUrl, songTitle, artistName, songLengthInSeconds, songIndex) {
   const burnList = document.getElementById("burn-list");
   const entry = document.createElement("tr");
   entry.className = "burn-entry";
   entry.setAttribute("data-length", songLengthInSeconds); // Ensure this attribute is meaningful
+  entry.setAttribute("data-song-index", songIndex); // Set the song index
 
   const songLengthFormatted = formatLength(songLengthInSeconds);
 
@@ -172,9 +173,18 @@ function moveSong(button, direction) {
 }
 
 function removeSongFromBurnList(button) {
-  const entry = button.parentNode.parentNode;
-  entry.parentNode.removeChild(entry);
-  updateOrderNumbers(); // Update the order numbers after removal
+    const entry = button.parentNode.parentNode;
+    const songIndex = entry.getAttribute('data-song-index'); // Ensure each entry has a 'data-song-index' attribute corresponding to its index in the song list
+
+    // Remove the song entry from the burn list
+    entry.parentNode.removeChild(entry);
+    updateOrderNumbers(); // Update the order numbers after removal
+
+    // Reset the burn icon in the song list
+    const songListTable = document.getElementById("song-list");
+    const songRows = songListTable.getElementsByTagName("tr");
+    const burnIconCell = songRows[songIndex].getElementsByClassName("burn-icon")[0];
+    burnIconCell.innerHTML = '<i class="fa fa-fire" aria-hidden="true"></i>';
 }
 
 function updateOrderNumbers() {
