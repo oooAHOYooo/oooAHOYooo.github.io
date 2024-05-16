@@ -25,3 +25,37 @@
 #v25-burn-cd-instructions-text p {
     text-align: left !important;
 }
+
+
+.burn-entry {
+    background-color: var(--background-color);
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-color);
+}
+
+.burn-entry td {
+    padding: 8px 12px;
+    text-align: left;
+}
+
+.burn-entry button {
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.burn-entry button:hover {
+    background-color: #1E90FF;
+}
+
+.burn-entry i.fa {
+    color: white;
+}

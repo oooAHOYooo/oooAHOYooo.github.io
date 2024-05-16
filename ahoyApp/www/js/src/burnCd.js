@@ -82,28 +82,22 @@ function displayCdAndContents(cdName) {
     displayArea.appendChild(cdNameElement);
 
     const songListElement = document.createElement("ul");
-    let totalLength = 0;
 
-    for (let i = 0; i < entries.length; i++) {
+    // Limit the number of songs displayed to 12
+    const maxSongs = 12;
+    for (let i = 0; i < entries.length && i < maxSongs; i++) {
         const songTitle = entries[i].querySelector("td:nth-child(4)").textContent;
-        const songLength = parseInt(entries[i].getAttribute("data-length"), 10); // Assuming each entry has a data-length attribute
-        totalLength += songLength;
-
         const songItem = document.createElement("li");
         songItem.textContent = songTitle;
         songListElement.appendChild(songItem);
     }
-
     displayArea.appendChild(songListElement);
-
-    // Convert total length from seconds to a more readable format
-    const totalLengthFormatted = formatLength(totalLength);
-    const totalLengthElement = document.createElement("p");
-    totalLengthElement.textContent = `Total Length: ${totalLengthFormatted}`;
-    displayArea.appendChild(totalLengthElement);
 }
 
 function formatLength(totalSeconds) {
+    if (totalSeconds <= 0) {
+        return '0h 0m 0s'; // Return a default format if the length is zero or undefined
+    }
     const hours = Math.floor(totalSeconds / 3600);
     const minutes = Math.floor((totalSeconds - (hours * 3600)) / 60);
     const seconds = totalSeconds - (hours * 3600) - (minutes * 60);
@@ -137,22 +131,14 @@ function addSongToBurnList(songUrl, songTitle, artistName, songLengthInSeconds, 
   const songLengthFormatted = formatLength(songLengthInSeconds);
 
   entry.innerHTML = `
-    <td style="text-align: left;">${burnList.getElementsByTagName("tr").length + 1}</td>
-    <td style="text-align: left;">${songTitle} by ${artistName} (${songLengthFormatted})</td>
+    <td>${burnList.getElementsByTagName("tr").length + 1}</td>
+    <td>${songTitle} by ${artistName}</td>
     <td><button onclick="moveSong(this, -1)"><i class="fa fa-arrow-up"></i></button></td>
     <td><button onclick="moveSong(this, 1)"><i class="fa fa-arrow-down"></i></button></td>
     <td><button onclick="removeSongFromBurnList(this)"><i class="fa fa-remove"></i></button></td>
   `;
   
   burnList.appendChild(entry);
-}
-
-function formatLength(totalSeconds) {
-    let minutes = Math.floor(totalSeconds / 60);
-    let seconds = totalSeconds % 60;
-    // Pad seconds with leading zero if needed
-    seconds = seconds < 10 ? '0' + seconds : seconds;
-    return `${minutes}:${seconds}`;
 }
 
 function moveSong(button, direction) {
