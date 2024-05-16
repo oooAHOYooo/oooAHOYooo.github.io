@@ -131,11 +131,10 @@ function addSongToBurnList(songUrl, songTitle, artistName, songLengthInSeconds) 
   const burnList = document.getElementById("burn-list");
   const entry = document.createElement("tr");
   entry.className = "burn-entry";
-  entry.setAttribute("data-length", songLengthInSeconds); // Set the song length in seconds as a data attribute
-  
-  // Convert song length from seconds to "M:SS" format
+  entry.setAttribute("data-length", songLengthInSeconds); // Ensure this attribute is meaningful
+
   const songLengthFormatted = formatLength(songLengthInSeconds);
-  
+
   entry.innerHTML = `
     <td style="text-align: left;">${burnList.getElementsByTagName("tr").length + 1}</td>
     <td style="text-align: left;">${songTitle} by ${artistName} (${songLengthFormatted})</td>
@@ -190,3 +189,6 @@ document.getElementById('burn-cd-button').addEventListener('click', function() {
   console.log('Preparing to send email...');
   alert('Congrats! You have sent your playlist.');
 });
+
+window.addSongToBurnList = addSongToBurnList;
+

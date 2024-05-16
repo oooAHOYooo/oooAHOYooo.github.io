@@ -73,7 +73,12 @@ class SongManager {
 
     burnSong(index) {
         const song = this.currentPlaylist.length > 0 ? this.currentPlaylist[index] : this.songsArray[index];
-        console.log(`Burning song: ${song.songTitle} by ${song.artist}`); // Placeholder for actual burn functionality
+        if (!song) return;
+
+        // Assuming song object has all the necessary details
+        window.addSongToBurnList(song.mp3url, song.songTitle, song.artist, song.lengthInSeconds);
+
+        console.log(`Added to burn list: ${song.songTitle} by ${song.artist}`);
     }
 
     addPlaylist(name, songIndexes) {
