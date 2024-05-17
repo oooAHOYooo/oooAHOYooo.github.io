@@ -39,25 +39,31 @@ function loadPodcasts() {
 function togglePlayPausePodcast(index) {
     const podcast = podcasts[index];
     const audioPlayer = document.getElementById('audio-player');
-    const playPauseIcon = document.getElementById('v27-play-pause-icon');
-    const currentPlaying = document.getElementById('thisOne');
+    const currentIcon = document.getElementById(`podcast-play-${index}`).querySelector('i');
 
-    currentPodcastIndex = index; // Update the current index
+    // Pause any currently playing podcast and update the icon
+    if (currentPodcastIndex !== index && !audioPlayer.paused) {
+        const currentPlayingIcon = document.getElementById(`podcast-play-${currentPodcastIndex}`).querySelector('i');
+        currentPlayingIcon.className = 'fas fa-play';
+        audioPlayer.pause();
+    }
 
-    if (audioPlayer.src !== podcast.mp3url) {
+    // Toggle play/pause for the selected podcast
+    if (audioPlayer.src !== podcast.mp3url || audioPlayer.paused) {
         audioPlayer.src = podcast.mp3url;
         audioPlayer.play();
-        playPauseIcon.className = 'fas fa-pause';
-        currentPlaying.textContent = podcast.title;
+        currentIcon.className = 'fas fa-pause';
     } else {
-        if (audioPlayer.paused) {
-            audioPlayer.play();
-            playPauseIcon.className = 'fas fa-pause';
-        } else {
-            audioPlayer.pause();
-            playPauseIcon.className = 'fas fa-play';
-        }
+        audioPlayer.pause();
+        currentIcon.className = 'fas fa-play';
     }
+
+    // Update the current podcast index
+    currentPodcastIndex = index;
+
+    // Update the currently playing text if needed
+    const currentPlaying = document.getElementById('thisOne');
+    currentPlaying.textContent = podcast.title;
 }
 
 function playPreviousPodcast() {
