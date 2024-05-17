@@ -32,17 +32,20 @@ class SongManager {
         const song = this.currentPlaylist.length > 0 ? this.currentPlaylist[index] : this.songsArray[index];
         if (!song) return;
 
-        this.audioPlayer.src = song.mp3url;
-        this.audioPlayer.play();
-        this.updateNowPlayingDetails(song);
-        this.currentSongIndex = index;
+        if (this.audioPlayer.src !== song.mp3url || this.audioPlayer.paused) {
+            this.audioPlayer.src = song.mp3url;
+            this.audioPlayer.play();
+            this.updateNowPlayingDetails(song);
+            this.currentSongIndex = index;
+            this.updatePlayPauseIcon(true);
+        } else {
+            this.pauseSong();
+        }
 
         // Update the display element with the current song title
         if (this.displayElement) {
             this.displayElement.textContent = song.songTitle;
         }
-
-        this.updatePlayPauseIcon(true);
     }
 
     pauseSong() {
@@ -135,13 +138,46 @@ class SongManager {
     }
 }
 
-const songManager = new SongManager();
 document.addEventListener("DOMContentLoaded", function () {
+    const songManager = new SongManager();
     songManager.fetchSongs();
     songManager.addPlaylist('default', [0, 1, 2, 3]); // Default playlist using indices
 
+    // Play/Pause button
     const pauseButton = document.getElementById('pause-btn');
     pauseButton.addEventListener('click', function() {
-        songManager.pauseSong();
+        const isPlaying = !songManager.audioPlayer.paused;
+        if (isPlaying) {
+            songManager.pauseSong();
+        } else {
+            songManager.playSong(songManager.currentSongIndex);
+        }
+    });
+
+    // Previous button
+    const prevButton = document.getElementById('v27-prev-button');
+    prevButton.addEventListener('click', function() {
+        if (songManager.currentSongIndex > 0) {
+            songManager.playSong(songManager.currentSongIndex - 1);
+        } else {
+            songManager.playSong(songManager.songsArray.length - 1); // Loop to the last song
+        }
+    });
+
+    // Next button
+    const nextButton = document.getElementById('v27-next-button');
+    nextButton.addEventListener('click', function() {
+        if (songManager.currentSongIndex < songManager.songsArray.length - 1) {
+            songManager.playSong(songManager.currentSongIndex + 1);
+        } else {
+            songManager.playSong(0); // Loop back to the first song
+        }
+    });
+
+    // Settings button
+    const settingsButton = document.getElementById('v27-settings-button');
+    settingsButton.addEventListener('click', function() {
+        navigateToTab('settings-tab'); // Assuming navigateToTab is defined elsewhere
     });
 });
+
