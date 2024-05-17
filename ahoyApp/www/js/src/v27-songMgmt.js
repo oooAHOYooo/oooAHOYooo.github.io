@@ -14,10 +14,15 @@ class SongManager {
             "Based out of New Haven CT",
             "Listen to a song",
             "Listen to a Podcast",
-            "Burn a CD and change the world",
-            "Create an Account to Get Free",
-            "We are Ad Free",
-            "Homegrown"
+            "Watch a Media",
+            "Checkout out our beta marketplace",
+            "Send a CD Mixtape to a friend",
+            "Create an Account - Lock in",
+            "Ahoy Indie Media - is Ad Free",
+            "Homegrown",
+            "and alive",
+            "New Updates all the time",
+            "Spread the word - so we can quit our day jobs"
         ];
         this.currentIndex = 0;
         this.textInterval = null;
@@ -123,21 +128,24 @@ class SongManager {
         const song = this.currentPlaylist.length > 0 ? this.currentPlaylist[index] : this.songsArray[index];
         if (!song) return;
 
-        // Assuming song object has all the necessary details
-        window.addSongToBurnList(song.mp3url, song.songTitle, song.artist, song.lengthInSeconds);
+        // Add song to burn list if not already added
+        window.addSongToBurnList(song.mp3url, song.songTitle, song.artist, song.lengthInSeconds, index);
 
-        // Update UI to replace the burn icon with a checkmark icon
+        // Toggle the burn icon to a checkmark or back to fire icon
         const tableBody = document.getElementById("song-list");
         const rows = tableBody.getElementsByTagName("tr");
         const burnIconCell = rows[index].getElementsByClassName("burn-icon")[0]; // Ensure you have a class 'burn-icon' on the burn icon element
-        burnIconCell.innerHTML = '<i class="fa fa-check" aria-hidden="true"></i>';
+        const icon = burnIconCell.querySelector('i');
 
-        // Reset the icon back to the burn icon after 1 second
-        setTimeout(() => {
-            burnIconCell.innerHTML = '<i class="fa fa-fire" aria-hidden="true"></i>';
-        }, 1000);
+        if (icon.classList.contains('fa-fire')) {
+            icon.className = 'fa fa-check';
+            icon.parentNode.setAttribute('title', 'Remove from burn list'); // Optional: Change the tooltip
+        } else {
+            icon.className = 'fa fa-fire';
+            icon.parentNode.setAttribute('title', 'Add to burn list'); // Optional: Change the tooltip
+        }
 
-        console.log(`Burned: ${song.songTitle} by ${song.artist}`);
+        console.log(`Toggled burn status for: ${song.songTitle} by ${song.artist}`);
     }
 
     addPlaylist(name, songIndexes) {

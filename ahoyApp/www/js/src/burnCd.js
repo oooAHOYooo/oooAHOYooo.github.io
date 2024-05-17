@@ -7,13 +7,6 @@ document.addEventListener('DOMContentLoaded', function() {
   setupCheckoutFunctionality(); // Setup the functionality for checkout
 });
 
-function initInteractiveCheckpoints() {
-  // This might contain other initializations as needed
-}
-
-function initQueueManagement() {
-  // Other queue management features could go here
-}
 
 function createInputFieldAndSaveButton() {
   const container = document.getElementById("input-container"); // Assuming there's a div with id="input-container"
