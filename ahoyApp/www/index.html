@@ -415,8 +415,7 @@
               <button id="beta-features"
                 onclick="navigateToTab('beta-tab')">Explore Experimental BETA
                 Features</button>
-              <p>VOLUME</p><input type="range" id="v27-volume-control" min="0"
-                max="100" step="1">
+             
             </div>
             <!-- Add button to clear the background user image -->
             <div class="setting">
@@ -734,32 +733,7 @@
         </div>
         <div id="currently-playing" style="flex-grow: 1;">
           <p id="thisOne" style="font-family: monospace; font-size: smaller; text-transform: uppercase;">DYLM?</p>
-          <script>
-            const texts = [
-              "hello there - Welcome to Ahoy", // Welcome text
-              "Today's Date is - " + new Date().toLocaleDateString(),
-              "We are an indie media platform", // New text 1
-    "Based out of New Haven CT",      // New text 2
-    "Listen to a song",               // New text 3
-    "Listen to a Podcast",            // New text 4
-    "Burn a CD and change the world", // New text 5
-    "Create an Account to Get Free",  // New text 6
-    "We are Ad Free",                 // New text 7
-    "Homegrown"         // Today's date
-            ];
-            let currentIndex = 0;
-          
-            function updateTextContent() {
-              document.getElementById('thisOne').textContent = texts[currentIndex];
-              currentIndex = (currentIndex + 1) % texts.length; // Cycle through the texts
-            }
-          
-            // Call the function to set initial text
-            updateTextContent();
-          
-            // Update the text every 3 seconds
-            setInterval(updateTextContent, 3000);
-          </script>
+         
           <!-- p id="currently-playing-title">No media is playing</p -->
         </div>
         <div id="v27-player-controls">
@@ -767,7 +741,7 @@
       
           <button id="v27-prev-button"><i
               class="fas fa-step-backward"></i></button>
-          <button id="pause-btn"><i class="fa fa-pause" aria-hidden="true"></i> </button>
+          <button id="v27-play-button"><i class="fa fa-play"></i> </button>
           <button id="v27-next-button"><i
               class="fas fa-step-forward"></i></button>
           <button id="v27-settings-button"
@@ -777,7 +751,6 @@
         <!-- New section for displaying currently playing song or podcast -->
 
       </div>
-      <!-- Add this in your HTML where the audio player UI is defined -->
       <div id="sound-timeline-container">
         <div id="sound-timeline-progress"></div>
       </div>
@@ -785,73 +758,11 @@
     </div>
 
   </div>
-  <!-- Start of v25 PLAYER -->
-  <!--div id="v24ahoyPlayer" class="player-v25">
-        <audio id="audio-player" src></audio>
-        <div class="audio-player-controls">
-          <div class="v25-superPlayerButtonMash" id="barA">
-            <button id="play-pause-button" onclick="togglePlayPause()"
-              class="control-button">
 
-              <i class="fas fa-play" id="play-pause-icon"></i>
-            </button>
-            <div id="now-playing-song-title" style="font-size: 12px;">Song
-              Title</div>
-            <div id="now-playing-song-artist" style="font-size: 12px;">Artist
-              Name</div>
-            <div id="current-time-v25">0:00</div>
 
-            <input type="range" id="song-progress-bar" value="0" min="0"
-              max="100">
-
-            <button id="next-button" class="control-button"
-              style="display: none;">
-              <i class="fas fa-step-forward"></i>
-            </button>
-            <button id="settings-icon-button-a"
-              onclick="navigateToTab('settings-tab')">
-              <i class="fas fa-cog"></i>
-            </button>
-
-            <div id="settings-icon-container-a">
-
-            </div>
-          </div>
-
-        </div>
-
-      </div -->
-  <!-- END OF v24 Bottom Player-->
-
-  <!-- TEMPSCRIPT - TRYING TO MAKE A UNIVERSAL BUTTON-->
-  <script>
-          // Function to toggle play/pause for the audio player
-          function togglePlayPause() {
-            var audio = document.getElementById('audio-player');
-            var playPauseIcon = document.getElementById('play-pause-icon');
-            if (audio.paused) {
-              audio.play();
-              playPauseIcon.className = 'fas fa-pause'; // Change to pause icon
-            } else {
-              audio.pause();
-              playPauseIcon.className = 'fas fa-play'; // Change to play icon
-            }
-          }
-
-          // Event listener to update the play/pause icon based on the audio state
-          document.getElementById('audio-player').addEventListener('play', function() {
-            document.getElementById('play-pause-icon').className = 'fas fa-pause';
-          });
-
-          document.getElementById('audio-player').addEventListener('pause', function() {
-            document.getElementById('play-pause-icon').className = 'fas fa-play';
-          });
-        </script>
 
 </div>
-<div>
 
-</div>
 <!-- END OF BOTTOM PLAYER -->
 <!-- CONDITIONAL LOGIC BITCH -->
 <!-- DYNAMIC SHARE TEST -->
@@ -936,7 +847,7 @@
 <!-- MUSIC VIZ -->
 <!--script src="js/src/experience.js"></script-->
 <!-- TODAYS DATE -->
-<script src="js/src/function_pull_LatestSong.js"></script>
+<!--script src="js/src/function_pull_LatestSong.js"></script-->
 <script src="js/src/function_today_date.js"></script>
 <!-- BURN CD Script-->
 <script src="js/src/burnCd.js"></script>
@@ -956,7 +867,7 @@
 <script src="js/src/v25-cart-manager.js"></script>
 <!--script src="js/src/v25-media-control.js"></script-->
 <!--script src="js/src/v25_globalAudioManager.js"></script-->
-<!--script src="js/src/v25-combined.js"></script -->
+<!--script src="js/src/v25-combined.js"></script-->
 <script src="js/src/v27-songMgmt.js"></script>
   <!-- END -->
   </body>

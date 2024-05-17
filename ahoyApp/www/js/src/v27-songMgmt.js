@@ -7,7 +7,58 @@ class SongManager {
         this.isShuffle = false;
         this.audioPlayer = document.getElementById("audio-player");
         this.displayElement = document.getElementById('thisOne'); // Element to update with song title
+        this.texts = [
+            "hello there - Welcome to Ahoy",
+            "Today's Date is - " + new Date().toLocaleDateString(),
+            "We are an indie media platform",
+            "Based out of New Haven CT",
+            "Listen to a song",
+            "Listen to a Podcast",
+            "Burn a CD and change the world",
+            "Create an Account to Get Free",
+            "We are Ad Free",
+            "Homegrown"
+        ];
+        this.currentIndex = 0;
+        this.textInterval = null;
         this.initAudioPlayer();
+        this.setupSongListEvents();
+        this.startTextAnimation();
+    }
+
+    setupSongListEvents() {
+        const songList = document.getElementById('song-list'); // Assuming there's an element with id 'song-list'
+        songList.addEventListener('click', (event) => {
+            const songIndex = event.target.getAttribute('data-index');
+            if (songIndex) {
+                this.playSong(parseInt(songIndex));
+                this.updatePlayPauseButton();
+            }
+        });
+    }
+
+    updatePlayPauseButton() {
+        const playPauseButton = document.getElementById('v27-play-button');
+        if (this.audioPlayer.paused) {
+            playPauseButton.textContent = 'Play';
+        } else {
+            playPauseButton.textContent = 'Pause';
+        }
+    }
+
+    playSong(index) {
+        const song = this.currentPlaylist.length > 0 ? this.currentPlaylist[index] : this.songsArray[index];
+        if (!song) return;
+
+        if (this.audioPlayer.src !== song.mp3url || this.audioPlayer.paused) {
+            this.audioPlayer.src = song.mp3url;
+            this.audioPlayer.play();
+            this.updateNowPlayingDetails(song);
+            this.currentSongIndex = index;
+            this.updatePlayPauseIcon(true);
+            this.updatePlayPauseButton();
+            this.stopTextAnimation();
+        }
     }
 
     fetchSongs() {
@@ -28,30 +79,11 @@ class SongManager {
         });
     }
 
-    playSong(index) {
-        const song = this.currentPlaylist.length > 0 ? this.currentPlaylist[index] : this.songsArray[index];
-        if (!song) return;
-
-        if (this.audioPlayer.src !== song.mp3url || this.audioPlayer.paused) {
-            this.audioPlayer.src = song.mp3url;
-            this.audioPlayer.play();
-            this.updateNowPlayingDetails(song);
-            this.currentSongIndex = index;
-            this.updatePlayPauseIcon(true);
-        } else {
-            this.pauseSong();
-        }
-
-        // Update the display element with the current song title
-        if (this.displayElement) {
-            this.displayElement.textContent = song.songTitle;
-        }
-    }
-
     pauseSong() {
         if (this.audioPlayer) {
             this.audioPlayer.pause();
             this.updatePlayPauseIcon(false);
+            this.startTextAnimation();
         }
     }
 
@@ -59,12 +91,16 @@ class SongManager {
         document.getElementById("now-playing-album-art").src = song.coverArt;
         document.getElementById("now-playing-song-title").textContent = song.songTitle;
         document.getElementById("now-playing-song-artist").textContent = song.artist;
+        this.displayElement.textContent = song.songTitle + " by " + song.artist;
     }
 
     initAudioPlayer() {
         this.audioPlayer.onerror = () => {
             console.error("Error occurred during song playback.");
         };
+        // Initialize audio player events
+        this.audioPlayer.addEventListener('play', () => this.updatePlayPauseButton());
+        this.audioPlayer.addEventListener('pause', () => this.updatePlayPauseButton());
     }
 
     loadSongsToUI() {
@@ -73,7 +109,7 @@ class SongManager {
         this.songsArray.forEach((song, index) => {
             const row = document.createElement("tr");
             row.innerHTML = `
-                <td><button onclick="songManager.playSong(${index})"><i class="fas fa-play"></i></button></td>
+                <td><button data-index="${index}"><i class="fas fa-play"></i></button></td>
                 <td><img src="${song.coverArt}" alt="${song.songTitle}" class="thumbnail"></td>
                 <td>${song.artist}</td>
                 <td>${song.songTitle}</td>
@@ -136,6 +172,24 @@ class SongManager {
             icon.className = isPlaying ? 'fa fa-pause' : 'fa fa-play';
         }
     }
+
+    startTextAnimation() {
+        this.stopTextAnimation(); // Clear any existing interval
+        this.updateTextContent(); // Set initial text
+        this.textInterval = setInterval(() => {
+            this.updateTextContent();
+        }, 3000);
+    }
+
+    stopTextAnimation() {
+        clearInterval(this.textInterval);
+        this.textInterval = null;
+    }
+
+    updateTextContent() {
+        this.displayElement.textContent = this.texts[this.currentIndex];
+        this.currentIndex = (this.currentIndex + 1) % this.texts.length; // Cycle through the texts
+    }
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -180,4 +234,3 @@ document.addEventListener("DOMContentLoaded", function () {
         navigateToTab('settings-tab'); // Assuming navigateToTab is defined elsewhere
     });
 });
-
