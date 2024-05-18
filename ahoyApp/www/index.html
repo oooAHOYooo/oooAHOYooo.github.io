@@ -33,7 +33,6 @@
   <!-- SECURITY -->
   <!-- SECURITY -->
 <meta name="referrer" content="strict-origin-when-cross-origin">
-
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
 <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
 <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=()">
@@ -68,6 +67,7 @@
   <link rel="stylesheet" href="./css/v25buttons.css">
   <link rel="stylesheet" href="./css/v25-market.css">
   <link rel="stylesheet" href="./css/v27_audioController.css">
+  <link rel="stylesheet" href="./css/v25_loadingScreen.css">
 
   <!-- Icons -->
   <link rel="icon" type="image/png" href="./img/favicon_ahoy.png">
@@ -75,12 +75,6 @@
   <!-- Firebase SDK -->
   <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js"></script>
-
-  <!-- Supabase (Optional: remove if not used) -->
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@latest"></script>
-
-  <!-- Plausible Analytics (defer loading) -->
-  <script defer src="https://plausible.io/js/script.js" data-domain="ahoy.ooo"></script>
 
   <!-- JWPlayer -->
   <script src="https://cdn.jwplayer.com/libraries/9Gtk2B1J.js"></script>
@@ -191,7 +185,7 @@
         </div>
         <div
           style="width: 100%; background-color: rgba(0, 47, 255, 0.087); text-align: center; padding: 0px; font-weight: bold; color: rgb(255, 255, 255);">
-          <p>AHOY BETA v0.24.3</p>
+          <p>AHOY BETA v0.24.4</p>
         </div>
 
         <!-- DATE DISPLAY -->
@@ -266,8 +260,7 @@
   </button>
         </div>
 
-  
-          <button id="classical-mode-button"
+            <button id="classical-mode-button"
             onclick="navigateToTab('classical-tab')"
             class="common-button">Classical Music Mode</button>
           <!-- SONG COLLECTION -->
@@ -869,6 +862,7 @@
 <!--script src="js/src/v25_globalAudioManager.js"></script-->
 <!--script src="js/src/v25-combined.js"></script-->
 <script src="js/src/v27-songMgmt.js"></script>
+<script src="js/src/v25_loadingScreen.js"></script>
   <!-- END -->
   </body>
 </html>

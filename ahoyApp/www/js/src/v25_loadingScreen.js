@@ -1,33 +1,40 @@
-    // Initialize Three.js LoadingManager
-    const loadingManager = new THREE.LoadingManager();
+document.addEventListener("DOMContentLoaded", () => {
+    // Check if the loading screen should be displayed
+    if (!localStorage.getItem('loadingDisplayed')) {
+        // Create loading screen elements
+        const loadingScreen = document.createElement('div');
+        loadingScreen.id = 'loading-screen';
+        loadingScreen.style.position = 'fixed';
+        loadingScreen.style.width = '100%';
+        loadingScreen.style.height = '100%';
+        loadingScreen.style.top = '0';
+        loadingScreen.style.left = '0';
+        loadingScreen.style.backgroundColor = 'rgba(0,0,0,0.5)'; // Semi-transparent background
+        loadingScreen.style.zIndex = '1000'; // Make sure it covers other content
+        loadingScreen.style.display = 'flex';
+        loadingScreen.style.justifyContent = 'center';
+        loadingScreen.style.alignItems = 'center';
 
-    // Set a minimum loading time of 3 seconds
-    const minLoadingTime = 3000;
-    const startTime = Date.now();
+        const logo = document.createElement('img');
+        logo.src = './img/assets/u_ahoy23.png';
+        loadingScreen.appendChild(logo);
 
-    loadingManager.onLoad = function () {
-      const elapsedTime = Date.now() - startTime;
-      const remainingTime = minLoadingTime - elapsedTime;
+        const spinner = document.createElement('div');
+        spinner.className = 'spinner';
+        loadingScreen.appendChild(spinner);
 
-      setTimeout(() => {
-        document.getElementById('loading-screen').style.display = 'none';
-        document.getElementById('app-content').style.display = 'block';
-      }, Math.max(remainingTime, 0));
-    };
+        document.body.appendChild(loadingScreen);
 
-    // Simulate loading assets
-    const textureLoader = new THREE.TextureLoader(loadingManager);
-    textureLoader.load('./img/assets/u_ahoy23.png');
+        // Ensure the loading screen is displayed for at least 2 seconds
+        setTimeout(() => {
+            loadingScreen.style.display = 'none';
+            localStorage.setItem('loadingDisplayed', 'true'); // Set flag as displayed
+        }, 5000);
+    }
+});
 
-    // Your existing Three.js initialization code
-    // Example:
-    // const scene = new THREE.Scene();
-    // const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    // const renderer = new THREE.WebGLRenderer();
-    // renderer.setSize(window.innerWidth, window.innerHeight);
-    // document.body.appendChild(renderer.domElement);
-    // function animate() {
-    //   requestAnimationFrame(animate);
-    //   renderer.render(scene, camera);
-    // }
-    // animate();
+// Reset the loading display flag on page unload so it shows again on refresh
+window.addEventListener('beforeunload', () => {
+    localStorage.removeItem('loadingDisplayed');
+});
+});
