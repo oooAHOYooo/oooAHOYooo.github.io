@@ -62,7 +62,7 @@ class SongManager {
             this.currentSongIndex = index;
             this.updatePlayPauseIcon(true);
             this.updatePlayPauseButton();
-            this.stopTextAnimation();
+            this.stopTextAnimation(true);
         }
     }
 
@@ -242,3 +242,14 @@ document.addEventListener("DOMContentLoaded", function () {
         navigateToTab('settings-tab'); // Assuming navigateToTab is defined elsewhere
     });
 });
+
+function handlePlayButtonClick() {
+    const isPlaying = !songManager.audioPlayer.paused;
+    if (isPlaying) {
+        songManager.pauseSong();
+    } else {
+        songManager.playSong(songManager.currentSongIndex);
+    }
+}
+
+

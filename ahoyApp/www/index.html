@@ -242,22 +242,21 @@
         <div id="now-playing-song-details">
           <h3 id="now-playing-song-title">Song Title</h3>
           <p id="now-playing-song-artist">Artist Name</p>
-          <button class="play-button-tiny"
-          onclick="playCurrentQueue()"
-          style="width: 16px; height: 16px; padding: 0; border: none; background: none; cursor: not-allowed; position: fixed; bottom: 10px; left: 10px; color: #c0c0c0;"
+          <!-- <button class="play-button-tiny"
+          onclick="handlePlayButtonClick()"
+          style="width: 16px; height: 16px; padding: 0; border: none; background: none; cursor: pointer; position: fixed; bottom: 10px; left: 10px; color: #c0c0c0;"
           onmouseover="this.style.width='18px';this.style.height='18px';"
-          onmouseout="this.style.width='16px';this.style.height='16px';"
-          disabled>
+          onmouseout="this.style.width='16px';this.style.height='16px';">
       <i class="fas fa-play" style="font-size: 16px; color: #c0c0c0;"></i>
-  </button>
-  <button class="burn-button-tiny"
+          </button>
+          <button class="burn-button-tiny"
           onclick="burnSong('songUrl', 'Song Title', 'Artist Name', this)"
-          style="width: 16px; height: 16px; padding: 0; border: none; background: none; cursor: not-allowed; position: fixed; bottom: 10px; right: 10px; color: #c0c0c0;"
+          style="width: 16px; height: 16px; padding: 0; border: none; background: none; cursor: not-allowed; position: fixed; bottom: 10px; right: 10px; color: #c0c0c000;"
           onmouseover="this.style.width='18px';this.style.height='18px';"
           onmouseout="this.style.width='16px';this.style.height='16px';"
           disabled>
-      <i class="fas fa-fire" style="font-size: 16px; color: #c0c0c0;"></i>
-  </button>
+          <i class="fas fa-fire" style="font-size: 16px; color: #c0c0c01d;"></i>
+        </button> -->
         </div>
 
             <button id="classical-mode-button"
@@ -265,10 +264,11 @@
             class="common-button">Classical Music Mode</button>
           <!-- SONG COLLECTION -->
           <img src="./img/ahoy-fullSong.svg" class="svgBlend">
-          <h2 style="text-transform:uppercae; text-align:center;">Click Play to
-            Play - Click Burn to add songs to your CD</h2>
-          <p>The following songs are homegrown from local heroes. At the moment
-            they are sorted by the most recent on the bottom. </p>
+       
+          <p>The following songs are homegrown from locals. Presently,
+         arranged by the most recently added song on the bottom. </p>
+            <h2 style="text-transform:uppercae; text-align:center; font-size: 1rem;">Click Play to
+              Play - Click Burn to add songs to your CD</h2>
 
           <style>
             #yep {
@@ -484,7 +484,7 @@
               style="margin: auto; display: block; width: 80%; max-width: 700px;" />
           </div>
 
-          <h3>Present App State = v.24.3</h3>
+          <h3>Present App State = v.24.4</h3>
 
           <h4>Present Focus</h4>
           <p>Redesigning the entire layout - stay tuned - really going for
@@ -559,13 +559,6 @@
             </div>
           </div>
 
-          <script>
-  function signUpForGrandfatherSurprise() {
-    // Implementation for sign-up logic
-    // This should include form handling and Mailchimp integration for sending the certificate
-    alert("Sign-up functionality to be implemented.");
-  }
-</script>
 
           <!-- USER LOG IN DISPLAY -->
           <!-- Logged-in Message Section -->
@@ -596,9 +589,9 @@
         <div id="burn-tab" class="tab-content" style="padding-bottom: 20px;">
           <img src="./img/ahoy-burn.svg" class="svgBlend">
           <h2 style="margin: 15px;">Burn a CD : Save the World</h2>
-          <p>Support Local Musicians -
+          <!-- <p>Support Local Musicians -
             foster new industry
-          </p>
+          </p> -->
           <div id="burn-list"></div>
 
           <div id="cd-save-section"
@@ -760,8 +753,7 @@
 <script src="js/src/function-toggle-dash.js"></script>
 <script src="js/src/login.js"></script>
 <script src="js/src/fetch-homepage-nowplaying.js"></script>
-<script src="js/src/music_daily_shuffle.js"></script>
-<script src="js/src/podcast.js"></script>
+
 <script src="js/src/media.js"></script>
 <script src="js/src/newsletter.js"></script>
 <script src="js/src/updates-commits.js"></script>
@@ -773,14 +765,18 @@
 <script src="js/src/function_today_date.js"></script>
 <script src="js/src/burnCd.js"></script>
 <script src="js/src/v25_menuCode.js"></script>
-<script src="js/src/v25_dailyJukebox.js"></script>
 <script src="js/src/magic-svg-logic.js"></script>
 <script src="js/src/updates-commits.js"></script>
 <script src="js/src/classical_music.js"></script>
 <script src="js/src/v25-market.js"></script>
 <script src="js/src/v25-cart-manager.js"></script>
-<script src="js/src/v27-songMgmt.js"></script>
 <script src="js/src/v25_loadingScreen.js"></script>
+
+<!-- Audio + Music -->
+<!--script src="js/src/v25_dailyJukebox.js"></script>-->
+<script src="js/src/v27-songMgmt.js"></script>
+<script src="js/src/music_daily_shuffle.js"></script>
+<script src="js/src/podcast.js"></script>
 
 
   <!-- END -->
