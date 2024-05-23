@@ -66,22 +66,22 @@ class SongManager {
         }
     }
 
-    fetchSongs() {
+    async fetchSongs() {
         const url = "https://api.jsonbin.io/v3/b/662f0278acd3cb34a8400e67";
         const accessKey = '$2a$10$4GRuokwTdv4sRnqIwYDyGOWZ2CZgDkefsKy7OFlmTydfnDvXBomtC';
-        return fetch(url, {
-            headers: { 'X-Access-Key': accessKey }
-        }).then(response => {
+        try {
+            const response = await fetch(url, {
+                headers: { 'X-Access-Key': accessKey }
+            });
             if (!response.ok) {
                 throw new Error(`Network response was not ok: ${response.statusText}`);
             }
-            return response.json();
-        }).then(data => {
+            const data = await response.json();
             this.songsArray = data.record.songs;
             this.loadSongsToUI();
-        }).catch(error => {
+        } catch (error) {
             console.error("Failed to fetch songs: ", error);
-        });
+        }
     }
 
     pauseSong() {

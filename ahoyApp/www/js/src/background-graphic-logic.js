@@ -33,8 +33,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // Set initial background image randomly on page load
     changeBackgroundImage();
 
-    // Rotate background images every 2 minutes
-    setInterval(changeBackgroundImage, 12000); // 120000 milliseconds = 2 minutes
+    // Declare and use changeInterval within the DOMContentLoaded context
+    let changeInterval = setInterval(changeBackgroundImage, 120000); // 120000 milliseconds = 2 minutes
+
+    // Function to override background change
+    window.overrideBackgroundChange = function() {
+        clearInterval(changeInterval); // Stop the automatic background change
+        changeBackgroundImage(); // Change the background image immediately
+    };
 
     // Change background image when the 'o' key is pressed
     document.addEventListener('keydown', function(event) {
