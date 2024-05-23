@@ -1,7 +1,24 @@
 {
   "podcasts": [
     {
+      "id": 18,
+      "title": "The Rob Show #29 - Andrew Leverton",
+      "description": "Andrew, co-captain of the Tallboyz, is back on the Rob Show - talking shop about everything including the new Tallboyz video premiere",
+      "date": "2024-05-23",
+      "mp3url": "https://storage.googleapis.com/ahoy-podcast-collection/readyRobShow_Andrew_ep29.mp3",
+      "thumbnail": "https://storage.googleapis.com/ahoy-podcast-collection/Rob%20Show%20-%20Ep29%20-%20Andrew%20Leverton%20-%205.17.24.jpg"
+
+    },
+    {
       "id": 17,
+      "title": "The Rob Show #28 - Alex Gonzalez",
+      "description": "Alex founder of Ahoy - talks to Rob about behind the scenes - friendships with the Tallboyz and future Willy Wonka type plans",
+      "date": "2024-05-10",
+      "mp3url": "https://storage.googleapis.com/ahoy-podcast-collection/ready_The%20Rob%20Show%20-%20Ep28%20-%20Alex%20Gonzalez.mp3",
+      "thumbnail": "https://storage.googleapis.com/ahoy-podcast-collection/The%20Rob%20Show%20-%20Ep28%20-%20Alex%20Gonzalez%20-%205.10.24.jpg"
+    },
+    {
+      "id": 16,
       "title": "The Rob Show #27 - Dave Gunn + Tyler Mirando",
       "description": "Tallboyz OG's Tyler and Dave join Rob in a remastered Rob Show Classic -  Originally recorded May 2023",
       "date": "2024-05-08",
@@ -27,7 +44,7 @@
     {
       "id": 13,
       "title": "The Rob Show #24 - Ellen Martin",
-      "description": "Ellen Martin - neuroscientist from the UK joins the Rob Show",
+      "description": "Ellen Martin - neuroscientist from the UK",
       "date": "2024-04-15",
       "mp3url": "https://storage.googleapis.com/ahoy-podcast-collection/ready%2BThe%20Rob%20Show%20-%20Ep%2024%20-%20Ellen%20Martin.mp3",
       "thumbnail": "https://storage.googleapis.com/ahoy-podcast-collection/The%20Rob%20Show%20-%20Ep24%20-%20Ellen%20Martin.jpg"
