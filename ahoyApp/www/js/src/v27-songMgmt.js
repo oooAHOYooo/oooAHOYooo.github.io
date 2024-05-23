@@ -44,10 +44,13 @@ class SongManager {
 
     updatePlayPauseButton() {
         const playPauseButton = document.getElementById('v27-play-button');
+        const icon = playPauseButton.querySelector('i'); // Assuming the button contains an <i> element for the icon
         if (this.audioPlayer.paused) {
-            playPauseButton.textContent = 'Play';
+            icon.className = 'fa fa-play';
+            playPauseButton.setAttribute('title', 'Play'); // Optional: updating the tooltip on hover
         } else {
-            playPauseButton.textContent = 'Pause';
+            icon.className = 'fa fa-pause';
+            playPauseButton.setAttribute('title', 'Pause'); // Optional: updating the tooltip on hover
         }
     }
 
@@ -175,7 +178,7 @@ class SongManager {
     }
 
     updatePlayPauseIcon(isPlaying) {
-        const icon = document.querySelector('#pause-btn i');
+        const icon = document.querySelector('#v27-play-button i');
         if (icon) {
             icon.className = isPlaying ? 'fa fa-pause' : 'fa fa-play';
         }
