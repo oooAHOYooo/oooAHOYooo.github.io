@@ -238,7 +238,9 @@
             <img id="now-playing-album-art" src="./path/to/your/image.jpg"
               alt="Album Art" style="max-width: 100%; max-height: 100%;">
           </div>
-        </div>
+        </div>'  <!-- Song Search Section -->
+
+      '
         <div id="now-playing-song-details">
           <h3 id="now-playing-song-title">Song Title</h3>
           <p id="now-playing-song-artist">Artist Name</p>
@@ -308,6 +310,7 @@
           <div id="search-container">
             <input type="text" id="search-input" placeholder="Search by title or artist..." />
             <button onclick="searchMedia()">Search</button>
+            <button id="clear-search">Clear</button>
           </div>
           <div class="media-container">
             <table id="mediaTable" class="list">
@@ -337,7 +340,11 @@
           <img src="./img/ahoy-podcasts.svg" class="svgBlend">
           <div class="podcast-container">
             <div id="podcast-featured-image-container"></div>
-
+            <div class="search-container podcast-search-container">
+              <input type="text" id="podcast-search-input" class="search-input" placeholder="Search Podcasts...">
+              <button id="podcast-search-button">Search</button>
+              <button id="podcast-clear-search" onclick="clearPodcastSearch()">Clear</button>
+          </div>
             <table class="standard-table" id="podcast-table">
               <tbody>
                 <!-- Podcast rows will be dynamically inserted here -->

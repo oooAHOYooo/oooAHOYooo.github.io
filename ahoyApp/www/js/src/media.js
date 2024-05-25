@@ -97,3 +97,16 @@ document.getElementById('search-input').addEventListener("keyup", function(event
     searchMedia();
   }
 });
+
+// Event listener for the clear search button
+document.getElementById('clear-search').addEventListener("click", function() {
+  // Clear the search input
+  document.getElementById('search-input').value = '';
+
+  // Reset the display of all rows to make them visible
+  const tableBody = document.querySelector("#mediaTable tbody");
+  const rows = tableBody.getElementsByTagName('tr');
+  for (let i = 0; i < rows.length; i++) {
+    rows[i].style.display = "";
+  }
+});

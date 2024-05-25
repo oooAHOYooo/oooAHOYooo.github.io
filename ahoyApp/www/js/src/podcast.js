@@ -78,9 +78,34 @@ function playNextPodcast() {
     }
 }
 
+function searchPodcasts() {
+    const searchText = document.getElementById('podcast-search-input').value.toLowerCase();
+    const tableBody = document.getElementById("podcast-table").querySelector("tbody");
+    const rows = tableBody.getElementsByTagName('tr');
+
+    for (let i = 0; i < rows.length; i++) {
+        let titleCell = rows[i].getElementsByTagName('td')[2]; // Assuming the title is in the third column
+        if (titleCell) {
+            let title = titleCell.textContent || titleCell.innerText;
+            if (title.toLowerCase().indexOf(searchText) > -1) {
+                rows[i].style.display = "";
+            } else {
+                rows[i].style.display = "none";
+            }
+        }
+    }
+}
+
+function clearPodcastSearch() {
+    document.getElementById('podcast-search-input').value = '';
+    searchPodcasts(); // This will effectively reset the search and show all podcasts
+}
+
+document.getElementById('podcast-search-button').addEventListener("click", searchPodcasts);
+document.getElementById('podcast-clear-search').addEventListener("click", clearPodcastSearch);
+
 document.addEventListener("DOMContentLoaded", function () {
     if (document.getElementById("podcast-table")) {
         loadPodcasts();
     }
 });
-
