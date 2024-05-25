@@ -71,3 +71,29 @@ document.addEventListener("DOMContentLoaded", function () {
     .catch((error) => console.error("Error:", error));
 });
 
+function searchMedia() {
+  const searchText = document.getElementById('search-input').value.toLowerCase();
+  const tableBody = document.querySelector("#mediaTable tbody");
+  const rows = tableBody.getElementsByTagName('tr');
+
+  for (let i = 0; i < rows.length; i++) {
+    let titleCell = rows[i].getElementsByTagName('td')[3]; // Assuming the title is in the fourth column
+    let artistCell = rows[i].getElementsByTagName('td')[2]; // Assuming the artist is in the third column
+    if (titleCell || artistCell) {
+      let title = titleCell.textContent || titleCell.innerText;
+      let artist = artistCell.textContent || artistCell.innerText;
+      if (title.toLowerCase().indexOf(searchText) > -1 || artist.toLowerCase().indexOf(searchText) > -1) {
+        rows[i].style.display = "";
+      } else {
+        rows[i].style.display = "none";
+      }
+    }       
+  }
+}
+
+// Add event listener for enter key in the search input
+document.getElementById('search-input').addEventListener("keyup", function(event) {
+  if (event.key === "Enter") {
+    searchMedia();
+  }
+});

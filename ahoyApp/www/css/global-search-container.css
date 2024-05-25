@@ -1,0 +1,24 @@
+#search-container {
+    margin-bottom: 20px;
+    text-align: center;
+    background: rgba(53, 53, 53, 0.109);
+    /* Semi-transparent white */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    /* This creates the frosted glass effect */
+    border-radius: 10px;
+    /* Optional: adds rounded corners */
+    margin-top: 20px;
+}
+
+#search-input {
+    padding: 8px;
+    width: 300px;
+    margin-right: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    background: transparent;
+    /* Makes the input field background clear */
+    border-radius: 5px;
+    /* Optional: adds rounded corners to the input field */
+}

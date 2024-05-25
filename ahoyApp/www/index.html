@@ -68,7 +68,7 @@
   <link rel="stylesheet" href="./css/v25-market.css">
   <link rel="stylesheet" href="./css/v27_audioController.css">
   <link rel="stylesheet" href="./css/v25_loadingScreen.css">
-
+  <link rel="stylesheet" href="./css/global-search-container.css">
   <!-- Icons -->
   <link rel="icon" type="image/png" href="./img/favicon_ahoy.png">
 
@@ -305,7 +305,10 @@
               </div>
             </div>
           </div>
-
+          <div id="search-container">
+            <input type="text" id="search-input" placeholder="Search by title or artist..." />
+            <button onclick="searchMedia()">Search</button>
+          </div>
           <div class="media-container">
             <table id="mediaTable" class="list">
               <thead class="mediaTable-header">
