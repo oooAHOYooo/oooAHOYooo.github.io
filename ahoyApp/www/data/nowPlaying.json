@@ -119,6 +119,16 @@
       "artist": "The Tallboyz",
       "tag": "podcast",
       "dateAdded": "05-23-24"
+    },
+       
+{
+      "id": "052624",
+      "albumArt": "https://storage.googleapis.com/ahoy-dynamic-content/Ahoy%20News%20Update%20-%205-25-24.jpg",
+      "songTitle": "Added 5 New Media Clips, Music Videos, and live performances to the Media Mix",
+      "artist": "New Media",
+      "tag": "media",
+      "dateAdded": "05-26-24"
     }
+    
   ]
 }

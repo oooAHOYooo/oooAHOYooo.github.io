@@ -238,6 +238,26 @@
               "mp4_link": "https://cdn.jwplayer.com/videos/lykfKrpQ-GVOzihKP.mp4",
               "thumbnail_link": "https://cdn.jwplayer.com/v2/media/lykfKrpQ/poster.jpg?width=720",
               "year": "2013"
+            },
+            {
+              "id": 27,
+              "video_id": "IdqbXxlv",
+              "display_title": "Folk Punk Dad at Gather East - New Haven - Circa 2022",
+              "artist": "Folk Punk Dad",
+              "duration": "00:03:35",
+              "mp4_link": "https://cdn.jwplayer.com/videos/IdqbXxlv-GVOzihKP.mp4",
+              "thumbnail_link": "https://cdn.jwplayer.com/v2/media/IdqbXxlv/poster.jpg?width=720",
+              "year": "2022"
+            },
+            {
+              "id": 28,
+              "video_id": "S4VUFsmU",
+              "display_title": "I Believe in Love | Music Video",
+              "artist": "Clones of Clarence",
+              "duration": "00:01:05",
+              "mp4_link": "https://cdn.jwplayer.com/videos/S4VUFsmU-GVOzihKP.mp4",
+              "thumbnail_link": "https://cdn.jwplayer.com/v2/media/S4VUFsmU/poster.jpg?width=720",
+              "year": "Unknown"
             }
           ]
           
