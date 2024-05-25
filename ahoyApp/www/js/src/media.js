@@ -29,6 +29,9 @@ document.addEventListener("DOMContentLoaded", function () {
   fetch("data/mediaCollection.json")
     .then((response) => response.json())
     .then((data) => {
+      // Sort the data by 'id' in descending order
+      data.sort((a, b) => b.id - a.id);
+
       const randomVideo = selectRandomVideo(data);
       loadVideoInJWPlayer(randomVideo.mp4_link, randomVideo.thumbnail_link, randomVideo.artist, randomVideo.display_title);
 
