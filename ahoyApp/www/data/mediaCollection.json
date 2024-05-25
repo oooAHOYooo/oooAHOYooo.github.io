@@ -210,6 +210,15 @@
               "duration": "00:01:11", 
               "mp4_link": "https://content.jwplatform.com/videos/MS7zwzR2-Da3Hhbi4.mp4",
               "thumbnail_link": "https://cdn.jwplayer.com/thumbs/MS7zwzR2-640.jpg"
+            },
+            {
+              "id": 24,
+              "video_id": "l2o4EqgV",
+              "display_title": "Alex Gonzalez - New Haven Masked Update",
+              "artist": "Alex Gonzalez",
+              "duration": "00:00:29",  
+              "mp4_link": "https://content.jwplatform.com/videos/l2o4EqgV-Da3Hhbi4.mp4",
+              "thumbnail_link": "https://cdn.jwplayer.com/thumbs/l2o4EqgV-640.jpg"
             }
           ]
           
