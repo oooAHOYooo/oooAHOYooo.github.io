@@ -1,5 +1,13 @@
 {
   "podcasts": [
+        {
+      "id": 19,
+      "title": "The Rob Show #30 - Kyle Middleton",
+      "description": "Kyle Middleton is a graphic designer from CT",
+      "date": "2024-05-30",
+      "mp3url": "https://storage.googleapis.com/ahoy-podcast-collection/ready%20The%20Rob%20Show%20-%20Ep%2030%20-%20Kyle.mp3",
+      "thumbnail": "https://storage.googleapis.com/ahoy-podcast-collection/Rob%20Show%20-%20Ep%2030%20-%20Kyle%20Middleton.jpg"
+    },
     {
       "id": 18,
       "title": "The Rob Show #29 - Andrew Leverton",
@@ -7,7 +15,6 @@
       "date": "2024-05-23",
       "mp3url": "https://storage.googleapis.com/ahoy-podcast-collection/readyRobShow_Andrew_ep29.mp3",
       "thumbnail": "https://storage.googleapis.com/ahoy-podcast-collection/Rob%20Show%20-%20Ep29%20-%20Andrew%20Leverton%20-%205.17.24.jpg"
-
     },
     {
       "id": 17,
