@@ -43,6 +43,7 @@ function populateNowPlaying() {
           albumArtImg.style.top = '50%';
           albumArtImg.style.left = '50%';
           albumArtImg.style.transform = 'translate(-50%, -50%)';
+          albumArtImg.style.cursor = 'pointer'; // Change cursor to pointer to indicate clickable link
           albumArtImg.onclick = function() { navigateToTag(item.tag); };
 
           albumArtContainer.appendChild(albumArtBlur);
@@ -52,10 +53,14 @@ function populateNowPlaying() {
           songTitleH2.id = 'current-song-title';
           songTitleH2.textContent = `"${item.songTitle}"`;
           songTitleH2.style.marginTop = '20px'; // Add more space
+          songTitleH2.style.lineHeight = '1.5'; // Increase line height for better readability
+          songTitleH2.style.fontSize = '1.2rem'; // Responsive font size
 
           const artistH3 = document.createElement('h3');
           artistH3.id = 'current-song-artist';
           artistH3.textContent = item.artist;
+          artistH3.style.lineHeight = '1.5'; // Consistent line height with title
+          artistH3.style.fontSize = '1rem'; // Slightly smaller font size for artist
 
           songInfoDiv.appendChild(albumArtContainer);
           songInfoDiv.appendChild(songTitleH2);
