@@ -14,24 +14,50 @@ function populateNowPlaying() {
           songInfoDiv.className = 'song-info';
           songInfoDiv.id = item.id;
 
+          // Create a container for the album art
+          const albumArtContainer = document.createElement('div');
+          albumArtContainer.className = 'album-art-container';
+          albumArtContainer.style.position = 'relative';
+          albumArtContainer.style.width = '100vw';
+          albumArtContainer.style.height = '56.25vw'; // 16:9 Aspect Ratio
+
+          // Blurry background image
+          const albumArtBlur = document.createElement('img');
+          albumArtBlur.className = 'album-art-blur';
+          albumArtBlur.src = item.albumArt;
+          albumArtBlur.alt = 'Blurred Album Art';
+          albumArtBlur.style.width = '100%';
+          albumArtBlur.style.height = '100%';
+          albumArtBlur.style.objectFit = 'cover';
+          albumArtBlur.style.filter = 'blur(8px)';
+
+          // Clear top image
           const albumArtImg = document.createElement('img');
-          albumArtImg.id = 'album-art';
+          albumArtImg.id = `album-art-${item.id}`;
           albumArtImg.src = item.albumArt;
           albumArtImg.alt = 'Album Art';
-          // Add onclick event to navigate based on the tag
+          albumArtImg.style.width = '50vw'; // Set width to 50% of the viewport width
+          albumArtImg.style.height = '50vw'; // Set height equal to the width to maintain a square aspect ratio
+          albumArtImg.style.objectFit = 'cover';
+          albumArtImg.style.position = 'absolute';
+          albumArtImg.style.top = '50%';
+          albumArtImg.style.left = '50%';
+          albumArtImg.style.transform = 'translate(-50%, -50%)';
           albumArtImg.onclick = function() { navigateToTag(item.tag); };
+
+          albumArtContainer.appendChild(albumArtBlur);
+          albumArtContainer.appendChild(albumArtImg);
 
           const songTitleH2 = document.createElement('h2');
           songTitleH2.id = 'current-song-title';
           songTitleH2.textContent = `"${item.songTitle}"`;
+          songTitleH2.style.marginTop = '20px'; // Add more space
 
           const artistH3 = document.createElement('h3');
           artistH3.id = 'current-song-artist';
           artistH3.textContent = item.artist;
 
-          // Removed play button logic
-
-          songInfoDiv.appendChild(albumArtImg);
+          songInfoDiv.appendChild(albumArtContainer);
           songInfoDiv.appendChild(songTitleH2);
           songInfoDiv.appendChild(artistH3);
 
