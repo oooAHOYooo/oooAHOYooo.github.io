@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Ahoy Indie Media - Combined Page</title>
     <link rel="stylesheet" href="./css/account.css">
     <link rel="stylesheet" href="./css/billing.css">
@@ -31,13 +32,25 @@
             padding: 0;
             font-family: 'Poppins', sans-serif;
             height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             background: linear-gradient(120deg, #a6c0fe, #f68084);
             animation: gradientBG 10s ease infinite;
             background-size: 400% 400%;
+            width: 100%; /* Ensure full width */
         }
+
+        /* Ensure all containers are full width on mobile */
+        @media (max-width: 768px) {
+            body, html {
+padding:20px;
+                flex-direction: column; /* Stack elements vertically on small screens */
+                align-items: stretch; /* Align items to stretch full width */
+            }
+
+            input, select, .form-section, .cool-button, .cool-button-a {
+                width: 100%; /* Full width for form elements and buttons */
+            }
+        }
+
         @keyframes gradientBG {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
@@ -58,6 +71,7 @@
             outline: none;
             border-radius: 5px; /* Rounded corners */
             box-shadow: 0 2.9px #000000; /* Shadow for 3D effect */
+            width: auto; /* Auto width for flexibility */
         }
         .cool-button:hover, .cool-button-a:hover {
             background-image: linear-gradient(to right, #093637, #44a08d); /* Gradient hover effect */
@@ -87,6 +101,7 @@
     <section id="checkout">
       <h1>Checkout</h1>
       <form>
+        <img src="./img/logo.png" style="max-width: 320px;">
         <div class="form-section form-group">
           <label for="name">Full Name</label>
           <div id="name" required></div>
