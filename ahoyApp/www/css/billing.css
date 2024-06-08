@@ -12,6 +12,19 @@ a {
     color: white;
 }
 
+.cols {
+    padding: 2px;
+    margin: 0;
+    margin-left: 20px;
+    margin-right: 25px;
+}
+
+label {
+    color: rgb(255, 255, 255);
+    font-size: 12px;
+    margin-top: 2px;
+    text-transform: capitalize;
+}
 
 
 body {
@@ -43,6 +56,15 @@ body img {
     height: auto;
     margin-top: 10px;
     /* Added a tiny bit of margin to the top of the logo */
+}
+
+@media (max-width: 768px) {
+
+    /* Adjusts for screens smaller than 768px */
+    #signup-form {
+        flex-direction: column;
+        /* Stacks the child elements vertically */
+    }
 }
 
 #signup-form {
@@ -95,9 +117,12 @@ body img {
 
 /* Additions for the Grandfather Club promotion */
 h3 {
-    color: #FFD700;
+    color: #ffffff;
     /* Gold color for the promotion header */
     text-align: center;
+    font-size: 12px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 p {
@@ -131,12 +156,11 @@ p {
 
 .id-badge h2 {
     text-align: center;
-    color: #333;
+    color: #ffffff;
 }
 
 .id-badge-content {
     text-align: left;
-    margin-top: 20px;
     font-size: 16px;
     /* Slightly larger font for better readability */
     line-height: 1.5;
@@ -154,12 +178,40 @@ p {
 
 .id-badge p {
     margin: 5px 0;
-    color: #666;
+    color: #ffffff;
     /* Lighter text color for less strain */
 }
 
 .id-badge p strong {
-    color: #333;
+    color: #ffffff;
     text-align: left;
     /* Darker color for important labels */
+}
+
+/* Add this style to make all text in the preview ID badge white */
+#previewName,
+#previewEmail,
+#previewDisplayName,
+#previewAddress,
+#previewTier,
+#previewFavoriteThing,
+#previewUpdateMethod,
+#previewContactNumber {
+    color: white !important;
+}
+
+select {
+    background-color: white;
+    /* Set background to white */
+    color: white;
+    /* Set text color to white */
+    border: 1px solid white;
+    /* Set border color to white */
+}
+
+option {
+    background-color: white;
+    /* Set background of options to white */
+    color: black;
+    /* Set text color of options to black for readability */
 }
