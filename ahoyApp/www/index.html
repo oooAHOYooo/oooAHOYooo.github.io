@@ -46,6 +46,7 @@
   <link rel="stylesheet" href="./css/foundational.css">
   <link rel="stylesheet" href="./css/mobileOS-addons.css">
   <link rel="stylesheet" href="./css/user-account.css">
+  <link rel="stylesheet" href="./css/section-home.css">
   <link rel="stylesheet" href="./css/section-homepage-featured.css">
   <link rel="stylesheet" href="./css/section-songs.css">
   <link rel="stylesheet" href="./css/section-podcast.css">
@@ -69,6 +70,7 @@
   <link rel="stylesheet" href="./css/v27_audioController.css">
   <link rel="stylesheet" href="./css/v25_loadingScreen.css">
   <link rel="stylesheet" href="./css/global-search-container.css">
+  <link rel="stylesheet" href="./css/v25widgets.css">
   <!-- Icons -->
   <link rel="icon" type="image/png" href="./img/favicon_ahoy.png">
 
@@ -176,36 +178,27 @@
       <!-- HOME TAB -->
       <div id="home-tab" class="tab-content active">
 
-        <div id="home-logo-div">
-          <a href="./index.html"><img src="./img/assets/u_ahoy23.png" />
-          </a>
-        </div>
-        <div
-          style="width: 100%; background-color: rgba(0, 47, 255, 0.087); text-align: center; padding: 0px; font-weight: bold; color: rgb(255, 255, 255);">
-          <p>AHOY BETA v0.24.6</p>
-        </div>
+   
+        <div class="v25-miniCall-toAction-container">
+          <a href="./create-account.html"><button class="v25_glass-button">Create an Account
+          </button></a></div>
+
+
+
 
         <!-- DATE DISPLAY -->
         <div class="date-display">
-          <h2 id="calendar-date" style="font-family: 'Barlow', sans-serif; font-weight: bold; font-size: 24px; text-transform: uppercase; letter-spacing: 0.1em; border-top: 2px solid #333; border-bottom: 2px solid #333; padding: 10px 0; text-align: center;"> </h2>
+          <h2 id="calendar-date" style="font-family: 'Barlow', sans-serif; font-weight: bold; font-size: 24px; text-transform: uppercase; letter-spacing: 0.1em; border-top: 2px solid #ffffff; border-bottom: 2px solid #ffffff; padding: 10px 0; text-align: center;"> </h2></
           <br>
-          <br>
-          <!-- 
-          <div class="home-tab-learn-more-wrap">
-            <button onclick="navigateToTab('about-tab')"
-              class="common-button">Learn More</button>
-            <a href="./js/src/getOn/index.html"><button
-                class="common-button">Get
-                On ahoy</button></a>
-            <a href="https://7ufdbpnl2tt.typeform.com/to/OKeXjt6z"><button
-                class="common-button">Leave
-                Feedback</button></a>
+          <div class="newspaper-header">
+            <p>Volume I - Issue 0</p>
+            <a href="./index.html">
+              <img src="./img/assets/u_ahoy23.png" alt="Ahoy Logo" class="newspaper-header-logo">
+            </a><p>AHOY BETA v0.24.6</p>
+       
           </div>
-          <div class="get-started-wrap">
-            <a href="./create-account.html"><button
-                class="get-started-button">Get
-                Started</button></a>
-          </div>-->
+          <br>
+         
   <!-- NOW PLAYING -->
   <div class="now-playing">
     <img src="./img/ahoy-recentlyAdded.svg" class="svgBlend">
@@ -243,6 +236,11 @@
       </div>
       <!-- SONGS TAB -->
       <div id="songs-tab" class="tab-content">
+        <div class="v25-miniCall-toAction-container">
+          <a href="./login.html">
+            <button class="v25_glass-button">Login to Save Playlist</button>
+          </a>
+        </div>
         <div id="now-playing-song-container" class="now-playing-song">
           <img src="./img/ahoy-music.svg" class="svgBlend">
           <div class="image-and-play-button-aa"
@@ -250,7 +248,10 @@
             <img id="now-playing-album-art" src="./path/to/your/image.jpg"
               alt="Album Art" style="max-width: 100%; max-height: 100%;">
           </div>
-        </div>'  <!-- Song Search Section -->
+        </div>
+        
+   
+        <!-- Song Search Section -->
 
       '
         <div id="now-playing-song-details">
@@ -272,7 +273,47 @@
           <i class="fas fa-fire" style="font-size: 16px; color: #c0c0c01d;"></i>
         </button> -->
         </div>
+<!-- PLAYLIST MANAGEMENT SECTION -->
+<div id="playlist-mgmt-section">
+  <h2>Playlist Management</h2>
+  <p>Manage your playlists here:</p>
+  
+  <!-- Simplified playlist display -->
+  <div class="playlist">
+    <h3>Chill Vibes</h3>
+    <button onclick="playPlaylist()">Play</button>
+    <button onclick="shufflePlaylist()">Shuffle</button>
+    <div id="playlist-items">
+      <!-- Songs will be displayed here -->
+    </div>
+  </div>
 
+  <!-- Add new playlist -->
+  <div>
+    <input type="text" id="new-playlist-name" placeholder="New Playlist Name">
+    <button onclick="createNewPlaylist()">Create Playlist</button>
+  </div>
+</div>
+
+<script>
+  // Function to play the playlist
+  function playPlaylist() {
+    // Logic to play the playlist
+  }
+
+  // Function to shuffle the playlist
+  function shufflePlaylist() {
+    // Logic to shuffle the playlist
+  }
+
+  // Function to create a new playlist
+  function createNewPlaylist() {
+    var playlistName = document.getElementById('new-playlist-name').value;
+    // Logic to create a new playlist
+  }
+</script>
+<!-- END OF PLAYLIST MANAGEMENT SECTION -->
+        
             <button id="classical-mode-button"
             onclick="navigateToTab('classical-tab')"
             class="common-button">Classical Music Mode</button>
@@ -508,7 +549,7 @@
               style="margin: auto; display: block; width: 80%; max-width: 700px;" />
           </div>
 
-          <h3>Present App State = v.24.4</h3>
+          <h3>Present App State = v.24.6</h3>
 
           <h4>Present Focus</h4>
           <p>Redesigning the entire layout - stay tuned - really going for
@@ -521,12 +562,24 @@
         <!-- ACCOUNT -->
         <div id="account-tab" class="tab-content">
           <img src="./img/ahoy-account.svg" class="svgBlend">
-
-          <div class="v25-create-account-button-container">
-            <button id="v25-create-account-button"
-              onclick="window.location.href='create-account.html'">Create
-              Account</button>
+          <!-- User Login Section -->
+          <div id="login-section" class="center-frame"
+            style="margin:22px; flex: 1; flex-direction: column; justify-content: center; align-items: center; height: 40vh; background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(15px); border-radius: 15px; padding: 20px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); border: 1px solid rgba(255, 255, 255, 0.3);  background: linear-gradient(145deg, rgba(255,255,255,0.1), rgba(255,255,255,0.25));">
+            <img src="./img/assets/u_ahoy23.png"
+              style="max-width: 60%; height: auto; border-radius: 10px;">
+            <h1 style="margin-top: 20px; font-weight: bold;">Already a
+              member?</h1>
+            <div style="margin-top: 20px;">
+              <a href="./login.html" style="text-decoration: none;">
+                <button
+                  style="background-color: rgba(255, 255, 255, 0.5); color: #000000; border: none; padding: 0 border-radius: 5px; cursor: pointer; margin-right: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); backdrop-filter: blur(5px); border: 1px solid rgba(255, 255, 255, 0.3);">Login
+                </button>
+              </a>
+          
+           
+            </div>
           </div>
+      
           <!-- The Grandfather Surprise Section -->
           <div class="grandfather-surprise-section">
             <h2>Lifetime Access Free for Now</h2>
@@ -566,24 +619,17 @@
             <p>Don't miss this chance to be a part of Ahoy Indie Media's
               future—sign up today!</p>
           </div>
-          <!-- User Login Section -->
-          <div id="login-section" class="center-frame"
-            style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 40vh; background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(15px); border-radius: 15px; padding: 20px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); border: 1px solid rgba(255, 255, 255, 0.3);  background: linear-gradient(145deg, rgba(255,255,255,0.1), rgba(255,255,255,0.25));">
-            <img src="./img/assets/u_ahoy23.png"
-              style="max-width: 60%; height: auto; border-radius: 10px;">
-            <h1 style="margin-top: 20px; font-weight: bold;">Already a
-              member?</h1>
-            <div style="margin-top: 20px;">
-              <a href="./login.html" style="text-decoration: none;">
-                <button
-                  style="background-color: rgba(255, 255, 255, 0.5); color: #000000; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin-right: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); backdrop-filter: blur(5px); border: 1px solid rgba(255, 255, 255, 0.3);">Login
-                </button>
-              </a>
-
-            </div>
+          <div class="v25-create-account-button-container">
+            <button id="v25-create-account-button"
+              onclick="window.location.href='create-account.html'">Create
+              Account</button>
           </div>
-
-
+          <div class="v25-miniCall-toAction-container">
+            <h1>Have content for Ahoy?</h1>
+            <a href="./get-on-ahoy.html"><button class="v25_glass-button">Get on Ahoy
+            </button></a>
+          </div>
+  
           <!-- USER LOG IN DISPLAY -->
           <!-- Logged-in Message Section -->
           <div class="userLOGGEDin">
@@ -603,10 +649,14 @@
         <!-- MARKET TAB-->
         <div id="market-tab" class="tab-content">
           <img src="./img/ahoy-market.svg" class="svgBlend">
-          <p>WARNING: This feature is not yet ready for prime time</p>
+          <div class="v25-miniCall-toAction-container">
+          <a href="./create-account.html"><button class="v25_glass-button">Create an Account to see other Merch
+          </button></a></div>
           <div id="market-grid"></div>
           <div id="your-market-cart"></div>
           <table id="market-cart-table"></table>
+          <p>Warning - Marketplace Still in Beta</p>
+
         </div>
 
         <!-- BURN TAB-->
@@ -664,7 +714,7 @@
                 style="font-weight: bold; text-align: center;">This all,
                 at the moment, is the only way
                 Ahoy makes any money</span></p>
-           <p>Money goes directly to Ahoy and not the artist - but we are working on a feature to send tips and props out - but tha feature is going to require a lot of math - help if you're out there.</p>
+           <p>Money goes directly to Ahoy and not the artist - but we are working on a feature to send tips and props out - but the feature is going to require a lot of math - help if you're out there.</p>
 <br><br><br>
           </div>
         </div>

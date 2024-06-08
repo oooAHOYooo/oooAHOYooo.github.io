@@ -1,151 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <title>Sign Up - Ahoy Indie Media</title>
+    <meta charset="UTF-8">
+    <title>Ahoy Indie Media - Combined Page</title>
     <link rel="stylesheet" href="./css/account.css">
+    <link rel="stylesheet" href="./css/billing.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet">
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic"
+      rel="stylesheet">
+    <link
+      href="https://cdn.rawgit.com/necolas/normalize.css/master/normalize.css"
+      rel="stylesheet">
+    <link
+      href="https://cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css"
+      rel="stylesheet">
     <script
       src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js"></script>
     <script
       src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js"></script>
-    <link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://js.stripe.com/v3/"></script>
     <style>
-  .cool-button {
-  background-color: #4CAF50; /* Fallback color */
-  background-image: linear-gradient(to right, #44a08d, #093637); /* Gradient background */
-  color: white;
-  border: none;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  transition: all 0.5s; /* Smooth transition for hover effects */
-  cursor: pointer;
-  outline: none;
-  border-radius: 5px; /* Rounded corners */
-  box-shadow: 0 2.9px #000000; /* Shadow for 3D effect */
-}
-
-.cool-button:hover {
-  background-image: linear-gradient(to right, #093637, #44a08d); /* Gradient hover effect */
-  box-shadow: 0 5px #666; /* Shadow effect on hover */
-  transform: scale(1.1); /* Slightly increase the size */
-}
-
-#cbv25 {
-  background-color: #4CAF50; /* Fallback color */
-  background-image: linear-gradient(to right, #44a08d, #093637); /* Gradient background */
-  color: white;
-  border: none;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  transition: all 0.5s; /* Smooth transition for hover effects */
-  cursor: pointer;
-  outline: none;
-  border-radius: 5px; /* Rounded corners */
-  box-shadow: 0 2.9px #000000; /* Shadow for 3D effect */
-}
-
-#cbv25:hover {
-  background-image: linear-gradient(to right, #09363700, #ff00ae); /* Gradient hover effect */
-  box-shadow: 0 5px #666; /* Shadow effect on hover */
-  transform: scale(1.1); /* Slightly increase the size */
-}
-</style>
-    <script type="module">
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
-      import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js";
-      
-      const firebaseConfig = {
-          apiKey: "AIzaSyBq_IQRwkjh2o-jUkS8tI8wcEek5yMIwmo",
-          authDomain: "ahoy-indie-media-da86d.firebaseapp.com",
-          projectId: "ahoy-indie-media-da86d",
-          storageBucket: "ahoy-indie-media-da86d.appspot.com",
-          messagingSenderId: "179901301547",
-          appId: "1:179901301547:web:599159f9efb826f464bb6e",
-          measurementId: "G-K3QN161BVX"
-      };
-
-      const app = initializeApp(firebaseConfig);
-      const auth = getAuth(app);
-
-      document.getElementById("signup-form").addEventListener("submit", async (e) => {
-          e.preventDefault();
-
-          const email = document.getElementById("email").value;
-          const password = document.getElementById("password").value;
-          const notificationEl = document.getElementById("notification");
-
-          try {
-              const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-              notificationEl.textContent = "Signup successful! Please verify your email.";
-              notificationEl.style.color = "green";
-              // Redirect to billing page after successful account creation
-              window.location.href = 'billing.html';
-          } catch (error) {
-              notificationEl.textContent = `Signup failed: ${error.message}`;
-              notificationEl.style.color = "red";
-          }
-      });
-    </script>
-    <script>
-    function toggleFAQ() {
-        var faqScreen = document.getElementById('faqScreen');
-        if (faqScreen.style.display === 'none') {
-            faqScreen.style.display = 'block';
-        } else {
-            faqScreen.style.display = 'none';
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(120deg, #a6c0fe, #f68084);
+            animation: gradientBG 10s ease infinite;
+            background-size: 400% 400%;
         }
-    }
-    </script>
-    <link rel="stylesheet" href="./foundational.css" />
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .cool-button, .cool-button-a {
+            background-color: #4CAF50; /* Fallback color */
+            background-image: linear-gradient(to right, #44a08d, #093637); /* Gradient background */
+            color: white;
+            border: none;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            transition: all 0.5s; /* Smooth transition for hover effects */
+            cursor: pointer;
+            outline: none;
+            border-radius: 5px; /* Rounded corners */
+            box-shadow: 0 2.9px #000000; /* Shadow for 3D effect */
+        }
+        .cool-button:hover, .cool-button-a:hover {
+            background-image: linear-gradient(to right, #093637, #44a08d); /* Gradient hover effect */
+            box-shadow: 0 5px #666; /* Shadow effect on hover */
+            transform: scale(1.1); /* Slightly increase the size */
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            display: inline-block;
+            border: none; /* Removes border */
+            box-sizing: border-box;
+            outline: none; /* Removes focus outline */
+            background-color: #f1f1f1; /* Light grey background */
+        }
+        input:focus, select:focus {
+            background-color: #ddd; /* Darker grey background on focus */
+            outline: none; /* Ensures no outline on focus */
+        }
+    </style>
   </head>
   <body>
-    <a href="../../index.html"><img src="../www/img/logo.png"
-        style="width: 300px; margin-top:50px;"></a>
-    <h1>Create Account</h1>
-    <form id="signup-form">
 
-      <input type="email" id="email" placeholder="Email" required />
-      <input type="password" id="password" placeholder="Password" required />
-      <button type="submit" class="cool-button">CREATE</button>
-      <button id="cbv25" class="fa fa-question-circle" style="font-size:24px;"
-        onclick="toggleFAQ()"></button>
-      <div id="faqScreen" style="display:none;">
-        <h2 style="text-align: center;">FAQ & Help</h2>
 
-        <p><strong>Q: What's Ahoy Indie Media, you say?</strong></p>
-        <p>A: It's the indie hub where creators play! From music to podcasts, oh
-          what a scene, a treasure chest where content's queen!</p>
-        <p><strong>Q: How do I join this grand soiree?</strong></p>
-        <p>A: Just hit 'Create' and sail away! <br>Type your email, a password
-          too, verify that link – yo ho, you're through!</p>
-        <p><strong>Q: What treasures on Ahoy can I find?</strong></p>
-        <p>A: Indie gems of every kind! Tracks and chats from lands afar,
-          exclusive stuff that'll raise the bar!</p>
-        <p><strong>Q: How do I subscribe, what’s the trick?</strong></p>
-        <p>A: Log in, click 'subscribe' – it’s just one click! Choose your plan,
-          be it big or small, unlimited access, have a ball!</p>
-        <p><strong>Q: Upload my own? Can it be done?</strong></p>
-        <p>A: No, my friend, that ship has not begun.</p>
-        <p><strong>Q: Why subscribe? What's in store?</strong></p>
-        <p>A: Support the artists you adore!</p>
-        <p><strong>Q: Subscription's end, how do I flee?</strong></p>
-        <p>A: 'Cancel Subscription' – be easy as tea! It stays till the bill's
-          last date, no early leave, mate, that's the fate.</p>
-        <p><strong>Q: Need help? Where’s the crew?</strong></p>
-        <p>A: Support@ahoy.ooo will rescue you!</p>
-      </div>
-      <div id="notification"></div>
-      <br />
-      <a href="login.html" class="theme-link" id="loginLink">Already have an
-        account? Login here</a>
+    <!-- Checkout Section -->
+    <section id="checkout">
+      <h1>Checkout</h1>
+      <form>
+        <div class="form-section form-group">
+          <label for="name">Full Name</label>
+          <div id="name" required></div>
+            <input type="text" id="name" required>
+          </div>
+          <!-- Displayed Username -->
+          <label for="email">Email</label>
+          <input type="email" id="email" required>
+        
+          <label for="displayUsername">Display Username</label><input type="text" id="DisplayName" required>
 
-    </form>
+          <label for="address">Shipping Address</label>
+          <div id="address" required></div>
+            <input type="text" id="address" required>
+          </div>
+          <!-- Dropdown tier-->
+          <div id="tier" required></div>
+            <select id="tier" required>
+              <option value>Select Membership Tier</option>
+              <option value="basic">Basic</option>
+              <option value="premium">Premium</option>
+              <option value="vip">VIP</option>
+            </select>
+          <!-- Favorite gift-->
+          <div id="favorite-thing" required></div>
+            <select id="favorite-thing" required>
+              <option value>Favorite Thing to Receive in Mail</option>
+              <option value="books">Books</option>
+              <option value="games">Games</option>
+              <option value="clothes">Clothes</option>
+              <option value="electronics">Electronics</option>
+            </select>
+          </div>
+          <div id="receive-updates">
+            <select id="update-method" onchange="updateInputField()" required>
+              <option value="">Receive Updates of Ahoy</option>
+              <option value="sms">SMS</option>
+              <option value="whatsapp">WhatsApp</option>
+            </select>
+            <input type="text" id="contact-number" name="contact-number" placeholder="Enter your phone number" style="display:none;" required>
+          </div>
+          
+          <script>
+          function updateInputField() {
+            var selection = document.getElementById('update-method').value;
+            var inputField = document.getElementById('contact-number');
+            if (selection === 'sms' || selection === 'whatsapp') {
+              inputField.style.display = 'block';
+              inputField.placeholder = 'Enter your ' + selection + ' number';
+            } else {
+              inputField.style.display = 'none';
+            }
+          }
+          </script>
+          
+        <button type="submit">Proceed to Payment</button>
+      </form>
+    </section>
+
+    <!-- Billing Section -->
+    <section id="billing">
+      <h1>Subscribe</h1>
+
+    </section>
+
+    <script>
+        var stripe = Stripe('your-public-key');
+        var elements = stripe.elements();
+        var card = elements.create('card');
+        card.mount('#card-element');
+    </script>
   </body>
 </html>
