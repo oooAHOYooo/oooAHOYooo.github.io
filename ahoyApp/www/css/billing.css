@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;600&display=swap');
 
-body,
 input,
 button,
 #notification,
 .text-outline {
     font-family: 'Barlow', sans-serif;
+    color: rgb(255, 255, 255);
 }
 
 a {
@@ -19,13 +19,18 @@ body {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
+    background-size: 160%;
     background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: top;
     justify-content: center;
     height: 90vh;
     color: white !important;
+    padding: 10px;
 }
 
 .text-outline {
@@ -82,7 +87,7 @@ body img {
 #signup-form input[type="email"],
 #signup-form input[type="password"] {
     width: 80%;
-    background: rgba(234, 234, 234, 0.1);
+    background: rgba(201, 59, 59, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(10px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -103,16 +108,25 @@ p {
 }
 
 .id-badge {
-    background-color: #f3f3f3;
-    border: 1px solid #ccc;
+    background-color: #f3f3f300;
+    border: 1px solid #ffffff;
     border-radius: 8px;
     padding: 20px;
     max-width: 300px;
     margin: auto;
-    margin-top: 500px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 120px;
     font-family: 'Roboto', sans-serif;
-    color: black;
+    color: rgb(255, 255, 255) !important;
+    text-align: left !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.preview input span {
+    color: white;
 }
 
 .id-badge h2 {
@@ -146,21 +160,6 @@ p {
 
 .id-badge p strong {
     color: #333;
+    text-align: left;
     /* Darker color for important labels */
-}
-
-/* Style for the register button */
-.register-btn {
-    background-color: #4CAF50;
-    /* Green background */
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 20px 2px;
-    cursor: pointer;
-    border-radius: 5px;
 }
