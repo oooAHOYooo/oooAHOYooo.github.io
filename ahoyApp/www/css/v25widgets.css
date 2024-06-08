@@ -1,0 +1,38 @@
+#playlist-mgmt-section {
+    background: rgba(255, 255, 255, 0.7);
+    /* Semi-transparent white background */
+    border-radius: 10px;
+    /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+    backdrop-filter: blur(10px);
+    /* Blur effect behind the background */
+    padding: 20px;
+    /* Padding around the content */
+    margin: 20px;
+    /* Margin around the section */
+}
+
+.playlist {
+    margin-top: 20px;
+    /* Space between playlists */
+    padding: 15px;
+    /* Padding inside each playlist */
+    background: rgba(255, 255, 255, 0.5);
+    /* Lighter background for nested playlists */
+    border-radius: 8px;
+    /* Rounded corners for nested playlists */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    /* Lighter shadow for nested elements */
+}
+
+.v25-miniCall-toAction-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    min-height: 11.5vh;
+    margin-top: 0px;
+    gap: 10px;
+
+}

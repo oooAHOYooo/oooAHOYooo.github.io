@@ -39,3 +39,17 @@
     margin-top: 10px;
     margin-bottom: 5px;
 }
+
+.newspaper-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.newspaper-header-logo {
+    margin-right: 20px;
+    width: 100%;
+    /* Adjust spacing between logo and text as needed */
+}
