@@ -123,6 +123,10 @@ p {
 .id-badge-content {
     text-align: left;
     margin-top: 20px;
+    font-size: 16px;
+    /* Slightly larger font for better readability */
+    line-height: 1.5;
+    /* Improved line spacing for readability */
 }
 
 .id-badge img {
@@ -136,10 +140,27 @@ p {
 
 .id-badge p {
     margin: 5px 0;
-    font-size: 14px;
     color: #666;
+    /* Lighter text color for less strain */
 }
 
 .id-badge p strong {
     color: #333;
+    /* Darker color for important labels */
+}
+
+/* Style for the register button */
+.register-btn {
+    background-color: #4CAF50;
+    /* Green background */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 20px 2px;
+    cursor: pointer;
+    border-radius: 5px;
 }
