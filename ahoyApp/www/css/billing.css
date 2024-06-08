@@ -12,8 +12,10 @@ a {
     color: white;
 }
 
+
+
 body {
-    background: url("https://media.giphy.com/media/fvSRe1p3pC7YHFQXZd/giphy.gif") no-repeat center center fixed;
+    background: url("https://media.giphy.com/media/fvSRe1p3pC7YHFQXZd/giphy.gif") repeat left center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -80,7 +82,7 @@ body img {
 #signup-form input[type="email"],
 #signup-form input[type="password"] {
     width: 80%;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(234, 234, 234, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(10px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -98,4 +100,46 @@ p {
     /* White color for better readability */
     text-align: center;
     margin: 10px 0;
+}
+
+.id-badge {
+    background-color: #f3f3f3;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 300px;
+    margin: auto;
+    margin-top: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Roboto', sans-serif;
+    color: black;
+}
+
+.id-badge h2 {
+    text-align: center;
+    color: #333;
+}
+
+.id-badge-content {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.id-badge img {
+    display: block;
+    margin: 0 auto 10px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.id-badge p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.id-badge p strong {
+    color: #333;
 }

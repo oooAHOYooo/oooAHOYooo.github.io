@@ -26,43 +26,42 @@
     <script
       src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js"></script>
     <script src="https://js.stripe.com/v3/"></script>
-    <style>
-  
-    </style>
+
   </head>
   <body>
 
+    <div class="cols">
+      <div class="col1" style="float: left; width: 50%;">
+        <!-- Checkout Section -->
+        <section id="checkout">
+          <h1>Create an Account</h1>
+          <form>
+            <img src="./img/logo.png" style="max-width: 320px;">
 
-    <!-- Checkout Section -->
-    <section id="checkout">
-      <h1>Checkout</h1>
-      <form>
-        <img src="./img/logo.png" style="max-width: 320px;">
-        <div class="form-section form-group">
-          <label for="name">Full Name</label>
-          <div id="name" required></div>
-            <input type="text" id="name" required>
-          </div>
-          <!-- Displayed Username -->
-          <label for="email">Email</label>
-          <input type="email" id="email" required>
-        
-          <label for="displayUsername">Display Username</label><input type="text" id="DisplayName" required>
+            <!-- ID Card Preview -->
+            <div class="form-section form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" required>
+            </div>
+            <label for="email">Email</label>
+            <input type="email" id="email" required>
 
-          <label for="address">Shipping Address</label>
-          <div id="address" required></div>
+            <label for="displayUsername">Display Username</label>
+            <input type="text" id="DisplayName" required
+              oninput="updateIDCard()">
+
+            <label for="address">Shipping Address</label>
             <input type="text" id="address" required>
-          </div>
-          <!-- Dropdown tier-->
-          <div id="tier" required></div>
+
+            <!-- Dropdown tier-->
             <select id="tier" required>
               <option value>Select Membership Tier</option>
               <option value="basic">Basic</option>
               <option value="premium">Premium</option>
               <option value="vip">VIP</option>
             </select>
-          <!-- Favorite gift-->
-          <div id="favorite-thing" required></div>
+
+            <!-- Favorite gift-->
             <select id="favorite-thing" required>
               <option value>Favorite Thing to Receive in Mail</option>
               <option value="books">Books</option>
@@ -70,40 +69,65 @@
               <option value="clothes">Clothes</option>
               <option value="electronics">Electronics</option>
             </select>
-          </div>
-          <div id="receive-updates">
-            <select id="update-method" onchange="updateInputField()" required>
-              <option value="">Receive Updates of Ahoy</option>
-              <option value="sms">SMS</option>
-              <option value="whatsapp">WhatsApp</option>
-            </select>
-            <input type="text" id="contact-number" name="contact-number" placeholder="Enter your phone number" style="display:none;" required>
-          </div>
-          
-          <script>
-          function updateInputField() {
-            var selection = document.getElementById('update-method').value;
-            var inputField = document.getElementById('contact-number');
-            if (selection === 'sms' || selection === 'whatsapp') {
-              inputField.style.display = 'block';
-              inputField.placeholder = 'Enter your ' + selection + ' number';
-            } else {
-              inputField.style.display = 'none';
-            }
-          }
-          </script>
-          
-        <button type="submit">Proceed to Create</button>
-      </form>
-    </section>
 
+            <div id="receive-updates">
+              <select id="update-method" onchange="updateInputField()" required>
+                <option value>Receive Updates of Ahoy</option>
+                <option value="sms">SMS</option>
+                <option value="whatsapp">WhatsApp</option>
+              </select>
+              <input type="text" id="contact-number" name="contact-number"
+                placeholder="Enter your phone number" style="display:none;"
+                required>
+            </div>
 
+            <button type="submit">Create</button>
+          </form>
+        </section>
+      </div>
+
+      <div class="col2" style="float: right; width: 50%;">
+        <!-- Preview Section -->
+        <section id="preview" class="id-badge">
+          <h2>ID Badge Preview</h2>
+          <div class="id-badge-content">
+            <p><strong>Full Name:</strong> <span id="previewName"></span></p>
+            <p><strong>Email:</strong> <span id="previewEmail"></span></p>
+            <p><strong>Username:</strong> <span
+                id="previewDisplayName"></span></p>
+            <p><strong>Address:</strong> <span id="previewAddress"></span></p>
+            <p><strong>Tier:</strong> <span id="previewTier"></span></p>
+            <p><strong>Favorite:</strong> <span
+                id="previewFavoriteThing"></span></p>
+            <p><strong>Contact:</strong> <span id="previewUpdateMethod"></span>
+              <span id="previewContactNumber"></span></p>
+          </div>
+        </section>
+      </div>
+    </div>
 
     <script>
-        var stripe = Stripe('your-public-key');
-        var elements = stripe.elements();
-        var card = elements.create('card');
-        card.mount('#card-element');
+      function updateInputField() {
+        var selection = document.getElementById('update-method').value;
+        var inputField = document.getElementById('contact-number');
+        if (selection === 'sms' || selection === 'whatsapp') {
+          inputField.style.display = 'block';
+          inputField.placeholder = 'Enter your ' + selection + ' number';
+        } else {
+          inputField.style.display = 'none';
+        }
+      }
+
+      function updateIDCard() {
+        document.getElementById('previewName').textContent = document.getElementById('name').value;
+        document.getElementById('previewEmail').textContent = document.getElementById('email').value;
+        document.getElementById('previewDisplayName').textContent = document.getElementById('DisplayName').value;
+        document.getElementById('previewAddress').textContent = document.getElementById('address').value;
+        document.getElementById('previewTier').textContent = document.getElementById('tier').options[document.getElementById('tier').selectedIndex].text;
+        document.getElementById('previewFavoriteThing').textContent = document.getElementById('favorite-thing').options[document.getElementById('favorite-thing').selectedIndex].text;
+        document.getElementById('previewUpdateMethod').textContent = document.getElementById('update-method').options[document.getElementById('update-method').selectedIndex].text;
+        document.getElementById('previewContactNumber').textContent = document.getElementById('contact-number').value;
+      }
     </script>
   </body>
 </html>
