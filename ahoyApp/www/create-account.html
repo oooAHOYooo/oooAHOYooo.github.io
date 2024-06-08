@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Ahoy Indie Media - Combined Page</title>
-    <link rel="stylesheet" href="./css/account.css">
+
     <link rel="stylesheet" href="./css/billing.css">
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
@@ -27,71 +27,7 @@
       src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js"></script>
     <script src="https://js.stripe.com/v3/"></script>
     <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            font-family: 'Poppins', sans-serif;
-            height: 100%;
-            background: linear-gradient(120deg, #a6c0fe, #f68084);
-            animation: gradientBG 10s ease infinite;
-            background-size: 400% 400%;
-            width: 100%; /* Ensure full width */
-        }
-
-        /* Ensure all containers are full width on mobile */
-        @media (max-width: 768px) {
-            body, html {
-padding:20px;
-                flex-direction: column; /* Stack elements vertically on small screens */
-                align-items: stretch; /* Align items to stretch full width */
-            }
-
-            input, select, .form-section, .cool-button, .cool-button-a {
-                width: 100%; /* Full width for form elements and buttons */
-            }
-        }
-
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        .cool-button, .cool-button-a {
-            background-color: #4CAF50; /* Fallback color */
-            background-image: linear-gradient(to right, #44a08d, #093637); /* Gradient background */
-            color: white;
-            border: none;
-            padding: 15px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            transition: all 0.5s; /* Smooth transition for hover effects */
-            cursor: pointer;
-            outline: none;
-            border-radius: 5px; /* Rounded corners */
-            box-shadow: 0 2.9px #000000; /* Shadow for 3D effect */
-            width: auto; /* Auto width for flexibility */
-        }
-        .cool-button:hover, .cool-button-a:hover {
-            background-image: linear-gradient(to right, #093637, #44a08d); /* Gradient hover effect */
-            box-shadow: 0 5px #666; /* Shadow effect on hover */
-            transform: scale(1.1); /* Slightly increase the size */
-        }
-        input, select {
-            width: 100%;
-            padding: 10px;
-            margin: 8px 0;
-            display: inline-block;
-            border: none; /* Removes border */
-            box-sizing: border-box;
-            outline: none; /* Removes focus outline */
-            background-color: #f1f1f1; /* Light grey background */
-        }
-        input:focus, select:focus {
-            background-color: #ddd; /* Darker grey background on focus */
-            outline: none; /* Ensures no outline on focus */
-        }
+  
     </style>
   </head>
   <body>
@@ -157,15 +93,11 @@ padding:20px;
           }
           </script>
           
-        <button type="submit">Proceed to Payment</button>
+        <button type="submit">Proceed to Create</button>
       </form>
     </section>
 
-    <!-- Billing Section -->
-    <section id="billing">
-      <h1>Subscribe</h1>
 
-    </section>
 
     <script>
         var stripe = Stripe('your-public-key');
