@@ -43,7 +43,6 @@ body {
     justify-content: center;
     height: 90vh;
     color: white !important;
-    padding: 10px;
 }
 
 .text-outline {
@@ -147,6 +146,8 @@ p {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
+    ;
 
 }
 
