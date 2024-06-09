@@ -224,9 +224,19 @@
       <!-- HOME TAB -->
       <div id="home-tab" class="tab-content active">
 
-   
+   <!-- Login Button -->
+  <button id="loginButton" onclick="showLoginModal()">Login</button>
+  
+  <!-- Create Account Button -->
+  <button id="createAccountButton" onclick="location.href='https://www.xyz.com/signup'">Create Account</button>
+  <script>
+    function showLoginModal() {
+      // This function would trigger the display of a login modal.
+      // For demonstration, this could be a simple redirect or a more complex modal display logic.
+      location.href = 'https://www.xyz.com/login'; // Redirect to a login page
+    }
+  </script>
         <div class="v25-miniCall-toAction-container">
-          <button id="loginButton">Login</button> <!-- Login Button -->
           <a href="./create-account.html"><button class="v25_glass-button">Create an Account
           </button></a></div>
 
