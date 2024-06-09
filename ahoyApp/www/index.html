@@ -94,6 +94,52 @@
   </script>
 
 
+<!-- FrongEgg CDN -->
+<script src="https://cdn.frontegg.com/v1.0/frontegg.min.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Initialize Frontegg
+    const fronteggApp = new Frontegg.FronteggProvider({
+      contextOptions: {
+        baseUrl: 'https://app-luchorxg0t2p.frontegg.com',
+        clientId: '1edcbfaf-919b-42f3-be6d-dae160e5d9c6',
+      },
+      authOptions: {
+        // Add any auth options you need here
+      }
+    });
+
+    const { loginBox } = Frontegg.useAuth(fronteggApp);
+    loginBox.mount('#frontegg-login-container');
+
+    fronteggApp.auth.onAuthStateChanged(user => {
+      if (user) {
+        document.getElementById('burn-tab').style.display = 'block';
+        document.getElementById('loginModal').style.display = 'none';
+      } else {
+        document.getElementById('burn-tab').style.display = 'none';
+        document.getElementById('loginModal').style.display = 'block';
+      }
+    });
+
+    window.login = function() {
+      const email = document.getElementById('login-email').value;
+      const password = document.getElementById('login-password').value;
+      fronteggApp.auth.login({ email, password });
+    };
+  });
+</script>
+
+<div id="app-root" style="display: none">
+  <h1>This is Frontegg Integration in Vanilla Javascript </h1>
+  <div id="user-container"></div>
+  <br/>
+  <a id="logout" fe-state="isAuthenticated"><button>Logout</button></a>
+  <button id="loginWithRedirect" fe-mode="hosted" fe-state="!isAuthenticated">
+    Login With Redirect [HostedLogin]
+  </button>
+</div>
 
     <!-- Firebase SDK -->
     <script type="module">
@@ -180,6 +226,7 @@
 
    
         <div class="v25-miniCall-toAction-container">
+          <button id="loginButton">Login</button> <!-- Login Button -->
           <a href="./create-account.html"><button class="v25_glass-button">Create an Account
           </button></a></div>
 
