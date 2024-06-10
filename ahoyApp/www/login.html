@@ -32,14 +32,10 @@
 
             try {
                 const userCredential = await signInWithEmailAndPassword(auth, email, password);
-                // Login successful
-                setMessage("Login successful! Redirecting...", "success");
-                localStorage.setItem('userEmail', email); // Store user email in localStorage
-                setTimeout(() => {
-                    window.location.href = "./index.html"; // Adjust this path as needed
-                }, 2000);
+                localStorage.setItem('isLoggedIn', 'true'); // Save login state
+                window.location.href = '../www/index.html'; // Redirect to home page
             } catch (error) {
-                setMessage(error.message, "error");
+                console.error(error.message);
             }
         }
 
