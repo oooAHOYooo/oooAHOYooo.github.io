@@ -137,6 +137,29 @@
           messageElement.className = type;
       }
   </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+      const loginButton = document.getElementById('login-button');
+      const logoutButton = document.getElementById('logout-button');
+      const loggedInMessage = document.getElementById('logged-in-message');
+  
+      if (isLoggedIn) {
+        if (loginButton) loginButton.style.display = 'none';
+        if (logoutButton) logoutButton.style.display = 'block';
+        if (loggedInMessage) loggedInMessage.style.display = 'block';
+      } else {
+        if (loginButton) loginButton.style.display = 'block';
+        if (logoutButton) logoutButton.style.display = 'none';
+        if (loggedInMessage) loggedInMessage.style.display = 'none';
+      }
+    });
+  
+    function logout() {
+      localStorage.setItem('isLoggedIn', 'false');
+      window.location.href = 'login.html'; // Redirect to login page
+    }
+  </script>
 </head>
 
   <body>

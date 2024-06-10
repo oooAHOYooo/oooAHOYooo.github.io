@@ -6,6 +6,11 @@
     <title>Login - Ahoy Indie Media</title>
     <link rel="stylesheet" href="./css/login.css">
     <!-- Firebase SDK -->
+    <script
+      src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js"></script>
+    <script
+      src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js"></script>
+    <!-- Firebase SDK -->
     <script type="module">
         // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
@@ -51,7 +56,7 @@
       <div class="login__logo-container">
         <a href="../www/index.html"><img src="./img/assets/u_ahoy23.png"
             style="width: 300px" /></a>
-        <input type="email" id="login-email" placeholder="Email" />
+        <input type="email" id="login-email" placeholder="Email or Number" />
         <input type="password" id="login-password" placeholder="Password" />
         <div class="login__menu-container">
           <button onclick="login()">Login</button>
