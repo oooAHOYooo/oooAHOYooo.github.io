@@ -100,16 +100,7 @@
       import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
       import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js";
       
-      // Your web app's Firebase configuration
-      const firebaseConfig = {
-          apiKey: "AIzaSyBq_IQRwkjh2o-jUkS8tI8wcEek5yMIwmo",
-          authDomain: "ahoy-indie-media-da86d.firebaseapp.com",
-          projectId: "ahoy-indie-media-da86d",
-          storageBucket: "ahoy-indie-media-da86d.appspot.com",
-          messagingSenderId: "179901301547",
-          appId: "1:179901301547:web:599159f9efb826f464bb6e",
-          measurementId: "G-K3QN161BVX"
-      };
+
   
       // Initialize Firebase
       const app = initializeApp(firebaseConfig);
@@ -137,29 +128,7 @@
           messageElement.className = type;
       }
   </script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
-      const loginButton = document.getElementById('login-button');
-      const logoutButton = document.getElementById('logout-button');
-      const loggedInMessage = document.getElementById('logged-in-message');
-  
-      if (isLoggedIn) {
-        if (loginButton) loginButton.style.display = 'none';
-        if (logoutButton) logoutButton.style.display = 'block';
-        if (loggedInMessage) loggedInMessage.style.display = 'block';
-      } else {
-        if (loginButton) loginButton.style.display = 'block';
-        if (logoutButton) logoutButton.style.display = 'none';
-        if (loggedInMessage) loggedInMessage.style.display = 'none';
-      }
-    });
-  
-    function logout() {
-      localStorage.setItem('isLoggedIn', 'false');
-      window.location.href = 'login.html'; // Redirect to login page
-    }
-  </script>
+
 </head>
 
   <body>
@@ -169,7 +138,28 @@
     <div class="app">
       <div class="app-background-layer"></div>
     </div>
-
+    <body>
+      <div class="app">
+      <div class="app-background-layer"></div>
+      </div>
+      <div class="v25_topLogin">
+      <button id="login-button" class="v25_glass-button">LOGIN</button>
+      <p id="login-message" style="display:none;">Yes! You are logged in</p>
+      </div>
+      <script>
+      document.addEventListener('DOMContentLoaded', function() {
+      const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+      const loginButton = document.getElementById('login-button');
+      const loginMessage = document.getElementById('login-message');
+      if (isLoggedIn) {
+      loginButton.style.display = 'none';
+      loginMessage.style.display = 'block';
+      } else {
+      loginButton.style.display = 'block';
+      loginMessage.style.display = 'none';
+      }
+      });
+      </script>
  
     
     <div class="v25_topLogin">
@@ -395,11 +385,16 @@
           <img src="./img/ahoy-podcasts.svg" class="svgBlend">
           <div class="podcast-container">
             <div id="podcast-featured-image-container"></div>
-            <div class="search-container podcast-search-container">
-              <input type="text" id="podcast-search-input" class="search-input" placeholder="Search Podcasts...">
-              <button id="podcast-search-button">Search</button>
-              <button id="podcast-clear-search" onclick="clearPodcastSearch()">Clear</button>
-          </div>
+            <div style="width: 100%; padding: 10px; background: rgba(255, 255, 255, 0.1); border-radius: 10px; backdrop-filter: blur(10px); display: flex; align-items: center;">
+              <input type="text" id="podcast-search-input" class="search-input" placeholder="Search Podcasts..." style="flex-grow: 1; height: 32px; background-color: rgba(255, 255, 255, 0.5); padding: 5px; border: none; border-radius: 0px; backdrop-filter: blur(5px); margin-right: 10px;">
+            
+              <button id="podcast-search-button" style="width: 32px; height: 32px; border: none; background: rgba(255, 255, 255, 0.5); display: flex; justify-content: center; align-items: center;">
+                <i class="fas fa-search" style="color: #333;"></i>
+              </button>
+              <button id="podcast-clear-search" onclick="clearPodcastSearch()" style="width: 32px; height: 32px; border: none; background: rgba(255, 255, 255, 0.5); display: flex; justify-content: center; align-items: center;">
+                <i class="fas fa-times" style="color: #333;"></i>
+              </button>
+            </div>
             <table class="standard-table" id="podcast-table">
               <tbody>
                 <!-- Podcast rows will be dynamically inserted here -->
