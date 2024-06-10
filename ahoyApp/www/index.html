@@ -71,6 +71,7 @@
   <link rel="stylesheet" href="./css/v25_loadingScreen.css">
   <link rel="stylesheet" href="./css/global-search-container.css">
   <link rel="stylesheet" href="./css/v25widgets.css">
+  <link rel="stylesheet" href="./css/v25-topLogin.css">
   <!-- Icons -->
   <link rel="icon" type="image/png" href="./img/favicon_ahoy.png">
 
@@ -92,54 +93,6 @@
     gtag('js', new Date());
     gtag('config', 'G-X81RK0SVNS');
   </script>
-
-
-<!-- FrongEgg CDN -->
-<script src="https://cdn.frontegg.com/v1.0/frontegg.min.js"></script>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // Initialize Frontegg
-    const fronteggApp = new Frontegg.FronteggProvider({
-      contextOptions: {
-        baseUrl: 'https://app-luchorxg0t2p.frontegg.com',
-        clientId: '1edcbfaf-919b-42f3-be6d-dae160e5d9c6',
-      },
-      authOptions: {
-        // Add any auth options you need here
-      }
-    });
-
-    const { loginBox } = Frontegg.useAuth(fronteggApp);
-    loginBox.mount('#frontegg-login-container');
-
-    fronteggApp.auth.onAuthStateChanged(user => {
-      if (user) {
-        document.getElementById('burn-tab').style.display = 'block';
-        document.getElementById('loginModal').style.display = 'none';
-      } else {
-        document.getElementById('burn-tab').style.display = 'none';
-        document.getElementById('loginModal').style.display = 'block';
-      }
-    });
-
-    window.login = function() {
-      const email = document.getElementById('login-email').value;
-      const password = document.getElementById('login-password').value;
-      fronteggApp.auth.login({ email, password });
-    };
-  });
-</script>
-
-<div id="app-root" style="display: none">
-  <h1>This is Frontegg Integration in Vanilla Javascript </h1>
-  <div id="user-container"></div>
-  <br/>
-  <a id="logout" fe-state="isAuthenticated"><button>Logout</button></a>
-  <button id="loginWithRedirect" fe-mode="hosted" fe-state="!isAuthenticated">
-    Login With Redirect [HostedLogin]
-  </button>
-</div>
 
     <!-- Firebase SDK -->
     <script type="module">
@@ -194,7 +147,36 @@
       <div class="app-background-layer"></div>
     </div>
 
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        console.log("DOM fully loaded and parsed");
+        const auth = firebase.auth();
+        const loginContainer = document.querySelector('.v25_topLogin');
+        if (!loginContainer) {
+          console.error('Login container not found');
+          return;
+        }
+    
+        auth.onAuthStateChanged(user => {
+          console.log("Auth state changed. User:", user);
+          if (user) {
+            // User is signed in, hide the login button
+            loginContainer.style.display = 'none';
+          } else {
+            // No user is signed in, show the login button
+            loginContainer.style.display = 'block';
+          }
+        });
+      });
+    </script>
+    
+    <div class="v25_topLogin">
+      <a href="./login.html"><button class="v25_glass-button">LOGIN</button></a>
+    </div>
+
+
     <div id="tabSortza">
+      
       <!-- HOME TAB -->
       <div id="home-tab" class="tab-content active">
 
@@ -843,7 +825,7 @@
 </div>
 
 <!-- LIVE SCRIPTS -->
-<script src="js/src/function-toggle-dash.js"></script>
+
 <script src="js/src/login.js"></script>
 <script src="js/src/fetch-homepage-nowplaying.js"></script>
 

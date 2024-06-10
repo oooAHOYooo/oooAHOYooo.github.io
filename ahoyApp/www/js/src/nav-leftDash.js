@@ -4,7 +4,11 @@ function navigateToTab(tabId) {
     tab.style.display = 'none';
   });
   // Show the selected tab
-  document.getElementById(tabId).style.display = 'block';
+  const selectedTab = document.getElementById(tabId);
+  selectedTab.style.display = 'block';
+
+  // Scroll the selected tab into view
+  selectedTab.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
   // Highlight the active tab icon and flash the label on mobile
   document.querySelectorAll('.left-dashboard button, .right-dashboard button').forEach(button => {

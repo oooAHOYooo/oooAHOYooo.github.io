@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Frontegg Integration</title>
+        <style>
+        button {
+            border-radius: 4px;
+            background: dodgerblue;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+        }
+    </style>
+    </head>
+    <body>
+        <h2>Yo</h2>
+        <div id="app-root" style="display: none">
+            <h1>This is Frontegg Integration in Vanilla Javascript</h1>
+            <div id="user-container">
+            </div>
+            <br />
+            <a id="logout"
+                fe-state="isAuthenticated"><button>Logout</button></a>
+            <button id="loginWithRedirect" fe-mode="hosted"
+                fe-state="!isAuthenticated">
+                Login With Redirect [HostedLogin]
+            </button>
+        </div>
+
+        <!-- Import Frontegg JavaScript SDK -->
+        <script type="module">
+        import { initialize } from "@frontegg/js";
+
+        const style = document.createElement('style');
+        document.head.appendChild(style);
+
+        const app = initialize({
+            contextOptions: {
+                baseUrl: 'https://app-luchorxg0t2p.frontegg.com',
+                clientId: '1edcbfaf-919b-42f3-be6d-dae160e5d9c6'
+            },
+            authOptions: {
+                hostedLoginBox: true
+            }
+        });
+
+        app.store.subscribe(() => {
+            const { auth } = app.store.getState();
+
+            if (auth.user) {
+                document.getElementById('user-container').innerText = auth.user.email;
+            } else {
+                document.getElementById('user-container').innerText = 'Not Authenticated';
+            }
+
+            document.getElementById('app-root').style.display = auth.isLoading ? 'none' : 'block';
+
+            let styleHtml = ``;
+            if (auth.isAuthenticated) {
+                styleHtml += `[fe-state="isAuthenticated"] { display: block; }`;
+                styleHtml += `[fe-state="!isAuthenticated"] { display: none; }`;
+            } else {
+                styleHtml += `[fe-state="isAuthenticated"] { display: none; }`;
+                styleHtml += `[fe-state="!isAuthenticated"] { display: block; }`;
+            }
+
+            if(app.options.authOptions.hostedLoginBox){
+                styleHtml += `[fe-mode="hosted"] { display: block; }`;
+            } else {
+                styleHtml += `[fe-mode="hosted"] { display: none; }`;
+            }
+
+            style.innerHTML = styleHtml;
+        });
+
+        document.getElementById("loginWithRedirect").addEventListener("click", () => {
+            app.loginWithRedirect();
+        });
+
+        document.getElementById("logout").addEventListener("click", () => {
+            app.logout();
+        });
+    </script>
+    </body>
+</html>

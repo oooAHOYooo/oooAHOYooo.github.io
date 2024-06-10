@@ -95,7 +95,51 @@
 
 
 <!-- FrongEgg CDN -->
-<script src="https://cdn.frontegg.com/v1.0/frontegg.min.js"></script>
+<script type="application/javascript" src="https://cdn.jsdelivr.net/npm/@frontegg/js/umd/frontegg.production.min.js"></script>
+
+<script>
+    import {initialize} from "@frontegg/js"
+
+const style = document.createElement('style');
+style.setAttribute('type', 'text/css');
+style.innerHTML = '';
+document.getElementsByTagName('head')[0].appendChild(style);
+
+
+const app = initialize({
+  contextOptions: {
+    baseUrl: 'https://app-luchorxg0t2p.frontegg.com', //set your Frontegg environment domain and client ID here
+    clientId: '1edcbfaf-919b-42f3-be6d-dae160e5d9c6'
+  },
+  authOptions: {
+    // keepSessionAlive: true // Uncomment this in order to maintain the session alive
+  },
+  hostedLoginBox: true
+})
+
+// Uncomment below code for automatic redirect to login/app
+// app.ready(() => {
+
+//   console.log("App is ready");
+//   let unsubscribe = app.store.subscribe(()=>{
+//     const {auth} = app.store.getState();
+
+//     if(!auth.isLoading) {
+//       if (!auth.isAuthenticated) {
+// app.loginWithRedirect()
+//       }
+//     }
+//   })
+// })
+
+document.getElementById("loginWithRedirect").addEventListener("click", () => {
+  app.loginWithRedirect()
+})
+
+document.getElementById("logout").addEventListener("click", () => {
+  app.logout()
+})
+</script>
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
@@ -224,62 +268,14 @@
       <!-- HOME TAB -->
       <div id="home-tab" class="tab-content active">
 
-   <!-- Login Button -->
-  <button id="loginButton" onclick="showLoginModal()">Login</button>
-  
-  <!-- Create Account Button -->
-  <button id="createAccountButton" onclick="location.href='https://www.xyz.com/signup'">Create Account</button>
-  <script>
-    // Function to show the login modal
-    function showLoginModal() {
-      document.getElementById('loginModal').style.display = 'block';
-    }
 
-    // Function to close the login modal
-    document.querySelector('.close').onclick = function() {
-      document.getElementById('loginModal').style.display = 'none';
-    };
 
-    // Login function
-    window.login = async function() {
-      const email = document.getElementById("login-email").value;
-      const password = document.getElementById("login-password").value;
 
-      try {
-        const userCredential = await signInWithEmailAndPassword(auth, email, password);
-        setMessage("Login successful! Redirecting...", "success");
-        setTimeout(() => {
-          window.location.href = "./index.html"; // Adjust this path as needed
-        }, 2000);
-      } catch (error) {
-        setMessage(error.message, "error");
-      }
-    }
-
-    // Function to display messages
-    window.setMessage = function(message, type) {
-      const messageElement = document.getElementById("message");
-      messageElement.textContent = message;
-      messageElement.className = type;
-    }
-  </script>
-
-    <!-- Login Modal -->
-    <div id="loginModal" class="modal" style="display:none;">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2>Login to Your Account</h2>
-        <input type="email" id="login-email" placeholder="Email">
-        <input type="password" id="login-password" placeholder="Password">
-        <button onclick="login()">Login</button>
-        <p id="message"></p>
-      </div>
-    </div>
         <div class="v25-miniCall-toAction-container">
-          <a href="./create-account.html"><button class="v25_glass-button">Create an Account
+          <a href="./login.html"><button class="v25_glass-button">LOGIN
           </button></a></div>
 
-
+   
 
 
         <!-- DATE DISPLAY -->
