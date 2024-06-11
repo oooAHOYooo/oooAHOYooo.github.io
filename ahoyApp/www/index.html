@@ -135,37 +135,30 @@
 
   
 
-    <div class="app">
-      <div class="app-background-layer"></div>
-    </div>
-    <body>
+    
       <div class="app">
       <div class="app-background-layer"></div>
       </div>
       <div class="v25_topLogin">
-      <button id="login-button" class="v25_glass-button">LOGIN</button>
-      <p id="login-message" style="display:none;">Yes! You are logged in</p>
+        <button id="login-button" class="v25_glass-button" onclick="window.location.href='./login.html'">LOGIN</button>
+        <p id="login-message" style="display:none;">Yes! You are logged in</p>
       </div>
       <script>
       document.addEventListener('DOMContentLoaded', function() {
-      const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
-      const loginButton = document.getElementById('login-button');
-      const loginMessage = document.getElementById('login-message');
-      if (isLoggedIn) {
-      loginButton.style.display = 'none';
-      loginMessage.style.display = 'block';
-      } else {
-      loginButton.style.display = 'block';
-      loginMessage.style.display = 'none';
-      }
+        const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+        const loginButton = document.getElementById('login-button');
+        const loginMessage = document.getElementById('login-message');
+        if (isLoggedIn) {
+          loginButton.style.display = 'none';
+          loginMessage.style.display = 'block';
+        } else {
+          loginButton.style.display = 'block';
+          loginMessage.style.display = 'none';
+        }
       });
       </script>
- 
     
-    <div class="v25_topLogin">
-      <a href="./login.html"><button class="v25_glass-button">LOGIN</button></a>
-     <p style="display:none;">Yes! You are logged in</p>
-    </div>
+  
 
 
     <div id="tabSortza">

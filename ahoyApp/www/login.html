@@ -14,7 +14,7 @@
     <script type="module">
         // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
-        import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js";
+        import { getAuth, signInWithEmailAndPassword, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js";
         
         // Your web app's Firebase configuration
         const firebaseConfig = {
@@ -49,6 +49,20 @@
             messageElement.textContent = message;
             messageElement.className = type;
         }
+
+        window.resetPassword = async function() {
+            const email = document.getElementById("login-email").value;
+            if (!email) {
+                setMessage("Please enter your email to reset password.", "error");
+                return;
+            }
+            try {
+                await sendPasswordResetEmail(auth, email);
+                setMessage("Password reset email sent!", "success");
+            } catch (error) {
+                setMessage(error.message, "error");
+            }
+        }
     </script>
   </head>
   <body>
@@ -67,6 +81,11 @@
     <p class="hipster-text">
       Don't have an account? <a href="./create-account.html"
         class="hipster-link">Create One</a>
+    </p>
+    <p class="hipster-text"
+      style="font-size: 10px; position: fixed; bottom: 5px; right: 5px;">
+      Forgot your password? <a href="#" onclick="resetPassword()"
+        class="hipster-link">Reset it here</a>
     </p>
   </body>
 </html>
