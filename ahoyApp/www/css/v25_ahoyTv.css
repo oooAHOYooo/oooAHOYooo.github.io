@@ -1,0 +1,51 @@
+.ahoy-tv-section {
+    background-color: #eae0d5;
+    /* A soft, vintage paper-like background color */
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: 'Courier New', Courier, monospace;
+    /* Gives a typewriter-like feel */
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.schedule-table th,
+.schedule-table td {
+    border: 1px solid #ccc;
+    /* Softer border color */
+    padding: 8px;
+    text-align: left;
+    font-family: 'Courier New', Courier, monospace;
+    /* Consistent font for vintage look */
+}
+
+.schedule-table th {
+    background-color: #8a7967;
+    /* A muted, vintage leather color */
+    color: #fffefe;
+    /* Soft white for better vintage contrast */
+}
+
+.ahoy-tv-section h1 {
+    color: #3e2723;
+    /* Deep, rich brown for a strong, vintage headline */
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-family: 'Georgia', serif;
+    /* More classic font choice */
+}
+
+.ahoy-tv-section p {
+    color: #564e48;
+    /* Dark gray for a softer, more aged text appearance */
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: 'Georgia', serif;
+    /* Consistency in font choice */
+}
