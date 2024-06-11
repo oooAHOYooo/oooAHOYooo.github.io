@@ -1,51 +1,43 @@
 .ahoy-tv-section {
-    background-color: #eae0d5;
-    /* A soft, vintage paper-like background color */
-    border-radius: 8px;
-    padding: 20px;
-    margin-top: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     font-family: 'Courier New', Courier, monospace;
-    /* Gives a typewriter-like feel */
+    /* Retro font */
+    color: #fff;
+    background-color: #000000b5;
+    /* Mimic old TV color */
+    padding: 20px;
+    border-radius: 10px;
+    /* Soft rounded corners for the outer section */
+    text-align: center;
+    /* Center align the content */
 }
 
+
 .schedule-table {
-    width: 100%;
+    margin-top: 20px;
     border-collapse: collapse;
-    margin-top: 15px;
+    width: 100%;
+    color: black;
+    background: linear-gradient(145deg, #e6e8e9, #f0f1f2);
+    /* Subtle gradient for a vintage paper look */
 }
 
 .schedule-table th,
 .schedule-table td {
-    border: 1px solid #ccc;
-    /* Softer border color */
     padding: 8px;
     text-align: left;
-    font-family: 'Courier New', Courier, monospace;
-    /* Consistent font for vintage look */
+    border: 1px solid #ccc;
+    /* Light borders for the table */
+    color: #333;
+    /* Darker text for a more vintage feel */
+    background-color: #f9f9f9;
+    /* Light background for cells to mimic aged paper */
 }
 
 .schedule-table th {
-    background-color: #8a7967;
-    /* A muted, vintage leather color */
-    color: #fffefe;
-    /* Soft white for better vintage contrast */
-}
-
-.ahoy-tv-section h1 {
-    color: #3e2723;
-    /* Deep, rich brown for a strong, vintage headline */
-    font-size: 24px;
-    margin-bottom: 10px;
-    font-family: 'Georgia', serif;
-    /* More classic font choice */
-}
-
-.ahoy-tv-section p {
-    color: #564e48;
-    /* Dark gray for a softer, more aged text appearance */
-    font-size: 16px;
-    line-height: 1.5;
-    font-family: 'Georgia', serif;
-    /* Consistency in font choice */
+    background-color: #555;
+    /* Darker header for a more pronounced contrast */
+    color: #f0f0f2;
+    /* Light text color for the header */
+    text-shadow: 1px 1px 0px #000;
+    /* Subtle text shadow for a retro effect */
 }
