@@ -73,6 +73,7 @@
   <link rel="stylesheet" href="./css/v25widgets.css">
   <link rel="stylesheet" href="./css/v25-topLogin.css">
   <link rel="stylesheet" href="./css/v25_ahoyTV.css">
+  <link rel="stylesheet" href="./css/v25-userLiveFeatures.css">
   <!-- Icons -->
   <link rel="icon" type="image/png" href="./img/favicon_ahoy.png">
 
@@ -140,6 +141,12 @@
       <div class="app">
       <div class="app-background-layer"></div>
       </div>
+
+      <div class="account-icon">
+        <i class="fas fa-user"></i> <!-- Font Awesome user icon -->
+        <span class="status-indicator"></span> <!-- Green light indicator -->
+      </div>
+
       <div class="v25_topLogin">
         <button id="login-button" class="v25_glass-button" onclick="window.location.href='./login.html'">LOGIN</button>
         <p id="login-message" style="display:none;">Yes! You are logged in
@@ -151,6 +158,7 @@
           function showAccountTab() {
               // Hide all other tabs
               document.getElementById('home-tab').style.display = 'none';
+              document.getElementById('v25_topLogin').style.display = 'none';
               // Add other tabs you want to hide
               // Show the account tab
               document.getElementById('account-tab').style.display = 'block';
@@ -627,9 +635,8 @@
       
           <!-- The Grandfather Surprise Section -->
           <div class="grandfather-surprise-section">
-            <h2>Lifetime Access Free for Now</h2>
-            <p>We're trying to figure it all out - and want to reward that
-              pioneering group at Ahoy Indie Media
+            <h2>Account Benefits</h2>
+         
             </p>
             <ul>
               <li><strong>Lifetime Membership:</strong> The first 100 members
@@ -669,6 +676,8 @@
               onclick="window.location.href='create-account.html'">Create
               Account</button>
           </div>
+          <p>We're trying to figure it all out - and want to reward that
+            pioneering group at Ahoy Indie Media
           <div class="v25-miniCall-toAction-container">
             <h1>Have content for Ahoy?</h1>
             <a href="./get-on-ahoy.html"><button class="v25_glass-button">Get on Ahoy

@@ -1,0 +1,27 @@
+.account-icon {
+    position: fixed;
+    top: 10px;
+    /* Adjust based on your header's height */
+    right: 10px;
+    /* Adjust for padding from the right edge */
+    z-index: 1000;
+    /* Ensures it stays on top of other content */
+}
+
+.account-icon .fas {
+    font-size: 24px;
+    /* Icon size, adjust as needed */
+    color: #fff;
+    /* Icon color */
+}
+
+.status-indicator {
+    width: 10px;
+    height: 10px;
+    background-color: green;
+    /* Green light */
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 5px;
+    /* Space between icon and indicator */
+}
