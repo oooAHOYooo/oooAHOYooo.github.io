@@ -142,7 +142,21 @@
       </div>
       <div class="v25_topLogin">
         <button id="login-button" class="v25_glass-button" onclick="window.location.href='./login.html'">LOGIN</button>
-        <p id="login-message" style="display:none;">Yes! You are logged in </p>
+        <p id="login-message" style="display:none;">Yes! You are logged in
+        
+
+          <button onclick="showAccountTab();">View Benefits</button>
+
+          <script>
+          function showAccountTab() {
+              // Hide all other tabs
+              document.getElementById('home-tab').style.display = 'none';
+              // Add other tabs you want to hide
+              // Show the account tab
+              document.getElementById('account-tab').style.display = 'block';
+          }
+          </script>
+        </p>
        
       </div>
       <script>
