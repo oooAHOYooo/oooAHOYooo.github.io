@@ -4,24 +4,42 @@
     /* Adjust based on your header's height */
     right: 10px;
     /* Adjust for padding from the right edge */
-    z-index: 1000;
+    z-index: 10000;
     /* Ensures it stays on top of other content */
 }
 
-.account-icon .fas {
-    font-size: 24px;
+.fas {
+    font-size: 9px;
     /* Icon size, adjust as needed */
-    color: #fff;
+    border-color: greenyellow;
+    /* Icon color */
+}
+
+.account-icon:hover .fas:hover {
+    font-size: 11px;
+    /* Icon size, adjust as needed */
+    color: #ff5b5b;
+    cursor: pointer;
     /* Icon color */
 }
 
 .status-indicator {
-    width: 10px;
-    height: 10px;
-    background-color: green;
-    /* Green light */
+    width: 8px;
+    height: 8px;
+    background-color: rgba(0, 128, 0, 0.371);
+    border-style: solid;
+    border-color: greenyellow;
     border-radius: 50%;
     display: inline-block;
-    margin-left: 5px;
-    /* Space between icon and indicator */
+}
+
+.status-indicator:hover {
+    width: 8px;
+    height: 8px;
+    background-color: greenyellow;
+    border-style: solid;
+    border-color: greenyellow;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
 }

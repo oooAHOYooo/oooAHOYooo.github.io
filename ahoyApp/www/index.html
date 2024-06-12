@@ -143,8 +143,10 @@
       </div>
 
       <div class="account-icon">
-        <i class="fas fa-user"></i> <!-- Font Awesome user icon -->
-        <span class="status-indicator"></span> <!-- Green light indicator -->
+        <button onclick="showAccountTab();">
+          <i class="fas fa-user"></i>
+          <span class="status-indicator"></span>
+        </button>
       </div>
 
       <div class="v25_topLogin">
@@ -158,7 +160,6 @@
           function showAccountTab() {
               // Hide all other tabs
               document.getElementById('home-tab').style.display = 'none';
-              document.getElementById('v25_topLogin').style.display = 'none';
               // Add other tabs you want to hide
               // Show the account tab
               document.getElementById('account-tab').style.display = 'block';

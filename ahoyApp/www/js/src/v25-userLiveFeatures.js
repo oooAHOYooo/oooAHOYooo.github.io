@@ -25,3 +25,31 @@ window.login = async function() {
         setMessage(error.message, "error");
     }
 }
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+    const loginButton = document.getElementById('login-button');
+    const loginMessage = document.getElementById('login-message');
+    const viewBenefitsButton = document.getElementById('view-benefits-button'); // Ensure this ID is assigned to your View Benefits button
+  
+    if (isLoggedIn) {
+      loginButton.style.display = 'none';
+      loginMessage.style.display = 'block';
+      const userProfileDropdown = document.getElementById('user-profile-dropdown');
+      userProfileDropdown.style.display = 'block';
+  
+      // Hide message and button after 5 seconds
+      setTimeout(() => {
+        loginMessage.style.display = 'none';
+      }, 3000);
+  
+      // Hide message and button when View Benefits is clicked
+      viewBenefitsButton.addEventListener('click', function() {
+        loginMessage.style.display = 'none';
+      });
+    } else {
+      loginButton.style.display = 'block';
+      loginMessage.style.display = 'none';
+    }
+  });
