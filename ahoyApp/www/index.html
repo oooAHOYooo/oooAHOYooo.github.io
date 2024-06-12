@@ -143,6 +143,10 @@
       <div class="v25_topLogin">
         <button id="login-button" class="v25_glass-button" onclick="window.location.href='./login.html'">LOGIN</button>
         <p id="login-message" style="display:none;">Yes! You are logged in</p>
+        <div id="user-profile-dropdown" style="display:none;">
+          <!-- other profile elements -->
+          <p id="last-login-time"></p>
+      </div>
       </div>
       <script>
       document.addEventListener('DOMContentLoaded', function() {
@@ -152,6 +156,8 @@
         if (isLoggedIn) {
           loginButton.style.display = 'none';
           loginMessage.style.display = 'block';
+          const userProfileDropdown = document.getElementById('user-profile-dropdown');
+          userProfileDropdown.style.display = 'block';
         } else {
           loginButton.style.display = 'block';
           loginMessage.style.display = 'none';
@@ -876,6 +882,7 @@
 <script src="js/src/v27-songMgmt.js"></script>
 <script src="js/src/music_daily_shuffle.js"></script>
 <script src="js/src/podcast.js"></script>
+<script src="js/src/v25-userLiveFeatures.js"></script>
 
 
   <!-- END -->
