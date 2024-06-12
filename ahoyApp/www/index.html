@@ -142,11 +142,8 @@
       </div>
       <div class="v25_topLogin">
         <button id="login-button" class="v25_glass-button" onclick="window.location.href='./login.html'">LOGIN</button>
-        <p id="login-message" style="display:none;">Yes! You are logged in</p>
-        <div id="user-profile-dropdown" style="display:none;">
-          <!-- other profile elements -->
-          <p id="last-login-time"></p>
-      </div>
+        <p id="login-message" style="display:none;">Yes! You are logged in </p>
+       
       </div>
       <script>
       document.addEventListener('DOMContentLoaded', function() {
@@ -592,6 +589,10 @@
         <!-- ACCOUNT -->
         <div id="account-tab" class="tab-content">
           <img src="./img/ahoy-account.svg" class="svgBlend">
+          <div id="user-profile-dropdown" style="display:none;">
+            <!-- other profile elements -->
+            <p id="last-login-time"></p>
+        </div>
           <!-- User Login Section -->
           <div id="login-section" class="center-frame"
             style="margin:22px; flex: 1; flex-direction: column; justify-content: center; align-items: center; height: 40vh; background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(15px); border-radius: 15px; padding: 20px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); border: 1px solid rgba(255, 255, 255, 0.3);  background: linear-gradient(145deg, rgba(255,255,255,0.1), rgba(255,255,255,0.25));">
