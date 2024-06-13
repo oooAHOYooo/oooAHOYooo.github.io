@@ -135,25 +135,14 @@
 </head>
 
   <body>
-    <button id="toggle-sidebar-btn" onclick="toggleSidebar()">Toggle Sidebar</button>
-  <!-- Sidebar Container -->
-<div id="v25-sidebar" class="v25-sidebar" style="display: none;">
-  <h2>My Library</h2>
-  <ul id="v25-playlist-library">
-      <!-- Playlists will be added here dynamically -->
-  </ul>
-  <button onclick="createNewPlaylist()">Create New Playlist</button>
-</div>
+
+
 
     
       <div class="app">
       <div class="app-background-layer"></div>
       </div>
-      <button id="toggle-sidebar-btn" onclick="toggleSidebar()" style="position: fixed; left: 50%; transform: translateX(-50%);">Toggle Sidebar</button>
-      <div class="account-icon">
-          <i class="fas fa-user" onclick="showAccountTab();"></i>
-          <span class="status-indicator"></span>
-      </div>
+     
 
       <div class="v25_topLogin">
         <button id="login-button" class="v25_glass-button" onclick="window.location.href='./login.html'">LOGIN</button>
@@ -191,9 +180,30 @@
       });
       </script>
     
-  
-
-
+    <div id="sidebar" class="sidebar">
+      <!-- Sidebar content goes here -->
+      <button onclick="toggleSidebar()">Toggle Sidebar</button>
+      <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Playlists</a></li>
+          <li><a href="#">Artists</a></li>
+          <li><a href="#">Albums</a></li>
+      </ul>
+  </div>
+ 
+  <script>
+    function toggleSidebar() {
+    var sidebar = document.getElementById('sidebar');
+    var mainContent = document.getElementById('main-content');
+    if (sidebar.classList.contains('collapsed')) {
+        sidebar.classList.remove('collapsed');
+        mainContent.style.marginLeft = '300px';
+    } else {
+        sidebar.classList.add('collapsed');
+        mainContent.style.marginLeft = '50px';
+    }
+}
+  </script>
     <div id="tabSortza">
       
       <!-- HOME TAB -->

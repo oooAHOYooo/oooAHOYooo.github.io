@@ -1,19 +1,50 @@
-/* Add to your CSS file */
-.v25-sidebar {
-    width: 240px;
-    position: fixed;
-    left: 0;
-    top: 0;
-    background-color: #f4f4f4;
-    height: 100%;
-    overflow-y: auto;
-    display: none;
-    /* Ensure sidebar is initially hidden */
+@media (max-width: 600px) {
+    .sidebar {
+        display: none;
+        /* Hide sidebar on smaller screens */
+    }
 }
 
-@media (min-width: 600px) {
-    .v25-sidebar {
-        display: block;
-        /* Show sidebar on larger screens */
-    }
+.sidebar {
+    width: 15vw;
+    min-height: 98vh;
+    /* Adjust width for a larger sidebar */
+    position: fixed;
+    z-index: 100000;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #24242431;
+    color: white;
+    overflow: auto;
+    transition: width 0.5s;
+    text-decoration: none;
+    border-style: solid;
+    border-color: white;
+    border-width: 1px;
+}
+
+.sidebar a {
+    color: white;
+
+}
+
+.sidebar li {
+    text-align: none;
+}
+
+.main-content {
+    margin-left: 300px;
+    /* Same as sidebar width */
+    padding: 20px;
+}
+
+/* Smaller sidebar for a collapsed state */
+.collapsed {
+    width: 50px;
+}
+
+/* Adjust main content margin when sidebar is collapsed */
+.collapsed+.main-content {
+    margin-left: 50px;
 }
