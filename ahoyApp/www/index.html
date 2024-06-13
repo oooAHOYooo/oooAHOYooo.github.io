@@ -74,6 +74,7 @@
   <link rel="stylesheet" href="./css/v25-topLogin.css">
   <link rel="stylesheet" href="./css/v25_ahoyTV.css">
   <link rel="stylesheet" href="./css/v25-userLiveFeatures.css">
+  <link rel="stylesheet" href="./css/v25-sidebar.css">
   <!-- Icons -->
   <link rel="icon" type="image/png" href="./img/favicon_ahoy.png">
 
@@ -134,19 +135,24 @@
 </head>
 
   <body>
-
-  
+    <button id="toggle-sidebar-btn" onclick="toggleSidebar()">Toggle Sidebar</button>
+  <!-- Sidebar Container -->
+<div id="v25-sidebar" class="v25-sidebar" style="display: none;">
+  <h2>My Library</h2>
+  <ul id="v25-playlist-library">
+      <!-- Playlists will be added here dynamically -->
+  </ul>
+  <button onclick="createNewPlaylist()">Create New Playlist</button>
+</div>
 
     
       <div class="app">
       <div class="app-background-layer"></div>
       </div>
-
+      <button id="toggle-sidebar-btn" onclick="toggleSidebar()" style="position: fixed; left: 50%; transform: translateX(-50%);">Toggle Sidebar</button>
       <div class="account-icon">
-        <button onclick="showAccountTab();">
-          <i class="fas fa-user"></i>
+          <i class="fas fa-user" onclick="showAccountTab();"></i>
           <span class="status-indicator"></span>
-        </button>
       </div>
 
       <div class="v25_topLogin">
@@ -910,6 +916,8 @@
 <script src="js/src/v25-userLiveFeatures.js"></script>
 
 
+<!-- SIDEBAR LIBRARY -->
+<script src="js/src/v25-sidebarLibrary.js"></script>
   <!-- END -->
   </body>
 </html>

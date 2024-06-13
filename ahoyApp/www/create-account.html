@@ -135,5 +135,35 @@
         document.getElementById('previewContactNumber').textContent = document.getElementById('contact-number').value;
       }
     </script>
+
+
+</form>
+...
+<script>
+function registerUser(event) {
+  event.preventDefault(); // Prevent form from submitting normally
+
+  // Get user details from form
+  var email = document.getElementById('email').value;
+  var password = document.getElementById('password').value; // Ensure you have an input for password
+
+  // Firebase authentication
+  firebase.auth().createUserWithEmailAndPassword(email, password)
+    .then((userCredential) => {
+      // Signed in 
+      var user = userCredential.user;
+      console.log('User created successfully with email: ', user.email);
+      // Redirect or update UI
+    })
+    .catch((error) => {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      console.error('Error signing up:', errorMessage);
+      // Handle Errors here.
+    });
+}
+
+
+</script>
   </body>
 </html>
