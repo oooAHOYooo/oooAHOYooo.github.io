@@ -7,23 +7,6 @@
     background-color: #f4f4f4;
     height: 100%;
     overflow-y: auto;
-}
-
-@media (min-width: 600px) {
-    .v25-sidebar {
-        display: block;
-        /* Show sidebar on larger screens */
-    }
-}
-
-.v25-sidebar {
-    width: 240px;
-    position: fixed;
-    left: 0;
-    top: 0;
-    background-color: #f4f4f4;
-    height: 100%;
-    overflow-y: auto;
     display: none;
     /* Ensure sidebar is initially hidden */
 }
