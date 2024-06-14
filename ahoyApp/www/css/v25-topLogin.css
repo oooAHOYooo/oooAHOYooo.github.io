@@ -12,3 +12,9 @@
     padding: 10px 0;
     /* Adds some padding around the button */
 }
+
+.v25_topLogin-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
