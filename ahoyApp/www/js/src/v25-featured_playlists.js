@@ -3,13 +3,24 @@ document.addEventListener('DOMContentLoaded', function() {
     .then(response => response.json())
     .then(data => {
       const sidebarRight = document.getElementById('sidebar-right');
+      sidebarRight.innerHTML = ''; // Clear existing content
+
+      // Create and append the header
+      const headerDiv = document.createElement('div');
+      headerDiv.className = 'sidebar-header';
+      const header = document.createElement('h3');
+      header.textContent = 'Featured Playlists';
+      headerDiv.appendChild(header);
+      sidebarRight.appendChild(headerDiv);
+
+      // Create and append each playlist section
       data.playlists.forEach(playlist => {
         const section = document.createElement('div');
         section.className = 'playlist-section';
 
-        const header = document.createElement('h3');
-        header.textContent = playlist.genre;
-        section.appendChild(header);
+        const genreHeader = document.createElement('h3');
+        genreHeader.textContent = playlist.genre;
+        section.appendChild(genreHeader);
 
         const ul = document.createElement('ul');
         playlist.songs.forEach(song => {
@@ -23,4 +34,23 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     })
     .catch(error => console.error('Error fetching the playlists:', error));
+
+  // Add toggle feature
+  document.getElementById('sidebarCollapse').addEventListener('click', toggleSidebar);
 });
+
+function toggleSidebar() {
+    var sidebar = document.getElementById('sidebar');
+    var toggleIcon = document.getElementById('sidebarCollapse').children[0]; // Get the <i> element
+
+    sidebar.classList.toggle('active');
+
+    // Check if the sidebar is active to determine which icon to display
+    if (sidebar.classList.contains('active')) {
+        toggleIcon.classList.remove('fa-bars');
+        toggleIcon.classList.add('fa-times');
+    } else {
+        toggleIcon.classList.remove('fa-times');
+        toggleIcon.classList.add('fa-bars');
+    }
+}
