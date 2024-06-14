@@ -25,15 +25,37 @@ function populateSidebarWithSamples() {
 }
 
 function toggleSidebar() {
-    var sidebar = document.getElementById('v25-sidebar');
-    if (sidebar.style.display === 'none' || sidebar.style.display === '') {
-        sidebar.style.display = 'block';
-        populateSidebarWithSamples(); // Populate sidebar when it is shown
+    var sidebar = document.getElementById('sidebar');
+    var toggleIcon = document.getElementById('sidebarCollapse').children[0]; // Get the <i> element
+
+    sidebar.classList.toggle('active');
+
+    // Check if the sidebar is active to determine which icon to display
+    if (sidebar.classList.contains('active')) {
+        toggleIcon.classList.remove('fa-bars');
+        toggleIcon.classList.add('fa-times');
     } else {
-        sidebar.style.display = 'none';
+        toggleIcon.classList.remove('fa-times');
+        toggleIcon.classList.add('fa-bars');
     }
 }
 
 document.addEventListener('DOMContentLoaded', function() {
     populateSidebarWithSamples(); // Also populate when the document is ready
 });
+
+function toggleSidebar() {
+    var sidebar = document.getElementById('sidebar');
+    var toggleIcon = document.getElementById('sidebarCollapse').children[0]; // Get the <i> element
+
+    sidebar.classList.toggle('active');
+
+    // Check if the sidebar is active to determine which icon to display
+    if (sidebar.classList.contains('active')) {
+        toggleIcon.classList.remove('fa-bars');
+        toggleIcon.classList.add('fa-times');
+    } else {
+        toggleIcon.classList.remove('fa-times');
+        toggleIcon.classList.add('fa-bars');
+    }
+}
