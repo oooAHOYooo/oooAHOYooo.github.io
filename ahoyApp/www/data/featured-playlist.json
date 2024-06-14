@@ -1,0 +1,20 @@
+{
+  "playlists": [
+    {
+      "genre": "Classical",
+      "songs": [
+        {"title": "Song 1a", "artist": "Artist 1"},
+        {"title": "Song 2", "artist": "Artist 2"},
+        {"title": "Song 3", "artist": "Artist 3"}
+      ]
+    },
+    {
+      "genre": "New Indie",
+      "songs": [
+        {"title": "Indie Song 1", "artist": "Indie Artist 1"},
+        {"title": "Indie Song 2", "artist": "Indie Artist 2"},
+        {"title": "Indie Song 3", "artist": "Indie Artist 3"}
+      ]
+    }
+  ]
+}

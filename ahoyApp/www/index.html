@@ -180,36 +180,40 @@
       });
       </script>
     
+    <!-- START OF SIDEBAR-->
     <div id="sidebar" class="sidebar">
       <button onclick="toggleSidebar()">Toggle Sidebar</button>
       <div class="sidebar-header">
         <h3>#Your Library</h3>
       </div>
       <ul class="list-unstyled components">
+       <p style="text-transform: uppercase;">Pinned Playlists</P>
+        <li><a href="#">Dynamic Playlist Classics</a></li>
         <li><a href="#">Bachata Classics</a></li>
+    
         <li><a href="#">Bachata Classics</a></li>
-        <li><a href="#">Bachata Classics</a></li>
-        <li><a href="#">Bachata Classics</a></li>
-        <li><a href="#">Bachata Classics</a></li>
-        <li><a href="#">Bachata Classics</a></li>
-        <li><a href="#">Bachata Classics</a></li>
-        <li><a href="#">+ ADD NEW LIBRARY</a></li>
+        <li><a href="#" onclick="createNewPlaylist(); return false;">+ ADD NEW Playlist</a></li>      </ul>
+
+       
+    </div>
+    <!-- END OF SIDEBAR-->
+    <style>
+
+    </style>
+    <div id="sidebar-right" class="sidebar-right">
+      <div class="sidebar-header">
+        <h3>Featured Playlists</h3>
+      </div>
+      <ul>
+        <li>Song 1 - Artist 1</li>
+        <li>Song 2 - Artist 2</li>
+        <li>Song 3 - Artist 3</li>
+        <!-- Add more songs as needed -->
       </ul>
     </div>
 
-  <script>
-    function toggleSidebar() {
-    var sidebar = document.getElementById('sidebar');
-    var mainContent = document.getElementById('main-content');
-    if (sidebar.classList.contains('collapsed')) {
-        sidebar.classList.remove('collapsed');
-        mainContent.style.marginLeft = '300px';
-    } else {
-        sidebar.classList.add('collapsed');
-        mainContent.style.marginLeft = '50px';
-    }
-}
-  </script>
+
+    <!-- BEGIN-->
     <div id="tabSortza">
       
       <!-- HOME TAB -->
@@ -935,6 +939,7 @@
 
 <!-- SIDEBAR LIBRARY -->
 <script src="js/src/v25-sidebarLibrary.js"></script>
+<script src="js/src/v25-featured_playlists.js"></script>
   <!-- END -->
   </body>
 </html>
