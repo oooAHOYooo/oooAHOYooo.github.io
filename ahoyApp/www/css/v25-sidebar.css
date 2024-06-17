@@ -1,4 +1,4 @@
-@media (max-width: 600px) {
+@media (max-width: 500px) {
   .sidebar {
     display: none;
     /* Hide sidebar on smaller screens */

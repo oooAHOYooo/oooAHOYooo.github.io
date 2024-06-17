@@ -74,6 +74,16 @@ function createNewPlaylist() {
             newPlaylist.textContent = playlistName;
             newPlaylist.onclick = () => displayPlaylist(docRef.id);
             playlistLibrary.appendChild(newPlaylist);
+
+            // Also add to the sidebar list
+            const sidebarPlaylistList = document.querySelector('.list-unstyled.components');
+            const newSidebarPlaylist = document.createElement('li');
+            const newSidebarPlaylistLink = document.createElement('a');
+            newSidebarPlaylistLink.href = "#";
+            newSidebarPlaylistLink.textContent = playlistName;
+            newSidebarPlaylistLink.onclick = () => displayPlaylist(docRef.id);
+            newSidebarPlaylist.appendChild(newSidebarPlaylistLink);
+            sidebarPlaylistList.appendChild(newSidebarPlaylist);
         })
         .catch(error => {
             console.error("Error adding document: ", error);
