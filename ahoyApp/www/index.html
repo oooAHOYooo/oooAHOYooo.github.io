@@ -134,29 +134,29 @@
   </script>
 
 </head>
-
+<!-- START OF BODY -->
   <body>
 
      <!-- DO THIS LATER 
     
-    To implement the toggle functionality for both the left and right sidebars with a high z-index and smooth transitions, you can modify the existing JavaScript and CSS code. Here's how you can achieve this:
+   
 -->
-<style>
-
-</style>
 <div class="toggle-sidebar-container">
   <div id="left-topNav">
-    <button onclick="toggleSidebar()">
+    <button onclick="toggleLeftSidebar()">
       <i class="fa fa-bars" aria-hidden="true"></i>
     </button>
   </div>
-  <div id="right-topNav">
-    <!--button>
-      <i class="fa fa-star" aria-hidden="true"></i>
-    </button-->
-  </div>
 </div>
-
+<div id="left-sidebar" class="sidebar">
+  <div class="sidebar-header">
+    <h3>#Your Library</h3>
+  </div>
+  <ul class="list-unstyled components">
+    <p style="text-transform: uppercase;">Pinned Playlists</p>
+    <li><a href="#" id="addPlaylist">+ ADD NEW Playlist</a></li>
+  </ul>
+</div>
 
     
       <div class="app">
@@ -181,15 +181,7 @@
         </div>
       </div>
       
-      <div id="left-sidebar" class="sidebar">
-        <div class="sidebar-header">
-          <h3>#Your Library</h3>
-        </div>
-        <ul class="list-unstyled components">
-          <p style="text-transform: uppercase;">Pinned Playlists</p>
-          <li><a href="#" id="addPlaylist">+ ADD NEW Playlist</a></li>
-        </ul>
-      </div>
+
       
       <script>
         function toggleSidebar() {
@@ -946,7 +938,13 @@
 
 <!-- SIDEBAR LIBRARY -->
 <script src="js/src/v25-sidebarLibrary.js"></script>
-<script src="js/src/v25-featured_playlists.js"></script>
+<script src="js/src/v25_sidebarToggles.js"></script>
+
+<!-- NOT QUITE READY TO BE LINKED AND LIVE -->
+<!--script src="js/src/v25-featured_playlists.js"></script-->
+
+
   <!-- END -->
+  <!-- THANK YOU FOR TAKING THE TIME - LOVE YOU MUCH - ALEX GONZALEZ on June 20th 2024-->
   </body>
 </html>

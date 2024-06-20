@@ -107,18 +107,3 @@ function displayPlaylist(playlistId) {
         });
 }
 
-function toggleSidebar() {
-    var sidebar = document.getElementById('sidebar');
-    var toggleIcon = document.getElementById('sidebarCollapse').children[0]; // Get the <i> element
-
-    sidebar.classList.toggle('active');
-
-    // Check if the sidebar is active to determine which icon to display
-    if (sidebar.classList.contains('active')) {
-        toggleIcon.classList.remove('fa-bars');
-        toggleIcon.classList.add('fa-times');
-    } else {
-        toggleIcon.classList.remove('fa-times');
-        toggleIcon.classList.add('fa-bars');
-    }
-}

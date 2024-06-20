@@ -112,18 +112,31 @@ a[aria-expanded="true"] {
 
 #left-sidebar {
   width: 250px;
-  /* Adjust width as needed */
   position: fixed;
   left: -250px;
   /* Start hidden off-screen */
   top: 0;
   bottom: 0;
-  transition: left 0.3s ease;
+  background: #7387d515;
+  /* Adjust color to match design */
+  color: #fff;
+  transition: transform 0.3s ease-out;
+  /* Use transform for better performance */
   z-index: 1000;
   /* Ensure it's above other content */
+  transform: translateX(-100%);
+  /* Start transformed out of view */
 }
 
 #left-sidebar.active {
-  left: 0;
+  transform: translateX(0%);
   /* Slide in */
+}
+
+.toggle-sidebar-container button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: 1.5em;
 }
