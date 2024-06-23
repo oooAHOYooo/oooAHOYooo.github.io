@@ -305,11 +305,6 @@
       </div>
       <!-- SONGS TAB -->
       <div id="songs-tab" class="tab-content">
-        <div class="v25-miniCall-toAction-container">
-          <a href="./login.html">
-            <button class="v25_glass-button">Login to Save Playlist</button>
-          </a>
-        </div>
         <div id="now-playing-song-container" class="now-playing-song">
           <img src="./img/ahoy-music.svg" class="svgBlend">
           <div class="image-and-play-button-aa"
@@ -317,6 +312,49 @@
             <img id="now-playing-album-art" src="./path/to/your/image.jpg"
               alt="Album Art" style="max-width: 100%; max-height: 100%;">
           </div>
+        </div>
+<style>
+  .music-radio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-style: solid;
+    border-color: var(--border-color);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+  }
+  .radio-play-btn i {
+    color: var(--text-color);
+    font-size: 48px;
+    margin: 5px;
+    border-style: solid;
+    border-color: rgba(var(--border-color-rgb), 1); /* Ensure var(--border-color-rgb) is defined in your CSS as the RGB values */
+    border-radius: 50%;
+    padding: 10px;
+    transition: border-color 0.3s ease; /* Smooth transition for border color change */
+  }
+
+  .radio-play-btn i:hover {
+    background-color: var(--border-color);
+    cursor: pointer;
+    border-color: rgba(var(--border-color-rgb), 0.5); /* Change opacity on hover */
+  }
+</style>
+        <div class="music-radio">
+          <img src="./img/ahoy-radio.svg" class="svgBlend">
+          <div class="radio-container">
+            <div class="radio-play-btn"><br>
+              <i class="fas fa-play"></i>
+            </div>
+            <div class="radio-station-name">
+              <p>Radio Station Name</p>
+            </div>
+          </div>
+          <div class="radio-stats">
+            <p>Broadcasting out of : <span>East Haven, CT</span></p><p>on Air Since</p>
+          </div><p>The time is <span id="radio-time">00:00</span></p>
+        
         </div>
         
    
