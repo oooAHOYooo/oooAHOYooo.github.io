@@ -144,6 +144,14 @@
       "artist": "Rob Meglio",
       "tag": "podcast",
       "dateAdded": "05-30-24"
+    },
+    {
+      "id": "062524",
+      "albumArt": "https://storage.googleapis.com/ahoy-dynamic-content/ahoy_underconstruction.gif",
+      "songTitle": "Under Construction for the Summer",
+      "artist": "Ahoy Indie Media Dev Team",
+      "tag": "news",
+      "dateAdded": "06-25-24"
     }
     
   ]

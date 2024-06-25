@@ -173,22 +173,16 @@
       </div>
 
 
-      <div class="toggle-sidebar-container">
+      <div class="toggle-sidebar-container" style="position: relative; z-index: 10000;">
         <div id="left-topNav">
           <button onclick="toggleSidebar()">
             <i class="fa fa-bars" aria-hidden="true"></i>
           </button>
         </div>
       </div>
-      
 
       
-      <script>
-        function toggleSidebar() {
-          const sidebar = document.getElementById('left-sidebar');
-          sidebar.classList.toggle('active');
-        }
-      </script>
+   
 
     <!-- START OF SIDEBAR-->
     <div id="left-sidebar" class="sidebar">
@@ -202,25 +196,13 @@
        
     </div>
     <!-- END OF SIDEBAR-->
-<!-- START OF RIGHT SIDEBAR-->
-    <!--div id="sidebar-right" class="sidebar-right">
-      <div class="sidebar-header">
-        <h3>Featured Playlists</h3>
-      </div>
-      <div id="sidebar-right" class="sidebar-right">
-      </div>
-    </div -->
-<!-- END OF RIGHT SIDEBAR-->
+
 
     <!-- BEGIN-->
     <div id="tabSortza">
       
       <!-- HOME TAB -->
       <div id="home-tab" class="tab-content active">
-
-
-<br>
-<p>Heed Caution: We are undergoing major development. For the latest updates, please read our dev log.</p>
 
         <!-- DATE DISPLAY -->
         <div class="date-display">
