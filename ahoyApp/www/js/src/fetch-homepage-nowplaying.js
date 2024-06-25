@@ -6,8 +6,8 @@ function populateNowPlaying() {
         const nowPlayingContainer = document.getElementById('now-playing-container');
         nowPlayingContainer.innerHTML = ''; // Clear existing content
 
-        // Sort the nowPlaying array by dateAdded in descending order
-        data.nowPlaying.sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded));
+        // Sort the nowPlaying array by id in descending order
+        data.nowPlaying.sort((a, b) => parseInt(b.id) - parseInt(a.id));
 
         data.nowPlaying.forEach(item => {
           const songInfoDiv = document.createElement('div');
