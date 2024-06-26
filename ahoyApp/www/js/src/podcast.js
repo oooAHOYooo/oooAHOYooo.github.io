@@ -5,6 +5,7 @@ let podcasts = []; // This will hold the fetched podcast data
 function loadPodcasts() {
     const url = "https://api.jsonbin.io/v3/b/662f022dacd3cb34a8400e3e";
     const accessKey = '$2a$10$4GRuokwTdv4sRnqIwYDyGOWZ2CZgDkefsKy7OFlmTydfnDvXBomtC';
+    const fallbackUrl = 'data/podcastCollection.json';
 
     fetch(url, {
         headers: {
@@ -19,20 +20,39 @@ function loadPodcasts() {
     })
     .then(data => {
         podcasts = data.record.podcasts; // Store podcasts globally
-        const tableBody = document.getElementById("podcast-table").querySelector("tbody");
-        podcasts.forEach((podcast, index) => {
-            const row = document.createElement("tr");
-            row.innerHTML = `
-                <td><button class="control-button-podcast" id="podcast-play-${index}" onclick="togglePlayPausePodcast(${index})"><i class="fas fa-play"></i></button></td>
-                <td><img src="${podcast.thumbnail}" alt="${podcast.title}" class="thumbnail"></td>
-                <td>${podcast.title}</td>
-                <td>${podcast.description}</td>
-            `;
-            tableBody.appendChild(row);
-        });
+        populatePodcastTable();
     })
     .catch(error => {
-        console.error("Error loading podcasts:", error);
+        console.error("Error loading podcasts from JSON bin:", error);
+        // Fallback to local JSON file
+        fetch(fallbackUrl)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                podcasts = data.podcasts; // Store podcasts globally
+                populatePodcastTable();
+            })
+            .catch(fallbackError => {
+                console.error("Error loading podcasts from fallback JSON:", fallbackError);
+            });
+    });
+}
+
+function populatePodcastTable() {
+    const tableBody = document.getElementById("podcast-table").querySelector("tbody");
+    podcasts.forEach((podcast, index) => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+            <td><button class="control-button-podcast" id="podcast-play-${index}" onclick="togglePlayPausePodcast(${index})"><i class="fas fa-play"></i></button></td>
+            <td><img src="${podcast.thumbnail}" alt="${podcast.title}" class="thumbnail"></td>
+            <td>${podcast.title}</td>
+            <td>${podcast.description}</td>
+        `;
+        tableBody.appendChild(row);
     });
 }
 
