@@ -50,7 +50,6 @@ function populatePodcastTable() {
             <td><button class="control-button-podcast" id="podcast-play-${index}" onclick="togglePlayPausePodcast(${index})"><i class="fas fa-play"></i></button></td>
             <td><img src="${podcast.thumbnail}" alt="${podcast.title}" class="thumbnail"></td>
             <td>${podcast.title}</td>
-            <td>${podcast.description}</td>
         `;
         tableBody.appendChild(row);
     });
