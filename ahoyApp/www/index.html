@@ -141,6 +141,10 @@
     
    
 -->
+<button onclick="toggleLeftSidebar()">
+  <i class="fa fa-bars" aria-hidden="true"></i>
+</button>
+
 <div class="toggle-sidebar-container">
   <div id="left-topNav">
     <button onclick="toggleLeftSidebar()">
@@ -163,10 +167,18 @@
       <div class="app-background-layer"></div>
       </div>
 
-
+<style>
+.right-content {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 10px;
+}
+</style>
       <div class="v25_topLogin">
         <div class="v25_topLogin-container">
-        <button id="login-button" class="v25_glass-button" onclick="window.location.href='./login.html'">LOGIN</button>
+          <div class="right-content">
+          <button id="login-button" class="v25_glass-button-a" onclick="window.location.href='./login.html'">LOGIN</button></div>
+
         <p id="login-message" style="display:none;">Yes! You are logged in
           <button onclick="showAccountTab();">View Benefits</button>
         </div> 

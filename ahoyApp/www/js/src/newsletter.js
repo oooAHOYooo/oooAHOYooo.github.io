@@ -4,45 +4,51 @@ window.addEventListener('DOMContentLoaded', (event) => {
         .then(data => {
             const sortedData = data.sort((a, b) => new Date(b.date) - new Date(a.date));
             const newsletterList = document.getElementById('newsletter-list');
+            const groupedByMonth = {};
 
-            // Ensure newsletter lightbox elements are created only once
-            let lightboxBackground = document.getElementById('newsletter-lightbox-background');
-            if (!lightboxBackground) {
-                lightboxBackground = document.createElement('div');
-                lightboxBackground.id = 'newsletter-lightbox-background';
-                const lightboxImg = document.createElement('img');
-                lightboxImg.className = 'lightbox-img';
-                lightboxBackground.appendChild(lightboxImg);
-                document.body.appendChild(lightboxBackground);
+            // Group data by month and year
+            sortedData.forEach(item => {
+                const date = new Date(item.date);
+                const monthYear = date.toLocaleString('default', { month: 'long', year: 'numeric' });
+                if (!groupedByMonth[monthYear]) {
+                    groupedByMonth[monthYear] = [];
+                }
+                groupedByMonth[monthYear].push(item);
+            });
 
-                // Function to open the newsletter lightbox
-                const openLightbox = (src) => {
-                    lightboxImg.src = src;
-                    lightboxBackground.style.display = 'flex';
-                };
+            const menu = document.createElement('div');
+            menu.className = 'dropdown';
+            menu.innerHTML = `<button class="btn">Select Month <i class="bx bx-chevron-down"></i></button>`;
+            const dropdownContent = document.createElement('div');
+            dropdownContent.className = 'dropdown-content';
 
-                // Function to close the newsletter lightbox
-                const closeLightbox = () => {
-                    lightboxBackground.style.display = 'none';
-                };
-
-                // Close lightbox when clicking outside the image
-                lightboxBackground.addEventListener('click', (e) => {
-                    if (e.target !== lightboxImg) {
-                        closeLightbox();
-                    }
+            Object.keys(groupedByMonth).forEach(monthYear => {
+                const menuItem = document.createElement('a');
+                menuItem.href = '#';
+                menuItem.textContent = monthYear;
+                menuItem.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    filterNewsByMonth(monthYear);
                 });
+                dropdownContent.appendChild(menuItem);
+            });
 
-                sortedData.forEach((newsletter, index) => {
+            menu.appendChild(dropdownContent);
+            newsletterList.before(menu);
+
+            // Function to filter news items by month and year
+            function filterNewsByMonth(monthYear) {
+                const filteredItems = groupedByMonth[monthYear];
+                renderNewsItems(filteredItems);
+            }
+
+            // Function to render news items
+            function renderNewsItems(items) {
+                newsletterList.innerHTML = ''; // Clear existing items
+                items.forEach((newsletter, index) => {
                     const div = document.createElement('div');
                     div.className = 'newsletter-item';
                     div.style.textAlign = 'center';
-
-                    if (index > 0) {
-                        const divider = document.createElement('hr');
-                        divider.className = 'newsletter-divider';
-                        newsletterList.appendChild(divider);
-                    }
 
                     let htmlContent = `
                         <p class="newsletter-date">${newsletter.date}</p>
@@ -60,5 +66,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
                     newsletterList.appendChild(div);
                 });
             }
+
+            // Initially render all news items
+            renderNewsItems(sortedData);
         });
 });
