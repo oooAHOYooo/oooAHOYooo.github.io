@@ -1,6 +1,22 @@
 {
   "podcasts": [
     {
+      "id": 21,
+      "title": "The Rob Show #32 - Tom Berry III",
+      "description": "####",
+      "date": "2024-06-26",
+      "mp3url": "https://storage.googleapis.com/ahoy-podcast-collection/ready_RobShow_Berry_ep32.mp3",
+      "thumbnail": "https://storage.googleapis.com/ahoy-podcast-collection/Rob%20Show%20-%20Ep%2032%20-%20Tom%20Berry%20III.jpg"
+    },
+    {
+      "id": 20,
+      "title": "The Rob Show #31 - Casey Delbasso",
+      "description": "####",
+      "date": "2024-06-26",
+      "mp3url": "https://storage.googleapis.com/ahoy-podcast-collection/ready_RobShow_CaseyDelbasso_ep31.mp3",
+      "thumbnail": "https://storage.googleapis.com/ahoy-podcast-collection/Rob%20Show%20-%20Ep%2031%20-%20Casey%20Delbasso.jpg"
+    },
+    {
       "id": 19,
       "title": "The Rob Show #30 - Kyle Middleton",
       "description": "Kyle Middleton is a graphic designer from CT",
