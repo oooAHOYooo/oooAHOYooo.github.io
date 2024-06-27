@@ -3,7 +3,8 @@ document.addEventListener('DOMContentLoaded', function() {
     .then(response => response.json())
     .then(data => {
       const tableBody = document.getElementById('song-table-body');
-      data.songs.forEach(song => {
+      const audioPlayer = document.getElementById('audio-player'); // Assuming the audio player ID is 'audio-player'
+      data.songs.forEach((song, index) => {
         const row = document.createElement('tr');
         
         const artworkCell = document.createElement('td');
@@ -21,9 +22,14 @@ document.addEventListener('DOMContentLoaded', function() {
         const actionCell = document.createElement('td');
         const playButton = document.createElement('button');
         playButton.textContent = 'Play';
-        playButton.onclick = function() { /* Add play functionality */ };
+        playButton.id = `play-btn-${index}`; // Unique ID for each play button
+        playButton.onclick = function() {
+          audioPlayer.src = song.audioFile; // Assuming each song object has an 'audioFile' property with the URL
+          audioPlayer.play();
+        };
         const addButton = document.createElement('button');
         addButton.textContent = 'Add to Playlist';
+        addButton.id = `add-btn-${index}`; // Unique ID for each add button
         addButton.onclick = function() { /* Add to playlist functionality */ };
         actionCell.appendChild(playButton);
         actionCell.appendChild(addButton);
