@@ -44,24 +44,7 @@
 }
 
 
-/* Toggle button styles */
-.toggle-button {
-    position: fixed;
-    left: 10px;
-    top: 10px;
-    z-index: 1001;
-    cursor: pointer;
-    padding: 10px;
-    background-color: transparent;
-    color: var(--text-color);
-    border: none;
-    font-size: 24px;
-}
 
-.toggle-button:hover {
-    background-color: (--border-color);
-    color: var(--text-color);
-}
 
 .modal {
     position: fixed;
@@ -77,13 +60,9 @@
     align-items: center;
     justify-content: center;
     z-index: 1000;
+    color: var(--border-color);
 }
 
-/* Ensure the toggle button does not overlap with the modal */
-.toggle-button {
-    z-index: 1002;
-    /* Increase z-index to be above sidedock and modal */
-}
 
 
 /*buttons */
@@ -99,3 +78,24 @@
     background-color: var(--background-color);
     color: var(--border-color);
 }
+
+/* Toggle button styles */
+.toggle-button {
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    z-index: 1001;
+    cursor: pointer;
+    padding: 10px;
+    background-color: transparent;
+    color: var(--text-color);
+    border: none;
+    font-size: 24px;
+}
+
+.toggle-button:hover {
+    background-color: var(--border-color);
+    color: var(--text-color);
+}
+
+/*END OF BUTTON

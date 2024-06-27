@@ -156,17 +156,10 @@
     <div class="app">
       <div class="app-background-layer"></div>
     </div>
-    <style>
 
-      </style>
     <!-- Sidebar Toggle Button -->
     <button id="toggle-button" class="toggle-button">☰</button>
-    <style>
-  .list-item-menu {
-    width: 100%;
-    background-color: yellow;
-  }
-</style>
+
     <!-- Sidebar -->
     <div id="sidedock" class="sidedock" style="left: -250px;"> <!-- Initially hidden -->
       <div id="sidedock-top" class="sidedock-top" style="padding-top: 20px;">
@@ -383,51 +376,11 @@
 
               '
 
-              <!-- PLAYLIST MANAGEMENT SECTION -->
-              <div id="playlist-mgmt-section">
-                <h2>Playlist Management</h2>
-                <p>Manage your playlists here:</p>
-
-                <!-- Simplified playlist display -->
-                <div class="playlist">
-                  <h3>Chill Vibes</h3>
-                  <button onclick="playPlaylist()">Play</button>
-                  <button onclick="shufflePlaylist()">Shuffle</button>
-                  <div id="playlist-items">
-                    <!-- Songs will be displayed here -->
-                  </div>
-                </div>
-
-                <!-- Add new playlist -->
-                <div>
-                  <input type="text" id="new-playlist-name"
-                    placeholder="New Playlist Name">
-                  <button onclick="createNewPlaylist()">Create Playlist</button>
-                </div>
-              </div>
-
-              <script>
-  // Function to play the playlist
-  function playPlaylist() {
-    // Logic to play the playlist
-  }
-
-  // Function to shuffle the playlist
-  function shufflePlaylist() {
-    // Logic to shuffle the playlist
-  }
-
-  // Function to create a new playlist
-  function createNewPlaylist() {
-    var playlistName = document.getElementById('new-playlist-name').value;
-    // Logic to create a new playlist
-  }
-</script>
-              <!-- END OF PLAYLIST MANAGEMENT SECTION -->
 
               <button id="classical-mode-button"
                 onclick="navigateToTab('classical-tab')"
                 class="common-button">Classical Music Mode</button>
+              <button id="song-collection-tab-button" onclick="navigateToTab('song-collection-tab')">Song Collection</button>
               <!-- SONG COLLECTION -->
               <img src="./img/ahoy-fullSong.svg" class="svgBlend">
 
@@ -522,6 +475,23 @@
             <div id="classical-tab" class="tab-content" style="display: none;">
               <h2>Classical Music Collection</h2>
               <div id="classical-music-list"></div>
+            </div>
+
+            <div id="song-collection-tab" class="tab-content">
+              <!-- this is where a song table will appear from songCollection.json-->
+              <table id="song-table">
+                <thead>
+                  <tr>
+                    <th>Album Artwork</th>
+                    <th>Artist</th>
+                    <th>Song</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="song-table-body">
+                  <!-- Songs will be inserted here -->
+                </tbody>
+              </table>
             </div>
             <!-- PODCASTS -->
             <div id="podcasts-tab" class="tab-content">
@@ -683,6 +653,8 @@
               <p>But they are ready for your testing</p>
               <button onclick="navigateToTab('market-tab')">Go to
                 Market</button>
+              <button onclick="navigateToTab('songs-tab')">Previous Song Tab and Radio Features
+                </button>
             </div>
 
             <!-- CASTING TAB -->
@@ -910,7 +882,7 @@
                   onclick="navigateToTab('news-tab')"><i
                     class="fas fa-newspaper"></i></div>
                 <div class="v25-dock-icon"
-                  onclick="navigateToTab('songs-tab')"><i
+                  onclick="navigateToTab('song-collection-tab')"><i
                     class="fas fa-music"></i></div>
                 <div class="v25-dock-icon"
                   onclick="navigateToTab('podcasts-tab')"><i
@@ -1034,6 +1006,9 @@
     <!-- SIDEBAR LIBRARY -->
     <script src="js/src/v25-sidebarLibrary.js"></script>
     <script src="js/src/v25_sidebarToggles.js"></script>
+
+    <!-- SONG COLLECTION -->
+    <script src="js/src/song-collection.js"></script>
 
     <!-- NOT QUITE READY TO BE LINKED AND LIVE -->
     <!--script src="js/src/v25-featured_playlists.js"></script-->

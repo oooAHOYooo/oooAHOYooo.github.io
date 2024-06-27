@@ -90,7 +90,7 @@ function loadSongs() {
   }).catch(error => console.error("Error loading songs:", error));
 }
 
-// Helper function to fetch songs from JSONBin
+// Helper function to fetch songs from JSONBin with fallback to local JSON file
 function fetchSongs() {
   const url = "https://api.jsonbin.io/v3/b/662f0278acd3cb34a8400e67";
   const accessKey = '$2a$10$4GRuokwTdv4sRnqIwYDyGOWZ2CZgDkefsKy7OFlmTydfnDvXBomtC';
@@ -103,6 +103,17 @@ function fetchSongs() {
       throw new Error('Network response was not ok ' + response.statusText);
     }
     return response.json();
+  }).catch(error => {
+    console.error("Error fetching from JSONBin, trying local file:", error);
+    return fetch('./data/songCollection.json')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Local fetch was not successful');
+        }
+        return response.json();
+      })
+      .then(data => data.songs) // Assuming the local JSON structure matches that expected from JSONBin
+      .catch(localError => console.error("Error fetching local songs:", localError));
   });
 }
 
