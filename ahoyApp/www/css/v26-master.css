@@ -1,0 +1,48 @@
+/*v26 master css*/
+
+
+/*Side Dock*/
+
+/* Sidebar styles */
+.sidedock {
+    position: fixed;
+    left: -250px;
+    /* Sidebar width */
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background: #333;
+    transition: left 0.3s;
+    z-index: 1000;
+}
+
+.sidedock ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidedock ul li a {
+    display: block;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.sidedock ul li a:hover {
+    background-color: #555;
+}
+
+/* Toggle button styles */
+.toggle-button {
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    z-index: 1001;
+    cursor: pointer;
+    padding: 10px;
+    background: #333;
+    color: white;
+    border: none;
+    font-size: 20px;
+}
