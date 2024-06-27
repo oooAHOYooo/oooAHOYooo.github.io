@@ -3,22 +3,24 @@
 
 /*Side Dock*/
 
-/* Sidebar styles */
 .sidedock {
     position: fixed;
-    left: -250px;
-    /* Sidebar width */
+    left: 0;
     top: 0;
-    width: 250px;
+    width: 300px;
     height: 100%;
-    background: #333;
+    background-color: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(10px);
+    color: white;
     transition: left 0.3s;
     z-index: 1000;
 }
 
 .sidedock ul {
     list-style: none;
-    padding: 0;
+    /* Remove bullet points */
+    padding: 20px;
+    /* Padding around the list */
     margin: 0;
 }
 
@@ -29,9 +31,18 @@
     text-decoration: none;
 }
 
-.sidedock ul li a:hover {
-    background-color: #555;
+.sidedock a {
+    display: block;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
 }
+
+.sidedock a:hover {
+    background-color: #555;
+
+}
+
 
 /* Toggle button styles */
 .toggle-button {
