@@ -338,22 +338,7 @@
     padding: 10px;
     margin: 10px;
   }
-  .radio-play-btn i {
-    color: var(--text-color);
-    font-size: 48px;
-    margin: 5px;
-    border-style: solid;
-    border-color: rgba(var(--border-color-rgb), 1); /* Ensure var(--border-color-rgb) is defined in your CSS as the RGB values */
-    border-radius: 50%;
-    padding: 10px;
-    transition: border-color 0.3s ease; /* Smooth transition for border color change */
-  }
 
-  .radio-play-btn i:hover {
-    background-color: var(--border-color);
-    cursor: pointer;
-    border-color: rgba(var(--border-color-rgb), 0.5); /* Change opacity on hover */
-  }
 </style>
               <div class="music-radio">
                 <img src="./img/ahoy-radio.svg" class="svgBlend">
@@ -374,7 +359,7 @@
 
               <!-- Song Search Section -->
 
-              '
+              
 
 
               <button id="classical-mode-button"
@@ -478,6 +463,7 @@
             </div>
 
             <div id="song-collection-tab" class="tab-content">
+              <img src="./img/ahoy-music.svg" class="svgBlend">
               <!-- this is where a song table will appear from songCollection.json-->
               <table id="song-table">
                 <thead>

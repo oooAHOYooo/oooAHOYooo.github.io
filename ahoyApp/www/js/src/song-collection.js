@@ -20,17 +20,24 @@ document.addEventListener('DOMContentLoaded', function() {
         songCell.textContent = song.songTitle;
         
         const actionCell = document.createElement('td');
+        actionCell.style.display = 'flex'; // Use flexbox to layout action buttons side by side
+        actionCell.style.alignItems = 'center'; // Center-align the buttons vertically
+        actionCell.style.justifyContent = 'space-between'; // Distribute space between buttons
+        
         const playButton = document.createElement('button');
-        playButton.textContent = 'Play';
+        playButton.innerHTML = '<i class="fas fa-play"></i>'; // Changed to icon
         playButton.id = `play-btn-${index}`; // Unique ID for each play button
         playButton.onclick = function() {
           audioPlayer.src = song.audioFile; // Assuming each song object has an 'audioFile' property with the URL
           audioPlayer.play();
         };
         const addButton = document.createElement('button');
-        addButton.textContent = 'Add to Playlist';
+        addButton.innerHTML = '<i class="fas fa-plus"></i>'; // Changed to icon
         addButton.id = `add-btn-${index}`; // Unique ID for each add button
         addButton.onclick = function() { /* Add to playlist functionality */ };
+        
+        // Styling for inline display of buttons
+        playButton.style.marginRight = '10px'; // Space between buttons
         actionCell.appendChild(playButton);
         actionCell.appendChild(addButton);
         

@@ -98,4 +98,26 @@
     color: var(--text-color);
 }
 
+/*RADIO BUTTONS */
+
+.radio-play-btn i {
+    color: var(--text-color);
+    font-size: 48px;
+    margin: 5px;
+    border-style: solid;
+    border-color: rgba(var(--border-color-rgb), 1);
+    /* Ensure var(--border-color-rgb) is defined in your CSS as the RGB values */
+    border-radius: 50%;
+    padding: 10px;
+    transition: border-color 0.3s ease;
+    /* Smooth transition for border color change */
+}
+
+.radio-play-btn i:hover {
+    background-color: var(--border-color);
+    cursor: pointer;
+    border-color: rgba(var(--border-color-rgb), 0.5);
+    /* Change opacity on hover */
+}
+
 /*END OF BUTTON
