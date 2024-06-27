@@ -3,12 +3,11 @@
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.069);
     /* Semi-transparent black background */
     z-index: 1000;
     /* Ensures it stays on top of other content */
     text-align: center;
-    /* Centers the button */
     padding: 10px 0;
     /* Adds some padding around the button */
 }
@@ -17,4 +16,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.v25_topLogin button {
+    float: right;
 }
