@@ -52,8 +52,50 @@
     z-index: 1001;
     cursor: pointer;
     padding: 10px;
-    background: #333;
-    color: white;
+    background-color: transparent;
+    color: var(--text-color);
     border: none;
     font-size: 24px;
+}
+
+.toggle-button:hover {
+    background-color: (--border-color);
+    color: var(--text-color);
+}
+
+.modal {
+    position: fixed;
+    /* Changed from relative to fixed */
+    left: 300px;
+    /* Start where the sidedock ends */
+    top: 0;
+    width: calc(100% - 300px);
+    /* Take the remaining width */
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+/* Ensure the toggle button does not overlap with the modal */
+.toggle-button {
+    z-index: 1002;
+    /* Increase z-index to be above sidedock and modal */
+}
+
+
+/*buttons */
+
+.button-login-top-right {
+    border-color: var(--border-color);
+    background-color: var(--border-color);
+    color: var(--text-color);
+
+}
+
+.button-login-top-right:hover {
+    background-color: var(--background-color);
+    color: var(--border-color);
 }
