@@ -28,8 +28,16 @@ document.addEventListener('DOMContentLoaded', function() {
         playButton.innerHTML = '<i class="fas fa-play"></i>'; // Changed to icon
         playButton.id = `play-btn-${index}`; // Unique ID for each play button
         playButton.onclick = function() {
-          audioPlayer.src = song.audioFile; // Assuming each song object has an 'audioFile' property with the URL
-          audioPlayer.play();
+          // Check if the songManager is managing a different song
+          if (!songManager || songManager.currentSongIndex !== index) {
+            audioPlayer.src = song.audioFile;
+            audioPlayer.play().then(() => {
+              console.log('Playback started successfully');
+            }).catch(error => {
+              console.error('Playback failed:', error);
+              alert('Error: Unable to play the audio. Please check your audio settings.');
+            });
+          }
         };
         const addButton = document.createElement('button');
         addButton.innerHTML = '<i class="fas fa-plus"></i>'; // Changed to icon
