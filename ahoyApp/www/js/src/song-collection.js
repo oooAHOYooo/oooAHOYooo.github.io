@@ -83,5 +83,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Update the current song index
     currentSongIndex = index;
+
+    // Update the currently playing text and play/pause button in the main content
+    const currentPlaying = document.getElementById('thisOne');
+    currentPlaying.innerHTML = `
+      <button id="current-pause-btn" style="font-size: 0.8em; margin-right: 5px;"><i class="fas ${audioPlayer.paused ? 'fa-play' : 'fa-pause'}"></i></button>
+      <span>${song.songTitle} - ${song.artist}</span>
+    `;
+
+    // Add event listener to the div to toggle play/pause
+    currentPlaying.onclick = function() {
+      togglePlayPauseSong(index);
+    };
+
+    // Update the currently playing text in the sidebar
+    const sidebarCurrentTrack = document.getElementById('current-track');
+    sidebarCurrentTrack.innerHTML = `${song.songTitle} - ${song.artist}`;
   }
 });
