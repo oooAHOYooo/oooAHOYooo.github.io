@@ -72,8 +72,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Toggle play/pause for the selected song
-    if (audioPlayer.src !== song.audioFile || audioPlayer.paused) {
-      audioPlayer.src = song.audioFile;
+    if (audioPlayer.src !== song.mp3url || audioPlayer.paused) { // Use mp3url from JSON
+      audioPlayer.src = song.mp3url; // Update to use mp3url
       audioPlayer.play();
       currentIcon.className = 'fas fa-pause';
     } else {
