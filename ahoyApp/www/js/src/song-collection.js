@@ -9,6 +9,8 @@ document.addEventListener('DOMContentLoaded', function() {
       const table = document.getElementById('song-table');
       table.style.width = '100%';
 
+      let currentPlayingButton = null; // Track the currently playing button
+
       data.songs.forEach((song, index) => {
         const row = document.createElement('tr');
         
@@ -33,9 +35,15 @@ document.addEventListener('DOMContentLoaded', function() {
         playButton.innerHTML = '<i class="fas fa-play"></i>'; // Changed to icon
         playButton.id = `play-btn-${index}`; // Unique ID for each play button
         playButton.onclick = function() {
+          if (currentPlayingButton && currentPlayingButton !== playButton) {
+            audioPlayer.pause(); // Pause the currently playing audio
+            currentPlayingButton.innerHTML = '<i class="fas fa-play"></i>'; // Reset the icon of the previous button
+          }
           audioPlayer.src = song.audioFile;
           audioPlayer.play().then(() => {
             console.log('Playback started successfully');
+            playButton.innerHTML = '<i class="fas fa-pause"></i>'; // Change icon to pause
+            currentPlayingButton = playButton; // Update the currently playing button
           }).catch(error => {
             console.error('Playback failed:', error);
             alert('Error: Unable to play the audio. Please check your audio settings.');
