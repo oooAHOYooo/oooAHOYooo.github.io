@@ -4,6 +4,11 @@ document.addEventListener('DOMContentLoaded', function() {
     .then(data => {
       const tableBody = document.getElementById('song-table-body');
       const audioPlayer = document.getElementById('audio-player'); // Assuming the audio player ID is 'audio-player'
+      
+      // Ensure the table is full width
+      const table = document.getElementById('song-table');
+      table.style.width = '100%';
+
       data.songs.forEach((song, index) => {
         const row = document.createElement('tr');
         
@@ -28,21 +33,18 @@ document.addEventListener('DOMContentLoaded', function() {
         playButton.innerHTML = '<i class="fas fa-play"></i>'; // Changed to icon
         playButton.id = `play-btn-${index}`; // Unique ID for each play button
         playButton.onclick = function() {
-          // Check if the songManager is managing a different song
-          if (!songManager || songManager.currentSongIndex !== index) {
-            audioPlayer.src = song.audioFile;
-            audioPlayer.play().then(() => {
-              console.log('Playback started successfully');
-            }).catch(error => {
-              console.error('Playback failed:', error);
-              alert('Error: Unable to play the audio. Please check your audio settings.');
-            });
-          }
+          audioPlayer.src = song.audioFile;
+          audioPlayer.play().then(() => {
+            console.log('Playback started successfully');
+          }).catch(error => {
+            console.error('Playback failed:', error);
+            alert('Error: Unable to play the audio. Please check your audio settings.');
+          });
         };
         const addButton = document.createElement('button');
-        addButton.innerHTML = '<i class="fas fa-plus"></i>'; // Changed to icon
-        addButton.id = `add-btn-${index}`; // Unique ID for each add button
-        addButton.onclick = function() { /* Add to playlist functionality */ };
+        addButton.innerHTML = '<i class="fas fa-plus"></i>'; 
+        addButton.id = `add-btn-${index}`; 
+        addButton.onclick = function() { };
         
         // Styling for inline display of buttons
         playButton.style.marginRight = '10px'; // Space between buttons
