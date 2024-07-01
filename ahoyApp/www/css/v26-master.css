@@ -50,6 +50,15 @@
     transition: left 0.3s ease;
 }
 
+#sidedock p {
+    padding: 5px;
+}
+
+/*SIDEDOCK turning to FULLDOCK on Mobile */
+
+
+
+
 .modal {
     position: fixed;
     /* Changed from relative to fixed */
@@ -59,26 +68,47 @@
     width: calc(100% - 300px);
     /* Take the remaining width */
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.844);
+    color: white !important;
     display: none;
     align-items: center;
     justify-content: center;
     z-index: 1000;
     color: var(--border-color);
+    transition: left 0.3s ease;
+
 }
 
 .modal-content {
     background-color: #fefefe;
     margin: 15% auto;
     padding: 20px;
-    border: 1px solid #888;
+    border: 1px solid #ffffff;
     width: 80%;
+    min-height: 50vh;
+
 }
 
-.modal-content ul,
-li {
-    text-decoration: none;
+
+
+/* Full width modal on mobile */
+@media (max-width: 768px) {
+    .modal {
+        left: 0;
+        width: 100%;
+
+    }
+
+    .modal-content {
+        width: 90%;
+        margin: 10% auto;
+        background-color: black;
+        color: white !important;
+        min-height: 50vh;
+    }
 }
+
+
 
 /*buttons */
 
