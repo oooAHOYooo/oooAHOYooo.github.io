@@ -13,6 +13,23 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     }
 
+    // Function to filter items based on category
+    function filterItems(category) {
+      const items = document.querySelectorAll('.grid-item');
+      items.forEach(item => {
+        if (category === 'all' || item.dataset.category === category) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    // Event listener for category select
+    document.getElementById('category-select').addEventListener('change', function() {
+      filterItems(this.value);
+    });
+
     // Sign out and purchase button
     const purchaseButton = document.createElement('button');
     purchaseButton.textContent = 'Sign out and Purchase';
@@ -56,6 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
           // Create the main item container
           const itemDiv = document.createElement('div');
           itemDiv.className = 'grid-item';
+          itemDiv.dataset.category = item.category; // Add category data attribute
   
           // Add an image if available
           const img = document.createElement('img');

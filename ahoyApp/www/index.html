@@ -793,11 +793,15 @@
             <!-- MARKET TAB-->
             <div id="market-tab" class="tab-content">
               <img src="./img/ahoy-market.svg" class="svgBlend">
-              <div class="v25-miniCall-toAction-container">
-                <a href="./create-account.html"><button
-                    class="v25_glass-button">Create an Account to see other
-                    Merch
-                  </button></a></div>
+              <div id="submenu-filter">
+                <select id="category-select">
+                  <option value="all">All Categories</option>
+                  <option value="electronics">Electronics</option>
+                  <option value="books">Books</option>
+                  <option value="clothing">Clothing</option>
+                  <!-- Add more categories as needed -->
+                </select>
+              </div>
               <div id="market-grid"></div>
               <div id="your-market-cart"></div>
               <table id="market-cart-table"></table>

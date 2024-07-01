@@ -2,16 +2,10 @@ document.addEventListener('DOMContentLoaded', function() {
     fetchPlaylists(); // Fetch playlists when the document is ready
 });
 
-        // Your web app's Firebase configuration
-        const firebaseConfig = {
-            apiKey: "AIzaSyBq_IQRwkjh2o-jUkS8tI8wcEek5yMIwmo",
-            authDomain: "ahoy-indie-media-da86d.firebaseapp.com",
-            projectId: "ahoy-indie-media-da86d",
-            storageBucket: "ahoy-indie-media-da86d.appspot.com",
-            messagingSenderId: "179901301547",
-            appId: "1:179901301547:web:599159f9efb826f464bb6e",
-            measurementId: "G-K3QN161BVX"
-        };
+// Your web app's Firebase configuration
+const firebaseConfig = {
+    // ... existing code ...
+};
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
