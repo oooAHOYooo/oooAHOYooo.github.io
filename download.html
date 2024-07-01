@@ -22,18 +22,53 @@
                 color: white;
             }
 
+            span {
+                font-weight: 600;
+            }
+
             .download-container {
                 background-color: var(--background-color);
                 color: var(--text-color);
-                padding: 40px;
                 text-align: center;
                 border-radius: 20px;
-                margin: 50px auto;
-                width: 90%;
-                max-width: 800px;
+                margin: 20px auto;
+                width: 95%;
+                max-width: 600px;
                 box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
                 backdrop-filter: blur(10px);
                 border: 1px solid rgba(255, 255, 255, 0.18);
+                padding: 20px;
+            }
+
+            @media (max-width: 600px) {
+                .download-container {
+                    width: 80%;
+                    padding: 15px;
+                }
+
+                .download-link {
+                    width: 100%;
+                    padding: 15px;
+                    font-size: 18px;
+                }
+            }
+
+            @media (max-width: 420px) {
+                .download-container {
+                    width: 100%;
+                    padding: 10px;
+                }
+
+                .download-link {
+                    width: 100%;
+                    padding: 10px;
+                    font-size: 16px;
+                }
+
+                .platforms {
+                    flex-direction: column;
+                    align-items: center;
+                }
             }
 
             .platforms {
@@ -93,7 +128,9 @@
                         class="fab fa-apple"></i> Desktop v24.3</a>
 
             </div>
-            <p>Note: Devices using 24.3 - must be set to Developer Mode</p>
+            <p><span>Note:</span> Devices using ahoy v24.3 - v24.7 - must be set
+                to Developer
+                Mode</p>
         </div>
     </body>
 </html>
