@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const playAllButton = document.createElement('button');
     playAllButton.textContent = 'Play All';
     playAllButton.addEventListener('click', () => {
-      playPlaylist(playlist.songs);
+      playPlaylist(playlist.songs, playlist.name);
     });
     songList.appendChild(playAllButton);
 
@@ -110,10 +110,29 @@ document.addEventListener('DOMContentLoaded', function() {
     sidebarCurrentTrack.innerHTML = `${song.title} - ${song.artist}`;
   }
 
-  function playPlaylist(songs) {
+  function playPlaylist(songs, playlistName) {
     playlistSongs = songs;
     currentSongIndex = 0;
     playNextSong();
+
+    // Update the "Now Playing" section
+    const nowPlaying = document.getElementById('thisOne');
+    nowPlaying.innerHTML = `
+      <button id="current-pause-btn" style="font-size: 0.8em; margin-right: 5px;"><i class="fas fa-pause"></i></button>
+      <span>Playing Playlist: ${playlistName}</span>
+    `;
+
+    // Add event listener to the pause button
+    document.getElementById('current-pause-btn').onclick = function() {
+      const audioPlayer = document.getElementById('audio-player');
+      if (audioPlayer.paused) {
+        audioPlayer.play();
+        this.querySelector('i').className = 'fas fa-pause';
+      } else {
+        audioPlayer.pause();
+        this.querySelector('i').className = 'fas fa-play';
+      }
+    };
   }
 
   function playNextSong() {
