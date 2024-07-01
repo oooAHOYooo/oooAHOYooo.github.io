@@ -1,19 +1,63 @@
 {
   "playlists": [
     {
-      "genre": "Classical",
+      "name": "Playlist A",
       "songs": [
-        {"title": "Song 1a", "artist": "Artist 1"},
-        {"title": "Song 2", "artist": "Artist 2"},
-        {"title": "Song 3", "artist": "Artist 3"}
+        {
+          "title": "Seen Better Days",
+          "artist": "Samuel Dylan Witch",
+          "mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/01%20I%27ve%20Seen%20Better%20Days.mp3"
+        },
+        {
+          "title": "Far From Here",
+          "artist": "Cambell Rice",
+          "mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Campbell+Rice-+From+Here.mp3"
+        },
+        {
+          "title": "Summer Bummer",
+          "artist": "Youth XL",
+          "mp3url": "https://ahoycollection.s3.amazonaws.com/Youth+XL+-+Summer+Bummer.mp3"
+        }
       ]
     },
     {
-      "genre": "New Indie",
+      "name": "Playlist B",
       "songs": [
-        {"title": "Indie Song 1", "artist": "Indie Artist 1"},
-        {"title": "Indie Song 2", "artist": "Indie Artist 2"},
-        {"title": "Indie Song 3", "artist": "Indie Artist 3"}
+        {
+          "title": "Beneath the Willow Tree",
+          "artist": "Samuel Dylan Witch",
+          "mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Beneath+the+Willow+Tree.mp3"
+        },
+        {
+          "title": "Sunflower",
+          "artist": "Cambell Rice",
+          "mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Campbell+Rice-Sunflower.mp3"
+        },
+        {
+          "title": "Yoga",
+          "artist": "Youth XL",
+          "mp3url": "https://ahoycollection.s3.amazonaws.com/Youth+XL+-+Yoga.mp3"
+        }
+      ]
+    },
+    {
+      "name": "Playlist C",
+      "songs": [
+        {
+          "title": "Put Me on the Run",
+          "artist": "Samuel Dylan Witch",
+          "mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Put+Me+on+the+Run-+Draft+1mp3.mp3"
+        },
+        {
+          "title": "To Play Guitar in a Huge Room",
+          "artist": "Cambell Rice",
+          "mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Campbell+Rice-Trying+to+play+guitar+in+a+huge+room.mp3"
+        },
+        {
+          "title": "Text Your Friends",
+          "artist": "Youth XL",
+          "mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Youth+XL+-+Text+Your+Friends.mp3"
+        }
       ]
     }
   ]
