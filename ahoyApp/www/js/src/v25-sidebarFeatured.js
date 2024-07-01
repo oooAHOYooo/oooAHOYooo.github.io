@@ -43,13 +43,33 @@ document.addEventListener('DOMContentLoaded', function() {
     const songList = document.getElementById('song-list');
     songList.innerHTML = '';
 
+    // Create table
+    const table = document.createElement('table');
+    table.className = 'styled-table';
+    table.innerHTML = `
+      <thead>
+        <tr>
+          <th>Album Art</th>
+          <th>Title</th>
+          <th>Artist</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    `;
+    songList.appendChild(table);
+    const tbody = table.querySelector('tbody');
+
     playlist.songs.forEach((song, index) => {
-      const songItem = document.createElement('li');
-      songItem.innerHTML = `
-        ${song.title} by ${song.artist}
-        <button id="play-btn-${index}" class="play-btn"><i class="fas fa-play"></i></button>
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td><img src="${song.coverArt}" alt="Album Art" style="width: 50px; height: 50px;"></td>
+        <td>${song.title}</td>
+        <td>${song.artist}</td>
+        <td><button id="play-btn-${index}" class="play-btn"><i class="fas fa-play"></i></button></td>
       `;
-      songList.appendChild(songItem);
+      tbody.appendChild(row);
 
       // Add event listener to play button
       document.getElementById(`play-btn-${index}`).addEventListener('click', () => {

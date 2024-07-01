@@ -6,17 +6,34 @@
         {
           "title": "Seen Better Days",
           "artist": "Samuel Dylan Witch",
-          "mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/01%20I%27ve%20Seen%20Better%20Days.mp3"
+          "mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/01%20I%27ve%20Seen%20Better%20Days.mp3",
+          "coverArt": "https://i.ytimg.com/vi/XDH0X-dF4GM/maxresdefault.jpg",
+          "play": false,
+          "artistUrl": "https://ahoy.ooo/artist/total/sdw/sdw.html"
         },
         {
           "title": "Far From Here",
           "artist": "Cambell Rice",
-          "mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Campbell+Rice-+From+Here.mp3"
+          "mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Campbell+Rice-+From+Here.mp3",
+          "coverArt": "https://catapultlakeland.com/wp-content/uploads/2020/09/Untitled-design-2.jpg",
+          "play": false,
+          "artistUrl": "https://ahoy.ooo/artist/total/cambellRice/cambellRice.html"
         },
         {
           "title": "Summer Bummer",
           "artist": "Youth XL",
-          "mp3url": "https://ahoycollection.s3.amazonaws.com/Youth+XL+-+Summer+Bummer.mp3"
+          "mp3url": "https://ahoycollection.s3.amazonaws.com/Youth+XL+-+Summer+Bummer.mp3",
+          "coverArt": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyBXIMTxuYsGbaO23UEDr-TeH57LhPKid4ohwt85HyZgtprWiecvV_iFk0dYCMMJnT3ys&usqp=CAU",
+          "play": false,
+          "artistUrl": "https://ahoy.ooo/artist/total/youthXL/youthXL.html"
+        },
+        {
+          "title": "You Know Me",
+          "artist": "Samuel Dylan Witch",
+          "mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/You+Know+Me+Draft+2.mp3",
+          "coverArt": "https://i.ytimg.com/vi/XDH0X-dF4GM/maxresdefault.jpg",
+          "play": false,
+          "artistUrl": "https://ahoy.ooo/artist/total/sdw/sdw.html"
         }
       ]
     },
@@ -26,17 +43,34 @@
         {
           "title": "Beneath the Willow Tree",
           "artist": "Samuel Dylan Witch",
-          "mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Beneath+the+Willow+Tree.mp3"
+          "mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Beneath+the+Willow+Tree.mp3",
+          "coverArt": "https://i.ytimg.com/vi/koPyEhqksBk/maxresdefault.jpg",
+          "play": false,
+          "artistUrl": "https://ahoy.ooo/artist/total/sdw/sdw.html"
         },
         {
           "title": "Sunflower",
           "artist": "Cambell Rice",
-          "mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Campbell+Rice-Sunflower.mp3"
+          "mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Campbell+Rice-Sunflower.mp3",
+          "coverArt": "https://catapultlakeland.com/wp-content/uploads/2020/09/Untitled-design-2.jpg",
+          "play": false,
+          "artistUrl": "https://ahoy.ooo/artist/total/cambellRice/cambellRice.html"
         },
         {
           "title": "Yoga",
           "artist": "Youth XL",
-          "mp3url": "https://ahoycollection.s3.amazonaws.com/Youth+XL+-+Yoga.mp3"
+          "mp3url": "https://ahoycollection.s3.amazonaws.com/Youth+XL+-+Yoga.mp3",
+          "coverArt": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwxXTk37iEbLqFEa5QZWImJbtIqoBi88rgTrfpWKfckiC3UWuODDcuVjPkUIbqzkADylo&usqp=CAU",
+          "play": false,
+          "artistUrl": "https://ahoy.ooo/artist/total/youthXL/youthXL.html"
+        },
+        {
+          "title": "Watching Her Fly",
+          "artist": "Samuel Dylan Witch",
+          "mp3url": "https://ahoycollection.s3.amazonaws.com/Coral+Reefer+-+Untitled+(original).mp3",
+          "coverArt": "https://i.ytimg.com/vi/XDH0X-dF4GM/maxresdefault.jpg",
+          "play": false,
+          "artistUrl": "https://ahoy.ooo/artist/total/sdw/sdw.html"
         }
       ]
     },
@@ -46,17 +80,18 @@
         {
           "title": "Put Me on the Run",
           "artist": "Samuel Dylan Witch",
-          "mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Put+Me+on+the+Run-+Draft+1mp3.mp3"
+          "mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Put+Me+on+the+Run-+Draft+1mp3.mp3",
+          "coverArt": "https://i.ytimg.com/vi/uEqMlBsKYpQ/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLABNZs86_3-knu6Zq78I43Am1eLWA",
+          "play": false,
+          "artistUrl": "https://ahoy.ooo/artist/total/sdw/sdw.html"
         },
         {
           "title": "To Play Guitar in a Huge Room",
           "artist": "Cambell Rice",
-          "mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Campbell+Rice-Trying+to+play+guitar+in+a+huge+room.mp3"
-        },
-        {
-          "title": "Text Your Friends",
-          "artist": "Youth XL",
-          "mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Youth+XL+-+Text+Your+Friends.mp3"
+          "mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Campbell+Rice-Trying+to+play+guitar+in+a+huge+room.mp3",
+          "coverArt": "https://m.media-amazon.com/images/I/61APLxryThL._UXNaN_FMjpg_QL85_.jpg",
+          "play": false,
+          "artistUrl": "https://ahoy.ooo/artist/total/cambellRice/cambellRice.html"
         }
       ]
     }

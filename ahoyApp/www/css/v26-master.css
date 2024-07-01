@@ -108,55 +108,41 @@
     }
 }
 
-/*FEATURED MODAL TABLE*/
-
-#featured-table {
+.styled-table {
     width: 100%;
+    max-width: 100%;
     border-collapse: collapse;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    background-color: black;
+    color: white !important;
+    margin: 0;
 }
 
-#featured-table th,
-#featured-table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-}
-
-#featured-table th {
-    background-color: #f2f2f2;
+.styled-table thead tr {
+    background-color: #33333394;
+    color: #ffffff;
     text-align: left;
 }
 
-@media screen and (max-width: 600px) {
-    #featured-table thead {
-        display: none;
-    }
-
-    #featured-table tr {
-        display: block;
-        margin-bottom: 10px;
-    }
-
-    #featured-table td {
-        display: block;
-        text-align: right;
-        font-size: 13px;
-        border-bottom: 1px solid #ddd;
-        position: relative;
-        padding-left: 50%;
-    }
-
-    #featured-table td::before {
-        content: attr(data-label);
-        position: absolute;
-        left: 0;
-        width: 50%;
-        padding-left: 15px;
-        font-weight: bold;
-        text-align: left;
-    }
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+    border: 1px solid #444;
+    text-align: left;
 }
 
+.styled-table tbody tr {
+    border-bottom: 1px solid #444;
+}
 
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #22222261;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #333;
+}
 
 /*buttons */
 
