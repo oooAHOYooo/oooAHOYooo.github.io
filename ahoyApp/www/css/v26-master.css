@@ -43,8 +43,12 @@
 
 }
 
-
-
+#sidedock {
+    position: fixed;
+    left: -100%;
+    /* Start off-screen */
+    transition: left 0.3s ease;
+}
 
 .modal {
     position: fixed;
@@ -82,15 +86,15 @@
 /* Toggle button styles */
 .toggle-button {
     position: fixed;
-    left: 10px;
-    top: 10px;
+    left: 2.25px;
+    top: 2.5px;
     z-index: 1001;
     cursor: pointer;
-    padding: 10px;
     background-color: transparent;
-    color: var(--text-color);
+    color: white;
+    );
     border: none;
-    font-size: 24px;
+    font-size: 25px;
 }
 
 .toggle-button:hover {

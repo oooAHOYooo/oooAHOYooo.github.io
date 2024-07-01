@@ -58,6 +58,7 @@ class SongManager {
         const song = this.currentPlaylist.length > 0 ? this.currentPlaylist[index] : this.songsArray[index];
         if (!song) return;
 
+        // Check if the song is already playing
         if (this.audioPlayer.src !== song.mp3url || this.audioPlayer.paused) {
             this.audioPlayer.src = song.mp3url;
             this.audioPlayer.play();

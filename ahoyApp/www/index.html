@@ -166,9 +166,10 @@
         <img src="./img/assets/u_ahoy23.png" alt="Main Logo" style="display: block; margin: auto; width: 100px; height: auto;">
       </div>
       <div class="sidedock-middle" id="sidedock-middle">
-        <div class="playlist-item"><a href="#">Playlist Item 1</a></div>
-        <div class="playlist-item"><a href="#">Playlist Item 2</a></div>
-        <div class="playlist-item"><a href="#">Playlist Item 3</a></div>
+        <div class="playlist-item"><a href="#">Featured Playlist 1</a></div>
+        <div class="playlist-item"><a href="#">Featured Playlist 2</a></div>
+        <div class="playlist-item"><a href="#">Featured Playlist 3</a></div>
+        <hr>
         <!-- Placeholder for additional playlists -->
         <div class="playlist-item"><a href="#"><i class="fa fa-plus-circle"></i> Add Playlist</a></div>
         <style>
@@ -181,16 +182,20 @@
       </div>
 
     </div>
-        <script>
-    document.getElementById('toggle-button').addEventListener('click', function() {
-      var sidedock = document.getElementById('sidedock');
-      if (sidedock.style.left === '-250px') {
-        sidedock.style.left = '0px'; // Show sidebar
-      } else {
-        sidedock.style.left = '-250px'; // Hide sidebar
-      }
-    });
-  </script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var sidedock = document.getElementById('sidedock');
+        sidedock.style.left = '-100%'; // Ensure it's hidden on load
+    
+        document.getElementById('toggle-button').addEventListener('click', function() {
+          if (sidedock.style.left === '0px') {
+            sidedock.style.left = '-100%'; // Hide sidebar
+          } else {
+            sidedock.style.left = '0px'; // Show sidebar
+          }
+        });
+      });
+    </script>
 
 <div class="v25_topLogin">
   <div class="v25_topLogin-container" style="background-color:transparent; display: flex; justify-content: flex-end;">
@@ -225,7 +230,7 @@
                 </div>
                 <br>
                 <h2 id="calendar-date"
-                  style="font-family: 'Barlow', sans-serif; font-weight: bold; font-size: 24px; text-transform: uppercase; letter-spacing: 1.5em; border-top: 2px solid #ffffff; border-bottom: 2px solid #ffffff; padding: 10px 0; text-align: center;">
+                  style="font-family: 'Barlow', sans-serif; font-weight: 900; font-size: 24px; text-transform: uppercase; letter-spacing: .5em; border-top: 2px solid #ffffff; border-bottom: 2px solid #ffffff; padding: 10px 0; text-align: center; color:var(--text-color);">
                 </h2>
                 <br>
                 <!-- NOW PLAYING -->
