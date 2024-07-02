@@ -130,6 +130,13 @@
         "imageUrl": "https://storage.googleapis.com/ahoy-dynamic-content/Rob%20Show%202%20News.jpg",
         "content": "Oy oy - the Rob Show is alive and well and back with two new episodes back to back - these were the episodes Rob recorded when Alex was away in Singapore.",
         "mp3Url": "#"
+    },
+    {
+        "date": "2024-07-02",
+        "title": "New Feature Alert ",
+        "imageUrl": "https://storage.googleapis.com/ahoy-dynamic-content/news/AHOY%20NewsFlash%20-%20Summer%2024.mp4",
+        "content": "Work in Progress but a Progress in Work",
+        "mp3Url": "#"
     }
 
 

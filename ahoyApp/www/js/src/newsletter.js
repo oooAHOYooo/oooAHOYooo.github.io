@@ -55,11 +55,22 @@ window.addEventListener('DOMContentLoaded', (event) => {
                         <h2>${newsletter.title}</h2>
                     `;
                     if (newsletter.imageUrl) {
-                        htmlContent += `
-                            <div style="text-align: center;">
-                                <img src="${newsletter.imageUrl}" alt="${newsletter.title}" class="newsletter-image" style="max-width: 100%; height: auto;" onclick="openLightbox('${newsletter.imageUrl}')">
-                            </div>
-                        `;
+                        if (newsletter.imageUrl.endsWith('.mp4')) {
+                            htmlContent += `
+                                <div style="text-align: center;">
+                                    <video loop autoplay muted style="width: 100%; height: auto;">
+                                        <source src="${newsletter.imageUrl}" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </div>
+                            `;
+                        } else {
+                            htmlContent += `
+                                <div style="text-align: center;">
+                                    <img src="${newsletter.imageUrl}" alt="${newsletter.title}" class="newsletter-image" style="max-width: 100%; height: auto;" onclick="openLightbox('${newsletter.imageUrl}')">
+                                </div>
+                            `;
+                        }
                     }
                     htmlContent += `<p>${newsletter.content}</p>`;
                     div.innerHTML = htmlContent;

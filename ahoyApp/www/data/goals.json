@@ -1,0 +1,19 @@
+{
+  "goals": [
+    {
+      "type": "Song",
+      "goal": 800,
+      "currentCount": 42
+    },
+    {
+      "type": "Podcast",
+      "goal": 200,
+      "currentCount": 11
+    },
+    {
+      "type": "Artist",
+      "goal": 120,
+      "currentCount": 10
+    }
+  ]
+}
