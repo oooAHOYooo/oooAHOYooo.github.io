@@ -1,7 +1,7 @@
 {
   "playlists": [
     {
-      "name": "Playlist A",
+      "name": "Featured Playlist 1",
       "songs": [
         {
           "title": "Seen Better Days",
@@ -38,7 +38,7 @@
       ]
     },
     {
-      "name": "Playlist B",
+      "name": "Featured Playlist 2",
       "songs": [
         {
           "title": "Beneath the Willow Tree",
@@ -75,7 +75,7 @@
       ]
     },
     {
-      "name": "Playlist C",
+      "name": "Featured Playlist 3",
       "songs": [
         {
           "title": "Put Me on the Run",

@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         const actionCell = document.createElement('td');
         actionCell.classList.add('action-cell'); // Add class for action cell
+        actionCell.classList.add('action-cell-flex'); // Add flex class for inline display
         
         const playButton = document.createElement('button');
         playButton.innerHTML = '<i class="fas fa-play"></i>'; // Changed to icon

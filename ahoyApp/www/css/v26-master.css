@@ -125,19 +125,24 @@
     text-align: left;
 }
 
-.styled-table th,
 .styled-table td {
+    height: 60px; /* Ensure consistent cell height */
     padding: 12px 15px;
     border: 1px solid #444;
     text-align: left;
+    background-color: #f9f9f9; /* Light background color for cells */
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f2f2f2; /* Light gray for even rows */
+}
+
+.styled-table tbody tr:nth-of-type(odd) {
+    background-color: #ffffff; /* White for odd rows */
 }
 
 .styled-table tbody tr {
     border-bottom: 1px solid #444;
-}
-
-.styled-table tbody tr:nth-of-type(even) {
-    background-color: #22222261;
 }
 
 .styled-table tbody tr:last-of-type {
@@ -241,9 +246,7 @@
   border: none;
   color: white;
   font-size: 16px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
+
   transform: translate(-50%, -50%);
   cursor: pointer;
 }
@@ -258,7 +261,7 @@
   background-color: #007bff6c;
   color: white;
   cursor: pointer;
-  margin-left: 5px;
+  margin: 5px; /* Add margin for spacing */
 }
 
 td {
@@ -288,10 +291,30 @@ td {
     align-items: center;
     justify-content: center; /* Center content horizontally */
     padding: 0;
+    margin: 5px; /* Add margin for spacing */
 }
 
   td {
     height: 50px; /* Adjust cell height for smaller screens */
   }
 }
+
+/* Add this to your CSS file */
+.carousel {
+    display: flex;
+    overflow: hidden;
+    width: 60px; /* Adjust width as needed */
+  }
+  
+  .carousel .action-button {
+    transition: transform 0.5s ease;
+  }
+  
+  .carousel:hover .action-button:nth-child(1) {
+    transform: translateX(-100%);
+  }
+  
+  .carousel:hover .action-button:nth-child(2) {
+    transform: translateX(-100%);
+  }
 
