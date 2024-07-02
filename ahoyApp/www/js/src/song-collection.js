@@ -15,11 +15,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
       songs.forEach((song, index) => {
         const row = document.createElement('tr');
+        row.classList.add('song-row'); // Add class for consistent row height
         
         const artworkCell = document.createElement('td');
         const img = document.createElement('img');
         img.src = song.coverArt;
         img.classList.add('album-art'); // Add class for album art
+        img.onclick = function() { // Play song on album art click
+          togglePlayPauseSong(index);
+        };
         artworkCell.appendChild(img);
         
         const artistCell = document.createElement('td');
