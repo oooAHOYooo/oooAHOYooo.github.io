@@ -270,7 +270,7 @@ td {
 }
 
 .even-row {
-  background-color: #f2f2f251; /* Light gray for even rows */
+  background-color: #f2f2f226; /* Light gray for even rows */
 }
 
 .odd-row {
@@ -284,8 +284,8 @@ td {
   }
 
   .play-button, .action-button {
-    width: 48px;
-    height: 48px;
+    width: 37px;
+    height: 37px;
     font-size: 10px;
     display: flex;
     align-items: center;
@@ -294,27 +294,12 @@ td {
     margin: 5px; /* Add margin for spacing */
 }
 
+.play-button {
+    background-color: #ff0060!important;
+}
+
   td {
     height: 50px; /* Adjust cell height for smaller screens */
   }
 }
-
-/* Add this to your CSS file */
-.carousel {
-    display: flex;
-    overflow: hidden;
-    width: 60px; /* Adjust width as needed */
-  }
-  
-  .carousel .action-button {
-    transition: transform 0.5s ease;
-  }
-  
-  .carousel:hover .action-button:nth-child(1) {
-    transform: translateX(-100%);
-  }
-  
-  .carousel:hover .action-button:nth-child(2) {
-    transform: translateX(-100%);
-  }
 
