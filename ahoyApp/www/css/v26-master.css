@@ -216,3 +216,75 @@
     text-decoration: none;
     cursor: pointer;
 }
+
+
+.responsive-table {
+    width: 100%;
+    overflow-x: auto;
+  }
+  
+  .play-button {
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    background-position: center;
+    border: none;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .play-button::before {
+    content: '\f04b'; /* FontAwesome play icon */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    color: white;
+    font-size: 16px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .action-button {
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+  }
+  
+  td {
+    height: 60px; /* Ensure consistent cell height */
+    vertical-align: middle; /* Center content vertically */
+  }
+  
+  .even-row {
+    background-color: #f2f2f2; /* Light gray for even rows */
+  }
+  
+  .odd-row {
+    background-color: #ffffff; /* White for odd rows */
+  }
+  
+  @media (max-width: 600px) {
+    .play-button {
+      width: 40px; /* Decrease button size on smaller screens */
+      height: 40px;
+    }
+  
+    .play-button::before {
+      font-size: 12px; /* Adjust icon size for smaller screens */
+    }
+  
+    .action-button {
+      width: 25px;
+      height: 25px;
+      font-size: 10px;
+    }
+  
+    td {
+      height: 50px; /* Adjust cell height for smaller screens */
+    }
+  }
