@@ -93,6 +93,7 @@ document.addEventListener('DOMContentLoaded', function() {
     currentPlaying.innerHTML = `
       <button id="current-pause-btn" style="font-size: 0.8em; margin-right: 5px;"><i class="fas ${audioPlayer.paused ? 'fa-play' : 'fa-pause'}"></i></button>
       <span>${song.songTitle} - ${song.artist}</span>
+ 
     `;
 
     // Add event listener to the div to toggle play/pause
@@ -107,11 +108,42 @@ document.addEventListener('DOMContentLoaded', function() {
       <div>
         <span>${song.songTitle}</span><br>
         <span>${song.artist}</span>
+        <br>
+        <div id="timeline-container">
+        <span id="current-time">0:00</span>
+        <input type="range" id="timeline" value="0" max="100">
+        <span id="total-time">0:00</span>
+      </div>
+
       </div>
     `;
 
     // Update the album art in the currently playing section
     const bottomAlbumArt = document.getElementById('bottom-album-art');
     bottomAlbumArt.src = song.coverArt;
+
+    // Update the timeline and time display
+    const timeline = document.getElementById('timeline');
+    const currentTimeDisplay = document.getElementById('current-time');
+    const totalTimeDisplay = document.getElementById('total-time');
+
+    audioPlayer.ontimeupdate = function() {
+      const currentTime = audioPlayer.currentTime;
+      const duration = audioPlayer.duration;
+      timeline.value = (currentTime / duration) * 100;
+      currentTimeDisplay.textContent = formatTime(currentTime);
+      totalTimeDisplay.textContent = formatTime(duration);
+    };
+
+    timeline.oninput = function() {
+      const duration = audioPlayer.duration;
+      audioPlayer.currentTime = (timeline.value / 100) * duration;
+    };
+  }
+
+  function formatTime(seconds) {
+    const minutes = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
   }
 });

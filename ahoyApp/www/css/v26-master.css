@@ -315,3 +315,26 @@ td {
   }
 }
 
+
+/*Sidbear Timeline*/
+
+#timeline-container {
+    width: 90%;
+    background: rgba(255, 255, 255, 0.2); /* Glass-like effect */
+    backdrop-filter: blur(10px); /* Blur effect */
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  #timeline {
+    flex-grow: 1;
+    margin: 0 10px;
+  }
+  
+  #current-time, #total-time {
+    white-space: nowrap;
+  }

@@ -126,9 +126,19 @@ document.addEventListener('DOMContentLoaded', function() {
       togglePlayPauseSong(index, songs);
     };
 
-    // Update the currently playing text in the sidebar
+    // Update the currently playing text and album art in the sidebar
     const sidebarCurrentTrack = document.getElementById('current-track');
-    sidebarCurrentTrack.innerHTML = `${song.title} - ${song.artist}`;
+    sidebarCurrentTrack.innerHTML = `
+      <img src="${song.coverArt}" alt="Album Art" class="current-album-art">
+      <div>
+        <span>${song.title}</span><br>
+        <span>${song.artist}</span>
+      </div>
+    `;
+
+    // Update the album art in the currently playing section
+    const bottomAlbumArt = document.getElementById('bottom-album-art');
+    bottomAlbumArt.src = song.coverArt;
   }
 
   function playPlaylist(songs, playlistName) {
