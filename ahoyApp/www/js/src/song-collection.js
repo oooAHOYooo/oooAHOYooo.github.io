@@ -15,11 +15,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
       songs.forEach((song, index) => {
         const row = document.createElement('tr');
-        if (index % 2 === 0) {
-          row.classList.add('even-row'); // Add class for even rows
-        } else {
-          row.classList.add('odd-row'); // Add class for odd rows
-        }
         
         const artworkCell = document.createElement('td');
         const img = document.createElement('img');
@@ -34,35 +29,29 @@ document.addEventListener('DOMContentLoaded', function() {
         songCell.textContent = song.songTitle;
         
         const actionCell = document.createElement('td');
-        const addButton = document.createElement('button');
-        addButton.innerHTML = '<i class="fas fa-plus"></i>'; 
-        addButton.id = `add-btn-${index}`; 
-        addButton.classList.add('action-button'); // Add class for action button
-        addButton.onclick = function(event) {
-          event.stopPropagation(); // Prevent row click event
-          // Add your add button functionality here
-        };
+        actionCell.classList.add('action-cell'); // Add class for action cell
         
         const playButton = document.createElement('button');
         playButton.innerHTML = '<i class="fas fa-play"></i>'; // Changed to icon
         playButton.id = `play-btn-${index}`; // Unique ID for each play button
-        playButton.classList.add('play-button'); // Add class for play button
-        playButton.onclick = function(event) {
-          event.stopPropagation(); // Prevent row click event
+        playButton.onclick = function() {
           togglePlayPauseSong(index);
         };
-
-        actionCell.appendChild(addButton);
+        const addButton = document.createElement('button');
+        addButton.innerHTML = '<i class="fas fa-plus"></i>'; 
+        addButton.id = `add-btn-${index}`; 
+        addButton.onclick = function() { };
+        
+        // Styling for inline display of buttons
+        playButton.classList.add('action-button'); // Add class for action button
+        addButton.classList.add('action-button'); // Add class for action button
         actionCell.appendChild(playButton);
+        actionCell.appendChild(addButton);
         
         row.appendChild(artworkCell);
         row.appendChild(artistCell);
         row.appendChild(songCell);
         row.appendChild(actionCell);
-
-        row.onclick = function() {
-          togglePlayPauseSong(index);
-        };
         
         tableBody.appendChild(row);
       });
