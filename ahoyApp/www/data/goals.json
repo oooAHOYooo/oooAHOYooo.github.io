@@ -8,12 +8,12 @@
     {
       "type": "Podcast",
       "goal": 200,
-      "currentCount": 11
+      "currentCount": 21
     },
     {
       "type": "Artist",
       "goal": 120,
-      "currentCount": 10
+      "currentCount": 13
     }
   ]
 }
