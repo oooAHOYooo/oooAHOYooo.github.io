@@ -615,31 +615,30 @@
                   onclick="navigateToTab('about-tab')">About Ahoy</button>
                 <button id="updates-button"
                   onclick="navigateToTab('updates-tab')">Dev Log</button>
+                  <button id="goals-button"
+                  onclick="navigateToTab('goals-tab')">Goal Count</button>
               </div>
               <div id="newsletter-list"></div>
-              <div class="goals-container">
-                <img src="./img/ahoy-goals.svg" class="svgBlend">
-                <h2>Updates on Goals</h2>
-                <div class="goal">
-                  <h3>Song Goal: 800</h3>
-                  <h4>Present Song Count: <span
-                      id="current-song-count">42</span></h4>
-                </div>
-                <div class="goal">
-                  <h3>Podcast Goal: 200</h3>
-                  <h4>Present Episode Count: <span
-                      id="current-song-count">11</span></h4>
-                </div>
-                <div class="goal">
-                  <h3>Artist Goal: 120</h3>
-                  <h4>Present Artist Count: <span
-                      id="current-artist-count">10</span></h4>
-                </div>
-
-              </div>
+          
             </div>
             <!-- CHAT TAB CHAT TAB CHAT TAB -->
-
+<!-- GOALS TAB -->
+<div id="goals-tab" class="tab-content">
+  <img src="./img/ahoy-goals.svg" class="svgBlend">
+  <h2>Goal Count</h2>
+  <div class="goal">
+    <h3>Song Goal: 800</h3>
+    <h4>Present Song Count: <span id="current-song-count">42</span></h4>
+  </div>
+  <div class="goal">
+    <h3>Podcast Goal: 200</h3>
+    <h4>Present Episode Count: <span id="current-song-count">11</span></h4>
+  </div>
+  <div class="goal">
+    <h3>Artist Goal: 120</h3>
+    <h4>Present Artist Count: <span id="current-artist-count">10</span></h4>
+  </div>
+</div>
             <!-- BETA TAB -->
             <div id="beta-tab" class="tab-content">
               <h2>BETA Experimental Features</h2>
