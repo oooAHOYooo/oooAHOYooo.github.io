@@ -75,12 +75,12 @@
     justify-content: center;
     z-index: 1000;
     color: var(--border-color);
-    transition: left 0.3s ease;
+    transition: left 0.23s ease;
 
 }
 
 .modal-content {
-    background-color: #fefefe;
+    background-color: #fefefe64;
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #ffffff;
@@ -102,7 +102,7 @@
     .modal-content {
         width: 90%;
         margin: 10% auto;
-        background-color: black;
+        background-color: rgba(0, 0, 0, 0.78);
         color: white !important;
         min-height: 50vh;
     }
@@ -110,13 +110,20 @@
 
 .styled-table {
     width: 100%;
+    table-layout: fixed; /* Ensures the table cells do not overflow */
     max-width: 100%;
     border-collapse: collapse;
     font-size: 0.9em;
     font-family: sans-serif;
     background-color: black;
     color: white !important;
-    margin: 0;
+    margin: 0px;
+}
+
+.styled-table th, .styled-table td {
+    overflow: hidden;
+    text-overflow: ellipsis; /* Adds ellipsis if the text is too long */
+    white-space: nowrap; /* Prevents text from wrapping */
 }
 
 .styled-table thead tr {
@@ -130,15 +137,16 @@
     padding: 12px 15px;
     border: 1px solid #444;
     text-align: left;
-    background-color: #f9f9f9; /* Light background color for cells */
+    color: white;
+    background-color: #f9f9f938; /* Light background color for cells */
 }
 
 .styled-table tbody tr:nth-of-type(even) {
-    background-color: #f2f2f2; /* Light gray for even rows */
+    background-color: #f2f2f22a; /* Light gray for even rows */
 }
 
 .styled-table tbody tr:nth-of-type(odd) {
-    background-color: #ffffff; /* White for odd rows */
+    background-color: #ffffff2e; /* White for odd rows */
 }
 
 .styled-table tbody tr {
@@ -152,14 +160,18 @@
 /*buttons */
 
 .button-login-top-right {
-    border-color: var(--border-color);
-    background-color: var(--border-color);
-    color: var(--text-color);
-
+    margin-right: 9px;
+    border: 2px solid var(--border-color);
+    background: rgba(255, 255, 255, 0.2); /* Glass effect with transparency */
+    color: var(--border-color);
+    backdrop-filter: blur(10px); /* Apply blur for glass effect */
+    border-radius: 10px; /* Rounded corners for a softer look */
+    padding: 10px 20px; /* Add some padding for better spacing */
+    transition: background 0.3s ease, color 0.3s ease; /* Smooth transition for hover effects */
 }
 
 .button-login-top-right:hover {
-    background-color: var(--background-color);
+    background: rgba(255, 255, 255, 0.4); /* Slightly less transparent on hover */
     color: var(--border-color);
 }
 

@@ -46,6 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Create table
     const table = document.createElement('table');
     table.className = 'styled-table';
+    table.style.width = '100%'; // Ensure the table takes up the full width
     table.innerHTML = `
       <thead>
         <tr>
