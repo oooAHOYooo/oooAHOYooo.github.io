@@ -66,3 +66,16 @@
 .dropdown:hover .btn {
     background-color: var(--border-color);
 }
+
+
+/*SIDEBAR CURRENT ART*/
+
+.current-album-art {
+    margin-top: 20px;
+    width: 100%;
+    height: auto;
+    display: cover;
+    margin-bottom: 10px;
+    border-style: solid;
+    border-color: var(--border-color);
+  }
