@@ -24,12 +24,13 @@
         body {
             font-family: 'Poppins', sans-serif;
             background-color: #333;
-            color: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            color: #fff!important;
             height: 100vh;
             margin: 0;
+        }
+
+        a {
+            color: white;
         }
         .carousel {
             display: flex;
@@ -48,6 +49,7 @@
         .carousel-item img {
             width: 100%;
             border-radius: 10px;
+            aspect-ratio: 16 / 9; /* Ensure 16:9 aspect ratio */
         }
         .carousel-item h5 {
             margin: 10px 0 5px;
@@ -81,9 +83,11 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 52vh;
-            background-color: #333;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background-color: #333333e1;
             color: #fff;
+            top: 0;
         }
         .splash-screen img {
             width: 150px;
@@ -107,44 +111,44 @@
     </head>
     <body>
         <div class="splash-screen">
-            <img src="./img/ahoy_logo.png" alt="Ahoy Logo">
+            <img src="./img/assets/u_ahoy23.png" alt="Ahoy Logo">
             <h1>Welcome to Ahoy</h1>
-            <p>Choose your level and enjoy the best gaming experience with our
-                top-rated games. Each tier offers unique features and
+            <p>Choose your level and enjoy the best experience. <br>
+                Each tier offers unique features and
                 benefits.</p>
         </div>
         <div class="headline">Choose Level</div>
         <div class="carousel">
-            <div class="carousel-item">
-                <img src="./img/game1.jpg" alt="Greatest of All Time">
+            <a href="https://buy.stripe.com/14k03Rb1p8XebwQ3ch"
+                class="carousel-item">
+                <img src="./img/41.webp" alt="Greatest of All Time">
                 <h5>Greatest of All Time</h5>
-                <p> 5</p>
-                <a href="https://buy.stripe.com/14k03Rb1p8XebwQ3ch">Buy Now</a>
-            </div>
-            <div class="carousel-item">
-                <img src="./img/game2.jpg" alt="Legend">
+                <p>5</p>
+            </a>
+            <a href="https://buy.stripe.com/5kA7wj1qPb5mbwQcMQ"
+                class="carousel-item">
+                <img src="./img/31.webp" alt="Legend">
                 <h5>Legend</h5>
                 <p>4</p>
-                <a href="https://buy.stripe.com/5kA7wj1qPb5mbwQcMQ">Buy Now</a>
-            </div>
-            <div class="carousel-item">
-                <img src="./img/game3.jpg" alt="Champion">
+            </a>
+            <a href="https://buy.stripe.com/bIY3g3d9x7TaasM147"
+                class="carousel-item">
+                <img src="./img/21.webp" alt="Champion">
                 <h5>Champion</h5>
                 <p>3</p>
-                <a href="https://buy.stripe.com/bIY3g3d9x7TaasM147">Buy Now</a>
-            </div>
-            <div class="carousel-item">
-                <img src="./img/game4.jpg" alt="Pro">
-                <h5>2</h5>
+            </a>
+            <a href="https://buy.stripe.com/bIY6sf7Pd6P66cw9AC"
+                class="carousel-item">
+                <img src="./img/01.webp" alt="Pro">
+                <h5>Pro</h5>
                 <p>2</p>
-                <a href="https://buy.stripe.com/bIY6sf7Pd6P66cw9AC">Buy Now</a>
-            </div>
-            <div class="carousel-item">
-                <img src="./img/game5.jpg" alt="Rookie">
+            </a>
+            <a href="https://buy.stripe.com/8wMcQD7Pd7Ta8kE3cd"
+                class="carousel-item">
+                <img src="./img/11.webp" alt="Rookie">
                 <h5>Rookie</h5>
                 <p>P1</p>
-                <a href="https://buy.stripe.com/8wMcQD7Pd7Ta8kE3cd">Buy Now</a>
-            </div>
+            </a>
         </div>
         <div class="carousel-controls">
             <button id="prevBtn">&lt;</button>
