@@ -110,7 +110,8 @@
 
 .styled-table {
     width: 100%;
-    table-layout: fixed; /* Ensures the table cells do not overflow */
+    table-layout: fixed;
+    /* Ensures the table cells do not overflow */
     max-width: 100%;
     border-collapse: collapse;
     font-size: 0.9em;
@@ -120,10 +121,13 @@
     margin: 0px;
 }
 
-.styled-table th, .styled-table td {
+.styled-table th,
+.styled-table td {
     overflow: hidden;
-    text-overflow: ellipsis; /* Adds ellipsis if the text is too long */
-    white-space: nowrap; /* Prevents text from wrapping */
+    text-overflow: ellipsis;
+    /* Adds ellipsis if the text is too long */
+    white-space: nowrap;
+    /* Prevents text from wrapping */
 }
 
 .styled-table thead tr {
@@ -133,20 +137,24 @@
 }
 
 .styled-table td {
-    height: 60px; /* Ensure consistent cell height */
+    height: 60px;
+    /* Ensure consistent cell height */
     padding: 12px 15px;
     border: 1px solid #444;
     text-align: left;
     color: white;
-    background-color: #f9f9f938; /* Light background color for cells */
+    background-color: #f9f9f938;
+    /* Light background color for cells */
 }
 
 .styled-table tbody tr:nth-of-type(even) {
-    background-color: #f2f2f22a; /* Light gray for even rows */
+    background-color: #f2f2f22a;
+    /* Light gray for even rows */
 }
 
 .styled-table tbody tr:nth-of-type(odd) {
-    background-color: #ffffff2e; /* White for odd rows */
+    background-color: #ffffff2e;
+    /* White for odd rows */
 }
 
 .styled-table tbody tr {
@@ -162,16 +170,22 @@
 .button-login-top-right {
     margin-right: 9px;
     border: 2px solid var(--border-color);
-    background: rgba(255, 255, 255, 0.2); /* Glass effect with transparency */
+    background: rgba(255, 255, 255, 0.2);
+    /* Glass effect with transparency */
     color: var(--border-color);
-    backdrop-filter: blur(10px); /* Apply blur for glass effect */
-    border-radius: 10px; /* Rounded corners for a softer look */
-    padding: 10px 20px; /* Add some padding for better spacing */
-    transition: background 0.3s ease, color 0.3s ease; /* Smooth transition for hover effects */
+    backdrop-filter: blur(10px);
+    /* Apply blur for glass effect */
+    border-radius: 10px;
+    /* Rounded corners for a softer look */
+    padding: 10px 20px;
+    /* Add some padding for better spacing */
+    transition: background 0.3s ease, color 0.3s ease;
+    /* Smooth transition for hover effects */
 }
 
 .button-login-top-right:hover {
-    background: rgba(255, 255, 255, 0.4); /* Slightly less transparent on hover */
+    background: rgba(255, 255, 255, 0.4);
+    /* Slightly less transparent on hover */
     color: var(--border-color);
 }
 
@@ -236,83 +250,94 @@
 
 
 .responsive-table {
-  width: 100%;
-  overflow-x: auto;
+    width: 100%;
+    overflow-x: auto;
 }
 
 .artwork-container {
-  position: relative;
-  display: inline-block;
+    position: relative;
+    display: inline-block;
 }
 
 .album-art {
-  width: 100px;
-  height: 100px;
-  object-fit: cover; /* Ensure the image is not smooshed */
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    /* Ensure the image is not smooshed */
 }
 
 .play-button {
-  width: 50px;
-  height: 50px;
-  background-color: rgb(0, 0, 0)!important;
-  border: none;
-  color: white;
-  font-size: 16px;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(0, 0, 0) !important;
+    border: none;
+    color: white;
+    font-size: 16px;
 
-  transform: translate(-50%, -50%);
-  cursor: pointer;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
 }
 
 
 
 .action-button {
-  width: 30px;
-  height: 30px;
-  font-size: 12px;
-  border: none;
-  background-color: #007bff6c;
-  color: white;
-  cursor: pointer;
-  margin: 5px; /* Add margin for spacing */
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+    border: none;
+    background-color: #007bff6c;
+    color: white;
+    cursor: pointer;
+    margin: 5px;
+    /* Add margin for spacing */
 }
 
 td {
-  height: 60px; /* Ensure consistent cell height */
-  vertical-align: middle; /* Center content vertically */
+    height: 60px;
+    /* Ensure consistent cell height */
+    vertical-align: middle;
+    /* Center content vertically */
 }
 
 .even-row {
-  background-color: #f2f2f226; /* Light gray for even rows */
+    background-color: #f2f2f226;
+    /* Light gray for even rows */
 }
 
 .odd-row {
-  background-color: #ffffff4d; /* White for odd rows */
+    background-color: #ffffff4d;
+    /* White for odd rows */
 }
 
 @media (max-width: 600px) {
-  .album-art {
-    width: 40px; /* Decrease album artwork size on smaller screens */
-    height: 40px;
-  }
+    .album-art {
+        width: 40px;
+        /* Decrease album artwork size on smaller screens */
+        height: 40px;
+    }
 
-  .play-button, .action-button {
-    width: 37px;
-    height: 37px;
-    font-size: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Center content horizontally */
-    padding: 0;
-    margin: 5px; /* Add margin for spacing */
-}
+    .play-button,
+    .action-button {
+        width: 37px;
+        height: 37px;
+        font-size: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* Center content horizontally */
+        padding: 0;
+        margin: 5px;
+        /* Add margin for spacing */
+    }
 
-.play-button {
-    background-color: #ff0060!important;
-}
+    .play-button {
+        background-color: #ff0060 !important;
+    }
 
-  td {
-    height: 50px; /* Adjust cell height for smaller screens */
-  }
+    td {
+        height: 50px;
+        /* Adjust cell height for smaller screens */
+    }
 }
 
 
@@ -320,21 +345,55 @@ td {
 
 #timeline-container {
     width: 90%;
-    background: rgba(255, 255, 255, 0.2); /* Glass-like effect */
-    backdrop-filter: blur(10px); /* Blur effect */
+    background: rgba(255, 255, 255, 0.2);
+    /* Glass-like effect */
+    backdrop-filter: blur(10px);
+    /* Blur effect */
     padding: 10px;
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-top: 10px;
-  }
-  
-  #timeline {
+}
+
+#timeline {
     flex-grow: 1;
     margin: 0 10px;
-  }
-  
-  #current-time, #total-time {
+}
+
+#current-time,
+#total-time {
     white-space: nowrap;
-  }
+}
+
+
+
+/* Add this to your external stylesheet */
+
+
+.login-button-b {
+    background-color: rgba(255, 255, 255, 0.2);
+    /* More transparent background */
+    color: #000000;
+    border: none;
+    padding: 10px 20px;
+    /* Added padding */
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    /* Increased blur for glass effect */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    width: 200px;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    /* Smooth transition */
+}
+
+.login-button-b:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    /* Slightly less transparent on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    /* Enhanced shadow on hover */
+}
