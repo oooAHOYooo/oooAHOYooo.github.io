@@ -4,8 +4,13 @@
     "Rearrange your playlist by dragging the songs into your preferred order.",
     "Give your CD a unique name.",
     "Review your playlist. You can remove songs or add more as long as you stay within the limit.",
-    "Submit your CD burn request. Rob Meglio will personally curate your playlist, write a personalized note, and design the CD cover with a sharpie.",
-    "Your CD will be mailed to your house within 2-4 weeks. You will be contacted for payment and shipping details shortly."
+    "Submit your CD burn request.",
+    "Your CD will be shipped to your house and within 2-4 weeks."
   ],
-  "confirmation": "Are you ready to submit your CD burn request?"
+  "description": [
+    "Discover music not found on big platforms - and such send music to those who you love.",
+    "Getting Started is Easy and Free - and once you are all set up - we hope to get you cruisin - Your favorite host - Rob Meglio, will personally package, ship and personalized each order.",
+    "This all, at the moment, is the only way Ahoy makes any money",
+    "Money goeas directly to Ahoy and not the artist - but we are working on a feature to send tips and props out - but the feature is going to require a lot of math - help if you're out there."
+  ]
 }
