@@ -16,22 +16,30 @@
 
 
 .the-featured-podcast-image {
-    width: 400px; /* Fixed width for square shape */
-    height: 400px; /* Fixed height for square shape */
-    object-fit: cover; /* Ensure the image covers the area without losing its aspect ratio */
-    object-position: center; /* Center the image within the element */
+    width: 400px;
+    /* Fixed width for square shape */
+    height: 400px;
+    /* Fixed height for square shape */
+    object-fit: cover;
+    /* Ensure the image covers the area without losing its aspect ratio */
+    object-position: center;
+    /* Center the image within the element */
     border-style: solid;
     border-color: var(--border-color);
     border-width: 1px;
 }
 
+#podcast-table td {
+    padding: 20px;
+    /* Increase cell padding */
+    font-size: 150%;
+    /* Increase font size */
+    font-family: 'Barlow', sans-serif;
+    /* Use Barlow font */
+}
 
-
-
-
-
-
-
+/* Ensure you have imported the Barlow font */
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap');
 
 .podcast-featured-image-container:hover {
     cursor: pointer;
@@ -71,7 +79,7 @@
         margin: 0 auto;
     }
 
-   
+
 
 
 

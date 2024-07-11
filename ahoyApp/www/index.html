@@ -291,7 +291,7 @@
                 <div style="overflow:hidden;"><iframe
                     src="https://cdn.jwplayer.com/players/S9LOWFXC-9Gtk2B1J.html"></iframe></div>
 
-                <h1>Welcome to Ahoy TV!</h1>
+                <h1 class="headline">Ahoy TV!</h1>
                 <p>Explore a world of indie delights with our curated 12-hour
                   cycles, repeated for your convenience and viewing pleasure.
                   From skate films to classical music sessions, Ahoy TV brings
@@ -335,19 +335,6 @@
                     alt="Album Art" style="max-width: 100%; max-height: 100%;">
                 </div>
               </div>
-              <style>
-  .music-radio {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-style: solid;
-    border-color: var(--border-color);
-    border-radius: 10px;
-    padding: 10px;
-    margin: 10px;
-  }
-
-</style>
               <div class="music-radio">
                 <img src="./img/ahoy-radio.svg" class="svgBlend">
                 <div class="radio-container">
@@ -612,11 +599,11 @@
 
               <div class="newsSubHeaderMenu">
                 <button id="about-button"
-                  onclick="navigateToTab('about-tab')">About Ahoy</button>
+                  onclick="navigateToTab('about-tab')" class="btnPrimary">About Ahoy</button>
                 <button id="updates-button"
-                  onclick="navigateToTab('updates-tab')">Dev Log</button>
+                  onclick="navigateToTab('updates-tab')" class="btnPrimary">Dev Log</button>
                   <button id="goals-button"
-                  onclick="navigateToTab('goals-tab')">Goal Count</button>
+                  onclick="navigateToTab('goals-tab')" class="btnPrimary">Goal Count</button>
               </div>
               <div id="newsletter-list"></div>
           
@@ -644,11 +631,11 @@
               <h2>BETA Experimental Features</h2>
               <p>These features are not yet ready for prime time</p>
               <p>But they are ready for your testing</p>
-              <button onclick="navigateToTab('market-tab')">Go to
+              <button class="btnPrimary" onclick="navigateToTab('market-tab')">Ahoy Indie
                 Market</button>
-              <button onclick="navigateToTab('songs-tab')">Previous Song Tab and Radio Features
+              <button class="btnPrimary" onclick="navigateToTab('songs-tab')">Previous Song Tab and Radio Features
                 </button>
-              <button onclick="window.location.href='create.html'">Create an Ahoy Indie Media Account</button>
+              <button class="btnPrimary" onclick="window.location.href='create.html'">Create an Ahoy Indie Media Account</button>
             </div>
 
             <!-- CASTING TAB -->
@@ -737,16 +724,12 @@
               <p>Don't miss this chance to be a part of Ahoy Indie Media's
                 future—sign up today!</p>
             </div>
-            <div class="v25-create-account-button-container">
-              <button id="v25-create-account-button"
-                onclick="window.location.href='create-account.html'">Create
-                Account</button>
-            </div>
+
               <div class="v25-miniCall-toAction-container">
                 <h1>Have content for Ahoy?</h1>
                 <p>We're always on the hunt for new artists and content</p>
                 <a href="./get-on-ahoy.html"><button
-                    class="v25_glass-button">Get on Ahoy
+                    class="login-button-b">Get on Ahoy
                   </button></a>
               </div>
 

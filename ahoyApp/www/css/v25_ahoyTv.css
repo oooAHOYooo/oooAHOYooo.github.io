@@ -17,27 +17,27 @@
     border-collapse: collapse;
     width: 100%;
     color: black;
-    background: linear-gradient(145deg, #e6e8e9, #f0f1f2);
-    /* Subtle gradient for a vintage paper look */
+    background: rgba(255, 255, 255, 0.091);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .schedule-table th,
 .schedule-table td {
     padding: 8px;
     text-align: left;
-    border: 1px solid #ccc;
-    /* Light borders for the table */
+    border: 1px solid rgba(255, 255, 255, 0.3);
     color: #333;
-    /* Darker text for a more vintage feel */
-    background-color: #f9f9f9;
-    /* Light background for cells to mimic aged paper */
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .schedule-table th {
-    background-color: #555;
-    /* Darker header for a more pronounced contrast */
+    background-color: rgba(85, 85, 85, 0.5);
     color: #f0f0f2;
-    /* Light text color for the header */
     text-shadow: 1px 1px 0px #000;
     /* Subtle text shadow for a retro effect */
 }

@@ -375,7 +375,7 @@ td {
 .login-button-b {
     background-color: rgba(255, 255, 255, 0.2);
     /* More transparent background */
-    color: #000000;
+    color: var(--text-color);
     border: none;
     padding: 10px 20px;
     /* Added padding */
@@ -388,12 +388,61 @@ td {
     border: 1px solid rgba(255, 255, 255, 0.3);
     width: 200px;
     transition: background 0.3s ease, box-shadow 0.3s ease;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.5px;
     /* Smooth transition */
 }
 
 .login-button-b:hover {
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: var(--border-color);
+    color: var(--text-color);
     /* Slightly less transparent on hover */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     /* Enhanced shadow on hover */
+}
+
+.btnPrimary {
+
+    background-color: rgba(255, 255, 255, 0.2);
+    /* More transparent background */
+    color: var(--text-color);
+    border: none;
+    padding: 10px 20px;
+    /* Added padding */
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    /* Increased blur for glass effect */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    width: 200px;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    /* Smooth transition */
+}
+
+.btnPrimary:hover {
+    background-color: var(--border-color);
+    color: var(--text-color);
+    /* Slightly less transparent on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    /* Enhanced shadow on hover */
+}
+
+
+
+/* individual styles for things - widgets */
+.music-radio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-style: solid;
+    border-color: var(--border-color);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
 }
