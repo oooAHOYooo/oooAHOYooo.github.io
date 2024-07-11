@@ -478,31 +478,23 @@
             <div id="podcasts-tab" class="tab-content">
               <img src="./img/ahoy-podcasts.svg" class="svgBlend">
               <div class="podcast-container">
-                <div id="podcast-featured-image-container"></div>
-                <div
-                  style="width: 100%; padding: 10px; background: rgba(255, 255, 255, 0.1); border-radius: 10px; backdrop-filter: blur(10px); display: flex; align-items: center;">
-                  <input type="text" id="podcast-search-input"
-                    class="search-input" placeholder="Search Podcasts..."
-                    style="flex-grow: 1; height: 32px; background-color: rgba(255, 255, 255, 0.5); padding: 5px; border: none; border-radius: 0px; backdrop-filter: blur(5px); margin-right: 10px;">
-
-                  <button id="podcast-search-button"
-                    style="width: 32px; height: 32px; border: none; background: rgba(255, 255, 255, 0.5); display: flex; justify-content: center; align-items: center;">
-                    <i class="fas fa-search" style="color: #333;"></i>
-                  </button>
-                  <button id="podcast-clear-search"
-                    onclick="clearPodcastSearch()"
-                    style="width: 32px; height: 32px; border: none; background: rgba(255, 255, 255, 0.5); display: flex; justify-content: center; align-items: center;">
-                    <i class="fas fa-times" style="color: #333;"></i>
-                  </button>
-                </div>
-                <table class="standard-table" id="podcast-table">
-                  <tbody>
-                    <!-- Podcast rows will be dynamically inserted here -->
-                  </tbody>
-                </table>
+                  <div id="podcast-featured-image-container"></div>
+                  <div class="ahoypodcast_search-container">
+                      <input type="text" id="podcast-search-input" class="search-input" placeholder="Search Podcasts...">
+                      <button id="podcast-search-button">
+                          <i class="fas fa-search"></i>
+                      </button>
+                      <button id="podcast-clear-search" onclick="clearPodcastSearch()">
+                          <i class="fas fa-times"></i>
+                      </button>
+                  </div>
+                  <table class="standard-table" id="podcast-table">
+                      <tbody>
+                          <!-- Podcast rows will be dynamically inserted here -->
+                      </tbody>
+                  </table>
               </div>
-
-            </div>
+          </div>
 
             <!-- ABOUT TAB -->
             <div id="about-tab" class="tab-content">

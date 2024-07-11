@@ -446,3 +446,35 @@ td {
     padding: 10px;
     margin: 10px;
 }
+
+
+.ahoypodcast_row {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ffffff; /* Added 1px solid to define the border */
+}
+
+.ahoypodcast_thumbnail {
+    width: 52px;
+    height: 52px;
+    margin-right: 10px;
+}
+
+.ahoypodcast_info {
+    flex-grow: 1;
+}
+
+.ahoypodcast_title {
+    font-weight: bold;
+    line-height: 95%;
+}
+
+.ahoypodcast_details {
+    font-size: 12px;
+    color: white;
+}
+
+.ahoypodcast_control-button {
+    background: none;
+    border: none;
+}

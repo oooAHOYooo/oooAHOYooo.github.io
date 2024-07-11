@@ -44,12 +44,22 @@ function loadPodcasts() {
 
 function populatePodcastTable() {
     const tableBody = document.getElementById("podcast-table").querySelector("tbody");
+    tableBody.innerHTML = ''; // Clear existing rows
+
     podcasts.forEach((podcast, index) => {
         const row = document.createElement("tr");
+        row.style.border = "1px solid #ccc"; // Add border style
         row.innerHTML = `
-            <td><button class="control-button-podcast" id="podcast-play-${index}" onclick="togglePlayPausePodcast(${index})"><i class="fas fa-play"></i></button></td>
-            <td><img src="${podcast.thumbnail}" alt="${podcast.title}" class="thumbnail"></td>
-            <td>${podcast.title}</td>
+            <td class="ahoypodcast_row">
+                <img src="${podcast.thumbnail}" alt="${podcast.title}" class="ahoypodcast_thumbnail">
+                <div class="ahoypodcast_info">
+                    <div class="ahoypodcast_title">${podcast.title}</div>
+                    <div class="ahoypodcast_details">${podcast.date}</div>
+                </div>
+                <button class="ahoypodcast_control-button" id="podcast-play-${index}" onclick="togglePlayPausePodcast(${index})">
+                    <i class="fas fa-play" style="color: var(--border-color); font-size: 22px;"></i>
+                </button>
+            </td>
         `;
         tableBody.appendChild(row);
     });

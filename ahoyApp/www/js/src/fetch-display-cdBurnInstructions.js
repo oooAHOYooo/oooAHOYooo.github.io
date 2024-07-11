@@ -1,5 +1,5 @@
-  document.addEventListener('DOMContentLoaded', function() {
-    fetch('./data_static/cdBurn-instructions.json')
+document.addEventListener('DOMContentLoaded', function() {
+    fetch('./data_static/cdBurn-instructions.json') // Updated the fetch URL
       .then(response => response.json())
       .then(data => {
         const instructionsList = document.getElementById('burn-instructions');
