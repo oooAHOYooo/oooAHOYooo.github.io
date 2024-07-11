@@ -59,6 +59,9 @@ function populatePodcastTable() {
                 <button class="ahoypodcast_control-button" id="podcast-play-${index}" onclick="togglePlayPausePodcast(${index})">
                     <i class="fas fa-play" style="color: var(--border-color); font-size: 22px;"></i>
                 </button>
+                <button class="ahoypodcast_add-button" onclick="addPodcastToPlaylist(${index})">
+                    <i class="fas fa-plus" style="color: var(--border-color); font-size: 16px;"></i>
+                </button>
             </td>
         `;
         tableBody.appendChild(row);
@@ -128,6 +131,48 @@ function searchPodcasts() {
 function clearPodcastSearch() {
     document.getElementById('podcast-search-input').value = '';
     searchPodcasts(); // This will effectively reset the search and show all podcasts
+}
+
+function addPodcastToPlaylist(index) {
+    const podcast = podcasts[index];
+    checkUserPlaylists().then(hasPlaylists => {
+        if (hasPlaylists) {
+            const playlistId = prompt("Enter the playlist ID to add the podcast to:");
+            if (playlistId) {
+                db.collection('playlists').doc(playlistId).collection('podcasts').add({
+                    title: podcast.title,
+                    mp3url: podcast.mp3url,
+                    thumbnail: podcast.thumbnail,
+                    date: podcast.date
+                })
+                .then(() => {
+                    console.log("Podcast added to playlist");
+                    alert("Podcast added to playlist successfully!");
+                })
+                .catch(error => {
+                    console.error("Error adding podcast to playlist: ", error);
+                });
+            }
+        } else {
+            if (confirm("You don't have any playlists. Would you like to create one?")) {
+                createNewPlaylist().then(newPlaylistId => {
+                    db.collection('playlists').doc(newPlaylistId).collection('podcasts').add({
+                        title: podcast.title,
+                        mp3url: podcast.mp3url,
+                        thumbnail: podcast.thumbnail,
+                        date: podcast.date
+                    })
+                    .then(() => {
+                        console.log("Podcast added to new playlist");
+                        alert("Podcast added to new playlist successfully!");
+                    })
+                    .catch(error => {
+                        console.error("Error adding podcast to new playlist: ", error);
+                    });
+                });
+            }
+        }
+    });
 }
 
 document.getElementById('podcast-search-button').addEventListener("click", searchPodcasts);

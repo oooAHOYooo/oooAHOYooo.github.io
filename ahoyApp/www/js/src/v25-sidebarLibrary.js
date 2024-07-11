@@ -1,5 +1,38 @@
 document.addEventListener('DOMContentLoaded', function() {
     fetchPlaylists(); // Fetch playlists when the document is ready
+
+    // Add event listener to the "Add Playlist" button
+    const addPlaylistButton = document.querySelector('.add-playlist-button');
+    if (addPlaylistButton) {
+        addPlaylistButton.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default link behavior
+            showAddPlaylistModal();
+        });
+    }
+
+    // Add event listener to the "Create Playlist" button in the modal
+    const createPlaylistButton = document.getElementById('create-playlist-button');
+    if (createPlaylistButton) {
+        createPlaylistButton.addEventListener('click', function() {
+            const playlistName = document.getElementById('new-playlist-name').value;
+            if (playlistName) {
+                createNewPlaylist(playlistName).then(newPlaylistId => {
+                    alert("New playlist created successfully!");
+                    hideAddPlaylistModal();
+                });
+            } else {
+                alert("Please enter a playlist name.");
+            }
+        });
+    }
+
+    // Add event listener to close the modal
+    const closeModalButtons = document.querySelectorAll('.addPlaylist_modal .addPlaylist_modal-close');
+    closeModalButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            hideAddPlaylistModal();
+        });
+    });
 });
 
 // Your web app's Firebase configuration
@@ -56,36 +89,35 @@ function showMorePlaylists(docs, startIndex) {
     }
 }
 
-function createNewPlaylist() {
-    const playlistName = prompt("Enter the name of the new playlist:");
-    if (playlistName) {
-        db.collection('playlists').add({
-            name: playlistName
-        })
-        .then(docRef => {
-            const playlistLibrary = document.getElementById('v25-playlist-library');
-            const newPlaylist = document.createElement('li');
-            newPlaylist.textContent = playlistName;
-            newPlaylist.onclick = () => displayPlaylist(docRef.id);
-            playlistLibrary.appendChild(newPlaylist);
+function createNewPlaylist(playlistName) {
+    return db.collection('playlists').add({
+        name: playlistName
+    })
+    .then(docRef => {
+        const playlistLibrary = document.getElementById('v25-playlist-library');
+        const newPlaylist = document.createElement('li');
+        newPlaylist.textContent = playlistName;
+        newPlaylist.onclick = () => displayPlaylist(docRef.id);
+        playlistLibrary.appendChild(newPlaylist);
 
-            // Also add to the sidebar list
-            const sidebarPlaylistList = document.querySelector('.list-unstyled.components');
-            const newSidebarPlaylist = document.createElement('li');
-            const newSidebarPlaylistLink = document.createElement('a');
-            newSidebarPlaylistLink.href = "#";
-            newSidebarPlaylistLink.textContent = playlistName;
-            newSidebarPlaylistLink.onclick = () => displayPlaylist(docRef.id);
-            newSidebarPlaylist.appendChild(newSidebarPlaylistLink);
-            sidebarPlaylistList.appendChild(newSidebarPlaylist);
+        // Also add to the sidebar list
+        const sidebarPlaylistList = document.querySelector('.list-unstyled.components');
+        const newSidebarPlaylist = document.createElement('li');
+        const newSidebarPlaylistLink = document.createElement('a');
+        newSidebarPlaylistLink.href = "#";
+        newSidebarPlaylistLink.textContent = playlistName;
+        newSidebarPlaylistLink.onclick = () => displayPlaylist(docRef.id);
+        newSidebarPlaylist.appendChild(newSidebarPlaylistLink);
+        sidebarPlaylistList.appendChild(newSidebarPlaylist);
 
-            // Show the modal to add songs
-            showAddSongsModal(docRef.id, playlistName);
-        })
-        .catch(error => {
-            console.error("Error adding document: ", error);
-        });
-    }
+        // Show the modal to add songs
+        showAddSongsModal(docRef.id, playlistName);
+
+        return docRef.id; // Return the new playlist ID
+    })
+    .catch(error => {
+        console.error("Error adding document: ", error);
+    });
 }
 
 function displayPlaylist(playlistId) {
@@ -102,6 +134,16 @@ function displayPlaylist(playlistId) {
         .catch(error => {
             console.log("Error getting document:", error);
         });
+}
+
+function showAddPlaylistModal() {
+    const modal = document.getElementById('add-playlist-modal');
+    modal.style.display = 'block';
+}
+
+function hideAddPlaylistModal() {
+    const modal = document.getElementById('add-playlist-modal');
+    modal.style.display = 'none';
 }
 
 function showAddSongsModal(playlistId, playlistName) {
@@ -136,8 +178,18 @@ function addSongToPlaylist(playlistId) {
 
 // Close the modal when the user clicks outside of it
 window.onclick = function(event) {
-    const modal = document.getElementById('add-songs-modal');
-    if (event.target == modal) {
-        modal.style.display = "none";
+    const addPlaylistModal = document.getElementById('add-playlist-modal');
+    const addSongsModal = document.getElementById('add-songs-modal');
+    if (event.target == addPlaylistModal) {
+        addPlaylistModal.style.display = "none";
     }
+    if (event.target == addSongsModal) {
+        addSongsModal.style.display = "none";
+    }
+}
+
+function checkUserPlaylists() {
+    return db.collection('playlists').get().then(querySnapshot => {
+        return querySnapshot.size > 0;
+    });
 }
