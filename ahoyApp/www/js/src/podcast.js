@@ -54,7 +54,7 @@ function populatePodcastTable() {
                 <img src="${podcast.thumbnail}" alt="${podcast.title}" class="ahoypodcast_thumbnail">
                 <div class="ahoypodcast_info">
                     <div class="ahoypodcast_title">${podcast.title}</div>
-                    <div class="ahoypodcast_details">${podcast.date}</div>
+                    ${podcast.date ? `<div class="ahoypodcast_details">${podcast.date}</div>` : ''}
                 </div>
                 <button class="ahoypodcast_control-button" id="podcast-play-${index}" onclick="togglePlayPausePodcast(${index})">
                     <i class="fas fa-play" style="color: var(--border-color); font-size: 22px;"></i>
