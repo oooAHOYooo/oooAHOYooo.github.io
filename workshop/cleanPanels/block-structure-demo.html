@@ -8,9 +8,121 @@
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap');
         </style>
+        <style>
+                    body {
+                        background: linear-gradient(270deg, #ff6a6a, #ffcc6a, #6aff6a, #6affcc, #6a6aff, #cc6aff);
+                        background-size: 1200% 1200%;
+                        animation: gradientAnimation 15s ease infinite;
+                    }
+
+                    @keyframes gradientAnimation {
+                        0% { background-position: 0% 50%; }
+                        50% { background-position: 100% 50%; }
+                        100% { background-position: 0% 50%; }
+                    }
+                    h2 {
+                        color: white;
+                        font-family: 'Barlow', sans-serif;
+                        font-size: 24px;
+                        font-weight: 700;
+                        line-height: 28.80px;
+                        word-wrap: break-word;
+                    }
+            .full-width-container {
+                width: 100%;
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+        
+            .compontent {
+                width: 100%;
+                margin: 10px;
+            }
+        
+            .block {
+                width: 100%;
+            }
+        
+            .panel {
+                width: 100%;
+            }
+        
+            .item-container {
+                width: 100%;
+            }
+        
+            .item-block {
+                width: 100%;
+            }
+        
+        
+         .--panel-style-1 {
+            background-color: #ff6a6a41;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0px 0px 10px 0px #00000053;
+            border: 1px solid #ff6a6a8d;
+            
+         }
+        
+        .--panel-style-2 {
+            border-radius: 10px;
+            border: 1px solid var(--Border-Glass-Border-Light-12, rgba(255, 255, 255, 0.12));
+            background: var(--surface-white-opacity-05-placeholder, rgba(255, 255, 255, 0.05));
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(12px);
+            padding: 20px;
+        
+        }
+        
+        .--item-style-1 {
+                        background-color: #4242428d;
+                        border-radius: 20px;
+                        padding: 20px;
+                        box-shadow: 0px 0px 10px 0px #00000053;
+                        border: 1px solid #ff6a6a8d;
+                        color: white;
+                        font-size: 24px;
+                        font-family: 'Barlow', sans-serif; /* Apply Barlow font to items */
+                        font-weight: 700;
+                        line-height: 28.80px;
+                        word-wrap: break-word;
+                    }
+        
+         .--item-size-1 {
+            width: 150px;
+            height: 100%;
+         }
+        
+         .--item-size-2 {
+            width: 300px;
+            height: 100%;
+         }
+        
+         .--item-size-3 {
+            width: 450px;
+            height: 100%;
+         }
+        
+         .horizontal {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+         }
+        
+         .vertical {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+         }
+        
+        </style>
     </head>
     <body>
         <div class="full-width-container vertical">
+            <h2>This is a component with the same structure</h2>
             <div class="component" id="compo1">
                 <div class="block">
                     <div class="panel --panel-style-2">
@@ -18,7 +130,11 @@
                             <div class="item --item-style-1 --item-size-1">
                                 <div class="item-block">
 
-                                    Item Block 1</div>
+                                    Item Name 1
+                                    <br>
+                                    <p>This item is wrapped in a Paragraph Tag -
+                                        and notice how everything else is
+                                        becoming dynamic</p></div>
                             </div>
                             <div class="item --item-style-1 --item-size-2">
                                 <div class="item-block">Item Block 2</div>
@@ -28,6 +144,7 @@
                     </div>
                 </div>
             </div>
+            <h2>This is another component with the same structure</h2>
             <div class="component" id="compo2">
                 <div class="block">
                     <div class="panel --panel-style-2">
@@ -47,108 +164,5 @@
             </div>
         </div>
 
-        <style>
-            body {
-                background-color: #00000053;
-            }
-    .full-width-container {
-        width: 100%;
-        display:flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-    }
-
-    .compontent {
-        width: 100%;
-        margin: 10px;
-    }
-
-    .block {
-        width: 100%;
-    }
-
-    .panel {
-        width: 100%;
-    }
-
-    .item-container {
-        width: 100%;
-    }
-
-    .item-block {
-        width: 100%;
-    }
-
-
- .--panel-style-1 {
-    background-color: #ff6a6a41;
-    border-radius: 20px;
-    padding: 20px;
-    box-shadow: 0px 0px 10px 0px #00000053;
-    border: 1px solid #ff6a6a8d;
-    
- }
-
-.--panel-style-2 {
-    border-radius: 10px;
-    border: 1px solid var(--Border-Glass-Border-Light-12, rgba(255, 255, 255, 0.12));
-    background: var(--surface-white-opacity-05-placeholder, rgba(255, 255, 255, 0.05));
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
-    backdrop-filter: blur(12px);
-    padding: 20px;
-
-}
-
-.--item-style-1 {
-                background-color: #4242428d;
-                border-radius: 20px;
-                padding: 20px;
-                box-shadow: 0px 0px 10px 0px #00000053;
-                border: 1px solid #ff6a6a8d;
-                color: white;
-                font-size: 24px;
-                font-family: 'Barlow', sans-serif; /* Apply Barlow font to items */
-                font-weight: 700;
-                line-height: 28.80px;
-                word-wrap: break-word;
-            }
-
- .--item-size-1 {
-    width: 150px;
-    height: 100%;
- }
-
- .--item-size-2 {
-    width: 300px;
-    height: 100%;
- }
-
- .--item-size-3 {
-    width: 450px;
-    height: 100%;
- }
-
- .horizontal {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
- }
-
- .vertical {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
- }
-
- .full-flex {
-    width: 100%;
-    display:flex;
-    align-items: center;
-    justify-content: center;
- }
-
-
-</style>
     </body>
 </html>
