@@ -10,8 +10,8 @@
         </style>
     </head>
     <body>
-        <div class="full-width-container">
-            <div class="component">
+        <div class="full-width-container vertical">
+            <div class="component" id="compo1">
                 <div class="block">
                     <div class="panel --panel-style-2">
                         <div class="item-container horizontal">
@@ -21,6 +21,23 @@
                                     Item Block 1</div>
                             </div>
                             <div class="item --item-style-1 --item-size-2">
+                                <div class="item-block">Item Block 2</div>
+                            </div>
+                            <!-- Add more items as needed -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="component" id="compo2">
+                <div class="block">
+                    <div class="panel --panel-style-2">
+                        <div class="item-container horizontal">
+                            <div class="item --item-style-1 --item-size-1">
+                                <div class="item-block">
+
+                                    Item Block 1</div>
+                            </div>
+                            <div class="item --item-style-1 --item-size-3">
                                 <div class="item-block">Item Block 2</div>
                             </div>
                             <!-- Add more items as needed -->
@@ -44,6 +61,7 @@
 
     .compontent {
         width: 100%;
+        margin: 10px;
     }
 
     .block {
@@ -106,6 +124,11 @@
     height: 100%;
  }
 
+ .--item-size-3 {
+    width: 450px;
+    height: 100%;
+ }
+
  .horizontal {
     width: 100%;
     display: flex;
@@ -116,6 +139,13 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+ }
+
+ .full-flex {
+    width: 100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
  }
 
 
