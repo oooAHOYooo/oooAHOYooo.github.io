@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Block</title>
+        <link rel="stylesheet" href="styles.css">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap');
+        </style>
+    </head>
+    <body>
+        <div class="full-width-container">
+            <div class="component">
+                <div class="block">
+                    <div class="panel --panel-style-2">
+                        <div class="item-container horizontal">
+                            <div class="item --item-style-1 --item-size-1">
+                                <div class="item-block">
+
+                                    Item Block 1</div>
+                            </div>
+                            <div class="item --item-style-1 --item-size-2">
+                                <div class="item-block">Item Block 2</div>
+                            </div>
+                            <!-- Add more items as needed -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <style>
+            body {
+                background-color: #00000053;
+            }
+    .full-width-container {
+        width: 100%;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .compontent {
+        width: 100%;
+    }
+
+    .block {
+        width: 100%;
+    }
+
+    .panel {
+        width: 100%;
+    }
+
+    .item-container {
+        width: 100%;
+    }
+
+    .item-block {
+        width: 100%;
+    }
+
+
+ .--panel-style-1 {
+    background-color: #ff6a6a41;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px 0px #00000053;
+    border: 1px solid #ff6a6a8d;
+    
+ }
+
+.--panel-style-2 {
+    border-radius: 10px;
+    border: 1px solid var(--Border-Glass-Border-Light-12, rgba(255, 255, 255, 0.12));
+    background: var(--surface-white-opacity-05-placeholder, rgba(255, 255, 255, 0.05));
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(12px);
+    padding: 20px;
+
+}
+
+.--item-style-1 {
+                background-color: #4242428d;
+                border-radius: 20px;
+                padding: 20px;
+                box-shadow: 0px 0px 10px 0px #00000053;
+                border: 1px solid #ff6a6a8d;
+                color: white;
+                font-size: 24px;
+                font-family: 'Barlow', sans-serif; /* Apply Barlow font to items */
+                font-weight: 700;
+                line-height: 28.80px;
+                word-wrap: break-word;
+            }
+
+ .--item-size-1 {
+    width: 150px;
+    height: 100%;
+ }
+
+ .--item-size-2 {
+    width: 300px;
+    height: 100%;
+ }
+
+ .horizontal {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+ }
+
+ .vertical {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+ }
+
+
+</style>
+    </body>
+</html>
