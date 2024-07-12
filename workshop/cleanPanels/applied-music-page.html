@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Music Collection</title>
+        <link rel="stylesheet" href="styles.css">
+        <style>
+        @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap');
+        body {
+            background: linear-gradient(270deg, #ff6a6a, #ffcc6a, #6aff6a, #6affcc, #6a6aff, #cc6aff);
+            background-size: 1200% 1200%;
+            animation: gradientAnimation 15s ease infinite;
+        }
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        h2 {
+            color: white;
+            font-family: 'Barlow', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 28.80px;
+            word-wrap: break-word;
+        }
+        .full-width-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .responsive-table {
+            width: 100%;
+        }
+        .song-row {
+            height: 50px;
+        }
+        .album-art {
+            width: 50px;
+            height: 50px;
+        }
+        .action-cell {
+            display: flex;
+            justify-content: space-around;
+        }
+        .action-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        .current-album-art {
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+    </head>
+    <body>
+        <div class="full-width-container vertical">
+            <h2>Music Collection</h2>
+            <table id="song-table" class="responsive-table">
+                <thead>
+                    <tr>
+                        <th>Artwork</th>
+                        <th>Artist</th>
+                        <th>Song</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="song-table-body">
+                    <!-- Songs will be dynamically inserted here -->
+                </tbody>
+            </table>
+            <audio id="audio-player" controls style="display:none;"></audio>
+            <div id="thisOne"></div>
+            <div id="current-track"></div>
+            <img id="bottom-album-art" src alt="Album Art">
+        </div>
+        <script src="../../ahoyApp/js/src/song-collection.js"></script>
+    </body>
+</html>
