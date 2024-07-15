@@ -451,7 +451,8 @@ td {
 .ahoypodcast_row {
     display: flex;
     align-items: center;
-    border-bottom: 1px solid #ffffff; /* Added 1px solid to define the border */
+    border-bottom: 1px solid #ffffff;
+    /* Added 1px solid to define the border */
 }
 
 .ahoypodcast_thumbnail {
@@ -480,25 +481,36 @@ td {
 }
 
 .addPlaylist_modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 2000; /* Sit on top */
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 2000;
+    /* Sit on top */
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
 }
 
 .addPlaylist_modal-content {
     background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
+    margin: 15% auto;
+    /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
-    max-width: 500px; /* Maximum width */
+    width: 80%;
+    /* Could be more or less, depending on screen size */
+    max-width: 500px;
+    /* Maximum width */
 }
 
 .addPlaylist_modal-close {
@@ -513,4 +525,26 @@ td {
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+.action-cell-flex {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* Adjust the gap between buttons as needed */
+}
+
+.action-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 16px;
+    color: var(--border-color);
+    /* Use the same color variable */
+}
+
+.action-button i {
+    font-size: 22px;
+    /* Adjust icon size as needed */
 }
