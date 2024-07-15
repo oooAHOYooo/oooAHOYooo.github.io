@@ -57,15 +57,11 @@
 
 #enlarged-thumbnail-container {
     display: none;
-    /* Hidden by default */
-    /* Or 'absolute' */
     z-index: 1050;
-    /* Ensure it's above other content */
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     background-color: white;
-    /* Or any other background */
     padding: 90px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -78,11 +74,6 @@
         max-width: 90% !important;
         margin: 0 auto;
     }
-
-
-
-
-
 }
 
 

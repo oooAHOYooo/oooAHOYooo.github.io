@@ -9,6 +9,19 @@
             @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap');
         </style>
         <style>
+
+.item-block pre {
+                white-space: pre-wrap; /* Wraps the code */
+                word-wrap: break-word; /* Breaks long words */
+                overflow: auto; /* Adds scrollbars if needed */
+                background-color: #333; /* Optional: background color for code */
+                color: #fff; /* Optional: text color for code */
+                padding: 10px; /* Optional: padding for better readability */
+                border-radius: 5px; /* Optional: rounded corners */
+                font-size: 12px;
+                line-height: 95%;
+                font-weight: 400;
+            }
             body {
                 background: linear-gradient(270deg, #ff6a6a, #ffcc6a, #6aff6a, #6affcc, #6a6aff, #cc6aff);
                 background-size: 1200% 1200%;
@@ -112,10 +125,28 @@
                     <div class="panel --panel-style-1">
                         <div class="item-container horizontal">
                             <div class="item --item-style-1 --item-size-1">
-                                <div class="item-block">Item 1</div>
+                                <div class="item-block">Items can be thought of
+                                    in terms of html like -
+                                    <div class="itemheader">Header</div>
+                                    <div class="body">Body</div>
+                                    <div class="footer">Footer</div>
+                                </div>
                             </div>
                             <div class="item --item-style-1 --item-size-2">
-                                <div class="item-block">Item 2</div>
+                                <div class="item-block">Item 2
+
+                                    <br>
+                                    Content for item 2
+                                    <br>
+                                    <pre><code>
+    &lt;div class="item-block"&gt;Items can be thought of in terms of html like - 
+    &lt;div class="item-header"&gt;Header&lt;/div&gt;
+    &lt;div class="item-body"&gt;Body&lt;/div&gt;
+    &lt;div class="item-footer"&gt;Footer&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+                                </div>
                             </div>
                         </div>
                     </div>
