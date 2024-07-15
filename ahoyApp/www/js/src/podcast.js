@@ -48,7 +48,6 @@ function populatePodcastTable() {
 
     podcasts.forEach((podcast, index) => {
         const row = document.createElement("tr");
-        row.style.border = "1px solid #ccc"; // Add border style
         row.innerHTML = `
             <td class="ahoypodcast_row">
                 <img src="${podcast.thumbnail}" alt="${podcast.title}" class="ahoypodcast_thumbnail">
@@ -56,11 +55,11 @@ function populatePodcastTable() {
                     <div class="ahoypodcast_title">${podcast.title}</div>
                     ${podcast.date ? `<div class="ahoypodcast_details">${podcast.date}</div>` : ''}
                 </div>
-                <button class="ahoypodcast_control-button" id="podcast-play-${index}" onclick="togglePlayPausePodcast(${index})">
-                    <i class="fas fa-play" style="color: var(--border-color); font-size: 22px;"></i>
+                <button class="podcast-action-button" id="podcast-play-${index}" onclick="togglePlayPausePodcast(${index})">
+                    <i class="fas fa-play play-icon"></i>
                 </button>
-                <button class="ahoypodcast_add-button" onclick="addPodcastToPlaylist(${index})">
-                    <i class="fas fa-plus" style="color: var(--border-color); font-size: 16px;"></i>
+                <button class="podcast-action-button" onclick="addPodcastToPlaylist(${index})">
+                    <i class="fas fa-plus add-icon"></i>
                 </button>
             </td>
         `;

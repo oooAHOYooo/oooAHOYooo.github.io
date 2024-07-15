@@ -548,3 +548,21 @@ td {
     font-size: 22px;
     /* Adjust icon size as needed */
 }
+
+
+.podcast-action-button {
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.podcast-action-button:hover {
+    background-color: #444444;
+}
+
+.podcast-action-button i {
+    margin-right: 5px;
+}
