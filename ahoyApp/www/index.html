@@ -330,92 +330,7 @@
               </div>
               <!-- END OF NOW PLAYING -->
             </div>
-            <!-- SONGS TAB -->
-            <div id="songs-tab" class="tab-content">
-              <div id="now-playing-song-container" class="now-playing-song">
-                <img src="./img/ahoy-music.svg" class="svgBlend">
-                <div class="image-and-play-button-aa"
-                  style="max-width: 100%; height:auto; max-height: 300px; display: flex; justify-content: center; align-items: center;">
-                  <img id="now-playing-album-art" src="./path/to/your/image.jpg"
-                    alt="Album Art" style="max-width: 100%; max-height: 100%;">
-                </div>
-              </div>
-              <div class="music-radio">
-                <img src="./img/ahoy-radio.svg" class="svgBlend">
-                <div class="radio-container">
-                  <div class="radio-play-btn"><br>
-                    <i class="fas fa-play"></i>
-                  </div>
-                  <div class="radio-station-name">
-                    <p>Radio Station Name</p>
-                  </div>
-                </div>
-                <div class="radio-stats">
-                  <p>Broadcasting out of : <span>East Haven, CT</span></p><p>on
-                    Air Since</p>
-                </div><p>The time is <span id="radio-time">00:00</span></p>
 
-              </div>
-
-              <!-- Song Search Section -->
-
-              
-
-
-              <button id="classical-mode-button"
-                onclick="navigateToTab('classical-tab')"
-                class="common-button">Classical Music Mode</button>
-              <button id="song-collection-tab-button" onclick="navigateToTab('song-collection-tab')">Song Collection</button>
-              <!-- SONG COLLECTION -->
-              <img src="./img/ahoy-fullSong.svg" class="svgBlend">
-
-              <p>The following songs are homegrown from locals. Presently,
-                arranged by the most recently added song on the bottom. </p>
-              <h2
-                style="text-transform:uppercae; text-align:center; font-size: 1rem;">Click
-                Play to
-                Play - Click Burn to add songs to your CD</h2>
-
-              <style>
-            #yep {
-              display:none;
-            }
-          </style>
-              <div id="yep">
-                <input type="text" id="search-bar-a"
-                  placeholder="Search songs..." />
-                <button id="mix-button">Mix</button>
-                <button>Recently Added</button>
-                <button id="sort-az">Sort A-Z</button>
-
-              </div>
-
-              <div id="song-wrap-list">
-                <ul class="list" id="song-list"></ul>
-              </div>
-
-              <div id="now-playing-song-details">
-                <h3 id="now-playing-song-title">Song Title</h3>
-                <p id="now-playing-song-artist">Artist Name</p>
-                <!-- <button class="play-button-tiny"
-            onclick="handlePlayButtonClick()"
-            style="width: 16px; height: 16px; padding: 0; border: none; background: none; cursor: pointer; position: fixed; bottom: 10px; left: 10px; color: #c0c0c0;"
-            onmouseover="this.style.width='18px';this.style.height='18px';"
-            onmouseout="this.style.width='16px';this.style.height='16px';">
-        <i class="fas fa-play" style="font-size: 16px; color: #c0c0c0;"></i>
-            </button>
-            <button class="burn-button-tiny"
-            onclick="burnSong('songUrl', 'Song Title', 'Artist Name', this)"
-            style="width: 16px; height: 16px; padding: 0; border: none; background: none; cursor: not-allowed; position: fixed; bottom: 10px; right: 10px; color: #c0c0c000;"
-            onmouseover="this.style.width='18px';this.style.height='18px';"
-            onmouseout="this.style.width='16px';this.style.height='16px';"
-            disabled>
-            <i class="fas fa-fire" style="font-size: 16px; color: #c0c0c01d;"></i>
-          </button> -->
-              </div>
-
-            </div>
-            <!-- ENDOF SONG-->
             <!-- MEDIA TAB -->
             <div id="media-tab-a" class="tab-content">
               <img src="./img/ahoy-media.svg"
@@ -560,14 +475,12 @@
               <p>You are on version <span id="app-version">v.0.24.7</span></p>
               <div class="settings-options">
                 <div class="setting">
-
                   <!-- Mute Button -->
                   <!--button id="mute-button" onclick="toggleMute()"
                 class="control-button">Mute
                 <i class="fas fa-volume-up" id="mute-icon">Audio</i>
               </button -->
                   <br>
-
                   <button id="theme-switch-button"
                     onclick="switchTheme()">Switch
                     Theme</button>
