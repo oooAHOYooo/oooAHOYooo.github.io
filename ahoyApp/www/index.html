@@ -187,6 +187,38 @@
     </script>
 
 
+<!-- Full Screen JWPlayer Modal -->
+<div id="jwplayer-fullscreen-modal" class="jwplayer-modal">
+  <div class="jwplayer-modal-content">
+    <span class="jwplayer-close"><i class="fa fa-times"></i></span>
+    <div id="jwplayer-container">
+
+
+      
+    </div>
+    <div id="jwplayer-currently-playing" class="currently-playing">
+      <h2 class="jwplayer-title">Currently Playing:</h2>
+      <p id="current-title" class="jwplayer-text-bold">Title: 
+        <span id="current-title-text" class="jwplayer-text">Skate Clips</span></p>
+      <p id="current-description" class="jwplayer-text-bold">Description: <span class="jwplayer-text" id="current-description-text">Skate Clips from our skate friends</span></p>
+      <div class="tiny-note" style="margin-top: 110px;">
+      <button class="btnPrimary" id="close-fullscreen-button">Close FullScreen</button>
+    </div>
+    </div>
+  </div>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // ... existing code ...
+
+    // Add event listener for the "Close FullScreen" button
+    document.getElementById('close-fullscreen-button').addEventListener('click', function() {
+      document.getElementById('jwplayer-fullscreen-modal').style.display = 'none';
+    });
+  });
+</script>
+
+
 <!-- RIGHT FEATURED BUTTON-->
 <style>
 
@@ -204,8 +236,23 @@
         <div ><iframe
             src="https://cdn.jwplayer.com/players/S9LOWFXC-9Gtk2B1J.html"></iframe></div>
 
-        <button class="btnPrimary">
-Play FullScreen        </button>
+    <!-- ... existing code ... -->
+    <br>
+<button class="btnPrimary" id="play-fullscreen-button">
+  Play FullScreen
+</button>
+<!-- ... existing code ... -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // ... existing code ...
+
+    // Add event listener for the "Play FullScreen" button
+    document.getElementById('play-fullscreen-button').addEventListener('click', function() {
+      jwplayer().play();
+      jwplayer().setFullscreen(true);
+    });
+  });
+</script>
 <div class="tiny-note">
         <p class="tinyText">Explore a world of indie delights with our curated 12-hour
           cycles, repeated for your convenience and viewing pleasure.
@@ -214,22 +261,22 @@ Play FullScreen        </button>
         <table class="schedule-table">
           <thead>
             <tr>
-              <th>Time Slot</th>
-              <th>Content Block</th>
-              <th>Featured Content</th>
+              <th class="tinyText">Time Slot</th>
+              <th class="tinyText">Content Block</th>
+              <th class="tinyText">Featured Content</th>
             </tr>
           </thead>
           <tbody>
             <!-- Example Rows -->
             <tr>
-              <td>00:00 - 01:00</td>
-              <td>Block A</td>
-              <td>Classical Music Pack A & B</td>
+              <td class="tinyText">00:00 - 01:00</td>
+              <td class="tinyText">Block A</td>
+              <td class="tinyText">Rob Show Classics</td>
             </tr>
             <tr>
-              <td>01:00 - 02:00</td>
-              <td>Block B</td>
-              <td>Skate Film Pack C & D</td>
+              <td class="tinyText">01:00 - 02:00</td>
+              <td class="tinyText">Block B</td>
+              <td class="tinyText">Skate Films</td>
             </tr>
             <!-- Add more rows as per your schedule -->
           </tbody>
@@ -886,6 +933,8 @@ Play FullScreen        </button>
 
     <!--DYNAMIC CONTENT -->
     <script src="js/src/goals.js"></script>
+    <!-- MAKE JWPLAYER FULLSCREEN FUNCTION -->
+    <script src="js/src/function-toggle-fs.js"></script>
     <!-- NOT QUITE READY TO BE LINKED AND LIVE -->
     <!--script src="js/src/v25-featured_playlists.js"></script-->
 

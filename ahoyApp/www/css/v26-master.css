@@ -647,8 +647,8 @@ td {
 
 .schedule-table th,
 .schedule-table td {
-    padding: 8px;
-    text-align: left;
+    padding: 5px;
+    text-align: center;
     border: 1px solid rgba(255, 255, 255, 0.3);
     color: #ffffff;
 }
@@ -673,5 +673,77 @@ td {
     font-size: 14px;
     max-width: 50ch;
     padding: 5px;
+    text-align: center;
 
 }
+
+/* ... existing code ... */
+
+.jwplayer-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.jwplayer-modal-content {
+    position: relative;
+    margin: auto;
+    padding: 0;
+    width: 80%;
+    max-width: 1200px;
+    height: 80%;
+}
+
+.jwplayer-close {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    color: #fff;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.jwplayer-close:hover,
+.jwplayer-close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.jwplayer-title {
+    font-size: calc(2vw + 2vh + 2vmin);
+    /* Responsive font size */
+    text-align: left;
+    margin: 0.5em 0;
+    color: white;
+    font-weight: 900;
+}
+
+.jwplayer-text {
+    font-size: calc(1.5vw + 1.5vh + 1.5vmin);
+    /* Responsive font size */
+    text-align: left;
+    margin: 0.5em 0;
+    font-weight: 400;
+    color: white;
+}
+
+.jwplayer-text-bold {
+    font-weight: 900;
+    font-size: calc(1.5vw + 1.5vh + 1.5vmin);
+    /* Responsive font size */
+    text-align: left;
+    margin: 0.5em 0;
+    font-weight: 900;
+    color: white;
+}
+
+/* ... existing code ... */
