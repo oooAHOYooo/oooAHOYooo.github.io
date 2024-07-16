@@ -689,6 +689,8 @@ td {
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.9);
+    overflow-y: scroll;
+    padding-bottom: 410px;
 }
 
 .jwplayer-modal-content {
