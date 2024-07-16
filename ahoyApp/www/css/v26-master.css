@@ -56,7 +56,70 @@
 
 /*SIDEDOCK turning to FULLDOCK on Mobile */
 
+.right-sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(10px);
+    color: white;
+    transition: right 0.3s ease;
+    z-index: 1000;
+    padding: 20px;
+    display: none;
+}
 
+.right-sidebar-top,
+.right-sidebar-middle {
+    margin-bottom: 20px;
+}
+
+.right-sidebar h2 {
+    font-family: 'Barlow', sans-serif;
+    font-weight: 900;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.tv-box,
+.daily-shuffle-box {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: 1px solid var(--border-color);
+    margin-bottom: 20px;
+}
+
+.daily-shuffle-box {
+    overflow-y: scroll;
+    height: 30vh;
+}
+
+.tv-box {
+    overflow-y: auto;
+    height: 610px;
+}
+
+.toggle-button-right {
+    position: fixed;
+    right: 2.25px;
+    top: 2.5px;
+    z-index: 1001;
+    cursor: pointer;
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: 25px;
+}
+
+.toggle-button-right:hover {
+    background-color: var(--border-color);
+    color: var(--text-color);
+}
 
 .modal {
     position: fixed;
@@ -405,7 +468,7 @@ td {
 
     background-color: rgba(255, 255, 255, 0.2);
     /* More transparent background */
-    color: var(--text-color);
+    color: white;
     border: none;
     padding: 10px 20px;
     /* Added padding */
@@ -564,4 +627,51 @@ td {
 
 .podcast-action-button i {
     margin-right: 5px;
+}
+
+.ahoy-tv-section {
+    color: #fff;
+    border-radius: 10px;
+    text-align: center;
+}
+
+
+.schedule-table {
+    border-collapse: collapse;
+    width: 100%;
+    color: var(--border-color);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.schedule-table th,
+.schedule-table td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+}
+
+.schedule-table th {
+    color: #f0f0f2;
+    text-align: center;
+    font-weight: 400;
+    font-size: 10px;
+    /* Subtle text shadow for a retro effect */
+}
+
+.tiny-note {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4.9px;
+}
+
+.tinyText {
+    font-size: 14px;
+    max-width: 50ch;
+    padding: 5px;
+
 }

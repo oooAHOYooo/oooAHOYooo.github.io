@@ -141,6 +141,7 @@
       }
   </script>
 
+
   </head>
   <!-- START OF BODY -->
   <body>
@@ -188,60 +189,7 @@
 
 <!-- RIGHT FEATURED BUTTON-->
 <style>
-  .right-sidebar {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 250px;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.75);
-    backdrop-filter: blur(10px);
-    color: white;
-    transition: right 0.3s ease;
-    z-index: 1000;
-    padding: 20px;
-    display: none;
-}
 
-.right-sidebar-top,
-.right-sidebar-middle {
-    margin-bottom: 20px;
-}
-
-.right-sidebar h2 {
-    font-family: 'Barlow', sans-serif;
-    font-weight: 900;
-    font-size: 18px;
-    text-transform: uppercase;
-    letter-spacing: .1em;
-    color: white;
-    margin-bottom: 10px;
-}
-
-.tv-box,
-.daily-shuffle-box {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    border: 1px solid var(--border-color);
-    margin-bottom: 20px;
-}
-
-.toggle-button-right {
-    position: fixed;
-    right: 2.25px;
-    top: 2.5px;
-    z-index: 1001;
-    cursor: pointer;
-    background-color: transparent;
-    color: white;
-    border: none;
-    font-size: 25px;
-}
-
-.toggle-button-right:hover {
-    background-color: var(--border-color);
-    color: var(--text-color);
-}
 </style>
 <!-- Right Sidebar Toggle Button -->
 <button id="right-toggle-button" class="toggle-button-right">☰</button>
@@ -249,15 +197,72 @@
 <!-- Right Sidebar -->
 <div id="right-sidebar" class="right-sidebar" style="display: none;"> <!-- Initially hidden -->
   <div class="right-sidebar-top">
-    <h2>TV</h2>
-    <div class="tv-box"></div>
+    <h2>Live on Air</h2>
+    <div class="tv-box">
+      <div id="ahoy-tv-schedule" class="ahoy-tv-section">
+
+        <div ><iframe
+            src="https://cdn.jwplayer.com/players/S9LOWFXC-9Gtk2B1J.html"></iframe></div>
+
+        <button class="btnPrimary">
+Play FullScreen        </button>
+<div class="tiny-note">
+        <p class="tinyText">Explore a world of indie delights with our curated 12-hour
+          cycles, repeated for your convenience and viewing pleasure.
+         </p></div>
+
+        <table class="schedule-table">
+          <thead>
+            <tr>
+              <th>Time Slot</th>
+              <th>Content Block</th>
+              <th>Featured Content</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Example Rows -->
+            <tr>
+              <td>00:00 - 01:00</td>
+              <td>Block A</td>
+              <td>Classical Music Pack A & B</td>
+            </tr>
+            <tr>
+              <td>01:00 - 02:00</td>
+              <td>Block B</td>
+              <td>Skate Film Pack C & D</td>
+            </tr>
+            <!-- Add more rows as per your schedule -->
+          </tbody>
+        </table><div class="tiny-note">
+        <p class="tinyText">Catch our prime time content every evening from 7 PM to 10
+          PM, featuring exclusive premieres and fan favorites.</p></div>
+      </div>
+    </div>
+
   </div>
   <div class="right-sidebar-middle">
-    <h2>Daily Shuffle Playlist</h2>
-    <div class="daily-shuffle-box"></div>
+    <!-- 
+    <div class="daily-shuffle-box">
+      <div id="v25-daily-shuffle">
+        <div class="daily-shuffle-headline">
+          <img src="./img/ahoy-theDailySHuffle.svg" class="svgBlend">
+          <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title="The Daily Shuffle feature generates a daily playlist called the 'Daily Shuffle,' which is the same for all users each day. It begins with a daily seed based on the current date, ensuring the shuffle algorithm produces a uniform sequence of songs for everyone, ensuring a consistent playlist each day.">
+            Info
+          </button>
+        </div>
+        <button id="play-daily-shuffle" class="play-daily-shuffle-button">Play Daily Radio</button>
+        <div id="daily-shuffle-list"></div>
+      </div>
+    </div>-->
   </div>
 </div>
 
+<!-- Initialize tooltips -->
+<script>
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+  });
+</script>
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
@@ -338,24 +343,7 @@
                   </div>
                 </div>
                 <div id="daily-shuffle-super-mix"></div>
-                <div id="v25-daily-shuffle">
-                  <div class="daily-shuffle-headline">
-                    <img src="./img/ahoy-theDailySHuffle.svg" class="svgBlend">
-                    <p>
-                      The Daily Shuffle feature generates a daily playlist
-                      called the "Daily Shuffle," which is the same for all
-                      users each day. It begins with a daily seed based on the
-                      current date, ensuring the shuffle algorithm produces a
-                      uniform sequence of songs for everyone, ensuring a
-                      consistent playlist each day.
-                    </p>
-                  </div>
-                  <button id="play-daily-shuffle"
-                    class="play-daily-shuffle-button">Play Daily
-                    Shuffle</button>
-                  <div id="daily-shuffle-list"></div>
-
-                </div>
+            
                 <!-- BOTTOM DESCRIPTION-->
                 <div id="homepage-bottom-desc"
                   style="display:flex; flex-direction: column; align-items: center;">
@@ -379,43 +367,7 @@
                   <div id="bottomHomeSpace" style="height:160px"></div>
                 </div>
               </div>
-              <div id="ahoy-tv-schedule" class="ahoy-tv-section">
-
-                <div style="overflow:hidden;"><iframe
-                    src="https://cdn.jwplayer.com/players/S9LOWFXC-9Gtk2B1J.html"></iframe></div>
-
-                <h1 class="headline">Ahoy TV!</h1>
-                <p>Explore a world of indie delights with our curated 12-hour
-                  cycles, repeated for your convenience and viewing pleasure.
-                  From skate films to classical music sessions, Ahoy TV brings
-                  you non-stop entertainment, tailored for the indie soul.</p>
-
-                <table class="schedule-table">
-                  <thead>
-                    <tr>
-                      <th>Time Slot</th>
-                      <th>Content Block</th>
-                      <th>Featured Content</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <!-- Example Rows -->
-                    <tr>
-                      <td>00:00 - 01:00</td>
-                      <td>Block A</td>
-                      <td>Classical Music Pack A & B</td>
-                    </tr>
-                    <tr>
-                      <td>01:00 - 02:00</td>
-                      <td>Block B</td>
-                      <td>Skate Film Pack C & D</td>
-                    </tr>
-                    <!-- Add more rows as per your schedule -->
-                  </tbody>
-                </table>
-                <p>Catch our prime time content every evening from 7 PM to 10
-                  PM, featuring exclusive premieres and fan favorites.</p>
-              </div>
+            
               <!-- END OF NOW PLAYING -->
             </div>
 
@@ -917,7 +869,7 @@
     <!--script src="js/src/v25_loadingScreen.js"></script-->
 
     <!-- Audio + Music -->
-    <!--script src="js/src/v25_dailyJukebox.js"></script>-->
+    <!--script src="js/src/v25_dailyJukebox.js"></script-->
     <!--script src="js/src/v27-songMgmt.js"></script-->
     <script src="js/src/music_daily_shuffle.js"></script>
     <script src="js/src/podcast.js"></script>
