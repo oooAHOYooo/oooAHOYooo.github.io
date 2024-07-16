@@ -185,6 +185,95 @@
       });
     </script>
 
+
+<!-- RIGHT FEATURED BUTTON-->
+<style>
+  .right-sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(10px);
+    color: white;
+    transition: right 0.3s ease;
+    z-index: 1000;
+    padding: 20px;
+    display: none;
+}
+
+.right-sidebar-top,
+.right-sidebar-middle {
+    margin-bottom: 20px;
+}
+
+.right-sidebar h2 {
+    font-family: 'Barlow', sans-serif;
+    font-weight: 900;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.tv-box,
+.daily-shuffle-box {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: 1px solid var(--border-color);
+    margin-bottom: 20px;
+}
+
+.toggle-button-right {
+    position: fixed;
+    right: 2.25px;
+    top: 2.5px;
+    z-index: 1001;
+    cursor: pointer;
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: 25px;
+}
+
+.toggle-button-right:hover {
+    background-color: var(--border-color);
+    color: var(--text-color);
+}
+</style>
+<!-- Right Sidebar Toggle Button -->
+<button id="right-toggle-button" class="toggle-button-right">☰</button>
+
+<!-- Right Sidebar -->
+<div id="right-sidebar" class="right-sidebar" style="display: none;"> <!-- Initially hidden -->
+  <div class="right-sidebar-top">
+    <h2>TV</h2>
+    <div class="tv-box"></div>
+  </div>
+  <div class="right-sidebar-middle">
+    <h2>Daily Shuffle Playlist</h2>
+    <div class="daily-shuffle-box"></div>
+  </div>
+</div>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var rightSidebar = document.getElementById('right-sidebar');
+    var rightToggleButton = document.getElementById('right-toggle-button');
+
+    rightToggleButton.addEventListener('click', function() {
+      if (rightSidebar.style.display === 'block') {
+        rightSidebar.style.display = 'none'; // Hide sidebar
+      } else {
+        rightSidebar.style.display = 'block'; // Show sidebar
+      }
+    });
+  });
+</script>
+
 <div class="v25_topLogin">
   <div class="v25_topLogin-container" style="background-color:transparent!important; display: flex; justify-content: flex-end;">
     <div class="right-content">
@@ -197,7 +286,6 @@
   </div>
 </div>
 
-          <!-- END OF SIDEBAR-->
     <!-- Add Songs Modal -->
     <div id="add-songs-modal" class="modal">
       <div class="modal-content">
@@ -255,7 +343,7 @@
                     <img src="./img/ahoy-theDailySHuffle.svg" class="svgBlend">
                     <p>
                       The Daily Shuffle feature generates a daily playlist
-                      called the “Daily Shuffle,” which is the same for all
+                      called the "Daily Shuffle," which is the same for all
                       users each day. It begins with a daily seed based on the
                       current date, ensuring the shuffle algorithm produces a
                       uniform sequence of songs for everyone, ensuring a
