@@ -18,7 +18,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
             const menu = document.createElement('div');
             menu.className = 'dropdown';
-            menu.innerHTML = `<button class="btn">Select Month <i class="bx bx-chevron-down"></i></button>`;
+            menu.innerHTML = `<button class="btnPrimary">Select Month <i class="fa fa-chevron-down"></i></button>`;
             const dropdownContent = document.createElement('div');
             dropdownContent.className = 'dropdown-content';
 
