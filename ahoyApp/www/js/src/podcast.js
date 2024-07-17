@@ -55,7 +55,7 @@ function populatePodcastTable() {
                     <div class="ahoypodcast_title">${podcast.title}</div>
                     ${podcast.date ? `<div class="ahoypodcast_details">${podcast.date}</div>` : ''}
                 </div>
-                <button class="podcast-action-button" id="podcast-play-${index}" onclick="togglePlayPausePodcast(${index})">
+                <button class="custom-play-button" id="podcast-play-${index}" onclick="togglePlayPausePodcast(${index})">
                     <i class="fas fa-play play-icon"></i>
                 </button>
                 <button class="podcast-action-button" onclick="addPodcastToPlaylist(${index})">

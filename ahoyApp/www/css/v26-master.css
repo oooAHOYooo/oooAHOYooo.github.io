@@ -785,7 +785,8 @@ td {
 .newsSubHeaderMenu button {
     text-transform: uppercase;
     font-size: 15px;
-    margin: 5px;
+    margin-right: 5px;
+    margin-bottom: 10px;
     color: var(--text-color);
 }
 
@@ -805,7 +806,6 @@ td {
 /* Style for each song info div */
 .song-info {
     background-color: rgba(0, 0, 0, 0);
-    /* Semi-transparent black background */
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 5px;
@@ -878,4 +878,46 @@ td {
     margin-bottom: 10px;
     border-style: solid;
     border-color: var(--border-color);
+}
+
+.custom-play-button {
+    color: white;
+    /* Make the icon white */
+    border: 2px solid var(--border-color);
+    /* Use the border color variable */
+    background-color: transparent;
+    /* Ensure the background is transparent */
+    padding: 10px;
+    /* Add some padding */
+    border-radius: 50%;
+    /* Make the button circular */
+    cursor: pointer;
+    /* Change cursor to pointer */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* Smooth transition for background and color */
+}
+
+.custom-play-button i {
+    color: white;
+    /* Ensure the icon inside the button is white */
+}
+
+.custom-play-button:hover {
+    background-color: #1E90FF;
+    /* Nautical blue color */
+    color: #FFD700;
+    /* Gold color for a beautiful contrast */
+    border-color: #FFD700;
+    /* Change border color to gold */
+}
+
+.custom-play-button:hover i {
+    color: #FFD700;
+    /* Change icon color to gold */
+}
+
+.home-logo {
+    margin-top: 13px;
+    width: 353px;
+    height: 100%;
 }

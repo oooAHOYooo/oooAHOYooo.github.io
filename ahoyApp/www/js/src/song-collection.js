@@ -39,6 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const playButton = document.createElement('button');
         playButton.innerHTML = '<i class="fas fa-play"></i>'; // Changed to icon
         playButton.id = `play-btn-${index}`; // Unique ID for each play button
+        playButton.classList.add('custom-play-button'); // Add custom class
         playButton.onclick = function() {
           togglePlayPauseSong(index);
         };
