@@ -78,7 +78,6 @@
     <link rel="stylesheet" href="./css/v26-master.css">
     <!-- Icons -->
     <link rel="icon" type="image/png" href="./img/favicon_ahoy.png">
-
     <!-- Firebase SDK -->
     <script
       src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js"></script>
@@ -108,8 +107,6 @@
       import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
       import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js";
       
-
-  
       // Initialize Firebase
       const app = initializeApp(firebaseConfig);
       const auth = getAuth(app);
@@ -136,26 +133,20 @@
           messageElement.className = type;
       }
   </script>
-
-
   </head>
   <!-- START OF BODY -->
   <body>
-
     <div class="app">
       <div class="app-background-layer"></div>
     </div>
-
     <!-- Sidebar Toggle Button -->
     <button id="toggle-button" class="toggle-button">☰</button>
-
     <!-- Sidebar -->
     <div id="sidedock" class="sidedock" style="left: -250px;"> <!-- Initially hidden -->
       <div id="sidedock-top" class="sidedock-top" style="padding-top: 20px;">
         <img src="./img/assets/u_ahoy23.png" alt="Main Logo" style="display: block; margin: auto; width: 100px; height: auto;">
       </div>
       <div class="sidedock-middle" id="sidedock-middle">
-       
         <hr>
         <!-- Placeholder for additional playlists -->
         <div class="playlist-item"><a href="#"><i class="fa fa-plus-circle"></i> Add Playlist</a></div>
@@ -190,7 +181,6 @@
     <div id="jwplayer-container">
 
 
-      
     </div>
     <div id="jwplayer-currently-playing" class="currently-playing">
       <h2 class="jwplayer-title">Currently Playing:</h2>
@@ -215,10 +205,6 @@
 </script>
 
 
-<!-- RIGHT FEATURED BUTTON-->
-<style>
-
-</style>
 <!-- Right Sidebar Toggle Button -->
 <button id="right-toggle-button" class="toggle-button-right">☰</button>
 
@@ -323,9 +309,9 @@
 </script>
 
 <div class="v25_topLogin">
-  <div class="v25_topLogin-container" style="background-color:transparent!important; display: flex; justify-content: flex-end;">
+  <div class="v25_topLogin-container" style="background-color:transparent!important; display: flex; justify-content: center;">
   
-      <button id="login-button" class="button-login-top-right"
+      <button id="login-button-b" class="button-login-top-center"
         onclick="window.location.href='./login.html'">LOGIN</button>
     </div>
     <p id="login-message" style="display:none;">Yes! You are logged in
