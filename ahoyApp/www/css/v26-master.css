@@ -173,58 +173,56 @@
 .styled-table {
     width: 100%;
     table-layout: fixed;
-    /* Ensures the table cells do not overflow */
     max-width: 100%;
     border-collapse: collapse;
     font-size: 0.9em;
     font-family: sans-serif;
-    background-color: black;
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Glass-like effect */
     color: white !important;
     margin: 0px;
+    backdrop-filter: blur(10px);
+    /* Blur effect for glass-like appearance */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
 .styled-table th,
 .styled-table td {
     overflow: hidden;
-    text-overflow: ellipsis;
-    /* Adds ellipsis if the text is too long */
-    white-space: nowrap;
-    /* Prevents text from wrapping */
+    white-space: normal;
+    /* Allow text to wrap */
+    word-wrap: break-word;
+    /* Ensure long words break properly */
+    padding: 12px 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    /* Glass-like border */
 }
 
 .styled-table thead tr {
-    background-color: #33333394;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent header */
     color: #ffffff;
     text-align: left;
 }
 
-.styled-table td {
-    height: 60px;
-    /* Ensure consistent cell height */
-    padding: 12px 15px;
-    border: 1px solid #444;
-    text-align: left;
-    color: white;
-    background-color: #f9f9f938;
-    /* Light background color for cells */
-}
-
 .styled-table tbody tr:nth-of-type(even) {
-    background-color: #f2f2f22a;
-    /* Light gray for even rows */
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Light glass-like for even rows */
 }
 
 .styled-table tbody tr:nth-of-type(odd) {
-    background-color: #ffffff2e;
-    /* White for odd rows */
+    background-color: rgba(255, 255, 255, 0.2);
+    /* Slightly darker glass-like for odd rows */
 }
 
 .styled-table tbody tr {
-    border-bottom: 1px solid #444;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    /* Glass-like border */
 }
 
 .styled-table tbody tr:last-of-type {
-    border-bottom: 2px solid #333;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+    /* Slightly thicker border */
 }
 
 /*buttons */
@@ -508,7 +506,6 @@ td {
     padding: 10px;
     margin: 10px;
 }
-
 
 .ahoypodcast_row {
     display: flex;
@@ -921,3 +918,78 @@ td {
     width: 353px;
     height: 100%;
 }
+
+/*v26 master css*/
+
+/* Table Styles */
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd34;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f347;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
+
+/* Custom Play Button */
+.custom-play-button {
+    color: white;
+    border: 2px solid var(--border-color);
+    background-color: transparent;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.custom-play-button i {
+    color: white;
+}
+
+.custom-play-button:hover {
+    background-color: #1E90FF;
+    color: #FFD700;
+    border-color: #FFD700;
+}
+
+.custom-play-button:hover i {
+    color: #FFD700;
+}
+
+/* Action Button */
+.action-button {
+    margin: 0 5px;
+}
+
+
+
+/* ... existing CSS ... */

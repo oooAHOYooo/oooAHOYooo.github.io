@@ -42,27 +42,65 @@ function loadPodcasts() {
     });
 }
 
-function populatePodcastTable() {
+function populatePodcastTable(filteredPodcasts = podcasts) {
     const tableBody = document.getElementById("podcast-table").querySelector("tbody");
     tableBody.innerHTML = ''; // Clear existing rows
 
-    podcasts.forEach((podcast, index) => {
+    filteredPodcasts.forEach((podcast, index) => {
         const row = document.createElement("tr");
-        row.innerHTML = `
-            <td class="ahoypodcast_row">
-                <img src="${podcast.thumbnail}" alt="${podcast.title}" class="ahoypodcast_thumbnail">
-                <div class="ahoypodcast_info">
-                    <div class="ahoypodcast_title">${podcast.title}</div>
-                    ${podcast.date ? `<div class="ahoypodcast_details">${podcast.date}</div>` : ''}
-                </div>
-                <button class="custom-play-button" id="podcast-play-${index}" onclick="togglePlayPausePodcast(${index})">
-                    <i class="fas fa-play play-icon"></i>
-                </button>
-                <button class="podcast-action-button" onclick="addPodcastToPlaylist(${index})">
-                    <i class="fas fa-plus add-icon"></i>
-                </button>
-            </td>
-        `;
+        row.classList.add('podcast-row'); // Add class for consistent row height
+        
+        const artworkCell = document.createElement('td');
+        const img = document.createElement('img');
+        img.src = podcast.thumbnail;
+        img.classList.add('album-art'); // Add class for album art
+        img.onclick = function() { togglePlayPausePodcast(index); }; // Play podcast on thumbnail click
+        artworkCell.appendChild(img);
+        
+        const infoCell = document.createElement('td');
+        const titleDiv = document.createElement('div');
+        titleDiv.classList.add('podcast-title');
+        titleDiv.textContent = podcast.title;
+        infoCell.appendChild(titleDiv);
+        
+        if (podcast.date) {
+            const dateDiv = document.createElement('div');
+            dateDiv.classList.add('podcast-details');
+            dateDiv.textContent = podcast.date;
+            infoCell.appendChild(dateDiv);
+        }
+
+        const descriptionCell = document.createElement('td');
+        descriptionCell.classList.add('podcast-description');
+        descriptionCell.textContent = podcast.description;
+
+        const actionCell = document.createElement('td');
+        actionCell.classList.add('action-cell'); // Add class for action cell
+        actionCell.classList.add('action-cell-flex'); // Add flex class for inline display
+
+        const playButton = document.createElement('button');
+        playButton.innerHTML = '<i class="fas fa-play"></i>'; // Changed to icon
+        playButton.id = `play-btn-${index}`; // Unique ID for each play button
+        playButton.classList.add('custom-play-button'); // Add custom class
+        playButton.onclick = function() {
+            togglePlayPausePodcast(index);
+        };
+        const addButton = document.createElement('button');
+        addButton.innerHTML = '<i class="fas fa-plus"></i>'; 
+        addButton.id = `add-btn-${index}`; 
+        addButton.onclick = function() { };
+
+        // Styling for inline display of buttons
+        playButton.classList.add('action-button'); // Add class for action button
+        addButton.classList.add('action-button'); // Add class for action button
+        actionCell.appendChild(playButton);
+        actionCell.appendChild(addButton);
+
+        row.appendChild(artworkCell);
+        row.appendChild(infoCell);
+        row.appendChild(descriptionCell);
+        row.appendChild(actionCell);
+        
         tableBody.appendChild(row);
     });
 }
@@ -111,67 +149,13 @@ function playNextPodcast() {
 
 function searchPodcasts() {
     const searchText = document.getElementById('podcast-search-input').value.toLowerCase();
-    const tableBody = document.getElementById("podcast-table").querySelector("tbody");
-    const rows = tableBody.getElementsByTagName('tr');
-
-    for (let i = 0; i < rows.length; i++) {
-        let titleCell = rows[i].getElementsByTagName('td')[2]; // Assuming the title is in the third column
-        if (titleCell) {
-            let title = titleCell.textContent || titleCell.innerText;
-            if (title.toLowerCase().indexOf(searchText) > -1) {
-                rows[i].style.display = "";
-            } else {
-                rows[i].style.display = "none";
-            }
-        }
-    }
+    const filteredPodcasts = podcasts.filter(podcast => podcast.title.toLowerCase().includes(searchText));
+    populatePodcastTable(filteredPodcasts);
 }
 
 function clearPodcastSearch() {
     document.getElementById('podcast-search-input').value = '';
-    searchPodcasts(); // This will effectively reset the search and show all podcasts
-}
-
-function addPodcastToPlaylist(index) {
-    const podcast = podcasts[index];
-    checkUserPlaylists().then(hasPlaylists => {
-        if (hasPlaylists) {
-            const playlistId = prompt("Enter the playlist ID to add the podcast to:");
-            if (playlistId) {
-                db.collection('playlists').doc(playlistId).collection('podcasts').add({
-                    title: podcast.title,
-                    mp3url: podcast.mp3url,
-                    thumbnail: podcast.thumbnail,
-                    date: podcast.date
-                })
-                .then(() => {
-                    console.log("Podcast added to playlist");
-                    alert("Podcast added to playlist successfully!");
-                })
-                .catch(error => {
-                    console.error("Error adding podcast to playlist: ", error);
-                });
-            }
-        } else {
-            if (confirm("You don't have any playlists. Would you like to create one?")) {
-                createNewPlaylist().then(newPlaylistId => {
-                    db.collection('playlists').doc(newPlaylistId).collection('podcasts').add({
-                        title: podcast.title,
-                        mp3url: podcast.mp3url,
-                        thumbnail: podcast.thumbnail,
-                        date: podcast.date
-                    })
-                    .then(() => {
-                        console.log("Podcast added to new playlist");
-                        alert("Podcast added to new playlist successfully!");
-                    })
-                    .catch(error => {
-                        console.error("Error adding podcast to new playlist: ", error);
-                    });
-                });
-            }
-        }
-    });
+    populatePodcastTable(podcasts);
 }
 
 document.getElementById('podcast-search-button').addEventListener("click", searchPodcasts);

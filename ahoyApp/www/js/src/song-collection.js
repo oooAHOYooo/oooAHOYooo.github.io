@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
       // Ensure the table is full width
       const table = document.getElementById('song-table');
-      table.classList.add('responsive-table'); // Add responsive class
+      table.classList.add('styled-table'); // Add styled-table class
 
       songs.forEach((song, index) => {
         const row = document.createElement('tr');

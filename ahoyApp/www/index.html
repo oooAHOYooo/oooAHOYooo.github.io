@@ -54,11 +54,9 @@
     <link rel="stylesheet" href="./css/foundational.css">
     <link rel="stylesheet" href="./css/mobileOS-addons.css">
     <link rel="stylesheet" href="./css/user-account.css">
-    <link rel="stylesheet" href="./css/section-home.css">
     <link rel="stylesheet" href="./css/section-homepage-featured.css">
     <link rel="stylesheet" href="./css/section-media.css">
     <link rel="stylesheet" href="./css/background-graphic.css">
-    <link rel="stylesheet" href="./css/section-home.css">
     <link rel="stylesheet" href="./css/user-loginModal.css">
     <link rel="stylesheet" href="./css/section-settings.css">
     <link rel="stylesheet" href="./css/page-buttons.css">
@@ -367,7 +365,6 @@
               <div class="date-display">
 
                 <div class="newspaper-header">
-
                   <a href="./index.html">
                     <img src="./img/assets/u_ahoy23.png" alt="Ahoy Logo"
                       class="home-logo">
@@ -493,11 +490,19 @@
                           <i class="fas fa-times"></i>
                       </button>
                   </div>
-                  <table class="standard-table" id="podcast-table">
-                      <tbody>
-                          <!-- Podcast rows will be dynamically inserted here -->
-                      </tbody>
-                  </table>
+                  <table id="podcast-table" class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Podcast Artwork</th>
+                            <th>Artist</th>
+                            <th>Episode</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Rows will be populated by JavaScript -->
+                    </tbody>
+                </table>
               </div>
           </div>
 
