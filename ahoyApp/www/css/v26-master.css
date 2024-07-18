@@ -174,46 +174,6 @@
     -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
 }
 
-/* Table Styles */
-.styled-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 25px 0;
-    font-size: 0.9em;
-    font-family: sans-serif;
-    min-width: 400px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-}
-
-.styled-table thead tr {
-    text-align: center;
-}
-
-.styled-table th,
-.styled-table td {
-    padding: 12px 15px;
-}
-
-.style-table td {
-    color: var(--border-color);
-}
-
-.styled-table tbody tr {
-    border-bottom: 1px solid #dddddd34;
-}
-
-.styled-table tbody tr:nth-of-type(even) {
-    background-color: #f3f3f31b;
-}
-
-.styled-table tbody tr:last-of-type {
-    border-bottom: 2px solid #4700985f;
-}
-
-.styled-table tbody tr.active-row {
-    font-weight: bold;
-    color: var(--border-color);
-}
 
 /* Custom Play Button */
 .custom-play-button {
@@ -260,25 +220,7 @@
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Enhance shadow on hover */
 }
 
-/* Media query for iPhone/mobile breakpoints */
-@media (max-width: 600px) {
-    .styled-table {
-        font-size: 0.8em; /* Reduce font size */
-        margin: 10px 0; /* Adjust margin */
-        width: 100%; /* Ensure full width */
-        overflow-x: auto; /* Enable horizontal scrolling */
-        display: block; /* Ensure table is block element */
-    }
-    .styled-table thead tr {
-        font-size: 0.9em; /* Adjust header font size */
-    }
-    .action-button {
-        width: 30px; /* Reduce width */
-        height: 30px; /* Reduce height */
-        font-size: 14px; /* Adjust font size */
-        padding: 5px; /* Adjust padding */
-    }
-}
+
 
 /*buttons */
 
@@ -364,22 +306,6 @@
 }
 
 
-.responsive-table {
-    width: 100%;
-    overflow-x: auto;
-}
-
-.artwork-container {
-    position: relative;
-    display: inline-block;
-}
-
-.album-art {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    /* Ensure the image is not smooshed */
-}
 
 .play-button {
     width: 50px;
@@ -415,21 +341,34 @@
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Enhance shadow on hover */
 }
 
-td {
-    height: 60px;
-    vertical-align: middle;
-    /* Center content vertically */
+
+
+.album-art {
+    position: relative;
+    width: 80%
 }
 
 
-@media (max-width: 600px) {
-    .album-art {
-        width: 100%;
-        /* Decrease album artwork size on smaller screens */
-        height: auto;
+    .podcast-row  {
+        width: 50px; /* Decrease podcast artwork size */
+        height: 50px; /* Ensure height matches width */
     }
 
- 
+    td {
+        max-width: 40px;
+        margin: 0px;
+    }
+
+    .song-row td, .podcast-row td {
+        font-size: 1.1em; /* Increase font size */
+    }
+
+    .action-button {
+        width: 30px; /* Reduce width */
+        height: 30px; /* Reduce height */
+        font-size: 14px; /* Adjust font size */
+        padding: 5px; /* Adjust padding */
+    }
 }
 
 
@@ -917,33 +856,52 @@ td {
 /* Table Styles */
 .styled-table {
     width: 100%;
-    border-collapse: collapse;
-    margin: 25px 0;
-    font-size: 0.9em;
-    font-family: sans-serif;
+    font-size: 0.85em; /* Slightly smaller font size */
+    font-family: 'Barlow', sans-serif;
     min-width: 400px;
+    background-color: #121212; /* Dark background */
+    color: #b3b3b3; /* Light text color */
+    border-collapse: collapse;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead {
+    background-color: #282828; /* Slightly lighter background for header */
 }
 
 .styled-table thead tr {
     text-align: center;
 }
 
-.styled-table th,
-.styled-table td {
-    padding: 12px 15px;
+.styled-table thead th {
+    padding: 8px 10px; /* Reduced padding */
+    text-align: left;
+    font-weight: 700;
+    color: #ffffff; /* White text for header */
 }
 
-.style-table td {
-    color: var(--border-color);
+.styled-table th,
+.styled-table td {
+    padding: 8px 10px; /* Reduced padding */
 }
 
 .styled-table tbody tr {
-    border-bottom: 1px solid #dddddd34;
+    border-bottom: 1px solid #333; /* Subtle border */
 }
 
 .styled-table tbody tr:nth-of-type(even) {
-    background-color: #f3f3f31b;
+    background-color: #1a1a1a; /* Slightly lighter background for even rows */
+}
+
+.styled-table tbody tr:hover {
+    background-color: #333; /* Darker background on hover */
+    color: #ffffff; /* White text on hover */
+}
+
+.styled-table tbody td {
+    padding: 8px 10px; /* Reduced padding */
+    text-align: left;
+    color: #b3b3b3; /* Light text color */
 }
 
 .styled-table tbody tr:last-of-type {
@@ -952,7 +910,7 @@ td {
 
 .styled-table tbody tr.active-row {
     font-weight: bold;
-    color: var(--border-color);
+    color: #1db954; /* Spotify green for active row */
 }
 
 /* Custom Play Button */
@@ -998,32 +956,6 @@ td {
     background-color: var(--text-color); /* Change background on hover */
     color: var(--border-color); /* Change text color on hover */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Enhance shadow on hover */
-}
-
-/* Media query for iPhone/mobile breakpoints */
-@media (max-width: 600px) {
-    .styled-table {
-        font-size: 0.8em; /* Reduce font size */
-        margin: 10px 0; /* Adjust margin */
-        width: 100%; /* Ensure full width */
-        overflow-x: auto; /* Enable horizontal scrolling */
-        display: block; /* Ensure table is block element */
-    }
-
-    .styled-table th,
-    .styled-table td {
-        padding: 8px 10px; /* Reduce padding */
-    }
-
-    .styled-table thead tr {
-        font-size: 0.9em; /* Adjust header font size */
-    }
-    .action-button {
-        width: 30px; /* Reduce width */
-        height: 30px; /* Reduce height */
-        font-size: 14px; /* Adjust font size */
-        padding: 5px; /* Adjust padding */
-    }
 }
 
 .home-calendar-date {

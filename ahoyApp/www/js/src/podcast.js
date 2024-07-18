@@ -63,16 +63,17 @@ function populatePodcastTable(filteredPodcasts = podcasts) {
         titleDiv.textContent = podcast.title;
         infoCell.appendChild(titleDiv);
         
+        const descriptionDiv = document.createElement('div');
+        descriptionDiv.classList.add('podcast-description');
+        descriptionDiv.textContent = podcast.description;
+        infoCell.appendChild(descriptionDiv);
+
         if (podcast.date) {
             const dateDiv = document.createElement('div');
             dateDiv.classList.add('podcast-details');
             dateDiv.textContent = podcast.date;
             infoCell.appendChild(dateDiv);
         }
-
-        const descriptionCell = document.createElement('td');
-        descriptionCell.classList.add('podcast-description');
-        descriptionCell.textContent = podcast.description;
 
         const actionCell = document.createElement('td');
         actionCell.classList.add('action-cell'); // Add class for action cell
@@ -98,7 +99,6 @@ function populatePodcastTable(filteredPodcasts = podcasts) {
 
         row.appendChild(artworkCell);
         row.appendChild(infoCell);
-        row.appendChild(descriptionCell);
         row.appendChild(actionCell);
         
         tableBody.appendChild(row);
@@ -163,6 +163,10 @@ document.getElementById('podcast-clear-search').addEventListener("click", clearP
 
 document.addEventListener("DOMContentLoaded", function () {
     if (document.getElementById("podcast-table")) {
+        document.getElementById("podcast-table").classList.add('full-width-table'); // Add class to podcast table
         loadPodcasts();
+    }
+    if (document.getElementById("song-table")) {
+        document.getElementById("song-table").classList.add('full-width-table'); // Add class to song table
     }
 });
