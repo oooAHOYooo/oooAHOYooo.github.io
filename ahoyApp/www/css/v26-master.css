@@ -220,7 +220,18 @@
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Enhance shadow on hover */
 }
 
+/* Reduce icon size on mobile */
+@media (max-width: 768px) {
+    .action-button {
+        width: 30px; /* Reduce width */
+        height: 30px; /* Reduce height */
+        font-size: 12px; /* Reduce font size */
+    }
 
+    .action-button i {
+        font-size: 18px; /* Reduce icon size */
+    }
+}
 
 /*buttons */
 
@@ -802,42 +813,6 @@
     border-color: var(--border-color);
 }
 
-.custom-play-button {
-    color: white;
-    /* Make the icon white */
-    border: 2px solid var(--border-color);
-    /* Use the border color variable */
-    background-color: transparent;
-    /* Ensure the background is transparent */
-    padding: 10px;
-    /* Add some padding */
-    border-radius: 50%;
-    /* Make the button circular */
-    cursor: pointer;
-    /* Change cursor to pointer */
-    transition: background-color 0.3s ease, color 0.3s ease;
-    /* Smooth transition for background and color */
-}
-
-.custom-play-button i {
-    color: white;
-    /* Ensure the icon inside the button is white */
-}
-
-.custom-play-button:hover {
-    background-color: #1E90FF;
-    /* Nautical blue color */
-    color: #FFD700;
-    /* Gold color for a beautiful contrast */
-    border-color: #FFD700;
-    /* Change border color to gold */
-}
-
-.custom-play-button:hover i {
-    color: #FFD700;
-    /* Change icon color to gold */
-}
-
 .home-logo {
     margin-top: 13px;
     width: 353px;
@@ -858,7 +833,6 @@
     width: 100%;
     font-size: 0.85em; /* Slightly smaller font size */
     font-family: 'Barlow', sans-serif;
-    min-width: 400px;
     background-color: #121212; /* Dark background */
     color: #b3b3b3; /* Light text color */
     border-collapse: collapse;
@@ -874,15 +848,13 @@
 }
 
 .styled-table thead th {
-    padding: 8px 10px; /* Reduced padding */
     text-align: left;
     font-weight: 700;
     color: #ffffff; /* White text for header */
 }
 
-.styled-table th,
 .styled-table td {
-    padding: 8px 10px; /* Reduced padding */
+    min-height: 50px;
 }
 
 .styled-table tbody tr {
@@ -898,27 +870,18 @@
     color: #ffffff; /* White text on hover */
 }
 
-.styled-table tbody td {
-    padding: 8px 10px; /* Reduced padding */
-    text-align: left;
-    color: #b3b3b3; /* Light text color */
-}
 
 .styled-table tbody tr:last-of-type {
     border-bottom: 2px solid #4700985f;
 }
 
-.styled-table tbody tr.active-row {
-    font-weight: bold;
-    color: #1db954; /* Spotify green for active row */
-}
+
 
 /* Custom Play Button */
 .custom-play-button {
     color: white;
     border: 2px solid var(--border-color);
     background-color: transparent;
-    padding: 10px;
     border-radius: 50%;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -940,14 +903,12 @@
 
 /* Action Button */
 .action-button {
-    width: 40px; /* Increase width */
-    height: 40px; /* Increase height */
+    margin: 0px;
     font-size: 16px;
     border: 2px solid var(--border-color); /* Add border */
     background-color: var(--border-color); /* Add background color */
     color: var(--text-color); /* Ensure text color contrasts */
     cursor: pointer;
-    margin: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add shadow */
     transition: background 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
 }
@@ -956,6 +917,29 @@
     background-color: var(--text-color); /* Change background on hover */
     color: var(--border-color); /* Change text color on hover */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Enhance shadow on hover */
+}
+
+/* Reduce icon size on mobile */
+@media (max-width: 768px) {
+    .action-button {
+        width: 30px; /* Reduce width */
+        height: 30px; /* Reduce height */
+        font-size: 12px; /* Reduce font size */
+    }
+
+    .action-button i {
+        font-size: 18px; /* Reduce icon size */
+    }
+}
+
+/* Reduce padding, margin, and set fixed width on mobile */
+@media (max-width: 768px) {
+    .styled-table td {
+        padding: 0;
+        margin: 0;
+        min-width: 50px; /* Adjust the width as needed */
+        max-width: 75px;
+    }
 }
 
 .home-calendar-date {
