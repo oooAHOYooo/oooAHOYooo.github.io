@@ -372,9 +372,7 @@
 
                 </div>
                 <br>
-                <h2 id="calendar-date"
-                  style="font-family: 'Barlow', sans-serif; font-weight: 900; font-size: 24px; text-transform: uppercase; letter-spacing: .5em; border-top: 2px solid #ffffff; border-bottom: 2px solid #ffffff; padding: 10px 0; text-align: center; color:var(--text-color);">
-                </h2>
+                <h2 id="calendar-date" class="home-calendar-date"></h2>
                 <br>
                 <!-- NOW PLAYING -->
                 <div class="now-playing">
@@ -461,7 +459,7 @@
 
             <div id="song-collection-tab" class="tab-content">
               <img src="./img/ahoy-music.svg" class="svgBlend">
-              <!-- this is where a song table will appear from songCollection.json-->
+            <div class="table-container">
               <table id="song-table">
                 <thead>
                   <tr>
@@ -475,6 +473,7 @@
                   <!-- Songs will be inserted here -->
                 </tbody>
               </table>
+            </div>
             </div>
             <!-- PODCASTS -->
             <div id="podcasts-tab" class="tab-content">
@@ -490,6 +489,7 @@
                           <i class="fas fa-times"></i>
                       </button>
                   </div>
+                  <div class="table-container">
                   <table id="podcast-table" class="styled-table">
                     <thead>
                         <tr>
@@ -502,7 +502,7 @@
                     <tbody>
                         <!-- Rows will be populated by JavaScript -->
                     </tbody>
-                </table>
+                </table></div>
               </div>
           </div>
 
