@@ -493,6 +493,7 @@ td {
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
+    margin-top: 20px;
     margin-right: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(10px);
@@ -502,12 +503,21 @@ td {
     font-family: 'Barlow', sans-serif;
     font-weight: 400;
     letter-spacing: 0.5px;
+    min-height: 40px;
+    height: 60px;
 }
 
 .btnPrimary:hover {
     background-color: var(--border-color);
     color: var(--text-color);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.--btn--login {
+    margin: -10px;
+    opacity: .9;
+    color: white;
+    border-color: var(--border-color);
 }
 
 /* individual styles for things - widgets */
