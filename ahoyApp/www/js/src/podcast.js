@@ -58,6 +58,7 @@ function populatePodcastTable(filteredPodcasts = podcasts) {
         artworkCell.appendChild(img);
         
         const infoCell = document.createElement('td');
+        infoCell.classList.add('info-cell'); // Add class for larger cell
         const titleDiv = document.createElement('div');
         titleDiv.classList.add('podcast-title');
         titleDiv.textContent = podcast.title;
@@ -78,6 +79,7 @@ function populatePodcastTable(filteredPodcasts = podcasts) {
         const actionCell = document.createElement('td');
         actionCell.classList.add('action-cell'); // Add class for action cell
         actionCell.classList.add('action-cell-flex'); // Add flex class for inline display
+        actionCell.style.textAlign = 'right'; // Align buttons to the right
 
         const playButton = document.createElement('button');
         playButton.innerHTML = '<i class="fas fa-play"></i>'; // Changed to icon

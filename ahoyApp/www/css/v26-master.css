@@ -171,9 +171,21 @@
 .table-container {
     width: 100%;
     overflow-x: auto;
-    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    -webkit-overflow-scrolling: touch;
+    /* Smooth scrolling on iOS */
 }
 
+/*Add the following CSS to ensure the infoCell is larger and the buttons are aligned to the right:
+*/
+.info-cell {
+    width: 60%;
+    /* Adjust the width as needed */
+}
+
+.action-cell {
+    text-align: right;
+    /* Align buttons to the right */
+}
 
 /* Custom Play Button */
 .custom-play-button {
@@ -202,34 +214,48 @@
 
 /* Action Button */
 .action-button {
-    width: 40px; /* Increase width */
-    height: 40px; /* Increase height */
+    width: 40px;
+    /* Increase width */
+    height: 40px;
+    /* Increase height */
     font-size: 16px;
-    border: 2px solid var(--border-color); /* Add border */
-    background-color: var(--border-color); /* Add background color */
-    color: var(--text-color); /* Ensure text color contrasts */
+    border: 2px solid var(--border-color);
+    /* Add border */
+    background-color: var(--border-color);
+    /* Add background color */
+    color: var(--text-color);
+    /* Ensure text color contrasts */
     cursor: pointer;
     margin: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add shadow */
-    transition: background 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    /* Add shadow */
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    /* Smooth transition */
 }
 
 .action-button:hover {
-    background-color: var(--text-color); /* Change background on hover */
-    color: var(--border-color); /* Change text color on hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Enhance shadow on hover */
+    background-color: var(--text-color);
+    /* Change background on hover */
+    color: var(--border-color);
+    /* Change text color on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    /* Enhance shadow on hover */
 }
 
 /* Reduce icon size on mobile */
 @media (max-width: 768px) {
     .action-button {
-        width: 30px; /* Reduce width */
-        height: 30px; /* Reduce height */
-        font-size: 12px; /* Reduce font size */
+        width: 30px;
+        /* Reduce width */
+        height: 30px;
+        /* Reduce height */
+        font-size: 12px;
+        /* Reduce font size */
     }
 
     .action-button i {
-        font-size: 18px; /* Reduce icon size */
+        font-size: 18px;
+        /* Reduce icon size */
     }
 }
 
@@ -333,23 +359,32 @@
 
 
 .action-button {
-    width: 40px; /* Increase width */
-    height: 40px; /* Increase height */
+    width: 40px;
+    /* Increase width */
+    height: 40px;
+    /* Increase height */
     font-size: 16px;
-    border: 1px solid var(--border-color); /* Add border */
-    background-color: var(--border-color); /* Add background color */
-    color: var(--text-color); /* Ensure text color contrasts */
+    border: 1px solid var(--border-color);
+    /* Add border */
+    background-color: var(--border-color);
+    /* Add background color */
+    color: var(--text-color);
+    /* Ensure text color contrasts */
     cursor: pointer;
-    display:flex;
+    display: flex;
     align-items: center;
     justify-content: center;
-    transition: background 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    /* Smooth transition */
 }
 
 .action-button:hover {
-    background-color: var(--text-color); /* Change background on hover */
-    color: var(--border-color); /* Change text color on hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Enhance shadow on hover */
+    background-color: var(--text-color);
+    /* Change background on hover */
+    color: var(--border-color);
+    /* Change text color on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    /* Enhance shadow on hover */
 }
 
 
@@ -360,26 +395,34 @@
 }
 
 
-    .podcast-row  {
-        width: 50px; /* Decrease podcast artwork size */
-        height: 50px; /* Ensure height matches width */
-    }
+.podcast-row {
+    width: 50px;
+    /* Decrease podcast artwork size */
+    height: 50px;
+    /* Ensure height matches width */
+}
 
-    td {
-        max-width: 40px;
-        margin: 0px;
-    }
+td {
+    max-width: 40px;
+    margin: 0px;
+}
 
-    .song-row td, .podcast-row td {
-        font-size: 1.1em; /* Increase font size */
-    }
+.song-row td,
+.podcast-row td {
+    font-size: 1.1em;
+    /* Increase font size */
+}
 
-    .action-button {
-        width: 30px; /* Reduce width */
-        height: 30px; /* Reduce height */
-        font-size: 14px; /* Adjust font size */
-        padding: 5px; /* Adjust padding */
-    }
+.action-button {
+    width: 30px;
+    /* Reduce width */
+    height: 30px;
+    /* Reduce height */
+    font-size: 14px;
+    /* Adjust font size */
+    padding: 5px;
+    /* Adjust padding */
+}
 }
 
 
@@ -825,22 +868,27 @@
 .table-container {
     width: 100%;
     overflow-x: auto;
-    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    -webkit-overflow-scrolling: touch;
+    /* Smooth scrolling on iOS */
 }
 
 /* Table Styles */
 .styled-table {
     width: 100%;
-    font-size: 0.85em; /* Slightly smaller font size */
+    font-size: 0.85em;
+    /* Slightly smaller font size */
     font-family: 'Barlow', sans-serif;
-    background-color: #121212; /* Dark background */
-    color: #b3b3b3; /* Light text color */
+    background-color: #121212;
+    /* Dark background */
+    color: #b3b3b3;
+    /* Light text color */
     border-collapse: collapse;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
 .styled-table thead {
-    background-color: #282828; /* Slightly lighter background for header */
+    background-color: #282828;
+    /* Slightly lighter background for header */
 }
 
 .styled-table thead tr {
@@ -850,7 +898,8 @@
 .styled-table thead th {
     text-align: left;
     font-weight: 700;
-    color: #ffffff; /* White text for header */
+    color: #ffffff;
+    /* White text for header */
 }
 
 .styled-table td {
@@ -858,16 +907,20 @@
 }
 
 .styled-table tbody tr {
-    border-bottom: 1px solid #333; /* Subtle border */
+    border-bottom: 1px solid #333;
+    /* Subtle border */
 }
 
 .styled-table tbody tr:nth-of-type(even) {
-    background-color: #1a1a1a; /* Slightly lighter background for even rows */
+    background-color: #1a1a1a;
+    /* Slightly lighter background for even rows */
 }
 
 .styled-table tbody tr:hover {
-    background-color: #333; /* Darker background on hover */
-    color: #ffffff; /* White text on hover */
+    background-color: #333;
+    /* Darker background on hover */
+    color: #ffffff;
+    /* White text on hover */
 }
 
 
@@ -905,30 +958,42 @@
 .action-button {
     margin: 0px;
     font-size: 16px;
-    border: 2px solid var(--border-color); /* Add border */
-    background-color: var(--border-color); /* Add background color */
-    color: var(--text-color); /* Ensure text color contrasts */
+    border: 2px solid var(--border-color);
+    /* Add border */
+    background-color: var(--border-color);
+    /* Add background color */
+    color: var(--text-color);
+    /* Ensure text color contrasts */
     cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add shadow */
-    transition: background 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    /* Add shadow */
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    /* Smooth transition */
 }
 
 .action-button:hover {
-    background-color: var(--text-color); /* Change background on hover */
-    color: var(--border-color); /* Change text color on hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Enhance shadow on hover */
+    background-color: var(--text-color);
+    /* Change background on hover */
+    color: var(--border-color);
+    /* Change text color on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    /* Enhance shadow on hover */
 }
 
 /* Reduce icon size on mobile */
 @media (max-width: 768px) {
     .action-button {
-        width: 30px; /* Reduce width */
-        height: 30px; /* Reduce height */
-        font-size: 12px; /* Reduce font size */
+        width: 30px;
+        /* Reduce width */
+        height: 30px;
+        /* Reduce height */
+        font-size: 12px;
+        /* Reduce font size */
     }
 
     .action-button i {
-        font-size: 18px; /* Reduce icon size */
+        font-size: 18px;
+        /* Reduce icon size */
     }
 }
 
@@ -937,12 +1002,22 @@
     .styled-table td {
         padding: 0;
         margin: 0;
-        min-width: 50px; /* Adjust the width as needed */
+        min-width: 50px;
+        /* Adjust the width as needed */
         max-width: 75px;
     }
 }
 
 .home-calendar-date {
-    font-family: 'Barlow', sans-serif; font-weight: 900; font-size: 24px; text-transform: uppercase; letter-spacing: .4em; border-top: 1px solid #ffffff; border-bottom: 1px solid #ffffff; padding: 10px 0; text-align: center; color:var(--text-color);
+    font-family: 'Barlow', sans-serif;
+    font-weight: 900;
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: .4em;
+    border-top: 1px solid #ffffff;
+    border-bottom: 1px solid #ffffff;
+    padding: 10px 0;
+    text-align: center;
+    color: var(--text-color);
 
 }
