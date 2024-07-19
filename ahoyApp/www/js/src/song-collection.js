@@ -53,6 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Styling for inline display of buttons
         playButton.classList.add('action-button'); // Add class for action button
         addButton.classList.add('action-button'); // Add class for action button
+        addButton.classList.add('--action-add'); // Add class for action button
         actionCell.appendChild(playButton);
         actionCell.appendChild(addButton);
         

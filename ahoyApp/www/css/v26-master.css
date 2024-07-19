@@ -179,7 +179,6 @@
 */
 .info-cell {
     width: 60%;
-    /* Adjust the width as needed */
 }
 
 .song-cell {
@@ -189,6 +188,7 @@
 
 .action-cell {
     text-align: right;
+    margin-right: 20px;
     /* Align buttons to the right */
 }
 
@@ -594,7 +594,10 @@ td {
     padding: 5px;
     font-size: 16px;
     color: var(--border-color);
-    /* Use the same color variable */
+}
+
+.--action-add {
+    background: rgb(0, 255, 204);
 }
 
 .action-button i {
@@ -893,7 +896,7 @@ td {
     font-size: 0.85em;
     /* Slightly smaller font size */
     font-family: 'Barlow', sans-serif;
-    background-color: #121212;
+    background-color: #121212dd;
     /* Dark background */
     color: #b3b3b3;
     /* Light text color */
@@ -947,22 +950,25 @@ td {
 
 /* Custom Play Button */
 .custom-play-button {
-    color: white;
+    color: var(--text-color);
     border: 2px solid var(--border-color);
     background-color: transparent;
-    border-radius: 50%;
+    border-radius: 25%;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .custom-play-button i {
-    color: white;
+    color: black;
+    font-size: 16px;
+    margin-left: -2.5px;
+
 }
 
 .custom-play-button:hover {
     background-color: var(--border-color);
     color: #000000;
-    border-color: #000000;
+    border-color: var(--border-color);
 }
 
 .custom-play-button:hover i {
@@ -977,7 +983,7 @@ td {
     /* Add border */
     background-color: var(--border-color);
     /* Add background color */
-    color: var(--text-color);
+    color: black;
     /* Ensure text color contrasts */
     cursor: pointer;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -995,22 +1001,7 @@ td {
     /* Enhance shadow on hover */
 }
 
-/* Reduce icon size on mobile */
-@media (max-width: 768px) {
-    .action-button {
-        width: 30px;
-        /* Reduce width */
-        height: 30px;
-        /* Reduce height */
-        font-size: 12px;
-        /* Reduce font size */
-    }
 
-    .action-button i {
-        font-size: 18px;
-        /* Reduce icon size */
-    }
-}
 
 /* Reduce padding, margin, and set fixed width on mobile */
 @media (max-width: 768px) {

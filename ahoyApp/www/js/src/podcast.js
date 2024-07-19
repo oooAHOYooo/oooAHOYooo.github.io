@@ -64,10 +64,11 @@ function populatePodcastTable(filteredPodcasts = podcasts) {
         titleDiv.textContent = podcast.title;
         infoCell.appendChild(titleDiv);
         
-        const descriptionDiv = document.createElement('div');
-        descriptionDiv.classList.add('podcast-description');
-        descriptionDiv.textContent = podcast.description;
-        infoCell.appendChild(descriptionDiv);
+        // Commented out the descriptionDiv code
+        // const descriptionDiv = document.createElement('div');
+        // descriptionDiv.classList.add('podcast-description');
+        // descriptionDiv.textContent = podcast.description;
+        // infoCell.appendChild(descriptionDiv);
 
         if (podcast.date) {
             const dateDiv = document.createElement('div');
