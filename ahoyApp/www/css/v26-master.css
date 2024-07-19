@@ -182,6 +182,11 @@
     /* Adjust the width as needed */
 }
 
+.song-cell {
+    width: 45%;
+    ;
+}
+
 .action-cell {
     text-align: right;
     /* Align buttons to the right */

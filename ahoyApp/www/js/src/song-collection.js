@@ -30,11 +30,13 @@ document.addEventListener('DOMContentLoaded', function() {
         artistCell.textContent = song.artist;
         
         const songCell = document.createElement('td');
+        songCell.classList.add('song-cell'); // Add class for larger cell
         songCell.textContent = song.songTitle;
         
         const actionCell = document.createElement('td');
         actionCell.classList.add('action-cell'); // Add class for action cell
         actionCell.classList.add('action-cell-flex'); // Add flex class for inline display
+        actionCell.style.textAlign = 'right'; // Align buttons to the right
         
         const playButton = document.createElement('button');
         playButton.innerHTML = '<i class="fas fa-play"></i>'; // Changed to icon
