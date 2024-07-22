@@ -1,5 +1,3 @@
-
-
 /* Add this to your CSS file */
 img.item-image {
     width: 100%;
@@ -14,15 +12,18 @@ img.item-image:hover {
 }
 
 .market-grid {
+    margin-top: 20px;
+    min-height: 100vh;
     display: grid;
     grid-template-columns: repeat(5, 1fr); /* Default: 5 columns */
     grid-template-rows: auto; /* Auto rows */
-    gap: 20px; /* Adjust the gap between items as needed */
+    grid-gap: 20px; /* Equal gap on all sides */
 }
 
 .market-item {
+    border-style: solid;
+    border-color: var(--border-color);
     color: black;
-    border: 1px solid #ccc; /* Optional: Add border to items */
     padding: 10px; /* Optional: Add padding to items */
     background-color: #f9f9f9; /* Optional: Add background color to items */
     text-align: center; /* Center align text and elements */
@@ -30,7 +31,7 @@ img.item-image:hover {
     flex-direction: column;
     justify-content: space-between; /* Space out children elements */
     height: 100%; /* Ensure the item takes full height */
-    margin: 10px; /* Add margin to prevent overlap */
+    margin-bottom: 12px!important; /* Add margin to prevent overlap */
 }
 
 .market-item img.item-image {
@@ -52,7 +53,7 @@ img.item-image:hover {
 
 .market-item button {
     width: 100px; /* Set a fixed width for buttons */
-    height: 30px; /* Set a fixed height for buttons */
+    height: 52px; /* Set a fixed height for buttons */
     font-size: 14px; /* Set a fixed font size for button text */
     margin-top: 10px; /* Add margin for spacing */
     align-self: center; /* Center the button horizontally */

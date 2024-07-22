@@ -96,6 +96,10 @@ document.addEventListener('DOMContentLoaded', function() {
           const subscription = document.createElement('p');
           subscription.textContent = `Requires Subscription: ${item.requires_subscription ? 'Yes' : 'No'}`;
   
+          // Edition information
+          const edition = document.createElement('p');
+          edition.textContent = `Edition: ${item.edition}`;
+  
           // Reserve Button
           const reserveButton = document.createElement('button');
           reserveButton.textContent = 'Join Waitlist';
@@ -114,6 +118,7 @@ document.addEventListener('DOMContentLoaded', function() {
           contentDiv.appendChild(name);
           contentDiv.appendChild(price);
           contentDiv.appendChild(subscription);
+          contentDiv.appendChild(edition); // Append edition information
           contentDiv.appendChild(reserveButton);
   
           // Append image and content div to the main item div

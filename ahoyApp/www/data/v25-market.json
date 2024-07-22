@@ -7,7 +7,8 @@
         "thumbnail": "https://storage.googleapis.com/ahoy-dynamic-content/AHOY%20Market%20v25%20-%20Thumbnail%20Graphic%20T.jpg",
         "image": "https://storage.googleapis.com/ahoy-dynamic-content/AHOY%20Market%20v25%20-%20Thumbnail%20Graphic%20T.jpg",
         "productImage2": "https://storage.googleapis.com/ahoy-dynamic-content/AHOY%20Market%20v25%20-%20Thumbnail%20Graphic%20T%20-%20img2.jpg",
-        "tags": ["clothing", "graphic tee", "apparel"]
+        "tags": ["clothing", "graphic tee", "apparel"],
+        "edition": "1 of 30"
     },
     {
         "id": "v25-3",
@@ -16,7 +17,8 @@
         "requires_subscription": false,
         "thumbnail": "https://storage.googleapis.com/ahoy-dynamic-content/AHOY%20Market%20v25%20-%20YounGonzjpg.jpg",
         "image": "https://storage.googleapis.com/ahoy-dynamic-content/AHOY%20Market%20v25%20-%20YounGonzjpg.jpg",
-        "tags": ["art", "collectible", "exclusive"]
+        "tags": ["art", "collectible", "exclusive"],
+        "edition": "1 of 1"
     },
     {
         "id": "v25-4",
@@ -25,7 +27,8 @@
         "requires_subscription": false,
         "thumbnail": "https://storage.googleapis.com/ahoy-dynamic-content/AHOY%20Market%20v25%20-%20GRAPHIC%20SWEATSHIRT.jpg",
         "image": "https://storage.googleapis.com/ahoy-dynamic-content/AHOY%20Market%20v25%20-%20GRAPHIC%20SWEATSHIRT.jpg",
-        "tags": ["clothing", "sweatshirt", "apparel"]
+        "tags": ["clothing", "sweatshirt", "apparel"],
+        "edition": "1 of 50"
     },
     {
         "id": "v25-5",
@@ -34,7 +37,8 @@
         "requires_subscription": false,
         "thumbnail": "https://storage.googleapis.com/ahoy-dynamic-content/AHOY%20Market%20v25%20-%20Beanie.png",
         "image": "https://storage.googleapis.com/ahoy-dynamic-content/AHOY%20Market%20v25%20-%20Beanie.png",
-        "tags": ["clothing", "beanie", "apparel"]
+        "tags": ["clothing", "beanie", "apparel"],
+        "edition": "1 of 100"
     },
     {
         "id": "v25-6",
@@ -43,7 +47,8 @@
         "requires_subscription": true,
         "thumbnail": "https://storage.googleapis.com/ahoy-dynamic-content/AHOY%20Market%20v25%20-%20Not%20Square%20Sticker.jpg",
         "image": "https://storage.googleapis.com/ahoy-dynamic-content/AHOY%20Market%20v25%20-%20Not%20Square%20Sticker.jpg",
-        "tags": ["sticker", "accessory", "subscription"]
+        "tags": ["sticker", "accessory", "subscription"],
+        "edition": "1 of 200"
     },
     {
         "id": "v25-7",
@@ -52,6 +57,7 @@
         "requires_subscription": true,
         "thumbnail": "https://storage.googleapis.com/ahoy-dynamic-content/Ahoy%20Indie%20Media%20-%20v25%20Product%20-%20Rob%20Mousepad%201.png",
         "image": "https://storage.googleapis.com/ahoy-dynamic-content/Ahoy%20Indie%20Media%20-%20v25%20Product%20-%20Rob%20Mousepad%201.png",
-        "tags": ["mousepad", "accessory", "subscription"]
+        "tags": ["mousepad", "accessory", "subscription"],
+        "edition": "1 of 150"
     }
 ]
