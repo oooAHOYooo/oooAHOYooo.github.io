@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const marketGrid = document.getElementById('market-grid');
+    marketGrid.classList.add('market-grid'); // Add CSS class for grid container
     const cart = []; // Initialize an empty array to hold cart items
 
     // Function to update cart display
@@ -72,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
         itemsForSale.forEach(item => {
           // Create the main item container
           const itemDiv = document.createElement('div');
-          itemDiv.className = 'grid-item';
+          itemDiv.className = 'grid-item market-item'; // Add CSS class for grid item
           itemDiv.dataset.category = item.category; // Add category data attribute
   
           // Add an image if available
@@ -125,3 +126,29 @@ document.addEventListener('DOMContentLoaded', function() {
       })
       .catch(error => console.error('Failed to load items:', error));
   });
+
+
+  const cart = []; // Initialize an empty array to hold cart items
+
+// Function to add item to cart
+function addToCart(item) {
+    cart.push(item);
+    updateCartDisplay();
+    goToCompleteOrderPage();
+}
+
+// Function to update cart display
+function updateCartDisplay() {
+    const cartDiv = document.getElementById('cart');
+    cartDiv.innerHTML = ''; // Clear previous cart display
+    cart.forEach(cartItem => {
+        const cartItemDiv = document.createElement('div');
+        const reservationText = cartItem.reserved ? ' - Reserved' : '';
+        cartItemDiv.textContent = `${cartItem.name} - ${cartItem.price}${reservationText}`;
+        cartDiv.appendChild(cartItemDiv);
+    });
+}
+// Function to navigate to the complete order page
+function goToCompleteOrderPage() {
+    window.location.href = '/complete-order'; // Assuming '/complete-order' is the URL for the Complete Order page
+}

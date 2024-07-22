@@ -1,15 +1,4 @@
-/* Add this to your CSS file */
-.grid-item {
-    margin: 10px;
-    /* Adjust the margin size as needed */
-    display: inline-block;
-    vertical-align: top;
-}
 
-#market-grid {
-    text-align: center;
-    /* Center the items if they don't fill the full width */
-}
 
 /* Add this to your CSS file */
 img.item-image {
@@ -22,4 +11,79 @@ img.item-image {
 img.item-image:hover {
     transform: scale(1.05);
     /* Slight zoom effect on hover */
+}
+
+.market-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Default: 5 columns */
+    grid-template-rows: auto; /* Auto rows */
+    gap: 20px; /* Adjust the gap between items as needed */
+}
+
+.market-item {
+    color: black;
+    border: 1px solid #ccc; /* Optional: Add border to items */
+    padding: 10px; /* Optional: Add padding to items */
+    background-color: #f9f9f9; /* Optional: Add background color to items */
+    text-align: center; /* Center align text and elements */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Space out children elements */
+    height: 100%; /* Ensure the item takes full height */
+    margin: 10px; /* Add margin to prevent overlap */
+}
+
+.market-item img.item-image {
+    width: 150px; /* Increase width for images */
+    height: 150px; /* Increase height for images */
+    object-fit: cover; /* Ensure images cover the area without distortion */
+    margin: 0 auto; /* Center the image horizontally */
+}
+
+.market-item h3 {
+    font-size: 16px; /* Set a fixed font size for headers */
+    margin: 10px 0; /* Add margin for spacing */
+}
+
+.market-item p {
+    font-size: 14px; /* Set a fixed font size for price and other text */
+    margin: 5px 0; /* Add margin for spacing */
+}
+
+.market-item button {
+    width: 100px; /* Set a fixed width for buttons */
+    height: 30px; /* Set a fixed height for buttons */
+    font-size: 14px; /* Set a fixed font size for button text */
+    margin-top: 10px; /* Add margin for spacing */
+    align-self: center; /* Center the button horizontally */
+}
+
+/* Media queries for responsive design */
+@media (max-width: 1200px) {
+    .market-grid {
+        grid-template-columns: repeat(4, 1fr); /* 4 columns for screens <= 1200px */
+    }
+}
+
+@media (max-width: 992px) {
+    .market-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns for screens <= 992px */
+    }
+}
+
+@media (max-width: 768px) {
+    .market-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for screens <= 768px */
+    }
+}
+
+@media (max-width: 576px) {
+    .market-grid {
+        grid-template-columns: 1fr; /* 1 column for screens <= 576px */
+    }
+
+    .market-item img.item-image {
+        width: 200px; /* Increase width for mobile */
+        height: 200px; /* Increase height for mobile */
+    }
 }
