@@ -16,9 +16,25 @@
             </div>
         </div>
         <audio id="audioPlayer" controls></audio>
-        <button id="prevBtn">Previous</button>
-        <button id="nextBtn">Next</button>
+       
+		
     </div>
+	<div class="radio-controls">
+	<button id="prevBtn">Previous</button>
+	<button id="nextBtn">Next</button>
+	<button id="likeBtn">Like</button>
+	</div>
+	<div class="liked-songs-widget">
+		<h3>Liked Songs</h3>
+		<ul id="likedSongsList"></ul>
+	</div>
+	<!-- ... existing HTML ... -->
+<button id="burnToCdBtn">Burn to CD</button>
+<ul id="cdPreviewList"></ul>
+<input type="text" id="cdNameInput" placeholder="Enter CD Name">
+<button id="submitCdBtn">Submit CD Burn Request</button>
+<button id="emailBtn">Email Playlist</button>
+<div id="messageBox"></div>
     <script src="radioWidget.js"></script>
 </body>
 </html>

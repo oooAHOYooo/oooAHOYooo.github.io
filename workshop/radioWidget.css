@@ -5,22 +5,62 @@ body {
 }
 
 .radio-widget {
+    position: relative;
+    overflow: hidden;
     width: 100%;
-    max-width: 100%;
-    height: 300px;
-    background-color: #f0f0f0;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 20px;
-    box-sizing: border-box;
+    color: rgb(50, 50, 50);
+    text-align: center;
+}
+
+.radio-widget::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: blur(20px);
+    z-index: -1;
+}
+
+.blurred-background {
+    position: relative;
+    overflow: hidden;
+}
+
+.blurred-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    filter: blur(10px);
+    z-index: -1;
+}
+
+.blurred-background::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: -1;
 }
 
 .song-info {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
 }
 
 .song-info img {
@@ -46,6 +86,8 @@ body {
 }
 
 audio {
+    position: relative;
+    z-index: 1;
     width: 100%;
     margin-bottom: 20px;
 }
@@ -55,4 +97,17 @@ button {
     margin: 5px;
     font-size: 16px;
     cursor: pointer;
+}
+
+.radio-widget {
+    background-color: rgb(255, 255, 255); /* Dark translucent blue */
+    /* Other styles */
+}
+
+#cdPreviewList li {
+    cursor: move;
+    margin: 5px 0;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
