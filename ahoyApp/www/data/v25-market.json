@@ -59,5 +59,35 @@
         "image": "https://storage.googleapis.com/ahoy-dynamic-content/Ahoy%20Indie%20Media%20-%20v25%20Product%20-%20Rob%20Mousepad%201.png",
         "tags": ["mousepad", "accessory", "subscription"],
         "edition": "1 of 150"
+    },
+    {
+        "id": "v25-8",
+        "name": "Basic Subscription Plan",
+        "price": "$9.99/month",
+        "requires_subscription": true,
+        "thumbnail": "https://storage.googleapis.com/ahoy-dynamic-content/AHOY%20Market%20v25%20-%20Basic%20Subscription.jpg",
+        "image": "https://storage.googleapis.com/ahoy-dynamic-content/AHOY%20Market%20v25%20-%20Basic%20Subscription.jpg",
+        "tags": ["subscription", "basic"],
+        "edition": "N/A"
+    },
+    {
+        "id": "v25-9",
+        "name": "Standard Subscription Plan",
+        "price": "$14.99/month",
+        "requires_subscription": true,
+        "thumbnail": "https://storage.googleapis.com/ahoy-dynamic-content/AHOY%20Market%20v25%20-%20Standard%20Subscription.jpg",
+        "image": "https://storage.googleapis.com/ahoy-dynamic-content/AHOY%20Market%20v25%20-%20Standard%20Subscription.jpg",
+        "tags": ["subscription", "standard"],
+        "edition": "N/A"
+    },
+    {
+        "id": "v25-10",
+        "name": "Premium Subscription Plan",
+        "price": "$19.99/month",
+        "requires_subscription": true,
+        "thumbnail": "../../img/11.webp",
+        "image": "https://storage.googleapis.com/ahoy-dynamic-content/AHOY%20Market%20v25%20-%20Premium%20Subscription.jpg",
+        "tags": ["subscription", "premium"],
+        "edition": "N/A"
     }
 ]
