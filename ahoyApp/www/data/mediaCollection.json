@@ -268,6 +268,18 @@
               "mp4_link": "https://cdn.jwplayer.com/videos/Mr9gNRSS-GVOzihKP.mp4",
               "thumbnail_link": "https://cdn.jwplayer.com/v2/media/Mr9gNRSS/poster.jpg?width=720",
               "year": "Unknown"
+            },
+            {
+              "id": 30,
+              "video_id": "X7555555",
+              "display_title": "tallboyz Obsolete Trailer [2024]",
+              "artist": "The Tallboyz",
+              "duration": "00:00:56",
+              "mp4_link": "https://cdn.jwplayer.com/videos/dKiWH9zw-GVOzihKP.mp4",
+              "thumbnail_link": "https://cdn.jwplayer.com/v2/media/dKiWH9zw/poster.jpg?width=720",
+              "youtube_link": "https://www.youtube.com/watch?v=X7555555",
+              "youtube_channel": "https://www.youtube.com/channel/UC1234567890",
+              "note": "View full movie on YouTube"
             }
           ]
           
