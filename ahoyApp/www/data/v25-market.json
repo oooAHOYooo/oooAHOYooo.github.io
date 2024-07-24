@@ -89,5 +89,45 @@
         "image": "https://storage.googleapis.com/ahoy-dynamic-content/AHOY%20Market%20v25%20-%20Premium%20Subscription.jpg",
         "tags": ["subscription", "premium"],
         "edition": "N/A"
+    },
+    {
+        "id": "v25-11a",
+        "name": "Crappy Art 1",
+        "price": "$15",
+        "requires_subscription": false,
+        "thumbnail": "https://storage.googleapis.com/ahoy-dynamic-content/ahoyMarket_crappyArt-1.jpg",
+        "image": "https://storage.googleapis.com/ahoy-dynamic-content/ahoyMarket_crappyArt-1.jpg",
+        "tags": ["art", "crappy art", "collectible"],
+        "edition": "1 of 1"
+    },
+    {
+        "id": "v25-12",
+        "name": "Crappy Art 2",
+        "price": "$30",
+        "requires_subscription": false,
+        "thumbnail": "https://storage.googleapis.com/ahoy-dynamic-content/ahoyMarket_crappyArt-2.jpg",
+        "image": "https://storage.googleapis.com/ahoy-dynamic-content/ahoyMarket_crappyArt-2.jpg",
+        "tags": ["art", "crappy art", "collectible"],
+        "edition": "1 of 1"
+    },
+    {
+        "id": "v25-13",
+        "name": "Crappy Art 3",
+        "price": "$45",
+        "requires_subscription": false,
+        "thumbnail": "https://storage.googleapis.com/ahoy-dynamic-content/ahoyMarket_crappyArt-3.jpg",
+        "image": "https://storage.googleapis.com/ahoy-dynamic-content/ahoyMarket_crappyArt-3.jpg",
+        "tags": ["art", "crappy art", "collectible"],
+        "edition": "1 of 1"
+    },
+    {
+        "id": "v25-14",
+        "name": "Crappy Art 1",
+        "price": "$15",
+        "requires_subscription": false,
+        "thumbnail": "https://storage.googleapis.com/ahoy-dynamic-content/ahoyMarket_crappyArt-1.jpg",
+        "image": "https://storage.googleapis.com/ahoy-dynamic-content/ahoyMarket_crappyArt-1.jpg",
+        "tags": ["art", "crappy art", "collectible"],
+        "edition": "1 of 1"
     }
 ]
