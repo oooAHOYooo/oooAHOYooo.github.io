@@ -1,27 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Music Player</title>
-        <link rel="stylesheet" href="music-index.css">
-    </head>
-    <body>
-        <div class="player-container">
-            <div class="player">
-                <div class="album-art"></div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Music Player</title>
+    <link rel="stylesheet" href="music-index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div id="music-player-container">
+        <h1>Music Player</h1>
+        <div class="player">
+            <div class="album-art"></div>
+            <div class="controls-container">
+                <div class="song-info">
+                    <h2 id="song-title"></h2>
+                    <p id="artist-name"></p>
+                </div>
                 <div class="controls">
-                    <button id="like-btn">♥</button>
-                    <button id="shuffle-btn">↻</button>
-                    <button id="prev-btn">⇄</button>
-                    <button id="play-btn">▶</button>
+                    <button id="like-btn"><i class="fas fa-heart"></i></button>
+                    <button id="shuffle-btn"><i class="fas fa-random"></i></button>
+                    <button id="prev-btn"><i class="fas fa-step-backward"></i></button>
+                    <button id="play-btn"><i class="fas fa-play"></i></button>
+                    <button id="next-btn"><i class="fas fa-step-forward"></i></button>
                 </div>
                 <div class="progress-bar">
                     <div class="progress"></div>
                 </div>
+                <div class="time-display">
+                    <span id="current-time">0:00</span> / <span id="duration">0:00</span>
+                </div>
+                <div class="volume-control">
+                    <i class="fas fa-volume-down"></i>
+                    <input type="range" id="volume-slider" min="0" max="100" value="100">
+                    <i class="fas fa-volume-up"></i>
+                </div>
             </div>
         </div>
-        <div class="song-list"></div>
-        <script src="music-index.js"></script>
-    </body>
+    </div>
+    <div class="song-collection">
+        <h3>Song Collection</h3>
+        <table id="song-table">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Artist</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <audio id="audio" preload="metadata"></audio>
+    <script src="music-index.js"></script>
+</body>
 </html>
