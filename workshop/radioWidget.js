@@ -6,7 +6,6 @@ fetch('radioPlay.json')
     .then(data => {
         const songs = data.songs;
         let currentSongIndex = 0;
-        let playHistory = [];
 
         const audioPlayer = document.getElementById('audioPlayer');
         const songTitle = document.getElementById('songTitle');
@@ -44,23 +43,13 @@ fetch('radioPlay.json')
             coverArt.src = song.coverArt;
             audioPlayer.src = song.mp3url;
             commentSongTitle.textContent = song.songTitle;
-            updateCommentsList();
-            
-            // Add current song to play history
-            playHistory.push(currentSongIndex);
+            updateCommentsList(); // Add this line to update comments when loading a new song
+            // Removed background image feature
         }
 
         function prevSong() {
-            if (playHistory.length > 1) {
-                // Remove current song from history
-                playHistory.pop();
-                // Get the previous song index
-                currentSongIndex = playHistory.pop();
-                loadSong(songs[currentSongIndex]);
-            } else {
-                // If there's no previous song, just restart the current song
-                audioPlayer.currentTime = 0;
-            }
+            currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+            loadSong(songs[currentSongIndex]);
         }
 
         function nextSong() {
@@ -194,7 +183,6 @@ fetch('radioPlay.json')
         volumeBar.addEventListener('input', updateVolume);
 
         shuffleSongs();
-        currentSongIndex = 0;
         loadSong(songs[currentSongIndex]);
         updateVolume();
     })
