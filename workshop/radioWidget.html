@@ -6,7 +6,9 @@
         <title>Radio Widget</title>
         <link rel="stylesheet" href="radioWidget.css">
         <link rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/font-awesome-animation@1.1.1/css/font-awesome-animation.min.css">
         <style>
         body {
             font-family: monospace;
@@ -14,6 +16,40 @@
         .comment-title {
             font-size: 0.9em;
             text-align: center;
+        }
+        .radio-controls button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            box-shadow: 0 5px #999;
+        }
+        .radio-controls button:hover {
+            background-color: #45a049;
+            transform: translateY(-2px);
+            box-shadow: 0 7px #999;
+        }
+        .radio-controls button:active {
+            background-color: #3e8e41;
+            box-shadow: 0 2px #666;
+            transform: translateY(4px);
+        }
+        #likeBtn {
+            background-color: #ff4081;
+        }
+        #likeBtn:hover {
+            background-color: #e91e63;
+        }
+        .radio-controls button i {
+            margin: 0 5px;
         }
     </style>
     </head>
@@ -33,9 +69,14 @@
                     value="1">
             </div>
             <div class="radio-controls">
-                <button id="prevBtn">Previous</button>
-                <button id="nextBtn">Next</button>
-                <button id="likeBtn">Like</button>
+                <button id="prevBtn"><i
+                        class="fas fa-step-backward faa-horizontal animated-hover"></i>
+                    Previous</button>
+                <button id="nextBtn">Next <i
+                        class="fas fa-step-forward faa-horizontal animated-hover"></i></button>
+                <button id="likeBtn"><i
+                        class="fas fa-heart faa-pulse animated-hover"></i>
+                    Like</button>
             </div>
             <div class="liked-songs-widget">
                 <h3>Liked Songs</h3>
