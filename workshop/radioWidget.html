@@ -1,40 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Radio Widget</title>
-    <link rel="stylesheet" href="radioWidget.css">
-</head>
-<body>
-    <div class="radio-widget">
-        <div class="song-info">
-            <img id="coverArt" src="" alt="Cover Art">
-            <div class="details">
-                <h2 id="songTitle">Song Title</h2>
-                <p id="artist">Artist</p>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Radio Widget</title>
+        <link rel="stylesheet" href="radioWidget.css">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    </head>
+    <body>
+        <div class="radio-widget">
+            <div class="song-info">
+                <img id="coverArt" src alt="Cover Art">
+                <div class="details">
+                    <h2 id="songTitle">Song Title</h2>
+                    <p id="artist">Artist</p>
+                </div>
             </div>
+            <audio id="audioPlayer" controls></audio>
+            <div class="volume-control">
+                <i id="volumeIcon" class="fas fa-volume-up"></i>
+                <input type="range" id="volumeBar" min="0" max="1" step="0.1"
+                    value="1">
+            </div>
+            <div class="radio-controls">
+                <button id="prevBtn">Previous</button>
+                <button id="nextBtn">Next</button>
+                <button id="likeBtn">Like</button>
+            </div>
+            <div class="liked-songs-widget">
+                <h3>Liked Songs</h3>
+                <ul id="likedSongsList"></ul>
+            </div>
+            <div class="comment-section">
+                <h3>Comments for Current Song</h3>
+                <div id="currentSongComments">
+                    <ul id="commentsList"></ul>
+                </div>
+                <input type="text" id="commentInput"
+                    placeholder="Add a comment">
+                <button id="submitCommentBtn">Submit Comment</button>
+            </div>
+            <button id="burnToCdBtn">Burn to CD</button>
+            <ul id="cdPreviewList"></ul>
+            <input type="text" id="cdNameInput" placeholder="Enter CD Name">
+            <button id="submitCdBtn">Submit CD Burn Request</button>
+            <button id="emailBtn">Email Playlist</button>
+            <div id="messageBox"></div>
         </div>
-        <audio id="audioPlayer" controls></audio>
-       
-		
-    </div>
-	<div class="radio-controls">
-	<button id="prevBtn">Previous</button>
-	<button id="nextBtn">Next</button>
-	<button id="likeBtn">Like</button>
-	</div>
-	<div class="liked-songs-widget">
-		<h3>Liked Songs</h3>
-		<ul id="likedSongsList"></ul>
-	</div>
-	<!-- ... existing HTML ... -->
-<button id="burnToCdBtn">Burn to CD</button>
-<ul id="cdPreviewList"></ul>
-<input type="text" id="cdNameInput" placeholder="Enter CD Name">
-<button id="submitCdBtn">Submit CD Burn Request</button>
-<button id="emailBtn">Email Playlist</button>
-<div id="messageBox"></div>
-    <script src="radioWidget.js"></script>
-</body>
+        <script src="radioWidget.js"></script>
+    </body>
 </html>
