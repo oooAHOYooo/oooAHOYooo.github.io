@@ -112,7 +112,7 @@ button {
 .action-btn {
     background-color: #4CAF50;
     color: white;
-    border: none;
+    border: solid;
     padding: 5px 10px;
     border-radius: 5px;
     cursor: pointer;

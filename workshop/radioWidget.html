@@ -7,6 +7,15 @@
         <link rel="stylesheet" href="radioWidget.css">
         <link rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <style>
+        body {
+            font-family: monospace;
+        }
+        .comment-title {
+            font-size: 0.9em;
+            text-align: center;
+        }
+    </style>
     </head>
     <body>
         <div class="radio-widget">
@@ -33,7 +42,8 @@
                 <ul id="likedSongsList"></ul>
             </div>
             <div class="comment-section">
-                <h3>Comments for Current Song</h3>
+                <h3 class="comment-title">Comments for "<span
+                        id="commentSongTitle"></span>"</h3>
                 <div id="currentSongComments">
                     <ul id="commentsList"></ul>
                 </div>

@@ -21,9 +21,14 @@ fetch('radioPlay.json')
         const cdNameInput = document.getElementById('cdNameInput');
         const submitCdBtn = document.getElementById('submitCdBtn');
         const messageBox = document.getElementById('messageBox');
+        const volumeBar = document.getElementById('volumeBar');
+        const commentInput = document.getElementById('commentInput');
+        const submitCommentBtn = document.getElementById('submitCommentBtn');
+        const commentsList = document.getElementById('commentsList');
+        const commentSongTitle = document.getElementById('commentSongTitle');
         let likedSongs = [];
         let playlist = [];
-        let totalDuration = 0;
+        let comments = {};
 
         function shuffleSongs() {
             for (let i = songs.length - 1; i > 0; i--) {
@@ -37,6 +42,8 @@ fetch('radioPlay.json')
             artist.textContent = song.artist;
             coverArt.src = song.coverArt;
             audioPlayer.src = song.mp3url;
+            commentSongTitle.textContent = song.songTitle;
+            updateCommentsList(); // Add this line to update comments when loading a new song
             // Removed background image feature
         }
 
@@ -133,16 +140,50 @@ fetch('radioPlay.json')
             messageBox.textContent = 'Your CD burn request has been submitted. Your CD will be shipped to your house within 2-4 weeks.';
         }
 
+        function addComment() {
+            const commentText = commentInput.value.trim();
+            if (commentText) {
+                const comment = {
+                    text: commentText,
+                    timestamp: new Date().toLocaleString()
+                };
+                const currentSong = songs[currentSongIndex];
+                if (!comments[currentSong.id]) {
+                    comments[currentSong.id] = [];
+                }
+                comments[currentSong.id].push(comment);
+                updateCommentsList();
+                commentInput.value = '';
+            }
+        }
+
+        function updateCommentsList() {
+            commentsList.innerHTML = '';
+            const currentSong = songs[currentSongIndex];
+            if (comments[currentSong.id]) {
+                comments[currentSong.id].forEach(comment => {
+                    const li = document.createElement('li');
+                    li.textContent = `${comment.timestamp}: ${comment.text}`;
+                    commentsList.appendChild(li);
+                });
+            }
+        }
+
+        function updateVolume() {
+            audioPlayer.volume = volumeBar.value;
+        }
+
         prevBtn.addEventListener('click', prevSong);
         nextBtn.addEventListener('click', nextSong);
         likeBtn.addEventListener('click', likeSong);
         burnToCdBtn.addEventListener('click', burnToCd);
         emailBtn.addEventListener('click', emailPlaylist);
         submitCdBtn.addEventListener('click', submitCdRequest);
+        submitCommentBtn.addEventListener('click', addComment);
+        volumeBar.addEventListener('input', updateVolume);
 
-        // Shuffle songs initially
         shuffleSongs();
-        // Load the first song initially
         loadSong(songs[currentSongIndex]);
+        updateVolume();
     })
     .catch(error => console.error('Error fetching the song data:', error));
