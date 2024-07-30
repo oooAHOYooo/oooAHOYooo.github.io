@@ -6,6 +6,7 @@ fetch('radioPlay.json')
     .then(data => {
         const songs = data.songs;
         let currentSongIndex = 0;
+        let playHistory = [];
 
         const audioPlayer = document.getElementById('audioPlayer');
         const songTitle = document.getElementById('songTitle');
@@ -43,13 +44,23 @@ fetch('radioPlay.json')
             coverArt.src = song.coverArt;
             audioPlayer.src = song.mp3url;
             commentSongTitle.textContent = song.songTitle;
-            updateCommentsList(); // Add this line to update comments when loading a new song
-            // Removed background image feature
+            updateCommentsList();
+            
+            // Add current song to play history
+            playHistory.push(currentSongIndex);
         }
 
         function prevSong() {
-            currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
-            loadSong(songs[currentSongIndex]);
+            if (playHistory.length > 1) {
+                // Remove current song from history
+                playHistory.pop();
+                // Get the previous song index
+                currentSongIndex = playHistory.pop();
+                loadSong(songs[currentSongIndex]);
+            } else {
+                // If there's no previous song, just restart the current song
+                audioPlayer.currentTime = 0;
+            }
         }
 
         function nextSong() {
@@ -59,7 +70,7 @@ fetch('radioPlay.json')
 
         function likeSong() {
             const currentSong = songs[currentSongIndex];
-            if (!likedSongs.some(song => song.id === currentSong.id)) {
+            if (!likedSongs.includes(currentSong)) {
                 likedSongs.push(currentSong);
                 updateLikedSongsList();
             }
@@ -70,68 +81,42 @@ fetch('radioPlay.json')
             updateLikedSongsList();
         }
 
+        function burnToCd() {
+            if (likedSongs.length > 15 || totalDuration > 70) {
+                alert('You can only select up to 15 songs or 70 minutes total.');
+                return;
+            }
+            playlist = [...likedSongs];
+            updateCdPreviewList();
+        }
+
         function updateLikedSongsList() {
             likedSongsList.innerHTML = '';
+            totalDuration = 0;
             likedSongs.forEach((song, index) => {
                 const li = document.createElement('li');
                 li.textContent = `${song.songTitle} by ${song.artist} (${song.duration} mins)`;
-                
+                totalDuration += song.duration;
                 const removeBtn = document.createElement('button');
                 removeBtn.textContent = 'Remove';
                 removeBtn.addEventListener('click', () => removeLikedSong(index));
-                
-                const addToCdBtn = document.createElement('button');
-                addToCdBtn.textContent = 'Add to CD';
-                addToCdBtn.addEventListener('click', () => addToCdPlaylist(song));
-                
                 li.appendChild(removeBtn);
-                li.appendChild(addToCdBtn);
                 likedSongsList.appendChild(li);
             });
-        }
-
-        function addToCdPlaylist(song) {
-            if (playlist.length < 15 && getTotalDuration() + song.duration <= 70) {
-                playlist.push(song);
-                updateCdPreviewList();
-            } else {
-                alert('You can only select up to 15 songs or 70 minutes total.');
-            }
-        }
-
-        function getTotalDuration() {
-            return playlist.reduce((total, song) => total + song.duration, 0);
-        }
-
-        function burnToCd() {
-            // This function is no longer needed as we're adding songs individually
-            // You can remove it or keep it for batch adding all liked songs
-            updateCdPreviewList();
         }
 
         function updateCdPreviewList() {
             cdPreviewList.innerHTML = '';
             playlist.forEach((song, index) => {
                 const li = document.createElement('li');
-                li.textContent = `${song.songTitle} by ${song.artist} (${song.duration} mins)`;
+                li.textContent = `${song.songTitle} by ${song.artist}`;
                 li.draggable = true;
                 li.dataset.index = index;
-                
-                const removeBtn = document.createElement('button');
-                removeBtn.textContent = 'Remove';
-                removeBtn.addEventListener('click', () => removeFromCdPlaylist(index));
-                
-                li.appendChild(removeBtn);
                 li.addEventListener('dragstart', handleDragStart);
                 li.addEventListener('dragover', handleDragOver);
                 li.addEventListener('drop', handleDrop);
                 cdPreviewList.appendChild(li);
             });
-        }
-
-        function removeFromCdPlaylist(index) {
-            playlist.splice(index, 1);
-            updateCdPreviewList();
         }
 
         function handleDragStart(e) {
@@ -209,6 +194,7 @@ fetch('radioPlay.json')
         volumeBar.addEventListener('input', updateVolume);
 
         shuffleSongs();
+        currentSongIndex = 0;
         loadSong(songs[currentSongIndex]);
         updateVolume();
     })

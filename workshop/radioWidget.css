@@ -69,6 +69,65 @@ body {
     /* Pinkish hue for the player */
 }
 
+audio {
+    /* Overall styling */
+    display: block;
+    width: 300px;
+    height: 54px;
+    border-radius: 27px;
+    background-color: #f0f0f0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+audio:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Webkit (Chrome, Safari) specific styles */
+audio::-webkit-media-controls-panel {
+    background-color: #f0f0f0;
+    border-radius: 27px;
+}
+
+audio::-webkit-media-controls-play-button {
+    background-color: #FF6B6B;
+    /* Coral pink - energetic and fun */
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+audio::-webkit-media-controls-play-button:hover {
+    background-color: #4ECDC4;
+    /* Turquoise - refreshing and engaging */
+}
+
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display {
+    color: #45B7D1;
+    /* Sky blue - trustworthy and calming */
+}
+
+audio::-webkit-media-controls-volume-slider {
+    background-color: #FFD93D;
+    /* Bright yellow - cheerful and attention-grabbing */
+    border-radius: 25px;
+}
+
+audio::-webkit-media-controls-mute-button {
+    background-color: #6C5CE7;
+    /* Soft purple - creative and luxurious */
+    border-radius: 50%;
+}
+
+/* Firefox specific styles */
+@-moz-document url-prefix() {
+    audio {
+        border: 2px solid #FF6B6B;
+    }
+}
+
 .volume-control {
     display: flex;
     align-items: center;
@@ -119,6 +178,7 @@ button:hover {
 .liked-songs-widget,
 .comment-section {
     margin-top: 30px;
+    background: transparent;
 }
 
 h3 {
