@@ -17,16 +17,30 @@
             margin: 0;
             padding: 0;
             height: 100%;
-            background-color: var(--primary-bg);
+            background: linear-gradient(45deg, #000000, #1a1a2e, #2a2a3e);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
             color: var(--primary-text);
             font-family: 'Courier New', monospace;
-            overflow: hidden;
+            overflow-x: hidden;
+        }
+
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
         .crt::before {
             content: " ";
             display: block;
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             bottom: 0;
@@ -45,6 +59,8 @@
             overflow-y: auto;
             display: flex;
             flex-direction: column;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .song-info, .active-profile {
@@ -183,23 +199,48 @@
 
         @media (min-width: 1200px) {
             .radio-widget {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
+                display: flex;
+                flex-direction: column;
                 gap: 2vw;
+                padding: 2vw;
+                max-width: 1000px;
+                margin: 0 auto;
+                aspect-ratio: 16 / 9;
             }
 
             .player-container {
-                grid-column: 1 / -1;
+                width: 100%;
             }
 
             .radio-controls button,
             #submitCommentBtn,
             #commentsList button {
-                font-size: 1vw;
+                font-size: 0.8vw;
+                padding: 0.4vw 0.8vw;
+                margin: 0.5vw;
             }
 
             h2, h3 {
-                font-size: 2vw;
+                font-size: 1.5vw;
+            }
+
+            .song-list {
+                max-width: 1000px;
+                margin: 0 auto;
+            }
+
+            .song-info, .active-profile, .friends-profiles, .terminal-section, .song-list {
+                padding: 1vw;
+                margin-bottom: 1vw;
+            }
+
+            #songSearch, #searchBtn {
+                font-size: 1vw;
+            }
+
+            .play-song-btn {
+                font-size: 0.8vw;
+                padding: 0.3vw 0.6vw;
             }
         }
 
