@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Retro Radio Terminal</title>
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-color: #1a1a2e;
+            color: #e0e0e0;
+            font-family: 'Courier New', monospace;
+            overflow: hidden;
+        }
+        .crt::before {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            z-index: 2;
+            background-size: 100% 2px, 3px 100%;
+            pointer-events: none;
+        }
+        .radio-widget {
+            padding: 20px;
+            border: 2px solid #4a4e69;
+            height: 100%;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+        .song-info, .active-profile {
+            border: 1px solid #4a4e69;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        .radio-controls button {
+            background-color: #16213e;
+            color: #e0e0e0;
+            border: 2px solid #4a4e69;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            font-family: 'Courier New', monospace;
+            font-size: 16px;
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+        .radio-controls button:hover {
+            background-color: #4a4e69;
+            color: #e0e0e0;
+            box-shadow: 0 0 10px #4a4e69;
+        }
+        input[type="text"], input[type="range"] {
+            background-color: #16213e;
+            color: #e0e0e0;
+            border: 1px solid #4a4e69;
+            padding: 5px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        h2, h3 {
+            border-bottom: 1px solid #4a4e69;
+            padding-bottom: 5px;
+        }
+        #coverArt {
+            max-width: 200px;
+            max-height: 200px;
+            margin-bottom: 10px;
+        }
+    </style>
+    </head>
+    <body class="crt">
+        <div class="radio-widget">
+            <h1>> RETRO RADIO TERMINAL_</h1>
+            <div class="song-info">
+                <img id="coverArt" src alt="Cover Art">
+                <h2 id="songTitle">SONG TITLE: ________</h2>
+                <p id="artist">ARTIST: ________</p>
+            </div>
+            <audio id="audioPlayer"></audio>
+            <div class="radio-controls">
+                <button id="playBtn">[► PLAY]</button>
+                <button id="prevBtn">[◄◄ PREV]</button>
+                <button id="nextBtn">[►► NEXT]</button>
+                <button id="likeBtn">[♥ LIKE]</button>
+            </div>
+            <div class="volume-control">
+                <p>VOLUME: <input type="range" id="volumeBar" min="0" max="1"
+                        step="0.1" value="1"></p>
+            </div>
+            <div class="liked-songs-widget">
+                <h3>> LIKED SONGS: <span id="likedSongsCount">0</span></h3>
+                <ul id="likedSongsList"></ul>
+            </div>
+            <div class="comments-widget">
+                <h3>> COMMENTS FOR: <span id="commentSongTitle"></span></h3>
+                <p>TOTAL COMMENTS: <span id="commentsCount">0</span></p>
+                <ul id="commentsList"></ul>
+                <input type="text" id="commentInput"
+                    placeholder="Add a comment...">
+                <button id="submitCommentBtn">[SUBMIT]</button>
+            </div>
+            <div class="active-profile">
+                <h2>> ACTIVE PROFILE:</h2>
+                <p id="activeUser">USER: PLAYER_1</p>
+                <p id="userLevel">LEVEL: 5</p>
+                <p id="userXP">XP: 1337</p>
+                <p id="userComments">COMMENTS: <span
+                        id="commentsCount">0</span></p>
+            </div>
+        </div>
+
+        <script>
+        // Fetch the song data from radioPlay.json
+        fetch('radioPlay.json')
+            .then(response => response.json())
+            .then(data => {
+                const songs = data.songs;
+                let currentSongIndex = 0;
+
+                const audioPlayer = document.getElementById('audioPlayer');
+                const songTitle = document.getElementById('songTitle');
+                const artist = document.getElementById('artist');
+                const coverArt = document.getElementById('coverArt');
+                const prevBtn = document.getElementById('prevBtn');
+                const nextBtn = document.getElementById('nextBtn');
+                const likeBtn = document.getElementById('likeBtn');
+                const likedSongsList = document.getElementById('likedSongsList');
+                const volumeBar = document.getElementById('volumeBar');
+                const commentInput = document.getElementById('commentInput');
+                const submitCommentBtn = document.getElementById('submitCommentBtn');
+                const commentsList = document.getElementById('commentsList');
+                const commentSongTitle = document.getElementById('commentSongTitle');
+                const playBtn = document.getElementById('playBtn');
+                let likedSongs = [];
+                let comments = {};
+                let totalComments = 0;
+
+                const likedSongsCount = document.getElementById('likedSongsCount');
+                const commentsCount = document.getElementById('commentsCount');
+
+                function shuffleSongs() {
+                    for (let i = songs.length - 1; i > 0; i--) {
+                        const j = Math.floor(Math.random() * (i + 1));
+                        [songs[i], songs[j]] = [songs[j], songs[i]];
+                    }
+                }
+
+                function togglePlay() {
+                    if (audioPlayer.paused) {
+                        audioPlayer.play();
+                        playBtn.textContent = '[❚❚ PAUSE]';
+                    } else {
+                        audioPlayer.pause();
+                        playBtn.textContent = '[► PLAY]';
+                    }
+                }
+
+                function loadSong(song) {
+                    songTitle.textContent = `SONG TITLE: ${song.songTitle}`;
+                    artist.textContent = `ARTIST: ${song.artist}`;
+                    coverArt.src = song.coverArt;
+                    audioPlayer.src = song.mp3url;
+                    commentSongTitle.textContent = song.songTitle;
+                    updateCommentsList();
+                    playBtn.textContent = '[► PLAY]';
+                }
+
+                function prevSong() {
+                    currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+                    loadSong(songs[currentSongIndex]);
+                }
+
+                function nextSong() {
+                    currentSongIndex = (currentSongIndex + 1) % songs.length;
+                    loadSong(songs[currentSongIndex]);
+                }
+
+                function likeSong() {
+                    const currentSong = songs[currentSongIndex];
+                    if (!likedSongs.some(song => song.id === currentSong.id)) {
+                        likedSongs.push(currentSong);
+                        updateLikedSongsList();
+                        likedSongsCount.textContent = likedSongs.length;
+                    }
+                }
+
+                function updateLikedSongsList() {
+                    likedSongsList.innerHTML = '';
+                    likedSongs.forEach((song, index) => {
+                        const li = document.createElement('li');
+                        li.textContent = `${song.songTitle} by ${song.artist}`;
+                        const removeBtn = document.createElement('button');
+                        removeBtn.textContent = '[REMOVE]';
+                        removeBtn.addEventListener('click', () => removeLikedSong(index));
+                        li.appendChild(removeBtn);
+                        likedSongsList.appendChild(li);
+                    });
+                }
+
+                function removeLikedSong(index) {
+                    likedSongs.splice(index, 1);
+                    updateLikedSongsList();
+                    likedSongsCount.textContent = likedSongs.length;
+                }
+
+                function addComment() {
+                    const commentText = commentInput.value.trim();
+                    if (commentText) {
+                        const comment = {
+                            text: commentText,
+                            timestamp: new Date().toLocaleString()
+                        };
+                        const currentSong = songs[currentSongIndex];
+                        if (!comments[currentSong.id]) {
+                            comments[currentSong.id] = [];
+                        }
+                        comments[currentSong.id].push(comment);
+                        updateCommentsList();
+                        commentInput.value = '';
+                        totalComments++;
+                        commentsCount.textContent = totalComments;
+                    }
+                }
+
+                function updateCommentsList() {
+                    commentsList.innerHTML = '';
+                    const currentSong = songs[currentSongIndex];
+                    if (comments[currentSong.id]) {
+                        comments[currentSong.id].forEach((comment, index) => {
+                            const li = document.createElement('li');
+                            li.textContent = `${comment.timestamp}: ${comment.text}`;
+                            const deleteBtn = document.createElement('button');
+                            deleteBtn.textContent = '[DELETE]';
+                            deleteBtn.addEventListener('click', () => deleteComment(currentSong.id, index));
+                            li.appendChild(deleteBtn);
+                            commentsList.appendChild(li);
+                        });
+                    }
+                }
+
+                function deleteComment(songId, commentIndex) {
+                    comments[songId].splice(commentIndex, 1);
+                    updateCommentsList();
+                    totalComments--;
+                    commentsCount.textContent = totalComments;
+                }
+
+                function updateVolume() {
+                    audioPlayer.volume = volumeBar.value;
+                }
+
+                prevBtn.addEventListener('click', prevSong);
+                nextBtn.addEventListener('click', nextSong);
+                likeBtn.addEventListener('click', likeSong);
+                submitCommentBtn.addEventListener('click', addComment);
+                volumeBar.addEventListener('input', updateVolume);
+                playBtn.addEventListener('click', togglePlay);
+
+                shuffleSongs();
+                loadSong(songs[currentSongIndex]);
+                updateVolume();
+            })
+            .catch(error => console.error('Error fetching the song data:', error));
+        </script>
+    </body>
+</html>
