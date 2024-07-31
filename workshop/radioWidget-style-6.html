@@ -217,11 +217,111 @@
         #friendsList li {
             margin-bottom: 1vw;
         }
+
+        .terminal-section {
+            border: 1px solid var(--accent-color);
+            padding: 2vw;
+            margin-bottom: 2vw;
+        }
+
+        #songSearch {
+            background-color: var(--primary-bg);
+            color: var(--primary-text);
+            border: 1px solid var(--accent-color);
+            padding: 1vw;
+            font-family: 'Courier New', monospace;
+            font-size: 3vw;
+            width: 70%;
+        }
+
+        #searchBtn {
+            background-color: #16213e;
+            color: var(--primary-text);
+            border: 1px solid var(--accent-color);
+            padding: 1vw 2vw;
+            font-family: 'Courier New', monospace;
+            font-size: 3vw;
+            cursor: pointer;
+        }
+
+        .song-list {
+            border: 1px solid var(--accent-color);
+            padding: 2vw;
+            margin-bottom: 2vw;
+        }
+
+        #songListTable {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        #songListTable th, #songListTable td {
+            border: 1px solid var(--accent-color);
+            padding: 1vw;
+            text-align: left;
+        }
+
+        #songListTable th {
+            background-color: #16213e;
+        }
+
+        .play-song-btn {
+            background-color: #16213e;
+            color: var(--primary-text);
+            border: 1px solid var(--accent-color);
+            padding: 0.5vw 1vw;
+            cursor: pointer;
+            font-family: 'Courier New', monospace;
+            font-size: 2vw;
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+
+        .play-song-btn:hover {
+            background-color: var(--accent-color);
+            color: var(--primary-text);
+            box-shadow: 0 0 10px var(--accent-color);
+        }
+
+        .comment-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1vw;
+            border: 1px solid var(--accent-color);
+            margin-bottom: 1vw;
+        }
+
+        .comment-text {
+            flex-grow: 1;
+            margin-right: 1vw;
+        }
+
+        .delete-btn, .play-btn {
+            background: none;
+            border: none;
+            color: var(--accent-color);
+            cursor: pointer;
+            font-size: 3vw;
+            padding: 0.5vw;
+        }
+
+        .delete-btn:hover, .play-btn:hover {
+            color: var(--primary-text);
+        }
+
+        #likedSongs li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1vw;
+            border: 1px solid var(--accent-color);
+            margin-bottom: 1vw;
+        }
     </style>
     </head>
     <body class="crt">
         <div class="radio-widget">
-            <h1>AHOY RADIO TERMINAL</h1>
             <div class="player-container">
                 <div class="song-info">
                     <img id="coverArt" src alt="Cover Art">
@@ -231,9 +331,64 @@
                     </div>
                 </div>
                 <audio id="audioPlayer"></audio>
-                <div id="timeline">
-                    <div id="timelineHandle"></div>
+                <div id="timeline" class="vcr-timeline"
+                    style="margin-top: 10px; margin-bottom: 10px;">
+                    <div id="timelineHandle" class="vcr-handle"
+                        style="border-radius: 0; cursor: grab; transition: transform 0.1s;">
+                        <div class="handle-grip"></div>
+                    </div>
                 </div>
+                <style>
+                    .vcr-handle {
+                        user-select: none;
+                    }
+                    .vcr-handle:active {
+                        cursor: grabbing;
+                        transform: scale(1.1);
+                    }
+                    .handle-grip {
+                        width: 100%;
+                        height: 100%;
+                        background: repeating-linear-gradient(
+                            90deg,
+                            var(--accent-color),
+                            var(--accent-color) 2px,
+                            transparent 2px,
+                            transparent 4px
+                        );
+                    }
+                </style>
+                <script>
+                    const handle = document.getElementById('timelineHandle');
+                    let isDragging = false;
+                    let startX, startScrollLeft;
+
+                    handle.addEventListener('mousedown', (e) => {
+                        isDragging = true;
+                        startX = e.pageX - handle.offsetLeft;
+                        startScrollLeft = handle.parentElement.scrollLeft;
+                    });
+
+                    document.addEventListener('mousemove', (e) => {
+                        if (!isDragging) return;
+                        e.preventDefault();
+                        const x = e.pageX - handle.parentElement.offsetLeft;
+                        const walk = (x - startX) * 2;
+                        handle.parentElement.scrollLeft = startScrollLeft - walk;
+                    });
+
+                    document.addEventListener('mouseup', () => {
+                        if (isDragging) {
+                            isDragging = false;
+                            const audio = document.getElementById('audioPlayer');
+                            const currentRate = audio.playbackRate;
+                            audio.playbackRate = currentRate * 1.5;
+                            setTimeout(() => {
+                                audio.playbackRate = currentRate;
+                            }, 300);
+                        }
+                    });
+                </script>
                 <div class="radio-controls">
                     <button id="prevBtn">[◄◄ PREV]</button>
                     <button id="playBtn">[► PLAY]</button>
@@ -270,6 +425,25 @@
                 <h2>> FRIENDS:</h2>
                 <div id="friendsList"></div>
             </div>
+            <div class="terminal-section">
+                <h2>> SEARCH SONGS:</h2>
+                <input type="text" id="songSearch"
+                    placeholder="Enter search query...">
+                <button id="searchBtn">[SEARCH]</button>
+            </div>
+            <div class="song-list">
+                <h2>> FULL SONG LIST:</h2>
+                <table id="songListTable">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Artist</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="songListBody"></tbody>
+                </table>
+            </div>
         </div>
 
         <script>
@@ -301,6 +475,10 @@
                 const likedSongsCount = document.getElementById('likedSongsCount');
                 const commentsCount = document.getElementById('commentsCount');
 
+                const songSearch = document.getElementById('songSearch');
+                const searchBtn = document.getElementById('searchBtn');
+                const songListBody = document.getElementById('songListBody');
+
                 function shuffleSongs() {
                     for (let i = songs.length - 1; i > 0; i--) {
                         const j = Math.floor(Math.random() * (i + 1));
@@ -326,43 +504,58 @@
                     commentSongTitle.textContent = song.songTitle;
                     updateCommentsList();
                     playBtn.textContent = '[► PLAY]';
+                    populateSongList();
                 }
 
                 function prevSong() {
                     currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
                     loadSong(songs[currentSongIndex]);
+                    audioPlayer.play();
+                    playBtn.textContent = '[❚❚ PAUSE]';
                 }
 
                 function nextSong() {
                     currentSongIndex = (currentSongIndex + 1) % songs.length;
                     loadSong(songs[currentSongIndex]);
+                    audioPlayer.play();
+                    playBtn.textContent = '[❚❚ PAUSE]';
                 }
 
                 function likeSong() {
                     const currentSong = songs[currentSongIndex];
                     if (!likedSongs.some(song => song.id === currentSong.id)) {
                         likedSongs.push(currentSong);
-                        updateLikedSongsList();
+                        updateLikedSongs();
                         likedSongsCount.textContent = likedSongs.length;
                     }
                 }
 
-                function updateLikedSongsList() {
+                function updateLikedSongs() {
                     likedSongsList.innerHTML = '';
                     likedSongs.forEach((song, index) => {
                         const li = document.createElement('li');
-                        li.textContent = `${song.songTitle} by ${song.artist}`;
-                        const removeBtn = document.createElement('button');
-                        removeBtn.textContent = '[REMOVE]';
-                        removeBtn.addEventListener('click', () => removeLikedSong(index));
-                        li.appendChild(removeBtn);
+                        li.innerHTML = `
+                            <span>${song.songTitle} - ${song.artist}</span>
+                            <div>
+                                <button class="play-btn" aria-label="Play song">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <button class="delete-btn" aria-label="Remove from liked songs">
+                                    <i class="fas fa-times-circle"></i>
+                                </button>
+                            </div>
+                        `;
+                        const playBtn = li.querySelector('.play-btn');
+                        const deleteBtn = li.querySelector('.delete-btn');
+                        playBtn.addEventListener('click', () => playSongFromLiked(index));
+                        deleteBtn.addEventListener('click', () => removeLikedSong(index));
                         likedSongsList.appendChild(li);
                     });
                 }
 
                 function removeLikedSong(index) {
                     likedSongs.splice(index, 1);
-                    updateLikedSongsList();
+                    updateLikedSongs();
                     likedSongsCount.textContent = likedSongs.length;
                 }
 
@@ -391,11 +584,15 @@
                     if (comments[currentSong.id]) {
                         comments[currentSong.id].forEach((comment, index) => {
                             const li = document.createElement('li');
-                            li.textContent = `${comment.timestamp}: ${comment.text}`;
-                            const deleteBtn = document.createElement('button');
-                            deleteBtn.textContent = '[DELETE]';
+                            li.className = 'comment-item';
+                            li.innerHTML = `
+                                <span class="comment-text">${comment.timestamp}: ${comment.text}</span>
+                                <button class="delete-btn" aria-label="Delete comment">
+                                    <i class="fas fa-times-circle"></i>
+                                </button>
+                            `;
+                            const deleteBtn = li.querySelector('.delete-btn');
                             deleteBtn.addEventListener('click', () => deleteComment(currentSong.id, index));
-                            li.appendChild(deleteBtn);
                             commentsList.appendChild(li);
                         });
                     }
@@ -453,9 +650,58 @@
                     }
                 });
 
+                function populateSongList(filteredSongs = songs) {
+                    songListBody.innerHTML = '';
+                    
+                    filteredSongs.forEach((song, index) => {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td>${song.songTitle}</td>
+                            <td>${song.artist}</td>
+                            <td><button class="play-song-btn" data-index="${index}">${index === currentSongIndex ? '[PLAYING]' : '[PLAY]'}</button></td>
+                        `;
+                        songListBody.appendChild(row);
+                    });
+
+                    // Add event listeners to play buttons
+                    const playButtons = document.querySelectorAll('.play-song-btn');
+                    playButtons.forEach(button => {
+                        button.addEventListener('click', (e) => {
+                            const songIndex = parseInt(e.target.getAttribute('data-index'));
+                            playSongFromList(songIndex);
+                        });
+                    });
+                }
+
+                function playSongFromList(index) {
+                    currentSongIndex = index;
+                    loadSong(songs[currentSongIndex]);
+                    audioPlayer.play();
+                    playBtn.textContent = '[❚❚ PAUSE]';
+                    populateSongList();
+                }
+
+                function playSongFromLiked(index) {
+                    const songToPlay = likedSongs[index];
+                    const songIndex = songs.findIndex(song => song.id === songToPlay.id);
+                    if (songIndex !== -1) {
+                        playSongFromList(songIndex);
+                    }
+                }
+
+                searchBtn.addEventListener('click', () => {
+                    const query = songSearch.value.toLowerCase();
+                    const filteredSongs = songs.filter(song => 
+                        song.songTitle.toLowerCase().includes(query) || 
+                        song.artist.toLowerCase().includes(query)
+                    );
+                    populateSongList(filteredSongs);
+                });
+
                 shuffleSongs();
                 loadSong(songs[currentSongIndex]);
                 updateVolume();
+                populateSongList();
 
                 // Add this after the other variable declarations
                 const friendsList = document.getElementById('friendsList');
@@ -463,7 +709,7 @@
                 // Add this function to create a bot friend
                 function createBotFriend() {
                     const botFriend = {
-                        name: 'BOTBUDDY_42',
+                        name: 'PAL-BOT',
                         level: 3,
                         xp: 750,
                         comments: 15
