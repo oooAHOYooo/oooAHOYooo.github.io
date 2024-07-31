@@ -85,12 +85,6 @@
     <body class="crt">
         <div class="radio-widget">
             <h1>> RETRO RADIO TERMINAL_</h1>
-            <div class="active-profile">
-                <h2>> ACTIVE PROFILE:</h2>
-                <p id="activeUser">USER: PLAYER_1</p>
-                <p id="userLevel">LEVEL: 5</p>
-                <p id="userXP">XP: 1337</p>
-            </div>
             <div class="song-info">
                 <img id="coverArt" src alt="Cover Art">
                 <h2 id="songTitle">SONG TITLE: ________</h2>
@@ -108,15 +102,24 @@
                         step="0.1" value="1"></p>
             </div>
             <div class="liked-songs-widget">
-                <h3>> LIKED SONGS:</h3>
+                <h3>> LIKED SONGS: <span id="likedSongsCount">0</span></h3>
                 <ul id="likedSongsList"></ul>
             </div>
             <div class="comment-section">
-                <h3>> COMMENTS FOR <span id="commentSongTitle"></span>:</h3>
-                <ul id="commentsList"></ul>
+                <h3>> LEAVE A COMMENT FOR THE ARTIST:</h3>
                 <input type="text" id="commentInput"
                     placeholder="Enter comment...">
                 <button id="submitCommentBtn">[SUBMIT]</button>
+                <h3>> COMMENTS:</h3>
+                <ul id="commentsList"></ul>
+            </div>
+            <div class="active-profile">
+                <h2>> ACTIVE PROFILE:</h2>
+                <p id="activeUser">USER: PLAYER_1</p>
+                <p id="userLevel">LEVEL: 5</p>
+                <p id="userXP">XP: 1337</p>
+                <p id="userComments">COMMENTS: <span
+                        id="commentsCount">0</span></p>
             </div>
         </div>
 
@@ -144,6 +147,10 @@
                 const playBtn = document.getElementById('playBtn');
                 let likedSongs = [];
                 let comments = {};
+                let totalComments = 0;
+
+                const likedSongsCount = document.getElementById('likedSongsCount');
+                const commentsCount = document.getElementById('commentsCount');
 
                 function shuffleSongs() {
                     for (let i = songs.length - 1; i > 0; i--) {
@@ -187,6 +194,7 @@
                     if (!likedSongs.some(song => song.id === currentSong.id)) {
                         likedSongs.push(currentSong);
                         updateLikedSongsList();
+                        likedSongsCount.textContent = likedSongs.length;
                     }
                 }
 
@@ -213,6 +221,8 @@
                         comments[currentSong.id].push(comment);
                         updateCommentsList();
                         commentInput.value = '';
+                        totalComments++;
+                        commentsCount.textContent = totalComments;
                     }
                 }
 
@@ -244,6 +254,6 @@
                 updateVolume();
             })
             .catch(error => console.error('Error fetching the song data:', error));
-    </script>
+        </script>
     </body>
 </html>
