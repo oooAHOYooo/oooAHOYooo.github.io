@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Retro Radio Terminal</title>
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-color: #000;
+            color: rgb(255, 255, 255);
+            font-family: 'Courier New', monospace;
+            overflow: hidden;
+        }
+        .crt::before {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            z-index: 2;
+            background-size: 100% 2px, 3px 100%;
+            pointer-events: none;
+        }
+        .radio-widget {
+            padding: 20px;
+            border: 2px solid #0f0;
+            height: 100%;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+        .song-info {
+            border: 1px solid #0f0;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        .radio-controls button {
+            background-color: #000;
+            color: #0f0;
+            border: 1px solid #0f0;
+            padding: 10px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        .radio-controls button:hover {
+            background-color: #0f0;
+            color: #000;
+        }
+        input[type="text"], input[type="range"] {
+            background-color: #000;
+            color: #0f0;
+            border: 1px solid #0f0;
+            padding: 5px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        h2, h3 {
+            border-bottom: 1px solid #0f0;
+            padding-bottom: 5px;
+        }
+        </style>
+    </head>
+    <body class="crt">
+        <div class="radio-widget">
+            <h1>> RETRO RADIO TERMINAL_</h1>
+            <div class="song-info">
+                <h2 id="songTitle">SONG TITLE: ________</h2>
+                <p id="artist">ARTIST: ________</p>
+            </div>
+            <audio id="audioPlayer"></audio>
+            <div class="radio-controls">
+                <button id="playBtn">[PLAY]</button>
+                <button id="prevBtn">[PREV]</button>
+                <button id="nextBtn">[NEXT]</button>
+                <button id="likeBtn">[LIKE]</button>
+            </div>
+            <div class="volume-control">
+                <p>VOLUME: <input type="range" id="volumeBar" min="0" max="1"
+                        step="0.1" value="1"></p>
+            </div>
+            <div class="liked-songs-widget">
+                <h3>> LIKED SONGS:</h3>
+                <ul id="likedSongsList"></ul>
+            </div>
+            <div class="comment-section">
+                <h3>> COMMENTS:</h3>
+                <ul id="commentsList"></ul>
+                <input type="text" id="commentInput"
+                    placeholder="Enter comment...">
+                <button id="submitCommentBtn">[SUBMIT]</button>
+            </div>
+            <button id="burnToCdBtn">[BURN TO CD]</button>
+            <ul id="cdPreviewList"></ul>
+            <input type="text" id="cdNameInput" placeholder="Enter CD Name...">
+            <button id="submitCdBtn">[SUBMIT CD]</button>
+            <button id="emailBtn">[EMAIL PLAYLIST]</button>
+        </div>
+        <script src="radioWidget.js"></script>
+    </body>
+</html>

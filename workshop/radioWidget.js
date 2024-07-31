@@ -26,6 +26,7 @@ fetch('radioPlay.json')
         const submitCommentBtn = document.getElementById('submitCommentBtn');
         const commentsList = document.getElementById('commentsList');
         const commentSongTitle = document.getElementById('commentSongTitle');
+        const playBtn = document.getElementById('playBtn');
         let likedSongs = [];
         let playlist = [];
         let comments = {};
@@ -37,14 +38,24 @@ fetch('radioPlay.json')
             }
         }
 
+        function togglePlay() {
+            if (audioPlayer.paused) {
+                audioPlayer.play();
+                playBtn.textContent = '[PAUSE]';
+            } else {
+                audioPlayer.pause();
+                playBtn.textContent = '[PLAY]';
+            }
+        }
+
         function loadSong(song) {
             songTitle.textContent = song.songTitle;
             artist.textContent = song.artist;
             coverArt.src = song.coverArt;
             audioPlayer.src = song.mp3url;
             commentSongTitle.textContent = song.songTitle;
-            updateCommentsList(); // Add this line to update comments when loading a new song
-            // Removed background image feature
+            updateCommentsList();
+            playBtn.textContent = '[PLAY]';
         }
 
         function prevSong() {
@@ -181,6 +192,7 @@ fetch('radioPlay.json')
         submitCdBtn.addEventListener('click', submitCdRequest);
         submitCommentBtn.addEventListener('click', addComment);
         volumeBar.addEventListener('input', updateVolume);
+        playBtn.addEventListener('click', togglePlay);
 
         shuffleSongs();
         loadSong(songs[currentSongIndex]);
