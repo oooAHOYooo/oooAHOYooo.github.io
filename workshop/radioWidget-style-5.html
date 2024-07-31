@@ -7,15 +7,22 @@
         <link rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
         <style>
+        :root {
+            --primary-bg: #1a1a2e;
+            --primary-text: #e0e0e0;
+            --accent-color: #4a4e69;
+        }
+
         body, html {
             margin: 0;
             padding: 0;
             height: 100%;
-            background-color: #1a1a2e;
-            color: #e0e0e0;
+            background-color: var(--primary-bg);
+            color: var(--primary-text);
             font-family: 'Courier New', monospace;
             overflow: hidden;
         }
+
         .crt::before {
             content: " ";
             display: block;
@@ -29,127 +36,186 @@
             background-size: 100% 2px, 3px 100%;
             pointer-events: none;
         }
+
         .radio-widget {
-            padding: 20px;
-            border: 2px solid #4a4e69;
+            padding: 5vw;
+            border: 2px solid var(--accent-color);
             height: 100%;
             box-sizing: border-box;
             overflow-y: auto;
+            display: flex;
+            flex-direction: column;
         }
+
         .song-info, .active-profile {
-            border: 1px solid #4a4e69;
-            padding: 10px;
-            margin-bottom: 20px;
+            border: 1px solid var(--accent-color);
+            padding: 2vw;
+            margin-bottom: 2vw;
         }
-        .radio-controls button {
+
+        .radio-controls {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .radio-controls button,
+        #submitCommentBtn,
+        #commentsList button {
             background-color: #16213e;
-            color: #e0e0e031;
-            border: 2px solid #4a4e69;
-            padding: 10px 20px;
-            margin: 5px;
+            color: rgba(224, 224, 224, 0.19);
+            border: 2px solid var(--accent-color);
+            padding: 2vw 4vw;
+            margin: 1vw;
             cursor: pointer;
             font-family: 'Courier New', monospace;
-            font-size: 16px;
+            font-size: 4vw;
             text-transform: uppercase;
             transition: all 0.3s;
         }
-        .radio-controls button:hover {
-            background-color: #4a4e69;
-            color: #e0e0e0;
-            box-shadow: 0 0 10px #4a4e69;
+
+        .radio-controls button:hover,
+        #submitCommentBtn:hover,
+        #commentsList button:hover {
+            background-color: var(--accent-color);
+            color: var(--primary-text);
+            box-shadow: 0 0 10px var(--accent-color);
         }
+
         input[type="text"], input[type="range"] {
             background-color: #16213e;
-            color: #e0e0e0;
-            border: 1px solid #4a4e69;
-            padding: 5px;
+            color: var(--primary-text);
+            border: 1px solid var(--accent-color);
+            padding: 1vw;
+            width: 100%;
+            box-sizing: border-box;
         }
+
         ul {
             list-style-type: none;
             padding: 0;
         }
+
         li {
-            margin-bottom: 5px;
+            margin-bottom: 1vw;
         }
+
         h2, h3 {
-            border-bottom: 1px solid #4a4e69;
-            padding-bottom: 5px;
+            border-bottom: 1px solid var(--accent-color);
+            padding-bottom: 1vw;
+            font-size: 5vw;
         }
+
         #coverArt {
-            max-width: 200px;
-            max-height: 200px;
-            margin-bottom: 10px;
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 2vw;
         }
+
         .player-container {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-bottom: 20px;
+            margin-bottom: 2vw;
         }
 
         .song-info {
             display: flex;
+            flex-direction: column;
             align-items: center;
             width: 100%;
-            margin-bottom: 10px;
-        }
-
-        .song-info img {
-            margin-right: 20px;
+            margin-bottom: 2vw;
         }
 
         .song-details {
-            flex-grow: 1;
-        }
-
-        .song-details h2 {
-            font-size: 24px;
-            margin-bottom: 10px;
-            text-shadow: 0 0 10px #4a4e69;
-        }
-
-        .song-details p {
-            font-size: 20px;
-            margin-bottom: 5px;
-            text-shadow: 0 0 8px #4a4e69;
+            text-align: center;
         }
 
         #timeline {
             width: 100%;
             height: 10px;
-            background-color: #34495e;
+            background-color: #16213e;
             position: relative;
             cursor: pointer;
-            margin-bottom: 10px;
-            border-radius: 5px;
         }
 
         #timelineHandle {
             width: 20px;
             height: 20px;
-            background-color: #e74c3c;
+            background-color: var(--accent-color);
+            border-radius: 50%;
             position: absolute;
             top: 50%;
-            left: 0;
-            transform: translate(-50%, -50%);
-            border-radius: 50%;
-            cursor: grab;
+            transform: translateY(-50%);
+            cursor: pointer;
         }
 
-        .radio-controls {
-            display: flex;
-            justify-content: center;
-            width: 100%;
+        @media (min-width: 768px) {
+            .radio-widget {
+                padding: 2vw;
+            }
+
+            .radio-controls button,
+            #submitCommentBtn,
+            #commentsList button {
+                font-size: 2vw;
+                padding: 1vw 2vw;
+            }
+
+            h2, h3 {
+                font-size: 3vw;
+            }
+
+            .song-info {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            #coverArt {
+                max-width: 30%;
+            }
+
+            .song-details {
+                text-align: left;
+                margin-left: 2vw;
+            }
         }
 
-        .volume-control {
-            display: flex;
-            align-items: center;
-            margin-top: 10px;
+        @media (min-width: 1200px) {
+            .radio-widget {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 2vw;
+            }
+
+            .player-container {
+                grid-column: 1 / -1;
+            }
+
+            .radio-controls button,
+            #submitCommentBtn,
+            #commentsList button {
+                font-size: 1vw;
+            }
+
+            h2, h3 {
+                font-size: 2vw;
+            }
         }
 
-        .volume-control input {
-            margin-left: 10px;
+        .friends-profiles {
+            border: 1px solid var(--accent-color);
+            padding: 2vw;
+            margin-bottom: 2vw;
+        }
+
+        #friendsList {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #friendsList li {
+            margin-bottom: 1vw;
         }
     </style>
     </head>
@@ -199,6 +265,10 @@
                 <p id="userXP">XP: 1337</p>
                 <p id="userComments">COMMENTS: <span
                         id="commentsCount">0</span></p>
+            </div>
+            <div class="friends-profiles">
+                <h2>> FRIENDS:</h2>
+                <div id="friendsList"></div>
             </div>
         </div>
 
