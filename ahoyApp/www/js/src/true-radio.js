@@ -18,7 +18,7 @@
                 const commentsList = document.getElementById('commentsList');
                 const commentSongTitle = document.getElementById('commentSongTitle');
                 const playBtn = document.getElementById('playBtn');
-                let likedSongs = [];
+                let likedSongs = JSON.parse(localStorage.getItem('likedSongs')) || [];
                 let comments = {};
                 let totalComments = 0;
 
@@ -55,6 +55,9 @@
                     updateCommentsList();
                     playBtn.textContent = '[► PLAY]';
                     populateSongList();
+
+                    likeBtn.dataset.songId = song.id;
+                    updateLikeButtonState(song.id);
                 }
 
                 function prevSong() {
@@ -278,6 +281,55 @@
 
                 // Add this to the end of the fetch .then() block
                 createBotFriend();
+
+                // Add these functions to handle the like button
+                function updateLikeButtonState(songId) {
+                    if (likedSongs.includes(songId)) {
+                        likeBtn.classList.add('liked');
+                        likeBtn.querySelector('i').classList.remove('far');
+                        likeBtn.querySelector('i').classList.add('fas');
+                    } else {
+                        likeBtn.classList.remove('liked');
+                        likeBtn.querySelector('i').classList.remove('fas');
+                        likeBtn.querySelector('i').classList.add('far');
+                    }
+                }
+
+                function toggleLike() {
+                    const songId = likeBtn.dataset.songId;
+                    if (!songId) return;
+
+                    const index = likedSongs.indexOf(songId);
+                    if (index === -1) {
+                        likedSongs.push(songId);
+                    } else {
+                        likedSongs.splice(index, 1);
+                    }
+
+                    localStorage.setItem('likedSongs', JSON.stringify(likedSongs));
+                    updateLikeButtonState(songId);
+                    updateLikedSongsList();
+                }
+
+                function updateLikedSongsList() {
+                    const likedSongsList = document.getElementById('likedSongsList');
+                    const likedSongsCount = document.getElementById('likedSongsCount');
+
+                    likedSongsList.innerHTML = '';
+                    likedSongsCount.textContent = likedSongs.length;
+
+                    likedSongs.forEach(songId => {
+                        const song = songs.find(s => s.id === songId);
+                        if (song) {
+                            const li = document.createElement('li');
+                            li.textContent = `${song.songTitle} - ${song.artist}`;
+                            likedSongsList.appendChild(li);
+                        }
+                    });
+                }
+
+                likeBtn.addEventListener('click', toggleLike);
+                updateLikedSongsList();
             })
             .catch(error => console.error('Error fetching the song data:', error));
 
@@ -311,4 +363,56 @@
                         audio.playbackRate = currentRate;
                     }, 300);
                 }
+            });
+
+
+
+            document.addEventListener('DOMContentLoaded', function() {
+                const likeBtn = document.getElementById('likeBtn');
+                
+                likeBtn.addEventListener('click', function() {
+                    this.classList.toggle('liked');
+                    if (this.classList.contains('liked')) {
+                        this.innerHTML = '<i class="fas fa-heart"></i> LIKED';
+                        // Here you would typically send a request to your server to record the like
+                        console.log('Song liked!');
+                    } else {
+                        this.innerHTML = '<i class="far fa-heart"></i> LIKE';
+                        // Here you would typically send a request to your server to remove the like
+                        console.log('Like removed!');
+                    }
+                });
+            });
+
+
+            document.addEventListener('DOMContentLoaded', function() {
+                const likeBtn = document.getElementById('likeBtn');
+                const audioPlayer = document.getElementById('audioPlayer');
+                
+                function updateLikeButton() {
+                    const currentSong = audioPlayer.src;
+                    const isLiked = localStorage.getItem(currentSong) === 'liked';
+                    likeBtn.classList.toggle('liked', isLiked);
+                    likeBtn.innerHTML = isLiked ? '<i class="fas fa-heart"></i> LIKED' : '<i class="far fa-heart"></i> LIKE';
+                }
+                
+                likeBtn.addEventListener('click', function() {
+                    const currentSong = audioPlayer.src;
+                    const isLiked = this.classList.toggle('liked');
+                    if (isLiked) {
+                        localStorage.setItem(currentSong, 'liked');
+                        this.innerHTML = '<i class="fas fa-heart"></i> LIKED';
+                        console.log('Song liked!');
+                    } else {
+                        localStorage.removeItem(currentSong);
+                        this.innerHTML = '<i class="far fa-heart"></i> LIKE';
+                        console.log('Like removed!');
+                    }
+                });
+                
+                // Update like button state when a new song is loaded
+                audioPlayer.addEventListener('loadedmetadata', updateLikeButton);
+                
+                // Initial update
+                updateLikeButton();
             });

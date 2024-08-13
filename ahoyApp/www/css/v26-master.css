@@ -1374,3 +1374,13 @@ td {
             transparent 2px);
     pointer-events: none;
 }
+
+
+#likeBtn.liked {
+    background-color: var(--accent-color) !important;
+    color: white !important;
+}
+
+#likeBtn.liked i {
+    color: red !important;
+}
