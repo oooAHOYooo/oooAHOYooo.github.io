@@ -1125,16 +1125,16 @@ td {
 
 .comments-widget {
     background-color: #000;
-    color: #00ff00;
+    color: var(--border-color);
     font-family: "Courier New", Courier, monospace;
-    border: 2px solid #00ff00;
+    border: 2px solid var(--border-color);
     padding: 20px;
     margin-top: 20px;
 }
 
 .comments-widget h3 {
-    color: #00ff00;
-    border-bottom: 1px solid #00ff00;
+    color: var(--border-color);
+    border-bottom: 1px solidvar(--border-color);
     padding-bottom: 10px;
     margin-bottom: 15px;
 }
@@ -1158,15 +1158,15 @@ td {
 #commentInput {
     width: 100%;
     background-color: #001100;
-    border: 1px solid #00ff00;
-    color: #00ff00;
+    border: 1px solid var(--border-color);
+    color: var(--border-color);
     padding: 10px;
     margin-bottom: 10px;
 }
 
 #submitCommentBtn {
     background-color: #005500;
-    color: #00d0ff;
+    color: var(--border-color);
     border: none;
     padding: 10px 20px;
     cursor: pointer;
@@ -1175,7 +1175,7 @@ td {
 }
 
 #submitCommentBtn:hover {
-    background-color: #007700;
+    background-color: var(--border-color);
 }
 
 .comment-form {
@@ -1185,8 +1185,8 @@ td {
 #commentInput {
     width: 100%;
     background-color: #001100;
-    border: 1px solid #00ff00;
-    color: #00ff00;
+    border: 1px solid var(--border-color);
+    color: var(--border-color);
     padding: 10px;
     margin-bottom: 10px;
     font-family: "Courier New", Courier, monospace;
@@ -1195,16 +1195,16 @@ td {
 
 .terminal-section {
     background-color: #000;
-    color: #00ff00;
+    color: var(--border-color);
     font-family: "Courier New", Courier, monospace;
-    border: 2px solid #00ff00;
+    border: 2px solid var(--border-color);
     padding: 20px;
     margin-top: 20px;
 }
 
 .terminal-section h2 {
-    color: #00ff00;
-    border-bottom: 1px solid #00ff00;
+    color: var(--border-color);
+    border-bottom: 1px solid var(--border-color);
     padding-bottom: 10px;
     margin-bottom: 15px;
 }
@@ -1212,8 +1212,8 @@ td {
 #songSearch {
     width: calc(100% - 110px);
     background-color: #001100;
-    border: 1px solid #00ff00;
-    color: #00ff00;
+    border: 1px solid var(--border-color);
+    color: var(--border-color);
     padding: 10px;
     margin-right: 10px;
     font-family: "Courier New", Courier, monospace;
@@ -1221,7 +1221,7 @@ td {
 
 #searchBtn {
     background-color: #005500;
-    color: #00ff00;
+    color: var(--border-color);
     border: none;
     padding: 10px 20px;
     cursor: pointer;
@@ -1230,7 +1230,7 @@ td {
 }
 
 #searchBtn:hover {
-    background-color: #007700;
+    background-color: var(--border-color);
 }
 
 .search-container {
@@ -1240,17 +1240,17 @@ td {
 
 .active-profile {
     background-color: #000;
-    color: #00ff00;
+    color: var(--border-color);
     font-family: "Courier New", Courier, monospace;
-    border: 2px solid #00ff00;
+    border: 2px solid var(--border-color);
     padding: 20px;
     margin-top: 20px;
-    box-shadow: 0 0 10px #00ff00;
+    box-shadow: 0 0 10px var(--border-color);
 }
 
 .active-profile h2 {
-    color: #00ff00;
-    border-bottom: 1px solid #00ff00;
+    color: var(--border-color);
+    border-bottom: 1px solid var(--border-color);
     padding-bottom: 10px;
     margin-bottom: 15px;
     text-transform: uppercase;
@@ -1266,9 +1266,9 @@ td {
 #userXP,
 #userComments {
     display: inline-block;
-    background-color: #001100;
+    background-color: #001100ee;
     padding: 5px 10px;
-    border: 1px solid #00ff00;
+    border: 1px solid var(--border-color);
     margin-right: 10px;
 }
 
@@ -1280,12 +1280,12 @@ td {
 
 .liked-songs-widget {
     background-color: #000;
-    color: #00ff00;
+    color: var(--border-color);
     font-family: "Courier New", Courier, monospace;
-    border: 2px solid #00ff00;
+    border: 2px solid var(--border-color);
     padding: 20px;
     margin-top: 20px;
-    box-shadow: 0 0 10px #00ff00;
+    box-shadow: 0 0 10px var(--border-color);
 }
 
 .liked-songs-widget h3 {
@@ -1310,7 +1310,7 @@ td {
     margin-bottom: 10px;
     padding: 5px;
     background-color: #001100;
-    border: 1px solid color: var(--border-color);
+    border: 1px solid var(--border-color);
 }
 
 #likedSongsList li:before {
@@ -1322,10 +1322,11 @@ td {
     background-color: #000;
     color: var(--border-color);
     font-family: "Courier New", Courier, monospace;
-    border: 2px solid #00ff00;
+    border: 2px solid var(--border-color);
+    ;
     padding: 20px;
     margin-top: 20px;
-    box-shadow: 0 0 10px #00ff00;
+    box-shadow: 0 0 10px var(--border-color);
 }
 
 .song-list h2 {
