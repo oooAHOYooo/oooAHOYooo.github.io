@@ -1,4 +1,4 @@
-        fetch('radioPlay.json')
+        fetch('./data/true-radioPlay.json')
             .then(response => response.json())
             .then(data => {
                 const songs = data.songs;
@@ -280,3 +280,35 @@
                 createBotFriend();
             })
             .catch(error => console.error('Error fetching the song data:', error));
+
+
+
+            const handle = document.getElementById('timelineHandle');
+            let isDragging = false;
+            let startX, startScrollLeft;
+
+            handle.addEventListener('mousedown', (e) => {
+                isDragging = true;
+                startX = e.pageX - handle.offsetLeft;
+                startScrollLeft = handle.parentElement.scrollLeft;
+            });
+
+            document.addEventListener('mousemove', (e) => {
+                if (!isDragging) return;
+                e.preventDefault();
+                const x = e.pageX - handle.parentElement.offsetLeft;
+                const walk = (x - startX) * 2;
+                handle.parentElement.scrollLeft = startScrollLeft - walk;
+            });
+
+            document.addEventListener('mouseup', () => {
+                if (isDragging) {
+                    isDragging = false;
+                    const audio = document.getElementById('audioPlayer');
+                    const currentRate = audio.playbackRate;
+                    audio.playbackRate = currentRate * 1.5;
+                    setTimeout(() => {
+                        audio.playbackRate = currentRate;
+                    }, 300);
+                }
+            });

@@ -338,7 +338,7 @@
           <div id="tabSortza">
 
             <!-- HOME TAB -->
-            <div id="home-tab" class="tab-content active">
+            <div id="home-tab" class="tab-content">
 
               <!-- DATE DISPLAY -->
               <div class="date-display">
@@ -439,24 +439,125 @@
               <h2>Classical Music Collection</h2>
               <div id="classical-music-list"></div>
             </div>
-
+            <!-- END OF CLASSIC MUSIC TAB-->
             <!-- TRUE CLASSIC RADIO (to replace song-collection-tab)-->
-            <div id="true-classic-radio" class="tab-content">
-              <h1>Hiiii</h1>
-              <h2>True Classic Radio</h2>
-
-<div class="true-radio-widget">
-  <div class="true-player-container">
-    <div class="true-song-info">
-      <img id="true-coverArt" src alt="Covert Art">
-      <div class="true-song-details">
-        <h2 id="true-songTitle">:_________</h2>
-        <p id="true-artist">ARTIST:_______________</p>
-      </div>
-    </div>
-  </div>
-</div>
-
+            <div id="true-classic-radio" class="tab-content active">
+              <div class="radio-widget">
+                <div class="player-container">
+                    <div class="song-info">
+                        <img id="coverArt" src alt="Cover Art">
+                        <div class="song-details">
+                            <h2 id="songTitle">: ________</h2>
+                            <p id="artist">ARTIST: ________</p>
+                        </div>
+                    </div>
+                    <audio id="audioPlayer"></audio>
+                    <div id="timeline" class="vcr-timeline"
+                        style="margin-top: 10px; margin-bottom: 10px;">
+                        <div id="timelineHandle" class="vcr-handle"
+                            style="border-radius: 0; cursor: grab; transition: transform 0.1s;">
+                            <div class="handle-grip"></div>
+                        </div>
+                    </div>
+                    <style>
+                     
+                    </style>
+                    <script>
+                    
+                    </script>
+                    <div class="radio-controls">
+                        <button id="prevBtn">[◄◄ PREV]</button>
+                        <button id="playBtn">[► PLAY]</button>
+                        <button id="nextBtn">[►► NEXT]</button>
+                        <button id="likeBtn">[♥ LIKE]</button>
+                    </div>
+                    <div class="volume-control">
+                        <span><i class="fas fa-volume-up"></i></span>
+                        <input type="range" id="volumeBar" min="0" max="1"
+                            step="0.1" value="1" class="styled-volume-bar">
+                    </div>
+                    <style>
+                        .volume-control {
+                            margin: 20px 0;
+                            display: flex;
+                            align-items: center;
+                        }
+                        .volume-control span {
+                            margin-right: 10px;
+                        }
+                        .styled-volume-bar {
+                            -webkit-appearance: none;
+                            width: 100%;
+                            height: 10px;
+                            background: #d3d3d3;
+                            outline: none;
+                            opacity: 0.7;
+                            transition: opacity .2s;
+                        }
+                        .styled-volume-bar:hover {
+                            opacity: 1;
+                        }
+                        .styled-volume-bar::-webkit-slider-thumb {
+                            -webkit-appearance: none;
+                            appearance: none;
+                            width: 20px;
+                            height: 20px;
+                            background: var(--accent-color);
+                            cursor: pointer;
+                            border-radius: 50%;
+                        }
+                        .styled-volume-bar::-moz-range-thumb {
+                            width: 20px;
+                            height: 20px;
+                            background: var(--accent-color);
+                            cursor: pointer;
+                            border-radius: 50%;
+                        }
+                    </style>
+                </div>
+             
+                <div class="comments-widget">
+                    <h3>> COMMENTS FOR: <span id="commentSongTitle"></span></h3>
+                    <p>TOTAL COMMENTS: <span id="commentsCount">0</span></p>
+                    <ul id="commentsList"></ul>
+                    <input type="text" id="commentInput"
+                        placeholder="Add a comment...">
+                    <button id="submitCommentBtn">[SUBMIT]</button>
+                </div>
+       
+         
+                <div class="terminal-section">
+                    <h2>> SEARCH SONGS:</h2>
+                    <input type="text" id="songSearch"
+                        placeholder="Enter search query...">
+                    <button id="searchBtn">[SEARCH]</button>
+                </div>
+                <div class="song-list">
+                    <h2>> FULL SONG LIST:</h2>
+                    <table id="songListTable">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Artist</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="songListBody"></tbody>
+                    </table>
+                </div>
+                <div class="active-profile">
+                  <h2>> ACTIVE PROFILE:</h2>
+                  <p id="activeUser">USER: PLAYER_1</p>
+                  <p id="userLevel">LEVEL: 5</p>
+                  <p id="userXP">XP: 1337</p>
+                  <p id="userComments">COMMENTS: <span
+                          id="commentsCount">0</span></p>
+              </div>
+                <div class="liked-songs-widget">
+                  <h3>> LIKED SONGS: <span id="likedSongsCount">0</span></h3>
+                  <ul id="likedSongsList"></ul>
+              </div>
+            </div>
 
 
 
