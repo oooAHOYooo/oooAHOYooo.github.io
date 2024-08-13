@@ -83,7 +83,6 @@
       src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js"></script>
     <script
       src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js"></script>
-
     <!-- JWPlayer -->
     <script src="https://cdn.jwplayer.com/libraries/9Gtk2B1J.js"></script>
 
@@ -647,19 +646,19 @@
                     <button id="searchBtn">[SEARCH]</button>
                 </div>
             </div>
-                <div class="song-list">
-                    <h2>> FULL SONG LIST:</h2>
-                    <table id="songListTable">
-                        <thead>
-                            <tr>
-                                <th>Title</th>
-                                <th>Artist</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody id="songListBody"></tbody>
-                    </table>
-                </div>
+            <div class="song-list">
+              <h2>> FULL SONG LIST:</h2>
+              <table id="songListTable">
+                  <thead>
+                      <tr>
+                          <th>[TITLE]</th>
+                          <th>[ARTIST]</th>
+                          <th>[ACTION]</th>
+                      </tr>
+                  </thead>
+                  <tbody id="songListBody"></tbody>
+              </table>
+          </div>
                 <div class="active-profile">
                   <h2>> YOUR ACTIVE PROFILE:</h2>
                   <p id="activeUser">USER: PLAYER_1</p>
@@ -668,10 +667,10 @@
                   <p id="userComments">COMMENTS: <span
                           id="commentsCount">0</span></p>
               </div>
-                <div class="liked-songs-widget">
-                  <h3>> LIKED SONGS: <span id="likedSongsCount">0</span></h3>
-                  <ul id="likedSongsList"></ul>
-              </div>
+              <div class="liked-songs-widget">
+                <h3>> YOUR LIKED SONGS: [<span id="likedSongsCount">0</span>]</h3>
+                <ul id="likedSongsList"></ul>
+            </div>
             </div>
 
 
@@ -861,7 +860,7 @@
                 <button class="btnPrimary" onclick="window.location.href='../../workshop/radioWidget-style-5.html'">Radio Widget style 5</button>
                 <button class="btnPrimary" onclick="window.location.href='../../workshop/radioWidget-style-7.html'">Radio Widget style 7</button>
                 <button class="btnPrimary" onclick="window.location.href='../../workshop/radioWidget-style-8.html'">Radio Widget style 8</button>
-
+                <button class="btnPrimary" onclick="navigateToTab('burn-tab')">Burn to Disc Feature</button>
               <button class="btnPrimary" onclick="window.location.href='../../workshop/radioWidget.html'">Radio Widget</button>
               <button class="btnPrimary" onclick="navigateToTab('songs-tab')">Previous Song Tab and Radio Features
                 </button>
@@ -1050,9 +1049,7 @@
                 <div class="v25-dock-icon"
                   onclick="navigateToTab('media-tab-a')"><i
                     class="fas fa-image"></i></div>
-                <div class="v25-dock-icon"
-                  onclick="navigateToTab('burn-tab')"><i
-                    class="fas fa-fire"></i></div>
+             
                 <div class="v25-dock-icon"
                   onclick="navigateToTab('account-tab')"><i
                     class="fas fa-user-circle"></i></div>
