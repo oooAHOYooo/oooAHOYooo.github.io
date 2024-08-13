@@ -630,21 +630,23 @@
                 </div>
              
                 <div class="comments-widget">
-                    <h3>> COMMENTS FOR: <span id="commentSongTitle"></span></h3>
-                    <p>TOTAL COMMENTS: <span id="commentsCount">0</span></p>
-                    <ul id="commentsList"></ul>
-                    <input type="text" id="commentInput"
-                        placeholder="Add a comment...">
-                    <button id="submitCommentBtn">[SUBMIT]</button>
-                </div>
+                  <h3>> COMMENTS FOR: <span id="commentSongTitle"></span></h3>
+                  <p>TOTAL COMMENTS: <span id="commentsCount">0</span></p>
+                  <ul id="commentsList"></ul>
+                  <div class="comment-form">
+                      <textarea id="commentInput" rows="4" placeholder="Add a comment..."></textarea>
+                      <button id="submitCommentBtn">[SUBMIT]</button>
+                  </div>
+              </div>
        
          
-                <div class="terminal-section">
-                    <h2>> SEARCH SONGS:</h2>
-                    <input type="text" id="songSearch"
-                        placeholder="Enter search query...">
+              <div class="terminal-section">
+                <h2>> SEARCH SONGS:</h2>
+                <div class="search-container">
+                    <input type="text" id="songSearch" placeholder="Enter search query...">
                     <button id="searchBtn">[SEARCH]</button>
                 </div>
+            </div>
                 <div class="song-list">
                     <h2>> FULL SONG LIST:</h2>
                     <table id="songListTable">
@@ -659,7 +661,7 @@
                     </table>
                 </div>
                 <div class="active-profile">
-                  <h2>> ACTIVE PROFILE:</h2>
+                  <h2>> YOUR ACTIVE PROFILE:</h2>
                   <p id="activeUser">USER: PLAYER_1</p>
                   <p id="userLevel">LEVEL: 5</p>
                   <p id="userXP">XP: 1337</p>
