@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Retro Radio Terminal</title>
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <style>
+        :root {
+            --primary-bg: #1a1a2e;
+            --primary-text: #e0e0e0;
+            --accent-color: #4a4e69;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background: linear-gradient(45deg, #000000, #1a1a2e, #2a2a3e);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: var(--primary-text);
+            font-family: 'Courier New', monospace;
+            overflow-x: hidden;
+        }
+
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .crt::before {
+            content: " ";
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            z-index: 2;
+            background-size: 100% 2px, 3px 100%;
+            pointer-events: none;
+        }
+
+        .radio-widget {
+            padding: 5vw;
+            border: 2px solid var(--accent-color);
+            height: 100%;
+            box-sizing: border-box;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .song-info, .active-profile {
+            border: 1px solid var(--accent-color);
+            padding: 2vw;
+            margin-bottom: 2vw;
+        }
+
+        .radio-controls {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .radio-controls button,
+        #submitCommentBtn,
+        #commentsList button {
+            background-color: #16213e;
+            color: rgba(224, 224, 224, 0.19);
+            border: 2px solid var(--accent-color);
+            padding: 2vw 4vw;
+            margin: 1vw;
+            cursor: pointer;
+            font-family: 'Courier New', monospace;
+            font-size: 4vw;
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+
+        .radio-controls button:hover,
+        #submitCommentBtn:hover,
+        #commentsList button:hover {
+            background-color: var(--accent-color);
+            color: var(--primary-text);
+            box-shadow: 0 0 10px var(--accent-color);
+        }
+
+        input[type="text"], input[type="range"] {
+            background-color: #16213e;
+            color: var(--primary-text);
+            border: 1px solid var(--accent-color);
+            padding: 1vw;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 1vw;
+        }
+
+        h2, h3 {
+            border-bottom: 1px solid var(--accent-color);
+            padding-bottom: 1vw;
+            font-size: 5vw;
+        }
+
+        #coverArt {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 2vw;
+        }
+
+        .player-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 2vw;
+        }
+
+        .song-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 2vw;
+        }
+
+        .song-details {
+            text-align: center;
+        }
+
+        #timeline {
+            width: 100%;
+            height: 10px;
+            background-color: #16213e;
+            position: relative;
+            cursor: pointer;
+        }
+
+        #timelineHandle {
+            width: 20px;
+            height: 20px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+
+        @media (min-width: 768px) {
+            .radio-widget {
+                padding: 2vw;
+            }
+
+            .radio-controls button,
+            #submitCommentBtn,
+            #commentsList button {
+                font-size: 2vw;
+                padding: 1vw 2vw;
+            }
+
+            h2, h3 {
+                font-size: 3vw;
+            }
+
+            .song-info {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            #coverArt {
+                max-width: 30%;
+            }
+
+            .song-details {
+                text-align: left;
+                margin-left: 2vw;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .radio-widget {
+                display: flex;
+                flex-direction: column;
+                gap: 2vw;
+                padding: 2vw;
+                max-width: 1000px;
+                margin: 0 auto;
+                aspect-ratio: 16 / 9;
+            }
+
+            .player-container {
+                width: 100%;
+            }
+
+            .radio-controls button,
+            #submitCommentBtn,
+            #commentsList button {
+                font-size: 0.8vw;
+                padding: 0.4vw 0.8vw;
+                margin: 0.5vw;
+            }
+
+            h2, h3 {
+                font-size: 1.5vw;
+            }
+
+            .song-list {
+                max-width: 1000px;
+                margin: 0 auto;
+            }
+
+            .song-info, .active-profile, .friends-profiles, .terminal-section, .song-list {
+                padding: 1vw;
+                margin-bottom: 1vw;
+            }
+
+            #songSearch, #searchBtn {
+                font-size: 1vw;
+            }
+
+            .play-song-btn {
+                font-size: 0.8vw;
+                padding: 0.3vw 0.6vw;
+            }
+        }
+
+        .friends-profiles {
+            border: 1px solid var(--accent-color);
+            padding: 2vw;
+            margin-bottom: 2vw;
+        }
+
+        #friendsList {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #friendsList li {
+            margin-bottom: 1vw;
+        }
+
+        .terminal-section {
+            border: 1px solid var(--accent-color);
+            padding: 2vw;
+            margin-bottom: 2vw;
+        }
+
+        #songSearch {
+            background-color: var(--primary-bg);
+            color: var(--primary-text);
+            border: 1px solid var(--accent-color);
+            padding: 1vw;
+            font-family: 'Courier New', monospace;
+            font-size: 3vw;
+            width: 70%;
+        }
+
+        #searchBtn {
+            background-color: #16213e;
+            color: var(--primary-text);
+            border: 1px solid var(--accent-color);
+            padding: 1vw 2vw;
+            font-family: 'Courier New', monospace;
+            font-size: 3vw;
+            cursor: pointer;
+        }
+
+        .song-list {
+            border: 1px solid var(--accent-color);
+            padding: 2vw;
+            margin-bottom: 2vw;
+        }
+
+        #songListTable {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        #songListTable th, #songListTable td {
+            border: 1px solid var(--accent-color);
+            padding: 1vw;
+            text-align: left;
+        }
+
+        #songListTable th {
+            background-color: #16213e;
+        }
+
+        .play-song-btn {
+            background-color: #16213e;
+            color: var(--primary-text);
+            border: 1px solid var(--accent-color);
+            padding: 0.5vw 1vw;
+            cursor: pointer;
+            font-family: 'Courier New', monospace;
+            font-size: 2vw;
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+
+        .play-song-btn:hover {
+            background-color: var(--accent-color);
+            color: var(--primary-text);
+            box-shadow: 0 0 10px var(--accent-color);
+        }
+
+        .comment-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1vw;
+            border: 1px solid var(--accent-color);
+            margin-bottom: 1vw;
+        }
+
+        .comment-text {
+            flex-grow: 1;
+            margin-right: 1vw;
+        }
+
+        .delete-btn, .play-btn {
+            background: none;
+            border: none;
+            color: var(--accent-color);
+            cursor: pointer;
+            font-size: 3vw;
+            padding: 0.5vw;
+        }
+
+        .delete-btn:hover, .play-btn:hover {
+            color: var(--primary-text);
+        }
+
+        #likedSongs li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1vw;
+            border: 1px solid var(--accent-color);
+            margin-bottom: 1vw;
+        }
+    </style>
+    </head>
+    <body class="crt">
+        <div class="radio-widget">
+            <div class="player-container">
+                <div class="song-info">
+                    <img id="coverArt" src alt="Cover Art">
+                    <div class="song-details">
+                        <h2 id="songTitle">: ________</h2>
+                        <p id="artist">ARTIST: ________</p>
+                    </div>
+                </div>
+                <audio id="audioPlayer"></audio>
+                <div id="timeline" class="vcr-timeline"
+                    style="margin-top: 10px; margin-bottom: 10px;">
+                    <div id="timelineHandle" class="vcr-handle"
+                        style="border-radius: 0; cursor: grab; transition: transform 0.1s;">
+                        <div class="handle-grip"></div>
+                    </div>
+                </div>
+                <style>
+                    .vcr-handle {
+                        user-select: none;
+                    }
+                    .vcr-handle:active {
+                        cursor: grabbing;
+                        transform: scale(1.1);
+                    }
+                    .handle-grip {
+                        width: 100%;
+                        height: 100%;
+                        background: repeating-linear-gradient(
+                            90deg,
+                            var(--accent-color),
+                            var(--accent-color) 2px,
+                            transparent 2px,
+                            transparent 4px
+                        );
+                    }
+                </style>
+                <script>
+                    const handle = document.getElementById('timelineHandle');
+                    let isDragging = false;
+                    let startX, startScrollLeft;
+
+                    handle.addEventListener('mousedown', (e) => {
+                        isDragging = true;
+                        startX = e.pageX - handle.offsetLeft;
+                        startScrollLeft = handle.parentElement.scrollLeft;
+                    });
+
+                    document.addEventListener('mousemove', (e) => {
+                        if (!isDragging) return;
+                        e.preventDefault();
+                        const x = e.pageX - handle.parentElement.offsetLeft;
+                        const walk = (x - startX) * 2;
+                        handle.parentElement.scrollLeft = startScrollLeft - walk;
+                    });
+
+                    document.addEventListener('mouseup', () => {
+                        if (isDragging) {
+                            isDragging = false;
+                            const audio = document.getElementById('audioPlayer');
+                            const currentRate = audio.playbackRate;
+                            audio.playbackRate = currentRate * 1.5;
+                            setTimeout(() => {
+                                audio.playbackRate = currentRate;
+                            }, 300);
+                        }
+                    });
+                </script>
+                <div class="radio-controls">
+                    <button id="prevBtn">[◄◄ PREV]</button>
+                    <button id="playBtn">[► PLAY]</button>
+                    <button id="nextBtn">[►► NEXT]</button>
+                    <button id="likeBtn">[♥ LIKE]</button>
+                </div>
+                <div class="volume-control">
+                    <span><i class="fas fa-volume-up"></i></span>
+                    <input type="range" id="volumeBar" min="0" max="1"
+                        step="0.1" value="1" class="styled-volume-bar">
+                </div>
+                <style>
+                    .volume-control {
+                        margin: 20px 0;
+                        display: flex;
+                        align-items: center;
+                    }
+                    .volume-control span {
+                        margin-right: 10px;
+                    }
+                    .styled-volume-bar {
+                        -webkit-appearance: none;
+                        width: 100%;
+                        height: 10px;
+                        background: #d3d3d3;
+                        outline: none;
+                        opacity: 0.7;
+                        transition: opacity .2s;
+                    }
+                    .styled-volume-bar:hover {
+                        opacity: 1;
+                    }
+                    .styled-volume-bar::-webkit-slider-thumb {
+                        -webkit-appearance: none;
+                        appearance: none;
+                        width: 20px;
+                        height: 20px;
+                        background: var(--accent-color);
+                        cursor: pointer;
+                        border-radius: 50%;
+                    }
+                    .styled-volume-bar::-moz-range-thumb {
+                        width: 20px;
+                        height: 20px;
+                        background: var(--accent-color);
+                        cursor: pointer;
+                        border-radius: 50%;
+                    }
+                </style>
+            </div>
+            <div class="liked-songs-widget">
+                <h3>> LIKED SONGS: <span id="likedSongsCount">0</span></h3>
+                <ul id="likedSongsList"></ul>
+            </div>
+            <div class="comments-widget">
+                <h3>> COMMENTS FOR: <span id="commentSongTitle"></span></h3>
+                <p>TOTAL COMMENTS: <span id="commentsCount">0</span></p>
+                <ul id="commentsList"></ul>
+                <input type="text" id="commentInput"
+                    placeholder="Add a comment...">
+                <button id="submitCommentBtn">[SUBMIT]</button>
+            </div>
+            <div class="active-profile">
+                <h2>> ACTIVE PROFILE:</h2>
+                <p id="activeUser">USER: PLAYER_1</p>
+                <p id="userLevel">LEVEL: 5</p>
+                <p id="userXP">XP: 1337</p>
+                <p id="userComments">COMMENTS: <span
+                        id="commentsCount">0</span></p>
+            </div>
+            <div class="friends-profiles">
+                <h2>> FRIENDS:</h2>
+                <div id="friendsList"></div>
+            </div>
+            <div class="terminal-section">
+                <h2>> SEARCH SONGS:</h2>
+                <input type="text" id="songSearch"
+                    placeholder="Enter search query...">
+                <button id="searchBtn">[SEARCH]</button>
+            </div>
+            <div class="song-list">
+                <h2>> FULL SONG LIST:</h2>
+                <table id="songListTable">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Artist</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="songListBody"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <script>
+        // Fetch the song data from radioPlay.json
+        fetch('radioPlay.json')
+            .then(response => response.json())
+            .then(data => {
+                const songs = data.songs;
+                let currentSongIndex = 0;
+
+                const audioPlayer = document.getElementById('audioPlayer');
+                const songTitle = document.getElementById('songTitle');
+                const artist = document.getElementById('artist');
+                const coverArt = document.getElementById('coverArt');
+                const prevBtn = document.getElementById('prevBtn');
+                const nextBtn = document.getElementById('nextBtn');
+                const likeBtn = document.getElementById('likeBtn');
+                const likedSongsList = document.getElementById('likedSongsList');
+                const volumeBar = document.getElementById('volumeBar');
+                const commentInput = document.getElementById('commentInput');
+                const submitCommentBtn = document.getElementById('submitCommentBtn');
+                const commentsList = document.getElementById('commentsList');
+                const commentSongTitle = document.getElementById('commentSongTitle');
+                const playBtn = document.getElementById('playBtn');
+                let likedSongs = [];
+                let comments = {};
+                let totalComments = 0;
+
+                const likedSongsCount = document.getElementById('likedSongsCount');
+                const commentsCount = document.getElementById('commentsCount');
+
+                const songSearch = document.getElementById('songSearch');
+                const searchBtn = document.getElementById('searchBtn');
+                const songListBody = document.getElementById('songListBody');
+
+                function shuffleSongs() {
+                    for (let i = songs.length - 1; i > 0; i--) {
+                        const j = Math.floor(Math.random() * (i + 1));
+                        [songs[i], songs[j]] = [songs[j], songs[i]];
+                    }
+                }
+
+                function togglePlay() {
+                    if (audioPlayer.paused) {
+                        audioPlayer.play();
+                        playBtn.textContent = '[❚❚ PAUSE]';
+                    } else {
+                        audioPlayer.pause();
+                        playBtn.textContent = '[► PLAY]';
+                    }
+                }
+
+                function loadSong(song) {
+                    songTitle.textContent = `SONG TITLE: ${song.songTitle}`;
+                    artist.textContent = `ARTIST: ${song.artist}`;
+                    coverArt.src = song.coverArt;
+                    audioPlayer.src = song.mp3url;
+                    commentSongTitle.textContent = song.songTitle;
+                    updateCommentsList();
+                    playBtn.textContent = '[► PLAY]';
+                    populateSongList();
+                }
+
+                function prevSong() {
+                    currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+                    loadSong(songs[currentSongIndex]);
+                    audioPlayer.play();
+                    playBtn.textContent = '[❚❚ PAUSE]';
+                }
+
+                function nextSong() {
+                    currentSongIndex = (currentSongIndex + 1) % songs.length;
+                    loadSong(songs[currentSongIndex]);
+                    audioPlayer.play();
+                    playBtn.textContent = '[❚❚ PAUSE]';
+                }
+
+                function likeSong() {
+                    const currentSong = songs[currentSongIndex];
+                    if (!likedSongs.some(song => song.id === currentSong.id)) {
+                        likedSongs.push(currentSong);
+                        updateLikedSongs();
+                        likedSongsCount.textContent = likedSongs.length;
+                    }
+                }
+
+                function updateLikedSongs() {
+                    likedSongsList.innerHTML = '';
+                    likedSongs.forEach((song, index) => {
+                        const li = document.createElement('li');
+                        li.innerHTML = `
+                            <span>${song.songTitle} - ${song.artist}</span>
+                            <div>
+                                <button class="play-btn" aria-label="Play song">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <button class="delete-btn" aria-label="Remove from liked songs">
+                                    <i class="fas fa-times-circle"></i>
+                                </button>
+                            </div>
+                        `;
+                        const playBtn = li.querySelector('.play-btn');
+                        const deleteBtn = li.querySelector('.delete-btn');
+                        playBtn.addEventListener('click', () => playSongFromLiked(index));
+                        deleteBtn.addEventListener('click', () => removeLikedSong(index));
+                        likedSongsList.appendChild(li);
+                    });
+                }
+
+                function removeLikedSong(index) {
+                    likedSongs.splice(index, 1);
+                    updateLikedSongs();
+                    likedSongsCount.textContent = likedSongs.length;
+                }
+
+                function addComment() {
+                    const commentText = commentInput.value.trim();
+                    if (commentText) {
+                        const comment = {
+                            text: commentText,
+                            timestamp: new Date().toLocaleString()
+                        };
+                        const currentSong = songs[currentSongIndex];
+                        if (!comments[currentSong.id]) {
+                            comments[currentSong.id] = [];
+                        }
+                        comments[currentSong.id].push(comment);
+                        updateCommentsList();
+                        commentInput.value = '';
+                        totalComments++;
+                        commentsCount.textContent = totalComments;
+                    }
+                }
+
+                function updateCommentsList() {
+                    commentsList.innerHTML = '';
+                    const currentSong = songs[currentSongIndex];
+                    if (comments[currentSong.id]) {
+                        comments[currentSong.id].forEach((comment, index) => {
+                            const li = document.createElement('li');
+                            li.className = 'comment-item';
+                            li.innerHTML = `
+                                <span class="comment-text">${comment.timestamp}: ${comment.text}</span>
+                                <button class="delete-btn" aria-label="Delete comment">
+                                    <i class="fas fa-times-circle"></i>
+                                </button>
+                            `;
+                            const deleteBtn = li.querySelector('.delete-btn');
+                            deleteBtn.addEventListener('click', () => deleteComment(currentSong.id, index));
+                            commentsList.appendChild(li);
+                        });
+                    }
+                }
+
+                function deleteComment(songId, commentIndex) {
+                    comments[songId].splice(commentIndex, 1);
+                    updateCommentsList();
+                    totalComments--;
+                    commentsCount.textContent = totalComments;
+                }
+
+                function updateVolume() {
+                    audioPlayer.volume = volumeBar.value;
+                }
+
+                prevBtn.addEventListener('click', prevSong);
+                nextBtn.addEventListener('click', nextSong);
+                likeBtn.addEventListener('click', likeSong);
+                submitCommentBtn.addEventListener('click', addComment);
+                volumeBar.addEventListener('input', updateVolume);
+                playBtn.addEventListener('click', togglePlay);
+
+                // Add draggable timeline functionality
+                const timeline = document.getElementById('timeline');
+                const timelineHandle = document.getElementById('timelineHandle');
+                let isDragging = false;
+
+                timelineHandle.addEventListener('mousedown', (e) => {
+                    isDragging = true;
+                    document.addEventListener('mousemove', onMouseMove);
+                    document.addEventListener('mouseup', onMouseUp);
+                });
+
+                function onMouseMove(e) {
+                    if (isDragging) {
+                        const timelineRect = timeline.getBoundingClientRect();
+                        let newPosition = (e.clientX - timelineRect.left) / timelineRect.width;
+                        newPosition = Math.max(0, Math.min(newPosition, 1));
+                        timelineHandle.style.left = `${newPosition * 100}%`;
+                        audioPlayer.currentTime = newPosition * audioPlayer.duration;
+                    }
+                }
+
+                function onMouseUp() {
+                    isDragging = false;
+                    document.removeEventListener('mousemove', onMouseMove);
+                    document.removeEventListener('mouseup', onMouseUp);
+                }
+
+                audioPlayer.addEventListener('timeupdate', () => {
+                    if (!isDragging) {
+                        const progress = audioPlayer.currentTime / audioPlayer.duration;
+                        timelineHandle.style.left = `${progress * 100}%`;
+                    }
+                });
+
+                function populateSongList(filteredSongs = songs) {
+                    songListBody.innerHTML = '';
+                    
+                    filteredSongs.forEach((song, index) => {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td>${song.songTitle}</td>
+                            <td>${song.artist}</td>
+                            <td><button class="play-song-btn" data-index="${index}">${index === currentSongIndex ? '[PLAYING]' : '[PLAY]'}</button></td>
+                        `;
+                        songListBody.appendChild(row);
+                    });
+
+                    // Add event listeners to play buttons
+                    const playButtons = document.querySelectorAll('.play-song-btn');
+                    playButtons.forEach(button => {
+                        button.addEventListener('click', (e) => {
+                            const songIndex = parseInt(e.target.getAttribute('data-index'));
+                            playSongFromList(songIndex);
+                        });
+                    });
+                }
+
+                function playSongFromList(index) {
+                    currentSongIndex = index;
+                    loadSong(songs[currentSongIndex]);
+                    audioPlayer.play();
+                    playBtn.textContent = '[❚❚ PAUSE]';
+                    populateSongList();
+                }
+
+                function playSongFromLiked(index) {
+                    const songToPlay = likedSongs[index];
+                    const songIndex = songs.findIndex(song => song.id === songToPlay.id);
+                    if (songIndex !== -1) {
+                        playSongFromList(songIndex);
+                    }
+                }
+
+                searchBtn.addEventListener('click', () => {
+                    const query = songSearch.value.toLowerCase();
+                    const filteredSongs = songs.filter(song => 
+                        song.songTitle.toLowerCase().includes(query) || 
+                        song.artist.toLowerCase().includes(query)
+                    );
+                    populateSongList(filteredSongs);
+                });
+
+                shuffleSongs();
+                loadSong(songs[currentSongIndex]);
+                updateVolume();
+                populateSongList();
+
+                // Add this after the other variable declarations
+                const friendsList = document.getElementById('friendsList');
+
+                // Add this function to create a bot friend
+                function createBotFriend() {
+                    const botFriend = {
+                        name: 'PAL-BOT',
+                        level: 3,
+                        xp: 750,
+                        comments: 15
+                    };
+                    
+                    const botElement = document.createElement('div');
+                    botElement.innerHTML = `
+                        <h3>> BOT FRIEND:</h3>
+                        <p>NAME: ${botFriend.name}</p>
+                        <p>LEVEL: ${botFriend.level}</p>
+                        <p>XP: ${botFriend.xp}</p>
+                        <p>COMMENTS: ${botFriend.comments}</p>
+                    `;
+                    friendsList.appendChild(botElement);
+                }
+
+                // Add this to the end of the fetch .then() block
+                createBotFriend();
+            })
+            .catch(error => console.error('Error fetching the song data:', error));
+        </script>
+    </body>
+</html>
