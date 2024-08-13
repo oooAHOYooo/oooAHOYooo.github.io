@@ -460,7 +460,69 @@
                         </div>
                     </div>
                     <style>
-                     
+                        .radio-widget {
+                            background: rgba(0, 0, 0, 0.8);
+                            border-radius: 10px;
+                            padding: 20px;
+                            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+                            backdrop-filter: blur(10px);
+                            border: 1px solid rgba(255, 255, 255, 0.1);
+                        }
+                        .player-container {
+                            background: linear-gradient(45deg, #1a1a1a, #2c2c2c);
+                            border-radius: 8px;
+                            padding: 15px;
+                            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+                        }
+                        .song-info {
+                            display: flex;
+                            align-items: center;
+                            margin-bottom: 15px;
+                        }
+                        #coverArt {
+                            width: 80px;
+                            height: 80px;
+                            border-radius: 5px;
+                            margin-right: 15px;
+                            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+                        }
+                        .song-details h2, .song-details p {
+                            color: #e0e0e0;
+                            margin: 5px 0;
+                        }
+                        .vcr-timeline {
+                            background: #333;
+                            height: 10px;
+                            position: relative;
+                            border-radius: 5px;
+                        }
+                        .vcr-handle {
+                            width: 20px;
+                            height: 20px;
+                            background: #e0e0e0;
+                            position: absolute;
+                            top: -5px;
+                            border-radius: 50%;
+                        }
+                        .handle-grip {
+                            width: 10px;
+                            height: 2px;
+                            background: #333;
+                            margin: 9px auto;
+                        }
+                        .radio-controls button {
+                            background: #4a4a4a;
+                            color: #e0e0e0;
+                            border: none;
+                            padding: 10px 15px;
+                            margin: 5px;
+                            border-radius: 5px;
+                            cursor: pointer;
+                            transition: background 0.3s;
+                        }
+                        .radio-controls button:hover {
+                            background: #5a5a5a;
+                        }
                     </style>
                     <script>
                     
