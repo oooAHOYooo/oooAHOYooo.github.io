@@ -196,11 +196,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     podcastListBody.appendChild(row);
                 });
 
-                document.querySelectorAll('.play-podcast-btn').forEach(btn => {
+                document.querySelectorAll('.play-podcast-btn-agStyle').forEach(btn => {
                     btn.addEventListener('click', function() {
                         currentPodcastIndex = parseInt(this.dataset.index);
                         loadPodcast(podcasts[currentPodcastIndex]);
-                        togglePlay();
+                        audioPlayer.play();
+                        playBtn.textContent = '[❚❚ PAUSE]';
                     });
                 });
             }
