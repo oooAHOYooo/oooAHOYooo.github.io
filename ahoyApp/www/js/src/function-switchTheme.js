@@ -1,4 +1,4 @@
-const themes = ["light", "dark", "pink", "ellie"];
+const themes = ["light", "dark", "pink", "ellie", "bug", "hiii", "crazy"];
 
 function getRandomTheme() {
   const randomIndex = Math.floor(Math.random() * themes.length);
@@ -46,7 +46,7 @@ function switchTheme(selectedTheme) {
       "#ffd300"
     );
     theme = "ellie";
-  } else {
+  } else if (theme === "ellie") {
     setThemeProperties(
       root,
       "#ffffff99",
@@ -55,6 +55,39 @@ function switchTheme(selectedTheme) {
       "#f2f2f2",
       "#d9d9d9",
       "#ffd900"
+    );
+    theme = "bug";
+  } else if (theme === "bug") {
+    setThemeProperties(
+      root,
+      "#E1F5C4",
+      "#7A9E7E",
+      "#9BC4BC",
+      "#EDE574",
+      "#F9D423",
+      "#FC913A"
+    );
+    theme = "hiii";
+  } else if (theme === "hiii") {
+    setThemeProperties(
+      root,
+      "#F6F4D2",
+      "#A44A3F",
+      "#F19C79",
+      "#CBDFBD",
+      "#D4E09B",
+      "#F19C79"
+    );
+    theme = "crazy";
+  } else if (theme === "crazy") {
+    setThemeProperties(
+      root,
+      "#FFBE0B",
+      "#3A86FF",
+      "#FB5607",
+      "#FF006E",
+      "#8338EC",
+      "#FFBE0B"
     );
     theme = "light";
   }
