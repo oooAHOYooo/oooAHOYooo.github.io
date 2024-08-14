@@ -129,5 +129,65 @@
         "image": "https://storage.googleapis.com/ahoy-dynamic-content/ahoyMarket_crappyArt-1.jpg",
         "tags": ["art", "crappy art", "collectible"],
         "edition": "1 of 1"
-    }
+    },
+    {
+        "id": "v25-15",
+        "name": "Ahoy Mixtape Vol. 1",
+        "price": "$9.99",
+        "requires_subscription": false,
+        "thumbnail": "https://storage.googleapis.com/ahoy-dynamic-content/ahoy_mixtape_vol1.jpg",
+        "image": "https://storage.googleapis.com/ahoy-dynamic-content/ahoy_mixtape_vol1.jpg",
+        "tags": ["mixtape", "music", "digital"],
+        "edition": "Digital Download"
+      },
+      {
+        "id": "v25-16",
+        "name": "Ahoy Mixtape Vol. 2 - Indie Vibes",
+        "price": "$12.99",
+        "requires_subscription": false,
+        "thumbnail": "https://storage.googleapis.com/ahoy-dynamic-content/ahoy_mixtape_vol2_indie.jpg",
+        "image": "https://storage.googleapis.com/ahoy-dynamic-content/ahoy_mixtape_vol2_indie.jpg",
+        "tags": ["mixtape", "music", "indie", "digital"],
+        "edition": "Digital Download"
+      },
+      {
+        "id": "v25-17",
+        "name": "Ahoy Mixtape Vol. 3 - Retro Classics",
+        "price": "$14.99",
+        "requires_subscription": false,
+        "thumbnail": "https://storage.googleapis.com/ahoy-dynamic-content/ahoy_mixtape_vol3_retro.jpg",
+        "image": "https://storage.googleapis.com/ahoy-dynamic-content/ahoy_mixtape_vol3_retro.jpg",
+        "tags": ["mixtape", "music", "retro", "digital"],
+        "edition": "Digital Download"
+      },
+      {
+        "id": "v25-18",
+        "name": "Ahoy Retro Mixtape - 80s Classics",
+        "price": "$14.99",
+        "requires_subscription": false,
+        "thumbnail": "https://storage.googleapis.com/ahoy-dynamic-content/ahoy_mixtape_80s_cassette.jpg",
+        "image": "https://storage.googleapis.com/ahoy-dynamic-content/ahoy_mixtape_80s_cassette.jpg",
+        "tags": ["mixtape", "music", "physical", "80s", "retro"],
+        "edition": "Limited Edition CD"
+      },
+      {
+        "id": "v25-19",
+        "name": "Ahoy Indie Mixtape - Underground Hits",
+        "price": "$16.99",
+        "requires_subscription": false,
+        "thumbnail": "https://storage.googleapis.com/ahoy-dynamic-content/ahoy_mixtape_indie_cassette.jpg",
+        "image": "https://storage.googleapis.com/ahoy-dynamic-content/ahoy_mixtape_indie_cassette.jpg",
+        "tags": ["mixtape", "music", "physical", "indie", "underground"],
+        "edition": "Limited Edition CD"
+      },
+      {
+        "id": "v25-20",
+        "name": "Ahoy Chill Mixtape - Lo-Fi Beats",
+        "price": "$15.99",
+        "requires_subscription": false,
+        "thumbnail": "https://storage.googleapis.com/ahoy-dynamic-content/ahoy_mixtape_lofi_cassette.jpg",
+        "image": "https://storage.googleapis.com/ahoy-dynamic-content/ahoy_mixtape_lofi_cassette.jpg",
+        "tags": ["mixtape", "music", "physical", "lo-fi", "chill"],
+        "edition": "Limited Edition CD"
+      }
 ]
