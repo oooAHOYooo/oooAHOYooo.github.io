@@ -13,12 +13,17 @@ function displayRecentlyAdded() {
       data.recentlyAdded.forEach(item => {
         const itemElement = document.createElement('div');
         itemElement.className = 'recently-added-item';
+        
+        // Format the date
+        const date = new Date(item.dateAdded);
+        const formattedDate = formatDate(date);
+        
         itemElement.innerHTML = `
           <img src="${item.albumArt}" alt="${item.songTitle}" class="recently-added-image">
           <div class="recently-added-info">
             <h3>${item.songTitle}</h3>
             <p>${item.artist}</p>
-            <p>Added: ${item.dateAdded}</p>
+            <p>Added: ${formattedDate}</p>
             <span class="tag ${item.tag.toLowerCase()}">${item.tag}</span>
           </div>
         `;
@@ -26,6 +31,12 @@ function displayRecentlyAdded() {
       });
     })
     .catch(error => console.error('Error fetching recently added content:', error));
+}
+
+// Function to format the date
+function formatDate(date) {
+  const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+  return date.toLocaleDateString('en-US', options);
 }
 
 // Call the function when the page loads

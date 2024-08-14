@@ -2207,3 +2207,112 @@ td {
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
     /* Increased shadow on hover */
 }
+
+
+/*homepage PAGNATION CONTROLS */
+
+/* Newsletter Pagination */
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.pagination-button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    margin: 0 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.pagination-button:hover {
+    background-color: #555;
+}
+
+.pagination-button:disabled {
+    background-color: #666;
+    cursor: not-allowed;
+}
+
+.pagination-button.prev::before {
+    content: "⏪";
+    margin-right: 5px;
+}
+
+.pagination-button.next::after {
+    content: "⏩";
+    margin-left: 5px;
+}
+
+.pagination-info {
+    margin: 0 10px;
+    font-size: 14px;
+}
+
+
+.recently-added-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.recently-added-item {
+    display: flex;
+    width: 300px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.recently-added-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.recently-added-info {
+    padding: 10px;
+    flex-grow: 1;
+}
+
+.recently-added-info h3 {
+    margin: 0 0 5px 0;
+    font-size: 16px;
+}
+
+.recently-added-info p {
+    margin: 0 0 5px 0;
+    font-size: 14px;
+}
+
+.tag {
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.tag.new-song {
+    background-color: #ffd700;
+}
+
+.tag.podcast {
+    background-color: #90ee90;
+}
+
+.tag.media {
+    background-color: #add8e6;
+}
+
+.tag.news {
+    background-color: #ffa07a;
+}
