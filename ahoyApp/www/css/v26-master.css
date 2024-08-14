@@ -1339,6 +1339,10 @@ td {
     text-transform: uppercase;
 }
 
+.table-container {
+    overflow-x: auto;
+}
+
 #songListTable {
     width: 100%;
     border-collapse: collapse;
@@ -1346,21 +1350,51 @@ td {
 
 #songListTable th,
 #songListTable td {
-    border: 1px solid var(--border-color);
-    padding: 8px;
+    padding: 12px;
     text-align: left;
+    border-bottom: 1px solid var(--border-color);
 }
 
 #songListTable th {
-    background-color: #001100;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-weight: bold;
 }
 
-#songListTable tr:nth-child(even) {
-    background-color: #001100;
-}
+@media screen and (max-width: 600px) {
+    #songListTable thead {
+        display: table-header-group;
+    }
 
-#songListTable tr:hover {
-    background-color: #002200;
+    #songListTable,
+    #songListTable tbody,
+    #songListTable tr,
+    #songListTable td {
+        display: block;
+        width: 100%;
+    }
+
+    #songListTable tr {
+        margin-bottom: 15px;
+        border-bottom: 2px solid var(--border-color);
+    }
+
+    #songListTable td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+
+    #songListTable td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: bold;
+    }
 }
 
 .song-list::after {
@@ -2316,3 +2350,7 @@ td {
 .tag.news {
     background-color: #ffa07a;
 }
+
+/* Existing styles */
+
+/* Add these new styles for better mobile responsiveness */

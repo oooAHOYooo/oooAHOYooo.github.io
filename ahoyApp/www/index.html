@@ -505,17 +505,26 @@
             </div>
             <div class="song-list">
               <h2>> FULL SONG LIST:</h2>
-              <table id="songListTable">
+              <div class="table-responsive">
+                <table id="songListTable">
                   <thead>
-                      <tr>
-                          <th>[TITLE]</th>
-                          <th>[ARTIST]</th>
-                          <th>[ACTION]</th>
-                      </tr>
+                    <tr>
+                      <th>[TITLE]</th>
+                      <th>[ARTIST]</th>
+                      <th>[ACTION]</th>
+                    </tr>
                   </thead>
-                  <tbody id="songListBody"></tbody>
-              </table>
-          </div>
+                  <tbody id="songListBody">
+                    <!-- Example row (repeat for each song) -->
+                    <tr>
+                      <td data-label="Title">[Song Title]</td>
+                      <td data-label="Artist">[Artist Name]</td>
+                      <td data-label="Action">[Action Buttons]</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
                 <div class="active-profile">
                   <h2>> YOUR ACTIVE PROFILE:</h2>
                   <p id="activeUser">USER: PLAYER_1</p>
