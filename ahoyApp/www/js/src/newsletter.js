@@ -5,6 +5,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
             const sortedData = data.sort((a, b) => new Date(b.date) - new Date(a.date));
             const newsletterList = document.getElementById('newsletter-list');
             const groupedByMonth = {};
+            let currentPage = 1;
+            const itemsPerPage = 5;
 
             // Group data by month and year
             sortedData.forEach(item => {
@@ -18,14 +20,14 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
             const menu = document.createElement('div');
             menu.className = 'dropdown';
-            menu.innerHTML = `<button class="btnPrimary">Select Month <i class="fa fa-chevron-down"></i></button>`;
+            menu.innerHTML = `<button class="btnPrimary">Select Month <i class="fa-solid fa-chevron-down"></i></button>`;
             const dropdownContent = document.createElement('div');
             dropdownContent.className = 'dropdown-content';
 
             Object.keys(groupedByMonth).forEach(monthYear => {
                 const menuItem = document.createElement('a');
                 menuItem.href = '#';
-                menuItem.textContent = monthYear;
+                menuItem.innerHTML = `<i class="fa-regular fa-calendar"></i> ${monthYear}`;
                 menuItem.addEventListener('click', (e) => {
                     e.preventDefault();
                     filterNewsByMonth(monthYear);
@@ -39,20 +41,25 @@ window.addEventListener('DOMContentLoaded', (event) => {
             // Function to filter news items by month and year
             function filterNewsByMonth(monthYear) {
                 const filteredItems = groupedByMonth[monthYear];
+                currentPage = 1;
                 renderNewsItems(filteredItems);
             }
 
-            // Function to render news items
+            // Function to render news items with pagination
             function renderNewsItems(items) {
                 newsletterList.innerHTML = ''; // Clear existing items
-                items.forEach((newsletter, index) => {
+                const startIndex = (currentPage - 1) * itemsPerPage;
+                const endIndex = startIndex + itemsPerPage;
+                const pageItems = items.slice(startIndex, endIndex);
+
+                pageItems.forEach((newsletter) => {
                     const div = document.createElement('div');
                     div.className = 'newsletter-item';
                     div.style.textAlign = 'center';
 
                     let htmlContent = `
-                        <p class="newsletter-date">${newsletter.date}</p>
-                        <h2>${newsletter.title}</h2>
+                        <p class="newsletter-date"><i class="fa-regular fa-clock"></i> ${newsletter.date}</p>
+                        <h2><i class="fa-solid fa-newspaper"></i> ${newsletter.title}</h2>
                     `;
                     if (newsletter.imageUrl) {
                         if (newsletter.imageUrl.endsWith('.mp4')) {
@@ -72,11 +79,32 @@ window.addEventListener('DOMContentLoaded', (event) => {
                             `;
                         }
                     }
-                    htmlContent += `<p>${newsletter.content}</p>`;
+                    htmlContent += `<p><i class="fa-solid fa-file-lines"></i> ${newsletter.content}</p>`;
                     div.innerHTML = htmlContent;
                     newsletterList.appendChild(div);
                 });
+
+                // Add pagination controls
+                const totalPages = Math.ceil(items.length / itemsPerPage);
+                const paginationControls = document.createElement('div');
+                paginationControls.className = 'pagination-controls';
+                paginationControls.innerHTML = `
+                    <button ${currentPage === 1 ? 'disabled' : ''} onclick="changePage(${currentPage - 1})">
+                        <i class="fa-solid fa-chevron-left"></i> Previous
+                    </button>
+                    <span>Page ${currentPage} of ${totalPages}</span>
+                    <button ${currentPage === totalPages ? 'disabled' : ''} onclick="changePage(${currentPage + 1})">
+                        Next <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                `;
+                newsletterList.after(paginationControls);
             }
+
+            // Function to change page
+            window.changePage = function(newPage) {
+                currentPage = newPage;
+                renderNewsItems(sortedData);
+            };
 
             // Initially render all news items
             renderNewsItems(sortedData);
