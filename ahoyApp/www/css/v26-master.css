@@ -1864,7 +1864,7 @@ td {
 
 .homepage-logo {
     width: 100%;
-    height: 300px;
+    height: auto;
     margin: auto;
     display: block;
 }
@@ -2189,23 +2189,14 @@ td {
     font-family: "Barlow", sans-serif;
     font-weight: 900;
     color: #ffffff;
-    /* White text color */
     background-color: rgba(255, 255, 255, 0.2);
-    /* Semi-transparent white */
     border: 1px solid rgba(255, 255, 255, 0.3);
-    /* Light white border for a subtle outline */
     border-radius: 10px;
-    /* Rounded corners */
     backdrop-filter: blur(10px);
-    /* Blur effect */
     -webkit-backdrop-filter: blur(10px);
-    /* For Safari */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    /* Subtle shadow for depth */
     cursor: pointer;
-    /* Cursor indicates button */
     transition: background-color 0.3s ease, transform 0.3s ease;
-    /* Smooth transition for hover effects */
 }
 
 .v25_glass-button:hover {
