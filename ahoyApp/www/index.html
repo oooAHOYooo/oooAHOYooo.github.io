@@ -138,6 +138,16 @@
     <div class="app">
       <div class="app-background-layer"></div>
     </div>
+      <!-- Add this new div for the warning banner -->
+  <div id="warning-banner">
+    
+    <p>
+      <strong>Warning:</strong>
+   We are in the process of implementing a new design system. Things might look unusual for the next two weeks. 
+   <br>Please bear with us!
+  </p> 
+    <button onclick="this.parentElement.style.display='none'" style="float: right; background: none; border: none; cursor: pointer;">&times;</button>
+  </div>
     <!-- Sidebar Toggle Button -->
     <button id="toggle-button" class="toggle-button">☰</button>
     <!-- Sidebar -->
@@ -612,6 +622,7 @@
             <tr>
               <th scope="col">[THUMBNAIL]</th>
               <th scope="col">[TITLE]</th>
+              <th scope="col">[DATE]</th>
               <th scope="col">[ACTION]</th>
             </tr>
           </thead>
@@ -1065,7 +1076,8 @@
 <!-- TRUE RADIO INTG-->
 <script src="js/src/true-radio.js"></script>
 
-
+<!-- LOADING LOGIC -->
+ <script src="js/src/loading-logic.js"></script>
     <!-- END -->
     <!-- THANK YOU FOR TAKING THE TIME - ALEX GONZALEZ >
   </body>

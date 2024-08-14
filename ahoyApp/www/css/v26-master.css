@@ -1820,3 +1820,40 @@ td {
     transform: translateY(2px);
     box-shadow: 0 0 5px var(--text-color);
 }
+
+
+#warning-banner {
+    position: fixed;
+    top: -50px;
+    left: 0;
+    width: 100%;
+    background-color: #ffcc00d4 !important;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 40px;
+    padding-right: 40px;
+    transition: transform 0.5s ease-out;
+
+}
+
+
+#warning-banner.show {
+    top: 0;
+}
+
+#warning-banner button {
+    float: right;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+#warning-banner.exit {
+    transform: translateY(-100%);
+}
