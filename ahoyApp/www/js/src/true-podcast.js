@@ -190,8 +190,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     const row = document.createElement('tr');
                     row.innerHTML = `
                         <td><img src="${podcast.thumbnail}" alt="${podcast.title}" class="podcast-thumbnail"></td>
-                        <td>${podcast.title}</td>
-                        <td><button class="play-podcast-btn" data-index="${index}">[PLAY]</button></td>
+                        <td class="podcast-title-class">${podcast.title}</td>
+                        <td><button class="play-podcast-btn-agStyle" data-index="${index}">[PLAY]</button></td>
                     `;
                     podcastListBody.appendChild(row);
                 });

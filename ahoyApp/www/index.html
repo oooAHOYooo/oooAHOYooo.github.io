@@ -602,20 +602,24 @@
         <button id="searchPodcastBtn">[SEARCH]</button>
       </div>
     </div>
-    <div class="podcast-list">
-      <h2>> FULL PODCAST LIST:</h2>
-      <table id="podcastListTable">
-        <thead>
-          <tr>
-            <th>[THUMBNAIL]</th>
-            <th>[TITLE]</th>
-            <th>[DATE]</th>
-            <th>[ACTION]</th>
-          </tr>
-        </thead>
-        <tbody id="podcastListBody"></tbody>
-      </table>
-    </div>
+    <figure>
+      <figcaption id="podcast-list-caption">
+        <h2>> FULL PODCAST LIST:</h2>
+      </figcaption>
+      <div class="table-wrapper" role="group" aria-labelledby="podcast-list-caption" tabindex="0">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">[THUMBNAIL]</th>
+              <th scope="col">[TITLE]</th>
+              <th scope="col">[DATE]</th>
+              <th scope="col">[ACTION]</th>
+            </tr>
+          </thead>
+          <tbody id="podcastListBody"></tbody>
+        </table>
+      </div>
+    </figure>
   </div>
 </div>
             <!-- ABOUT TAB -->

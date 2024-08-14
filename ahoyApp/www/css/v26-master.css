@@ -1761,3 +1761,35 @@ td {
         padding: 5px;
     }
 }
+
+
+
+.podcast-title-class {
+    color: var(--text-color);
+    width: 100%;
+    min-width: 250px;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.play-podcast-btn-agStyle {
+    background-color: var(--border-color);
+    color: var(--text-color);
+    border: 2px solid var(--text-color);
+    padding: 5px 10px;
+    font-family: 'VT323', monospace;
+    font-size: 14px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.play-podcast-btn-agStyle:hover {
+    background-color: var(--text-color);
+    color: var(--border-color);
+}
+
+.play-podcast-btn-agStyle:active {
+    transform: translateY(2px);
+    box-shadow: 0 0 5px var(--text-color);
+}
