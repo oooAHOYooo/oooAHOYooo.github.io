@@ -366,9 +366,7 @@
                 <div class="now-playing">
                   <img src="./img/ahoy-recentlyAdded.svg" class="svgBlend">
 
-                  <div id="now-playing-container" class="v25nowPlaying">
-                    <!-- RECENTLY ADDED Dynamic content will be loaded here -->
-                  </div>
+                  
                 </div>
                 <div id="daily-shuffle-super-mix"></div>
             
@@ -728,7 +726,25 @@
                 Haven, Connecticut. Our mission is to provide a homegrown
                 alternative to the way folks consume media.</p>
               </div>
-              <div class="newsSubHeaderMenu">
+              <div class="newsSubHeaderMenu" id="homepage-top-submenu">
+                <button id="about-button"
+                  onclick="navigateToTab('about-tab')" class="btnPrimary">About Ahoy</button>
+                <button id="news-button"
+                  onclick="navigateToTab('updates-tab')" class="btnPrimary">News</button>
+                  <button id="recently-added-button"
+                  onclick="navigateToTab('goals-tab')" class="btnPrimary">Recently Added</button>
+              </div>
+              <img src="./img/ahoy-news.svg" class="svgBlend" id="news-svg">
+
+              <div id="newsletter-list"></div>
+
+
+              <img src="./img/ahoy-recentlyAdded.svg" class="svgBlend">
+
+              <div id="now-playing-container" class="recently-added-list">
+                <!-- RECENTLY ADDED Dynamic content will be loaded here -->
+              </div>
+              <div class="newsSubHeaderMenu" id="homepage-bottom-submenu">
                 <button id="about-button"
                   onclick="navigateToTab('about-tab')" class="btnPrimary">About Ahoy</button>
                 <button id="updates-button"
@@ -736,12 +752,8 @@
                   <button id="goals-button"
                   onclick="navigateToTab('goals-tab')" class="btnPrimary">Goal Count</button>
               </div>
-              <img src="./img/ahoy-news.svg" class="svgBlend" id="news-svg">
-
-              <div id="newsletter-list"></div>
-          
             </div>
-            <!-- CHAT TAB CHAT TAB CHAT TAB -->
+    
 <!-- GOALS TAB -->
 <div id="goals-tab" class="tab-content">
   <img src="./img/ahoy-goals.svg" class="svgBlend">

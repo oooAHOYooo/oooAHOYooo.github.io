@@ -1883,3 +1883,7 @@ td {
 #homepage-sub-desc-text {
     max-width: 50ch;
 }
+
+.recently-added-list {
+    display: flex;
+}
