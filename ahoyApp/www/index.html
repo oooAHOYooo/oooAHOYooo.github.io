@@ -467,7 +467,7 @@
                     <div class="radio-controls">
                         <button id="prevBtn">[◄◄ PREV]</button>
                         <button id="playBtn">[► PLAY]</button>
-                        <button id="nextBtn">[►�� NEXT]</button>
+                        <button id="nextBtn">[► NEXT]</button>
                         <button id="likeBtn"><i class="far fa-heart"></i> LIKE</button>
                     </div>
                     <div class="volume-control">
@@ -549,43 +549,17 @@
               </table>
             </div>
             </div>
-            <!-- PODCASTS -->
-            <div id="podcasts-tab" class="tab-content">
-              <img src="./img/ahoy-podcasts.svg" class="svgBlend">
-              <div class="podcast-container">
-                  <div id="podcast-featured-image-container"></div>
-                  <div class="ahsearch-container">
-                      <input type="text" id="podcast-search-input" class="search-input" placeholder="Search Podcasts...">
-                      <button id="podcast-search-button">
-                          <i class="fas fa-search"></i>
-                      </button>
-                      <button id="podcast-clear-search" onclick="clearPodcastSearch()">
-                          <i class="fas fa-times"></i>
-                      </button>
-                  </div>
-                  <div class="table-container">
-                  <table id="podcast-table" class="styled-table">
-                    <thead>
-                        <tr>
-                            <th>Artwork</th>
-                            <th>Episode</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- Rows will be populated by JavaScript -->
-                    </tbody>
-                </table></div>
-              </div>
-          </div>
+        
 <!-- TRUE PODCAST TAB-->
  <!-- Replace the existing podcast tab content with this -->
 <!-- Replace the existing podcast tab content with this -->
 <div id="podcast-tab" class="tab-content">
   <div class="radio-widget">
-    <div class="player-container">
+    <div class="player-container-a">
       <div class="song-info">
-        <img id="podcast-thumbnail" src="" alt="Podcast Thumbnail">
+        <div class="podcast-thumbnail-container">
+          <img id="podcast-thumbnail" src="" alt="Podcast Thumbnail">
+        </div>
         <div class="song-details">
           <h2 id="podcast-title">PODCAST TITLE: ________</h2>
           <p id="podcast-description">DESCRIPTION: ________</p>
@@ -633,6 +607,7 @@
       <table id="podcastListTable">
         <thead>
           <tr>
+            <th>[THUMBNAIL]</th>
             <th>[TITLE]</th>
             <th>[DATE]</th>
             <th>[ACTION]</th>

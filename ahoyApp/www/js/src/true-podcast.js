@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 podcastTitle.textContent = `PODCAST TITLE: ${podcast.title}`;
                 podcastDescription.textContent = `DESCRIPTION: ${podcast.description}`;
                 podcastThumbnail.src = podcast.thumbnail;
+                podcastThumbnail.alt = podcast.title;
                 audioPlayer.src = podcast.mp3url;
                 updateCommentsList();
                 playBtn.textContent = '[► PLAY]';
@@ -53,11 +54,15 @@ document.addEventListener('DOMContentLoaded', function() {
             function prevPodcast() {
                 currentPodcastIndex = (currentPodcastIndex - 1 + podcasts.length) % podcasts.length;
                 loadPodcast(podcasts[currentPodcastIndex]);
+                audioPlayer.play();
+                playBtn.textContent = '[❚❚ PAUSE]';
             }
 
             function nextPodcast() {
                 currentPodcastIndex = (currentPodcastIndex + 1) % podcasts.length;
                 loadPodcast(podcasts[currentPodcastIndex]);
+                audioPlayer.play();
+                playBtn.textContent = '[❚❚ PAUSE]';
             }
 
             function toggleLike() {
@@ -96,12 +101,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     likedPodcastsList.appendChild(li);
                 });
                 likedPodcastsCount.textContent = likedPodcasts.length;
-                localStorage.setItem('likedPodcasts', JSON.stringify(likedPodcasts));
             }
 
             function removeLikedPodcast(index) {
                 likedPodcasts.splice(index, 1);
                 updateLikedPodcasts();
+                localStorage.setItem('likedPodcasts', JSON.stringify(likedPodcasts));
             }
 
             function playPodcastFromLiked(index) {
@@ -184,14 +189,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 podcastsToShow.forEach((podcast, index) => {
                     const row = document.createElement('tr');
                     row.innerHTML = `
+                        <td><img src="${podcast.thumbnail}" alt="${podcast.title}" class="podcast-thumbnail"></td>
                         <td>${podcast.title}</td>
-                        <td>${podcast.date}</td>
                         <td><button class="play-podcast-btn" data-index="${index}">[PLAY]</button></td>
                     `;
                     podcastListBody.appendChild(row);
                 });
 
-                // Add event listeners to play buttons
                 document.querySelectorAll('.play-podcast-btn').forEach(btn => {
                     btn.addEventListener('click', function() {
                         currentPodcastIndex = parseInt(this.dataset.index);
