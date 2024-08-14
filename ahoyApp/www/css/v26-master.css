@@ -1887,3 +1887,60 @@ td {
 .recently-added-list {
     display: flex;
 }
+
+.recently-added-item {
+    display: flex;
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.recently-added-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.recently-added-info {
+    padding: 10px;
+}
+
+.recently-added-info h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.recently-added-info p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.new.song {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.podcast {
+    background-color: #2196F3;
+    color: white;
+}
+
+.media {
+    background-color: #FFC107;
+    color: black;
+}
+
+.news {
+    background-color: #FF5722;
+    color: white;
+}

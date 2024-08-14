@@ -1,0 +1,182 @@
+{
+  "nowPlaying": [
+    {
+      "id": "1",
+      "albumArt": "https://ahoycollection.s3.us-east-2.amazonaws.com/SGCarlson-AhoyIndieMedia.png",
+      "songTitle": "How I Got Fat While Living Skinny",
+      "artist": "S.G. Carlson",
+      "tag": "new song",
+      "dateAdded": "03-10-24"
+    },
+    {
+      "id": "2",
+      "albumArt": "https://ahoypodcast.s3.us-east-2.amazonaws.com/The+Rob+Show+-+Ep20+-+Pat+Clendenen.jpg",
+      "songTitle": "The Rob Show #20 | Pat Clendenen",
+      "artist": "Pat Clendenen",
+      "tag": "podcast",
+      "dateAdded": "03-19-24"
+    },
+    {
+      "id": "3",
+      "albumArt": "https://f4.bcbits.com/img/a3851680380_16.jpg",
+      "songTitle": "Framework + Fruit in the Shower + No 1",
+      "artist": "Justin Arena",
+      "tag": "new song",
+      "dateAdded": "03-20-24"
+    },
+    {
+      "id": "4",
+      "albumArt": "https://f4.bcbits.com/img/a1273412504_16.jpg",
+      "songTitle": "Daisies + Garden Girl + Magic Man + Melted Side + Snout + Mustard Seed",
+      "artist": "Riddle M",
+      "tag": "new song",
+      "dateAdded": "03-21-24"
+    },
+    {
+      "id": "5",
+      "albumArt": "https://ahoypodcast.s3.us-east-2.amazonaws.com/The+Rob+Show+-+Ep21+-+Tony+Rick+and+Andrew+August.jpg",
+      "songTitle": "The Rob Show #21",
+      "artist": "Tony Rick and Andrew August",
+      "tag": "podcast",
+      "dateAdded": "03-26-24"
+    },
+    {
+      "id": "6",
+      "albumArt": "https://ahoypodcast.s3.us-east-2.amazonaws.com/The+Rob+Show+-+Ep22+-+Sam+Carlson+-+3.28.24.jpg",
+      "songTitle": "The Rob Show #22 - Sam Carlson - New Haven Musician",
+      "artist": "Sam Carlson",
+      "tag": "podcast",
+      "dateAdded": "03-28-24"
+    },
+    {
+      "id": "7",
+      "albumArt": "https://storage.googleapis.com/ahoy-song-collection/ready_theTinesAlbumArtwork.jpg",
+      "songTitle": "Moon Views, Know by Feel, Chokecherries",
+      "artist": "The Tines",
+      "tag": "new song",
+      "dateAdded": "04-03-24"
+    },
+    {
+      "id": "8",
+      "albumArt": "https://ahoypodcast.s3.us-east-2.amazonaws.com/readyThe+Rob+Show+-+Ep23+-+Dave+Gunn+-+4.4.24.jpg",
+      "songTitle": "The Rob Show #23 - Dave Gunn",
+      "artist": "Dave Gunn",
+      "tag": "podcast",
+      "dateAdded": "04-04-24"
+    },
+    {
+      "id": "9",
+      "albumArt": "https://cdn.jwplayer.com/thumbs/MS7zwzR2-640.jpg",
+      "songTitle": "Dave Gunn - Raleigh/Durham Footage",
+      "artist": "Dave Gunn",
+      "tag": "media",
+      "dateAdded": "04-09-24"
+    },
+    {
+      "id": "10",
+      "albumArt": "https://storage.googleapis.com/ahoy-podcast-collection/The%20Rob%20Show%20-%20Ep24%20-%20Ellen%20Martin.jpg",
+      "songTitle": "The Rob Show #24 - Ellen Martin",
+      "artist": "Ellen Martin",
+      "tag": "podcast",
+      "dateAdded": "04-15-24"
+    },
+    {
+      "id": "11",
+      "albumArt": "https://storage.googleapis.com/ahoy-podcast-collection/The%20Rob%20Show%20-%20Ep25%20-%20Lizzie%20Consindine%20_%204.21.24.jpg",
+      "songTitle": "The Rob Show #25 - Lizzie Consindine",
+      "artist": "Lizzie Consindine",
+      "tag": "podcast",
+      "dateAdded": "04-26-24"
+    },
+    {
+      "id": "12",
+      "albumArt": "https://storage.googleapis.com/ahoy-podcast-collection/The%20Rob%20Show%20-%20Ep26%20-%20Dan%20Carbonella%20-%204.26.24.jpg",
+      "songTitle": "The Rob Show #26 - Dan Carbonella",
+      "artist": "Dan Carbonella",
+      "tag": "podcast",
+      "dateAdded": "04-30-24"
+    },
+    {
+      "id": "13",
+      "albumArt": "https://storage.googleapis.com/ahoy-podcast-collection/The%20Rob%20Show%20-%20Ep27%20-%20Remastered%20Classic%20-5.08.24.jpg",
+      "songTitle": "The Rob Show #27 - Dave Gunn + Tyler Mirando",
+      "artist": "The Tallboyz",
+      "tag": "podcast",
+      "dateAdded": "05-08-24"
+    },
+    {
+      "id": "14",
+      "albumArt": "https://storage.googleapis.com/ahoy-podcast-collection/The%20Rob%20Show%20-%20Ep28%20-%20Alex%20Gonzalez%20-%205.10.24.jpg",
+      "songTitle": "The Rob Show #28 - Alex Gonzalez",
+      "artist": "Alex Gonzalez",
+      "tag": "podcast",
+      "dateAdded": "05-10-24"
+    },
+    {
+      "id": "15",
+      "albumArt": "https://storage.googleapis.com/ahoy-podcast-collection/Rob%20Show%20-%20Ep29%20-%20Andrew%20Leverton%20-%205.17.24.jpg",
+      "songTitle": "The Rob Show #29 - Andrew Leverton",
+      "artist": "The Tallboyz",
+      "tag": "podcast",
+      "dateAdded": "05-23-24"
+    },
+       
+{
+      "id": "16",
+      "albumArt": "https://storage.googleapis.com/ahoy-dynamic-content/Ahoy%20News%20Update%20-%205-25-24.jpg",
+      "songTitle": "Added a couple New Media Clips, Music Videos, and live performances to the Media Mix",
+      "artist": "New Media",
+      "tag": "media",
+      "dateAdded": "05-26-24"
+    },
+    {
+      "id": "17",
+      "albumArt": "https://cdn.jwplayer.com/v2/media/Mr9gNRSS/poster.jpg?width=720",
+      "songTitle": " 2nd Nature - The Gnarth - Fig's Part",
+      "artist": "2nd Nature - Fig",
+      "tag": "media",
+      "dateAdded": "05-29-24"
+    },
+    {
+      "id": "18",
+      "albumArt": "https://storage.googleapis.com/ahoy-podcast-collection/Rob%20Show%20-%20Ep%2030%20-%20Kyle%20Middleton.jpg",
+      "songTitle": " The Rob Show #30 - Kyle Middleton",
+      "artist": "Rob Meglio",
+      "tag": "podcast",
+      "dateAdded": "05-30-24"
+    },
+    {
+      "id": "19",
+      "albumArt": "https://storage.googleapis.com/ahoy-dynamic-content/ahoy_underconstruction.gif",
+      "songTitle": "Under Construction for the Summer",
+      "artist": "Ahoy Indie Media Dev Team",
+      "tag": "news",
+      "dateAdded": "06-25-24"
+    },
+    {
+      "id": "20",
+      "albumArt": "https://storage.googleapis.com/ahoy-podcast-collection/Rob%20Show%20-%20Ep%2031%20-%20Casey%20Delbasso.jpg",
+      "songTitle": "Episode #31 - Casey Delbasso",
+      "artist": "The Rob Show ",
+      "tag": "podcast",
+      "dateAdded": "06-26-24"
+    },
+    {
+      "id": "21",
+      "albumArt": "https://storage.googleapis.com/ahoy-podcast-collection/Rob%20Show%20-%20Ep%2032%20-%20Tom%20Berry%20III.jpg",
+      "songTitle": "Episode #32 - Tom Berry III",
+      "artist": "The Rob Show ",
+      "tag": "podcast",
+      "dateAdded": "06-26-24"
+    },
+    {
+      "id": "22",
+      "albumArt": "https://cdn.jwplayer.com/v2/media/dKiWH9zw/poster.jpg?width=720",
+      "songTitle": "Obsolete Trailer",
+      "artist": "The Tallboyz ",
+      "tag": "news",
+      "dateAdded": "07-24-24"
+    }
+    
+  ]
+}
