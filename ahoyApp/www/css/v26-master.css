@@ -1944,3 +1944,105 @@ td {
     background-color: #FF5722;
     color: white;
 }
+
+
+/*DOCK BUSINESS */
+
+.v25-dock-icon.active {
+    background: var(--border-color);
+    /* Use the active color you prefer */
+    transform: scale(1.1);
+    /* Slightly larger than the hover state */
+}
+
+.v25-dock-icon.active i {
+    color: #ffffff;
+    /* Change icon color for better contrast */
+}
+
+#v25-dock-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    /* For Safari */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Fallback color */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('/path/to/your/fallback/background/image.jpg');
+    /* Fallback image */
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    z-index: 50000;
+}
+
+#v25-dock {
+    display: flex;
+    max-width: 600px;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+#v25-dock::-webkit-scrollbar {
+    display: none;
+}
+
+.scroll-container {
+    display: flex;
+}
+
+.v25-dock-icon {
+    flex: none;
+    margin: 10px 8px;
+    /* More space between icons */
+    min-width: 52px;
+    min-height: 52px;
+    background: #ffffff;
+    /* Slightly lighter for contrast */
+    white-space: nowrap;
+    border-style: solid;
+    border-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 90%;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.v25-dock-icon:hover,
+.v25-dock-icon:focus {
+    background: #ff0050;
+    /* Highlight on hover/focus */
+    transform: scale(0.9151);
+    /* Slight increase in size */
+    cursor: pointer;
+}
+
+.v25-dock-icon i {
+    color: #000000;
+    /* Light icon color for contrast */
+    font-size: 20px;
+    /* Larger icons */
+}
+
+/* v25 Now Playing Bar Styles */
+#v25-now-playing-bar {
+    position: fixed;
+    bottom: 60px;
+    /* Adjust based on the height of your v25 dock */
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-top: 2px solid #ff0050;
+    /* Accent color */
+    z-index: 50001;
+    /* Ensure it's above the v25 dock */
+}
