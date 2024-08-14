@@ -459,120 +459,7 @@
                         </div>
                     </div>
                     <style>
-                        .radio-widget {
-                            background: rgba(0, 0, 0, 0.8) !important;
-                            border-radius: 15px !important;
-                            padding: 30px !important;
-                            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5) !important;
-                            backdrop-filter: blur(15px) !important;
-                            border: 2px solid rgba(255, 255, 255, 0.1) !important;
-                            max-width: 800px !important;
-                            margin: 0 auto !important;
-                        }
-                        .player-container {
-                            background: linear-gradient(45deg, #1a1a1a, #2c2c2c) !important;
-                            border-radius: 10px !important;
-                            padding: 20px !important;
-                            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5) !important;
-                        }
-                        .song-info {
-                            display: flex !important;
-                            align-items: center !important;
-                            margin-bottom: 20px !important;
-                        }
-                        #coverArt {
-                            width: 120px !important;
-                            height: 120px !important;
-                            border-radius: 10px !important;
-                            margin-right: 20px !important;
-                            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3) !important;
-                        }
-                        .song-details h2, .song-details p {
-                            color: #e0e0e0 !important;
-                            margin: 5px 0 !important;
-                        }
-                        .song-details h2 {
-                            font-size: 24px !important;
-                        }
-                        .song-details p {
-                            font-size: 18px !important;
-                        }
-                        .vcr-timeline {
-                            background: #333 !important;
-                            height: 15px !important;
-                            position: relative !important;
-                            border-radius: 7px !important;
-                            margin: 20px 0 !important;
-                        }
-                        .vcr-handle {
-                            width: 30px !important;
-                            height: 30px !important;
-                            background: #e0e0e0 !important;
-                            position: absolute !important;
-                            top: -7px !important;
-                            border-radius: 50% !important;
-                            cursor: pointer !important;
-                            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3) !important;
-                        }
-                        .handle-grip {
-                            width: 15px !important;
-                            height: 3px !important;
-                            background: #333 !important;
-                            margin: 13px auto !important;
-                        }
-                        .radio-controls {
-                            display: flex !important;
-                            justify-content: center !important;
-                            margin-top: 20px !important;
-                        }
-                        .radio-controls button {
-                            background: #4a4a4a !important;
-                            color: #e0e0e0 !important;
-                            border: none !important;
-                            padding: 12px 20px !important;
-                            margin: 0 10px !important;
-                            border-radius: 5px !important;
-                            cursor: pointer !important;
-                            transition: background 0.3s, transform 0.1s !important;
-                            font-size: 16px !important;
-                        }
-                        .radio-controls button:hover {
-                            background: #5a5a5a !important;
-                            transform: scale(1.05) !important;
-                        }
-                        .radio-controls button:active {
-                            transform: scale(0.95) !important;
-                        }
-                        #song-list {
-                            margin-top: 30px !important;
-                            background: rgba(255, 255, 255, 0.1) !important;
-                            border-radius: 10px !important;
-                            padding: 20px !important;
-                            max-height: 300px !important;
-                            overflow-y: auto !important;
-                        }
-                        #song-list h3 {
-                            color: #e0e0e0 !important;
-                            margin-bottom: 15px !important;
-                            font-size: 20px !important;
-                        }
-                        #song-list ul {
-                            list-style-type: none !important;
-                            padding: 0 !important;
-                        }
-                        #song-list li {
-                            color: #c0c0c0 !important;
-                            padding: 10px !important;
-                            border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
-                            cursor: pointer !important;
-                            transition: background 0.3s !important;
-                        }
-                        #song-list li:hover {
-                            background: rgba(255, 255, 255, 0.1) !important;
-                        }
-                        #song-list li:last-child {
-                            border-bottom: none !important;
-                        }
+                    
                     </style>
                     <script>
                     
@@ -580,7 +467,7 @@
                     <div class="radio-controls">
                         <button id="prevBtn">[◄◄ PREV]</button>
                         <button id="playBtn">[► PLAY]</button>
-                        <button id="nextBtn">[►► NEXT]</button>
+                        <button id="nextBtn">[►�� NEXT]</button>
                         <button id="likeBtn"><i class="far fa-heart"></i> LIKE</button>
                     </div>
                     <div class="volume-control">
@@ -588,44 +475,7 @@
                         <input type="range" id="volumeBar" min="0" max="1"
                             step="0.1" value="1" class="styled-volume-bar">
                     </div>
-                    <style>
-                        .volume-control {
-                            margin: 20px 0;
-                            display: flex;
-                            align-items: center;
-                        }
-                        .volume-control span {
-                            margin-right: 10px;
-                        }
-                        .styled-volume-bar {
-                            -webkit-appearance: none;
-                            width: 100%;
-                            height: 10px;
-                            background: #d3d3d3;
-                            outline: none;
-                            opacity: 0.7;
-                            transition: opacity .2s;
-                        }
-                        .styled-volume-bar:hover {
-                            opacity: 1;
-                        }
-                        .styled-volume-bar::-webkit-slider-thumb {
-                            -webkit-appearance: none;
-                            appearance: none;
-                            width: 20px;
-                            height: 20px;
-                            background: var(--accent-color);
-                            cursor: pointer;
-                            border-radius: 50%;
-                        }
-                        .styled-volume-bar::-moz-range-thumb {
-                            width: 20px;
-                            height: 20px;
-                            background: var(--accent-color);
-                            cursor: pointer;
-                            border-radius: 50%;
-                        }
-                    </style>
+              
                 </div>
              
                 <div class="comments-widget">
@@ -633,7 +483,7 @@
                   <p>TOTAL COMMENTS: <span id="commentsCount">0</span></p>
                   <ul id="commentsList"></ul>
                   <div class="comment-form">
-                      <textarea id="commentInput" rows="4" placeholder="Add a comment...keepy it classy"></textarea>
+                      <textarea id="commentInput" rows="3" placeholder="Write a comment to a song you like ... keepy it classy"></textarea>
                       <button id="submitCommentBtn">[SUBMIT]</button>
                   </div>
               </div>
@@ -728,7 +578,71 @@
                 </table></div>
               </div>
           </div>
-
+<!-- TRUE PODCAST TAB-->
+ <!-- Replace the existing podcast tab content with this -->
+<!-- Replace the existing podcast tab content with this -->
+<div id="podcast-tab" class="tab-content">
+  <div class="radio-widget">
+    <div class="player-container">
+      <div class="song-info">
+        <img id="podcast-thumbnail" src="" alt="Podcast Thumbnail">
+        <div class="song-details">
+          <h2 id="podcast-title">PODCAST TITLE: ________</h2>
+          <p id="podcast-description">DESCRIPTION: ________</p>
+        </div>
+      </div>
+      <audio id="podcastPlayer"></audio>
+      <div id="podcast-timeline" class="vcr-timeline">
+        <div id="podcast-timelineHandle" class="vcr-handle">
+          <div class="handle-grip"></div>
+        </div>
+      </div>
+      <div class="radio-controls">
+        <button id="prevPodcastBtn">[◄◄ PREV]</button>
+        <button id="playPodcastBtn">[► PLAY]</button>
+        <button id="nextPodcastBtn">[►► NEXT]</button>
+        <button id="likePodcastBtn"><i class="far fa-heart"></i> LIKE</button>
+      </div>
+      <div class="volume-control">
+        <span><i class="fas fa-volume-up"></i></span>
+        <input type="range" id="podcastVolumeBar" min="0" max="1" step="0.1" value="1" class="styled-volume-bar">
+      </div>
+    </div>
+    <div class="comments-widget">
+      <h3>> COMMENTS FOR: <span id="commentPodcastTitle"></span></h3>
+      <p>TOTAL COMMENTS: <span id="commentsCount">0</span></p>
+      <ul id="podcastCommentsList"></ul>
+      <div class="comment-form">
+        <textarea id="podcastCommentInput" rows="3" placeholder="Write a comment about this podcast ... keep it classy"></textarea>
+        <button id="submitPodcastCommentBtn">[SUBMIT]</button>
+      </div>
+    </div>
+    <div class="liked-podcasts-widget">
+      <h3>> YOUR LIKED PODCASTS: [<span id="likedPodcastsCount">0</span>]</h3>
+      <ul id="likedPodcastsList"></ul>
+    </div>
+    <div class="terminal-section">
+      <h2>> SEARCH PODCASTS:</h2>
+      <div class="search-container">
+        <input type="text" id="podcastSearch" placeholder="Enter search query...">
+        <button id="searchPodcastBtn">[SEARCH]</button>
+      </div>
+    </div>
+    <div class="podcast-list">
+      <h2>> FULL PODCAST LIST:</h2>
+      <table id="podcastListTable">
+        <thead>
+          <tr>
+            <th>[TITLE]</th>
+            <th>[DATE]</th>
+            <th>[ACTION]</th>
+          </tr>
+        </thead>
+        <tbody id="podcastListBody"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
             <!-- ABOUT TAB -->
             <div id="about-tab" class="tab-content">
               <img src="./img/favicon_ahoy.png"
@@ -1044,7 +958,7 @@
                   onclick="navigateToTab('true-classic-radio')"><i
                     class="fas fa-music"></i></div>
                 <div class="v25-dock-icon"
-                  onclick="navigateToTab('podcasts-tab')"><i
+                  onclick="navigateToTab('podcast-tab')"><i
                     class="fas fa-podcast"></i></div>
                 <div class="v25-dock-icon"
                   onclick="navigateToTab('media-tab-a')"><i
@@ -1168,7 +1082,8 @@
     <!--script src="js/src/v25-featured_playlists.js"></script-->
 
 
-
+<!-- TRUE PODCAST INTG -->
+ <script src="js/src/true-podcast.js"></script>
 <!-- TRUE RADIO INTG-->
 <script src="js/src/true-radio.js"></script>
 
