@@ -55,7 +55,6 @@
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
     <meta http-equiv="Cross-Origin-Embedder-Policy" content="require-corp">
     <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
-
     <!-- CSS -->
     <link rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
@@ -138,6 +137,14 @@
       }
   </script>
   </head>
+     <!--
+     _               _       
+    | |__   ___   __| |_   _ 
+    | '_ \ / _ \ / _` | | | |
+    | |_) | (_) | (_| | |_| |
+    |_.__/ \___/ \__,_|\__, |
+                       |___/ 
+     -->
   <!-- START OF BODY -->
   <body>
     <div class="app">
@@ -153,6 +160,16 @@
   </p> 
     <button onclick="this.parentElement.style.display='none'" style="float: right; background: none; border: none; cursor: pointer;">&times;</button>
   </div>
+
+
+  <!--
+ _     _____ _____ _____   _____ _____ ____  _____ 
+| |   | ____|  ___/_   _| / ____|_   _|  _ \| ____|
+| |   |  _| | |_    | |  | (___   | | | | | |  _|  
+| |___| |___|  _|   | |   \___ \  | | | |_| | |___ 
+|_____|_____|_|     |_|   |____/  |_| |____/|_____|
+                                                   
+-->
     <!-- Sidebar Toggle Button -->
     <button id="toggle-button" class="toggle-button">☰</button>
     <!-- Sidebar -->
@@ -167,16 +184,22 @@
         
       </div>
       <div id="sidedock-bottom" class="sidedock-bottom">
-        <p>Currently Playing: <span id="current-track">Track Name</span></p>
-        <!-- Audio bar or similar component could be added here -->
+        <img id="sidedock-cover-art" src="./img/assets/default-cover.png" alt="Cover Art" style="width: 100px; height: 100px; object-fit: cover;">
+        <p>Currently Playing: <span id="current-track">No track playing</span></p>
+        <button id="sidedock-play-pause" style="font-size: 24px;">&#9658;</button>
       </div>
 
     </div>
-    <script>
-    
-    </script>
 
-
+<!--
+     ______ _    _ _      _      
+    |  ____| |  | | |    | |     
+    | |__  | |  | | |    | |     
+    |  __| | |  | | |    | |     
+    | |    | |__| | |____| |____ 
+    |_|     \____/|______|______|
+                                 
+-->
 <!-- Full Screen JWPlayer Modal -->
 <div id="jwplayer-fullscreen-modal" class="jwplayer-modal">
   <div class="jwplayer-modal-content">
@@ -208,9 +231,17 @@
 </script>
 
 
+
+<!--
+ _____  _____  _____  _    _ _______    _____ _____ _____  ______ 
+|  __ \|_   _|/ ____|  | |  |__   __|  / ____|_   _|  __ \|  ____|
+| |__) | | | | |  __   | |     | |    | (___   | | | |  | | |__   
+|  _  /  | | | | |_ |  | |     | |     \___ \  | | | |  | |  __|  
+| | \ \ _| |_| |__| |  | |     | |     ____) |_| |_| |__| | |____ 
+|_|  \_\_____|\_____/  |_|     |_|    |_____/|_____|_____/|______|
+-->
 <!-- Right Sidebar Toggle Button -->
 <button id="right-toggle-button" class="toggle-button-right">☰</button>
-
 <!-- Right Sidebar -->
 <div id="right-sidebar" class="right-sidebar" style="display: none;"> <!-- Initially hidden -->
   <div class="right-sidebar-top">
@@ -360,7 +391,13 @@
               <!-- END OF NOW PLAYING -->
             </div>
 
-            
+            <!--
+             __  __   _____   ____    ___      _      _____     _     ____  
+            |  \/  | | ____| |  _ \  |_ _|    / \    |_   _|   / \   | __ ) 
+            | |\/| | |  _|   | | | |  | |    / _ \     | |    / _ \  |  _ \ 
+            | |  | | | |___  | |_| |  | |   / ___ \    | |   / ___ \ | |_) |
+            |_|  |_| |_____| |____/  |___| /_/   \_\   |_|  /_/   \_\|____/ 
+            -->
 
             <!-- MEDIA TAB -->
             <div id="media-tab-a" class="tab-content">
@@ -412,6 +449,18 @@
               <div id="classical-music-list"></div>
             </div>
             <!-- END OF CLASSIC MUSIC TAB-->
+
+
+   <!--
+             ____       _       ____    ___    ___     _____     _     ____  
+            |  _ \     / \     |  _ \  |_ _|  / _ \   |_   _|   / \   | __ ) 
+            | |_) |   / _ \    | | | |  | |  | | | |    | |    / _ \  |  _ \ 
+            |  _ <   / ___ \   | |_| |  | |  | |_| |    | |   / ___ \ | |_) |
+            |_| \_\ /_/   \_\  |____/  |___|  \___/     |_|  /_/   \_\|____/ 
+            -->
+
+
+            
             <!-- TRUE CLASSIC RADIO (to replace song-collection-tab)-->
             <div id="true-classic-radio" class="tab-content active">
               <div class="radio-widget">
@@ -432,9 +481,7 @@
                         </div>
                     </div>
               
-                    <script>
-                    
-                    </script>
+                  
                     <div class="radio-controls">
                         <button id="prevBtn">[◄◄ PREV]</button>
                         <button id="playBtn">[► PLAY]</button>
@@ -511,25 +558,17 @@
 
             </div>
 <!-- END OF TRUE CLASSIC RADIO -->
-            <div id="song-collection-tab" class="tab-content">
-              <img src="./img/ahoy-music.svg" class="svgBlend">
-            <div class="table-container">
-              <table id="song-table">
-                <thead>
-                  <tr>
-                    <th>Artwork</th>
-                    <th>Artist</th>
-                    <th>Song</th>
-                    <th>Actions</th>
-                  </tr>
-                </thead>
-                <tbody id="song-table-body">
-                  <!-- Songs will be inserted here -->
-                </tbody>
-              </table>
-            </div>
-            </div>
-        
+    
+
+
+   <!--
+             ____     ___    ____     _____     _     ____  
+            |  _ \   / _ \  |  _ \   |_   _|   / \   | __ ) 
+            | |_) | | | | | | | | |    | |    / _ \  |  _ \ 
+            |  __/  | |_| | | |_| |    | |   / ___ \ | |_) |
+            |_|      \___/  |____/     |_|  /_/   \_\|____/ 
+            -->
+
 <!-- TRUE PODCAST TAB-->
  <!-- Replace the existing podcast tab content with this -->
 <!-- Replace the existing podcast tab content with this -->
@@ -602,6 +641,18 @@
     </figure>
   </div>
 </div>
+
+
+
+
+   <!--
+             _    ____   ___  _   _ _____   _____  _    ____  
+            / \  | __ ) / _ \| | | |_   _| |_   _|/ \  | __ ) 
+           / _ \ |  _ \| | | | | | | | |     | | / _ \ |  _ \ 
+          / ___ \| |_) | |_| | |_| | | |     | |/ ___ \| |_) |
+         /_/   \_\____/ \___/ \___/  |_|     |_/_/   \_\____/ 
+            -->
+
             <!-- ABOUT TAB -->
             <div id="about-tab" class="tab-content">
               <img src="./img/favicon_ahoy.png"
@@ -639,9 +690,7 @@
                   Ahoy -
                   word of mouth is our most powerful weapon agaisnt the wild
                   marketing robots</li>
-                <li><strong>Join the Dev Team:</strong> Have skills in
-                  development?
-                  Join our team and contribute to the growth of Ahoy.</li>
+              
                 <li><strong>Help Market Ahoy:</strong> Assist in marketing
                   efforts
                   to help Ahoy reach a wider audience.</li>
@@ -655,6 +704,23 @@
                   href="mailto:alex@ahoy.ooo">alex@ahoy.ooo</a>.</p>
 
             </div>
+
+
+
+   <!--
+             ____       _____   _____   _____   ___   _   _    _____   ____  
+            / ___|     | ____| |_   _| |_   _| |_ _| | \ | |  / ____| / ___| 
+            \___ \     |  _|     | |     | |    | |  |  \| | | |  _   \___ \ 
+             ___) |    | |___    | |     | |    | |  | |\  | | |_| |   ___) |
+            |____/     |_____|   |_|     |_|   |___| |_| \_|  \_____|  |____/ 
+                                                                              
+                                    _____     _     ____  
+                                   |_   _|   / \   | __ ) 
+                                     | |    / _ \  |  _ \ 
+                                     | |   / ___ \ | |_) |
+                                     |_|  /_/   \_\|____/ 
+            -->
+
             <!-- SETTINGS TAB -->
             <div id="settings-tab" class="tab-content">
               <h2>Settings</h2>
@@ -689,6 +755,15 @@
                 </div>
               </div>
             </div>
+
+               <!--
+             _   _   _____  __        __  ____    _____     _     ____  
+            | \ | | | ____| \ \      / / / ___|  |_   _|   / \   | __ ) 
+            |  \| | |  _|    \ \ /\ / /  \___ \    | |    / _ \  |  _ \ 
+            | |\  | | |___    \ V  V /    ___) |-   | |   / ___ \ | |_) |
+            |_| \_| |_____|    \_/\_/    |____/    |_|  /_/   \_\|____/ 
+            -->
+
             <!-- NEWS TAB-->
             <div id="news-tab" class="tab-content">
               <img src="./img/assets/u_ahoy23.png" alt="Ahoy Indie Media Logo" class="homepage-logo">
@@ -724,6 +799,15 @@
               </div>
               
             </div>
+
+               <!--
+             _____    ___      _      _        ____    _____     _     ____  
+            |  __ \  / _ \    / \    | |      / ___|  |_   _|   / \   | __ ) 
+            | |  | || | | |  / _ \   | |     | |  _     | |    / _ \  |  _ \ 
+            | |__| || |_| | / ___ \  | |___  | |_| |    | |   / ___ \ | |_) |
+            |_____/  \___/ /_/   \_\ |_____|  \____|    |_|  /_/   \_\|____/ 
+            -->
+
     
 <!-- GOALS TAB -->
 <div id="goals-tab" class="tab-content">
@@ -742,6 +826,15 @@
     <h4>Present Artist Count: <span id="current-artist-count">10</span></h4>
   </div>
 </div>
+
+   <!--
+             ____    _____   _____     _      _____     _     ____  
+            | __ )  | ____| |_   _|   / \    |_   _|   / \   | __ ) 
+            |  _ \  |  _|     | |    / _ \     | |    / _ \  |  _ \ 
+            | |_) | | |___    | |   / ___ \    | |   / ___ \ | |_) |
+            |____/  |_____|   |_|  /_/   \_\   |_|  /_/   \_\|____/ 
+            -->
+
             <!-- BETA TAB -->
             <div id="beta-tab" class="tab-content">
               <h2>BETA Experimental Features</h2>
@@ -749,16 +842,25 @@
               <p>But they are ready for your testing</p>
               <button class="btnPrimary" onclick="navigateToTab('market-tab')">Ahoy Indie
                 Market</button>
-                <button class="btnPrimary" onclick="window.location.href='../../workshop/radioWidget-style-4.html'">Radio Widget style 4</button>
-                <button class="btnPrimary" onclick="window.location.href='../../workshop/radioWidget-style-5.html'">Radio Widget style 5</button>
-                <button class="btnPrimary" onclick="window.location.href='../../workshop/radioWidget-style-7.html'">Radio Widget style 7</button>
                 <button class="btnPrimary" onclick="window.location.href='../../workshop/radioWidget-style-8.html'">Radio Widget style 8</button>
+                <button class="btnPrimary" onclick="navigateToTab('casting-tab')">CASTING TAB
+                </button>
                 <button class="btnPrimary" onclick="navigateToTab('burn-tab')">Burn to Disc Feature</button>
               <button class="btnPrimary" onclick="window.location.href='../../workshop/radioWidget.html'">Radio Widget</button>
               <button class="btnPrimary" onclick="navigateToTab('songs-tab')">Previous Song Tab and Radio Features
                 </button>
               <button class="btnPrimary" onclick="window.location.href='create.html'">Create an Ahoy Indie Media Account</button>
             </div>
+
+               <!--
+             ____       _     ____   _____   ___   _   _    ____     _____     _     ____  
+            / ___|     / \   / ___| |_   _| |_ _| | \ | |  / ___|   |_   _|   / \   | __ ) 
+            | |       / _ \  \___ \   | |    | |  |  \| | | |  _      | |    / _ \  |  _ \ 
+            | |___   / ___ \  ___) |  | |    | |  | |\  | | |_| |     | |   / ___ \ | |_) |
+             \____| /_/   \_\|____/   |_|   |___| |_| \_|  \____|     |_|  /_/   \_\|____/ 
+                                                                              
+            -->
+
 
             <!-- CASTING TAB -->
             <div id="casting-tab" class="tab-content">
@@ -774,6 +876,15 @@
             </div>
             <!-- UPDATES-->
             <!-- UPDATES-->
+                  <!--
+             _   _   ____   ____       _     _____   _____   ____     _____     _     ____  
+            | | | | |  _ \ |  _ \     / \   |_   _| | ____| / ___|   |_   _|   / \   | __ ) 
+            | | | | | |_) || |_) |   / _ \    | |   |  _|   \___ \     | |    / _ \  |  _ \ 
+            | |_| | |  __/ |  _ <   / ___ \   | |   | |___   ___) |    | |   / ___ \ | |_) |
+             \___/  |_|    |_| \_\ /_/   \_\  |_|   |_____| |____/     |_|  /_/   \_\|____/ 
+                                                                              
+            -->
+
             <div id="updates-tab" class="tab-content">
 
               <div class="version-movie-poster-wrap">
@@ -797,6 +908,15 @@
               <hr>
               <div id="commits-list"></div>
             </div>
+
+                     <!--
+              _    ____ ____ ___  _   _ _   _ _____   _____  _    ____  
+             / \  / ___/ ___/ _ \| | | | \ | |_   _| |_   _|/ \  | __ ) 
+            / _ \| |  | |  | | | | | | |  \| | | |     | | / _ \ |  _ \ 
+           / ___ \ |__| |__| |_| | |_| | |\  | | |     | |/ ___ \| |_) |
+          /_/   \_\____\____\___/ \___/|_| \_| |_|     |_/_/   \_\____/ 
+                                                                              
+            -->
             <!-- ACCOUNT -->
             <div id="account-tab" class="tab-content">
               <img src="./img/ahoy-account.svg" class="svgBlend">
@@ -870,7 +990,14 @@
               <!-- END OF ACCOUNT TAB DONT TOUCH -->
             </div>
             <!-- END OF THE ACCOUNT TAB-->
-
+    <!--
+              __  __    _    ____  _  _______ _____   _____  _    ____  
+             |  \/  |  / \  |  _ \| |/ / ____|_   _| |_   _|/ \  | __ ) 
+             | |\/| | / _ \ | |_) | ' /|  _|   | |     | | / _ \ |  _ \ 
+             | |  | |/ ___ \|  _ <| . \| |___  | |     | |/ ___ \| |_) |
+             |_|  |_/_/   \_\_| \_\_|\_\_____| |_|     |_/_/   \_\____/ 
+                                                                              
+            -->
             <!-- MARKET TAB-->
             <div id="market-tab" class="tab-content">
               <img src="./img/ahoy-market.svg" class="svgBlend">
@@ -890,6 +1017,14 @@
 
             </div>
         <!-- END OF MARKET TAB-->
+             <!--
+              ____  _   _ ____  _   _   _____  _    ____  
+             | __ )| | | |  _ \| \ | | |_   _|/ \  | __ ) 
+             |  _ \| | | | |_) |  \| |   | | / _ \ |  _ \ 
+             | |_) | |_| |  _ <| |\  |   | |/ ___ \| |_) |
+             |____/ \___/|_| \_\_| \_|   |_/_/   \_\____/ 
+                                                                              
+            -->
             <!-- BURN TAB-->
             <div id="burn-tab" class="tab-content"
               style="padding-bottom: 20px;">
@@ -923,6 +1058,16 @@
 
             <!-- END OF TABS ? CHECK -->
           </div><!-- YES -->
+
+      <!--
+              ____    ___   _____  _____   ___   __  __    ____    ___    ____ _  __
+             | __ )  / _ \ |_   _||_   _| / _ \ |  \/  |  |  _ \  / _ \  / ___| |/ /
+             |  _ \ | | | |  | |    | |  | | | || |\/| |  | | | || | | || |   | ' / 
+             | |_) || |_| |  | |    | |  | |_| || |  | |  | |_| || |_| || |___| . \ 
+             |____/  \___/   |_|    |_|   \___/ |_|  |_|  |____/  \___/  \____|_|\_\
+                                                                              
+            -->
+
           <!--v25 dock -->
           <div id="v25-dock-container">
             <div id="v25-dock">
@@ -1008,6 +1153,14 @@
       </div>
 
     </div>
+   <!--
+              _     _____     _______    ____    ____ ____  ___ ____ _____ ____  
+             | |   |_ _\ \   / / ____|  / ___|  / ___|  _ \|_ _|  _ \_   _/ ___| 
+             | |    | | \ \ / /|  _|    \___ \  \___ \ |_) || || |_) || | \___ \ 
+             | |___ | |  \ V / | |___    ___) |  ___) |  __/ | ||  __/ | |  ___) |
+             |_____|___|  \_/  |_____|  |____/  |____/|_|  |___|_|    |_| |____/ 
+                                                                              
+            -->
 
     <!-- LIVE SCRIPTS -->
 
