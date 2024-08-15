@@ -2353,4 +2353,50 @@ td {
 
 /* Existing styles */
 
-/* Add these new styles for better mobile responsiveness */
+
+
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.pagination-button {
+    padding: 5px 10px;
+    margin: 0 5px;
+    font-family: 'Times New Roman', serif;
+}
+
+.pagination-info {
+    font-family: 'Times New Roman', serif;
+    margin: 0 10px;
+}
+
+.newsletter-menu-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 500px;
+}
+
+/* General SVG blend mode */
+.svgBlend {
+    max-width: 100%;
+    mix-blend-mode: lighten;
+    mix-blend-mode: soft-light;
+    position: relative;
+    overflow: hidden;
+}
+
+.svgBlend::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mP8//8/AxJgYmD4DwRCoAEDAJyTDwXj8ZIuAAAAAElFTkSuQmCC');
+    opacity: 0.2;
+    mix-blend-mode: soft-light;
+}

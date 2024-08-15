@@ -19,15 +19,17 @@ window.addEventListener('DOMContentLoaded', (event) => {
             });
 
             const menu = document.createElement('div');
+            menu.style.display = 'block';
+            menu.className = 'newsletter-menu-container';
             menu.className = 'dropdown';
-            menu.innerHTML = `<button class="btnPrimary">Select Month <i class="fa-solid fa-chevron-down"></i></button>`;
+            menu.innerHTML = `<button class="btnPrimary">Issues <i class="fa-solid fa-chevron-down"></i></button>`;
             const dropdownContent = document.createElement('div');
             dropdownContent.className = 'dropdown-content';
 
             Object.keys(groupedByMonth).forEach(monthYear => {
                 const menuItem = document.createElement('a');
                 menuItem.href = '#';
-                menuItem.innerHTML = `<i class="fa-regular fa-calendar"></i> ${monthYear}`;
+                menuItem.innerHTML = ` ${monthYear}`;
                 menuItem.addEventListener('click', (e) => {
                     e.preventDefault();
                     filterNewsByMonth(monthYear);
@@ -36,7 +38,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
             });
 
             menu.appendChild(dropdownContent);
-            newsletterList.before(menu);
 
             // Function to filter news items by month and year
             function filterNewsByMonth(monthYear) {
@@ -65,7 +66,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
                         let htmlContent = `
                             <p class="newsletter-date"><i class="fa-regular fa-clock"></i> ${newsletter.date}</p>
-                            <h2><i class="fa-solid fa-newspaper"></i> ${newsletter.title}</h2>
+                            <h2> ${newsletter.title}</h2>
                         `;
                         if (newsletter.imageUrl) {
                             if (newsletter.imageUrl.endsWith('.mp4')) {
@@ -99,6 +100,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
                         <span class="pagination-info">Page ${currentPage} of ${totalPages}</span>
                         <button class="pagination-button next" ${currentPage === totalPages ? 'disabled' : ''}>Next</button>
                     `;
+                    
+                    // Add the dropdown menu after the pagination controls
+                    paginationControls.appendChild(menu);
                     
                     const prevButton = paginationControls.querySelector('.prev');
                     const nextButton = paginationControls.querySelector('.next');
