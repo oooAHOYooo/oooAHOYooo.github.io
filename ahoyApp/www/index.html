@@ -1,5 +1,13 @@
 <!DOCTYPE html>
 <!-- APP AHOY -->
+
+<!--
+     _    _   _  ___  __   __
+    / \  | | | |/ _ \ \ \ / /
+   / _ \ | |_| | | | | \ V / 
+  / ___ \|  _  | |_| |  | |  
+ /_/   \_\_| |_|\___/   |_|  
+-->
 <!-- PRAISE GOD -->
 <html>
 
@@ -218,11 +226,8 @@
 <button class="btnPrimary" id="play-fullscreen-button">
   Play FullScreen
 </button>
-<!-- ... existing code ... -->
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    // ... existing code ...
-
     // Add event listener for the "Play FullScreen" button
     document.getElementById('play-fullscreen-button').addEventListener('click', function() {
       jwplayer().play();
@@ -268,39 +273,6 @@
 
   </div>
 </div>
-
-<!-- Initialize tooltips -->
-<script>
-  $(function () {
-    $('[data-toggle="tooltip"]').tooltip();
-  });
-</script>
-
-<!--div class="v25_topLogin">
-  <div class="v25_topLogin-container" style="background-color:transparent!important; display: flex; justify-content: center;">
-    <button id="login-button-b" class="btnPrimary --btn--login"
-      onclick="window.location.href='./login.html'">LOGIN</button>
-  </div>
-  <p id="login-message" style="display:none;">Yes! You are logged in
-    <br><button onclick="showAccountTab();">View Benefits</button>
-  </p>
-</div -->
-
-<script>
-  // Function to show the login message
-  function showLoginMessage() {
-    const loginMessage = document.getElementById('login-message');
-    loginMessage.style.display = 'block';
-    
-    // Set a timeout to hide the message after 10 seconds
-    setTimeout(() => {
-      loginMessage.style.display = 'none';
-    }, 10000); // 10000 milliseconds = 10 seconds
-  }
-
-  // Call this function when the user successfully logs in
-  // For example: showLoginMessage();
-</script>
   
 </div>
 
@@ -327,6 +299,15 @@
 
           <!-- BEGIN-->
           <div id="tabSortza">
+<!-- ASCII Art for "HOME TAB" -->
+<!--
+ _    _  ____  __  __ ______   _______       ____  
+| |  | |/ __ \|  \/  |  ____| |__   __|/\   |  _ \ 
+| |__| | |  | | \  / | |__       | |  /  \  | |_) |
+|  __  | |  | | |\/| |  __|      | | / /\ \ |  _ < 
+| |  | | |__| | |  | | |____     | |/ ____ \| |_) |
+|_|  |_|\____/|_|  |_|______|    |_/_/    \_\____/ 
+-->
 
             <!-- HOME TAB --> 
              <!-- PRESENTLY NOT SHOWING ON PURPOSE-->
@@ -378,6 +359,8 @@
             
               <!-- END OF NOW PLAYING -->
             </div>
+
+            
 
             <!-- MEDIA TAB -->
             <div id="media-tab-a" class="tab-content">
