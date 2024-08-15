@@ -177,18 +177,16 @@
       <div id="sidedock-top" class="sidedock-top" style="padding-top: 20px;">
         <img src="./img/assets/u_ahoy23.png" alt="Main Logo" style="display: block; margin: auto; width: 100px; height: auto;">
       </div>
+      <hr>
       <div class="sidedock-middle" id="sidedock-middle">
         <hr>
-        <!-- Placeholder for additional playlists -->
-        <div class="playlist-item"><a href="#"><i class="fa fa-plus-circle"></i> Add Playlist</a></div>
-        
       </div>
       <div id="sidedock-bottom" class="sidedock-bottom">
         <img id="sidedock-cover-art" src="./img/assets/default-cover.png" alt="Cover Art" style="width: 100px; height: 100px; object-fit: cover;">
         <p>Currently Playing: <span id="current-track">No track playing</span></p>
         <button id="sidedock-play-pause" style="font-size: 24px;">&#9658;</button>
       </div>
-
+      <hr>
     </div>
 
 <!--
@@ -307,27 +305,13 @@
   
 </div>
 
-    <!-- Add Songs Modal -->
-    <div id="add-songs-modal" class="modal">
-      <div class="modal-content">
-          <span class="close">&times;</span>
-          <h2 id="modal-title"></h2>
-          <ul id="song-list"></ul>
-      </div>
-  </div>
-
-
-    <!-- Add Playlist Modal -->
-    <div id="add-playlist-modal" class="addPlaylist_modal">
-      <div class="addPlaylist_modal-content">
-          <span class="addPlaylist_modal-close">&times;</span>
-          <h2>Create New Playlist</h2>
-          <input type="text" id="new-playlist-name" placeholder="Enter playlist name">
-          <button id="create-playlist-button">Create Playlist</button>
-      </div>
-  </div>
-
-
+<!--
+    _    _     _       _______    _    ____   _____ 
+   / \  | |   | |     |__   __|  / \  |  _ \ / ____|
+  / _ \ | |   | |        | |    / _ \ | |_) | (___  
+ / ___ \| |   | |        | |   / ___ \|  _ < \___ \ 
+/_/   \_\_|   |_|        |_|  /_/   \_\_| \_\____/ 
+-->
           <!-- BEGIN-->
           <div id="tabSortza">
 <!-- ASCII Art for "HOME TAB" -->
@@ -539,14 +523,7 @@
                 </table>
               </div>
             </div>
-                <div class="active-profile">
-                  <h2>> YOUR ACTIVE PROFILE:</h2>
-                  <p id="activeUser">USER: PLAYER_1</p>
-                  <p id="userLevel">LEVEL: 5</p>
-                  <p id="userXP">XP: 1337</p>
-                  <p id="userComments">COMMENTS: <span
-                          id="commentsCount">0</span></p>
-              </div>
+          
             
             </div>
 
@@ -924,6 +901,14 @@
                 <!-- other profile elements -->
                 <p id="last-login-time"></p>
               </div>
+              <div class="active-profile">
+                <h2>> YOUR ACTIVE PROFILE:</h2>
+                <p id="activeUser">USER: Alex</p>
+                <p id="userLevel">LEVEL: 5</p>
+                <p id="userXP">XP: 1337</p>
+                <p id="userComments">COMMENTS: <span
+                        id="commentsCount">0</span></p>
+            </div>
               <!-- User Login Section -->
               <div id="login-section" class="center-frame"
                 style="margin:22px; flex: 1; flex-direction: column; justify-content: center; align-items: center; height: auto; background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(15px); border-radius: 15px; padding: 20px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); border: 1px solid rgba(255, 255, 255, 0.3);  background: linear-gradient(145deg, rgba(255,255,255,0.1), rgba(255,255,255,0.25));">
