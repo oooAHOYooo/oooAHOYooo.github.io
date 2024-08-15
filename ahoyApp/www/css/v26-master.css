@@ -2400,3 +2400,47 @@ td {
     opacity: 0.2;
     mix-blend-mode: soft-light;
 }
+
+.vcr-container {
+    background-color: #000;
+    color: #0f0;
+    font-family: 'VCR OSD Mono', monospace;
+    padding: 20px;
+    border: 2px solid #0f0;
+    box-shadow: 0 0 10px #0f0;
+}
+
+.vcr-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.vcr-item {
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px solid #0f0;
+    background-color: rgba(0, 255, 0, 0.1);
+}
+
+.vcr-item::before {
+    content: '▶';
+    margin-right: 10px;
+}
+
+@keyframes flicker {
+    0% {
+        opacity: 0.9;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.9;
+    }
+}
+
+.vcr-container {
+    animation: flicker 0.1s infinite;
+}

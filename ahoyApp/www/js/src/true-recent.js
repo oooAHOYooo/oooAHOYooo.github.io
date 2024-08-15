@@ -1,60 +1,51 @@
-// Function to fetch and display recently added content
-function displayRecentlyAdded() {
-  fetch('./data/true-recent.json')
-    .then(response => response.json())
-    .then(data => {
-      const recentlyAddedContainer = document.getElementById('recently-added-container');
-      if (!recentlyAddedContainer) {
-        console.error('Recently added container not found');
-        return;
-      }
-      recentlyAddedContainer.innerHTML = ''; // Clear existing content
-
-      data.recentlyAdded.forEach(item => {
-        const itemElement = document.createElement('div');
-        itemElement.className = 'recently-added-item';
-        
-        // Format the date
-        const date = new Date(item.dateAdded);
-        const formattedDate = formatDate(date);
-        
-        itemElement.innerHTML = `
-          <img src="${item.albumArt}" alt="${item.songTitle}" class="recently-added-image">
-          <div class="recently-added-info">
-            <h3>${item.songTitle}</h3>
-            <p>${item.artist}</p>
-            <p>Added: ${formattedDate}</p>
-            <span class="tag ${item.tag.toLowerCase()}">${item.tag}</span>
-          </div>
-        `;
-        recentlyAddedContainer.appendChild(itemElement);
-      });
-    })
-    .catch(error => console.error('Error fetching recently added content:', error));
+// Function to get the latest items from the JSON data
+function getLatestItems(jsonData, key, count = 5) {
+  return jsonData[key]
+    .sort((a, b) => b.id - a.id)
+    .slice(0, count);
 }
 
-// Function to format the date
-function formatDate(date) {
-  const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-  return date.toLocaleDateString('en-US', options);
+// Function to create the HTML for the recent items list
+function createRecentItemsList(items, type) {
+  const ul = document.createElement('ul');
+  ul.className = `recent-${type} vcr-list`;
+  
+  items.forEach(item => {
+    const li = document.createElement('li');
+    li.className = 'vcr-item';
+    li.textContent = type === 'songs' 
+      ? `${item.artist} - ${item.songTitle}`
+      : `${item.title}`;
+    ul.appendChild(li);
+  });
+  
+  return ul;
 }
 
-// Call the function when the page loads
-document.addEventListener('DOMContentLoaded', displayRecentlyAdded);
+// Function to update the newsletter menu container
+function updateNewsletterMenu(songsData, podcastsData) {
+  const container = document.querySelector('.newsletter-menu-container');
+  container.classList.add('vcr-container');
+  const songCollection = container.querySelector('p:nth-child(1)');
+  const podcastCollection = container.querySelector('p:nth-child(2)');
+  
+  const latestSongs = getLatestItems(songsData, 'songs');
+  const latestPodcasts = getLatestItems(podcastsData, 'podcasts');
+  
+  const songsList = createRecentItemsList(latestSongs, 'songs');
+  const podcastsList = createRecentItemsList(latestPodcasts, 'podcasts');
+  
+  // Insert the lists after their respective paragraphs
+  songCollection.insertAdjacentElement('afterend', songsList);
+  podcastCollection.insertAdjacentElement('afterend', podcastsList);
+}
 
-// Update the content when the news tab is shown
-document.addEventListener('DOMContentLoaded', () => {
-  const newsTab = document.getElementById('news-tab');
-  if (newsTab) {
-    const observer = new MutationObserver((mutations) => {
-      mutations.forEach((mutation) => {
-        if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
-          if (newsTab.style.display === 'block') {
-            displayRecentlyAdded();
-          }
-        }
-      });
-    });
-    observer.observe(newsTab, { attributes: true });
-  }
-});
+// Fetch both JSON files and update the menu
+Promise.all([
+  fetch('data/true-radioPlay.json').then(response => response.json()),
+  fetch('data/podcastCollection.json').then(response => response.json())
+])
+  .then(([songsData, podcastsData]) => {
+    updateNewsletterMenu(songsData, podcastsData);
+  })
+  .catch(error => console.error('Error fetching JSON:', error));
