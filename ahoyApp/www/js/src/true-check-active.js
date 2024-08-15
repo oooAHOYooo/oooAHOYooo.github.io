@@ -30,3 +30,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Set initial active tab (assuming 'news-tab' is the default)
     updateActiveTab('news-tab');
 });
+
+
+

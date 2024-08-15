@@ -276,16 +276,32 @@
   });
 </script>
 
-<div class="v25_topLogin">
+<!--div class="v25_topLogin">
   <div class="v25_topLogin-container" style="background-color:transparent!important; display: flex; justify-content: center;">
-  
-      <button id="login-button-b" class="btnPrimary --btn--login"
-        onclick="window.location.href='./login.html'">LOGIN</button>
-    </div>
-    <p id="login-message" style="display:none;">Yes! You are logged in
-      <br><button onclick="showAccountTab();">View Benefits</button>
-    </p> <!-- Fixed missing closing tag -->
+    <button id="login-button-b" class="btnPrimary --btn--login"
+      onclick="window.location.href='./login.html'">LOGIN</button>
   </div>
+  <p id="login-message" style="display:none;">Yes! You are logged in
+    <br><button onclick="showAccountTab();">View Benefits</button>
+  </p>
+</div -->
+
+<script>
+  // Function to show the login message
+  function showLoginMessage() {
+    const loginMessage = document.getElementById('login-message');
+    loginMessage.style.display = 'block';
+    
+    // Set a timeout to hide the message after 10 seconds
+    setTimeout(() => {
+      loginMessage.style.display = 'none';
+    }, 10000); // 10000 milliseconds = 10 seconds
+  }
+
+  // Call this function when the user successfully logs in
+  // For example: showLoginMessage();
+</script>
+  
 </div>
 
     <!-- Add Songs Modal -->
@@ -327,7 +343,6 @@
 
                 </div>
                 <br>
-                <h2 id="calendar-date" class="home-calendar-date"></h2>
                 <br>
                 <!-- NOW PLAYING -->
                 <div class="now-playing">
@@ -694,6 +709,8 @@
             <!-- NEWS TAB-->
             <div id="news-tab" class="tab-content">
               <img src="./img/assets/u_ahoy23.png" alt="Ahoy Indie Media Logo" class="homepage-logo">
+              <h2 id="calendar-date" class="home-calendar-date"></h2>
+
               <div class="homepage-subheader">
               <p id="homepage-sub-desc-text">Ahoy Indie Media is a hand-crafted media company based out of
                 New
@@ -708,6 +725,9 @@
                   <button id="recently-added-button"
                   onclick="navigateToTab('goals-tab')" class="btnPrimary">Recently Added</button>
               </div>
+
+       
+            
               <img src="./img/ahoy-news.svg" class="svgBlend" id="news-svg">
 <!-- PAGNATE THIS NEWSLETTER-->
 
@@ -717,27 +737,11 @@
 
               <img src="./img/ahoy-recentlyAdded.svg" class="svgBlend">
 
-              <div id="recently-added-container" class="recently-added-list">
-                <!-- RECENTLY ADDED Dynamic content will be loaded here -->
-              </div>
-
-
-
               <div class="newsletter-menu-container">
                 <p></span>Song Collection</span></p>
                 <p>Podcast Collection</p>
               </div>
               
-            
-
-              <div class="newsSubHeaderMenu" id="homepage-bottom-submenu">
-                <button id="about-button"
-                  onclick="navigateToTab('about-tab')" class="btnPrimary">About Ahoy</button>
-                <button id="updates-button"
-                  onclick="navigateToTab('updates-tab')" class="btnPrimary">Dev Log</button>
-                  <button id="goals-button"
-                  onclick="navigateToTab('goals-tab')" class="btnPrimary">Goal Count</button>
-              </div>
             </div>
     
 <!-- GOALS TAB -->
