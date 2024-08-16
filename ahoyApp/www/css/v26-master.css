@@ -55,6 +55,16 @@
 
 /*SIDEDOCK turning to FULLDOCK on Mobile */
 
+#right-sidebar {
+    transition: transform 0.3s ease-out;
+    transform: translateX(100%);
+    /* Other styles for positioning and dimensions */
+}
+
+#right-sidebar.active {
+    transform: translateX(0);
+}
+
 .right-sidebar {
     position: fixed;
     top: 0;

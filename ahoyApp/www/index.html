@@ -267,7 +267,6 @@
         <div ><iframe
             src="https://cdn.jwplayer.com/players/S9LOWFXC-9Gtk2B1J.html"></iframe></div>
 
-    <!-- ... existing code ... -->
     <br>
 <button class="btnPrimary" id="play-fullscreen-button">
   Play FullScreen
@@ -316,7 +315,7 @@
 
   </div>
   <div class="right-sidebar-middle">
-
+<hr>
   </div>
 </div>
   
@@ -649,6 +648,15 @@
 
             <!-- ABOUT TAB -->
             <div id="about-tab" class="tab-content">
+              <img src="./img/assets/u_ahoy23.png" alt="Ahoy Indie Media Logo" class="homepage-logo" onclick="navigateToTab('home-tab')">
+              <div class="newsSubHeaderMenu" id="homepage-top-submenu">
+                <button id="about-button"
+                  onclick="navigateToTab('about-tab')" class="btnPrimary">About Ahoy</button>
+                <button id="news-button"
+                  onclick="navigateToTab('recent-tab')" class="btnPrimary">Recently Added</button>
+                  <button id="recently-added-button"
+                  onclick="navigateToTab('updates-tab')" class="btnPrimary">App Updates</button>
+              </div>
               <img src="./img/favicon_ahoy.png"
                 style="width: 100px; height: auto;">
               <h2>About Ahoy Indie Media</h2>
@@ -717,8 +725,10 @@
 
             <!-- SETTINGS TAB -->
             <div id="settings-tab" class="tab-content">
+              <img src="./img/assets/u_ahoy23.png" alt="Ahoy Indie Media Logo" class="homepage-logo" onclick="navigateToTab('home-tab')">
+
               <h2>Settings</h2>
-              <p>You are on version <span id="app-version">v.0.24.7</span></p>
+              <p>You are on version <span id="app-version">v.0.24.8a</span></p>
               <div class="settings-options">
                 <div class="setting">
                   <!-- Mute Button -->
@@ -773,9 +783,9 @@
                 <button id="about-button"
                   onclick="navigateToTab('about-tab')" class="btnPrimary">About Ahoy</button>
                 <button id="news-button"
-                  onclick="navigateToTab('updates-tab')" class="btnPrimary">News</button>
+                  onclick="navigateToTab('recent-tab')" class="btnPrimary">Recently Added</button>
                   <button id="recently-added-button"
-                  onclick="navigateToTab('goals-tab')" class="btnPrimary">Recently Added</button>
+                  onclick="navigateToTab('updates-tab')" class="btnPrimary">App Updates</button>
               </div>
 
      
@@ -846,6 +856,9 @@
               <button class="btnPrimary" onclick="window.location.href='create.html'">Create an Ahoy Indie Media Account</button>
             </div>
 
+
+
+         
                <!--
              ____       _     ____   _____   ___   _   _    ____     _____     _     ____  
             / ___|     / \   / ___| |_   _| |_ _| | \ | |  / ___|   |_   _|   / \   | __ ) 
@@ -868,6 +881,44 @@
                 </div>
               </div>
             </div>
+
+
+            <!--
+            RECENT TABS-->
+              <!--
+             ____    _____   ____   _____   _   _   _____     _____     _     ____  
+            |  _ \  | ____| / ___| | ____| | \ | | |_   _|   |_   _|   / \   | __ ) 
+            | |_) | |  _|  | |     |  _|   |  \| |   | |      | |    / _ \  |  _ \ 
+            |  _ <  | |___ | |___  | |___  | |\  |   | |      | |   / ___ \ | |_) |
+            |_| \_\ |_____| \____| |_____| |_| \_|   |_|      |_|  /_/   \_\|____/ 
+                                                                              
+            --><!-- FULL RECENTLY ADDED -->
+
+
+
+            <div id="recent-tab" class="tab-content">
+              <img src="./img/assets/u_ahoy23.png" alt="Ahoy Indie Media Logo" class="homepage-logo">
+
+              <h2>Recent Tabs</h2>
+              <div class="newsSubHeaderMenu" id="homepage-top-submenu">
+                <button id="about-button"
+                  onclick="navigateToTab('about-tab')" class="btnPrimary">About Ahoy</button>
+                <button id="news-button"
+                  onclick="navigateToTab('recent-tab')" class="btnPrimary">Recently Added</button>
+                  <button id="recently-added-button"
+                  onclick="navigateToTab('updates-tab')" class="btnPrimary">App Updates</button>
+              </div>
+
+
+
+            </div>
+
+
+    
+
+
+
+
             <!-- UPDATES-->
             <!-- UPDATES-->
                   <!--
@@ -880,7 +931,16 @@
             -->
 
             <div id="updates-tab" class="tab-content">
+              <img src="./img/assets/u_ahoy23.png" alt="Ahoy Indie Media Logo" class="homepage-logo">
 
+              <div class="newsSubHeaderMenu" id="homepage-top-submenu">
+                <button id="about-button"
+                  onclick="navigateToTab('about-tab')" class="btnPrimary">About Ahoy</button>
+                <button id="news-button"
+                  onclick="navigateToTab('recent-tab')" class="btnPrimary">Recently Added</button>
+                  <button id="recently-added-button"
+                  onclick="navigateToTab('updates-tab')" class="btnPrimary">App Updates</button>
+              </div>
               <div class="version-movie-poster-wrap">
                 <img id="lightbox-trigger"
                   src="./img/assets/splash-screens/splash-640x960.png"
@@ -1230,6 +1290,7 @@
 
 
    <script src="js/src/true-sidebar.js"></script>
+   <script src="js/src/true-right-sidebar.js"></script>
     <!-- END -->
     <!-- THANK YOU FOR TAKING THE TIME - ALEX GONZALEZ >
   </body>
