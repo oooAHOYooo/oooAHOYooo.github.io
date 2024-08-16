@@ -455,8 +455,8 @@
              ____       _       ____    ___    ___     _____     _     ____  
             |  _ \     / \     |  _ \  |_ _|  / _ \   |_   _|   / \   | __ ) 
             | |_) |   / _ \    | | | |  | |  | | | |    | |    / _ \  |  _ \ 
-            |  _ <   / ___ \   | |_| |  | |  | |_| |    | |   / ___ \ | |_) |
-            |_| \_\ /_/   \_\  |____/  |___|  \___/     |_|  /_/   \_\|____/ 
+            |  __/  | |_| | | |_| | | |  | | |  |_| |    | |   / ___ \ | |_) |
+            |_|      \___/  |____/     |_|     |_| |_|    |_|  /_/   \_\|____/ 
             -->
 
 
@@ -662,7 +662,7 @@
               </style>
               <div class="body-desc-container">
             <div class="body-desc-block">
-              <h2>About Ahoy Indie Media</h2>
+              <h2 class="heading-2 center-text">About Ahoy Indie Media</h2>
               <p>Ahoy Indie Media is a hand-crafted media company based out of
                 New
                 Haven, Connecticut. Our mission is to provide a homegrown
@@ -867,7 +867,7 @@
             / ___|     / \   / ___| |_   _| |_ _| | \ | |  / ___|   |_   _|   / \   | __ ) 
             | |       / _ \  \___ \   | |    | |  |  \| | | |  _      | |    / _ \  |  _ \ 
             | |___   / ___ \  ___) |  | |    | |  | |\  | | |_| |     | |   / ___ \ | |_) |
-             \____| /_/   \_\|____/   |_|   |___| |_| \_|  \____|     |_|  /_/   \_\|____/ 
+            |_____| /_/   \_\|____/   |_|   |___| |_| \_|  \____|     |_|  /_/   \_\|____/ 
                                                                               
             -->
 
@@ -897,27 +897,44 @@
                                                                               
             --><!-- FULL RECENTLY ADDED -->
 
-
-
             <div id="recent-tab" class="tab-content">
               <img src="./img/assets/u_ahoy23.png" alt="Ahoy Indie Media Logo" class="homepage-logo" onclick="navigateToTab('news-tab')">
-
-              <h2>Recent Tabs</h2>
+            
               <div class="newsSubHeaderMenu" id="homepage-top-submenu">
-                <button id="about-button"
-                  onclick="navigateToTab('about-tab')" class="btnPrimary">About Ahoy</button>
-                <button id="news-button"
-                  onclick="navigateToTab('recent-tab')" class="btnPrimary">Recently Added</button>
-                  <button id="recently-added-button"
-                  onclick="navigateToTab('updates-tab')" class="btnPrimary">App Updates</button>
+                <button id="about-button" onclick="navigateToTab('about-tab')" class="btnPrimary">About Ahoy</button>
+                <button id="news-button" onclick="navigateToTab('recent-tab')" class="btnPrimary">Recently Added</button>
+                <button id="recently-added-button" onclick="navigateToTab('updates-tab')" class="btnPrimary">App Updates</button>
               </div>
-
-
-
+              <h2 class="heading-2 center-text">Recent ADDED CONTENT </h2>
+            
+              <div id="full-recent-player">
+                <div class="table-responsive">
+                  <table id="full-recent-podcasts">
+                    <thead>
+                      <tr>
+                        <th colspan="3">Recent Podcasts</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!-- Podcast items will be dynamically inserted here -->
+                    </tbody>
+                  </table>
+                </div>
+            
+                <div class="table-responsive">
+                  <table id="full-recent-songs">
+                    <thead>
+                      <tr>
+                        <th colspan="3">Recent Songs</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!-- Song items will be dynamically inserted here -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
             </div>
-
-
-    
 
 
 
@@ -1294,6 +1311,9 @@
 
    <script src="js/src/true-sidebar.js"></script>
    <script src="js/src/true-right-sidebar.js"></script>
+
+
+   <script src="js/src/true-full-recent.js"></script>
     <!-- END -->
     <!-- THANK YOU FOR TAKING THE TIME - ALEX GONZALEZ >
   </body>
