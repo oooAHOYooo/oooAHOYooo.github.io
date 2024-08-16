@@ -2490,6 +2490,10 @@ td {
 }
 
 
+
+
+
+
 .newsletter-menu-container {
 
     border: 2px solid var(--border-color);
@@ -2521,6 +2525,18 @@ td {
     background-color: var(--border-color);
     color: #000;
 }
+
+
+
+/*
+  _____   ______ _____ ______ _   _ _______ 
+ |  __ \ |  ____/ ____|  ____| \ | |__   __|
+ |  |__) | |__ | |    | |__  |  \| |  | |   
+ |  _  /|  __|| |    |  __| | . ` |  | |   
+ | | \ \| |___| |____| |____| |\  |  | |   
+ |_|  \_\______\_____|______|_| \_|  |_|   
+*/
+
 
 
 /* Styles for #full-recent-player */
@@ -2584,6 +2600,11 @@ td {
         font-size: 12px;
     }
 }
+
+
+
+
+
 
 /* Hide audio elements */
 #full-recent-player audio,
