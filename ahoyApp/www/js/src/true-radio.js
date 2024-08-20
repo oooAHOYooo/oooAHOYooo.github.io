@@ -76,11 +76,21 @@
                 function prevSong() {
                     currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
                     loadSong(songs[currentSongIndex]);
+                    audioPlayer.play().then(() => {
+                        playBtn.textContent = '[❚❚ PAUSE]';
+                    }).catch(error => {
+                        console.error('Playback was prevented:', error);
+                    });
                 }
 
                 function nextSong() {
                     currentSongIndex = (currentSongIndex + 1) % songs.length;
                     loadSong(songs[currentSongIndex]);
+                    audioPlayer.play().then(() => {
+                        playBtn.textContent = '[❚❚ PAUSE]';
+                    }).catch(error => {
+                        console.error('Playback was prevented:', error);
+                    });
                 }
 
                 function likeSong() {
@@ -179,8 +189,14 @@
                     audioPlayer.volume = volumeBar.value;
                 }
 
-                prevBtn.addEventListener('click', prevSong);
-                nextBtn.addEventListener('click', nextSong);
+                prevBtn.addEventListener('click', () => {
+                    prevSong();
+                    setupAutoplay(); // Enable autoplay when previous button is clicked
+                });
+                nextBtn.addEventListener('click', () => {
+                    nextSong();
+                    setupAutoplay(); // Enable autoplay when next button is clicked
+                });
                 likeBtn.addEventListener('click', likeSong);
                 submitCommentBtn.addEventListener('click', addComment);
                 volumeBar.addEventListener('input', updateVolume);
@@ -292,6 +308,12 @@
                         console.error('Playback was prevented:', error);
                     });
                     populateSongList();
+                    
+                    // Scroll to the top of the page smoothly
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
                 }
 
                 function playSongFromLiked(index) {
