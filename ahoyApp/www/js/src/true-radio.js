@@ -246,24 +246,11 @@
                         songListBody.appendChild(row);
                     });
 
-                    // Add event listeners to play buttons and album art
-                    const playButtons = songListBody.querySelectorAll('.play-song-btn');
-                    playButtons.forEach(button => {
-                        button.addEventListener('click', (e) => {
-                            const songIndex = parseInt(e.currentTarget.getAttribute('data-index'));
-                            if (songIndex === currentSongIndex) {
-                                togglePlay();
-                            } else {
-                                playSongFromList(songIndex);
-                            }
-                        });
-                    });
-
-                    // Add event listeners to album art
-                    const albumArtImages = songListBody.querySelectorAll('.song-artwork img');
-                    albumArtImages.forEach(img => {
-                        img.addEventListener('click', (e) => {
-                            const songIndex = parseInt(e.currentTarget.getAttribute('data-index'));
+                    // Add event listeners to play buttons, album art, and the entire row
+                    const songRows = songListBody.querySelectorAll('.song-row');
+                    songRows.forEach(row => {
+                        row.addEventListener('click', (e) => {
+                            const songIndex = parseInt(e.currentTarget.querySelector('.play-song-btn').getAttribute('data-index'));
                             playSongFromList(songIndex);
                         });
                     });
@@ -299,6 +286,11 @@
                 function playSongFromList(index) {
                     currentSongIndex = index;
                     loadSong(songs[currentSongIndex]);
+                    audioPlayer.play().then(() => {
+                        playBtn.textContent = '[❚❚ PAUSE]';
+                    }).catch(error => {
+                        console.error('Playback was prevented:', error);
+                    });
                     populateSongList();
                 }
 
@@ -488,3 +480,26 @@
                 // Initial update
                 updateLikeButton();
             });
+
+            // Add this CSS to your stylesheet or in a <style> tag in your HTML
+            const style = document.createElement('style');
+            style.textContent = `
+                #commentInput {
+                    max-width: 250px;
+                    margin-left: auto;
+                    margin-right: auto;
+                    min-width: 200px;
+                    display: block;
+                }
+                #songListBody tr {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: 5px;
+                }
+                #songListBody td:first-child {
+                    flex-grow: 1;
+                    margin-right: 10px;
+                }
+            `;
+            document.head.appendChild(style);
