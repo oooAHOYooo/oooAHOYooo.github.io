@@ -1734,9 +1734,10 @@ td {
 }
 
 .radio-controls {
-    display: flex !important;
-    justify-content: center !important;
-    margin-top: 20px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .radio-controls button {
@@ -1744,11 +1745,31 @@ td {
     color: #e0e0e0 !important;
     border: none !important;
     padding: 12px 20px !important;
-    margin: 0 10px !important;
+    margin: 5px !important;
     border-radius: 5px !important;
     cursor: pointer !important;
     transition: background 0.3s, transform 0.1s !important;
     font-size: 16px !important;
+    flex: 1 0 auto;
+}
+
+@media (max-width: 768px) {
+    .radio-controls {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .radio-controls button {
+        width: 100%;
+        height: 62px;
+        /* Set a fixed height for all buttons */
+        margin: 0 !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 .radio-controls button:hover {
