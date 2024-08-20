@@ -47,9 +47,10 @@
                 }
 
                 function loadSong(song) {
-                    songTitle.textContent = `SONG TITLE: ${song.songTitle}`;
-                    artist.textContent = `ARTIST: ${song.artist}`;
+                    songTitle.textContent = song.songTitle;
+                    artist.textContent = song.artist;
                     coverArt.src = song.coverArt;
+                    coverArt.alt = `${song.artist} - ${song.songTitle}`;
                     audioPlayer.src = song.mp3url;
                     commentSongTitle.textContent = song.songTitle;
                     updateCommentsList();
@@ -58,6 +59,30 @@
 
                     likeBtn.dataset.songId = song.id;
                     updateLikeButtonState(song.id);
+
+                    // Set max-width and max-height for coverArt
+                    coverArt.style.maxWidth = '100%';
+                    coverArt.style.maxHeight = '50vh';
+                    coverArt.style.width = 'auto';
+                    coverArt.style.height = 'auto';
+                    coverArt.style.objectFit = 'contain';
+
+                    // Display artist name and song title
+                    const songInfoContainer = document.createElement('div');
+                    songInfoContainer.className = 'song-info-container';
+                    songInfoContainer.innerHTML = `
+                        <p class="current-artist">${song.artist}</p>
+                        <p class="current-song-title">${song.songTitle}</p>
+                    `;
+
+                    // Remove any existing song info container
+                    const existingSongInfo = coverArt.parentNode.querySelector('.song-info-container');
+                    if (existingSongInfo) {
+                        existingSongInfo.remove();
+                    }
+
+                    // Insert the new song info container after the coverArt
+                    coverArt.parentNode.insertBefore(songInfoContainer, coverArt.nextSibling);
 
                     // Start playing the song automatically
                     if (navigator.getAutoplayPolicy) {
@@ -233,23 +258,83 @@
                     songListBody.innerHTML = '';
                     
                     filteredSongs.forEach((song, index) => {
-                        const row = document.createElement('tr');
+                        const row = document.createElement('div');
+                        row.className = 'song-row';
                         row.innerHTML = `
-                            <td>${song.songTitle}</td>
-                            <td>${song.artist}</td>
-                            <td><button class="play-song-btn" data-index="${index}">${index === currentSongIndex ? '[PLAYING]' : '[PLAY]'}</button></td>
+                            <div class="song-index">${index + 1}</div>
+                            <div class="song-info">
+                                <img src="${song.coverArt}" alt="${song.songTitle}" class="song-cover">
+                                <div class="song-details">
+                                    <div class="song-title">${song.songTitle}</div>
+                                    <div class="song-artist">${song.artist}</div>
+                                </div>
+                            </div>
+                            <div class="song-duration">${formatDuration(song.duration)}</div>
+                            <div class="song-actions">
+                                <button class="play-song-btn" data-index="${index}">
+                                    ${index === currentSongIndex ? '<i class="fas fa-pause"></i>' : '<i class="fas fa-play"></i>'}
+                                </button>
+                                <button class="like-song-btn" data-id="${song.id}">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                            </div>
                         `;
                         songListBody.appendChild(row);
                     });
 
                     // Add event listeners to play buttons
-                    const playButtons = document.querySelectorAll('.play-song-btn');
+                    const playButtons = songListBody.querySelectorAll('.play-song-btn');
                     playButtons.forEach(button => {
                         button.addEventListener('click', (e) => {
-                            const songIndex = parseInt(e.target.getAttribute('data-index'));
-                            playSongFromList(songIndex);
+                            const songIndex = parseInt(e.currentTarget.getAttribute('data-index'));
+                            if (songIndex === currentSongIndex) {
+                                togglePlay();
+                            } else {
+                                playSongFromList(songIndex);
+                            }
                         });
                     });
+
+                    // Add event listeners to like buttons
+                    const likeButtons = songListBody.querySelectorAll('.like-song-btn');
+                    likeButtons.forEach(button => {
+                        button.addEventListener('click', (e) => {
+                            const songId = e.currentTarget.getAttribute('data-id');
+                            toggleLikeSong(songId);
+                        });
+                    });
+                }
+
+                function formatDuration(seconds) {
+                    const minutes = Math.floor(seconds / 60);
+                    const remainingSeconds = Math.floor(seconds % 60);
+                    return `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
+                }
+
+                function toggleLikeSong(songId) {
+                    const index = likedSongs.indexOf(songId);
+                    if (index === -1) {
+                        likedSongs.push(songId);
+                    } else {
+                        likedSongs.splice(index, 1);
+                    }
+                    localStorage.setItem('likedSongs', JSON.stringify(likedSongs));
+                    updateLikeButtonState(songId);
+                    updateLikedSongsList();
+                }
+
+                function updateLikeButtonState(songId) {
+                    const likeButton = songListBody.querySelector(`.like-song-btn[data-id="${songId}"]`);
+                    if (likeButton) {
+                        const icon = likeButton.querySelector('i');
+                        if (likedSongs.includes(songId)) {
+                            icon.classList.remove('far');
+                            icon.classList.add('fas', 'liked');
+                        } else {
+                            icon.classList.remove('fas', 'liked');
+                            icon.classList.add('far');
+                        }
+                    }
                 }
 
                 function playSongFromList(index) {
