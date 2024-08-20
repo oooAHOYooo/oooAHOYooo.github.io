@@ -38,8 +38,11 @@
 
                 function togglePlay() {
                     if (audioPlayer.paused) {
-                        audioPlayer.play();
-                        playBtn.textContent = '[❚❚ PAUSE]';
+                        audioPlayer.play().then(() => {
+                            playBtn.textContent = '[❚❚ PAUSE]';
+                        }).catch(error => {
+                            console.error('Playback was prevented:', error);
+                        });
                     } else {
                         audioPlayer.pause();
                         playBtn.textContent = '[► PLAY]';
@@ -54,84 +57,47 @@
                     audioPlayer.src = song.mp3url;
                     commentSongTitle.textContent = song.songTitle;
                     updateCommentsList();
-                    playBtn.textContent = '[❚❚ PAUSE]';
+                    playBtn.textContent = '[► PLAY]';
                     populateSongList();
 
                     likeBtn.dataset.songId = song.id;
                     updateLikeButtonState(song.id);
 
-                    // Set max-width and max-height for coverArt
+                    // Optimize cover art for mobile
                     coverArt.style.maxWidth = '100%';
-                    coverArt.style.maxHeight = '50vh';
-                    coverArt.style.width = 'auto';
+                    coverArt.style.maxHeight = '40px';
+                    coverArt.style.width = '10';
                     coverArt.style.height = 'auto';
                     coverArt.style.objectFit = 'contain';
-
-                    // Display artist name and song title
-                    const songInfoContainer = document.createElement('div');
-                    songInfoContainer.className = 'song-info-container';
-                    songInfoContainer.innerHTML = `
-                        <p class="current-artist">${song.artist}</p>
-                        <p class="current-song-title">${song.songTitle}</p>
-                    `;
-
-                    // Remove any existing song info container
-                    const existingSongInfo = coverArt.parentNode.querySelector('.song-info-container');
-                    if (existingSongInfo) {
-                        existingSongInfo.remove();
-                    }
-
-                    // Insert the new song info container after the coverArt
-                    coverArt.parentNode.insertBefore(songInfoContainer, coverArt.nextSibling);
-
-                    // Start playing the song automatically
-                    if (navigator.getAutoplayPolicy) {
-                        const policy = navigator.getAutoplayPolicy('mediaelement');
-                        if (policy === 'allowed') {
-                            audioPlayer.play().catch(error => {
-                                console.error('Autoplay was prevented:', error);
-                                playBtn.textContent = '[► PLAY]';
-                            });
-                        } else if (policy === 'allowed-muted') {
-                            audioPlayer.muted = true;
-                            audioPlayer.play().catch(error => {
-                                console.error('Autoplay was prevented:', error);
-                                playBtn.textContent = '[► PLAY]';
-                            });
-                        } else {
-                            console.log('Autoplay is not allowed');
-                            playBtn.textContent = '[► PLAY]';
-                        }
-                    } else {
-                        // Fallback for browsers that don't support getAutoplayPolicy
-                        audioPlayer.play().catch(error => {
-                            console.error('Autoplay was prevented:', error);
-                            playBtn.textContent = '[► PLAY]';
-                        });
-                    }
+                    coverArt.style.margin = '0 auto';
+                    coverArt.style.display = 'block';
                 }
 
                 function prevSong() {
                     currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
                     loadSong(songs[currentSongIndex]);
-                    audioPlayer.play();
-                    playBtn.textContent = '[❚❚ PAUSE]';
                 }
 
                 function nextSong() {
                     currentSongIndex = (currentSongIndex + 1) % songs.length;
                     loadSong(songs[currentSongIndex]);
-                    audioPlayer.play();
-                    playBtn.textContent = '[❚❚ PAUSE]';
                 }
 
                 function likeSong() {
                     const currentSong = songs[currentSongIndex];
-                    if (!likedSongs.some(song => song.id === currentSong.id)) {
+                    const songId = currentSong.id;
+                    const index = likedSongs.findIndex(song => song.id === songId);
+                    
+                    if (index === -1) {
                         likedSongs.push(currentSong);
-                        updateLikedSongs();
-                        likedSongsCount.textContent = likedSongs.length;
+                    } else {
+                        likedSongs.splice(index, 1);
                     }
+                    
+                    localStorage.setItem('likedSongs', JSON.stringify(likedSongs));
+                    updateLikeButtonState(songId);
+                    updateLikedSongs();
+                    likedSongsCount.textContent = likedSongs.length;
                 }
 
                 function updateLikedSongs() {
@@ -141,7 +107,7 @@
                         li.innerHTML = `
                             <span>${song.songTitle} - ${song.artist}</span>
                             <div>
-                                <button class="play-btn" aria-label="Play song">
+                                <button class="play-btn responsive-play-btn" aria-label="Play song">
                                     <i class="fas fa-play"></i>
                                 </button>
                                 <button class="delete-btn" aria-label="Remove from liked songs">
@@ -261,28 +227,26 @@
                         const row = document.createElement('div');
                         row.className = 'song-row';
                         row.innerHTML = `
-                            <div class="song-index">${index + 1}</div>
-                            <div class="song-info">
-                                <img src="${song.coverArt}" alt="${song.songTitle}" class="song-cover">
-                                <div class="song-details">
-                                    <div class="song-title">${song.songTitle}</div>
-                                    <div class="song-artist">${song.artist}</div>
-                                </div>
+                            <div class="song-artwork">
+                                <img src="${song.coverArt}" alt="${song.songTitle}" class="song-cover-max play-song-btn" data-index="${index}">
                             </div>
-                            <div class="song-duration">${formatDuration(song.duration)}</div>
-                            <div class="song-actions">
-                                <button class="play-song-btn" data-index="${index}">
-                                    ${index === currentSongIndex ? '<i class="fas fa-pause"></i>' : '<i class="fas fa-play"></i>'}
-                                </button>
-                                <button class="like-song-btn" data-id="${song.id}">
-                                    <i class="far fa-heart"></i>
-                                </button>
+                            <div class="song-details">
+                                <div class="song-index">${index + 1}</div>
+                                <div class="song-info-row">
+                                    <div class="song-title"><p class="body-text-bold">${song.songTitle}</p></div>
+                                    <div class="song-artist"><p class="body-text">${song.artist}</p></div>
+                                </div>
+                                <div class="song-actions">
+                                    <button class="play-song-btn" data-index="${index}">
+                                        ${index === currentSongIndex ? '<i class="fas fa-pause"></i>' : '<i class="fas fa-play"></i>'}
+                                    </button>
+                                </div>
                             </div>
                         `;
                         songListBody.appendChild(row);
                     });
 
-                    // Add event listeners to play buttons
+                    // Add event listeners to play buttons and album art
                     const playButtons = songListBody.querySelectorAll('.play-song-btn');
                     playButtons.forEach(button => {
                         button.addEventListener('click', (e) => {
@@ -292,6 +256,15 @@
                             } else {
                                 playSongFromList(songIndex);
                             }
+                        });
+                    });
+
+                    // Add event listeners to album art
+                    const albumArtImages = songListBody.querySelectorAll('.song-artwork img');
+                    albumArtImages.forEach(img => {
+                        img.addEventListener('click', (e) => {
+                            const songIndex = parseInt(e.currentTarget.getAttribute('data-index'));
+                            playSongFromList(songIndex);
                         });
                     });
 
@@ -311,37 +284,21 @@
                     return `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
                 }
 
-                function toggleLikeSong(songId) {
-                    const index = likedSongs.indexOf(songId);
-                    if (index === -1) {
-                        likedSongs.push(songId);
-                    } else {
-                        likedSongs.splice(index, 1);
-                    }
-                    localStorage.setItem('likedSongs', JSON.stringify(likedSongs));
-                    updateLikeButtonState(songId);
-                    updateLikedSongsList();
-                }
-
                 function updateLikeButtonState(songId) {
-                    const likeButton = songListBody.querySelector(`.like-song-btn[data-id="${songId}"]`);
-                    if (likeButton) {
-                        const icon = likeButton.querySelector('i');
-                        if (likedSongs.includes(songId)) {
-                            icon.classList.remove('far');
-                            icon.classList.add('fas', 'liked');
-                        } else {
-                            icon.classList.remove('fas', 'liked');
-                            icon.classList.add('far');
-                        }
+                    if (likedSongs.some(song => song.id === songId)) {
+                        likeBtn.classList.add('liked');
+                        likeBtn.querySelector('i').classList.remove('far');
+                        likeBtn.querySelector('i').classList.add('fas');
+                    } else {
+                        likeBtn.classList.remove('liked');
+                        likeBtn.querySelector('i').classList.remove('fas');
+                        likeBtn.querySelector('i').classList.add('far');
                     }
                 }
 
                 function playSongFromList(index) {
                     currentSongIndex = index;
                     loadSong(songs[currentSongIndex]);
-                    audioPlayer.play();
-                    playBtn.textContent = '[❚❚ PAUSE]';
                     populateSongList();
                 }
 
@@ -389,7 +346,7 @@
                     
                     const botElement = document.createElement('div');
                     botElement.innerHTML = `
-                        <h3>> BOT FRIEND:</h3>
+                        <h3>> Your Friend:</h3>
                         <p>NAME: ${botFriend.name}</p>
                         <p>LEVEL: ${botFriend.level}</p>
                         <p>XP: ${botFriend.xp}</p>
@@ -403,7 +360,7 @@
 
                 // Add these functions to handle the like button
                 function updateLikeButtonState(songId) {
-                    if (likedSongs.includes(songId)) {
+                    if (likedSongs.some(song => song.id === songId)) {
                         likeBtn.classList.add('liked');
                         likeBtn.querySelector('i').classList.remove('far');
                         likeBtn.querySelector('i').classList.add('fas');
@@ -418,9 +375,9 @@
                     const songId = likeBtn.dataset.songId;
                     if (!songId) return;
 
-                    const index = likedSongs.indexOf(songId);
+                    const index = likedSongs.findIndex(song => song.id === songId);
                     if (index === -1) {
-                        likedSongs.push(songId);
+                        likedSongs.push(songs[currentSongIndex]);
                     } else {
                         likedSongs.splice(index, 1);
                     }
@@ -437,13 +394,10 @@
                     likedSongsList.innerHTML = '';
                     likedSongsCount.textContent = likedSongs.length;
 
-                    likedSongs.forEach(songId => {
-                        const song = songs.find(s => s.id === songId);
-                        if (song) {
-                            const li = document.createElement('li');
-                            li.textContent = `${song.songTitle} - ${song.artist}`;
-                            likedSongsList.appendChild(li);
-                        }
+                    likedSongs.forEach(song => {
+                        const li = document.createElement('li');
+                        li.textContent = `${song.songTitle} - ${song.artist}`;
+                        likedSongsList.appendChild(li);
                     });
                 }
 
@@ -483,7 +437,6 @@
                     }, 300);
                 }
             });
-
 
 
             document.addEventListener('DOMContentLoaded', function() {

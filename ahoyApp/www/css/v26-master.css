@@ -75,6 +75,17 @@
 }
 
 
+.body-text {
+    margin-bottom: 5px;
+}
+
+.body-text-bold {
+    font-weight: 600;
+}
+
+
+
+
 
 
 
@@ -409,8 +420,44 @@
 
 /*RADIO BUTTONS */
 
+.responsive-play-btn {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 16px;
+    padding: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.responsive-play-btn:hover {
+    transform: scale(1.1);
+}
+
+.responsive-play-btn i {
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .responsive-play-btn {
+        font-size: 14px;
+        padding: 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    .responsive-play-btn {
+        font-size: 12px;
+        padding: 4px;
+    }
+}
+
+.play-btn {
+    color: white;
+}
+
 .radio-play-btn i {
-    color: var(--text-color);
+    color: white;
     font-size: 48px;
     margin: 5px;
     border-style: solid;
@@ -1428,6 +1475,10 @@ td {
 
 .table-container {
     overflow-x: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 
 #songListTable {
@@ -1663,7 +1714,7 @@ td {
 .radio-widget {
     background: rgba(0, 0, 0, 0.8) !important;
     border-radius: 15px !important;
-    padding: 30px !important;
+    padding: 20px !important;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.5) !important;
     backdrop-filter: blur(15px) !important;
     border: 2px solid rgba(255, 255, 255, 0.1) !important;
@@ -1672,24 +1723,81 @@ td {
 }
 
 .player-container {
-    background: linear-gradient(to bottom, #282828, #181818) !important;
+    background: linear-gradient(to bottom, #28282876, #1818186c) !important;
     border-radius: 8px !important;
     padding: 20px !important;
     box-shadow: 0 4px 60px rgba(0, 0, 0, 0.5) !important;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .song-info {
-    display: flex !important;
-    align-items: center !important;
-    margin-bottom: 20px !important;
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 20px;
 }
 
 #coverArt {
-    width: 64px !important;
-    height: 64px !important;
-    border-radius: 4px !important;
-    margin-right: 16px !important;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.song-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#songTitle {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#artist {
+    font-size: 18px;
+    color: #b3b3b3;
+}
+
+.radio-controls {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.radio-controls button {
+    margin-right: 10px;
+}
+
+.volume-control {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#timeline {
+    width: 100%;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    #coverArt {
+        max-width: 90%;
+    }
+}
+
+.song-cover-max {
+    width: 200px;
+    height: 200px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center;
+    min-width: 100px;
+    margin: 5px;
 }
 
 .song-details h2,
@@ -1701,6 +1809,7 @@ td {
 .song-details h2 {
     font-size: 16px !important;
     font-weight: 700 !important;
+    text-align: left;
 }
 
 .song-details p {
@@ -1729,6 +1838,7 @@ td {
 }
 
 .radio-controls {
+    position: sticky;
     display: flex;
     justify-content: center;
     align-items: center;
