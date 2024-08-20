@@ -376,6 +376,46 @@
 		"mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/ready_The+Tines+-+The+Tines+-+09+-+Moon+Views.mp3",
 		"coverArt": "https://ahoycollection.s3.us-east-2.amazonaws.com/ready_theTinesAlbumArtwork.jpg",
 		"play": false
+	},
+	{
+		"id": 43,
+		"artist": "Jake Custer",
+		"songTitle": "Better Halves",
+		"mp3url": "https://storage.googleapis.com/ahoy-song-collection/Jake%20Custer%20-%20Better%20Halves.mp3",
+		"coverArt": "https://storage.googleapis.com/ahoy-song-collection/ahoy_jake-custer.jpg",
+		"play": false
+	},
+	{
+		"id": 44,
+		"artist": "Jake Custer",
+		"songTitle": "By Myself",
+		"mp3url": "https://storage.googleapis.com/ahoy-song-collection/Jake%20Custer%20-%20By%20Myself.mp3",
+		"coverArt": "https://storage.googleapis.com/ahoy-song-collection/ahoy_jake-custer.jpg",
+		"play": false
+	},
+	{
+		"id": 45,
+		"artist": "Jake Custer",
+		"songTitle": "I'm Fine",
+		"mp3url": "https://storage.googleapis.com/ahoy-song-collection/Jake%20Custer%20-%20I'm%20Fine.mp3",
+		"coverArt": "https://storage.googleapis.com/ahoy-song-collection/ahoy_jake-custer.jpg",
+		"play": false
+	},
+	{
+		"id": 46,
+		"artist": "Jake Custer",
+		"songTitle": "It's a Mad,Mad World",
+		"mp3url": "https://storage.googleapis.com/ahoy-song-collection/Jake%20Custer%20-%20It's%20a%20Mad%2C%20Mad%20World.mp3",
+		"coverArt": "https://storage.googleapis.com/ahoy-song-collection/ahoy_jake-custer.jpg",
+		"play": false
+	},
+	{
+		"id": 47,
+		"artist": "Jake Custer",
+		"songTitle": "You Love to See It",
+		"mp3url": "https://storage.googleapis.com/ahoy-song-collection/Jake%20Custer%20-%20You%20Love%20to%20See%20It.mp3",
+		"coverArt": "https://storage.googleapis.com/ahoy-song-collection/ahoy_jake-custer.jpg",
+		"play": false
 	}
 	]
   }
