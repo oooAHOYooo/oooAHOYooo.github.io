@@ -58,18 +58,17 @@
                     commentSongTitle.textContent = song.songTitle;
                     updateCommentsList();
                     playBtn.textContent = '[► PLAY]';
+                    playBtn.style.fontSize = '0.19em'; // Add this line to make the text smaller
                     populateSongList();
 
                     likeBtn.dataset.songId = song.id;
                     updateLikeButtonState(song.id);
 
-                    // Optimize cover art for mobile
-                    coverArt.style.maxWidth = '100%';
-                    coverArt.style.maxHeight = '40px';
-                    coverArt.style.width = '10';
-                    coverArt.style.height = 'auto';
-                    coverArt.style.objectFit = 'contain';
-                    coverArt.style.margin = '0 auto';
+                    // Make cover art a perfect square and maintain aspect ratio
+                    const size = '100px';
+                    coverArt.style.width = size;
+                    coverArt.style.height = size;
+                    coverArt.style.objectFit = 'cover';
                     coverArt.style.display = 'block';
                 }
 
@@ -116,12 +115,12 @@
                         const li = document.createElement('li');
                         li.innerHTML = `
                             <span>${song.songTitle} - ${song.artist}</span>
-                            <div>
-                                <button class="play-btn responsive-play-btn" aria-label="Play song">
-                                    <i class="fas fa-play"></i>
+                            <div style="margin: 10px 0;">
+                                <button class="play-btn responsive-play-btn" aria-label="Play song" style="margin-right: 10px; font-size: 1em; padding: 8px 12px; border: 2px solid #4CAF50; border-radius: 5px;">
+                                    <i class="fas fa-play" style="font-size: 1.2em;"></i>
                                 </button>
-                                <button class="delete-btn" aria-label="Remove from liked songs">
-                                    <i class="fas fa-times-circle"></i>
+                                <button class="delete-btn" aria-label="Remove from liked songs" style="background: none; border: none; color: #999; opacity: 0.6; font-size: 0.9em; padding: 5px; cursor: pointer; transition: opacity 0.3s ease;">
+                                    <i class="fas fa-times"></i>
                                 </button>
                             </div>
                         `;
@@ -510,7 +509,7 @@
                     max-width: 250px;
                     margin-left: auto;
                     margin-right: auto;
-                    min-width: 200px;
+                    width: 200px!important;
                     display: block;
                 }
                 #songListBody tr {

@@ -1818,23 +1818,135 @@ td {
 }
 
 .vcr-timeline {
-    background: #535353 !important;
-    height: 4px !important;
-    border-radius: 2px !important;
+    background: linear-gradient(90deg, #00FFFF, #FF00FF) !important;
+    height: 8px !important;
+    border-radius: 4px !important;
     margin: 20px 0 !important;
     position: relative !important;
+    cursor: pointer !important;
+    animation: timelineColorChange 15s infinite alternate !important;
+}
+
+@keyframes timelineColorChange {
+    0% {
+        background: linear-gradient(90deg, #00FFFF, #FF00FF);
+    }
+
+    25% {
+        background: linear-gradient(90deg, #FF00FF, #FFFF00);
+    }
+
+    50% {
+        background: linear-gradient(90deg, #FFFF00, #00FF00);
+    }
+
+    75% {
+        background: linear-gradient(90deg, #00FF00, #0000FF);
+    }
+
+    100% {
+        background: linear-gradient(90deg, #0000FF, #00FFFF);
+    }
 }
 
 .vcr-handle {
-    width: 12px !important;
-    height: 12px !important;
-    background: #fff !important;
+    width: 24px !important;
+    height: 24px !important;
+    background: linear-gradient(135deg, #00FFFF, #FF00FF) !important;
     border-radius: 50% !important;
     position: absolute !important;
-    top: -4px !important;
-    margin-left: -6px !important;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
-    cursor: pointer !important;
+    top: -8px !important;
+    margin-left: -12px !important;
+    box-shadow: 0 2px 8px rgba(0, 255, 255, 0.4), 0 0 15px rgba(255, 0, 255, 0.2) !important;
+    cursor: grab !important;
+    transition: all 0.3s ease !important;
+    animation: handleColorChange 15s infinite alternate !important;
+}
+
+@keyframes handleColorChange {
+    0% {
+        background: linear-gradient(135deg, #00FFFF, #FF00FF);
+    }
+
+    25% {
+        background: linear-gradient(135deg, #FF00FF, #FFFF00);
+    }
+
+    50% {
+        background: linear-gradient(135deg, #FFFF00, #00FF00);
+    }
+
+    75% {
+        background: linear-gradient(135deg, #00FF00, #0000FF);
+    }
+
+    100% {
+        background: linear-gradient(135deg, #0000FF, #00FFFF);
+    }
+}
+
+.vcr-handle:hover {
+    transform: scale(1.2) !important;
+    box-shadow: 0 4px 12px rgba(0, 255, 255, 0.5), 0 0 20px rgba(255, 0, 255, 0.3) !important;
+}
+
+.vcr-handle:active {
+    cursor: grabbing !important;
+    transform: scale(1.1) !important;
+    box-shadow: 0 3px 10px rgba(0, 255, 255, 0.4), 0 0 15px rgba(255, 0, 255, 0.2) !important;
+}
+
+.vcr-timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, #00FF00, #FFFF00);
+    border-radius: 4px;
+    transition: width 0.1s linear;
+    animation: progressColorChange 15s infinite alternate !important;
+}
+
+@keyframes progressColorChange {
+    0% {
+        background: linear-gradient(90deg, #00FF00, #FFFF00);
+    }
+
+    25% {
+        background: linear-gradient(90deg, #FFFF00, #FF00FF);
+    }
+
+    50% {
+        background: linear-gradient(90deg, #FF00FF, #00FFFF);
+    }
+
+    75% {
+        background: linear-gradient(90deg, #00FFFF, #0000FF);
+    }
+
+    100% {
+        background: linear-gradient(90deg, #0000FF, #00FF00);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.vcr-handle:hover {
+    animation: pulse 1s infinite, handleColorChange 15s infinite alternate !important;
 }
 
 .radio-controls {
@@ -1847,7 +1959,7 @@ td {
 
 .radio-controls button {
     background: transparent !important;
-    color: #b3b3b3 !important;
+    color: #00FFFF !important;
     border: none !important;
     font-size: 16px !important;
     padding: 8px !important;
@@ -1880,50 +1992,116 @@ td {
     color: #fff !important;
 }
 
-#playBtn {
-    font-size: 32px !important;
-    color: #fff !important;
-}
-
 .volume-control {
     margin: 20px 0;
     display: flex;
     align-items: center;
+    border-radius: 15px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(255, 0, 255, 0.5);
+}
+
+@keyframes neonPulse {
+    0% {
+        box-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(255, 0, 255, 0.5);
+    }
+
+    50% {
+        box-shadow: 0 0 15px rgba(0, 255, 0, 0.5), 0 0 30px rgba(255, 255, 0, 0.5);
+    }
+
+    100% {
+        box-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(255, 0, 255, 0.5);
+    }
 }
 
 .volume-control span {
-    margin-right: 10px;
+    margin-right: 15px;
+    font-family: 'VT323', monospace;
+    font-size: 18px;
+    color: #00ffff;
+    text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff;
 }
 
 .styled-volume-bar {
     -webkit-appearance: none;
     width: 100%;
-    height: 4px;
-    background: #535353;
-    border-radius: 2px;
+    height: 20px;
+    border-radius: 10px;
     outline: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.styled-volume-bar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg,
+            rgba(255, 0, 255, 0.2),
+            rgba(0, 255, 255, 0.2));
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    animation: gradientShift 8s infinite alternate;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .styled-volume-bar:hover {
     opacity: 1;
 }
 
+.styled-volume-bar:hover::before {
+    background: linear-gradient(135deg,
+            rgba(255, 0, 255, 0.4),
+            rgba(0, 255, 255, 0.4));
+}
+
 .styled-volume-bar::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 12px;
-    height: 12px;
-    background: #fff;
+    width: 30px;
+    height: 30px;
+    background: radial-gradient(circle, #f0f0f0 40%, #00ffff 60%);
     cursor: pointer;
     border-radius: 50%;
+    box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+    position: relative;
+    z-index: 2;
 }
 
 .styled-volume-bar::-moz-range-thumb {
-    width: 12px;
-    height: 12px;
-    background: #fff;
+    width: 30px;
+    height: 30px;
+    background: radial-gradient(circle, #f0f0f0 40%, #00ffff 60%);
     cursor: pointer;
     border-radius: 50%;
+    box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+    position: relative;
+    z-index: 2;
+}
+
+.styled-volume-bar::-webkit-slider-runnable-track,
+.styled-volume-bar::-moz-range-track {
+    height: 20px;
+    background: transparent;
 }
 
 #likeBtn {
