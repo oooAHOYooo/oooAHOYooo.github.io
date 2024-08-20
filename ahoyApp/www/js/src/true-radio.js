@@ -53,11 +53,37 @@
                     audioPlayer.src = song.mp3url;
                     commentSongTitle.textContent = song.songTitle;
                     updateCommentsList();
-                    playBtn.textContent = '[► PLAY]';
+                    playBtn.textContent = '[❚❚ PAUSE]';
                     populateSongList();
 
                     likeBtn.dataset.songId = song.id;
                     updateLikeButtonState(song.id);
+
+                    // Start playing the song automatically
+                    if (navigator.getAutoplayPolicy) {
+                        const policy = navigator.getAutoplayPolicy('mediaelement');
+                        if (policy === 'allowed') {
+                            audioPlayer.play().catch(error => {
+                                console.error('Autoplay was prevented:', error);
+                                playBtn.textContent = '[► PLAY]';
+                            });
+                        } else if (policy === 'allowed-muted') {
+                            audioPlayer.muted = true;
+                            audioPlayer.play().catch(error => {
+                                console.error('Autoplay was prevented:', error);
+                                playBtn.textContent = '[► PLAY]';
+                            });
+                        } else {
+                            console.log('Autoplay is not allowed');
+                            playBtn.textContent = '[► PLAY]';
+                        }
+                    } else {
+                        // Fallback for browsers that don't support getAutoplayPolicy
+                        audioPlayer.play().catch(error => {
+                            console.error('Autoplay was prevented:', error);
+                            playBtn.textContent = '[► PLAY]';
+                        });
+                    }
                 }
 
                 function prevSong() {
@@ -251,10 +277,18 @@
                     populateSongList(filteredSongs);
                 });
 
+                // Add this function to handle autoplay
+                function setupAutoplay() {
+                    audioPlayer.addEventListener('ended', () => {
+                        nextSong();
+                    });
+                }
+
                 shuffleSongs();
                 loadSong(songs[currentSongIndex]);
                 updateVolume();
                 populateSongList();
+                setupAutoplay(); // Call this function to set up autoplay
 
                 // Add this after the other variable declarations
                 const friendsList = document.getElementById('friendsList');
