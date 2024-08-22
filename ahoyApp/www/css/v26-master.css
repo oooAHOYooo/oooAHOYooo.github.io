@@ -1291,7 +1291,8 @@ td {
     margin-bottom: 10px;
 }
 
-#commentInput {
+#commentInput,
+#podcastCommentInput {
     width: 75%;
     max-width: 75%;
     background-color: #001100;
@@ -1302,12 +1303,15 @@ td {
     margin-left: auto;
     margin-right: auto;
     display: block;
+    font-family: "Courier New", Courier, monospace;
+    resize: vertical;
 }
 
 #submitCommentBtn {
-    background-color: #005500;
-    color: var(--border-color);
-    border: none;
+    background-color: transparent;
+    color: var(--text-color);
+    border: solid;
+    border-color: var(--text-color);
     padding: 10px 20px;
     cursor: pointer;
     font-family: "Courier New", Courier, monospace;
@@ -1315,7 +1319,27 @@ td {
 }
 
 #submitCommentBtn:hover {
-    background-color: var(--border-color);
+    background-color: transparent;
+    border-color: var(--border-color);
+    color: var(--border-color);
+}
+
+
+#searchBtn {
+    background-color: transparent;
+    color: var(--text-color);
+    border: solid;
+    border-color: var(--text-color);
+    padding: 10px 20px;
+    cursor: pointer;
+    font-family: "Courier New", Courier, monospace;
+    font-weight: bold;
+}
+
+#searchBtn:hover {
+    background-color: transparent;
+    border-color: var(--border-color);
+    color: var(--border-color);
 }
 
 .comment-form {
@@ -1349,7 +1373,8 @@ td {
     margin-bottom: 15px;
 }
 
-#songSearch {
+#songSearch,
+#podcastSearch {
     width: calc(100% - 110px);
     background-color: #001100;
     border: 1px solid var(--border-color);
@@ -1359,19 +1384,7 @@ td {
     font-family: "Courier New", Courier, monospace;
 }
 
-#searchBtn {
-    background-color: #005500;
-    color: var(--border-color);
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-family: "Courier New", Courier, monospace;
-    font-weight: bold;
-}
 
-#searchBtn:hover {
-    background-color: var(--border-color);
-}
 
 .search-container {
     display: flex;
@@ -1657,30 +1670,36 @@ td {
 }
 
 #podcast-tab .radio-controls {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    width: 100%;
 }
 
 #podcast-tab .radio-controls button {
-    background: #4a4a4a;
-    color: #e0e0e0;
-    border: none;
-    padding: 12px 20px;
-    margin: 0 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.1s;
-    font-size: 16px;
+    width: 100%;
+    height: 62px;
+    margin: 0 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent !important;
+    color: #00FFFF !important;
+    border: none !important;
+    font-size: 16px !important;
+    padding: 8px !important;
+    cursor: pointer !important;
+    transition: color 0.2s !important;
 }
 
 #podcast-tab .radio-controls button:hover {
-    background: #5a5a5a;
-    transform: scale(1.05);
+    color: #fff !important;
 }
 
-#podcast-tab .radio-controls button:active {
-    transform: scale(0.95);
+@media (max-width: 768px) {
+    #podcast-tab .radio-controls {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 #podcast-tab .volume-control {
