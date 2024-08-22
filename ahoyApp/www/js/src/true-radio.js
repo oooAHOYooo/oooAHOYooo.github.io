@@ -100,13 +100,18 @@
 
                     const index = likedSongs.findIndex(song => song.id === songId);
                     if (index === -1) {
+                        // Song is not liked, add it to likedSongs
                         likedSongs.push(songs[currentSongIndex]);
+                        likeBtn.classList.add('liked');
+                        likeBtn.innerHTML = '<i class="fas fa-heart"></i> LIKED';
                     } else {
+                        // Song is already liked, remove it from likedSongs
                         likedSongs.splice(index, 1);
+                        likeBtn.classList.remove('liked');
+                        likeBtn.innerHTML = '<i class="far fa-heart"></i> LIKE';
                     }
 
                     localStorage.setItem('likedSongs', JSON.stringify(likedSongs));
-                    updateLikeButtonState(songId);
                     updateLikedSongs();
                 }
 
@@ -300,15 +305,9 @@
                 }
 
                 function updateLikeButtonState(songId) {
-                    if (likedSongs.some(song => song.id === songId)) {
-                        likeBtn.classList.add('liked');
-                        likeBtn.querySelector('i').classList.remove('far');
-                        likeBtn.querySelector('i').classList.add('fas');
-                    } else {
-                        likeBtn.classList.remove('liked');
-                        likeBtn.querySelector('i').classList.remove('fas');
-                        likeBtn.querySelector('i').classList.add('far');
-                    }
+                    const isLiked = likedSongs.some(song => song.id === songId);
+                    likeBtn.classList.toggle('liked', isLiked);
+                    likeBtn.innerHTML = isLiked ? '<i class="fas fa-heart"></i> LIKED' : '<i class="far fa-heart"></i> LIKE';
                 }
 
                 function playSongFromList(index) {
@@ -413,6 +412,10 @@
                     #songListBody td:first-child {
                         flex-grow: 1;
                         margin-right: 10px;
+                    }
+                    #likeBtn.liked {
+                        background-color: #ff4081;
+                        color: white;
                     }
                 `;
                 document.head.appendChild(style);

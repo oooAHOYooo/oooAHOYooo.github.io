@@ -195,6 +195,24 @@ document.addEventListener('DOMContentLoaded', function() {
         updateLikedSongs();
     }
 
+    function addLikedSong(song) {
+        const likedSongs = JSON.parse(localStorage.getItem('likedSongs')) || [];
+        
+        // Check if the song already exists in the liked songs list
+        const isDuplicate = likedSongs.some(likedSong => 
+            likedSong.songTitle === song.songTitle && likedSong.artist === song.artist
+        );
+
+        if (!isDuplicate) {
+            likedSongs.push(song);
+            localStorage.setItem('likedSongs', JSON.stringify(likedSongs));
+            updateLikedSongs();
+        } else {
+            console.log('Song already in liked list');
+            // Optionally, you can show a message to the user that the song is already liked
+        }
+    }
+
     // Call updateLikedSongs initially and whenever the liked songs change
     updateLikedSongs();
 
