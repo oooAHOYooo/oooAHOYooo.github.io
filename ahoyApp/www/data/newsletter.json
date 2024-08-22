@@ -154,10 +154,25 @@
         "active": "true"
     },
     {
-        "date": "2024-08-21",
-        "title": "DEVELOPMENT DEVELOPMENT : In the Thick of It",
-        "content": "Hand writing this platform has been wild - Some days progress feels slow - other days we get some new music or record another Rob show - and it feels amazing - I guess that's the journey <br><br> It seems that progress is ramping up these days - day by day - clawing our way through code - javascript - css - html - the whole nine - hand coding this bad boy - it is a wild journey to be honest - as a single developer - you begin to realize that there is a lot to the little apps that we use everyday - there are things liked songs - tab switching - the nine <br><br>In the analog real world front - we have been meeting as a team and are hoping to launch a bit more publically this September - not sure exactly what we're going to do - you might see us about the havens scattered - thinking of doing a couple of events - getting a little tent and spray painting it - <br><br>a reason why we started the big ooo - is that we're going to keep it physical - there have been talks of getting an event together <br><br>There's no secret about it - we need some content - guests for the Rob show - so if you are out there and reading this - hit us up - we would love to give it a listen. Until then we are heading to lots of open mics around the havens - cafe 9 - looking for a few good local folks to get the party started - we're not sure of the exact magic number to get the party started - but the truth is - we yearn to put quality any day - the music you will find here is in no way - we are just out for more because things don't feel real somehow with just 50 songs or so - we're going for 500 quality songs and starting there - songs that yeah - you could get on bandcamp or spotify or whatever - but are also here - in our little platform that could <br><br>-alex",
+        "date": "2024-08-22",
+        "title": "'Alive on Central' Episodes 2-5 Now Streaming",
+        "content": "Added 4 episodes of Alive on Central to the media mix. Shoutout to Jack Galvin out in Newport. He's organizing another film festival this September 9 Central Film Festival If you're in the area, check it out!",
+        "active": "true",
+        "goTo": "media-tab",
+        "imageUrl": "https://cdn.jwplayer.com/v2/media/omiMcvN8/poster.jpg?width=720",
+        "externalLink": "https://www.newportthisweek.com/articles/9-central-film-festival-returns-sept-9/"
+    },
+    {
+        "date": "2024-08-22",
+        "title": "9 Central Film Festival Festival Shoutout",
+        "content": "9 Central Film Festival If you're in the area, check it out! <br><br>Stay tuned for more Newport",
         "active": "false",
-          "goTo": "update-tab"
+        "goTo": "media-tab",
+        "imageUrl": "https://cdn.jwplayer.com/v2/media/VqtV35od/poster.jpg?width=720",
+        "additionalImages": [
+            "https://www.newportthisweek.com/wp-content/uploads/images/2023-08-31/25p1.jpg",
+            "https://www.newportthisweek.com/wp-content/uploads/images/2023-08-31/25p2.jpg"
+        ],
+        "externalLink": "https://www.newportthisweek.com/articles/9-central-film-festival-returns-sept-9/"
     }
 ]

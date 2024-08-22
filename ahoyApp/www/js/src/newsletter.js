@@ -68,7 +68,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
                         let htmlContent = `
                             <p class="newsletter-date"><i class="fa-regular fa-clock"></i> ${newsletter.date}</p>
-                            <h2> ${newsletter.title}</h2>
+                            <h2>${newsletter.title}</h2>
                         `;
                         if (newsletter.imageUrl) {
                             if (newsletter.imageUrl.endsWith('.mp4')) {
@@ -81,14 +81,25 @@ window.addEventListener('DOMContentLoaded', (event) => {
                                     </div>
                                 `;
                             } else {
+                                const imageClickHandler = newsletter.goTo ? `onclick="goTo('${newsletter.goTo}')"` : `onclick="openLightbox('${newsletter.imageUrl}')"`;
                                 htmlContent += `
                                     <div style="text-align: center;">
-                                        <img src="${newsletter.imageUrl}" alt="${newsletter.title}" class="newsletter-image" style="max-width: 100%; height: auto;" onclick="openLightbox('${newsletter.imageUrl}')">
+                                        <img src="${newsletter.imageUrl}" alt="${newsletter.title}" class="newsletter-image" style="max-width: 100%; height: auto; cursor: pointer;" ${imageClickHandler}>
                                     </div>
                                 `;
                             }
                         }
                         htmlContent += `<p><i class="fa-solid fa-file-lines"></i> ${newsletter.content}</p>`;
+
+                        // Add additional images if present
+                        if (newsletter.additionalImages && newsletter.additionalImages.length > 0) {
+                            htmlContent += `<div class="additional-images">`;
+                            newsletter.additionalImages.forEach(imgUrl => {
+                                htmlContent += `<img src="${imgUrl}" alt="Additional Image" style="max-width: 100%; height: auto; margin: 10px 0;" onclick="openLightbox('${imgUrl}')">`;
+                            });
+                            htmlContent += `</div>`;
+                        }
+
                         div.innerHTML = htmlContent;
                         newsletterList.appendChild(div);
                     });
