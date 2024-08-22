@@ -1020,10 +1020,38 @@ td {
 /* Style for artist names */
 #now-playing-container h3#current-song-artist {
     color: var(--text-color);
-    /* White text color */
     opacity: 0.7;
-    /* More transparent text */
 }
+
+.dropdown-toggle {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: var(--border-color);
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.dropdown-toggle:hover {
+    background-color: var(--border-color);
+    color: var(--text-color);
+    border-color: var(--text-color);
+}
+
+.dropdown-toggle:active {
+    transform: translateY(2px);
+}
+
 
 .dropdown {
     position: relative;

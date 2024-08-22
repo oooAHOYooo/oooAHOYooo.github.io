@@ -149,15 +149,47 @@ document.addEventListener('DOMContentLoaded', function() {
         accountLikedSongsList.innerHTML = '';
         accountLikedSongsCount.textContent = likedSongs.length;
 
+        // Create a dropdown toggle button
+        const toggleButton = document.createElement('button');
+        toggleButton.textContent = 'Show Liked Songs';
+        toggleButton.className = 'dropdown-toggle';
+
+        // Create a container for the list
+        const listContainer = document.createElement('div');
+        listContainer.style.display = 'none';
+        listContainer.style.maxHeight = '200px';
+        listContainer.style.overflowY = 'auto';
+        listContainer.style.border = '1px solid #444';
+        listContainer.style.borderRadius = '4px';
+        listContainer.style.padding = '10px';
+        listContainer.style.marginTop = '10px';
+
+        toggleButton.addEventListener('click', () => {
+            if (listContainer.style.display === 'none') {
+                listContainer.style.display = 'block';
+                toggleButton.textContent = 'Hide Liked Songs';
+            } else {
+                listContainer.style.display = 'none';
+                toggleButton.textContent = 'Show Liked Songs';
+            }
+        });
+
+        accountLikedSongsList.appendChild(toggleButton);
+        accountLikedSongsList.appendChild(listContainer);
+
         likedSongs.forEach((song, index) => {
-            const li = document.createElement('li');
+            const li = document.createElement('div');
+            li.style.display = 'flex';
+            li.style.justifyContent = 'space-between';
+            li.style.alignItems = 'center';
+            li.style.marginBottom = '10px';
             li.innerHTML = `
                 <span>${song.songTitle} - ${song.artist}</span>
-                <div style="margin: 10px 0;">
-                    <button class="play-btn responsive-play-btn" aria-label="Play song" style="margin-right: 10px; font-size: 1em; padding: 8px 12px; border: 2px solid #4CAF50; border-radius: 5px;">
-                        <i class="fas fa-play" style="font-size: 1.2em;"></i>
+                <div>
+                    <button class="play-btn" aria-label="Play song" style="margin-right: 10px; background: none; border: none; color: #4CAF50; cursor: pointer;">
+                        <i class="fas fa-play"></i>
                     </button>
-                    <button class="delete-btn" aria-label="Remove from liked songs" style="background: none; border: none; color: #999; opacity: 0.6; font-size: 0.9em; padding: 5px; cursor: pointer; transition: opacity 0.3s ease;">
+                    <button class="delete-btn" aria-label="Remove from liked songs" style="background: none; border: none; color: #999; cursor: pointer;">
                         <i class="fas fa-times"></i>
                     </button>
                 </div>
@@ -166,7 +198,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const deleteBtn = li.querySelector('.delete-btn');
             playBtn.addEventListener('click', () => playSongFromLiked(index));
             deleteBtn.addEventListener('click', () => removeLikedSong(index));
-            accountLikedSongsList.appendChild(li);
+            listContainer.appendChild(li);
         });
     }
 
@@ -176,15 +208,11 @@ document.addEventListener('DOMContentLoaded', function() {
         if (songToPlay) {
             const audioPlayer = document.getElementById('audioPlayer');
             if (audioPlayer) {
-                // Set the audio source
                 audioPlayer.src = songToPlay.audioSrc;
-                // Update the UI elements
                 document.getElementById('songTitle').textContent = `SONG TITLE: ${songToPlay.songTitle}`;
                 document.getElementById('artist').textContent = `ARTIST: ${songToPlay.artist}`;
                 document.getElementById('coverArt').src = songToPlay.coverArt;
-                // Play the song
                 audioPlayer.play();
-                // Update the currently playing display
                 updateCurrentlyPlaying();
             } else {
                 console.error('Audio player not found');

@@ -22,11 +22,17 @@ document.addEventListener('DOMContentLoaded', function() {
     ];
     let currentImageIndex = Math.floor(Math.random() * backgroundImages.length); // Start with a random image
 
+    function isMobileDevice() {
+        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    }
+
     function changeBackgroundImage() {
         const appBackgroundLayer = document.querySelector('.app-background-layer');
-        if (appBackgroundLayer) {
+        if (appBackgroundLayer && !isMobileDevice()) {
             appBackgroundLayer.style.backgroundImage = `url('${backgroundImages[currentImageIndex]}')`;
             currentImageIndex = (currentImageIndex + 1) % backgroundImages.length;
+        } else if (appBackgroundLayer && isMobileDevice()) {
+            appBackgroundLayer.style.backgroundImage = 'none';
         }
     }
 
@@ -42,9 +48,9 @@ document.addEventListener('DOMContentLoaded', function() {
         changeBackgroundImage(); // Change the background image immediately
     };
 
-    // Change background image when the 'o' key is pressed
+    // Change background image when the 'o' key is pressed (only on non-mobile devices)
     document.addEventListener('keydown', function(event) {
-        if (event.key === 'o') {
+        if (event.key === 'o' && !isMobileDevice()) {
             changeBackgroundImage();
         }
     });
