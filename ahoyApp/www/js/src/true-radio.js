@@ -3,7 +3,6 @@
             .then(data => {
                 const songs = data.songs;
                 let currentSongIndex = 0;
-
                 const audioPlayer = document.getElementById('audioPlayer');
                 const songTitle = document.getElementById('songTitle');
                 const artist = document.getElementById('artist');
