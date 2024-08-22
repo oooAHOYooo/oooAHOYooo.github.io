@@ -98,6 +98,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Add click event listener to bottomMainDisplay
         bottomMainDisplay.addEventListener('click', togglePlayPause);
+
+        // Update comments count
+        const commentsCount = document.querySelectorAll('#commentsList li, #podcastCommentsList li').length;
+        document.getElementById('commentsCount').textContent = commentsCount;
     }
 
     function updatePlayPauseButton(isPlaying) {
@@ -300,4 +304,23 @@ document.addEventListener('DOMContentLoaded', function() {
             updateLikedPodcasts();
         }
     });
+
+    // Add this new function to update the active profile
+    function updateActiveProfile() {
+        // In a real application, you would fetch this data from a server or local storage
+        const userData = {
+            username: 'Alex',
+            level: 5,
+            xp: 1337,
+            commentsCount: 42 // Example value
+        };
+
+        document.getElementById('username').textContent = userData.username;
+        document.getElementById('level').textContent = userData.level;
+        document.getElementById('xp').textContent = userData.xp;
+        document.getElementById('commentsCount').textContent = userData.commentsCount;
+    }
+
+    // Call the function to update the profile
+    updateActiveProfile();
 });
