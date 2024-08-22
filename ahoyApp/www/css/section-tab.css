@@ -7,7 +7,7 @@
 
 .tab-content {
     position: absolute;
-    padding: 10px;
+    padding: 5.5px;
     border-left: 1px solid var(--border-color);
     border-right: 1px solid var(--border-color);
     border-top: 1px solid var(--border-color);
@@ -22,15 +22,13 @@
     margin-right: 52.5px !important;
     margin: 0 auto;
     background-color: var(--background-color);
-    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    /* Added glow effect with slight pulse */
     animation: pulseGlow 2s infinite ease-in-out;
 }
 
 .tab-content {
     width: 100%;
     /* Adjust based on your content's ideal width */
-    max-width: 750px;
+    max-width: 755px;
     /* Maximum width of the content */
     /* Center the content */
 }
@@ -56,7 +54,7 @@
 /* Responsive adjustments */
 @media (max-width: 600px) {
     .tab-content {
-        padding: 10px;
+        padding: 8px;
     }
 }
 
@@ -79,9 +77,9 @@
 @media (max-width: 600px) {
     .tab-content {
         padding: 10px;
-        margin-left: 20px !important;
+        margin-left: 5px !important;
         /* Reduced margin for mobile */
-        margin-right: 20px !important;
+        margin-right: 10px !important;
         /* Reduced margin for mobile */
     }
 }

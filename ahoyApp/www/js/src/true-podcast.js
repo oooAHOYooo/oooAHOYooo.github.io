@@ -186,23 +186,50 @@ document.addEventListener('DOMContentLoaded', function() {
 
             function populatePodcastList(podcastsToShow = podcasts) {
                 podcastListBody.innerHTML = '';
+                
                 podcastsToShow.forEach((podcast, index) => {
-                    const row = document.createElement('tr');
+                    const row = document.createElement('div');
+                    row.className = 'podcast-row';
                     row.innerHTML = `
-                        <td><img src="${podcast.thumbnail}" alt="${podcast.title}" class="podcast-thumbnail"></td>
-                        <td class="podcast-title-class">${podcast.title}</td>
-                        <td><button class="play-podcast-btn-agStyle" data-index="${index}">[PLAY]</button></td>
+                        <div class="podcast-artwork">
+                            <img src="${podcast.thumbnail}" alt="${podcast.title}" class="podcast-cover-max play-podcast-btn" data-index="${index}">
+                        </div>
+                        <div class="podcast-details">
+                            <div class="podcast-title"><p class="body-text-bold">${podcast.title}</p></div>
+                            <div class="podcast-actions">
+                                <button class="play-podcast-btn" data-index="${index}">
+                                    ${index === currentPodcastIndex ? '<i class="fas fa-pause"></i>' : '<i class="fas fa-play"></i>'}
+                                </button>
+                            </div>
+                        </div>
                     `;
                     podcastListBody.appendChild(row);
                 });
 
-                document.querySelectorAll('.play-podcast-btn-agStyle').forEach(btn => {
-                    btn.addEventListener('click', function() {
-                        currentPodcastIndex = parseInt(this.dataset.index);
-                        loadPodcast(podcasts[currentPodcastIndex]);
-                        audioPlayer.play();
-                        playBtn.textContent = '[❚❚ PAUSE]';
+                // Add event listeners to play buttons, podcast art, and the entire row
+                const podcastRows = podcastListBody.querySelectorAll('.podcast-row');
+                podcastRows.forEach(row => {
+                    row.addEventListener('click', (e) => {
+                        const podcastIndex = parseInt(e.currentTarget.querySelector('.play-podcast-btn').getAttribute('data-index'));
+                        playPodcastFromList(podcastIndex);
                     });
+                });
+            }
+
+            function playPodcastFromList(index) {
+                currentPodcastIndex = index;
+                loadPodcast(podcasts[currentPodcastIndex]);
+                audioPlayer.play().then(() => {
+                    playBtn.textContent = '[❚❚ PAUSE]';
+                }).catch(error => {
+                    console.error('Playback was prevented:', error);
+                });
+                populatePodcastList();
+                
+                // Scroll to the top of the page smoothly
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
                 });
             }
 

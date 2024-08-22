@@ -139,13 +139,6 @@
       "thumbnail": "https://ahoypodcast.s3.us-east-2.amazonaws.com/Ahoy+Podcast+Default.png"
     },
     {
-      "id": 2,
-      "title": "The Alex and Ellen Show #1",
-      "description": "Welcome to a new podcast, The Alex and Ellen Show, where Alex and Ellen discuss a wide range of topics, from the canals of New Haven to the squawks of bald eagles.",
-      "mp3url": "https://ahoypodcast.s3.us-east-2.amazonaws.com/ready_Alex+and+Ellen+Show+-+Ep+1+-+The+Sound+of+the+Bald+Eagle.mp3",
-      "thumbnail": "https://ahoypodcast.s3.us-east-2.amazonaws.com/Ahoy+Podcast+Default.png"
-    },
-    {
       "id": 3,
       "title": "Found Cassettes # 1 - Samuel Dylan Witch",
       "description": "Old Shin Harmonica - the creation of a lost song",

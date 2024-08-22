@@ -549,10 +549,57 @@
 
 
 .podcast-row {
-    width: 50px;
-    /* Decrease podcast artwork size */
-    height: 50px;
-    /* Ensure height matches width */
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.podcast-artwork {
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+}
+
+.podcast-cover-max {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.podcast-details {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+.podcast-index {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.podcast-info-row {
+    flex-grow: 1;
+}
+
+.podcast-title {
+    font-weight: bold;
+}
+
+.podcast-description {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.podcast-actions {
+    margin-left: 10px;
+}
+
+.play-podcast-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
 }
 
 td {
@@ -560,11 +607,7 @@ td {
     margin: 0px;
 }
 
-.song-row td,
-.podcast-row td {
-    font-size: 1.1em;
-    /* Increase font size */
-}
+
 
 .action-button {
     width: 30px;
@@ -1592,7 +1635,7 @@ td {
 }
 
 #likeBtn.liked i {
-    color: red !important;
+    color: #ff0060 !important;
 }
 
 
