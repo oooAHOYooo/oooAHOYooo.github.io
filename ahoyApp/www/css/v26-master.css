@@ -1413,6 +1413,16 @@ td {
     font-weight: bold;
 }
 
+.liked-podcasts-widget {
+    background-color: #000;
+    color: var(--border-color);
+    font-family: "Courier New", Courier, monospace;
+    border: 2px solid var(--border-color);
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 0 10px var(--border-color);
+}
+
 
 .liked-songs-widget {
     background-color: #000;
@@ -1425,8 +1435,8 @@ td {
 }
 
 .liked-songs-widget h3 {
-    color: color: var(--border-color);
-    border-bottom: 1px solid #00ff00;
+    color: var(--border-color);
+    border-bottom: 1px solid var(--border-color);
     padding-bottom: 10px;
     margin-bottom: 15px;
     text-transform: uppercase;
