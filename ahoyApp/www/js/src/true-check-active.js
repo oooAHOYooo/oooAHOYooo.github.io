@@ -89,17 +89,20 @@ document.addEventListener('DOMContentLoaded', function() {
             updatePlayPauseButton(false);
         } else {
             currentTrackElement.textContent = 'No track selected';
-            bottomMainDisplay.textContent = 'NO MEDIA SELECTED';
+            bottomMainDisplay.textContent = 'DYLM?';
             coverArtElement.src = './img/assets/default-cover.png'; // Add a default cover image
             updatePlayPauseButton(false);
         }
+
+        // Add click event listener to bottomMainDisplay
+        bottomMainDisplay.addEventListener('click', togglePlayPause);
     }
 
     function updatePlayPauseButton(isPlaying) {
         playPauseButton.innerHTML = isPlaying ? '&#10074;&#10074;' : '&#9658;';
     }
 
-    playPauseButton.addEventListener('click', function() {
+    function togglePlayPause() {
         const podcastPlayer = document.getElementById('podcastPlayer');
         const audioPlayer = document.getElementById('audioPlayer');
 
@@ -107,13 +110,15 @@ document.addEventListener('DOMContentLoaded', function() {
             podcastPlayer.pause();
         } else if (audioPlayer && !audioPlayer.paused) {
             audioPlayer.pause();
-        } else if (podcastPlayer) {
+        } else if (podcastPlayer && podcastPlayer.paused && podcastPlayer.currentTime > 0) {
             podcastPlayer.play();
-        } else if (audioPlayer) {
+        } else if (audioPlayer && audioPlayer.paused && audioPlayer.currentTime > 0) {
             audioPlayer.play();
         }
         updateCurrentlyPlaying();
-    });
+    }
+
+    playPauseButton.addEventListener('click', togglePlayPause);
 
     // Set up event listeners for audio players
     const podcastPlayer = document.getElementById('podcastPlayer');
