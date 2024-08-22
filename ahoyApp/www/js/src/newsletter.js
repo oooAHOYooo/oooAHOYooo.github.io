@@ -2,7 +2,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
     fetch('./data/newsletter.json')
         .then(response => response.json())
         .then(data => {
-            const sortedData = data.sort((a, b) => new Date(b.date) - new Date(a.date));
+            // Filter out inactive items
+            const activeData = data.filter(item => item.active !== "false" && item.active !== false);
+            const sortedData = activeData.sort((a, b) => new Date(b.date) - new Date(a.date));
             const newsletterList = document.getElementById('newsletter-list');
             const groupedByMonth = {};
             let currentPage = 1;
