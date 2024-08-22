@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const currentTrackElement = document.getElementById('current-track');
     const coverArtElement = document.getElementById('sidedock-cover-art');
     const playPauseButton = document.getElementById('sidedock-play-pause');
+    const bottomMainDisplay = document.getElementById('bottom-main-display');
 
     function updateActiveTab(clickedTabId) {
         // Remove active class from all tabs and dock icons
@@ -44,6 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const podcastCoverArt = document.getElementById('podcast-cover-art');
             if (podcastTitle) {
                 currentTrackElement.textContent = podcastTitle.textContent.replace('PODCAST TITLE: ', '');
+                bottomMainDisplay.textContent = `PODCAST: ${currentTrackElement.textContent}`;
             }
             if (podcastCoverArt) {
                 coverArtElement.src = podcastCoverArt.src;
@@ -55,14 +57,36 @@ document.addEventListener('DOMContentLoaded', function() {
             const artist = document.getElementById('artist');
             const coverArt = document.getElementById('coverArt');
             if (songTitle && artist) {
-                currentTrackElement.textContent = `${songTitle.textContent.replace('SONG TITLE: ', '')} - ${artist.textContent.replace('ARTIST: ', '')}`;
+                const songText = songTitle.textContent.replace('SONG TITLE: ', '');
+                const artistText = artist.textContent.replace('ARTIST: ', '');
+                currentTrackElement.textContent = `${songText} - ${artistText}`;
+                bottomMainDisplay.textContent = `NOW PLAYING: ${songText} by ${artistText}`;
             }
             if (coverArt) {
                 coverArtElement.src = coverArt.src;
             }
             updatePlayPauseButton(true);
+        } else if (podcastPlayer && podcastPlayer.paused && podcastPlayer.currentTime > 0) {
+            // Podcast is paused
+            const podcastTitle = document.getElementById('podcast-title');
+            if (podcastTitle) {
+                const title = podcastTitle.textContent.replace('PODCAST TITLE: ', '');
+                bottomMainDisplay.textContent = `PAUSED: ${title}`;
+            }
+            updatePlayPauseButton(false);
+        } else if (audioPlayer && audioPlayer.paused && audioPlayer.currentTime > 0) {
+            // Song is paused
+            const songTitle = document.getElementById('songTitle');
+            const artist = document.getElementById('artist');
+            if (songTitle && artist) {
+                const songText = songTitle.textContent.replace('SONG TITLE: ', '');
+                const artistText = artist.textContent.replace('ARTIST: ', '');
+                bottomMainDisplay.textContent = `PAUSED: ${songText} by ${artistText}`;
+            }
+            updatePlayPauseButton(false);
         } else {
-            currentTrackElement.textContent = 'No track playing';
+            currentTrackElement.textContent = 'No track selected';
+            bottomMainDisplay.textContent = 'NO MEDIA SELECTED';
             coverArtElement.src = './img/assets/default-cover.png'; // Add a default cover image
             updatePlayPauseButton(false);
         }
