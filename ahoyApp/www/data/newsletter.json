@@ -149,6 +149,15 @@
         "title": "Jake Custer - New Music Added",
         "imageUrl": "https://storage.googleapis.com/ahoy-song-collection/ahoy_jake-custer.jpg",
         "content": "Added 5 new songs by Jake Custer to the media mix",
-        "mp3Url": "#"
+        "mp3Url": "#",
+        "goTo": "#",
+        "active": "true"
+    },
+    {
+        "date": "2024-08-21",
+        "title": "In the Thick of It",
+        "content": "Some days progress feels slow - other days we get some new music or record another Rob show - and it feels amazing - I guess that's the journey",
+        "active": "false",
+          "goTo": "update-tab"
     }
 ]

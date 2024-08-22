@@ -6,6 +6,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const playPauseButton = document.getElementById('sidedock-play-pause');
     const bottomMainDisplay = document.getElementById('bottom-main-display');
 
+    const accountLikedSongsList = document.getElementById('accountLikedSongsList');
+    const accountLikedSongsCount = document.getElementById('accountLikedSongsCount');
+
     function updateActiveTab(clickedTabId) {
         // Remove active class from all tabs and dock icons
         tabContents.forEach(tab => tab.classList.remove('active'));
@@ -131,4 +134,69 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initial update
     updateCurrentlyPlaying();
+
+    function updateLikedSongs() {
+        const likedSongs = JSON.parse(localStorage.getItem('likedSongs')) || [];
+        accountLikedSongsList.innerHTML = '';
+        accountLikedSongsCount.textContent = likedSongs.length;
+
+        likedSongs.forEach((song, index) => {
+            const li = document.createElement('li');
+            li.innerHTML = `
+                <span>${song.songTitle} - ${song.artist}</span>
+                <div style="margin: 10px 0;">
+                    <button class="play-btn responsive-play-btn" aria-label="Play song" style="margin-right: 10px; font-size: 1em; padding: 8px 12px; border: 2px solid #4CAF50; border-radius: 5px;">
+                        <i class="fas fa-play" style="font-size: 1.2em;"></i>
+                    </button>
+                    <button class="delete-btn" aria-label="Remove from liked songs" style="background: none; border: none; color: #999; opacity: 0.6; font-size: 0.9em; padding: 5px; cursor: pointer; transition: opacity 0.3s ease;">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            `;
+            const playBtn = li.querySelector('.play-btn');
+            const deleteBtn = li.querySelector('.delete-btn');
+            playBtn.addEventListener('click', () => playSongFromLiked(index));
+            deleteBtn.addEventListener('click', () => removeLikedSong(index));
+            accountLikedSongsList.appendChild(li);
+        });
+    }
+
+    function playSongFromLiked(index) {
+        const likedSongs = JSON.parse(localStorage.getItem('likedSongs')) || [];
+        const songToPlay = likedSongs[index];
+        if (songToPlay) {
+            const audioPlayer = document.getElementById('audioPlayer');
+            if (audioPlayer) {
+                // Set the audio source
+                audioPlayer.src = songToPlay.audioSrc;
+                // Update the UI elements
+                document.getElementById('songTitle').textContent = `SONG TITLE: ${songToPlay.songTitle}`;
+                document.getElementById('artist').textContent = `ARTIST: ${songToPlay.artist}`;
+                document.getElementById('coverArt').src = songToPlay.coverArt;
+                // Play the song
+                audioPlayer.play();
+                // Update the currently playing display
+                updateCurrentlyPlaying();
+            } else {
+                console.error('Audio player not found');
+            }
+        }
+    }
+
+    function removeLikedSong(index) {
+        const likedSongs = JSON.parse(localStorage.getItem('likedSongs')) || [];
+        likedSongs.splice(index, 1);
+        localStorage.setItem('likedSongs', JSON.stringify(likedSongs));
+        updateLikedSongs();
+    }
+
+    // Call updateLikedSongs initially and whenever the liked songs change
+    updateLikedSongs();
+
+    // Add an event listener for changes in localStorage
+    window.addEventListener('storage', function(e) {
+        if (e.key === 'likedSongs') {
+            updateLikedSongs();
+        }
+    });
 });

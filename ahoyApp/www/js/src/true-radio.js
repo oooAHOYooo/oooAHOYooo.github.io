@@ -12,6 +12,9 @@
                 const nextBtn = document.getElementById('nextBtn');
                 const likeBtn = document.getElementById('likeBtn');
                 const likedSongsList = document.getElementById('likedSongsList');
+                const accountLikedSongsList = document.getElementById('accountLikedSongsList');
+                const likedSongsCount = document.getElementById('likedSongsCount');
+                const accountLikedSongsCount = document.getElementById('accountLikedSongsCount');
                 const volumeBar = document.getElementById('volumeBar');
                 const commentInput = document.getElementById('commentInput');
                 const submitCommentBtn = document.getElementById('submitCommentBtn');
@@ -22,7 +25,6 @@
                 let comments = {};
                 let totalComments = 0;
 
-                const likedSongsCount = document.getElementById('likedSongsCount');
                 const commentsCount = document.getElementById('commentsCount');
 
                 const songSearch = document.getElementById('songSearch');
@@ -92,50 +94,61 @@
                     });
                 }
 
-                function likeSong() {
-                    const currentSong = songs[currentSongIndex];
-                    const songId = currentSong.id;
+                function toggleLike() {
+                    const songId = likeBtn.dataset.songId;
+                    if (!songId) return;
+
                     const index = likedSongs.findIndex(song => song.id === songId);
-                    
                     if (index === -1) {
-                        likedSongs.push(currentSong);
+                        likedSongs.push(songs[currentSongIndex]);
                     } else {
                         likedSongs.splice(index, 1);
                     }
-                    
+
                     localStorage.setItem('likedSongs', JSON.stringify(likedSongs));
                     updateLikeButtonState(songId);
                     updateLikedSongs();
-                    likedSongsCount.textContent = likedSongs.length;
                 }
 
                 function updateLikedSongs() {
                     likedSongsList.innerHTML = '';
+                    accountLikedSongsList.innerHTML = '';
+                    likedSongsCount.textContent = likedSongs.length;
+                    accountLikedSongsCount.textContent = likedSongs.length;
+
                     likedSongs.forEach((song, index) => {
-                        const li = document.createElement('li');
-                        li.innerHTML = `
-                            <span>${song.songTitle} - ${song.artist}</span>
-                            <div style="margin: 10px 0;">
-                                <button class="play-btn responsive-play-btn" aria-label="Play song" style="margin-right: 10px; font-size: 1em; padding: 8px 12px; border: 2px solid #4CAF50; border-radius: 5px;">
-                                    <i class="fas fa-play" style="font-size: 1.2em;"></i>
-                                </button>
-                                <button class="delete-btn" aria-label="Remove from liked songs" style="background: none; border: none; color: #999; opacity: 0.6; font-size: 0.9em; padding: 5px; cursor: pointer; transition: opacity 0.3s ease;">
-                                    <i class="fas fa-times"></i>
-                                </button>
-                            </div>
-                        `;
-                        const playBtn = li.querySelector('.play-btn');
-                        const deleteBtn = li.querySelector('.delete-btn');
-                        playBtn.addEventListener('click', () => playSongFromLiked(index));
-                        deleteBtn.addEventListener('click', () => removeLikedSong(index));
+                        const li = createLikedSongElement(song, index);
+                        const accountLi = createLikedSongElement(song, index);
+                        
                         likedSongsList.appendChild(li);
+                        accountLikedSongsList.appendChild(accountLi);
                     });
+                }
+
+                function createLikedSongElement(song, index) {
+                    const li = document.createElement('li');
+                    li.innerHTML = `
+                        <span>${song.songTitle} - ${song.artist}</span>
+                        <div style="margin: 10px 0;">
+                            <button class="play-btn responsive-play-btn" aria-label="Play song" style="margin-right: 10px; font-size: 1em; padding: 8px 12px; border: 2px solid #4CAF50; border-radius: 5px;">
+                                <i class="fas fa-play" style="font-size: 1.2em;"></i>
+                            </button>
+                            <button class="delete-btn" aria-label="Remove from liked songs" style="background: none; border: none; color: #999; opacity: 0.6; font-size: 0.9em; padding: 5px; cursor: pointer; transition: opacity 0.3s ease;">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    `;
+                    const playBtn = li.querySelector('.play-btn');
+                    const deleteBtn = li.querySelector('.delete-btn');
+                    playBtn.addEventListener('click', () => playSongFromLiked(index));
+                    deleteBtn.addEventListener('click', () => removeLikedSong(index));
+                    return li;
                 }
 
                 function removeLikedSong(index) {
                     likedSongs.splice(index, 1);
+                    localStorage.setItem('likedSongs', JSON.stringify(likedSongs));
                     updateLikedSongs();
-                    likedSongsCount.textContent = likedSongs.length;
                 }
 
                 function addComment() {
@@ -196,7 +209,7 @@
                     nextSong();
                     setupAutoplay(); // Enable autoplay when next button is clicked
                 });
-                likeBtn.addEventListener('click', likeSong);
+                likeBtn.addEventListener('click', toggleLike);
                 submitCommentBtn.addEventListener('click', addComment);
                 volumeBar.addEventListener('input', updateVolume);
                 playBtn.addEventListener('click', togglePlay);
@@ -371,51 +384,38 @@
                 // Add this to the end of the fetch .then() block
                 createBotFriend();
 
-                // Add these functions to handle the like button
-                function updateLikeButtonState(songId) {
-                    if (likedSongs.some(song => song.id === songId)) {
-                        likeBtn.classList.add('liked');
-                        likeBtn.querySelector('i').classList.remove('far');
-                        likeBtn.querySelector('i').classList.add('fas');
-                    } else {
-                        likeBtn.classList.remove('liked');
-                        likeBtn.querySelector('i').classList.remove('fas');
-                        likeBtn.querySelector('i').classList.add('far');
+                // Call updateLikedSongs initially and whenever the liked songs change
+                updateLikedSongs();
+
+                // Add an event listener for changes in localStorage
+                window.addEventListener('storage', function(e) {
+                    if (e.key === 'likedSongs') {
+                        updateLikedSongs();
                     }
-                }
+                });
 
-                function toggleLike() {
-                    const songId = likeBtn.dataset.songId;
-                    if (!songId) return;
-
-                    const index = likedSongs.findIndex(song => song.id === songId);
-                    if (index === -1) {
-                        likedSongs.push(songs[currentSongIndex]);
-                    } else {
-                        likedSongs.splice(index, 1);
+                // Add this CSS to your stylesheet or in a <style> tag in your HTML
+                const style = document.createElement('style');
+                style.textContent = `
+                    #commentInput {
+                        max-width: 250px;
+                        margin-left: auto;
+                        margin-right: auto;
+                        width: 200px!important;
+                        display: block;
                     }
-
-                    localStorage.setItem('likedSongs', JSON.stringify(likedSongs));
-                    updateLikeButtonState(songId);
-                    updateLikedSongsList();
-                }
-
-                function updateLikedSongsList() {
-                    const likedSongsList = document.getElementById('likedSongsList');
-                    const likedSongsCount = document.getElementById('likedSongsCount');
-
-                    likedSongsList.innerHTML = '';
-                    likedSongsCount.textContent = likedSongs.length;
-
-                    likedSongs.forEach(song => {
-                        const li = document.createElement('li');
-                        li.textContent = `${song.songTitle} - ${song.artist}`;
-                        likedSongsList.appendChild(li);
-                    });
-                }
-
-                likeBtn.addEventListener('click', toggleLike);
-                updateLikedSongsList();
+                    #songListBody tr {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        margin-bottom: 5px;
+                    }
+                    #songListBody td:first-child {
+                        flex-grow: 1;
+                        margin-right: 10px;
+                    }
+                `;
+                document.head.appendChild(style);
             })
             .catch(error => console.error('Error fetching the song data:', error));
 
@@ -501,26 +501,3 @@
                 // Initial update
                 updateLikeButton();
             });
-
-            // Add this CSS to your stylesheet or in a <style> tag in your HTML
-            const style = document.createElement('style');
-            style.textContent = `
-                #commentInput {
-                    max-width: 250px;
-                    margin-left: auto;
-                    margin-right: auto;
-                    width: 200px!important;
-                    display: block;
-                }
-                #songListBody tr {
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    margin-bottom: 5px;
-                }
-                #songListBody td:first-child {
-                    flex-grow: 1;
-                    margin-right: 10px;
-                }
-            `;
-            document.head.appendChild(style);
