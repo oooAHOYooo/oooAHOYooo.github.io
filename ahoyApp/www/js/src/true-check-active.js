@@ -8,8 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const accountLikedSongsList = document.getElementById('accountLikedSongsList');
     const accountLikedSongsCount = document.getElementById('accountLikedSongsCount');
-    const likedPodcastsList = document.getElementById('likedPodcastsList');
-    const likedPodcastsCount = document.getElementById('likedPodcastsCount');
 
     function updateActiveTab(clickedTabId) {
         // Remove active class from all tabs and dock icons
@@ -100,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
         bottomMainDisplay.addEventListener('click', togglePlayPause);
 
         // Update comments count
-        const commentsCount = document.querySelectorAll('#commentsList li, #podcastCommentsList li').length;
+        const commentsCount = document.querySelectorAll('#commentsList li').length;
         document.getElementById('commentsCount').textContent = commentsCount;
     }
 
@@ -172,32 +170,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    function updateLikedPodcasts() {
-        const likedPodcasts = JSON.parse(localStorage.getItem('likedPodcasts')) || [];
-        likedPodcastsList.innerHTML = '';
-        likedPodcastsCount.textContent = likedPodcasts.length;
-
-        likedPodcasts.forEach((podcast, index) => {
-            const li = document.createElement('li');
-            li.innerHTML = `
-                <span>${podcast.podcastTitle} - ${podcast.episodeTitle}</span>
-                <div style="margin: 10px 0;">
-                    <button class="play-btn responsive-play-btn" aria-label="Play podcast" style="margin-right: 10px; font-size: 1em; padding: 8px 12px; border: 2px solid #4CAF50; border-radius: 5px;">
-                        <i class="fas fa-play" style="font-size: 1.2em;"></i>
-                    </button>
-                    <button class="delete-btn" aria-label="Remove from liked podcasts" style="background: none; border: none; color: #999; opacity: 0.6; font-size: 0.9em; padding: 5px; cursor: pointer; transition: opacity 0.3s ease;">
-                        <i class="fas fa-times"></i>
-                    </button>
-                </div>
-            `;
-            const playBtn = li.querySelector('.play-btn');
-            const deleteBtn = li.querySelector('.delete-btn');
-            playBtn.addEventListener('click', () => playPodcastFromLiked(index));
-            deleteBtn.addEventListener('click', () => removeLikedPodcast(index));
-            likedPodcastsList.appendChild(li);
-        });
-    }
-
     function playSongFromLiked(index) {
         const likedSongs = JSON.parse(localStorage.getItem('likedSongs')) || [];
         const songToPlay = likedSongs[index];
@@ -245,63 +217,13 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    function playPodcastFromLiked(index) {
-        const likedPodcasts = JSON.parse(localStorage.getItem('likedPodcasts')) || [];
-        const podcastToPlay = likedPodcasts[index];
-        if (podcastToPlay) {
-            const podcastPlayer = document.getElementById('podcastPlayer');
-            if (podcastPlayer) {
-                // Set the audio source
-                podcastPlayer.src = podcastToPlay.audioSrc;
-                // Update the UI elements
-                document.getElementById('podcast-title').textContent = `PODCAST TITLE: ${podcastToPlay.podcastTitle}`;
-                document.getElementById('podcast-description').textContent = `DESCRIPTION: ${podcastToPlay.episodeTitle}`;
-                document.getElementById('podcast-thumbnail').src = podcastToPlay.thumbnailSrc;
-                // Play the podcast
-                podcastPlayer.play();
-                // Update the currently playing display
-                updateCurrentlyPlaying();
-            } else {
-                console.error('Podcast player not found');
-            }
-        }
-    }
-
-    function removeLikedPodcast(index) {
-        const likedPodcasts = JSON.parse(localStorage.getItem('likedPodcasts')) || [];
-        likedPodcasts.splice(index, 1);
-        localStorage.setItem('likedPodcasts', JSON.stringify(likedPodcasts));
-        updateLikedPodcasts();
-    }
-
-    function addLikedPodcast(podcast) {
-        const likedPodcasts = JSON.parse(localStorage.getItem('likedPodcasts')) || [];
-        
-        // Check if the podcast already exists in the liked podcasts list
-        const isDuplicate = likedPodcasts.some(likedPodcast => 
-            likedPodcast.podcastTitle === podcast.podcastTitle && likedPodcast.episodeTitle === podcast.episodeTitle
-        );
-
-        if (!isDuplicate) {
-            likedPodcasts.push(podcast);
-            localStorage.setItem('likedPodcasts', JSON.stringify(likedPodcasts));
-            updateLikedPodcasts();
-        } else {
-            console.log('Podcast already in liked list');
-            // Optionally, you can show a message to the user that the podcast is already liked
-        }
-    }
-
-    // Call updateLikedSongs and updateLikedPodcasts initially and whenever the liked items change
+    // Call updateLikedSongs initially and whenever the liked items change
     updateLikedSongs();
-    updateLikedPodcasts();
 
     // Add an event listener for changes in localStorage
     window.addEventListener('storage', function(e) {
         if (e.key === 'likedSongs') {
             updateLikedSongs();
-        } else if (e.key === 'likedPodcasts') {
-            updateLikedPodcasts();
         }
     });
 
