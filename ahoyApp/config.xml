@@ -32,5 +32,6 @@
     <platform name="ios">
         <icon src="www/img/logo.png" width="180" height="180"/>
         <!-- Add specific icons per size if necessary -->
+        <preference name="deployment-target" value="16.0" />
     </platform>
 </widget>
