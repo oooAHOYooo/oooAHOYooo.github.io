@@ -1,8 +1,8 @@
 {
-  "name": "io.cordova.hellocordova",
-  "displayName": "HelloCordova",
-  "version": "1.0.0",
-  "description": "A sample Apache Cordova application that responds to the deviceready event.",
+  "name": "Ahoy",
+  "displayName": "Ahoy Indie Media",
+  "version": "0.2.8c",
+  "description": "Ahoy Indie Media - Your homegrown alternative to mainstream media. Discover and support independent artists, musicians, podcasters, and creators from New Haven, Connecticut. Enjoy ad-free, hand-crafted content that celebrates indie culture.",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,10 +10,18 @@
     "build": "electron-builder"
   },
   "keywords": [
-    "ecosystem:cordova"
+    "indie media",
+    "independent artists",
+    "indie music",
+    "podcasts",
+    "New Haven",
+    "alternative media",
+    "ad-free content",
+    "indie culture",
+    "support local artists"
   ],
-  "author": "Apache Cordova Team",
-  "license": "Apache-2.0",
+  "author": "Alex Gonzalez",
+  "license": "MIT",
   "devDependencies": {
     "cordova-android": "^12.0.1",
     "cordova-ios": "^7.1.0",
@@ -22,7 +30,9 @@
     "cordova-plugin-androidx-adapter": "^1.1.3",
     "macos": "^0.0.1",
     "osx": "^0.1.0",
-    "windows": "^0.1.2"
+    "windows": "^0.1.2",
+    "electron": "^23.1.0",
+    "electron-builder": "^23.6.0"
   },
   "cordova": {
     "platforms": [
@@ -34,7 +44,17 @@
       "cordova-plugin-androidx": {},
       "cordova-plugin-androidx-adapter": {}
     }
-  }
-
-
+  },
+  "build": {
+    "appId": "com.ahoyapp.app",
+    "win": {
+      "target": "nsis",
+      "icon": "www/img/assets/ahoyFav.png"
+    },
+    "files": [
+      "main.js",
+      "www/**/*"
+    ]
+  },
+  "logo": "www/img/assets/ahoyFav.png"
 }
