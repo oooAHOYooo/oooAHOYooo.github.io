@@ -1,4 +1,8 @@
 const { app, BrowserWindow } = require('electron');
+const path = require('path');
+
+app.name = 'Ahoy Indie Media v28.b';  
+
 
 function createWindow() {
   const win = new BrowserWindow({
@@ -9,7 +13,7 @@ function createWindow() {
     },
   });
 
-  win.loadFile('index.html');
+  win.loadFile(path.join(__dirname, 'www/index.html'));  // Adjust the path here
 }
 
 app.whenReady().then(createWindow);
