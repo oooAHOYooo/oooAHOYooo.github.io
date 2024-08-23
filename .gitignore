@@ -29,6 +29,12 @@ platforms/windows/build/
 platforms/windows/www/
 platforms/windows/cordova/console.log
 
+# Electron
+dist/
+out/
+electron-builder.yml
+electron-packager-config.json
+
 # Other
 .gradle/
 .idea/
