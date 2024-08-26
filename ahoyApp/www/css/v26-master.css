@@ -3085,28 +3085,24 @@ td {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100%;
 }
 
 .circular-timer {
     position: relative;
-    width: 200px;
-    height: 200px;
-    margin-bottom: 20px;
+    width: 300px;
+    height: 300px;
 }
 
-.timer-controls {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
-
-.circular-progress {
+.timer-background,
+.timer-progress {
     transform: rotate(-90deg);
     transform-origin: 50% 50%;
     transition: stroke-dashoffset 0.3s;
-    stroke-dasharray: 440;
-    stroke-dashoffset: 440px;
+}
+
+.timer-progress {
+    stroke-dasharray: 911.0619293499365 911.0619293499365;
+    stroke-dashoffset: 911.0619293499365;
 }
 
 .timer-display {
@@ -3114,15 +3110,42 @@ td {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 36px;
+    font-size: 48px;
     font-weight: bold;
 }
 
-.pause-icon {
+.timer-control-btn {
     position: absolute;
-    bottom: 20px;
+    bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 24px;
-    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: rgba(255, 153, 153, 0.2);
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.timer-control-btn:hover {
+    background-color: rgba(255, 153, 153, 0.4);
+}
+
+.timer-control-btn:active {
+    transform: translateX(-50%) scale(0.95);
+}
+
+.timer-control-btn svg {
+    fill: #ff9999;
+    transition: fill 0.3s;
+}
+
+.timer-control-btn:hover svg {
+    fill: #ff6666;
+}
+
+.timer-controls {
+    margin-top: 20px;
 }

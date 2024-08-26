@@ -179,7 +179,7 @@
     {
         "date": "2024-08-25",
         "title": "New Feature: Ahoy Work Mode Beta",
-        "content": "Exciting news! We've just launched the beta version of Ahoy Work Mode. This new feature plays classical music and includes a focus timer to boost your productivity. Try it out and let us know what you think!",
+        "content": "Exciting news! We've just launched the beta version of Ahoy Work Mode. This new feature plays classical music to give ya a boost. This feature came out of super necessity after being such an adhd developer. We were using all types of focus apps figured - eff - why not try to slam one in our little app - give folks a tool to use throughout the day. Try it out the beta now - lock in - and get more done",
         "active": "false",
         "goTo": "work-mode-tab",
         "imageUrl": "https://storage.googleapis.com/ahoy-dynamic-content/work-mode-beta.png",

@@ -1,14 +1,13 @@
 let timer;
-let minutes = 25;
-let seconds = 0;
+let totalSeconds = 25 * 60;
+let remainingSeconds = totalSeconds;
 let isRunning = false;
 let currentSongIndex = 0;
 let songs = [];
 
 const timerDisplay = document.querySelector('.timer-display');
-const pauseIcon = document.querySelector('.pause-icon');
-const startButton = document.getElementById('start-timer');
-const pauseButton = document.getElementById('pause-timer');
+const timerProgress = document.querySelector('.timer-progress');
+const timerControlBtn = document.querySelector('.timer-control-btn');
 const resetButton = document.getElementById('reset-timer');
 const playlist = document.getElementById('classical-playlist');
 const playAllButton = document.getElementById('play-all');
@@ -16,27 +15,45 @@ const shuffleButton = document.getElementById('shuffle-playlist');
 const audioPlayer = new Audio();
 
 function updateDisplay() {
+  const minutes = Math.floor(remainingSeconds / 60);
+  const seconds = remainingSeconds % 60;
   const formattedTime = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
   timerDisplay.textContent = formattedTime;
   updateCircularProgress();
 }
 
+function updateCircularProgress() {
+  const progress = (totalSeconds - remainingSeconds) / totalSeconds;
+  const circumference = 2 * Math.PI * 145;
+  const offset = circumference * (1 - progress);
+  timerProgress.style.strokeDasharray = `${circumference} ${circumference}`;
+  timerProgress.style.strokeDashoffset = offset;
+}
+
+function toggleTimer() {
+  if (isRunning) {
+    pauseTimer();
+  } else {
+    startTimer();
+  }
+}
+
 function startTimer() {
   if (!isRunning) {
     isRunning = true;
-    pauseIcon.style.display = 'none';
+    document.querySelector('.play-icon').style.display = 'none';
+    document.querySelector('.pause-icon').style.display = 'block';
     timer = setInterval(() => {
-      if (seconds > 0) {
-        seconds--;
-      } else if (minutes > 0) {
-        minutes--;
-        seconds = 59;
+      if (remainingSeconds > 0) {
+        remainingSeconds--;
+        updateDisplay();
       } else {
         clearInterval(timer);
         isRunning = false;
+        document.querySelector('.play-icon').style.display = 'block';
+        document.querySelector('.pause-icon').style.display = 'none';
         alert('Time is up!');
       }
-      updateDisplay();
     }, 1000);
   }
 }
@@ -44,26 +61,20 @@ function startTimer() {
 function pauseTimer() {
   clearInterval(timer);
   isRunning = false;
-  pauseIcon.style.display = 'block';
+  document.querySelector('.play-icon').style.display = 'block';
+  document.querySelector('.pause-icon').style.display = 'none';
 }
 
 function resetTimer() {
   clearInterval(timer);
   isRunning = false;
-  minutes = 25;
-  seconds = 0;
+  remainingSeconds = totalSeconds;
   updateDisplay();
-  pauseIcon.style.display = 'none';
+  document.querySelector('.play-icon').style.display = 'block';
+  document.querySelector('.pause-icon').style.display = 'none';
 }
 
-function updateCircularProgress() {
-  const totalSeconds = minutes * 60 + seconds;
-  const progress = (1 - totalSeconds / (25 * 60)) * 100;
-  document.querySelector('.circular-progress').style.strokeDashoffset = `${440 - (440 * progress) / 100}px`;
-}
-
-startButton.addEventListener('click', startTimer);
-pauseButton.addEventListener('click', pauseTimer);
+timerControlBtn.addEventListener('click', toggleTimer);
 resetButton.addEventListener('click', resetTimer);
 
 // Load classical playlist from JSON file
