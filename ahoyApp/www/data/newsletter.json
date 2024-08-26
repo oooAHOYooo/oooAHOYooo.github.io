@@ -162,6 +162,7 @@
         "imageUrl": "https://cdn.jwplayer.com/v2/media/omiMcvN8/poster.jpg?width=720",
         "externalLink": "https://www.newportthisweek.com/articles/9-central-film-festival-returns-sept-9/"
     },
+ 
     {
         "date": "2024-08-22",
         "title": "9 Central Film Festival Festival Shoutout",
@@ -174,5 +175,18 @@
             "https://www.newportthisweek.com/wp-content/uploads/images/2023-08-31/25p2.jpg"
         ],
         "externalLink": "https://www.newportthisweek.com/articles/9-central-film-festival-returns-sept-9/"
+    },
+    {
+        "date": "2024-08-25",
+        "title": "New Feature: Ahoy Work Mode Beta",
+        "content": "Exciting news! We've just launched the beta version of Ahoy Work Mode. This new feature plays classical music and includes a focus timer to boost your productivity. Try it out and let us know what you think!",
+        "active": "false",
+        "goTo": "work-mode-tab",
+        "imageUrl": "https://storage.googleapis.com/ahoy-dynamic-content/work-mode-beta.png",
+        "additionalImages": [
+            "https://storage.googleapis.com/ahoy-dynamic-content/work-mode-timer.png",
+            "https://storage.googleapis.com/ahoy-dynamic-content/work-mode-music.png"
+        ],
+        "externalLink": "#"
     }
 ]
