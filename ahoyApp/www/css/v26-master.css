@@ -76,7 +76,12 @@
 
 
 .body-text {
-    margin-bottom: 5px;
+    max-width: 65ch;
+    margin: 1.5rem auto;
+    padding: 0 1rem;
+    line-height: 1.6;
+    font-size: 1rem;
+    text-align: justify;
 }
 
 .body-text-bold {
