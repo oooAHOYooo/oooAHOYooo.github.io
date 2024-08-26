@@ -34,6 +34,13 @@
       "songTitle": "Clair de Lune",
       "mp3url": "https://example.com/debussy_clair_de_lune.mp3",
       "coverArt": "https://example.com/debussy_clair_de_lune.jpg"
+    },
+    {
+      "id": 6,
+      "composer": "Wolfgang Amadeus Mozart",
+      "songTitle": "No 9. in D Major",
+      "mp3url": "https://storage.googleapis.com/ahoy-dynamic-content/classical/Mozart%20-%20Serenade%20No.9%20in%20D%20major%20-%20IV.%20Rondo.mp3",
+      "coverArt": "https://example.com/bach_air_on_g_string.jpg"
     }
   ]
 }

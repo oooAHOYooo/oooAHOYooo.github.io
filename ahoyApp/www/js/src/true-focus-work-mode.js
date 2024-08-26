@@ -14,6 +14,23 @@ const playAllButton = document.getElementById('play-all');
 const shuffleButton = document.getElementById('shuffle-playlist');
 const audioPlayer = new Audio();
 
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const playBtn = document.getElementById('playBtn');
+const songTitle = document.getElementById('songTitle');
+const artist = document.getElementById('artist');
+const coverArt = document.getElementById('coverArt');
+
+// Load classical playlist from JSON file
+fetch('./data/classicalMusic.json')
+  .then(response => response.json())
+  .then(data => {
+    songs = data.songs;
+    populatePlaylist(songs);
+    loadSong(songs[currentSongIndex]);
+  })
+  .catch(error => console.error('Error loading playlist:', error));
+
 function updateDisplay() {
   const minutes = Math.floor(remainingSeconds / 60);
   const seconds = remainingSeconds % 60;
@@ -77,56 +94,74 @@ function resetTimer() {
 timerControlBtn.addEventListener('click', toggleTimer);
 resetButton.addEventListener('click', resetTimer);
 
-// Load classical playlist from JSON file
-fetch('js/data/classical_playlist.json')
-  .then(response => response.json())
-  .then(data => {
-    songs = data.songs;
-    populatePlaylist(songs);
-  })
-  .catch(error => console.error('Error loading playlist:', error));
-
 function populatePlaylist(tracks) {
   playlist.innerHTML = '';
   tracks.forEach((track, index) => {
     const li = document.createElement('li');
-    li.textContent = `${track.composer} - ${track.songTitle}`;
-    li.addEventListener('click', () => playTrack(index));
+    li.id = `tf-playlist-item-${index}`;
+    li.className = 'tf-playlist-item';
+    li.innerHTML = `
+      <div id="tf-song-info-${index}" class="tf-song-info">
+        <div id="tf-song-title-${index}" class="tf-song-title">${track.songTitle}</div>
+        <div id="tf-song-artist-${index}" class="tf-song-artist">${track.composer}</div>
+      </div>
+      <button id="tf-play-song-btn-${index}" class="tf-play-song-btn" data-index="${index}">
+        <i class="fas fa-play"></i>
+      </button>
+    `;
+    li.querySelector('.tf-play-song-btn').addEventListener('click', () => playSongFromList(index));
     playlist.appendChild(li);
   });
 }
 
-function playTrack(index) {
+function loadSong(song) {
+  songTitle.textContent = song.songTitle;
+  artist.textContent = song.composer;
+  coverArt.src = song.coverArt;
+  coverArt.alt = `${song.composer} - ${song.songTitle}`;
+  audioPlayer.src = song.mp3url;
+  updatePlayButton();
+}
+
+function playSongFromList(index) {
   currentSongIndex = index;
-  const track = songs[currentSongIndex];
-  audioPlayer.src = track.mp3url;
+  loadSong(songs[currentSongIndex]);
   audioPlayer.play();
-  updateNowPlaying();
+  updatePlayButton();
 }
 
-function updateNowPlaying() {
-  const track = songs[currentSongIndex];
-  document.getElementById('now-playing').textContent = `Now Playing: ${track.composer} - ${track.songTitle}`;
+function togglePlay() {
+  if (audioPlayer.paused) {
+    audioPlayer.play();
+  } else {
+    audioPlayer.pause();
+  }
+  updatePlayButton();
 }
 
-function playNextTrack() {
+function updatePlayButton() {
+  playBtn.innerHTML = audioPlayer.paused ? '<i class="fas fa-play"></i>' : '<i class="fas fa-pause"></i>';
+}
+
+function prevSong() {
+  currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+  loadSong(songs[currentSongIndex]);
+  audioPlayer.play();
+}
+
+function nextSong() {
   currentSongIndex = (currentSongIndex + 1) % songs.length;
-  playTrack(currentSongIndex);
+  loadSong(songs[currentSongIndex]);
+  audioPlayer.play();
 }
 
-audioPlayer.addEventListener('ended', playNextTrack);
-
-playAllButton.addEventListener('click', () => {
-  currentSongIndex = 0;
-  playTrack(currentSongIndex);
-});
-
-shuffleButton.addEventListener('click', () => {
+function shufflePlaylist() {
   songs = shuffleArray(songs);
   populatePlaylist(songs);
   currentSongIndex = 0;
-  playTrack(currentSongIndex);
-});
+  loadSong(songs[currentSongIndex]);
+  audioPlayer.play();
+}
 
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
@@ -136,4 +171,17 @@ function shuffleArray(array) {
   return array;
 }
 
-updateDisplay();
+playAllButton.addEventListener('click', () => {
+  currentSongIndex = 0;
+  loadSong(songs[currentSongIndex]);
+  audioPlayer.play();
+});
+
+shuffleButton.addEventListener('click', shufflePlaylist);
+prevBtn.addEventListener('click', prevSong);
+nextBtn.addEventListener('click', nextSong);
+playBtn.addEventListener('click', togglePlay);
+
+audioPlayer.addEventListener('ended', nextSong);
+
+// ... existing updateDisplay() call ...

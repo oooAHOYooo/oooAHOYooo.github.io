@@ -1000,13 +1000,7 @@ td {
     /* Semi-transparent white background */
 }
 
-/* Style for each song info div */
-.song-info {
-    background-color: rgba(0, 0, 0, 0);
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-}
+
 
 /* Style for album art images */
 #now-playing-container img#album-art {
@@ -1851,7 +1845,8 @@ td {
 
 .song-info {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     margin-bottom: 20px;
 }
@@ -2331,22 +2326,6 @@ td {
     transition: all 0.3s ease;
 }
 
-/*AG STYLE TO CSS*/
-.play-song-btn {
-    background-color: transparent;
-    border-style: solid;
-    border-color: var(--border-color);
-    color: var(--border-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-}
-
-.play-song-btn:hover {
-    border-style: dashed;
-    border-color: var(--border-color);
-}
 
 .play-podcast-btn-agStyle {
     background-color: transparent;
@@ -3153,4 +3132,49 @@ td {
 
 .timer-controls {
     margin-top: 20px;
+}
+
+
+#tf-classical-playlist {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tf-playlist-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.tf-playlist-item:last-child {
+    border-bottom: none;
+}
+
+.tf-song-info {
+    flex-grow: 1;
+}
+
+.tf-song-title {
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.tf-song-artist {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.tf-play-song-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.tf-play-song-btn:hover {
+    color: #007bff;
 }
