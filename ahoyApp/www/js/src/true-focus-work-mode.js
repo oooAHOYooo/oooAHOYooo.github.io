@@ -3,7 +3,7 @@ let totalSeconds = 25 * 60;
 let remainingSeconds = totalSeconds;
 let isRunning = false;
 let currentSongIndex = 0;
-let songs = [];
+let classicalSongs = []; // Rename 'songs' to 'classicalSongs'
 
 const timerDisplay = document.querySelector('.timer-display');
 const timerProgress = document.querySelector('.timer-progress');
@@ -11,7 +11,7 @@ const timerControlBtn = document.querySelector('.timer-control-btn');
 const resetButton = document.getElementById('reset-timer');
 const playlist = document.getElementById('classical-playlist');
 const playAllButton = document.getElementById('play-all');
-const shuffleButton = document.getElementById('shuffle-playlist');
+// const shuffleButton = document.getElementById('shuffle-playlist');
 const audioPlayer = new Audio();
 
 const prevBtn = document.getElementById('prevBtn');
@@ -21,15 +21,18 @@ const songTitle = document.getElementById('songTitle');
 const artist = document.getElementById('artist');
 const coverArt = document.getElementById('coverArt');
 
+// Add these lines near the top of the file, with the other constant declarations
+const pauseFocusMusicBtn = document.getElementById('pause-focus-music');
+
 // Load classical playlist from JSON file
 fetch('./data/classicalMusic.json')
   .then(response => response.json())
   .then(data => {
-    songs = data.songs;
-    populatePlaylist(songs);
-    loadSong(songs[currentSongIndex]);
+    classicalSongs = data.songs; // Use 'classicalSongs' instead of 'songs'
+    classicPopulatePlaylist(classicalSongs);
+    classicLoadSong(classicalSongs[currentSongIndex]);
   })
-  .catch(error => console.error('Error loading playlist:', error));
+  .catch(error => console.error('Error loading classical playlist:', error));
 
 function updateDisplay() {
   const minutes = Math.floor(remainingSeconds / 60);
@@ -94,7 +97,7 @@ function resetTimer() {
 timerControlBtn.addEventListener('click', toggleTimer);
 resetButton.addEventListener('click', resetTimer);
 
-function populatePlaylist(tracks) {
+function classicPopulatePlaylist(tracks) {
   playlist.innerHTML = '';
   tracks.forEach((track, index) => {
     const li = document.createElement('li');
@@ -109,79 +112,92 @@ function populatePlaylist(tracks) {
         <i class="fas fa-play"></i>
       </button>
     `;
-    li.querySelector('.tf-play-song-btn').addEventListener('click', () => playSongFromList(index));
+    li.querySelector('.tf-play-song-btn').addEventListener('click', () => classicPlaySongFromList(index));
     playlist.appendChild(li);
   });
 }
 
-function loadSong(song) {
+function classicLoadSong(song) {
   songTitle.textContent = song.songTitle;
   artist.textContent = song.composer;
   coverArt.src = song.coverArt;
   coverArt.alt = `${song.composer} - ${song.songTitle}`;
   audioPlayer.src = song.mp3url;
-  updatePlayButton();
+  classicUpdatePlayButton();
 }
 
-function playSongFromList(index) {
+function classicPlaySongFromList(index) {
   currentSongIndex = index;
-  loadSong(songs[currentSongIndex]);
+  classicLoadSong(classicalSongs[currentSongIndex]);
   audioPlayer.play();
-  updatePlayButton();
+  classicUpdatePlayButton();
 }
 
-function togglePlay() {
+function classicTogglePlay() {
   if (audioPlayer.paused) {
+    currentSongIndex = 0; // Reset to the first song
+    classicLoadSong(classicalSongs[currentSongIndex]);
     audioPlayer.play();
   } else {
     audioPlayer.pause();
   }
-  updatePlayButton();
+  classicUpdatePlayButton();
 }
 
-function updatePlayButton() {
-  playBtn.innerHTML = audioPlayer.paused ? '<i class="fas fa-play"></i>' : '<i class="fas fa-pause"></i>';
+function classicUpdatePlayButton() {
+  const isPaused = audioPlayer.paused;
+  const playIcon = '<i class="fas fa-play"></i>';
+  const pauseIcon = '<i class="fas fa-pause"></i>';
+  
+  playBtn.innerHTML = isPaused ? playIcon : pauseIcon;
+  pauseBtn.innerHTML = isPaused ? playIcon : pauseIcon;
+  pauseFocusMusicBtn.textContent = isPaused ? 'Resume' : 'Pause';
+  
+  // Update the play button in the playlist
+  document.querySelectorAll('.tf-play-song-btn').forEach((btn, index) => {
+    btn.innerHTML = index === currentSongIndex && !isPaused ? pauseIcon : playIcon;
+  });
 }
 
-function prevSong() {
-  currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
-  loadSong(songs[currentSongIndex]);
+function classicPrevSong() {
+  currentSongIndex = (currentSongIndex - 1 + classicalSongs.length) % classicalSongs.length;
+  classicLoadSong(classicalSongs[currentSongIndex]);
   audioPlayer.play();
 }
 
-function nextSong() {
-  currentSongIndex = (currentSongIndex + 1) % songs.length;
-  loadSong(songs[currentSongIndex]);
+function classicNextSong() {
+  currentSongIndex = (currentSongIndex + 1) % classicalSongs.length;
+  classicLoadSong(classicalSongs[currentSongIndex]);
   audioPlayer.play();
 }
 
-function shufflePlaylist() {
-  songs = shuffleArray(songs);
-  populatePlaylist(songs);
-  currentSongIndex = 0;
-  loadSong(songs[currentSongIndex]);
-  audioPlayer.play();
-}
+// Remove the classicShufflePlaylist and classicShuffleArray functions
 
-function shuffleArray(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
+// Update event listeners
+playAllButton.addEventListener('click', classicTogglePlay);
+
+// Remove the shuffleButton event listener
+// shuffleButton.addEventListener('click', classicShufflePlaylist);
+
+prevBtn.addEventListener('click', classicPrevSong);
+nextBtn.addEventListener('click', classicNextSong);
+playBtn.addEventListener('click', classicTogglePlay);
+
+audioPlayer.addEventListener('ended', classicNextSong);
+
+// Add this function to handle pausing and resuming the music
+function togglePauseFocusMusic() {
+  if (audioPlayer.paused) {
+    audioPlayer.play();
+    pauseFocusMusicBtn.textContent = 'Pause';
+  } else {
+    audioPlayer.pause();
+    pauseFocusMusicBtn.textContent = 'Resume';
   }
-  return array;
+  classicUpdatePlayButton();
 }
 
-playAllButton.addEventListener('click', () => {
-  currentSongIndex = 0;
-  loadSong(songs[currentSongIndex]);
-  audioPlayer.play();
-});
-
-shuffleButton.addEventListener('click', shufflePlaylist);
-prevBtn.addEventListener('click', prevSong);
-nextBtn.addEventListener('click', nextSong);
-playBtn.addEventListener('click', togglePlay);
-
-audioPlayer.addEventListener('ended', nextSong);
+// Add this event listener near the bottom of the file, with the other event listeners
+pauseFocusMusicBtn.addEventListener('click', togglePauseFocusMusic);
 
 // ... existing updateDisplay() call ...
