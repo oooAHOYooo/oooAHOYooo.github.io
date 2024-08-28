@@ -113,7 +113,7 @@
 }
 
 #left-sidebar {
-    left: -3000px;
+    left: -320px;
     border-radius: 0 20px 20px 0;
 }
 
@@ -2548,25 +2548,29 @@ td {
     bottom: 0;
     left: 0;
     right: 0;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    /* For Safari */
-    background-color: rgba(0, 0, 0, 0.5);
-    /* Fallback color */
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url('/path/to/your/fallback/background/image.jpg');
-    /* Fallback image */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    background-color: rgba(18, 18, 18, 0.7);
     padding: 10px 0;
     display: flex;
     justify-content: center;
     z-index: 50000;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+#v25-dock-container:hover {
+    background-color: rgba(28, 28, 28, 0.8);
 }
 
 #v25-dock {
     display: flex;
-    max-width: 600px;
+    max-width: 100%;
     overflow-x: auto;
     scrollbar-width: none;
+    gap: 20px;
+    padding: 5px 20px;
 }
 
 #v25-dock::-webkit-scrollbar {
@@ -2575,40 +2579,118 @@ td {
 
 .scroll-container {
     display: flex;
+    gap: 20px;
 }
 
 .v25-dock-icon {
     flex: none;
-    margin: 10px 8px;
-    /* More space between icons */
-    min-width: 52px;
-    min-height: 52px;
-    background: #ffffff;
-    /* Slightly lighter for contrast */
-    white-space: nowrap;
-    border-style: solid;
-    border-color: black;
+    width: 55px;
+    height: 55px;
+    background: rgba(255, 255, 255, 0.1);
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 90%;
-    transition: transform 0.2s ease, background 0.2s ease;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.v25-dock-icon::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #ff3366, #00ccff);
+    z-index: -1;
+    border-radius: 17px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.v25-dock-icon:hover::before,
+.v25-dock-icon:focus::before,
+.v25-dock-icon.active::before {
+    opacity: 1;
 }
 
 .v25-dock-icon:hover,
-.v25-dock-icon:focus {
-    background: #ff0050;
-    /* Highlight on hover/focus */
-    transform: scale(0.9151);
-    /* Slight increase in size */
-    cursor: pointer;
+.v25-dock-icon:focus,
+.v25-dock-icon.active {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .v25-dock-icon i {
-    color: #000000;
-    /* Light icon color for contrast */
-    font-size: 20px;
-    /* Larger icons */
+    color: #ffffff;
+    font-size: 24px;
+    transition: all 0.3s ease;
+}
+
+.v25-dock-icon:hover i,
+.v25-dock-icon:focus i,
+.v25-dock-icon.active i {
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+/* Tooltip styles */
+.v25-dock-icon::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.v25-dock-icon:hover::after {
+    opacity: 1;
+    visibility: visible;
+    bottom: calc(100% + 10px);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    #v25-dock {
+        gap: 15px;
+        padding: 5px 10px;
+    }
+
+    .v25-dock-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .v25-dock-icon i {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    #v25-dock {
+        gap: 10px;
+    }
+
+    .v25-dock-icon {
+        width: 45px;
+        height: 45px;
+    }
+
+    .v25-dock-icon i {
+        font-size: 20px;
+    }
 }
 
 /* v25 Now Playing Bar Styles */
