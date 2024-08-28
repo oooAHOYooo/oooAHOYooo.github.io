@@ -693,6 +693,25 @@ td {
 }
 
 
+.featured-playlist {
+    margin-bottom: 10px;
+}
+
+.featured-playlist h4 {
+    margin-bottom: 5px;
+}
+
+.featured-playlist ul {
+    list-style-type: none;
+    padding-left: 10px;
+}
+
+.featured-playlist li {
+    font-size: 0.9em;
+    margin-bottom: 3px;
+}
+
+
 .addPlaylist_modal {
     display: none;
     /* Hidden by default */

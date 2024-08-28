@@ -73,4 +73,15 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    // Close playlist popup when clicking outside
+    document.addEventListener('click', function(event) {
+        const playlistPopup = document.querySelector('.playlist-popup');
+        const toggleButtons = document.querySelectorAll('.toggle-playlist');
+        
+        if (playlistPopup && !playlistPopup.contains(event.target) && 
+            !Array.from(toggleButtons).some(button => button.contains(event.target))) {
+            playlistPopup.remove();
+        }
+    });
 });

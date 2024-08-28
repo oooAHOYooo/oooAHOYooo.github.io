@@ -84,5 +84,107 @@ function loadFeaturedMedia() {
     .catch((error) => console.error("Failed to load featured media:", error));
 }
 
+// Function to load and display featured playlists
+function loadFeaturedPlaylists() {
+  fetch("./data/featured-playlist.json")
+    .then((response) => response.json())
+    .then((data) => {
+      const container = document.getElementById("left-sidebar-middle");
+      container.innerHTML = "<h3>Featured Playlists</h3>"; // Clear previous content and add title
+
+      // Display all playlists
+      data.playlists.forEach((playlist, index) => {
+        const playlistItem = document.createElement("div");
+        playlistItem.className = "featured-playlist";
+        playlistItem.innerHTML = `
+          <button class="toggle-playlist" data-playlist="${index}">
+            <i class="fas fa-list"></i> ${playlist.name}
+          </button>
+        `;
+        container.appendChild(playlistItem);
+      });
+
+      // Add event listeners to toggle buttons
+      const toggleButtons = document.querySelectorAll(".toggle-playlist");
+      toggleButtons.forEach((button) => {
+        button.addEventListener("click", function(event) {
+          event.stopPropagation(); // Prevent event from bubbling up
+          const playlistIndex = this.getAttribute("data-playlist");
+          showPlaylistPopup(data.playlists[playlistIndex], this);
+        });
+      });
+    })
+    .catch((error) => console.error("Failed to load featured playlists:", error));
+}
+
+function showPlaylistPopup(playlist, button) {
+  // Remove existing popup if any
+  const existingPopup = document.querySelector(".playlist-popup");
+  if (existingPopup) {
+    existingPopup.remove();
+  }
+
+  // Create popup
+  const popup = document.createElement("div");
+  popup.className = "playlist-popup";
+  popup.innerHTML = `
+    <h3>${playlist.name}</h3>
+    <button class="play-all"><i class="fas fa-play-circle"></i></button>
+    <ul>
+      ${playlist.songs.map((song, index) => `
+        <li>
+          <span>${song.title} - ${song.artist}</span>
+          <button class="play-song" data-index="${index}"><i class="fas fa-play"></i></button>
+        </li>
+      `).join('')}
+    </ul>
+    <button class="close-popup"><i class="fas fa-times"></i></button>
+  `;
+
+  // Position the popup next to the button
+  const buttonRect = button.getBoundingClientRect();
+  popup.style.position = 'absolute';
+  popup.style.left = `${buttonRect.right + 10}px`;
+  popup.style.top = `${buttonRect.top}px`;
+
+  // Add popup to the body
+  document.body.appendChild(popup);
+
+  // Add event listener to close button
+  popup.querySelector(".close-popup").addEventListener("click", () => popup.remove());
+
+  // Add event listeners to play buttons
+  const playButtons = popup.querySelectorAll(".play-song");
+  playButtons.forEach((button) => {
+    button.addEventListener("click", function() {
+      const songIndex = this.getAttribute("data-index");
+      playSong(playlist.songs[songIndex]);
+    });
+  });
+
+  // Add event listener to play all button
+  popup.querySelector(".play-all").addEventListener("click", () => playAllSongs(playlist.songs));
+}
+
+function playSong(song) {
+  // Implement your audio playing logic here
+  console.log(`Playing: ${song.title} by ${song.artist}`);
+  // Example: 
+  // const audio = new Audio(song.mp3url);
+  // audio.play();
+}
+
+function playAllSongs(songs) {
+  // Implement your logic to play all songs in the playlist
+  console.log("Playing all songs in the playlist");
+  // Example:
+  // songs.forEach((song, index) => {
+  //   setTimeout(() => playSong(song), index * 1000); // Play each song with a 1-second delay
+  // });
+}
+
 // Execute when the DOM is fully loaded
-document.addEventListener("DOMContentLoaded", loadFeaturedMedia);
+document.addEventListener("DOMContentLoaded", () => {
+  loadFeaturedMedia();
+  loadFeaturedPlaylists();
+});
