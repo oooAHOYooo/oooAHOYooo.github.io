@@ -113,7 +113,10 @@
 }
 
 #left-sidebar {
-    left: -320px;
+    left: -9999px;
+    /* Move it way off screen */
+    display: none;
+    /* Hide it completely */
     border-radius: 0 20px 20px 0;
 }
 

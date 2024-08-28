@@ -16,7 +16,16 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function toggleLeftSidebar() {
-        leftSidebar.style.left = leftSidebar.style.left === '0px' ? '-250px' : '0px';
+        if (leftSidebar.style.display === 'none' || leftSidebar.style.left === '-9999px') {
+            leftSidebar.style.display = 'block';
+            leftSidebar.style.left = '0px';
+        } else {
+            leftSidebar.style.left = '-9999px';
+            setTimeout(() => {
+                leftSidebar.style.display = 'none';
+            }, 500); // Wait for the transition to complete before hiding
+        }
+        updateSidebarState();
     }
 
     function toggleRightSidebar(event) {
@@ -26,7 +35,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function closeSidebars() {
-        leftSidebar.style.left = '-250px';
+        leftSidebar.style.left = '-9999px';
+        setTimeout(() => {
+            leftSidebar.style.display = 'none';
+        }, 500);
         rightSidebar.classList.remove('open');
         updateSidebarState();
     }
