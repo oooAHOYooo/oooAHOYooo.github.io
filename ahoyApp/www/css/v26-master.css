@@ -93,143 +93,100 @@
 
 
 
-/*Side Dock*/
-
-.sidedock {
+/* Left Sidebar */
+#left-sidebar {
     position: fixed;
-    left: 0;
+    left: -250px;
     top: 0;
-    width: 250px;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.75);
-    backdrop-filter: blur(10px);
-    color: white;
-    transition: left 0.3s;
+    width: 250px;
+    /* Adjust as needed */
+    background-color: #333;
+    /* Adjust color as needed */
+    transition: left 0.3s ease-out;
     z-index: 1000;
 }
 
-.sidedock ul {
+#left-sidebar.open {
+    left: 0;
+}
+
+#left-sidebar ul {
     list-style: none;
-    /* Remove bullet points */
     padding: 20px;
-    /* Padding around the list */
     margin: 0;
 }
 
-.sidedock ul li a {
+#left-sidebar ul li a {
     display: block;
     padding: 10px;
     color: white;
     text-decoration: none;
 }
 
-.sidedock a {
+#left-sidebar a {
     display: block;
     padding: 10px;
     color: white;
     text-decoration: none;
 }
 
-.sidedock a:hover {
+#left-sidebar a:hover {
     background-color: #555;
-
 }
 
-#sidedock {
-    position: fixed;
-    left: -100%;
-    /* Start off-screen */
-    transition: left 0.3s ease;
-}
-
-#sidedock p {
+#left-sidebar p {
     padding: 5px;
 }
 
-/*SIDEDOCK turning to FULLDOCK on Mobile */
-
+/* Right Sidebar */
 #right-sidebar {
-    transition: transform 0.3s ease-out;
-    transform: translateX(100%);
-    /* Other styles for positioning and dimensions */
-}
-
-#right-sidebar.active {
-    transform: translateX(0);
-}
-
-.right-sidebar {
     position: fixed;
-    top: 0;
     right: -300px;
-    /* Start off-screen */
-    width: 300px;
+    top: 0;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.75);
-    backdrop-filter: blur(10px);
-    color: white;
-    transition: right 0.3s ease;
+    width: 300px;
+    /* Adjust as needed */
+    background-color: #333;
+    /* Adjust color as needed */
+    transition: right 0.3s ease-out;
     z-index: 1000;
-    padding: 20px;
 }
 
-.right-sidebar.open {
+#right-sidebar.open {
     right: 0;
 }
 
-.right-sidebar-top,
-.right-sidebar-middle {
-    margin-bottom: 20px;
-}
-
-.right-sidebar h2 {
-    font-family: 'Barlow', sans-serif;
-    font-weight: 900;
-    font-size: 18px;
-    text-transform: uppercase;
-    letter-spacing: .1em;
-    color: white;
-    margin-bottom: 10px;
-}
-
-.tv-box,
-.daily-shuffle-box {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    border: 1px solid var(--border-color);
-    margin-bottom: 20px;
-}
-
-.daily-shuffle-box {
-    overflow-y: scroll;
-    height: 30vh;
-}
-
-.tv-box {
-    overflow-y: auto;
-    height: 610px;
-}
-
+/* Toggle buttons */
+.toggle-button,
 .toggle-button-right {
     position: fixed;
     top: 2.5px;
-    right: 2.25px;
     z-index: 1001;
     cursor: pointer;
     background-color: transparent;
     color: white;
     border: none;
     font-size: 25px;
-    transition: right 0.3s ease;
 }
 
-.toggle-button-right:hover {
-    background-color: var(--border-color);
-    color: var(--text-color);
+.toggle-button {
+    left: 2.25px;
+}
+
+.toggle-button-right {
+    right: 2.25px;
+    transition: right 0.3s ease;
 }
 
 .toggle-button-right.active {
     right: 302.25px;
+}
+
+.toggle-button:hover,
+.toggle-button-right:hover {
+    background-color: var(--border-color);
+    color: var(--text-color);
 }
 
 .modal {

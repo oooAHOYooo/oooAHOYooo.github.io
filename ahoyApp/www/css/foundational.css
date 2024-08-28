@@ -1401,26 +1401,6 @@ button:hover {
   color: var(--gold);
 }
 
-/*LEFT DASHBOARD LOGIC*/
-.left-dashboard {
-  position: fixed;
-  z-index: 3000 !important;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 50px;
-  /* Initial width */
-  background-color: var(--background-color);
-  overflow-y: auto;
-  box-sizing: border-box;
-  transition: width 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-height: 452px !important;
-}
-
-
 
 .left-dashboard button {
   background: none;
