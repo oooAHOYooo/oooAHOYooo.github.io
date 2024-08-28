@@ -5,48 +5,37 @@ document.addEventListener('DOMContentLoaded', function() {
     const leftToggleButton = document.getElementById('left-toggle-button');
 
     function toggleSidebars() {
-        if (window.innerWidth > 1024) {
+        if (window.innerWidth > 768) {
             leftSidebar.style.left = '0px';
-            rightSidebar.classList.add('open');
+            rightSidebar.style.right = '0px';
         } else {
-            leftSidebar.style.left = '-250px';
-            rightSidebar.classList.remove('open');
+            leftSidebar.style.left = '-100%';
+            rightSidebar.style.right = '-100%';
         }
         updateSidebarState();
     }
 
     function toggleLeftSidebar() {
-        if (leftSidebar.style.display === 'none' || leftSidebar.style.left === '-9999px') {
-            leftSidebar.style.display = 'block';
-            leftSidebar.style.left = '0px';
-        } else {
-            leftSidebar.style.left = '-9999px';
-            setTimeout(() => {
-                leftSidebar.style.display = 'none';
-            }, 500); // Wait for the transition to complete before hiding
-        }
+        leftSidebar.style.left = leftSidebar.style.left === '0px' ? '-100%' : '0px';
         updateSidebarState();
     }
 
     function toggleRightSidebar(event) {
         event.stopPropagation();
-        rightSidebar.classList.toggle('open');
+        rightSidebar.style.right = rightSidebar.style.right === '0px' ? '-100%' : '0px';
         updateSidebarState();
     }
 
     function closeSidebars() {
-        leftSidebar.style.left = '-9999px';
-        setTimeout(() => {
-            leftSidebar.style.display = 'none';
-        }, 500);
-        rightSidebar.classList.remove('open');
+        leftSidebar.style.left = '-100%';
+        rightSidebar.style.right = '-100%';
         updateSidebarState();
     }
 
     function updateSidebarState() {
-        const isRightOpen = rightSidebar.classList.contains('open');
+        const isRightOpen = rightSidebar.style.right === '0px';
         rightToggleButton.textContent = isRightOpen ? '✕' : '☰';
-        rightToggleButton.style.right = isRightOpen ? '302.25px' : '2.25px';
+        rightToggleButton.style.right = isRightOpen && window.innerWidth > 768 ? '282px' : '10px';
         
         const isLeftOpen = leftSidebar.style.left === '0px';
         leftToggleButton.textContent = isLeftOpen ? '✕' : '☰';
@@ -96,4 +85,30 @@ document.addEventListener('DOMContentLoaded', function() {
             playlistPopup.remove();
         }
     });
+
+    // Add touch event listeners for swipe gestures
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    document.addEventListener('touchstart', function(event) {
+        touchStartX = event.changedTouches[0].screenX;
+    }, false);
+
+    document.addEventListener('touchend', function(event) {
+        touchEndX = event.changedTouches[0].screenX;
+        handleSwipe();
+    }, false);
+
+    function handleSwipe() {
+        const swipeThreshold = 100; // Minimum distance for a swipe
+        if (touchEndX - touchStartX > swipeThreshold) {
+            // Swipe right
+            toggleLeftSidebar();
+        } else if (touchStartX - touchEndX > swipeThreshold) {
+            // Swipe left
+            toggleRightSidebar(event);
+        }
+    }
+
+    // ... rest of your existing code ...
 });
