@@ -244,67 +244,27 @@
 -->
 <!-- Right Sidebar Toggle Button -->
 <button id="right-toggle-button" class="toggle-button-right">☰</button>
-<!-- Right Sidebar -->
-<div id="right-sidebar" class="right-sidebar" style="display: none;"> <!-- Initially hidden -->
+
+<!-- Add this right sidebar structure -->
+<div id="right-sidebar" class="right-sidebar">
   <div class="right-sidebar-top">
     <h2>Live on Air</h2>
     <div class="tv-box">
-      <div id="ahoy-tv-schedule" class="ahoy-tv-section">
-
-        <div ><iframe
-            src="https://cdn.jwplayer.com/players/S9LOWFXC-9Gtk2B1J.html"></iframe></div>
-
-    <br>
-<button class="btnPrimary" id="play-fullscreen-button">
-  Play FullScreen
-</button>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // Add event listener for the "Play FullScreen" button
-    document.getElementById('play-fullscreen-button').addEventListener('click', function() {
-      jwplayer().play();
-      jwplayer().setFullscreen(true);
-    });
-  });
-</script>
-<div class="tiny-note">
-        <p class="tinyText">Explore a world of indie delights with our curated 12-hour
-          cycles, repeated for your convenience and viewing pleasure.
-         </p></div>
-
-        <table class="schedule-table">
-          <thead>
-            <tr>
-              <th class="tinyText">Time Slot</th>
-              <th class="tinyText">Content Block</th>
-              <th class="tinyText">Featured Content</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- Example Rows -->
-            <tr>
-              <td class="tinyText">00:00 - 01:00</td>
-              <td class="tinyText">Block A</td>
-              <td class="tinyText">Rob Show Classics</td>
-            </tr>
-            <tr>
-              <td class="tinyText">01:00 - 02:00</td>
-              <td class="tinyText">Block B</td>
-              <td class="tinyText">Skate Films</td>
-            </tr>
-            <!-- Add more rows as per your schedule -->
-          </tbody>
-        </table><div class="tiny-note">
-        <p class="tinyText">Catch our prime time content every evening from 7 PM to 10
-          PM, featuring exclusive premieres and fan favorites.</p></div>
-      </div>
+      <!-- Add your live content here -->
     </div>
-
   </div>
   <div class="right-sidebar-middle">
-<hr>
+    <h2>Upcoming Schedule</h2>
+    <p>Hiii</p>
+    <!-- Add your schedule content here -->
+  </div>
+  <div class="right-sidebar-bottom">
+    <h2>Daily Shuffle</h2>
+    <!-- Add your daily shuffle content here -->
   </div>
 </div>
+
+<!-- Rest of your existing body content -->
 
 <!--
     _    _     _       _______    _    ____   _____ 
@@ -440,7 +400,7 @@
              ____       _       ____    ___    ___     _____     _     ____  
             |  _ \     / \     |  _ \  |_ _|  / _ \   |_   _|   / \   | __ ) 
             | |_) |   / _ \    | | | |  | |  | | | |    | |    / _ \  |  _ \ 
-            |  __/  | |_| | | |_| | | |  | | | |_| |    | |   / ___ \ | |_) |
+            |  __/  | |_| | | |_| | | |  | | | | |_| |    | |   / ___ \ | |_) |
             |_|      \___/  |____/     |_|     |_| |_|    |_|  /_/   \_\|____/ 
             -->
 
@@ -761,11 +721,12 @@
 </div>
 
    <!--
-             ____    _____   _____     _      _____     _     ____  
-            | __ )  | ____| |_   _|   / \    |_   _|   / \   | __ ) 
-            |  _ \  |  _|     | |    / _ \     | |    / _ \  |  _ \ 
-            | |_) | | |___    | |   / ___ \    | |   / ___ \ | |_) |
-            |____/  |_____|   |_|  /_/   \_\   |_|  /_/   \_\|____/ 
+             ____    _____   ____   _____   _   _   _____     _____     _     ____  
+            |  _ \  | ____| / ___| | ____| | \ | | |_   _|   |_   _|   / \   | __ ) 
+            | |_) | |  _|  | |     |  _|   |  \| |   | |      | |    / _ \  |  _ \ 
+            |  _ <  | |___ | |___  | |___  | |\  |   | |      | |   / ___ \ | |_) |
+            |_| \_\ |_____| \____| |_____| |_| \_|   |_|      |_|  /_/   \_\|____/ 
+                                                                              
             -->
 
             <!-- BETA TAB -->
@@ -1017,7 +978,7 @@
         <!--
          _____ ___   ____ _   _ ____    __        _____  ____  _  __   __  __  ___  ____  _____ 
         |  ___/ _ \ / ___| | | / ___|   \ \      / / _ \|  _ \| |/ /  |  \/  |/ _ \|  _ \| ____|
-        | |_ | | | | |   | | | \___ \    \ \ /\ / / | | | |_) | ' /   | |\/| | | | | | | |  _|  
+        | |_ | | | | |   | | | \___ \    \ \ /\ / / | | | | |_) | ' /   | |\/| | | | | | | |  _|  
         |  _|| |_| | |___| |_| |___) |    \ V  V /| |_| |  _ <| . \   | |  | | |_| | |_| | |___ 
         |_|   \___/ \____|\___/|____/      \_/\_/  \___/|_| \_\_|\_\  |_|  |_|\___/|____/|_____|
                                                                                                 
@@ -1217,37 +1178,27 @@
     <script src="js/src/newsletter.js"></script>
     <script src="js/src/updates-commits.js"></script>
     <script src="js/src/function-switchTheme.js"></script>
-    <!--script src="js/src/tab.js"></script-->
     <script src="js/src/nav-leftDash.js"></script>
     <script src="js/src/background-graphic-logic.js"></script>
     <script src="js/src/function_today_date.js"></script>
-
-    <!-- BURN CD -->
-    <!--script src="js/src/burnCd.js"></script-->
-    <!--script src="js/src/fetch-display-cdBurnInstructions.js"></script-->
 
     <script src="js/src/v25_menuCode.js"></script>
     <script src="js/src/magic-svg-logic.js"></script>
     <script src="js/src/classical_music.js"></script>
     <script src="js/src/v25-market.js"></script>
-    <!--script src="js/src/v25-cart-manager.js"></script -->
-    <!--script src="js/src/v25_loadingScreen.js"></script-->
+  
 
     <!-- Audio + Music -->
-    <!--script src="js/src/v25_dailyJukebox.js"></script-->
-    <!--script src="js/src/v27-songMgmt.js"></script-->
     <script src="js/src/music_daily_shuffle.js"></script>
-    <!--script src="js/src/podcast.js"></script-->
     <script src="js/src/v25-userLiveFeatures.js"></script>
 
     <!-- SIDEBAR LIBRARY -->
     <script src="js/src/v25-sidebarLibrary.js"></script>
-    <script src="js/src/v25_sidebarToggles.js"></script>
     <script src="js/src/v25-sidebarFeatured.js"></script>
 
     <!-- SONG COLLECTION -->
     <script src="js/src/song-collection.js"></script>
-
+    <script src="js/src/true-toggles.js"></script>
 
     <!--DYNAMIC CONTENT -->
     <script src="js/src/goals.js"></script>
@@ -1270,11 +1221,8 @@
 
   <!-- TRUE CHECK WHATS ACTIVE -->
    <script src="js/src/true-check-active.js"></script>
-
-
    <script src="js/src/true-sidebar.js"></script>
-   <script src="js/src/true-right-sidebar.js"></script>
-
+  
 
    <script src="js/src/true-full-recent.js"></script>
    <script src="js/src/true-focus-work-mode.js"></script>

@@ -8,7 +8,6 @@
 || $$  \ $$| $$  | $$| $$  \ $$ /$$     |
 || $$$$$$$$| $$$$$$$$| $$  | $$| $$     |
 || $$__  $$| $$__  $$| $$  | $$| $$     |
-|| $$  | $$| $$  | $$| $$  | $$| $$     |
 || $$  | $$| $$  | $$|  $$$$$$/| $$     |
 ||__/  |__/|__/  |__/ \______/ |__/     |
 |                                       |
@@ -162,7 +161,8 @@
 .right-sidebar {
     position: fixed;
     top: 0;
-    right: 0;
+    right: -300px;
+    /* Start off-screen */
     width: 300px;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.75);
@@ -171,7 +171,10 @@
     transition: right 0.3s ease;
     z-index: 1000;
     padding: 20px;
-    display: none;
+}
+
+.right-sidebar.open {
+    right: 0;
 }
 
 .right-sidebar-top,
@@ -209,19 +212,24 @@
 
 .toggle-button-right {
     position: fixed;
-    right: 2.25px;
     top: 2.5px;
+    right: 2.25px;
     z-index: 1001;
     cursor: pointer;
     background-color: transparent;
     color: white;
     border: none;
     font-size: 25px;
+    transition: right 0.3s ease;
 }
 
 .toggle-button-right:hover {
     background-color: var(--border-color);
     color: var(--text-color);
+}
+
+.toggle-button-right.active {
+    right: 302.25px;
 }
 
 .modal {
