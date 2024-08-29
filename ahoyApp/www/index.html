@@ -996,22 +996,69 @@
                                                                               
             -->
 
-            <!-- BETA TAB -->
+            <!-- Settings TAB -->
             <div id="settings-tab" class="tab-content">
-              <h2>Settings</h2>
-              <!-- CHANGE THEME-->
+              <h1>Settings</h1>
+              
+              <!-- Theme Switcher -->
+              <h3>Theme Switcher</h3>
+              <label for="theme-dropdown">Select Theme:</label>
+              <select id="theme-dropdown" class="theme-dropdown">
+                <!-- Options will be populated by JavaScript -->
+              </select>
+              <p>Current Theme: <span id="theme-title"></span></p>
+              
+              <!-- Account Settings -->
+              <h3>Account Settings</h3>
+              <button class="btnPrimary" onclick="window.location.href='account.html'">Manage Account</button>
+              <button class="btnPrimary" onclick="logout()">Log Out</button>
+              
+              <!-- Notification Settings -->
+               <p class="body-text"><span class="body-text-bold">Note:</span> The features below are experimental and works in progress (beta features).</p>
+              <h3>Notification Settings</h3>
+              <label>
+                <input type="checkbox" id="email-notifications"> Email Notifications
+              </label>
+              <label>
+                <input type="checkbox" id="sms-notifications"> SMS Notifications
+              </label>
+              <label>
+                <input type="checkbox" id="push-notifications"> Push Notifications
+              </label>
+              
+              <!-- Privacy Settings -->
+              <h3>Privacy Settings</h3>
+              <label>
+                <input type="checkbox" id="profile-visibility"> Profile Visibility
+              </label>
+              <label>
+                <input type="checkbox" id="search-engine-indexing"> Allow Search Engine Indexing
+              </label>
+              
+              <!-- Playback Settings -->
+              <h3>Playback Settings</h3>
+              <label for="playback-quality">Playback Quality:</label>
+              <select id="playback-quality">
+                <option value="auto">Auto</option>
+                <option value="1080p">1080p</option>
+                <option value="720p">720p</option>
+                <option value="480p">480p</option>
+                <option value="360p">360p</option>
+              </select>
+              <label>
+                <input type="checkbox" id="autoplay-next"> Autoplay Next Video
+              </label>
+              
+              <!-- Beta Experimental Features -->
               <h2>BETA Experimental Features</h2>
               <p>These features are not yet ready for prime time</p>
               <p>But they are ready for your testing</p>
-              <button class="btnPrimary" onclick="navigateToTab('market-tab')">Ahoy Indie
-                Market</button>
-                <button class="btnPrimary" onclick="window.location.href='../../workshop/radioWidget-style-8.html'">Radio Widget style 8</button>
-                <button class="btnPrimary" onclick="navigateToTab('casting-tab')">CASTING TAB
-                </button>
-                <button class="btnPrimary" onclick="navigateToTab('burn-tab')">Burn to Disc Feature</button>
+              <button class="btnPrimary" onclick="navigateToTab('market-tab')">Ahoy Indie Market</button>
+              <button class="btnPrimary" onclick="window.location.href='../../workshop/radioWidget-style-8.html'">Radio Widget style 8</button>
+              <button class="btnPrimary" onclick="navigateToTab('casting-tab')">CASTING TAB</button>
+              <button class="btnPrimary" onclick="navigateToTab('burn-tab')">Burn to Disc Feature</button>
               <button class="btnPrimary" onclick="window.location.href='../../workshop/radioWidget.html'">Radio Widget</button>
-              <button class="btnPrimary" onclick="navigateToTab('songs-tab')">Previous Song Tab and Radio Features
-                </button>
+              <button class="btnPrimary" onclick="navigateToTab('songs-tab')">Previous Song Tab and Radio Features</button>
               <button class="btnPrimary" onclick="window.location.href='create.html'">Create an Ahoy Indie Media Account</button>
             </div>
 
@@ -1191,12 +1238,12 @@
             </div>
             <!-- END OF THE ACCOUNT TAB-->
     <!--
-              __  __    _    ____  _  _______ _____   _____  _    ____  
-             |  \/  |  / \  |  _ \| |/ / ____|_   _| |_   _|/ \  | __ ) 
-             | |\/| | / _ \ | |_) | ' /|  _|   | |     | | / _ \ |  _ \ 
-             | |  | |/ ___ \|  _ <| . \| |___  | |     | |/ ___ \| |_) |
-             |_|  |_/_/   \_\_| \_\_|\_\_____| |_|     |_/_/   \_\____/ 
-                                                                              
+              __  __    _    ____  _  _______ _____   _____  ____  _  __   __  __  ___  ____  _____ 
+             |  \/  |  / \  |  _ \| |/ / ____|_   _| |_   _|/ _ \| |/ /  |  \/  |/ _ \|  _ \| ____|
+             | |\/| | / _ \ | |_) | ' /|  _|   | |     | | / | | | ' /   | |\/| | | | | | | |  _|  
+             | |  | |/ ___ \|  _ <| . \| |___  | |     | |/| |_| | . \   | |  | | |_| | |_| | |___ 
+             |_|  |_/_/   \_\_| \_\_|\_\_____| |_|     |_| \___/|_|\_\  |_|  |_|\___/|____/|_____|
+                                                                                                
             -->
             <!-- MARKET TAB-->
             <div id="market-tab" class="tab-content">

@@ -136,4 +136,21 @@ function hexToRgb(hex) {
 // Apply a random theme on page load
 document.addEventListener("DOMContentLoaded", function () {
   switchTheme();
+
+  // Populate theme dropdown
+  const themeDropdown = document.getElementById("theme-dropdown");
+  themes.forEach(theme => {
+    const option = document.createElement("option");
+    option.value = theme;
+    option.textContent = theme.charAt(0).toUpperCase() + theme.slice(1);
+    themeDropdown.appendChild(option);
+  });
+
+  // Set the current theme in the dropdown
+  themeDropdown.value = theme;
+
+  // Add event listener for theme change
+  themeDropdown.addEventListener("change", function () {
+    switchTheme(this.value);
+  });
 });
