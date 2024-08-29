@@ -203,35 +203,6 @@
     |_|  \_\_____|\_____/  |_|     |_|    |_____/|_____|_____/|______|
                                                                               
 -->
-<!-- Full Screen JWPlayer Modal -->
-<div id="jwplayer-fullscreen-modal" class="jwplayer-modal">
-  <div class="jwplayer-modal-content">
-    <span class="jwplayer-close"><i class="fa fa-times"></i></span>
-    <div id="jwplayer-container">
-
-
-    </div>
-    <div id="jwplayer-currently-playing" class="currently-playing">
-      <h2 class="jwplayer-title">Currently Playing:</h2>
-      <p id="current-title" class="jwplayer-text-bold">Title: 
-        <span id="current-title-text" class="jwplayer-text">Skate Clips</span></p>
-      <p id="current-description" class="jwplayer-text-bold">Description: <span class="jwplayer-text" id="current-description-text">Skate Clips from our skate friends</span></p>
-      <div class="tiny-note" style="margin-top: 110px;">
-      <button class="btnPrimary" id="close-fullscreen-button">Close FullScreen</button>
-    </div>
-    </div>
-  </div>
-</div>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // ... existing code ...
-
-    // Add event listener for the "Close FullScreen" button
-    document.getElementById('close-fullscreen-button').addEventListener('click', function() {
-      document.getElementById('jwplayer-fullscreen-modal').style.display = 'none';
-    });
-  });
-</script>
 
 <!--
  _____  _____  _____  _    _ _______    _____ _____ _____  ______ 
@@ -255,6 +226,15 @@
   <div class="right-sidebar-middle">
     <h2>Upcoming Schedule</h2>
     <p>Hiii</p>
+    <div id="jwplayer-currently-playing" class="currently-playing">
+      <h2 class="jwplayer-title">Currently Playing:</h2>
+      <p id="current-title" class="jwplayer-text-bold">Title: 
+        <span id="current-title-text" class="jwplayer-text">Skate Clips</span></p>
+      <p id="current-description" class="jwplayer-text-bold">Description: <span class="jwplayer-text" id="current-description-text">Skate Clips from our skate friends</span></p>
+      <div class="tiny-note" style="margin-top: 110px;">
+      <button class="btnPrimary" id="close-fullscreen-button">Close FullScreen</button>
+    </div>
+    </div>
     <!-- Add your schedule content here -->
   </div>
   <div class="right-sidebar-bottom">
@@ -525,10 +505,11 @@
         </div>
       </div>
       <div class="radio-controls">
-        <button id="prevPodcastBtn">[◄◄ PREV]</button>
         <button id="playPodcastBtn">[► PLAY]</button>
-        <button id="nextPodcastBtn">[►► NEXT]</button>
         <button id="likePodcastBtn"><i class="far fa-heart"></i> LIKE</button>
+        <button id="prevPodcastBtn">[◄◄ PREV]</button>
+        <button id="nextPodcastBtn">[►► NEXT]</button>
+    
       </div>
       <div class="volume-control">
         <span><i class="fas fa-volume-up"></i></span>
