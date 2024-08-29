@@ -214,7 +214,7 @@
   </div>
   <div class="right-sidebar-middle">    <!-- ... existing code ... -->
     <p>Hiii</p>
-    <div id="jwplayer-currently-playing" class="currently-playing" style="max-width: 300px;">
+    <div id="jwplayer-currently-playing" class="currently-playing">
       <div id="jwplayer-container"></div>
       <h2 class="jwplayer-title">Currently Playing:</h2>
       <p id="current-title" class="jwplayer-text-bold">Title: 
@@ -323,9 +323,7 @@
         loadMedia(currentIndex);
       });
     </script>
-    <style>
- 
-    </style>
+   
 <!-- ... existing code ... -->
 <script>
   document.addEventListener('DOMContentLoaded', async () => {
@@ -613,17 +611,18 @@
 
             <!-- MEDIA TAB -->
             <div id="media-tab-a" class="tab-content">
-              <img src="./img/ahoy-media.svg"
-                class="svgBlend">
+              <!--img src="./img/ahoy-media.svg"
+                class="svgBlend"-->
               <!-- START OF MEDIA-COLS-->
+               <br>
               <div class="tv-container">
                 <div class="tv-wrap">
                   <div id="jw-player-container"></div>
                   <div id="media-display-text">
                     <div id="media-artist-name">
-                      <p>This is where the Media Artist Name will Go</p></div>
+                      <p class="body-text-header">This is where the Media Artist Name will Go</p></div>
                     <div id="media-title-name">
-                      <p>This is where the Media Title Name will Go</p></div>
+                      <p class="body-text">This is where the Media Title Name will Go</p></div>
                   </div>
                 </div>
               </div>

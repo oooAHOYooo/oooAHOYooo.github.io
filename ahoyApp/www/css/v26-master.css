@@ -42,8 +42,6 @@
 
 
 
-
-
 /*
  _____                                       _           
 |_   _|   _ _ __   ___   __ _ _ __ __ _ _ __| |__  _   _ 
@@ -87,20 +85,48 @@
     padding: 0 1rem;
     line-height: 1.6;
     font-size: 1rem;
-    text-align: justify;
 }
 
 .body-text-bold {
     font-weight: 600;
 }
 
+.body-text-header {
+    font-weight: 900;
+    font-size: 22px;
+    line-height: 95%;
+}
 
 
 
+.tiny-note {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4.9px;
+}
+
+.tinyText {
+    font-size: 14px;
+    max-width: 50ch;
+    padding: 5px;
+    text-align: center;
+
+}
 
 
 
-/* Sidebar styles */
+/*
+  _____ _     _      _                   _        _           
+ / ____(_)   | |    | |                 | |      | |          
+| (___  _  __| | ___| |__   __ _ _ __   | |_ ___ | | ___  ___ 
+ \___ \| |/ _` |/ _ \ '_ \ / _` | '__|  | __/ _ \| |/ _ \/ __|
+ ____) | | (_| |  __/ |_) | (_| | |     | || (_) | |  __/\__ \
+|_____/|_|\__,_|\___|_.__/ \__,_|_|      \__\___/|_|\___||___/
+                                                              
+*/
+
 #left-sidebar,
 #right-sidebar {
     position: fixed;
@@ -1119,23 +1145,20 @@ td {
     /* Subtle text shadow for a retro effect */
 }
 
-.tiny-note {
-    width: 100%;
+
+
+
+
+
+#jwplayer-currently-playing {
     display: flex;
+    width: 100%;
     align-items: center;
     justify-content: center;
-    padding: 4.9px;
+    flex-direction: column;
 }
 
-.tinyText {
-    font-size: 14px;
-    max-width: 50ch;
-    padding: 5px;
-    text-align: center;
 
-}
-
-/* ... existing code ... */
 
 .jwplayer-modal {
     display: none;
