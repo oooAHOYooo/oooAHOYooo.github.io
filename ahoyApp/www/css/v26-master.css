@@ -572,6 +572,100 @@
     color: var(--text-color);
 }
 
+.tab-content {
+    display: none;
+
+    /* Adjusted margin to avoid interference with left-dashboard */
+
+}
+
+.tab-content {
+    position: absolute;
+    padding: 5.5px;
+    border-left: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+    border-top: 1px solid var(--border-color);
+    margin-top: 10px;
+    overflow: hidden;
+    position: relative;
+    z-index: 10;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-top: 0px !important;
+    margin-left: 52.5px !important;
+    margin-right: 52.5px !important;
+    margin: 0 auto;
+    background-color: var(--background-color);
+    animation: pulseGlow 2s infinite ease-in-out;
+}
+
+.tab-content {
+    width: 100%;
+    /* Adjust based on your content's ideal width */
+    max-width: 755px;
+    /* Maximum width of the content */
+    /* Center the content */
+}
+
+@keyframes pulseGlow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 8px 0 rgba(255, 255, 255, 0.5), 0 4px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    50% {
+        box-shadow: 0 0 12px 0 rgba(255, 255, 255, 0.75), 0 6px 8px 0 rgba(0, 0, 0, 0.25), 0 8px 25px 0 rgba(0, 0, 0, 0.22);
+    }
+}
+
+.tab-content {
+    transition: background-color 0.3s ease, padding 0.3s ease;
+    /* Smooth transitions for visual properties */
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .tab-content {
+        padding: 8px;
+    }
+}
+
+.tab-content.active {
+    display: block;
+
+}
+
+/* Centering .tab-content with max-width for desktop view */
+.tab-content {
+
+
+    z-index: 2;
+    background-color: var(--background-color);
+    /* Ensures .tab-content is above the background layer */
+    max-width: 750px;
+    /* Set max-width for desktop */
+}
+
+@media (max-width: 600px) {
+    .tab-content {
+        padding: 10px;
+        margin-left: 5px !important;
+        /* Reduced margin for mobile */
+        margin-right: 10px !important;
+        /* Reduced margin for mobile */
+    }
+}
+
+#tabSortza {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 32px;
+}
+
 /*RADIO BUTTONS */
 
 .responsive-play-btn {
@@ -2519,43 +2613,52 @@ td {
 }
 
 
+
 #warning-banner {
-    position: absolute;
-    /* Change to absolute to position it within the content area */
-    top: 0;
+    position: fixed;
+    bottom: 0;
     left: 0;
     right: 0;
-    /* Adjust width to account for sidebars */
-    /* Center the banner within the content area */
-    background-color: #ff9d00d4 !important;
+    background: linear-gradient(45deg, #ff9d00, #ff6f00) !important;
     color: #ffffff;
     text-align: center;
-    padding: 10px;
+    padding: 20px;
     z-index: 9999;
     display: flex;
+    height: 300px;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     padding-left: 40px;
     padding-right: 40px;
-    transition: transform 0.5s ease-out;
-
+    border-top: 5px solid #ff4500;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.5s ease-out, background 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
 }
-
 
 #warning-banner.show {
-    top: 0;
-}
-
-#warning-banner button {
-    float: right;
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 20px;
+    transform: translateY(0);
 }
 
 #warning-banner.exit {
-    transform: translateY(-100%);
+    transform: translateY(100%);
+}
+
+#warning-banner button {
+    background: none;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 10px 20px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+#warning-banner button:hover {
+    background: #ffffff;
+    color: #ff4500;
 }
 
 /*new homepage tweaks*/
