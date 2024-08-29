@@ -4,6 +4,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const leftToggleButton = document.getElementById('left-toggle-button');
     const rightToggleButton = document.getElementById('right-toggle-button');
     const mainContent = document.getElementById('tabSortza');
+    const exitButton = document.createElement('button');
+    exitButton.id = 'exit-button';
+    exitButton.innerText = '✖';
+    document.body.appendChild(exitButton);
+
+    // Add subtle transition to sidebars and buttons
+    leftSidebar.style.transition = 'left 0.3s ease';
+    rightSidebar.style.transition = 'right 0.3s ease';
+    leftToggleButton.style.transition = 'left 0.3s ease';
+    rightToggleButton.style.transition = 'right 0.3s ease';
 
     function toggleSidebar(sidebar, position) {
         const isOpen = sidebar.classList.contains('open');
@@ -11,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (position === 'left') {
             sidebar.style.left = isOpen ? '-280px' : '0';
-            leftToggleButton.style.left = isOpen ? '10px' : '290px';
+            leftToggleButton.style.left = isOpen ? '10px' : '90px';
         } else {
             sidebar.style.right = isOpen ? '-280px' : '0';
             rightToggleButton.style.right = isOpen ? '10px' : '290px';
@@ -75,10 +85,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.addEventListener('click', function(event) {
         if (!leftSidebar.contains(event.target) && event.target !== leftToggleButton &&
-            !rightSidebar.contains(event.target) && event.target !== rightToggleButton) {
+            !rightSidebar.contains(event.target) && event.target !== rightToggleButton &&
+            event.target !== exitButton) {
             closeSidebars();
         }
     });
+
+    exitButton.addEventListener('click', closeSidebars);
 
     // Initialize sidebar positions
     handleResize();
