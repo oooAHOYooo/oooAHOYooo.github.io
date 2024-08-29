@@ -44,7 +44,14 @@
 
 
 
-/*TYPOGRAPHY */
+/*
+ _____                                       _           
+|_   _|   _ _ __   ___   __ _ _ __ __ _ _ __| |__  _   _ 
+  | || | | | '_ \ / _ \ / _` | '__/ _` | '__| '_ \| | | |
+  | || |_| | |_) | (_) | (_| | | | (_| | |  | | | | |_| |
+  |_| \__, | .__/ \___/ \__, |_|  \__,_|_|  |_| |_|\__, |
+      |___/|_|          |___/                      |___/ 
+*/
 
 .heading-2 {
     font-weight: 900;
@@ -2610,6 +2617,43 @@ td {
 .play-podcast-btn-agStyle:active {
     transform: translateY(2px);
     box-shadow: 0 0 5px var(--text-color);
+}
+
+
+/*REMOTE CONTROLS */
+
+.remote-controls {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+    margin-left: 15px;
+    margin-right: 25px;
+}
+
+.remoteControlButton {
+    padding: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.remoteControlButton i {
+    margin: 0 5px;
+}
+
+#video-progress {
+    margin-top: 20px;
+}
+
+#progress-bar {
+    width: 100%;
 }
 
 

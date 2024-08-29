@@ -211,24 +211,263 @@
 <div id="right-sidebar" class="right-sidebar">
   <div class="right-sidebar-top">
     <h2>Live on Air</h2>
-    <div class="tv-box">
-      <!-- Add your live content here -->
-    </div>
   </div>
-  <div class="right-sidebar-middle">
-    <h2>Upcoming Schedule</h2>
+  <div class="right-sidebar-middle">    <!-- ... existing code ... -->
     <p>Hiii</p>
+    <div id="jwplayer-currently-playing" class="currently-playing" style="max-width: 300px;">
+      <div id="jwplayer-container"></div>
+      <h2 class="jwplayer-title">Currently Playing:</h2>
+      <p id="current-title" class="jwplayer-text-bold">Title: 
+        <span id="current-title-text" class="jwplayer-text"></span></p>
+      <p id="current-description" class="jwplayer-text-bold">Description: <span class="jwplayer-text" id="current-description-text"></span></p>
+      <div class="remote-controls">
+        <button id="play-pause-button" class="remoteControlButton"><i class="fas fa-play"></i></button>
+        <button id="rewind-button" class="remoteControlButton"><i class="fas fa-undo"></i></button>
+        <button id="fast-forward-button" class="remoteControlButton"><i class="fas fa-forward"></i></button>
+        <button id="next-button" class="remoteControlButton"><i class="fas fa-step-forward"></i></button>
+        <button id="shuffle-button" class="remoteControlButton"><i class="fas fa-random"></i></button>
+        <button id="fullscreen-button" class="remoteControlButton"><i class="fas fa-expand"></i></button>
+        <button id="volume-up" class="remoteControlButton"><i class="fas fa-volume-up"></i></button>
+        <button id="volume-down" class="remoteControlButton"><i class="fas fa-volume-down"></i></button>
+        <button id="mute-button" class="remoteControlButton"><i class="fas fa-volume-mute"></i></button>
+      </div>
+      </div>
+      <div id="video-progress">
+        <progress id="progress-bar" value="0" max="100"></progress>
+      </div>
+    </div>
     <!-- ... existing code ... -->
+    <script>
+      document.addEventListener('DOMContentLoaded', async () => {
+        const response = await fetch('./data/mediaCollection.json');
+        const mediaCollection = await response.json();
+        let currentIndex = 0;
+    
+        function loadMedia(index) {
+          const currentMedia = mediaCollection[index];
+          jwplayer("jwplayer-container").setup({
+            file: currentMedia.mp4_link,
+            image: currentMedia.thumbnail_link,
+            title: currentMedia.display_title,
+            description: currentMedia.artist,
+            width: "100%",
+            aspectratio: "16:9"
+          }).on('complete', () => {
+            currentIndex = (currentIndex + 1) % mediaCollection.length;
+            loadMedia(currentIndex);
+          }).on('time', (event) => {
+            const progress = (event.position / event.duration) * 100;
+            document.getElementById('progress-bar').value = progress;
+          });
+          document.getElementById('current-title-text').textContent = currentMedia.display_title;
+          document.getElementById('current-description-text').textContent = currentMedia.artist;
+        }
+    
+        document.getElementById('play-pause-button').addEventListener('click', () => {
+          const player = jwplayer();
+          if (player.getState() === 'playing') {
+            player.pause();
+            document.getElementById('play-pause-button').innerHTML = '<i class="fas fa-play"></i>';
+          } else {
+            player.play();
+            document.getElementById('play-pause-button').innerHTML = '<i class="fas fa-pause"></i>';
+          }
+        });
+    
+        document.getElementById('rewind-button').addEventListener('click', () => {
+          const player = jwplayer();
+          player.seek(Math.max(player.getPosition() - 10, 0));
+        });
+    
+        document.getElementById('fast-forward-button').addEventListener('click', () => {
+          const player = jwplayer();
+          player.seek(Math.min(player.getPosition() + 10, player.getDuration()));
+        });
+    
+        document.getElementById('next-button').addEventListener('click', () => {
+          currentIndex = (currentIndex + 1) % mediaCollection.length;
+          loadMedia(currentIndex);
+        });
+    
+        document.getElementById('shuffle-button').addEventListener('click', () => {
+          currentIndex = Math.floor(Math.random() * mediaCollection.length);
+          loadMedia(currentIndex);
+        });
+    
+        document.getElementById('fullscreen-button').addEventListener('click', () => {
+          jwplayer().setFullscreen(true);
+        });
+    
+        document.getElementById('volume-up').addEventListener('click', () => {
+          const currentVolume = jwplayer().getVolume();
+          jwplayer().setVolume(Math.min(currentVolume + 10, 100));
+        });
+    
+        document.getElementById('volume-down').addEventListener('click', () => {
+          const currentVolume = jwplayer().getVolume();
+          jwplayer().setVolume(Math.max(currentVolume - 10, 0));
+        });
+    
+        document.getElementById('mute-button').addEventListener('click', () => {
+          const player = jwplayer();
+          if (player.getMute()) {
+            player.setMute(false);
+            document.getElementById('mute-button').innerHTML = '<i class="fas fa-volume-mute"></i>';
+          } else {
+            player.setMute(true);
+            document.getElementById('mute-button').innerHTML = '<i class="fas fa-volume-up"></i>';
+          }
+        });
+    
+        // Load the first media item initially
+        loadMedia(currentIndex);
+      });
+    </script>
+    <style>
+ 
+    </style>
 <!-- ... existing code ... -->
-<p>Hiii</p>
-<div id="jwplayer-currently-playing" class="currently-playing">
-  <div id="jwplayer-container"></div>
-  <h2 class="jwplayer-title">Currently Playing:</h2>
-  <p id="current-title" class="jwplayer-text-bold">Title: 
-    <span id="current-title-text" class="jwplayer-text"></span></p>
-  <p id="current-description" class="jwplayer-text-bold">Description: <span class="jwplayer-text" id="current-description-text"></span></p>
-  <button id="next-button" class="btnPrimary">Next</button>
-</div>
+<script>
+  document.addEventListener('DOMContentLoaded', async () => {
+    const response = await fetch('./data/mediaCollection.json');
+    const mediaCollection = await response.json();
+    let currentIndex = 0;
+
+    function loadMedia(index) {
+      const currentMedia = mediaCollection[index];
+      jwplayer("jwplayer-container").setup({
+        file: currentMedia.mp4_link,
+        image: currentMedia.thumbnail_link,
+        title: currentMedia.display_title,
+        description: currentMedia.artist,
+        width: "100%",
+        aspectratio: "16:9"
+      }).on('complete', () => {
+        currentIndex = (currentIndex + 1) % mediaCollection.length;
+        loadMedia(currentIndex);
+      }).on('time', (event) => {
+        const progress = (event.position / event.duration) * 100;
+        document.getElementById('progress-bar').value = progress;
+      });
+      document.getElementById('current-title-text').textContent = currentMedia.display_title;
+      document.getElementById('current-description-text').textContent = currentMedia.artist;
+    }
+
+    document.getElementById('play-pause-button').addEventListener('click', () => {
+      const player = jwplayer();
+      if (player.getState() === 'playing') {
+        player.pause();
+        document.getElementById('play-pause-button').innerHTML = '<i class="fas fa-play"></i>';
+      } else {
+        player.play();
+        document.getElementById('play-pause-button').innerHTML = '<i class="fas fa-pause"></i>';
+      }
+    });
+
+    document.getElementById('rewind-button').addEventListener('click', () => {
+      const player = jwplayer();
+      player.seek(Math.max(player.getPosition() - 10, 0));
+    });
+
+    document.getElementById('fast-forward-button').addEventListener('click', () => {
+      const player = jwplayer();
+      player.seek(Math.min(player.getPosition() + 10, player.getDuration()));
+    });
+
+    document.getElementById('next-button').addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % mediaCollection.length;
+      loadMedia(currentIndex);
+    });
+
+    document.getElementById('shuffle-button').addEventListener('click', () => {
+      currentIndex = Math.floor(Math.random() * mediaCollection.length);
+      loadMedia(currentIndex);
+    });
+
+    document.getElementById('fullscreen-button').addEventListener('click', () => {
+      jwplayer().setFullscreen(true);
+    });
+
+    document.getElementById('volume-up').addEventListener('click', () => {
+      const currentVolume = jwplayer().getVolume();
+      jwplayer().setVolume(Math.min(currentVolume + 10, 100));
+    });
+
+    document.getElementById('volume-down').addEventListener('click', () => {
+      const currentVolume = jwplayer().getVolume();
+      jwplayer().setVolume(Math.max(currentVolume - 10, 0));
+    });
+
+    document.getElementById('mute-button').addEventListener('click', () => {
+      const player = jwplayer();
+      if (player.getMute()) {
+        player.setMute(false);
+        document.getElementById('mute-button').innerHTML = '<i class="fas fa-volume-mute"></i>';
+      } else {
+        player.setMute(true);
+        document.getElementById('mute-button').innerHTML = '<i class="fas fa-volume-up"></i>';
+      }
+    });
+
+    // Load the first media item initially
+    loadMedia(currentIndex);
+  });
+</script>
+<!-- ... existing code ... -->
+<script>
+  document.addEventListener('DOMContentLoaded', async () => {
+    const response = await fetch('./data/mediaCollection.json');
+    const mediaCollection = await response.json();
+    let currentIndex = 0;
+
+    function loadMedia(index) {
+      const currentMedia = mediaCollection[index];
+      jwplayer("jwplayer-container").setup({
+        file: currentMedia.mp4_link,
+        image: currentMedia.thumbnail_link,
+        title: currentMedia.display_title,
+        description: currentMedia.artist,
+        width: "100%",
+        aspectratio: "16:9"
+      }).on('complete', () => {
+        currentIndex = (currentIndex + 1) % mediaCollection.length;
+        loadMedia(currentIndex);
+      }).on('time', (event) => {
+        const progress = (event.position / event.duration) * 100;
+        document.getElementById('progress-bar').value = progress;
+      });
+      document.getElementById('current-title-text').textContent = currentMedia.display_title;
+      document.getElementById('current-description-text').textContent = currentMedia.artist;
+    }
+
+    document.getElementById('next-button').addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % mediaCollection.length;
+      loadMedia(currentIndex);
+    });
+
+    document.getElementById('shuffle-button').addEventListener('click', () => {
+      currentIndex = Math.floor(Math.random() * mediaCollection.length);
+      loadMedia(currentIndex);
+    });
+
+    document.getElementById('fullscreen-button').addEventListener('click', () => {
+      jwplayer().setFullscreen(true);
+    });
+
+    document.getElementById('volume-up').addEventListener('click', () => {
+      const currentVolume = jwplayer().getVolume();
+      jwplayer().setVolume(Math.min(currentVolume + 10, 100));
+    });
+
+    document.getElementById('volume-down').addEventListener('click', () => {
+      const currentVolume = jwplayer().getVolume();
+      jwplayer().setVolume(Math.max(currentVolume - 10, 0));
+    });
+
+    // Load the first media item initially
+    loadMedia(currentIndex);
+  });
+</script>
 <!-- ... existing code ... -->
 <script>
   document.addEventListener('DOMContentLoaded', async () => {
@@ -287,7 +526,7 @@
     <!-- Add your schedule content here -->
   </div>
   <div class="right-sidebar-bottom">
-    <h2>Daily Shuffle</h2>
+    <h2>RideSideBar Bottone</h2>
     <!-- Add your daily shuffle content here -->
   </div>
 </div>
