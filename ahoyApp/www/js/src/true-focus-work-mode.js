@@ -25,9 +25,13 @@ const coverArt = document.getElementById('coverArt');
 fetch('./data/classicalMusic.json')
   .then(response => response.json())
   .then(data => {
-    songs = data.songs;
+    songs = data.songs.filter(song => song.active);
     populatePlaylist(songs);
-    loadSong(songs[currentSongIndex]);
+    if (songs.length > 0) {
+      loadSong(songs[currentSongIndex]);
+    } else {
+      console.log("No active songs available.");
+    }
   })
   .catch(error => console.error('Error loading playlist:', error));
 
@@ -185,3 +189,30 @@ playBtn.addEventListener('click', togglePlay);
 audioPlayer.addEventListener('ended', nextSong);
 
 // ... existing updateDisplay() call ...
+
+function initializeFocusWorkMode() {
+  if (!FOCUS_WORK_MODE_ACTIVE) {
+    console.log("Focus Work Mode is currently inactive.");
+    document.getElementById('focus-work-mode-tab').innerHTML = '<p>Focus Work Mode is currently unavailable.</p>';
+    return;
+  }
+
+  // Modify the fetch function inside initializeFocusWorkMode as well
+  fetch('./data/classicalMusic.json')
+    .then(response => response.json())
+    .then(data => {
+      songs = data.songs.filter(song => song.active);
+      populatePlaylist(songs);
+      if (songs.length > 0) {
+        loadSong(songs[currentSongIndex]);
+      } else {
+        console.log("No active songs available.");
+        document.getElementById('focus-work-mode-tab').innerHTML = '<p>No active songs available in the playlist.</p>';
+      }
+    })
+    .catch(error => console.error('Error loading playlist:', error));
+
+  // ... rest of the existing code ...
+}
+
+// ... existing code ...

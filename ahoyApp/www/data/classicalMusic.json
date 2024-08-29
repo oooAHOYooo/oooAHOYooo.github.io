@@ -5,42 +5,48 @@
       "composer": "Ludwig van Beethoven",
       "songTitle": "Moonlight Sonata",
       "mp3url": "https://example.com/beethoven_moonlight_sonata.mp3",
-      "coverArt": "https://example.com/beethoven_moonlight_sonata.jpg"
+      "coverArt": "https://example.com/beethoven_moonlight_sonata.jpg",
+      "active": false
     },
     {
       "id": 2,
       "composer": "Wolfgang Amadeus Mozart",
       "songTitle": "Eine Kleine Nachtmusik",
       "mp3url": "https://example.com/mozart_eine_kleine_nachtmusik.mp3",
-      "coverArt": "https://example.com/mozart_eine_kleine_nachtmusik.jpg"
+      "coverArt": "https://example.com/mozart_eine_kleine_nachtmusik.jpg",
+      "active": false
     },
     {
       "id": 3,
       "composer": "Johann Sebastian Bach",
       "songTitle": "Air on the G String",
       "mp3url": "https://example.com/bach_air_on_g_string.mp3",
-      "coverArt": "https://example.com/bach_air_on_g_string.jpg"
+      "coverArt": "https://example.com/bach_air_on_g_string.jpg",
+      "active": false
     },
     {
       "id": 4,
       "composer": "Frédéric Chopin",
       "songTitle": "Nocturne in E-flat major, Op. 9, No. 2",
       "mp3url": "https://example.com/chopin_nocturne_op9_no2.mp3",
-      "coverArt": "https://example.com/chopin_nocturne_op9_no2.jpg"
+      "coverArt": "https://example.com/chopin_nocturne_op9_no2.jpg",
+      "active": false
     },
     {
       "id": 5,
       "composer": "Claude Debussy",
       "songTitle": "Clair de Lune",
       "mp3url": "https://example.com/debussy_clair_de_lune.mp3",
-      "coverArt": "https://example.com/debussy_clair_de_lune.jpg"
+      "coverArt": "https://example.com/debussy_clair_de_lune.jpg",
+      "active": false
     },
     {
       "id": 6,
       "composer": "Wolfgang Amadeus Mozart",
       "songTitle": "No 9. in D Major",
       "mp3url": "https://storage.googleapis.com/ahoy-dynamic-content/classical/Mozart%20-%20Serenade%20No.9%20in%20D%20major%20-%20IV.%20Rondo.mp3",
-      "coverArt": "https://example.com/bach_air_on_g_string.jpg"
+      "coverArt": "https://example.com/bach_air_on_g_string.jpg",
+      "active": true
     }
   ]
 }

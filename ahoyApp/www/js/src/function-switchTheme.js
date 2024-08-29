@@ -110,6 +110,27 @@ function setThemeProperties(
   root.style.setProperty("--secondary-color", secondaryColor);
   root.style.setProperty("--button-color", buttonColor);
   root.style.setProperty("--gold", goldColor);
+
+  // Add RGB versions of the colors
+  root.style.setProperty("--background-color-rgb", hexToRgb(backgroundColor));
+  root.style.setProperty("--text-color-rgb", hexToRgb(textColor));
+  root.style.setProperty("--border-color-rgb", hexToRgb(borderColor));
+  root.style.setProperty("--secondary-color-rgb", hexToRgb(secondaryColor));
+}
+
+// Helper function to convert hex to RGB
+function hexToRgb(hex) {
+  // Remove the hash if it's there
+  hex = hex.replace(/^#/, '');
+
+  // Parse the hex values
+  var bigint = parseInt(hex, 16);
+  var r = (bigint >> 16) & 255;
+  var g = (bigint >> 8) & 255;
+  var b = bigint & 255;
+
+  // Return the RGB values as a string
+  return r + "," + g + "," + b;
 }
 
 // Apply a random theme on page load
