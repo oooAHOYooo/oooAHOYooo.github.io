@@ -3,33 +3,44 @@ document.addEventListener('DOMContentLoaded', function() {
     const rightSidebar = document.getElementById('right-sidebar');
     const leftToggleButton = document.getElementById('left-toggle-button');
     const rightToggleButton = document.getElementById('right-toggle-button');
-    const body = document.body;
+    const mainContent = document.getElementById('tabSortza');
 
     function toggleSidebar(sidebar, position) {
-        const isOpen = sidebar.style[position] === '0px';
-        sidebar.style[position] = isOpen ? `-240px` : '0px';
+        const isOpen = sidebar.classList.contains('open');
+        sidebar.classList.toggle('open');
         
         if (position === 'left') {
-            body.classList.toggle('left-sidebar-open', !isOpen);
+            sidebar.style.left = isOpen ? '-280px' : '0';
+            leftToggleButton.style.left = isOpen ? '10px' : '290px';
         } else {
-            body.classList.toggle('right-sidebar-open', !isOpen);
+            sidebar.style.right = isOpen ? '-280px' : '0';
+            rightToggleButton.style.right = isOpen ? '10px' : '290px';
         }
         
-        updateToggleButton(position, !isOpen);
+        updateMainContentMargin();
     }
 
-    function updateToggleButton(position, isOpen) {
-        const button = position === 'left' ? leftToggleButton : rightToggleButton;
-        button.textContent = isOpen ? '✕' : '☰';
-        button.style[position] = isOpen && window.innerWidth > 768 ? '240px' : '10px';
+    function updateMainContentMargin() {
+        const isLeftOpen = leftSidebar.classList.contains('open');
+        const isRightOpen = rightSidebar.classList.contains('open');
+        
+        if (window.innerWidth > 768) {
+            mainContent.style.marginLeft = isLeftOpen ? '280px' : '0';
+            mainContent.style.marginRight = isRightOpen ? '280px' : '0';
+        } else {
+            mainContent.style.marginLeft = '0';
+            mainContent.style.marginRight = '0';
+        }
     }
 
     function closeSidebars() {
-        leftSidebar.style.left = '-240px';
-        rightSidebar.style.right = '-240px';
-        body.classList.remove('left-sidebar-open', 'right-sidebar-open');
-        updateToggleButton('left', false);
-        updateToggleButton('right', false);
+        leftSidebar.classList.remove('open');
+        rightSidebar.classList.remove('open');
+        leftSidebar.style.left = '-280px';
+        rightSidebar.style.right = '-280px';
+        leftToggleButton.style.left = '10px';
+        rightToggleButton.style.right = '10px';
+        updateMainContentMargin();
     }
 
     leftToggleButton.addEventListener('click', () => toggleSidebar(leftSidebar, 'left'));
@@ -39,6 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (window.innerWidth <= 768) {
             closeSidebars();
         }
+        updateMainContentMargin();
     });
 
     document.addEventListener('click', function(event) {

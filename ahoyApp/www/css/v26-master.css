@@ -100,30 +100,24 @@
     top: 0;
     height: 100%;
     width: 280px;
-    max-width: 280px;
+    background-color: #121212;
+    color: #ffffff;
+    overflow-y: auto;
+    transition: all 0.3s ease;
     z-index: 1000;
-    transition: transform 0.3s ease;
 }
 
 #left-sidebar {
-    left: 0;
-    transform: translateX(-100%);
+    left: -280px;
 }
 
 #right-sidebar {
-    right: 0;
-    transform: translateX(100%);
+    right: -280px;
 }
 
 #left-sidebar.open,
 #right-sidebar.open {
-    transform: translateX(0);
-}
-
-#left-sidebar.mobile,
-#right-sidebar.mobile {
-    width: 100%;
-    max-width: 100%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
 
 #left-toggle-button,
@@ -131,6 +125,11 @@
     position: fixed;
     top: 10px;
     z-index: 1001;
+    background-color: #1db954;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
     transition: all 0.3s ease;
 }
 
@@ -147,6 +146,20 @@
 }
 
 @media (max-width: 768px) {
+
+    #left-sidebar,
+    #right-sidebar {
+        width: 100%;
+    }
+
+    #left-sidebar.open {
+        left: 0;
+    }
+
+    #right-sidebar.open {
+        right: 0;
+    }
+
     #tabSortza {
         margin-left: 0 !important;
         margin-right: 0 !important;
