@@ -52,8 +52,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const thumbnailCell = document.createElement("td");
         const thumbnail = document.createElement("img");
-        thumbnail.src = item.thumbnail_link;
+        thumbnail.dataset.src = item.thumbnail_link; // Use data-src for lazy loading
         thumbnail.alt = item.display_title;
+        thumbnail.className = "lazy-thumbnail"; // Add a class for lazy loading
         thumbnailCell.appendChild(thumbnail);
         row.appendChild(thumbnailCell);
 
@@ -67,8 +68,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
         tableBody.appendChild(row);
       });
+
+      // Lazy load the thumbnails
+      lazyLoadThumbnails();
     })
     .catch((error) => console.error("Error:", error));
+
+  function lazyLoadThumbnails() {
+    const lazyThumbnails = document.querySelectorAll(".lazy-thumbnail");
+
+    const lazyLoadObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const thumbnail = entry.target;
+          thumbnail.src = thumbnail.dataset.src; // Load the actual image
+          thumbnail.classList.remove("lazy-thumbnail");
+          observer.unobserve(thumbnail);
+        }
+      });
+    });
+
+    lazyThumbnails.forEach(thumbnail => {
+      lazyLoadObserver.observe(thumbnail);
+    });
+  }
 });
 
 function searchMedia() {

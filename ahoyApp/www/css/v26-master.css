@@ -2736,7 +2736,6 @@ td {
 .recently-added-item {
     display: flex;
     margin-bottom: 20px;
-    background-color: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     overflow: hidden;
 }
@@ -2770,28 +2769,34 @@ td {
     text-transform: uppercase;
 }
 
-.new.song {
+.tag-new-song {
     background-color: #4CAF50;
     color: white;
 }
 
-.podcast {
+.tag-podcast {
     background-color: #2196F3;
     color: white;
 }
 
-.media {
+.tag-media {
     background-color: #FFC107;
     color: black;
 }
 
-.news {
+.tag-news {
     background-color: #FF5722;
     color: white;
 }
 
 
-/*DOCK BUSINESS */
+/*
+ ____   ___   ____ _  __  ____  _   _ ____ ___ _   _ _____ ____ ____
+|  _ \ / _ \ / ___| |/ / | __ )| | | / ___|_ _| \ | | ____/ ___/ ___|
+| | | | | | | |   | ' /  |  _ \| | | \___ \| ||  \| |  _| \___ \___ \
+| |_| | |_| | |___| . \  | |_) | |_| |___) | || |\  | |___ ___) |__) |
+|____/ \___/ \____|_|\_\ |____/ \___/|____/___|_| \_|_____|____/____/
+*/
 
 .v25-dock-icon.active {
     background: rgba(var(--border-color), 0.1) !important;
