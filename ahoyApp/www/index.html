@@ -188,7 +188,7 @@
       </div>
       <div id="left-sidebar-bottom" class="left-sidebar-bottom">
         <img id="left-sidebar-cover-art" src="./img/assets/default-cover.png" alt="Cover Art" style="width: 100px; height: 100px; object-fit: cover;">
-        <p>Currently Playing: <span id="current-track">No track playing</span></p>
+        <p class="body-text-header">Currently Playing: <br><span id="current-track" class="body-text">No track playing</span></p>
         <button id="left-sidebar-play-pause" style="font-size: 24px;">&#9658;</button>
       </div>
       <hr>
@@ -210,10 +210,10 @@
 <!-- Add this right sidebar structure -->
 <div id="right-sidebar" class="right-sidebar">
   <div class="right-sidebar-top">
-    <h2>Live on Air</h2>
+    <h2 class="heading-2">Now Playing</h2>
   </div>
   <div class="right-sidebar-middle">    <!-- ... existing code ... -->
-    <p>Hiii</p>
+    <p style="display:none;">Hiii</p>
     <div id="jwplayer-currently-playing" class="currently-playing">
       <div id="jwplayer-container"></div>
       <h2 class="jwplayer-title">Currently Playing:</h2>
@@ -610,7 +610,7 @@
             -->
 
             <!-- MEDIA TAB -->
-            <div id="media-tab-a" class="tab-content">
+            <div id="media-tab-a" class="tab-content active">
               <!--img src="./img/ahoy-media.svg"
                 class="svgBlend"-->
               <!-- START OF MEDIA-COLS-->
@@ -620,7 +620,7 @@
                   <div id="jw-player-container"></div>
                   <div id="media-display-text">
                     <div id="media-artist-name">
-                      <p class="body-text-header">This is where the Media Artist Name will Go</p></div>
+                      <p>This is where the Media Artist Name will Go</p></div>
                     <div id="media-title-name">
                       <p class="body-text">This is where the Media Title Name will Go</p></div>
                   </div>
@@ -673,7 +673,7 @@
 
             
             <!-- TRUE CLASSIC RADIO (to replace song-collection-tab)-->
-            <div id="true-classic-radio" class="tab-content active">
+            <div id="true-classic-radio" class="tab-content">
               <div class="radio-widget">
                 <div class="player-container">
                     <div class="song-info">

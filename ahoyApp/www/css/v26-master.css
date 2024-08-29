@@ -58,6 +58,7 @@
     margin-bottom: 1rem;
     transition: font-size 0.3s ease;
     text-transform: uppercase;
+    margin-left: 10px;
 }
 
 @media (max-width: 768px) {
@@ -89,6 +90,7 @@
 
 .body-text-bold {
     font-weight: 600;
+    margin: 1.5rem auto;
 }
 
 .body-text-header {
@@ -148,6 +150,7 @@
 
 #right-sidebar {
     right: -280px;
+
 }
 
 #left-sidebar.open {
@@ -189,6 +192,13 @@
 .toggle-button-right:hover {
     background: rgba(255, 255, 255, 0.3);
 }
+
+
+
+
+/*MEDIA TAB WORK */
+
+
 
 /* Main content transition */
 #tabSortza {
@@ -1218,6 +1228,7 @@ td {
     margin: 0.5em 0;
     font-weight: 400;
     color: white;
+    margin-left: 5px;
 }
 
 .jwplayer-text-bold {
@@ -1227,6 +1238,8 @@ td {
     margin: 0.5em 0;
     font-weight: 900;
     color: white;
+    margin-left: 10px;
+    max-width: 50ch;
 }
 
 /* ... existing code ... */

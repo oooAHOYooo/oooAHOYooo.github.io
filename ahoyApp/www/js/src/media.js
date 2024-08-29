@@ -89,7 +89,13 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     lazyThumbnails.forEach(thumbnail => {
-      lazyLoadObserver.observe(thumbnail);
+      // Check if the thumbnail is already in the viewport
+      if (thumbnail.getBoundingClientRect().top < window.innerHeight) {
+        thumbnail.src = thumbnail.dataset.src; // Load the actual image
+        thumbnail.classList.remove("lazy-thumbnail");
+      } else {
+        lazyLoadObserver.observe(thumbnail);
+      }
     });
   }
 });
