@@ -100,37 +100,57 @@
     top: 0;
     height: 100%;
     width: 280px;
-    background-color: rgba(51, 51, 51, 0.9);
-    /* Increased opacity for better readability on mobile */
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
-    /* Faster transition for mobile */
+    max-width: 280px;
     z-index: 1000;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
-    overflow-y: auto;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+    transition: transform 0.3s ease;
 }
 
 #left-sidebar {
-    left: -100%;
-    /* Changed from -9999px for smoother transitions */
-    display: none;
-    /* Hide it completely */
-    border-radius: 0 20px 20px 0;
+    left: 0;
+    transform: translateX(-100%);
 }
 
 #right-sidebar {
-    right: -100%;
-    /* Changed from -280px for consistency */
-    border-radius: 20px 0 0 20px;
+    right: 0;
+    transform: translateX(100%);
 }
 
 #left-sidebar.open,
 #right-sidebar.open {
     transform: translateX(0);
+}
+
+#left-sidebar.mobile,
+#right-sidebar.mobile {
+    width: 100%;
+    max-width: 100%;
+}
+
+#left-toggle-button,
+#right-toggle-button {
+    position: fixed;
+    top: 10px;
+    z-index: 1001;
+    transition: all 0.3s ease;
+}
+
+#left-toggle-button {
+    left: 10px;
+}
+
+#right-toggle-button {
+    right: 10px;
+}
+
+#tabSortza {
+    transition: margin 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    #tabSortza {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
 }
 
 /* Breathing Effect */
@@ -2573,14 +2593,14 @@ td {
 /*DOCK BUSINESS */
 
 .v25-dock-icon.active {
-    background: var(--border-color);
+    background: rgba(var(--border-color), 0.1) !important;
     /* Use the active color you prefer */
-    transform: scale(1.1);
+    transform: scale(1.011);
     /* Slightly larger than the hover state */
 }
 
 .v25-dock-icon.active i {
-    color: #ffffff;
+    color: rgba(255, 255, 255, 0.2);
     /* Change icon color for better contrast */
 }
 
@@ -2644,7 +2664,7 @@ td {
     left: -2px;
     right: -2px;
     bottom: -2px;
-    background: linear-gradient(45deg, var(--border-color), var(--secondary-color));
+    background: linear-gradient(45deg, rgba(var(--border-color-rgb), 0.7), rgba(var(--secondary-color-rgb), 0.57));
     z-index: -1;
     border-radius: 17px;
     opacity: 0;
@@ -2676,6 +2696,7 @@ td {
 .v25-dock-icon.active i {
     color: var(--border-color);
     transform: scale(1.1);
+    cursor: pointer;
 }
 
 /* Tooltip styles */

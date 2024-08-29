@@ -1,50 +1,45 @@
 document.addEventListener('DOMContentLoaded', function() {
     const leftSidebar = document.getElementById('left-sidebar');
     const rightSidebar = document.getElementById('right-sidebar');
-    const rightToggleButton = document.getElementById('right-toggle-button');
     const leftToggleButton = document.getElementById('left-toggle-button');
+    const rightToggleButton = document.getElementById('right-toggle-button');
+    const body = document.body;
 
-    function toggleSidebars() {
-        if (window.innerWidth > 768) {
-            leftSidebar.style.left = '0px';
-            rightSidebar.style.right = '0px';
+    function toggleSidebar(sidebar, position) {
+        const isOpen = sidebar.style[position] === '0px';
+        sidebar.style[position] = isOpen ? `-240px` : '0px';
+        
+        if (position === 'left') {
+            body.classList.toggle('left-sidebar-open', !isOpen);
         } else {
-            leftSidebar.style.left = '-100%';
-            rightSidebar.style.right = '-100%';
+            body.classList.toggle('right-sidebar-open', !isOpen);
         }
-        updateSidebarState();
+        
+        updateToggleButton(position, !isOpen);
     }
 
-    function toggleLeftSidebar() {
-        leftSidebar.style.left = leftSidebar.style.left === '0px' ? '-100%' : '0px';
-        updateSidebarState();
-    }
-
-    function toggleRightSidebar(event) {
-        event.stopPropagation();
-        rightSidebar.style.right = rightSidebar.style.right === '0px' ? '-100%' : '0px';
-        updateSidebarState();
+    function updateToggleButton(position, isOpen) {
+        const button = position === 'left' ? leftToggleButton : rightToggleButton;
+        button.textContent = isOpen ? '✕' : '☰';
+        button.style[position] = isOpen && window.innerWidth > 768 ? '240px' : '10px';
     }
 
     function closeSidebars() {
-        leftSidebar.style.left = '-100%';
-        rightSidebar.style.right = '-100%';
-        updateSidebarState();
+        leftSidebar.style.left = '-240px';
+        rightSidebar.style.right = '-240px';
+        body.classList.remove('left-sidebar-open', 'right-sidebar-open');
+        updateToggleButton('left', false);
+        updateToggleButton('right', false);
     }
 
-    function updateSidebarState() {
-        const isRightOpen = rightSidebar.style.right === '0px';
-        rightToggleButton.textContent = isRightOpen ? '✕' : '☰';
-        rightToggleButton.style.right = isRightOpen && window.innerWidth > 768 ? '282px' : '10px';
-        
-        const isLeftOpen = leftSidebar.style.left === '0px';
-        leftToggleButton.textContent = isLeftOpen ? '✕' : '☰';
-    }
+    leftToggleButton.addEventListener('click', () => toggleSidebar(leftSidebar, 'left'));
+    rightToggleButton.addEventListener('click', () => toggleSidebar(rightSidebar, 'right'));
 
-    toggleSidebars();
-    window.addEventListener('resize', toggleSidebars);
-    leftToggleButton.addEventListener('click', toggleLeftSidebar);
-    rightToggleButton.addEventListener('click', toggleRightSidebar);
+    window.addEventListener('resize', () => {
+        if (window.innerWidth <= 768) {
+            closeSidebars();
+        }
+    });
 
     document.addEventListener('click', function(event) {
         if (!leftSidebar.contains(event.target) && event.target !== leftToggleButton &&
@@ -100,13 +95,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }, false);
 
     function handleSwipe() {
-        const swipeThreshold = 100; // Minimum distance for a swipe
+        const swipeThreshold = 100;
         if (touchEndX - touchStartX > swipeThreshold) {
-            // Swipe right
-            toggleLeftSidebar();
+            toggleSidebar(leftSidebar, 'left');
         } else if (touchStartX - touchEndX > swipeThreshold) {
-            // Swipe left
-            toggleRightSidebar(event);
+            toggleSidebar(rightSidebar, 'right');
         }
     }
 
