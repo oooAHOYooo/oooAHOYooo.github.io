@@ -218,15 +218,72 @@
   <div class="right-sidebar-middle">
     <h2>Upcoming Schedule</h2>
     <p>Hiii</p>
-    <div id="jwplayer-currently-playing" class="currently-playing">
-      <h2 class="jwplayer-title">Currently Playing:</h2>
-      <p id="current-title" class="jwplayer-text-bold">Title: 
-        <span id="current-title-text" class="jwplayer-text">Skate Clips</span></p>
-      <p id="current-description" class="jwplayer-text-bold">Description: <span class="jwplayer-text" id="current-description-text">Skate Clips from our skate friends</span></p>
-      <div class="tiny-note" style="margin-top: 110px;">
-      <button class="btnPrimary" id="close-fullscreen-button">Close FullScreen</button>
-    </div>
-    </div>
+    <!-- ... existing code ... -->
+<!-- ... existing code ... -->
+<p>Hiii</p>
+<div id="jwplayer-currently-playing" class="currently-playing">
+  <div id="jwplayer-container"></div>
+  <h2 class="jwplayer-title">Currently Playing:</h2>
+  <p id="current-title" class="jwplayer-text-bold">Title: 
+    <span id="current-title-text" class="jwplayer-text"></span></p>
+  <p id="current-description" class="jwplayer-text-bold">Description: <span class="jwplayer-text" id="current-description-text"></span></p>
+  <button id="next-button" class="btnPrimary">Next</button>
+</div>
+<!-- ... existing code ... -->
+<script>
+  document.addEventListener('DOMContentLoaded', async () => {
+    const response = await fetch('./data/mediaCollection.json');
+    const mediaCollection = await response.json();
+    let currentIndex = 0;
+
+    function loadMedia(index) {
+      const currentMedia = mediaCollection[index];
+      jwplayer("jwplayer-container").setup({
+        file: currentMedia.mp4_link,
+        image: currentMedia.thumbnail_link,
+        title: currentMedia.display_title,
+        description: currentMedia.artist,
+        width: "100%",
+        aspectratio: "16:9"
+      });
+      document.getElementById('current-title-text').textContent = currentMedia.display_title;
+      document.getElementById('current-description-text').textContent = currentMedia.artist;
+    }
+
+    document.getElementById('next-button').addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % mediaCollection.length;
+      loadMedia(currentIndex);
+    });
+
+    // Load the first media item initially
+    loadMedia(currentIndex);
+  });
+</script>
+<!-- ... existing code ... -->
+<script>
+  document.addEventListener('DOMContentLoaded', async () => {
+    const response = await fetch('./data/mediaCollection.json');
+    const mediaCollection = await response.json();
+    
+    // Assuming the first media item is the current media
+    const currentMedia = mediaCollection[0];
+
+    // Initialize JWPlayer
+    jwplayer("jwplayer-container").setup({
+      file: currentMedia.mp4_link,
+      image: currentMedia.thumbnail_link,
+      title: currentMedia.display_title,
+      description: currentMedia.artist,
+      width: "100%",
+      aspectratio: "16:9"
+    });
+
+    // Update the HTML with the current media details
+    document.getElementById('current-title-text').textContent = currentMedia.display_title;
+    document.getElementById('current-description-text').textContent = currentMedia.artist;
+  });
+</script>
+
     <!-- Add your schedule content here -->
   </div>
   <div class="right-sidebar-bottom">
