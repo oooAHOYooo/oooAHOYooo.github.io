@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const coverArtElement = document.getElementById('sidedock-cover-art');
     const playPauseButton = document.getElementById('sidedock-play-pause');
     const bottomMainDisplay = document.getElementById('bottom-main-display');
+    const likeButton = document.getElementById('like-button');
 
     const accountLikedSongsList = document.getElementById('accountLikedSongsList');
     const accountLikedSongsCount = document.getElementById('accountLikedSongsCount');
