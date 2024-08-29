@@ -43,15 +43,28 @@ document.addEventListener('DOMContentLoaded', function() {
         updateMainContentMargin();
     }
 
+    function openSidebars() {
+        leftSidebar.classList.add('open');
+        rightSidebar.classList.add('open');
+        leftSidebar.style.left = '0';
+        rightSidebar.style.right = '0';
+        leftToggleButton.style.left = '290px';
+        rightToggleButton.style.right = '290px';
+        updateMainContentMargin();
+    }
+
+    function handleResize() {
+        if (window.innerWidth > 768) {
+            openSidebars();
+        } else {
+            closeSidebars();
+        }
+    }
+
     leftToggleButton.addEventListener('click', () => toggleSidebar(leftSidebar, 'left'));
     rightToggleButton.addEventListener('click', () => toggleSidebar(rightSidebar, 'right'));
 
-    window.addEventListener('resize', () => {
-        if (window.innerWidth <= 768) {
-            closeSidebars();
-        }
-        updateMainContentMargin();
-    });
+    window.addEventListener('resize', handleResize);
 
     document.addEventListener('click', function(event) {
         if (!leftSidebar.contains(event.target) && event.target !== leftToggleButton &&
@@ -60,60 +73,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Add event listener for the "Play FullScreen" button
-    const playFullscreenButton = document.getElementById('play-fullscreen-button');
-    if (playFullscreenButton) {
-        playFullscreenButton.addEventListener('click', function() {
-            const jwplayerFullscreenModal = document.getElementById('jwplayer-fullscreen-modal');
-            if (jwplayerFullscreenModal) {
-                jwplayerFullscreenModal.style.display = 'block';
-            }
-        });
-    }
-
-    // Add event listener for the "Close FullScreen" button
-    const closeFullscreenButton = document.getElementById('close-fullscreen-button');
-    if (closeFullscreenButton) {
-        closeFullscreenButton.addEventListener('click', function() {
-            const jwplayerFullscreenModal = document.getElementById('jwplayer-fullscreen-modal');
-            if (jwplayerFullscreenModal) {
-                jwplayerFullscreenModal.style.display = 'none';
-            }
-        });
-    }
-
-    // Close playlist popup when clicking outside
-    document.addEventListener('click', function(event) {
-        const playlistPopup = document.querySelector('.playlist-popup');
-        const toggleButtons = document.querySelectorAll('.toggle-playlist');
-        
-        if (playlistPopup && !playlistPopup.contains(event.target) && 
-            !Array.from(toggleButtons).some(button => button.contains(event.target))) {
-            playlistPopup.remove();
-        }
-    });
-
-    // Add touch event listeners for swipe gestures
-    let touchStartX = 0;
-    let touchEndX = 0;
-
-    document.addEventListener('touchstart', function(event) {
-        touchStartX = event.changedTouches[0].screenX;
-    }, false);
-
-    document.addEventListener('touchend', function(event) {
-        touchEndX = event.changedTouches[0].screenX;
-        handleSwipe();
-    }, false);
-
-    function handleSwipe() {
-        const swipeThreshold = 100;
-        if (touchEndX - touchStartX > swipeThreshold) {
-            toggleSidebar(leftSidebar, 'left');
-        } else if (touchStartX - touchEndX > swipeThreshold) {
-            toggleSidebar(rightSidebar, 'right');
-        }
-    }
-
-    // ... rest of your existing code ...
+    // Initialize sidebar positions
+    handleResize();
 });

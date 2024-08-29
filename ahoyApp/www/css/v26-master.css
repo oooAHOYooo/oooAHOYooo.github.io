@@ -93,18 +93,20 @@
 
 
 
-/* Sidebar Base Styles */
+/* Sidebar styles */
 #left-sidebar,
 #right-sidebar {
     position: fixed;
     top: 0;
     height: 100%;
     width: 280px;
-    background-color: #121212;
+    background-color: rgba(18, 18, 18, 0.95);
+    /* Dark, semi-transparent background */
     color: #ffffff;
     overflow-y: auto;
     transition: all 0.3s ease;
     z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 #left-sidebar {
@@ -115,32 +117,47 @@
     right: -280px;
 }
 
-#left-sidebar.open,
-#right-sidebar.open {
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+#left-sidebar.open {
+    left: 0;
 }
 
-#left-toggle-button,
-#right-toggle-button {
+#right-sidebar.open {
+    right: 0;
+}
+
+/* Toggle button styles */
+.toggle-button,
+.toggle-button-right {
     position: fixed;
     top: 10px;
     z-index: 1001;
-    background-color: #1db954;
+    background: rgba(255, 255, 255, 0.2);
+    /* Glass-like effect */
+    backdrop-filter: blur(10px);
+    /* Glass-like effect */
     color: white;
     border: none;
     padding: 10px;
     cursor: pointer;
+    border-radius: 50%;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-#left-toggle-button {
+.toggle-button {
     left: 10px;
 }
 
-#right-toggle-button {
+.toggle-button-right {
     right: 10px;
 }
 
+.toggle-button:hover,
+.toggle-button-right:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Main content transition */
 #tabSortza {
     transition: margin 0.3s ease;
 }
