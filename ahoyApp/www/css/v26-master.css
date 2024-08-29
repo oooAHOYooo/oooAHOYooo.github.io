@@ -167,19 +167,40 @@
     #left-sidebar,
     #right-sidebar {
         width: 100%;
+        position: fixed;
+        top: 0;
+        height: 100%;
+        z-index: 1000;
+        display: none;
+        /* Hide by default on mobile */
     }
 
-    #left-sidebar.open {
-        left: 0;
-    }
-
+    #left-sidebar.open,
     #right-sidebar.open {
-        right: 0;
+        display: block;
+        /* Show when open */
     }
 
     #tabSortza {
         margin-left: 0 !important;
         margin-right: 0 !important;
+    }
+
+    .toggle-button,
+    .toggle-button-right {
+        display: block;
+        /* Show toggle buttons by default */
+        position: fixed;
+        top: 10px;
+        z-index: 1001;
+    }
+
+    .toggle-button {
+        left: 10px;
+    }
+
+    .toggle-button-right {
+        right: 10px;
     }
 }
 
@@ -2499,11 +2520,14 @@ td {
 
 
 #warning-banner {
-    position: fixed;
-    top: -50px;
+    position: absolute;
+    /* Change to absolute to position it within the content area */
+    top: 0;
     left: 0;
-    width: 100%;
-    background-color: #ffcc00d4 !important;
+    right: 0;
+    /* Adjust width to account for sidebars */
+    /* Center the banner within the content area */
+    background-color: #ff9d00d4 !important;
     color: #ffffff;
     text-align: center;
     padding: 10px;

@@ -156,17 +156,16 @@
   <body>
     <div class="app">
       <div class="app-background-layer"></div>
+      <!-- Add this new div for the warning banner within the main content area -->
+      <div id="warning-banner">
+        <p>
+          <strong>Warning:</strong>
+          We are in the process of implementing a new design system. Things might look unusual for the next two weeks.
+          <br>Please bear with us!
+        </p>
+        <button onclick="this.parentElement.style.display='none'" style="float: right; background: none; border: none; cursor: pointer;">&times;</button>
+      </div>
     </div>
-      <!-- Add this new div for the warning banner -->
-  <div id="warning-banner">
-      <p>
-      <strong>Warning:</strong>
-   We are in the process of implementing a new design system. Things might look unusual for the next two weeks. 
-   <br>Please bear with us!
-  </p> 
-    <button onclick="this.parentElement.style.display='none'" style="float: right; background: none; border: none; cursor: pointer;">&times;</button>
-  </div>
-
 
   <!--
  _     _____ _____ _____   _____ _____ ____  _____ 
@@ -659,7 +658,7 @@
 
             <!-- NEWS TAB-->
             <div id="news-tab" class="tab-content">
-              <img src="./img/assets/u_ahoy23.png" alt="Ahoy Indie Media Logo" class="homepage-logo">
+              <img src="./img/assets/u_ahoy23.png" alt="Ahoy Indie Media Logo" class="homepage-logo" style="font-family: 'Times New Roman', Times, serif; font-size: 24px; text-transform: uppercase;">
               <h2 id="calendar-date" class="home-calendar-date"></h2>
 
               <div class="homepage-subheader">

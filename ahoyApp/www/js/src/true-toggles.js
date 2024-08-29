@@ -56,14 +56,21 @@ document.addEventListener('DOMContentLoaded', function() {
     function handleResize() {
         if (window.innerWidth > 768) {
             openSidebars();
+            leftToggleButton.style.display = 'block';
+            rightToggleButton.style.display = 'block';
         } else {
             closeSidebars();
+            leftToggleButton.style.display = 'block';
+            rightToggleButton.style.display = 'block';
         }
     }
 
-    leftToggleButton.addEventListener('click', () => toggleSidebar(leftSidebar, 'left'));
-    rightToggleButton.addEventListener('click', () => toggleSidebar(rightSidebar, 'right'));
-
+    leftToggleButton.addEventListener('click', () => {
+        toggleSidebar(leftSidebar, 'left');
+    });
+    rightToggleButton.addEventListener('click', () => {
+        toggleSidebar(rightSidebar, 'right');
+    });
     window.addEventListener('resize', handleResize);
 
     document.addEventListener('click', function(event) {
@@ -75,4 +82,37 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize sidebar positions
     handleResize();
+
+    // Add touch event listeners for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    function handleTouchStart(event) {
+        touchStartX = event.changedTouches[0].screenX;
+    }
+
+    function handleTouchEnd(event) {
+        touchEndX = event.changedTouches[0].screenX;
+        handleGesture();
+    }
+
+    function handleGesture() {
+        if (touchEndX < touchStartX - 50) {
+            closeSidebars(); // Swipe left to close
+        }
+        if (touchEndX > touchStartX + 50) {
+            openSidebars(); // Swipe right to open
+        }
+    }
+
+    document.addEventListener('touchstart', handleTouchStart, false);
+    document.addEventListener('touchend', handleTouchEnd, false);
+
+    // Ensure toggles and sidebars are visible on mobile
+    if (window.innerWidth <= 768) {
+        leftSidebar.style.left = '-280px';
+        rightSidebar.style.right = '-280px';
+        leftToggleButton.style.display = 'block';
+        rightToggleButton.style.display = 'block';
+    }
 });
