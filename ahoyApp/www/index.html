@@ -1163,6 +1163,10 @@
             <!-- ACCOUNT -->
             <div id="account-tab" class="tab-content">
               <img src="./img/ahoy-account.svg" class="svgBlend">
+
+<button class="btnPrimary" onclick="navigateToTab('login-tab')">Login</button>
+
+
               <div id="user-profile-dropdown" style="display:none;">
                 <!-- other profile elements -->
                 <p id="last-login-time"></p>
@@ -1304,7 +1308,23 @@
         </div>
 
 
+<!-- LOGIN TAB -->
+ <div id="login-tab" class="tab-content">
+  <h1>Login</h1>
+  <form>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name"><br><br>
 
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email"><br><br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password"><br><br>
+
+    <button type="button" id="registerButton">Register</button>
+</form>
+
+ </div>
 
 
              <!--
