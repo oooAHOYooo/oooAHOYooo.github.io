@@ -21,10 +21,10 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (position === 'left') {
             sidebar.style.left = isOpen ? '-280px' : '0';
-            leftToggleButton.style.left = isOpen ? '10px' : '90px';
+            leftToggleButton.style.left = isOpen ? '10px' : '290px';
         } else {
             sidebar.style.right = isOpen ? '-280px' : '0';
-            rightToggleButton.style.right = isOpen ? '10px' : '290px';
+            rightToggleButton.style.right = isOpen ? '290px' : '10px'; // Adjusted positions
         }
         
         updateMainContentMargin();
@@ -72,6 +72,8 @@ document.addEventListener('DOMContentLoaded', function() {
             closeSidebars();
             leftToggleButton.style.display = 'block';
             rightToggleButton.style.display = 'block';
+            rightSidebar.style.right = '-280px'; // Ensure sidebar is hidden on mobile
+            rightToggleButton.style.right = '10px'; // Ensure button is visible and correctly positioned
         }
     }
 
@@ -127,5 +129,6 @@ document.addEventListener('DOMContentLoaded', function() {
         rightSidebar.style.right = '-280px';
         leftToggleButton.style.display = 'block';
         rightToggleButton.style.display = 'block';
+        rightToggleButton.style.right = '10px'; // Ensure button is visible and correctly positioned
     }
 });
