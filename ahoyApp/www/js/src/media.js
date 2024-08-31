@@ -39,30 +39,48 @@ document.addEventListener("DOMContentLoaded", function () {
 
       data.forEach((item) => {
         const row = document.createElement("tr");
+        row.className = "superMediaRow"; // Added class
+        row.style.backgroundImage = `url(${item.thumbnail_link})`; // Set background image
+        row.style.backgroundSize = "cover"; // Ensure the background covers the row
+        row.style.backgroundPosition = "center"; // Center the background image
+        row.style.color = "white"; // Change text color for better visibility
+        row.style.position = "relative"; // Set position for overlay positioning
         row.onclick = function () {
           loadVideoInJWPlayer(item.mp4_link, item.thumbnail_link, item.artist, item.display_title);
           window.scrollTo(0, 0); // Scroll back to the top of the page
         };
 
-        const playButtonCell = document.createElement("td");
-        const playButton = document.createElement("button");
-        playButton.textContent = "▶";
-        playButtonCell.appendChild(playButton);
-        row.appendChild(playButtonCell);
+        // Create an overlay for better text visibility
+        const overlay = document.createElement("div");
+        overlay.style.position = "absolute";
+        overlay.style.top = "0";
+        overlay.style.left = "0";
+        overlay.style.right = "0";
+        overlay.style.bottom = "0";
+        overlay.style.backgroundColor = "rgba(0, 0, 0, 0.5)"; // Dark overlay for contrast
+        row.appendChild(overlay);
 
-        const thumbnailCell = document.createElement("td");
-        const thumbnail = document.createElement("img");
-        thumbnail.dataset.src = item.thumbnail_link; // Use data-src for lazy loading
-        thumbnail.alt = item.display_title;
-        thumbnail.className = "lazy-thumbnail"; // Add a class for lazy loading
-        thumbnailCell.appendChild(thumbnail);
-        row.appendChild(thumbnailCell);
+        // Play Button
+        const playButton = document.createElement("button");
+        playButton.className = "superMediaPlayButton";
+        playButton.textContent = "▶";
+        playButton.style.position = "absolute";
+        playButton.style.left = "10px";
+        playButton.style.top = "10px";
+        playButton.style.zIndex = "10";
+        playButton.onclick = function(event) {
+          event.stopPropagation(); // Prevent row click event
+          loadVideoInJWPlayer(item.mp4_link, item.thumbnail_link, item.artist, item.display_title);
+        };
+        row.appendChild(playButton);
 
         const artistCell = document.createElement("td");
+        artistCell.className = "superMediaArtist"; // Added class
         artistCell.textContent = item.artist;
         row.appendChild(artistCell);
 
         const titleCell = document.createElement("td");
+        titleCell.className = "superMediaTitle"; // Added class
         titleCell.textContent = item.display_title;
         row.appendChild(titleCell);
 

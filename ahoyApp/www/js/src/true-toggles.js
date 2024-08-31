@@ -21,10 +21,8 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (position === 'left') {
             sidebar.style.left = isOpen ? '-280px' : '0';
-            leftToggleButton.style.left = isOpen ? '10px' : '290px';
         } else {
             sidebar.style.right = isOpen ? '-280px' : '0';
-            rightToggleButton.style.right = isOpen ? '290px' : '10px'; // Adjusted positions
         }
         
         updateMainContentMargin();
@@ -79,9 +77,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     leftToggleButton.addEventListener('click', () => {
         toggleSidebar(leftSidebar, 'left');
+        leftToggleButton.querySelector('.toggle-icon').classList.toggle('open');
     });
+
     rightToggleButton.addEventListener('click', () => {
         toggleSidebar(rightSidebar, 'right');
+        rightToggleButton.querySelector('.toggle-icon').classList.toggle('open');
     });
     window.addEventListener('resize', handleResize);
 
