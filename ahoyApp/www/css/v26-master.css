@@ -3753,3 +3753,55 @@ td {
 .tf-play-song-btn:hover {
     color: #007bff;
 }
+
+
+
+.success-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border: 2px solid #4CAF50;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.success-message .animation {
+    margin-bottom: 20px;
+}
+
+.checkmark {
+    width: 56px;
+    height: 56px;
+    stroke-width: 2;
+    stroke: #4CAF50;
+    stroke-miterlimit: 10;
+    animation: stroke 0.5s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.checkmark__circle {
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    stroke-width: 2;
+    stroke-miterlimit: 10;
+    stroke: #4CAF50;
+    fill: none;
+    animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.checkmark__check {
+    transform-origin: 50% 50%;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) forwards 0.2s;
+}
+
+@keyframes stroke {
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
