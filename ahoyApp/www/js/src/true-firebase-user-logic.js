@@ -92,7 +92,7 @@ function loginUser() {
     const password = document.getElementById("login-password").value;
 
     if (!email || !password) {
-        toggleStatusMessage("Email and password are required", false);
+        createGlassMessage("Email and password are required"); // Use glass-like message for errors
         return;
     }
 
@@ -106,7 +106,7 @@ function loginUser() {
         window.location.href = "/dashboard.html"; // Redirect to the dashboard
     })
     .catch((error) => {
-        toggleStatusMessage(error.message, false);
+        createGlassMessage(error.message); // Use glass-like message for errors
     })
     .finally(() => {
         showLoading(false);
@@ -178,3 +178,28 @@ auth.onAuthStateChanged((user) => {
         window.location.href = "/login.html";
     }
 });
+
+// Utility function to create and display a glass-like error message
+function createGlassMessage(message) {
+    let glassMessage = document.createElement('div');
+    glassMessage.textContent = message;
+    glassMessage.style.cssText = `
+        position: fixed;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        color: #333;
+        font-size: 16px;
+        z-index: 1000;
+    `;
+    document.body.appendChild(glassMessage);
+    setTimeout(() => {
+        document.body.removeChild(glassMessage);
+    }, 3000);
+}

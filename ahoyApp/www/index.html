@@ -1401,7 +1401,17 @@
 
     </div>
 
+<!-- Place this at the end of the body to ensure it loads after all DOM elements are available -->
+<script type="module">
+  import { loginUser } from './js/src/true-firebase-user-logic.js';
 
+  document.addEventListener('DOMContentLoaded', function() {
+    const loginButton = document.getElementById('loginButton');
+    if (loginButton) {
+      loginButton.addEventListener('click', loginUser);
+    }
+  });
+</script>
     <!-- LIVE SCRIPTS -->
 
     
