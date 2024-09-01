@@ -40,7 +40,57 @@
 }
 
 
+/*ELEMENTALS */
 
+/* Existing input styles */
+input {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: white;
+}
+
+/* Extend similar styles to textarea and select */
+textarea,
+select {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: white;
+    padding: 10px;
+    /* Add padding for better text alignment */
+    border-radius: 5px;
+    /* Optional: rounded corners */
+}
+
+/* Ensure select dropdown arrow is visible */
+select {
+    -webkit-appearance: none;
+    /* Removes default chrome and safari style */
+    -moz-appearance: none;
+    /* Removes default style Firefox */
+    appearance: none;
+    /* Removes default style */
+    background-image: url('data:image/svg+xml;utf8,<svg fill="white" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    /* Add custom arrow */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+}
+
+/* Additional styling for focus states to enhance accessibility */
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    /* Removes default focus outline */
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.4);
+    /* Custom focus style */
+}
 
 /*
  _____                                       _           
@@ -1042,6 +1092,26 @@ td {
 #current-time,
 #total-time {
     white-space: nowrap;
+}
+
+#login-email,
+#login-password {
+    /* Other styles remain the same */
+    background-color: rgba(255,
+            255,
+            255,
+            0.1) !important;
+    /* Semi-transparent white */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    /* Semi-transparent white border */
+    backdrop-filter: blur(10px);
+    /* Apply blur to the background */
+    -webkit-backdrop-filter: blur(10px);
+    /* For Safari */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Add some shadow for depth */
+    color: white;
+    /* White text color */
 }
 
 .login-button-b {
@@ -3314,9 +3384,10 @@ td {
 
 
 /*INTERACTIVE BUTTON */
+/*INTERACTIVE BUTTON */
 .button-interactive {
-    background-color: #4CAF50;
-    /* Green */
+    background-color: var(--background-color);
+    /* Updated to use CSS variable */
     border: none;
     color: white;
     padding: 15px 32px;
@@ -3326,15 +3397,22 @@ td {
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 2s ease;
+    /* Updated transition time */
 }
 
 .button-interactive:hover {
-    background-color: #45a049;
+    background-color: #493f3f79;
+    /* Updated hover background color */
+    color: white;
+    /* Added pulse animation */
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    /* Added text shadow */
 }
 
 .button-interactive:active {
     background-color: #3e8e41;
+    /* Kept the active background color */
     box-shadow: 0 5px #666;
     transform: translateY(4px);
 }

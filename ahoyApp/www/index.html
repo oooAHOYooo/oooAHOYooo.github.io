@@ -1266,13 +1266,14 @@
   <div class="form-container">
       <!-- Login Form -->
  <!-- Login Form -->
-<form id="loginForm">
-  <label for="login-email">Email:</label>
-  <input type="email" id="login-email" name="email"><br><br>
-  <label for="login-password">Password:</label>
-  <input type="password" id="login-password" name="password"><br><br>
-  <button type="button" id="loginButton" class="button-interactive">Login</button>
-</form>
+ <div class="login-container">
+  <h1>Login to Ahoy Indie Media</h1>
+  <input type="email" id="login-email" placeholder="Enter your email" />
+  <input type="password" id="login-password" placeholder="Enter your password" />
+  <button onclick="login()">Login</button>
+  <p id="message"></p> <!-- Message display area -->
+  <button onclick="resetPassword()">Reset Password</button>
+</div>
       <hr>
       <!-- Registration Form -->
       <form id="registerForm">
@@ -1401,17 +1402,7 @@
 
     </div>
 
-<!-- Place this at the end of the body to ensure it loads after all DOM elements are available -->
-<script type="module">
-  import { loginUser } from './js/src/true-firebase-user-logic.js';
 
-  document.addEventListener('DOMContentLoaded', function() {
-    const loginButton = document.getElementById('loginButton');
-    if (loginButton) {
-      loginButton.addEventListener('click', loginUser);
-    }
-  });
-</script>
     <!-- LIVE SCRIPTS -->
 
     
@@ -1478,6 +1469,6 @@
 
 <script src="js/src/true-firebase-user-logic.js"></script>
     <!-- END -->
-    <!-- THANK YOU FOR TAKING THE TIME - ALEX GONZALEZ >
+    <!-- THANK YOU FOR TAKING THE TIME - ALEX LEZ >
   </body>
 </html>
