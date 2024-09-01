@@ -20,13 +20,15 @@ const analytics = getAnalytics(app); // Initialize Firebase Analytics
 
 // Utility functions
 function validateEmail(email) {
-    const re = /\S+@\S+\.\S+/;
-    return re.test(email);
+    const isValid = /\S+@\S+\.\S+/.test(email);
+    console.log(`validateEmail: ${email} is ${isValid ? 'valid' : 'invalid'}`);
+    return isValid;
 }
 
 function showLoading(isLoading) {
     const loadingSpinner = document.getElementById('loadingSpinner');
     loadingSpinner.style.display = isLoading ? 'block' : 'none';
+    console.log(`showLoading: Display is ${isLoading ? 'block' : 'none'}`);
 }
 
 function showSuccessMessage(message) {
@@ -36,12 +38,14 @@ function showSuccessMessage(message) {
     setTimeout(() => {
         window.location.href = "../index.html"; // Redirect after login/register
     }, 3000);
+    console.log(`showSuccessMessage: ${message}`);
 }
 
 function showErrorMessage(error) {
     const errorMessage = document.getElementById('errorMessage');
     errorMessage.textContent = error;
     errorMessage.style.display = 'block';
+    console.log(`showErrorMessage: ${error}`);
 }
 
 // Registration function
@@ -76,6 +80,7 @@ function registerUser(email, password, confirmPassword, name) {
     .finally(() => {
         showLoading(false);
     });
+    console.log(`registerUser: Attempting to register ${email}`);
 }
 
 // Login function
@@ -101,6 +106,7 @@ function loginUser(email, password) {
     .finally(() => {
         showLoading(false);
     });
+    console.log(`loginUser: Attempting to login ${email}`);
 }
 
 // Reset password function
@@ -117,6 +123,7 @@ function resetPassword(email) {
     .catch((error) => {
         showErrorMessage(`Error: ${error.message}`);
     });
+    console.log(`resetPassword: Attempting to reset password for ${email}`);
 }
 
 // Logout function
@@ -126,6 +133,7 @@ function logoutUser() {
     }).catch((error) => {
         showErrorMessage(`Error: ${error.message}`);
     });
+    console.log('logoutUser: Attempting to logout');
 }
 
 // Event listeners
@@ -154,9 +162,11 @@ document.getElementById('logoutButton').addEventListener('click', logoutUser);
 // Redirect logic based on authentication state
 auth.onAuthStateChanged((user) => {
     if (user) {
+        console.log(`onAuthStateChanged: User is signed in, redirecting to dashboard`);
         // User is signed in, redirect to dashboard
         window.location.href = "/dashboard.html";
     } else {
+        console.log('onAuthStateChanged: User is signed out, redirecting to login');
         // User is signed out
         window.location.href = "/login.html";
     }

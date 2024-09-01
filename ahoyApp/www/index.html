@@ -111,38 +111,7 @@
     <script
       src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js?loadCastFramework=1"></script>
 
-    <!-- Firebase SDK -->
-    <script type="module">
-      // Import the functions you need from the SDKs you need
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
-      import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js";
-      
-      // Initialize Firebase
-      const app = initializeApp(firebaseConfig);
-      const auth = getAuth(app);
-  
-      window.login = async function() {
-          const email = document.getElementById("login-email").value;
-          const password = document.getElementById("login-password").value;
-  
-          try {
-              const userCredential = await signInWithEmailAndPassword(auth, email, password);
-              // Login successful
-              setMessage("Login successful! Redirecting...", "success");
-              setTimeout(() => {
-                  window.location.href = "../index.html"; // Adjust this path as needed
-              }, 2000);
-          } catch (error) {
-              setMessage(error.message, "error");
-          }
-      }
-  
-      window.setMessage = function(message, type) {
-          const messageElement = document.getElementById("message");
-          messageElement.textContent = message;
-          messageElement.className = type;
-      }
-  </script>
+
   </head>
      <!--
      _               _       
