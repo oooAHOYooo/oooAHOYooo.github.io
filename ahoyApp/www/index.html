@@ -975,27 +975,8 @@
               <button class="btnPrimary" onclick="window.location.href='account.html'">Manage Account</button>
               <button class="btnPrimary" onclick="logout()">Log Out</button>
               
-              <!-- Notification Settings -->
-               <p class="body-text"><span class="body-text-bold">Note:</span> The features below are experimental and works in progress (beta features).</p>
-              <h3>Notification Settings</h3>
-              <label>
-                <input type="checkbox" id="email-notifications"> Email Notifications
-              </label>
-              <label>
-                <input type="checkbox" id="sms-notifications"> SMS Notifications
-              </label>
-              <label>
-                <input type="checkbox" id="push-notifications"> Push Notifications
-              </label>
-              
-              <!-- Privacy Settings -->
-              <h3>Privacy Settings</h3>
-              <label>
-                <input type="checkbox" id="profile-visibility"> Profile Visibility
-              </label>
-              <label>
-                <input type="checkbox" id="search-engine-indexing"> Allow Search Engine Indexing
-              </label>
+          
+           
               
               <!-- Playback Settings -->
               <h3>Playback Settings</h3>
@@ -1016,12 +997,7 @@
               <p>These features are not yet ready for prime time</p>
               <p>But they are ready for your testing</p>
               <button class="btnPrimary" onclick="navigateToTab('market-tab')">Ahoy Indie Market</button>
-              <button class="btnPrimary" onclick="window.location.href='../../workshop/radioWidget-style-8.html'">Radio Widget style 8</button>
               <button class="btnPrimary" onclick="navigateToTab('casting-tab')">CASTING TAB</button>
-              <button class="btnPrimary" onclick="navigateToTab('burn-tab')">Burn to Disc Feature</button>
-              <button class="btnPrimary" onclick="window.location.href='../../workshop/radioWidget.html'">Radio Widget</button>
-              <button class="btnPrimary" onclick="navigateToTab('songs-tab')">Previous Song Tab and Radio Features</button>
-              <button class="btnPrimary" onclick="window.location.href='create.html'">Create an Ahoy Indie Media Account</button>
             </div>
 
 
@@ -1302,6 +1278,8 @@
           <input type="password" id="password" name="password"><br><br>
           <button type="button" id="registerButton">Register</button>
       </form>
+      <!-- Status Message Display -->
+      <p id="statusMessage" style="display: none;"></p>
   </div>
 </div>
 

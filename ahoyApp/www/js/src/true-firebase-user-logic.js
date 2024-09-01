@@ -31,21 +31,24 @@ function showLoading(isLoading) {
     console.log(`showLoading: Display is ${isLoading ? 'block' : 'none'}`);
 }
 
-function showSuccessMessage(message) {
-    const successMessage = document.getElementById('successMessage');
-    successMessage.textContent = message; // Display custom message
-    successMessage.style.display = 'block';
+// Add a function to toggle status message visibility
+function toggleStatusMessage(message, isSuccess) {
+    const statusMessage = document.getElementById('statusMessage');
+    statusMessage.textContent = message;
+    statusMessage.style.color = isSuccess ? 'green' : 'red'; // Green for success, red for errors
+    statusMessage.style.display = 'block';
     setTimeout(() => {
-        window.location.href = "../index.html"; // Redirect after login/register
+        statusMessage.style.display = 'none'; // Hide after 3 seconds
     }, 3000);
-    console.log(`showSuccessMessage: ${message}`);
+}
+
+// Modify existing functions to use toggleStatusMessage
+function showSuccessMessage(message) {
+    toggleStatusMessage(message, true);
 }
 
 function showErrorMessage(error) {
-    const errorMessage = document.getElementById('errorMessage');
-    errorMessage.textContent = error;
-    errorMessage.style.display = 'block';
-    console.log(`showErrorMessage: ${error}`);
+    toggleStatusMessage(error, false);
 }
 
 // Registration function
