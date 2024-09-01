@@ -1252,21 +1252,27 @@
             </ul>
           </div>
         </div>
+        <script type="module">
+          import { loginUser } from './js/src/true-firebase-user-logic.js';
+      
+          document.getElementById('loginButton').addEventListener('click', loginUser);
+      </script>
 
 
 <!-- LOGIN TAB -->
-<!-- Inside the login-tab div -->
+<!-- LOGIN TAB -->
 <div id="login-tab" class="tab-content">
   <h1>Login or Register</h1>
   <div class="form-container">
       <!-- Login Form -->
-      <form id="loginForm">
-          <label for="login-email">Email:</label>
-          <input type="email" id="login-email" name="email"><br><br>
-          <label for="login-password">Password:</label>
-          <input type="password" id="login-password" name="password"><br><br>
-          <button type="button" id="loginButton">Login</button>
-      </form>
+ <!-- Login Form -->
+<form id="loginForm">
+  <label for="login-email">Email:</label>
+  <input type="email" id="login-email" name="email"><br><br>
+  <label for="login-password">Password:</label>
+  <input type="password" id="login-password" name="password"><br><br>
+  <button type="button" id="loginButton" class="button-interactive">Login</button>
+</form>
       <hr>
       <!-- Registration Form -->
       <form id="registerForm">
@@ -1276,13 +1282,12 @@
           <input type="email" id="email" name="email"><br><br>
           <label for="password">Password:</label>
           <input type="password" id="password" name="password"><br><br>
-          <button type="button" id="registerButton">Register</button>
+          <button type="button" id="registerButton" class="button-interactive">Register</button>
       </form>
       <!-- Status Message Display -->
       <p id="statusMessage" style="display: none;"></p>
   </div>
 </div>
-
 
              <!--
               ____  _   _ ____  _   _   _____  _    ____  
@@ -1399,7 +1404,7 @@
 
     <!-- LIVE SCRIPTS -->
 
-    <script src="js/src/login.js"></script>
+    
     <script src="js/src/fetch-homepage-nowplaying.js"></script>
 
     <script src="js/src/media.js"></script>

@@ -87,29 +87,30 @@ function registerUser(email, password, confirmPassword, name) {
 }
 
 // Login function
-function loginUser(email, password) {
-    if (!validateEmail(email)) {
-        showErrorMessage('Invalid email format.');
+function loginUser() {
+    const email = document.getElementById("login-email").value;
+    const password = document.getElementById("login-password").value;
+
+    if (!email || !password) {
+        toggleStatusMessage("Email and password are required", false);
         return;
     }
 
     showLoading(true);
 
-    setPersistence(auth, browserSessionPersistence)
-    .then(() => {
-        return signInWithEmailAndPassword(auth, email, password);
-    })
+    signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
         console.log('User logged in:', userCredential.user);
-        showSuccessMessage('Logged in successfully. Redirecting...');
+        localStorage.setItem("user", JSON.stringify(userCredential.user)); // Store user info
+        toggleStatusMessage("Logged in successfully. Redirecting...", true);
+        window.location.href = "/dashboard.html"; // Redirect to the dashboard
     })
     .catch((error) => {
-        showErrorMessage(`Login failed: ${error.message}`);
+        toggleStatusMessage(error.message, false);
     })
     .finally(() => {
         showLoading(false);
     });
-    console.log(`loginUser: Attempting to login ${email}`);
 }
 
 // Reset password function
@@ -139,19 +140,22 @@ function logoutUser() {
     console.log('logoutUser: Attempting to logout');
 }
 
-// Event listeners
+// Event listeners with immediate feedback
 document.getElementById('registerButton').addEventListener('click', () => {
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
     const confirmPassword = document.getElementById('confirmPassword').value;
     const name = document.getElementById('name').value;
 
+    toggleStatusMessage("Processing registration...", true); // Immediate feedback
     registerUser(email, password, confirmPassword, name);
 });
 
 document.getElementById('loginButton').addEventListener('click', () => {
     const email = document.getElementById('login-email').value;
     const password = document.getElementById('login-password').value;
+
+    toggleStatusMessage("Processing login...", true); // Immediate feedback
     loginUser(email, password);
 });
 
