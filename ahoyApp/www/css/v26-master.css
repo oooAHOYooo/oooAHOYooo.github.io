@@ -180,6 +180,11 @@ select:focus {
                                                               
 */
 
+
+#left-sidebar {
+    padding-left: 12px !important;
+}
+
 #left-sidebar,
 #right-sidebar {
     position: fixed;
