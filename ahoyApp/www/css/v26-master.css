@@ -1459,24 +1459,25 @@ td {
     color: var(--text-color);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
     .newsSubHeaderMenu {
         display: flex;
         flex-direction: column;
         align-items: center;
         margin: 0;
         padding: 0;
-        gap: 1px;
-        line-height: 1.5;
+        gap: 5px;
+        line-height: 1.2;
     }
 
     #news-button,
     #about-button,
     #recently-added-button {
-        margin: 5px;
-        gap: 1px;
-        line-height: 1.5;
-        max-width: 100%;
+        margin: 3px 0;
+        padding: 8px 12px;
+        font-size: 14px;
+        width: 90%;
+        max-width: none;
     }
 }
 
