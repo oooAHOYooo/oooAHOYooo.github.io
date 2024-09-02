@@ -1447,6 +1447,8 @@ td {
     float: center;
 }
 
+/*newsSubHeader */
+
 .newsSubHeaderMenu {
     min-width: 100%;
     display: flex;
@@ -1455,6 +1457,27 @@ td {
     -ms-flex-align: center;
     flex-direction: row;
     color: var(--text-color);
+}
+
+@media (max-width: 768px) {
+    .newsSubHeaderMenu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        gap: 1px;
+        line-height: 1.5;
+    }
+
+    #news-button,
+    #about-button,
+    #recently-added-button {
+        margin: 5px;
+        gap: 1px;
+        line-height: 1.5;
+        max-width: 100%;
+    }
 }
 
 .newsSubHeaderMenu button {
