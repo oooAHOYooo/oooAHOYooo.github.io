@@ -949,6 +949,35 @@
   </div>
 </div>
 
+
+<!-- MGMT ACCOUNT TAB -->
+<div id="manage-account" class="tab-content" style="display: none;">
+    <h1>Manage Your Account</h1>
+    <div class="account-settings">
+        <h3>Profile Information</h3>
+        <div class="profile-info">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username">
+            <button onclick="updateUsername()">Update Username</button>
+        </div>
+        <div class="profile-info">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+            <button onclick="updateEmail()">Update Email</button>
+        </div>
+        <div class="profile-info">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+            <button onclick="updatePassword()">Change Password</button>
+        </div>
+        <div class="profile-info">
+            <label for="profile-pic">Profile Picture:</label>
+            <input type="file" id="profile-pic" name="profile-pic">
+            <button onclick="updateProfilePic()">Upload New Picture</button>
+        </div>
+    </div>
+</div>
+
    <!--
              ____    _____   ____   _____   _   _   _____     _____     _     ____  
             |  _ \  | ____| / ___| | ____| | \ | | |_   _|   |_   _|   / \   | __ ) 
@@ -972,7 +1001,7 @@
               
               <!-- Account Settings -->
               <h3>Account Settings</h3>
-              <button class="btnPrimary" onclick="window.location.href='account.html'">Manage Account</button>
+              <button class="btnPrimary" onclick="navigateToTab('manage-account')">Manage Account</button>
               <button class="btnPrimary" onclick="logout()">Log Out</button>
               
           
@@ -988,16 +1017,19 @@
                 <option value="480p">480p</option>
                 <option value="360p">360p</option>
               </select>
-              <label>
-                <input type="checkbox" id="autoplay-next"> Autoplay Next Video
-              </label>
+         
               
               <!-- Beta Experimental Features -->
               <h2>BETA Experimental Features</h2>
               <p>These features are not yet ready for prime time</p>
+              
               <p>But they are ready for your testing</p>
-              <button class="btnPrimary" onclick="navigateToTab('market-tab')">Ahoy Indie Market</button>
-              <button class="btnPrimary" onclick="navigateToTab('casting-tab')">CASTING TAB</button>
+              <button class="btnPrimary" onclick="navigateToTab('market-tab')"><i class="fas fa-store"></i></button>
+              <button class="btnPrimary" onclick="navigateToTab('casting-tab')"><i class="fas fa-broadcast-tower"></i></button>
+              <button class="btnPrimary" onclick="navigateToTab('focus-work-mode-tab')"><i class="fas fa-clock"></i></button>
+             
+            
+              </div>
             </div>
 
 
@@ -1330,9 +1362,7 @@
                 <div class="v25-dock-icon"
                   onclick="navigateToTab('media-tab-a')"><i
                     class="fas fa-image"></i></div>
-                    <div class="v25-dock-icon" onclick="navigateToTab('focus-work-mode-tab')">
-                      <i class="fas fa-clock"></i>
-                    </div>
+                  
                 <div class="v25-dock-icon"
                   onclick="navigateToTab('account-tab')"><i
                     class="fas fa-user-circle"></i></div>
@@ -1464,7 +1494,7 @@
    <!--script src="js/src/true-sidebar.js"></script-->
 
    <script src="js/src/true-full-recent.js"></script>
-   <script src="js/src/true-focus-work-mode.js"></script>
+   <!--script src="js/src/true-focus-work-mode.js"></script-->
 
 
 <script src="js/src/true-firebase-user-logic.js"></script>

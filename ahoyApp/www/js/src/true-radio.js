@@ -416,6 +416,10 @@
                         background-color: #ff4081;
                         color: white;
                     }
+                    #volumeBar {
+                        width: 100%; /* Set the width to 100% to make it full width */
+                        margin: 10px 0;
+                    }
                 `;
                 document.head.appendChild(style);
             })
