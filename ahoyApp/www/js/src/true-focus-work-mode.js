@@ -130,7 +130,8 @@ function loadSong(song) {
 function playSongFromList(index) {
   currentSongIndex = index;
   loadSong(songs[currentSongIndex]);
-  audioPlayer.play();
+  // Remove autoplay
+  // audioPlayer.play();
   updatePlayButton();
 }
 
@@ -164,7 +165,8 @@ function shufflePlaylist() {
   populatePlaylist(songs);
   currentSongIndex = 0;
   loadSong(songs[currentSongIndex]);
-  audioPlayer.play();
+  // Remove autoplay
+  // audioPlayer.play();
 }
 
 function shuffleArray(array) {
@@ -178,7 +180,8 @@ function shuffleArray(array) {
 playAllButton.addEventListener('click', () => {
   currentSongIndex = 0;
   loadSong(songs[currentSongIndex]);
-  audioPlayer.play();
+  // Remove autoplay
+  // audioPlayer.play();
 });
 
 shuffleButton.addEventListener('click', shufflePlaylist);
