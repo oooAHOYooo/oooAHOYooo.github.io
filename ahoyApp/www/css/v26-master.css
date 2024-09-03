@@ -42,54 +42,51 @@
 
 /*ELEMENTALS */
 
-/* Existing input styles */
-input {
-    background-color: rgba(255, 255, 255, 0.1) !important;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    color: white;
-}
-
-/* Extend similar styles to textarea and select */
+/* Universal Styles for Input, Textarea, and Select */
+input,
 textarea,
 select {
     background-color: rgba(255, 255, 255, 0.1) !important;
+    /* Semi-transparent background */
     border: 1px solid rgba(255, 255, 255, 0.2);
+    /* Light border for subtle contrast */
     backdrop-filter: blur(10px);
+    /* Blur effect for glassmorphism */
     -webkit-backdrop-filter: blur(10px);
+    /* For Safari */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Soft shadow for depth */
     color: white;
+    /* Text color */
     padding: 10px;
-    /* Add padding for better text alignment */
+    /* Padding for better text alignment */
     border-radius: 5px;
-    /* Optional: rounded corners */
+    /* Rounded corners */
+    outline: none;
+    /* Remove default focus outline */
 }
 
-/* Ensure select dropdown arrow is visible */
-select {
-    -webkit-appearance: none;
-    /* Removes default chrome and safari style */
-    -moz-appearance: none;
-    /* Removes default style Firefox */
-    appearance: none;
-    /* Removes default style */
-    background-image: url('data:image/svg+xml;utf8,<svg fill="white" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
-    /* Add custom arrow */
-    background-repeat: no-repeat;
-    background-position: right 10px center;
-    background-size: 12px;
-}
-
-/* Additional styling for focus states to enhance accessibility */
+/* Custom focus styles to enhance accessibility */
 input:focus,
 textarea:focus,
 select:focus {
-    outline: none;
-    /* Removes default focus outline */
     box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.4);
     /* Custom focus style */
+}
+
+/* Custom dropdown arrow for select elements */
+select {
+    -webkit-appearance: none;
+    /* Removes default style for Chrome and Safari */
+    -moz-appearance: none;
+    /* Removes default style for Firefox */
+    appearance: none;
+    /* Removes default style */
+    background-image: url('data:image/svg+xml;utf8,<svg fill="white" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    /* Custom dropdown arrow */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
 }
 
 /*
