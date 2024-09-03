@@ -179,14 +179,21 @@
     {
         "date": "2024-08-25",
         "title": "New Feature: Ahoy Work Mode Beta",
-        "content": "Exciting news! We've just launched the beta version of Ahoy Work Mode. This new feature plays classical music to give ya a boost. This feature came out of super necessity after being such an adhd developer. We were using all types of focus apps figured - eff - why not try to slam one in our little app - give folks a tool to use throughout the day. Try it out the beta now - lock in - and get more done",
+        "content": "Unlock your peak productivity with our revolutionary new feature, Ahoy Work Mode! Designed specifically for those who thrive on focus and efficiency, this cutting-edge tool blends the soothing power of classical music with a precision-timed productivity timer. Dive into deep work sessions with our curated playlist that not only enhances concentration but also elevates your work experience. Say goodbye to distractions and hello to a world of heightened focus and outstanding results. Try Ahoy Work Mode today and transform your workday into a symphony of productivity!",
         "active": "false",
         "goTo": "work-mode-tab",
         "imageUrl": "https://storage.googleapis.com/ahoy-dynamic-content/work-mode-beta.png",
         "additionalImages": [
             "https://storage.googleapis.com/ahoy-dynamic-content/work-mode-timer.png",
             "https://storage.googleapis.com/ahoy-dynamic-content/work-mode-music.png"
-        ],
-        "externalLink": "#"
-    }
+        ]
+    },
+{
+    "date": "2024-09-03",
+    "title": "Emerging from Construction: Exciting Updates Ahead",
+    "content": "Not sure if you noticed but we've been adding  new features to the app left and right - spent the summer in construction mode - but we're almost out - and we're excited to share some new features with you soon - poke around - and enjoy. ",
+    "active": "true",
+    "goTo": "updates-tab",
+    "imageUrl": "https://storage.googleapis.com/ahoy-dynamic-content/news/ahoy-construction.jpg"
+}
 ]
