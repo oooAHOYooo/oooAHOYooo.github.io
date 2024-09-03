@@ -786,7 +786,7 @@ select {
     border-left: 1px solid var(--border-color);
     border-right: 1px solid var(--border-color);
     border-top: 1px solid var(--border-color);
-    margin-top: 10px;
+    margin-top: 8px;
     overflow: hidden;
     position: relative;
     z-index: 10;
@@ -798,6 +798,7 @@ select {
     margin: 0 auto;
     background-color: var(--background-color);
     animation: pulseGlow 2s infinite ease-in-out;
+    padding-bottom: 50px !important;
 }
 
 .tab-content {
@@ -945,7 +946,6 @@ select {
 }
 
 
-
 .play-button {
     width: 50px;
     height: 50px;
@@ -1008,6 +1008,7 @@ select {
     width: 60px;
     height: 60px;
     margin-right: 10px;
+    border-radius: 15px;
 }
 
 .podcast-cover-max {
@@ -1057,17 +1058,6 @@ td {
 }
 
 
-
-.action-button {
-    width: 30px;
-    /* Reduce width */
-    height: 30px;
-    /* Reduce height */
-    font-size: 14px;
-    /* Adjust font size */
-    padding: 5px;
-    /* Adjust padding */
-}
 
 
 /*Sidbear Timeline*/
@@ -1777,9 +1767,9 @@ td {
 
 
 .volume-control {
-    margin: 20px 0;
     display: flex;
     align-items: center;
+    min-width: 90%;
 }
 
 .volume-control span {
@@ -2400,14 +2390,19 @@ td {
     justify-content: center;
     width: 100%;
     margin-bottom: 20px;
+    gap: 20px;
 }
 
 #coverArt {
-    width: 200px;
-    height: 200px;
+    min-width: 237px;
+    min-height: 236px;
+    /* Default width */
+
+    /* Default height */
     object-fit: cover;
-    margin-right: 20px;
 }
+
+
 
 .song-details {
     display: flex;
@@ -2424,6 +2419,7 @@ td {
 #artist {
     font-size: 18px;
     color: #b3b3b3;
+    text-align: left !important;
 }
 
 .radio-controls {
@@ -2454,13 +2450,14 @@ td {
 }
 
 .song-cover-max {
-    width: 200px;
-    height: 200px;
+    width: 100%;
+    height: 321px;
     aspect-ratio: 1 / 1;
     object-fit: cover;
     object-position: center;
     min-width: 100px;
     margin: 5px;
+    border-radius: 24px;
 }
 
 .song-details h2,
@@ -2478,6 +2475,7 @@ td {
 .song-details p {
     font-size: 14px !important;
     color: #b3b3b3 !important;
+    margin-bottom: 11px;
 }
 
 .vcr-timeline {
@@ -2773,7 +2771,6 @@ td {
 
 #song-list {
     margin-top: 30px !important;
-    background: rgba(255, 255, 255, 0.1) !important;
     border-radius: 8px !important;
     padding: 16px !important;
     max-height: 300px !important;
@@ -2796,6 +2793,7 @@ td {
     padding: 8px 0 !important;
     cursor: pointer !important;
     transition: color 0.2s !important;
+    line-height: 1.2;
 }
 
 #song-list li:hover {
@@ -2804,8 +2802,9 @@ td {
 
 .podcast-thumbnail-container {
     max-width: 100%;
-    max-height: 200px;
+    max-height: 252px;
     /* Adjust this value as needed */
+    border-radius: 54px;
     overflow: hidden;
 }
 
@@ -2820,12 +2819,12 @@ td {
 
 @media (max-width: 768px) {
     .podcast-thumbnail-container {
-        max-height: 150px;
+        max-height: 252px;
         /* Smaller max-height for mobile devices */
     }
 
     #podcast-thumbnail {
-        max-height: 150px;
+        max-height: 252px;
         /* Should match the container's max-height */
     }
 }
@@ -2834,7 +2833,7 @@ td {
     width: 60px;
     height: 60px;
     object-fit: cover;
-    border-radius: 5px;
+    border-radius: 25px;
 }
 
 @media (max-width: 768px) {
@@ -2861,7 +2860,6 @@ td {
     font-size: 18px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.3);
     padding: 5px;
     border: 3px solid var(--border-color);
     transition: all 0.3s ease;
@@ -2973,7 +2971,23 @@ td {
 
 #warning-banner button:hover {
     background: #ffffff;
-    color: #ff4500;
+    color: #ff00aa;
+}
+
+.glass-button {
+    margin-right: 9px;
+    border: 2px solid var(--border-color);
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--border-color);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 10px 20px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.glass-button:hover {
+    background: rgba(255, 255, 255, 0.4);
+    color: var(--border-color);
 }
 
 /*new homepage tweaks*/
