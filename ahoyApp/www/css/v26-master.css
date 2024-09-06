@@ -68,7 +68,7 @@ select {
 }
 
 input {
-    color: rgba(var(--text-color-rgb), 0.1));
+    color: rgba(var(--text-color-rgb));
 }
 
 input::placeholder {

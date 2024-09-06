@@ -1142,12 +1142,17 @@
                           <h1>Upload Local Music Venue</h1>
                           <p class="body-text center-text">Share a flyer for your favorite local music venue</p>
                           <div class="flyer-upload">
+                            <input type="file" id="venue-flyer" accept="image/*" required />
+                           
+                    
+                            <hr>
+                            <input type="date" id="date-added">
                             <input type="text" id="venue-name" placeholder="Venue Name (optional)" />
                             <input type="text" id="venue-description" placeholder="Description (optional)" />
-                            <input type="date" id="date-added" required />
+                          
                             <input type="url" id="venue-url" placeholder="Website URL (optional)" />
-                            <input type="file" id="venue-flyer" accept="image/*" required />
-                            <button id="upload-venue-btn">Upload Venue</button>
+                        <hr>
+                        <button id="upload-venue-btn">Upload Venue</button>
                           </div>
                           <div id="community-board">
                             <h2>Community Board</h2>
