@@ -1076,6 +1076,7 @@
               <button class="btnPrimary" onclick="navigateToTab('market-tab')"><i class="fas fa-store"></i></button>
               <button class="btnPrimary" onclick="navigateToTab('casting-tab')"><i class="fas fa-broadcast-tower"></i></button>
               <button class="btnPrimary" onclick="navigateToTab('focus-work-mode-tab')"><i class="fas fa-clock"></i></button>
+              <button class="btnPrimary" onclick="navigateToTab('upload-local-bands-tab')"><i class="fas fa-upload"></i> Upload Local Flyers</button>
              
             
               </div>
@@ -1135,8 +1136,31 @@
               </div>
             </div>
 
-
-
+  
+                        <!-- NEW UPLOAD LOCAL BANDS TAB -->
+                        <div id="upload-local-bands-tab" class="tab-content" style="display: none;">
+                          <h1>Upload Local Music Venue</h1>
+                          <p class="body-text center-text">Share a flyer for your favorite local music venue</p>
+                          <div class="flyer-upload">
+                            <input type="text" id="venue-name" placeholder="Venue Name (optional)" />
+                            <input type="text" id="venue-description" placeholder="Description (optional)" />
+                            <input type="date" id="date-added" required />
+                            <input type="url" id="venue-url" placeholder="Website URL (optional)" />
+                            <input type="file" id="venue-flyer" accept="image/*" required />
+                            <button id="upload-venue-btn">Upload Venue</button>
+                          </div>
+                          <div id="community-board">
+                            <h2>Community Board</h2>
+                            <ul id="venue-list"></ul>
+                            <!-- Comment Section -->
+                            <div id="comment-section">
+                              <input type="text" id="comment-input" placeholder="Leave a comment..." />
+                              <button id="submit-comment-btn">Submit Comment</button>
+                              <ul id="comment-list"></ul>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- END OF UPLOA
 
             <!-- UPDATES-->
             <!-- UPDATES-->
@@ -1529,7 +1553,7 @@
 
    <script src="js/src/true-full-recent.js"></script>
    <!--script src="js/src/true-focus-work-mode.js"></script-->
-
+<script src="js/src/true-upload-flyer.js"></script>
 
 <script src="js/src/true-firebase-user-logic.js"></script>
     <!-- END -->

@@ -59,18 +59,47 @@
 input,
 textarea,
 select {
-    background-color: rgba(255, 255, 255, 0.1) !important;
-    /* Semi-transparent background */
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    /* Light border for subtle contrast */
-    backdrop-filter: blur(10px);
-    /* Blur effect for glassmorphism */
-    -webkit-backdrop-filter: blur(10px);
-    /* For Safari */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    /* Soft shadow for depth */
-    color: white;
-    /* Text color */
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+}
+
+input {
+    color: rgba(var(--text-color-rgb), 0.1));
+}
+
+input::placeholder {
+    color: var(--text-clor);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    box-shadow: 0 0 0 2px rgba(255, 255, 0, 0.7);
+    border-color: rgba(255, 255, 0, 0.7);
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="white" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+}
+
+/* Update styles for the date input for better contrast */
+input[type="date"] {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    /* Darker semi-transparent background */
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    /* Slightly lighter border for better visibility */
+    color: #ffffff;
+    /* Keep text color white for contrast */
     padding: 10px;
     /* Padding for better text alignment */
     border-radius: 5px;
@@ -79,27 +108,12 @@ select {
     /* Remove default focus outline */
 }
 
-/* Custom focus styles to enhance accessibility */
-input:focus,
-textarea:focus,
-select:focus {
-    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.4);
-    /* Custom focus style */
-}
-
-/* Custom dropdown arrow for select elements */
-select {
-    -webkit-appearance: none;
-    /* Removes default style for Chrome and Safari */
-    -moz-appearance: none;
-    /* Removes default style for Firefox */
-    appearance: none;
-    /* Removes default style */
-    background-image: url('data:image/svg+xml;utf8,<svg fill="white" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
-    /* Custom dropdown arrow */
-    background-repeat: no-repeat;
-    background-position: right 10px center;
-    background-size: 12px;
+/* Custom focus styles for date input */
+input[type="date"]:focus {
+    box-shadow: 0 0 0 2px rgba(255, 255, 0, 0.7);
+    /* Change focus outline color for better visibility */
+    border-color: rgba(255, 255, 0, 0.7);
+    /* Change border color on focus */
 }
 
 /*
@@ -260,6 +274,63 @@ select {
 }
 
 
+/*FLYER*/
+/* Add this to your existing CSS file */
+.flyer-upload {
+    display: flex;
+    flex-direction: column;
+    /* Stack elements vertically */
+    align-items: center;
+    /* Center elements horizontally */
+    padding: 10px;
+    margin: 20px;
+    /* Add some margin for spacing */
+}
+
+.flyer-upload input,
+.flyer-upload button {
+    width: 80%;
+    /* Set a consistent width for inputs and buttons */
+    margin: 5px 0;
+    /* Add vertical spacing between elements */
+    padding: 10px;
+    /* Add padding for better touch targets */
+    border-radius: 5px;
+    /* Rounded corners */
+    border: 1px solid #ccc;
+    /* Light border */
+    font-size: 16px;
+    /* Increase font size for readability */
+}
+
+.flyer-upload button {
+    background-color: rgba(var(--border-color), 0.9);
+    /* Button background color */
+    color: var(--text-color);
+    /* Button text color */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    transition: background-color 0.3s;
+    /* Smooth transition for hover effect */
+    width: 100%;
+}
+
+.flyer-upload button:hover {
+    background-color: rgba(var(--border-color), 0.9);
+    /* Darker shade on hover */
+}
+
+.flyer {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+.flyer img {
+    margin-right: 10px;
+}
 
 
 /* SuperMedia Table Styling - Modern and Fluid Design */
