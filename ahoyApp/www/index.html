@@ -170,17 +170,22 @@
         <img src="./img/assets/u_ahoy23.png" alt="Main Logo" style="display: block; margin: auto; width: 100px; height: auto;">
       </div>
       <hr>
+      <aside>
       <div class="left-sidebar-middle" id="left-sidebar-middle">
         <!-- Featured playlists will be dynamically inserted here -->
         <button id="playlist1" class="playlist-button">Featuredz Playlist 1</button>
         <button id="playlist2" class="playlist-button">Featured Playlist 2</button>
         <button id="playlist3" class="playlist-button">Featured Playlist 3</button>
       </div>
+      </aside>
+      <hr>
+      <aside>
       <div id="left-sidebar-bottom" class="left-sidebar-bottom">
         <img id="left-sidebar-cover-art" src="./img/assets/default-cover.png" alt="Cover Art" style="width: 100px; height: 100px; object-fit: cover;">
         <p class="body-text-header">Currently Playing: <br><span id="current-track" class="body-text">No track playing</span></p>
         <button id="left-sidebar-play-pause" style="font-size: 24px;">&#9658;</button>
       </div>
+      </aside>
       <hr>
     </div>
 
@@ -230,27 +235,7 @@
 
 <!-- ... existing code ... -->
 <script>
-  document.addEventListener('DOMContentLoaded', async () => {
-    const response = await fetch('./data/mediaCollection.json');
-    const mediaCollection = await response.json();
-    
-    // Assuming the first media item is the current media
-    const currentMedia = mediaCollection[0];
 
-    // Initialize JWPlayer
-    jwplayer("jwplayer-container").setup({
-      file: currentMedia.mp4_link,
-      image: currentMedia.thumbnail_link,
-      title: currentMedia.display_title,
-      description: currentMedia.artist,
-      width: "100%",
-      aspectratio: "16:9"
-    });
-
-    // Update the HTML with the current media details
-    document.getElementById('current-title-text').textContent = currentMedia.display_title;
-    document.getElementById('current-description-text').textContent = currentMedia.artist;
-  });
 </script>
 
     <!-- Add your schedule content here -->
@@ -1308,6 +1293,7 @@
 
 <script src="js/src/true-firebase-user-logic.js"></script>
 <script src="js/src/tv-media-player-controls.js"></script>
+<script src="js/src/tv-media-player-init.js"></script>
     <!-- END -->
     <!-- THANK YOU FOR TAKING THE TIME - ALEX LEZ >
   </body>
