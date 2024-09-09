@@ -192,6 +192,7 @@
 |  _  /  | | |  _\ \  | |     | |     \___ \  | | | |  | |  __|  
 | | \ \ _| |_| |__| |  | |     | |     ____) |_| |_| |__| | |____ 
 |_|  \_\_____|\_____/  |_|     |_|    |_____/|_____|_____/|______|
+                                                                              
 -->
 <!-- Right Sidebar Toggle Button -->
 <button id="right-toggle-button" class="toggle-button-right">☰</button>
@@ -895,6 +896,27 @@
                 <div class="v25-dock-icon"
                   onclick="navigateToTab('settings-tab')"><i
                     class="fas fa-cog"></i></div>
+                <!-- Add Login and Active Username Feature to Dock -->
+                <div class="v25-dock-icon" id="user-status-icon" onclick="toggleUserAccountDock()">
+                    <div class="user-avatar" id="user-avatar">
+                        <i class="fas fa-user-circle"></i> <!-- Default icon when not logged in -->
+                    </div>
+                    <div class="user-status" id="user-status">
+                        <span class="status-light" id="status-light"></span> <!-- Status light -->
+                    </div>
+                    <!-- User Account Dock -->
+                    <div id="user-account-dock" class="user-account-dock">
+                        <div id="user-avatar" style="width: 50px; height: 50px; border-radius: 50%; background-size: cover;"></div>
+                        <div id="user-info">
+                            <h3 id="dock-username">Username</h3>
+                            <p id="user-status">Status: <span id="user-online-status">Offline</span></p>
+                            <p>Likes: <span id="user-likes-count">0</span></p>
+                            <p>Comments: <span id="user-comments-count">0</span></p>
+                            <p>Last Login: <span id="user-last-login">Never</span></p>
+                            <p>Fun Fact: <span id="user-fun-fact">None yet!</span></p>
+                        </div>
+                    </div>
+                </div>
               </div>
             </div>
           </div>
@@ -985,6 +1007,7 @@
 <script src="js/src/true-firebase-user-logic.js"></script>
 <script src="js/src/tv-media-player-controls.js"></script>
 <script src="js/src/tv-media-player-init.js"></script>
+<script src="js/src/dock-user.js"></script>
     <!-- END -->
     <!-- THANK YOU FOR TAKING THE TIME - ALEX LEZ -->
   </body>

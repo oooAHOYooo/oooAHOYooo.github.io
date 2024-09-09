@@ -154,38 +154,52 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Function to create and show a popup with playlist details
-    function showPlaylistPopup(playlist, targetElement) {
-        console.log("Showing popup for:", playlist.name); // Debugging log
+    function showPlaylistPopup(playlist) {
+        // Create the overlay for the popup
+        const overlay = document.createElement('div');
+        overlay.style.position = 'fixed';
+        overlay.style.top = '0';
+        overlay.style.left = '0';
+        overlay.style.width = '100%';
+        overlay.style.height = '100%';
+        overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+        overlay.style.zIndex = '1000';
+        overlay.style.display = 'flex';
+        overlay.style.justifyContent = 'center';
+        overlay.style.alignItems = 'center';
+
+        // Create the popup container
         const popup = document.createElement('div');
-        popup.id = 'playlist-popup';
-        popup.style.position = 'fixed'; // Changed from 'absolute' to 'fixed'
-        popup.style.top = '50%'; // Center vertically
-        popup.style.left = '50%'; // Center horizontally
-        popup.style.transform = 'translate(-50%, -50%)'; // Adjust to center
-        popup.style.backgroundColor = '#f9f9f9';
-        popup.style.padding = '10px';
-        popup.style.border = '1px solid #ccc';
-        popup.style.borderRadius = '5px';
-        popup.style.boxShadow = '0 2px 5px rgba(0,0,0,0.2)';
-        popup.style.width = '300px';
-        popup.style.zIndex = '10000'; // Ensure it's on top
-        popup.innerHTML = `<h4>${playlist.name}</h4>`;
+        popup.style.background = '#fff';
+        popup.style.padding = '20px';
+        popup.style.borderRadius = '10px';
+        popup.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+        popup.style.width = '80%';
+        popup.style.maxWidth = '600px';
+        popup.style.textAlign = 'center';
+
+        // Add content to the popup
+        const title = document.createElement('h4');
+        title.textContent = playlist.name;
+        popup.appendChild(title);
 
         playlist.songs.forEach(song => {
-            const songElement = document.createElement('div');
-            songElement.innerHTML = `<p><strong>${song.title}</strong> by ${song.artist}</p>`;
+            const songElement = document.createElement('p');
+            songElement.textContent = `${song.title} by ${song.artist}`;
             popup.appendChild(songElement);
         });
 
+        // Close button for the popup
         const closeButton = document.createElement('button');
-        closeButton.innerText = 'Close';
-        closeButton.style.marginTop = '10px';
+        closeButton.textContent = 'Close';
         closeButton.onclick = function() {
-            document.body.removeChild(popup);
+            document.body.removeChild(overlay);
         };
         popup.appendChild(closeButton);
 
-        document.body.appendChild(popup);
+        // Append the popup to the overlay, then the overlay to the body
+        overlay.appendChild(popup);
+        document.body.appendChild(overlay);
     }
 
     // Function to play a playlist and show details
@@ -196,7 +210,7 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(data => {
                 const playlist = data.playlists[playlistIndex];
                 console.log("Fetched playlist:", playlist); // Debugging log
-                showPlaylistPopup(playlist, event.target);
+                showPlaylistPopup(playlist);
                 playlist.songs.forEach(song => {
                     console.log(`Playing song: ${song.title} by ${song.artist}`);
                     // Here you would typically use an audio library or HTML5 audio to play the song

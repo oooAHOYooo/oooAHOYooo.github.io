@@ -84,3 +84,51 @@
                     z-index: 50001;
                     /* Ensure it's above the v25 dock */
                 }
+
+                #user-account-dock {
+                    background-color: #333;
+                    color: white;
+                    padding: 10px;
+                    border-radius: 5px;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                }
+
+                .user-account-dock {
+                    position: relative;
+                    /* Needed for absolute positioning of the popup */
+                    display: inline-block;
+                    /* Align with other dock icons */
+                    z-index: 2000;
+                }
+
+                .user-info-popup {
+                    display: none;
+                    /* Initially hidden */
+                    position: absolute;
+                    bottom: 100%;
+                    /* Position above the dock icon */
+                    right: 0;
+                    /* Align to the right of the dock icon */
+                    background-color: #333;
+                    color: white;
+                    padding: 10px;
+                    border-radius: 5px;
+                    white-space: nowrap;
+                    /* Prevents wrapping of text */
+                    z-index: 100;
+                    /* Ensures it appears above other content */
+                    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                    /* Adds a subtle shadow */
+                }
+
+                #user-info h3 {
+                    margin: 0;
+                    color: #4CAF50;
+                    /* Green for username */
+                }
+
+                #user-info p {
+                    margin: 5px 0;
+                }
