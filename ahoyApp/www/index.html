@@ -272,18 +272,7 @@
                   </tbody>
                 </table>
               </div>
-
             </div>
-
-            <!-- CLASSICAL MUSIC TAB -->
-            <div id="classical-tab" class="tab-content" style="display: none;">
-              <h2>Classical Music Collection</h2>
-              <div id="classical-music-list"></div>
-            </div>
-            <!-- END OF CLASSIC MUSIC TAB-->
-
-
-
             <!-- TRUE CLASSIC RADIO (to replace song-collection-tab)-->
             <div id="true-classic-radio" class="tab-content">
               <div class="radio-widget">
@@ -362,20 +351,9 @@
           
             
             </div>
-
-
             </div>
 <!-- END OF TRUE CLASSIC RADIO -->
     
-
-
-   <!--
-             ____     ___    ____     _____     _     ____  
-            |  __ \  / _ \  |  _ \   |_   _|   / \   | __ ) 
-            | |  | || | | | | | | |    | |    / _ \  |  _ \ 
-            | |__| || |_| | | |_| |    | |   / ___ \ | |_) |
-            |_____/  \___/  |____/     |_|  /_/   \_\|____/ 
-            -->
 
 <!-- TRUE PODCAST TAB-->
 
@@ -442,22 +420,7 @@
   </div>
 </div>
 
-
-
-
-   <!--
-             _    ____   ___  _   _ _____   _____  _    ____  
-            / \  | __ ) / _ \| | | |_   _| |_   _|/ \  | __ ) 
-           / _ \ |  _ \| | | | | | | | |     | | / _ \ |  _ \ 
-          / ___ \| |_) | |_| | |_| | | |     | |/ ___ \| |_) |
-         /_/   \_\____/ \___/ \___/  |_|     |_/_/   \_\|____/ 
-                                                                              
-                                    _____     _     ____  
-                                   |_   _|   / \   | __ ) 
-                                     | |    / _ \  |  _ \ 
-                                     | |   / ___ \ | |_) |
-                                     |_|  /_/   \_\|____/ 
-            -->
+   <!-- ABOUT TAB -->
 
             <!-- ABOUT TAB -->
             <div id="about-tab" class="tab-content">
@@ -713,8 +676,6 @@
                           <p class="body-text center-text">Share a flyer for your favorite local music venue</p>
                           <div class="flyer-upload">
                             <input type="file" id="venue-flyer" accept="image/*" required />
-                           
-                    
                             <hr>
                             <input type="date" id="date-added">
                             <input type="text" id="venue-name" placeholder="Venue Name (optional)" />
@@ -820,22 +781,7 @@
               <ul id="likedPodcastsList"></ul>
             </div>
 
-     
-              <!-- The Grandfather Surprise Section -->
-              <!--
-              <div class="grandfather-surprise-section">
-     
-
-
-            -->
-              <!-- Logged-in Message Section -->
-              <div class="userLOGGEDin">
-                <div id="logged-in-message" class="center-frame"
-                  style="display: none; flex-direction: column; justify-content: center; align-items: center; height: 50vh; background-color: #f0f0f0;">
-                  <h1>Congrats, you are already logged in!</h1>
-                  <button onclick="logout()">Log Out</button>
-                </div>
-
+          
               </div>
               <!-- END OF USER LOGGED IN-->
 
@@ -856,10 +802,8 @@
               <div id="your-market-cart"></div>
               <table id="market-cart-table"></table>
               <p>Warning - Marketplace Still in Beta</p>
-
             </div>
             <div id="focus-work-mode-tab" class="tab-content">
-     
               <div class="focus-timer-container">
                 <div class="circular-timer">
                   <svg width="300" height="300" viewBox="0 0 300 300">
@@ -927,8 +871,6 @@
 </div>
             <!-- END OF TABS ? CHECK -->
           </div><!-- YES -->
-
-
           <!--v25 dock -->
           <div id="v25-dock-container">
             <div id="v25-dock">
@@ -956,46 +898,13 @@
               </div>
             </div>
           </div>
-          <!-- end of v25 dock -->
-          <div id="v25_BottomAudio"
-            style="height: 42px; position: fixed; bottom: 0; width: 100%; background-color: #282828; display: flex; align-items: center; justify-content: space-between; padding: 0 10px; box-sizing: border-box; color: white;">
-            <div class="song-info" style="display: flex; align-items: center;">
-              <img id="bottom-album-art" src alt="Album Art"
-                style="height: 40px; width: 40px; margin-right: 10px;">
-              <div>
-                <div id="bottom-song-title" style="font-weight: bold;">Song
-                  Title</div>
-                <div id="bottom-artist-name">Artist Name</div>
-              </div>
-            </div>
-            <div class="player-controls"
-              style="display: flex; align-items: center;">
-              <button id="bottom-prev-button" onclick="playPreviousSong()"><i
-                  class="fas fa-step-backward"></i></button>
-              <button id="bottom-play-pause-button"
-                onclick="togglePlayPause()"><i
-                  class="fas fa-play" id="bottom-play-pause-icon"></i></button>
-              <button id="pause-btn"><i class="fa fa-pause"
-                  aria-hidden="true"></i>Pause</button>
-              <button id="bottom-next-button" onclick="playNextSong()"><i
-                  class="fas fa-step-forward"></i></button>
-              <button id="unique-burn-button" onclick="uniqueBurnSong()">
-                <i class="fas fa-fire"></i>
-              </button>
-            </div>
-            <div class="progress-bar" style="flex-grow: 1; margin-left: 10px;">
-              <input type="range" id="bottom-song-progress" value="0" min="0"
-                max="100" step="1" style="width: 100%;">
-            </div>
-          </div>
-
+ 
           <div id="v27-player">
             <div style="display: flex; align-items: center;">
 <!-- AUDIO PLAYER -->
               <audio id="audio-player" controls style="display:none;"></audio>
 
             </div>
-
 
           </div>
           <div id="sound-timeline-container">
