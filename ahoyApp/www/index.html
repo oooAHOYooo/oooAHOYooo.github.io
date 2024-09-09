@@ -962,16 +962,6 @@
 
               <!-- END OF ACCOUNT TAB DONT TOUCH -->
             </div>
-            <!-- END OF THE ACCOUNT TAB-->
-    <!--
-              __  __    _    ____  _  _______ _____   _____  ____  _  __   __  __  ___  ____  _____ 
-             |  \/  |  / \  |  _ \| |/ / ____|_   _| |_   _|/ _ \| |/ /  |  \/  |/ _ \|  _ \| ____|
-             | |\/| | / _ \ | |_) | ' /|  _|   | |     | | / | | | ' /   | |\/| | | | | | | |  _|  
-             | |  | |/ ___ \|  _ <| . \| |___  | |     | |/| |_| | . \   | |  | | |_| | |_| | |___ 
-             |_|  |_/_/   \_\_| \_\_|\_\_____| |_|     |_| \___/|_|\_\  |_|  |_|\___/|____/|_____|
-                                                                                                
-            -->
-            <!-- MARKET TAB-->
             <div id="market-tab" class="tab-content">
               <img src="./img/ahoy-market.svg" class="svgBlend">
               <div id="submenu-filter">
@@ -989,6 +979,51 @@
               <p>Warning - Marketplace Still in Beta</p>
 
             </div>
+            <div id="focus-work-mode-tab" class="tab-content">
+     
+              <div class="focus-timer-container">
+                <div class="circular-timer">
+                  <svg width="300" height="300" viewBox="0 0 300 300">
+                    <circle class="timer-background" cx="150" cy="150" r="145" fill="none" stroke="#e0e0e0" stroke-width="10" />
+                    <circle class="timer-progress" cx="150" cy="150" r="145" fill="none" stroke="#ff9999" stroke-width="10" />
+                  </svg>
+                  <div class="timer-display">25:00</div>
+                  <button class="timer-control-btn">
+                    <svg class="play-icon" viewBox="0 0 24 24" width="50" height="50">
+                      <path d="M8 5v14l11-7z"/>
+                    </svg>
+                    <svg class="pause-icon" viewBox="0 0 24 24" width="50" height="50" style="display: none;">
+                      <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+                    </svg>
+                  </button>
+                </div>
+                <div class="timer-controls">
+                  <button id="reset-timer">Reset</button>
+                </div>
+              </div>
+              <p class="body-text"><span class="body-text-bold">Warning</span> this mode is in active development</p>
+              <div class="body-desc-container">
+                <div class="body-desc-block">
+                  <p class="body-text">This feature combines a Pomodoro-style timer with a curated music playlist to enhance focus and productivity. Users can start a 25-minute work session using the timer, which displays remaining time and a circular progress indicator. The timer alerts users when the work session ends, while the music continues playing. This combination of timed work intervals and background music aims to create an ideal environment for concentrated work or study.</p>
+                </div></div>
+              
+            </div>
+            <script type="module">
+              import { loginUser } from './js/src/true-firebase-user-logic.js';
+          
+              document.getElementById('loginButton').addEventListener('click', loginUser);
+          </script>
+            <!-- END OF THE ACCOUNT TAB-->
+    <!--
+              __  __    _    ____  _  _______ _____   _____  ____  _  __   __  __  ___  ____  _____ 
+             |  \/  |  / \  |  _ \| |/ / ____|_   _| |_   _|/ _ \| |/ /  |  \/  |/ _ \|  _ \| ____|
+             | |\/| | / _ \ | |_) | ' /|  _|   | |     | | / | | | ' /   | |\/| | | | | | | |  _|  
+             | |  | |/ ___ \|  _ <| . \| |___  | |     | |/| |_| | . \   | |  | | |_| | |_| | |___ 
+             |_|  |_/_/   \_\_| \_\_|\_\_____| |_|     |_| \___/|_|\_\  |_|  |_|\___/|____/|_____|
+                                                                                                
+            -->
+            <!-- MARKET TAB-->
+           
         <!-- END OF MARKET TAB-->
         <!-- FOCUS WORK MODE -->
         <!--
@@ -999,48 +1034,7 @@
         |_|   \___/ \____|\___/|____/      \_/\_/  \___/|_| \_\_|\_\  |_|  |_|\___/|____/|_____|
                                                                                                 
         -->
-        <div id="focus-work-mode-tab" class="tab-content">
-     
-          <div class="focus-timer-container">
-            <div class="circular-timer">
-              <svg width="300" height="300" viewBox="0 0 300 300">
-                <circle class="timer-background" cx="150" cy="150" r="145" fill="none" stroke="#e0e0e0" stroke-width="10" />
-                <circle class="timer-progress" cx="150" cy="150" r="145" fill="none" stroke="#ff9999" stroke-width="10" />
-              </svg>
-              <div class="timer-display">25:00</div>
-              <button class="timer-control-btn">
-                <svg class="play-icon" viewBox="0 0 24 24" width="50" height="50">
-                  <path d="M8 5v14l11-7z"/>
-                </svg>
-                <svg class="pause-icon" viewBox="0 0 24 24" width="50" height="50" style="display: none;">
-                  <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
-                </svg>
-              </button>
-            </div>
-            <div class="timer-controls">
-              <button id="reset-timer">Reset</button>
-            </div>
-          </div>
-          <p class="body-text"><span class="body-text-bold">Warning</span> this mode is in active development</p>
-          <div class="body-desc-container">
-            <div class="body-desc-block">
-              <p class="body-text">This feature combines a Pomodoro-style timer with a classical music playlist to enhance focus and productivity. Users can start a 25-minute work session using the timer, which displays remaining time and a circular progress indicator. Simultaneously, they can enjoy a curated classical music playlist, with options to play individual tracks, shuffle the playlist, or play all songs sequentially. The timer alerts users when the work session ends, while the music continues playing, automatically moving to the next track. This combination of timed work intervals and soothing classical music aims to create an ideal environment for concentrated work or study.</p>
-            </div></div>
-            <div class="focus-playlist">
-              <h3>Classical Music Playlist</h3>
-            <div id="now-playing"></div>
-            <button id="play-all">Play All</button>
-            <button id="shuffle-playlist">Shuffle</button>
-            <ul id="classical-playlist">
-              <!-- Playlist items will be dynamically inserted here -->
-            </ul>
-          </div>
-        </div>
-        <script type="module">
-          import { loginUser } from './js/src/true-firebase-user-logic.js';
-      
-          document.getElementById('loginButton').addEventListener('click', loginUser);
-      </script>
+ 
 
 
 <!-- LOGIN TAB -->
