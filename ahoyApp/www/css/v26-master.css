@@ -55,6 +55,20 @@
 
 /*ELEMENTALS */
 
+em {
+    font-size: calc(1rem + 0.5vw);
+    font-style: normal;
+}
+
+.emARTIST {
+    color: yellow !important;
+    font-size: calc(1.5rem + 0.5vw);
+}
+
+.emSONG-TITLE {
+    color: yellow;
+}
+
 /* Universal Styles for Input, Textarea, and Select */
 input,
 textarea,
