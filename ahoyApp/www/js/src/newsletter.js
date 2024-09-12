@@ -18,117 +18,99 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 groupedByMonth[monthYear].push(item);
             });
 
-            // Create the dropdown menu for filtering
-            const menu = document.createElement('div');
-            menu.className = 'dropdown newsletter-menu-container';
-            menu.innerHTML = `<button class="btnPrimary">Issues <i class="fa-solid fa-chevron-down"></i></button>`;
-            const dropdownContent = document.createElement('div');
-            dropdownContent.className = 'dropdown-content';
-
-            Object.keys(groupedByMonth).forEach(monthYear => {
-                const menuItem = document.createElement('a');
-                menuItem.href = '#';
-                menuItem.innerHTML = monthYear;
-                menuItem.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    filterNewsByMonth(monthYear);
-                });
-                dropdownContent.appendChild(menuItem);
-            });
-
-            menu.appendChild(dropdownContent);
-
-            function filterNewsByMonth(monthYear) {
-                const filteredItems = groupedByMonth[monthYear];
-                currentPage = 1;
-                displayNewsletter(filteredItems);
-            }
-
-            function displayNewsletter(data) {
+            function displayNewsletter(data, append = false) {
                 const newsletterList = document.getElementById('newsletter-list');
-                const paginationControls = document.querySelector('.pagination-controls');
-                let totalPages = Math.ceil(data.length / itemsPerPage);
+                const start = (currentPage - 1) * itemsPerPage;
+                const end = start + itemsPerPage;
+                const pageItems = data.slice(start, end);
 
-                function renderPage(page) {
+                // If we're not appending, clear the existing content
+                if (!append) {
                     newsletterList.innerHTML = '';
-                    const start = (page - 1) * itemsPerPage;
-                    const end = start + itemsPerPage;
-                    const pageItems = data.slice(start, end);
-
-                    pageItems.forEach(newsletter => {
-                        const div = document.createElement('div');
-                        div.className = 'newsletter-item';
-                        div.style.textAlign = 'center';
-
-                        let htmlContent = `
-                            <p class="newsletter-date"><i class="fa-regular fa-clock"></i> ${newsletter.date}</p>
-                            <h2>${newsletter.title}</h2>
-                        `;
-                        if (newsletter.imageUrl) {
-                            if (newsletter.imageUrl.endsWith('.mp4')) {
-                                htmlContent += `
-                                    <div style="text-align: center;">
-                                        <video loop autoplay muted loading="lazy" style="width: 100%; height: auto;">
-                                            <source src="${newsletter.imageUrl}" type="video/mp4">
-                                            Your browser does not support the video tag.
-                                        </video>
-                                    </div>
-                                `;
-                            } else {
-                                const imageClickHandler = newsletter.goTo ? `onclick="goTo('${newsletter.goTo}')"` : `onclick="openLightbox('${newsletter.imageUrl}')"`;
-                                htmlContent += `
-                                    <div style="text-align: center;">
-                                        <img src="${newsletter.imageUrl}" alt="${newsletter.title}" class="newsletter-image" loading="lazy" style="max-width: 100%; height: auto; cursor: pointer;" ${imageClickHandler}>
-                                    </div>
-                                `;
-                            }
-                        }
-                        htmlContent += `<p><i class="fa-solid fa-file-lines"></i> ${newsletter.content}</p>`;
-
-                        if (newsletter.additionalImages && newsletter.additionalImages.length > 0) {
-                            htmlContent += `<div class="additional-images">`;
-                            newsletter.additionalImages.forEach(imgUrl => {
-                                htmlContent += `<img src="${imgUrl}" alt="Additional Image" loading="lazy" style="max-width: 100%; height: auto; margin: 10px 0;" onclick="openLightbox('${imgUrl}')">`;
-                            });
-                            htmlContent += `</div>`;
-                        }
-
-                        div.innerHTML = htmlContent;
-                        newsletterList.appendChild(div);
-                    });
-
-                    updatePaginationControls(totalPages);
                 }
 
-                function updatePaginationControls(totalPages) {
-                    paginationControls.innerHTML = `
-                        <button class="pagination-button prev" ${currentPage === 1 ? 'disabled' : ''}>Previous</button>
-                        <span class="pagination-info">Page ${currentPage} of ${totalPages}</span>
-                        <button class="pagination-button next" ${currentPage === totalPages ? 'disabled' : ''}>Next</button>
+                pageItems.forEach(newsletter => {
+                    const div = document.createElement('div');
+                    div.className = 'newsletter-item';
+                    div.style.textAlign = 'center';
+
+                    let htmlContent = `
+                        <p class="newsletter-date"><i class="fa-regular fa-clock"></i> ${newsletter.date}</p>
+                        <h2>${newsletter.title}</h2>
                     `;
-                    paginationControls.appendChild(menu);
-
-                    const prevButton = paginationControls.querySelector('.prev');
-                    const nextButton = paginationControls.querySelector('.next');
-
-                    prevButton.addEventListener('click', () => {
-                        if (currentPage > 1) {
-                            currentPage--;
-                            renderPage(currentPage);
+                    if (newsletter.imageUrl) {
+                        if (newsletter.imageUrl.endsWith('.mp4')) {
+                            htmlContent += `
+                                <div style="text-align: center;">
+                                    <video loop autoplay muted loading="lazy" style="width: 100%; height: auto;">
+                                        <source src="${newsletter.imageUrl}" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </div>
+                            `;
+                        } else {
+                            const imageClickHandler = newsletter.goTo ? `onclick="goTo('${newsletter.goTo}')"` : `onclick="openLightbox('${newsletter.imageUrl}')"`;
+                            htmlContent += `
+                                <div style="text-align: center;">
+                                    <img src="${newsletter.imageUrl}" alt="${newsletter.title}" class="newsletter-image lazy-load" loading="lazy" style="max-width: 100%; height: auto; cursor: pointer;" ${imageClickHandler}>
+                                </div>
+                            `;
                         }
-                    });
+                    }
+                    htmlContent += `<p><i class="fa-solid fa-file-lines"></i> ${newsletter.content}</p>`;
 
-                    nextButton.addEventListener('click', () => {
-                        if (currentPage < totalPages) {
-                            currentPage++;
-                            renderPage(currentPage);
-                        }
-                    });
-                }
+                    if (newsletter.additionalImages && newsletter.additionalImages.length > 0) {
+                        htmlContent += `<div class="additional-images">`;
+                        newsletter.additionalImages.forEach(imgUrl => {
+                            htmlContent += `<img src="${imgUrl}" alt="Additional Image" class="lazy-load" loading="lazy" style="max-width: 100%; height: auto; margin: 10px 0;" onclick="openLightbox('${imgUrl}')">`;
+                        });
+                        htmlContent += `</div>`;
+                    }
 
-                renderPage(currentPage);
+                    div.innerHTML = htmlContent;
+                    newsletterList.appendChild(div);
+                });
+
+                lazyLoadImages(); // Apply lazy loading to the images
             }
 
-            displayNewsletter(sortedData);
+            // Function to apply lazy loading to images using Intersection Observer
+            function lazyLoadImages() {
+                const lazyImages = document.querySelectorAll('.lazy-load');
+
+                const observer = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const image = entry.target;
+                            image.src = image.dataset.src || image.src; // Load image when in view
+                            image.classList.remove('lazy-load');
+                            observer.unobserve(image); // Stop observing once image is loaded
+                        }
+                    });
+                });
+
+                lazyImages.forEach(image => {
+                    observer.observe(image); // Start observing each lazy-load image
+                });
+            }
+
+            // Infinite scroll functionality
+            function infiniteScroll() {
+                const observer = new IntersectionObserver((entries) => {
+                    const lastEntry = entries[0];
+                    if (lastEntry.isIntersecting) {
+                        if (currentPage * itemsPerPage < sortedData.length) {
+                            currentPage++;
+                            displayNewsletter(sortedData, true); // Load next page and append
+                        }
+                    }
+                }, { rootMargin: '0px 0px 200px 0px' }); // Trigger when the user is 200px from the bottom
+
+                // Attach the observer to the last element in the list
+                observer.observe(document.querySelector('#newsletter-list > .newsletter-item:last-child'));
+            }
+
+            displayNewsletter(sortedData); // Display the first page of items
+            infiniteScroll(); // Initialize infinite scroll
         });
 });
