@@ -17,6 +17,69 @@
      \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 */
 
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100000;
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    background-color: black;
+    height: 52px;
+    overflow: hidden;
+}
+
+.top-nav-container-controls {
+    flex-grow: 1;
+}
+
+.top-nav-playing-display {
+    flex-grow: 2;
+    text-align: center;
+}
+
+.top-nav-user-controls {
+    flex-grow: 1;
+    text-align: right;
+}
+
+.user-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+#main-content,
+#sidebar {
+    padding-top: 100px;
+}
+
+.top-nav-container-controls {
+    width: 2%;
+    display: flex;
+    height: 53px;
+    align-items: center;
+    justify-content: center;
+}
+
+.top-nav-control-btn {
+    color: var(--border-color);
+    transition: all .2s ease;
+    opacity: .8;
+    width: 33px;
+    width: 100%;
+
+}
+
+.top-nav-control-btn:hover {
+    opacity: 1;
+    transform: scale(1.05)
+}
+
+
+
 /*
   ____            _        _                 
  / ___|___  _ __ | |_ __ _(_)_ __   ___ _ __ 
@@ -521,6 +584,8 @@ input[type="date"]:focus {
 #left-sidebar.open,
 #right-sidebar.open {
     animation: breathe 4s infinite ease-in-out;
+    margin-top: 52px !important;
+
 }
 
 /* Sidebar Content Styles */
@@ -928,6 +993,8 @@ input[type="date"]:focus {
     background-color: var(--background-color);
     animation: pulseGlow 2s infinite ease-in-out;
     padding-bottom: 50px !important;
+    padding-top: 52px;
+    margin-top: 53px;
 }
 
 .tab-content {
