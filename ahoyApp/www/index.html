@@ -147,10 +147,11 @@
    <nav>
     <div class="top-nav-container-controls">
       <button id="top-nav-play-btn" class="top-nav-control-btn" aria-label="Play or Pause"><i class="fas fa-play"></i></button>
-      <button id="top-nav-prev-btn" class="top-nav-control-btn" aria-label="Previous Track"><i class="fas fa-step-backward"></i></button>
-      <button id="top-nav-next-btn" class="top-nav-control-btn" aria-label="Next Track"><i class="fas fa-step-forward"></i></button>
+      <!-- Hide previous and next on mobile -->
+      <button id="top-nav-prev-btn" class="top-nav-control-btn mobile-hide" aria-label="Previous Track"><i class="fas fa-step-backward"></i></button>
+      <button id="top-nav-next-btn" class="top-nav-control-btn mobile-hide" aria-label="Next Track"><i class="fas fa-step-forward"></i></button>
     </div>
-    <div class="top-nav-playing-display">
+    <div class="top-nav-playing-display mobile-compact-display">
       <img id="current-track-image" src="./img/assets/default-cover.png" alt="Current track cover" class="current-track-image">
       <div class="track-info">
         <p id="current-track-title" class="current-track-title"><em>Media Title</em></p>
@@ -158,10 +159,8 @@
       </div>
     </div>
     <div class="top-nav-search-container">
-      <p>
-        <input type="text" id="search-input" placeholder="Search...">
-        <button id="search-button" aria-label="Search">Search</button>
-      </p>
+      <input type="text" id="search-input" placeholder="Search...">
+      <button id="search-button" aria-label="Search">Search</button>
     </div>
     <div class="top-nav-user-controls">
       <button id="user-login-btn" class="user-control-btn" aria-label="Login">Username</button>

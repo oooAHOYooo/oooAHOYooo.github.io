@@ -78,7 +78,33 @@ nav {
     transform: scale(1.05)
 }
 
+/* Add to your existing CSS file */
+@media (max-width: 600px) {
+    .mobile-hide {
+        display: none;
+    }
 
+    .mobile-compact-display {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .top-nav-control-btn {
+        min-width: 44px;
+        /* Increase touch target size */
+        min-height: 44px;
+        /* Increase touch target size */
+    }
+
+    .top-nav-search-container input,
+    .top-nav-search-container button {
+        width: 100%;
+        /* Full width for smaller screens */
+        margin: 5px 0;
+        /* Add some spacing */
+    }
+}
 
 /*
   ____            _        _                 
