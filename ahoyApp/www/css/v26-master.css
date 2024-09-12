@@ -61,12 +61,43 @@ em {
 }
 
 .emARTIST {
-    color: yellow !important;
-    font-size: calc(1.5rem + 0.5vw);
+    color: rgba(var(--text-color), 0.72);
+    margin: 0;
+    line-height: 95%;
+
+
+
 }
 
 .emSONG-TITLE {
-    color: yellow;
+    color: rgba(var(--text-color), 0.72);
+    font-size: calc(1.5rem + 0.5vw);
+    margin: 0;
+    line-height: 95%;
+}
+
+.emPLAY-song-btn {
+    color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10%;
+    padding: 12.5px;
+    transition: all 0.3s ease;
+    border-color: var(--border-color);
+}
+
+.emPLAY-song-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+}
+
+.hr-spacer {
+    height: 10px;
+    border: none;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
 }
 
 /* Universal Styles for Input, Textarea, and Select */
