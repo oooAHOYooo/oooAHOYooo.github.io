@@ -24,15 +24,20 @@ nav {
     right: 0;
     z-index: 100000;
     width: 100%;
+    height: 52px;
     display: flex;
     align-items: stretch;
     background-color: black;
-    height: 52px;
     overflow: hidden;
 }
 
 .top-nav-container-controls {
     flex-grow: 1;
+    width: 2%;
+    height: 53px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .top-nav-playing-display {
@@ -40,12 +45,10 @@ nav {
     text-align: center;
 }
 
-.top-nav-user-controls {
+.top-nav-user-controls,
+.user-avatar {
     flex-grow: 1;
     text-align: right;
-}
-
-.user-avatar {
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -56,41 +59,28 @@ nav {
     padding-top: 100px;
 }
 
-.top-nav-container-controls {
-    width: 2%;
-    display: flex;
-    height: 53px;
-    align-items: center;
-    justify-content: center;
-}
-
 .top-nav-control-btn {
     color: var(--border-color);
     transition: all .2s ease;
     opacity: .8;
-    width: 33px;
     width: 100%;
-
 }
 
 .top-nav-control-btn:hover {
     opacity: 1;
-    transform: scale(1.05)
+    transform: scale(1.05);
 }
 
-/* Add to your existing CSS file */
 @media (max-width: 600px) {
     .mobile-hide {
         display: none;
     }
 
-    .mobile-compact-display {
+    .mobile-compact-display,
+    .top-nav-control-btn {
         display: flex;
         flex-direction: column;
         align-items: center;
-    }
-
-    .top-nav-control-btn {
         min-width: 44px;
         /* Increase touch target size */
         min-height: 44px;
@@ -98,15 +88,22 @@ nav {
     }
 
     .top-nav-search-container input,
-    .top-nav-search-container button {
+    .top-nav-search-container button,
+    #search-input,
+    #search-input:focus {
         width: 100%;
-        /* Full width for smaller screens */
         margin: 5px 0;
-        /* Add some spacing */
+    }
+
+    .top-nav-track-info,
+    .top-nav-current-track-title,
+    .top-nav-current-track-artist {
+        flex-direction: row;
+        justify-content: space-between;
+        max-width: 100px;
     }
 }
 
-/* Sexy glass search styles */
 .top-nav-search-container {
     position: relative;
     display: flex;
@@ -129,35 +126,21 @@ nav {
 .top-nav-current-track-title,
 .top-nav-current-track-artist {
     margin: 0;
-    line-height: 1.2;
+    line-height: 1.0;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 150px;
-}
-
-.top-nav-current-track-title {
-    font-size: 0.8em;
+    font-size: 0.48em;
+    /* title */
     color: var(--text-color);
+    /* title */
 }
 
 .top-nav-current-track-artist {
     font-size: 0.7em;
     color: rgba(var(--text-color-rgb), 0.7);
 }
-
-@media (max-width: 600px) {
-    .top-nav-track-info {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    .top-nav-current-track-title,
-    .top-nav-current-track-artist {
-        max-width: 100px;
-    }
-}
-
 
 #search-input {
     background: rgba(255, 255, 255, 0.1);
@@ -178,7 +161,8 @@ nav {
     width: 250px;
 }
 
-#search-input::placeholder {
+#search-input::placeholder,
+#search-button {
     color: rgba(255, 255, 255, 0.5);
 }
 
@@ -187,7 +171,6 @@ nav {
     right: 10px;
     background: none;
     border: none;
-    color: var(--text-color);
     font-size: 18px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -198,21 +181,8 @@ nav {
     transform: scale(1.1);
 }
 
-.tiny-invisible-shadow {
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-@media (max-width: 600px) {
-    #search-input {
-        width: 150px;
-    }
-
-    #search-input:focus {
-        width: 200px;
-    }
-}
-
-.user-profile-badge {
+.user-profile-badge,
+.profile-dropdown select {
     background-color: rgba(0, 0, 128, 0.5);
     padding: 10px;
     border-radius: 5px;
@@ -235,27 +205,11 @@ nav {
     font-size: 24px;
 }
 
-.profile-dropdown select {
-    background-color: rgba(0, 0, 128, 0.5);
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    outline: none;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-}
-
-.profile-dropdown select:hover {
-    background-color: rgba(0, 0, 128, 0.5);
-}
-
+.profile-dropdown select:hover,
 .profile-dropdown select:focus {
+    background-color: rgba(0, 0, 128, 0.5);
     box-shadow: 0 0 0 2px #fff, 0 0 0 4px rgba(0, 0, 128, 0.5);
-    ;
 }
-
 
 
 /*

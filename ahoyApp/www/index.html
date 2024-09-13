@@ -150,11 +150,10 @@
       <!-- Hide previous and next on mobile -->
       <button id="top-nav-prev-btn" class="top-nav-control-btn mobile-hide" aria-label="Previous Track"><i class="fas fa-step-backward"></i></button>
       <button id="top-nav-next-btn" class="top-nav-control-btn mobile-hide" aria-label="Next Track"><i class="fas fa-step-forward"></i></button>
-    </div>
-    <div class="top-nav-playing-display mobile-compact-display">
-      <div class="top-nav-track-info" style="font-size: 0.8em; display: flex; align-items: center; justify-content: space-between;">
-        <p id="current-track-title" class="top-nav-current-track-title" style="margin: 0;"><em>Media Title</em></p>
-        <p id="current-track-artist" class="top-nav-current-track-artist" style="margin: 0;"><em class="emArtist">Artist Name</em></p>
+    </div>    <div class="top-nav-playing-display mobile-compact-display">
+      <div class="top-nav-track-info">
+        <p id="current-track-title" class="top-a-nav-current-track-title"><em>Media Title</em></p>
+        <p id="current-track-artist" class="top-a-nav-current-track-artist"><em class="emArtist">Artist Name</em></p>
       </div>
     </div>
     <div class="top-nav-search-container">
@@ -168,23 +167,26 @@
 
 /* Additional styles can be added below */
     </style>
-    <div class="top-nav-user-controls">
+    <div class="top-nav-user-controls" style="background: rgba(0, 0, 0, 0.5); backdrop-filter: blur(10px); border-radius: 10px; padding: 10px;">
       <div id="user-profile-badge" class="user-profile-badge" style="display: flex; align-items: center; justify-content: space-between;">
         <div class="profile-badge" style="display: flex; align-items: center;">
-          <span class="profile-badge__username" style="margin-right: 10px;">Username</span>
+          <span class="profile-badge__username" style="font-size: 12px; font-weight: 400; margin-right: 10px; color: white;">Username</span>
           <div class="profile-badge__icon">
-            <i class="fas fa-user-circle"></i>
+            <i class="fas fa-user-circle" style="color: white;"></i>
           </div>
         </div>
         <div class="profile-dropdown">
-          <select onchange="handleProfileAction(this.value)">
+          <select onchange="handleProfileAction(this.value)" style="background: rgba(255, 255, 255, 0.2); color: white; border: none; border-radius: 5px;">
             <option value="">Actions</option>
             <option value="sign-in">Sign In</option>
             <option value="sign-out">Sign Out</option>
           </select>
         </div>
+  
       </div>
     </div>
+
+
   </nav>
 
 
@@ -990,7 +992,40 @@
 
     </div>
 
+<!-- Search Results Tab -->
+<div id="search-results-tab" class="tab-content" style="display: none;">
+  <h1>Search Results</h1>
+  <div id="search-results-container">
+    <!-- Search results will be dynamically inserted here -->
+  </div>
+</div>
 
+<script>
+  function performSearch(query) {
+    // Logic to perform search and fetch results
+    // For demonstration, assume results are fetched and stored in `searchResults`
+
+    const resultsContainer = document.getElementById('search-results-container');
+    resultsContainer.innerHTML = ''; // Clear previous results
+
+    if (searchResults.length > 0) {
+      searchResults.forEach(result => {
+        const resultElement = document.createElement('div');
+        resultElement.classList.add('search-result');
+        resultElement.textContent = result; // Assuming result is a string for simplicity
+        resultsContainer.appendChild(resultElement);
+      });
+    } else {
+      resultsContainer.textContent = 'No results found.';
+    }
+
+    // Display the search results tab
+    document.getElementById('search-results-tab').style.display = 'block';
+  }
+
+  // Example usage:
+  // performSearch('query');
+</script>
     <!-- LIVE SCRIPTS -->
 
     
