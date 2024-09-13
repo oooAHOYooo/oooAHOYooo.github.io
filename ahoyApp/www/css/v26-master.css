@@ -212,6 +212,52 @@ nav {
     }
 }
 
+.user-profile-badge {
+    background-color: rgba(0, 0, 128, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.profile-badge {
+    gap: 10px;
+}
+
+.profile-badge__username {
+    font-weight: bold;
+}
+
+.profile-badge__icon i {
+    font-size: 24px;
+}
+
+.profile-dropdown select {
+    background-color: rgba(0, 0, 128, 0.5);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.profile-dropdown select:hover {
+    background-color: rgba(0, 0, 128, 0.5);
+}
+
+.profile-dropdown select:focus {
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px rgba(0, 0, 128, 0.5);
+    ;
+}
+
+
+
 /*
   ____            _        _                 
  / ___|___  _ __ | |_ __ _(_)_ __   ___ _ __ 

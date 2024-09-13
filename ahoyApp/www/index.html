@@ -161,9 +161,29 @@
       <input type="text" id="search-input" placeholder="Search...">
       <button id="search-button" aria-label="Search" class="tiny-invisible-shadow"><i class="fas fa-search"></i></button>
     </div>
+    <style>
+      /* Existing CSS... */
+
+
+
+/* Additional styles can be added below */
+    </style>
     <div class="top-nav-user-controls">
-      <button id="user-login-btn" class="user-control-btn" aria-label="Login">Username</button>
-  <img src="./img/assets/u_ahoy23.png" alt="User Avatar" class="user-avatar">
+      <div id="user-profile-badge" class="user-profile-badge" style="display: flex; align-items: center; justify-content: space-between;">
+        <div class="profile-badge" style="display: flex; align-items: center;">
+          <span class="profile-badge__username" style="margin-right: 10px;">Username</span>
+          <div class="profile-badge__icon">
+            <i class="fas fa-user-circle"></i>
+          </div>
+        </div>
+        <div class="profile-dropdown">
+          <select onchange="handleProfileAction(this.value)">
+            <option value="">Actions</option>
+            <option value="sign-in">Sign In</option>
+            <option value="sign-out">Sign Out</option>
+          </select>
+        </div>
+      </div>
     </div>
   </nav>
 
