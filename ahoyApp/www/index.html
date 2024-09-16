@@ -657,17 +657,27 @@
   </select>
   <p>Current Theme: <span id="theme-title"></span></p>
 
-  <!-- Playback Settings -->
-  <h3>Playback Settings</h3>
-  <label for="playback-quality">Playback Quality:</label>
-  <select id="playback-quality">
-      <option value="auto">Auto</option>
-      <option value="1080p">1080p</option>
-      <option value="720p">720p</option>
-      <option value="480p">480p</option>
-      <option value="360p">360p</option>
-  </select>
-
+  <h3>Top Navigation Visibility</h3>
+  <label class="switch">
+    <input type="checkbox" id="toggle-top-nav">
+    <span class="slider round"></span>
+  </label>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const navBar = document.querySelector('nav');
+      const toggle = document.getElementById('nav-toggle');
+  
+      // Check if there's a saved preference and apply it
+      const navVisible = localStorage.getItem('navVisible') === 'true';
+      toggle.checked = navVisible;
+      navBar.style.display = navVisible ? 'block' : 'none';
+  
+      toggle.addEventListener('change', function() {
+        navBar.style.display = this.checked ? 'block' : 'none';
+        localStorage.setItem('navVisible', this.checked);
+      });
+    });
+  </script>
   <!-- Beta Experimental Features -->
   <h2>BETA Experimental Features</h2>
   <p>These features are not yet ready for prime time</p>

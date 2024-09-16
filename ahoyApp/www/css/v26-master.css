@@ -17,6 +17,12 @@
      \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 */
 
+/* Example of overriding within v26-master.css */
+nav {
+    display: none !important;
+    /* Ensures that JS toggle controls the display */
+}
+
 nav {
     position: fixed;
     top: 0;
