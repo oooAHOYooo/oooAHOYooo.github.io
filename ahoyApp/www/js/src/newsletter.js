@@ -38,6 +38,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
                         <p class="newsletter-date"><i class="fa-regular fa-clock"></i> ${newsletter.date}</p>
                         <h2>${newsletter.title}</h2>
                     `;
+                    // Check if imageUrl exists before rendering image or video
                     if (newsletter.imageUrl) {
                         if (newsletter.imageUrl.endsWith('.mp4')) {
                             htmlContent += `

@@ -662,22 +662,7 @@
     <input type="checkbox" id="toggle-top-nav">
     <span class="slider round"></span>
   </label>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const navBar = document.querySelector('nav');
-      const toggle = document.getElementById('nav-toggle');
-  
-      // Check if there's a saved preference and apply it
-      const navVisible = localStorage.getItem('navVisible') === 'true';
-      toggle.checked = navVisible;
-      navBar.style.display = navVisible ? 'block' : 'none';
-  
-      toggle.addEventListener('change', function() {
-        navBar.style.display = this.checked ? 'block' : 'none';
-        localStorage.setItem('navVisible', this.checked);
-      });
-    });
-  </script>
+
   <!-- Beta Experimental Features -->
   <h2>BETA Experimental Features</h2>
   <p>These features are not yet ready for prime time</p>
@@ -1106,5 +1091,22 @@
 <script src="js/src/dock-user.js"></script>
     <!-- END -->
     <!-- THANK YOU FOR TAKING THE TIME - ALEX LEZ -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const nav = document.querySelector('nav');
+        const toggle = document.getElementById('toggle-top-nav');
+      
+        // Initialize nav display based on localStorage or default to hidden
+        const navVisible = localStorage.getItem('navVisible') === 'true';
+        toggle.checked = navVisible;
+        nav.style.display = navVisible ? 'block' : 'none';
+      
+        toggle.addEventListener('change', function() {
+          localStorage.setItem('navVisible', this.checked);
+          // Refresh the page after changing the visibility setting
+          window.location.reload();
+        });
+      });
+      </script>
   </body>
 </html>

@@ -17,13 +17,9 @@
      \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 */
 
-/* Example of overriding within v26-master.css */
 nav {
-    display: none !important;
+    display: none;
     /* Ensures that JS toggle controls the display */
-}
-
-nav {
     position: fixed;
     top: 0;
     left: 0;
@@ -31,7 +27,6 @@ nav {
     z-index: 100000;
     width: 100%;
     height: 52px;
-    display: flex;
     align-items: stretch;
     background-color: black;
     overflow: hidden;
