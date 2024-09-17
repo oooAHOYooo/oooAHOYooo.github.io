@@ -1082,54 +1082,10 @@
 <script src="js/src/true-firebase-user-logic.js"></script>
 <script src="js/src/tv-media-player-controls.js"></script>
 <script src="js/src/tv-media-player-init.js"></script>
+<script src="js/src/top-nav-controller.js"></script>
 <!--<script src="js/src/dock-user.js"></script>-->
     <!-- END -->
     <!-- THANK YOU FOR TAKING THE TIME - ALEX LEZ -->
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const nav = document.querySelector('nav');
-        const toggle = document.getElementById('toggle-top-nav');
-      
-        // Initialize nav display based on localStorage or default to hidden
-        const navVisible = localStorage.getItem('navVisible') === 'true';
-        toggle.checked = navVisible;
-        nav.style.display = navVisible ? 'block' : 'none';
-      
-        toggle.addEventListener('change', function() {
-          localStorage.setItem('navVisible', this.checked);
-          // Refresh the page after changing the visibility setting
-          window.location.reload();
-        });
-      });
-      </script>
 
-
-<script>
-  function updateNavBar(title, artist) {
-      const trackTitleElement = document.getElementById('current-track-title');
-      const trackArtistElement = document.getElementById('current-track-artist');
-  
-      // Set to blank initially or when no title or artist is provided
-      trackTitleElement.innerHTML = title ? `<em>${title}</em>` : '';
-      trackArtistElement.innerHTML = artist ? `<em class="emArtist">${artist}</em>` : '';
-  }
-  </script>
-  <script>
-    // Placeholder functions for media control, replace with actual logic from your media player scripts
-    function playCurrentMedia() {
-        // Logic to play current media
-        console.log('Playing current media');
-    }
-    
-    function playPreviousMedia() {
-        // Logic to play previous media
-        console.log('Playing previous media');
-    }
-    
-    function playNextMedia() {
-        // Logic to play next media
-        console.log('Playing next media');
-    }
-    </script>
   </body>
 </html>

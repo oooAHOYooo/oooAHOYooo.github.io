@@ -70,11 +70,11 @@ document.addEventListener('DOMContentLoaded', function() {
             leftToggleButton.style.display = 'block';
             rightToggleButton.style.display = 'block';
         } else {
-            closeSidebars();
-            leftToggleButton.style.display = 'block';
-            rightToggleButton.style.display = 'block';
-            rightSidebar.style.right = '-280px'; // Ensure sidebar is hidden on mobile
-            rightToggleButton.style.right = '10px'; // Ensure button is visible and correctly positioned
+            // Hide sidebars and toggle buttons completely on mobile
+            leftSidebar.style.display = 'none';
+            rightSidebar.style.display = 'none';
+            leftToggleButton.style.display = 'none';
+            rightToggleButton.style.display = 'none';
         }
     }
 
@@ -90,10 +90,12 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('resize', handleResize);
 
     document.addEventListener('click', function(event) {
-        if (!leftSidebar.contains(event.target) && event.target !== leftToggleButton &&
-            !rightSidebar.contains(event.target) && event.target !== rightToggleButton &&
-            event.target !== exitButton) {
-            closeSidebars();
+        if (window.innerWidth > 768) {
+            if (!leftSidebar.contains(event.target) && event.target !== leftToggleButton &&
+                !rightSidebar.contains(event.target) && event.target !== rightToggleButton &&
+                event.target !== exitButton) {
+                closeSidebars();
+            }
         }
     });
 
@@ -129,11 +131,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Ensure toggles and sidebars are visible on mobile
     if (window.innerWidth <= 768) {
-        leftSidebar.style.left = '-280px';
-        rightSidebar.style.right = '-280px';
-        leftToggleButton.style.display = 'block';
-        rightToggleButton.style.display = 'block';
-        rightToggleButton.style.right = '10px'; // Ensure button is visible and correctly positioned
+        leftSidebar.style.display = 'none';
+        rightSidebar.style.display = 'none';
+        leftToggleButton.style.display = 'none';
+        rightToggleButton.style.display = 'none';
     }
 
     // Function to play a playlist
