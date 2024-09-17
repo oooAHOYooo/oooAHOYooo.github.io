@@ -145,49 +145,53 @@
       <div class="app-background-layer"></div>
    <!-- NEW TOP NAV -->
    <nav>
-    <div class="top-nav-container-controls">
-      <button id="top-nav-play-btn" class="top-nav-control-btn" aria-label="Play or Pause"><i class="fas fa-play"></i></button>
-      <!-- Hide previous and next on mobile -->
-      <button id="top-nav-prev-btn" class="top-nav-control-btn mobile-hide" aria-label="Previous Track"><i class="fas fa-step-backward"></i></button>
-      <button id="top-nav-next-btn" class="top-nav-control-btn mobile-hide" aria-label="Next Track"><i class="fas fa-step-forward"></i></button>
-    </div>    <div class="top-nav-playing-display mobile-compact-display">
-      <div class="top-nav-track-info">
-        <p id="current-track-title" class="top-a-nav-current-track-title"><em>Media Title</em></p>
-        <p id="current-track-artist" class="top-a-nav-current-track-artist"><em class="emArtist">Artist Name</em></p>
-      </div>
-    </div>
-    <div class="top-nav-search-container">
-      <input type="text" id="search-input" placeholder="Search...">
-      <button id="search-button" aria-label="Search" class="tiny-invisible-shadow"><i class="fas fa-search"></i></button>
-    </div>
-    <style>
-      /* Existing CSS... */
-
-
-
-/* Additional styles can be added below */
-    </style>
-    <div class="top-nav-user-controls" style="background: rgba(0, 0, 0, 0.5); backdrop-filter: blur(10px); border-radius: 10px; padding: 10px;">
-      <div id="user-profile-badge" class="user-profile-badge" style="display: flex; align-items: center; justify-content: space-between;">
-        <div class="profile-badge" style="display: flex; align-items: center;">
-          <span class="profile-badge__username" style="font-size: 12px; font-weight: 400; margin-right: 10px; color: white;">Username</span>
-          <div class="profile-badge__icon">
-            <i class="fas fa-user-circle" style="color: white;"></i>
+    <table style="width: 100%;">
+      <tr>
+       
+        <td>
+          <div class="top-nav-playing-display mobile-compact-display">
+            <div class="top-nav-track-info">
+              <p id="current-track-title" class="top-a-nav-current-track-title"><em>Media Title</em></p>
+              <p id="current-track-artist" class="top-a-nav-current-track-artist"><em class="emArtist">Artist Name</em></p>
+            </div>
           </div>
-        </div>
-        <div class="profile-dropdown">
-          <select onchange="handleProfileAction(this.value)" style="background: rgba(255, 255, 255, 0.2); color: white; border: none; border-radius: 5px;">
-            <option value="">Actions</option>
-            <option value="sign-in">Sign In</option>
-            <option value="sign-out">Sign Out</option>
-          </select>
-        </div>
-  
-      </div>
-    </div>
-
-
+        </td>
+        <td>
+          <div class="top-nav-container-controls">
+            <button id="top-nav-play-btn" class="top-nav-control-btn" aria-label="Play or Pause"><i class="fas fa-play"></i></button>
+            <button id="top-nav-prev-btn" class="top-nav-control-btn" aria-label="Previous Track"><i class="fas fa-step-backward"></i></button>
+            <button id="top-nav-next-btn" class="top-nav-control-btn" aria-label="Next Track"><i class="fas fa-step-forward"></i></button>
+          </div>
+        </td>
+        <td>
+          <div class="top-nav-search-container">
+            <input type="text" id="search-input" placeholder="Search...">
+            <button id="search-button" aria-label="Search" class="tiny-invisible-shadow"><i class="fas fa-search"></i></button>
+          </div>
+        </td>
+        <td>
+          <div class="top-nav-user-controls">
+            <div id="user-profile-badge" class="user-profile-badge">
+              <div class="profile-badge">
+                <span class="profile-badge__username">Username</span>
+                <div class="profile-badge__icon">
+                  <i class="fas fa-user-circle"></i>
+                </div>
+              </div>
+              <div class="profile-dropdown">
+                <select onchange="handleProfileAction(this.value)">
+                  <option value="">Actions</option>
+                  <option value="sign-in">Sign In</option>
+                  <option value="sign-out">Sign Out</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </table>
   </nav>
+
 
 
 
@@ -296,7 +300,7 @@
             -->
 
             <!-- MEDIA TAB -->
-            <div id="media-tab-a" class="tab-content active">
+            <div id="media-tab-a" class="tab-content ">
               <!--img src="./img/ahoy-media.svg"
                 class="svgBlend"-->
               <!-- START OF MEDIA-COLS-->
@@ -441,6 +445,17 @@
         <input type="range" id="podcastVolumeBar" min="0" max="1" step="0.1" value="1" class="styled-volume-bar">
       </div>
     </div>
+   
+    <div class="terminal-section">
+      <h2>> SEARCH PODCASTS:</h2>
+      <div class="search-container">
+        <input type="text" id="podcastSearch" placeholder="Enter search query...">
+        <button id="searchPodcastBtn">[SEARCH]</button>
+      </div>
+    <div class="liked-podcasts-widget">
+      <h3>> YOUR LIKED PODCASTS: [<span id="likedPodcastsCount">0</span>]</h3>
+      <ul id="likedPodcastsList"></ul>
+    </div>
     <div class="comments-widget">
       <h3>> COMMENTS FOR: <span id="commentPodcastTitle"></span></h3>
       <p>TOTAL COMMENTS: <span id="commentsCount">0</span></p>
@@ -450,16 +465,7 @@
         <button id="submitPodcastCommentBtn">[SUBMIT]</button>
       </div>
     </div>
-    <div class="liked-podcasts-widget">
-      <h3>> YOUR LIKED PODCASTS: [<span id="likedPodcastsCount">0</span>]</h3>
-      <ul id="likedPodcastsList"></ul>
-    </div>
-    <div class="terminal-section">
-      <h2>> SEARCH PODCASTS:</h2>
-      <div class="search-container">
-        <input type="text" id="podcastSearch" placeholder="Enter search query...">
-        <button id="searchPodcastBtn">[SEARCH]</button>
-      </div>
+ 
     </div>
     <figure>
       <figcaption id="podcast-list-caption">
@@ -807,46 +813,49 @@
                                                                               
             -->
             <!-- ACCOUNT -->
-            <div id="account-tab" class="tab-content">
-              <img src="./img/ahoy-account.svg" class="svgBlend">
+            <div id="account-tab" class="tab-content active" >
+           
               <div class="active-profile">
-                <h2>> YOUR ACTIVE PROFILE:</h2>
-                <p id="activeUser">USER: <span id="username">Loading...</span></p>
-                <p id="userLevel">LEVEL: <span id="level">Loading...</span></p>
-                <p id="userXP">XP: <span id="xp">Loading...</span></p>
-                <p id="userComments">COMMENTS: <span id="commentsCount">Loading...</span></p>
+                <h2 style="font-size: 2.2em; word-wrap: break-word;">> YOUR ACTIVE PROFILE:</h2>
+                <p id="activeUser" style="font-size: 0.9em; word-wrap: break-word;">USER: <span id="username">Loading...</span></p>
+                <p id="userLevel" style="font-size: 0.9em; word-wrap: break-word;">LEVEL: <span id="level">Loading...</span></p>
+                <p id="userXP" style="font-size: 0.9em; word-wrap: break-word;">XP: <span id="xp">Loading...</span></p>
+                <p id="userComments" style="font-size: 0.9em; word-wrap: break-word;">COMMENTS: <span id="commentsCount">Loading...</span></p>
               </div>
-<button class="btnPrimary" onclick="navigateToTab('login-tab')">Login</button>
-   <!-- Account Settings -->
-   <h3>Account Settings</h3>
-   <button class="btnPrimary" onclick="navigateToTab('manage-account')">Manage Account</button>
-   <button class="btnPrimary" onclick="logout()">Log Out</button>
-   
+
+
+              <div class="liked-songs-widget">
+                <h3 style="font-size: 1.1em; word-wrap: break-word;">> YOUR LIKED SONGS: [<span id="accountLikedSongsCount">0</span>]</h3>
+                <ul id="accountLikedSongsList" style="padding-left: 20px; word-wrap: break-word;"></ul>
+              </div>
+              <hr>
+              <div class="liked-podcasts-widget">
+                <h3 style="font-size: 1.1em; word-wrap: break-word;">> YOUR LIKED PODCASTS: [<span id="likedPodcastsCount">0</span>]</h3>
+                <ul id="likedPodcastsList" style="padding-left: 20px; word-wrap: break-word;"></ul>
+              </div>
+              <hr>
+              <div class="account-settings-container"> 
+              <button class="btnPrimary" onclick="navigateToTab('login-tab')" style="width: 100%; margin-bottom: 10px;">Login</button>
+              <!-- Account Settings -->
+              <h3 style="font-size: 1.1em; word-wrap: break-word;">Account Settings</h3>
+              <button class="btnPrimary" onclick="navigateToTab('manage-account')">Manage Account</button>
+              <button class="btnPrimary" onclick="logout()" style="width: 100%; margin-bottom: 10px;">Log Out</button>
 
               <div id="user-profile-dropdown" style="display:none;">
-
                 <!-- other profile elements -->
-                <p id="last-login-time"></p>
+                <p id="last-login-time" style="font-size: 0.9em; word-wrap: break-word;"></p>
               </div>
               
-            <!-- Replace the existing liked songs widget with this updated version -->
-            <div class="liked-songs-widget">
-              <h3>> YOUR LIKED SONGS: [<span id="accountLikedSongsCount">0</span>]</h3>
-              <ul id="accountLikedSongsList"></ul>
+              <!-- Replace the existing liked songs widget with this updated version -->
+           
+            
             </div>
-            <div class="liked-podcasts-widget">
-              <h3>> YOUR LIKED PODCASTS: [<span id="likedPodcastsCount">0</span>]</h3>
-              <ul id="likedPodcastsList"></ul>
-            </div>
-
-          
-              </div>
-              <!-- END OF USER LOGGED IN-->
+            <!-- END OF USER LOGGED IN-->
 
               <!-- END OF ACCOUNT TAB DONT TOUCH -->
             </div>
+     
             <div id="market-tab" class="tab-content">
-              <img src="./img/ahoy-market.svg" class="svgBlend">
               <div id="submenu-filter">
                 <select id="category-select" class="newspaper-dropdown">
                   <option value="all">All Categories</option>

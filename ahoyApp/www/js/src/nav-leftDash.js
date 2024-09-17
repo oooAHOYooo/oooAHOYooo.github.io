@@ -7,8 +7,8 @@ function navigateToTab(tabId) {
   const selectedTab = document.getElementById(tabId);
   selectedTab.style.display = 'block';
 
-  // Scroll the selected tab into view
-  selectedTab.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  // Scroll the selected tab into view at the top of the viewport
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 
   // Highlight the active tab icon and flash the label on mobile
   document.querySelectorAll('.left-dashboard button, .right-dashboard button').forEach(button => {
