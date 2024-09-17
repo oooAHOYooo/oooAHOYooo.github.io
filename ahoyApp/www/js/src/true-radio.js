@@ -71,6 +71,9 @@ fetch('./data/true-radioPlay.json')
         coverArt.style.height = size;
         coverArt.style.objectFit = 'cover';
         coverArt.style.display = 'block';
+
+        // Update the navigation bar with the current song
+        updateNavBar(song.songTitle, song.artist);
     }
 
     function prevSong() {

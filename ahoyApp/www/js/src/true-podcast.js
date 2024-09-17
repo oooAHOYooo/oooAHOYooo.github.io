@@ -39,6 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 populatePodcastList();
                 likeBtn.dataset.podcastId = podcast.id;
                 updateLikeButtonState(podcast.id);
+                updateNavBar(podcast.title, "Podcast"); // Update the navigation bar, assuming 'Podcast' as the artist
             }
 
             function togglePlay() {

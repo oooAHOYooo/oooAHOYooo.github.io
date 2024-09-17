@@ -163,12 +163,7 @@
             <button id="top-nav-next-btn" class="top-nav-control-btn" aria-label="Next Track"><i class="fas fa-step-forward"></i></button>
           </div>
         </td>
-        <td>
-          <div class="top-nav-search-container">
-            <input type="text" id="search-input" placeholder="Search...">
-            <button id="search-button" aria-label="Search" class="tiny-invisible-shadow"><i class="fas fa-search"></i></button>
-          </div>
-        </td>
+      
         <td>
           <div class="top-nav-user-controls">
             <div id="user-profile-badge" class="user-profile-badge">
@@ -1107,5 +1102,16 @@
         });
       });
       </script>
+
+
+<script>
+  function updateNavBar(title, artist) {
+    const trackTitleElement = document.getElementById('current-track-title');
+    const trackArtistElement = document.getElementById('current-track-artist');
+
+    trackTitleElement.innerHTML = `<em>${title}</em>`;
+    trackArtistElement.innerHTML = `<em class="emArtist">${artist}</em>`;
+}
+</script>
   </body>
 </html>

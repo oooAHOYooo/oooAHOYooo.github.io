@@ -11,6 +11,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.querySelector("#media-artist-name p").textContent = artistName;
     document.querySelector("#media-title-name p").textContent = titleName;
+
+    updateNavBar(titleName, artistName); // Update the navigation bar with the current video
   }
 
   function selectRandomVideo(videos) {
