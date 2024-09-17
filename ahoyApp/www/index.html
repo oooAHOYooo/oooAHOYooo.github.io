@@ -1105,12 +1105,13 @@
 
 
 <script>
-  function updateNavBar(title, artist) {
+function updateNavBar(title, artist) {
     const trackTitleElement = document.getElementById('current-track-title');
     const trackArtistElement = document.getElementById('current-track-artist');
 
-    trackTitleElement.innerHTML = `<em>${title}</em>`;
-    trackArtistElement.innerHTML = `<em class="emArtist">${artist}</em>`;
+    // Check if title and artist are provided, otherwise set to a default message or leave blank
+    trackTitleElement.innerHTML = title ? `<em>${title}</em>` : `<em>Media Title</em>`;
+    trackArtistElement.innerHTML = artist ? `<em class="emArtist">${artist}</em>` : `<em class="emArtist">Artist Name</em>`;
 }
 </script>
   </body>

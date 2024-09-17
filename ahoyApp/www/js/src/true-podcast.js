@@ -3,7 +3,8 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(response => response.json())
         .then(data => {
             const podcasts = data.podcasts;
-            let currentPodcastIndex = 0;
+            // Select a random podcast index
+            let currentPodcastIndex = Math.floor(Math.random() * podcasts.length);
 
             const audioPlayer = document.getElementById('podcastPlayer');
             const podcastTitle = document.getElementById('podcast-title');
@@ -245,7 +246,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 audioPlayer.volume = volumeBar.value;
             });
 
-            // Initialize
+            // Initialize with a random podcast
             loadPodcast(podcasts[currentPodcastIndex]);
             updateLikedPodcasts();
             populatePodcastList();
