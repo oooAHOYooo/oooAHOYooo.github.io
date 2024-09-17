@@ -158,9 +158,9 @@
         </td>
         <td>
           <div class="top-nav-container-controls">
-            <button id="top-nav-play-btn" class="top-nav-control-btn" aria-label="Play or Pause"><i class="fas fa-play"></i></button>
-            <button id="top-nav-prev-btn" class="top-nav-control-btn" aria-label="Previous Track"><i class="fas fa-step-backward"></i></button>
-            <button id="top-nav-next-btn" class="top-nav-control-btn" aria-label="Next Track"><i class="fas fa-step-forward"></i></button>
+            <button id="top-nav-play-btn" class="top-nav-control-btn" aria-label="Play or Pause" onclick="togglePlay()"><i class="fas fa-play"></i></button> 
+            <button id="top-nav-prev-btn" class="top-nav-control-btn" aria-label="Previous Song" onclick="prevSong()"><i class="fas fa-backward"></i></button>
+            <button id="top-nav-next-btn" class="top-nav-control-btn" aria-label="Next Song" onclick="nextSong()"><i class="fas fa-forward"></i></button>
           </div>
         </td>
       
@@ -1105,14 +1105,31 @@
 
 
 <script>
-function updateNavBar(title, artist) {
-    const trackTitleElement = document.getElementById('current-track-title');
-    const trackArtistElement = document.getElementById('current-track-artist');
-
-    // Check if title and artist are provided, otherwise set to a default message or leave blank
-    trackTitleElement.innerHTML = title ? `<em>${title}</em>` : `<em>Media Title</em>`;
-    trackArtistElement.innerHTML = artist ? `<em class="emArtist">${artist}</em>` : `<em class="emArtist">Artist Name</em>`;
-}
-</script>
+  function updateNavBar(title, artist) {
+      const trackTitleElement = document.getElementById('current-track-title');
+      const trackArtistElement = document.getElementById('current-track-artist');
+  
+      // Set to blank initially or when no title or artist is provided
+      trackTitleElement.innerHTML = title ? `<em>${title}</em>` : '';
+      trackArtistElement.innerHTML = artist ? `<em class="emArtist">${artist}</em>` : '';
+  }
+  </script>
+  <script>
+    // Placeholder functions for media control, replace with actual logic from your media player scripts
+    function playCurrentMedia() {
+        // Logic to play current media
+        console.log('Playing current media');
+    }
+    
+    function playPreviousMedia() {
+        // Logic to play previous media
+        console.log('Playing previous media');
+    }
+    
+    function playNextMedia() {
+        // Logic to play next media
+        console.log('Playing next media');
+    }
+    </script>
   </body>
 </html>

@@ -38,17 +38,34 @@ fetch('./data/true-radioPlay.json')
     }
 
     function togglePlay() {
+        const playBtn = document.getElementById('top-nav-play-btn');
         if (audioPlayer.paused) {
             audioPlayer.play().then(() => {
-                playBtn.textContent = '[❚❚ PAUSE]';
+                playBtn.innerHTML = '<i class="fas fa-pause"></i>'; // Change to pause icon
             }).catch(error => {
                 console.error('Playback was prevented:', error);
             });
         } else {
             audioPlayer.pause();
-            playBtn.textContent = '[► PLAY]';
+            playBtn.innerHTML = '<i class="fas fa-play"></i>'; // Change to play icon
         }
     }
+
+    // Update the play button icon based on the audio state when the page loads or a new song is loaded
+    function updatePlayButtonIcon() {
+        const playBtn = document.getElementById('top-nav-play-btn');
+        if (!audioPlayer.paused) {
+            playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+        } else {
+            playBtn.innerHTML = '<i class="fas fa-play"></i>';
+        }
+    }
+
+    audioPlayer.addEventListener('loadeddata', updatePlayButtonIcon); // Update icon when a new song is loaded
+    document.addEventListener('DOMContentLoaded', updatePlayButtonIcon); // Update icon on page load
+
+    // Make togglePlay globally accessible
+    window.togglePlay = togglePlay;
 
     function loadSong(song) {
         songTitle.textContent = song.songTitle;
@@ -86,6 +103,9 @@ fetch('./data/true-radioPlay.json')
         });
     }
 
+    // Make prevSong globally accessible
+    window.prevSong = prevSong;
+
     function nextSong() {
         currentSongIndex = (currentSongIndex + 1) % songs.length;
         loadSong(songs[currentSongIndex]);
@@ -95,6 +115,9 @@ fetch('./data/true-radioPlay.json')
             console.error('Playback was prevented:', error);
         });
     }
+
+    // Make nextSong globally accessible
+    window.nextSong = nextSong;
 
     function toggleLike() {
         const songId = likeBtn.dataset.songId;

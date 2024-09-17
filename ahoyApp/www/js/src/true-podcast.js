@@ -246,10 +246,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 audioPlayer.volume = volumeBar.value;
             });
 
-            // Initialize with a random podcast
-            loadPodcast(podcasts[currentPodcastIndex]);
-            updateLikedPodcasts();
-            populatePodcastList();
+            // Setup event listeners for play buttons
+            document.querySelectorAll('.podcast-play-button').forEach(button => {
+                button.addEventListener('click', function() {
+                    const podcastId = this.getAttribute('data-podcast-id');
+                    const podcast = podcasts.find(podcast => podcast.id === podcastId);
+                    loadPodcast(podcast);
+                });
+            });
         })
         .catch(error => console.error('Error fetching the podcast data:', error));
 });
