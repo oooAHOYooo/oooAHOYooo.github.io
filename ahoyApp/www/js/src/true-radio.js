@@ -38,26 +38,26 @@ fetch('./data/true-radioPlay.json')
     }
 
     function togglePlay() {
-        const playBtn = document.getElementById('top-nav-play-btn');
+        const playBtns = document.querySelectorAll('.top-nav-control-btn'); // Select all play buttons across tabs
         if (audioPlayer.paused) {
             audioPlayer.play().then(() => {
-                playBtn.innerHTML = '<i class="fas fa-pause"></i>'; // Change to pause icon
+                playBtns.forEach(btn => btn.innerHTML = '<i class="fas fa-pause"></i>'); // Change all to pause icon
             }).catch(error => {
                 console.error('Playback was prevented:', error);
             });
         } else {
             audioPlayer.pause();
-            playBtn.innerHTML = '<i class="fas fa-play"></i>'; // Change to play icon
+            playBtns.forEach(btn => btn.innerHTML = '<i class="fas fa-play"></i>'); // Change all to play icon
         }
     }
 
     // Update the play button icon based on the audio state when the page loads or a new song is loaded
     function updatePlayButtonIcon() {
-        const playBtn = document.getElementById('top-nav-play-btn');
+        const playBtns = document.querySelectorAll('.top-nav-control-btn');
         if (!audioPlayer.paused) {
-            playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+            playBtns.forEach(btn => btn.innerHTML = '<i class="fas fa-pause"></i>');
         } else {
-            playBtn.innerHTML = '<i class="fas fa-play"></i>';
+            playBtns.forEach(btn => btn.innerHTML = '<i class="fas fa-play"></i>');
         }
     }
 
