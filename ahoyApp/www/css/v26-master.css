@@ -105,6 +105,42 @@ nav {
     }
 }
 
+@media (max-width: 600px) {
+
+    .top-nav-container-controls,
+    .top-nav-playing-display {
+        display: none;
+        /* Hide controls and display elements not needed on mobile */
+    }
+
+    .top-nav-search-container,
+    .top-nav-user-controls {
+        flex: 1;
+        /* Each takes equal width */
+        display: flex;
+        /* Use flexbox for internal alignment */
+        align-items: center;
+        /* Center items vertically */
+    }
+
+    .top-nav-search-container input[type="text"],
+    .top-nav-user-controls .profile-dropdown select {
+        width: 100%;
+        /* Full width of their containers */
+        margin: 0;
+        /* Remove any default margin */
+    }
+
+    nav {
+        display: flex;
+        /* Flex display to align items in a row */
+        justify-content: space-between;
+        /* Space between search and user badge */
+        padding: 10px;
+        /* Padding for better touch targets */
+    }
+}
+
 .top-nav-search-container {
     position: relative;
     display: flex;
@@ -3985,7 +4021,7 @@ td {
     display: flex;
     align-items: center;
     flex-direction: column;
-    height: 500px;
+    min-height: 500px;
 }
 
 /* General SVG blend mode */
@@ -4064,10 +4100,8 @@ td {
     color: var(--text-color);
     font-family: 'VT323', monospace;
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+
 }
 
 #full-recent-player table {

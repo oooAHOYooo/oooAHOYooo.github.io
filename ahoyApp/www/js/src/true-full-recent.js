@@ -7,12 +7,8 @@ function displayRecentPodcasts() {
       recentPodcasts.forEach((podcast, index) => {
         const row = document.createElement('tr');
         row.innerHTML = `
-          <td><img src="${podcast.thumbnail}" alt="${podcast.title}" width="50" class="glitch-effect"></td>
-          <td class="glitch-effect">${podcast.title}</td>
-          <td>
-            <button class="play-button" onclick="toggleAudio('podcast-${index}')">Play</button>
-            <audio id="podcast-${index}" src="${podcast.mp3url}"></audio>
-          </td>
+          <td><img src="${podcast.thumbnail}" alt="${podcast.title}" width="50"></td>
+          <td>${podcast.title}</td>
         `;
         podcastList.appendChild(row);
       });
@@ -28,12 +24,8 @@ function displayRecentSongs() {
       recentSongs.forEach((song, index) => {
         const row = document.createElement('tr');
         row.innerHTML = `
-          <td><img src="${song.coverArt}" alt="${song.songTitle}" width="50" class="glitch-effect"></td>
-          <td class="glitch-effect">${song.artist} - ${song.songTitle}</td>
-          <td>
-            <button class="play-button" onclick="toggleAudio('song-${index}')">Play</button>
-            <audio id="song-${index}" src="${song.mp3url}"></audio>
-          </td>
+          <td><img src="${song.coverArt}" alt="${song.songTitle}" width="50"></td>
+          <td>${song.artist} - ${song.songTitle}</td>
         `;
         songList.appendChild(row);
       });
