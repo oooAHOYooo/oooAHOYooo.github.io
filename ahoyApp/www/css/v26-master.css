@@ -158,6 +158,35 @@ button:hover {
     /* Set max-width for desktop */
 }
 
+.tab-content {
+    position: absolute;
+    padding: 5.5px;
+    border-left: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+    border-top: 1px solid var(--border-color);
+    margin-top: 4px;
+    overflow: hidden;
+    position: relative;
+    z-index: 10;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+
+    margin: 0 auto;
+
+
+    padding-bottom: 50px !important;
+    padding-top: 22px;
+    margin-top: 53px;
+}
+
+.tab-content {
+    width: 100%;
+    /* Adjust based on your content's ideal width */
+    max-width: 755px;
+    /* Maximum width of the content */
+    /* Center the content */
+}
+
 
 
 #tabSortza {
@@ -1202,36 +1231,7 @@ input[type="date"]:focus {
 
 }
 
-.tab-content {
-    position: absolute;
-    padding: 5.5px;
-    border-left: 1px solid var(--border-color);
-    border-right: 1px solid var(--border-color);
-    border-top: 1px solid var(--border-color);
-    margin-top: 8px;
-    overflow: hidden;
-    position: relative;
-    z-index: 10;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    margin-top: 0px !important;
-    margin-left: 52.5px !important;
-    margin-right: 52.5px !important;
-    margin: 0 auto;
-    background-color: var(--background-color);
-    animation: pulseGlow 2s infinite ease-in-out;
-    padding-bottom: 50px !important;
-    padding-top: 52px;
-    margin-top: 53px;
-}
 
-.tab-content {
-    width: 100%;
-    /* Adjust based on your content's ideal width */
-    max-width: 755px;
-    /* Maximum width of the content */
-    /* Center the content */
-}
 
 @keyframes pulseGlow {
 
