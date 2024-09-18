@@ -17,6 +17,34 @@
      \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 */
 
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;900&display=swap');
+
+
+:root {
+    --font-family: 'Barlow', sans-serif;
+    --h1-font-size: 2rem;
+    --h2-font-size: 1.375rem;
+    --h3-font-size: 1rem;
+    --p-font-size: 1rem;
+}
+
+/* CHAPTER 1 = BODY STYLES */
+
+p {
+    font-size: var(--p-font-size);
+    line-height: 1.5;
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    color: #333;
+    text-align: justify;
+    hyphens: auto;
+    word-wrap: break-word;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    margin-bottom: 1rem;
+}
+
 .tab-content {
     display: none;
 }
