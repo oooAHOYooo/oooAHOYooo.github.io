@@ -131,7 +131,7 @@
         <td>
           <div class="top-nav-playing-display mobile-compact-display">
             <div class="top-nav-track-info">
-              <p id="current-track-title" class="top-a-nav-current-track-title"><em>Media Title</em></p>
+              <p id="current-track-title" ><em>Media Title</em></p>
               <p id="current-track-artist" class="top-a-nav-current-track-artist"><em class="emArtist">Artist Name</em></p>
             </div>
           </div>
@@ -199,11 +199,11 @@
       </div>
       <hr>
       <aside>
-      <div class="left-sidebar-middle" id="left-sidebar-middle">
+      <div class="left-sidebar-middle">
         <!-- Featured playlists will be dynamically inserted here -->
-        <button id="playlist1" class="playlist-button">Featured Mixtape</button>
-        <button id="playlist2" class="playlist-button">Featured Mixtape 2</button>
-        <button id="playlist3" class="playlist-button">Featured Playlist 3</button>
+        <button id="playlist1" >Featured Mixtape</button>
+        <button id="playlist2" >Featured Mixtape 2</button>
+        <button id="playlist3" >Featured Playlist 3</button>
       </div>
       </aside>
       <aside>
@@ -218,7 +218,7 @@
       <aside>
       <div id="left-sidebar-bottom" class="left-sidebar-bottom">
         <img id="left-sidebar-cover-art" src="./img/assets/default-cover.png" alt="Cover Art" style="width: 100px; height: 100px; object-fit: cover;">
-        <p class="body-text-header">Currently Playing: <br><span id="current-track" class="body-text">No track playing</span></p>
+       <h2>Currently Playing: <br><span id="current-track" class="body-text">No track playing</span></h2>
         <button id="left-sidebar-play-pause" style="font-size: 24px;">&#9658;</button>
       </div>
       </aside>
@@ -258,9 +258,9 @@
         <li>Shows Attended: 3</li>
       </ul>
     </div>
-    
+    <hr>
     <div class="user-stuff">
-      <p>Your Stuff</p>
+      <h2>Your Stuffs</h2>
       <ul>
         <h5>Liked Songs</h5>
         <li>Liked Song 1</li>
@@ -274,7 +274,7 @@
         <li>Liked Media 1</li>
       </ul>
     </div>
-    
+    <hr>
 
   </div>
   <div class="right-sidebar-middle-a">
@@ -306,10 +306,10 @@
                 <p style="display:none;">Hiii</p>
                 <div id="jwplayer-currently-playing" class="currently-playing">
                   <div id="jwplayer-container"></div>
-                  <h2 class="jwplayer-title">Currently Playing:</h2>
+                  <h2>Currently Playing:</h2>
                   <p id="current-title" class="jwplayer-text-bold">
                     <span id="current-title-text" class="jwplayer-text"></span></p>
-                  <p id="current-description" class="jwplayer-text-bold">Description: <span class="jwplayer-text" id="current-description-text"></span></p>
+                  <p id="current-description" >Description: <span class="jwplayer-text" id="current-description-text"></span></p>
                   <div class="remote-controls">
                     <button id="play-pause-button" class="remoteControlButton"><i class="fas fa-play"></i></button>
                     <button id="rewind-button" class="remoteControlButton"><i class="fas fa-undo"></i></button>
@@ -322,6 +322,7 @@
                     <button id="mute-button" class="remoteControlButton"><i class="fas fa-volume-mute"></i></button>
                   </div>
                   </div>
+                  <hr>
                   <div id="video-progress">
                     <progress id="progress-bar" value="0" max="100"></progress>
                   </div>
@@ -583,11 +584,13 @@
 <!-- NEWS TAB -->
 <div id="news-tab" class="tab-content">
   <img src="./img/assets/u_ahoy23.png" alt="Ahoy Indie Media Logo" class="homepage-logo" style="font-family: 'Times New Roman', Times, serif; font-size: 24px; text-transform: uppercase;">
-  <h2 id="calendar-date" class="home-calendar-date"></h2>
+  <hr>
+  <h2 id="calendar-date"></h2>
 
   <div class="homepage-subheader">
-      <p id="homepage-sub-desc-text">Ahoy Indie Media is a hand-crafted media company based out of New Haven, Connecticut. Our mission is to provide a homegrown alternative to the way folks consume media.</p>
+      <p>Ahoy Indie Media is a hand-crafted media company based out of New Haven, Connecticut. Our mission is to provide a homegrown alternative to the way folks consume media.</p>
   </div>
+  <hr>
   <div class="newsSubHeaderMenu" id="homepage-top-submenu">
       <button id="about-button" onclick="navigateToTab('about-tab')" class="btnPrimary">About Ahoy</button>
       <button id="news-button" onclick="navigateToTab('recent-tab')" class="btnPrimary">Recently Added</button>
@@ -595,6 +598,9 @@
   </div>
 
   <!-- PAGINATE THIS NEWSLETTER -->
+   <hr>
+   <h1>Front Page News</h1>
+   <hr>
   <div id="newsletter-list"></div>
   <div class="pagination-controls"></div>
 
@@ -603,7 +609,7 @@
   <div class="newsletter-menu-container">
       <p>Song Collection</p>
       <p>Podcast Collection</p>
-      <p class="cta-explanation">Click to see all of our latest songs and podcasts</p>
+      <p>Click to see all of our latest songs and podcasts</p>
       <button id="view-all-recent" onclick="navigateToTab('recent-tab')" class="cta-button">
         <i class="fas fa-list"></i> View All Recently Added
       </button>
@@ -640,6 +646,7 @@
       <a href="#" id="share-twitter" onclick="shareOnTwitter()" class="glass-button hover-effect" style="text-decoration: none; transition: all 0.3s ease;">
           <i class="fab fa-twitter"></i> Share on Twitter
       </a>
+      <br><br><br><br>
       <a href="#" id="share-reddit" onclick="shareOnReddit()" class="glass-button hover-effect" style="text-decoration: none; transition: all 0.3s ease;">
           <i class="fab fa-reddit-alien"></i> Share on Reddit
       </a>
@@ -761,7 +768,7 @@
                         <!-- NEW UPLOAD LOCAL BANDS TAB -->
                         <div id="upload-local-bands-tab" class="tab-content" style="display: none;">
                           <h1>Upload Local Music Venue</h1>
-                          <p class="body-text center-text">Share a flyer for your favorite local music venue</p>
+                          <p>Share a flyer for your favorite local music venue</p>
                           <div class="flyer-upload">
                             <input type="file" id="venue-flyer" accept="image/*" required />
                             <hr>
@@ -915,10 +922,10 @@
                   <button id="reset-timer">Reset</button>
                 </div>
               </div>
-              <p class="body-text"><span class="body-text-bold">Warning</span> this mode is in active development</p>
+              <p><span class="body-text-bold">Warning</span> this mode is in active development</p>
               <div class="body-desc-container">
                 <div class="body-desc-block">
-                  <p class="body-text">This feature combines a Pomodoro-style timer with a curated music playlist to enhance focus and productivity. Users can start a 25-minute work session using the timer, which displays remaining time and a circular progress indicator. </p>
+                  <p>This feature combines a Pomodoro-style timer with a curated music playlist to enhance focus and productivity. Users can start a 25-minute work session using the timer, which displays remaining time and a circular progress indicator. </p>
                 </div></div>
               
             </div>

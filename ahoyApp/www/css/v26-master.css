@@ -25,24 +25,119 @@
     --h1-font-size: 2rem;
     --h2-font-size: 1.375rem;
     --h3-font-size: 1rem;
+    --h4-font-size: 0.875rem;
+    --h5-font-size: 0.72rem;
+    --h6-font-size: 0.625rem;
     --p-font-size: 1rem;
+    --p-font-weight: 300;
+    --h1-font-weight: 400;
+    --h2-font-weight: 500;
+    --h3-font-weight: 400;
+    --h4-font-weight: 400;
+    --h5-font-weight: 400;
+    --h6-font-weight: 400;
+    --text-color: #ffffff;
+    --text-color-rgb: 255, 255, 255;
+    --border-color: #ffffff;
+    --border-color-rgb: 255, 255, 255;
 }
+
+
 
 /* CHAPTER 1 = BODY STYLES */
 
 p {
     font-size: var(--p-font-size);
-    line-height: 1.5;
+    line-height: 95%;
     font-family: var(--font-family);
     margin: 0;
     padding: 0;
-    color: #333;
     text-align: justify;
     hyphens: auto;
     word-wrap: break-word;
     max-width: 100%;
     overflow-wrap: break-word;
     margin-bottom: 1rem;
+}
+
+/* CHAPTER 2 = ELEMENTALS */
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-family: var(--font-family);
+
+}
+
+li {
+    text-decoration: none;
+    list-style-type: none;
+    padding-left: 0;
+    padding: 0;
+    margin: 0;
+}
+
+/* Chapter 3 - the H1 Tags */
+
+h1 {
+    font-size: var(--h1-font-size);
+    font-family: var(--font-family);
+    font-weight: var(--h1-font-weight);
+}
+
+h2 {
+    font-size: var(--h2-font-size);
+    font-family: var(--font-family);
+    font-weight: var(--h2-font-weight);
+}
+
+h3 {
+    font-size: var(--h3-font-size);
+    font-family: var(--font-family);
+    font-weight: var(--h3-font-weight);
+}
+
+h4 {
+    font-size: var(--h4-font-size);
+    font-family: var(--font-family);
+    font-weight: var(--h4-font-weight);
+}
+
+h5 {
+    font-size: var(--h5-font-size);
+    font-family: var(--font-family);
+    font-weight: var(--h5-font-weight);
+}
+
+h6 {
+    font-size: var(--h6-font-size);
+    font-family: var(--font-family);
+    font-weight: var(--h6-font-weight);
+}
+
+
+hr {
+    border: 1px solid var(--border-color);
+}
+
+
+/* SUPER BUTTON */
+
+button {
+    background-color: transparent;
+    border-color: var(--border-color);
+    color: var(--text-color);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 2px;
+}
+
+button:hover {
+    border-color: rgba(var(--border-color), 0.91);
+    color: white;
 }
 
 .tab-content {
@@ -127,6 +222,7 @@ nav #search-input {
     border-radius: 5px;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 10px;
 }
 
 .playlist-button:hover {
@@ -387,11 +483,7 @@ input[type="date"]:focus {
     margin: 1.5rem auto;
 }
 
-.body-text-header {
-    font-weight: 900;
-    font-size: 22px;
-    line-height: 95%;
-}
+
 
 
 

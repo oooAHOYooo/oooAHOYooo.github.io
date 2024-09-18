@@ -1,11 +1,12 @@
-const themes = ["light", "dark", "pink", "ellie", "bug", "hiii", "crazy"];
+const themes = ["light", "dark", "pink", "ellie", "bug", "hiii", "crazy", "gradientPink"]; // Added new theme
 
 function getRandomTheme() {
   const randomIndex = Math.floor(Math.random() * themes.length);
   return themes[randomIndex];
 }
 
-let theme = getRandomTheme(); // Initialize with a random theme
+// Initialize with the 'gradientPink' theme as default
+let theme = "gradientPink";
 
 function switchTheme(selectedTheme) {
   const root = document.documentElement;
@@ -38,12 +39,12 @@ function switchTheme(selectedTheme) {
   } else if (theme === "pink") {
     setThemeProperties(
       root,
-      "#98ff9895",
-      "rgb(0, 119, 97)",
-      "#3eb489",
-      "#98ff98",
-      "#3eb489",
-      "#ffd300"
+      "rgba(255, 0, 96, 0.1)",  // Light pink background with transparency
+      "#ffffff",                // White text for contrast
+      "#ff0060",                // Main pink color
+      "linear-gradient(135deg, #ff0060, #ff4d8c)", // Pink gradient
+      "rgba(255, 0, 96, 0.3)",  // Slightly darker pink for accents
+      "#ff99bb"                 // Light pink for highlights
     );
     theme = "ellie";
   } else if (theme === "ellie") {
@@ -60,8 +61,8 @@ function switchTheme(selectedTheme) {
   } else if (theme === "bug") {
     setThemeProperties(
       root,
-      "#E1F5C4",
-      "#7A9E7E",
+      "#F9D423",
+      "#000000",
       "#9BC4BC",
       "#EDE574",
       "#F9D423",
@@ -71,8 +72,8 @@ function switchTheme(selectedTheme) {
   } else if (theme === "hiii") {
     setThemeProperties(
       root,
-      "#F6F4D2",
-      "#A44A3F",
+      "#F19C79",
+      "#000000",
       "#F19C79",
       "#CBDFBD",
       "#D4E09B",
@@ -83,13 +84,24 @@ function switchTheme(selectedTheme) {
     setThemeProperties(
       root,
       "#FFBE0B",
-      "#3A86FF",
+      "#000000",
       "#FB5607",
       "#FF006E",
       "#8338EC",
       "#FFBE0B"
     );
-    theme = "light";
+    theme = "gradientPink"; // Next theme after 'crazy'
+  } else if (theme === "gradientPink") { // New theme case
+    setThemeProperties(
+      root,
+      "linear-gradient(135deg, #590d22, #800f2f, #a4133c, #c9184a, #ff4d6d, #ff758f, #ff8fa3, #ffb3c1, #ffccd5, #fff0f3)", // Gradient background
+      "#fff0f3", // Text color
+      "#ff4d6d", // Border color
+      "#ff758f", // Secondary color
+      "#ff8fa3", // Button color
+      "#ffb3c1"  // Gold color (used as highlight color here)
+    );
+    theme = "light"; // Loop back to the first theme
   }
 
   themeTitle.innerText = theme;
@@ -133,9 +145,9 @@ function hexToRgb(hex) {
   return r + "," + g + "," + b;
 }
 
-// Apply a random theme on page load
+// Apply the default theme on page load
 document.addEventListener("DOMContentLoaded", function () {
-  switchTheme();
+  switchTheme(theme);
 
   // Populate theme dropdown
   const themeDropdown = document.getElementById("theme-dropdown");
