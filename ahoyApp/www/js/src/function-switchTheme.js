@@ -91,10 +91,10 @@ function switchTheme(selectedTheme) {
       "#FFBE0B"
     );
     theme = "gradientPink"; // Next theme after 'crazy'
-  } else if (theme === "gradientPink") { // New theme case
+  } else if (theme === "gradientPink") { // Updated gradientPink theme case
     setThemeProperties(
       root,
-      "linear-gradient(135deg, #590d22, #800f2f, #a4133c, #c9184a, #ff4d6d, #ff758f, #ff8fa3, #ffb3c1, #ffccd5, #fff0f3)", // Gradient background
+      "linear-gradient(135deg, #ff4d6d, #ff758f, #ff8fa3, #ffb3c1, #ffccd5, #fff0f3)", // Updated Gradient background
       "#fff0f3", // Text color
       "#ff4d6d", // Border color
       "#ff758f", // Secondary color

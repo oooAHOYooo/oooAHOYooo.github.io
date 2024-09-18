@@ -170,7 +170,7 @@ button:hover {
     z-index: 10;
     border-top-left-radius: 7px;
     border-top-right-radius: 7px;
-
+    background-color: rgba(0, 0, 0, 0.113);
     margin: 0 auto;
 
 
