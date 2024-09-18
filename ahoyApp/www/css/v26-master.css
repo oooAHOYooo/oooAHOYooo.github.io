@@ -90,6 +90,22 @@ nav #search-input {
 }
 
 /* Button styling */
+
+.playlist-button {
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.playlist-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 nav button {
     background-color: #282828;
     /* Darker background for buttons */
