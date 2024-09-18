@@ -144,6 +144,30 @@ button:hover {
     display: none;
 }
 
+.tab-content.active {
+    display: block;
+
+}
+
+.tab-content {
+
+    z-index: 2;
+    background-color: var(--background-color);
+    /* Ensures .tab-content is above the background layer */
+    max-width: 750px;
+    /* Set max-width for desktop */
+}
+
+
+
+#tabSortza {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 16px;
+}
+
 nav {
     display: none;
     /* Ensures that JS toggle controls the display */
@@ -1221,44 +1245,7 @@ input[type="date"]:focus {
     }
 }
 
-.tab-content {
-    transition: background-color 0.3s ease, padding 0.3s ease;
-    /* Smooth transitions for visual properties */
-}
 
-
-/* Responsive adjustments */
-@media (max-width: 600px) {
-    .tab-content {
-        padding: 8px;
-    }
-}
-
-.tab-content.active {
-    display: block;
-
-}
-
-/* Centering .tab-content with max-width for desktop view */
-.tab-content {
-
-
-    z-index: 2;
-    background-color: var(--background-color);
-    /* Ensures .tab-content is above the background layer */
-    max-width: 750px;
-    /* Set max-width for desktop */
-}
-
-
-
-#tabSortza {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding-top: 32px;
-}
 
 /*RADIO BUTTONS */
 
