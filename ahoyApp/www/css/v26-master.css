@@ -1250,15 +1250,7 @@ input[type="date"]:focus {
     /* Set max-width for desktop */
 }
 
-@media (max-width: 600px) {
-    .tab-content {
-        padding: 10px;
-        margin-left: 5px !important;
-        /* Reduced margin for mobile */
-        margin-right: 10px !important;
-        /* Reduced margin for mobile */
-    }
-}
+
 
 #tabSortza {
     display: flex;
