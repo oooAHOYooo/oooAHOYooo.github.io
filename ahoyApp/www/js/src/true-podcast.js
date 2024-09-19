@@ -3,8 +3,10 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(response => response.json())
         .then(data => {
             const podcasts = data.podcasts;
-            // Initialize to the last podcast index to load the latest episode
-            let currentPodcastIndex = podcasts.length - 1; // Set to the last index
+            // Find the podcast with the highest id
+            let currentPodcastIndex = podcasts.reduce((maxIndex, podcast, index) => {
+                return podcast.id > podcasts[maxIndex].id ? index : maxIndex;
+            }, 0); // Use reduce to find the index of the podcast with the highest id
 
             const audioPlayer = document.getElementById('podcastPlayer');
             const podcastTitle = document.getElementById('podcast-title');
@@ -237,7 +239,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Populate the podcast list and load the latest podcast on initial fetch
             populatePodcastList(); // Ensure list is populated initially
-            loadPodcast(podcasts[currentPodcastIndex]); // Load the latest podcast initially
+            loadPodcast(podcasts[currentPodcastIndex]); // Load the podcast with the highest id initially
 
             // Event listeners
             playBtn.addEventListener('click', togglePlay);
