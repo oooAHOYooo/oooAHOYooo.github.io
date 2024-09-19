@@ -1,12 +1,7 @@
-const themes = ["light", "dark", "pink", "ellie", "bug", "hiii", "crazy", "gradientPink"]; // Added new theme
-
-function getRandomTheme() {
-  const randomIndex = Math.floor(Math.random() * themes.length);
-  return themes[randomIndex];
-}
+const themes = ["light", "dark", "pink", "ellie", "bug", "hiii", "crazy", "gradientPink"]; // List of available themes
 
 // Initialize with the 'gradientPink' theme as default
-let theme = "gradientPink";
+let theme = "dark";
 
 function switchTheme(selectedTheme) {
   const root = document.documentElement;
@@ -14,97 +9,90 @@ function switchTheme(selectedTheme) {
 
   theme = selectedTheme || theme; // Use the passed theme or the current one
 
+  // Define theme properties based on the selected theme
   if (theme === "light") {
     setThemeProperties(
       root,
-      "rgb(0, 14, 19,0.8)",
-      "#00f2ff",
-      "#00e5ff",
-      "#000000ba",
-      "#ffffff2d",
-      "#ffd900"
+      "#ffffff", // Background color: white
+      "#000000", // Text color: black
+      "#cccccc", // Border color: light gray
+      "#e0e0e0", // Secondary color: gray for secondary elements
+      "#f0f0f0", // Button color: very light gray
+      "#ffd700"  // Gold color: used for highlights or accents
     );
-    theme = "dark";
   } else if (theme === "dark") {
     setThemeProperties(
       root,
-      "#FF265A93",
-      "#ffffff",
-      "#ff0060",
-      "#ff0060",
-      "#ff0060",
-      "#ffee"
+      "#003366", // Background color: beautiful navy gradient
+      "#ffffff", // Text color: white
+      "#2a2d4f", // Border color: matte dark navy purple blue
+      "#777777", // Secondary color: medium dark gray
+      "#1a3a5a", // Button color: shady navy
+      "#bbbbbb"  // Gold color: light gray (used as a highlight color here)
     );
-    theme = "pink";
   } else if (theme === "pink") {
     setThemeProperties(
       root,
-      "rgba(255, 0, 96, 0.1)",  // Light pink background with transparency
-      "#ffffff",                // White text for contrast
-      "#ff0060",                // Main pink color
-      "linear-gradient(135deg, #ff0060, #ff4d8c)", // Pink gradient
-      "rgba(255, 0, 96, 0.3)",  // Slightly darker pink for accents
-      "#ff99bb"                 // Light pink for highlights
+      "#ff4d6d", // Background color: bright pink
+      "#ffffff", // Text color: white
+      "#ff758f", // Border color: soft pink
+      "#ff8fa3", // Secondary color: lighter pink
+      "#ffb3c1", // Button color: very light pink
+      "#ffccd5"  // Gold color: palest pink (used as a highlight color here)
     );
-    theme = "ellie";
   } else if (theme === "ellie") {
     setThemeProperties(
       root,
-      "#ffffff99",
-      "#000000",
-      "#e0e0e0",
-      "#f2f2f2",
-      "#d9d9d9",
-      "#ffd900"
+      "#eeeeee", // Background color: very light gray
+      "#222222", // Text color: dark gray
+      "#cccccc", // Border color: light gray
+      "#dddddd", // Secondary color: very light gray
+      "#eeeeee", // Button color: lightest gray
+      "#ffd700"  // Gold color: gold (used for highlights or accents)
     );
-    theme = "bug";
   } else if (theme === "bug") {
     setThemeProperties(
       root,
-      "#F9D423",
-      "#000000",
-      "#9BC4BC",
-      "#EDE574",
-      "#F9D423",
-      "#FC913A"
+      "#76b947", // Background color: leaf green
+      "#ffffff", // Text color: white
+      "#89c763", // Border color: light green
+      "#9bd47f", // Secondary color: lighter green
+      "#aee08b", // Button color: pale green
+      "#c1ec97"  // Gold color: very pale green (used as a highlight color here)
     );
-    theme = "hiii";
   } else if (theme === "hiii") {
     setThemeProperties(
       root,
-      "#F19C79",
-      "#000000",
-      "#F19C79",
-      "#CBDFBD",
-      "#D4E09B",
-      "#F19C79"
+      "#f19c79", // Background color: coral
+      "#ffffff", // Text color: white
+      "#f2b1a1", // Border color: soft coral
+      "#f4c6c9", // Secondary color: lighter coral
+      "#f6dbf1", // Button color: pale coral
+      "#f9f0f3"  // Gold color: very pale coral (used as a highlight color here)
     );
-    theme = "crazy";
   } else if (theme === "crazy") {
     setThemeProperties(
       root,
-      "#FFBE0B",
-      "#000000",
-      "#FB5607",
-      "#FF006E",
-      "#8338EC",
-      "#FFBE0B"
+      "#ffbe0b", // Background color: bright yellow
+      "#000000", // Text color: black
+      "#fb5607", // Border color: bright orange
+      "#ff006e", // Secondary color: bright pink
+      "#8338ec", // Button color: bright purple
+      "#3a86ff"  // Gold color: bright blue (used as a highlight color here)
     );
-    theme = "gradientPink"; // Next theme after 'crazy'
-  } else if (theme === "gradientPink") { // Updated gradientPink theme case
+  } else if (theme === "gradientPink") { // Default theme
     setThemeProperties(
       root,
-      "linear-gradient(135deg, #ff4d6d, #ff758f, #ff8fa3, #ffb3c1, #ffccd5, #fff0f3)", // Updated Gradient background
-      "#fff0f3", // Text color
-      "#ff4d6d", // Border color
-      "#ff758f", // Secondary color
-      "#ff8fa3", // Button color
-      "#ffb3c1"  // Gold color (used as highlight color here)
+      "#ff0060", // Background color: dark pink gradient
+      "#ffffff", // Text color: white
+      "#ff4d6d", // Border color: bright pink
+      "#ff758f", // Secondary color: soft pink
+      "#ff8fa3", // Button color: lighter pink
+      "#ffb3c1"  // Gold color: very light pink (used as a highlight color here)
     );
-    theme = "light"; // Loop back to the first theme
   }
 
-  themeTitle.innerText = theme;
+  themeTitle.innerText = theme.charAt(0).toUpperCase() + theme.slice(1); // Update the theme title on the page
 }
 
 function setThemeProperties(
@@ -123,6 +111,9 @@ function setThemeProperties(
   root.style.setProperty("--button-color", buttonColor);
   root.style.setProperty("--gold", goldColor);
 
+  // Set the body background color
+  document.body.style.backgroundColor = backgroundColor;
+
   // Add RGB versions of the colors
   root.style.setProperty("--background-color-rgb", hexToRgb(backgroundColor));
   root.style.setProperty("--text-color-rgb", hexToRgb(textColor));
@@ -132,37 +123,18 @@ function setThemeProperties(
 
 // Helper function to convert hex to RGB
 function hexToRgb(hex) {
-  // Remove the hash if it's there
-  hex = hex.replace(/^#/, '');
-
-  // Parse the hex values
-  var bigint = parseInt(hex, 16);
-  var r = (bigint >> 16) & 255;
-  var g = (bigint >> 8) & 255;
-  var b = bigint & 255;
-
-  // Return the RGB values as a string
-  return r + "," + g + "," + b;
+  if (!hex.includes("gradient")) { // Skip gradient conversion
+    hex = hex.replace(/^#/, '');
+    var bigint = parseInt(hex, 16);
+    var r = (bigint >> 16) & 255;
+    var g = (bigint >> 8) & 255;
+    var b = bigint & 255;
+    return r + "," + g + "," + b;
+  }
+  return ""; // Return empty string for gradients
 }
 
 // Apply the default theme on page load
 document.addEventListener("DOMContentLoaded", function () {
   switchTheme(theme);
-
-  // Populate theme dropdown
-  const themeDropdown = document.getElementById("theme-dropdown");
-  themes.forEach(theme => {
-    const option = document.createElement("option");
-    option.value = theme;
-    option.textContent = theme.charAt(0).toUpperCase() + theme.slice(1);
-    themeDropdown.appendChild(option);
-  });
-
-  // Set the current theme in the dropdown
-  themeDropdown.value = theme;
-
-  // Add event listener for theme change
-  themeDropdown.addEventListener("change", function () {
-    switchTheme(this.value);
-  });
 });

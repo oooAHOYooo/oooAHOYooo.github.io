@@ -42,10 +42,12 @@
     --text-color-rgb: 255, 255, 255;
     --border-color: #ffffff;
     --border-color-rgb: 255, 255, 255;
-    --background-color: rgb(57, 57, 57);
+    --gold-color: #ffd700;
 }
 
-
+body {
+    background-color: var(--background-color);
+}
 
 /* CHAPTER 1 = BODY STYLES */
 
@@ -61,6 +63,7 @@ p {
     max-width: 100%;
     overflow-wrap: break-word;
     margin-bottom: 1rem;
+    color: var(--text-color);
 }
 
 /* CHAPTER 2 = ELEMENTALS */
@@ -87,36 +90,42 @@ h1 {
     font-size: var(--h1-font-size);
     font-family: var(--font-family);
     font-weight: var(--h1-font-weight);
+    color: var(--text-color);
 }
 
 h2 {
     font-size: var(--h2-font-size);
     font-family: var(--font-family);
     font-weight: var(--h2-font-weight);
+    color: var(--text-color);
 }
 
 h3 {
     font-size: var(--h3-font-size);
     font-family: var(--font-family);
     font-weight: var(--h3-font-weight);
+    color: var(--text-color);
 }
 
 h4 {
     font-size: var(--h4-font-size);
     font-family: var(--font-family);
     font-weight: var(--h4-font-weight);
+    color: var(--text-color);
 }
 
 h5 {
     font-size: var(--h5-font-size);
     font-family: var(--font-family);
     font-weight: var(--h5-font-weight);
+    color: var(--text-color);
 }
 
 h6 {
     font-size: var(--h6-font-size);
     font-family: var(--font-family);
     font-weight: var(--h6-font-weight);
+    color: var(--text-color);
 }
 
 
@@ -178,8 +187,7 @@ button:hover {
 
 
     padding-bottom: 50px !important;
-    padding-top: 22px;
-    margin-top: 53px;
+    padding-top: 12px;
 }
 
 .tab-content {
