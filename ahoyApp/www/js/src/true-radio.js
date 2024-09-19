@@ -285,39 +285,26 @@ fetch('./data/true-radioPlay.json')
             const row = document.createElement('div');
             row.className = 'song-row';
             row.innerHTML = `
-
-                <div class="song-artwork" style="position: relative; width: 100%; height: auto; overflow: hidden;">
-                    <img src="${song.coverArt}" alt="${song.songTitle}" class="song-cover-max play-song-btn" data-index="${index}" style="width: 100%; height: 100%; object-fit: cover;">
-                    <button class="emPLAY-song-btn" data-index="${index}" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-                        ${index === currentSongIndex ? '<i class="fas fa-pause"></i>' : '<i class="fas fa-play"></i>'}
-                    </button>
+                <div class="song-artwork" style="width: 50px; height: 50px; overflow: hidden;">
+                    <img src="${song.coverArt}" alt="${song.songTitle}" class="song-cover play-song-btn" data-index="${index}" style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
-                <div class="song-details">
-                    <div class="song-info-row">
-                        <div class="song-title"><em class="emSONG-TITLE">${song.songTitle}</em></div>
-                        <div class="song-artist"><em class="emARTIST">${song.artist}</em></div>
-                    </div>
+                <div class="song-details" style="flex-grow: 1; margin-left: 10px;">
+                    <div class="song-title">${song.songTitle}</div>
+                    <div class="song-artist">${song.artist}</div>
                 </div>
-                <hr class="hr-spacer">
+                <button class="play-song-btn" data-index="${index}" style="border: none; background: none; color: inherit;">
+                    ${index === currentSongIndex ? '<i class="fas fa-pause"></i>' : '<i class="fas fa-play"></i>'}
+                </button>
             `;
             songListBody.appendChild(row);
         });
 
-        // Add event listeners to play buttons, album art, and the entire row
-        const songRows = songListBody.querySelectorAll('.song-row');
-        songRows.forEach(row => {
-            row.addEventListener('click', (e) => {
-                const songIndex = parseInt(e.currentTarget.querySelector('.play-song-btn').getAttribute('data-index'));
-                playSongFromList(songIndex);
-            });
-        });
-
-        // Add event listeners to like buttons
-        const likeButtons = songListBody.querySelectorAll('.like-song-btn');
-        likeButtons.forEach(button => {
+        // Add event listeners to play buttons
+        const playButtons = songListBody.querySelectorAll('.play-song-btn');
+        playButtons.forEach(button => {
             button.addEventListener('click', (e) => {
-                const songId = e.currentTarget.getAttribute('data-id');
-                toggleLikeSong(songId);
+                const songIndex = parseInt(e.currentTarget.getAttribute('data-index'));
+                playSongFromList(songIndex);
             });
         });
     }

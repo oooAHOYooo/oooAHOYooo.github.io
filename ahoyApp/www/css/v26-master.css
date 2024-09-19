@@ -29,6 +29,8 @@
     --h5-font-size: 0.72rem;
     --h6-font-size: 0.625rem;
     --p-font-size: 1rem;
+    --p-padding: 1.03rem;
+    --p-line-height: 173%;
     --p-font-weight: 300;
     --h1-font-weight: 400;
     --h2-font-weight: 500;
@@ -40,6 +42,7 @@
     --text-color-rgb: 255, 255, 255;
     --border-color: #ffffff;
     --border-color-rgb: 255, 255, 255;
+    --background-color: rgb(57, 57, 57);
 }
 
 
@@ -48,10 +51,10 @@
 
 p {
     font-size: var(--p-font-size);
-    line-height: 95%;
+    line-height: var(--p-line-height);
     font-family: var(--font-family);
     margin: 0;
-    padding: 0;
+    padding: var(--p-padding);
     text-align: justify;
     hyphens: auto;
     word-wrap: break-word;
@@ -160,7 +163,7 @@ button:hover {
 
 .tab-content {
     position: absolute;
-    padding: 5.5px;
+    padding: 4.5px;
     border-left: 1px solid var(--border-color);
     border-right: 1px solid var(--border-color);
     border-top: 1px solid var(--border-color);
@@ -170,7 +173,7 @@ button:hover {
     z-index: 10;
     border-top-left-radius: 7px;
     border-top-right-radius: 7px;
-    background-color: rgba(0, 0, 0, 0.113);
+    background-color: var(--background-color);
     margin: 0 auto;
 
 
