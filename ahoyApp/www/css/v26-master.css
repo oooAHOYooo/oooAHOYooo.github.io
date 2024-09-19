@@ -1400,12 +1400,7 @@ input[type="date"]:focus {
 }
 
 
-.podcast-row {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-    cursor: pointer;
-}
+
 
 .podcast-artwork {
     width: 60px;

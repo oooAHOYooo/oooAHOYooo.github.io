@@ -189,26 +189,26 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             function populatePodcastList(podcastsToShow = podcasts) {
-                podcastListBody.innerHTML = '';
-                
+                podcastListBody.innerHTML = '<table>';
+
                 podcastsToShow.forEach((podcast, index) => {
-                    const row = document.createElement('div');
+                    const row = document.createElement('tr');
                     row.className = 'podcast-row';
                     row.innerHTML = `
-                        <div class="podcast-artwork">
+                        <td>
                             <img src="${podcast.thumbnail}" alt="${podcast.title}" class="podcast-cover-max play-podcast-btn" data-index="${index}">
-                        </div>
-                        <div class="podcast-details">
-                            <div class="podcast-title"><p class="body-text-bold">${podcast.title}</p></div>
-                            <div class="podcast-actions">
-                                <button class="play-podcast-btn" data-index="${index}">
-                                    ${index === currentPodcastIndex ? '<i class="fas fa-pause"></i>' : '<i class="fas fa-play"></i>'}
-                                </button>
-                            </div>
-                        </div>
+                        </td>
+                        <td>
+                            <p>${podcast.title}</p>
+                            <button class="play-podcast-btn" data-index="${index}">
+                                ${index === currentPodcastIndex ? '<i class="fas fa-pause"></i>' : '<i class="fas fa-play"></i>'}
+                            </button>
+                        </td>
                     `;
                     podcastListBody.appendChild(row);
                 });
+
+                podcastListBody.innerHTML += '</table>';
 
                 // Add event listeners to play buttons, podcast art, and the entire row
                 const podcastRows = podcastListBody.querySelectorAll('.podcast-row');

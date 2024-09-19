@@ -201,6 +201,13 @@
     "content": "Ahoy, listeners! The Rob Show is back with a bang for a new season! We're happy to announce our commitment to bringing you fresh episodes every Thursday at 4pm, in time to energize that final stretch of the workweek. So gather 'round the water cooler, buckle up with a beevy, and join us every week weekly dose of inspiration and insight from the one and only Rob. The Rob Show is here to make your Thursdays the highlight of your work week!",
     "active": "true",
     "goTo": "podcast-tab"
-   
+},
+{
+    "date": "2024-09-19",
+    "title": "The Rob Show Episode 33 with Guest Rob Meglio - Listen Now!",
+    "content": "Exciting news, Ahoy listeners! Today marks the release of The Rob Show Episode 33 featuring the one and only Rob Meglio. Tune in now to catch this special episode and enjoy the engaging conversation and insights. Don't miss out on this week's dose of inspiration and entertainment! <br><br><button onclick=\"navigateToTab('podcast-tab')\" class=\"cta-button\">Go to Podcast</button>",
+    "active": "true",
+    "goTo": "podcast-tab",
+    "imageUrl": "https://storage.googleapis.com/ahoy-podcast-collection/ROB%20SHOW%20-%20FALL%202024%20-%20EP33.jpg"
 }
 ]
