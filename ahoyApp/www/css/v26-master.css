@@ -732,8 +732,6 @@ input[type="date"]:focus {
 
 /* SuperMedia Table Styling - Modern and Fluid Design */
 .superMediaRow {
-    background-color: #e8e8e8;
-    /* Lighter shade for better contrast */
     border-bottom: 1px solid #d0d0d0;
     /* Lighter border color */
     display: flex;
@@ -1075,42 +1073,8 @@ input[type="date"]:focus {
     }
 }
 
-/* Responsive Table Container */
-.table-container {
-    width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    /* Smooth scrolling on iOS */
-}
 
-/* Table styles */
-.table {
-    width: 100%;
-    border-collapse: collapse;
-}
 
-.table th,
-.table td {
-    padding: 8px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-}
-
-/* Ensure table headers are bold and have a background */
-.table th {
-    background-color: #f2f2f2;
-    font-weight: bold;
-}
-
-/* Improve visibility on smaller screens */
-@media (max-width: 768px) {
-
-    .table th,
-    .table td {
-        padding: 12px;
-        font-size: 14px;
-    }
-}
 
 /*Add the following CSS to ensure the infoCell is larger and the buttons are aligned to the right:
 */
@@ -1703,30 +1667,6 @@ td {
 }
 
 
-.schedule-table {
-    border-collapse: collapse;
-    width: 100%;
-    color: var(--border-color);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-.schedule-table th,
-.schedule-table td {
-    padding: 5px;
-    text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    color: #ffffff;
-}
-
-.schedule-table th {
-    color: #f0f0f2;
-    text-align: center;
-    font-weight: 400;
-    font-size: 10px;
-    /* Subtle text shadow for a retro effect */
-}
 
 
 
@@ -2499,52 +2439,8 @@ td {
     /* Smooth scrolling on iOS */
 }
 
-/* Table styles */
-.table {
-    width: 100%;
-    border-collapse: collapse;
-}
 
-.table th,
-.table td {
-    padding: 8px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-}
 
-/* Ensure table headers are bold and have a background */
-.table th {
-    background-color: #f2f2f2;
-    font-weight: bold;
-}
-
-/* Improve visibility on smaller screens */
-@media (max-width: 768px) {
-
-    .table th,
-    .table td {
-        padding: 12px;
-        font-size: 14px;
-    }
-}
-
-#songListTable {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-#songListTable th,
-#songListTable td {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid var(--border-color);
-}
-
-#songListTable th {
-    background-color: var(--background-color);
-    color: var(--text-color);
-    font-weight: bold;
-}
 
 @media screen and (max-width: 600px) {
     #songListTable thead {

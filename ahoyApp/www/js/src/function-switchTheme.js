@@ -1,7 +1,7 @@
 const themes = ["light", "dark", "pink", "ellie", "bug", "hiii", "crazy", "gradientPink"]; // List of available themes
 
-// Initialize with the 'gradientPink' theme as default
-let theme = "dark";
+// Initialize with a random theme from 'gradientPink', 'dark', or 'pink'
+let theme = ["gradientPink", "dark", "pink"][Math.floor(Math.random() * 3)];
 
 function switchTheme(selectedTheme) {
   const root = document.documentElement;
