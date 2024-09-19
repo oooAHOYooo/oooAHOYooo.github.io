@@ -3,8 +3,8 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(response => response.json())
         .then(data => {
             const podcasts = data.podcasts;
-            // Select a random podcast index
-            let currentPodcastIndex = Math.floor(Math.random() * podcasts.length);
+            // Initialize to the last podcast index to load the latest episode
+            let currentPodcastIndex = podcasts.length - 1; // Set to the last index
 
             const audioPlayer = document.getElementById('podcastPlayer');
             const podcastTitle = document.getElementById('podcast-title');
@@ -234,6 +234,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     behavior: 'smooth'
                 });
             }
+
+            // Populate the podcast list and load the latest podcast on initial fetch
+            populatePodcastList(); // Ensure list is populated initially
+            loadPodcast(podcasts[currentPodcastIndex]); // Load the latest podcast initially
 
             // Event listeners
             playBtn.addEventListener('click', togglePlay);
