@@ -32,8 +32,8 @@ document.addEventListener('DOMContentLoaded', function() {
             let totalComments = 0;
 
             function loadPodcast(podcast) {
-                podcastTitle.textContent = `PODCAST TITLE: ${podcast.title}`;
-                podcastDescription.textContent = `DESCRIPTION: ${podcast.description}`;
+                podcastTitle.textContent = `${podcast.title}`;
+                podcastDescription.textContent = `${podcast.description}`;
                 podcastThumbnail.src = podcast.thumbnail;
                 podcastThumbnail.alt = podcast.title;
                 audioPlayer.src = podcast.mp3url;

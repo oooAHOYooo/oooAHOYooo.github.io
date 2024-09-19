@@ -1430,9 +1430,6 @@ input[type="date"]:focus {
     flex-grow: 1;
 }
 
-.podcast-title {
-    font-weight: bold;
-}
 
 .podcast-description {
     font-size: 0.9em;
