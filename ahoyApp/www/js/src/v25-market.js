@@ -31,37 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
       filterItems(this.value);
     });
 
-    // Sign out and purchase button
-    const purchaseButton = document.createElement('button');
-    purchaseButton.textContent = 'Sign out and Purchase';
-    purchaseButton.style.position = 'fixed'; // Fix position at the top
-    purchaseButton.style.top = '10px'; // 10px from the top
-    purchaseButton.style.right = '10px'; // 10px from the right
-    purchaseButton.onclick = function() {
-      // Send notification email to Alex
-      fetch('https://api.emailservice.com/send', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          to: 'alex@ahoy.ooo',
-          subject: 'Purchase Order',
-          body: `You have made a purchase of ${cart.length} items.`
-        })
-      }).then(response => {
-        if (response.ok) {
-          console.log('Purchase notification sent to alex@ahoy.ooo');
-        } else {
-          console.error('Failed to send purchase notification');
-        }
-      });
-
-      // Clear cart and sign out logic here
-      cart.length = 0;
-      updateCartDisplay();
-      console.log('User signed out and purchase completed');
-    };
+  
 
     document.body.insertBefore(purchaseButton, document.body.firstChild); // Insert at the top of the body
 
@@ -133,26 +103,6 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
 
-  const cart = []; // Initialize an empty array to hold cart items
-
-// Function to add item to cart
-function addToCart(item) {
-    cart.push(item);
-    updateCartDisplay();
-    goToCompleteOrderPage();
-}
-
-// Function to update cart display
-function updateCartDisplay() {
-    const cartDiv = document.getElementById('cart');
-    cartDiv.innerHTML = ''; // Clear previous cart display
-    cart.forEach(cartItem => {
-        const cartItemDiv = document.createElement('div');
-        const reservationText = cartItem.reserved ? ' - Reserved' : '';
-        cartItemDiv.textContent = `${cartItem.name} - ${cartItem.price}${reservationText}`;
-        cartDiv.appendChild(cartItemDiv);
-    });
-}
 // Function to navigate to the complete order page
 function goToCompleteOrderPage() {
     window.location.href = '/complete-order'; // Assuming '/complete-order' is the URL for the Complete Order page
