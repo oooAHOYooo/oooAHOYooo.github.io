@@ -1,13 +1,13 @@
 {
   "podcasts": [
     {
-      "id": 21,
+      "id": 22,
       "title": "The Rob Show #33 - Rob Meglio",
-      "description": "The title of this one is Solo - Rob Meglio - who ",
+      "description": "Rob Meglio is an actor, writer, and comedian - he's been in a few movies - and he's a regular on the New Haven scene",
       "date": "2024-06-26",
       "active": false,
       "mp3url": "https://storage.googleapis.com/ahoy-podcast-collection/ready_RobShow_Berry_ep32.mp3",
-      "thumbnail": "https://storage.googleapis.com/ahoy-podcast-collection/Rob%20Show%20-%20Ep%2032%20-%20Tom%20Berry%20III.jpg"
+      "thumbnail": "https://storage.googleapis.com/ahoy-podcast-collection/ROB%20SHOW%20-%20FALL%202024%20-%20EP33.jpg"
     },
     {
       "id": 21,

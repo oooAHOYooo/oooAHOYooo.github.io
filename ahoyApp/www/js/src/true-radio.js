@@ -279,25 +279,33 @@ fetch('./data/true-radioPlay.json')
     });
 
     function populateSongList(filteredSongs = songs) {
-        songListBody.innerHTML = '';
-        
+        songListBody.innerHTML = '';  // Clear existing entries
+
+        const table = document.createElement('table');
+        table.className = 'minimalist-song-table';
+        const tbody = document.createElement('tbody');
+
         filteredSongs.forEach((song, index) => {
-            const row = document.createElement('div');
-            row.className = 'song-row';
-            row.innerHTML = `
-                <div class="song-artwork" style="width: 50px; height: 50px; overflow: hidden;">
-                    <img src="${song.coverArt}" alt="${song.songTitle}" class="song-cover play-song-btn" data-index="${index}" style="width: 100%; height: 100%; object-fit: cover;">
-                </div>
-                <div class="song-details" style="flex-grow: 1; margin-left: 10px;">
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+                <td>
+                    <img src="${song.coverArt}" alt="${song.songTitle}" style="width: 100%; height: auto; object-fit: cover;">
+                </td>
+                <td>
                     <div class="song-title">${song.songTitle}</div>
                     <div class="song-artist">${song.artist}</div>
-                </div>
-                <button class="play-song-btn" data-index="${index}" style="border: none; background: none; color: inherit;">
-                    ${index === currentSongIndex ? '<i class="fas fa-pause"></i>' : '<i class="fas fa-play"></i>'}
-                </button>
+                </td>
+                <td style="text-align: right;">
+                    <button class="play-song-btn" data-index="${index}" style="border: none; background: none; color: inherit;">
+                        ${index === currentSongIndex ? '<i class="fas fa-pause"></i>' : '<i class="fas fa-play"></i>'}
+                    </button>
+                </td>
             `;
-            songListBody.appendChild(row);
+            tbody.appendChild(tr);
         });
+
+        table.appendChild(tbody);
+        songListBody.appendChild(table);
 
         // Add event listeners to play buttons
         const playButtons = songListBody.querySelectorAll('.play-song-btn');
