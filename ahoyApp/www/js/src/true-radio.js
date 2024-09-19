@@ -282,7 +282,7 @@ fetch('./data/true-radioPlay.json')
         songListBody.innerHTML = '';  // Clear existing entries
 
         const table = document.createElement('table');
-        table.className = 'minimalist-song-table';
+       
         const tbody = document.createElement('tbody');
 
         filteredSongs.forEach((song, index) => {

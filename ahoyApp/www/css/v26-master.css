@@ -82,6 +82,11 @@ li {
     padding-left: 0;
     padding: 0;
     margin: 0;
+    color: var(--text-color);
+}
+
+button {
+    color: var(--text-color);
 }
 
 /* Chapter 3 - the H1 Tags */
@@ -2442,41 +2447,7 @@ td {
 
 
 
-@media screen and (max-width: 600px) {
-    #songListTable thead {
-        display: table-header-group;
-    }
 
-    #songListTable,
-    #songListTable tbody,
-    #songListTable tr,
-    #songListTable td {
-        display: block;
-        width: 100%;
-    }
-
-    #songListTable tr {
-        margin-bottom: 15px;
-        border-bottom: 2px solid var(--border-color);
-    }
-
-    #songListTable td {
-        text-align: right;
-        padding-left: 50%;
-        position: relative;
-    }
-
-    #songListTable td::before {
-        content: attr(data-label);
-        position: absolute;
-        left: 6px;
-        width: 45%;
-        padding-right: 10px;
-        white-space: nowrap;
-        text-align: left;
-        font-weight: bold;
-    }
-}
 
 .song-list::after {
     content: "";
@@ -3085,13 +3056,7 @@ td {
     padding: 0 !important;
 }
 
-#song-list li {
-    color: #b3b3b3 !important;
-    padding: 8px 0 !important;
-    cursor: pointer !important;
-    transition: color 0.2s !important;
-    line-height: 1.2;
-}
+
 
 #song-list li:hover {
     color: #fff !important;
@@ -3957,26 +3922,7 @@ td {
     min-height: 500px;
 }
 
-/* General SVG blend mode */
-.svgBlend {
-    max-width: 100%;
-    mix-blend-mode: lighten;
-    mix-blend-mode: soft-light;
-    position: relative;
-    overflow: hidden;
-}
 
-.svgBlend::after {
-    content: "";
-    position: absolute;
-    top: 01;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mP8//8/AxJgYmD4DwRCoAEDAJyTDwXj8ZIuAAAAAElFTkSuQmCC');
-    opacity: 0.2;
-    mix-blend-mode: soft-light;
-}
 
 
 
@@ -4237,10 +4183,7 @@ td {
     flex-grow: 1;
 }
 
-.tf-song-title {
-    font-weight: bold;
-    margin-bottom: 4px;
-}
+
 
 .tf-song-artist {
     font-size: 0.9em;
