@@ -136,5 +136,22 @@ function hexToRgb(hex) {
 
 // Apply the default theme on page load
 document.addEventListener("DOMContentLoaded", function () {
-  switchTheme(theme);
+  switchTheme(theme); // Apply the default theme on page load
+  populateThemeDropdown(); // Populate the dropdown with theme options
 });
+
+// Function to populate the theme dropdown
+function populateThemeDropdown() {
+  const dropdown = document.getElementById('theme-dropdown');
+  themes.forEach(theme => {
+    const option = document.createElement('option');
+    option.value = theme;
+    option.textContent = theme.charAt(0).toUpperCase() + theme.slice(1);
+    dropdown.appendChild(option);
+  });
+
+  // Add event listener to change theme on user selection
+  dropdown.addEventListener('change', function() {
+    switchTheme(this.value);
+  });
+}
