@@ -8,15 +8,24 @@ function updateNavBar(title, artist) {
 
 // Media control functions
 function playCurrentMedia() {
-    console.log('Playing current media');
+    const audioPlayer = document.querySelector('.audio-player:playing');
+    if (audioPlayer) {
+        audioPlayer.play();
+    }
 }
 
 function playPreviousMedia() {
-    console.log('Playing previous media');
+    const prevBtn = document.querySelector('.prev-btn');
+    if (prevBtn) {
+        prevBtn.click();
+    }
 }
 
 function playNextMedia() {
-    console.log('Playing next media');
+    const nextBtn = document.querySelector('.next-btn');
+    if (nextBtn) {
+        nextBtn.click();
+    }
 }
 
 // Navigation and local storage handling

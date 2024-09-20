@@ -180,12 +180,39 @@ nav {
     right: 0;
     z-index: 10000;
     width: 100%;
-    height: 100px;
+    height: 43px;
     display: flex;
     flex-direction: row;
     background-color: var(--background-color);
     overflow: hidden;
+    padding: 0 10px;
+    /* Reduce padding */
+
 }
+
+nav table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    line-height: 95%;
+    margin: 0;
+    /* Remove margin */
+
+}
+
+nav table td {
+    padding: 5px;
+    text-align: left;
+}
+
+nav table tr {}
+
+nav table tr:hover {
+    background-color: transparent;
+}
+
 
 nav button {
     background-color: var(--background-color);
@@ -209,15 +236,12 @@ nav .profile-dropdown select {
     border-radius: 4px;
 }
 
-.top-nav-container-controls {
-    display: flex;
-    width: 25%;
-}
-
-.top-nav-track-info {}
-
+.top-nav-container-controls,
+.top-nav-track-info,
 .top-nav-user-controls {
-    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 /* Responsive adjustments */
@@ -435,48 +459,6 @@ nav #search-input {
     /* Ensure it behaves like a block element */
 }
 
-
-
-
-
-/*ELEMENTALS */
-
-em {
-    font-size: calc(1rem + 0.5vw);
-    font-style: normal;
-}
-
-.emARTIST {
-    color: rgba(var(--text-color), 0.72);
-    margin: 0;
-    line-height: 95%;
-
-
-
-}
-
-.emSONG-TITLE {
-    color: rgba(var(--text-color), 0.72);
-    font-size: calc(1.5rem + 0.5vw);
-    margin: 0;
-    line-height: 95%;
-}
-
-.emPLAY-song-btn {
-    color: rgba(255, 255, 255, 0.8);
-    background-color: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 10%;
-    padding: 12.5px;
-    transition: all 0.3s ease;
-    border-color: var(--border-color);
-}
-
-.emPLAY-song-btn:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
-    cursor: pointer;
-}
 
 .hr-spacer {
     height: 10px;
