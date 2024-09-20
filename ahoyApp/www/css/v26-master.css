@@ -1671,7 +1671,40 @@ td {
     text-align: center;
 }
 
+#podcastScrubber {
+    width: 90%;
+    background: linear-gradient(to right, var(--background-color), var(--border-color), var(--secondary-color), var(--button-color), var(--gold));
+    -webkit-appearance: none;
+    /* Override default appearance */
+    appearance: none;
+    height: 8px;
+    /* Set a specific height */
+}
 
+#podcastScrubber::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    /* Override default appearance */
+    appearance: none;
+    width: 20px;
+    /* Set a specific width */
+    height: 20px;
+    /* Set a specific height */
+    background: #fff;
+    /* White thumb */
+    cursor: pointer;
+    /* Cursor on hover */
+}
+
+#podcastScrubber::-moz-range-thumb {
+    width: 20px;
+    /* Set a specific width */
+    height: 20px;
+    /* Set a specific height */
+    background: #fff;
+    /* White thumb */
+    cursor: pointer;
+    /* Cursor on hover */
+}
 
 
 

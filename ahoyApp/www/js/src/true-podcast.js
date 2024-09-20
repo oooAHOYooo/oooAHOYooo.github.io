@@ -26,6 +26,9 @@ document.addEventListener('DOMContentLoaded', function() {
             const podcastListBody = document.getElementById('podcastListBody');
             const likedPodcastsCount = document.getElementById('likedPodcastsCount');
             const commentsCount = document.getElementById('commentsCount');
+            const podcastScrubber = document.getElementById('podcastScrubber');
+            const currentTimeDisplay = document.getElementById('currentTime');
+            const durationDisplay = document.getElementById('duration');
 
             let likedPodcasts = JSON.parse(localStorage.getItem('likedPodcasts')) || [];
             let comments = {};
@@ -259,6 +262,56 @@ document.addEventListener('DOMContentLoaded', function() {
                     const podcast = podcasts.find(podcast => podcast.id === podcastId);
                     loadPodcast(podcast);
                 });
+            });
+
+            // Update scrubber as the podcast plays
+            audioPlayer.addEventListener('timeupdate', () => {
+                const value = audioPlayer.currentTime;
+                podcastScrubber.value = value;
+                currentTimeDisplay.textContent = formatTime(value);
+            });
+
+            // Update time display as the scrubber is moved
+            podcastScrubber.addEventListener('input', () => {
+                const time = (podcastScrubber.value / podcastScrubber.max) * audioPlayer.duration;
+                currentTimeDisplay.textContent = formatTime(time);
+            });
+
+            // Update the podcast current time when the scrubber change is committed (e.g., user releases the mouse button)
+            podcastScrubber.addEventListener('change', () => {
+                audioPlayer.currentTime = podcastScrubber.value;
+            });
+
+            // Function to format time in minutes and seconds
+            function formatTime(time) {
+                const minutes = Math.floor(time / 60);
+                const seconds = Math.floor(time % 60);
+                return `${pad(minutes)}:${pad(seconds)}`;
+            }
+
+            // Function to pad numbers with zero
+            function pad(number) {
+                return number < 10 ? '0' + number : number;
+            }
+
+            // Setup event listeners for loaded metadata
+            audioPlayer.addEventListener('loadedmetadata', () => {
+                durationDisplay.textContent = formatTime(audioPlayer.duration);
+                podcastScrubber.max = audioPlayer.duration;
+            });
+
+            // Update scrubber as the podcast plays
+            audioPlayer.addEventListener('timeupdate', () => {
+                const value = audioPlayer.currentTime;
+                podcastScrubber.value = value;
+                currentTimeDisplay.textContent = formatTime(value);
+            });
+
+            // Seek in the podcast when the scrubber value changes
+            podcastScrubber.addEventListener('input', () => {
+                const time = (podcastScrubber.value / 100) * audioPlayer.duration;
+                audioPlayer.currentTime = time;
+                currentTimeDisplay.textContent = formatTime(audioPlayer.currentTime);
             });
         })
         .catch(error => console.error('Error fetching the podcast data:', error));
