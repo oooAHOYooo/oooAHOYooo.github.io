@@ -2,8 +2,8 @@
 function updateNavBar(title, artist) {
     const trackTitleElement = document.getElementById('current-track-title');
     const trackArtistElement = document.getElementById('current-track-artist');
-    trackTitleElement.innerHTML = title ? `<em>${title}</em>` : '';
-    trackArtistElement.innerHTML = artist ? `<em class="emArtist">${artist}</em>` : '';
+    trackTitleElement.innerHTML = title ? `${title}` : '';
+    trackArtistElement.innerHTML = artist ? `${artist}` : '';
 }
 
 // Media control functions

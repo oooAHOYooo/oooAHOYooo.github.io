@@ -43,6 +43,7 @@
     --border-color: #ffffff;
     --border-color-rgb: 255, 255, 255;
     --gold-color: #ffd700;
+    --background-color: #ff0060;
 }
 
 body {
@@ -168,6 +169,91 @@ tr:hover {
 }
 
 
+/*CHAPTER 5 - NAVIGATION */
+
+nav {
+    display: none;
+    /* Ensures that JS toggle controls the display */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10000;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    background-color: var(--background-color);
+    overflow: hidden;
+}
+
+nav button {
+    background-color: var(--background-color);
+    /* Darker background for buttons */
+    border: none;
+    padding: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+nav button i {
+    color: var(--text-color);
+}
+
+/* Profile dropdown styling */
+nav .profile-dropdown select {
+    background-color: var(--border-color);
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.top-nav-container-controls {
+    display: flex;
+    width: 25%;
+}
+
+.top-nav-track-info {}
+
+.top-nav-user-controls {
+    width: 25%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+
+
+    nav .top-nav-container-controls {
+        display: flex;
+        width: 25%;
+    }
+
+
+    nav .top-nav-playing-display,
+    nav .top-nav-search-container,
+    nav .top-nav-user-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    nav {
+        padding: 10px;
+    }
+
+    nav .top-nav-track-info,
+    nav .top-nav-container-controls,
+    nav .top-nav-search-container {
+        margin-bottom: 10px;
+    }
+
+    nav .top-nav-search-container {
+        max-width: 95%;
+        ;
+    }
+}
+
+
 /* SUPER BUTTON */
 
 button {
@@ -242,23 +328,6 @@ button:hover {
     padding-top: 16px;
 }
 
-nav {
-    display: none;
-    /* Ensures that JS toggle controls the display */
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 100000;
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: row;
-    background-color: currentColor;
-    overflow: hidden;
-}
-
-
 
 
 #main-content,
@@ -326,61 +395,6 @@ nav #search-input {
 .playlist-button:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-nav button {
-    background-color: #282828;
-    /* Darker background for buttons */
-    border: none;
-    padding: 10px;
-    border-radius: 20px;
-    cursor: pointer;
-}
-
-nav button i {
-    color: white;
-}
-
-/* Profile dropdown styling */
-nav .profile-dropdown select {
-    background-color: #282828;
-    color: white;
-    border: none;
-    padding: 8px;
-    border-radius: 4px;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-
-
-    nav .top-nav-container-controls {
-        display: flex;
-        width: 25%;
-    }
-
-
-    nav .top-nav-playing-display,
-    nav .top-nav-search-container,
-    nav .top-nav-user-controls {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    nav {
-        padding: 10px;
-    }
-
-    nav .top-nav-track-info,
-    nav .top-nav-container-controls,
-    nav .top-nav-search-container {
-        margin-bottom: 10px;
-    }
-
-    nav .top-nav-search-container {
-        max-width: 95%;
-        ;
-    }
 }
 
 
@@ -2008,108 +2022,6 @@ td {
     height: 100%;
 }
 
-/*v26 master css*/
-
-
-
-/* Table Styles */
-.styled-table {
-    width: 100%;
-    font-size: 0.85em;
-    /* Slightly smaller font size */
-    font-family: 'Barlow', sans-serif;
-    background-color: #121212dd;
-    /* Dark background */
-    color: #b3b3b3;
-    /* Light text color */
-    border-collapse: collapse;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-}
-
-.styled-table thead {
-    background-color: #282828;
-    /* Slightly lighter background for header */
-}
-
-.styled-table thead tr {
-    text-align: center;
-}
-
-.styled-table thead th {
-    text-align: left;
-    font-weight: 700;
-    color: #ffffff;
-    /* White text for header */
-}
-
-.styled-table td {
-    min-height: 50px;
-}
-
-.styled-table tbody tr {
-    border-bottom: 1px solid #333;
-    /* Subtle border */
-}
-
-.styled-table tbody tr:nth-of-type(even) {
-    background-color: #1a1a1a;
-    /* Slightly lighter background for even rows */
-}
-
-.styled-table tbody tr:hover {
-    background-color: #333;
-    /* Darker background on hover */
-    color: #ffffff;
-    /* White text on hover */
-}
-
-
-.styled-table tbody tr:last-of-type {
-    border-bottom: 2px solid #4700985f;
-}
-
-
-
-/* Custom Play Button */
-.custom-play-button {
-    color: var(--text-color);
-    border: 2px solid var(--border-color);
-    background-color: transparent;
-    border-radius: 50%;
-    /* Change to 50% for a perfect circle */
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    display: flex;
-    /* Add this */
-    justify-content: center;
-    /* Add this */
-    align-items: center;
-    /* Add this */
-    width: 40px;
-    /* Add this - adjust as needed */
-    height: 40px;
-    /* Add this - adjust as needed */
-}
-
-
-
-.custom-play-button i {
-    color: black;
-    font-size: 16px;
-    margin: 0;
-    /* Remove margin-left */
-}
-
-.custom-play-button:hover {
-    background-color: var(--border-color);
-    color: #000000;
-    border-color: var(--border-color);
-}
-
-.custom-play-button:hover i {
-    color: #000000;
-}
-
 /* Action Button */
 .action-button {
     margin: 0px;
@@ -2134,33 +2046,6 @@ td {
     /* Change text color on hover */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
     /* Enhance shadow on hover */
-}
-
-
-
-/* Reduce padding, margin, and set fixed width on mobile */
-@media (max-width: 768px) {
-    .styled-table td {
-        padding: 0;
-        margin: 0;
-        min-width: 50px;
-        /* Adjust the width as needed */
-        max-width: 75px;
-    }
-}
-
-.home-calendar-date {
-    font-family: 'Barlow', sans-serif;
-    font-weight: 900;
-    font-size: 24px;
-    text-transform: uppercase;
-    letter-spacing: .4em;
-    border-top: 1px solid #ffffff;
-    border-bottom: 1px solid #ffffff;
-    padding: 10px 0;
-    text-align: center;
-    color: var(--text-color);
-
 }
 
 
