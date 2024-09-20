@@ -138,6 +138,35 @@ hr {
     border: 1px solid var(--border-color);
 }
 
+/*CHAPTER 4 TABLES */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: left;
+}
+
+th,
+td {
+    padding: 12px 15px;
+
+}
+
+tr:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+
+}
+
+/* Responsive Table Container */
+/*NOT SURE IF I'LL USE THIS */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    /* Smooth scrolling on iOS */
+}
+
 
 /* SUPER BUTTON */
 
@@ -393,26 +422,8 @@ nav .profile-dropdown select {
 }
 
 
-/*CHAPTER 4 - THE TABLES */
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-    font-size: 18px;
-    text-align: left;
-}
 
-th,
-td {
-    padding: 12px 15px;
-
-}
-
-tr:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-
-}
 
 /*ELEMENTALS */
 
@@ -1999,13 +2010,7 @@ td {
 
 /*v26 master css*/
 
-/* Responsive Table Container */
-.table-container {
-    width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    /* Smooth scrolling on iOS */
-}
+
 
 /* Table Styles */
 .styled-table {
