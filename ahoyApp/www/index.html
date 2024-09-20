@@ -454,14 +454,12 @@
           <p id="podcast-description"></p>
         </div>
       </div>
+    
       <audio id="podcastPlayer"></audio>
-      <span id="currentTime">00:00</span>
+      <div class="podcast-timeline">
+      <p id="currentTime">00:00</p>
       <input type="range" id="podcastScrubber" value="0" min="0" max="100" step="1">
-      <span id="duration">00:00</span>
-      <div id="podcast-timeline" class="vcr-timeline">
-        <div id="podcast-timelineHandle" class="vcr-handle">
-          <div class="handle-grip"></div>
-        </div>
+      <p id="duration">00:00</p>
       </div>
       <div class="radio-controls">
         <button id="playPodcastBtn">[► PLAY]</button>
@@ -470,10 +468,7 @@
         <button id="nextPodcastBtn">[►► NEXT]</button>
     
       </div>
-      <div class="volume-control">
-        <span><i class="fas fa-volume-up"></i></span>
-        <input type="range" id="podcastVolumeBar" min="0" max="1" step="0.1" value="1" class="styled-volume-bar">
-      </div>
+      
     </div>
    
     <div class="terminal-section">

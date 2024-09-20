@@ -1673,7 +1673,12 @@ td {
 
 #podcastScrubber {
     width: 90%;
-    background: linear-gradient(to right, var(--background-color), var(--border-color), var(--secondary-color), var(--button-color), var(--gold));
+    background: linear-gradient(to right,
+            rgba(var(--background-color), 0.7),
+            rgba(var(--border-color), 0.7),
+            rgba(var(--secondary-color), 0.7),
+            rgba(var(--button-color), 0.7),
+            rgba(var(--gold), 0.7));
     -webkit-appearance: none;
     /* Override default appearance */
     appearance: none;
@@ -1706,6 +1711,13 @@ td {
     /* Cursor on hover */
 }
 
+.podcast-timeline {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
 
 
 
