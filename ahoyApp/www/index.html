@@ -128,39 +128,39 @@
     <table>
       <tr>
         <td>
-          
-      
-              <p id="current-track-title" >Media Title</p>
-              <p id="current-track-artist">Artist Name/p>
-        
-        
+          <p id="current-track-title">Media Title</p>
         </td>
         <td>
-     
-            <button id="top-nav-play-btn" class="top-nav-control-btn" aria-label="Play or Pause" onclick="togglePlay()"><i class="fas fa-play"></i></button> 
-            <button id="top-nav-prev-btn" class="top-nav-control-btn" aria-label="Previous Song" onclick="prevSong()"><i class="fas fa-backward"></i></button>
-            <button id="top-nav-next-btn" class="top-nav-control-btn" aria-label="Next Song" onclick="nextSong()"><i class="fas fa-forward"></i></button>
-          </div>
+          <table>
+            <tr>
+              <td>
+                <button id="top-nav-play-btn" aria-label="Play or Pause" onclick="togglePlay()"><i class="fas fa-play"></i></button>
+              </td>
+              <td>
+                <button id="top-nav-next-btn" aria-label="Next Song" onclick="nextSong()"><i class="fas fa-forward"></i></button>
+              </td>
+       
+            </tr>
+          </table>
         </td>
-      
         <td>
           
-              <div class="profile-badge">
-                <span class="profile-badge__username">Username</span>
-                <div class="profile-badge__icon">
-                  <i class="fas fa-user-circle"></i>
-                </div>
-              </div>
-              <div class="profile-dropdown">
-                <select onchange="handleProfileAction(this.value)">
-                  <option value="">Actions</option>
+          <table>
+            <tr>
+              <td class="profile-badge">
+                <!-- Retained dropdown functionality with username as the visible part of the dropdown -->
+                <select class="profile-dropdown" onchange="handleProfileAction(this.value)">
+                  <option value="" disabled selected>Username</option> <!-- Display username here -->
                   <option value="sign-in">Sign In</option>
                   <option value="sign-out">Sign Out</option>
                 </select>
-              </div>
-            </div>
-          </div>
-        </td>
+                <span class="profile-badge__icon">
+                  <i class="fas fa-user-circle"></i>
+                </span>
+              </td>
+            </tr>
+          </table>
+    </td>
       </tr>
     </table>
   </nav>
