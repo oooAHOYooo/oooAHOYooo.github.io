@@ -180,8 +180,9 @@ nav {
     right: 0;
     z-index: 10000;
     width: 100%;
-    height: 43px;
+    height: 143px;
     display: flex;
+    align-items: top;
     flex-direction: row;
     background-color: var(--background-color);
     overflow: hidden;
@@ -191,23 +192,18 @@ nav {
 }
 
 nav table {
-    width: 100%;
+    width: 97%;
     border-collapse: collapse;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    line-height: 95%;
     margin: 0;
+    background-color: var(--border-color);
     /* Remove margin */
 
 }
 
-nav table td {
-    padding: 5px;
-    text-align: left;
-}
 
-nav table tr {}
 
 nav table tr:hover {
     background-color: transparent;
@@ -236,49 +232,9 @@ nav .profile-dropdown select {
     border-radius: 4px;
 }
 
-.top-nav-container-controls,
-.top-nav-track-info,
-.top-nav-user-controls {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
 
 
-    nav .top-nav-container-controls {
-        display: flex;
-        width: 25%;
-    }
-
-
-    nav .top-nav-playing-display,
-    nav .top-nav-search-container,
-    nav .top-nav-user-controls {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    nav {
-        padding: 10px;
-    }
-
-    nav .top-nav-track-info,
-    nav .top-nav-container-controls,
-    nav .top-nav-search-container {
-        margin-bottom: 10px;
-    }
-
-    nav .top-nav-search-container {
-        max-width: 95%;
-        ;
-    }
-}
-
-
-/* SUPER BUTTON */
+/* CHAPTER 6 - BUTTONS */
 
 button {
     background-color: transparent;
@@ -295,6 +251,8 @@ button:hover {
     border-color: rgba(var(--border-color), 0.91);
     color: white;
 }
+
+/* CHAPTER 7 - TABS */
 
 .tab-content {
     display: none;
@@ -359,49 +317,7 @@ button:hover {
     padding-top: 150px;
 }
 
-/* General Styles for the Navigation Bar */
-nav {
-    background-color: #000;
-    /* Spotify-like dark background */
-    color: #fff;
-    font-family: Arial, sans-serif;
-    padding: 10px 20px;
-}
 
-/* Flexbox setup for the navigation components */
-nav .top-nav-playing-display,
-nav .top-nav-container-controls,
-nav .top-nav-search-container,
-nav .top-nav-user-controls {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-nav .top-nav-playing-display {
-    flex-grow: 1;
-}
-
-nav .top-nav-track-info p {
-    margin: 0;
-    padding: 5px 0;
-}
-
-/* Icon styles */
-nav .top-nav-control-btn i,
-nav .profile-badge__icon i {
-    color: #1DB954;
-    /* Spotify-like green for icons */
-}
-
-/* Search input styling */
-nav #search-input {
-    flex-grow: 1;
-    margin-right: 10px;
-    padding: 8px;
-    border: none;
-    border-radius: 4px;
-}
 
 /* Button styling */
 
@@ -529,38 +445,7 @@ input[type="date"]:focus {
     /* Change border color on focus */
 }
 
-/*
- _____                                       _           
-|_   _|   _ _ __   ___   __ _ _ __ __ _ _ __| |__  _   _ 
-  | || | | | '_ \ / _ \ / _` | '__/ _` | '__| '_ \| | | |
-  | || |_| | |_) | (_) | (_| | | | (_| | |  | | | | |_| |
-  |_| \__, | .__/ \___/ \__, |_|  \__,_|_|  |_| |_|\__, |
-      |___/|_|          |___/                      |___/ 
-*/
 
-.heading-2 {
-    font-weight: 900;
-    font-size: clamp(1.5rem, 4vw, 2.5rem);
-    line-height: 1.2;
-    margin-bottom: 1rem;
-    transition: font-size 0.3s ease;
-    text-transform: uppercase;
-    margin-left: 10px;
-}
-
-@media (max-width: 768px) {
-    .heading-2 {
-        font-size: clamp(1.2rem, 3vw, 2rem);
-        margin-bottom: 0.75rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .heading-2 {
-        font-size: clamp(1rem, 2.5vw, 1.5rem);
-        margin-bottom: 0.5rem;
-    }
-}
 
 .center-text {
     text-align: center;
@@ -579,10 +464,6 @@ input[type="date"]:focus {
     font-weight: 600;
     margin: 1.5rem auto;
 }
-
-
-
-
 
 .tiny-note {
     width: 100%;

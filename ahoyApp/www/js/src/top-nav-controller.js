@@ -32,12 +32,13 @@ function playNextMedia() {
 document.addEventListener('DOMContentLoaded', function() {
     const nav = document.querySelector('nav');
     const toggle = document.getElementById('toggle-top-nav');
-    const navVisible = localStorage.getItem('navVisible') === 'true';
-    toggle.checked = navVisible;
+    // Use local storage or default to 'not'
+    const navVisible = localStorage.getItem('navVisible') ? localStorage.getItem('navVisible') === 'active' : false;
+    toggle.value = navVisible ? 'active' : 'not';
     nav.style.display = navVisible ? 'block' : 'none';
 
     toggle.addEventListener('change', function() {
-        localStorage.setItem('navVisible', this.checked);
+        localStorage.setItem('navVisible', this.value);
         window.location.reload();
     });
 });

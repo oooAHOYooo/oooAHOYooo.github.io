@@ -129,14 +129,14 @@
       <tr>
         <td>
           
-            <div class="top-nav-track-info">
+      
               <p id="current-track-title" >Media Title</p>
               <p id="current-track-artist">Artist Name/p>
         
-          </div>
+        
         </td>
         <td>
-          <div class="top-nav-container-controls">
+     
             <button id="top-nav-play-btn" class="top-nav-control-btn" aria-label="Play or Pause" onclick="togglePlay()"><i class="fas fa-play"></i></button> 
             <button id="top-nav-prev-btn" class="top-nav-control-btn" aria-label="Previous Song" onclick="prevSong()"><i class="fas fa-backward"></i></button>
             <button id="top-nav-next-btn" class="top-nav-control-btn" aria-label="Next Song" onclick="nextSong()"><i class="fas fa-forward"></i></button>
@@ -144,8 +144,7 @@
         </td>
       
         <td>
-          <div class="top-nav-user-controls">
-            <div id="user-profile-badge" class="user-profile-badge">
+          
               <div class="profile-badge">
                 <span class="profile-badge__username">Username</span>
                 <div class="profile-badge__icon">
@@ -702,7 +701,7 @@
   </select>
 
 
-
+<hr>
 
   <!-- Beta Experimental Features -->
   <h2>BETA Experimental Features</h2>
@@ -712,11 +711,14 @@
   <button class="btnPrimary" onclick="navigateToTab('casting-tab')"><i class="fas fa-broadcast-tower"></i></button>
   <button class="btnPrimary" onclick="navigateToTab('focus-work-mode-tab')"><i class="fas fa-clock"></i></button>
   <button class="btnPrimary" onclick="navigateToTab('upload-local-bands-tab')"><i class="fas fa-upload"></i> Upload Local Flyers</button>
+  <hr>
   <h3>Top Navigation Visibility</h3>
   <p>Toggle the visibility of the top navigation bar</p>
-han a    <input type="checkbox" id="toggle-top-nav">
-    <span class="slider round"></span>
-  </label>
+han a   <!-- Replace the checkbox with a dropdown for navigation visibility -->
+<select id="toggle-top-nav">
+  <option value="active">Active</option>
+  <option value="not">Not Active</option>
+</select>
 </div>
                  
             </div>
