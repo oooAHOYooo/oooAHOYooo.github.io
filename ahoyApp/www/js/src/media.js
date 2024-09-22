@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", function () {
   // Function to load video in JW Player
   function loadVideoInJWPlayer(videoUrl, thumbnailUrl, artistName, titleName) {
     jwplayer("jw-player-container").setup({
-      autostart: false,
       file: videoUrl,
       image: thumbnailUrl,
       width: "100%",
@@ -31,68 +30,31 @@ document.addEventListener("DOMContentLoaded", function () {
   fetch("data/mediaCollection.json")
     .then((response) => response.json())
     .then((data) => {
-      // Sort the data by 'id' in descending order
-      data.sort((a, b) => b.id - a.id);
-
-      const randomVideo = selectRandomVideo(data);
-      loadVideoInJWPlayer(randomVideo.mp4_link, randomVideo.thumbnail_link, randomVideo.artist, randomVideo.display_title);
-
       const tableBody = document.querySelector("#mediaTable tbody");
+      tableBody.innerHTML = ''; // Clear existing entries
 
       data.forEach((item) => {
         const row = document.createElement("tr");
-        row.className = "superMediaRow"; // Added class
-        row.style.backgroundImage = `url(${item.thumbnail_link})`; // Set background image
-        row.style.backgroundSize = "cover"; // Ensure the background covers the row
-        row.style.backgroundPosition = "center"; // Center the background image
-        row.style.color = "white"; // Change text color for better visibility
-        row.style.position = "relative"; // Set position for overlay positioning
-        row.onclick = function () {
-          loadVideoInJWPlayer(item.mp4_link, item.thumbnail_link, item.artist, item.display_title);
-          window.scrollTo(0, 0); // Scroll back to the top of the page
-        };
-
-        // Create an overlay for better text visibility
-        const overlay = document.createElement("div");
-        overlay.style.position = "absolute";
-        overlay.style.top = "0";
-        overlay.style.left = "0";
-        overlay.style.right = "0";
-        overlay.style.bottom = "0";
-        overlay.style.backgroundColor = "rgba(0, 0, 0, 0.5)"; // Dark overlay for contrast
-        row.appendChild(overlay);
-
-        // Play Button
-        const playButton = document.createElement("button");
-        playButton.className = "superMediaPlayButton";
-        playButton.textContent = "▶";
-        playButton.style.position = "absolute";
-        playButton.style.left = "10px";
-        playButton.style.top = "10px";
-        playButton.style.zIndex = "10";
-        playButton.onclick = function(event) {
-          event.stopPropagation(); // Prevent row click event
-          loadVideoInJWPlayer(item.mp4_link, item.thumbnail_link, item.artist, item.display_title);
-        };
-        row.appendChild(playButton);
-
-        const artistCell = document.createElement("td");
-        artistCell.className = "superMediaArtist"; // Added class
-        artistCell.textContent = item.artist;
-        row.appendChild(artistCell);
-
-        const titleCell = document.createElement("td");
-        titleCell.className = "superMediaTitle"; // Added class
-        titleCell.textContent = item.display_title;
-        row.appendChild(titleCell);
-
+        row.className = "mediaRow";
+        row.innerHTML = `
+          <td class="mediaThumbnail">
+            <img src="${item.thumbnail_link}" alt="Thumbnail" class="mediaThumbnailImage">
+          </td>
+          <td class="mediaDetails">
+            <p class="mediaArtist">${item.artist}</p>
+            <p class="mediaTitle">${item.display_title}</p>
+            <button class="playMediaButton" onclick="loadVideoInJWPlayer('${item.mp4_link}', '${item.thumbnail_link}', '${item.artist}', '${item.display_title}')">Play</button>
+          </td>
+        `;
         tableBody.appendChild(row);
       });
 
-      // Lazy load the thumbnails
-      lazyLoadThumbnails();
+      // Optionally, load the first video
+      if (data.length > 0) {
+        loadVideoInJWPlayer(data[0].mp4_link, data[0].thumbnail_link, data[0].artist, data[0].display_title);
+      }
     })
-    .catch((error) => console.error("Error:", error));
+    .catch((error) => console.error("Error fetching media data:", error));
 
   function lazyLoadThumbnails() {
     const lazyThumbnails = document.querySelectorAll(".lazy-thumbnail");
