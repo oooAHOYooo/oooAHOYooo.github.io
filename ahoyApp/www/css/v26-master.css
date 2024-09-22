@@ -3268,6 +3268,11 @@ td {
     border-radius: 50%;
 }
 
+.user-stuff>h2 {
+    padding: 10px;
+    margin: 0;
+}
+
 .status-light {
     width: 100%;
     height: 100%;
@@ -3590,30 +3595,7 @@ td {
     font-size: 14px;
 }
 
-.tag {
-    display: inline-block;
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-size: 12px;
-    font-weight: bold;
-    text-transform: uppercase;
-}
 
-.tag.new-song {
-    background-color: #ffd700;
-}
-
-.tag.podcast {
-    background-color: #90ee90;
-}
-
-.tag.media {
-    background-color: #add8e6;
-}
-
-.tag.news {
-    background-color: #ffa07a;
-}
 
 /* Existing styles */
 
@@ -3944,34 +3926,24 @@ td {
     margin-bottom: 20px;
 }
 
-.checkmark {
-    width: 56px;
-    height: 56px;
-    stroke-width: 2;
-    stroke: #4CAF50;
-    stroke-miterlimit: 10;
-    animation: stroke 0.5s cubic-bezier(0.65, 0, 0.45, 1) forwards;
-}
-
-.checkmark__circle {
-    stroke-dasharray: 166;
-    stroke-dashoffset: 166;
-    stroke-width: 2;
-    stroke-miterlimit: 10;
-    stroke: #4CAF50;
-    fill: none;
-    animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
-}
-
-.checkmark__check {
-    transform-origin: 50% 50%;
-    stroke-dasharray: 48;
-    stroke-dashoffset: 48;
-    animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) forwards 0.2s;
-}
 
 @keyframes stroke {
     100% {
         stroke-dashoffset: 0;
     }
+}
+
+
+.card-content {
+    padding: 10px;
+    background-color: rgba(var(--background-color), 0.7);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+}
+
+.card-header {
+    cursor: pointer;
+    padding: 10px;
+    background-color: rgba(var(--background-color), 0.7);
+    border: 1px solid var(--border-color);
 }

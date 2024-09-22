@@ -264,20 +264,153 @@
     </div>
     <hr>
     <div class="user-stuff">
+      <style>
+
+      </style>
       <h2>Your Stuffs</h2>
-      <ul>
-        <h5>Liked Songs</h5>
-        <li>Liked Song 1</li>
-      </ul>
-      <ul>
-        <h5>Liked Podcasts</h5>
-        <li>Liked Podcast 1</li>
-      </ul>
-      <ul>
-        <h5>Liked Media</h5>
-        <li>Liked Media 1</li>
-      </ul>
-    </div>
+      <div class="card">
+          <div class="card-header" onclick="toggleVisibility('likedSongs')">
+              <h3>Liked Songs</h3>
+          </div>
+          <div class="card-content" id="likedSongs" style="display:none;">
+              <ul id="likedSongsList" style="height: 150px; overflow-y: auto;">
+                  <!-- Songs will be added here by JavaScript -->
+              </ul>
+          </div>
+      </div>
+      <div class="card">
+          <div class="card-header" onclick="toggleVisibility('likedPodcasts')">
+              <h3>Liked Podcasts</h3>
+          </div>
+          <div class="card-content" id="likedPodcasts" style="display:none;">
+              <ul id="likedPodcastsList" style="height: 150px; overflow-y: auto;">
+                  <!-- Podcasts will be added here by JavaScript -->
+              </ul>
+          </div>
+      </div>
+      <div class="card">
+          <div class="card-header" onclick="toggleVisibility('likedMedia')">
+              <h3>Liked Media</h3>
+          </div>
+          <div class="card-content" id="likedMedia" style="display:none;">
+              <ul id="likedMediaList" style="height: 150px; overflow-y: auto;">
+                  <!-- Media items will be added here by JavaScript -->
+              </ul>
+          </div>
+      </div>
+  </div>
+  
+  <script>
+  function toggleVisibility(id) {
+      var element = document.getElementById(id);
+      if (element.style.display === 'none') {
+          element.style.display = 'block';
+      } else {
+          element.style.display = 'none';
+      }
+  }
+  
+  // Example data arrays
+  const likedSongs = ["Song Title 1", "Song Title 2", "Song Title 3", "Song Title 4", "Song Title 5", "Song Title 6", "Song Title 7", "Song Title 8", "Song Title 9", "Song Title 10"];
+  const likedPodcasts = ["Podcast 1", "Podcast 2", "Podcast 3", "Podcast 4", "Podcast 5", "Podcast 6", "Podcast 7", "Podcast 8", "Podcast 9", "Podcast 10"];
+  const likedMedia = ["Media 1", "Media 2", "Media 3", "Media 4", "Media 5", "Media 6", "Media 7", "Media 8", "Media 9", "Media 10"];
+  
+  function populateList(listId, items) {
+      const list = document.getElementById(listId);
+      items.forEach(item => {
+          const listItem = document.createElement('li');
+          listItem.textContent = item;
+          list.appendChild(listItem);
+      });
+  }
+  
+  document.addEventListener('DOMContentLoaded', function() {
+      populateList('likedSongsList', likedSongs);
+      populateList('likedPodcastsList', likedPodcasts);
+      populateList('likedMediaList', likedMedia);
+  });
+  </script>
+  
+  <script>
+  function toggleVisibility(id) {
+      var element = document.getElementById(id);
+      if (element.style.display === 'none') {
+          element.style.display = 'block';
+      } else {
+          element.style.display = 'none';
+      }
+  }
+  
+  // Example data arrays
+  const likedSongs = ["Song Title 1", "Song Title 2", "Song Title 3", "Song Title 4", "Song Title 5", "Song Title 6", "Song Title 7", "Song Title 8", "Song Title 9", "Song Title 10"];
+  const likedPodcasts = ["Podcast 1", "Podcast 2", "Podcast 3", "Podcast 4", "Podcast 5"];
+  const likedMedia = ["Media 1", "Media 2", "Media 3", "Media 4", "Media 5"];
+  
+  function populateList(listId, items) {
+      const list = document.getElementById(listId);
+      items.forEach(item => {
+          const listItem = document.createElement('li');
+          listItem.textContent = item;
+          list.appendChild(listItem);
+      });
+  }
+  
+  document.addEventListener('DOMContentLoaded', function() {
+      populateList('likedSongsList', likedSongs);
+      populateList('likedPodcastsList', likedPodcasts);
+      populateList('likedMediaList', likedMedia);
+  });
+  </script>
+      <!-- Other sections remain the same -->
+  </div>
+  
+  <script>
+  function toggleVisibility(id) {
+      var element = document.getElementById(id);
+      if (element.style.display === 'none') {
+          element.style.display = 'block';
+      } else {
+          element.style.display = 'none';
+      }
+  }
+  
+  // Example array of liked songs
+  const likedSongs = [
+      "Song Title 1",
+      "Song Title 2",
+      "Song Title 3",
+      "Song Title 4",
+      "Song Title 5",
+      "Song Title 6",
+      "Song Title 7",
+      "Song Title 8",
+      "Song Title 9",
+      "Song Title 10"
+  ];
+  
+  // Function to populate liked songs
+  function populateLikedSongs() {
+      const list = document.getElementById('likedSongsList');
+      likedSongs.forEach(song => {
+          const listItem = document.createElement('li');
+          listItem.textContent = song;
+          list.appendChild(listItem);
+      });
+  }
+  
+  // Call the function to populate songs on page load
+  document.addEventListener('DOMContentLoaded', populateLikedSongs);
+  </script>
+  <script>
+  function toggleVisibility(id) {
+      var element = document.getElementById(id);
+      if (element.style.display === 'none') {
+          element.style.display = 'block';
+      } else {
+          element.style.display = 'none';
+      }
+  }
+  </script>
     <hr>
 
   </div>
