@@ -192,7 +192,10 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             function populatePodcastList(podcastsToShow = podcasts) {
-                podcastListBody.innerHTML = '<table>';
+                // Start by clearing the existing content and creating a new table element
+                podcastListBody.innerHTML = '';
+                const table = document.createElement('table');
+                table.className = 'podcast-table'; // Add a class for styling if needed
 
                 podcastsToShow.forEach((podcast, index) => {
                     const row = document.createElement('tr');
@@ -208,13 +211,13 @@ document.addEventListener('DOMContentLoaded', function() {
                             </button>
                         </td>
                     `;
-                    podcastListBody.appendChild(row);
+                    table.appendChild(row); // Append the row to the table instead of the body directly
                 });
 
-                podcastListBody.innerHTML += '</table>';
+                podcastListBody.appendChild(table); // Append the complete table to the podcastListBody
 
                 // Add event listeners to play buttons, podcast art, and the entire row
-                const podcastRows = podcastListBody.querySelectorAll('.podcast-row');
+                const podcastRows = table.querySelectorAll('.podcast-row');
                 podcastRows.forEach(row => {
                     row.addEventListener('click', (e) => {
                         const podcastIndex = parseInt(e.currentTarget.querySelector('.play-podcast-btn').getAttribute('data-index'));
