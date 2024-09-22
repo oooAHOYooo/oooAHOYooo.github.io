@@ -139,6 +139,10 @@
               <td>
                 <button id="top-nav-next-btn" aria-label="Next Song" onclick="nextSong()"><i class="fas fa-forward"></i></button>
               </td>
+              <td>
+                <button id="likeBtn"><i class="far fa-heart"></i></button>
+
+              </td>
        
             </tr>
           </table>
@@ -420,6 +424,7 @@
   </div>
   </div>
  
+  <audio id="audioPlayer"></audio>
 
           <!-- BEGIN-->
           <div id="tabSortza">
@@ -503,7 +508,6 @@
                             <p id="artist">ARTIST: ________</p>
                         </div>
                     </div>
-                    <audio id="audioPlayer"></audio>
                     <div id="timeline" class="vcr-timeline"
                         style="margin-top: 10px; margin-bottom: 10px;">
                         <div id="timelineHandle" class="vcr-handle"
@@ -589,15 +593,14 @@
         </div>
       </div>
     
-      <audio id="podcastPlayer"></audio>
-      <div class="podcast-timeline">
+      <!-- <div class="podcast-timeline">
       <p id="currentTime">00:00</p>
       <input type="range" id="podcastScrubber" value="0" min="0" max="100" step="1">
       <p id="duration">00:00</p>
-      </div>
+      </div> -->
       <div class="radio-controls">
-        <button id="playPodcastBtn">[► PLAY]</button>
-        <button id="likePodcastBtn"><i class="far fa-heart"></i> LIKE</button>
+        <button id="playPodcastBtn" onclick="togglePlay()">[► PLAY]</button>
+        <button id="likePodcastBtn" onclick="toggleLike()"><i class="far fa-heart"></i> LIKE</button>
         <button id="prevPodcastBtn">[◄◄ PREV]</button>
         <button id="nextPodcastBtn">[►► NEXT]</button>
     
@@ -1142,7 +1145,7 @@ han a   <!-- Replace the checkbox with a dropdown for navigation visibility -->
           <div id="v27-player">
             <div style="display: flex; align-items: center;">
 <!-- AUDIO PLAYER -->
-              <audio id="audio-player" controls style="display:none;"></audio>
+             
 
             </div>
 
@@ -1201,7 +1204,7 @@ han a   <!-- Replace the checkbox with a dropdown for navigation visibility -->
     <script src="js/src/updates-commits.js"></script>
     <script src="js/src/function-switchTheme.js"></script>
     <script src="js/src/nav-leftDash.js"></script>
-    <script src="js/src/background-graphic-logic.js"></script>
+    <!-- <script src="js/src/background-graphic-logic.js"></script> -->
     <script src="js/src/function_today_date.js"></script>
 
     <script src="js/src/v25_menuCode.js"></script>

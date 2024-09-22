@@ -6,9 +6,10 @@ document.addEventListener('DOMContentLoaded', function() {
             // Find the podcast with the highest id
             let currentPodcastIndex = podcasts.reduce((maxIndex, podcast, index) => {
                 return podcast.id > podcasts[maxIndex].id ? index : maxIndex;
-            }, 0); // Use reduce to find the index of the podcast with the highest id
+            }, 0);
 
-            const audioPlayer = document.getElementById('podcastPlayer');
+            // Use the default audio player
+            const audioPlayer = document.getElementById('audioPlayer'); // Changed from 'audio-player' to 'audioPlayer'
             const podcastTitle = document.getElementById('podcast-title');
             const podcastDescription = document.getElementById('podcast-description');
             const podcastThumbnail = document.getElementById('podcast-thumbnail');
@@ -26,9 +27,6 @@ document.addEventListener('DOMContentLoaded', function() {
             const podcastListBody = document.getElementById('podcastListBody');
             const likedPodcastsCount = document.getElementById('likedPodcastsCount');
             const commentsCount = document.getElementById('commentsCount');
-            const podcastScrubber = document.getElementById('podcastScrubber');
-            const currentTimeDisplay = document.getElementById('currentTime');
-            const durationDisplay = document.getElementById('duration');
 
             let likedPodcasts = JSON.parse(localStorage.getItem('likedPodcasts')) || [];
             let comments = {};
@@ -39,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 podcastDescription.textContent = `${podcast.description}`;
                 podcastThumbnail.src = podcast.thumbnail;
                 podcastThumbnail.alt = podcast.title;
-                audioPlayer.src = podcast.mp3url;
+                audioPlayer.src = podcast.mp3url; // Ensure this uses the default audio player
                 updateCommentsList();
                 playBtn.textContent = '[► PLAY]';
                 populatePodcastList();
@@ -61,14 +59,14 @@ document.addEventListener('DOMContentLoaded', function() {
             function prevPodcast() {
                 currentPodcastIndex = (currentPodcastIndex - 1 + podcasts.length) % podcasts.length;
                 loadPodcast(podcasts[currentPodcastIndex]);
-                audioPlayer.play();
+                audioPlayer.play(); // Ensure this is called after loading the podcast
                 playBtn.textContent = '[❚❚ PAUSE]';
             }
 
             function nextPodcast() {
                 currentPodcastIndex = (currentPodcastIndex + 1) % podcasts.length;
                 loadPodcast(podcasts[currentPodcastIndex]);
-                audioPlayer.play();
+                audioPlayer.play(); // Ensure this is called after loading the podcast
                 playBtn.textContent = '[❚❚ PAUSE]';
             }
 
@@ -101,11 +99,14 @@ document.addEventListener('DOMContentLoaded', function() {
                             </button>
                         </div>
                     `;
-                    const playBtn = li.querySelector('.play-btn');
-                    const deleteBtn = li.querySelector('.delete-btn');
-                    playBtn.addEventListener('click', () => playPodcastFromLiked(index));
-                    deleteBtn.addEventListener('click', () => removeLikedPodcast(index));
                     likedPodcastsList.appendChild(li);
+                });
+                // Reattach event listeners after updating the DOM
+                document.querySelectorAll('.play-btn').forEach((button, index) => {
+                    button.addEventListener('click', () => playPodcastFromLiked(index));
+                });
+                document.querySelectorAll('.delete-btn').forEach((button, index) => {
+                    button.addEventListener('click', () => removeLikedPodcast(index));
                 });
                 likedPodcastsCount.textContent = likedPodcasts.length;
             }
@@ -192,45 +193,40 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             function populatePodcastList(podcastsToShow = podcasts) {
-                // Start by clearing the existing content and creating a new table element
-                podcastListBody.innerHTML = '';
-                const table = document.createElement('table');
-                table.className = 'podcast-table'; // Add a class for styling if needed
+                podcastListBody.innerHTML = '<table>';
 
                 podcastsToShow.forEach((podcast, index) => {
                     const row = document.createElement('tr');
                     row.className = 'podcast-row';
                     row.innerHTML = `
                         <td>
-                            <img src="${podcast.thumbnail}" alt="${podcast.title}" class="podcast-cover-max play-podcast-btn" data-index="${index}">
+                            <img src="${podcast.thumbnail}" alt="${podcast.title}" class="podcast-cover-max play-podcast-btn" data-index="${index}" onclick="playPodcastFromList(${index}, true)">
                         </td>
                         <td>
                             <p>${podcast.title}</p>
-                            <button class="play-podcast-btn" data-index="${index}">
+                            <button class="play-podcast-btn" data-index="${index}" onclick="playPodcastFromList(${index})">
                                 ${index === currentPodcastIndex ? '<i class="fas fa-pause"></i>' : '<i class="fas fa-play"></i>'}
                             </button>
                         </td>
                     `;
-                    table.appendChild(row); // Append the row to the table instead of the body directly
+                    podcastListBody.appendChild(row);
                 });
 
-                podcastListBody.appendChild(table); // Append the complete table to the podcastListBody
-
-                // Add event listeners to play buttons, podcast art, and the entire row
-                const podcastRows = table.querySelectorAll('.podcast-row');
-                podcastRows.forEach(row => {
-                    row.addEventListener('click', (e) => {
-                        const podcastIndex = parseInt(e.currentTarget.querySelector('.play-podcast-btn').getAttribute('data-index'));
-                        playPodcastFromList(podcastIndex);
-                    });
-                });
+                podcastListBody.innerHTML += '</table>';
             }
 
-            function playPodcastFromList(index) {
+            function playPodcastFromList(index, scrollToTop = false) {
                 currentPodcastIndex = index;
                 loadPodcast(podcasts[currentPodcastIndex]);
                 audioPlayer.play().then(() => {
                     playBtn.textContent = '[❚❚ PAUSE]';
+                    if (scrollToTop) {
+                        // Scroll to the top of the page smoothly when image is clicked
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
+                    }
                 }).catch(error => {
                     console.error('Playback was prevented:', error);
                 });
@@ -255,7 +251,7 @@ document.addEventListener('DOMContentLoaded', function() {
             submitCommentBtn.addEventListener('click', addComment);
             searchBtn.addEventListener('click', searchPodcasts);
             volumeBar.addEventListener('input', () => {
-                audioPlayer.volume = volumeBar.value;
+                audioPlayer.volume = volumeBar.value; // Ensure this directly modifies the audio player's volume
             });
 
             // Setup event listeners for play buttons
@@ -265,56 +261,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     const podcast = podcasts.find(podcast => podcast.id === podcastId);
                     loadPodcast(podcast);
                 });
-            });
-
-            // Update scrubber as the podcast plays
-            audioPlayer.addEventListener('timeupdate', () => {
-                const value = audioPlayer.currentTime;
-                podcastScrubber.value = value;
-                currentTimeDisplay.textContent = formatTime(value);
-            });
-
-            // Update time display as the scrubber is moved
-            podcastScrubber.addEventListener('input', () => {
-                const time = (podcastScrubber.value / podcastScrubber.max) * audioPlayer.duration;
-                currentTimeDisplay.textContent = formatTime(time);
-            });
-
-            // Update the podcast current time when the scrubber change is committed (e.g., user releases the mouse button)
-            podcastScrubber.addEventListener('change', () => {
-                audioPlayer.currentTime = podcastScrubber.value;
-            });
-
-            // Function to format time in minutes and seconds
-            function formatTime(time) {
-                const minutes = Math.floor(time / 60);
-                const seconds = Math.floor(time % 60);
-                return `${pad(minutes)}:${pad(seconds)}`;
-            }
-
-            // Function to pad numbers with zero
-            function pad(number) {
-                return number < 10 ? '0' + number : number;
-            }
-
-            // Setup event listeners for loaded metadata
-            audioPlayer.addEventListener('loadedmetadata', () => {
-                durationDisplay.textContent = formatTime(audioPlayer.duration);
-                podcastScrubber.max = audioPlayer.duration;
-            });
-
-            // Update scrubber as the podcast plays
-            audioPlayer.addEventListener('timeupdate', () => {
-                const value = audioPlayer.currentTime;
-                podcastScrubber.value = value;
-                currentTimeDisplay.textContent = formatTime(value);
-            });
-
-            // Seek in the podcast when the scrubber value changes
-            podcastScrubber.addEventListener('input', () => {
-                const time = (podcastScrubber.value / 100) * audioPlayer.duration;
-                audioPlayer.currentTime = time;
-                currentTimeDisplay.textContent = formatTime(audioPlayer.currentTime);
             });
         })
         .catch(error => console.error('Error fetching the podcast data:', error));
