@@ -38,16 +38,17 @@ fetch('./data/true-radioPlay.json')
     }
 
     function togglePlay() {
-        const playBtns = document.querySelectorAll('.top-nav-control-btn'); // Select all play buttons across tabs
         if (audioPlayer.paused) {
+            AudioManager.requestPlay(audioPlayer);
             audioPlayer.play().then(() => {
-                playBtns.forEach(btn => btn.innerHTML = '<i class="fas fa-pause"></i>'); // Change all to pause icon
+                playBtns.forEach(btn => btn.innerHTML = '<i class="fas fa-pause"></i>');
             }).catch(error => {
                 console.error('Playback was prevented:', error);
             });
         } else {
             audioPlayer.pause();
-            playBtns.forEach(btn => btn.innerHTML = '<i class="fas fa-play"></i>'); // Change all to play icon
+            AudioManager.releasePlay(audioPlayer);
+            playBtns.forEach(btn => btn.innerHTML = '<i class="fas fa-play"></i>');
         }
     }
 
@@ -91,6 +92,9 @@ fetch('./data/true-radioPlay.json')
 
         // Update the navigation bar with the current song
         updateNavBar(song.songTitle, song.artist);
+
+        // Scroll to top when song is loaded
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     function prevSong() {
@@ -334,16 +338,11 @@ fetch('./data/true-radioPlay.json')
         loadSong(songs[currentSongIndex]);
         audioPlayer.play().then(() => {
             playBtn.textContent = '[❚❚ PAUSE]';
+            window.scrollTo({ top: 0, behavior: 'smooth' }); // Ensure it scrolls to top here as well
         }).catch(error => {
             console.error('Playback was prevented:', error);
         });
         populateSongList();
-        
-        // Scroll to the top of the page smoothly
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
     }
 
     function playSongFromLiked(index) {
@@ -366,7 +365,8 @@ fetch('./data/true-radioPlay.json')
     // Add this function to handle autoplay
     function setupAutoplay() {
         audioPlayer.addEventListener('ended', () => {
-            nextSong();
+            nextSong(); // Ensure next song is loaded and played
+            window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top when next song plays
         });
     }
 

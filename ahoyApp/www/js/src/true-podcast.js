@@ -3,13 +3,11 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(response => response.json())
         .then(data => {
             const podcasts = data.podcasts;
-            // Find the podcast with the highest id
             let currentPodcastIndex = podcasts.reduce((maxIndex, podcast, index) => {
                 return podcast.id > podcasts[maxIndex].id ? index : maxIndex;
             }, 0);
 
-            // Use the default audio player
-            const audioPlayer = document.getElementById('audioPlayer'); // Changed from 'audio-player' to 'audioPlayer'
+            const audioPlayer = document.getElementById('audioPlayer');
             const podcastTitle = document.getElementById('podcast-title');
             const podcastDescription = document.getElementById('podcast-description');
             const podcastThumbnail = document.getElementById('podcast-thumbnail');
@@ -37,21 +35,29 @@ document.addEventListener('DOMContentLoaded', function() {
                 podcastDescription.textContent = `${podcast.description}`;
                 podcastThumbnail.src = podcast.thumbnail;
                 podcastThumbnail.alt = podcast.title;
-                audioPlayer.src = podcast.mp3url; // Ensure this uses the default audio player
+                audioPlayer.src = podcast.mp3url;
+                audioPlayer.load();
+                audioPlayer.play().then(() => {
+                    playBtn.textContent = '[❚❚ PAUSE]';
+                }).catch(error => {
+                    console.error('Error attempting to play:', error);
+                });
                 updateCommentsList();
                 playBtn.textContent = '[► PLAY]';
                 populatePodcastList();
                 likeBtn.dataset.podcastId = podcast.id;
                 updateLikeButtonState(podcast.id);
-                updateNavBar(podcast.title, "Podcast"); // Update the navigation bar, assuming 'Podcast' as the artist
+                updateNavBar(podcast.title, "Podcast");
             }
 
             function togglePlay() {
                 if (audioPlayer.paused) {
+                    AudioManager.requestPlay(audioPlayer);
                     audioPlayer.play();
                     playBtn.textContent = '[❚❚ PAUSE]';
                 } else {
                     audioPlayer.pause();
+                    AudioManager.releasePlay(audioPlayer);
                     playBtn.textContent = '[► PLAY]';
                 }
             }
@@ -59,14 +65,14 @@ document.addEventListener('DOMContentLoaded', function() {
             function prevPodcast() {
                 currentPodcastIndex = (currentPodcastIndex - 1 + podcasts.length) % podcasts.length;
                 loadPodcast(podcasts[currentPodcastIndex]);
-                audioPlayer.play(); // Ensure this is called after loading the podcast
+                audioPlayer.play();
                 playBtn.textContent = '[❚❚ PAUSE]';
             }
 
             function nextPodcast() {
                 currentPodcastIndex = (currentPodcastIndex + 1) % podcasts.length;
                 loadPodcast(podcasts[currentPodcastIndex]);
-                audioPlayer.play(); // Ensure this is called after loading the podcast
+                audioPlayer.play();
                 playBtn.textContent = '[❚❚ PAUSE]';
             }
 
@@ -101,7 +107,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     `;
                     likedPodcastsList.appendChild(li);
                 });
-                // Reattach event listeners after updating the DOM
                 document.querySelectorAll('.play-btn').forEach((button, index) => {
                     button.addEventListener('click', () => playPodcastFromLiked(index));
                 });
@@ -200,7 +205,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     row.className = 'podcast-row';
                     row.innerHTML = `
                         <td>
-                            <img src="${podcast.thumbnail}" alt="${podcast.title}" class="podcast-cover-max play-podcast-btn" data-index="${index}" onclick="playPodcastFromList(${index}, true)">
+                            <img src="${podcast.thumbnail}" alt="${podcast.title}" class="podcast-cover-max" data-index="${index}" onclick="playPodcastFromList(${index}, true)">
                         </td>
                         <td>
                             <p>${podcast.title}</p>
@@ -215,33 +220,25 @@ document.addEventListener('DOMContentLoaded', function() {
                 podcastListBody.innerHTML += '</table>';
             }
 
-            function playPodcastFromList(index, scrollToTop = false) {
+            function playPodcastFromList(index, scrollToTop = true) {
                 currentPodcastIndex = index;
                 loadPodcast(podcasts[currentPodcastIndex]);
                 audioPlayer.play().then(() => {
                     playBtn.textContent = '[❚❚ PAUSE]';
-                    if (scrollToTop) {
-                        // Scroll to the top of the page smoothly when image is clicked
-                        window.scrollTo({
-                            top: 0,
-                            behavior: 'smooth'
-                        });
-                    }
                 }).catch(error => {
                     console.error('Playback was prevented:', error);
                 });
-                populatePodcastList();
-                
-                // Scroll to the top of the page smoothly
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            }
 
-            // Populate the podcast list and load the latest podcast on initial fetch
-            populatePodcastList(); // Ensure list is populated initially
-            loadPodcast(podcasts[currentPodcastIndex]); // Load the podcast with the highest id initially
+                // Scroll to the top when a podcast is played from the list
+                if (scrollToTop) {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                }
+
+                populatePodcastList();
+            }
 
             // Event listeners
             playBtn.addEventListener('click', togglePlay);
@@ -251,17 +248,12 @@ document.addEventListener('DOMContentLoaded', function() {
             submitCommentBtn.addEventListener('click', addComment);
             searchBtn.addEventListener('click', searchPodcasts);
             volumeBar.addEventListener('input', () => {
-                audioPlayer.volume = volumeBar.value; // Ensure this directly modifies the audio player's volume
+                audioPlayer.volume = volumeBar.value;
             });
 
-            // Setup event listeners for play buttons
-            document.querySelectorAll('.podcast-play-button').forEach(button => {
-                button.addEventListener('click', function() {
-                    const podcastId = this.getAttribute('data-podcast-id');
-                    const podcast = podcasts.find(podcast => podcast.id === podcastId);
-                    loadPodcast(podcast);
-                });
-            });
+            // Initial setup
+            populatePodcastList();
+            loadPodcast(podcasts[currentPodcastIndex]);
         })
         .catch(error => console.error('Error fetching the podcast data:', error));
 });
