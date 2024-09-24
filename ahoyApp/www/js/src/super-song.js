@@ -2,6 +2,34 @@ const songsDataUrl = './data/true-radioPlay.json'; // Updated path to your JSON 
 let currentSongIndex = 0;
 let songs = [];
 
+// Function to populate the song list table
+function populateSongList() {
+  const songListBody = document.getElementById('songListBody');
+  songs.forEach((song, index) => {
+    const row = document.createElement('tr');
+    row.innerHTML = `
+      <td><img src="${song.coverArt}" alt="${song.songTitle} cover art" style="width: 50px; height: 50px;"></td>
+      <td>${song.artist}</td>
+      <td>${song.songTitle}</td>
+      <td><button class="listen-btn" data-index="${index}">Listen</button></td>
+    `;
+    songListBody.appendChild(row);
+  });
+
+  // Add event listeners to all listen buttons
+  document.querySelectorAll('.listen-btn').forEach(button => {
+    button.addEventListener('click', function() {
+      const songIndex = this.getAttribute('data-index');
+      updateRadioPlayer(parseInt(songIndex));
+      document.getElementById('audioPlayer').play();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'  // Optional: Adds a smooth scrolling effect
+      });
+    });
+  });
+}
+
 // Fetch the songs data from the JSON file
 async function fetchRadioSongs() {
   try {
@@ -9,6 +37,7 @@ async function fetchRadioSongs() {
     const data = await response.json();
     songs = data.songs;
     updateRadioPlayer(currentSongIndex);
+    populateSongList(); // Populate the song list after fetching songs
   } catch (error) {
     console.error("Error fetching radio data:", error);
   }
