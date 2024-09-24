@@ -652,82 +652,7 @@ input[type="date"]:focus {
 }
 
 
-/* SuperMedia Table Styling - Modern and Fluid Design */
-.superMediaRow {
-    border-bottom: 1px solid #d0d0d0;
-    /* Lighter border color */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px;
-    /* Increased padding for better spacing */
-    position: relative;
-    /* Ensure the row is positioned relatively */
-    z-index: 1;
-    /* Lower z-index for the row */
-}
 
-.superMediaPlayButton {
-    flex: 0 0 auto;
-}
-
-.superMediaButton {
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
-
-.superMediaButton:hover {
-    background-color: #0056b3;
-}
-
-.superMediaThumbnail {
-    flex: 0 0 240px;
-    /* Increased width for larger images */
-    padding: 10px;
-    /* Increased padding for better framing */
-}
-
-.superMediaImg {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.superMediaImg:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-}
-
-.superMediaArtist,
-.superMediaTitle {
-    flex: 1;
-    padding: 20px;
-    /* Increased padding for alignment with larger image */
-    color: white;
-    font-size: 18px;
-    text-align: left;
-    font-weight: 600;
-    position: relative;
-    /* Ensure text is positioned relatively */
-    z-index: 2;
-    /* Higher z-index to bring text to the top layer */
-}
-
-/* Ensure the table fills the parent container */
-#mediaTable {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: auto;
-    border-collapse: collapse;
-    margin: 20px 0;
-}
 
 
 /* Main content transition */
@@ -2954,34 +2879,6 @@ td {
     font-size: 14px;
 }
 
-.tag {
-    display: inline-block;
-    padding: 2px 8px;
-    border-radius: 10px;
-    font-size: 12px;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-.tag-new-song {
-    background-color: #4CAF50;
-    color: white;
-}
-
-.tag-podcast {
-    background-color: #2196F3;
-    color: white;
-}
-
-.tag-media {
-    background-color: #FFC107;
-    color: black;
-}
-
-.tag-news {
-    background-color: #FF5722;
-    color: white;
-}
 
 
 /*
