@@ -169,6 +169,14 @@ tr:hover {
     color: var(--text-color);
 }
 
+#songListBody td {
+    text-align: left;
+    vertical-align: top;
+    line-height: 92%;
+    color: white;
+    font-family: var(--font-family);
+}
+
 /* Responsive Table Container */
 /*NOT SURE IF I'LL USE THIS */
 .table-container {
