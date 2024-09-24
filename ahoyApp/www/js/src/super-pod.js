@@ -5,6 +5,9 @@ async function populatePodcastTable() {
     const response = await fetch('data/podcastCollection.json'); // Updated URL
     const data = await response.json();
 
+    // Sort all podcasts by ID in descending order
+    data.podcasts.sort((a, b) => b.id - a.id);
+
     // Get the table body element
     const podcastTableBody = document.getElementById('podcastListBody');
 
@@ -32,9 +35,11 @@ async function populatePodcastTable() {
       // Create a cell for the play button
       const playButtonCell = document.createElement('td');
       const playButton = document.createElement('button');
-      playButton.textContent = "Play";
+      playButton.textContent = "Listen"; // Change button text from "Play" to "Listen"
       playButton.addEventListener('click', () => {
         playPodcast(podcast.mp3url, podcast.title, podcast.thumbnail);
+        // Assuming there is a duration bar element with id 'podcastDurationBar'
+        updateDurationBar(podcast.duration); // You need to define this function
       });
       playButtonCell.appendChild(playButton);
       row.appendChild(playButtonCell);
@@ -42,6 +47,13 @@ async function populatePodcastTable() {
       // Append the row to the table body
       podcastTableBody.appendChild(row);
     });
+
+    // Automatically play the latest episode
+    if (data.podcasts.length > 0) {
+      const latestPodcast = data.podcasts[0]; // First item after sorting by ID descending
+      playPodcast(latestPodcast.mp3url, latestPodcast.title, latestPodcast.thumbnail);
+      updateDurationBar(latestPodcast.duration);
+    }
   } catch (error) {
     console.error('Error fetching or processing the podcast data:', error);
   }
@@ -63,6 +75,23 @@ function playPodcast(mp3url, title, thumbnail) {
 
   // Scroll to the top of the page
   window.scrollTo(0, 0);
+
+  // Update duration bar functionality
+  audioPlayer.onloadedmetadata = () => {
+    document.getElementById('podcastDurationBar').max = audioPlayer.duration;
+  };
+  audioPlayer.ontimeupdate = () => {
+    document.getElementById('podcastDurationBar').value = audioPlayer.currentTime;
+  };
+}
+
+// Function to update the duration bar (you need to add this)
+function updateDurationBar(duration) {
+  const durationBar = document.getElementById('podcastDurationBar');
+  if (durationBar) {
+    durationBar.max = duration;
+    durationBar.value = 0; // Reset bar to start
+  }
 }
 
 // Call the function to populate the table on page load

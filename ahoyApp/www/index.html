@@ -596,11 +596,13 @@
  
       </div>
     
-   <div class="podcast-timeline">
-      <p id="currentTime">00:00</p>
-      <input type="range" id="podcastScrubber" value="0" min="0" max="100" step="1">
-      <p id="duration">00:00</p>
-      </div> 
+<!-- Add a duration bar and other elements expected by the JavaScript -->
+<div class="podcast-timeline">
+  <p id="currentTime">00:00</p>
+  <!-- Update ID to match the JavaScript expectation for the duration bar -->
+  <input type="range" id="podcastDurationBar" value="0" min="0" max="100" step="1">
+  <p id="duration">00:00</p>
+</div>
   
       
     </div>
