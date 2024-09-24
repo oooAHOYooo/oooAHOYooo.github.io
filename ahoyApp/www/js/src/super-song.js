@@ -62,6 +62,12 @@ function updateRadioPlayer(index) {
 
   // Reset the progress bar and play button
   document.getElementById('progress-bar').value = 0;
+
+  // Update duration bar max value and reset current value
+  audioPlayer.onloadedmetadata = () => {
+    document.getElementById('durationBar').max = audioPlayer.duration;
+    document.getElementById('durationBar').value = 0;
+  };
 }
 
 // Function to play or pause the song
@@ -120,11 +126,68 @@ function toggleLike() {
   }
 }
 
+// Function to handle search
+function searchSongs() {
+    const searchInput = document.getElementById('songSearch').value.toLowerCase();
+    const filteredSongs = songs.filter(song => 
+        song.songTitle.toLowerCase().includes(searchInput) ||
+        song.artist.toLowerCase().includes(searchInput)
+    );
+
+    // Clear the current list
+    const songListBody = document.getElementById('songListBody');
+    songListBody.innerHTML = '';
+
+    // Populate with filtered songs
+    filteredSongs.forEach((song, index) => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td><img src="${song.coverArt}" alt="${song.songTitle} cover art" style="width: 50px; height: 50px;"></td>
+            <td>${song.artist}</td>
+            <td>${song.songTitle}</td>
+            <td><button class="listen-btn" data-index="${index}">Listen</button></td>
+        `;
+        songListBody.appendChild(row);
+    });
+
+    // Re-add event listeners to new listen buttons
+    document.querySelectorAll('.listen-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            const songIndex = this.getAttribute('data-index');
+            updateRadioPlayer(parseInt(songIndex));
+            document.getElementById('audioPlayer').play();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    });
+}
+
+// Add event listener to search button
+document.getElementById('searchBtn').addEventListener('click', searchSongs);
+
 // Event listeners
 document.getElementById('playBtn').addEventListener('click', togglePlay);
 document.getElementById('nextBtn').addEventListener('click', nextSong);
 document.getElementById('prevBtn').addEventListener('click', prevSong);
 document.getElementById('likeBtn').addEventListener('click', toggleLike);
+
+// Function to update the duration bar as the song plays
+function updateDurationBar() {
+  const audioPlayer = document.getElementById('audioPlayer');
+  const durationBar = document.getElementById('durationBar');
+  durationBar.value = audioPlayer.currentTime;
+}
+
+// Event listener for the duration bar to seek in the song
+document.getElementById('durationBar').addEventListener('input', function() {
+  const audioPlayer = document.getElementById('audioPlayer');
+  audioPlayer.currentTime = this.value;
+});
+
+// Update the duration bar as the song plays
+document.getElementById('audioPlayer').addEventListener('timeupdate', updateDurationBar);
 
 // Call the fetch function once the page loads
 document.addEventListener('DOMContentLoaded', fetchRadioSongs);
