@@ -933,17 +933,10 @@ han a   <!-- Replace the checkbox with a dropdown for navigation visibility -->
                   <button id="recently-added-button"
                   onclick="navigateToTab('updates-tab')" class="btnPrimary">App Updates</button>
               </div>
-              <div class="version-movie-poster-wrap">
-                <img id="lightbox-trigger"
-                  src="./img/assets/splash-screens/splash-640x960.png"
-                  class="full-height-image">
-              </div>
-              <div id="lightbox"
-                style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.9);">
-                <img id="lightbox-image"
-                  style="margin: auto; display: block; width: 80%; max-width: 700px;" />
-              </div>
-
+              <img id="lightbox-trigger"
+              src="./img/assets/splash-screens/splash-640x960.png" style="width: 100%; height: auto;">
+            
+          
               <h3>Present Web App State = v.2.8c</h3>
 
               <h4>Present Focus</h4>
@@ -1037,11 +1030,13 @@ han a   <!-- Replace the checkbox with a dropdown for navigation visibility -->
                 </div></div>
               
             </div>
+            <!--
             <script type="module">
               import { loginUser } from './js/src/true-firebase-user-logic.js';
           
               document.getElementById('loginButton').addEventListener('click', loginUser);
-          </script>
+            </script>
+            -->
             <!-- END OF THE ACCOUNT TAB-->
 
 
