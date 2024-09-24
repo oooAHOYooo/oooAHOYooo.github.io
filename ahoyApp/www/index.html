@@ -208,22 +208,17 @@
         <button id="playlist3" >Featured Playlist 3</button>
       </div>
       </aside>
+      <hr>
       <aside>
         <h2>Featured Marketplace</h2>
         <ul>
-          <li>Market Item #1</li>
+          <li>Ahoy Mixtape Vol #1</li>
           <li>Market Item #2</li>
           <li>Market Item #3</li>
         </ul>
       </aside>
       <hr>
-      <aside>
-      <div id="left-sidebar-bottom" class="left-sidebar-bottom">
-        <img id="left-sidebar-cover-art" src="./img/assets/default-cover.png" alt="Cover Art" style="width: 100px; height: 100px; object-fit: cover;">
-       <h2>Currently Playing: <br><span id="current-track" class="body-text">No track playing</span></h2>
-        <button id="left-sidebar-play-pause" style="font-size: 24px;">&#9658;</button>
-      </div>
-      </aside>
+   
       <hr>
       <div class="beta-notice">
         <p><strong>Note:</strong> This feature is currently in development and for beta use only. Functionality may be limited or subject to change.</p>
@@ -469,7 +464,7 @@
                <div class="right-sidebar-middle">    <!-- ... existing code ... -->
               <div class="tv-container">
         
-                <!--
+          
                 <div class="tv-wrap">
                   <div id="jw-player-container"></div>
                   <div id="media-display-text">
@@ -479,7 +474,7 @@
                       <p>This is where the Media Title Name will Go</p></div>
                   </div>
                 </div>
-                -->
+             
               </div></div>
               <h2>Full Media Library</h2>
               <div id="search-container">
@@ -793,6 +788,16 @@
             <button onclick="updateProfilePic()">Upload New Picture</button>
         </div>
     </div>
+    <div class="share-buttons glass-effect">
+      <br>
+        <a href="#" id="share-twitter" onclick="shareOnTwitter()" class="glass-button hover-effect" style="text-decoration: none; transition: all 0.3s ease;">
+            <i class="fab fa-twitter"></i> Share on Twitter
+        </a>
+        <br><br><br><br>
+        <a href="#" id="share-reddit" onclick="shareOnReddit()" class="glass-button hover-effect" style="text-decoration: none; transition: all 0.3s ease;">
+            <i class="fab fa-reddit-alien"></i> Share on Reddit
+        </a>
+    </div>
 </div>
    <!--
     ____  _____ ____ _____ _   _ _____   _____  _    ____
@@ -839,10 +844,7 @@ han a   <!-- Replace the checkbox with a dropdown for navigation visibility -->
 </select>
 </div>
                  
-            </div>
-
-               <!-- CASTING TAB -->
-                                                                              
+            </div>                                    
         <!-- FULL RECENTLY ADDED -->
 
             <div id="recent-tab" class="tab-content">
