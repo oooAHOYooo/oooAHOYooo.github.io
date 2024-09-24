@@ -1139,40 +1139,7 @@ han a   <!-- Replace the checkbox with a dropdown for navigation visibility -->
 
     </div>
 
-<!-- Search Results Tab -->
-<div id="search-results-tab" class="tab-content" style="display: none;">
-  <h1>Search Results</h1>
-  <div id="search-results-container">
-    <!-- Search results will be dynamically inserted here -->
-  </div>
-</div>
 
-<script>
-  function performSearch(query) {
-    // Logic to perform search and fetch results
-    // For demonstration, assume results are fetched and stored in `searchResults`
-
-    const resultsContainer = document.getElementById('search-results-container');
-    resultsContainer.innerHTML = ''; // Clear previous results
-
-    if (searchResults.length > 0) {
-      searchResults.forEach(result => {
-        const resultElement = document.createElement('div');
-        resultElement.classList.add('search-result');
-        resultElement.textContent = result; // Assuming result is a string for simplicity
-        resultsContainer.appendChild(resultElement);
-      });
-    } else {
-      resultsContainer.textContent = 'No results found.';
-    }
-
-    // Display the search results tab
-    document.getElementById('search-results-tab').style.display = 'block';
-  }
-
-  // Example usage:
-  // performSearch('query');
-</script>
     <!-- LIVE SCRIPTS -->
 
     <!-- Core Functionality -->
