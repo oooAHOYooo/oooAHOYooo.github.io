@@ -159,6 +159,16 @@ tr:hover {
 
 }
 
+/*SPECIAL TABLES*/
+
+.podcastListBody>td p {
+    padding: 12px 15px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 92%;
+    color: var(--text-color);
+}
+
 /* Responsive Table Container */
 /*NOT SURE IF I'LL USE THIS */
 .table-container {

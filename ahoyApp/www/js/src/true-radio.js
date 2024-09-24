@@ -140,9 +140,12 @@ fetch('./data/true-radioPlay.json')
             likeBtn.innerHTML = '<i class="far fa-heart"></i> LIKE';
         }
 
-        localStorage.setItem('likedSongs', JSON.stringify(likedSongs));
+        // Update liked songs list directly without using localStorage
         updateLikedSongs();
     }
+
+    // Remove the event listener for storage changes
+    // window.removeEventListener('storage', storageEventListener);
 
     function updateLikedSongs() {
         likedSongsList.innerHTML = '';
@@ -343,6 +346,8 @@ fetch('./data/true-radioPlay.json')
             console.error('Playback was prevented:', error);
         });
         populateSongList();
+        // Ensure the audio plays immediately when selected from the song list
+        audioPlayer.autoplay = true; // Set autoplay to true to start playing immediately
     }
 
     function playSongFromLiked(index) {
