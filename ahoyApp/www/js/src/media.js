@@ -38,10 +38,10 @@ document.addEventListener("DOMContentLoaded", function () {
         const row = document.createElement("tr");
         row.className = "mediaRow";
         row.innerHTML = `
-          <td class="mediaThumbnail">
+          <td>
             <img src="${item.thumbnail_link}" alt="Thumbnail" class="mediaThumbnailImage lazy-thumbnail" data-src="${item.thumbnail_link}">
           </td>
-          <td class="mediaDetails">
+          <td>
             <p>${item.artist}</p>
             <p>${item.display_title}</p>
           </td>

@@ -1,8 +1,21 @@
-
   document.addEventListener('DOMContentLoaded', async () => {
     const response = await fetch('./data/mediaCollection.json');
     const mediaCollection = await response.json();
     let currentIndex = 0;
+
+    function populateMediaTable() {
+      const table = document.getElementById('media-table');
+      mediaCollection.forEach((media, index) => {
+        const row = table.insertRow();
+        const thumbnailCell = row.insertCell(0);
+        const titleCell = row.insertCell(1);
+        const playCell = row.insertCell(2);
+
+        thumbnailCell.innerHTML = `<img src="${media.thumbnail_link}" alt="${media.display_title}" style="width:100px;">`;
+        titleCell.textContent = media.display_title;
+        playCell.innerHTML = `<button onclick="loadMedia(${index})">Play</button>`;
+      });
+    }
 
     function loadMedia(index) {
       const currentMedia = mediaCollection[index];
@@ -13,12 +26,6 @@
         description: currentMedia.artist,
         width: "100%",
         aspectratio: "16:9"
-      }).on('complete', () => {
-        currentIndex = (currentIndex + 1) % mediaCollection.length;
-        loadMedia(currentIndex);
-      }).on('time', (event) => {
-        const progress = (event.position / event.duration) * 100;
-        document.getElementById('progress-bar').value = progress;
       });
       document.getElementById('current-title-text').textContent = currentMedia.display_title;
       document.getElementById('current-description-text').textContent = currentMedia.artist;
@@ -79,6 +86,9 @@
         document.getElementById('mute-button').innerHTML = '<i class="fas fa-volume-up"></i>';
       }
     });
+
+    // Populate the table when the document is ready
+    populateMediaTable();
 
     // Load the first media item initially
     loadMedia(currentIndex);
