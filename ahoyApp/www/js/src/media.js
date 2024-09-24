@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Function to load video in JW Player
+  // Function to load video in JWPlayer
   function loadVideoInJWPlayer(videoUrl, thumbnailUrl, artistName, titleName) {
     jwplayer("jw-player-container").setup({
       file: videoUrl,
@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // Fetch and populate media table
   fetch("data/mediaCollection.json")
     .then((response) => response.json())
     .then((data) => {
@@ -38,11 +39,13 @@ document.addEventListener("DOMContentLoaded", function () {
         row.className = "mediaRow";
         row.innerHTML = `
           <td class="mediaThumbnail">
-            <img src="${item.thumbnail_link}" alt="Thumbnail" class="mediaThumbnailImage">
+            <img src="${item.thumbnail_link}" alt="Thumbnail" class="mediaThumbnailImage lazy-thumbnail" data-src="${item.thumbnail_link}">
           </td>
           <td class="mediaDetails">
-            <p class="mediaArtist">${item.artist}</p>
-            <p class="mediaTitle">${item.display_title}</p>
+            <p>${item.artist}</p>
+            <p>${item.display_title}</p>
+          </td>
+          <td>
             <button class="playMediaButton" onclick="loadVideoInJWPlayer('${item.mp4_link}', '${item.thumbnail_link}', '${item.artist}', '${item.display_title}')">Play</button>
           </td>
         `;
