@@ -3,11 +3,9 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(response => response.json())
         .then(data => {
             const podcasts = data.podcasts;
-            let currentPodcastIndex = podcasts.reduce((maxIndex, podcast, index) => {
-                return podcast.id > podcasts[maxIndex].id ? index : maxIndex;
-            }, 0);
+            let currentPodcastIndex = 0;
 
-            const audioPlayer = document.getElementById('audioPlayer');
+            const audioPlayer = document.getElementById('podcastPlayer');
             const podcastTitle = document.getElementById('podcast-title');
             const podcastDescription = document.getElementById('podcast-description');
             const podcastThumbnail = document.getElementById('podcast-thumbnail');
@@ -31,33 +29,24 @@ document.addEventListener('DOMContentLoaded', function() {
             let totalComments = 0;
 
             function loadPodcast(podcast) {
-                podcastTitle.textContent = `${podcast.title}`;
-                podcastDescription.textContent = `${podcast.description}`;
+                podcastTitle.textContent = `PODCAST TITLE: ${podcast.title}`;
+                podcastDescription.textContent = `DESCRIPTION: ${podcast.description}`;
                 podcastThumbnail.src = podcast.thumbnail;
                 podcastThumbnail.alt = podcast.title;
                 audioPlayer.src = podcast.mp3url;
-                audioPlayer.load();
-                audioPlayer.play().then(() => {
-                    playBtn.textContent = '[❚❚ PAUSE]';
-                }).catch(error => {
-                    console.error('Error attempting to play:', error);
-                });
                 updateCommentsList();
                 playBtn.textContent = '[► PLAY]';
                 populatePodcastList();
                 likeBtn.dataset.podcastId = podcast.id;
                 updateLikeButtonState(podcast.id);
-                updateNavBar(podcast.title, "Podcast");
             }
 
             function togglePlay() {
                 if (audioPlayer.paused) {
-                    AudioManager.requestPlay(audioPlayer);
                     audioPlayer.play();
                     playBtn.textContent = '[❚❚ PAUSE]';
                 } else {
                     audioPlayer.pause();
-                    AudioManager.releasePlay(audioPlayer);
                     playBtn.textContent = '[► PLAY]';
                 }
             }
@@ -105,13 +94,11 @@ document.addEventListener('DOMContentLoaded', function() {
                             </button>
                         </div>
                     `;
+                    const playBtn = li.querySelector('.play-btn');
+                    const deleteBtn = li.querySelector('.delete-btn');
+                    playBtn.addEventListener('click', () => playPodcastFromLiked(index));
+                    deleteBtn.addEventListener('click', () => removeLikedPodcast(index));
                     likedPodcastsList.appendChild(li);
-                });
-                document.querySelectorAll('.play-btn').forEach((button, index) => {
-                    button.addEventListener('click', () => playPodcastFromLiked(index));
-                });
-                document.querySelectorAll('.delete-btn').forEach((button, index) => {
-                    button.addEventListener('click', () => removeLikedPodcast(index));
                 });
                 likedPodcastsCount.textContent = likedPodcasts.length;
             }
@@ -198,29 +185,38 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             function populatePodcastList(podcastsToShow = podcasts) {
-                podcastListBody.innerHTML = '<table>';
-
+                podcastListBody.innerHTML = '';
+                
                 podcastsToShow.forEach((podcast, index) => {
-                    const row = document.createElement('tr');
+                    const row = document.createElement('div');
                     row.className = 'podcast-row';
                     row.innerHTML = `
-                        <td>
-                            <img src="${podcast.thumbnail}" alt="${podcast.title}" class="podcast-cover-max" data-index="${index}" onclick="playPodcastFromList(${index}, true)">
-                        </td>
-                        <td>
-                            <p>${podcast.title}</p>
-                            <button class="play-podcast-btn" data-index="${index}" onclick="playPodcastFromList(${index})">
-                                ${index === currentPodcastIndex ? '<i class="fas fa-pause"></i>' : '<i class="fas fa-play"></i>'}
-                            </button>
-                        </td>
+                        <div class="podcast-artwork">
+                            <img src="${podcast.thumbnail}" alt="${podcast.title}" class="podcast-cover-max play-podcast-btn" data-index="${index}">
+                        </div>
+                        <div class="podcast-details">
+                            <div class="podcast-title"><p class="body-text-bold">${podcast.title}</p></div>
+                            <div class="podcast-actions">
+                                <button class="play-podcast-btn" data-index="${index}">
+                                    ${index === currentPodcastIndex ? '<i class="fas fa-pause"></i>' : '<i class="fas fa-play"></i>'}
+                                </button>
+                            </div>
+                        </div>
                     `;
                     podcastListBody.appendChild(row);
                 });
 
-                podcastListBody.innerHTML += '</table>';
+                // Add event listeners to play buttons, podcast art, and the entire row
+                const podcastRows = podcastListBody.querySelectorAll('.podcast-row');
+                podcastRows.forEach(row => {
+                    row.addEventListener('click', (e) => {
+                        const podcastIndex = parseInt(e.currentTarget.querySelector('.play-podcast-btn').getAttribute('data-index'));
+                        playPodcastFromList(podcastIndex);
+                    });
+                });
             }
 
-            function playPodcastFromList(index, scrollToTop = true) {
+            function playPodcastFromList(index) {
                 currentPodcastIndex = index;
                 loadPodcast(podcasts[currentPodcastIndex]);
                 audioPlayer.play().then(() => {
@@ -228,16 +224,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 }).catch(error => {
                     console.error('Playback was prevented:', error);
                 });
-
-                // Scroll to the top when a podcast is played from the list
-                if (scrollToTop) {
-                    window.scrollTo({
-                        top: 0,
-                        behavior: 'smooth'
-                    });
-                }
-
                 populatePodcastList();
+                
+                // Scroll to the top of the page smoothly
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
             }
 
             // Event listeners
@@ -251,9 +244,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 audioPlayer.volume = volumeBar.value;
             });
 
-            // Initial setup
-            populatePodcastList();
+            // Initialize
             loadPodcast(podcasts[currentPodcastIndex]);
+            updateLikedPodcasts();
+            populatePodcastList();
         })
         .catch(error => console.error('Error fetching the podcast data:', error));
 });
