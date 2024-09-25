@@ -77,6 +77,12 @@ function playPodcast(mp3url, title, thumbnail) {
   // Scroll to the top of the page
   window.scrollTo(0, 0);
 
+  // Check if there's a saved time for this podcast and set it
+  const savedTime = localStorage.getItem(mp3url);
+  if (savedTime) {
+    audioPlayer.currentTime = parseFloat(savedTime);
+  }
+
   // Update duration bar functionality
   audioPlayer.onloadedmetadata = () => {
     document.getElementById('podcastDurationBar').max = audioPlayer.duration;
@@ -85,6 +91,14 @@ function playPodcast(mp3url, title, thumbnail) {
   audioPlayer.ontimeupdate = () => {
     document.getElementById('podcastDurationBar').value = audioPlayer.currentTime;
     document.getElementById('currentTime').textContent = formatTime(audioPlayer.currentTime);
+  };
+
+  // Save the current time to local storage when the podcast is paused or ends
+  audioPlayer.onpause = () => {
+    localStorage.setItem(mp3url, audioPlayer.currentTime);
+  };
+  audioPlayer.onended = () => {
+    localStorage.removeItem(mp3url); // Remove the saved time when the podcast ends
   };
 }
 
