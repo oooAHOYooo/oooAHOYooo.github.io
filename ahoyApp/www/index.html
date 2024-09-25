@@ -589,20 +589,28 @@
           <p id="podcast-description"></p>
         </div>
       </div>
+      <!-- <div id="podcastTimeDisplay" style="font-family: var(--font-family), serif; font-size: var(--font-size); text-transform: uppercase; color: var(--border-color);">
+        Current Time: <span id="currentTime">0:00</span> <br> Total Duration: <span id="totalDuration">0:00</span>
+      </div> -->
       <div class="radio-controls">
         <button id="playPodcastBtn" onclick="togglePlay()">[► PLAY]</button>
+    
         <button id="likePodcastBtn"><i class="far fa-heart"></i> LIKE</button>
+        <button id="backwardPodcastBtn" onclick="skipBackward(15)">[-15s]</button>
+        <button id="forwardPodcastBtn" onclick="skipForward(15)">[+15s]</button>
    
  
       </div>
     
 <!-- Add a duration bar and other elements expected by the JavaScript -->
+<!--
 <div class="podcast-timeline">
   <p id="currentTime">00:00</p>
-  <!-- Update ID to match the JavaScript expectation for the duration bar -->
+
   <input type="range" id="podcastDurationBar" value="0" min="0" max="100" step="1">
   <p id="duration">00:00</p>
 </div>
+-->
   
       
     </div>
@@ -943,12 +951,10 @@ han a   <!-- Replace the checkbox with a dropdown for navigation visibility -->
               src="./img/assets/splash-screens/splash-640x960.png" style="width: 100%; height: auto;">
             
           
-              <h3>Present Web App State = v.2.8c</h3>
+              <h3>Present Web App State = v.2.8D</h3>
 
               <h4>Present Focus</h4>
-              <p>Redesigning the entire layout - stay tuned - really going for
-                that
-                mvp</p>
+              <p>Redesigning getting the audio features working properly.</p>
               <h1>Last 100 Updates to our Repo</h1>
               <hr>
               <div id="commits-list"></div>
@@ -967,13 +973,13 @@ han a   <!-- Replace the checkbox with a dropdown for navigation visibility -->
               <div class="beta-notice">
                 <p><strong>Note:</strong> This feature is currently in development and for beta use only. Functionality may be limited or subject to change.</p>
               </div>
-              <div class="active-profile">
+              <!-- <div class="active-profile">
                 <h2 style="font-size: 2.2em; word-wrap: break-word;">> YOUR ACTIVE PROFILE:</h2>
                 <p id="activeUser" style="font-size: 0.9em; word-wrap: break-word;">USER: <span id="username">Loading...</span></p>
                 <p id="userLevel" style="font-size: 0.9em; word-wrap: break-word;">LEVEL: <span id="level">Loading...</span></p>
                 <p id="userXP" style="font-size: 0.9em; word-wrap: break-word;">XP: <span id="xp">Loading...</span></p>
                 <p id="userComments" style="font-size: 0.9em; word-wrap: break-word;">COMMENTS: <span id="commentsCount">Loading...</span></p>
-              </div>
+              </div> -->
 
 
               <div class="liked-songs-widget">

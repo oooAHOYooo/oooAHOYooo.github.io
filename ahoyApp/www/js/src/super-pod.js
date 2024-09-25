@@ -27,6 +27,7 @@ async function populatePodcastTable() {
 
       // Create the title cell with a paragraph tag
       const titleCell = document.createElement('td');
+      titleCell.className = 'podcast-title-cell'; // Add a special class to the td
       const titleParagraph = document.createElement('p');
       titleParagraph.textContent = podcast.title;
       titleCell.appendChild(titleParagraph);
@@ -79,10 +80,19 @@ function playPodcast(mp3url, title, thumbnail) {
   // Update duration bar functionality
   audioPlayer.onloadedmetadata = () => {
     document.getElementById('podcastDurationBar').max = audioPlayer.duration;
+    document.getElementById('totalDuration').textContent = formatTime(audioPlayer.duration);
   };
   audioPlayer.ontimeupdate = () => {
     document.getElementById('podcastDurationBar').value = audioPlayer.currentTime;
+    document.getElementById('currentTime').textContent = formatTime(audioPlayer.currentTime);
   };
+}
+
+// Helper function to format time in minutes and seconds
+function formatTime(time) {
+  const minutes = Math.floor(time / 60);
+  const seconds = Math.floor(time % 60);
+  return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
 }
 
 // Function to update the duration bar (you need to add this)
@@ -92,6 +102,22 @@ function updateDurationBar(duration) {
     durationBar.max = duration;
     durationBar.value = 0; // Reset bar to start
   }
+}
+
+// Function to skip forward in the podcast by a specified number of seconds
+function skipForward(seconds) {
+  const audioPlayer = document.getElementById('audioPlayer');
+  if (audioPlayer) {
+    audioPlayer.currentTime += seconds; // Increment the current time
+  }
+}
+
+// Function to skip backward in the podcast by a specified number of seconds
+function skipBackward(seconds) {
+    const audioPlayer = document.getElementById('audioPlayer');
+    if (audioPlayer) {
+        audioPlayer.currentTime -= seconds; // Decrement the current time
+    }
 }
 
 // Call the function to populate the table on page load

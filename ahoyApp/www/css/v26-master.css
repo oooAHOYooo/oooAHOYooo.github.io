@@ -33,7 +33,7 @@
     --p-line-height: 173%;
     --p-font-weight: 300;
     --h1-font-weight: 400;
-    --h2-font-weight: 500;
+    --h2-font-weight: 300;
     --h3-font-weight: 400;
     --h4-font-weight: 400;
     --h5-font-weight: 400;
@@ -154,6 +154,13 @@ td {
 
 }
 
+td {
+    min-width: 20px;
+    max-width: 40px;
+    margin: 0px;
+    line-height: 97%;
+}
+
 tr:hover {
     background-color: rgba(255, 255, 255, 0.1);
 
@@ -174,6 +181,14 @@ tr:hover {
     vertical-align: top;
     line-height: 92%;
     color: white;
+    font-family: var(--font-family);
+}
+
+.podcast-title-cell {
+    min-width: 60px;
+    overflow: hidden;
+    text-align: left;
+    line-height: 72%;
     font-family: var(--font-family);
 }
 
@@ -1266,10 +1281,7 @@ input[type="date"]:focus {
     font-size: 1.2em;
 }
 
-td {
-    max-width: 40px;
-    margin: 0px;
-}
+
 
 
 
@@ -2049,10 +2061,9 @@ td {
 
 /* Add these styles to match the radio widget */
 #podcast-tab .radio-widget {
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.354);
     border-radius: 15px;
     padding: 30px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(15px);
     border: 2px solid rgba(255, 255, 255, 0.1);
     max-width: 800px;
@@ -2135,7 +2146,7 @@ td {
     justify-content: center;
     align-items: center;
     background: transparent !important;
-    color: #00FFFF !important;
+    color: var(--border-color) !important;
     border: none !important;
     font-size: 16px !important;
     padding: 8px !important;
@@ -2204,7 +2215,7 @@ td {
 }
 
 .radio-widget {
-    background: rgba(0, 0, 0, 0.8) !important;
+    background: rgba(0, 0, 0, 0.28) !important;
     border-radius: 15px !important;
     padding: 20px !important;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.5) !important;
@@ -2636,9 +2647,8 @@ td {
 
 .podcast-thumbnail-container {
     max-width: 100%;
-    max-height: 252px;
-    /* Adjust this value as needed */
-    border-radius: 54px;
+    max-height: 272px;
+    border-radius: 20px;
     overflow: hidden;
 }
 
@@ -2685,43 +2695,7 @@ td {
 
 
 
-.podcast-title-class {
-    color: var(--border-color);
-    width: 100%;
-    min-width: 250px;
-    max-width: 80%;
-    font-family: 'VT323', monospace;
-    font-size: 18px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    padding: 5px;
-    border: 3px solid var(--border-color);
-    transition: all 0.3s ease;
-}
 
-
-.play-podcast-btn-agStyle {
-    background-color: transparent;
-    color: var(--text-color);
-    border: 2px solid var(--text-color);
-    padding: 5px 10px;
-    font-family: 'VT323', monospace;
-    font-size: 14px;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.play-podcast-btn-agStyle:hover {
-    color: var(--border-color);
-    border-style: dashed;
-    border-color: var(--border-color);
-}
-
-.play-podcast-btn-agStyle:active {
-    transform: translateY(2px);
-    box-shadow: 0 0 5px var(--text-color);
-}
 
 
 /*REMOTE CONTROLS */

@@ -1,6 +1,15 @@
 {
   "podcasts": [
     {
+      "id": 23,
+      "title": "The Rob Show #34 - Jerry Ornelas",
+      "description": "Jerry Ornelas joins Rob for an engaging conversation in this episode of The Rob Show",
+      "date": "2024-09-26",
+      "active": false,
+      "mp3url": "https://storage.googleapis.com/ahoy-podcast-collection/ready-ep34-Jerry-The%20Rob%20Show%20-%20Fall%202024.mp3",
+      "thumbnail": "https://storage.googleapis.com/ahoy-podcast-collection/ROB%20EPISODE%2034%20-%20JERRY%20ORNELAS.jpg"
+    },
+    {
       "id": 22,
       "title": "The Rob Show #33 - Rob Meglio",
       "description": "Rob Meglio is an actor, writer, and comedian - he's been in a few movies - and he's a regular on the New Haven scene",
