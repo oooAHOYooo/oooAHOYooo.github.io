@@ -192,6 +192,10 @@ tr:hover {
     font-family: var(--font-family);
 }
 
+.podcast-title {
+    font-weight: 300;
+}
+
 /* Responsive Table Container */
 /*NOT SURE IF I'LL USE THIS */
 .table-container {
@@ -2091,14 +2095,10 @@ input[type="date"]:focus {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
 
-#podcast-tab .song-details h2,
-#podcast-tab .song-details p {
-    color: #e0e0e0;
-    margin: 5px 0;
-}
 
 #podcast-tab .song-details h2 {
     font-size: 24px;
+    font-weight: 300;
 }
 
 #podcast-tab .song-details p {
@@ -2261,17 +2261,7 @@ input[type="date"]:focus {
     justify-content: center;
 }
 
-#songTitle {
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
 
-#artist {
-    font-size: 18px;
-    color: #b3b3b3;
-    text-align: left !important;
-}
 
 .radio-controls {
     display: flex;
