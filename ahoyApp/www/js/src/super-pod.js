@@ -19,6 +19,7 @@ async function populatePodcastTable() {
 
       // Create a cell for the thumbnail
       const thumbnailCell = document.createElement('td');
+      thumbnailCell.className = 'podcast-thumbnail-cell'; // Added distinct class for thumbnail cell
       const thumbnailImg = document.createElement('img');
       thumbnailImg.src = podcast.thumbnail;
       thumbnailImg.style.width = '100px'; // Set a fixed width for the image
@@ -35,6 +36,7 @@ async function populatePodcastTable() {
 
       // Create a cell for the play button
       const playButtonCell = document.createElement('td');
+      playButtonCell.className = 'podcast-play-button-cell'; // Added distinct class for play button cell
       const playButton = document.createElement('button');
       playButton.textContent = "Listen"; // Change button text from "Play" to "Listen"
       playButton.addEventListener('click', () => {

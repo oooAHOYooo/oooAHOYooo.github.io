@@ -97,6 +97,7 @@ h1 {
     font-family: var(--font-family);
     font-weight: var(--h1-font-weight);
     color: var(--text-color);
+    text-align: center;
 }
 
 h2 {
@@ -104,6 +105,7 @@ h2 {
     font-family: var(--font-family);
     font-weight: var(--h2-font-weight);
     color: var(--text-color);
+    text-align: center;
 }
 
 h3 {
@@ -137,6 +139,13 @@ h6 {
 
 hr {
     border: 1px solid var(--border-color);
+}
+
+/*HEADING VARIATIONS*/
+
+.h2-left {
+    text-align: left;
+    padding-left: 5px;
 }
 
 /*CHAPTER 4 TABLES */
@@ -184,17 +193,7 @@ tr:hover {
     font-family: var(--font-family);
 }
 
-.podcast-title-cell {
-    min-width: 60px;
-    overflow: hidden;
-    text-align: left;
-    line-height: 72%;
-    font-family: var(--font-family);
-}
 
-.podcast-title {
-    font-weight: 300;
-}
 
 /* Responsive Table Container */
 /*NOT SURE IF I'LL USE THIS */
@@ -350,13 +349,12 @@ button:hover {
 
 
 
-#tabSortza {
+/* #tabSortza {
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding-top: 16px;
-}
+} */
 
 
 
@@ -2096,15 +2094,6 @@ input[type="date"]:focus {
 }
 
 
-#podcast-tab .song-details h2 {
-    font-size: 24px;
-    font-weight: 300;
-}
-
-#podcast-tab .song-details p {
-    font-size: 18px;
-}
-
 #podcast-tab .vcr-timeline {
     background: #333;
     height: 15px;
@@ -2301,17 +2290,7 @@ input[type="date"]:focus {
     border-radius: 24px;
 }
 
-.song-details h2,
-.song-details p {
-    color: #fff !important;
-    margin: 0 !important;
-}
 
-.song-details h2 {
-    font-size: 16px !important;
-    font-weight: 700 !important;
-    text-align: left;
-}
 
 .song-details p {
     font-size: 14px !important;
@@ -2447,9 +2426,6 @@ input[type="date"]:focus {
     }
 }
 
-.vcr-handle:hover {
-    animation: pulse 1s infinite, handleColorChange 15s infinite alternate !important;
-}
 
 .radio-controls {
     position: sticky;
@@ -2459,17 +2435,7 @@ input[type="date"]:focus {
     flex-wrap: wrap;
 }
 
-.radio-controls button {
-    background: transparent !important;
-    color: #00FFFF !important;
-    border: none !important;
-    font-size: 16px !important;
-    padding: 8px !important;
-    margin: 0 8px !important;
-    cursor: pointer !important;
-    transition: color 0.2s !important;
-    flex: 1 0 auto;
-}
+
 
 @media (max-width: 768px) {
     .radio-controls {
@@ -2479,15 +2445,7 @@ input[type="date"]:focus {
         width: 100%;
     }
 
-    .radio-controls button {
-        width: 100%;
-        height: 62px;
-        /* Set a fixed height for all buttons */
-        margin: 0 !important;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+
 }
 
 .radio-controls button:hover {
@@ -2634,6 +2592,32 @@ input[type="date"]:focus {
 #song-list li:hover {
     color: #fff !important;
 }
+
+
+.podcast-title {
+    text-align: left !important;
+}
+
+/*PODCAST STYLES*/
+
+.podcast-thumbnail-cell {
+    padding: 10px;
+    text-align: center;
+}
+
+.podcast-title-cell {
+    padding: 15px;
+    font-weight: var(--font-weight);
+    color: var(--text-color);
+}
+
+.podcast-play-button-cell {
+    padding: 10px;
+    text-align: right;
+}
+
+
+/*PODCAST THUMBNAIL STYLES*/
 
 .podcast-thumbnail-container {
     max-width: 100%;
