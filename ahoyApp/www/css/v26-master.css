@@ -63,8 +63,8 @@ p {
     word-wrap: break-word;
     max-width: 100%;
     overflow-wrap: break-word;
-    margin-bottom: 1rem;
     color: var(--text-color);
+
 }
 
 /* CHAPTER 2 = ELEMENTALS */
@@ -321,7 +321,7 @@ button:hover {
 
 .tab-content {
     position: absolute;
-    padding: 4.5px;
+    /* padding: 4.5px; */
     border-left: 1px solid var(--border-color);
     border-right: 1px solid var(--border-color);
     border-top: 1px solid var(--border-color);
@@ -374,6 +374,15 @@ button:hover {
 
 }
 
+#artist {
+    text-align: center;
+    margin-top: 0px;
+}
+
+.songTitle {
+    text-align: center;
+    margin: 0px;
+}
 
 
 /* #tabSortza {
@@ -2089,17 +2098,6 @@ input[type="date"]:focus {
 
 
 
-
-.radio-widget {
-    background: rgba(0, 0, 0, 0.28) !important;
-    border-radius: 15px !important;
-    padding: 20px !important;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5) !important;
-    backdrop-filter: blur(15px) !important;
-    border: 2px solid rgba(255, 255, 255, 0.1) !important;
-    max-width: 800px !important;
-    margin: 0 auto !important;
-}
 
 
 

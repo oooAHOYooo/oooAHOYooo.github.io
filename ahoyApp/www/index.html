@@ -504,47 +504,50 @@
                                       <p id="artist">ARTIST: ________</p>
                                   </div>
                               </div>
-                          </div>
-                          <div class="duration-control">
-                            <!-- Added styles for a glass-like appearance -->
-                            <style>
-                              .styled-duration-bar {
-                                appearance: none;
-                                width: 90%;
-                                height: 15px;
-                                border-radius: 10px;
-                                background: rgba(255, 255, 255, 0.6);
-                                backdrop-filter: blur(10px);
-                                border: 1px solid rgba(255, 255, 255, 0.3);
-                                cursor: pointer;
-                              }
-                              .styled-duration-bar::-webkit-slider-thumb {
-                                appearance: none;
-                                width: 25px;
-                                height: 25px;
-                                border-radius: 50%;
-                                background: #ffffff;
-                                cursor: pointer;
-                              }
-                              .styled-duration-bar::-moz-range-thumb {
-                                width: 25px;
-                                height: 25px;
-                                border: none;
-                                border-radius: 50%;
-                                background: #ffffff;
-                                cursor: pointer;
-                              }
-                            </style>
-                            <input type="range" id="durationBar" min="0" max="100" step="1" value="0" class="styled-duration-bar">
-                        </div>
-                      
-                            
-                          <div class="radio-controls">
-                              <button id="playBtn">[► PLAY]</button>
-                              <button id="likeBtn"><i class="far fa-heart"></i> LIKE</button>
-                              <button id="prevBtn">[◄◄ PREV]</button>
-                              <button id="nextBtn">[► NEXT]</button>
-                          </div>
+                              <div class="duration-control">
+                                <!-- Added styles for a glass-like appearance -->
+                                <style>
+                                  .styled-duration-bar {
+                                    appearance: none;
+                                    width: 90%;
+                                    height: 15px;
+                                    border-radius: 10px;
+                                    background: rgba(255, 255, 255, 0.6);
+                                    backdrop-filter: blur(10px);
+                                    border: 1px solid rgba(255, 255, 255, 0.3);
+                                    cursor: pointer;
+                                  }
+                                  .styled-duration-bar::-webkit-slider-thumb {
+                                    appearance: none;
+                                    width: 25px;
+                                    height: 25px;
+                                    border-radius: 50%;
+                                    background: #ffffff;
+                                    cursor: pointer;
+                                  }
+                                  .styled-duration-bar::-moz-range-thumb {
+                                    width: 25px;
+                                    height: 25px;
+                                    border: none;
+                                    border-radius: 50%;
+                                    background: #ffffff;
+                                    cursor: pointer;
+                                  }
+                                </style>
+                                <input type="range" id="durationBar" min="0" max="100" step="1" value="0" class="styled-duration-bar">
+                            </div>
+                          
+                                
+                              <div class="radio-controls">
+                                  <button id="playBtn">[► PLAY]</button>
+                                  <button id="likeBtn"><i class="far fa-heart"></i> LIKE</button>
+                                  <button id="prevBtn">[◄◄ PREV]</button>
+                                  <button id="nextBtn">[► NEXT]</button>
+                              </div>
+                          
+                          
+                            </div>
+                   
                           </div>
                        
                         <div class="liked-songs-widget">
@@ -821,15 +824,16 @@
 
      <!-- Settings TAB -->
 <div id="settings-tab" class="tab-content">
+  <h1>Settings</h1>
   <div class="beta-notice">
     <p><strong>Note:</strong> This feature is currently in development and for beta use only. Functionality may be limited or subject to change.</p>
   </div>
-  <h1>Settings</h1>
+
   <hr>
   <!-- Theme Switcher -->
   <h2>Theme Switcher</h2>
   <p>Current Theme: <span id="theme-title"></span></p>
-  <label for="theme-dropdown">Select Theme:</label>
+  <label for="theme-dropdown" style="width: 100%;">Select Theme:</label>
   <br>
   <select id="theme-dropdown" class="theme-dropdown">
       <!-- Options will be populated by JavaScript -->
@@ -849,10 +853,10 @@
   <hr>
   <h3>Top Navigation Visibility</h3>
   <p>Toggle the visibility of the top navigation bar</p>
-han a   <!-- Replace the checkbox with a dropdown for navigation visibility -->
-<select id="toggle-top-nav">
-  <option value="active">Active</option>
+<select id="toggle-top-nav" style="width: 100%;">
+ 
   <option value="not">Not Active</option>
+  <option value="active">Active</option>
 </select>
 </div>
                  
@@ -993,11 +997,11 @@ han a   <!-- Replace the checkbox with a dropdown for navigation visibility -->
               </div>
               <hr>
               <div class="account-settings-container"> 
-              <button class="btnPrimary" onclick="navigateToTab('login-tab')" style="width: 100%; margin-bottom: 10px;">Login</button>
+              <button class="btnPrimary login-button" onclick="navigateToTab('login-tab')">Login</button>
               <!-- Account Settings -->
-              <h3 style="font-size: 1.1em; word-wrap: break-word;">Account Settings</h3>
+              <h3 class="account-settings-header">Account Settings</h3>
               <button class="btnPrimary" onclick="navigateToTab('manage-account')">Manage Account</button>
-              <button class="btnPrimary" onclick="logout()" style="width: 100%; margin-bottom: 10px;">Log Out</button>
+              <button class="btnPrimary logout-button" onclick="logout()">Log Out</button>
 
               <div id="user-profile-dropdown" style="display:none;">
                 <!-- other profile elements -->
