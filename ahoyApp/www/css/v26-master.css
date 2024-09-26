@@ -19,6 +19,14 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;900&display=swap');
 
+#exit-button {
+    display: none;
+}
+
+a {
+    text-decoration: none;
+}
+
 
 :root {
     --font-family: 'Barlow', sans-serif;
