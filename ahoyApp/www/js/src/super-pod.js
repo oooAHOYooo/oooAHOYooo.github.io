@@ -51,6 +51,15 @@ async function populatePodcastTable() {
       podcastTableBody.appendChild(row);
     });
 
+    // Display the latest episode details without playing it
+    if (data.podcasts.length > 0) {
+      const latestPodcast = data.podcasts[0]; // First item after sorting by ID descending
+      const podcastTitle = document.getElementById('podcast-title');
+      const podcastThumbnail = document.getElementById('podcast-thumbnail');
+      podcastTitle.textContent = latestPodcast.title;
+      podcastThumbnail.src = latestPodcast.thumbnail;
+    }
+
     // Automatically play the latest episode
     if (data.podcasts.length > 0) {
       const latestPodcast = data.podcasts[0]; // First item after sorting by ID descending

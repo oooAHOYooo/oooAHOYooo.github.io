@@ -347,6 +347,33 @@ button:hover {
     /* Center the content */
 }
 
+/*CHAPTER 8 - MUSIC AND PODCAST DISPLAY" */
+
+.song-info {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.song-info>img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5.5px;
+}
+
+.player-container {
+    background: linear-gradient(to bottom, #28282876, #1818186c) !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 60px rgba(0, 0, 0, 0.5) !important;
+    padding: 10px;
+
+
+}
+
 
 
 /* #tabSortza {
@@ -2074,15 +2101,6 @@ input[type="date"]:focus {
     margin: 0 auto !important;
 }
 
-.player-container {
-    background: linear-gradient(to bottom, #28282876, #1818186c) !important;
-    border-radius: 8px !important;
-    padding: 20px !important;
-    box-shadow: 0 4px 60px rgba(0, 0, 0, 0.5) !important;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
 
 
 
@@ -2096,12 +2114,6 @@ input[type="date"]:focus {
 }
 
 
-
-.song-details {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
 
 
 
@@ -2144,12 +2156,6 @@ input[type="date"]:focus {
 }
 
 
-
-.song-details p {
-    font-size: 14px !important;
-    color: #b3b3b3 !important;
-    margin-bottom: 11px;
-}
 
 .vcr-timeline {
     background: linear-gradient(90deg, #00FFFF, #FF00FF) !important;
