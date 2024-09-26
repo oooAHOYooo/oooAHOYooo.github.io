@@ -56,7 +56,7 @@ p {
     font-size: var(--p-font-size);
     line-height: var(--p-line-height);
     font-family: var(--font-family);
-    margin: 0;
+    margin: 0px;
     padding: var(--p-padding);
     text-align: justify;
     hyphens: auto;
@@ -106,6 +106,7 @@ h2 {
     font-weight: var(--h2-font-weight);
     color: var(--text-color);
     text-align: center;
+    margin: 0px;
 }
 
 h3 {
@@ -113,6 +114,7 @@ h3 {
     font-family: var(--font-family);
     font-weight: var(--h3-font-weight);
     color: var(--text-color);
+    text-align: center;
 }
 
 h4 {
@@ -120,6 +122,7 @@ h4 {
     font-family: var(--font-family);
     font-weight: var(--h4-font-weight);
     color: var(--text-color);
+    text-align: center;
 }
 
 h5 {
@@ -134,6 +137,7 @@ h6 {
     font-family: var(--font-family);
     font-weight: var(--h6-font-weight);
     color: var(--text-color);
+    text-align: center;
 }
 
 
@@ -377,13 +381,22 @@ button:hover {
 #artist {
     text-align: center;
     margin-top: 0px;
+    padding-top: 0px;
 }
 
-.songTitle {
+#songTitle {
     text-align: center;
-    margin: 0px;
+    color: var(--text-color);
+    font-size: 1.5em;
+    margin-top: 10px;
 }
 
+#podcast-title {
+    text-align: center;
+    color: var(--text-color);
+    font-size: 1.5em;
+    margin-top: 10px;
+}
 
 /* #tabSortza {
     display: flex;
@@ -2113,17 +2126,35 @@ input[type="date"]:focus {
 
 
 
-
-
-.radio-controls {
-    display: flex;
-    align-items: center;
-    margin-top: 20px;
+.styled-duration-bar {
+    appearance: none;
+    width: 90%;
+    height: 7.5px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    cursor: pointer;
 }
 
-.radio-controls button {
-    margin-right: 10px;
+.styled-duration-bar::-webkit-slider-thumb {
+    appearance: none;
+    width: 12.5px;
+    height: 12.5px;
+    border-radius: 50%;
+    background: var(--border-color);
+    cursor: pointer;
 }
+
+.styled-duration-bar::-moz-range-thumb {
+    width: 12.5px;
+    height: 12.5px;
+    border: none;
+    border-radius: 50%;
+    background: #ffffff;
+    cursor: pointer;
+}
+
 
 .volume-control {
     display: flex;

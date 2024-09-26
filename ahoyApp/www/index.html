@@ -507,32 +507,7 @@
                               <div class="duration-control">
                                 <!-- Added styles for a glass-like appearance -->
                                 <style>
-                                  .styled-duration-bar {
-                                    appearance: none;
-                                    width: 90%;
-                                    height: 15px;
-                                    border-radius: 10px;
-                                    background: rgba(255, 255, 255, 0.6);
-                                    backdrop-filter: blur(10px);
-                                    border: 1px solid rgba(255, 255, 255, 0.3);
-                                    cursor: pointer;
-                                  }
-                                  .styled-duration-bar::-webkit-slider-thumb {
-                                    appearance: none;
-                                    width: 25px;
-                                    height: 25px;
-                                    border-radius: 50%;
-                                    background: #ffffff;
-                                    cursor: pointer;
-                                  }
-                                  .styled-duration-bar::-moz-range-thumb {
-                                    width: 25px;
-                                    height: 25px;
-                                    border: none;
-                                    border-radius: 50%;
-                                    background: #ffffff;
-                                    cursor: pointer;
-                                  }
+                          
                                 </style>
                                 <input type="range" id="durationBar" min="0" max="100" step="1" value="0" class="styled-duration-bar">
                             </div>
@@ -561,7 +536,7 @@
                               <input type="text" id="songSearch" placeholder="Enter search query...">
                               <button id="searchBtn">[SEARCH]</button>
                           </div>
-                        </div>
+                        </div><hr>
                         <div class="song-list">
                           <h2>FULL SONG LIST:</h2>
                           <div class="table-responsive">
