@@ -136,3 +136,17 @@ function skipBackward(seconds) {
 
 // Call the function to populate the table on page load
 document.addEventListener('DOMContentLoaded', populatePodcastTable);
+
+// Function to play the latest podcast when the "Podcast Play" button is clicked
+function playLatestPodcast() {
+  fetch('data/podcastCollection.json') // Adjust the path as necessary
+    .then(response => response.json())
+    .then(data => {
+      const latestPodcast = data.podcasts[0]; // Assuming podcasts are sorted by newest first
+      playPodcast(latestPodcast.mp3url, latestPodcast.title, latestPodcast.thumbnail);
+    })
+    .catch(error => console.error('Error loading latest podcast:', error));
+}
+
+// Event listener for the "Podcast Play" button
+document.getElementById('podcastPlayBtn').addEventListener('click', playLatestPodcast);
