@@ -213,7 +213,7 @@
 {
     "date": "2024-09-26",
     "title": "The Rob Show Episode 34 with Jerry Ornelas - Out Now!",
-    "content": "We're back with another exciting episode of The Rob Show! This week, Rob sits down with Jerry Ornelas for an engaging conversation you won't want to miss. Tune in now for some fresh insights and entertaining dialogue. <br><br><button onclick=\"navigateToTab('podcast-tab')\" class=\"cta-button\">Listen Now</button>",
+    "content": "We're back with another episode of The Rob Show! This week, Rob sits down with Jerry Ornelas for an engaging conversation you won't want to miss. Tune in now for some fresh insights and entertaining dialogue. <br><br><button onclick=\"navigateToTab('podcast-tab')\" class=\"cta-button\">Listen Now</button>",
     "active": "true",
     "goTo": "podcast-tab",
     "imageUrl": "https://storage.googleapis.com/ahoy-podcast-collection/ROB%20EPISODE%2034%20-%20JERRY%20ORNELAS.jpg"
