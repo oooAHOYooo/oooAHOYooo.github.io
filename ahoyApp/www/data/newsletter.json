@@ -217,5 +217,13 @@
     "active": "true",
     "goTo": "podcast-tab",
     "imageUrl": "https://storage.googleapis.com/ahoy-podcast-collection/ROB%20EPISODE%2034%20-%20JERRY%20ORNELAS.jpg"
-}
+},
+{
+    "date": "2024-10-03",
+    "title": "The Rob Show Episode 35 with Phoebe Kebabian - Listen Now!",
+    "imageUrl": "https://storage.googleapis.com/ahoy-podcast-collection/ROB%20EPISODE%2035%20-%20PHOEBE%20KEBABIAN.jpg",
+    "content": "Exciting news, Ahoy listeners! Today marks the release of The Rob Show Episode 35 featuring Phoebe Kebabian. Join Rob and Phoebe for a candid discussion as she shares her plans of moving to California and her journey as an aspiring actress. Don't miss it. <br><br><button onclick=\"navigateToTab('podcast-tab')\" class=\"cta-button\">Listen Now</button>",
+    "active": "true",
+        "goTo": "podcast-tab"
+    }
 ]
