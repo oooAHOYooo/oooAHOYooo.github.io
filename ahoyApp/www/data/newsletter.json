@@ -224,6 +224,18 @@
     "imageUrl": "https://storage.googleapis.com/ahoy-podcast-collection/ROB%20EPISODE%2035%20-%20PHOEBE%20KEBABIAN.jpg",
     "content": "Exciting news, Ahoy listeners! Today marks the release of The Rob Show Episode 35 featuring Phoebe Kebabian. Join Rob and Phoebe for a candid discussion as she shares her plans of moving to California and her journey as an aspiring actress. Don't miss it. <br><br><button onclick=\"navigateToTab('podcast-tab')\" class=\"cta-button\">Listen Now</button>",
     "active": "true",
-        "goTo": "podcast-tab"
-    }
+    "goTo": "podcast-tab"
+},
+{
+    "date": "2024-10-04",
+    "title": "Exciting News: Ahoy Merch Store Coming Soon!",
+    "imageUrl": "https://storage.googleapis.com/ahoy-dynamic-content/merch-store-preview.jpg",
+    "content": "Ahoy, fans! We're excited to announce that we're about to launch our very own merch store! Get ready to grab some exclusive Ahoy gear and show your support in style. We're handcrafting fashion, clothing, cassette tapes, prints, and more, which means it will take some time. Our goal is to launch an online store later this year and have a solid merch table for concerts. Check out some behind-the-scenes graphics below for a sneak peek at what's coming.",
+    "active": "false",
+    "goTo": "merch-tab",
+    "additionalImages": [
+        "https://storage.googleapis.com/ahoy-dynamic-content/merch-preview-1.jpg",
+        "https://storage.googleapis.com/ahoy-dynamic-content/merch-preview-2.jpg"
+    ]
+}
 ]
