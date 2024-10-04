@@ -22,7 +22,10 @@ async function populatePodcastTable() {
       thumbnailCell.className = 'podcast-thumbnail-cell'; // Added distinct class for thumbnail cell
       const thumbnailImg = document.createElement('img');
       thumbnailImg.src = podcast.thumbnail;
-      thumbnailImg.style.width = '100px'; // Set a fixed width for the image
+      thumbnailImg.addEventListener('click', () => {
+        playPodcast(podcast.mp3url, podcast.title, podcast.thumbnail);
+        updateDurationBar(podcast.duration); // You need to define this function
+      });
       thumbnailCell.appendChild(thumbnailImg);
       row.appendChild(thumbnailCell);
 
@@ -41,7 +44,6 @@ async function populatePodcastTable() {
       playButton.textContent = "Listen"; // Change button text from "Play" to "Listen"
       playButton.addEventListener('click', () => {
         playPodcast(podcast.mp3url, podcast.title, podcast.thumbnail);
-        // Assuming there is a duration bar element with id 'podcastDurationBar'
         updateDurationBar(podcast.duration); // You need to define this function
       });
       playButtonCell.appendChild(playButton);
