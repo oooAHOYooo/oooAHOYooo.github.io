@@ -548,19 +548,30 @@ textarea,
 select {
     background-color: rgba(255, 255, 255, 0.2) !important;
     border: 1px solid rgba(255, 255, 255, 0.5);
-    color: #ffffff;
+    color: var(--text-color);
+    /* Use theme text color */
     padding: 10px;
     border-radius: 5px;
     outline: none;
 }
 
-input {
-    color: rgba(var(--text-color-rgb));
+input::placeholder {
+    color: var(--text-color);
+    /* Use theme text color */
 }
 
-input::placeholder {
-    color: var(--text-clor);
+
+
+/* Form Labels */
+label {
+    color: var(--text-color);
+    /* Use theme text color */
+    font-family: var(--font-family);
+    text-align: center;
+    margin: 0px;
+    /* Use theme font family */
 }
+
 
 input:focus,
 textarea:focus,
@@ -603,7 +614,18 @@ input[type="date"]:focus {
     /* Change border color on focus */
 }
 
+.center-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
 
+.center-content>label {
+    width: 100%;
+    color: var(--text-color);
+}
 
 .center-text {
     text-align: center;

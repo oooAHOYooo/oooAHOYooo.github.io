@@ -61,7 +61,7 @@ function updateRadioPlayer(index) {
   audioPlayer.src = song.mp3url;
 
   // Reset the progress bar and play button
-  document.getElementById('progress-bar').value = 0;
+  document.getElementById('durationBar').value = 0; // Updated to use durationBar
 
   // Update duration bar max value and reset current value
   audioPlayer.onloadedmetadata = () => {
