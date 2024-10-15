@@ -79,10 +79,12 @@
     <!-- Icons -->
     <link rel="icon" type="image/png" href="./img/favicon_ahoy.png">
     <!-- Firebase SDK -->
+    <!--
     <script
       src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js"></script>
     <script
       src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js"></script>
+    -->
 
     <!-- JWPlayer -->
     <script src="https://cdn.jwplayer.com/libraries/9Gtk2B1J.js"></script>
@@ -237,6 +239,12 @@
                   placeholder="Search by title or artist..." />
                 <button onclick="searchMedia()" style="font-size: 2em; padding: 16px 64px;">Search</button>
                 <button id="clear-search">Clear</button>
+                <div id="sort-buttons">
+                  <button id="sort-recent">Most Recent Added</button>
+                  <button id="sort-artist-az">Artist A-Z</button>
+                  <button id="sort-title-az">Title A-Z</button>
+                  <button id="sort-random">Random</button>
+                </div>
               </div>
               <div class="media-container">
                 <table id="mediaTable" class="list">
@@ -437,7 +445,7 @@
             -->
 
 <!-- NEWS TAB -->
-<div id="news-tab" class="tab-content">
+<div id="news-tab" class="tab-content active">
   <img src="./img/assets/u_ahoy23.png" alt="Ahoy Indie Media Logo" class="homepage-logo" style="font-family: 'Times New Roman', Times, serif; font-size: 24px; text-transform: uppercase;">
   <hr>
   <h2 id="calendar-date"></h2>
@@ -545,7 +553,7 @@
     </div>
 </div>
 
-<div id="tv-mix" class="tab-content active">
+<div id="tv-mix" class="tab-content">
 <div id="jwplayer-currently-playing" class="currently-playing">
   <div class="media-library-player" id="jwplayer-container"></div>
     <h2>TV Mix - Currently Playing:</h2>

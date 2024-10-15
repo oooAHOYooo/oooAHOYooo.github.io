@@ -3400,7 +3400,7 @@ input[type="date"]:focus {
 }
 
 .mediaRow:hover {
-    background-color: #f1f1f1;
+    background-color: rgba(241, 241, 241, 0.1);
 }
 
 .mediaThumbnailImage {
@@ -3413,7 +3413,8 @@ input[type="date"]:focus {
 }
 
 .playMediaButton {
-    background-color: #007bff;
+    background-color: transparent;
+    border: 1px solid var(--border-color);
     color: white;
     border: none;
     padding: 8px 16px;
@@ -3428,12 +3429,51 @@ input[type="date"]:focus {
 }
 
 .playMediaButton:hover {
-    background-color: #0056b3;
+    border: 1px solid var(--border-color);
 }
 
 #mediaTable td:last-child {
     text-align: center;
 }
+
+#media-display-text {
+    position: relative;
+
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: top;
+    gap: 5px;
+}
+
+#media-artist-name p,
+#media-title-name p {
+    font-family: 'Barlow', sans-serif;
+    color: #ffffff;
+    margin: 0;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+#media-artist-name p {
+    line-height: 85%;
+    padding-left: 10px;
+    margin: 0px;
+
+}
+
+#media-artist-name p {
+    font-size: 32px;
+    margin: 0px;
+    line-height: 75%;
+    letter-spacing: .91px;
+}
+
 
 
 

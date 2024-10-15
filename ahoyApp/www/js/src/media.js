@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
+  let mediaData = [];
+
   // Function to load video in JWPlayer
   function loadVideoInJWPlayer(videoUrl, thumbnailUrl, artistName, titleName) {
     jwplayer("jw-player-container").setup({
@@ -8,10 +10,25 @@ document.addEventListener("DOMContentLoaded", function () {
       aspectratio: "16:9",
     });
 
-    document.querySelector("#media-artist-name p").textContent = artistName;
-    document.querySelector("#media-title-name p").textContent = titleName;
+    const artistElement = document.querySelector("#media-artist-name p");
+    const titleElement = document.querySelector("#media-title-name p");
+
+    artistElement.textContent = artistName;
+    titleElement.textContent = titleName;
 
     updateNavBar(titleName, artistName); // Update the navigation bar with the current video
+  }
+
+  function playVideoAndScrollToSearch(videoUrl, thumbnailUrl, artistName, titleName) {
+    loadVideoInJWPlayer(videoUrl, thumbnailUrl, artistName, titleName);
+    
+    // Scroll to the top of the page
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    const searchContainer = document.getElementById('search-container');
+    if (searchContainer) {
+      searchContainer.scrollIntoView({ behavior: 'smooth' }); // Scroll to the search container
+    }
   }
 
   function selectRandomVideo(videos) {
@@ -19,43 +36,75 @@ document.addEventListener("DOMContentLoaded", function () {
     return videos[randomIndex];
   }
 
-  function copyToClipboardAndShowPopup(text, title, artist) {
-    navigator.clipboard.writeText(text).then(() => {
-      alert(`Oy Oy Oy! You have a media item almost ready to share -  ${title} by ${artist} - ${text} is now in your clipboard and ready to share `);
-    }).catch(err => {
-      console.error('Could not copy text: ', err);
+  function populateMediaTable(data) {
+    const tableBody = document.querySelector("#mediaTable tbody");
+    tableBody.innerHTML = ''; // Clear existing entries
+
+    data.forEach((item) => {
+      const row = document.createElement("tr");
+      row.className = "mediaRow";
+      row.innerHTML = `
+        <td>
+          <img src="${item.thumbnail_link}" alt="Thumbnail" class="mediaThumbnailImage lazy-thumbnail" data-src="${item.thumbnail_link}">
+        </td>
+        <td>${item.artist}</td>
+        <td>${item.display_title}</td>
+        <td>
+          <button class="playMediaButton">Play</button>
+        </td>
+      `;
+      tableBody.appendChild(row);
+
+      // Add click event listener to the thumbnail
+      const thumbnail = row.querySelector(".mediaThumbnailImage");
+      thumbnail.addEventListener("click", function() {
+        playVideoAndScrollToSearch(item.mp4_link, item.thumbnail_link, item.artist, item.display_title);
+      });
+
+      // Add click event listener to the play button
+      const playButton = row.querySelector(".playMediaButton");
+      playButton.addEventListener("click", function() {
+        playVideoAndScrollToSearch(item.mp4_link, item.thumbnail_link, item.artist, item.display_title);
+      });
     });
+
+    lazyLoadThumbnails(); // Ensure lazy loading is applied after populating the table
   }
 
   // Fetch and populate media table
   fetch("data/mediaCollection.json")
     .then((response) => response.json())
     .then((data) => {
-      const tableBody = document.querySelector("#mediaTable tbody");
-      tableBody.innerHTML = ''; // Clear existing entries
+      mediaData = data; // Store data for sorting
+      sortAndDisplayMedia('random'); // Initially sort by random
 
-      data.forEach((item) => {
-        const row = document.createElement("tr");
-        row.className = "mediaRow";
-        row.innerHTML = `
-          <td>
-            <img src="${item.thumbnail_link}" alt="Thumbnail" class="mediaThumbnailImage lazy-thumbnail" data-src="${item.thumbnail_link}">
-          </td>
-          <td>${item.artist}</td>
-          <td>${item.display_title}</td>
-          <td>
-            <button class="playMediaButton" onclick="loadVideoInJWPlayer('${item.mp4_link}', '${item.thumbnail_link}', '${item.artist}', '${item.display_title}')">Play</button>
-          </td>
-        `;
-        tableBody.appendChild(row);
-      });
-
-      // Optionally, load the first video
-      if (data.length > 0) {
-        loadVideoInJWPlayer(data[0].mp4_link, data[0].thumbnail_link, data[0].artist, data[0].display_title);
+      // Load a random video initially
+      if (mediaData.length > 0) {
+        const randomVideo = selectRandomVideo(mediaData);
+        playVideoAndScrollToSearch(randomVideo.mp4_link, randomVideo.thumbnail_link, randomVideo.artist, randomVideo.display_title);
       }
     })
     .catch((error) => console.error("Error fetching media data:", error));
+
+  function sortAndDisplayMedia(criteria) {
+    let sortedData = [...mediaData];
+    if (criteria === 'recent') {
+      sortedData.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+    } else if (criteria === 'artist-az') {
+      sortedData.sort((a, b) => a.artist.localeCompare(b.artist));
+    } else if (criteria === 'title-az') {
+      sortedData.sort((a, b) => a.display_title.localeCompare(b.display_title));
+    } else if (criteria === 'random') {
+      sortedData.sort(() => Math.random() - 0.5);
+    }
+    populateMediaTable(sortedData);
+  }
+
+  // Event listeners for sorting buttons
+  document.getElementById('sort-recent').addEventListener('click', () => sortAndDisplayMedia('recent'));
+  document.getElementById('sort-artist-az').addEventListener('click', () => sortAndDisplayMedia('artist-az'));
+  document.getElementById('sort-title-az').addEventListener('click', () => sortAndDisplayMedia('title-az'));
+  document.getElementById('sort-random').addEventListener('click', () => sortAndDisplayMedia('random'));
 
   function lazyLoadThumbnails() {
     const lazyThumbnails = document.querySelectorAll(".lazy-thumbnail");
