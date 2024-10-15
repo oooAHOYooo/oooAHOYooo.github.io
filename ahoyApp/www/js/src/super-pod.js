@@ -60,12 +60,6 @@ async function populatePodcastTable() {
       podcastThumbnail.src = latestPodcast.thumbnail;
     }
 
-    // Remove or comment out the autoplay functionality
-    // if (data.podcasts.length > 0) {
-    //   const latestPodcast = data.podcasts[0]; // First item after sorting by ID descending
-    //   playPodcast(latestPodcast.mp3url, latestPodcast.title, latestPodcast.thumbnail);
-    //   updateDurationBar(latestPodcast.duration);
-    // }
   } catch (error) {
     console.error('Error fetching or processing the podcast data:', error);
   }

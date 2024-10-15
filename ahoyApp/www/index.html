@@ -213,29 +213,7 @@
             <div id="media-tab-a" class="tab-content ">
               <!-- START OF MEDIA-COLS-->
               <div class="right-sidebar-middle">    <!-- ... existing code ... -->
-                <div id="jwplayer-currently-playing" class="currently-playing">
-                  <div class="media-library-player" id="jwplayer-container"></div>
-                    <h2>Currently Playing:</h2>
-                    <p id="current-media"></p>
-                  <!-- <p id="current-description">Description: <span class="jwplayer-text" id="current-description-text"></span></p> -->
-                  <div class="remote-controls">
-                    <button id="play-pause-button" class="remoteControlButton"><i class="fas fa-play"></i></button>
-                    <button id="fast-forward-button" class="remoteControlButton"><i class="fas fa-forward"></i></button>
-                    <button id="next-button" class="remoteControlButton"><i class="fas fa-step-forward"></i></button>
-                    <button id="rewind-button" class="remoteControlButton"><i class="fas fa-undo"></i></button>
-                    <button id="shuffle-button" class="remoteControlButton"><i class="fas fa-random"></i></button>
-                    <button id="fullscreen-button" class="remoteControlButton"><i class="fas fa-expand"></i></button>
-                    <button id="mute-button" class="remoteControlButton"><i class="fas fa-volume-mute"></i></button>
-                    <button id="volume-down" class="remoteControlButton"><i class="fas fa-volume-down"></i></button>
-                    <button id="volume-up" class="remoteControlButton"><i class="fas fa-volume-up"></i></button>
            
-                
-                  </div>
-                  </div>
-                  <hr>
-                  <div id="video-progress">
-                    <progress id="progress-bar" value="0" max="100"></progress>
-                  </div>
               </div>
                <br>
                <div class="right-sidebar-middle">    <!-- ... existing code ... -->
@@ -253,11 +231,11 @@
                 </div>
              
               </div></div>
-              <h2>Full Media Library</h2>
+              <h1>Full Media Library</h1>
               <div id="search-container">
                 <input type="text" id="search-input"
                   placeholder="Search by title or artist..." />
-                <button onclick="searchMedia()">Search</button>
+                <button onclick="searchMedia()" style="font-size: 2em; padding: 16px 64px;">Search</button>
                 <button id="clear-search">Clear</button>
               </div>
               <div class="media-container">
@@ -459,7 +437,7 @@
             -->
 
 <!-- NEWS TAB -->
-<div id="news-tab" class="tab-content active">
+<div id="news-tab" class="tab-content">
   <img src="./img/assets/u_ahoy23.png" alt="Ahoy Indie Media Logo" class="homepage-logo" style="font-family: 'Times New Roman', Times, serif; font-size: 24px; text-transform: uppercase;">
   <hr>
   <h2 id="calendar-date"></h2>
@@ -566,6 +544,29 @@
         </a>
     </div>
 </div>
+
+<div id="tv-mix" class="tab-content active">
+<div id="jwplayer-currently-playing" class="currently-playing">
+  <div class="media-library-player" id="jwplayer-container"></div>
+    <h2>TV Mix - Currently Playing:</h2>
+    <p>It's like the good old days of TV, just on the internet. If you want something on and good, just click it and enjoy a mix of your favorite TV shows and media content.</p>
+    <p id="current-media">Current media: <span id="current-media-text"></span></p>
+  <!-- <p id="current-description">Description: <span class="jwplayer-text" id="current-description-text"></span></p> -->
+  <div class="remote-controls">
+    <button id="play-pause-button" class="remoteControlButton"><i class="fas fa-play"></i></button>
+    <button id="fast-forward-button" class="remoteControlButton"><i class="fas fa-forward"></i></button>
+    <button id="next-button" class="remoteControlButton"><i class="fas fa-step-forward"></i></button>
+    <button id="rewind-button" class="remoteControlButton"><i class="fas fa-undo"></i></button>
+    <button id="shuffle-button" class="remoteControlButton"><i class="fas fa-random"></i></button>
+    <button id="fullscreen-button" class="remoteControlButton"><i class="fas fa-expand"></i></button>
+    <button id="mute-button" class="remoteControlButton"><i class="fas fa-volume-mute"></i></button>
+    <button id="volume-down" class="remoteControlButton"><i class="fas fa-volume-down"></i></button>
+    <button id="volume-up" class="remoteControlButton"><i class="fas fa-volume-up"></i></button>
+
+
+  </div>
+  </div>
+</div>
    <!--
     ____  _____ ____ _____ _   _ _____   _____  _    ____
    |  _ \| ____/ ___|_   _| \ | |_   _| |_   _|/ \  | __ )
@@ -600,6 +601,9 @@
   <button class="btnPrimary" onclick="window.location.href='https://ahoy-indie-media.square.site/'"><i class="fas fa-store"></i></button>
   <button class="btnPrimary" onclick="navigateToTab('casting-tab')"><i class="fas fa-broadcast-tower"></i></button>
   <button class="btnPrimary" onclick="navigateToTab('focus-work-mode-tab')"><i class="fas fa-clock"></i></button>
+  <button class="btnPrimary" onclick="navigateToTab('tv-mix')"><i class="fas fa-tv"></i></button>
+  <button class="btnPrimary" onclick="navigateToTab('tv2-tab')"><i class="fas fa-tv"></i></button>
+  <button class="btnPrimary" onclick="navigateToTab('tv-mix-tab')"><i class="fas fa-music"></i></button>
   <button class="btnPrimary" onclick="navigateToTab('upload-local-bands-tab')"><i class="fas fa-upload"></i> Upload Local Flyers</button>
   <hr>
   <h3>Top Navigation Visibility</h3>

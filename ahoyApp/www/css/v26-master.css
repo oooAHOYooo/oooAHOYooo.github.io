@@ -2576,7 +2576,6 @@ input[type="date"]:focus {
 
 .podcast-thumbnail-container {
     max-width: 100%;
-
     border-radius: 5.5px;
     overflow: hidden;
 }
@@ -2587,16 +2586,13 @@ input[type="date"]:focus {
     object-fit: cover;
     object-position: center;
     border-radius: 5.5px;
-    /* Should match the container's max-height */
 }
-
-
-
 
 @media (max-width: 768px) {
     .podcast-thumbnail {
         width: 40px;
         height: 40px;
+        margin: 0 auto;
     }
 
     #podcastListTable th,
@@ -2605,10 +2601,6 @@ input[type="date"]:focus {
         padding: 5px;
     }
 }
-
-
-
-
 
 
 /*REMOTE CONTROLS */
@@ -3373,6 +3365,77 @@ input[type="date"]:focus {
     background-color: var(--border-color);
     color: #000;
 }
+
+#mediaTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 14px;
+    font-family: 'Barlow', sans-serif;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#mediaTable th,
+#mediaTable td {
+    border: 1px solid #e0e0e0;
+    padding: 8px;
+    vertical-align: middle;
+}
+
+#mediaTable th {
+    background-color: #f8f9fa;
+    color: #333;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+#mediaTable td:nth-child(2),
+#mediaTable td:nth-child(3) {
+    text-align: center;
+}
+
+.mediaRow {
+    transition: background-color 0.3s ease;
+}
+
+.mediaRow:hover {
+    background-color: #f1f1f1;
+}
+
+.mediaThumbnailImage {
+    width: 60px;
+    /* Fixed width for thumbnails */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    /* Center the image */
+}
+
+.playMediaButton {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 0;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.playMediaButton:hover {
+    background-color: #0056b3;
+}
+
+#mediaTable td:last-child {
+    text-align: center;
+}
+
+
 
 
 

@@ -41,10 +41,8 @@ document.addEventListener("DOMContentLoaded", function () {
           <td>
             <img src="${item.thumbnail_link}" alt="Thumbnail" class="mediaThumbnailImage lazy-thumbnail" data-src="${item.thumbnail_link}">
           </td>
-          <td>
-            <p>${item.artist}</p>
-            <p>${item.display_title}</p>
-          </td>
+          <td>${item.artist}</td>
+          <td>${item.display_title}</td>
           <td>
             <button class="playMediaButton" onclick="loadVideoInJWPlayer('${item.mp4_link}', '${item.thumbnail_link}', '${item.artist}', '${item.display_title}')">Play</button>
           </td>
@@ -91,8 +89,8 @@ function searchMedia() {
   const rows = tableBody.getElementsByTagName('tr');
 
   for (let i = 0; i < rows.length; i++) {
-    let titleCell = rows[i].getElementsByTagName('td')[3]; // Assuming the title is in the fourth column
-    let artistCell = rows[i].getElementsByTagName('td')[2]; // Assuming the artist is in the third column
+    let artistCell = rows[i].getElementsByTagName('td')[1]; // Corrected index for artist
+    let titleCell = rows[i].getElementsByTagName('td')[2]; // Corrected index for title
     if (titleCell || artistCell) {
       let title = titleCell.textContent || titleCell.innerText;
       let artist = artistCell.textContent || artistCell.innerText;
