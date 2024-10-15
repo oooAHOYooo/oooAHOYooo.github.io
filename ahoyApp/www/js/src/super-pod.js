@@ -1,3 +1,6 @@
+// Global variable to store podcast data
+let podcastData = [];
+
 // Function to fetch podcast data and populate the table
 async function populatePodcastTable() {
   try {
@@ -5,30 +8,35 @@ async function populatePodcastTable() {
     const response = await fetch('data/podcastCollection.json'); // Updated URL
     const data = await response.json();
 
+    // Store the data globally
+    podcastData = data.podcasts;
+
     // Sort all podcasts by ID in descending order
-    data.podcasts.sort((a, b) => b.id - a.id);
+    podcastData.sort((a, b) => b.id - a.id);
 
     // Get the table body element
     const podcastTableBody = document.getElementById('podcastListBody');
+    podcastTableBody.innerHTML = ''; // Clear existing list
 
-    // Loop through each podcast in the JSON data
-    data.podcasts.forEach(podcast => {
+    // Loop through each podcast in the sorted data
+    podcastData.forEach((podcast) => {
       // Create a new table row
       const row = document.createElement('tr');
-      row.className = 'podcast-row'; // Add a class for styling hover
+      row.className = 'podcast-row';
 
       // Create a cell for the thumbnail
       const thumbnailCell = document.createElement('td');
-      thumbnailCell.className = 'podcast-thumbnail-cell'; // Added distinct class for thumbnail cell
+      thumbnailCell.className = 'podcast-thumbnail-cell';
       const thumbnailImg = document.createElement('img');
       thumbnailImg.src = podcast.thumbnail;
-      thumbnailImg.style.width = '100px'; // Set a fixed width for the image
+      thumbnailImg.style.width = '50px';
+      thumbnailImg.style.height = '50px';
       thumbnailCell.appendChild(thumbnailImg);
       row.appendChild(thumbnailCell);
 
-      // Create the title cell with a paragraph tag
+      // Create the title cell
       const titleCell = document.createElement('td');
-      titleCell.className = 'podcast-title-cell'; // Add a special class to the td
+      titleCell.className = 'podcast-title-cell';
       const titleParagraph = document.createElement('p');
       titleParagraph.textContent = podcast.title;
       titleCell.appendChild(titleParagraph);
@@ -36,13 +44,13 @@ async function populatePodcastTable() {
 
       // Create a cell for the play button
       const playButtonCell = document.createElement('td');
-      playButtonCell.className = 'podcast-play-button-cell'; // Added distinct class for play button cell
+      playButtonCell.className = 'podcast-play-button-cell';
       const playButton = document.createElement('button');
-      playButton.textContent = "Listen"; // Change button text from "Play" to "Listen"
+      playButton.className = 'listen-btn';
+      playButton.textContent = "Listen";
       playButton.addEventListener('click', () => {
         playPodcast(podcast.mp3url, podcast.title, podcast.thumbnail);
-        // Assuming there is a duration bar element with id 'podcastDurationBar'
-        updateDurationBar(podcast.duration); // You need to define this function
+        updateDurationBar(podcast.duration);
       });
       playButtonCell.appendChild(playButton);
       row.appendChild(playButtonCell);
@@ -52,8 +60,8 @@ async function populatePodcastTable() {
     });
 
     // Display the latest episode details without playing it
-    if (data.podcasts.length > 0) {
-      const latestPodcast = data.podcasts[0]; // First item after sorting by ID descending
+    if (podcastData.length > 0) {
+      const latestPodcast = podcastData[0]; // First item after sorting by ID descending
       const podcastTitle = document.getElementById('podcast-title');
       const podcastThumbnail = document.getElementById('podcast-thumbnail');
       podcastTitle.textContent = latestPodcast.title;
@@ -138,6 +146,33 @@ function skipBackward(seconds) {
         audioPlayer.currentTime -= seconds; // Decrement the current time
     }
 }
+
+// Function to sort podcasts
+function sortPodcasts(criteria) {
+  switch (criteria) {
+    case 'recent':
+      podcastData.sort((a, b) => new Date(b.addedDate) - new Date(a.addedDate));
+      break;
+    case 'random':
+      podcastData.sort(() => Math.random() - 0.5);
+      break;
+    case 'title':
+      podcastData.sort((a, b) => a.title.localeCompare(b.title));
+      break;
+  }
+  populatePodcastTable(); // Repopulate after sorting
+}
+
+// Add event listeners for sort buttons
+document.getElementById('podcast-sort-recent').addEventListener('click', () => {
+  sortPodcasts('recent');
+});
+document.getElementById('podcast-sort-random').addEventListener('click', () => {
+  sortPodcasts('random');
+});
+document.getElementById('podcast-sort-title-az').addEventListener('click', () => {
+  sortPodcasts('title');
+});
 
 // Call the function to populate the table on page load
 document.addEventListener('DOMContentLoaded', populatePodcastTable);

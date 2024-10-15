@@ -223,12 +223,41 @@ tr:hover {
     letter-spacing: 0.5px;
 }
 
+/* Podcast Table Styles */
+#podcastListBody td {
+    text-align: left;
+    vertical-align: top;
+    line-height: 92%;
+    color: white;
+    /* Match the text color to the song list */
+    font-family: var(--font-family);
+    align-items: center;
+    justify-content: center;
+}
 
 #podcastTable {
     font-size: 14px;
     line-height: 1.2;
     letter-spacing: 0.5px;
 }
+
+
+.podcast-sort-button {
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 10px;
+}
+
+.podcast-sort-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 
 /* Responsive Table Container */
 /*NOT SURE IF I'LL USE THIS */
