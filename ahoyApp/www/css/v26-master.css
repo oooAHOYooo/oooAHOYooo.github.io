@@ -3399,14 +3399,15 @@ input[type="date"]:focus {
 
 #mediaTable th,
 #mediaTable td {
-    border: 1px solid #e0e0e0;
+    border: 1px solid var(--border-color);
+    /* Use border-color variable */
     padding: 8px;
     vertical-align: middle;
 }
 
 #mediaTable th {
-    background-color: #f8f9fa;
-    color: #333;
+    background-color: var(--secondary-color);
+    /* Use secondary-color variable */
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -3422,23 +3423,23 @@ input[type="date"]:focus {
 }
 
 .mediaRow:hover {
-    background-color: rgba(241, 241, 241, 0.1);
+    background-color: rgba(var(--background-color-rgb), 0.1);
+    /* Use background-color-rgb variable */
 }
 
 .mediaThumbnailImage {
-    width: 60px;
-    /* Fixed width for thumbnails */
+    width: 100%;
     height: auto;
     display: block;
     margin: 0 auto;
-    /* Center the image */
 }
 
 .playMediaButton {
     background-color: transparent;
     border: 1px solid var(--border-color);
-    color: white;
-    border: none;
+    /* Use border-color variable */
+    color: var(--text-color);
+    /* Use text-color variable */
     padding: 8px 16px;
     text-align: center;
     text-decoration: none;
@@ -3460,11 +3461,10 @@ input[type="date"]:focus {
 
 #media-display-text {
     position: relative;
-
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(var(--background-color-rgb), 0.7);
+    /* Use background-color-rgb variable */
     border-radius: 5px;
-    display: inline-block;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -3472,21 +3472,12 @@ input[type="date"]:focus {
     gap: 5px;
 }
 
-#media-artist-name p,
-#media-title-name p {
-    font-family: 'Barlow', sans-serif;
-    color: #ffffff;
-    margin: 0;
-    padding: 10px;
-    border-radius: 5px;
-    display: inline-block;
-}
-
 #media-artist-name p {
     line-height: 85%;
     padding-left: 10px;
     margin: 0px;
-
+    color: var(--text-color);
+    /* Use text-color variable */
 }
 
 #media-artist-name p {
@@ -3494,11 +3485,9 @@ input[type="date"]:focus {
     margin: 0px;
     line-height: 75%;
     letter-spacing: .91px;
+    color: var(--text-color);
+    /* Use text-color variable */
 }
-
-
-
-
 
 
 /*
