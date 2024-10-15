@@ -151,13 +151,16 @@ function skipBackward(seconds) {
 function sortPodcasts(criteria) {
   switch (criteria) {
     case 'recent':
-      podcastData.sort((a, b) => new Date(b.addedDate) - new Date(a.addedDate));
+      podcastData.sort((a, b) => new Date(b.date) - new Date(a.date)); // Sort by date
       break;
     case 'random':
-      podcastData.sort(() => Math.random() - 0.5);
+      podcastData.sort(() => Math.random() - 0.5); // Random sort
       break;
     case 'title':
-      podcastData.sort((a, b) => a.title.localeCompare(b.title));
+      podcastData.sort((a, b) => a.title.localeCompare(b.title)); // Sort by title
+      break;
+    case 'id':
+      podcastData.sort((a, b) => b.id - a.id); // Sort by ID in descending order
       break;
   }
   populatePodcastTable(); // Repopulate after sorting
