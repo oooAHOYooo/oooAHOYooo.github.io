@@ -3821,3 +3821,38 @@ input[type="date"]:focus {
     background-color: var(--border-color);
     /* Darker green on hover */
 }
+
+#sort-recent,
+#sort-artist-az,
+#sort-title-az,
+#sort-random {
+    background-color: var(--background-color);
+    /* Green background */
+    border: 1px solid var(--border-color);
+    color: white;
+    /* White text */
+    padding: 10px 20px;
+    /* Some padding */
+    text-align: center;
+    /* Centered text */
+    text-decoration: none;
+    /* Remove underline */
+    display: inline-block;
+    /* Make the buttons appear inline */
+    font-size: 16px;
+    /* Increase font size */
+    margin: 4px 2px;
+    /* Some margin */
+    cursor: pointer;
+    /* Pointer/hand icon on hover */
+    transition: background-color 0.3s ease;
+    /* Smooth transition */
+}
+
+#sort-recent:hover,
+#sort-artist-az:hover,
+#sort-title-az:hover,
+#sort-random:hover {
+    background-color: var(--border-color);
+    /* Darker green on hover */
+}
