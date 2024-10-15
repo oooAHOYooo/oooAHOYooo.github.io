@@ -3395,6 +3395,7 @@ input[type="date"]:focus {
     font-size: 14px;
     font-family: 'Barlow', sans-serif;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: var(--text-color);
 }
 
 #mediaTable th,

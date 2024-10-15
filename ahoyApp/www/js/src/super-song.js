@@ -98,34 +98,6 @@ function prevSong() {
   document.getElementById('audioPlayer').play();
 }
 
-// Like button functionality
-function toggleLike() {
-  const likeBtn = document.getElementById('likeBtn');
-  const likedSongsList = document.getElementById('likedSongsList');
-  const songTitle = songs[currentSongIndex].songTitle;
-
-  if (likeBtn.classList.contains('liked')) {
-    likeBtn.classList.remove('liked');
-    likeBtn.innerHTML = '<i class="far fa-heart"></i> LIKE';
-
-    // Remove song from liked list
-    const songToRemove = Array.from(likedSongsList.children).find(
-      (item) => item.textContent === songTitle
-    );
-    if (songToRemove) {
-      likedSongsList.removeChild(songToRemove);
-    }
-  } else {
-    likeBtn.classList.add('liked');
-    likeBtn.innerHTML = '<i class="fas fa-heart"></i> LIKED';
-
-    // Add song to liked list
-    const listItem = document.createElement('li');
-    listItem.textContent = songTitle;
-    likedSongsList.appendChild(listItem);
-  }
-}
-
 // Function to handle search
 function searchSongs() {
     const searchInput = document.getElementById('songSearch').value.toLowerCase();
@@ -171,7 +143,6 @@ document.getElementById('searchBtn').addEventListener('click', searchSongs);
 document.getElementById('playBtn').addEventListener('click', togglePlay);
 document.getElementById('nextBtn').addEventListener('click', nextSong);
 document.getElementById('prevBtn').addEventListener('click', prevSong);
-document.getElementById('likeBtn').addEventListener('click', toggleLike);
 
 // Function to update the duration bar as the song plays
 function updateDurationBar() {
