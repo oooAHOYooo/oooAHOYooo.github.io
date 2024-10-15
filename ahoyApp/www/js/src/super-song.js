@@ -5,6 +5,8 @@ let songs = [];
 // Function to populate the song list table
 function populateSongList() {
   const songListBody = document.getElementById('songListBody');
+  songListBody.innerHTML = ''; // Clear existing list
+
   songs.forEach((song, index) => {
     const row = document.createElement('tr');
     row.innerHTML = `
@@ -24,7 +26,7 @@ function populateSongList() {
       document.getElementById('audioPlayer').play();
       window.scrollTo({
         top: 0,
-        behavior: 'smooth'  // Optional: Adds a smooth scrolling effect
+        behavior: 'smooth'
       });
     });
   });
@@ -162,3 +164,36 @@ document.getElementById('audioPlayer').addEventListener('timeupdate', updateDura
 
 // Call the fetch function once the page loads
 document.addEventListener('DOMContentLoaded', fetchRadioSongs);
+
+// Function to sort songs
+function sortSongs(criteria) {
+  switch (criteria) {
+    case 'recent':
+      songs.sort((a, b) => new Date(b.addedDate) - new Date(a.addedDate));
+      break;
+    case 'random':
+      songs.sort(() => Math.random() - 0.5);
+      break;
+    case 'title':
+      songs.sort((a, b) => a.songTitle.localeCompare(b.songTitle));
+      break;
+    case 'artist':
+      songs.sort((a, b) => a.artist.localeCompare(b.artist));
+      break;
+  }
+  populateSongList(); // Repopulate after sorting
+}
+
+// Add event listeners for sort buttons
+document.getElementById('song-sort-recent').addEventListener('click', () => {
+  sortSongs('recent');
+});
+document.getElementById('song-sort-random').addEventListener('click', () => {
+  sortSongs('random');
+});
+document.getElementById('song-sort-title-az').addEventListener('click', () => {
+  sortSongs('title');
+});
+document.getElementById('song-sort-artist-az').addEventListener('click', () => {
+  sortSongs('artist');
+});

@@ -212,9 +212,23 @@ tr:hover {
     line-height: 92%;
     color: white;
     font-family: var(--font-family);
+    align-items: center;
+    justify-content: center;
+
+}
+
+#songListTable {
+    font-size: 14px;
+    line-height: 1.2;
+    letter-spacing: 0.5px;
 }
 
 
+#podcastTable {
+    font-size: 14px;
+    line-height: 1.2;
+    letter-spacing: 0.5px;
+}
 
 /* Responsive Table Container */
 /*NOT SURE IF I'LL USE THIS */
