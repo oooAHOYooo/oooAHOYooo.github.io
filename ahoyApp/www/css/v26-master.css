@@ -3885,3 +3885,38 @@ input[type="date"]:focus {
     background-color: var(--border-color);
     /* Darker green on hover */
 }
+
+
+#song-sort-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+    padding: 10px;
+
+    /* Light background */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#song-sort-buttons button {
+    background-color: var(--border-color);
+    /* Primary color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#song-sort-buttons button:hover {
+    background-color: var(--background-color);
+    /* Darker shade on hover */
+    transform: translateY(-1px);
+}
+
+#song-sort-buttons button:active {
+    background-color: var(--gold-color);
+    transform: translateY(0);
+}
