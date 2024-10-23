@@ -28,9 +28,17 @@ document.addEventListener("DOMContentLoaded", function() {
             row.innerHTML = `
                 <td><img src="${podcast.thumbnail}" alt="${podcast.title}" width="50"></td>
                 <td>${podcast.title}</td>
-                <td><button onclick="loadPodcast(${index})">Listen</button></td>
+                <td><button class="listen-btn" data-index="${index}">Listen</button></td>
             `;
             podcastListBody.appendChild(row);
+        });
+
+        // Add event listeners to all listen buttons
+        document.querySelectorAll('.listen-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const podcastIndex = this.getAttribute('data-index');
+                loadPodcast(parseInt(podcastIndex));
+            });
         });
     }
 
@@ -42,7 +50,15 @@ document.addEventListener("DOMContentLoaded", function() {
         podcastThumbnail.src = podcast.thumbnail;
         audioPlayer.src = podcast.mp3url;
         currentPodcastIndex = index;
-        playPodcast();
+
+        // Ensure the podcast plays immediately
+        audioPlayer.play().catch(error => console.error('Error playing podcast:', error));
+
+        // Scroll to the top of the page
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     }
 
     // Play podcast
