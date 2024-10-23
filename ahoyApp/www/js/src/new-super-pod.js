@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function() {
         currentPodcastIndex = index;
 
         // Ensure the podcast plays immediately
-        audioPlayer.play().catch(error => console.error('Error playing podcast:', error));
+        // audioPlayer.play().catch(error => console.error('Error playing podcast:', error));
 
         // Scroll to the top of the page
         window.scrollTo({
