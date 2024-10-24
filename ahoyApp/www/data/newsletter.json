@@ -237,5 +237,11 @@
         "https://storage.googleapis.com/ahoy-dynamic-content/merch-preview-1.jpg",
         "https://storage.googleapis.com/ahoy-dynamic-content/merch-preview-2.jpg"
     ]
+},
+{
+    "date": "2024-10-24",
+    "title": "Ahoy Indie Media: Headed to the App Store!",
+    "imageUrl": "https://storage.googleapis.com/ahoy-dynamic-content/news/AHOY%20-%20ALMOST%20READY.jpg",
+    "content": "Ahoy Indie Media is almost ready to hit the App Store! We've made progress since launching, and are now focusing on UI improvements, casting features to work across devices, and more. Stay tuned for updates as we finalize the app for the App Store, and soon you'll be able to enjoy Ahoy anywhere, anytime!"
 }
 ]
