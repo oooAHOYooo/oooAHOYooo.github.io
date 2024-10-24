@@ -1,7 +1,7 @@
 const themes = ["light", "dark", "pink", "ellie", "bug", "hiii", "crazy", "gradientPink"]; // List of available themes
 
 // Initialize with gradientPink as the default theme
-let theme = "gradientPink";
+let theme = themes[Math.floor(Math.random() * themes.length)];
 
 function switchTheme(selectedTheme) {
   const root = document.documentElement;
@@ -43,11 +43,11 @@ function switchTheme(selectedTheme) {
   } else if (theme === "ellie") {
     setThemeProperties(
       root,
-      "#eeeeee", // Background color: very light gray
-      "#222222", // Text color: dark gray
-      "#cccccc", // Border color: light gray
-      "#dddddd", // Secondary color: very light gray
-      "#eeeeee", // Button color: lightest gray
+      "#9c7a5e", // Background color: brownish
+      "#d6b580", // Text color: light brown
+      "#e3c7a1", // Border color: tan
+      "#f4e6b3", // Secondary color: pale yellow
+      "#f4c9b8", // Button color: peach
       "#ffd700"  // Gold color: gold (used for highlights or accents)
     );
   } else if (theme === "bug") {
