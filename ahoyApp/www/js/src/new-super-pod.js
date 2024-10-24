@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const playPodcastBtn = document.getElementById('playPodcastBtn');
     const backwardPodcastBtn = document.getElementById('backwardPodcastBtn');
     const forwardPodcastBtn = document.getElementById('forwardPodcastBtn');
+    const durationBar = document.getElementById('podcastDurationBar');
 
     let currentPodcastIndex = 0;
     let podcasts = [];
@@ -58,6 +59,18 @@ document.addEventListener("DOMContentLoaded", function() {
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
+        });
+
+        // Update the duration bar as the podcast plays
+        audioPlayer.addEventListener('timeupdate', () => {
+            const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+            durationBar.value = progress;
+        });
+
+        // Allow scrubbing through the podcast
+        durationBar.addEventListener('input', () => {
+            const scrubTime = (durationBar.value / 100) * audioPlayer.duration;
+            audioPlayer.currentTime = scrubTime;
         });
     }
 

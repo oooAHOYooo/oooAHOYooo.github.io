@@ -216,16 +216,21 @@
       <div class="podcast-thumbnail-container">
         <img id="podcast-thumbnail" src="" alt="Podcast Thumbnail">
       </div>
+      <div class="duration-control">
+        <input type="range" id="podcastDurationBar" min="0" max="100" step="1" value="0" class="styled-duration-bar">
+      </div>
+      <div class="podcast-player-controls">
+        <button id="playPodcastBtn">[► PLAY]</button>
+        <button id="backwardPodcastBtn">[-15s]</button>
+        <button id="forwardPodcastBtn">[+15s]</button>
+      </div>
       <div class="song-details">
         <h2 id="podcast-title"></h2>
         <p id="podcast-description"></p>
       </div>
     </div>
-    <div class="radio-controls">
-      <button id="playPodcastBtn">[► PLAY]</button>
-      <button id="backwardPodcastBtn" onclick="skipBackward(15)">[-15s]</button>
-      <button id="forwardPodcastBtn" onclick="skipForward(15)">[+15s]</button>
-    </div>
+  
+    
   </div>
   <hr>
   <h2>FULL PODCAST LIBRARY</h2>

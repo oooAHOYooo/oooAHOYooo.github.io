@@ -210,7 +210,7 @@ tr:hover {
     text-align: left;
     vertical-align: top;
     line-height: 92%;
-    color: white;
+    color: var(--text-color);
     font-family: var(--font-family);
     align-items: center;
     justify-content: center;
@@ -501,7 +501,8 @@ button:hover {
     text-align: center;
     color: var(--text-color);
     font-size: 1.5em;
-    margin-top: 10px;
+    margin-bottom: 0px;
+    padding: 0;
 }
 
 /* #tabSortza {
@@ -1434,10 +1435,12 @@ input[type="date"]:focus {
     align-items: center;
 }
 
+/*
 .podcast-index {
     margin-right: 10px;
     font-weight: bold;
 }
+*/
 
 .podcast-info-row {
     flex-grow: 1;
@@ -1445,6 +1448,7 @@ input[type="date"]:focus {
 
 
 .podcast-description {
+    margin-top: 0px;
     font-size: 0.9em;
     color: #666;
 }
@@ -2252,7 +2256,14 @@ input[type="date"]:focus {
     object-fit: cover;
 }
 
+.duration-control {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 
+}
 
 .styled-duration-bar {
     appearance: none;
@@ -2610,9 +2621,6 @@ input[type="date"]:focus {
 }
 
 
-.podcast-title {
-    text-align: left !important;
-}
 
 /*PODCAST STYLES*/
 
@@ -2626,7 +2634,6 @@ input[type="date"]:focus {
 }
 
 .podcast-title-cell {
-    padding: 15px;
     font-weight: var(--font-weight);
     color: var(--text-color);
 }
@@ -2634,6 +2641,10 @@ input[type="date"]:focus {
 .podcast-play-button-cell {
     padding: 10px;
     text-align: right;
+}
+
+.podcast-player-controls {
+    margin-bottom: 30px;
 }
 
 
