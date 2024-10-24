@@ -176,10 +176,10 @@
               <input type="range" id="durationBar" min="0" max="100" step="1" value="0" class="styled-duration-bar">
           </div>
           <div class="radio-controls">
-              <button id="playBtn">[► PLAY]</button>
-              <button id="add15sBtn">+ 15 s</button>
-              <button id="prevBtn">[◄◄ PREV]</button>
-              <button id="nextBtn">[► NEXT]</button>
+              <button class="audio-control-button" id="playBtn">[► PLAY]</button>
+              <button class="audio-control-button" id="add15sBtn">+ 15 s</button>
+              <button class="audio-control-button" id="prevBtn">[◄◄ PREV]</button>
+              <button class="audio-control-button" id="nextBtn">[► NEXT]</button>
           </div>
       </div>
   </div>
@@ -220,17 +220,15 @@
         <input type="range" id="podcastDurationBar" min="0" max="100" step="1" value="0" class="styled-duration-bar">
       </div>
       <div class="podcast-player-controls">
-        <button id="playPodcastBtn">[► PLAY]</button>
-        <button id="backwardPodcastBtn">[-15s]</button>
-        <button id="forwardPodcastBtn">[+15s]</button>
+        <button class="audio-control-button" id="playPodcastBtn">[► PLAY]</button>
+        <button class="audio-control-button" id="backwardPodcastBtn">[-15s]</button>
+        <button class="audio-control-button" id="forwardPodcastBtn">[+15s]</button>
       </div>
       <div class="song-details">
         <h2 id="podcast-title"></h2>
         <p id="podcast-description"></p>
       </div>
     </div>
-  
-    
   </div>
   <hr>
   <h2>FULL PODCAST LIBRARY</h2>
@@ -240,7 +238,6 @@
 </div>
 
    <!-- ABOUT TAB -->
-
             <!-- ABOUT TAB -->
             <div id="about-tab" class="tab-content">
               <img src="./img/assets/u_ahoy23.png" alt="Ahoy Indie Media Logo" class="homepage-logo" onclick="navigateToTab('news-tab')">
@@ -290,7 +287,6 @@
                 feel free to reach out to us at <a
                   href="mailto:alex@ahoy.ooo">alex@ahoy.ooo</a>.</p>
                 </div></div>
-             
             </div>
 
 
@@ -298,17 +294,8 @@
 <div id="news-tab" class="tab-content active">
   <img src="./img/assets/u_ahoy23.png" alt="Ahoy Indie Media Logo" class="homepage-logo" style="font-family: 'Times New Roman', Times, serif; font-size: 24px; text-transform: uppercase;">
   <hr>
-
-
   <h2 id="calendar-date"></h2>
-
-
   <hr>
-
-
-
-
-
   <div class="homepage-subheader">
     <p>Ahoy Indie Media is a hand-crafted media company based out of New Haven, Connecticut. Our mission is to provide a homegrown alternative to the way folks consume media.</p>
   </div>
@@ -488,7 +475,6 @@
                             <input type="date" id="date-added">
                             <input type="text" id="venue-name" placeholder="Venue Name (optional)" />
                             <input type="text" id="venue-description" placeholder="Description (optional)" />
-                          
                             <input type="url" id="venue-url" placeholder="Website URL (optional)" />
                         <hr>
                         <button id="upload-venue-btn">Upload Venue</button>
@@ -568,7 +554,6 @@
                 <div class="body-desc-block">
                   <p>This feature combines a Pomodoro-style timer with a curated music playlist to enhance focus and productivity. Users can start a 25-minute work session using the timer, which displays remaining time and a circular progress indicator. </p>
                 </div></div>
-              
             </div>
 
           </div><!-- YES -->
@@ -579,7 +564,6 @@
                 <div class="v25-dock-icon"
                   onclick="navigateToTab('news-tab')"><i
                     class="fas fa-home"></i></div>
-      
                 <div class="v25-dock-icon"
                   onclick="navigateToTab('true-classic-radio')"><i
                     class="fas fa-music"></i></div>
@@ -589,26 +573,16 @@
                 <div class="v25-dock-icon"
                   onclick="navigateToTab('media-tab-a')"><i
                     class="fas fa-image"></i></div>
-                  
-                <!-- <div class="v25-dock-icon"
-                  onclick="navigateToTab('account-tab')"><i
-                    class="fas fa-user-circle"></i></div> -->
                 <div class="v25-dock-icon"
                   onclick="navigateToTab('settings-tab')"><i
-                    class="fas fa-cog"></i></div>
-                <!-- Add Login and Active Username Feature to Dock -->
-          
+                    class="fas fa-cog"></i></div>          
               </div>
             </div>
           </div>
- 
-      
           <div id="sound-timeline-container">
             <div id="sound-timeline-progress"></div>
           </div>
-
         </div>
-
       </div>
 
     </div>
