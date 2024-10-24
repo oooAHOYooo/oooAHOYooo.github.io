@@ -2133,32 +2133,16 @@ input[type="date"]:focus {
     color: var(--border-color);
 }
 
-.comment-form {
-    margin-top: 20px;
-}
-
-#commentInput {
-    width: 100%;
-    background-color: #001100;
-    border: 1px solid var(--border-color);
-    color: var(--border-color);
-    padding: 10px;
-    margin-bottom: 10px;
-    font-family: "Courier New", Courier, monospace;
-    resize: vertical;
-}
-
 .terminal-section {
-    background-color: #000;
     color: var(--border-color);
-    font-family: "Courier New", Courier, monospace;
+    font-family: var(--font-family);
     border: 2px solid var(--border-color);
     padding: 20px;
     margin-top: 20px;
 }
 
 .terminal-section h2 {
-    color: var(--border-color);
+    color: var(--text-color);
     border-bottom: 1px solid var(--border-color);
     padding-bottom: 10px;
     margin-bottom: 15px;
@@ -2167,12 +2151,11 @@ input[type="date"]:focus {
 #songSearch,
 #podcastSearch {
     width: calc(100% - 110px);
-    background-color: #001100;
     border: 1px solid var(--border-color);
     color: var(--border-color);
     padding: 10px;
     margin-right: 10px;
-    font-family: "Courier New", Courier, monospace;
+    font-family: var(--font-family);
 }
 
 
@@ -2182,9 +2165,9 @@ input[type="date"]:focus {
 }
 
 .active-profile {
-    background-color: #000;
+    background-color: var(--background-color);
     color: var(--border-color);
-    font-family: "Courier New", Courier, monospace;
+    font-family: var(--font-family);
     border: 2px solid var(--border-color);
     padding: 20px;
     margin-top: 20px;
@@ -2204,20 +2187,6 @@ input[type="date"]:focus {
     font-size: 14px;
 }
 
-#activeUser,
-#userLevel,
-#userXP,
-#userComments {
-    display: inline-block;
-    background-color: #001100ee;
-    padding: 5px 10px;
-    border: 1px solid var(--border-color);
-    margin-right: 10px;
-}
-
-
-
-
 
 .table-container {
     width: 100%;
@@ -2225,11 +2194,6 @@ input[type="date"]:focus {
     -webkit-overflow-scrolling: touch;
     /* Smooth scrolling on iOS */
 }
-
-
-
-
-
 
 
 #likeBtn.liked {
