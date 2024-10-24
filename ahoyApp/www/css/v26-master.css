@@ -512,7 +512,13 @@ button:hover {
     text-align: center;
 } */
 
-
+.song-details h2 {
+    margin-top: 0px;
+    padding-top: 0px;
+    color: var(--text-color);
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
 
 #main-content,
 #sidebar {
