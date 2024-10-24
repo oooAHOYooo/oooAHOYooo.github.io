@@ -50,10 +50,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
                                 </div>
                             `;
                         } else {
-                            const imageClickHandler = newsletter.goTo ? `onclick="goTo('${newsletter.goTo}')"` : `onclick="openLightbox('${newsletter.imageUrl}')"`;
                             htmlContent += `
                                 <div style="text-align: center;">
-                                    <img src="${newsletter.imageUrl}" alt="${newsletter.title}" class="newsletter-image lazy-load" loading="lazy" style="max-width: 100%; height: auto; cursor: pointer;" ${imageClickHandler}>
+                                    <img src="${newsletter.imageUrl}" alt="${newsletter.title}" class="newsletter-image lazy-load" loading="lazy" style="max-width: 100%; height: auto; cursor: pointer;" onclick="openLightbox('${newsletter.imageUrl}')" onerror="this.style.display='none'">
                                 </div>
                             `;
                         }
@@ -61,9 +60,13 @@ window.addEventListener('DOMContentLoaded', (event) => {
                     htmlContent += `<p><i class="fa-solid fa-file-lines"></i> ${newsletter.content}</p>`;
 
                     if (newsletter.additionalImages && newsletter.additionalImages.length > 0) {
-                        htmlContent += `<div class="additional-images">`;
-                        newsletter.additionalImages.forEach(imgUrl => {
-                            htmlContent += `<img src="${imgUrl}" alt="Additional Image" class="lazy-load" loading="lazy" style="max-width: 100%; height: auto; margin: 10px 0;" onclick="openLightbox('${imgUrl}')">`;
+                        htmlContent += `<div class="additional-images gallery">`;
+                        newsletter.additionalImages.forEach((imgUrl, index) => {
+                            htmlContent += `
+                                <div class="gallery-item" style="display: inline-block; margin: 5px;">
+                                    <img src="${imgUrl}" alt="Additional Image ${index + 1}" class="lazy-load" loading="lazy" style="max-width: 100px; height: auto; cursor: pointer;" onclick="openLightbox('${imgUrl}')" onerror="this.style.display='none'">
+                                </div>
+                            `;
                         });
                         htmlContent += `</div>`;
                     }
@@ -93,6 +96,32 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 lazyImages.forEach(image => {
                     observer.observe(image); // Start observing each lazy-load image
                 });
+            }
+
+            // Function to open a lightbox
+            function openLightbox(imageUrl) {
+                const lightbox = document.createElement('div');
+                lightbox.id = 'lightbox';
+                lightbox.style.position = 'fixed';
+                lightbox.style.top = '0';
+                lightbox.style.left = '0';
+                lightbox.style.width = '100%';
+                lightbox.style.height = '100%';
+                lightbox.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+                lightbox.style.display = 'flex';
+                lightbox.style.alignItems = 'center';
+                lightbox.style.justifyContent = 'center';
+                lightbox.style.zIndex = '1000';
+                lightbox.onclick = () => document.body.removeChild(lightbox);
+
+                const img = document.createElement('img');
+                img.src = imageUrl;
+                img.style.maxWidth = '90%';
+                img.style.maxHeight = '90%';
+                img.style.boxShadow = '0 0 10px rgba(255, 255, 255, 0.5)';
+
+                lightbox.appendChild(img);
+                document.body.appendChild(lightbox);
             }
 
             // Infinite scroll functionality

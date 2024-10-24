@@ -228,15 +228,37 @@
 },
 {
     "date": "2024-10-04",
-    "title": "Exciting News: Ahoy Merch Store Coming Soon!",
-    "imageUrl": "https://storage.googleapis.com/ahoy-dynamic-content/merch-store-preview.jpg",
-    "content": "Ahoy, fans! We're excited to announce that we're about to launch our very own merch store! Get ready to grab some exclusive Ahoy gear and show your support in style. We're handcrafting fashion, clothing, cassette tapes, prints, and more, which means it will take some time. Our goal is to launch an online store later this year and have a solid merch table for concerts. Check out some behind-the-scenes graphics below for a sneak peek at what's coming.",
-    "active": "false",
+    "title": "Exciting News: Ahoy Merch Coming Soon!",
+    "imageUrl": "https://storage.googleapis.com/ahoy-dynamic-content/images/bts-merch/Ahoy%20BTS%20MERCH%20-%20FALL%202024%20-%203.jpeg",
+    "content": "Ahoy, fans! We're excited to announce that we're about to launch a merch store! Get ready to grab some exclusive Ahoy gear and show your support in style. We're vinly cutting graphics for shirts, burning cassette tapes, working on prints, and more, which means it will take some time. Our goal is to launch an online store later this year and have a solid merch table for various venues. Check out some behind-the-scenes graphics below for a sneak peek at what's coming.",
+    "active": "true",
     "goTo": "merch-tab",
-    "additionalImages": [
-        "https://storage.googleapis.com/ahoy-dynamic-content/merch-preview-1.jpg",
-        "https://storage.googleapis.com/ahoy-dynamic-content/merch-preview-2.jpg"
-    ]
+ "additionalImages": [
+
+    "https://storage.googleapis.com/ahoy-dynamic-content/images/bts-merch/Ahoy%20BTS%20MERCH%20-%20FALL%202024%20-%201.jpeg",
+    "https://storage.googleapis.com/ahoy-dynamic-content/images/bts-merch/Ahoy%20BTS%20MERCH%20-%20FALL%202024%20-%202.jpeg",
+    "https://storage.googleapis.com/ahoy-dynamic-content/images/bts-merch/Ahoy%20BTS%20MERCH%20-%20FALL%202024%20-%203.jpeg",
+    "https://storage.googleapis.com/ahoy-dynamic-content/images/bts-merch/Ahoy%20BTS%20MERCH%20-%20FALL%202024%20-%204.jpeg",
+    "https://storage.googleapis.com/ahoy-dynamic-content/images/bts-merch/Ahoy%20BTS%20MERCH%20-%20FALL%202024%20-%205.jpeg",
+    "https://storage.googleapis.com/ahoy-dynamic-content/images/bts-merch/Ahoy%20BTS%20MERCH%20-%20FALL%202024%20-%206.jpeg",
+    "https://storage.googleapis.com/ahoy-dynamic-content/images/bts-merch/Ahoy%20BTS%20MERCH%20-%20FALL%202024%20-%207.jpeg",
+    "https://storage.googleapis.com/ahoy-dynamic-content/images/bts-merch/Ahoy%20BTS%20MERCH%20-%20FALL%202024%20-%208.jpeg",
+    "https://storage.googleapis.com/ahoy-dynamic-content/images/bts-merch/Ahoy%20BTS%20MERCH%20-%20FALL%202024%20-%209.jpeg",
+
+    "https://storage.googleapis.com/ahoy-dynamic-content/images/bts-merch/Ahoy%20BTS%20MERCH%20-%20FALL%202024%20-%2012.jpeg",
+    "https://storage.googleapis.com/ahoy-dynamic-content/images/bts-merch/Ahoy%20BTS%20MERCH%20-%20FALL%202024%20-%2013.jpeg",
+    "https://storage.googleapis.com/ahoy-dynamic-content/images/bts-merch/Ahoy%20BTS%20MERCH%20-%20FALL%202024%20-%2014.jpeg",
+    "https://storage.googleapis.com/ahoy-dynamic-content/images/bts-merch/Ahoy%20BTS%20MERCH%20-%20FALL%202024%20-%2015.jpeg",
+    "https://storage.googleapis.com/ahoy-dynamic-content/images/bts-merch/Ahoy%20BTS%20MERCH%20-%20FALL%202024%20-%2016.jpeg",
+    "https://storage.googleapis.com/ahoy-dynamic-content/images/bts-merch/Ahoy%20BTS%20MERCH%20-%20FALL%202024%20-%2017.jpeg",
+    "https://storage.googleapis.com/ahoy-dynamic-content/images/bts-merch/Ahoy%20BTS%20MERCH%20-%20FALL%202024%20-%2018.jpeg",
+    "https://storage.googleapis.com/ahoy-dynamic-content/images/bts-merch/Ahoy%20BTS%20MERCH%20-%20FALL%202024%20-%2019.jpeg",
+    "https://storage.googleapis.com/ahoy-dynamic-content/images/bts-merch/Ahoy%20BTS%20MERCH%20-%20FALL%202024%20-%2022.jpeg",
+    "https://storage.googleapis.com/ahoy-dynamic-content/images/bts-merch/Ahoy%20BTS%20MERCH%20-%20FALL%202024%20-%2023.jpeg",
+    "https://storage.googleapis.com/ahoy-dynamic-content/images/bts-merch/Ahoy%20BTS%20MERCH%20-%20FALL%202024%20-%2024.jpeg",
+    "https://storage.googleapis.com/ahoy-dynamic-content/images/bts-merch/Ahoy%20BTS%20MERCH%20-%20FALL%202024%20-%2025.jpeg",
+    "https://storage.googleapis.com/ahoy-dynamic-content/images/bts-merch/Ahoy%20BTS%20MERCH%20-%20FALL%202024%20-%2026.jpeg"
+]
 },
 {
     "date": "2024-10-24",
