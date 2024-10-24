@@ -53,22 +53,22 @@ function switchTheme(selectedTheme) {
   } else if (theme === "bug") {
     setThemeProperties(
       root,
-      "#76b947", // Background color: leaf green
+      "#b3c59b", // Background color: rgb(179, 197, 155)
       "#ffffff", // Text color: white
-      "#89c763", // Border color: light green
-      "#9bd47f", // Secondary color: lighter green
-      "#aee08b", // Button color: pale green
-      "#c1ec97"  // Gold color: very pale green (used as a highlight color here)
+      "#9fb58c", // Border color: rgb(159, 181, 140)
+      "#c8d0a4", // Secondary color: rgb(200, 208, 164)
+      "#b1c18b", // Button color: rgb(177, 193, 139)
+      "#8fa76c"  // Gold color: rgb(143, 167, 108) (used as a highlight color here)
     );
   } else if (theme === "hiii") {
     setThemeProperties(
       root,
-      "#f19c79", // Background color: coral
+      "#f9c54e", // Background color: new color
       "#ffffff", // Text color: white
-      "#f2b1a1", // Border color: soft coral
-      "#f4c6c9", // Secondary color: lighter coral
-      "#f6dbf1", // Button color: pale coral
-      "#f9f0f3"  // Gold color: very pale coral (used as a highlight color here)
+      "#f9b248", // Border color: new color
+      "#f98348", // Secondary color: new color
+      "#f94346", // Button color: new color
+      "#f3712b"  // Gold color: new color
     );
   } else if (theme === "crazy") {
     setThemeProperties(
