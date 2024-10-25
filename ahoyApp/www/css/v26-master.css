@@ -117,7 +117,6 @@ h2 {
     color: var(--text-color);
     text-align: center;
     margin: 0px;
-    padding: var(--p-padding);
 
 }
 
@@ -458,13 +457,14 @@ button:hover {
 }
 
 .song-info>img {
-    width: 300px;
-    height: 300px;
+    width: 50%;
+    height: 350px;
     object-fit: cover;
     display: block;
     margin-left: auto;
     margin-right: auto;
     border-radius: 5.5px;
+
 }
 
 .player-container {
@@ -2226,15 +2226,13 @@ input[type="date"]:focus {
 
 
 
-
+/*
 #coverArt {
     min-width: 237px;
     min-height: 236px;
-    /* Default width */
-
-    /* Default height */
     object-fit: cover;
 }
+*/
 
 .duration-control {
     margin-top: 10px;
@@ -2644,7 +2642,7 @@ input[type="date"]:focus {
 }
 
 #podcast-thumbnail {
-    width: 100%;
+    width: 50%;
     height: auto;
     object-fit: cover;
     object-position: center;
