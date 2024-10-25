@@ -17,6 +17,8 @@ document.addEventListener("DOMContentLoaded", function() {
         .then(response => response.json())
         .then(data => {
             podcasts = data.podcasts;
+            // Sort podcasts by ID in descending order
+            podcasts.sort((a, b) => b.id - a.id);
             populatePodcastList();
             loadPodcast(currentPodcastIndex);
         })
@@ -74,11 +76,26 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // Play the next podcast when the current one ends
-    audioPlayer.addEventListener('ended', () => {
-        currentPodcastIndex = (currentPodcastIndex + 1) % podcasts.length;
-        loadPodcast(currentPodcastIndex);
-        audioPlayer.play();
+    // Play the previous podcast by ID
+    backwardPodcastBtn.addEventListener('click', () => {
+        const currentPodcastId = podcasts[currentPodcastIndex].id;
+        const previousPodcast = podcasts.find(podcast => podcast.id < currentPodcastId);
+        if (previousPodcast) {
+            currentPodcastIndex = podcasts.findIndex(podcast => podcast.id === previousPodcast.id);
+            loadPodcast(currentPodcastIndex);
+            audioPlayer.play();
+        }
+    });
+
+    // Play the next podcast by ID
+    forwardPodcastBtn.addEventListener('click', () => {
+        const currentPodcastId = podcasts[currentPodcastIndex].id;
+        const nextPodcast = podcasts.slice().reverse().find(podcast => podcast.id > currentPodcastId);
+        if (nextPodcast) {
+            currentPodcastIndex = podcasts.findIndex(podcast => podcast.id === nextPodcast.id);
+            loadPodcast(currentPodcastIndex);
+            audioPlayer.play();
+        }
     });
 
     // Toggle play/pause when clicking the podcast thumbnail
@@ -105,15 +122,5 @@ document.addEventListener("DOMContentLoaded", function() {
             audioPlayer.pause();
             playPodcastBtn.textContent = '[► PLAY]';
         }
-    });
-
-    // Skip backward
-    backwardPodcastBtn.addEventListener('click', () => {
-        audioPlayer.currentTime = Math.max(0, audioPlayer.currentTime - 15);
-    });
-
-    // Skip forward
-    forwardPodcastBtn.addEventListener('click', () => {
-        audioPlayer.currentTime = Math.min(audioPlayer.duration, audioPlayer.currentTime + 15);
     });
 });
