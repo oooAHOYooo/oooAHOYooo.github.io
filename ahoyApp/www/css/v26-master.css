@@ -199,7 +199,6 @@ tr:hover {
 }
 
 /*SPECIAL TABLES*/
-
 /*
 .podcastListBody>td p {
     padding: 12px 15px;
@@ -1284,7 +1283,25 @@ input[type="date"]:focus {
 
 
 
-/*RADIO BUTTONS */
+/* BUTTONS */
+
+.listen-btn {
+    background-color: transparent;
+    font-family: var(--font-family);
+    color: var(--text-color);
+    border: none;
+    font-size: 16px;
+    padding: 8px;
+    cursor: pointer;
+    border-color: var(--border-color);
+    transition: transform 0.2s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.listen-btn:hover {
+    transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 
 .responsive-play-btn {
     background-color: transparent;
