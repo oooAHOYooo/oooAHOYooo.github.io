@@ -3524,6 +3524,16 @@ input[type="date"]:focus {
     gap: 5px;
 }
 
+#media-title-name h2 {
+    margin: 0px;
+    padding: 0px;
+}
+
+#media-title-name p {
+    margin: 0px;
+    padding: 0px;
+}
+
 #media-artist-name p {
     line-height: 85%;
     padding-left: 10px;
