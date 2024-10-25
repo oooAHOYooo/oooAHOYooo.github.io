@@ -186,9 +186,11 @@ td {
 
 td {
     min-width: 20px;
-    max-width: 40px;
     margin: 0px;
     line-height: 97%;
+    font-family: var(--font-family);
+    color: var(--text-color);
+    text-align: center;
 }
 
 tr:hover {
@@ -198,6 +200,7 @@ tr:hover {
 
 /*SPECIAL TABLES*/
 
+/*
 .podcastListBody>td p {
     padding: 12px 15px;
     text-align: left;
@@ -205,7 +208,9 @@ tr:hover {
     line-height: 92%;
     color: var(--text-color);
 }
+*/
 
+/*
 #songListBody td {
     text-align: left;
     vertical-align: top;
@@ -216,6 +221,7 @@ tr:hover {
     justify-content: center;
 
 }
+*/
 
 #songListTable {
     font-size: 14px;
@@ -224,16 +230,17 @@ tr:hover {
 }
 
 /* Podcast Table Styles */
+/*
 #podcastListBody td {
     text-align: left;
     vertical-align: top;
     line-height: 92%;
     color: white;
-    /* Match the text color to the song list */
     font-family: var(--font-family);
     align-items: center;
     justify-content: center;
 }
+*/
 
 #podcastTable {
     font-size: 14px;
@@ -242,21 +249,7 @@ tr:hover {
 }
 
 
-.podcast-sort-button {
-    background: linear-gradient(135deg, #6e8efb, #a777e3);
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin: 10px;
-}
 
-.podcast-sort-button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
 
 
 /* Responsive Table Container */
@@ -2442,6 +2435,7 @@ input[type="date"]:focus {
 }
 
 @media (max-width: 768px) {
+
     .radio-controls,
     .podcast-player-controls {
         display: grid;
@@ -3907,11 +3901,12 @@ input[type="date"]:focus {
     background-color: var(--gold-color);
     transform: translateY(0);
 }
+
 .audio-control-button {
     --key-text-color: var(--text-color);
     --docsearch-key-shadow: inset 0 -1px 0 0 rgba(var(--border-color-rgb), 0.5), inset 0 0 1px 1px rgba(var(--border-color-rgb), 0.5),
-    0 1px 2px 1px rgba(var(--border-color-rgb), 0.763);
-  --docsearch-key-gradient: linear-gradient(-225deg, rgba(var(--border-color-rgb), 0.5), rgba(var(--border-color-rgb), 0.5));
+        0 1px 2px 1px rgba(var(--border-color-rgb), 0.763);
+    --docsearch-key-gradient: linear-gradient(-225deg, rgba(var(--border-color-rgb), 0.5), rgba(var(--border-color-rgb), 0.5));
     border: none;
     background: var(--docsearch-key-gradient);
     border-radius: 3px;
@@ -3933,6 +3928,7 @@ input[type="date"]:focus {
     -webkit-backdrop-filter: blur(5px);
     transition: background 0.3s ease, box-shadow 0.3s ease;
 }
+
 .audio-control-button:hover {
     background-color: var(--border-color);
     color: var(--text-color);
