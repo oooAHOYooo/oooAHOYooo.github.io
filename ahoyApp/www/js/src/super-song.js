@@ -93,6 +93,26 @@ function nextSong() {
   document.getElementById('audioPlayer').play();
 }
 
+// Add event listener to play the next song when the current one ends
+document.getElementById('audioPlayer').addEventListener('ended', nextSong);
+
+// Function to toggle play/pause when clicking the thumbnail
+function togglePlayOnThumbnail() {
+  const audioPlayer = document.getElementById('audioPlayer');
+  const playBtn = document.getElementById('playBtn');
+
+  if (audioPlayer.paused) {
+    audioPlayer.play();
+    playBtn.textContent = '[❚❚ PAUSE]';
+  } else {
+    audioPlayer.pause();
+    playBtn.textContent = '[► PLAY]';
+  }
+}
+
+// Add event listener to the cover art for play/pause toggle
+document.getElementById('coverArt').addEventListener('click', togglePlayOnThumbnail);
+
 // Function to go to the previous song
 function prevSong() {
   currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;

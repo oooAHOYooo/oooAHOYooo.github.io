@@ -74,6 +74,23 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
+    // Play the next podcast when the current one ends
+    audioPlayer.addEventListener('ended', () => {
+        currentPodcastIndex = (currentPodcastIndex + 1) % podcasts.length;
+        loadPodcast(currentPodcastIndex);
+        audioPlayer.play();
+    });
+
+    // Toggle play/pause when clicking the podcast thumbnail
+    podcastThumbnail.addEventListener('click', () => {
+        if (audioPlayer.paused) {
+            playPodcast();
+        } else {
+            audioPlayer.pause();
+            playPodcastBtn.textContent = '[► PLAY]';
+        }
+    });
+
     // Play podcast
     function playPodcast() {
         audioPlayer.play();
