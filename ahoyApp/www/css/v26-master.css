@@ -52,6 +52,7 @@ a {
     --border-color-rgb: 255, 255, 255;
     --gold-color: #ffd700;
     --background-color: #ff0060;
+    --tiny-font-size: 14px;
 }
 
 body {
@@ -177,24 +178,18 @@ table {
     text-align: left;
 }
 
-th,
-td {
-    padding: 12px 15px;
-
-}
 
 td {
     min-width: 20px;
     margin: 0px;
-    line-height: 97%;
     font-family: var(--font-family);
     color: var(--text-color);
     text-align: center;
+    font-size: var(--tiny-font-size);
 }
 
 tr:hover {
     background-color: rgba(255, 255, 255, 0.1);
-
 }
 
 /*SPECIAL TABLES*/
@@ -457,7 +452,7 @@ button:hover {
 }
 
 .song-info>img {
-    width: 50%;
+    width: 350px;
     height: 350px;
     object-fit: cover;
     display: block;
@@ -1849,6 +1844,14 @@ input[type="date"]:focus {
     font-weight: 400;
 }
 
+.newsletter-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    object-fit: cover;
+    width: 500px;
+}
+
 .article-link {
     color: white !important;
 }
@@ -2639,12 +2642,18 @@ input[type="date"]:focus {
     max-width: 100%;
     border-radius: 5.5px;
     overflow: hidden;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
 }
 
 #podcast-thumbnail {
-    width: 50%;
-    height: auto;
-    object-fit: cover;
+    width: 350px;
+    height: 350px;
+    object-fit: stretch;
     object-position: center;
     border-radius: 5.5px;
 }
@@ -2663,6 +2672,9 @@ input[type="date"]:focus {
     }
 }
 
+#podcast-description {
+    display: none;
+}
 
 /*REMOTE CONTROLS */
 
