@@ -124,15 +124,60 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    // Play the next podcast by ID
+    // Play the next podcast in a loop
     nextPodcastBtn.addEventListener('click', () => {
-        const currentPodcastId = podcasts[currentPodcastIndex].id;
-        const nextPodcast = podcasts.slice().reverse().find(podcast => podcast.id > currentPodcastId);
-        if (nextPodcast) {
-            currentPodcastIndex = podcasts.findIndex(podcast => podcast.id === nextPodcast.id);
-            loadPodcast(currentPodcastIndex);
-            audioPlayer.play();
-        }
+        currentPodcastIndex = (currentPodcastIndex + 1) % podcasts.length;
+        loadPodcast(currentPodcastIndex);
+        audioPlayer.play();
+    // Get the podcast audio player element from index.html
+    const podcastAudioPlayer = document.getElementById('podcast-audio-player');
+
+    // Check if the podcast audio player element exists
+    if (podcastAudioPlayer) {
+        // Update the audio player source
+        podcastAudioPlayer.src = podcasts[currentPodcastIndex].audioSrc;
+
+        // Add event listener to play/pause button
+        playPodcastBtn.addEventListener('click', () => {
+            if (podcastAudioPlayer.paused) {
+                podcastAudioPlayer.play();
+                playPodcastBtn.textContent = '[❚❚ PAUSE]';
+            } else {
+                podcastAudioPlayer.pause();
+                playPodcastBtn.textContent = '[► PLAY]';
+            }
+        });
+
+        // Add event listener to update the duration bar
+        podcastAudioPlayer.addEventListener('timeupdate', () => {
+            const progress = (podcastAudioPlayer.currentTime / podcastAudioPlayer.duration) * 100;
+            durationBar.value = progress;
+
+            // Display remaining time
+            const remainingTime = podcastAudioPlayer.duration - podcastAudioPlayer.currentTime;
+            const minutes = Math.floor(remainingTime / 60);
+            const seconds = Math.floor(remainingTime % 60).toString().padStart(2, '0');
+            document.getElementById('remaining-time').textContent = `${minutes}:${seconds}`;
+        });
+
+        // Allow scrubbing through the podcast
+        durationBar.addEventListener('input', () => {
+            const scrubTime = (durationBar.value / 100) * podcastAudioPlayer.duration;
+            podcastAudioPlayer.currentTime = scrubTime;
+        });
+
+        // Update the forward 15 seconds button event listener
+        document.getElementById('podcast-forward15sBtn').addEventListener('click', () => {
+            podcastAudioPlayer.currentTime = Math.min(podcastAudioPlayer.currentTime + 15, podcastAudioPlayer.duration);
+        });
+
+        // Update the backward 15 seconds button event listener
+        document.getElementById('podcast-backward15sBtn').addEventListener('click', () => {
+            podcastAudioPlayer.currentTime = Math.max(podcastAudioPlayer.currentTime - 15, 0);
+        });
+    } else {
+        console.error('Podcast audio player element not found in index.html');
+    }
     });
 
     // Update the duration bar as the podcast plays
@@ -145,6 +190,9 @@ document.addEventListener("DOMContentLoaded", function() {
         const minutes = Math.floor(remainingTime / 60);
         const seconds = Math.floor(remainingTime % 60).toString().padStart(2, '0');
         document.getElementById('remaining-time').textContent = `${minutes}:${seconds}`;
+
+        // Save progress periodically
+        saveProgress();
     });
 
     // Allow scrubbing through the podcast
@@ -154,7 +202,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     // Update the forward 15 seconds button event listener
-    forward15sBtn.addEventListener('click', () => {
+    document.getElementById('podcast-forward15sBtn').addEventListener('click', () => {
         audioPlayer.currentTime = Math.min(audioPlayer.currentTime + 15, audioPlayer.duration);
     });
 });

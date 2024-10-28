@@ -38,6 +38,13 @@ async function fetchRadioSongs() {
     const response = await fetch(songsDataUrl);
     const data = await response.json();
     songs = data.songs;
+    
+    // Store songs in local storage
+    localStorage.setItem('songs', JSON.stringify(songs));
+
+    // Retrieve current song index from local storage or default to 0
+    currentSongIndex = parseInt(localStorage.getItem('currentSongIndex')) || 0;
+
     updateRadioPlayer(currentSongIndex);
     populateSongList(); // Populate the song list after fetching songs
   } catch (error) {
@@ -70,6 +77,9 @@ function updateRadioPlayer(index) {
     document.getElementById('durationBar').max = audioPlayer.duration;
     document.getElementById('durationBar').value = 0;
   };
+
+  // Store current song index in local storage
+  localStorage.setItem('currentSongIndex', index);
 }
 
 // Function to play or pause the song
@@ -183,7 +193,18 @@ document.getElementById('durationBar').addEventListener('input', function() {
 document.getElementById('musicAudioPlayer').addEventListener('timeupdate', updateDurationBar);
 
 // Call the fetch function once the page loads
-document.addEventListener('DOMContentLoaded', fetchRadioSongs);
+document.addEventListener('DOMContentLoaded', () => {
+  // Check if songs are already in local storage
+  const storedSongs = localStorage.getItem('songs');
+  if (storedSongs) {
+    songs = JSON.parse(storedSongs);
+    currentSongIndex = parseInt(localStorage.getItem('currentSongIndex')) || 0;
+    updateRadioPlayer(currentSongIndex);
+    populateSongList();
+  } else {
+    fetchRadioSongs();
+  }
+});
 
 // Function to sort songs
 function sortSongs(criteria) {
