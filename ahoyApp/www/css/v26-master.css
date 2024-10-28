@@ -2640,7 +2640,6 @@ input[type="date"]:focus {
 
 .podcast-thumbnail-container {
     max-width: 100%;
-    border-radius: 5.5px;
     overflow: hidden;
     width: 100%;
     display: flex;
@@ -2651,17 +2650,17 @@ input[type="date"]:focus {
 }
 
 #podcast-thumbnail {
-    width: 350px;
-    height: 350px;
+    width: 400px;
+    height: 400px;
     object-fit: stretch;
     object-position: center;
-    border-radius: 5.5px;
+    border-radius: 12.5px;
 }
 
 @media (max-width: 768px) {
     .podcast-thumbnail {
-        width: 40px;
-        height: 40px;
+        width: 48px;
+        height: 48px;
         margin: 0 auto;
     }
 

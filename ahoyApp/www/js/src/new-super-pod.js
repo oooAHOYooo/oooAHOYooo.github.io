@@ -31,13 +31,13 @@ document.addEventListener("DOMContentLoaded", function() {
             row.innerHTML = `
                 <td><img src="${podcast.thumbnail}" alt="${podcast.title}" width="50"></td>
                 <td>${podcast.title}</td>
-                <td><button class="listen-btn" data-index="${index}">Listen</button></td>
+                <td><button class="listen-btn-podcast" data-index="${index}">Listen</button></td>
             `;
             podcastListBody.appendChild(row);
         });
 
         // Add event listeners to all listen buttons
-        document.querySelectorAll('.listen-btn').forEach(button => {
+        document.querySelectorAll('.listen-btn-podcast').forEach(button => {
             button.addEventListener('click', function() {
                 const podcastIndex = this.getAttribute('data-index');
                 loadPodcast(parseInt(podcastIndex));
@@ -67,6 +67,12 @@ document.addEventListener("DOMContentLoaded", function() {
         audioPlayer.addEventListener('timeupdate', () => {
             const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
             durationBar.value = progress;
+
+            // Display remaining time
+            const remainingTime = audioPlayer.duration - audioPlayer.currentTime;
+            const minutes = Math.floor(remainingTime / 60);
+            const seconds = Math.floor(remainingTime % 60).toString().padStart(2, '0');
+            document.getElementById('remaining-time').textContent = `${minutes}:${seconds}`;
         });
 
         // Allow scrubbing through the podcast
