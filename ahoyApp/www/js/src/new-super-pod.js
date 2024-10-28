@@ -76,6 +76,31 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
+    // Load saved podcast index and time from local storage
+    const savedPodcastIndex = localStorage.getItem('currentPodcastIndex');
+    const savedPlaybackTime = localStorage.getItem('currentPlaybackTime');
+
+    if (savedPodcastIndex !== null) {
+        currentPodcastIndex = parseInt(savedPodcastIndex);
+        loadPodcast(currentPodcastIndex);
+
+        if (savedPlaybackTime !== null) {
+            audioPlayer.currentTime = parseFloat(savedPlaybackTime);
+        }
+    }
+
+    // Save current podcast index and time to local storage
+    function saveProgress() {
+        localStorage.setItem('currentPodcastIndex', currentPodcastIndex);
+        localStorage.setItem('currentPlaybackTime', audioPlayer.currentTime);
+    }
+
+    // Save progress when the podcast is paused
+    audioPlayer.addEventListener('pause', saveProgress);
+
+    // Save progress when the user navigates away
+    window.addEventListener('beforeunload', saveProgress);
+
     // Play the previous podcast by ID
     backwardPodcastBtn.addEventListener('click', () => {
         const currentPodcastId = podcasts[currentPodcastIndex].id;
