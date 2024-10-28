@@ -1,0 +1,193 @@
+[
+    {
+        "id": "v25-2",
+        "name": "Thumbnail Graphic Tee",
+        "price": "$25",
+        "requires_subscription": false,
+        "thumbnail": "https://storage.googleapis.com/ahoy-dynamic-content/AHOY%20Market%20v25%20-%20Thumbnail%20Graphic%20T.jpg",
+        "image": "https://storage.googleapis.com/ahoy-dynamic-content/AHOY%20Market%20v25%20-%20Thumbnail%20Graphic%20T.jpg",
+        "productImage2": "https://storage.googleapis.com/ahoy-dynamic-content/AHOY%20Market%20v25%20-%20Thumbnail%20Graphic%20T%20-%20img2.jpg",
+        "tags": ["clothing", "graphic tee", "apparel"],
+        "edition": "1 of 30"
+    },
+    {
+        "id": "v25-3",
+        "name": "YounGonz",
+        "price": "$234",
+        "requires_subscription": false,
+        "thumbnail": "https://storage.googleapis.com/ahoy-dynamic-content/AHOY%20Market%20v25%20-%20YounGonzjpg.jpg",
+        "image": "https://storage.googleapis.com/ahoy-dynamic-content/AHOY%20Market%20v25%20-%20YounGonzjpg.jpg",
+        "tags": ["art", "collectible", "exclusive"],
+        "edition": "1 of 1"
+    },
+    {
+        "id": "v25-4",
+        "name": "Rob Classic Sweatshirt",
+        "price": "$27",
+        "requires_subscription": false,
+        "thumbnail": "https://storage.googleapis.com/ahoy-dynamic-content/AHOY%20Market%20v25%20-%20GRAPHIC%20SWEATSHIRT.jpg",
+        "image": "https://storage.googleapis.com/ahoy-dynamic-content/AHOY%20Market%20v25%20-%20GRAPHIC%20SWEATSHIRT.jpg",
+        "tags": ["clothing", "sweatshirt", "apparel"],
+        "edition": "1 of 50"
+    },
+    {
+        "id": "v25-5",
+        "name": "Beanie",
+        "price": "$19",
+        "requires_subscription": false,
+        "thumbnail": "https://storage.googleapis.com/ahoy-dynamic-content/AHOY%20Market%20v25%20-%20Beanie.png",
+        "image": "https://storage.googleapis.com/ahoy-dynamic-content/AHOY%20Market%20v25%20-%20Beanie.png",
+        "tags": ["clothing", "beanie", "apparel"],
+        "edition": "1 of 100"
+    },
+    {
+        "id": "v25-6",
+        "name": "Not Square Sticker",
+        "price": "Free (Limit 10), $1 after that",
+        "requires_subscription": true,
+        "thumbnail": "https://storage.googleapis.com/ahoy-dynamic-content/AHOY%20Market%20v25%20-%20Not%20Square%20Sticker.jpg",
+        "image": "https://storage.googleapis.com/ahoy-dynamic-content/AHOY%20Market%20v25%20-%20Not%20Square%20Sticker.jpg",
+        "tags": ["sticker", "accessory", "subscription"],
+        "edition": "1 of 200"
+    },
+    {
+        "id": "v25-7",
+        "name": "Ahoy Rob Meglio Facemousepad",
+        "price": "Free (Limit 2), $10 after that",
+        "requires_subscription": true,
+        "thumbnail": "https://storage.googleapis.com/ahoy-dynamic-content/Ahoy%20Indie%20Media%20-%20v25%20Product%20-%20Rob%20Mousepad%201.png",
+        "image": "https://storage.googleapis.com/ahoy-dynamic-content/Ahoy%20Indie%20Media%20-%20v25%20Product%20-%20Rob%20Mousepad%201.png",
+        "tags": ["mousepad", "accessory", "subscription"],
+        "edition": "1 of 150"
+    },
+    {
+        "id": "v25-8",
+        "name": "Basic Subscription Plan",
+        "price": "$9.99/month",
+        "requires_subscription": true,
+        "thumbnail": "https://storage.googleapis.com/ahoy-dynamic-content/AHOY%20Market%20v25%20-%20Basic%20Subscription.jpg",
+        "image": "https://storage.googleapis.com/ahoy-dynamic-content/AHOY%20Market%20v25%20-%20Basic%20Subscription.jpg",
+        "tags": ["subscription", "basic"],
+        "edition": "N/A"
+    },
+    {
+        "id": "v25-9",
+        "name": "Standard Subscription Plan",
+        "price": "$14.99/month",
+        "requires_subscription": true,
+        "thumbnail": "https://storage.googleapis.com/ahoy-dynamic-content/AHOY%20Market%20v25%20-%20Standard%20Subscription.jpg",
+        "image": "https://storage.googleapis.com/ahoy-dynamic-content/AHOY%20Market%20v25%20-%20Standard%20Subscription.jpg",
+        "tags": ["subscription", "standard"],
+        "edition": "N/A"
+    },
+    {
+        "id": "v25-10",
+        "name": "Premium Subscription Plan",
+        "price": "$19.99/month",
+        "requires_subscription": true,
+        "thumbnail": "../../img/11.webp",
+        "image": "https://storage.googleapis.com/ahoy-dynamic-content/AHOY%20Market%20v25%20-%20Premium%20Subscription.jpg",
+        "tags": ["subscription", "premium"],
+        "edition": "N/A"
+    },
+    {
+        "id": "v25-11a",
+        "name": "Crappy Art 1",
+        "price": "$15",
+        "requires_subscription": false,
+        "thumbnail": "https://storage.googleapis.com/ahoy-dynamic-content/ahoyMarket_crappyArt-1.jpg",
+        "image": "https://storage.googleapis.com/ahoy-dynamic-content/ahoyMarket_crappyArt-1.jpg",
+        "tags": ["art", "crappy art", "collectible"],
+        "edition": "1 of 1"
+    },
+    {
+        "id": "v25-12",
+        "name": "Crappy Art 2",
+        "price": "$30",
+        "requires_subscription": false,
+        "thumbnail": "https://storage.googleapis.com/ahoy-dynamic-content/ahoyMarket_crappyArt-2.jpg",
+        "image": "https://storage.googleapis.com/ahoy-dynamic-content/ahoyMarket_crappyArt-2.jpg",
+        "tags": ["art", "crappy art", "collectible"],
+        "edition": "1 of 1"
+    },
+    {
+        "id": "v25-13",
+        "name": "Crappy Art 3",
+        "price": "$45",
+        "requires_subscription": false,
+        "thumbnail": "https://storage.googleapis.com/ahoy-dynamic-content/ahoyMarket_crappyArt-3.jpg",
+        "image": "https://storage.googleapis.com/ahoy-dynamic-content/ahoyMarket_crappyArt-3.jpg",
+        "tags": ["art", "crappy art", "collectible"],
+        "edition": "1 of 1"
+    },
+    {
+        "id": "v25-14",
+        "name": "Crappy Art 1",
+        "price": "$15",
+        "requires_subscription": false,
+        "thumbnail": "https://storage.googleapis.com/ahoy-dynamic-content/ahoyMarket_crappyArt-1.jpg",
+        "image": "https://storage.googleapis.com/ahoy-dynamic-content/ahoyMarket_crappyArt-1.jpg",
+        "tags": ["art", "crappy art", "collectible"],
+        "edition": "1 of 1"
+    },
+    {
+        "id": "v25-15",
+        "name": "Ahoy Mixtape Vol. 1",
+        "price": "$9.99",
+        "requires_subscription": false,
+        "thumbnail": "https://storage.googleapis.com/ahoy-dynamic-content/ahoy_mixtape_vol1.jpg",
+        "image": "https://storage.googleapis.com/ahoy-dynamic-content/ahoy_mixtape_vol1.jpg",
+        "tags": ["mixtape", "music", "digital"],
+        "edition": "Digital Download"
+      },
+      {
+        "id": "v25-16",
+        "name": "Ahoy Mixtape Vol. 2 - Indie Vibes",
+        "price": "$12.99",
+        "requires_subscription": false,
+        "thumbnail": "https://storage.googleapis.com/ahoy-dynamic-content/ahoy_mixtape_vol2_indie.jpg",
+        "image": "https://storage.googleapis.com/ahoy-dynamic-content/ahoy_mixtape_vol2_indie.jpg",
+        "tags": ["mixtape", "music", "indie", "digital"],
+        "edition": "Digital Download"
+      },
+      {
+        "id": "v25-17",
+        "name": "Ahoy Mixtape Vol. 3 - Retro Classics",
+        "price": "$14.99",
+        "requires_subscription": false,
+        "thumbnail": "https://storage.googleapis.com/ahoy-dynamic-content/ahoy_mixtape_vol3_retro.jpg",
+        "image": "https://storage.googleapis.com/ahoy-dynamic-content/ahoy_mixtape_vol3_retro.jpg",
+        "tags": ["mixtape", "music", "retro", "digital"],
+        "edition": "Digital Download"
+      },
+      {
+        "id": "v25-18",
+        "name": "Ahoy Retro Mixtape - 80s Classics",
+        "price": "$14.99",
+        "requires_subscription": false,
+        "thumbnail": "https://storage.googleapis.com/ahoy-dynamic-content/ahoy_mixtape_80s_cassette.jpg",
+        "image": "https://storage.googleapis.com/ahoy-dynamic-content/ahoy_mixtape_80s_cassette.jpg",
+        "tags": ["mixtape", "music", "physical", "80s", "retro"],
+        "edition": "Limited Edition CD"
+      },
+      {
+        "id": "v25-19",
+        "name": "Ahoy Indie Mixtape - Underground Hits",
+        "price": "$16.99",
+        "requires_subscription": false,
+        "thumbnail": "https://storage.googleapis.com/ahoy-dynamic-content/ahoy_mixtape_indie_cassette.jpg",
+        "image": "https://storage.googleapis.com/ahoy-dynamic-content/ahoy_mixtape_indie_cassette.jpg",
+        "tags": ["mixtape", "music", "physical", "indie", "underground"],
+        "edition": "Limited Edition CD"
+      },
+      {
+        "id": "v25-20",
+        "name": "Ahoy Chill Mixtape - Lo-Fi Beats",
+        "price": "$15.99",
+        "requires_subscription": false,
+        "thumbnail": "https://storage.googleapis.com/ahoy-dynamic-content/ahoy_mixtape_lofi_cassette.jpg",
+        "image": "https://storage.googleapis.com/ahoy-dynamic-content/ahoy_mixtape_lofi_cassette.jpg",
+        "tags": ["mixtape", "music", "physical", "lo-fi", "chill"],
+        "edition": "Limited Edition CD"
+      }
+]
