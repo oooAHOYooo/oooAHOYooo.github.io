@@ -265,5 +265,15 @@
     "title": "Ahoy Indie Media: Headed to the App Store!",
     "imageUrl": "https://storage.googleapis.com/ahoy-dynamic-content/news/AHOY-ART-FALL-2024.jpg",
     "content": "Ahoy Indie Media is almost ready to hit the App Store! We've made progress since launching, and are now focusing on UI improvements, casting features to work across devices, and more. Stay tuned for updates as we finalize the app for the App Store, and soon you'll be able to enjoy Ahoy anywhere, anytime!"
+},
+
+{
+    "date": "2024-10-28",
+    "title": "The Rob Show #36 - Jack Galvin",
+    "imageUrl": "https://storage.googleapis.com/ahoy-podcast-collection/ROB%20EPISODE%2036%20-%20JACK%20GALVIN.jpg",
+    "content": "New episode of The Rob Show with Jack Galvin, a Newport Rhode Island surfer and filmmaker.",
+    "active": "true",
+    "goTo": "podcast-tab"
 }
+
 ]

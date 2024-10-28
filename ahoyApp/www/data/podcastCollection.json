@@ -1,6 +1,15 @@
 {
   "podcasts": [
     {
+      "id": 25,
+      "title": "The Rob Show #36 - Jack Galvin",
+      "description": "Jack Galvin, a Newport Rhode Island surfer and filmmaker.",
+      "date": "2024-10-28",
+      "active": true,
+      "mp3url": "https://storage.googleapis.com/ahoy-podcast-collection/ready-rs-ep36-jackgalvin.mp3",
+      "thumbnail": "https://storage.googleapis.com/ahoy-podcast-collection/ROB%20EPISODE%2036%20-%20JACK%20GALVIN.jpg"
+    },
+    {
       "id": 24,
       "title": "The Rob Show #35 - Phoebe Kebabian",
       "description": "Phoebe Kebabian, an aspiring actress who plans on leaving for California, joins Rob for an insightful discussion in this episode of The Rob Show",
