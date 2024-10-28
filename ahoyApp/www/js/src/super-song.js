@@ -23,7 +23,7 @@ function populateSongList() {
     button.addEventListener('click', function() {
       const songIndex = this.getAttribute('data-index');
       updateRadioPlayer(parseInt(songIndex));
-      document.getElementById('audioPlayer').play();
+      document.getElementById('musicAudioPlayer').play();
       window.scrollTo({
         top: 0,
         behavior: 'smooth'
@@ -59,7 +59,7 @@ function updateRadioPlayer(index) {
   document.getElementById('artist').textContent = song.artist;
 
   // Set the audio source for the player
-  const audioPlayer = document.getElementById('audioPlayer');
+  const audioPlayer = document.getElementById('musicAudioPlayer');
   audioPlayer.src = song.mp3url;
 
   // Reset the progress bar and play button
@@ -74,7 +74,7 @@ function updateRadioPlayer(index) {
 
 // Function to play or pause the song
 function togglePlay() {
-  const audioPlayer = document.getElementById('audioPlayer');
+  const audioPlayer = document.getElementById('musicAudioPlayer');
   const playBtn = document.getElementById('playBtn');
   
   if (audioPlayer.paused) {
@@ -90,15 +90,15 @@ function togglePlay() {
 function nextSong() {
   currentSongIndex = (currentSongIndex + 1) % songs.length;
   updateRadioPlayer(currentSongIndex);
-  document.getElementById('audioPlayer').play();
+  document.getElementById('musicAudioPlayer').play();
 }
 
 // Add event listener to play the next song when the current one ends
-document.getElementById('audioPlayer').addEventListener('ended', nextSong);
+document.getElementById('musicAudioPlayer').addEventListener('ended', nextSong);
 
 // Function to toggle play/pause when clicking the thumbnail
 function togglePlayOnThumbnail() {
-  const audioPlayer = document.getElementById('audioPlayer');
+  const audioPlayer = document.getElementById('musicAudioPlayer');
   const playBtn = document.getElementById('playBtn');
 
   if (audioPlayer.paused) {
@@ -117,7 +117,7 @@ document.getElementById('coverArt').addEventListener('click', togglePlayOnThumbn
 function prevSong() {
   currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
   updateRadioPlayer(currentSongIndex);
-  document.getElementById('audioPlayer').play();
+  document.getElementById('musicAudioPlayer').play();
 }
 
 // Function to handle search
@@ -149,7 +149,7 @@ function searchSongs() {
         button.addEventListener('click', function() {
             const songIndex = this.getAttribute('data-index');
             updateRadioPlayer(parseInt(songIndex));
-            document.getElementById('audioPlayer').play();
+            document.getElementById('musicAudioPlayer').play();
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
@@ -168,19 +168,19 @@ document.getElementById('prevBtn').addEventListener('click', prevSong);
 
 // Function to update the duration bar as the song plays
 function updateDurationBar() {
-  const audioPlayer = document.getElementById('audioPlayer');
+  const audioPlayer = document.getElementById('musicAudioPlayer');
   const durationBar = document.getElementById('durationBar');
   durationBar.value = audioPlayer.currentTime;
 }
 
 // Event listener for the duration bar to seek in the song
 document.getElementById('durationBar').addEventListener('input', function() {
-  const audioPlayer = document.getElementById('audioPlayer');
+  const audioPlayer = document.getElementById('musicAudioPlayer');
   audioPlayer.currentTime = this.value;
 });
 
 // Update the duration bar as the song plays
-document.getElementById('audioPlayer').addEventListener('timeupdate', updateDurationBar);
+document.getElementById('musicAudioPlayer').addEventListener('timeupdate', updateDurationBar);
 
 // Call the fetch function once the page loads
 document.addEventListener('DOMContentLoaded', fetchRadioSongs);

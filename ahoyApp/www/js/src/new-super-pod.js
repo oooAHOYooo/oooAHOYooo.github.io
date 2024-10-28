@@ -3,11 +3,12 @@ document.addEventListener("DOMContentLoaded", function() {
     const podcastTitle = document.getElementById('podcast-title');
     const podcastDescription = document.getElementById('podcast-description');
     const podcastThumbnail = document.getElementById('podcast-thumbnail');
-    const audioPlayer = document.getElementById('audioPlayer');
+    const audioPlayer = document.getElementById('podcastAudioPlayer');
     const playPodcastBtn = document.getElementById('playPodcastBtn');
     const backwardPodcastBtn = document.getElementById('backwardPodcastBtn');
-    const forwardPodcastBtn = document.getElementById('forwardPodcastBtn');
+    const nextPodcastBtn = document.getElementById('nextPodcastBtn');
     const durationBar = document.getElementById('podcastDurationBar');
+    const forward15sBtn = document.getElementById('forwardPodcastBtn');
 
     let currentPodcastIndex = 0;
     let podcasts = [];
@@ -17,7 +18,6 @@ document.addEventListener("DOMContentLoaded", function() {
         .then(response => response.json())
         .then(data => {
             podcasts = data.podcasts;
-            // Sort podcasts by ID in descending order
             podcasts.sort((a, b) => b.id - a.id);
             populatePodcastList();
             loadPodcast(currentPodcastIndex);
@@ -36,7 +36,6 @@ document.addEventListener("DOMContentLoaded", function() {
             podcastListBody.appendChild(row);
         });
 
-        // Add event listeners to all listen buttons
         document.querySelectorAll('.listen-btn-podcast').forEach(button => {
             button.addEventListener('click', function() {
                 const podcastIndex = this.getAttribute('data-index');
@@ -54,33 +53,40 @@ document.addEventListener("DOMContentLoaded", function() {
         audioPlayer.src = podcast.mp3url;
         currentPodcastIndex = index;
 
-        // Ensure the podcast plays immediately
-        // audioPlayer.play().catch(error => console.error('Error playing podcast:', error));
+        // Reset the duration bar
+        durationBar.value = 0;
 
-        // Scroll to the top of the page
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+        // Pause other audio players
+        document.querySelectorAll('audio').forEach(player => {
+            if (player !== audioPlayer) {
+                player.pause();
+            }
         });
 
-        // Update the duration bar as the podcast plays
-        audioPlayer.addEventListener('timeupdate', () => {
-            const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
-            durationBar.value = progress;
-
-            // Display remaining time
-            const remainingTime = audioPlayer.duration - audioPlayer.currentTime;
-            const minutes = Math.floor(remainingTime / 60);
-            const seconds = Math.floor(remainingTime % 60).toString().padStart(2, '0');
-            document.getElementById('remaining-time').textContent = `${minutes}:${seconds}`;
-        });
-
-        // Allow scrubbing through the podcast
-        durationBar.addEventListener('input', () => {
-            const scrubTime = (durationBar.value / 100) * audioPlayer.duration;
-            audioPlayer.currentTime = scrubTime;
-        });
+        // Play the podcast
+        playPodcast();
     }
+
+    // Play podcast
+    function playPodcast() {
+        audioPlayer.play().then(() => {
+            playPodcastBtn.textContent = '[❚❚ PAUSE]';
+        }).catch(error => console.error('Error playing podcast:', error));
+    }
+
+    // Toggle play/pause
+    function togglePlayPause() {
+        if (audioPlayer.paused) {
+            playPodcast();
+        } else {
+            audioPlayer.pause();
+            playPodcastBtn.textContent = '[► PLAY]';
+        }
+    }
+
+    // Event listeners
+    playPodcastBtn.addEventListener('click', togglePlayPause);
+    podcastThumbnail.addEventListener('click', togglePlayPause);
 
     // Load saved podcast index and time from local storage
     const savedPodcastIndex = localStorage.getItem('currentPodcastIndex');
@@ -119,7 +125,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     // Play the next podcast by ID
-    forwardPodcastBtn.addEventListener('click', () => {
+    nextPodcastBtn.addEventListener('click', () => {
         const currentPodcastId = podcasts[currentPodcastIndex].id;
         const nextPodcast = podcasts.slice().reverse().find(podcast => podcast.id > currentPodcastId);
         if (nextPodcast) {
@@ -129,29 +135,26 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    // Toggle play/pause when clicking the podcast thumbnail
-    podcastThumbnail.addEventListener('click', () => {
-        if (audioPlayer.paused) {
-            playPodcast();
-        } else {
-            audioPlayer.pause();
-            playPodcastBtn.textContent = '[► PLAY]';
-        }
+    // Update the duration bar as the podcast plays
+    audioPlayer.addEventListener('timeupdate', () => {
+        const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+        durationBar.value = progress;
+
+        // Display remaining time
+        const remainingTime = audioPlayer.duration - audioPlayer.currentTime;
+        const minutes = Math.floor(remainingTime / 60);
+        const seconds = Math.floor(remainingTime % 60).toString().padStart(2, '0');
+        document.getElementById('remaining-time').textContent = `${minutes}:${seconds}`;
     });
 
-    // Play podcast
-    function playPodcast() {
-        audioPlayer.play();
-        playPodcastBtn.textContent = '[❚❚ PAUSE]';
-    }
+    // Allow scrubbing through the podcast
+    durationBar.addEventListener('input', () => {
+        const scrubTime = (durationBar.value / 100) * audioPlayer.duration;
+        audioPlayer.currentTime = scrubTime;
+    });
 
-    // Play or pause podcast
-    playPodcastBtn.addEventListener('click', () => {
-        if (audioPlayer.paused) {
-            playPodcast();
-        } else {
-            audioPlayer.pause();
-            playPodcastBtn.textContent = '[► PLAY]';
-        }
+    // Skip forward 15 seconds
+    forward15sBtn.addEventListener('click', () => {
+        audioPlayer.currentTime = Math.min(audioPlayer.currentTime + 15, audioPlayer.duration);
     });
 });
