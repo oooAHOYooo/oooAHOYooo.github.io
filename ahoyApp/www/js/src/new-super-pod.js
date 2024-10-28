@@ -5,10 +5,10 @@ document.addEventListener("DOMContentLoaded", function() {
     const podcastThumbnail = document.getElementById('podcast-thumbnail');
     const audioPlayer = document.getElementById('podcastAudioPlayer');
     const playPodcastBtn = document.getElementById('playPodcastBtn');
-    const backwardPodcastBtn = document.getElementById('backwardPodcastBtn');
-    const nextPodcastBtn = document.getElementById('nextPodcastBtn');
+    const backwardPodcastBtn = document.getElementById('podcast-backward15sBtn');
+    const nextPodcastBtn = document.getElementById('podcast-nextBtn');
     const durationBar = document.getElementById('podcastDurationBar');
-    const forward15sBtn = document.getElementById('forwardPodcastBtn');
+    const forward15sBtn = document.getElementById('podcast-forward15sBtn');
 
     let currentPodcastIndex = 0;
     let podcasts = [];
@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", function() {
         audioPlayer.currentTime = scrubTime;
     });
 
-    // Skip forward 15 seconds
+    // Update the forward 15 seconds button event listener
     forward15sBtn.addEventListener('click', () => {
         audioPlayer.currentTime = Math.min(audioPlayer.currentTime + 15, audioPlayer.duration);
     });
