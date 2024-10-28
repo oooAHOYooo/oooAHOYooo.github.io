@@ -274,6 +274,14 @@
     "content": "New episode of The Rob Show with Jack Galvin, a Newport Rhode Island surfer and filmmaker.",
     "active": "true",
     "goTo": "podcast-tab"
+},
+{
+    "date": "2024-10-29",
+    "title": "The Rob Show Alumni are friends ",
+    "imageUrl": "https://storage.googleapis.com/ahoy-dynamic-content/news/Rob%20Show%20Alum%20Wish%20you%20a%20Happy%20Halloween.jpg",
+    "content": "here they are at a Halloween Party",
+    "active": "true",
+    "goTo": "podcast-tab"
 }
 
 ]
