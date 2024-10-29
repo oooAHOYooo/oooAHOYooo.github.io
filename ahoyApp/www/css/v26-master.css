@@ -516,6 +516,7 @@ button:hover {
 
 /* Button styling */
 
+/*
 .playlist-button {
     background: linear-gradient(135deg, #6e8efb, #a777e3);
     color: white;
@@ -531,8 +532,15 @@ button:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+*/
 
-
+.beta-experimental-features {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
 
 /*

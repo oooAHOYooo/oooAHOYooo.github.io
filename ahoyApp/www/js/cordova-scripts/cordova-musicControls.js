@@ -52,5 +52,3 @@ function musicControlsEventListener(action) {
     // Add cases for other actions as needed
   }
 }
-
-// Implement additional functions as needed...

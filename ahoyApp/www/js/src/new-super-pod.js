@@ -63,8 +63,8 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
 
-        // Play the podcast
-        playPodcast();
+        // Remove the automatic play call
+        // playPodcast();
     }
 
     // Play podcast
@@ -129,6 +129,8 @@ document.addEventListener("DOMContentLoaded", function() {
         currentPodcastIndex = (currentPodcastIndex + 1) % podcasts.length;
         loadPodcast(currentPodcastIndex);
         audioPlayer.play();
+    });
+
     // Get the podcast audio player element from index.html
     const podcastAudioPlayer = document.getElementById('podcast-audio-player');
 
@@ -178,7 +180,6 @@ document.addEventListener("DOMContentLoaded", function() {
     } else {
         console.error('Podcast audio player element not found in index.html');
     }
-    });
 
     // Update the duration bar as the podcast plays
     audioPlayer.addEventListener('timeupdate', () => {
