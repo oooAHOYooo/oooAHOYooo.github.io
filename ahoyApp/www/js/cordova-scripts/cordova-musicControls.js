@@ -3,24 +3,26 @@
 document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
-  // Create music controls
-  MusicControls.create(
-    {
-      track: "Track Title", // Provide a default or the current track title
-      artist: "Artist Name", // Provide the artist name
-      cover: "cover.jpg", // Path to cover image
-      isPlaying: true, // Playback status
-      dismissable: true, // Whether the notification can be dismissed
-
-      // Add other options as needed...
-    },
-    onSuccess,
-    onError
-  );
+  // Create music controls with default values
+  updateMusicControls("Track Title", "Artist Name", "cover.jpg", true);
 
   // Subscribe to music control events
   MusicControls.subscribe(musicControlsEventListener);
   MusicControls.listen();
+}
+
+function updateMusicControls(track, artist, cover, isPlaying) {
+  MusicControls.create(
+    {
+      track: track,
+      artist: artist,
+      cover: cover,
+      isPlaying: isPlaying,
+      dismissable: true,
+    },
+    onSuccess,
+    onError
+  );
 }
 
 function onSuccess() {
@@ -35,20 +37,48 @@ function musicControlsEventListener(action) {
   const message = JSON.parse(action).message;
   switch (message) {
     case "music-controls-next":
-      // Implement what happens when the user presses 'next'
+      // Trigger next song or podcast
+      if (typeof nextSong === 'function') nextSong();
+      if (typeof nextPodcast === 'function') nextPodcast();
       break;
     case "music-controls-previous":
-      // Implement what happens when the user presses 'previous'
+      // Trigger previous song or podcast
+      if (typeof prevSong === 'function') prevSong();
+      if (typeof prevPodcast === 'function') prevPodcast();
       break;
     case "music-controls-pause":
-      // Implement what happens when the user presses 'pause'
+      // Pause the current audio
+      if (typeof togglePlay === 'function') togglePlay();
+      if (typeof togglePlayPause === 'function') togglePlayPause();
       break;
     case "music-controls-play":
-      // Implement what happens when the user presses 'play'
+      // Play the current audio
+      if (typeof togglePlay === 'function') togglePlay();
+      if (typeof togglePlayPause === 'function') togglePlayPause();
       break;
-    case "music-controls-destroy":
-      // Implement what happens when the notification is dismissed
+    case "music-controls-seek-forward":
+      // Seek forward in the track
+      if (typeof seekForward === 'function') seekForward();
       break;
-    // Add cases for other actions as needed
+    case "music-controls-seek-backward":
+      // Seek backward in the track
+      if (typeof seekBackward === 'function') seekBackward();
+      break;
+    case "music-controls-volume-up":
+      // Increase volume
+      if (typeof volumeUp === 'function') volumeUp();
+      break;
+    case "music-controls-volume-down":
+      // Decrease volume
+      if (typeof volumeDown === 'function') volumeDown();
+      break;
+    case "music-controls-toggle-shuffle":
+      // Toggle shuffle mode
+      if (typeof toggleShuffle === 'function') toggleShuffle();
+      break;
+    case "music-controls-toggle-repeat":
+      // Toggle repeat mode
+      if (typeof toggleRepeat === 'function') toggleRepeat();
+      break;
   }
 }
