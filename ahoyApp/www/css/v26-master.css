@@ -3951,6 +3951,32 @@ input[type="date"]:focus {
     transform: translateY(0);
 }
 
+.song-sort-button:hover,
+.media-sort-button:hover {
+    background-color: var(--background-color);
+    color: var(--border-color);
+    transform: scale(1.05);
+    /* Scale up slightly for a pop effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.song-sort-button:active,
+.media-sort-button:active {
+    background-color: var(--gold-color);
+    color: var(--background-color);
+    transform: scale(0.95);
+    /* Scale down slightly when pressed */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.media-sort-button {
+    background-color: var(--border-color);
+    color: var(--text-color);
+    padding: 10px 20px;
+    margin-top: 20px;
+    font-size: 15px !important;
+}
+
 .audio-control-button {
     --key-text-color: var(--text-color);
     --docsearch-key-shadow: inset 0 -1px 0 0 rgba(var(--border-color-rgb), 0.5), inset 0 0 1px 1px rgba(var(--border-color-rgb), 0.5),

@@ -137,14 +137,15 @@
               <h1>Full Media Library</h1>
               <div id="search-container">
                 <input type="text" id="search-input" placeholder="Search by title or artist..." />
-                <button onclick="searchMedia()" style="font-size: 2em; padding: 16px 64px;">Search</button>
+                <button onclick="searchMedia()">Search</button>
                 <button id="clear-search">Clear</button>
                 <div id="sort-buttons">
-                  <button id="sort-recent">Most Recent Added</button>
-                  <button id="sort-artist-az">Artist A-Z</button>
-                  <button id="sort-title-az">Title A-Z</button>
-                  <button id="sort-random">Random</button>
+                  <button id="sort-recent" class="media-sort-button"> Recent</button>
+                  <button id="sort-artist-az" class="media-sort-button">Artist A-Z</button>
+                  <button id="sort-title-az" class="media-sort-button">Title A-Z</button>
+                  <button id="sort-random" class="media-sort-button">Rando</button>
                 </div>
+
               </div>
               <div class="media-container">
                 <table id="mediaTable" class="list">
