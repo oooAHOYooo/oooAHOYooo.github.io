@@ -418,10 +418,10 @@ button:hover {
 .tab-content {
     position: absolute;
     /* padding: 4.5px; */
-    border-left: 1px solid var(--border-color);
-    border-right: 1px solid var(--border-color);
-    border-top: 1px solid var(--border-color);
-    margin-top: 4px;
+    border-left: .91px solid var(--border-color);
+    border-right: .91px solid var(--border-color);
+    border-top: .91px solid var(--border-color);
+    margin-top: 3px;
     overflow: hidden;
     position: relative;
     z-index: 10;
@@ -432,13 +432,12 @@ button:hover {
 
 
     padding-bottom: 50px !important;
-    padding-top: 12px;
 }
 
 .tab-content {
     width: 100%;
     /* Adjust based on your content's ideal width */
-    max-width: 755px;
+    max-width: 765px;
     /* Maximum width of the content */
     /* Center the content */
 }
@@ -547,7 +546,7 @@ button:hover {
     /* Ensure z-index works */
     z-index: 10;
     /* Adjust as needed to be on top */
-    border: 2px solid transparent;
+    border: 1px solid transparent;
     border-image: linear-gradient(0deg, #ffcc00, #ff00cc, #00ccff, #ffcc00) 1;
     animation: rotateColors 4s linear infinite;
 }
