@@ -117,29 +117,26 @@
           <!-- BEGIN-->
           <div id="tabSortza">
 
-            <!-- MEDIA TAB -->
-            <div id="media-tab-a" class="tab-content ">
-              <!-- START OF MEDIA-COLS-->
-            
-               <div class="right-sidebar-middle">    <!-- ... existing code ... -->
-              <div class="tv-container">
-        
-          
-                <div class="tv-wrap">
-                  <div id="jw-player-container"></div>
-                  <div id="media-display-text">
-                    <div id="media-artist-name">
-                      <p>This is where the Media Artist Name will Go</p></div>
-                    <div id="media-title-name">
-                      <p>This is where the Media Title Name will Go</p></div>
+            <div id="media-tab-a" class="tab-content">
+              <div class="right-sidebar-middle">
+                <div class="tv-container">
+                  <div class="tv-wrap">
+                    <div id="media-display-text">
+                      <div id="media-artist-name">
+                        <p>This is where the Media Artist Name will Go</p>
+                      </div>
+                      <div id="media-title-name">
+                        <p>This is where the Media Title Name will Go</p>
+                      </div>
+                    </div>
+                    <div id="jw-player-container"></div>
+                
                   </div>
                 </div>
-             
-              </div></div>
+              </div>
               <h1>Full Media Library</h1>
               <div id="search-container">
-                <input type="text" id="search-input"
-                  placeholder="Search by title or artist..." />
+                <input type="text" id="search-input" placeholder="Search by title or artist..." />
                 <button onclick="searchMedia()" style="font-size: 2em; padding: 16px 64px;">Search</button>
                 <button id="clear-search">Clear</button>
                 <div id="sort-buttons">
@@ -151,7 +148,6 @@
               </div>
               <div class="media-container">
                 <table id="mediaTable" class="list">
-                
                   <tbody>
                     <!-- Table data will be inserted here -->
                   </tbody>

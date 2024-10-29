@@ -3559,26 +3559,18 @@ input[type="date"]:focus {
     padding: 0px;
 }
 
-#media-title-name p {
+#media-title-name p,
+#media-artist-name p {
     margin: 0px;
     padding: 0px;
-}
-
-#media-artist-name p {
-    line-height: 85%;
-    padding-left: 10px;
-    margin: 0px;
     color: var(--text-color);
-    /* Use text-color variable */
 }
 
 #media-artist-name p {
-    font-size: 32px;
-    margin: 0px;
     line-height: 75%;
+    padding-left: 10px;
+    font-size: 32px;
     letter-spacing: .91px;
-    color: var(--text-color);
-    /* Use text-color variable */
 }
 
 
