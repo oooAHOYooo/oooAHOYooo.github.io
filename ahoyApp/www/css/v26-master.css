@@ -542,6 +542,25 @@ button:hover {
     justify-content: center;
 }
 
+.glow-border {
+    position: relative;
+    /* Ensure z-index works */
+    z-index: 10;
+    /* Adjust as needed to be on top */
+    border: 2px solid transparent;
+    border-image: linear-gradient(0deg, #ffcc00, #ff00cc, #00ccff, #ffcc00) 1;
+    animation: rotateColors 4s linear infinite;
+}
+
+@keyframes rotateColors {
+    0% {
+        border-image-source: linear-gradient(0deg, #ffcc00, #ff00cc, #00ccff, #ffcc00);
+    }
+
+    100% {
+        border-image-source: linear-gradient(360deg, #ffcc00, #ff00cc, #00ccff, #ffcc00);
+    }
+}
 
 /*
   ____            _        _                 
@@ -2660,9 +2679,14 @@ input[type="date"]:focus {
 #podcast-thumbnail {
     width: 400px;
     height: 400px;
-    object-fit: stretch;
     object-position: center;
-    border-radius: 12.5px;
+}
+
+/* Mobile version for screens under 400px */
+@media (max-width: 400px) {
+    #podcast-thumbnail {
+        width: 300px;
+    }
 }
 
 @media (max-width: 768px) {

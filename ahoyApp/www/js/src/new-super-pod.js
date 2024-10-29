@@ -67,10 +67,14 @@ document.addEventListener("DOMContentLoaded", function() {
         // playPodcast();
     }
 
+    // Add a CSS class for glowing effect
+    const glowClass = 'glow-border';
+
     // Play podcast
     function playPodcast() {
         audioPlayer.play().then(() => {
             playPodcastBtn.textContent = '[❚❚ PAUSE]';
+            podcastThumbnail.classList.add(glowClass); // Add glow effect
         }).catch(error => console.error('Error playing podcast:', error));
     }
 
@@ -81,6 +85,7 @@ document.addEventListener("DOMContentLoaded", function() {
         } else {
             audioPlayer.pause();
             playPodcastBtn.textContent = '[► PLAY]';
+            podcastThumbnail.classList.remove(glowClass); // Remove glow effect
         }
     }
 
@@ -144,9 +149,11 @@ document.addEventListener("DOMContentLoaded", function() {
             if (podcastAudioPlayer.paused) {
                 podcastAudioPlayer.play();
                 playPodcastBtn.textContent = '[❚❚ PAUSE]';
+                podcastThumbnail.classList.add(glowClass); // Add glow effect
             } else {
                 podcastAudioPlayer.pause();
                 playPodcastBtn.textContent = '[► PLAY]';
+                podcastThumbnail.classList.remove(glowClass); // Remove glow effect
             }
         });
 
