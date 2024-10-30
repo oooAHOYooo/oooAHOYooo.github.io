@@ -1588,7 +1588,7 @@ input[type="date"]:focus {
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 20px;
+    margin-top: 10px;
     margin-right: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(10px);
@@ -1853,7 +1853,6 @@ input[type="date"]:focus {
 .newsSubHeaderMenu button {
     text-transform: uppercase;
     font-size: 15px;
-    margin-right: 5px;
     margin-bottom: 10px;
     color: var(--text-color);
 }
@@ -1872,7 +1871,6 @@ input[type="date"]:focus {
 
 .newsletter-image {
     width: 100%;
-    max-width: 300px;
     height: auto;
     object-fit: cover;
     width: 500px;
@@ -3404,25 +3402,6 @@ input[type="date"]:focus {
 /* Existing styles */
 
 
-
-.pagination-controls {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-}
-
-.pagination-button {
-    padding: 5px 10px;
-    margin: 0 5px;
-    font-family: 'Times New Roman', serif;
-}
-
-.pagination-info {
-    font-family: 'Times New Roman', serif;
-    margin: 0 10px;
-}
-
 .newsletter-menu-container {
     display: flex;
     align-items: center;
@@ -3430,7 +3409,9 @@ input[type="date"]:focus {
     min-height: 500px;
 }
 
-
+.newsletter-date {
+    margin: 0px;
+}
 
 
 
@@ -3921,33 +3902,32 @@ input[type="date"]:focus {
     display: flex;
     justify-content: space-around;
     padding: 10px;
-
-    /* Light background */
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 #song-sort-buttons button {
-    background-color: var(--border-color);
-    /* Primary color */
-    color: white;
+    background-color: transparent;
+    color: var(--text-color);
     border: none;
     padding: 10px 20px;
     font-size: 16px;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 #song-sort-buttons button:hover {
-    background-color: var(--background-color);
-    /* Darker shade on hover */
-    transform: translateY(-1px);
+    background-color: var(--border-color);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 #song-sort-buttons button:active {
-    background-color: var(--gold-color);
-    transform: translateY(0);
+    background-image: linear-gradient(135deg, #ff7e5f, #feb47b);
+    transform: translateY(0) scale(0.95);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
 }
 
 .song-sort-button:hover,
@@ -3955,7 +3935,6 @@ input[type="date"]:focus {
     background-color: var(--background-color);
     color: var(--border-color);
     transform: scale(1.05);
-    /* Scale up slightly for a pop effect */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
@@ -4008,4 +3987,10 @@ input[type="date"]:focus {
     color: var(--text-color);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.wave-container h1 {
+    margin: 0px;
+    padding: 2px;
 }
