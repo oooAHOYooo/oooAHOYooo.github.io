@@ -2486,6 +2486,10 @@ input[type="date"]:focus {
         gap: 10px;
         width: 100%;
     }
+
+    .podcast-player-controls {
+        padding-bottom: 0px;
+    }
 }
 
 .radio-controls button:hover {
@@ -2680,10 +2684,10 @@ input[type="date"]:focus {
     object-position: center;
 }
 
-/* Mobile version for screens under 400px */
 @media (max-width: 400px) {
     #podcast-thumbnail {
-        width: 300px;
+        width: 320px;
+        height: 320px;
     }
 }
 
