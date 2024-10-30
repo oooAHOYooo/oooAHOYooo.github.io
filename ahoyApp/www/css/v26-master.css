@@ -3920,7 +3920,6 @@ input[type="date"]:focus {
 #song-sort-buttons {
     display: flex;
     justify-content: space-around;
-    margin: 20px 0;
     padding: 10px;
 
     /* Light background */
