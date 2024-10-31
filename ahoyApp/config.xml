@@ -3,30 +3,12 @@
 
     <!-- App Metadata -->
     <name>Ahoy Indie Media</name>
-    <description>Ahoy Indie Media is a handcrafted indie media platform - dashing out sugar you could find anywhere else.</description>
+    <description>Ahoy Indie Media is a handcrafted indie media platform.</description>
     <author email="alex@ahoy.ooo" href="https://ahoy.ooo">
         Ahoy Indie Media Team
     </author>
     
     <!-- App Entry Point -->
     <content src="index.html" />
-
-    <!-- Allow Intents -->
-    <allow-intent href="http://*/*" />
-    <allow-intent href="https://*/*" />
-
-    <!-- AndroidX Support -->
-    <preference name="AndroidXEnabled" value="true" />
-
-    <!-- Status Bar Preferences -->
-    <preference name="StatusBarOverlaysWebView" value="false" />
-    <preference name="StatusBarBackgroundColor" value="#003366" />
-    <preference name="StatusBarStyle" value="lightcontent" />
-
-    <!-- Android Configuration -->
-    <platform name="android">
-        <icon src="www/img/logo.png"/>
-        <preference name="android-versionCode" value="23" />
-    </platform>
 
 </widget>
