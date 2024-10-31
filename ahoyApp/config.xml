@@ -1,18 +1,24 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="io.cordova.ahoyApp" version="0.23" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+
+    <!-- App Metadata -->
     <name>Ahoy Indie Media</name>
-    <description>Ahoy Indie Media is a handcrafted indie media platform - dashing out sugar you could find anywhere else</description>
+    <description>Ahoy Indie Media is a handcrafted indie media platform - dashing out sugar you could find anywhere else.</description>
     <author email="alex@ahoy.ooo" href="https://ahoy.ooo">
         Ahoy Indie Media Team
     </author>
+    
+    <!-- App Entry Point -->
     <content src="index.html" />
+
+    <!-- Allow Intents -->
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
 
+    <!-- AndroidX Support -->
     <preference name="AndroidXEnabled" value="true" />
 
-
-    <!-- Splash Screen Preferences (Updated to new method) -->
+    <!-- Splash Screen Configuration -->
     <preference name="SplashScreen" value="screen" />
     <preference name="SplashScreenDelay" value="3000" />
     <preference name="AndroidWindowSplashScreenAnimatedIcon" value="www/img/assets/splash-screens/splash-hdpi.png" />
@@ -22,16 +28,31 @@
     <preference name="StatusBarBackgroundColor" value="#003366" /> <!-- Nautical theme dark blue color -->
     <preference name="StatusBarStyle" value="lightcontent" />
 
-    <!-- Icon Configuration for Android -->
+    <!-- Android Configuration -->
     <platform name="android">
+        <!-- Set default icon -->
         <icon src="www/img/logo.png"/>
-        <!-- Add specific icons per density if necessary -->
+        
+        <!-- Specify adaptive icons if needed (Android 8.0+) -->
+        <!-- Uncomment and add more icons per density if required -->
+        <!-- <icon density="ldpi" src="res/android/ldpi.png" /> -->
+        
+        <!-- Android Version Code -->
+        <preference name="android-versionCode" value="23" />
+        
+        <!-- Additional configurations for compatibility -->
+        <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application">
+            <application android:usesCleartextTraffic="true" />
+        </edit-config>
     </platform>
     
-    <!-- Icon Configuration for iOS -->
+    <!-- iOS Configuration -->
     <platform name="ios">
+        <!-- Default iOS Icon -->
         <icon src="www/img/logo.png" width="180" height="180"/>
-        <!-- Add specific icons per size if necessary -->
+        
+        <!-- iOS Deployment Target -->
         <preference name="deployment-target" value="16.0" />
     </platform>
+    
 </widget>
