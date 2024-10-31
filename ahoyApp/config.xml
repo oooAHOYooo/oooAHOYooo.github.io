@@ -18,11 +18,6 @@
     <!-- AndroidX Support -->
     <preference name="AndroidXEnabled" value="true" />
 
-    <!-- Splash Screen Configuration -->
-    <preference name="SplashScreen" value="screen" />
-    <preference name="SplashScreenDelay" value="3000" />
-    <preference name="AndroidWindowSplashScreenAnimatedIcon" value="www/img/assets/splash-screens/splash-hdpi.png" />
-
     <!-- Status Bar Preferences -->
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarBackgroundColor" value="#003366" />
