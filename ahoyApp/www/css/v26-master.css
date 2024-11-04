@@ -624,6 +624,10 @@ button:hover {
     padding: 0;
 }
 
+.spacer-16 {
+    height: 16px;
+}
+
 .spacer-32 {
     height: 32px;
 }
@@ -2123,6 +2127,7 @@ input[type="date"]:focus {
 
 
 .search-container {
+    margin-top: 10px;
     width: 100%;
     display: flex;
     align-items: center;
