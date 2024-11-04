@@ -1,3 +1,5 @@
+import appConfig from './appConfig.js'; // Import the configuration
+
 document.addEventListener("DOMContentLoaded", function () {
   let mediaData = [];
 
@@ -72,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Fetch and populate media table
-  fetch("data/mediaCollection.json")
+  fetch(appConfig.jsonPaths.mediaCollection) // Use path from appConfig
     .then((response) => response.json())
     .then((data) => {
       mediaData = data; // Store data for sorting
