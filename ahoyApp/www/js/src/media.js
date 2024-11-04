@@ -1,5 +1,6 @@
+// media.js
 import appConfig from './appConfig.js'; // Import the configuration
-
+  
 document.addEventListener("DOMContentLoaded", function () {
   let mediaData = [];
 

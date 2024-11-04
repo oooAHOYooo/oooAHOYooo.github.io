@@ -1,3 +1,5 @@
+// command-center.js
+
 import appConfig from './appConfig.js'; // Import the configuration
 
 document.addEventListener('DOMContentLoaded', initializeApp);

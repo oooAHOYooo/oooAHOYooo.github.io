@@ -1,4 +1,4 @@
-// urlConfig.js
+// appConfig.js
 const appConfig = {
   jsonPaths: {
     radioPlay: './data/true-radioPlay.json',
