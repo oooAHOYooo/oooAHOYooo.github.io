@@ -222,6 +222,26 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+// Function to sort songs based on criteria
+function sortSongs(songs, criteria) {
+  switch (criteria) {
+    case 'recent':
+      // Assuming songs have a 'dateAdded' property
+      return songs.sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded));
+    case 'random':
+      // Shuffle the songs array
+      return songs.sort(() => Math.random() - 0.5);
+    case 'title':
+      // Sort by song title alphabetically
+      return songs.sort((a, b) => a.songTitle.localeCompare(b.songTitle));
+    case 'artist':
+      // Sort by artist name alphabetically
+      return songs.sort((a, b) => a.artist.localeCompare(b.artist));
+    default:
+      return songs;
+  }
+}
+
 // Function to sort and display songs
 function sortAndDisplaySongs(criteria) {
     songs = sortSongs(songs, criteria);

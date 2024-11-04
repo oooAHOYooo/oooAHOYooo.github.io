@@ -3,13 +3,26 @@ const audioContext = new (window.AudioContext || window.webkitAudioContext)();
 const analyserNode = audioContext.createAnalyser();
 analyserNode.fftSize = 2048; // Set the FFT size for frequency analysis
 
-// Connect audio element to analyser node
-function connectAudioElementToAnalyser(audioElementId) {
-    const audioElement = document.getElementById(audioElementId);
-    if (audioElement) {
-        const track = audioContext.createMediaElementSource(audioElement);
-        track.connect(analyserNode);
-        analyserNode.connect(audioContext.destination);
+// Connect virtual audio device to analyser node
+async function connectVirtualAudioToAnalyser() {
+    try {
+        const devices = await navigator.mediaDevices.enumerateDevices();
+        const audioInputDevices = devices.filter(device => device.kind === 'audioinput');
+
+        // Assuming the virtual audio device is the first audio input device
+        const virtualAudioDeviceId = audioInputDevices[0]?.deviceId;
+
+        if (virtualAudioDeviceId) {
+            const stream = await navigator.mediaDevices.getUserMedia({
+                audio: { deviceId: virtualAudioDeviceId }
+            });
+            const source = audioContext.createMediaStreamSource(stream);
+            source.connect(analyserNode);
+        } else {
+            console.error('No virtual audio device found.');
+        }
+    } catch (err) {
+        console.error('Error accessing virtual audio device:', err);
     }
 }
 
@@ -55,12 +68,12 @@ function drawWaveform() {
 }
 
 // Initialize visualization
-function initAudioVisualization(audioElementId) {
-    connectAudioElementToAnalyser(audioElementId);
+async function initAudioVisualization() {
+    await connectVirtualAudioToAnalyser();
     drawWaveform();
 }
 
 // Example usage
 document.addEventListener('DOMContentLoaded', () => {
-    initAudioVisualization('musicAudioPlayer');
+    initAudioVisualization();
 });
