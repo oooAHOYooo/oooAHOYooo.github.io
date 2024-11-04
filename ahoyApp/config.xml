@@ -2,9 +2,9 @@
 <widget id="io.cordova.ahoyApp" version="0.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
 
     <!-- App Metadata -->
-    <name>Ahoy Indie Media</name>
-    <description>Ahoy Indie Media is a hand-crafted indie media platform.</description>
-    <author email="alex@ahoy.ooo" href="https://ahoy.ooo">Ahoy Indie Media Team</author>
+    <name>Ahoy</name>
+ <description>Ahoy Indie Media is a hand-crafted indie media platform.</description>
+<author email="alex@ahoy.ooo" href="https://ahoy.ooo">Ahoy Indie Media Team</author>
     
     <!-- App Entry Point -->
     <content src="index.html" />
