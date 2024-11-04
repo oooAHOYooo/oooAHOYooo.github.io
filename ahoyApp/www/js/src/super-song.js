@@ -1,4 +1,6 @@
-const songsDataUrl = './data/true-radioPlay.json'; // Updated path to your JSON file
+import appConfig from './appConfig.js'; // Import the appConfig
+
+const songsDataUrl = appConfig.jsonPaths.radioPlay; // Use the path from appConfig
 let currentSongIndex = 0;
 let songs = [];
 

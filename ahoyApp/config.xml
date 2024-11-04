@@ -1,14 +1,32 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.cordova.ahoyApp" version="0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="io.cordova.ahoyApp" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
 
     <!-- App Metadata -->
     <name>Ahoy Indie Media</name>
     <description>Ahoy Indie Media is a hand-crafted indie media platform.</description>
-    <author email="alex@ahoy.ooo" href="https://ahoy.ooo">
-        Ahoy Indie Media Team
-    </author>
+    <author email="alex@ahoy.ooo" href="https://ahoy.ooo">Ahoy Indie Media Team</author>
     
     <!-- App Entry Point -->
     <content src="index.html" />
-
+    
+    <!-- Allow access to all domains -->
+    <access origin="*" />
+    
+    <!-- Configure WKWebView (recommended for iOS) -->
+    <feature name="CDVWKWebViewEngine">
+        <param name="ios-package" value="CDVWKWebViewEngine" />
+    </feature>
+    <preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine" />
+    
+    <!-- Enable Inline Media Playback -->
+    <preference name="AllowInlineMediaPlayback" value="true" />
+    <preference name="MediaPlaybackRequiresUserAction" value="false" />
+    
+    <!-- Set Scheme and Hostname for Local Access -->
+    <preference name="scheme" value="app" />
+    <preference name="hostname" value="localhost" />
+    
+    <!-- Enable Cross-Origin Resource Sharing Policies -->
+    <preference name="iosScheme" value="app" />
+    <preference name="corsEnabled" value="true" />
 </widget>
