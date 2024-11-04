@@ -55,6 +55,24 @@ a {
     --tiny-font-size: 14px;
 }
 
+/*action button styles*/
+:root {
+    --action-button-min-width: 100px;
+    --action-button-height: 50px;
+    --action-button-font-size: 15px;
+    --action-button-border: 2px solid rgba(255, 255, 255, 0.2);
+    --action-button-background: rgba(255, 255, 255, 0.15);
+    --action-button-padding: 10px;
+    --action-button-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    --action-button-transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+    --action-button-hover-background: rgba(255, 255, 255, 0.25);
+    --action-button-hover-box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    --action-button-hover-transform: translateY(-3px);
+    --action-button-active-transform: translateY(1px);
+    --action-button-active-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+
 body {
     background-color: var(--background-color);
 }
@@ -622,6 +640,13 @@ select {
 input::placeholder {
     color: var(--text-color);
     /* Use theme text color */
+}
+
+input {
+    width: 90%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-color: var(--border-color);
 }
 
 
@@ -1194,30 +1219,28 @@ input[type="date"]:focus {
 }
 
 .action-button {
-    width: 200px;
-    height: 50px;
-    font-size: 18px;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    background: rgba(255, 255, 255, 0.15);
+    min-width: var(--action-button-min-width);
+    height: var(--action-button-height);
+    font-size: var(--action-button-font-size);
+    border: var(--action-button-border);
+    background: var(--action-button-background);
     color: var(--text-color);
     cursor: pointer;
-    padding: 10px;
-    padding-left: 40px;
-    padding-right: 40px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+    padding: var(--action-button-padding);
+    box-shadow: var(--action-button-box-shadow);
+    transition: var(--action-button-transition);
 }
 
 .action-button:hover {
-    background: rgba(255, 255, 255, 0.25);
+    background: var(--action-button-hover-background);
     color: var(--border-color);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-    transform: translateY(-3px);
+    box-shadow: var(--action-button-hover-box-shadow);
+    transform: var(--action-button-hover-transform);
 }
 
 .action-button:active {
-    transform: translateY(1px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transform: var(--action-button-active-transform);
+    box-shadow: var(--action-button-active-box-shadow);
 }
 
 
@@ -1628,10 +1651,7 @@ input[type="date"]:focus {
     background: rgb(0, 255, 204);
 }
 
-.action-button i {
-    font-size: 22px;
-    /* Adjust icon size as needed */
-}
+
 
 
 .podcast-action-button {
@@ -2098,32 +2118,18 @@ input[type="date"]:focus {
 }
 
 
-.search-container {
+#search-container {
+    width: 100%;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
-.active-profile {
-    background-color: var(--background-color);
-    color: var(--border-color);
-    font-family: var(--font-family);
-    border: 2px solid var(--border-color);
-    padding: 20px;
-    margin-top: 20px;
-    box-shadow: 0 0 10px var(--border-color);
-}
+#search-buttons {
+    display: flex;
+    justify-content: center;
+    width: 100%;
 
-.active-profile h2 {
-    color: var(--border-color);
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 10px;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-}
-
-.active-profile p {
-    margin: 5px 0;
-    font-size: 14px;
 }
 
 
@@ -2134,7 +2140,6 @@ input[type="date"]:focus {
     /* Smooth scrolling on iOS */
 }
 
-
 #likeBtn.liked {
     background-color: var(--accent-color) !important;
     color: white !important;
@@ -2143,19 +2148,6 @@ input[type="date"]:focus {
 #likeBtn.liked i {
     color: #ff0060 !important;
 }
-
-
-
-
-
-
-/*
-#coverArt {
-    min-width: 237px;
-    min-height: 236px;
-    object-fit: cover;
-}
-*/
 
 .duration-control {
     margin-top: 10px;
@@ -3805,7 +3797,7 @@ input[type="date"]:focus {
 #sort-random {
     background-color: var(--background-color);
     border: 1px solid var(--border-color);
-    color: white;
+    color: var(--text-color);
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
@@ -3878,8 +3870,7 @@ input[type="date"]:focus {
     background-color: var(--border-color);
     color: var(--text-color);
     padding: 10px 20px;
-    margin-top: 20px;
-    font-size: 15px !important;
+    margin-top: 40px;
 }
 
 .audio-control-button {
