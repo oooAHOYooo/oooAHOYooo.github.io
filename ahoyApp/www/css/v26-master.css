@@ -2083,7 +2083,7 @@ input[type="date"]:focus {
 }
 
 
-#searchBtn {
+.searchBtn {
     background-color: transparent;
     color: var(--text-color);
     border: solid;
@@ -2094,14 +2094,19 @@ input[type="date"]:focus {
     font-weight: bold;
 }
 
-#searchBtn:hover {
-    background-color: transparent;
+.searchBtn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    /* Light glossy effect */
     border-color: var(--border-color);
     color: var(--border-color);
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.3), 0 6px 20px rgba(0, 0, 0, 0.19);
+    /* Glossy shadow */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    /* Smooth transition */
 }
 
 .terminal-section {
-    color: var(--border-color);
+    color: var(--text-color);
     font-family: var(--font-family);
     border: 2px solid var(--border-color);
     padding: 20px;
