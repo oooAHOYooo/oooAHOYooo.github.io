@@ -192,6 +192,14 @@ document.getElementById('durationBar').addEventListener('input', function() {
 // Update the duration bar as the song plays
 document.getElementById('musicAudioPlayer').addEventListener('timeupdate', updateDurationBar);
 
+// Function to shuffle an array
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
 // Call the fetch function once the page loads
 document.addEventListener('DOMContentLoaded', () => {
   // Check if songs are already in local storage
@@ -199,42 +207,37 @@ document.addEventListener('DOMContentLoaded', () => {
   if (storedSongs) {
     songs = JSON.parse(storedSongs);
     currentSongIndex = parseInt(localStorage.getItem('currentSongIndex')) || 0;
+    
+    // Shuffle songs before displaying
+    shuffleArray(songs);
+    
     updateRadioPlayer(currentSongIndex);
     populateSongList();
   } else {
-    fetchRadioSongs();
+    fetchRadioSongs().then(() => {
+      // Shuffle songs after fetching
+      shuffleArray(songs);
+      populateSongList();
+    });
   }
 });
 
-// Function to sort songs
-function sortSongs(criteria) {
-  switch (criteria) {
-    case 'recent':
-      songs.sort((a, b) => new Date(b.addedDate) - new Date(a.addedDate));
-      break;
-    case 'random':
-      songs.sort(() => Math.random() - 0.5);
-      break;
-    case 'title':
-      songs.sort((a, b) => a.songTitle.localeCompare(b.songTitle));
-      break;
-    case 'artist':
-      songs.sort((a, b) => a.artist.localeCompare(b.artist));
-      break;
-  }
-  populateSongList(); // Repopulate after sorting
+// Function to sort and display songs
+function sortAndDisplaySongs(criteria) {
+    songs = sortSongs(songs, criteria);
+    populateSongList(); // Repopulate after sorting
 }
 
 // Add event listeners for sort buttons
 document.getElementById('song-sort-recent').addEventListener('click', () => {
-  sortSongs('recent');
+    sortAndDisplaySongs('recent');
 });
 document.getElementById('song-sort-random').addEventListener('click', () => {
-  sortSongs('random');
+    sortAndDisplaySongs('random');
 });
 document.getElementById('song-sort-title-az').addEventListener('click', () => {
-  sortSongs('title');
+    sortAndDisplaySongs('title');
 });
 document.getElementById('song-sort-artist-az').addEventListener('click', () => {
-  sortSongs('artist');
+    sortAndDisplaySongs('artist');
 });
