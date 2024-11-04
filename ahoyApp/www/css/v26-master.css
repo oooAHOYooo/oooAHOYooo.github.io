@@ -66,7 +66,7 @@ a {
     --action-button-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     --action-button-transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
     --action-button-hover-background: rgba(255, 255, 255, 0.25);
-    --action-button-hover-box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    --action-button-hover-box-shadow: 0 15px 35px rgba(75, 0, 130, 0.3);
     --action-button-hover-transform: translateY(-3px);
     --action-button-active-transform: translateY(1px);
     --action-button-active-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -2368,6 +2368,7 @@ input[type="date"]:focus {
     align-items: center;
     flex-wrap: wrap;
     margin-top: 20px;
+    margin-bottom: 30px;
 }
 
 .podcast-player-controls {
