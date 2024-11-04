@@ -1193,94 +1193,33 @@ input[type="date"]:focus {
     color: #000000;
 }
 
-/* Action Button */
 .action-button {
-    width: 40px;
-    /* Increase width */
-    height: 40px;
-    /* Increase height */
-    font-size: 16px;
-    border: 2px solid var(--border-color);
-    /* Add border */
-    background-color: var(--border-color);
-    /* Add background color */
+    width: 200px;
+    height: 50px;
+    font-size: 18px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.15);
     color: var(--text-color);
-    /* Ensure text color contrasts */
     cursor: pointer;
-    margin: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    /* Add shadow */
-    transition: background 0.3s ease, box-shadow 0.3s ease;
-    /* Smooth transition */
+    padding: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
 }
 
 .action-button:hover {
-    background-color: var(--text-color);
-    /* Change background on hover */
+    background: rgba(255, 255, 255, 0.25);
     color: var(--border-color);
-    /* Change text color on hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-    /* Enhance shadow on hover */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    transform: translateY(-3px);
 }
 
-/* Reduce icon size on mobile */
-@media (max-width: 768px) {
-    .action-button {
-        width: 30px;
-        /* Reduce width */
-        height: 30px;
-        /* Reduce height */
-        font-size: 12px;
-        /* Reduce font size */
-    }
-
-    .action-button i {
-        font-size: 18px;
-        /* Reduce icon size */
-    }
+.action-button:active {
+    transform: translateY(1px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-/*buttons */
-
-.button-login-top-right {
-    margin-right: 9px;
-    border: 2px solid var(--border-color);
-    background: rgba(255, 255, 255, 0.2);
-    /* Glass effect with transparency */
-    color: var(--border-color);
-    backdrop-filter: blur(10px);
-    /* Apply blur for glass effect */
-    border-radius: 10px;
-    /* Rounded corners for a softer look */
-    padding: 10px 20px;
-    /* Add some padding for better spacing */
-    transition: background 0.3s ease, color 0.3s ease;
-    /* Smooth transition for hover effects */
-}
-
-.button-login-top-right:hover {
-    background: rgba(255, 255, 255, 0.4);
-    /* Slightly less transparent on hover */
-    color: var(--border-color);
-}
-
-/* Toggle button styles */
-.toggle-button {
-    position: fixed;
-    left: 2.25px;
-    top: 2.5px;
-    z-index: 1001;
-    cursor: pointer;
-    background-color: transparent;
-    color: white;
-    border: none;
-    font-size: 25px;
-}
-
-.toggle-button:hover {
-    background-color: var(--border-color);
-    color: var(--text-color);
-}
 
 .tab-content {
     display: none;
@@ -1413,27 +1352,6 @@ input[type="date"]:focus {
     cursor: pointer;
 }
 
-
-
-.action-button {
-    width: 40px;
-    /* Increase width */
-    height: 40px;
-    /* Increase height */
-    font-size: 16px;
-    border: 1px solid var(--border-color);
-    /* Add border */
-    background-color: var(--border-color);
-    /* Add background color */
-    color: var(--text-color);
-    /* Ensure text color contrasts */
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.3s ease, box-shadow 0.3s ease;
-    /* Smooth transition */
-}
 
 .action-button:hover {
     background-color: var(--text-color);
@@ -1704,14 +1622,7 @@ input[type="date"]:focus {
     /* Adjust the gap between buttons as needed */
 }
 
-.action-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 5px;
-    font-size: 16px;
-    color: var(--border-color);
-}
+
 
 .--action-add {
     background: rgb(0, 255, 204);
@@ -1991,22 +1902,6 @@ input[type="date"]:focus {
     height: 100%;
 }
 
-/* Action Button */
-.action-button {
-    margin: 0px;
-    font-size: 16px;
-    border: 2px solid var(--border-color);
-    /* Add border */
-    background-color: var(--border-color);
-    /* Add background color */
-    color: black;
-    /* Ensure text color contrasts */
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    /* Add shadow */
-    transition: background 0.3s ease, box-shadow 0.3s ease;
-    /* Smooth transition */
-}
 
 .action-button:hover {
     background-color: var(--text-color);
@@ -3693,6 +3588,24 @@ input[type="date"]:focus {
 }
 
 
+.settings-widget {
+    width: 100%;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+
+.theme-switcher-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
 
 /*AHOY WORK TAB MODE */
 

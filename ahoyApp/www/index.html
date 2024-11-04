@@ -242,8 +242,15 @@
                   <p class="team-member-name">Rob Meglio</p>
                   <p class="team-member-role">Movie Star</p>
                 </div>
+
+
               </div>
-            
+              <div class="settings-widget" id="privacy-section">
+
+                <p>To learn more about how we handle your data, please read our </p>
+                <a href="https://ahoy.ooo/privacy.html"><button class="action-button">Privacy Policy</button></a>
+                <br><br>
+              </div>
                 </div></div>
             </div>
 
@@ -323,28 +330,36 @@
   </div>
   </div>
 </div>
+<style>
+  .settings-widget {
+    width: 100%;
 
+  }
+</style>
      <!-- Settings TAB -->
 <div id="settings-tab" class="tab-content">
   <h1>Settings</h1>
-  <div class="beta-notice">
-    <p><strong>Note:</strong> This feature is currently in development and for beta use only. Functionality may be limited or subject to change.</p>
-  </div>
   <hr>
-  <!-- Theme Switcher -->
-  <div class="center-content">
-  <h2>Theme Switcher</h2>
-  <p>Current Theme: <span id="theme-title"></span></p>
-  <label for="theme-dropdown" style="width: 100%;">Select Theme:</label>
-  <br>
-  <select id="theme-dropdown" class="theme-dropdown">
-  </select>
+   <!-- Mute Audio -->
+ <div id="mute-audio-widget" class="settings-widget">
+  <button class="action-button" onclick="toggleMute()">Mute Audio</button>
 </div>
 <hr>
-<div id="privacy-section">
-  <h2>Privacy Policy</h2>
-  <p>To learn more about how we handle your data, please read our <a href="https://ahoy.ooo/privacy.html">Privacy Policy</a>.</p>
+  <!-- Theme Switcher -->
+  <h2>Theme Switcher</h2>
+  <div id="theme-switcher-widget" class="settings-widget">
+
+  <p>Current Theme: <span id="theme-title"></span></p>
+  <div class="theme-switcher-container">
+  <label for="theme-dropdown" style="width: 100%;">Select Theme:</label>
+  <select id="theme-dropdown" class="theme-dropdown">
+  </select>
+  </div>
 </div>
+<hr>
+
+
+<hr>
   </div>
                  
             </div>                                    
