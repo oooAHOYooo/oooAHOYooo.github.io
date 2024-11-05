@@ -1,6 +1,15 @@
 {
   "podcasts": [
     {
+      "id": 26,
+      "title": "The Rob Show #37 - Kevin McHahon",
+      "description": "Kevin McHahon, a local musician and songwriter, joins Rob for an engaging conversation in this episode of The Rob Show",
+      "date": "2024-11-05",
+      "active": true,
+      "mp3url": "https://storage.googleapis.com/ahoy-podcast-collection/ep37_kevin_The%20Rob%20Show%20-%20Fall%202024.mp3",
+      "thumbnail": "https://storage.googleapis.com/ahoy-podcast-collection/ROB%20EPISODE%2037%20-%20Kevin%20McHaon.jpg"
+    },
+    {
       "id": 25,
       "title": "The Rob Show #36 - Jack Galvin",
       "description": "Jack Galvin, a Newport Rhode Island surfer and filmmaker.",
