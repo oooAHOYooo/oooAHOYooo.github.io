@@ -16,8 +16,9 @@ document.addEventListener("DOMContentLoaded", function() {
     // Fetch podcast data
     async function fetchPodcasts() {
         try {
-            const response = await fetch('./data/podcastCollection.json');
+            const response = await fetch('https://storage.googleapis.com/ahoy-dynamic-content/dynamicJson/podcastCollection.json');
             const data = await response.json();
+            console.log('Fetched podcast data:', data);
             podcasts = data.podcasts;
             podcasts.sort((a, b) => b.id - a.id);
 

@@ -72,9 +72,10 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Fetch and populate media table
-  fetch("data/mediaCollection.json")
+  fetch("https://storage.googleapis.com/ahoy-dynamic-content/dynamicJson/mediaCollection.json")
     .then((response) => response.json())
     .then((data) => {
+      console.log("Fetched media data:", data); // Log the fetched data to the console
       mediaData = data; // Store data for sorting
       sortAndDisplayMedia('random'); // Initially sort by random
 

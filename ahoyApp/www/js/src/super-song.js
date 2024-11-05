@@ -2,6 +2,18 @@ const songsDataUrl = 'https://storage.googleapis.com/ahoy-dynamic-content/dynami
 let currentSongIndex = 0;
 let songs = [];
 
+fetch('https://storage.googleapis.com/ahoy-dynamic-content/dynamicJson/true-radioPlay.json')
+  .then(response => {
+    if (!response.ok) throw new Error("Network response was not ok");
+    return response.json();
+  })
+  .then(data => {
+    console.log('Fetched JSON data:', data);
+  })
+  .catch(error => {
+    console.error("Error fetching JSON data:", error);
+  });
+
 // Function to populate the song list table
 function populateSongList() {
   const songListBody = document.getElementById('songListBody');

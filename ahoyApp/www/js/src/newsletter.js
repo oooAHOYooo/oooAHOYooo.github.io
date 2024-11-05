@@ -1,7 +1,11 @@
 window.addEventListener('DOMContentLoaded', (event) => {
-    fetch('./data/newsletter.json')
-        .then(response => response.json())
+    fetch('https://storage.googleapis.com/ahoy-dynamic-content/dynamicJson/newsletter.json')
+        .then(response => {
+            if (!response.ok) throw new Error("Network response was not ok");
+            return response.json();
+        })
         .then(data => {
+            console.log('Fetched JSON data:', data);
             const activeData = data.filter(item => item.active !== "false" && item.active !== false);
             const sortedData = activeData.sort((a, b) => new Date(b.date) - new Date(a.date));
             const groupedByMonth = {};
@@ -142,5 +146,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
             displayNewsletter(sortedData); // Display the first page of items
             infiniteScroll(); // Initialize infinite scroll
+        })
+        .catch(error => {
+            console.error("Error fetching newsletter data:", error);
         });
 });
