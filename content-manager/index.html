@@ -18,6 +18,20 @@
         </select>
         <button onclick="loadData()">Load Data</button>
         <div id="jsonDisplay"></div>
+        <div id="addSong">
+            <h2>Add New Song</h2>
+            <input type="text" id="newTitle" placeholder="Title">
+            <input type="text" id="newArtist" placeholder="Artist">
+            <input type="text" id="newAlbum" placeholder="Album">
+            <button onclick="addSong()">Add Song</button>
+        </div>
+        <div id="reviewChanges">
+            <h2>Review Changes</h2>
+            <button onclick="previewChanges()">Preview Changes</button>
+            <div id="previewDisplay"></div>
+            <button onclick="downloadHumanReadable()">Download Human-Readable</button>
+            <button onclick="downloadMachineReadable()">Download Machine-Readable</button>
+        </div>
     </div>
     <script src="app.js"></script>
 </body>
