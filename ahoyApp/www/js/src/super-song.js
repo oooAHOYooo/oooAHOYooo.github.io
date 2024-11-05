@@ -1,4 +1,4 @@
-const songsDataUrl = './data/true-radioPlay.json'; // Updated path to your JSON file
+const songsDataUrl = 'https://storage.googleapis.com/ahoy-dynamic-content/dynamicJson/true-radioPlay.json'; // Updated to public URL
 let currentSongIndex = 0;
 let songs = [];
 
