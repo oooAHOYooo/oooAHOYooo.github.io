@@ -84,7 +84,7 @@
 
             <div id="media-tab-a" class="tab-content">
               <div class="tv-container">
-                <div class="tv-wrap">
+                
                   <div id="media-display-text">
                     <div id="media-artist-name">
                       <p>This is where the Media Artist Name will Go</p>
@@ -93,11 +93,13 @@
                       <p>This is where the Media Title Name will Go</p>
                     </div>
                   </div>
+
+
                   <div id="jw-player-container"></div>
               
                 </div>
-              </div>
-              
+          
+
               <h2>SEARCH MEDIA LIBRARY:</h2>
               <div id="search-container">
                 <input type="text" id="search-input" placeholder="Search by title or artist..." />
@@ -106,14 +108,14 @@
                   <button id="clear-search" class="action-button">Clear</button>
                  </div>
                 </div>
-                  
-                <div id="sort-buttons">
+                  <div class="table-responsive">
+                <div id="media-sort-buttons" class="sort-buttons-container">
                   <button id="sort-recent" class="media-sort-button"> Recent</button>
                   <button id="sort-artist-az" class="media-sort-button">Artist A-Z</button>
                   <button id="sort-title-az" class="media-sort-button">Title A-Z</button>
                   <button id="sort-random" class="media-sort-button">Rando</button>
                 </div>
-
+                </div>
              
               <div class="media-container">
                 <table id="mediaTable" class="list">
@@ -159,11 +161,11 @@
   <hr>
   <div class="song-list">
       <div class="table-responsive">
-        <div id="song-sort-buttons"> 
-          <button id="song-sort-recent">Recently Added</button>
-          <button id="song-sort-random">Random</button> <!-- Updated ID -->
-          <button id="song-sort-title-az">Title A-Z</button> <!-- Updated ID -->
-          <button id="song-sort-artist-az">Artist A-Z</button> <!-- Updated ID -->
+        <div id="song-sort-buttons" class="sort-buttons-container"> 
+          <button class="media-sort-button" id="song-sort-recent">Recently Added</button>
+          <button class="media-sort-button" id="song-sort-random">Random</button> 
+          <button class="media-sort-button" id="song-sort-title-az">Title A-Z</button> 
+          <button class="media-sort-button" id="song-sort-artist-az">Artist A-Z</button> 
         </div>
         <table id="songListTable">
           <thead></thead>
@@ -206,10 +208,11 @@
     </div>
   </div>
   <hr>
-  <div id="podcast-sort-buttons">
-    <button id="podcast-sort-recent" class="media-sort-button">Most Recent</button>
-    <button id="podcast-sort-title-az" class="media-sort-button">Title A-Z</button>
-    <button id="podcast-sort-random" class="media-sort-button">Random</button>
+  <div class="sort-buttons-container" id="podcast-sort-buttons">
+    <button class="media-sort-button" id="podcast-sort-recent">Most Recent</button>
+    <button class="media-sort-button" id="podcast-sort-random">Random</button>
+    <button class="media-sort-button" id="podcast-sort-title-az">Title A-Z</button>
+    <button class="media-sort-button" id="podcast-sort-series-az">Series A-Z</button>
   </div>
   <table>
     <tbody id="podcastListBody"></tbody>

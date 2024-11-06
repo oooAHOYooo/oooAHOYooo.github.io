@@ -273,3 +273,12 @@ document.getElementById('song-sort-title-az').addEventListener('click', () => {
 document.getElementById('song-sort-artist-az').addEventListener('click', () => {
     sortAndDisplaySongs('artist');
 });
+
+// Function to clear the search input and repopulate the song list
+function clearSearch() {
+  document.getElementById('songSearch').value = ''; // Clear the search input
+  populateSongList(); // Repopulate the song list with all songs
+}
+
+// Add event listener to the clear search button
+document.getElementById('clear-search').addEventListener('click', clearSearch);

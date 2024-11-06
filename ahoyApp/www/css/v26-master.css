@@ -210,29 +210,7 @@ tr:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-/*SPECIAL TABLES*/
-/*
-.podcastListBody>td p {
-    padding: 12px 15px;
-    text-align: left;
-    vertical-align: top;
-    line-height: 92%;
-    color: var(--text-color);
-}
-*/
 
-/*
-#songListBody td {
-    text-align: left;
-    vertical-align: top;
-    line-height: 92%;
-    color: var(--text-color);
-    font-family: var(--font-family);
-    align-items: center;
-    justify-content: center;
-
-}
-*/
 
 #songListTable {
     font-size: 14px;
@@ -968,157 +946,6 @@ input[type="date"]:focus {
     animation: breathe 4s infinite ease-in-out;
     margin-top: 52px !important;
 
-}
-
-/* Sidebar Content Styles */
-.sidebar-content {
-    padding: 20px;
-}
-
-.sidebar-section {
-    margin-bottom: 30px;
-    transition: transform 0.3s ease;
-}
-
-.sidebar-section:hover {
-    transform: translateY(-5px);
-}
-
-.sidebar-title {
-    font-size: 1.2em;
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 15px;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-    padding-bottom: 10px;
-}
-
-.sidebar-list {
-    list-style: none;
-    padding: 0;
-}
-
-.sidebar-list li {
-    margin-bottom: 10px;
-}
-
-.sidebar-list a {
-    display: block;
-    padding: 10px 15px;
-    color: rgba(255, 255, 255, 0.8);
-    text-decoration: none;
-    transition: all 0.3s ease;
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.05);
-}
-
-.sidebar-list a:hover {
-    background: rgba(255, 255, 255, 0.1);
-    color: #ffffff;
-    transform: translateX(5px);
-}
-
-/* Neumorphic Toggle Buttons */
-.toggle-button,
-.toggle-button-right {
-    position: fixed;
-    top: 20px;
-    z-index: 1001;
-    cursor: pointer;
-    background-color: rgba(51, 51, 51, 0.8);
-    color: white;
-    border: none;
-    font-size: 20px;
-    width: 50px;
-    height: 50px;
-    border-radius: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    box-shadow:
-        5px 5px 10px rgba(0, 0, 0, 0.2),
-        -5px -5px 10px rgba(255, 255, 255, 0.05);
-}
-
-.toggle-button {
-    left: 20px;
-}
-
-.toggle-button-right {
-    right: 20px;
-}
-
-.toggle-button:hover,
-.toggle-button-right:hover {
-    background-color: rgba(85, 85, 85, 0.8);
-    box-shadow:
-        inset 5px 5px 10px rgba(0, 0, 0, 0.2),
-        inset -5px -5px 10px rgba(255, 255, 255, 0.05);
-}
-
-/* Scrollbar Styling */
-#left-sidebar::-webkit-scrollbar,
-#right-sidebar::-webkit-scrollbar {
-    width: 6px;
-}
-
-#left-sidebar::-webkit-scrollbar-thumb,
-#right-sidebar::-webkit-scrollbar-thumb {
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 3px;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-
-    #left-sidebar,
-    #right-sidebar {
-        width: 100%;
-        /* Full width on mobile */
-        border-radius: 0;
-        /* Remove border radius on mobile */
-    }
-
-    #left-sidebar {
-        left: -100%;
-    }
-
-    #right-sidebar {
-        right: -100%;
-    }
-
-    .toggle-button,
-    .toggle-button-right {
-        top: 10px;
-        /* Move buttons closer to the top on mobile */
-    }
-
-    .toggle-button {
-        left: 10px;
-    }
-
-    .toggle-button-right {
-        right: 10px;
-    }
-}
-
-/* Improved visibility for sidebar content on mobile */
-@media (max-width: 768px) {
-    .sidebar-content {
-        padding: 20px;
-        font-size: 16px;
-        /* Slightly larger font size for better readability */
-    }
-
-    .sidebar-title {
-        font-size: 1.4em;
-        margin-bottom: 20px;
-    }
-
-    .sidebar-list a {
-        padding: 15px;
-        /* Larger touch targets */
-    }
 }
 
 .modal {
@@ -2094,16 +1921,6 @@ input[type="date"]:focus {
     font-weight: bold;
 }
 
-.searchBtn:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    /* Light glossy effect */
-    border-color: var(--border-color);
-    color: var(--border-color);
-    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.3), 0 6px 20px rgba(0, 0, 0, 0.19);
-    /* Glossy shadow */
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    /* Smooth transition */
-}
 
 .terminal-section {
     color: var(--text-color);
@@ -3770,77 +3587,7 @@ input[type="date"]:focus {
     border: 1px solid var(--border-color);
 }
 
-
-#song-sort-recent,
-#song-sort-random,
-#song-sort-title-az,
-#song-sort-artist-az {
-    background-color: var(--background-color);
-    /* Green background */
-    border: 1px solid var(--border-color);
-    color: white;
-    /* White text */
-    padding: 10px 20px;
-    /* Some padding */
-    text-align: center;
-    /* Centered text */
-    text-decoration: none;
-    /* Remove underline */
-    display: inline-block;
-    /* Make the buttons appear inline */
-    font-size: 16px;
-    /* Increase font size */
-    margin: 4px 2px;
-    /* Some margin */
-    cursor: pointer;
-    /* Pointer/hand icon on hover */
-    transition: background-color 0.3s ease;
-    /* Smooth transition */
-}
-
-#song-sort-recent:hover,
-#song-sort-random:hover,
-#song-sort-title-az:hover,
-#song-sort-artist-az:hover {
-    background-color: var(--border-color);
-    /* Darker green on hover */
-}
-
-#sort-recent,
-#sort-artist-az,
-#sort-title-az,
-#sort-random {
-    background-color: var(--background-color);
-    border: 1px solid var(--border-color);
-    color: var(--text-color);
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-#sort-recent:hover,
-#sort-artist-az:hover,
-#sort-title-az:hover,
-#sort-random:hover {
-    background-color: var(--border-color);
-    /* Darker green on hover */
-}
-
-
-#song-sort-buttons {
-    display: flex;
-    justify-content: space-around;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-#song-sort-buttons button {
+.media-sort-button {
     background-color: transparent;
     color: var(--text-color);
     border: none;
@@ -3851,6 +3598,32 @@ input[type="date"]:focus {
     transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+.media-sort-button:hover {
+    background-color: var(--border-color);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.media-sort-button:active {
+    background-image: linear-gradient(135deg, #ff7e5f, #feb47b);
+    transform: translateY(0) scale(0.95);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+
+
+
+.sort-buttons-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: var(--background-color);
+}
+
+
 
 #song-sort-buttons button:hover {
     background-color: var(--border-color);
@@ -3881,12 +3654,14 @@ input[type="date"]:focus {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/*
 .media-sort-button {
     background-color: var(--border-color);
     color: var(--text-color);
     padding: 10px 20px;
     margin-top: 40px;
 }
+*/
 
 .audio-control-button {
     --key-text-color: var(--text-color);
