@@ -97,15 +97,16 @@
               
                 </div>
               </div>
-<hr class="spacer-16">
+              
               <h2>SEARCH MEDIA LIBRARY:</h2>
               <div id="search-container">
                 <input type="text" id="search-input" placeholder="Search by title or artist..." />
+                <div id="search-buttons">
+                  <button class="action-button" onclick="searchMedia()">Search</button>
+                  <button id="clear-search" class="action-button">Clear</button>
+                 </div>
                 </div>
-                    <div id="search-buttons">
-                <button class="action-button" onclick="searchMedia()">Search</button>
-                <button id="clear-search" class="action-button">Clear</button>
-               </div>
+                  
                 <div id="sort-buttons">
                   <button id="sort-recent" class="media-sort-button"> Recent</button>
                   <button id="sort-artist-az" class="media-sort-button">Artist A-Z</button>
@@ -151,7 +152,8 @@
       <h2>SEARCH SONGS:</h2>
       <div class="search-container">
           <input type="text" id="songSearch" placeholder="Enter search query...">
-          <button id="searchBtn" class="searchBtn">[SEARCH]</button>
+          <button id="searchBtn" class="action-button">Search</button>
+          <button id="clear-search" class="action-button">Clear</button>
       </div>
   </div>
   <hr>
@@ -199,7 +201,7 @@
     <h2>SEARCH PODCASTS:</h2>
     <div class="search-container">
       <input type="text" id="podcastSearch" placeholder="Search podcasts...">
-      <button class="searchBtn" id="podcastSearchBtn">[SEARCH]</button>
+      <button class="action-button" id="podcastSearchBtn">Search</button>
       <button id="clear-search" class="action-button">Clear</button>
     </div>
   </div>
