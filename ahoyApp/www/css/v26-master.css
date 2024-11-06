@@ -432,10 +432,7 @@ button:hover {
 
 .tab-content {
     width: 100%;
-    /* Adjust based on your content's ideal width */
     max-width: 765px;
-    /* Maximum width of the content */
-    /* Center the content */
 }
 
 /*CHAPTER 8 - MUSIC AND PODCAST DISPLAY" */
@@ -447,8 +444,8 @@ button:hover {
 }
 
 .song-info>img {
-    width: 350px;
-    height: 350px;
+    width: 375px;
+    height: 375px;
     object-fit: cover;
     display: block;
     margin-left: auto;
