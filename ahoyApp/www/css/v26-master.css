@@ -509,25 +509,18 @@ button:hover {
 
 
 
-/* Button styling */
-
-/*
-.playlist-button {
-    background: linear-gradient(135deg, #6e8efb, #a777e3);
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin: 10px;
+.update-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
-.playlist-button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.update-image {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
 }
-*/
 
 .beta-experimental-features {
     width: 100%;
@@ -816,65 +809,6 @@ input[type="date"]:focus {
 .toggle-button:hover,
 .toggle-button-right:hover {
     background: rgba(255, 255, 255, 0.3);
-}
-
-
-/*FLYER*/
-/* Add this to your existing CSS file */
-.flyer-upload {
-    display: flex;
-    flex-direction: column;
-    /* Stack elements vertically */
-    align-items: center;
-    /* Center elements horizontally */
-    padding: 10px;
-    margin: 20px;
-    /* Add some margin for spacing */
-}
-
-.flyer-upload input,
-.flyer-upload button {
-    width: 80%;
-    /* Set a consistent width for inputs and buttons */
-    margin: 5px 0;
-    /* Add vertical spacing between elements */
-    padding: 10px;
-    /* Add padding for better touch targets */
-    border-radius: 5px;
-    /* Rounded corners */
-    border: 1px solid #ccc;
-    /* Light border */
-    font-size: 16px;
-    /* Increase font size for readability */
-}
-
-.flyer-upload button {
-    background-color: rgba(var(--border-color), 0.9);
-    /* Button background color */
-    color: var(--text-color);
-    /* Button text color */
-    cursor: pointer;
-    /* Pointer cursor on hover */
-    transition: background-color 0.3s;
-    /* Smooth transition for hover effect */
-    width: 100%;
-}
-
-.flyer-upload button:hover {
-    background-color: rgba(var(--border-color), 0.9);
-    /* Darker shade on hover */
-}
-
-.flyer {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin: 10px 0;
-    display: flex;
-    align-items: center;
-}
-
-.flyer img {
-    margin-right: 10px;
 }
 
 
@@ -2639,9 +2573,7 @@ input[type="date"]:focus {
     transition: all 0.3s ease;
 }
 
-#v25-dock-container:hover {
-    background-color: rgba(var(--background-color-rgb), 0.8);
-}
+
 
 #v25-dock {
     display: flex;
@@ -2700,7 +2632,7 @@ input[type="date"]:focus {
 .v25-dock-icon.active {
     transform: translateY(-5px);
     box-shadow: 0 5px 15px rgba(var(--text-color-rgb), 0.2);
-    background: rgba(var(--text-color-rgb), 0.2);
+    background: rgba(var(--border-color-rgb), 0.12);
 }
 
 .v25-dock-icon i {
@@ -2712,7 +2644,7 @@ input[type="date"]:focus {
 .v25-dock-icon:hover i,
 .v25-dock-icon:focus i,
 .v25-dock-icon.active i {
-    color: var(--border-color);
+
     transform: scale(1.1);
     cursor: pointer;
 }
@@ -3654,14 +3586,7 @@ input[type="date"]:focus {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/*
-.media-sort-button {
-    background-color: var(--border-color);
-    color: var(--text-color);
-    padding: 10px 20px;
-    margin-top: 40px;
-}
-*/
+
 
 .audio-control-button {
     --key-text-color: var(--text-color);
@@ -3746,4 +3671,21 @@ input[type="date"]:focus {
 .team-member-role {
     font-size: 12px;
     color: var(--text-color);
+}
+
+#audio-visualization-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.front-page-news-text {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 36px;
+    font-weight: 400;
+    letter-spacing: 20px;
+    line-height: 1.08;
 }

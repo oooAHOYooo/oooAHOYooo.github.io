@@ -158,7 +158,7 @@ function searchSongs() {
     filteredSongs.forEach((song, index) => {
         const row = document.createElement('tr');
         row.innerHTML = `
-            <td><img src="${song.coverArt}" alt="${song.songTitle} cover art" style="width: 50px; height: 50px;"></td>
+            <td><img src="${song.coverArt}" alt="${song.songTitle} cover art" style="width: 50px; height: 50px; object-fit: cover;"></td>
             <td>${song.artist}</td>
             <td>${song.songTitle}</td>
             <td><button class="listen-btn" data-index="${index}">Listen</button></td>

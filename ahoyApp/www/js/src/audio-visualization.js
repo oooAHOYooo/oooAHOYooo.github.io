@@ -37,11 +37,18 @@ function drawWaveform() {
         requestAnimationFrame(draw);
         analyserNode.getByteTimeDomainData(dataArray);
 
-        canvasContext.fillStyle = 'rgb(200, 200, 200)';
+        // Use the CSS variable for the background color
+        const backgroundColor = getComputedStyle(document.documentElement).getPropertyValue('--background-color');
+        canvasContext.fillStyle = backgroundColor.trim(); // Ensure no extra spaces
         canvasContext.fillRect(0, 0, canvas.width, canvas.height);
 
+        const gradient = canvasContext.createLinearGradient(0, 0, canvas.width, 0);
+        gradient.addColorStop(0, 'red');
+        gradient.addColorStop(0.5, 'yellow');
+        gradient.addColorStop(1, 'green');
+
         canvasContext.lineWidth = 2;
-        canvasContext.strokeStyle = 'rgb(0, 0, 0)';
+        canvasContext.strokeStyle = gradient;
         canvasContext.beginPath();
 
         const sliceWidth = canvas.width * 1.0 / bufferLength;

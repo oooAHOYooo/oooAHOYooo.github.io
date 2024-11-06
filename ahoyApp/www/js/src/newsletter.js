@@ -40,7 +40,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
                     let htmlContent = `
                         <p class="newsletter-date"><i class="fa-regular fa-clock"></i> ${newsletter.date}</p>
-                        <h2 class="h2-left">${newsletter.title}</h2>
+                        <h2>${newsletter.title}</h2>
                     `;
                     // Check if imageUrl exists before rendering image or video
                     if (newsletter.imageUrl) {

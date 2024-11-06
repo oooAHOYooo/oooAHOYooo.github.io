@@ -227,8 +227,7 @@
               <div class="newsSubHeaderMenu" id="homepage-top-submenu">
                 <button id="about-button"
                   onclick="navigateToTab('about-tab')" class="btnPrimary">About Ahoy</button>
-                <button id="news-button"
-                  onclick="navigateToTab('recent-tab')" class="btnPrimary">Recently Added</button>
+               
                   <button id="recently-added-button"
                   onclick="navigateToTab('updates-tab')" class="btnPrimary">App Updates</button>
               </div>
@@ -236,8 +235,6 @@
             <div class="body-desc-block">
               <h2 class="about-title">About Ahoy Indie Media</h2>
               <img src="https://storage.googleapis.com/ahoy-dynamic-content/images/about-ahoy-indie-media.jpg" alt="About Ahoy Indie Media" class="body-desc-image">
-              <div id="sfcrmpuf7khatafnkcyb7ha4app4xkcnzyu"></div>
-
               <p>Ahoy Indie Media is a hand-crafted media company based out of
                 New
                 Haven, Connecticut. Our mission is to provide a homegrown
@@ -286,13 +283,13 @@
   <hr>
   <div class="newsSubHeaderMenu" id="homepage-top-submenu">
     <button id="about-button" onclick="navigateToTab('about-tab')" class="btnPrimary">About Ahoy</button>
-    <button id="news-button" onclick="navigateToTab('recent-tab')" class="btnPrimary">Recently Added</button>
+    <!-- <button id="news-button" onclick="navigateToTab('recent-tab')" class="btnPrimary">Recently Added</button> -->
     <button id="recently-added-button" onclick="navigateToTab('updates-tab')" class="btnPrimary">App Updates</button>
   </div>
   <hr>
 
   <div class="wave-container">
-    <h1>Front Page News</h1>
+    <h1 class="front-page-news-text">Front Page News</h1>
 
   </div>
 
@@ -300,25 +297,23 @@
   <hr>
   <div id="newsletter-list"></div>
   <div class="pagination-controls"></div>
-   <div class="newsletter-menu-container">
+   <!-- <div class="newsletter-menu-container">
     <p>Song Collection</p>
     <p>Podcast Collection</p>
     <p>Click to see all of our latest songs and podcasts</p>
     <button id="view-all-recent" onclick="navigateToTab('recent-tab')" class="cta-button">
       <i class="fas fa-list"></i> View All Recently Added
     </button>
-  </div>
+  </div> -->
   <hr>
-  <div class="v25-miniCall-toAction-container">
+  <!-- <div class="v25-miniCall-toAction-container">
     <h1>Have content for Ahoy?</h1>
     <p>We're always on the hunt for new artists and content</p>
     <a href="./get-on-ahoy.html">
       <button class="login-button-b">Get on Ahoy</button>
     </a>
-  </div>
-  <br><br><br>
-  <hr>
-  <br>
+  </div> -->
+ 
   <hr>
   <br>
   <img src="./img/assets/u_ahoy23.png" alt="Ahoy Indie Media Logo" class="homepage-logo" style="font-family: 'Times New Roman', Times, serif; font-size: 24px; text-transform: uppercase;">
@@ -379,7 +374,9 @@
 
 <h2>Experimental Features</h2>
 <h3>Audio Visualization</h3>
+<div id="audio-visualization-container">
 <canvas id="audio-visualization" width="600" height="200"></canvas>
+</div>
 <hr>
 
 <hr>
@@ -434,19 +431,14 @@
               <div class="newsSubHeaderMenu" id="homepage-top-submenu">
                 <button id="about-button"
                   onclick="navigateToTab('about-tab')" class="btnPrimary">About Ahoy</button>
-                <button id="news-button"
-                  onclick="navigateToTab('recent-tab')" class="btnPrimary">Recently Added</button>
+                
                   <button id="recently-added-button"
                   onclick="navigateToTab('updates-tab')" class="btnPrimary">App Updates</button>
               </div>
+              <div class="update-image-container">
               <img id="lightbox-trigger"
-              src="./img/assets/splash-screens/splash-640x960.png" style="width: 100%; height: auto;">
-            
-          
-              <h3>Present Web App State = v.2.8D</h3>
-
-              <h4>Present Focus</h4>
-              <p>Redesigning getting the audio features working properly.</p>
+              src="./img/assets/splash-screens/splash-640x960.png" class="update-image">
+              </div>
               <h1>Last 100 Updates to our Repo</h1>
               <hr>
               <div id="commits-list"></div>
