@@ -80,7 +80,8 @@ async function initAudioVisualization() {
     drawWaveform();
 }
 
-// Example usage
+// Add event listener for the start button
 document.addEventListener('DOMContentLoaded', () => {
-    initAudioVisualization();
+    const startButton = document.getElementById('start-visualization');
+    startButton.addEventListener('click', initAudioVisualization);
 });
