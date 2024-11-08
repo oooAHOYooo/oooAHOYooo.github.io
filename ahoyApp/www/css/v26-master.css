@@ -59,7 +59,7 @@ a {
 :root {
     --action-button-min-width: 100px;
     --action-button-height: 50px;
-    --action-button-font-size: 15px;
+    --action-button-font-size: 12px;
     --action-button-border: 2px solid rgba(255, 255, 255, 0.2);
     --action-button-background: rgba(255, 255, 255, 0.15);
     --action-button-padding: 10px;
@@ -482,6 +482,12 @@ button:hover {
     font-size: 1.5em;
     margin-bottom: 10px;
     padding: 0;
+}
+
+.sort-buttons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* #tabSortza {
@@ -1886,12 +1892,14 @@ input[type="date"]:focus {
     justify-content: center;
 }
 
+/*
 #search-buttons {
     display: flex;
     justify-content: center;
     width: 100%;
 
 }
+*/
 
 
 .table-container {
@@ -3363,6 +3371,7 @@ input[type="date"]:focus {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 10px;
 }
 
 .action-button:hover {
