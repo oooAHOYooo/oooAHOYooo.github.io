@@ -282,6 +282,14 @@
     "content": "here they are at a Halloween Party",
     "active": "true",
     "goTo": "podcast-tab"
+},
+{
+    "date": "2024-11-05",
+    "title": "Rob Show Episode 37 - Kevin McHaon",
+    "imageUrl": "https://storage.googleapis.com/ahoy-dynamic-content/news/ROB%20EPISODE%2037%20-%20Kevin%20McHaon.jpg",
+    "content": "Join us for an exciting episode with Kevin McHaon.",
+    "active": "true",
+    "goTo": "podcast-tab"
 }
 
 ]

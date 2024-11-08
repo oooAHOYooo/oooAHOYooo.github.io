@@ -282,3 +282,12 @@ function clearSearch() {
 
 // Add event listener to the clear search button
 document.getElementById('clear-search').addEventListener('click', clearSearch);
+
+// Function to skip forward 15 seconds
+function skipForward15Seconds() {
+  const audioPlayer = document.getElementById('musicAudioPlayer');
+  audioPlayer.currentTime = Math.min(audioPlayer.currentTime + 15, audioPlayer.duration);
+}
+
+// Add event listener for the "+15 seconds" button
+document.getElementById('add15sBtn').addEventListener('click', skipForward15Seconds);

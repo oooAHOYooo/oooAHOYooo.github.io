@@ -102,8 +102,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 });
             }
 
-            // Function to open a lightbox
-            function openLightbox(imageUrl) {
+            // Function to open a lightbox as a mosaic popup
+            function openLightbox(imageUrls) {
                 const lightbox = document.createElement('div');
                 lightbox.id = 'lightbox';
                 lightbox.style.position = 'fixed';
@@ -116,7 +116,79 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 lightbox.style.alignItems = 'center';
                 lightbox.style.justifyContent = 'center';
                 lightbox.style.zIndex = '1000';
-                lightbox.onclick = () => document.body.removeChild(lightbox);
+                lightbox.style.transition = 'opacity 0.3s ease';
+                lightbox.style.opacity = '0';
+
+                // Create a container for the mosaic
+                const mosaicContainer = document.createElement('div');
+                mosaicContainer.style.display = 'grid';
+                mosaicContainer.style.gridTemplateColumns = 'repeat(auto-fill, minmax(150px, 1fr))';
+                mosaicContainer.style.gap = '10px';
+                mosaicContainer.style.maxWidth = '90%';
+                mosaicContainer.style.maxHeight = '90%';
+                mosaicContainer.style.overflowY = 'auto';
+                mosaicContainer.style.padding = '20px';
+                mosaicContainer.style.backgroundColor = '#fff';
+                mosaicContainer.style.borderRadius = '8px';
+
+                // Create a close button
+                const closeButton = document.createElement('span');
+                closeButton.innerHTML = '&times;';
+                closeButton.style.position = 'absolute';
+                closeButton.style.top = '10px';
+                closeButton.style.right = '20px';
+                closeButton.style.fontSize = '30px';
+                closeButton.style.color = '#fff';
+                closeButton.style.cursor = 'pointer';
+                closeButton.onclick = () => document.body.removeChild(lightbox);
+
+                // Append the close button to the lightbox
+                lightbox.appendChild(closeButton);
+
+                // Add each image to the mosaic
+                imageUrls.forEach(url => {
+                    const img = document.createElement('img');
+                    img.src = url;
+                    img.style.width = '100%';
+                    img.style.height = 'auto';
+                    img.style.cursor = 'pointer';
+                    img.style.boxShadow = '0 0 5px rgba(0, 0, 0, 0.3)';
+                    img.onclick = () => openSingleImage(url); // Open single image view on click
+                    mosaicContainer.appendChild(img);
+                });
+
+                // Append the mosaic container to the lightbox
+                lightbox.appendChild(mosaicContainer);
+
+                // Append the lightbox to the body
+                document.body.appendChild(lightbox);
+
+                // Fade in the lightbox
+                requestAnimationFrame(() => {
+                    lightbox.style.opacity = '1';
+                });
+
+                // Close the lightbox when clicking outside the mosaic
+                lightbox.onclick = (e) => {
+                    if (e.target === lightbox) {
+                        document.body.removeChild(lightbox);
+                    }
+                };
+            }
+
+            // Function to open a single image in full view
+            function openSingleImage(imageUrl) {
+                const singleImageLightbox = document.createElement('div');
+                singleImageLightbox.style.position = 'fixed';
+                singleImageLightbox.style.top = '0';
+                singleImageLightbox.style.left = '0';
+                singleImageLightbox.style.width = '100%';
+                singleImageLightbox.style.height = '100%';
+                singleImageLightbox.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+                singleImageLightbox.style.display = 'flex';
+                singleImageLightbox.style.alignItems = 'center';
+                singleImageLightbox.style.justifyContent = 'center';
+                singleImageLightbox.style.zIndex = '1001';
 
                 const img = document.createElement('img');
                 img.src = imageUrl;
@@ -124,8 +196,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 img.style.maxHeight = '90%';
                 img.style.boxShadow = '0 0 10px rgba(255, 255, 255, 0.5)';
 
-                lightbox.appendChild(img);
-                document.body.appendChild(lightbox);
+                singleImageLightbox.appendChild(img);
+                document.body.appendChild(singleImageLightbox);
+
+                singleImageLightbox.onclick = () => document.body.removeChild(singleImageLightbox);
             }
 
             // Infinite scroll functionality
