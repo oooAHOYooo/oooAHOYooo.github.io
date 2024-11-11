@@ -65,11 +65,36 @@ button {
     color: #fff;
     transition: background 0.3s, transform 0.3s;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: inline-block;
 }
 
 button:hover {
     background: rgba(255, 255, 255, 0.4);
     transform: translateY(-2px);
+}
+
+button.save {
+    background: rgba(76, 175, 80, 0.2);
+}
+
+button.save:hover {
+    background: rgba(76, 175, 80, 0.4);
+}
+
+button.delete {
+    background: rgba(244, 67, 54, 0.2);
+}
+
+button.delete:hover {
+    background: rgba(244, 67, 54, 0.4);
+}
+
+button.edit {
+    background: rgba(33, 150, 243, 0.2);
+}
+
+button.edit:hover {
+    background: rgba(33, 150, 243, 0.4);
 }
 
 input[type="text"] {

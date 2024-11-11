@@ -68,12 +68,39 @@ function formatJsonItem(item, index) {
     let formatted = '<ul>';
     for (const key in item) {
         if (item.hasOwnProperty(key)) {
-            formatted += `<li><strong>${key}:</strong> <input type="text" value="${item[key]}" data-key="${key}" data-index="${index}"></li>`;
+            const value = item[key];
+            if (typeof value === 'object' && value !== null) {
+                formatted += `<li><strong>${key}:</strong> ${formatNestedJson(value, `${index}-${key}`)}</li>`;
+            } else {
+                formatted += `<li><strong>${key}:</strong> <input type="text" value="${value}" data-key="${key}" data-index="${index}"></li>`;
+            }
         }
     }
     formatted += '</ul>';
-    formatted += `<button onclick="saveItem(${index})">Save</button>`;
-    formatted += `<button onclick="deleteItem(${index})">Delete</button>`;
+    formatted += `<button class="save" onclick="saveItem(${index})">Save</button>`;
+    formatted += `<button class="delete" onclick="deleteItem(${index})">Delete</button>`;
+    return formatted;
+}
+
+function formatNestedJson(value, parentIndex) {
+    let formatted = '<ul>';
+    if (Array.isArray(value)) {
+        value.forEach((item, index) => {
+            formatted += `<li>${formatNestedJson(item, `${parentIndex}-${index}`)}</li>`;
+        });
+    } else if (typeof value === 'object') {
+        for (const key in value) {
+            if (value.hasOwnProperty(key)) {
+                const nestedValue = value[key];
+                if (typeof nestedValue === 'object' && nestedValue !== null) {
+                    formatted += `<li><strong>${key}:</strong> ${formatNestedJson(nestedValue, `${parentIndex}-${key}`)}</li>`;
+                } else {
+                    formatted += `<li><strong>${key}:</strong> <input type="text" value="${nestedValue}" data-key="${parentIndex}-${key}" data-index="${parentIndex}"></li>`;
+                }
+            }
+        }
+    }
+    formatted += '</ul>';
     return formatted;
 }
 
@@ -109,23 +136,6 @@ function deleteItem(index) {
     listChanges();
 }
 
-function addSong() {
-    const title = document.getElementById('newTitle').value;
-    const artist = document.getElementById('newArtist').value;
-    const album = document.getElementById('newAlbum').value;
-
-    if (title && artist && album) {
-        const newSong = { title, artist, album };
-        currentData.push(newSong);
-        newEntries.push(currentData.length - 1);
-        displayData(currentData);
-        showNotification('New song added successfully! Click here to review.');
-        listChanges();
-        console.log('New song added:', newSong);
-    } else {
-        console.error('Please fill in all fields to add a new song.');
-    }
-}
 
 function previewChanges() {
     console.log('Previewing changes');
