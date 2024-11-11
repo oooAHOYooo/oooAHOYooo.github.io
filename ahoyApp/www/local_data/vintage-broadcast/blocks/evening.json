@@ -1,0 +1,25 @@
+{
+  "playlists": [
+    {
+      "playlist_id": "evening-1",
+      "media": [
+        { "title": "Prime Time Documentary", "file": "https://your-cdn.com/media/prime-time-documentary.mp4" },
+        { "title": "Indie Short Film", "file": "https://your-cdn.com/media/indie-short-film.mp4" }
+      ]
+    },
+    {
+      "playlist_id": "evening-2",
+      "media": [
+        { "title": "Music Showcase", "file": "https://your-cdn.com/media/music-showcase.mp4" },
+        { "title": "Behind the Scenes", "file": "https://your-cdn.com/media/behind-the-scenes.mp4" }
+      ]
+    },
+    {
+      "playlist_id": "evening-3",
+      "media": [
+        { "title": "Artist Interview", "file": "https://your-cdn.com/media/artist-interview.mp4" },
+        { "title": "Live Performance", "file": "https://your-cdn.com/media/live-performance.mp4" }
+      ]
+    }
+  ]
+}

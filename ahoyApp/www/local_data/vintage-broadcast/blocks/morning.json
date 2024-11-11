@@ -1,0 +1,27 @@
+{
+  "playlists": [
+    {
+      "playlist_id": "morning-1",
+      "media": [
+        { "title": "Morning News Brief", "file": "https://your-cdn.com/media/morning-news-brief.mp4" },
+        { "title": "Weather Update", "file": "https://your-cdn.com/media/weather-update.mp4" },
+        { "title": "Community Spotlight", "file": "https://your-cdn.com/media/community-spotlight.mp4" }
+      ]
+    },
+    {
+      "playlist_id": "morning-2",
+      "media": [
+        { "title": "Top Stories", "file": "https://your-cdn.com/media/top-stories.mp4" },
+        { "title": "Morning Music Mix", "file": "https://your-cdn.com/media/morning-music-mix.mp4" }
+      ]
+    },
+    {
+      "playlist_id": "morning-3",
+      "media": [
+        { "title": "Local Interview", "file": "https://your-cdn.com/media/local-interview.mp4" },
+        { "title": "Indie Spotlight", "file": "https://your-cdn.com/media/indie-spotlight.mp4" },
+        { "title": "Morning Meditation", "file": "https://your-cdn.com/media/morning-meditation.mp4" }
+      ]
+    }
+  ]
+}

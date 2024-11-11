@@ -1,0 +1,28 @@
+{
+    "blocks": [
+      {
+        "time": "06:00",
+        "title": "Morning Broadcast",
+        "description": "Start your day with news, weather updates, and inspiring morning content.",
+        "block_file": "blocks/morning.json"
+      },
+      {
+        "time": "12:00",
+        "title": "Afternoon Show",
+        "description": "Lively tunes, artist features, and fresh indie stories for a perfect afternoon break.",
+        "block_file": "blocks/afternoon.json"
+      },
+      {
+        "time": "18:00",
+        "title": "Evening Prime Time",
+        "description": "Prime time content with indie documentaries, short films, and artist interviews.",
+        "block_file": "blocks/evening.json"
+      },
+      {
+        "time": "22:00",
+        "title": "Late Night Classics",
+        "description": "Unwind with relaxing music, classic indie films, and soothing night sounds.",
+        "block_file": "blocks/late_night.json"
+      }
+    ]
+  }

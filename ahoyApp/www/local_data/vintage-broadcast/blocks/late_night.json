@@ -1,0 +1,24 @@
+{
+  "playlists": [
+    {
+      "playlist_id": "late_night-1",
+      "media": [
+        { "title": "Indie Movie Marathon", "file": "https://your-cdn.com/media/indie-movie-marathon.mp4" }
+      ]
+    },
+    {
+      "playlist_id": "late_night-2",
+      "media": [
+        { "title": "Late Night Indie Mix", "file": "https://your-cdn.com/media/late-night-indie-mix.mp4" },
+        { "title": "Classic Short Film", "file": "https://your-cdn.com/media/classic-short-film.mp4" }
+      ]
+    },
+    {
+      "playlist_id": "late_night-3",
+      "media": [
+        { "title": "Relaxing Soundscapes", "file": "https://your-cdn.com/media/relaxing-soundscapes.mp4" },
+        { "title": "Vintage Indie Film", "file": "https://your-cdn.com/media/vintage-indie-film.mp4" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "playlists": [
+    {
+      "playlist_id": "afternoon-1",
+      "media": [
+        { "title": "Indie Artist Feature", "file": "https://your-cdn.com/media/indie-artist-feature.mp4" },
+        { "title": "Podcast Highlights", "file": "https://your-cdn.com/media/podcast-highlights.mp4" }
+      ]
+    },
+    {
+      "playlist_id": "afternoon-2",
+      "media": [
+        { "title": "Afternoon Music Mix", "file": "https://your-cdn.com/media/afternoon-music-mix.mp4" },
+        { "title": "Art Showcase", "file": "https://your-cdn.com/media/art-showcase.mp4" }
+      ]
+    },
+    {
+      "playlist_id": "afternoon-3",
+      "media": [
+        { "title": "Indie Talk Show", "file": "https://your-cdn.com/media/indie-talk-show.mp4" },
+        { "title": "Creative Corner", "file": "https://your-cdn.com/media/creative-corner.mp4" }
+      ]
+    }
+  ]
+}
