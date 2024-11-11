@@ -1,502 +1,332 @@
 <!DOCTYPE html>
-<!-- APP AHOY -->
 <html>
-  <head>
-    <!-- Basic Meta Tags -->
-    <meta charset="utf-8">
-    <meta name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=yes">
-    <meta name="HandheldFriendly" content="true">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Ahoy Indie Media">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="theme-color" content="#ff0060">
-    <!-- Change this to your theme color -->
-    <meta name="description"
-      content="Ahoy Indie Media - A hand-crafted media company based out of New Haven, Connecticut. We offer a homegrown alternative to mainstream media consumption.">
-    <meta name="keywords"
-      content="Indie Media, Independent Artists, Indie Music, Podcasts, Indie Games, Digital Market, Indie Creators, Indie Culture, Ahoy Indie Media">
-    <meta name="robots" content="index, follow">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="msapplication-tap-highlight" content="no">
-    <meta name="color-scheme" content="light dark">
-  
-
-    <title>Ahoy Indie Media</title>
-
-    <!-- DNS Prefetch for External Resources -->
-    <link rel="dns-prefetch" href="//www.gstatic.com">
-    <link rel="dns-prefetch" href="//cdn.jwplayer.com">
-    <!-- Content Security Policy -->
-    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://cdn.jwplayer.com; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; img-src 'self' data: https:; media-src *; font-src 'self' data: https:;"> -->
-    <!-- SECURITY -->
-    <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
-    <meta http-equiv="Strict-Transport-Security"
-      content="max-age=31536000; includeSubDomains">
-    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
-    <meta http-equiv="Cross-Origin-Embedder-Policy" content="require-corp">
-    <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
-    <!-- CSS -->
-    <link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
-    
-    <link rel="stylesheet" href="./css/v26-master.css">
-    <!-- Icons -->
-    <link rel="icon" type="image/png" href="./img/favicon_ahoy.png">
-       <!-- JWPlayer -->
-    <script src="https://cdn.jwplayer.com/libraries/9Gtk2B1J.js"></script>
-
-<!-- Google tag (gtag.js) -->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=yes">
+<meta name="HandheldFriendly" content="true">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Ahoy Indie Media">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#ff0060">
+<meta name="description" content="Ahoy Indie Media - A hand-crafted media company based out of New Haven, Connecticut. We offer a homegrown alternative to mainstream media consumption.">
+<meta name="keywords" content="Indie Media, Independent Artists, Indie Music, Podcasts, Indie Games, Digital Market, Indie Creators, Indie Culture, Ahoy Indie Media">
+<meta name="robots" content="index, follow">
+<meta name="format-detection" content="telephone=no">
+<meta name="msapplication-tap-highlight" content="no">
+<meta name="color-scheme" content="light dark">
+<title>Ahoy Indie Media</title>
+<link rel="dns-prefetch" href="//www.gstatic.com">
+<link rel="dns-prefetch" href="//cdn.jwplayer.com">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+<meta http-equiv="Strict-Transport-Security" content="max-age=31536000;includeSubDomains">
+<meta http-equiv="X-XSS-Protection" content="1;mode=block">
+<meta http-equiv="Cross-Origin-Embedder-Policy" content="require-corp">
+<meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+<link rel="stylesheet" href="./css/v26-master.css">
+<link rel="icon" type="image/png" href="./img/favicon_ahoy.png">
+<script src="https://cdn.jwplayer.com/libraries/9Gtk2B1J.js"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-WVDL9N1HDT"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-WVDL9N1HDT');
-</script>
-  
-  
-  </head>
-     <!--
-     _               _       
-    | |__   ___   __| |_   _ 
-    | '_ \ / _ \ / _` | | | |
-    | |_) | (_) | (_| | |_| |
-    |_.__/ \___/ \__,_|\__, |
-                       |___/ 
-     -->
-  <!-- START OF BODY -->
-  <body>
-    <div class="app">
-      <div class="app-background-layer"></div>
-      <!--
-      <div id="warning-banner">
-        <p>
-          <strong>FYI:</strong>
-          We are in the process of implementing a new design system. Things might look unusual for a bit.
-        </p>
-        <button onclick="this.parentElement.style.display='none'" style="float: right; background: none; border: none; cursor: pointer;">&times;</button>
-      </div>
-      -->
-    </div>
-  </div>
- 
-  <audio id="musicAudioPlayer"></audio>
-  <audio id="podcastAudioPlayer"></audio>
-
-          <!-- BEGIN-->
-          <div id="tabSortza">
-
-            <div id="media-tab-a" class="tab-content">
-              <div class="tv-container">
-                
-                  <div id="media-display-text">
-                    <div id="media-artist-name">
-                      <p>This is where the Media Artist Name will Go</p>
-                    </div>
-                    <div id="media-title-name">
-                      <p>This is where the Media Title Name will Go</p>
-                    </div>
-                  </div>
-
-
-                  <div id="jw-player-container"></div>
-              
-                </div>
-          
-
-              <h2>SEARCH MEDIA LIBRARY:</h2>
-              <div class="search-container" id="search-container">
-                <input type="text" id="search-input" placeholder="Search by title or artist..." />
-              
-                  <button class="action-button" onclick="searchMedia()">Search</button>
-                  <button id="clear-search" class="action-button">Clear</button>
-                </div>
-                  <!-- <div class="table-responsive"> -->
-                    <hr>
-                <div id="media-sort-buttons" class="sort-buttons-container">
-                  <button id="sort-recent" class="action-button"> Recent</button>
-                  <button id="sort-artist-az" class="action-button">Artist A-Z</button>
-                  <button id="sort-title-az" class="action-button">Title A-Z</button>
-                  <button id="sort-random" class="action-button">Rando</button>
-                </div>
-                <!-- </div> -->
-             
-              <div class="media-container">
-                <table id="mediaTable" class="list">
-                  <tbody>
-                    <!-- Table data will be inserted here -->
-                  </tbody>
-                </table>
-              </div>
-            </div>
-<!-- TRUE CLASSIC RADIO (to replace song-collection-tab)-->
-<!-- TRUE CLASSIC RADIO (to replace song-collection-tab)-->
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-WVDL9N1HDT');</script>
+</head>
+<body>
+<div class="app">
+<div class="app-background-layer"></div>
+</div></div>
+<audio id="musicAudioPlayer"></audio>
+<audio id="podcastAudioPlayer"></audio>
+<div id="tabSortza">
+<div id="media-tab-a" class="tab-content">
+<div class="tv-container">
+<div id="media-display-text">
+<div id="media-artist-name"><p>This is where the Media Artist Name will Go</p></div>
+<div id="media-title-name"><p>This is where the Media Title Name will Go</p></div>
+</div>
+<div id="jw-player-container"></div>
+</div>
+<h2>SEARCH MEDIA LIBRARY:</h2>
+<div class="search-container" id="search-container">
+<input type="text" id="search-input" placeholder="Search by title or artist..."/>
+<button class="action-button" onclick="searchMedia()">Search</button>
+<button id="clear-search" class="action-button">Clear</button>
+</div>
+<hr>
+<div id="media-sort-buttons" class="sort-buttons-container">
+<button id="sort-recent" class="action-button">Recent</button>
+<button id="sort-artist-az" class="action-button">Artist A-Z</button>
+<button id="sort-title-az" class="action-button">Title A-Z</button>
+<button id="sort-random" class="action-button">Rando</button>
+</div>
+<div class="media-container">
+<table id="mediaTable" class="list">
+<tbody>
+<!-- Table data will be inserted here -->
+</tbody>
+</table>
+</div>
+</div>
 <div id="true-classic-radio" class="tab-content">
-  <div class="radio-widget">
-      <div class="player-container">
-          <div class="song-info">
-            <div class="song-details">
-              <h2 id="songTitle">: ________</h2>
-              <p id="artist">ARTIST: ________</p>
-          </div>
-              <img id="coverArt" src="" alt="Cover Art">
-           
-          </div>
-          <div class="duration-control">
-              <input type="range" id="durationBar" min="0" max="100" step="1" value="0" class="styled-duration-bar">
-          </div>
-          <div class="radio-controls">
-              <button class="audio-control-button" id="playBtn">[► PLAY]</button>
-              <button class="audio-control-button" id="add15sBtn">[+15s] </button>
-              <button class="audio-control-button" id="prevBtn">[◄◄ PREV]</button>
-              <button class="audio-control-button" id="nextBtn">[► NEXT]</button>
-          </div>
-         
-      </div>
-  </div>
-  <div class="terminal-section">
-      <h2>SEARCH SONGS:</h2>
-      <div class="search-container">
-          <input type="text" id="songSearch" placeholder="Enter search query...">
-          <button id="searchBtn" class="action-button">Search</button>
-          <button id="clear-search" class="action-button">Clear</button>
-      </div>
-  </div>
-  <hr>
-  <div class="song-list">
-      <div class="table-responsive">
-        <div id="song-sort-buttons" class="sort-buttons-container"> 
-          <button class="action-button" id="song-sort-recent">Recently Added</button>
-          <button class="action-button" id="song-sort-random">Random</button> 
-          <button class="action-button" id="song-sort-title-az">Title A-Z</button> 
-          <button class="action-button" id="song-sort-artist-az">Artist A-Z</button> 
-        </div>
-        <table id="songListTable">
-          <thead></thead>
-          <tbody id="songListBody"></tbody>
-        </table>
-      </div>
-  </div>
+<div class="radio-widget">
+<div class="player-container">
+<div class="song-info">
+<div class="song-details">
+<h2 id="songTitle">: ________</h2>
+<p id="artist">ARTIST: ________</p>
 </div>
-<!-- END OF TRUE CLASSIC RADIO -->
-<!-- TRUE PODCAST TAB-->
-
+<img id="coverArt" src="" alt="Cover Art">
+</div>
+<div class="duration-control">
+<input type="range" id="durationBar" min="0" max="100" step="1" value="0" class="styled-duration-bar">
+</div>
+<div class="radio-controls">
+<button class="audio-control-button" id="playBtn">[► PLAY]</button>
+<button class="audio-control-button" id="add15sBtn">[+15s]</button>
+<button class="audio-control-button" id="prevBtn">[◄◄ PREV]</button>
+<button class="audio-control-button" id="nextBtn">[► NEXT]</button>
+</div>
+</div>
+</div>
+<div class="terminal-section">
+<h2>SEARCH SONGS:</h2>
+<div class="search-container">
+<input type="text" id="songSearch" placeholder="Enter search query...">
+<button id="searchBtn" class="action-button">Search</button>
+<button id="clear-search" class="action-button">Clear</button>
+</div>
+</div>
+<hr>
+<div class="song-list">
+<div class="table-responsive">
+<div id="song-sort-buttons" class="sort-buttons-container">
+<button class="action-button" id="song-sort-recent">Recently Added</button>
+<button class="action-button" id="song-sort-random">Random</button>
+<button class="action-button" id="song-sort-title-az">Title A-Z</button>
+<button class="action-button" id="song-sort-artist-az">Artist A-Z</button>
+</div>
+<table id="songListTable">
+<thead></thead>
+<tbody id="songListBody"></tbody>
+</table>
+</div>
+</div>
+</div>
 <div id="podcast-tab" class="tab-content">
-  <div class="player-container">
-    <div class="song-info">
-      <div class="podcast-thumbnail-container">
-        <div class="song-details">
-          <h2 id="podcast-title"></h2>
-          <p id="podcast-description"></p>
-        </div>
-        <img id="podcast-thumbnail" src="" alt="Podcast Thumbnail">
-      </div>
-      <div class="duration-control">
-        <input type="range" id="podcastDurationBar" min="0" max="100" step="1" value="0" class="styled-duration-bar">
-      </div>
-      <div class="podcast-player-controls">
-        <button class="audio-control-button" id="playPodcastBtn">[► PLAY]</button>
-        <button class="audio-control-button" id="podcast-forward15sBtn">[+15s]</button>
-        <button class="audio-control-button" id="podcast-backward15sBtn">[◄◄ PREV]</button>
-        <button class="audio-control-button" id="podcast-nextBtn">[► NEXT]</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="terminal-section">
-    <h2>SEARCH PODCASTS:</h2>
-    <div class="search-container">
-      <input type="text" id="podcastSearch" placeholder="Search podcasts...">
-      <button class="action-button" id="podcastSearchBtn">Search</button>
-      <button id="clear-search" class="action-button">Clear</button>
-    </div>
-  </div>
-  <hr>
-  <div class="sort-buttons-container" id="podcast-sort-buttons">
-    <button class="action-button" id="podcast-sort-recent">Most Recent</button>
-    <button class="action-button" id="podcast-sort-random">Random</button>
-    <button class="action-button" id="podcast-sort-title-az">Title A-Z</button>
-    <button class="action-button" id="podcast-sort-series-az">Series A-Z</button>
-  </div>
-  <table>
-    <tbody id="podcastListBody"></tbody>
-  </table>
+<div class="player-container">
+<div class="song-info">
+<div class="podcast-thumbnail-container">
+<div class="song-details">
+<h2 id="podcast-title"></h2>
+<p id="podcast-description"></p>
 </div>
-
-   <!-- ABOUT TAB -->
-            <!-- ABOUT TAB -->
-            <div id="about-tab" class="tab-content">
-              <img src="./img/assets/u_ahoy23.png" alt="Ahoy Indie Media Logo" class="homepage-logo" onclick="navigateToTab('news-tab')">
-             
-              <div class="newsSubHeaderMenu" id="homepage-top-submenu">
-                <button id="about-button"
-                  onclick="navigateToTab('about-tab')" class="btnPrimary">About Ahoy</button>
-               
-                  <button id="recently-added-button"
-                  onclick="navigateToTab('updates-tab')" class="btnPrimary">App Updates</button>
-              </div>
-              <div class="body-desc-container">
-            <div class="body-desc-block">
-              <h2 class="about-title">About Ahoy Indie Media</h2>
-              <img src="https://storage.googleapis.com/ahoy-dynamic-content/images/about-ahoy-indie-media.jpg" alt="About Ahoy Indie Media" class="body-desc-image">
-              <p>Ahoy Indie Media is a hand-crafted media company based out of
-                New
-                Haven, Connecticut. Our mission is to provide a homegrown
-                alternative to the way folks consume media. </p>
-              <p>Our platform is dedicated to supporting independent filmmakers, musicians, podcasters, and creators by providing them with a
-                space
-                to share their work.</p>
-              <p>We sustain all of our operations through sheer will power.
-                This model allows us to support our artists while keeping the
-                platform accessible and ad-free.</p>
-              <p>Every piece of content on our platform is here with the express
-                blessings of the artists involved.</p>
-             
-              <div class="team-widget">
-                <h3>Our Team</h3>
-                <div class="team-member">
-                  <p class="team-member-name">Alex Gonzalez</p>
-                  <p class="team-member-role">Founder</p>
-                </div>
-                <div class="team-member">
-                  <p class="team-member-name">Rob Meglio</p>
-                  <p class="team-member-role">Movie Star</p>
-                </div>
-
-
-              </div>
-              <div class="settings-widget" id="privacy-section">
-
-                <p>To learn more about how we handle your data, please read our </p>
-                <a href="https://ahoy.ooo/privacy.html"><button class="action-button">Privacy Policy</button></a>
-                <br><br>
-              </div>
-                </div></div>
-            </div>
-
-
-<!-- NEWS TAB -->
+<img id="podcast-thumbnail" src="" alt="Podcast Thumbnail">
+</div>
+<div class="duration-control">
+<input type="range" id="podcastDurationBar" min="0" max="100" step="1" value="0" class="styled-duration-bar">
+</div>
+<div class="podcast-player-controls">
+<button class="audio-control-button" id="playPodcastBtn">[► PLAY]</button>
+<button class="audio-control-button" id="podcast-forward15sBtn">[+15s]</button>
+<button class="audio-control-button" id="podcast-backward15sBtn">[◄◄ PREV]</button>
+<button class="audio-control-button" id="podcast-nextBtn">[► NEXT]</button>
+</div>
+</div>
+</div>
+<div class="terminal-section">
+<h2>SEARCH PODCASTS:</h2>
+<div class="search-container">
+<input type="text" id="podcastSearch" placeholder="Search podcasts...">
+<button class="action-button" id="podcastSearchBtn">Search</button>
+<button id="clear-search" class="action-button">Clear</button>
+</div>
+</div>
+<hr>
+<div class="sort-buttons-container" id="podcast-sort-buttons">
+<button class="action-button" id="podcast-sort-recent">Most Recent</button>
+<button class="action-button" id="podcast-sort-random">Random</button>
+<button class="action-button" id="podcast-sort-title-az">Title A-Z</button>
+<button class="action-button" id="podcast-sort-series-az">Series A-Z</button>
+</div>
+<table>
+<tbody id="podcastListBody"></tbody>
+</table>
+</div>
+<div id="about-tab" class="tab-content">
+<img src="./img/assets/u_ahoy23.png" alt="Ahoy Indie Media Logo" class="homepage-logo" onclick="navigateToTab('news-tab')">
+<div class="newsSubHeaderMenu" id="homepage-top-submenu">
+<button id="about-button" onclick="navigateToTab('about-tab')" class="btnPrimary">About Ahoy</button>
+<button id="recently-added-button" onclick="navigateToTab('updates-tab')" class="btnPrimary">App Updates</button>
+</div>
+<div class="body-desc-container">
+<div class="body-desc-block">
+<h2 class="about-title">About Ahoy Indie Media</h2>
+<img src="https://storage.googleapis.com/ahoy-dynamic-content/images/about-ahoy-indie-media.jpg" alt="About Ahoy Indie Media" class="body-desc-image">
+<p>Ahoy Indie Media is a hand-crafted media company based out of New Haven, Connecticut. Our mission is to provide a homegrown alternative to the way folks consume media. </p>
+<p>Our platform is dedicated to supporting independent filmmakers, musicians, podcasters, and creators by providing them with a space to share their work.</p>
+<p>We sustain all of our operations through sheer will power. This model allows us to support our artists while keeping the platform accessible and ad-free.</p>
+<p>Every piece of content on our platform is here with the express blessings of the artists involved.</p>
+<div class="team-widget">
+<h3>Our Team</h3>
+<div class="team-member">
+<p class="team-member-name">Alex Gonzalez</p>
+<p class="team-member-role">Founder</p>
+</div>
+<div class="team-member">
+<p class="team-member-name">Rob Meglio</p>
+<p class="team-member-role">Movie Star</p>
+</div>
+</div>
+<div class="settings-widget" id="privacy-section">
+<p>To learn more about how we handle your data, please read our</p>
+<a href="https://ahoy.ooo/privacy.html"><button class="action-button">Privacy Policy</button></a>
+</div>
+</div>
+</div>
+</div>
 <div id="news-tab" class="tab-content active">
-  <img src="./img/assets/u_ahoy23.png" alt="Ahoy Indie Media Logo" class="homepage-logo" style="font-family: 'Times New Roman', Times, serif; font-size: 24px; text-transform: uppercase;">
-  <hr>
-  <h2 id="calendar-date"></h2>
-  <hr>
-  <div class="homepage-subheader">
-    <p>Ahoy Indie Media is a hand-crafted media company based out of New Haven, Connecticut. Our mission is to provide a homegrown alternative to the way folks consume media.</p>
-  </div>
-  <hr>
-  <div class="newsSubHeaderMenu" id="homepage-top-submenu">
-    <button id="about-button" onclick="navigateToTab('about-tab')" class="btnPrimary">About Ahoy</button>
-    <!-- <button id="news-button" onclick="navigateToTab('recent-tab')" class="btnPrimary">Recently Added</button> -->
-    <button id="recently-added-button" onclick="navigateToTab('updates-tab')" class="btnPrimary">App Updates</button>
-  </div>
-  <hr>
-
-  <div class="wave-container">
-    <h1 class="front-page-news-text">Front Page News</h1>
-
-  </div>
-
- 
-  <hr>
-  <div id="newsletter-list"></div>
-  <div class="pagination-controls"></div>
-   
-  <hr>
-
-  <hr>
-  <br>
-  <img src="./img/assets/u_ahoy23.png" alt="Ahoy Indie Media Logo" class="homepage-logo" style="font-family: 'Times New Roman', Times, serif; font-size: 24px; text-transform: uppercase;">
-  <p style="font-family: 'Times New Roman', Times, serif; font-size: 18px; text-align: center;">MMXXIV</p>
-  <br><br>
-  <hr>
-  
+<img src="./img/assets/u_ahoy23.png" alt="Ahoy Indie Media Logo" class="homepage-logo" style="font-family:'Times New Roman',Times,serif;font-size:24px;text-transform:uppercase;">
+<hr>
+<h2 id="calendar-date"></h2>
+<hr>
+<div class="homepage-subheader">
+<p>Ahoy Indie Media is a hand-crafted media company based out of New Haven, Connecticut. Our mission is to provide a homegrown alternative to the way folks consume media.</p>
 </div>
-
+<hr>
+<div class="newsSubHeaderMenu" id="homepage-top-submenu">
+<button id="about-button" onclick="navigateToTab('about-tab')" class="btnPrimary">About Ahoy</button>
+<button id="recently-added-button" onclick="navigateToTab('updates-tab')" class="btnPrimary">App Updates</button>
+</div>
+<hr>
+<div class="wave-container">
+<h1 class="front-page-news-text">Front Page News</h1>
+</div>
+<hr>
+<div id="newsletter-list"></div>
+<div class="pagination-controls"></div>
+<hr>
+<hr>
+<br>
+<img src="./img/assets/u_ahoy23.png" alt="Ahoy Indie Media Logo" class="homepage-logo" style="font-family:'Times New Roman',Times,serif;font-size:24px;text-transform:uppercase;">
+<p style="font-family:'Times New Roman',Times,serif;font-size:18px;text-align:center;">MMXXIV</p>
+<br><br>
+<hr>
+</div>
 <div id="tv-mix" class="tab-content">
 <div id="jwplayer-currently-playing" class="currently-playing">
-  <div class="media-library-player" id="jwplayer-container"></div>
-    <h2>TV Mix - Currently Playing:</h2>
-    <p>It's like the good old days of TV, just on the internet. If you want something on and good, just click it and enjoy a mix of your favorite TV shows and media content.</p>
-    <p id="current-media">Current media: <span id="current-media-text"></span></p>
-
-  <div class="remote-controls">
-    <button id="play-pause-button" class="remoteControlButton"><i class="fas fa-play"></i></button>
-    <button id="fast-forward-button" class="remoteControlButton"><i class="fas fa-forward"></i></button>
-    <button id="next-button" class="remoteControlButton"><i class="fas fa-step-forward"></i></button>
-    <button id="rewind-button" class="remoteControlButton"><i class="fas fa-undo"></i></button>
-    <button id="shuffle-button" class="remoteControlButton"><i class="fas fa-random"></i></button>
-    <button id="fullscreen-button" class="remoteControlButton"><i class="fas fa-expand"></i></button>
-    <button id="mute-button" class="remoteControlButton"><i class="fas fa-volume-mute"></i></button>
-    <button id="volume-down" class="remoteControlButton"><i class="fas fa-volume-down"></i></button>
-    <button id="volume-up" class="remoteControlButton"><i class="fas fa-volume-up"></i></button>
-
-  </div>
-  </div>
+<div class="media-library-player" id="jwplayer-container"></div>
+<h2>TV Mix - Currently Playing:</h2>
+<p>It's like the good old days of TV, just on the internet. If you want something on and good, just click it and enjoy a mix of your favorite TV shows and media content.</p>
+<p id="current-media">Current media: <span id="current-media-text"></span></p>
+<div class="remote-controls">
+<button id="play-pause-button" class="remoteControlButton"><i class="fas fa-play"></i></button>
+<button id="fast-forward-button" class="remoteControlButton"><i class="fas fa-forward"></i></button>
+<button id="next-button" class="remoteControlButton"><i class="fas fa-step-forward"></i></button>
+<button id="rewind-button" class="remoteControlButton"><i class="fas fa-undo"></i></button>
+<button id="shuffle-button" class="remoteControlButton"><i class="fas fa-random"></i></button>
+<button id="fullscreen-button" class="remoteControlButton"><i class="fas fa-expand"></i></button>
+<button id="mute-button" class="remoteControlButton"><i class="fas fa-volume-mute"></i></button>
+<button id="volume-down" class="remoteControlButton"><i class="fas fa-volume-down"></i></button>
+<button id="volume-up" class="remoteControlButton"><i class="fas fa-volume-up"></i></button>
 </div>
-
-     <!-- Settings TAB -->
+</div>
+</div>
 <div id="settings-tab" class="tab-content">
-  <h1>Settings</h1>
-  <hr>
-   <!-- Mute Audio -->
- <div id="mute-audio-widget" class="settings-widget">
-  <button class="action-button" onclick="toggleMute()">Mute Audio</button>
+<h1>Settings</h1>
+<hr>
+<div id="mute-audio-widget" class="settings-widget">
+<button class="action-button" onclick="toggleMute()">Mute Audio</button>
 </div>
 <hr>
-  <!-- Theme Switcher -->
-  <h2>Theme Switcher</h2>
-  <hr>
-  <div id="theme-switcher-widget" class="settings-widget">
-
-  <p>Current Theme: </p>
-  <span id="theme-title"></span>
-  <div class="theme-switcher-container">
-  <label for="theme-dropdown" style="width: 100%;">Select Theme:</label>
-  <select id="theme-dropdown" class="theme-dropdown">
-  </select>
-  </div>
+<h2>Theme Switcher</h2>
+<hr>
+<div id="theme-switcher-widget" class="settings-widget">
+<p>Current Theme: </p>
+<span id="theme-title"></span>
+<div class="theme-switcher-container">
+<label for="theme-dropdown" style="width:100%;">Select Theme:</label>
+<select id="theme-dropdown" class="theme-dropdown"></select>
+</div>
 </div>
 <hr>
-
-<!--
-<h2>Experimental Features</h2>
-<h3>Audio Visualization</h3>
-<div id="audio-visualization-container">
-  <canvas id="audio-visualization" width="600" height="200"></canvas>
-  <button id="start-visualization" class="action-button">Start</button>
 </div>
+<div id="recent-tab" class="tab-content">
+<img src="./img/assets/u_ahoy23.png" alt="Ahoy Indie Media Logo" class="homepage-logo" onclick="navigateToTab('news-tab')">
+<div class="newsSubHeaderMenu" id="homepage-top-submenu">
+<button id="about-button" onclick="navigateToTab('about-tab')" class="btnPrimary">About Ahoy</button>
+<button id="news-button" onclick="navigateToTab('recent-tab')" class="btnPrimary">Recently Added</button>
+<button id="recently-added-button" onclick="navigateToTab('updates-tab')" class="btnPrimary">App Updates</button>
+</div>
+<h2 class="heading-2 center-text">Recent ADDED CONTENT</h2>
+<div id="full-recent-player">
+<div class="table-responsive">
+<table id="full-recent-podcasts">
+<thead>
+<tr>
+<th colspan="3">Recent Podcasts</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+</div>
+<div class="table-responsive">
+<table id="full-recent-songs">
+<thead>
+<tr>
+<th colspan="3">Recent Songs</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="updates-tab" class="tab-content">
+<img src="./img/assets/u_ahoy23.png" alt="Ahoy Indie Media Logo" class="homepage-logo" onclick="navigateToTab('news-tab')">
+<div class="newsSubHeaderMenu" id="homepage-top-submenu">
+<button id="about-button" onclick="navigateToTab('about-tab')" class="btnPrimary">About Ahoy</button>
+<button id="recently-added-button" onclick="navigateToTab('updates-tab')" class="btnPrimary">App Updates</button>
+</div>
+<div class="update-image-container">
+<img id="lightbox-trigger" src="./img/assets/splash-screens/splash-640x960.png" class="update-image">
+</div>
+<h1>Last 100 Updates to our Repo</h1>
 <hr>
--->
-
-<hr>
-  </div>
-                 
-</div>                                    
-        <!-- FULL RECENTLY ADDED -->
-
-            <div id="recent-tab" class="tab-content">
-              <img src="./img/assets/u_ahoy23.png" alt="Ahoy Indie Media Logo" class="homepage-logo" onclick="navigateToTab('news-tab')">
-            
-              <div class="newsSubHeaderMenu" id="homepage-top-submenu">
-                <button id="about-button" onclick="navigateToTab('about-tab')" class="btnPrimary">About Ahoy</button>
-                <button id="news-button" onclick="navigateToTab('recent-tab')" class="btnPrimary">Recently Added</button>
-                <button id="recently-added-button" onclick="navigateToTab('updates-tab')" class="btnPrimary">App Updates</button>
-              </div>
-              <h2 class="heading-2 center-text">Recent ADDED CONTENT </h2>
-            
-              <div id="full-recent-player">
-                <div class="table-responsive">
-                  <table id="full-recent-podcasts">
-                    <thead>
-                      <tr>
-                        <th colspan="3">Recent Podcasts</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                  </table>
-                </div>
-            
-                <div class="table-responsive">
-                  <table id="full-recent-songs">
-                    <thead>
-                      <tr>
-                        <th colspan="3">Recent Songs</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-
-  
-            
-
-            <div id="updates-tab" class="tab-content">
-              <img src="./img/assets/u_ahoy23.png" alt="Ahoy Indie Media Logo" class="homepage-logo" onclick="navigateToTab('news-tab')">
-
-              <div class="newsSubHeaderMenu" id="homepage-top-submenu">
-                <button id="about-button"
-                  onclick="navigateToTab('about-tab')" class="btnPrimary">About Ahoy</button>
-                
-                  <button id="recently-added-button"
-                  onclick="navigateToTab('updates-tab')" class="btnPrimary">App Updates</button>
-              </div>
-              <div class="update-image-container">
-              <img id="lightbox-trigger"
-              src="./img/assets/splash-screens/splash-640x960.png" class="update-image">
-              </div>
-              <h1>Last 100 Updates to our Repo</h1>
-              <hr>
-              <div id="commits-list"></div>
-            </div>
-          </div><!-- YES -->
-          <!--v25 dock -->
-          <div id="v25-dock-container">
-            <div id="v25-dock">
-              <div id="v25-icon-container" class="scroll-container">
-                <div class="v25-dock-icon"
-                  onclick="navigateToTab('news-tab')"><i
-                    class="fas fa-home"></i></div>
-                <div class="v25-dock-icon"
-                  onclick="navigateToTab('true-classic-radio')"><i
-                    class="fas fa-music"></i></div>
-                <div class="v25-dock-icon"
-                  onclick="navigateToTab('podcast-tab')"><i
-                    class="fas fa-podcast"></i></div>
-                <div class="v25-dock-icon"
-                  onclick="navigateToTab('media-tab-a')"><i
-                    class="fas fa-image"></i></div>
-                <div class="v25-dock-icon"
-                  onclick="navigateToTab('settings-tab')"><i
-                    class="fas fa-cog"></i></div>          
-              </div>
-            </div>
-          </div>
-          <div id="sound-timeline-container">
-            <div id="sound-timeline-progress"></div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-
-    <!-- Core Functionality -->
+<div id="commits-list"></div>
+</div>
+<div id="v25-dock-container">
+<div id="v25-dock">
+<div id="v25-icon-container" class="scroll-container">
+<div class="v25-dock-icon" onclick="navigateToTab('news-tab')"><i class="fas fa-home"></i></div>
+<div class="v25-dock-icon" onclick="navigateToTab('true-classic-radio')"><i class="fas fa-music"></i></div>
+<div class="v25-dock-icon" onclick="navigateToTab('podcast-tab')"><i class="fas fa-podcast"></i></div>
+<div class="v25-dock-icon" onclick="navigateToTab('media-tab-a')"><i class="fas fa-image"></i></div>
+<div class="v25-dock-icon" onclick="navigateToTab('settings-tab')"><i class="fas fa-cog"></i></div>
+</div>
+</div>
+</div>
+<div id="sound-timeline-container">
+<div id="sound-timeline-progress"></div>
+</div>
+</div>
+</div>
 <script src="js/src/newsletter.js"></script>
 <script src="js/src/updates-commits.js"></script>
 <script src="js/src/function-switchTheme.js"></script>
 <script src="js/src/nav-leftDash.js"></script>
 <script src="js/src/function_today_date.js"></script>
-
-<!-- Audio and Media -->
-
 <script src="js/src/media.js"></script>
 <script src="js/src/super-song.js"></script>
 <script src="js/src/new-super-pod.js"></script>
 <script src="js/src/tv-media-player-controls.js"></script>
 <script src="js/src/tv-media-player-init.js"></script>
-
-<!-- UI Enhancements and Toggles -->
-<!-- <script src="js/src/loading-logic.js"></script> -->
 <script src="js/src/true-toggles.js"></script>
 <script src="js/src/true-recent.js"></script>
 <script src="js/src/true-full-recent.js"></script>
 <script src="js/src/basic-audio-controls.js"></script>
-<!-- <script src="js/src/command-center.js"></script> -->
-<!-- <script src="js/src/appConfig.js"></script> -->
 <script src="js/src/audio-visualization.js"></script>
-    <!-- END -->
-    <!-- THANK YOU FOR TAKING THE TIME - ALEX  -->
-
-  </body>
+</body>
 </html>
-

@@ -193,17 +193,12 @@ li {
 
 #ahoyLogo {
     width: 250px;
-    /* Adjust size as needed */
     height: auto;
     border-radius: 10px;
-    /* Rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
     background: rgba(255, 255, 255, 0.2);
-    /* Semi-transparent background */
     backdrop-filter: blur(5px);
-    /* Glass effect */
     transition: transform 0.3s ease;
-    /* Center the logo */
     display: block;
     margin: 0 auto;
     margin-top: 20px;
@@ -211,5 +206,4 @@ li {
 
 #ahoyLogo:hover {
     transform: scale(1.05);
-    /* Slight zoom on hover */
 }
