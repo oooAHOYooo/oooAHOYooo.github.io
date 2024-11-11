@@ -1,0 +1,7 @@
+{
+  "media": [
+    { "title": "Holiday Greetings", "file": "https://your-cdn.com/media/holiday-greetings.mp4" },
+    { "title": "Festive Indie Music Mix", "file": "https://your-cdn.com/media/festive-music-mix.mp4" },
+    { "title": "Classic Holiday Indie Film", "file": "https://your-cdn.com/media/classic-holiday-film.mp4" }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "media": [
+    { "title": "New Year Countdown", "file": "https://your-cdn.com/media/new-year-countdown.mp4" },
+    { "title": "Indie Celebration Mix", "file": "https://your-cdn.com/media/celebration-mix.mp4" },
+    { "title": "Fireworks Show", "file": "https://your-cdn.com/media/fireworks-show.mp4" }
+  ]
+}

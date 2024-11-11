@@ -1,0 +1,25 @@
+{
+  "events": [
+    {
+      "date": "2024-12-25",
+      "time": "12:00",
+      "title": "Christmas Special",
+      "description": "Celebrate the holiday with a curated collection of indie holiday music, films, and seasonal surprises.",
+      "playlist_file": "special_playlists/holiday_special.json"
+    },
+    {
+      "date": "2024-12-31",
+      "time": "23:00",
+      "title": "New Year's Eve Countdown",
+      "description": "Ring in the New Year with a special countdown and a celebratory music mix!",
+      "playlist_file": "special_playlists/new_years_eve.json"
+    },
+    {
+      "date": "2024-02-14",
+      "time": "18:00",
+      "title": "Valentine's Day Special",
+      "description": "A romantic selection of indie love songs and heartfelt films to celebrate Valentine's Day.",
+      "playlist_file": "special_playlists/valentines_special.json"
+    }
+  ]
+}

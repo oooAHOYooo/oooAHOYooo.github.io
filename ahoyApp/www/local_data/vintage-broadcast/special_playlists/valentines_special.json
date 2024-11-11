@@ -1,0 +1,7 @@
+{
+  "media": [
+    { "title": "Indie Love Songs", "file": "https://your-cdn.com/media/indie-love-songs.mp4" },
+    { "title": "Romantic Short Film", "file": "https://your-cdn.com/media/romantic-short-film.mp4" },
+    { "title": "Valentine's Day Message", "file": "https://your-cdn.com/media/valentines-day-message.mp4" }
+  ]
+}
