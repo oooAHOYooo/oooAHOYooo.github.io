@@ -52,6 +52,8 @@ h1 {
     -webkit-backdrop-filter: blur(15px);
     overflow: hidden;
     color: #fff;
+    max-width: 90%;
+    margin: 0 auto;
 }
 
 button {
@@ -137,6 +139,8 @@ input[type="text"]:focus {
     white-space: pre-wrap;
     color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 95%;
+
 }
 
 .json-item {

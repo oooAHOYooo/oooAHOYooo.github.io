@@ -100,8 +100,56 @@ function formatNestedJson(value, parentIndex) {
             }
         }
     }
+    formatted += `<button class="save" onclick="saveNestedItem('${parentIndex}')">Save Nested</button>`;
+    formatted += `<button class="delete" onclick="deleteNestedItem('${parentIndex}')">Delete Nested</button>`;
     formatted += '</ul>';
     return formatted;
+}
+
+function saveNestedItem(parentIndex) {
+    console.log('Saving nested item at index:', parentIndex);
+    const inputs = document.querySelectorAll(`input[data-index^="${parentIndex}"]`);
+    let itemChanged = false;
+    let changeDetails = [];
+    inputs.forEach(input => {
+        const key = input.getAttribute('data-key');
+        const newValue = input.value;
+        const keys = key.split('-');
+        let nestedItem = currentData;
+        keys.forEach((k, i) => {
+            if (i === keys.length - 1) {
+                if (nestedItem[k] !== newValue) {
+                    changeDetails.push(`${k}: "${nestedItem[k]}" -> "${newValue}"`);
+                    nestedItem[k] = newValue;
+                    itemChanged = true;
+                }
+            } else {
+                nestedItem = nestedItem[k];
+            }
+        });
+    });
+    if (itemChanged) {
+        changes.push({ index: parentIndex, details: changeDetails });
+        showNotification('Nested changes saved successfully! Click here to review.');
+        listChanges();
+        console.log('Nested Changes:', changes);
+    }
+}
+
+function deleteNestedItem(parentIndex) {
+    console.log('Deleting nested item at index:', parentIndex);
+    const keys = parentIndex.split('-');
+    let nestedItem = currentData;
+    keys.forEach((k, i) => {
+        if (i === keys.length - 1) {
+            delete nestedItem[k];
+        } else {
+            nestedItem = nestedItem[k];
+        }
+    });
+    displayData(currentData);
+    showNotification('Nested item deleted successfully! Click here to review.');
+    listChanges();
 }
 
 function saveItem(index) {
