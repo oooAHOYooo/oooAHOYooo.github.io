@@ -1,0 +1,7 @@
+{
+  "playlist_id": "evening-3",
+  "media": [
+    { "title": "Artist Interview", "file": "https://your-cdn.com/media/artist-interview.mp4" },
+    { "title": "Live Performance", "file": "https://your-cdn.com/media/live-performance.mp4" }
+  ]
+}

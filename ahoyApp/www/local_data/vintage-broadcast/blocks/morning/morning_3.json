@@ -1,0 +1,8 @@
+{
+  "playlist_id": "morning-3",
+  "media": [
+    { "title": "Local Interview", "file": "https://your-cdn.com/media/local-interview.mp4" },
+    { "title": "Indie Spotlight", "file": "https://your-cdn.com/media/indie-spotlight.mp4" },
+    { "title": "Morning Meditation", "file": "https://your-cdn.com/media/morning-meditation.mp4" }
+  ]
+}

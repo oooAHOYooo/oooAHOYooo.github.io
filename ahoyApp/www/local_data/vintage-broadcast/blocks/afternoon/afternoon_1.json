@@ -1,0 +1,7 @@
+{
+  "playlist_id": "afternoon-1",
+  "media": [
+    { "title": "Indie Artist Feature", "file": "https://your-cdn.com/media/indie-artist-feature.mp4" },
+    { "title": "Podcast Highlights", "file": "https://your-cdn.com/media/podcast-highlights.mp4" }
+  ]
+}

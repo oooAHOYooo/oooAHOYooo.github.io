@@ -1,0 +1,7 @@
+{
+  "playlist_id": "afternoon-3",
+  "media": [
+    { "title": "Indie Talk Show", "file": "https://your-cdn.com/media/indie-talk-show.mp4" },
+    { "title": "Creative Corner", "file": "https://your-cdn.com/media/creative-corner.mp4" }
+  ]
+}

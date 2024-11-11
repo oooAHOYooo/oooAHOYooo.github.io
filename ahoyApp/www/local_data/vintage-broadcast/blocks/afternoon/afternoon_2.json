@@ -1,0 +1,7 @@
+{
+  "playlist_id": "afternoon-2",
+  "media": [
+    { "title": "Afternoon Music Mix", "file": "https://your-cdn.com/media/afternoon-music-mix.mp4" },
+    { "title": "Art Showcase", "file": "https://your-cdn.com/media/art-showcase.mp4" }
+  ]
+}

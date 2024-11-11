@@ -1,0 +1,7 @@
+{
+  "playlist_id": "evening-2",
+  "media": [
+    { "title": "Music Showcase", "file": "https://your-cdn.com/media/music-showcase.mp4" },
+    { "title": "Behind the Scenes", "file": "https://your-cdn.com/media/behind-the-scenes.mp4" }
+  ]
+}

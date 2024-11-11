@@ -1,0 +1,8 @@
+{
+  "playlist_id": "morning-1",
+  "media": [
+    { "title": "Morning News Brief", "file": "https://your-cdn.com/media/morning-news-brief.mp4" },
+    { "title": "Weather Update", "file": "https://your-cdn.com/media/weather-update.mp4" },
+    { "title": "Community Spotlight", "file": "https://your-cdn.com/media/community-spotlight.mp4" }
+  ]
+}

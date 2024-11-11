@@ -1,0 +1,7 @@
+{
+  "playlist_id": "late_night-2",
+  "media": [
+    { "title": "Late Night Indie Mix", "file": "https://your-cdn.com/media/late-night-indie-mix.mp4" },
+    { "title": "Classic Short Film", "file": "https://your-cdn.com/media/classic-short-film.mp4" }
+  ]
+}

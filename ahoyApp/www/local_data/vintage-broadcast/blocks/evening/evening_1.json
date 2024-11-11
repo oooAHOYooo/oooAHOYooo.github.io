@@ -1,0 +1,7 @@
+{
+  "playlist_id": "evening-1",
+  "media": [
+    { "title": "Prime Time Documentary", "file": "https://your-cdn.com/media/prime-time-documentary.mp4" },
+    { "title": "Indie Short Film", "file": "https://your-cdn.com/media/indie-short-film.mp4" }
+  ]
+}

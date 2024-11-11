@@ -1,0 +1,7 @@
+{
+  "playlist_id": "morning-2",
+  "media": [
+    { "title": "Top Stories", "file": "https://your-cdn.com/media/top-stories.mp4" },
+    { "title": "Morning Music Mix", "file": "https://your-cdn.com/media/morning-music-mix.mp4" }
+  ]
+}
