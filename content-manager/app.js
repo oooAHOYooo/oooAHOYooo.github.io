@@ -133,6 +133,8 @@ function saveNestedItem(parentIndex) {
         showNotification('Nested changes saved successfully! Click here to review.');
         listChanges();
         console.log('Nested Changes:', changes);
+        // Scroll to publish and download section
+        document.getElementById('publishDownloadSection').scrollIntoView({ behavior: 'smooth' });
     }
 }
 
@@ -173,6 +175,8 @@ function saveItem(index) {
         showNotification('Changes saved successfully! Click here to review.');
         listChanges();
         console.log('Changes:', changes);
+        // Scroll to publish and download section
+        document.getElementById('publishDownloadSection').scrollIntoView({ behavior: 'smooth' });
     }
 }
 
