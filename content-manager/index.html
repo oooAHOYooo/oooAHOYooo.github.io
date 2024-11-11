@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ahoy Content Editor</title>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <h1>Ahoy Content Editor</h1>
-    <div id="content">
-        <select id="jsonSelector">
-            <option value="mediaCollection">Media Collection</option>
-            <option value="newsletter">Newsletter</option>
-            <option value="podcastCollection">Podcast Collection</option>
-            <option value="trueRadioPlay">True Radio Play</option>
-        </select>
-        <button onclick="loadData()">Load Data</button>
-        <div id="jsonDisplay"></div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ahoy Content Editor</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <h1>Ahoy Content Editor</h1>
+        <div id="content">
+            <select id="jsonSelector">
+                <option value="mediaCollection">Media Collection</option>
+                <option value="newsletter">Newsletter</option>
+                <option value="podcastCollection">Podcast Collection</option>
+                <option value="trueRadioPlay">True Radio Play</option>
+            </select>
+            <button onclick="loadData()">Load Data</button>
+            <div id="jsonDisplay"></div>
+            <!--
         <div id="addSong">
             <h2>Add New Song</h2>
             <input type="text" id="newTitle" placeholder="Title">
@@ -25,16 +28,18 @@
             <input type="text" id="newAlbum" placeholder="Album">
             <button onclick="addSong()">Add Song</button>
         </div>
-        <div id="reviewChanges">
-            <h2>Review Changes</h2>
-            <div id="changeLog"></div>
-            <button onclick="previewChanges()">Preview Changes</button>
-            <div id="previewDisplay"></div>
+        -->
+            <div id="reviewChanges">
+                <h2>Review Changes</h2>
+                <div id="changeLog"></div>
+                <button onclick="previewChanges()">Preview Changes</button>
+                <div id="previewDisplay"></div>
+            </div>
         </div>
-    </div>
-    <div id="fixedButtons">
-        <button onclick="publishChanges()">Publish and Download Changes</button>
-    </div>
-    <script src="app.js"></script>
-</body>
+        <div id="fixedButtons">
+            <button onclick="publishChanges()">Publish and Download
+                Changes</button>
+        </div>
+        <script src="app.js"></script>
+    </body>
 </html>

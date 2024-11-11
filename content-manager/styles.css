@@ -23,9 +23,17 @@ body::before {
 }
 
 @keyframes gradientAnimation {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 h1 {
@@ -66,6 +74,7 @@ button:hover {
 
 input[type="text"] {
     width: 100%;
+    max-width: 100%;
     padding: 10px;
     margin-bottom: 10px;
     border: none;
@@ -75,6 +84,7 @@ input[type="text"] {
     font-size: 16px;
     box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
     transition: background 0.3s;
+    box-sizing: border-box;
 }
 
 input[type="text"]::placeholder {
@@ -84,9 +94,12 @@ input[type="text"]::placeholder {
 input[type="text"]:focus {
     background: rgba(255, 255, 255, 0.3);
     outline: none;
+    border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
-#jsonDisplay, #previewDisplay, #changeLog {
+#jsonDisplay,
+#previewDisplay,
+#changeLog {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     padding: 20px;

@@ -43,17 +43,21 @@ function displayData(data) {
     jsonDisplay.innerHTML = ''; // Clear previous content
 
     if (Array.isArray(data)) {
+        const table = document.createElement('table');
+        table.className = 'json-table';
         data.forEach((item, index) => {
-            const itemDiv = document.createElement('div');
-            itemDiv.className = 'json-item';
-            if (newEntries.includes(index)) {
-                itemDiv.classList.add('new');
-            } else if (changes.some(change => change.index === index)) {
-                itemDiv.classList.add('changed');
-            }
-            itemDiv.innerHTML = formatJsonItem(item, index);
-            jsonDisplay.appendChild(itemDiv);
+            const row = document.createElement('tr');
+            const cell = document.createElement('td');
+            const details = document.createElement('details');
+            const summary = document.createElement('summary');
+            summary.textContent = `Item ${index + 1}`;
+            details.appendChild(summary);
+            details.innerHTML += formatJsonItem(item, index);
+            cell.appendChild(details);
+            row.appendChild(cell);
+            table.appendChild(row);
         });
+        jsonDisplay.appendChild(table);
     } else {
         jsonDisplay.innerHTML = formatJsonItem(data, 0);
     }
