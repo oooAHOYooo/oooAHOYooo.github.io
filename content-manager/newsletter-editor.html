@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter Editor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Newsletter Editor</h1>
+    <div id="newsletterContent">
+        <select id="jsonSelector">
+            <option value="newsletter">Newsletter</option>
+            <!-- Add more options if needed -->
+        </select>
+        <button onclick="loadNewsletterData()">Load Newsletter Data</button>
+        <div id="jsonDisplay"></div>
+        <div id="previewDisplay"></div>
+        <div id="changeLog"></div>
+        <div id="publishDownloadSection">
+            <button onclick="previewChanges()">Preview Changes</button>
+            <button onclick="publishChanges()">Publish Changes</button>
+        </div>
+    </div>
+    <div id="newItemForm">
+        <h2>Add New Newsletter Item</h2>
+        <input type="text" id="newDate" placeholder="Date (YYYY-MM-DD)">
+        <input type="text" id="newTitle" placeholder="Title">
+        <input type="text" id="newImageUrl" placeholder="Image URL">
+        <textarea id="newContent" placeholder="Content"></textarea>
+        <button onclick="addNewItem()">Add Item</button>
+    </div>
+    <script src="app.js"></script>
+    <script src="newsletterEditor.js"></script>
+</body>
+</html>
