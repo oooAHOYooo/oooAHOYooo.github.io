@@ -1,7 +1,10 @@
 {
   "playlist_id": "evening-1",
   "media": [
-    { "title": "Prime Time Documentary", "file": "https://your-cdn.com/media/prime-time-documentary.mp4" },
-    { "title": "Indie Short Film", "file": "https://your-cdn.com/media/indie-short-film.mp4" }
+    {
+      "title": "The Rob Show - Ep 8 - The Gypsies - Part 4",
+      "file": "https://cdn.jwplayer.com/videos/4f55y55N-GVOzihKP.mp4",
+      "thumbnail": "https://cdn.jwplayer.com/v2/media/4f55y55N/poster.jpg?width=720"
+    }
   ]
 }

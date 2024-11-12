@@ -97,11 +97,11 @@ async function loadPlaylistForTimeOfDay() {
 
         // Find the latest block matching or earlier than the current time
         const selectedBlock = blocks.slice().reverse().find(block => currentTime >= block.time) || blocks[0];
-        
+
         // Assuming the first file in block_files is the playlist JSON
         const playlistUrl = `./local_data/vintage-broadcast/${selectedBlock.block_files[0]}`;
         loadPlaylistFromJSON(playlistUrl, selectedBlock.title);
-        
+
     } catch (error) {
         console.error("Error loading schedule:", error);
     }
