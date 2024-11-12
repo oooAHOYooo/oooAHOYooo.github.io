@@ -2376,8 +2376,8 @@ input[type="date"]:focus {
     padding: 10px;
     font-size: 24px;
     cursor: pointer;
-    background-color: #ffffff4a;
-    color: #fff;
+    background-color: var(--border-color);
+    color: var(--text-color);
     border: none;
     border-radius: 5px;
     display: flex;
@@ -2411,6 +2411,13 @@ input[type="date"]:focus {
     width: 100%;
 }
 
+#video-broadcast-container {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
 
 
 #warning-banner {
