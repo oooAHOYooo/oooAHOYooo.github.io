@@ -1,3 +1,12 @@
+document.addEventListener('DOMContentLoaded', function() {
+    tinymce.init({
+        selector: '#newContent',
+        plugins: 'link image code',
+        toolbar: 'undo redo | bold italic | alignleft aligncenter alignright | code',
+        menubar: false
+    });
+});
+
 // Define any specific URLs or configurations for the newsletter
 const newsletterUrl = 'https://storage.googleapis.com/ahoy-dynamic-content/dynamicJson/newsletter.json';
 
@@ -50,11 +59,22 @@ function displayNewsletterData(data) {
     }
 }
 
+function formatText(command) {
+    document.execCommand(command, false, null);
+}
+
+function insertLink() {
+    const url = prompt("Enter the URL");
+    if (url) {
+        document.execCommand('createLink', false, url);
+    }
+}
+
 function addNewItem() {
     const newDate = document.getElementById('newDate').value;
     const newTitle = document.getElementById('newTitle').value;
     const newImageUrl = document.getElementById('newImageUrl').value;
-    const newContent = document.getElementById('newContent').value;
+    const newContent = document.getElementById('newContent').innerHTML; // Get HTML content
 
     if (!newDate || !newTitle || !newContent) {
         alert('Please fill in all required fields.');
@@ -73,6 +93,23 @@ function addNewItem() {
     displayNewsletterData(currentData);
     showNotification('New item added successfully! Click here to review.');
     listChanges();
+}
+
+function previewNewsletter() {
+    const previewDisplay = document.getElementById('previewDisplay');
+    previewDisplay.innerHTML = ''; // Clear previous preview
+
+    currentData.forEach((item, index) => {
+        const itemDiv = document.createElement('div');
+        itemDiv.className = 'newsletter-item';
+        itemDiv.innerHTML = `
+            <h3>${item.title}</h3>
+            <p><strong>Date:</strong> ${item.date}</p>
+            <img src="${item.imageUrl}" alt="${item.title}" style="max-width: 100%;">
+            <div>${item.content}</div>
+        `;
+        previewDisplay.appendChild(itemDiv);
+    });
 }
 
 // You can add more functions specific to the newsletter editor here

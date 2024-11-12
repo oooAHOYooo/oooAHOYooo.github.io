@@ -28,7 +28,13 @@
         <input type="text" id="newDate" placeholder="Date (YYYY-MM-DD)">
         <input type="text" id="newTitle" placeholder="Title">
         <input type="text" id="newImageUrl" placeholder="Image URL">
-        <textarea id="newContent" placeholder="Content"></textarea>
+        <div id="editorToolbar">
+            <button onclick="formatText('bold')">Bold</button>
+            <button onclick="formatText('italic')">Italic</button>
+            <button onclick="formatText('underline')">Underline</button>
+            <button onclick="insertLink()">Insert Link</button>
+        </div>
+        <div id="newContent" contenteditable="true" style="border: 1px solid #ccc; padding: 10px; min-height: 100px;"></div>
         <button onclick="addNewItem()">Add Item</button>
     </div>
     <script src="app.js"></script>
