@@ -1,8 +1,20 @@
 {
   "playlist_id": "morning-3",
   "media": [
-    { "title": "Local Interview", "file": "https://your-cdn.com/media/local-interview.mp4" },
-    { "title": "Indie Spotlight", "file": "https://your-cdn.com/media/indie-spotlight.mp4" },
-    { "title": "Morning Meditation", "file": "https://your-cdn.com/media/morning-meditation.mp4" }
+    {
+        "title": "Morning Indie Mix",
+        "file": "https://content.jwplatform.com/videos/bC5jAf0c-INZZZmia.mp4",
+        "thumbnail": "https://cdn.jwplayer.com/thumbs/bC5jAf0c-1280.jpg"
+    },
+    {
+        "title": "Andrew Leverton Tries the K2 Unnaturals",
+        "file": "https://content.jwplatform.com/videos/DOhS6Mfi-lDtdjaQS.mp4",
+        "thumbnail": "https://cdn.jwplayer.com/thumbs/DOhS6Mfi-1920.jpg"
+    },
+    {
+        "title": "Community Spotlight: The Rob Show - Episode 11 - Tyler Rice - Part 1",
+        "file": "https://content.jwplatform.com/videos/MmSe2svl-lDtdjaQS.mp4",
+        "thumbnail": "https://cdn.jwplayer.com/thumbs/MmSe2svl-1920.jpg"
+    }
   ]
 }
