@@ -1,10 +1,37 @@
 // Initialize video player in the broadcast container on page load
 document.addEventListener("DOMContentLoaded", () => {
-    loadPlaylistForTimeOfDay();
+    const broadcastButton = document.getElementById("broadcast-on-button");
+    broadcastButton.addEventListener("click", toggleBroadcast);
 });
 
 let currentMediaIndex = 0;
 let currentBlockFiles = [];
+let isBroadcasting = false;
+let currentTime = 0;
+
+// Function to toggle the broadcast
+function toggleBroadcast() {
+    const broadcastButton = document.getElementById("broadcast-on-button");
+    const videoElement = document.getElementById("video-broadcast-container");
+
+    if (isBroadcasting) {
+        currentTime = videoElement.currentTime; // Save the current time
+        videoElement.pause();
+        broadcastButton.classList.remove("active-broadcast");
+        broadcastButton.textContent = "Resume Broadcast"; // Change button text
+    } else {
+        if (currentBlockFiles.length > 0) {
+            videoElement.currentTime = currentTime; // Resume from saved time
+            videoElement.play();
+        } else {
+            loadPlaylistForTimeOfDay();
+        }
+        broadcastButton.classList.add("active-broadcast");
+        broadcastButton.textContent = "Pause Broadcast"; // Change button text
+    }
+
+    isBroadcasting = !isBroadcasting;
+}
 
 // Load a playlist from a JSON file
 async function loadPlaylistFromJSON(url) {

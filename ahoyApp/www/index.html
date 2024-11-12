@@ -216,10 +216,14 @@
 <hr>
 </div>
 <div id="vintage-broadcast-tab" class="tab-content active">
-<!-- Ahoy Vintage Broadcast Tab -->
-
   <h2>Ahoy Vintage Broadcast</h2>
-  <p>Enjoy a curated selection of indie content in a continuous broadcast format.</p>
+  <div class="broadcast-info">
+    <p>
+      <span class="tooltip" title="Enjoy a curated selection of indie content in a continuous broadcast format.">
+            </span>
+    </p>
+  </div>
+
   <div class="broadcast-player-container">
       <video id="video-broadcast-container" width="100%" controls>
           <source id="video-source" src="" type="video/mp4">
@@ -229,7 +233,11 @@
   <div class="broadcast-info">
       <p>Currently Playing: <span id="broadcast-media-title">Loading...</span></p>
   </div>
-
+  <div class="broadcast-on-off-container">
+    <button id="broadcast-on-button" class="action-button">
+      <i class="fas fa-power-off"></i> Start Broadcast
+    </button></div>
+    
 
 <div class="remote-controls">
 <button id="play-pause-button" class="remoteControlButton"><i class="fas fa-play"></i></button>

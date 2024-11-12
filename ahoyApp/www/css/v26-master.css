@@ -3500,5 +3500,19 @@ input[type="date"]:focus {
 #ondemand-video-player {
 
     border-radius: 15px;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
 
+
+.broadcast-on-off-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.active-broadcast {
+    background-color: #ff0060;
+    color: white;
+    border: 2px solid #ff0060;
 }
