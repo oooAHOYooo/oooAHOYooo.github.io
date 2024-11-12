@@ -2,6 +2,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const broadcastButton = document.getElementById("broadcast-on-button");
     broadcastButton.addEventListener("click", toggleBroadcast);
+    loadPlaylistForTimeOfDay(); // Load the playlist on page load
 });
 
 let currentMediaIndex = 0;
@@ -34,7 +35,7 @@ function toggleBroadcast() {
 }
 
 // Load a playlist from a JSON file
-async function loadPlaylistFromJSON(url) {
+async function loadPlaylistFromJSON(url, blockTitle) {
     try {
         const response = await fetch(url);
         const { media } = await response.json();
@@ -42,6 +43,7 @@ async function loadPlaylistFromJSON(url) {
         if (media?.length) {
             currentMediaIndex = 0;
             currentBlockFiles = media;
+            setThumbnailAndTitle(media[0], blockTitle); // Set thumbnail and title
             playVideo(currentMediaIndex);
         } else {
             console.warn("No media found in playlist.");
@@ -49,6 +51,14 @@ async function loadPlaylistFromJSON(url) {
     } catch (error) {
         console.error("Error loading playlist:", error);
     }
+}
+
+function setThumbnailAndTitle(mediaItem, blockTitle) {
+    const videoElement = document.getElementById("video-broadcast-container");
+    const sourceElement = document.getElementById("video-source");
+    sourceElement.src = mediaItem.file; // Assuming mediaItem.file contains the video URL
+    videoElement.poster = mediaItem.thumbnail; // Assuming mediaItem.thumbnail contains the thumbnail URL
+    document.getElementById("broadcast-media-title").textContent = blockTitle;
 }
 
 function playVideo(index) {
@@ -79,7 +89,7 @@ async function loadPlaylistForTimeOfDay() {
         
         // Assuming the first file in block_files is the playlist JSON
         const playlistUrl = `./local_data/vintage-broadcast/${selectedBlock.block_files[0]}`;
-        loadPlaylistFromJSON(playlistUrl);
+        loadPlaylistFromJSON(playlistUrl, selectedBlock.title);
         
     } catch (error) {
         console.error("Error loading schedule:", error);
