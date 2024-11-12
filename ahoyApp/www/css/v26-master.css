@@ -3496,3 +3496,9 @@ input[type="date"]:focus {
     width: 100%;
     height: 100%;
 }
+
+#ondemand-video-player {
+
+    border-radius: 15px;
+
+}
