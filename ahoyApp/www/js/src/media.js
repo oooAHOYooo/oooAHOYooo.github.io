@@ -1,14 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
   let mediaData = [];
 
-  // Function to load video in JWPlayer
-  function loadVideoInJWPlayer(videoUrl, thumbnailUrl, artistName, titleName) {
-    jwplayer("jw-player-container").setup({
-      file: videoUrl,
-      image: thumbnailUrl,
-      width: "100%",
-      aspectratio: "16:9",
-    });
+  // Function to load video in the native HTML5 video player
+  function loadVideoInHTML5Player(videoUrl, artistName, titleName) {
+    const videoPlayer = document.getElementById("ondemand-video-player");
+    const videoSource = document.getElementById("ondemand-video-source");
+
+    videoSource.src = videoUrl;
+    videoPlayer.load(); // Reload the video player with the new source
 
     const artistElement = document.querySelector("#media-artist-name p");
     const titleElement = document.querySelector("#media-title-name p");
@@ -20,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function playVideoAndScrollToSearch(videoUrl, thumbnailUrl, artistName, titleName) {
-    loadVideoInJWPlayer(videoUrl, thumbnailUrl, artistName, titleName);
+    loadVideoInHTML5Player(videoUrl, artistName, titleName);
     
     // Scroll to the top of the page
     window.scrollTo({ top: 0, behavior: 'smooth' });

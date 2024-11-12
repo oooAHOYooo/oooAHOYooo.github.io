@@ -17,7 +17,6 @@
 <meta name="color-scheme" content="light dark">
 <title>Ahoy Indie Media</title>
 <link rel="dns-prefetch" href="//www.gstatic.com">
-<link rel="dns-prefetch" href="//cdn.jwplayer.com">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
 <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
@@ -28,7 +27,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
 <link rel="stylesheet" href="./css/v26-master.css">
 <link rel="icon" type="image/png" href="./img/favicon_ahoy.png">
-<script src="https://cdn.jwplayer.com/libraries/9Gtk2B1J.js"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-WVDL9N1HDT"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-WVDL9N1HDT');</script>
 </head>
@@ -45,7 +43,10 @@
 <div id="media-artist-name"><p>This is where the Media Artist Name will Go</p></div>
 <div id="media-title-name"><p>This is where the Media Title Name will Go</p></div>
 </div>
-<div id="jw-player-container"></div>
+<video id="ondemand-video-player" width="100%" controls>
+  <source id="ondemand-video-source" src="" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 </div>
 <h2>SEARCH MEDIA LIBRARY:</h2>
 <div class="search-container" id="search-container">
