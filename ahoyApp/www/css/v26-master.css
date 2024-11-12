@@ -2376,13 +2376,27 @@ input[type="date"]:focus {
     padding: 10px;
     font-size: 24px;
     cursor: pointer;
-    background-color: #333;
+    background-color: #ffffff4a;
     color: #fff;
     border: none;
     border-radius: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+
+}
+
+.remoteControlButton:hover {
+    background-color: #ffffff80;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+.remoteControlButton:active {
+    background-color: #ffffff99;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transform: translateY(1px);
 }
 
 .remoteControlButton i {
