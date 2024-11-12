@@ -20,7 +20,7 @@
     
     <!-- Enable Inline Media Playback -->
     <preference name="AllowInlineMediaPlayback" value="true" />
-    <preference name="MediaPlaybackRequiresUserAction" value="false" />
+    <preference name="MediaTypesRequiringUserActionForPlayback" value="none" />
     
     <!-- Set Scheme and Hostname for Local Access -->
     <preference name="scheme" value="app" />
