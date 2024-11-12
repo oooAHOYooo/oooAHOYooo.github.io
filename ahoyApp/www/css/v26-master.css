@@ -3520,15 +3520,44 @@ input[type="date"]:focus {
 
 .broadcast-header {
     text-align: center;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    font-family: 'Georgia', serif;
+
+
     font-size: 28px;
-    color: #4a3c31;
+    color: var(--text-color);
     background-color: var(--background-color);
     padding: 15px;
-    border: 2px solid var(--border-color);
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid var(--border-color);
+
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.broadcast-info {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: .5px solid var(--border-color);
+
+    padding: 5px;
+
+}
+
+.broadcast-info p {
+    font-size: 12px;
+    color: var(--text-color);
+    letter-spacing: 1px;
+    font-weight: 400;
+    line-height: .8;
+    padding: 0px;
+    margin: 0px;
+
+}
+
+#broadcast-media-title {
+    font-style: normal;
+    letter-spacing: 1px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: .8;
 }
