@@ -3,6 +3,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const broadcastButton = document.getElementById("broadcast-on-button");
     broadcastButton.addEventListener("click", toggleBroadcast);
     loadPlaylistForTimeOfDay(); // Load the playlist on page load
+
+    // Add event listeners for remote control buttons
+    document.getElementById("play-pause-button").addEventListener("click", togglePlayPause);
+    document.getElementById("fast-forward-button").addEventListener("click", fastForward);
+    document.getElementById("next-button").addEventListener("click", playNext);
+    document.getElementById("rewind-button").addEventListener("click", rewind);
+    document.getElementById("shuffle-button").addEventListener("click", shufflePlaylist);
+    document.getElementById("fullscreen-button").addEventListener("click", toggleFullscreen);
+    document.getElementById("mute-button").addEventListener("click", toggleMute);
+    document.getElementById("volume-down").addEventListener("click", volumeDown);
+    document.getElementById("volume-up").addEventListener("click", volumeUp);
 });
 
 let currentMediaIndex = 0;
@@ -94,4 +105,71 @@ async function loadPlaylistForTimeOfDay() {
     } catch (error) {
         console.error("Error loading schedule:", error);
     }
+}
+
+// Function to toggle play/pause
+function togglePlayPause() {
+    const videoElement = document.getElementById("video-broadcast-container");
+    if (videoElement.paused) {
+        videoElement.play();
+    } else {
+        videoElement.pause();
+    }
+}
+
+// Function to fast forward the video by 10 seconds
+function fastForward() {
+    const videoElement = document.getElementById("video-broadcast-container");
+    videoElement.currentTime += 10;
+}
+
+// Function to play the next video in the playlist
+function playNext() {
+    currentMediaIndex = (currentMediaIndex + 1) % currentBlockFiles.length;
+    playVideo(currentMediaIndex);
+}
+
+// Function to rewind the video by 10 seconds
+function rewind() {
+    const videoElement = document.getElementById("video-broadcast-container");
+    videoElement.currentTime -= 10;
+}
+
+// Function to shuffle the playlist
+function shufflePlaylist() {
+    currentBlockFiles.sort(() => Math.random() - 0.5);
+    currentMediaIndex = 0;
+    playVideo(currentMediaIndex);
+}
+
+// Function to toggle fullscreen mode
+function toggleFullscreen() {
+    const videoElement = document.getElementById("video-broadcast-container");
+    if (videoElement.requestFullscreen) {
+        videoElement.requestFullscreen();
+    } else if (videoElement.mozRequestFullScreen) { // Firefox
+        videoElement.mozRequestFullScreen();
+    } else if (videoElement.webkitRequestFullscreen) { // Chrome, Safari and Opera
+        videoElement.webkitRequestFullscreen();
+    } else if (videoElement.msRequestFullscreen) { // IE/Edge
+        videoElement.msRequestFullscreen();
+    }
+}
+
+// Function to toggle mute
+function toggleMute() {
+    const videoElement = document.getElementById("video-broadcast-container");
+    videoElement.muted = !videoElement.muted;
+}
+
+// Function to decrease volume
+function volumeDown() {
+    const videoElement = document.getElementById("video-broadcast-container");
+    videoElement.volume = Math.max(0, videoElement.volume - 0.1);
+}
+
+// Function to increase volume
+function volumeUp() {
+    const videoElement = document.getElementById("video-broadcast-container");
+    videoElement.volume = Math.min(1, videoElement.volume + 0.1);
 }

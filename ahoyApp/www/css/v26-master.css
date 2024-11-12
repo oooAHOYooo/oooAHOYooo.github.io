@@ -3222,6 +3222,7 @@ input[type="date"]:focus {
     font-size: 24px;
     text-transform: uppercase;
     letter-spacing: 0.1em;
+    padding-top: 10px;
 }
 
 #media-title-name h2 {
@@ -3531,9 +3532,9 @@ input[type="date"]:focus {
     font-size: 28px;
     color: var(--text-color);
     background-color: var(--background-color);
-    padding: 15px;
     border-top: 1px solid var(--border-color);
     padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .broadcast-info {
