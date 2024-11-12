@@ -3458,3 +3458,20 @@ input[type="date"]:focus {
     letter-spacing: 20px;
     line-height: 1.08;
 }
+
+
+.broadcast-player-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+}
+
+.broadcast-player-container #jwplayer-broadcast-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}

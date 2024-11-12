@@ -1,7 +1,11 @@
 {
   "playlist_id": "afternoon-1",
   "media": [
-    { "title": "Indie Artist Feature", "file": "https://your-cdn.com/media/indie-artist-feature.mp4" },
-    { "title": "Podcast Highlights", "file": "https://your-cdn.com/media/podcast-highlights.mp4" }
+
+    { 
+      "title": "The Rob Show - Season 2 - Episode 1 - Tyler + Dave", 
+      "file": "https://content.jwplatform.com/videos/WZhBZ9ek-lDtdjaQS.mp4",
+      "thumbnail": "https://cdn.jwplayer.com/thumbs/WZhBZ9ek-1920.jpg"
+    }
   ]
 }

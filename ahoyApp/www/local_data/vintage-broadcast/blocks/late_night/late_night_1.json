@@ -1,6 +1,20 @@
 {
-  "playlist_id": "late_night-1",
-  "media": [
-    { "title": "Indie Movie Marathon", "file": "https://your-cdn.com/media/indie-movie-marathon.mp4" }
-  ]
-}
+    "playlist_id": "late_night-1",
+    "media": [
+      { 
+        "title": "Indie and Homemade",
+        "file": "https://content.jwplatform.com/videos/AaYoTwU5-lDtdjaQS.mp4",
+        "thumbnail": "https://cdn.jwplayer.com/thumbs/AaYoTwU5-1920.jpg"
+      },
+      { 
+        "title": "Staring at the Sun", 
+        "file": "https://content.jwplatform.com/videos/lykfKrpQ-7FkZDCa8.mp4",
+        "thumbnail": "https://cdn.jwplayer.com/thumbs/lykfKrpQ-480.jpg"
+      },
+      { 
+        "title": "Rob - Tallboyz - Intro", 
+        "file": "https://content.jwplatform.com/videos/y29db5OP-lDtdjaQS.mp4",
+        "thumbnail": "https://cdn.jwplayer.com/thumbs/y29db5OP-1920.jpg"
+      }
+    ]
+  }

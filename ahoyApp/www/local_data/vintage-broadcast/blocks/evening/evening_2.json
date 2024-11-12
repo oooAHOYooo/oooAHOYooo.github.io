@@ -1,7 +1,11 @@
 {
   "playlist_id": "evening-2",
   "media": [
-    { "title": "Music Showcase", "file": "https://your-cdn.com/media/music-showcase.mp4" },
-    { "title": "Behind the Scenes", "file": "https://your-cdn.com/media/behind-the-scenes.mp4" }
+
+    { 
+      "title": "Rob Show - Ep 8 - Dominic Jace - Part 1", 
+      "thumbnail": "https://cdn.jwplayer.com/thumbs/zOcGp9M6-1920.jpg",
+      "file": "https://content.jwplatform.com/videos/zOcGp9M6-lDtdjaQS.mp4"
+    }
   ]
 }

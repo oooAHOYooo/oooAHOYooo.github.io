@@ -185,7 +185,7 @@
 </div>
 </div>
 </div>
-<div id="news-tab" class="tab-content active">
+<div id="news-tab" class="tab-content">
 <img src="./img/assets/u_ahoy23.png" alt="Ahoy Indie Media Logo" class="homepage-logo" style="font-family:'Times New Roman',Times,serif;font-size:24px;text-transform:uppercase;">
 <hr>
 <h2 id="calendar-date"></h2>
@@ -213,12 +213,19 @@
 <br><br>
 <hr>
 </div>
-<div id="tv-mix" class="tab-content">
-<div id="jwplayer-currently-playing" class="currently-playing">
-<div class="media-library-player" id="jwplayer-container"></div>
-<h2>Streaming Now - Featured Content:</h2>
-<p>It's like the good old days of TV, just on the internet. If you want something on and good, just click it and enjoy a mix of your favorite TV shows and media content.</p>
-<p id="current-media">Current media: <span id="current-media-text"></span></p>
+<div id="vintage-broadcast-tab" class="tab-content active">
+<!-- Ahoy Vintage Broadcast Tab -->
+
+  <h2>Ahoy Vintage Broadcast</h2>
+  <p>Enjoy a curated selection of indie content in a continuous broadcast format.</p>
+  <div class="broadcast-player-container">
+      <div id="jwplayer-broadcast-container"></div>
+  </div>
+  <div class="broadcast-info">
+      <p>Currently Playing: <span id="broadcast-media-title">Loading...</span></p>
+  </div>
+
+
 <div class="remote-controls">
 <button id="play-pause-button" class="remoteControlButton"><i class="fas fa-play"></i></button>
 <button id="fast-forward-button" class="remoteControlButton"><i class="fas fa-forward"></i></button>
@@ -232,6 +239,7 @@
 </div>
 </div>
 </div>
+
 <div id="settings-tab" class="tab-content">
 <h1>Settings</h1>
 <hr>
@@ -276,6 +284,9 @@
 <div id="v25-icon-container" class="scroll-container">
 <div class="v25-dock-icon" onclick="navigateToTab('news-tab')"><i class="fas fa-home"></i></div>
 <div class="v25-dock-icon" onclick="navigateToTab('true-classic-radio')"><i class="fas fa-music"></i></div>
+<div class="v25-dock-icon" onclick="navigateToTab('vintage-broadcast-tab')">
+  <i class="fas fa-tv"></i> 
+</div>
 <div class="v25-dock-icon" onclick="navigateToTab('podcast-tab')"><i class="fas fa-podcast"></i></div>
 <div class="v25-dock-icon" onclick="navigateToTab('media-tab-a')"><i class="fas fa-image"></i></div>
 <div class="v25-dock-icon" onclick="navigateToTab('settings-tab')"><i class="fas fa-cog"></i></div>
@@ -295,12 +306,13 @@
 <script src="js/src/media.js"></script>
 <script src="js/src/super-song.js"></script>
 <script src="js/src/new-super-pod.js"></script>
-<script src="js/src/tv-media-player-controls.js"></script>
-<script src="js/src/tv-media-player-init.js"></script>
+<!-- <script src="js/src/tv-media-player-controls.js"></script>
+<script src="js/src/tv-media-player-init.js"></script> -->
 <script src="js/src/true-toggles.js"></script>
 <script src="js/src/true-recent.js"></script>
 <script src="js/src/true-full-recent.js"></script>
 <script src="js/src/basic-audio-controls.js"></script>
 <script src="js/src/audio-visualization.js"></script>
+<script src="js/src/vintageBroadcast.js"></script>
 </body>
 </html>
