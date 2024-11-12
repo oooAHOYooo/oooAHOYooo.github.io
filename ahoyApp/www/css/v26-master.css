@@ -3211,13 +3211,17 @@ input[type="date"]:focus {
     position: relative;
     width: 100%;
     background-color: rgba(var(--background-color-rgb), 0.7);
-    /* Use background-color-rgb variable */
     border-radius: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: top;
-    gap: 5px;
+    justify-content: center;
+    text-align: center;
+    color: var(--text-color);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
 }
 
 #media-title-name h2 {
@@ -3520,15 +3524,16 @@ input[type="date"]:focus {
 
 .broadcast-header {
     text-align: center;
-
+    text-transform: uppercase;
+    letter-spacing: 34px;
+    font-family: 'Times New Roman', Times, serif;
 
     font-size: 28px;
     color: var(--text-color);
     background-color: var(--background-color);
     padding: 15px;
     border-top: 1px solid var(--border-color);
-
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    padding-top: 10px;
 }
 
 .broadcast-info {
