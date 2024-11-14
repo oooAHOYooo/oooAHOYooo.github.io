@@ -10,7 +10,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
             const sortedData = activeData.sort((a, b) => new Date(b.date) - new Date(a.date));
             const groupedByMonth = {};
             let currentPage = 1;
-            const itemsPerPage = 10;
+            const itemsPerPage = 100;
 
             // Group data by month and year
             sortedData.forEach(item => {
@@ -44,24 +44,14 @@ window.addEventListener('DOMContentLoaded', (event) => {
                     `;
                     // Check if imageUrl exists before rendering image or video
                     if (newsletter.imageUrl) {
-                        if (newsletter.imageUrl.endsWith('.mp4')) {
-                            htmlContent += `
-                                <div style="text-align: center;">
-                                    <video loop autoplay muted loading="lazy" style="width: 100%; height: auto;">
-                                        <source src="${newsletter.imageUrl}" type="video/mp4">
-                                        Your browser does not support the video tag.
-                                    </video>
-                                </div>
-                            `;
-                        } else {
-                            htmlContent += `
-                                <div style="text-align: center;">
-                                    <img src="${newsletter.imageUrl}" alt="${newsletter.title}" class="newsletter-image lazy-load" loading="lazy" style="max-width: 100%; height: auto; cursor: pointer;" onclick="navigateToTab('${newsletter.goTo}')" onerror="this.style.display='none'">
-                                </div>
-                            `;
-                        }
+                        htmlContent += `
+                            <div class="newsletter-image-container">
+                                <img src="${newsletter.imageUrl}" alt="${newsletter.title}" class="newsletter-image-background">
+                                <img src="${newsletter.imageUrl}" alt="${newsletter.title}" class="newsletter-image-foreground lazy-load" loading="lazy" onclick="navigateToTab('${newsletter.goTo}')" onerror="this.style.display='none'">
+                            </div>
+                        `;
                     }
-                    htmlContent += `<p><i class="fa-solid fa-file-lines"></i> ${newsletter.content}</p>`;
+                    htmlContent += `<p>${newsletter.content}</p>`;
 
                     if (newsletter.additionalImages && newsletter.additionalImages.length > 0) {
                         htmlContent += `<div class="additional-images gallery">`;

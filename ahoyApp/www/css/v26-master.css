@@ -1567,11 +1567,34 @@ input[type="date"]:focus {
     font-weight: 400;
 }
 
-.newsletter-image {
+
+
+.newsletter-image-container {
+    position: relative;
     width: 100%;
-    height: auto;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+}
+
+.newsletter-image-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    width: 500px;
+    filter: blur(50px);
+    z-index: -1;
+}
+
+.newsletter-image-foreground {
+    position: relative;
+    max-width: 100%;
+    height: 100%;
+    object-fit: contain;
+    margin: auto;
+    display: block;
+    z-index: 1;
 }
 
 .article-link {
