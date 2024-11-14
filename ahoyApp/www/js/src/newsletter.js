@@ -56,7 +56,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
                         } else {
                             htmlContent += `
                                 <div style="text-align: center;">
-                                    <img src="${newsletter.imageUrl}" alt="${newsletter.title}" class="newsletter-image lazy-load" loading="lazy" style="max-width: 100%; height: auto; cursor: pointer;" onclick="openLightbox('${newsletter.imageUrl}')" onerror="this.style.display='none'">
+                                    <img src="${newsletter.imageUrl}" alt="${newsletter.title}" class="newsletter-image lazy-load" loading="lazy" style="max-width: 100%; height: auto; cursor: pointer;" onclick="navigateToTab('${newsletter.goTo}')" onerror="this.style.display='none'">
                                 </div>
                             `;
                         }
@@ -216,6 +216,13 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
                 // Attach the observer to the last element in the list
                 observer.observe(document.querySelector('#newsletter-list > .newsletter-item:last-child'));
+            }
+
+            // Function to navigate to a specific tab
+            function navigateToTab(tabName) {
+                // Implement the logic to navigate to the specified tab
+                console.log(`Navigating to tab: ${tabName}`);
+                // Example: window.location.href = `#${tabName}`;
             }
 
             displayNewsletter(sortedData); // Display the first page of items

@@ -3425,12 +3425,12 @@ input[type="date"]:focus {
 }
 
 .about-title {
-    font-size: 36px;
+    font-size: 37px;
     font-weight: 400;
-    letter-spacing: 3px;
     line-height: 1.08;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
     margin-bottom: 10px;
+    letter-spacing: 20px;
 }
 
 
@@ -3480,10 +3480,15 @@ input[type="date"]:focus {
 .front-page-news-text {
     text-align: center;
     text-transform: uppercase;
-    font-size: 36px;
-    font-weight: 400;
-    letter-spacing: 20px;
-    line-height: 1.08;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 22px;
+    line-height: .78;
+    padding: 0px;
+    margin: 0px;
+    color: #fff;
+    text-shadow: 2px 2px 0 #000, 4px 4px 0 var(--border-color), 6px 6px 0 #000;
+    scale: 1.25;
 }
 
 
