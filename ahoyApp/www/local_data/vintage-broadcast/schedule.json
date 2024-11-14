@@ -8,19 +8,19 @@
       },
       {
         "time": "12:00",
-        "title": "Afternoon Show",
+        "title": "Afternoon Broadcast",
         "description": "Lively tunes, artist features, and fresh indie stories for a perfect afternoon break.",
         "block_files": ["blocks/afternoon/afternoon_1.json", "blocks/afternoon/afternoon_2.json", "blocks/afternoon/afternoon_3.json"]
       },
       {
         "time": "18:00",
-        "title": "Evening Prime Time",
+        "title": "Evening Broadcast",
         "description": "Prime time content with indie documentaries, short films, and artist interviews.",
         "block_files": ["blocks/evening/evening_1.json", "blocks/evening/evening_2.json", "blocks/evening/evening_3.json"]
       },
       {
         "time": "22:00",
-        "title": "Late Night Classics",
+        "title": "Late Night Broadcast",
         "description": "Unwind with relaxing music, classic indie films, and soothing night sounds.",
         "block_files": ["blocks/late_night/late_night_1.json", "blocks/late_night/late_night_2.json", "blocks/late_night/late_night_3.json"]
       }
