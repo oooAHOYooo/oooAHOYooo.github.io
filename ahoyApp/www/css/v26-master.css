@@ -1548,6 +1548,65 @@ input[type="date"]:focus {
     }
 }
 
+.about-section {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+}
+
+.about-section strong {
+    color: var(--text-color);
+    font-weight:500;
+    text-transform: uppercase;
+    font-size: 18px;
+    padding-bottom:5px;
+}
+
+.about-section h3 {
+    color: var(--text-color);
+    font-weight:300;
+    text-transform: uppercase;
+    font-size: 26px;
+}
+
+.about-section p {
+    color: var(--text-color);
+    font-weight:300;
+    font-size: 16px;
+}
+
+#about-ahoy-broadcast ul li {
+    background-color: rgba(var(--background-color-rgb), 0.1);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+}
+
+#about-ahoy-broadcast ul li:hover {
+    background-color: rgba(var(--background-color-rgb), 0.2);
+}
+
+#about-ahoy-broadcast ul li strong {
+    color: var(--gold-color);
+}
+
+#about-ahoy-broadcast ul ul {
+    margin-top: 5px;
+    padding-left: 20px;
+}
+
+#about-ahoy-broadcast ul ul li {
+    background-color: transparent;
+    border: none;
+    padding: 5px 0;
+    margin: 0;
+    color: var(--text-color);
+}
+
 .newsSubHeaderMenu button {
     text-transform: uppercase;
     font-size: 15px;
@@ -3556,7 +3615,6 @@ input[type="date"]:focus {
     text-transform: uppercase;
     letter-spacing: 34px;
     font-family: 'Times New Roman', Times, serif;
-
     font-size: 28px;
     color: var(--text-color);
     background-color: var(--background-color);
@@ -3572,7 +3630,6 @@ input[type="date"]:focus {
     justify-content: center;
     align-items: center;
     border: .5px solid var(--border-color);
-
     padding: 5px;
 
 }
