@@ -28,11 +28,22 @@ function populateSongList() {
       <td><button class="listen-btn" data-index="${index}">Listen</button></td>
     `;
     songListBody.appendChild(row);
+
+    // Add event listener to the row
+    row.addEventListener('click', function() {
+      updateRadioPlayer(index);
+      document.getElementById('musicAudioPlayer').play();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
   });
 
   // Add event listeners to all listen buttons
   document.querySelectorAll('.listen-btn').forEach(button => {
-    button.addEventListener('click', function() {
+    button.addEventListener('click', function(event) {
+      event.stopPropagation(); // Prevent the row click event from firing
       const songIndex = this.getAttribute('data-index');
       updateRadioPlayer(parseInt(songIndex));
       document.getElementById('musicAudioPlayer').play();
