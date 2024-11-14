@@ -1,5 +1,5 @@
 window.addEventListener('DOMContentLoaded', (event) => {
-    fetch('https://storage.googleapis.com/ahoy-dynamic-content/dynamicJson/newsletter.json')
+    fetch('./local_data/newsletter.json')
         .then(response => {
             if (!response.ok) throw new Error("Network response was not ok");
             return response.json();

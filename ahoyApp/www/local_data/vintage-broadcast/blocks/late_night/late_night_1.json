@@ -6,15 +6,22 @@
         "file": "https://content.jwplatform.com/videos/AaYoTwU5-lDtdjaQS.mp4",
         "thumbnail": "https://cdn.jwplayer.com/thumbs/AaYoTwU5-1920.jpg"
       },
-      { 
-        "title": "Staring at the Sun", 
-        "file": "https://content.jwplatform.com/videos/lykfKrpQ-7FkZDCa8.mp4",
-        "thumbnail": "https://cdn.jwplayer.com/thumbs/lykfKrpQ-480.jpg"
-      },
+
       { 
         "title": "Rob - Tallboyz - Intro", 
         "file": "https://content.jwplatform.com/videos/y29db5OP-lDtdjaQS.mp4",
         "thumbnail": "https://cdn.jwplayer.com/thumbs/y29db5OP-1920.jpg"
+      },
+      {
+        "title": "The Tallboyz - Obsolete Trailer",
+        "file": "https://content.jwplatform.com/videos/dKiWH9zw-GVOzihKP.mp4",
+        "thumbnail": "https://cdn.jwplayer.com/thumbs/dKiWH9zw-1920.jpg"
+      },
+
+      { 
+        "title": "Staring at the Sun", 
+        "file": "https://content.jwplatform.com/videos/lykfKrpQ-7FkZDCa8.mp4",
+        "thumbnail": "https://cdn.jwplayer.com/thumbs/lykfKrpQ-480.jpg"
       }
     ]
   }

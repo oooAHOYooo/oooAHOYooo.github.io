@@ -46,10 +46,21 @@ document.addEventListener("DOMContentLoaded", function() {
                 <td><button class="listen-btn-podcast" data-index="${index}">Listen</button></td>
             `;
             podcastListBody.appendChild(row);
+
+            // Make the entire row clickable
+            row.addEventListener('click', function() {
+                loadPodcast(index);
+                audioPlayer.play();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
         });
 
         document.querySelectorAll('.listen-btn-podcast').forEach(button => {
-            button.addEventListener('click', function() {
+            button.addEventListener('click', function(event) {
+                event.stopPropagation(); // Prevent the row click event from firing
                 const podcastIndex = this.getAttribute('data-index');
                 loadPodcast(parseInt(podcastIndex));
                 audioPlayer.play();
@@ -98,7 +109,7 @@ document.addEventListener("DOMContentLoaded", function() {
             playPodcast();
         } else {
             audioPlayer.pause();
-            playPodcastBtn.textContent = '[► PLAY]';
+            playPodcastBtn.textContent = '[��� PLAY]';
             podcastThumbnail.classList.remove('glow-border'); // Remove glow effect
         }
     }

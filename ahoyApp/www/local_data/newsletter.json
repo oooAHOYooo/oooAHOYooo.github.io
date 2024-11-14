@@ -290,6 +290,22 @@
     "content": "Join us for an exciting episode with Kevin McHaon.",
     "active": "true",
     "goTo": "podcast-tab"
-}
+},
+{
+    "date": "2024-11-11",
+    "title": "Experience the nostalgic feel of broadcast TV with our curated indie content : New Feature Coming Soon",
+    "imageUrl": "https://storage.googleapis.com/ahoy-dynamic-content/news/App%20Updates%20v%203_4.png",
+    "content": "Coming soon: Ahoy Broadcast - a broadcast network feature. Content changes 4 times a day to match traditional broadcast schedules: Morning Mix (6am-12pm), Afternoon (12pm-6pm), Evening (6pm-10pm), and Late Night (10pm-6am). Time-based playlists populate curated indie content. We're hoping to create a nostalgic feel of broadcast TV with our curated indie content.",
+    "active": "true",
+    "goTo": "updates-tab"
+  },
+  {
+    "date": "2024-11-12",
+    "title": "Rob Show Episode 38 - Justin Neafsey",
+    "imageUrl": "https://storage.googleapis.com/ahoy-podcast-collection/ROB%20EPISODE%2038%20-%20Justin%20Neafsey.jpg",
+    "content": "New Rob Show with Justin Neafsey - musician and guitarist from CT",
+    "active": "true",
+    "goTo": "podcast-tab"
+  }
 
 ]
