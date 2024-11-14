@@ -1,0 +1,119 @@
+[33mcommit 8621641dfed1de475f4804ff050dea630d01d4d2[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;31morigin/1029cssClean[m[33m)[m
+Author: agBabbbyCakes <108819253+agBabbbyCakes@users.noreply.github.com>
+Date:   Tue Oct 29 23:01:53 2024 -0400
+
+    updated some margins - idk im tired
+
+[33mcommit 40645342dccc3c803d8f3c68cec0fde9020f8254[m
+Author: agBabbbyCakes <108819253+agBabbbyCakes@users.noreply.github.com>
+Date:   Tue Oct 29 22:55:30 2024 -0400
+
+    added some bottom to experimental features
+
+[33mcommit e2e369ed9c24101ee9065fca1d77e54a6a3ea3d8[m
+Author: agBabbbyCakes <108819253+agBabbbyCakes@users.noreply.github.com>
+Date:   Tue Oct 29 22:53:23 2024 -0400
+
+    updated the about ahoy page - got rid of things unncessary
+
+[33mcommit b7ef7ca7b347b592ac7e10534d32e4878a56697d[m
+Author: agBabbbyCakes <108819253+agBabbbyCakes@users.noreply.github.com>
+Date:   Tue Oct 29 22:38:43 2024 -0400
+
+    combined front page news - cleaned up css
+
+[33mcommit c702dd85265babf3c76deeb05b80abb21260cf71[m
+Author: agBabbbyCakes <108819253+agBabbbyCakes@users.noreply.github.com>
+Date:   Tue Oct 29 22:26:22 2024 -0400
+
+    removed some padding on song sort button
+
+[33mcommit b68ae4cd4c7c0eada53e3fe44881934d1f8a3d4b[m[33m ([m[1;31morigin/1028-latenight-clean[m[33m)[m
+Author: agBabbbyCakes <108819253+agBabbbyCakes@users.noreply.github.com>
+Date:   Tue Oct 29 00:40:58 2024 -0400
+
+    cleaned up the media buttons in the media sort
+
+[33mcommit d25406614a28f0a5b14dc828e01985910c330d8e[m
+Author: agBabbbyCakes <108819253+agBabbbyCakes@users.noreply.github.com>
+Date:   Tue Oct 29 00:31:58 2024 -0400
+
+    refactored media tab a bit - switched the media title above just like the other tabs
+
+[33mcommit b3bb05bc0ec76fcb11725fb68fcbe3a76d5640ad[m
+Author: agBabbbyCakes <108819253+agBabbbyCakes@users.noreply.github.com>
+Date:   Tue Oct 29 00:28:10 2024 -0400
+
+    cleaned up the padding on the tab content - ommited uuncessary sidebar logic
+
+[33mcommit 56b9073c467fd41bb082dac97a4711963d5c2037[m
+Author: agBabbbyCakes <108819253+agBabbbyCakes@users.noreply.github.com>
+Date:   Tue Oct 29 00:22:39 2024 -0400
+
+    brought back loading logic - created a new folder called old code
+
+[33mcommit b7c82ea00ccefe33e29ccaecf1b2e7ea5b3c6508[m
+Author: agBabbbyCakes <108819253+agBabbbyCakes@users.noreply.github.com>
+Date:   Tue Oct 29 00:08:26 2024 -0400
+
+    updated cordova music controls a bit
+
+[33mcommit e8a651b258f5b77701b97c67eac716bd2250d73d[m
+Author: agBabbbyCakes <108819253+agBabbbyCakes@users.noreply.github.com>
+Date:   Tue Oct 29 00:06:51 2024 -0400
+
+    removed the auto play podcast feature
+
+[33mcommit 5437e11b4fc2689234d7f820853a8690d5ef403e[m[33m ([m[1;31morigin/1028-updates[m[33m)[m
+Author: agBabbbyCakes <108819253+agBabbbyCakes@users.noreply.github.com>
+Date:   Mon Oct 28 16:57:56 2024 -0400
+
+    tried to update it so the local storage works - none of the podcast buttons work - but at least the play pause does
+
+[33mcommit 9003f9a2a618803624b44531cba73c220e8e85f4[m
+Author: agBabbbyCakes <108819253+agBabbbyCakes@users.noreply.github.com>
+Date:   Mon Oct 28 16:42:39 2024 -0400
+
+    trying to make the alt features work
+
+[33mcommit 67b8524fbfc9a97a60ed8e9b87a1c13f2f4f1b21[m
+Author: agBabbbyCakes <108819253+agBabbbyCakes@users.noreply.github.com>
+Date:   Mon Oct 28 16:35:06 2024 -0400
+
+    think I got the podcast to a working state - need to get the duration bar working
+
+[33mcommit 2887c90fb0a4b82d56bddb1f99778801b6e616ff[m
+Author: agBabbbyCakes <108819253+agBabbbyCakes@users.noreply.github.com>
+Date:   Mon Oct 28 14:35:02 2024 -0400
+
+    attempted to make the podcast play button work just with podcast - also refeactored a bit of the ui - englarged the podcast thumbnail and more radius
+
+[33mcommit 5b1fb726992df856ecbe76c044cdcf25384639b9[m
+Author: agBabbbyCakes <108819253+agBabbbyCakes@users.noreply.github.com>
+Date:   Mon Oct 28 14:29:54 2024 -0400
+
+    added a feature to save local progress of the podcast local storage
+
+[33mcommit 2f0cdf414c120f6b404a71c579a437bf879d3146[m
+Author: agBabbbyCakes <108819253+agBabbbyCakes@users.noreply.github.com>
+Date:   Mon Oct 28 11:22:07 2024 -0400
+
+    moved old js around
+
+[33mcommit 80a787c5ccabd9232cdc0a06d5439842caa74b57[m
+Author: agBabbbyCakes <108819253+agBabbbyCakes@users.noreply.github.com>
+Date:   Mon Oct 28 10:58:04 2024 -0400
+
+    added at a halloween party
+
+[33mcommit c14e54606ba844ede97b72c311f497cae3cf1c0b[m
+Author: agBabbbyCakes <108819253+agBabbbyCakes@users.noreply.github.com>
+Date:   Mon Oct 28 10:49:27 2024 -0400
+
+    added jack galvin to the rob show
+
+[33mcommit 96a4e2101b89e742430822f4331c5c4d605c92d0[m[33m ([m[1;31morigin/1024night[m[33m)[m
+Author: agBabbbyCakes <108819253+agBabbbyCakes@users.noreply.github.com>
+Date:   Thu Oct 24 23:41:06 2024 -0400
+
+    got the previous podcast working not the nexxxxxxt - but im tired and bed time - xoxo
