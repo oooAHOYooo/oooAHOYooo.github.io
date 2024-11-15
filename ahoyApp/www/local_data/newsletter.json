@@ -132,13 +132,6 @@
         "mp3Url": "#"
     },
     {
-        "date": "2024-07-02",
-        "title": "New Feature Alert - Desktop Only",
-        "imageUrl": "https://storage.googleapis.com/ahoy-dynamic-content/news/AHOY%20NewsFlash%20-%20Summer%2024.mp4",
-        "content": "Work in Progress but a Progress in Work - we're adding new features to the app! Please note that our latest toggle feature is currently available for desktop users only. We're focusing on perfecting the experience on larger screens before adapting it for mobile devices. Stay tuned for future updates as we continue to enhance and expand our app's capabilities across all platforms!",
-        "mp3Url": "#"
-    },
-    {
         "date": "2024-07-24",
         "title": "Obsolete Full Length Skate Film Out Now",
         "content": "<iframe src='https://cdn.jwplayer.com/players/dKiWH9zw-9Gtk2B1J.html' width='100%' height='100%' style='min-height:400px;' frameborder='0' title='tallboyz Obsolete Trailer [2024]'  allowfullscreen></iframe><br>The Tallboyz 5th full length skate film is out now - watch it on <a href='https://www.youtube.com/watch?v=X7555555' class='article-link'>YouTube</a>.<p class='body-text'><b>Featured Skaters:</b> Dave Gunn, Tadd Labozzetta, Josh Weaver, Ian Hutchinson, Nigel Klein, Julian Hinsch, Dave Hartnett, Mark Wojda, Don Sanders, Nick Chongo Sellen, Jay Kouch, Tyler Knight, Brad, Alec Gerhart, Matt Ragone, Brendan Brown, Eric Larson, Rob Dargiewicz, Chapi, Nick Tomanelli, Olivier De Tomas, Marcello Savona, Leon Toppin, Chuck Winfield, Aaron Kalat, Connor Murphy, Jeremy Raff, Bella Sadik, Jay O'Neill & Ed Braxton.</p><p class='body-text'>Watch the trailer <a href='https://cdn.jwplayer.com/previews/dKiWH9zw-9Gtk2B1J' class='article-link'>here</a>. <br><br> Read about them in <a href='https://www.rollernews.com/2024/07/21/obsolete/' class='article-link'>rollernews</a>.</p>"
@@ -175,18 +168,7 @@
         ],
         "externalLink": "https://www.newportthisweek.com/articles/9-central-film-festival-returns-sept-9/"
     },
-    {
-        "date": "2024-08-25",
-        "title": "New Feature: Ahoy Work Mode Beta",
-        "content": "Unlock your peak productivity with our revolutionary new feature, Ahoy Work Mode! Designed specifically for those who thrive on focus and efficiency, this cutting-edge tool blends the soothing power of classical music with a precision-timed productivity timer. Dive into deep work sessions with our curated playlist that not only enhances concentration but also elevates your work experience. Say goodbye to distractions and hello to a world of heightened focus and outstanding results. Try Ahoy Work Mode today and transform your workday into a symphony of productivity!",
-        "active": "false",
-        "goTo": "work-mode-tab",
-        "imageUrl": "https://storage.googleapis.com/ahoy-dynamic-content/work-mode-beta.png",
-        "additionalImages": [
-            "https://storage.googleapis.com/ahoy-dynamic-content/work-mode-timer.png",
-            "https://storage.googleapis.com/ahoy-dynamic-content/work-mode-music.png"
-        ]
-    },
+
 {
     "date": "2024-09-03",
     "title": "Emerging from Construction: Exciting Updates Ahead",
