@@ -13,10 +13,15 @@ document.addEventListener("DOMContentLoaded", function() {
     let currentPodcastIndex = 0;
     let podcasts = [];
 
+    const useLocalData = true; // Set to true for local, false for cloud
+    const podcastDataUrl = useLocalData 
+        ? "local_data/podcastCollection.json" 
+        : "https://storage.googleapis.com/ahoy-dynamic-content/dynamicJson/podcastCollection.json";
+
     // Fetch podcast data
     async function fetchPodcasts() {
         try {
-            const response = await fetch('https://storage.googleapis.com/ahoy-dynamic-content/dynamicJson/podcastCollection.json');
+            const response = await fetch(podcastDataUrl);
             const data = await response.json();
             console.log('Fetched podcast data:', data);
             podcasts = data.podcasts;
@@ -109,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function() {
             playPodcast();
         } else {
             audioPlayer.pause();
-            playPodcastBtn.textContent = '[��� PLAY]';
+            playPodcastBtn.textContent = '[ PLAY]';
             podcastThumbnail.classList.remove('glow-border'); // Remove glow effect
         }
     }

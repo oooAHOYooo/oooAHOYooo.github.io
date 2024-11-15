@@ -1,10 +1,19 @@
 {
   "podcasts": [
     {
+      "id": 27,
+      "title": "The Rob Show #38 - Justin Neafsey",
+      "description": "Justin Neafsey, a musician and guitarist from CT, joins Rob for an engaging conversation in this episode of The Rob Show",
+      "date": "2024-11-12",
+      "active": true,
+      "mp3url": "https://storage.googleapis.com/ahoy-podcast-collection/The%20Rob%20Show%20-%20Episode%2038%20-%20Justin%20Neafsey%20.mp3",
+      "thumbnail": "https://storage.googleapis.com/ahoy-podcast-collection/ROB%20EPISODE%2038%20-%20Justin%20Neafsey.jpg"
+    },
+    {
       "id": 26,
       "title": "The Rob Show #37 - Kevin McHahon",
       "description": "Kevin McHahon, a local musician and songwriter, joins Rob for an engaging conversation in this episode of The Rob Show",
-      "date": "2024-11-05",
+      "date": "2024-11-05", 
       "active": true,
       "mp3url": "https://storage.googleapis.com/ahoy-podcast-collection/ep37_kevin_The%20Rob%20Show%20-%20Fall%202024.mp3",
       "thumbnail": "https://storage.googleapis.com/ahoy-podcast-collection/ROB%20EPISODE%2037%20-%20Kevin%20McHaon.jpg"
