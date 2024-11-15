@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function sortAndDisplayMedia(criteria) {
     let sortedData = [...mediaData];
     if (criteria === 'recent') {
-      sortedData.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+      sortedData.sort((a, b) => b.id - a.id);
     } else if (criteria === 'artist-az') {
       sortedData.sort((a, b) => a.artist.localeCompare(b.artist));
     } else if (criteria === 'title-az') {
