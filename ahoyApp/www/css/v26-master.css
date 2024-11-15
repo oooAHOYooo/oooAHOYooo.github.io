@@ -3623,7 +3623,6 @@ input[type="date"]:focus {
     padding-bottom: 10px;
 }
 
-
 @media (max-width: 768px) {
     .broadcast-header {
         letter-spacing: 10px; 

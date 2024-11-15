@@ -16,13 +16,6 @@
         "tape_id": "TAPE002"
     },
     {
-        "order": 4,
-        "title": "Community Spotlight: The Rob Show - Episode 11 - Tyler Rice - Part 1",
-        "file": "https://content.jwplatform.com/videos/MmSe2svl-lDtdjaQS.mp4",
-        "thumbnail": "https://cdn.jwplayer.com/thumbs/MmSe2svl-1920.jpg",
-        "tape_id": "TAPE003"
-    },
-    {
         "order": 2,
         "title": "2nd Nature - The Gnarth - Alex Figueroa",
         "file": "https://content.jwplatform.com/videos/Mr9gNRSS-7FkZDCa8.mp4",
@@ -31,17 +24,38 @@
     },
     {
         "order": 5,
-        "title": "The Rob Show - Episode 12 - Josh Kebabian - Part 2",
-          "file": "https://content.jwplatform.com/videos/7ImbVUnl-lDtdjaQS.mp4",
-        "thumbnail": "https://cdn.jwplayer.com/thumbs/7ImbVUnl-1920.jpg",
+        "title": "The Rob Show - Episode 12 - Josh Kebabian - Part 1",
+        "file": "https://content.jwplatform.com/videos/0bgv9kF6-lDtdjaQS.mp4",
+        "thumbnail": "https://cdn.jwplayer.com/thumbs/0bgv9kF6-1920.jpg",
         "tape_id": "TAPE005"
     },
     {
         "order": 6,
+        "title": "The Rob Show - Episode 12 - Josh Kebabian - Part 2",
+        "file": "https://content.jwplatform.com/videos/7ImbVUnl-lDtdjaQS.mp4",
+        "thumbnail": "https://cdn.jwplayer.com/thumbs/7ImbVUnl-1920.jpg",
+        "tape_id": "TAPE006"
+    },
+    {
+        "order": 7,
         "title": "The Rob Show - Episode 13 - Josh Kebabian - Part 4",
         "file": "https://content.jwplatform.com/videos/7aN39rhT-lDtdjaQS.mp4",
         "thumbnail": "https://cdn.jwplayer.com/thumbs/7aN39rhT-1920.jpg",
-        "tape_id": "TAPE006"
+        "tape_id": "TAPE008"
+    },
+    {
+        "order": 8,
+        "title": "The Rob Show - Episode 14 - Josh Kebabian - Part 5",
+        "file": "https://content.jwplatform.com/videos/XdT7UzQh-lDtdjaQS.mp4",
+        "thumbnail": "https://cdn.jwplayer.com/thumbs/XdT7UzQh-1920.jpg",
+        "tape_id": "TAPE009"
+    },
+    {
+        "order": 9,
+        "title": "The Rob Show - Episode 14 - Josh Kebabian - Part 6",
+        "file": "https://content.jwplatform.com/videos/v8JQHACa-lDtdjaQS.mp4",
+        "thumbnail": "https://cdn.jwplayer.com/thumbs/v8JQHACa-1920.jpg",
+        "tape_id": "TAPE010"
     }
   ]
 }

@@ -50,7 +50,7 @@
         {
           "id": 6,
           "video_id": "ZNJ0TBsj",
-          "display_title": "The Rob Show - Episode 11 - Tyler Rice - Clip 5 1",
+          "display_title": "The Rob Show - Episode 11 - Tyler Rice - Part 5",
           "artist": "Rob Meglio", 
           "duration": "00:08:28", 
           "mp4_link": "https://cdn.jwplayer.com/videos/ZNJ0TBsj-GVOzihKP.mp4",
@@ -320,6 +320,60 @@
               "mp4_link": "https://cdn.jwplayer.com/videos/Sqxcvpaj-GVOzihKP.mp4",
               "thumbnail_link": "https://cdn.jwplayer.com/v2/media/Sqxcvpaj/poster.jpg?width=720",
               "jwplayer_script": "https://cdn.jwplayer.com/players/Sqxcvpaj-9Gtk2B1J.js"
+            },
+            {
+              "id": 35,
+              "video_id": "0bgv9kF6",
+              "display_title": "The Rob Show - Episode 12 - Josh Kebabian - Part 1",
+              "artist": "The Rob Show",
+              "duration": "00:13:07",
+              "mp4_link": "https://content.jwplatform.com/videos/0bgv9kF6-lDtdjaQS.mp4",
+              "thumbnail_link": "https://cdn.jwplayer.com/thumbs/0bgv9kF6-1920.jpg"
+            },
+            {
+              "id": 36,
+              "video_id": "7ImbVUnl",
+              "display_title": "The Rob Show - Episode 12 - Josh Kebabian - Part 2",
+              "artist": "The Rob Show",
+              "duration": "00:08:43",
+              "mp4_link": "https://content.jwplatform.com/videos/7ImbVUnl-lDtdjaQS.mp4",
+              "thumbnail_link": "https://cdn.jwplayer.com/thumbs/7ImbVUnl-1920.jpg"
+            },
+            {
+              "id": 37,
+              "video_id": "esRzhzE3",
+              "display_title": "The Rob Show - Episode 13 - Josh Kebabian - Part 3",
+              "artist": "The Rob Show",
+              "duration": "00:08:11",
+              "mp4_link": "https://content.jwplatform.com/videos/esRzhzE3-lDtdjaQS.mp4",
+              "thumbnail_link": "https://cdn.jwplayer.com/thumbs/esRzhzE3-1920.jpg"
+            },
+            {
+              "id": 38,
+              "video_id": "7aN39rhT",
+              "display_title": "The Rob Show - Episode 13 - Josh Kebabian - Part 4",
+              "artist": "The Rob Show",
+              "duration": "00:18:10",
+              "mp4_link": "https://content.jwplatform.com/videos/7aN39rhT-lDtdjaQS.mp4",
+              "thumbnail_link": "https://cdn.jwplayer.com/thumbs/7aN39rhT-1920.jpg"
+            },
+            {
+              "id": 39,
+              "video_id": "XdT7UzQh",
+              "display_title": "The Rob Show - Episode 14 - Josh Kebabian - Part 5",
+              "artist": "The Rob Show",
+              "duration": "00:09:50",
+              "mp4_link": "https://content.jwplatform.com/videos/XdT7UzQh-lDtdjaQS.mp4",
+              "thumbnail_link": "https://cdn.jwplayer.com/thumbs/XdT7UzQh-1920.jpg"
+            },
+            {
+              "id": 40,
+              "video_id": "v8JQHACa",
+              "display_title": "The Rob Show - Episode 14 - Josh Kebabian - Part 6",
+              "artist": "The Rob Show",
+              "duration": "00:13:52",
+              "mp4_link": "https://content.jwplatform.com/videos/v8JQHACa-lDtdjaQS.mp4",
+              "thumbnail_link": "https://cdn.jwplayer.com/thumbs/v8JQHACa-1920.jpg"
             }
           ]
           

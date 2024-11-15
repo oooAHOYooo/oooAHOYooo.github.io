@@ -1,6 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
   let mediaData = [];
 
+  // Define the URL for fetching media data
+  const useLocalData = true; // Set to true for local, false for cloud
+  const mediaDataUrl = useLocalData 
+    ? "local_data/mediaCollection.json" 
+    : "https://storage.googleapis.com/ahoy-dynamic-content/dynamicJson/mediaCollection.json";
+
   // Function to load video in the native HTML5 video player
   function loadVideoInHTML5Player(videoUrl, artistName, titleName) {
     const videoPlayer = document.getElementById("ondemand-video-player");
@@ -71,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Fetch and populate media table
-  fetch("https://storage.googleapis.com/ahoy-dynamic-content/dynamicJson/mediaCollection.json")
+  fetch(mediaDataUrl) // Use the variable to fetch data
     .then((response) => response.json())
     .then((data) => {
       console.log("Fetched media data:", data); // Log the fetched data to the console

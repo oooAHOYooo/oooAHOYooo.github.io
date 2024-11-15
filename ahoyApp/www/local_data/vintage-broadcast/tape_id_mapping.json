@@ -20,8 +20,39 @@
     "thumbnail": "https://cdn.jwplayer.com/thumbs/Mr9gNRSS-480.jpg"
   },
   "TAPE005": {
+    "title": "The Rob Show - Episode 12 - Josh Kebabian - Part 1",
+    "file": "https://content.jwplatform.com/videos/0bgv9kF6-lDtdjaQS.mp4",
+    "thumbnail": "https://cdn.jwplayer.com/thumbs/0bgv9kF6-1920.jpg",
+    "duration": "00:13:07"
+  },
+  "TAPE006": {
     "title": "The Rob Show - Episode 12 - Josh Kebabian - Part 2",
     "file": "https://content.jwplatform.com/videos/7ImbVUnl-lDtdjaQS.mp4",
-    "thumbnail": "https://cdn.jwplayer.com/thumbs/7ImbVUnl-1920.jpg"
+    "thumbnail": "https://cdn.jwplayer.com/thumbs/7ImbVUnl-1920.jpg",
+    "duration": "00:08:43"
+  },
+  "TAPE007": {
+    "title": "The Rob Show - Episode 13 - Josh Kebabian - Part 3",
+    "file": "https://content.jwplatform.com/videos/esRzhzE3-lDtdjaQS.mp4",
+    "thumbnail": "https://cdn.jwplayer.com/thumbs/esRzhzE3-1920.jpg",
+    "duration": "00:08:11"
+  },
+  "TAPE008": {
+    "title": "The Rob Show - Episode 13 - Josh Kebabian - Part 4", 
+    "file": "https://content.jwplatform.com/videos/7aN39rhT-lDtdjaQS.mp4",
+    "thumbnail": "https://cdn.jwplayer.com/thumbs/7aN39rhT-1920.jpg",
+    "duration": "00:18:10"
+  },
+  "TAPE009": {
+    "title": "The Rob Show - Episode 14 - Josh Kebabian - Part 5",
+    "file": "https://content.jwplatform.com/videos/XdT7UzQh-lDtdjaQS.mp4", 
+    "thumbnail": "https://cdn.jwplayer.com/thumbs/XdT7UzQh-1920.jpg",
+    "duration": "00:09:50"
+  },
+  "TAPE010": {
+    "title": "The Rob Show - Episode 14 - Josh Kebabian - Part 6",
+    "file": "https://content.jwplatform.com/videos/v8JQHACa-lDtdjaQS.mp4",
+    "thumbnail": "https://cdn.jwplayer.com/thumbs/v8JQHACa-1920.jpg",
+    "duration": "00:13:52"
   }
 }
