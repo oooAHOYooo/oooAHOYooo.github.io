@@ -3,22 +3,62 @@
   "media": [
     {
       "order": 1,
+      "title": "The Rob Show - Episode 12 - Josh Kebabian - Part 1",
+      "file": "https://content.jwplatform.com/videos/0bgv9kF6-lDtdjaQS.mp4",
+      "thumbnail": "https://cdn.jwplayer.com/thumbs/0bgv9kF6-1920.jpg",
+      "tape_id": "TAPE005"
+    },
+    {
+      "order": 2,
       "title": "Ahoy Wishes You Wellness",
       "file": "https://cdn.jwplayer.com/videos/liBlaVgh-GVOzihKP.mp4",
       "thumbnail": "https://cdn.jwplayer.com/v2/media/liBlaVgh/poster.jpg?width=720"
     },
-    { 
-      "order": 2,
-      "title": "The Rob Show - Season 2 - Episode 1 - Tyler + Dave", 
-      "file": "https://content.jwplatform.com/videos/WZhBZ9ek-lDtdjaQS.mp4",
-      "thumbnail": "https://cdn.jwplayer.com/thumbs/WZhBZ9ek-1920.jpg"
-    },
-    { 
+    {
       "order": 3,
-      "title": "Dave Gunn - Raleigh/Durham Footage", 
+      "title": "The Rob Show - Episode 12 - Josh Kebabian - Part 2",
+      "file": "https://content.jwplatform.com/videos/7ImbVUnl-lDtdjaQS.mp4",
+      "thumbnail": "https://cdn.jwplayer.com/thumbs/7ImbVUnl-1920.jpg",
+      "tape_id": "TAPE006"
+    },
+    {
+      "order": 4,
+      "title": "Dave Gunn - Raleigh/Durham Footage",
       "file": "https://content.jwplatform.com/videos/MS7zwzR2-Da3Hhbi4.mp4",
       "thumbnail": "https://cdn.jwplayer.com/thumbs/MS7zwzR2-640.jpg"
+    },
+    {
+      "order": 5,
+      "title": "The Rob Show - Episode 13 - Josh Kebabian - Part 4",
+      "file": "https://content.jwplatform.com/videos/7aN39rhT-lDtdjaQS.mp4",
+      "thumbnail": "https://cdn.jwplayer.com/thumbs/7aN39rhT-1920.jpg",
+      "tape_id": "TAPE008"
+    },
+    {
+      "order": 6,
+      "title": "The Rob Show - Episode 14 - Josh Kebabian - Part 5",
+      "file": "https://content.jwplatform.com/videos/XdT7UzQh-lDtdjaQS.mp4",
+      "thumbnail": "https://cdn.jwplayer.com/thumbs/XdT7UzQh-1920.jpg",
+      "tape_id": "TAPE009"
+    },
+    {
+      "order": 7,
+      "title": "The Rob Show - Episode 14 - Josh Kebabian - Part 6",
+      "file": "https://content.jwplatform.com/videos/v8JQHACa-lDtdjaQS.mp4",
+      "thumbnail": "https://cdn.jwplayer.com/thumbs/v8JQHACa-1920.jpg",
+      "tape_id": "TAPE010"
+    },
+    {
+      "order": 8,
+      "title": "Indie and Homemade",
+      "file": "https://content.jwplatform.com/videos/AaYoTwU5-lDtdjaQS.mp4",
+      "thumbnail": "https://cdn.jwplayer.com/thumbs/AaYoTwU5-1920.jpg"
+    },
+    {
+      "order": 9,
+      "title": "The Rob Show - Season 2 - Episode 1 - Tyler + Dave",
+      "file": "https://content.jwplatform.com/videos/WZhBZ9ek-lDtdjaQS.mp4",
+      "thumbnail": "https://cdn.jwplayer.com/thumbs/WZhBZ9ek-1920.jpg"
     }
- 
   ]
 }
