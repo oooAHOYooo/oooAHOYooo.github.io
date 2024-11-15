@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .then((data) => {
       console.log("Fetched media data:", data); // Log the fetched data to the console
       mediaData = data; // Store data for sorting
-      sortAndDisplayMedia('random'); // Initially sort by random
+      sortAndDisplayMedia('recent'); // Initially sort by recent
 
       // Load a random video initially
       if (mediaData.length > 0) {
