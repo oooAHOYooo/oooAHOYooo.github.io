@@ -3626,7 +3626,7 @@ input[type="date"]:focus {
 
 @media (max-width: 768px) {
     .broadcast-header {
-        letter-spacing: 10px; /* Reduced letter-spacing for mobile */
+        letter-spacing: 10px; 
     }
 }
 

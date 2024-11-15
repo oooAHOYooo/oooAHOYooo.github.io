@@ -2,19 +2,32 @@
   "playlist_id": "morning-1",
   "media": [
     {
+        "order": 1,
         "title": "Morning Indie Mix",
         "file": "https://content.jwplatform.com/videos/bC5jAf0c-INZZZmia.mp4",
-        "thumbnail": "https://cdn.jwplayer.com/thumbs/bC5jAf0c-1280.jpg"
+        "thumbnail": "https://cdn.jwplayer.com/thumbs/bC5jAf0c-1280.jpg",
+        "tape_id": "TAPE001"
     },
     {
+        "order": 3,
         "title": "Andrew Leverton Tries the K2 Unnaturals",
         "file": "https://content.jwplatform.com/videos/DOhS6Mfi-lDtdjaQS.mp4",
-        "thumbnail": "https://cdn.jwplayer.com/thumbs/DOhS6Mfi-1920.jpg"
+        "thumbnail": "https://cdn.jwplayer.com/thumbs/DOhS6Mfi-1920.jpg",
+        "tape_id": "TAPE002"
     },
     {
+        "order": 4,
         "title": "Community Spotlight: The Rob Show - Episode 11 - Tyler Rice - Part 1",
         "file": "https://content.jwplatform.com/videos/MmSe2svl-lDtdjaQS.mp4",
-        "thumbnail": "https://cdn.jwplayer.com/thumbs/MmSe2svl-1920.jpg"
+        "thumbnail": "https://cdn.jwplayer.com/thumbs/MmSe2svl-1920.jpg",
+        "tape_id": "TAPE003"
+    },
+    {
+        "order": 2,
+        "title": "2nd Nature - The Gnarth - Alex Figueroa",
+        "file": "https://content.jwplatform.com/videos/Mr9gNRSS-7FkZDCa8.mp4",
+        "thumbnail": "https://cdn.jwplayer.com/thumbs/Mr9gNRSS-480.jpg",
+        "tape_id": "TAPE004"
     }
   ]
 }
