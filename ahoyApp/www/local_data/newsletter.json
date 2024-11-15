@@ -318,8 +318,8 @@
   {
     "date": "2024-11-15",
     "title": "Now Available: Josh Kebabian Interview",
-    "imageUrl": "https://cdn.jwplayer.com/thumbs/v8JQHACa-1920.jpg",
-    "content": "We've dug into our archives to bring you our interview with Josh Kebabian, now available on-demand! Check out the conversation in our media section <i class=\"fas fa-image\"></i>. This interview has also been added to our broadcast rotation and will be playing during morning and afternoon hours for the next week.",
+    "imageUrl": "https://cdn.jwplayer.com/thumbs/v8JQHACa-1920.jpg", 
+    "content": "We've dug into our archives to bring you our interview with Josh Kebabian, now available on-demand! Check out the conversation in our media section <button onclick=\"navigateToTab('media-tab-a')\" class=\"action-button\"><i class=\"fas fa-image\"></i></button>. This interview has also been added to our broadcast rotation <button onclick=\"navigateToTab('vintage-broadcast-tab')\" class=\"action-button\"><i class=\"fas fa-tv\"></i></button> and will be playing during morning and afternoon hours for the next week. ",
     "active": "true",
     "goTo": "vintage-broadcast-tab"
   }
