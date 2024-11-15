@@ -2,17 +2,19 @@
   "playlist_id": "afternoon-1",
   "media": [
     {
-      "item-order": 1,
+      "order": 1,
       "title": "Ahoy Wishes You Wellness",
       "file": "https://cdn.jwplayer.com/videos/liBlaVgh-GVOzihKP.mp4",
       "thumbnail": "https://cdn.jwplayer.com/v2/media/liBlaVgh/poster.jpg?width=720"
     },
     { 
+      "order": 2,
       "title": "The Rob Show - Season 2 - Episode 1 - Tyler + Dave", 
       "file": "https://content.jwplatform.com/videos/WZhBZ9ek-lDtdjaQS.mp4",
       "thumbnail": "https://cdn.jwplayer.com/thumbs/WZhBZ9ek-1920.jpg"
     },
     { 
+      "order": 3,
       "title": "Dave Gunn - Raleigh/Durham Footage", 
       "file": "https://content.jwplatform.com/videos/MS7zwzR2-Da3Hhbi4.mp4",
       "thumbnail": "https://cdn.jwplayer.com/thumbs/MS7zwzR2-640.jpg"

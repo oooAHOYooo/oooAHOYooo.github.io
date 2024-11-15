@@ -66,7 +66,8 @@ a {
     --action-button-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
     --action-button-transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
     --action-button-hover-background: rgba(255, 255, 255, 0.25);
-    --action-button-hover-box-shadow: 0 15px 35px rgba(75, 0, 130, 0.3);
+    --action-button-hover-font-color: var(--text-color);
+    --action-button-hover-box-shadow: 0 15px 35px rgba(var(--border-color-rgb), 0.3);
     --action-button-hover-transform: translateY(-3px);
     --action-button-active-transform: translateY(1px);
     --action-button-active-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -1148,14 +1149,6 @@ input[type="date"]:focus {
 }
 
 
-.action-button:hover {
-    background-color: var(--text-color);
-    /* Change background on hover */
-    color: var(--border-color);
-    /* Change text color on hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-    /* Enhance shadow on hover */
-}
 
 
 
@@ -1771,14 +1764,7 @@ input[type="date"]:focus {
 }
 
 
-.action-button:hover {
-    background-color: var(--text-color);
-    /* Change background on hover */
-    color: var(--border-color);
-    /* Change text color on hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-    /* Enhance shadow on hover */
-}
+
 
 
 .volume-control {
@@ -3467,20 +3453,21 @@ input[type="date"]:focus {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-.action-button {
-    background-color: rgba(255, 255, 255, 0.15);
-    color: var(--text-color);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    margin-top: 10px;
+
+
+@media (max-width: 768px) {
+    .action-button {
+        padding: 8px 16px; /* Reduce padding */
+        font-size: 14px;   /* Reduce font size */
+    }
 }
 
-.action-button:hover {
-    background-color: rgba(255, 255, 255, 0.25);
-    transform: translateY(-3px);
+@media (max-width: 400px) {
+    .action-button {
+        padding: 6px 12px; /* Further reduce padding */
+        font-size: 12px;   /* Further reduce font size */
+        min-width: auto;   /* Allow button to shrink more */
+    }
 }
 
 .theme-switcher-container {
@@ -3657,4 +3644,19 @@ input[type="date"]:focus {
     font-weight: 400;
     font-size: 12px;
     line-height: .8;
+}
+
+/* Video Player Styles */
+video {
+    width: 100%;
+    border: 2px solid var(--border-color);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+video::-webkit-media-controls-time-remaining-display,
+video::-webkit-media-controls-current-time-display {
+    display: none; /* Hide time display */
 }
