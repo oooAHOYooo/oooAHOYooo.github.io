@@ -28,6 +28,20 @@
         "file": "https://content.jwplatform.com/videos/Mr9gNRSS-7FkZDCa8.mp4",
         "thumbnail": "https://cdn.jwplayer.com/thumbs/Mr9gNRSS-480.jpg",
         "tape_id": "TAPE004"
+    },
+    {
+        "order": 5,
+        "title": "The Rob Show - Episode 12 - Josh Kebabian - Part 2",
+          "file": "https://content.jwplatform.com/videos/7ImbVUnl-lDtdjaQS.mp4",
+        "thumbnail": "https://cdn.jwplayer.com/thumbs/7ImbVUnl-1920.jpg",
+        "tape_id": "TAPE005"
+    },
+    {
+        "order": 6,
+        "title": "The Rob Show - Episode 13 - Josh Kebabian - Part 4",
+        "file": "https://content.jwplatform.com/videos/7aN39rhT-lDtdjaQS.mp4",
+        "thumbnail": "https://cdn.jwplayer.com/thumbs/7aN39rhT-1920.jpg",
+        "tape_id": "TAPE006"
     }
   ]
 }

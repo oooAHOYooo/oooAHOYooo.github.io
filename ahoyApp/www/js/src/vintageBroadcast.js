@@ -52,6 +52,9 @@ async function loadPlaylistFromJSON(url, blockTitle) {
         const { media } = await response.json();
         
         if (media?.length) {
+            // Sort media by order
+            media.sort((a, b) => a.order - b.order);
+
             currentMediaIndex = 0;
             currentBlockFiles = media;
             setThumbnailAndTitle(media[0], blockTitle); // Set thumbnail and title

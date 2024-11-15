@@ -314,6 +314,14 @@
     "content": "We've quietly rolled out our biggest update yet - the Ahoy Broadcast feature is now available in Beta! This is our crown jewel, bringing a nostalgic broadcast TV experience to indie content. While still riddled with bugs, this release marks a major milestone and we're now nearly feature complete for the mvp of the app and are ready to move forward with our App Store submission. Stay tuned for a smoother experience as we polish things up!<br><br><div style=\"text-align: center;\"><button onclick=\"navigateToTab('vintage-broadcast-tab')\" class=\"action-button beta-try-button\">Try the Beta Now</button></div>",
     "active": "true", 
     "goTo": "vintage-broadcast-tab"
+  },
+  {
+    "date": "2024-11-15",
+    "title": "Now Available: Josh Kebabian Interview On-Demand",
+    "imageUrl": "https://cdn.jwplayer.com/thumbs/7aN39rhT-1920.jpg",
+    "content": "For the first time, we're making our 2023 interview with Josh Kebabian available on-demand! Check out this fascinating conversation in our media section.",
+    "active": "true",
+    "goTo": "media-tab"
   }
 
 ]
