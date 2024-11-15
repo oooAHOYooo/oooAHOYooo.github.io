@@ -5,15 +5,33 @@ document.addEventListener("DOMContentLoaded", () => {
     loadPlaylistForTimeOfDay(); // Load the playlist on page load
 
     // Add event listeners for remote control buttons
-    document.getElementById("play-pause-button").addEventListener("click", togglePlayPause);
-    document.getElementById("fast-forward-button").addEventListener("click", fastForward);
-    document.getElementById("next-button").addEventListener("click", playNext);
-    document.getElementById("rewind-button").addEventListener("click", rewind);
-    document.getElementById("shuffle-button").addEventListener("click", shufflePlaylist);
-    document.getElementById("fullscreen-button").addEventListener("click", toggleFullscreen);
-    document.getElementById("mute-button").addEventListener("click", toggleMute);
-    document.getElementById("volume-down").addEventListener("click", volumeDown);
-    document.getElementById("volume-up").addEventListener("click", volumeUp);
+    document.getElementById("play-pause-button").addEventListener("click", () => {
+        if (isBroadcasting) togglePlayPause();
+    });
+    document.getElementById("fast-forward-button").addEventListener("click", () => {
+        if (isBroadcasting) fastForward();
+    });
+    document.getElementById("next-button").addEventListener("click", () => {
+        if (isBroadcasting) playNext();
+    });
+    document.getElementById("rewind-button").addEventListener("click", () => {
+        if (isBroadcasting) rewind();
+    });
+    document.getElementById("shuffle-button").addEventListener("click", () => {
+        if (isBroadcasting) shufflePlaylist();
+    });
+    document.getElementById("fullscreen-button").addEventListener("click", () => {
+        if (isBroadcasting) toggleFullscreen();
+    });
+    document.getElementById("mute-button").addEventListener("click", () => {
+        if (isBroadcasting) toggleMute();
+    });
+    document.getElementById("volume-down").addEventListener("click", () => {
+        if (isBroadcasting) volumeDown();
+    });
+    document.getElementById("volume-up").addEventListener("click", () => {
+        if (isBroadcasting) volumeUp();
+    });
 });
 
 let currentMediaIndex = 0;
