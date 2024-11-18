@@ -1,6 +1,15 @@
 {
   "podcasts": [
     {
+      "id": 28,
+      "title": "The Rob Show #39 - Dr. Tyler Rice",
+      "description": "Dr. Tyler Rice joins Rob for an insightful discussion in this episode of The Rob Show.",
+      "date": "2024-11-18",
+      "active": true,
+      "mp3url": "https://storage.googleapis.com/ahoy-podcast-collection/The%20Rob%20Show%20-%20Episode%2039%20-%20Dr%20Tyler%20Rice.mp3",
+      "thumbnail": "https://storage.googleapis.com/ahoy-podcast-collection/ROB%20EPISODE%2039%20-%20Dr%20Tyler%20Rice.jpg"
+    },
+    {
       "id": 27,
       "title": "The Rob Show #38 - Justin Neafsey",
       "description": "Justin Neafsey, a musician and guitarist from CT, joins Rob for an engaging conversation in this episode of The Rob Show",
