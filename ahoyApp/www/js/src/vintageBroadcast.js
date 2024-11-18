@@ -53,8 +53,6 @@ function toggleBroadcast() {
         if (currentBlockFiles.length > 0) {
             videoElement.currentTime = currentTime; // Resume from saved time
             videoElement.play();
-        } else {
-            loadPlaylistForTimeOfDay();
         }
         broadcastButton.classList.add("active-broadcast");
         broadcastButton.textContent = "Pause Broadcast"; // Change button text
@@ -76,7 +74,8 @@ async function loadPlaylistFromJSON(url, blockTitle) {
             currentMediaIndex = 0;
             currentBlockFiles = media;
             setThumbnailAndTitle(media[0], blockTitle); // Set thumbnail and title
-            playVideo(currentMediaIndex);
+            // Prepare the video but do not play
+            prepareVideo(currentMediaIndex);
         } else {
             console.warn("No media found in playlist.");
         }
@@ -93,7 +92,7 @@ function setThumbnailAndTitle(mediaItem, blockTitle) {
     document.getElementById("broadcast-media-title").textContent = blockTitle;
 }
 
-function playVideo(index) {
+function prepareVideo(index) {
     const videoElement = document.getElementById("video-broadcast-container");
     const sourceElement = document.getElementById("video-source");
     sourceElement.src = currentBlockFiles[index].file; // Assuming media[index].file contains the video URL
@@ -103,7 +102,7 @@ function playVideo(index) {
 
     videoElement.onended = () => {
         currentMediaIndex = (currentMediaIndex + 1) % currentBlockFiles.length;
-        playVideo(currentMediaIndex);
+        prepareVideo(currentMediaIndex);
     };
 }
 
@@ -147,7 +146,7 @@ function fastForward() {
 // Function to play the next video in the playlist
 function playNext() {
     currentMediaIndex = (currentMediaIndex + 1) % currentBlockFiles.length;
-    playVideo(currentMediaIndex);
+    prepareVideo(currentMediaIndex);
 }
 
 // Function to rewind the video by 10 seconds
@@ -160,7 +159,7 @@ function rewind() {
 function shufflePlaylist() {
     currentBlockFiles.sort(() => Math.random() - 0.5);
     currentMediaIndex = 0;
-    playVideo(currentMediaIndex);
+    prepareVideo(currentMediaIndex);
 }
 
 // Function to toggle fullscreen mode
