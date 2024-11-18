@@ -1,4 +1,4 @@
-const themes = ["light", "dark", "pink", "ellie", "bug", "hiii", "crazy", "gradientPink"]; // List of available themes
+const themes = ["light", "dark", "pink", "ellie", "bug", "licorice", "old yella", "gradientPink"]; // List of available themes
 
 // Initialize with gradientPink as the default theme
 let theme = themes[Math.floor(Math.random() * themes.length)];
@@ -60,17 +60,17 @@ function switchTheme(selectedTheme) {
       "#b1c18b", // Button color: rgb(177, 193, 139)
       "#8fa76c"  // Gold color: rgb(143, 167, 108) (used as a highlight color here)
     );
-  } else if (theme === "hiii") {
+  } else if (theme === "licorice") {
     setThemeProperties(
       root,
-      "#f9c54e", // Background color: new color
-      "#ffffff", // Text color: white
-      "#f9b248", // Border color: new color
-      "#f98348", // Secondary color: new color
-      "#f94346", // Button color: new color
-      "#f3712b"  // Gold color: new color
+      "#191516", // Background color: Licorice (dark)
+      "#C9DAEA", // Text color: Columbia blue
+      "#AB2346", // Border color: Amaranth purple
+      "#00B295", // Secondary color: Jungle green
+      "#AB2346", // Button color: Amaranth purple
+      "#03F7EB"  // Gold color: Fluorescent cyan (used as a highlight color here)
     );
-  } else if (theme === "crazy") {
+  } else if (theme === "old yella") {
     setThemeProperties(
       root,
       "#ffbe0b", // Background color: bright yellow
