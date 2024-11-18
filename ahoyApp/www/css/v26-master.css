@@ -3660,3 +3660,14 @@ video::-webkit-media-controls-time-remaining-display,
 video::-webkit-media-controls-current-time-display {
     display: none; /* Hide time display */
 }
+
+
+/* Add this CSS to your stylesheet */
+.hover-link {
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.hover-link:hover {
+    transform: scale(1.05);
+}
