@@ -3671,3 +3671,11 @@ video::-webkit-media-controls-current-time-display {
 .hover-link:hover {
     transform: scale(1.05);
 }
+
+
+#theme-title {
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: var(--text-color);
+}
