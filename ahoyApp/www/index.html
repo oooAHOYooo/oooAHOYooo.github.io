@@ -286,6 +286,10 @@
 </div>
 </div>
 <hr>
+<div id="cache-reset-widget" class="settings-widget">
+  <button class="action-button" onclick="clearCacheAndReset()">Clear Cache & Reset Page</button>
+</div>
+<hr>
 </div>
 <div id="updates-tab" class="tab-content">
 <img src="./img/assets/u_ahoy23.png" alt="Ahoy Indie Media Logo" class="homepage-logo" onclick="navigateToTab('news-tab')">
@@ -335,5 +339,18 @@
 <script src="js/src/basic-audio-controls.js"></script>
 <script src="js/src/audio-visualization.js"></script>
 <script src="js/src/vintageBroadcast.js"></script>
+
+<script>
+  function clearCacheAndReset() {
+      // Clear local storage
+      localStorage.clear();
+      
+      // Clear session storage
+      sessionStorage.clear();
+      
+      // Reload the page
+      location.reload();
+  }
+</script>
 </body>
 </html>
