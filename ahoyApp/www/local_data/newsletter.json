@@ -304,6 +304,14 @@
     "content": "We've dug into our archives to bring you our interview with Josh Kebabian, now available on-demand! Check out the conversation in our media section <button onclick=\"navigateToTab('media-tab-a')\" class=\"action-button\"><i class=\"fas fa-image\"></i></button>. This interview has also been added to our broadcast rotation <button onclick=\"navigateToTab('vintage-broadcast-tab')\" class=\"action-button\"><i class=\"fas fa-tv\"></i></button> and will be playing during morning and afternoon hours for the next week. ",
     "active": "true",
     "goTo": "vintage-broadcast-tab"
+  },
+  {
+    "date": "2024-11-18",
+    "title": "The Rob Show #39 - Dr. Tyler Rice",
+    "imageUrl": "https://storage.googleapis.com/ahoy-podcast-collection/ROB%20EPISODE%2039%20-%20Dr%20Tyler%20Rice.jpg",
+    "content": "Dr. Tyler Rice joins Rob for an discussion in this episode of The Rob Show.",
+    "active": "true",
+    "goTo": "podcast-tab"
   }
 
 ]

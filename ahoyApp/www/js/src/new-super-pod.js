@@ -13,10 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let currentPodcastIndex = 0;
     let podcasts = [];
 
-    const useLocalData = true; // Set to true for local, false for cloud
-    const podcastDataUrl = useLocalData 
-        ? "local_data/podcastCollection.json" 
-        : "https://storage.googleapis.com/ahoy-dynamic-content/dynamicJson/podcastCollection.json";
+    const podcastDataUrl = "local_data/podcastCollection.json"; // Always use local data
 
     // Fetch podcast data
     async function fetchPodcasts() {
