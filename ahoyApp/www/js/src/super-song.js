@@ -1,18 +1,29 @@
-const songsDataUrl = 'https://storage.googleapis.com/ahoy-dynamic-content/dynamicJson/true-radioPlay.json'; // Updated to public URL
+const songsDataUrl = 'local_data/radioPlay.json'; // Updated to use local data
 let currentSongIndex = 0;
 let songs = [];
 
-fetch('https://storage.googleapis.com/ahoy-dynamic-content/dynamicJson/true-radioPlay.json')
-  .then(response => {
-    if (!response.ok) throw new Error("Network response was not ok");
-    return response.json();
-  })
-  .then(data => {
-    console.log('Fetched JSON data:', data);
-  })
-  .catch(error => {
-    console.error("Error fetching JSON data:", error);
-  });
+// Fetch the songs data from the local JSON file
+async function fetchRadioSongs() {
+  try {
+    const response = await fetch(songsDataUrl);
+    const data = await response.json();
+    songs = data.songs;
+
+    // Sort songs by the highest id value first
+    songs.sort((a, b) => b.id - a.id);
+
+    // Store songs in local storage
+    localStorage.setItem('songs', JSON.stringify(songs));
+
+    // Retrieve current song index from local storage or default to 0
+    currentSongIndex = parseInt(localStorage.getItem('currentSongIndex')) || 0;
+
+    updateRadioPlayer(currentSongIndex);
+    populateSongList(); // Populate the song list after fetching songs
+  } catch (error) {
+    console.error("Error fetching radio data:", error);
+  }
+}
 
 // Function to populate the song list table
 function populateSongList() {
@@ -53,26 +64,6 @@ function populateSongList() {
       });
     });
   });
-}
-
-// Fetch the songs data from the JSON file
-async function fetchRadioSongs() {
-  try {
-    const response = await fetch(songsDataUrl);
-    const data = await response.json();
-    songs = data.songs;
-    
-    // Store songs in local storage
-    localStorage.setItem('songs', JSON.stringify(songs));
-
-    // Retrieve current song index from local storage or default to 0
-    currentSongIndex = parseInt(localStorage.getItem('currentSongIndex')) || 0;
-
-    updateRadioPlayer(currentSongIndex);
-    populateSongList(); // Populate the song list after fetching songs
-  } catch (error) {
-    console.error("Error fetching radio data:", error);
-  }
 }
 
 // Function to update the radio player with the current song
@@ -231,17 +222,13 @@ document.addEventListener('DOMContentLoaded', () => {
     songs = JSON.parse(storedSongs);
     currentSongIndex = parseInt(localStorage.getItem('currentSongIndex')) || 0;
     
-    // Shuffle songs before displaying
-    shuffleArray(songs);
+    // Sort songs by the highest id value first
+    songs.sort((a, b) => b.id - a.id);
     
     updateRadioPlayer(currentSongIndex);
     populateSongList();
   } else {
-    fetchRadioSongs().then(() => {
-      // Shuffle songs after fetching
-      shuffleArray(songs);
-      populateSongList();
-    });
+    fetchRadioSongs();
   }
 });
 
@@ -249,8 +236,8 @@ document.addEventListener('DOMContentLoaded', () => {
 function sortSongs(songs, criteria) {
   switch (criteria) {
     case 'recent':
-      // Assuming songs have a 'dateAdded' property
-      return songs.sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded));
+      // Sort by the highest id value first
+      return songs.sort((a, b) => b.id - a.id);
     case 'random':
       // Shuffle the songs array
       return songs.sort(() => Math.random() - 0.5);

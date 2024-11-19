@@ -312,6 +312,14 @@
     "content": "Dr. Tyler Rice joins Rob for an discussion in this episode of The Rob Show.",
     "active": "true",
     "goTo": "podcast-tab"
-  }
+  },
+  {
+    "date": "2024-11-19",
+    "title": "Rediscovered Track: Spider in Stereo - 'Float'",
+    "imageUrl": "https://storage.googleapis.com/ahoy-song-collection/Spider%20in%20Stereo%20-%20Float.jpg",
+    "content": "We've unearthed an old draft of 'Float' by Spider in Stereo from an old hard drive and have done our best to remaster it. Perhaps one day we'll record it again. Check it out",
+    "active": "true",
+    "goTo": "true-classic-radio"
+}
 
 ]

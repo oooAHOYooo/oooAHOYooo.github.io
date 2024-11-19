@@ -416,6 +416,16 @@
 		"mp3url": "https://storage.googleapis.com/ahoy-song-collection/Jake%20Custer%20-%20You%20Love%20to%20See%20It.mp3",
 		"coverArt": "https://storage.googleapis.com/ahoy-song-collection/ahoy_jake-custer.jpg",
 		"play": false
+	},
+	{
+		"id": 48,
+		"artist": "Spider in Stereo",
+		"songTitle": "Float",
+		"mp3url": "https://storage.googleapis.com/ahoy-song-collection/Spide%20in%20Stereo%20-%20Float.mp3",
+		"coverArt": "https://storage.googleapis.com/ahoy-song-collection/Spider%20in%20Stereo%20-%20Float.jpg",
+		"play": false,
+		"dateAdded": "11-19-24"
+
 	}
 	]
   }
