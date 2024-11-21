@@ -3732,19 +3732,102 @@ video::-webkit-media-controls-current-time-display {
 
 @keyframes glow {
     from {
-        box-shadow: 0 0 15px rgba(255, 255, 0, 0.7);
+        box-shadow: 0 0 15px rgba(var(--gold), 0.7);
     }
 
     to {
-        box-shadow: 0 0 25px rgba(255, 255, 0, 1);
+        box-shadow: 0 0 25px rgba(var(--gold), 1);
     }
 }
 
+.changelog-entry {
+    border: 1px solid rgba(var(--border-color-rgb), 0.7);
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: rgba(var(--background-color-rgb), 0.7);
+}
+
+.changelog-date {
+    font-weight: bold;
+    color: rgba(var(--text-color-rgb), 0.3);
+    margin-bottom: 5px;
+}
+
+.changelog-description {
+    color: rgba(var(--text-color-rgb), 0.2);
+}
+
+#status-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#build-info {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 10px;
+    font-weight: bold;
+    color: rgba(var(--text-color-rgb), 1);
+}
+
+#build-info span {
+    margin-right: 20px;
+}
 
 .changelog-entry {
-    margin-bottom: 10px;
+    border: 1px solid rgba(var(--border-color-rgb), 0.7);
     padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: rgba(var(--background-color-rgb), 0.7);
+}
+
+.changelog-date {
+    font-weight: bold;
+    color: rgba(var(--text-color-rgb), 1);
+    margin-bottom: 5px;
+}
+
+.changelog-description {
+    color: rgba(var(--text-color-rgb), 0.7);
+}
+
+.changelog-entry {
     border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+    /* Increased bottom margin for better spacing */
     border-radius: 5px;
     background-color: #f9f9f9;
+}
+
+.changelog-date {
+    font-size: 10px;
+    /* Tiny font size */
+    font-family: 'Barlow', sans-serif;
+    /* Barlow font */
+    text-transform: uppercase;
+    /* All caps */
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.changelog-description {
+    color: #555;
+    margin-bottom: 5px;
+    font-size: 12px;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 300;
+}
+
+.changelog-build {
+    font-size: 12px;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 300;
+    color: #333;
 }

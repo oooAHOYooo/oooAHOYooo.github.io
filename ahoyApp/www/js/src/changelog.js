@@ -8,7 +8,28 @@ fetch('./local_data/changelog.json')
       changelogEntries.forEach(entry => {
         const entryElement = document.createElement('div');
         entryElement.classList.add('changelog-entry');
-        entryElement.innerHTML = `<strong>${entry.date}:</strong> ${entry.description}`;
+
+        // Create date element
+        const dateElement = document.createElement('div');
+        dateElement.classList.add('changelog-date');
+        dateElement.textContent = entry.date.toUpperCase();
+
+        // Create description element
+        const descriptionElement = document.createElement('div');
+        descriptionElement.classList.add('changelog-description');
+        descriptionElement.textContent = entry.description;
+
+        // Create build element
+        const buildElement = document.createElement('div');
+        buildElement.classList.add('changelog-build');
+        buildElement.textContent = `Present Build: ${entry.build.present}`;
+
+        // Append date, description, and build to entry
+        entryElement.appendChild(dateElement);
+        entryElement.appendChild(descriptionElement);
+        entryElement.appendChild(buildElement);
+
+        // Append entry to container
         changelogContainer.appendChild(entryElement);
       });
     } else {
