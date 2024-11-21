@@ -3291,7 +3291,7 @@ input[type="date"]:focus {
     font-size: 24px;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    padding-top: 10px;
+    padding-top: 20px;
 }
 
 #media-title-name h2 {
@@ -3684,10 +3684,58 @@ video::-webkit-media-controls-current-time-display {
     font-weight: 400;
     letter-spacing: 1px;
     color: var(--text-color);
+    text-align: center;
+    margin-top: 0px;
 }
 
-/* Add this CSS rule to your stylesheet */
 .mediaThumbnailImage {
+    position: relative;
+    /* Ensure the overlay is positioned correctly */
     cursor: pointer;
-    /* Change cursor to pointer on hover */
+    transition: transform 0.2s ease-in-out, box-shadow 0.3s ease, border-color 0.3s ease;
+    display: block;
+    /* Ensure the image is a block element for proper overlay positioning */
+}
+
+.mediaThumbnailImage:hover {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.mediaThumbnailImage.playing {
+    box-shadow: 0 0 15px rgba(255, 255, 0, 0.7);
+    border: 2px solid rgba(255, 255, 0, 0.7);
+    animation: glow 1.5s infinite alternate;
+}
+
+.mediaThumbnailImage::after {
+    content: "Play Now!";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px 20px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    /* Ensure the overlay doesn't block clicks */
+    z-index: 100;
+    /* Ensure the overlay is on top of the image */
+}
+
+.mediaThumbnailImage:hover::after {
+    opacity: 1;
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 15px rgba(255, 255, 0, 0.7);
+    }
+
+    to {
+        box-shadow: 0 0 25px rgba(255, 255, 0, 1);
+    }
 }

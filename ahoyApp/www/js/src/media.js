@@ -24,11 +24,17 @@ document.addEventListener("DOMContentLoaded", function () {
     updateNavBar(titleName, artistName); // Update the navigation bar with the current video
   }
 
-  function playVideoAndScrollToTop(videoUrl, thumbnailUrl, artistName, titleName) {
+  function playVideoAndScrollToTop(videoUrl, thumbnailUrl, artistName, titleName, thumbnailElement) {
     loadVideoInHTML5Player(videoUrl, artistName, titleName);
     
     // Scroll to the top of the viewport
     window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // Remove 'playing' class from all thumbnails
+    document.querySelectorAll('.mediaThumbnailImage').forEach(img => img.classList.remove('playing'));
+
+    // Add 'playing' class to the current thumbnail
+    thumbnailElement.classList.add('playing');
   }
 
   function selectRandomVideo(videos) {
@@ -55,23 +61,18 @@ document.addEventListener("DOMContentLoaded", function () {
       `;
       tableBody.appendChild(row);
 
-      // Add click event listener to the row
-      row.addEventListener('click', function() {
-        playVideoAndScrollToTop(item.mp4_link, item.thumbnail_link, item.artist, item.display_title);
-      });
-
       // Add click event listener to the thumbnail
       const thumbnail = row.querySelector(".mediaThumbnailImage");
       thumbnail.addEventListener("click", function(event) {
         event.stopPropagation(); // Prevent the row click event from firing
-        playVideoAndScrollToTop(item.mp4_link, item.thumbnail_link, item.artist, item.display_title);
+        playVideoAndScrollToTop(item.mp4_link, item.thumbnail_link, item.artist, item.display_title, thumbnail);
       });
 
       // Add click event listener to the play button
       const playButton = row.querySelector(".playMediaButton");
       playButton.addEventListener("click", function(event) {
         event.stopPropagation(); // Prevent the row click event from firing
-        playVideoAndScrollToTop(item.mp4_link, item.thumbnail_link, item.artist, item.display_title);
+        playVideoAndScrollToTop(item.mp4_link, item.thumbnail_link, item.artist, item.display_title, thumbnail);
       });
     });
 
