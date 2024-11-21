@@ -1159,7 +1159,6 @@ input[type="date"]:focus {
 
 
 
-
 .podcast-artwork {
     width: 60px;
     height: 60px;
@@ -1484,7 +1483,6 @@ input[type="date"]:focus {
     align-items: center;
     justify-content: center;
 }
-
 
 
 
@@ -3741,11 +3739,51 @@ video::-webkit-media-controls-current-time-display {
 }
 
 .changelog-entry {
-    border: 1px solid rgba(var(--border-color-rgb), 0.7);
+    position: relative;
     padding: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     border-radius: 5px;
-    background-color: rgba(var(--background-color-rgb), 0.7);
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: #f9f9f9;
+    overflow: hidden;
+    animation: borderElectricity 3s infinite;
+
+    /* Ensure the pseudo-element doesn't overflow */
+}
+
+
+
+@keyframes borderElectricity {
+    0% {
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 0 0 10px rgba(255, 255, 255, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    20% {
+        box-shadow: 0 0 5px rgba(255, 255, 0, 0.7), 0 0 10px rgba(255, 255, 0, 0.5);
+        border: 1px solid rgba(255, 255, 0, 0.7);
+    }
+
+    40% {
+        box-shadow: 0 0 5px rgba(255, 0, 255, 0.7), 0 0 10px rgba(255, 0, 255, 0.5);
+        border: 1px solid rgba(255, 0, 255, 0.7);
+    }
+
+    60% {
+        box-shadow: 0 0 5px rgba(0, 255, 255, 0.7), 0 0 10px rgba(0, 255, 255, 0.5);
+        border: 1px solid rgba(0, 255, 255, 0.7);
+    }
+
+    80% {
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.7), 0 0 10px rgba(255, 255, 255, 0.5);
+        border: 1px solid rgba(255, 255, 255, 0.7);
+    }
+
+    100% {
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 0 0 10px rgba(255, 255, 255, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+    }
 }
 
 .changelog-date {
@@ -3823,6 +3861,13 @@ video::-webkit-media-controls-current-time-display {
     font-size: 12px;
     font-family: 'Barlow', sans-serif;
     font-weight: 300;
+}
+
+.changelog-build {
+    font-size: 12px;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 300;
+    color: #333;
 }
 
 .changelog-build {
