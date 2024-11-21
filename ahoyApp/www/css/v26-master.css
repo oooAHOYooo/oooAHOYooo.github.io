@@ -1551,22 +1551,22 @@ input[type="date"]:focus {
 
 .about-section strong {
     color: var(--text-color);
-    font-weight:500;
+    font-weight: 500;
     text-transform: uppercase;
     font-size: 18px;
-    padding-bottom:5px;
+    padding-bottom: 5px;
 }
 
 .about-section h3 {
     color: var(--text-color);
-    font-weight:300;
+    font-weight: 300;
     text-transform: uppercase;
     font-size: 26px;
 }
 
 .about-section p {
     color: var(--text-color);
-    font-weight:300;
+    font-weight: 300;
     font-size: 16px;
 }
 
@@ -3457,16 +3457,21 @@ input[type="date"]:focus {
 
 @media (max-width: 768px) {
     .action-button {
-        padding: 8px 16px; /* Reduce padding */
-        font-size: 14px;   /* Reduce font size */
+        padding: 8px 16px;
+        /* Reduce padding */
+        font-size: 14px;
+        /* Reduce font size */
     }
 }
 
 @media (max-width: 400px) {
     .action-button {
-        padding: 6px 12px; /* Further reduce padding */
-        font-size: 12px;   /* Further reduce font size */
-        min-width: auto;   /* Allow button to shrink more */
+        padding: 6px 12px;
+        /* Further reduce padding */
+        font-size: 12px;
+        /* Further reduce font size */
+        min-width: auto;
+        /* Allow button to shrink more */
     }
 }
 
@@ -3612,7 +3617,7 @@ input[type="date"]:focus {
 
 @media (max-width: 768px) {
     .broadcast-header {
-        letter-spacing: 10px; 
+        letter-spacing: 10px;
     }
 }
 
@@ -3658,7 +3663,8 @@ video {
 
 video::-webkit-media-controls-time-remaining-display,
 video::-webkit-media-controls-current-time-display {
-    display: none; /* Hide time display */
+    display: none;
+    /* Hide time display */
 }
 
 
@@ -3678,4 +3684,10 @@ video::-webkit-media-controls-current-time-display {
     font-weight: 400;
     letter-spacing: 1px;
     color: var(--text-color);
+}
+
+/* Add this CSS rule to your stylesheet */
+.mediaThumbnailImage {
+    cursor: pointer;
+    /* Change cursor to pointer on hover */
 }
