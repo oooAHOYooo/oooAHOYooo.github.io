@@ -57,9 +57,74 @@
   },
   
   "TAPE011": {
-    "title": "The Rob Show - Sam Carlson - Part 1",
+    "title": "The Rob Show - Episode 10 - Sam Carlson - Part 1",
+    "file": "https://content.jwplatform.com/videos/U6zdhV93-lDtdjaQS.mp4",
+    "thumbnail": "https://cdn.jwplayer.com/thumbs/U6zdhV93-1920.jpg",
+    "duration": "00:09:02"
+  },
+  "TAPE012": {
+    "title": "The Rob Show - Episode 10 - Sam Carlson - Part 2",
+    "file": "https://content.jwplatform.com/videos/jDaqjf3O-lDtdjaQS.mp4",
+    "thumbnail": "https://cdn.jwplayer.com/thumbs/jDaqjf3O-1920.jpg",
+    "duration": "00:09:41"
+  },
+  "TAPE013": {
+    "title": "The Rob Show - Episode 10 - Sam Carlson - Part 3",
+    "file": "https://content.jwplatform.com/videos/P0VPT9Wt-lDtdjaQS.mp4",
+    "thumbnail": "https://cdn.jwplayer.com/thumbs/P0VPT9Wt-1920.jpg",
+    "duration": "00:10:38"
+  },
+  "TAPE014": {
+    "title": "The Rob Show - Episode 10 - Sam Carlson - Part 4",
+    "file": "https://content.jwplatform.com/videos/HssMGzjB-lDtdjaQS.mp4",
+    "thumbnail": "https://cdn.jwplayer.com/thumbs/HssMGzjB-1920.jpg",
+    "duration": "00:08:28"
+  },
+  "TAPE015": {
+    "title": "The Rob Show - Episode 10 - Sam Carlson - Part 5",
     "file": "https://content.jwplatform.com/videos/Ca1PRMwt-lDtdjaQS.mp4",
     "thumbnail": "https://cdn.jwplayer.com/thumbs/Ca1PRMwt-1920.jpg",
     "duration": "00:03:16"
+  },
+  "TAPE016": {
+    "title": "The Rob Show - Episode 10 - Sam Carlson - Clip 6",
+    "file": "https://content.jwplatform.com/videos/XdT7UzQh-lDtdjaQS.mp4",
+    "thumbnail": "https://cdn.jwplayer.com/thumbs/XdT7UzQh-1920.jpg",
+    "duration": "00:09:50"
+  },
+  "TAPE017": {
+    "title": "S.g. Carlson & The Tines - Collarbone - Performed Live At The State House",
+    "file": "https://content.jwplatform.com/videos/Kz23zAbn.mp4",
+    "thumbnail": "https://cdn.jwplayer.com/thumbs/Kz23zAbn-1920.jpg",
+    "duration": "00:03:15",
+    "date": "Oct 20, 2022"
+  },
+  "TAPE018": {
+    "title": "S.g Carlson & The Tines - Spangled Sun",
+    "file": "https://content.jwplatform.com/videos/Jhzd81pr.mp4",
+    "thumbnail": "https://cdn.jwplayer.com/thumbs/Jhzd81pr-1920.jpg",
+    "duration": "00:03:04",
+    "date": "Oct 20, 2022"
+  },
+  "TAPE019": {
+    "title": "The Tines - In The Morning You Will Find It",
+    "file": "https://content.jwplatform.com/videos/JUGbc3eV.mp4",
+    "thumbnail": "https://cdn.jwplayer.com/thumbs/JUGbc3eV-1920.jpg",
+    "duration": "00:02:48",
+    "date": "Oct 20, 2022"
+  },
+  "TAPE020": {
+    "title": "S.g Carlson & The Tines - White Sedan : Red Earth - Featuring Katherine Von Ancken",
+    "file": "https://content.jwplatform.com/videos/yxf8HwsN.mp4",
+    "thumbnail": "https://cdn.jwplayer.com/thumbs/yxf8HwsN-1920.jpg",
+    "duration": "00:03:14",
+    "date": "Oct 20, 2022"
+  },
+  "TAPE021": {
+    "title": "The Tines - Crisis Shopper - Sans Serif Rec - Free As Birds Records - By The Tines",
+    "file": "https://content.jwplatform.com/videos/5Oses8mG.mp4",
+    "thumbnail": "https://cdn.jwplayer.com/thumbs/5Oses8mG-1920.jpg",
+    "duration": "00:02:57",
+    "date": "Oct 20, 2022"
   }
 }

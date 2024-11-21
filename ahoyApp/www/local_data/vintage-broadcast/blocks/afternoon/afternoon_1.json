@@ -2,70 +2,80 @@
   "playlist_id": "afternoon-1",
   "media": [
     {
-      "order": 10,
-      "title": "The Rob Show - Episode 12 - Josh Kebabian - Part 1",
-      "file": "https://content.jwplatform.com/videos/0bgv9kF6-lDtdjaQS.mp4",
-      "thumbnail": "https://cdn.jwplayer.com/thumbs/0bgv9kF6-1920.jpg",
-      "tape_id": "TAPE005"
+      "order": 1,
+      "title": "The Rob Show - Episode 10 - Sam Carlson - Part 1",
+      "file": "https://content.jwplatform.com/videos/U6zdhV93-lDtdjaQS.mp4",
+      "thumbnail": "https://cdn.jwplayer.com/thumbs/U6zdhV93-1920.jpg",
+      "tape_id": "TAPE011"
     },
     {
-      "order": 2,
+      "order": 9,
       "title": "Ahoy Wishes You Wellness",
       "file": "https://cdn.jwplayer.com/videos/liBlaVgh-GVOzihKP.mp4",
       "thumbnail": "https://cdn.jwplayer.com/v2/media/liBlaVgh/poster.jpg?width=720"
     },
     {
-      "order": 3,
-      "title": "The Rob Show - Episode 12 - Josh Kebabian - Part 2",
-      "file": "https://content.jwplatform.com/videos/7ImbVUnl-lDtdjaQS.mp4",
-      "thumbnail": "https://cdn.jwplayer.com/thumbs/7ImbVUnl-1920.jpg",
-      "tape_id": "TAPE006"
+      "order": 2,
+      "title": "The Tines - Crisis Shopper - Sans Serif Rec - Free As Birds Records - By The Tines",
+      "file": "https://content.jwplatform.com/videos/5Oses8mG.mp4", 
+      "thumbnail": "https://cdn.jwplayer.com/thumbs/5Oses8mG-1920.jpg",
+      "tape_id": "TAPE021"
     },
     {
-      "order": 4,
-      "title": "Dave Gunn - Raleigh/Durham Footage",
-      "file": "https://content.jwplatform.com/videos/MS7zwzR2-Da3Hhbi4.mp4",
-      "thumbnail": "https://cdn.jwplayer.com/thumbs/MS7zwzR2-640.jpg"
+      "order": 3,
+      "title": "The Rob Show - Episode 10 - Sam Carlson - Part 2",
+      "file": "https://content.jwplatform.com/videos/jDaqjf3O-lDtdjaQS.mp4",
+      "thumbnail": "https://cdn.jwplayer.com/thumbs/jDaqjf3O-1920.jpg",
+      "tape_id": "TAPE012"
     },
     {
       "order": 5,
-      "title": "The Rob Show - Episode 13 - Josh Kebabian - Part 4",
-      "file": "https://content.jwplatform.com/videos/7aN39rhT-lDtdjaQS.mp4",
-      "thumbnail": "https://cdn.jwplayer.com/thumbs/7aN39rhT-1920.jpg",
-      "tape_id": "TAPE008"
+      "title": "The Rob Show - Episode 10 - Sam Carlson - Part 3",
+      "file": "https://content.jwplatform.com/videos/P0VPT9Wt-lDtdjaQS.mp4",
+      "thumbnail": "https://cdn.jwplayer.com/thumbs/P0VPT9Wt-1920.jpg",
+      "tape_id": "TAPE013"
     },
     {
-      "order": 6,
-      "title": "The Rob Show - Episode 14 - Josh Kebabian - Part 5",
-      "file": "https://content.jwplatform.com/videos/XdT7UzQh-lDtdjaQS.mp4",
-      "thumbnail": "https://cdn.jwplayer.com/thumbs/XdT7UzQh-1920.jpg",
-      "tape_id": "TAPE009"
+      "order": 4,
+      "title": "S.g Carlson & The Tines - White Sedan : Red Earth - Featuring Katherine Von Ancken",
+      "file": "https://content.jwplatform.com/videos/yxf8HwsN.mp4",
+      "thumbnail": "https://cdn.jwplayer.com/thumbs/yxf8HwsN-1920.jpg",
+      "tape_id": "TAPE020"
     },
     {
       "order": 7,
-      "title": "The Rob Show - Episode 14 - Josh Kebabian - Part 6",
-      "file": "https://content.jwplatform.com/videos/v8JQHACa-lDtdjaQS.mp4",
-      "thumbnail": "https://cdn.jwplayer.com/thumbs/v8JQHACa-1920.jpg",
-      "tape_id": "TAPE010"
+      "title": "The Rob Show - Episode 10 - Sam Carlson - Part 4",
+      "file": "https://content.jwplatform.com/videos/HssMGzjB-lDtdjaQS.mp4",
+      "thumbnail": "https://cdn.jwplayer.com/thumbs/HssMGzjB-1920.jpg",
+      "tape_id": "TAPE014"
     },
     {
       "order": 8,
-      "title": "Indie and Homemade",
-      "file": "https://content.jwplatform.com/videos/AaYoTwU5-lDtdjaQS.mp4",
-      "thumbnail": "https://cdn.jwplayer.com/thumbs/AaYoTwU5-1920.jpg"
-    },
-    {
-      "order": 9,
-      "title": "The Rob Show - Season 2 - Episode 1 - Tyler + Dave",
-      "file": "https://content.jwplatform.com/videos/WZhBZ9ek-lDtdjaQS.mp4",
-      "thumbnail": "https://cdn.jwplayer.com/thumbs/WZhBZ9ek-1920.jpg"
-    },
-    {
-      "order": 1,
-      "title": "The Rob Show - Sam Carlson - Part 1",
+      "title": "The Rob Show - Episode 10 - Sam Carlson - Part 5",
       "file": "https://content.jwplatform.com/videos/Ca1PRMwt-lDtdjaQS.mp4",
       "thumbnail": "https://cdn.jwplayer.com/thumbs/Ca1PRMwt-1920.jpg",
-      "tape_id": "TAPE011"
+      "tape_id": "TAPE015"
+    },
+    {
+      "order": 10,
+      "title": "S.g. Carlson & The Tines - Collarbone - Performed Live At The State House",
+      "file": "https://content.jwplatform.com/videos/Kz23zAbn.mp4",
+      "thumbnail": "https://cdn.jwplayer.com/thumbs/Kz23zAbn-1920.jpg",
+      "tape_id": "TAPE017"
+    },
+    {
+      "order": 11,
+      "title": "S.g Carlson & The Tines - Spangled Sun",
+      "file": "https://content.jwplatform.com/videos/Jhzd81pr.mp4", 
+      "thumbnail": "https://cdn.jwplayer.com/thumbs/Jhzd81pr-1920.jpg",
+      "tape_id": "TAPE018"
+    },
+    {
+      "order": 6,
+      "title": "The Tines - In The Morning You Will Find It",
+      "file": "https://content.jwplatform.com/videos/JUGbc3eV.mp4",
+      "thumbnail": "https://cdn.jwplayer.com/thumbs/JUGbc3eV-1920.jpg",
+      "tape_id": "TAPE019"
     }
   ]
 }

@@ -382,6 +382,66 @@
               "mp4_link": "https://content.jwplatform.com/videos/v8JQHACa-lDtdjaQS.mp4",
               "thumbnail_link": "https://cdn.jwplayer.com/thumbs/v8JQHACa-1920.jpg",
               "tape_id": "TAPE010"
+            },
+            {
+              "id": 41,
+              "video_id": "U6zdhV93",
+              "display_title": "The Rob Show - Episode 10 - Sam Carlson - Part 1",
+              "artist": "The Rob Show",
+              "duration": "00:09:02",
+              "mp4_link": "https://content.jwplatform.com/videos/U6zdhV93-lDtdjaQS.mp4",
+              "thumbnail_link": "https://cdn.jwplayer.com/thumbs/U6zdhV93-1920.jpg",
+              "tape_id": "TAPE011"
+            },
+            {
+              "id": 42,
+              "video_id": "jDaqjf3O",
+              "display_title": "The Rob Show - Episode 10 - Sam Carlson - Part 2",
+              "artist": "The Rob Show",
+              "duration": "00:09:41",
+              "mp4_link": "https://content.jwplatform.com/videos/jDaqjf3O-lDtdjaQS.mp4",
+              "thumbnail_link": "https://cdn.jwplayer.com/thumbs/jDaqjf3O-1920.jpg",
+              "tape_id": "TAPE012"
+            },
+            {
+              "id": 43,
+              "video_id": "P0VPT9Wt",
+              "display_title": "The Rob Show - Episode 10 - Sam Carlson - Part 3",
+              "artist": "The Rob Show",
+              "duration": "00:10:38",
+              "mp4_link": "https://content.jwplatform.com/videos/P0VPT9Wt-lDtdjaQS.mp4",
+              "thumbnail_link": "https://cdn.jwplayer.com/thumbs/P0VPT9Wt-1920.jpg",
+              "tape_id": "TAPE013"
+            },
+            {
+              "id": 44,
+              "video_id": "HssMGzjB",
+              "display_title": "The Rob Show - Episode 10 - Sam Carlson - Part 4",
+              "artist": "The Rob Show",
+              "duration": "00:08:28",
+              "mp4_link": "https://content.jwplatform.com/videos/HssMGzjB-lDtdjaQS.mp4",
+              "thumbnail_link": "https://cdn.jwplayer.com/thumbs/HssMGzjB-1920.jpg",
+              "tape_id": "TAPE014"
+            },
+            {
+              "id": 45,
+              "video_id": "Ca1PRMwt",
+              "display_title": "The Rob Show - Episode 10 - Sam Carlson - Part 5",
+              "artist": "The Rob Show",
+              "duration": "00:03:16",
+              "mp4_link": "https://content.jwplatform.com/videos/Ca1PRMwt-lDtdjaQS.mp4",
+              "thumbnail_link": "https://cdn.jwplayer.com/thumbs/Ca1PRMwt-1920.jpg",
+              "tape_id": "TAPE015"
+            },
+            {
+              "id": 46,
+              "video_id": "XdT7UzQh",
+              "display_title": "The Rob Show - Episode 10 - Sam Carlson - Clip 6",
+              "artist": "The Rob Show",
+              "duration": "00:09:50",
+              "mp4_link": "https://content.jwplatform.com/videos/HssMGzjB-lDtdjaQS.mp4",
+              "thumbnail_link": "https://cdn.jwplayer.com/thumbs/HssMGzjB-1920.jpg",
+              "tape_id": "TAPE016"
             }
           ]
           
