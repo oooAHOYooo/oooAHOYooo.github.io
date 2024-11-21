@@ -1,0 +1,101 @@
+[
+  {
+    "date": "Nov 21, 2024",
+    "description": "Added padding to media display; omitted copy in theme switch",
+    "build": {
+      "goal": "0.3.5",
+      "present": "mvp35_c",
+      "mobile": "0.3.4"
+    }
+  },
+  {
+    "date": "Nov 21, 2024",
+    "description": "Attempted to make media scroll to the top upon hover",
+    "build": {
+      "goal": "0.3.5",
+      "present": "mvp35_c",
+      "mobile": "0.3.4"
+    }
+  },
+  {
+    "date": "Nov 19, 2024",
+    "description": "Updated sorting logic on the music tab; remastered track of Spider in Stereo added to newsletter",
+    "build": {
+      "goal": "0.3.5",
+      "present": "mvp35_c",
+      "mobile": "0.3.4"
+    }
+  },
+  {
+    "date": "Nov 18, 2024",
+    "description": "Hotfix - added a clear cache button",
+    "build": {
+      "goal": "0.3.5",
+      "present": "mvp35_c",
+      "mobile": "0.3.4"
+    }
+  },
+  {
+    "date": "Nov 18, 2024",
+    "description": "Hotfix - made so the broadcast only plays when button is clicked",
+    "build": {
+      "goal": "0.3.5",
+      "present": "mvp35_c",
+      "mobile": "0.3.4"
+    }
+  },
+  {
+    "date": "Nov 18, 2024",
+    "description": "Updated the themes a bit - added the licorice theme",
+    "build": {
+      "goal": "0.3.5",
+      "present": "mvp35_c",
+      "mobile": "0.3.4"
+    }
+  },
+  {
+    "date": "Nov 18, 2024",
+    "description": "Updated the theme a bit and podcast collection",
+    "build": {
+      "goal": "0.3.5",
+      "present": "mvp35_c",
+      "mobile": "0.3.4"
+    }
+  },
+  {
+    "date": "Nov 18, 2024",
+    "description": "Trying to add Tyler - still glitch with adding new people",
+    "build": {
+      "goal": "0.3.5",
+      "present": "mvp35_c",
+      "mobile": "0.3.4"
+    }
+  },
+  {
+    "date": "Nov 18, 2024",
+    "description": "Updated the JavaScript for newsletter to give users a visual cue when they hover over images that can navigate to another tab",
+    "build": {
+      "goal": "0.3.5",
+      "present": "mvp35_c",
+      "mobile": "0.3.4"
+    }
+  },
+  {
+    "date": "Nov 18, 2024",
+    "description": "Made podcast come from local data - added Tyler to newsletter and podcast",
+    "build": {
+      "goal": "0.3.5",
+      "present": "mvp35_c",
+      "mobile": "0.3.4"
+    }
+  },
+  {
+    "date": "Nov 18, 2024",
+    "description": "Update podcast on local for Dr. Tyler Rice",
+    "build": {
+      "goal": "0.3.5",
+      "present": "mvp35_c",
+      "mobile": "0.3.4"
+    }
+  }
+]

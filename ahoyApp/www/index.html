@@ -291,45 +291,23 @@
 <hr>
 </div>
 <div id="updates-tab" class="tab-content">
-<img src="./img/assets/u_ahoy23.png" alt="Ahoy Indie Media Logo" class="homepage-logo" onclick="navigateToTab('news-tab')">
-<div class="newsSubHeaderMenu" id="homepage-top-submenu">
-<button id="about-button" onclick="navigateToTab('about-tab')" class="btnPrimary">About Ahoy</button>
-<button id="recently-added-button" onclick="navigateToTab('updates-tab')" class="btnPrimary">App Updates</button>
-</div>
-<hr>
-<h1>Changelog</h1>
-<p>Current Build = mvp35_c</p>
-<p>Avaliable on </p>
-<ul><li>Web</li><li>ios</li><li>android</li></ul>
-<ul>
-  <p>List of Changelog</p>
-  <li>Change 1</li>
-</ul>
-<p>List of Changelog</p>
-<ul>
-  <li>Nov 21, 2024: Added padding to media display; omitted copy in theme switch</li>
-  <li>Nov 21, 2024: Attempted to make media scroll to the top upon hover</li>
-  <li>Nov 19, 2024: Updated sorting logic on the music tab; remastered track of Spider in Stereo added to newsletter</li>
-  <li>Nov 18, 2024: Hotfix - Added a clear cache button</li>
-  <li>Nov 18, 2024: Hotfix - Broadcast only plays when button is clicked</li>
-  <li>Nov 18, 2024: Updated themes; added Licorice theme</li>
-  <li>Nov 18, 2024: Updated theme and podcast collection; added Tyler to newsletter and podcast</li>
-  <li>Nov 15, 2024: Hotfix - Deleted newsletter entries for non-shipping features</li>
-  <li>Nov 15, 2024: Added broadcast and media buttons to the newsletter</li>
-  <li>Nov 15, 2024: Hotfix - Toggle for local and remote data for podcast collection</li>
-  <li>Nov 15, 2024: Updated afternoon rotation with Josh K; updated newsletter</li>
-  <li>Nov 15, 2024: Hotfix - Broadcast check; only starts if user hits the button</li>
-  <li>Nov 15, 2024: Updated newsletter to go to broadcast; softer action button on mobile</li>
-  <li>Nov 14, 2024: Changed to 34 on config</li>
-  <li>Nov 14, 2024: Hotfix - Reduced letter spacing on broadcast header on mobile</li>
-  <li>Nov 14, 2024: Hotfix - Duplicate privacy policy</li>
-  <li>Nov 14, 2024: Removed extra features and newsletter in settings</li>
-  <li>Nov 14, 2024: Updated button on the news</li>
-  <li>Nov 14, 2024: Updated image for news article about new feature</li>
-  <li>Nov 14, 2024: Updated broadcast header and other elements</li>
-  <li>Nov 14, 2024: Updated newsletter announcing the update</li>
-</ul>
-
+  <img src="./img/assets/u_ahoy23.png" alt="Ahoy Indie Media Logo" class="homepage-logo" onclick="navigateToTab('news-tab')">
+  <div class="newsSubHeaderMenu" id="homepage-top-submenu">
+    <button id="about-button" onclick="navigateToTab('about-tab')" class="btnPrimary">About Ahoy</button>
+    <button id="recently-added-button" onclick="navigateToTab('updates-tab')" class="btnPrimary">App Updates</button>
+  </div>
+  <hr>
+  <h1>Changelog</h1>
+  <p>Current Build = mvp35_c</p>
+  <p>Available on:</p>
+  <ul>
+    <li>Web</li>
+    <li>iOS</li>
+    <li>Android</li>
+  </ul>
+  <div id="changelog-container">
+    <!-- Changelog entries will be inserted here by JavaScript -->
+  </div>
 </div>
 
 <!-- DOCK -->
@@ -369,7 +347,8 @@
 <script src="js/src/basic-audio-controls.js"></script>
 <script src="js/src/audio-visualization.js"></script>
 <script src="js/src/vintageBroadcast.js"></script>
-
+<script src="js/src/changelog.js"></script>
+<!--
 <script>
   function clearCacheAndReset() {
       // Clear local storage
@@ -382,5 +361,6 @@
       location.reload();
   }
 </script>
+-->
 </body>
 </html>
