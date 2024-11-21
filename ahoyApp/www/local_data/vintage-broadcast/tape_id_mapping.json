@@ -54,5 +54,12 @@
     "file": "https://content.jwplatform.com/videos/v8JQHACa-lDtdjaQS.mp4",
     "thumbnail": "https://cdn.jwplayer.com/thumbs/v8JQHACa-1920.jpg",
     "duration": "00:13:52"
+  },
+  
+  "TAPE011": {
+    "title": "The Rob Show - Sam Carlson - Part 1",
+    "file": "https://content.jwplatform.com/videos/Ca1PRMwt-lDtdjaQS.mp4",
+    "thumbnail": "https://cdn.jwplayer.com/thumbs/Ca1PRMwt-1920.jpg",
+    "duration": "00:03:16"
   }
 }

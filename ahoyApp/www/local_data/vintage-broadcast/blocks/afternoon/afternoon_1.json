@@ -2,7 +2,7 @@
   "playlist_id": "afternoon-1",
   "media": [
     {
-      "order": 1,
+      "order": 10,
       "title": "The Rob Show - Episode 12 - Josh Kebabian - Part 1",
       "file": "https://content.jwplatform.com/videos/0bgv9kF6-lDtdjaQS.mp4",
       "thumbnail": "https://cdn.jwplayer.com/thumbs/0bgv9kF6-1920.jpg",
@@ -59,6 +59,13 @@
       "title": "The Rob Show - Season 2 - Episode 1 - Tyler + Dave",
       "file": "https://content.jwplatform.com/videos/WZhBZ9ek-lDtdjaQS.mp4",
       "thumbnail": "https://cdn.jwplayer.com/thumbs/WZhBZ9ek-1920.jpg"
+    },
+    {
+      "order": 1,
+      "title": "The Rob Show - Sam Carlson - Part 1",
+      "file": "https://content.jwplatform.com/videos/Ca1PRMwt-lDtdjaQS.mp4",
+      "thumbnail": "https://cdn.jwplayer.com/thumbs/Ca1PRMwt-1920.jpg",
+      "tape_id": "TAPE011"
     }
   ]
 }
