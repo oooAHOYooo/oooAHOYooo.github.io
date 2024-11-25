@@ -1,0 +1,84 @@
+{
+  "media": [
+    {
+      "order": 1,
+      "title": "Pal Bot 2 - Thanksgiving Marathon",
+      "file": "https://content.jwplatform.com/videos/7wYLrZIM-lDtdjaQS.mp4",
+      "description": "Pal Bot 2 - Thanksgiving Marathon",
+      "duration": "00:00:19",
+      "date": "Nov 22, 2022"
+    },
+    {
+      "order": 2,
+      "title": "Coming Next - Pal Bot 2 - This Week",
+      "file": "https://your-cdn.com/media/z5eJHdVK.mp4",
+      "description": "Upcoming Pal Bot 2 content",
+      "duration": "00:00:59",
+      "date": "Nov 18, 2022"
+    },
+    {
+      "order": 3,
+      "title": "Coming Next - Pal Bot 1 + 2",
+      "file": "https://your-cdn.com/media/1b1Frciu.mp4",
+      "description": "Upcoming Pal Bot 1 and 2 content",
+      "duration": "00:01:27",
+      "date": "Nov 18, 2022"
+    },
+    {
+      "order": 4,
+      "title": "Coming Next - Pal Bot 2",
+      "file": "https://your-cdn.com/media/6OWgfGtp.mp4",
+      "description": "Upcoming Pal Bot 2 content",
+      "duration": "00:00:47",
+      "date": "Nov 18, 2022"
+    },
+    {
+      "order": 5,
+      "title": "Pal-bot 2 - Behind The Scenes - Kidnap Scene",
+      "file": "https://your-cdn.com/media/CIl6HVjq.mp4",
+      "description": "Behind the scenes of the kidnap scene",
+      "duration": "00:02:46",
+      "date": "Nov 24, 2022"
+    },
+    {
+      "order": 6,
+      "title": "Pal-bot (2014) By Robert Meglio",
+      "file": "https://your-cdn.com/media/jUPzrVh2.mp4",
+      "description": "The original Pal-bot film",
+      "duration": "00:16:13",
+      "date": "Nov 24, 2022"
+    },
+    {
+      "order": 7,
+      "title": "Pal-bot 2 Trailer (2020)",
+      "file": "https://your-cdn.com/media/xueIvKS1.mp4",
+      "description": "Trailer for Pal-bot 2",
+      "duration": "00:01:54",
+      "date": "Nov 23, 2022"
+    },
+    {
+      "order": 8,
+      "title": "Pal-bot 2 - Behind the Scenes - Day 4 (2018)",
+      "file": "https://your-cdn.com/media/B7GUBR48.mp4",
+      "description": "Behind the scenes from Day 4",
+      "duration": "00:12:09",
+      "date": "Nov 23, 2022"
+    },
+    {
+      "order": 9,
+      "title": "Pal-bot 2 (Festival Cut)",
+      "file": "https://your-cdn.com/media/Onl1RzgI.mp4",
+      "description": "Festival cut of Pal-bot 2",
+      "duration": "00:49:17",
+      "date": "Nov 23, 2022"
+    },
+    {
+      "order": 10,
+      "title": "Pal-bot 2 : Behind the Scenes - Battle Scene",
+      "file": "https://your-cdn.com/media/5e7l2lBd.mp4",
+      "description": "Behind the scenes of the battle scene",
+      "duration": "00:02:46",
+      "date": "Nov 24, 2022"
+    }
+  ]
+}
