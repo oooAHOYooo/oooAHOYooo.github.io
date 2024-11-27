@@ -886,55 +886,70 @@ input[type="date"]:focus {
 
 }
 
-.modal {
-    position: fixed;
-    /* Changed from relative to fixed */
-    left: 300px;
-    /* Start where the sidedock ends */
-    top: 0;
-    width: calc(100% - 300px);
-    /* Take the remaining width */
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.844);
-    color: white !important;
+/* Cache Modal Styles */
+.cache-modal {
     display: none;
-    align-items: center;
-    justify-content: center;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
     z-index: 1000;
-    color: var(--border-color);
-    transition: left 0.23s ease;
-
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+    color: var(--border-color) !important;
 }
 
-.modal-content {
-    background-color: #fefefe64;
+.cache-modal-content {
+    background-color: var(--background-color);
     margin: 15% auto;
+    /* 15% from the top and centered */
     padding: 20px;
-    border: 1px solid #ffffff;
+    border: 1px solid #888;
+    color: var(--border-color) !important;
     width: 80%;
-    min-height: 50vh;
-
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    /* Center the text and button */
 }
 
-/* Full width modal on mobile */
-@media (max-width: 768px) {
-    .modal {
-        left: 0;
-        width: 100%;
-
-    }
-
-    .modal-content {
-        width: 90%;
-        margin: 10% auto;
-        background-color: rgba(0, 0, 0, 0.78);
-        color: white !important;
-        min-height: 50vh;
-    }
+.cache-cta-button {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    padding: 10px 20px;
+    margin-top: 20px;
+    border: solid 1px var(--border-color);
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
 }
 
+.cache-cta-button:hover {
+    background-color: rgba(var(--background-color), 0.7)
+}
 
+.cache-close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
 
+.cache-close-button:hover,
+.cache-close-button:focus {
+    color: black;
+    text-decoration: none;
+}
 
 /*Add the following CSS to ensure the infoCell is larger and the buttons are aligned to the right:
 */

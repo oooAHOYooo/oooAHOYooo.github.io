@@ -27,6 +27,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
 <link rel="stylesheet" href="./css/v26-master.css">
 <link rel="icon" type="image/png" href="./img/favicon_ahoy.png">
+<script src="js/src/function_clearCacheAndReset.js"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-WVDL9N1HDT"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-WVDL9N1HDT');</script>
 </head>
@@ -288,6 +289,14 @@
 <div id="cache-reset-widget" class="settings-widget">
   <button class="action-button" onclick="clearCacheAndReset()">Clear Cache & Reset Page</button>
 </div>
+<div id="cacheModal" class="cache-modal">
+  <div class="cache-modal-content">
+    <p>Cache cleared and page will be reloaded.</p>
+    <button class="cache-cta-button" onclick="closeCacheModal()">Cancel</button> 
+    <button class="cache-cta-button" onclick="reloadPage()">Reload</button>
+ 
+  </div>
+</div>
 <hr>
 </div>
 <div id="updates-tab" class="tab-content">
@@ -333,6 +342,7 @@
 <script src="js/src/newsletter.js"></script>
 <!-- <script src="js/src/updates-commits.js"></script> -->
 <script src="js/src/function-switchTheme.js"></script>
+
 <script src="js/src/nav-leftDash.js"></script>
 <script src="js/src/function_today_date.js"></script>
 <script src="js/src/media.js"></script>
@@ -347,19 +357,6 @@
 <script src="js/src/audio-visualization.js"></script>
 <script src="js/src/vintageBroadcast.js"></script>
 <script src="js/src/changelog.js"></script>
-<!--
-<script>
-  function clearCacheAndReset() {
-      // Clear local storage
-      localStorage.clear();
-      
-      // Clear session storage
-      sessionStorage.clear();
-      
-      // Reload the page
-      location.reload();
-  }
-</script>
--->
+
 </body>
 </html>
