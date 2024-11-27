@@ -109,19 +109,28 @@ function prepareVideo(index) {
 // Select the appropriate playlist based on the time of day
 async function loadPlaylistForTimeOfDay() {
     try {
-        const response = await fetch('./local_data/vintage-broadcast/schedule.json');
-        const { blocks } = await response.json();
-
         const now = new Date();
-        const currentTime = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
+        const isThanksgiving = now.getMonth() === 10 && now.getDate() >= 28 && now.getDate() <= 30; // Example date range for Thanksgiving
 
-        // Find the latest block matching or earlier than the current time
-        const selectedBlock = blocks.slice().reverse().find(block => currentTime >= block.time) || blocks[0];
+        if (isThanksgiving) {
+            // Load the Pal-bot 2 Thanksgiving Marathon
+            const playlistUrl = './local_data/vintage-broadcast/special_playlists/palbot2_thanksgiving.json';
+            const blockTitle = "Pal-bot 2 Thanksgiving Marathon";
+            loadPlaylistFromJSON(playlistUrl, blockTitle);
+        } else {
+            // Load the regular schedule
+            const response = await fetch('./local_data/vintage-broadcast/schedule.json');
+            const { blocks } = await response.json();
 
-        // Assuming the first file in block_files is the playlist JSON
-        const playlistUrl = `./local_data/vintage-broadcast/${selectedBlock.block_files[0]}`;
-        loadPlaylistFromJSON(playlistUrl, selectedBlock.title);
+            const currentTime = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
 
+            // Find the latest block matching or earlier than the current time
+            const selectedBlock = blocks.slice().reverse().find(block => currentTime >= block.time) || blocks[0];
+
+            // Assuming the first file in block_files is the playlist JSON
+            const playlistUrl = `./local_data/vintage-broadcast/${selectedBlock.block_files[0]}`;
+            loadPlaylistFromJSON(playlistUrl, selectedBlock.title);
+        }
     } catch (error) {
         console.error("Error loading schedule:", error);
     }
