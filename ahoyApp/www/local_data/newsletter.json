@@ -336,6 +336,14 @@
     "content": "Celebrate Thanksgiving with us as we present 'Pal-bot 2' on our broadcast channel all day! This annual treat will be available from Thursday to Sunday of Thanksgiving weekend, showcasing exclusive behind-the-scenes content. Tune in to our broadcast network <button onclick=\"navigateToTab('vintage-broadcast-tab')\" class=\"action-button\"><i class=\"fas fa-tv\"></i></button> and enjoy 'Pal-bot 2' throughout the holiday!",
     "active": "true",
     "goTo": "vintage-broadcast-tab"
+},
+{
+    "date": "2024-11-28",
+    "title": "Thanksgiving Special: Pal-bot 2",
+    "imageUrl": "https://storage.googleapis.com/ahoy-dynamic-content/news/palbot2-maratahon-thumb.jpg", 
+    "content": " Celebrate Thanksgiving with us as we present 'Pal-bot 2' on our broadcast channel. This annual tradition will be available from Thursday to Sunday of Thanksgiving weekend, showcasing behind-the-scenes content. Tune in via  <button onclick=\"navigateToTab('vintage-broadcast-tab')\" class=\"action-button\"><i class=\"fas fa-tv\"></i></button> and enjoy 'Pal-bot 2' throughout the holiday! - Happy Thanksgiving - from all of us at Ahoy Indie Media",
+    "active": "true",
+    "goTo": "vintage-broadcast-tab"
 }
 
 ]
