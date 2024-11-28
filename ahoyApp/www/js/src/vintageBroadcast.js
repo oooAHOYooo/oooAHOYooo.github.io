@@ -110,7 +110,7 @@ function prepareVideo(index) {
 async function loadPlaylistForTimeOfDay() {
     try {
         const now = new Date();
-        const isThanksgiving = now.getMonth() === 10 && now.getDate() >= 28 && now.getDate() <= 30; // Example date range for Thanksgiving
+        const isThanksgiving = now.getMonth() === 10 && now.getDate() >= 28 && now.getDate() <= 30; // Example date range for Thanksgiving - - - why 10?
 
         if (isThanksgiving) {
             // Load the Pal-bot 2 Thanksgiving Marathon
