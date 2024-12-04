@@ -1,8 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="io.cordova.ahoyApp" version="0.3.5" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
 
-
-
     <!-- App Metadata -->
     <name>Ahoy</name>
     <description>Ahoy Indie Media is a hand-crafted indie media platform.</description>
@@ -32,15 +30,15 @@
     <preference name="iosScheme" value="app" />
     <preference name="corsEnabled" value="true" />
 
-
-       <!-- Electron Platform Settings -->
+    <!-- Electron Platform Settings -->
     <platform name="electron">
-        <preference name="electronMainFile" value="cdv-electron-main.js" />
-        <!-- Optional Preferences for Electron -->
+        <!-- Entry point for Electron -->
+<preference name="ElectronMainFile" value="cdv-electron-main.js" />
+        
+        <!-- Optional Electron Preferences -->
         <preference name="ElectronBackgroundColor" value="#FFFFFF" />
         <preference name="ElectronWindowWidth" value="1280" />
         <preference name="ElectronWindowHeight" value="720" />
-      
     </platform>
 
 </widget>
