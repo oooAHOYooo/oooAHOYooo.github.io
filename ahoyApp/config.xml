@@ -32,13 +32,45 @@
 
     <!-- Electron Platform Settings -->
     <platform name="electron">
-        <!-- Entry point for Electron -->
-<preference name="ElectronMainFile" value="cdv-electron-main.js" />
-        
-        <!-- Optional Electron Preferences -->
+        <preference name="ElectronMainFile" value="cdv-electron-main.js" />
         <preference name="ElectronBackgroundColor" value="#FFFFFF" />
         <preference name="ElectronWindowWidth" value="1280" />
         <preference name="ElectronWindowHeight" value="720" />
+    </platform>
+
+    <!-- Android Platform -->
+    <platform name="android">
+        <icon src="resources/icons/android/mipmap-mdpi/ic_launcher.png" density="mdpi" />
+        <icon src="resources/icons/android/mipmap-hdpi/ic_launcher.png" density="hdpi" />
+        <icon src="resources/icons/android/mipmap-xhdpi/ic_launcher.png" density="xhdpi" />
+        <icon src="resources/icons/android/mipmap-xxhdpi/ic_launcher.png" density="xxhdpi" />
+        <icon src="resources/icons/android/mipmap-xxxhdpi/ic_launcher.png" density="xxxhdpi" />
+        <splash src="resources/splash/android/drawable-mdpi/splash.png" density="mdpi" />
+        <splash src="resources/splash/android/drawable-hdpi/splash.png" density="hdpi" />
+        <splash src="resources/splash/android/drawable-xhdpi/splash.png" density="xhdpi" />
+        <splash src="resources/splash/android/drawable-xxhdpi/splash.png" density="xxhdpi" />
+        <splash src="resources/splash/android/drawable-xxxhdpi/splash.png" density="xxxhdpi" />
+    </platform>
+
+    <!-- iOS Platform -->
+    <platform name="ios">
+        <icon src="resources/icons/ios/Icon-App-20x20@1x.png" width="20" height="20" />
+        <icon src="resources/icons/ios/Icon-App-20x20@2x.png" width="40" height="40" />
+        <icon src="resources/icons/ios/Icon-App-20x20@3x.png" width="60" height="60" />
+        <icon src="resources/icons/ios/Icon-App-29x29@1x.png" width="29" height="29" />
+        <icon src="resources/icons/ios/Icon-App-29x29@2x.png" width="58" height="58" />
+        <icon src="resources/icons/ios/Icon-App-29x29@3x.png" width="87" height="87" />
+        <icon src="resources/icons/ios/Icon-App-40x40@1x.png" width="40" height="40" />
+        <icon src="resources/icons/ios/Icon-App-40x40@2x.png" width="80" height="80" />
+        <icon src="resources/icons/ios/Icon-App-40x40@3x.png" width="120" height="120" />
+        <icon src="resources/icons/ios/Icon-App-60x60@2x.png" width="120" height="120" />
+        <icon src="resources/icons/ios/Icon-App-60x60@3x.png" width="180" height="180" />
+        <icon src="resources/icons/ios/Icon-App-76x76@1x.png" width="76" height="76" />
+        <icon src="resources/icons/ios/Icon-App-76x76@2x.png" width="152" height="152" />
+        <icon src="resources/icons/ios/Icon-App-83.5x83.5@2x.png" width="167" height="167" />
+        <icon src="resources/icons/ios/iTunesArtwork@1x.png" width="512" height="512" />
+        <icon src="resources/icons/ios/iTunesArtwork@2x.png" width="1024" height="1024" />
+        <icon src="resources/icons/ios/iTunesArtwork@3x.png" width="1536" height="1536" />
     </platform>
 
 </widget>
