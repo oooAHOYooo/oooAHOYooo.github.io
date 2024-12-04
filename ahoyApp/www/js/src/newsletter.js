@@ -44,10 +44,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
                     `;
                     // Check if imageUrl exists before rendering image or video
                     if (newsletter.imageUrl) {
+                        const linkAction = newsletter.externalLink ? `window.open('${newsletter.externalLink}', '_blank')` : `navigateToTab('${newsletter.goTo}')`;
                         htmlContent += `
                             <div class="newsletter-image-container">
                                 <img src="${newsletter.imageUrl}" alt="${newsletter.title}" class="newsletter-image-background">
-                                <img src="${newsletter.imageUrl}" alt="${newsletter.title}" class="newsletter-image-foreground lazy-load hover-link" loading="lazy" onclick="navigateToTab('${newsletter.goTo}')" onerror="this.style.display='none'">
+                                <img src="${newsletter.imageUrl}" alt="${newsletter.title}" class="newsletter-image-foreground lazy-load hover-link" loading="lazy" onclick="${linkAction}" onerror="this.style.display='none'">
                             </div>
                         `;
                     }

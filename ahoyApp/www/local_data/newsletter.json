@@ -344,6 +344,14 @@
     "content": " Celebrate Thanksgiving with us as we present 'Pal-bot 2' on our broadcast channel. This annual tradition will be available from Thursday to Sunday of Thanksgiving weekend, showcasing behind-the-scenes content. Tune in via  <button onclick=\"navigateToTab('vintage-broadcast-tab')\" class=\"action-button\"><i class=\"fas fa-tv\"></i></button> and enjoy 'Pal-bot 2' throughout the holiday! - Happy Thanksgiving - from all of us at Ahoy Indie Media",
     "active": "true",
     "goTo": "vintage-broadcast-tab"
+},
+{
+    "date": "2024-12-04",
+    "title": "Ahoy Indie Media is Now on Reddit!",
+    "imageUrl": "https://storage.googleapis.com/ahoy-dynamic-content/AHOY%20ON%20REDIT.jpg",
+    "content": "Exciting news, Ahoy fans! We're happy to announce that Ahoy Indie Media is now on Reddit. Join us for exclusive behind-the-scenes content and deep cuts. While we remain committed to not advertising on social media, we wanted a way to connect with our fans and spread news about new content. We believe Reddit is the best platform for this. Follow us to help spread our reach and stay updated on all things Ahoy! <button onclick=\"window.location.href='https://www.reddit.com/r/AhoyIndieMedia/'\" class=\"action-button\"><i class=\"fas fa-reddit\"></i> Follow us on Reddit</button>",
+        "active": "true",
+    "goTo": "https://www.reddit.com/r/AhoyIndieMedia/"
 }
 
 ]
