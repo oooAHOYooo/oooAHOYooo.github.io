@@ -45,11 +45,7 @@
         <icon src="resources/icons/android/mipmap-xhdpi/ic_launcher.png" density="xhdpi" />
         <icon src="resources/icons/android/mipmap-xxhdpi/ic_launcher.png" density="xxhdpi" />
         <icon src="resources/icons/android/mipmap-xxxhdpi/ic_launcher.png" density="xxxhdpi" />
-        <splash src="resources/splash/android/drawable-mdpi/splash.png" density="mdpi" />
-        <splash src="resources/splash/android/drawable-hdpi/splash.png" density="hdpi" />
-        <splash src="resources/splash/android/drawable-xhdpi/splash.png" density="xhdpi" />
-        <splash src="resources/splash/android/drawable-xxhdpi/splash.png" density="xxhdpi" />
-        <splash src="resources/splash/android/drawable-xxxhdpi/splash.png" density="xxxhdpi" />
+  
     </platform>
 
     <!-- iOS Platform -->
@@ -71,6 +67,16 @@
         <icon src="resources/icons/ios/iTunesArtwork@1x.png" width="512" height="512" />
         <icon src="resources/icons/ios/iTunesArtwork@2x.png" width="1024" height="1024" />
         <icon src="resources/icons/ios/iTunesArtwork@3x.png" width="1536" height="1536" />
+    </platform>
+    <!-- macOS Platform -->
+    <platform name="osx">
+        <icon src="resources/icons/osx/16.png" width="16" height="16" />
+        <icon src="resources/icons/osx/32.png" width="32" height="32" />
+        <icon src="resources/icons/osx/64.png" width="64" height="64" />
+        <icon src="resources/icons/osx/128.png" width="128" height="128" />
+        <icon src="resources/icons/osx/256.png" width="256" height="256" />
+        <icon src="resources/icons/osx/512.png" width="512" height="512" />
+        <icon src="resources/icons/osx/1024.png" width="1024" height="1024" />
     </platform>
 
 </widget>
