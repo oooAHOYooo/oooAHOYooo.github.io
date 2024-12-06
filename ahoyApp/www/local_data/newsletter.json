@@ -359,7 +359,7 @@
     "imageUrl": "https://storage.googleapis.com/ahoy-podcast-collection/my-friend/MY%20FRIEND%20-%20Thomas%20King.jpg",
     "content": "Join your host, Alex Gonzalez, as he invites a friend to dive into the wonderfully mundane, the unexpectedly delightful, and the sometimes downright weird corners of life. Each episode is a cozy conversation designed to spark curiosity and connection.  Check it out now <button onclick=\"navigateToTab('podcast-tab')\" class=\"action-button\"><i class=\"fas fa-podcast\"></i></button>",
     "active": "true",
-    "goTo": "https://ahoy.ooo"
+    "goTo": "podcast-tab"
 }
 
 ]

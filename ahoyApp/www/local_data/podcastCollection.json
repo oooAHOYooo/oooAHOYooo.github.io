@@ -1,5 +1,14 @@
 {
   "podcasts": [
+      {
+      "id": 29, 
+      "title": "My Friend #001 - Thomas King",
+      "description": "Join your host, Alex Gonzalez, as he invites Thomas King to dive into the wonderfully mundane, the unexpectedly delightful, and the sometimes downright weird corners of life.",
+      "date": "2024-12-06", 
+      "active": true,
+      "mp3url": "https://storage.googleapis.com/ahoy-podcast-collection/my-friend/podcast_myFriend_ep1_thomasKing.mp3", 
+      "thumbnail": "https://storage.googleapis.com/ahoy-podcast-collection/my-friend/MY%20FRIEND%20-%20Thomas%20King.jpg" 
+    },
     {
       "id": 28,
       "title": "The Rob Show #39 - Dr. Tyler Rice",

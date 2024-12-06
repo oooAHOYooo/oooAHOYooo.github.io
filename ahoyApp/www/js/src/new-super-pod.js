@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let currentPodcastIndex = 0;
     let podcasts = [];
 
-    const podcastDataUrl = "local_data/podcastCollection.json"; // Always use local data
+    const podcastDataUrl = "local_data/podcastCollection.json"; 
 
     // Fetch podcast data
     async function fetchPodcasts() {
