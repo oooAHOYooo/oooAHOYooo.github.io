@@ -352,6 +352,14 @@
     "content": "Exciting news, Ahoy fans! We're happy to announce that Ahoy Indie Media is now on Reddit. Join us for exclusive behind-the-scenes content and deep cuts. While we remain committed to not advertising on social media, we wanted a way to connect with our fans and spread news about new content. We believe Reddit is the best platform for this. Follow us to help spread our reach and stay updated on all things Ahoy! <button onclick=\"window.location.href='https://www.reddit.com/r/AhoyIndieMedia/'\" class=\"action-button\"><i class=\"fas fa-reddit\"></i> Follow us on Reddit</button>",
         "active": "true",
     "goTo": "https://www.reddit.com/r/AhoyIndieMedia/"
+},
+{
+    "date": "2024-12-05",
+    "title": "Welcome to My Friend..., the newest podcast from Ahoy Indie Media!",
+    "imageUrl": "https://storage.googleapis.com/ahoy-podcast-collection/my-friend/MY%20FRIEND%20-%20Thomas%20King.jpg",
+    "content": "Join your host, Alex Gonzalez, as he invites a friend to dive into the wonderfully mundane, the unexpectedly delightful, and the sometimes downright weird corners of life. Each episode is a cozy conversation designed to spark curiosity and connection.  Check it out now <button onclick=\"navigateToTab('podcast-tab')\" class=\"action-button\"><i class=\"fas fa-podcast\"></i></button>",
+    "active": "true",
+    "goTo": "https://ahoy.ooo"
 }
 
 ]
