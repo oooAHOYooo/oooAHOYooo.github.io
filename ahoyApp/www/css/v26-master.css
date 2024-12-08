@@ -172,7 +172,7 @@ h6 {
     font-weight: var(--h6-font-weight);
     color: var(--text-color);
     text-align: center;
-    padding: var(--p-padding);
+    margin-bottom: 0px;
 }
 
 

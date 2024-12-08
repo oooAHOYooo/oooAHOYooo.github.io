@@ -218,7 +218,8 @@
 </div>
 <div id="vintage-broadcast-tab" class="tab-content">
   <div class="broadcast-header">
-  <h2>Ahoy Broadcast</h2>
+
+  <h6>Currently Playing:</h6><br> <h2 id="broadcast-media-title">Loading...</span>
   </div>
   <div class="broadcast-player-container">
       <video id="video-broadcast-container" width="100%" controls>
@@ -226,26 +227,27 @@
           Your browser does not support the video 
       </video>
   </div>
-  <div class="broadcast-info">
+  <!-- <div class="broadcast-info">
       <p>Currently Playing: <span id="broadcast-media-title">Loading...</span></p>
-  </div>
+  </div> -->
   <div class="broadcast-on-off-container">
     <button id="broadcast-on-button" class="action-button">
       <i class="fas fa-power-off"></i> Start Broadcast
     </button></div>
     
 
-<div class="remote-controls">
-<button id="play-pause-button" class="remoteControlButton"><i class="fas fa-play"></i></button>
-<button id="fast-forward-button" class="remoteControlButton"><i class="fas fa-forward"></i></button>
-<button id="next-button" class="remoteControlButton"><i class="fas fa-step-forward"></i></button>
-<button id="rewind-button" class="remoteControlButton"><i class="fas fa-undo"></i></button>
-<button id="shuffle-button" class="remoteControlButton"><i class="fas fa-random"></i></button>
-<button id="fullscreen-button" class="remoteControlButton"><i class="fas fa-expand"></i></button>
-<button id="mute-button" class="remoteControlButton"><i class="fas fa-volume-mute"></i></button>
-<button id="volume-down" class="remoteControlButton"><i class="fas fa-volume-down"></i></button>
-<button id="volume-up" class="remoteControlButton"><i class="fas fa-volume-up"></i></button>
-</div>
+    <div class="remote-controls">
+      <button id="prev-button" class="remoteControlButton"><i class="fas fa-step-backward"></i></button> <!-- Updated button -->
+      <button id="play-pause-button" class="remoteControlButton"><i class="fas fa-play"></i></button>
+      <button id="next-button" class="remoteControlButton"><i class="fas fa-step-forward"></i></button>
+      <!-- Removed fast-forward-button -->
+      <button id="rewind-button" class="remoteControlButton"><i class="fas fa-undo"></i></button>
+      <button id="shuffle-button" class="remoteControlButton"><i class="fas fa-random"></i></button>
+      <button id="fullscreen-button" class="remoteControlButton"><i class="fas fa-expand"></i></button>
+      <button id="mute-button" class="remoteControlButton"><i class="fas fa-volume-mute"></i></button>
+      <button id="volume-down" class="remoteControlButton"><i class="fas fa-volume-down"></i></button>
+      <button id="volume-up" class="remoteControlButton"><i class="fas fa-volume-up"></i></button>
+  </div>
 <div id="about-ahoy-broadcast" class="about-section">
   <h2>About Ahoy Broadcast</h2>
   <p>Ahoy Broadcast recreates the essence of classic TV for the digital age, delivering rotating indie playlists that shift throughout the day, just like a traditional TV broadcast would.</p>
