@@ -3892,3 +3892,12 @@ video::-webkit-media-controls-current-time-display {
     font-weight: 300;
     color: #333;
 }
+
+#broadcast-on-button.full-width {
+    width: 100%;
+}
+
+#broadcast-on-button.active-broadcast {
+    width: auto;
+
+}

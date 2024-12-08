@@ -42,13 +42,19 @@ function toggleBroadcast() {
         currentTime = videoElement.currentTime; // Save the current time
         videoElement.pause();
         broadcastButton.classList.remove("active-broadcast");
-        broadcastButton.textContent = "Resume Broadcast";
+        broadcastButton.classList.add("full-width"); // Make button full width when paused
+        broadcastButton.textContent = "Start Broadcast";
     } else {
         if (currentBlockFiles.length > 0) {
             videoElement.currentTime = currentTime; // Resume from saved time
             videoElement.play();
+        } else {
+            // Load the first video when starting the broadcast
+            prepareVideo(currentMediaIndex);
+            videoElement.play();
         }
         broadcastButton.classList.add("active-broadcast");
+        broadcastButton.classList.remove("full-width"); // Shrink button when playing
         broadcastButton.textContent = "Pause Broadcast";
     }
 
@@ -105,14 +111,17 @@ function setThumbnailAndTitle(mediaItem, blockTitle) {
     document.getElementById("broadcast-media-title").textContent = blockTitle;
 }
 
-// Prepare and play the video
+// Prepare the video but do not play it immediately
 function prepareVideo(index) {
     const videoElement = document.getElementById("video-broadcast-container");
     const sourceElement = document.getElementById("video-source");
     sourceElement.src = currentBlockFiles[index].file;
     videoElement.load();
     document.getElementById("broadcast-media-title").textContent = currentBlockFiles[index].title;
-    videoElement.play();
+    videoElement.poster = currentBlockFiles[index].thumbnail; // Set the thumbnail
+
+    // Remove auto-play logic
+    // videoElement.play();
 
     videoElement.onended = () => {
         currentMediaIndex = (currentMediaIndex + 1) % currentBlockFiles.length;

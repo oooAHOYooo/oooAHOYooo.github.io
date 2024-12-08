@@ -217,23 +217,26 @@
 <hr>
 </div>
 <div id="vintage-broadcast-tab" class="tab-content">
-  <div class="broadcast-header">
+ 
 
-  <h6>Currently Playing:</h6><br> <h2 id="broadcast-media-title">Loading...</span>
-  </div>
   <div class="broadcast-player-container">
       <video id="video-broadcast-container" width="100%" controls>
           <source id="video-source" src="" type="video/mp4">
           Your browser does not support the video 
       </video>
   </div>
+  <div class="broadcast-on-off-container">
+    <button id="broadcast-on-button" class="action-button full-width">
+        <i class="fas fa-power-off"></i> Start Broadcast
+    </button>
+</div>
+  <div class="broadcast-header">
+    <h6>Currently Playing:</h6><br> <h2 id="broadcast-media-title">Loading...</span>
+    </div>
   <!-- <div class="broadcast-info">
       <p>Currently Playing: <span id="broadcast-media-title">Loading...</span></p>
   </div> -->
-  <div class="broadcast-on-off-container">
-    <button id="broadcast-on-button" class="action-button">
-      <i class="fas fa-power-off"></i> Start Broadcast
-    </button></div>
+
     
 
     <div class="remote-controls">
@@ -249,7 +252,7 @@
       <button id="volume-up" class="remoteControlButton"><i class="fas fa-volume-up"></i></button>
   </div>
 <div id="about-ahoy-broadcast" class="about-section">
-  <h2>About Ahoy Broadcast</h2>
+  <h3>About Ahoy Broadcast</h3>
   <p>Ahoy Broadcast recreates the essence of classic TV for the digital age, delivering rotating indie playlists that shift throughout the day, just like a traditional TV broadcast would.</p>
   <h3>How It Works</h3>
   <ul>
