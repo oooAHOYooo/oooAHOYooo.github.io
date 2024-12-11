@@ -429,7 +429,7 @@
 	},
 	{
 		"id": 49,
-		"artist": "Mintea",
+		"artist": "mintea",
 		"songTitle": "7eleven",
 		"mp3url": "https://storage.googleapis.com/ahoy-song-collection/mintea%20-%207eleven.mp3",
 		"coverArt": "https://storage.googleapis.com/ahoy-song-collection/mintea%20-%20The%20Lost%20Clause%20-%20Album%20Cover.jpg",
@@ -438,12 +438,22 @@
 	},
 	{
 		"id": 50,
-		"artist": "Mintea",
-		"songTitle": "Weird",
+		"artist": "mintea",
+		"songTitle": "weird",
 		"mp3url": "https://storage.googleapis.com/ahoy-song-collection/mintea%20-%20wired.mp3",
 		"coverArt": "https://storage.googleapis.com/ahoy-song-collection/mintea%20-%20The%20Lost%20Clause%20-%20Album%20Cover.jpg",
 		"play": false,
 		"dateAdded": "12-11-24"
+	},
+	{
+		"id": 51,
+		"artist": "mintea",
+		"songTitle": "fairy wings",
+		"mp3url": "https://storage.googleapis.com/ahoy-song-collection/mintea%20-%20fairy%20wings.mp3",
+		"coverArt": "https://storage.googleapis.com/ahoy-song-collection/mintea%20-%20fairy%20wings%20-%20album%20cover.jpg",
+		"play": false,
+		"dateAdded": "12-11-24"
+
 	}
 	]
   }
