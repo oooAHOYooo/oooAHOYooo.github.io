@@ -426,6 +426,24 @@
 		"play": false,
 		"dateAdded": "11-19-24"
 
+	},
+	{
+		"id": 49,
+		"artist": "Mintea",
+		"songTitle": "7eleven",
+		"mp3url": "https://storage.googleapis.com/ahoy-song-collection/mintea%20-%207eleven.mp3",
+		"coverArt": "https://storage.googleapis.com/ahoy-song-collection/mintea%20-%20The%20Lost%20Clause%20-%20Album%20Cover.jpg",
+		"play": false,
+		"dateAdded": "12-11-24"
+	},
+	{
+		"id": 50,
+		"artist": "Mintea",
+		"songTitle": "Weird",
+		"mp3url": "https://storage.googleapis.com/ahoy-song-collection/mintea%20-%20wired.mp3",
+		"coverArt": "https://storage.googleapis.com/ahoy-song-collection/mintea%20-%20The%20Lost%20Clause%20-%20Album%20Cover.jpg",
+		"play": false,
+		"dateAdded": "12-11-24"
 	}
 	]
   }
