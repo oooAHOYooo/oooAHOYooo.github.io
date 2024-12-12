@@ -360,6 +360,14 @@
     "content": "Join your host, Alex Gonzalez, as he invites a friend to dive into the wonderfully mundane, the unexpectedly delightful, and the sometimes downright weird corners of life. Each episode is a cozy conversation designed to spark curiosity and connection.  Check it out now <button onclick=\"navigateToTab('podcast-tab')\" class=\"action-button\"><i class=\"fas fa-podcast\"></i></button>",
     "active": "true",
     "goTo": "podcast-tab"
+},
+{
+    "date": "2024-12-12",
+    "title": "Welcome Mintea: New Artist from Trumbull,CT",
+    "imageUrl": "https://storage.googleapis.com/ahoy-dynamic-content/news/mintea.jpg",
+    "content": "We're excited to welcome mintea to our collection! Hailing from Trumbull, CT, mintea brings a unique blend of sci-fi and fairy pop to the mix. We've added three  tracks: '7eleven', 'weird', and 'fairy wings'. Give a listen today! ",
+    "active": "true",
+    "goTo": "music-tab"
 }
 
 ]
