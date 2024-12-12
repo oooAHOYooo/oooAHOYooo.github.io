@@ -362,12 +362,27 @@
     "goTo": "podcast-tab"
 },
 {
-    "date": "2024-12-12",
+    "date": "2024-12-11",
     "title": "Welcome Mintea: New Artist from Trumbull,CT",
     "imageUrl": "https://storage.googleapis.com/ahoy-dynamic-content/news/mintea.jpg",
     "content": "We're excited to welcome mintea to our collection! Hailing from Trumbull, CT, mintea brings a unique blend of sci-fi and fairy pop to the mix. We've added three  tracks: '7eleven', 'weird', and 'fairy wings'. Give a listen today! ",
     "active": "true",
     "goTo": "true-classic-radio"
+},
+{
+    "date": "2024-12-12",
+    "title": "Upcoming New Show : The Ahoy Cabaret ",
+    "imageUrl": "https://storage.googleapis.com/ahoy-dynamic-content/images/bts-ahoy-caba-ep-1/%5BAHOY%20CABA%20BTS%20EP1%5DWhatsApp%20Image%202024-12-11%20at%2023.35.56.jpeg",
+    "content": "Last night marked an exciting milestone as we filmed our first episode of the Ahoy Cabaret - a new live experience we've been planning for some bit. Last night was a big step - as we successfully filmed our 'live' set - shout out to host Josh Sanders - Guest Pat Clenenen - music act Ellen Martin - and our audience member - Chris Batista - - - Stay tuned - it'll be out soon",
+    "additionalImages": [
+        "https://storage.googleapis.com/ahoy-dynamic-content/images/bts-ahoy-caba-ep-1/%5BAHOY%20CABA%20BTS%20EP1%5DWhatsApp%20Image%202024-12-06%20at%2023.16.37.jpeg",
+        "https://storage.googleapis.com/ahoy-dynamic-content/images/bts-ahoy-caba-ep-1/%5BAHOY%20CABA%20BTS%20EP1%5DWhatsApp%20Image%202024-12-11%20at%2023.36.22.jpeg",
+        "https://storage.googleapis.com/ahoy-dynamic-content/images/bts-ahoy-caba-ep-1/%5BAHOY%20CABA%20BTS%20EP1%5DWhatsApp%20Image%202024-12-11%20at%2023.36.24.jpeg",
+        "https://storage.googleapis.com/ahoy-dynamic-content/images/bts-ahoy-caba-ep-1/%5BAHOY%20CABA%20BTS%20EP1%5DWhatsApp%20Image%202024-12-12%20at%2012.25.38.jpeg",
+        "https://storage.googleapis.com/ahoy-dynamic-content/images/bts-ahoy-caba-ep-1/%5BAHOY%20CABA%20BTS%20EP1%5DWhatsApp%20Image%202024-12-12%20at%2012.25.39.jpeg"
+    ],
+    "active": "true",
+    "goTo": "media-tab"
 }
 
 ]
