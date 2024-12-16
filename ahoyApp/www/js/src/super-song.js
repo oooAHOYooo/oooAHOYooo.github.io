@@ -1,8 +1,8 @@
-const songsDataUrl = 'local_data/radioPlay.json'; // Updated to use local data
+const songsDataUrl = 'https://api.npoint.io/bbe846ba39eae7cf4f06'; // Updated to use remote data
 let currentSongIndex = 0;
 let songs = [];
 
-// Fetch the songs data from the local JSON file
+// Fetch the songs data from the remote JSON API
 async function fetchRadioSongs() {
   try {
     const response = await fetch(songsDataUrl);
