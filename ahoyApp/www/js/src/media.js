@@ -2,10 +2,10 @@ document.addEventListener("DOMContentLoaded", function () {
   let mediaData = [];
 
   // Define the URL for fetching media data
-  const useLocalData = true; // Set to true for local, false for cloud
+  const useLocalData = false; // Set to true for local, false for cloud
   const mediaDataUrl = useLocalData 
     ? "local_data/mediaCollection.json" 
-    : "https://storage.googleapis.com/ahoy-dynamic-content/dynamicJson/mediaCollection.json";
+    : "https://api.npoint.io/bfb2178f2ecdff6864e5";
 
   // Function to load video in the native HTML5 video player
   function loadVideoInHTML5Player(videoUrl, artistName, titleName) {
