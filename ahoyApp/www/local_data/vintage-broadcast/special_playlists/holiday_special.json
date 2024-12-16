@@ -1,7 +1,17 @@
 {
   "media": [
-    { "title": "Holiday Greetings", "file": "https://your-cdn.com/media/holiday-greetings.mp4" },
-    { "title": "Festive Indie Music Mix", "file": "https://your-cdn.com/media/festive-music-mix.mp4" },
-    { "title": "Classic Holiday Indie Film", "file": "https://your-cdn.com/media/classic-holiday-film.mp4" }
+    {
+      "order": 1,
+      "title": "Ahoy Cabaret: Episode 1 (Pilot)",
+      "file": "https://content.jwplatform.com/videos/UxOkU10T.mp4",
+      "thumbnail": "https://cdn.jwplayer.com/thumbs/UxOkU10T-1920.jpg",
+      "duration": "00:20:59",
+      "date": "Dec 15, 2024",
+      "description": "Welcome to the first-ever episode of Ahoy Cabaret! Join us for a mix of indie music, laughs, and community vibes in this pilot installment of our variety show.",
+      "tags": ["indie music", "comedy", "community", "variety show"],
+      "author": "Add a content author",
+      "media_page_permalink": "https://",
+      "status": "Ready"
+    }
   ]
 }

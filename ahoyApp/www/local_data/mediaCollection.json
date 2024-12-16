@@ -442,6 +442,17 @@
               "mp4_link": "https://content.jwplatform.com/videos/HssMGzjB-lDtdjaQS.mp4",
               "thumbnail_link": "https://cdn.jwplayer.com/thumbs/HssMGzjB-1920.jpg",
               "tape_id": "TAPE016"
+            },
+            {
+              "id": 47,
+              "video_id": "UxOkU10T",
+              "display_title": "Ahoy Cabaret: Episode 1 (Pilot)",
+              "artist": "Ahoy Cabaret",
+              "duration": "00:20:59",
+              "mp4_link": "https://content.jwplatform.com/videos/UxOkU10T.mp4",
+              "thumbnail_link": "https://cdn.jwplayer.com/thumbs/UxOkU10T-1920.jpg",
+              "tape_id": "TAPE023",
+              "holiday_special": true
             }
           ]
           

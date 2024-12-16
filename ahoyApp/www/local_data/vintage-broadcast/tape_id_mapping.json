@@ -126,5 +126,17 @@
     "thumbnail": "https://cdn.jwplayer.com/thumbs/5Oses8mG-1920.jpg",
     "duration": "00:02:57",
     "date": "Oct 20, 2022"
+  },
+  "TAPE023": {
+    "title": "Ahoy Cabaret: Episode 1 (Pilot)",
+    "file": "https://content.jwplatform.com/videos/UxOkU10T.mp4", 
+    "thumbnail": "https://cdn.jwplayer.com/thumbs/UxOkU10T-1920.jpg", 
+    "duration": "00:20:59", 
+    "date": "Dec 15, 2024",
+    "description": "Welcome to the first-ever episode of Ahoy Cabaret! Join us for a mix of indie music, laughs, and community vibes in this pilot installment of our variety show.",
+    "tags": ["indie music", "comedy", "community", "variety show"], 
+    "author": "Add a content author", 
+    "media_page_permalink": "https://", 
+    "status": "Draft"
   }
 }
