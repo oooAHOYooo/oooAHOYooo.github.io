@@ -1,5 +1,5 @@
 window.addEventListener('DOMContentLoaded', (event) => {
-    fetch('./local_data/newsletter.json')
+    fetch('https://api.npoint.io/2d370326697768b60f76')
         .then(response => {
             if (!response.ok) throw new Error("Network response was not ok");
             return response.json();
