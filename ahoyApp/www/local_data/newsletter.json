@@ -388,9 +388,11 @@
     "date": "2024-12-17",
     "title": "mintea's 'Last Christmas' Music Video Added",
     "imageUrl": "https://cdn.jwplayer.com/thumbs/0aNgsscy-1920.jpg",
-    "content": "Ahoy is happy to present mintea's cover of 'Last Christmas' by Wham! This rendition, featuring vocals, production, and synth by Abby (Mintea), along with contributions from Hanna, Rachel, Josh, Sammy, Christina (Kiki), and Reed Mayhew, is now available and part of our broadcast rotation and avaliable on demand in our media collection. <br><br> Discover more of mintea's music on <a href='https://mintea.bandcamp.com'>Bandcamp</a>, <a href='https://soundcloud.com/sleepymintea'>SoundCloud</a>, and <a href='https://www.instagram.com/sleepymintea'>Instagram</a>.",
+    "content": "Ahoy is happy to present mintea's cover of 'Last Christmas' by Wham! This rendition, featuring vocals, production, and synth by Abby (Mintea), along with contributions from Hanna, Rachel, Josh, Sammy, Christina (Kiki), and Reed Mayhew, is now available and part of our broadcast rotation and available on demand in our media collection. <br><br> Discover more of mintea's music on <a href='https://mintea.bandcamp.com'>Bandcamp</a>, <a href='https://soundcloud.com/sleepymintea'>SoundCloud</a>, and <a href='https://www.instagram.com/sleepymintea'>Instagram</a>.",
     "active": "true",
-    "goTo": "media-tab"
+    "goTo": "media-tab",
+    "featuredVideo": "0aNgsscy",
+    "featuredVideoIframe": "https://cdn.jwplayer.com/players/0aNgsscy-9Gtk2B1J.html"
 }
 
 ]
