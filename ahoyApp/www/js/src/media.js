@@ -1,5 +1,32 @@
 document.addEventListener("DOMContentLoaded", function () {
   let mediaData = [];
+  let isOfflineMode = false;
+
+  document.addEventListener('offlineModeChanged', function(event) {
+    isOfflineMode = event.detail;
+    fetchAndPopulateMediaTable();
+  });
+
+  function fetchAndPopulateMediaTable() {
+    const mediaDataUrl = isOfflineMode 
+      ? "local_data/mediaCollection.json" 
+      : "https://api.npoint.io/bfb2178f2ecdff6864e5";
+
+    fetch(mediaDataUrl)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Fetched media data:", data);
+        mediaData = data;
+        sortAndDisplayMedia('recent');
+        if (mediaData.length > 0) {
+          const randomVideo = selectRandomVideo(mediaData);
+          playVideoAndScrollToTop(randomVideo.mp4_link, randomVideo.thumbnail_link, randomVideo.artist, randomVideo.display_title);
+        }
+      })
+      .catch((error) => console.error("Error fetching media data:", error));
+  }
+
+  fetchAndPopulateMediaTable(); // Initial fetch
 
   // Define the URL for fetching media data
   const useLocalData = false; // Set to true for local, false for cloud
@@ -81,22 +108,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     lazyLoadThumbnails(); // Ensure lazy loading is applied after populating the table
   }
-
-  // Fetch and populate media table
-  fetch(mediaDataUrl) // Use the variable to fetch data
-    .then((response) => response.json())
-    .then((data) => {
-      console.log("Fetched media data:", data); // Log the fetched data to the console
-      mediaData = data; // Store data for sorting
-      sortAndDisplayMedia('recent'); // Initially sort by recent
-
-      // Load a random video initially
-      if (mediaData.length > 0) {
-        const randomVideo = selectRandomVideo(mediaData);
-        playVideoAndScrollToTop(randomVideo.mp4_link, randomVideo.thumbnail_link, randomVideo.artist, randomVideo.display_title);
-      }
-    })
-    .catch((error) => console.error("Error fetching media data:", error));
 
   function sortAndDisplayMedia(criteria) {
     let sortedData = [...mediaData];
