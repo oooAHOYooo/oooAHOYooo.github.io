@@ -66,7 +66,7 @@ async function loadPlaylistForTimeOfDay() {
     try {
         const now = new Date();
         const isThanksgiving = now.getMonth() === 10 && now.getDate() >= 28 && now.getDate() <= 30;
-        const isHolidaySpecial = now.getFullYear() === 2024 && now.getMonth() === 11 && now.getDate() >= 16 && now.getDate() <= 20;
+        const isHolidaySpecial = now.getFullYear() === 2024 && now.getMonth() === 11 && now.getDate() >= 20 && now.getDate() <= 30;
 
         if (isThanksgiving) {
             loadPlaylistFromJSON('./local_data/vintage-broadcast/special_playlists/palbot2_thanksgiving.json', "Pal-bot 2 Thanksgiving Marathon");

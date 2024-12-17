@@ -134,9 +134,21 @@
     "duration": "00:20:59", 
     "date": "Dec 15, 2024",
     "description": "Welcome to the first-ever episode of Ahoy Cabaret! Join us for a mix of indie music, laughs, and community vibes in this pilot installment of our variety show.",
-    "tags": ["indie music", "comedy", "community", "variety show"], 
-    "author": "Add a content author", 
+    "tags": ["indie music", "comedy", "community", "variety show", "live show"], 
+    "author": "Ahoy Indie Media", 
     "media_page_permalink": "https://", 
     "status": "Draft"
+  },
+  "TAPE024": {
+    "title": "mintea - Last Christmas (Wham! Cover)",
+    "file": "https://content.jwplatform.com/videos/0aNgsscy.mp4", 
+    "thumbnail": "https://cdn.jwplayer.com/thumbs/0aNgsscy-1920.jpg", 
+    "duration": "00:05:18", 
+    "date": "Dec 17, 2024",
+    "description": "Celebrate the season with this rendition of Last Christmas by Wham!, covered by Mintea and friends.\n\nCredits:\n• Vocals, Production & Synth: Abby (Mintea)\n• Vocals: Hanna\n• Harmonies: Rachel\n• Violin: Josh\n• Viola: Sammy\n• Cello: Christina (Kiki)\n• Mixed & Mastered By: Reed Mayhew",
+    "tags": ["cover", "holiday", "music video", "Mintea"], 
+    "author": "mintea", 
+    "media_page_permalink": "https://", 
+    "status": "Ready"
   }
 }
