@@ -1,5 +1,11 @@
 window.addEventListener('DOMContentLoaded', (event) => {
-    fetch('https://api.npoint.io/2d370326697768b60f76')
+    // Define the URL for fetching newsletter data
+    const useLocalData = false; // Set to true for local, false for cloud
+    const newsletterDataUrl = useLocalData 
+        ? "local_data/newsletterCollection.json" 
+        : "https://api.npoint.io/2d370326697768b60f76";
+
+    fetch(newsletterDataUrl) // Use the variable to fetch data
         .then(response => {
             if (!response.ok) throw new Error("Network response was not ok");
             return response.json();

@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
     tableBody.innerHTML = ''; // Clear existing entries
 
     // Filter out items where live is false
-    const filteredData = data.filter(item => item.live !== false && item.id !== 47);
+    const filteredData = data.filter(item => item.live !== false);
 
     filteredData.forEach((item) => {
       const row = document.createElement("tr");
