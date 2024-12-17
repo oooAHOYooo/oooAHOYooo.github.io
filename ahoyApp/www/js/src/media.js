@@ -46,7 +46,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const tableBody = document.querySelector("#mediaTable tbody");
     tableBody.innerHTML = ''; // Clear existing entries
 
-    data.forEach((item) => {
+    // Filter out items where live is false
+    const filteredData = data.filter(item => item.live !== false && item.id !== 47);
+
+    filteredData.forEach((item) => {
       const row = document.createElement("tr");
       row.className = "mediaRow";
       row.innerHTML = `
