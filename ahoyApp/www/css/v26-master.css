@@ -3402,7 +3402,6 @@ input[type="date"]:focus {
 
 
 
-
 /* Hide audio elements */
 #full-recent-player audio,
 #full-recent-podcasts audio {
@@ -3900,4 +3899,70 @@ video::-webkit-media-controls-current-time-display {
 #broadcast-on-button.active-broadcast {
     width: auto;
 
+}
+
+/* Community Dashboard Styles */
+.community-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+.community-container section {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border: 1px solid var(--border-color);
+}
+
+.community-container h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.alumni-list, .shoutouts-container, .creator-feature {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.alumni-item, .creator-feature {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.alumni-thumbnail, .creator-thumbnail {
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.support-button {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.support-button:hover {
+    background-color: var(--border-color);
+}
+
+.shoutouts-container, .creator-feature {
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #fff;
 }
