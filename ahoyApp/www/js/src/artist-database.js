@@ -1,8 +1,15 @@
 function artistDirectory() {
     return {
       searchQuery: '', // User's search input
-      artists: [ // Artist data with sample images
-        { name: "Samuel Dylan Witch", songs: ["Seen Better Days", "Beneath the Willow Tree", "Put Me on the Run", "You Know Me", "Watching Her Fly"], image: "https://i.ytimg.com/vi/XDH0X-dF4GM/maxresdefault.jpg" },
+      artists: [ // Artist data with sample images and links
+        { 
+          name: "Samuel Dylan Witch", 
+          songs: ["Seen Better Days", "Beneath the Willow Tree", "Put Me on the Run", "You Know Me", "Watching Her Fly"], 
+          image: "https://i.ytimg.com/vi/XDH0X-dF4GM/maxresdefault.jpg",
+          donationLink: "https://donate.samuel.com",
+          merchLink: "https://merch.samuel.com",
+          externalLink: "https://samuel.com"
+        },
         { name: "Cambell Rice", songs: ["Far From Here", "Sunflower", "To Play Guitar in a Huge Room"], image: "https://m.media-amazon.com/images/I/61APLxryThL._UXNaN_FMjpg_QL85_.jpg" },
         { name: "Youth XL", songs: ["Summer Bummer", "Yoga", "Text Your Friends", "Gypsy Gia"], image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyBXIMTxuYsGbaO23UEDr-TeH57LhPKid4ohwt85HyZgtprWiecvV_iFk0dYCMMJnT3ys&usqp=CAU" },
         { name: "Fella Gazelle", songs: ["Reasons"], image: "https://m.media-amazon.com/images/I/61NpQ4vCxOL._UXNaN_FMjpg_QL85_.jpg" },
@@ -17,6 +24,7 @@ function artistDirectory() {
         { name: "Spider in Stereo", songs: ["Float"], image: "https://storage.googleapis.com/ahoy-song-collection/Spider%20in%20Stereo%20-%20Float.jpg" },
         { name: "mintea", songs: ["7eleven", "weird", "fairy wings", "clown girl"], image: "https://storage.googleapis.com/ahoy-song-collection/mintea%20-%20The%20Lost%20Clause%20-%20Album%20Cover.jpg" }
       ],
+      selectedArtist: null, // Currently selected artist for expanded view
       // Computed property: Filtered Artists
       get filteredArtists() {
         if (!this.searchQuery) return this.artists;
@@ -26,6 +34,14 @@ function artistDirectory() {
           artist.name.toLowerCase().includes(query) || 
           artist.songs.some(song => song.toLowerCase().includes(query))
         );
+      },
+      // Method to select an artist and show options
+      selectArtist(artist) {
+        this.selectedArtist = artist;
+      },
+      // Method to close the expanded view
+      closeArtistView() {
+        this.selectedArtist = null;
       }
     }
   }

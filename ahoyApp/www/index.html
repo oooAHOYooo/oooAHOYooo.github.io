@@ -164,12 +164,7 @@
         <div class="community-header">
             <h1>Welcome to the Ahoy Indie Media Community Page</h1>
             <p>Discover alumni, support indie creators, and explore spotlights on those making waves in our world.</p>
-            <div class="control-center">
-              <button class="action-button" onclick="navigateTo('home')">Home</button>
-              <button class="action-button" onclick="navigateTo('profile')">Profile</button>
-              <button class="action-button" onclick="navigateTo('settings')">Settings</button>
-              <button class="action-button" onclick="logout()">Logout</button>
-          </div>
+       
         </div>
         <div x-data="artistDirectory()" class="artist-directory">
           <!-- Search Input -->
@@ -186,7 +181,7 @@
           <!-- Artist Grid -->
           <div class="artist-grid">
             <template x-for="artist in filteredArtists" :key="artist.name">
-              <div class="artist-card">
+              <div class="artist-card" @click="selectArtist(artist)">
                 <img :src="artist.image" alt="" class="artist-image">
                 <h3 x-text="artist.name"></h3>
                 <ul>
@@ -194,6 +189,19 @@
                 </ul>
               </div>
             </template>
+          </div>
+
+          <!-- Expanded Artist View (Modal) -->
+          <div x-show="selectedArtist" class="artist-expanded-view" @click.away="closeArtistView()">
+            <div class="artist-expanded-content">
+              <button @click="closeArtistView()">Close</button>
+              <h2 x-text="selectedArtist.name"></h2>
+              <img :src="selectedArtist.image" alt="" class="artist-image-large">
+              <p>Support the artist:</p>
+              <a :href="selectedArtist.donationLink" target="_blank">Donate</a>
+              <a :href="selectedArtist.merchLink" target="_blank">Buy Merch</a>
+              <a :href="selectedArtist.externalLink" target="_blank">Visit Website</a>
+            </div>
           </div>
         </div>
         <!-- Rob Show Alumni Section -->
