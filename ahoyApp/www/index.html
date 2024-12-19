@@ -187,6 +187,7 @@
           <div class="artist-grid">
             <template x-for="artist in filteredArtists" :key="artist.name">
               <div class="artist-card">
+                <img :src="artist.image" alt="" class="artist-image">
                 <h3 x-text="artist.name"></h3>
                 <ul>
                   <li x-for="song in artist.songs" :key="song" x-text="song"></li>

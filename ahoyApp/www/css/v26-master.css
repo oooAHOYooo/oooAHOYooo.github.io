@@ -4022,3 +4022,53 @@ video::-webkit-media-controls-current-time-display {
     font-weight: bold;
     color: var(--text-color);
 }
+
+/* Styles for the artist grid */
+.artist-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+    padding: 20px;
+    justify-items: center;
+    align-items: start;
+}
+
+.artist-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+    width: 100%;
+    max-width: 200px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.artist-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.artist-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.artist-card h3 {
+    font-size: 1rem;
+    margin: 0 0 10px 0;
+    color: var(--text-color);
+}
+
+.artist-card ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.artist-card li {
+    font-size: 0.875rem;
+    color: var(--text-color);
+}
