@@ -3907,7 +3907,7 @@ video::-webkit-media-controls-current-time-display {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
     padding: 20px;
-    background-color: #f0f0f0;
+    background-color: var(--background-color);
 }
 
 .community-container section {
@@ -3920,7 +3920,7 @@ video::-webkit-media-controls-current-time-display {
 
 .community-container h2 {
     font-size: 1.5rem;
-    font-weight: bold;
+    font-weight: 300;
     text-transform: uppercase;
     margin-bottom: 15px;
     color: var(--text-color);
@@ -3945,6 +3945,11 @@ video::-webkit-media-controls-current-time-display {
     object-fit: cover;
 }
 
+.alumni-info, .creator-info {
+    display: flex;
+    flex-direction: column;
+}
+
 .support-button {
     background-color: var(--background-color);
     color: var(--text-color);
@@ -3964,5 +3969,41 @@ video::-webkit-media-controls-current-time-display {
     overflow-y: auto;
     border: 1px solid #ccc;
     padding: 10px;
-    background-color: #fff;
+    background-color: var(--background-color);
+}
+
+.alumni-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.alumni-item {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 150px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.alumni-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.alumni-thumbnail {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.alumni-name {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--text-color);
 }

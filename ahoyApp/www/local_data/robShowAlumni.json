@@ -1,0 +1,29 @@
+{
+  "alumni": [
+
+    {
+      "id": 2,
+      "name": "Dr. Tyler Rice",
+      "description": "Dr. Tyler Rice is a renowned scientist with a passion for sharing knowledge.",
+      "thumbnail": "https://storage.googleapis.com/ahoy-podcast-collection/ROB%20EPISODE%2039%20-%20Dr%20Tyler%20Rice.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Justin Neafsey",
+      "description": "Justin Neafsey is a talented musician and guitarist from Connecticut.",
+      "thumbnail": "https://storage.googleapis.com/ahoy-podcast-collection/ROB%20EPISODE%2038%20-%20Justin%20Neafsey.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Kevin McHahon",
+      "description": "Kevin McHahon is a local musician and songwriter with a unique style.",
+      "thumbnail": "https://storage.googleapis.com/ahoy-podcast-collection/ROB%20EPISODE%2037%20-%20Kevin%20McHaon.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Jack Galvin",
+      "description": "Jack Galvin is a surfer and filmmaker from Newport, Rhode Island.",
+      "thumbnail": "https://storage.googleapis.com/ahoy-podcast-collection/ROB%20EPISODE%2036%20-%20JACK%20GALVIN.jpg"
+    }
+  ]
+}

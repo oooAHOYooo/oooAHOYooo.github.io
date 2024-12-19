@@ -158,48 +158,45 @@
 </div>
 <!--COMMUNITY TAB-->
 <div id="community-tab" class="tab-content">
-  <div class="community-container">
-      <!-- Rob Show Alumni Section -->
-      <section class="rob-show-alumni">
-          <h2>Rob Show Alumni</h2>
-          <div class="alumni-list">
-              <!-- Placeholder data -->
-              <div class="alumni-item">
-                  <img src="placeholder.jpg" alt="Alumni Thumbnail" class="alumni-thumbnail">
-                  <p class="alumni-name">John Doe</p>
-                  <a href="#" class="alumni-link">Episode Link</a>
-              </div>
-              <!-- Repeat for more alumni -->
-          </div>
-      </section>
+    <div class="community-container">
+        <!-- Community Page Header -->
+        <div class="community-header">
+            <h1>Welcome to the Ahoy Indie Media Community Page</h1>
+            <p>Discover alumni, support indie creators, and explore spotlights on those making waves in our world.</p>
+        </div>
 
-      <!-- Support Us Section -->
-      <section class="support-us">
-          <h2>Support Us</h2>
-          <p>Support Ahoy Indie Media by contributing to our mission of providing ad-free, quality indie media.</p>
-          <button class="support-button">Support Ahoy Indie Media</button>
-      </section>
+        <!-- Rob Show Alumni Section -->
+        <section class="rob-show-alumni">
+            <h2>Rob Show Alumni</h2>
+            <p>Meet the inspiring guests who have joined the Rob Show for meaningful conversations and creative ideas.</p>
+            <div class="alumni-grid">
+                <!-- Alumni cards will be dynamically inserted here by alumni.js -->
+            </div>
+        </section>
 
-      <!-- Fan Shoutouts Section -->
-      <section class="fan-shoutouts">
-          <h2>Fan Shoutouts</h2>
-          <div class="shoutouts-container">
-              <!-- Placeholder for fan comments -->
-              <p>Great content! - Jane</p>
-              <!-- Repeat for more comments -->
-          </div>
-      </section>
+        <!-- Support Us Section -->
+        <section class="support-us">
+            <h2>Support Ahoy Indie Media</h2>
+            <p>Help us stay indie and ad-free by contributing to our mission.</p>
+            <div class="support-content">
+                <p>Support Ahoy Indie Media by contributing to our mission of providing ad-free, quality indie media.</p>
+                <button class="action-button support-button">Support Ahoy Indie Media</button>
+            </div>
+        </section>
 
-      <!-- Indie Creator Spotlight Section -->
-      <section class="indie-creator-spotlight">
-          <h2>Indie Creator Spotlight</h2>
-          <div class="creator-feature">
-              <img src="creator-placeholder.jpg" alt="Creator Thumbnail" class="creator-thumbnail">
-              <p class="creator-name">Jane Smith</p>
-              <p class="creator-description">An inspiring indie creator known for her unique storytelling.</p>
-          </div>
-      </section>
-  </div>
+        <!-- Artist Spotlight Section -->
+        <section class="artist-spotlight">
+            <h2>Indie Creator Spotlight</h2>
+            <p>A monthly feature highlighting creators making waves in music, film, and art.</p>
+            <div class="artist-feature">
+                <img src="artist-placeholder.jpg" alt="Artist Thumbnail" class="artist-thumbnail">
+                <div class="artist-info">
+                    <p class="artist-name">Jane Smith</p>
+                    <p class="artist-description">An inspiring indie creator known for her unique storytelling.</p>
+                </div>
+            </div>
+        </section>
+    </div>
 </div>
 <!--ABOUT TAB-->
 <div id="about-tab" class="tab-content">
@@ -383,10 +380,11 @@
 </div>
 <div class="v25-dock-icon" onclick="navigateToTab('podcast-tab')"><i class="fas fa-podcast"></i></div>
 <div class="v25-dock-icon" onclick="navigateToTab('media-tab-a')"><i class="fas fa-image"></i></div>
-<div class="v25-dock-icon" onclick="navigateToTab('settings-tab')"><i class="fas fa-cog"></i></div>
+
 <div class="v25-dock-icon" onclick="navigateToTab('community-tab')">
   <i class="fas fa-users"></i>
 </div>
+<div class="v25-dock-icon" onclick="navigateToTab('settings-tab')"><i class="fas fa-cog"></i></div>
 </div>
 </div>
 </div>
@@ -415,6 +413,7 @@
 <script src="js/src/vintageBroadcast.js"></script>
 <script src="js/src/changelog.js"></script>
 <script src="js/src/offlineMode.js"></script>
+<script src="js/src/alumni.js"></script>
 
 </body>
 </html>
