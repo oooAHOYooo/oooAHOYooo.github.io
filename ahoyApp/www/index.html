@@ -192,14 +192,17 @@
           </div>
 
           <!-- Expanded Artist View (Modal) -->
-          <div x-show="selectedArtist" class="artist-expanded-view" @click.away="closeArtistView()">
+          <div 
+            x-show="selectedArtist" 
+            class="artist-expanded-view" 
+            @click.away="closeArtistView()"
+          >
             <div class="artist-expanded-content">
               <button @click="closeArtistView()">Close</button>
               <h2 x-text="selectedArtist.name"></h2>
               <img :src="selectedArtist.image" alt="" class="artist-image-large">
-              <p>Support the artist:</p>
-              <a :href="selectedArtist.donationLink" target="_blank">Donate</a>
-              <a :href="selectedArtist.merchLink" target="_blank">Buy Merch</a>
+              <p>More</p>
+              <a :href="selectedArtist.merchLink" target="_blank">Merch</a>
               <a :href="selectedArtist.externalLink" target="_blank">Visit Website</a>
             </div>
           </div>

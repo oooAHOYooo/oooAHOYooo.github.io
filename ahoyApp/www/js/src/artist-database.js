@@ -35,6 +35,19 @@ function artistDirectory() {
           artist.songs.some(song => song.toLowerCase().includes(query))
         );
       },
+      // Method to initialize event listeners
+      init() {
+        document.addEventListener('click', this.handleOutsideClick.bind(this));
+      },
+
+      // Method to handle clicks outside the popup
+      handleOutsideClick(event) {
+        const popup = document.querySelector('.popup-selector'); // Replace with your actual popup selector
+        if (this.selectedArtist && popup && !popup.contains(event.target)) {
+          this.closeArtistView();
+        }
+      },
+
       // Method to select an artist and show options
       selectArtist(artist) {
         this.selectedArtist = artist;
@@ -45,3 +58,8 @@ function artistDirectory() {
       }
     }
   }
+
+// Initialize the artist directory
+const directory = artistDirectory();
+directory.init();
+
