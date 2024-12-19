@@ -3926,26 +3926,40 @@ video::-webkit-media-controls-current-time-display {
     color: var(--text-color);
 }
 
-.alumni-list, .shoutouts-container, .creator-feature {
+.rob-show-alumni .alumni-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+    justify-items: center;
+    align-items: center;
+}
+
+
+.alumni-list,
+.shoutouts-container,
+.creator-feature {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-.alumni-item, .creator-feature {
+.alumni-item,
+.creator-feature {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.alumni-thumbnail, .creator-thumbnail {
+.alumni-thumbnail,
+.creator-thumbnail {
     width: 120px;
     height: 120px;
     border-radius: 10px;
     object-fit: cover;
 }
 
-.alumni-info, .creator-info {
+.alumni-info,
+.creator-info {
     display: flex;
     flex-direction: column;
 }
@@ -3964,7 +3978,8 @@ video::-webkit-media-controls-current-time-display {
     background-color: var(--border-color);
 }
 
-.shoutouts-container, .creator-feature {
+.shoutouts-container,
+.creator-feature {
     max-height: 200px;
     overflow-y: auto;
     border: 1px solid #ccc;

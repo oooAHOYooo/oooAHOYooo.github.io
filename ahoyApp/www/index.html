@@ -28,6 +28,7 @@
 <link rel="stylesheet" href="./css/v26-master.css">
 <link rel="icon" type="image/png" href="./img/favicon_ahoy.png">
 <script src="js/src/function_clearCacheAndReset.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.0/dist/cdn.min.js" defer></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-WVDL9N1HDT"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-WVDL9N1HDT');</script>
 </head>
@@ -164,11 +165,71 @@
             <h1>Welcome to the Ahoy Indie Media Community Page</h1>
             <p>Discover alumni, support indie creators, and explore spotlights on those making waves in our world.</p>
         </div>
+        <style>
+          .artist-directory {
+  padding: 20px;
+}
 
+.search-bar {
+  display: block;
+  margin-bottom: 20px;
+  padding: 10px;
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+}
+
+.artist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.artist-card {
+  border: 1px solid var(--border-color);
+  padding: 15px;
+  background-color: var(--background-color);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.artist-card h3 {
+  margin: 0 0 10px;
+}
+
+.artist-card ul {
+  padding: 0;
+  list-style: none;
+}
+
+        </style>
+        <div x-data="artistDirectory()" class="artist-directory">
+          <h2>Artist Directory</h2>
+        
+          <!-- Search Input -->
+          <input 
+            type="text" 
+            placeholder="Search for artists or songs..." 
+            x-model="searchQuery"
+            class="search-bar"
+          />
+        
+          <!-- Artist Grid -->
+          <div class="artist-grid">
+            <template x-for="artist in filteredArtists" :key="artist.name">
+              <div class="artist-card">
+                <h3 x-text="artist.name"></h3>
+                <ul>
+                  <li x-for="song in artist.songs" :key="song" x-text="song"></li>
+                </ul>
+              </div>
+            </template>
+          </div>
+        </div>
         <!-- Rob Show Alumni Section -->
         <section class="rob-show-alumni">
             <h2>Rob Show Alumni</h2>
-            <p>Meet the inspiring guests who have joined the Rob Show for meaningful conversations and creative ideas.</p>
+            <p>Meet the guests who have joined the Rob Show</p>
             <div class="alumni-grid">
                 <!-- Alumni cards will be dynamically inserted here by alumni.js -->
             </div>
@@ -414,6 +475,7 @@
 <script src="js/src/changelog.js"></script>
 <script src="js/src/offlineMode.js"></script>
 <script src="js/src/alumni.js"></script>
+<script src="js/src/artist-database.js"></script>
 
 </body>
 </html>

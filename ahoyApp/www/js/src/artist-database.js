@@ -1,0 +1,31 @@
+function artistDirectory() {
+    return {
+      searchQuery: '', // User's search input
+      artists: [ // Artist data
+        { name: "Samuel Dylan Witch", songs: ["Seen Better Days", "Beneath the Willow Tree", "Put Me on the Run", "You Know Me", "Watching Her Fly"] },
+        { name: "Cambell Rice", songs: ["Far From Here", "Sunflower", "To Play Guitar in a Huge Room"] },
+        { name: "Youth XL", songs: ["Summer Bummer", "Yoga", "Text Your Friends", "Gypsy Gia"] },
+        { name: "Fella Gazelle", songs: ["Reasons"] },
+        { name: "Riddle M", songs: ["Glued in the Nude", "Honeydew", "Daisies", "Garden Girl", "Magic Man", "Melted Side", "Snout", "Mustard Seed"] },
+        { name: "Justin Arena", songs: ["Oceans", "When You Wake Up", "Crash The Party", "Framework", "Fruit In The Shower", "No 1"] },
+        { name: "Clones of Clarence", songs: ["Lost Time", "Salty Salsa", "Proj 17", "3AM"] },
+        { name: "Coral Reefer", songs: ["Electro"] },
+        { name: "My Own Grenade", songs: ["My Own Grenade", "Frustrated", "My Parents' Couch (Live Cut)", "Spacegirl With A Headset", "Special", "Today Is In My Way"] },
+        { name: "S.G. Carlson", songs: ["How I Got Fat While Living Skinny"] },
+        { name: "The Tines", songs: ["Know By Feel", "Chokecherries", "Moon Views"] },
+        { name: "Jake Custer", songs: ["Better Halves", "By Myself", "I'm Fine", "It's a Mad,Mad World", "You Love to See It"] },
+        { name: "Spider in Stereo", songs: ["Float"] },
+        { name: "mintea", songs: ["7eleven", "weird", "fairy wings", "clown girl"] }
+      ],
+      // Computed property: Filtered Artists
+      get filteredArtists() {
+        if (!this.searchQuery) return this.artists;
+
+        const query = this.searchQuery.toLowerCase();
+        return this.artists.filter(artist =>
+          artist.name.toLowerCase().includes(query) || 
+          artist.songs.some(song => song.toLowerCase().includes(query))
+        );
+      }
+    }
+  }
