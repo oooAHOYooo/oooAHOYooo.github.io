@@ -164,12 +164,14 @@
         <div class="community-header">
             <h1>Welcome to the Ahoy Indie Media Community Page</h1>
             <p>Discover alumni, support indie creators, and explore spotlights on those making waves in our world.</p>
+            <div class="control-center">
+              <button class="action-button" onclick="navigateTo('home')">Home</button>
+              <button class="action-button" onclick="navigateTo('profile')">Profile</button>
+              <button class="action-button" onclick="navigateTo('settings')">Settings</button>
+              <button class="action-button" onclick="logout()">Logout</button>
+          </div>
         </div>
-   
-                  <h2>Artist Directory</h2>
-
         <div x-data="artistDirectory()" class="artist-directory">
-        
           <!-- Search Input -->
           <div class="artist-directory-search-container">
             <label for="artist-search" class="search-label">Search Artists:</label>
@@ -208,22 +210,11 @@
             <p>Help us stay indie and ad-free by contributing to our mission.</p>
             <div class="support-content">
                 <p>Support Ahoy Indie Media by contributing to our mission of providing ad-free, quality indie media.</p>
-                <button class="action-button support-button">Support Ahoy Indie Media</button>
+                <button class="action-button"><a href="https://checkout.square.site/merchant/MLCEJBSG4Z671/checkout/OTECA53PANFVTTCVDCDAZNRX" class="support-button">Support Ahoy Indie Media</a></button>
             </div>
         </section>
 
-        <!-- Artist Spotlight Section -->
-        <section class="artist-spotlight">
-            <h2>Indie Creator Spotlight</h2>
-            <p>A monthly feature highlighting creators making waves in music, film, and art.</p>
-            <div class="artist-feature">
-                <img src="artist-placeholder.jpg" alt="Artist Thumbnail" class="artist-thumbnail">
-                <div class="artist-info">
-                    <p class="artist-name">Jane Smith</p>
-                    <p class="artist-description">An inspiring indie creator known for her unique storytelling.</p>
-                </div>
-            </div>
-        </section>
+       
     </div>
 </div>
 <!--ABOUT TAB-->
