@@ -73,6 +73,9 @@ a {
     --action-button-active-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     background-color: var(--background-color);
