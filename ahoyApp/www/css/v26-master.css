@@ -4026,7 +4026,7 @@ video::-webkit-media-controls-current-time-display {
 /* Styles for the artist grid */
 .artist-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
     gap: 15px;
     padding: 20px;
     justify-items: center;
@@ -4037,10 +4037,9 @@ video::-webkit-media-controls-current-time-display {
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 15px;
+    padding: 10px;
     text-align: center;
-    width: 100%;
-    max-width: 200px;
+    width: 100px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -4053,13 +4052,16 @@ video::-webkit-media-controls-current-time-display {
     width: 100%;
     height: auto;
     border-radius: 5px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .artist-card h3 {
-    font-size: 1rem;
-    margin: 0 0 10px 0;
+    font-size: 0.875rem;
+    margin: 5px 0;
     color: var(--text-color);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .artist-card ul {
@@ -4069,6 +4071,9 @@ video::-webkit-media-controls-current-time-display {
 }
 
 .artist-card li {
-    font-size: 0.875rem;
+    font-size: 0.75rem;
     color: var(--text-color);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
