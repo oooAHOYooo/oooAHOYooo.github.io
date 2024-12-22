@@ -11,11 +11,10 @@ let currentTime = 0;
 
 // Setup event listeners for broadcast and control buttons
 function setupEventListeners() {
-    const broadcastButton = document.getElementById("broadcast-on-button");
-    broadcastButton.addEventListener("click", toggleBroadcast);
+    const playPauseButton = document.getElementById("play-pause-button");
+    playPauseButton.addEventListener("click", toggleBroadcast); // Use play button for broadcast
 
     const controlButtons = [
-        { id: "play-pause-button", action: togglePlayPause },
         { id: "prev-button", action: playPrevious },
         { id: "next-button", action: playNext },
         { id: "rewind-button", action: rewind },
@@ -33,17 +32,15 @@ function setupEventListeners() {
     });
 }
 
-// Toggle the broadcast state
+// Toggle the broadcast state using the play button
 function toggleBroadcast() {
-    const broadcastButton = document.getElementById("broadcast-on-button");
+    const playPauseButton = document.getElementById("play-pause-button");
     const videoElement = document.getElementById("video-broadcast-container");
 
     if (isBroadcasting) {
         currentTime = videoElement.currentTime; // Save the current time
         videoElement.pause();
-        broadcastButton.classList.remove("active-broadcast");
-        broadcastButton.classList.add("full-width"); // Make button full width when paused
-        broadcastButton.textContent = "Start Broadcast";
+        playPauseButton.textContent = "[► PLAY]";
     } else {
         if (currentBlockFiles.length > 0) {
             videoElement.currentTime = currentTime; // Resume from saved time
@@ -53,9 +50,7 @@ function toggleBroadcast() {
             prepareVideo(currentMediaIndex);
             videoElement.play();
         }
-        broadcastButton.classList.add("active-broadcast");
-        broadcastButton.classList.remove("full-width"); // Shrink button when playing
-        broadcastButton.textContent = "Pause Broadcast";
+        playPauseButton.textContent = "[❚❚ PAUSE]";
     }
 
     isBroadcasting = !isBroadcasting;
