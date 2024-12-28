@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ahoy Beta Signup</title>
+        <link rel="stylesheet" href="css/beta.css">
+        <script
+            src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.0/dist/cdn.min.js"
+            defer></script>
+    </head>
+    <body>
+
+        <section class="beta-signup-section"
+            x-data="{ submitted: false, hover: false }">
+            <img src="images/u_ahoy23.png" alt="Ahoy Logo"
+                :class="{ 'transform scale-110 transition-transform duration-300': hover }"
+                @mouseenter="hover = true" @mouseleave="hover = false"
+                class="responsive-logo">
+            <h2>Join the Ahoy Beta Program</h2>
+            <p>Sign up to be among the first to experience the Ahoy Indie Media
+                platform and provide valuable feedback.</p>
+
+            <form id="betaSignupForm"
+                action="https://formspree.io/f/YOUR_FORM_ID" method="POST"
+                x-show="!submitted" @submit.prevent="submitted = true">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name"
+                        placeholder="Your Name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email"
+                        placeholder="Your Email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="platform">Preferred Platform</label>
+                    <select id="platform" name="platform" required>
+                        <option value="iOS">iOS (TestFlight)</option>
+                        <option value="Android">Android (Google Play
+                            Beta)</option>
+                        <option value="Web">Web Browser</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="feedback">Additional Comments</label>
+                    <textarea id="feedback" name="feedback"
+                        placeholder="What are you excited about?"
+                        rows="4"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" name="agreement" required>
+                        I agree to receive updates and provide feedback during
+                        the beta program.
+                    </label>
+                </div>
+
+                <button type="submit" class="cta-button">Sign Up</button>
+            </form>
+
+            <div x-show="submitted" class="thank-you-message">
+                <h3>Thank You!</h3>
+                <p>You’ve successfully signed up for the Ahoy Beta Program. We’l
+                </p>
+            </div>
+        </section>
+    </body>
+</html>
