@@ -4,18 +4,172 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Ahoy Beta Signup</title>
-        <link rel="stylesheet" href="css/beta.css">
+        <link rel="stylesheet" href="beta.css">
         <script
             src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.0/dist/cdn.min.js"
             defer></script>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap"
+            rel="stylesheet">
+        <style>
+        :root {
+            --background-color: #FFA07A; /* Light Salmon Pink */
+            --gold-color: #FFD700; /* Gold */
+            --text-color: #333333; /* Dark Grey */
+            --font-family: 'Barlow', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-family);
+            margin: 0;
+            background: linear-gradient(135deg, #FFF1E6, #FFA07A);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            animation: breathing 5s ease-in-out infinite;
+        }
+
+        @keyframes breathing {
+            0%, 100% {
+                background-size: 100% 100%;
+            }
+            50% {
+                background-size: 110% 110%;
+            }
+        }
+
+        .beta-signup-section {
+            text-align: center;
+            padding: 40px 20px;
+            border-radius: 20px;
+            margin: 20px auto;
+            max-width: 400px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .beta-signup-section img {
+            max-width: 100px;
+            height: auto;
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+
+        .beta-signup-section img:hover {
+            transform: scale(1.1);
+        }
+
+        h2 {
+            color: var(--gold-color);
+            margin-bottom: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        input,
+        select,
+        textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: var(--text-color);
+            font-family: var(--font-family);
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: var(--gold-color);
+            box-shadow: 0 0 8px var(--gold-color);
+        }
+
+        .cta-button {
+            width: 100%;
+            padding: 15px;
+            background-color: var(--background-color);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .cta-button:hover {
+            background-color: var(--gold-color);
+            transform: scale(1.05);
+        }
+
+        .thank-you-message {
+            color: var(--text-color);
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 20px 0;
+        }
+
+        .responsive-logo {
+            max-width: 80px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 480px) {
+            .beta-signup-section {
+                padding: 20px;
+            }
+
+            .cta-button {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+        }
+
+        .back-home-button {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 56px;
+            height: 56px;
+            background-color: var(--background-color);
+            border-radius: 50%;
+            border: none;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-home-button:hover {
+            background-color: var(--gold-color);
+            transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+    </style>
     </head>
     <body>
 
-        <section class="beta-signup-section"
-            x-data="{ submitted: false, hover: false }">
+        <section class="beta-signup-section" x-data="{ submitted: false }">
             <img src="images/u_ahoy23.png" alt="Ahoy Logo"
-                :class="{ 'transform scale-110 transition-transform duration-300': hover }"
-                @mouseenter="hover = true" @mouseleave="hover = false"
                 class="responsive-logo">
             <h2>Join the Ahoy Beta Program</h2>
             <p>Sign up to be among the first to experience the Ahoy Indie Media
@@ -66,9 +220,10 @@
 
             <div x-show="submitted" class="thank-you-message">
                 <h3>Thank You!</h3>
-                <p>You’ve successfully signed up for the Ahoy Beta Program. We’l
-                </p>
+                <p>You’ve successfully signed up for the Ahoy Beta Program.
+                    We’ll be in touch soon!</p>
             </div>
         </section>
+
     </body>
 </html>
