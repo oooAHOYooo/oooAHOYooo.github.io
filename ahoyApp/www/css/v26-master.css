@@ -3663,26 +3663,16 @@ input[type="date"]:focus {
 #broadcast-media-title {
     font-style: normal;
     letter-spacing: 100%;
-    /* Adjusted for better readability */
     font-weight: 300;
     font-size: 24px;
     line-height: 1;
     color: var(--text-color);
-    /* Use a solid color for text */
     background: rgba(255, 255, 255, 0.2);
-    /* Glass-like background */
     backdrop-filter: blur(10px);
-    /* Blur effect for glass */
     padding: 10px;
-    /* Padding for better spacing */
     border-radius: 10px;
-    /* Rounded corners */
-    -webkit-background-clip: border-box;
-    /* Ensure background clip is correct */
     -webkit-text-fill-color: initial;
-    /* Reset text fill color */
     animation: none;
-    /* Remove animation */
     min-height: 100px;
 }
 
