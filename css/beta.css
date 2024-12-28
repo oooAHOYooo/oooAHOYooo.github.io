@@ -1,9 +1,10 @@
 :root {
     --background-color: #FFA07A;
     /* Light Salmon Pink */
-    --gold-color: #FFD700;
+    --gold-color: #000000;
     /* Gold */
     --text-color: #333333;
+    --success-color: #00FF00;
     /* Dark Grey */
     --font-family: 'Barlow', sans-serif;
 }
@@ -168,7 +169,25 @@ textarea:focus {
     cursor: pointer;
 }
 
-.agree-to-terms:hover {
-    transform: scale(1.1);
-    color: var(--background-color);
+
+
+.agree-to-terms input[type="checkbox"] {
+    width: 52px;
+    height: 52px;
+    appearance: none;
+    background-color: var(--background-color);
+    border: 2px solid var(--gold-color);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.agree-to-terms input[type="checkbox"]:checked {
+    background-color: var(--success-color);
+}
+
+.agree-to-terms input[type="checkbox"]:hover {
+    background-color: var(--gold-color);
 }
