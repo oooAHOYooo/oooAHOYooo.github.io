@@ -4055,6 +4055,7 @@ video::-webkit-media-controls-current-time-display {
     padding: 10px;
     text-align: center;
     width: 150px;
+    height: 150px;
     /* Adjusted for desktop */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -4077,7 +4078,8 @@ video::-webkit-media-controls-current-time-display {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Darker background for less translucency */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -4085,31 +4087,132 @@ video::-webkit-media-controls-current-time-display {
 }
 
 .artist-expanded-content {
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.15);
+    /* Less translucent background */
+    backdrop-filter: blur(30px);
+    /* Increased blur for a stronger glass effect */
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 20px;
     text-align: center;
-    max-width: 500px;
     width: 90%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    /* Ensures a 16:9 aspect ratio */
+    aspect-ratio: 16 / 9;
+    /* Sets the aspect ratio */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 6px 10px rgba(255, 255, 255, 0.2) inset;
     color: var(--text-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow-y: scroll;
+    /* Enables vertical scrolling */
+    animation: saturationBreath 3s infinite alternate;
+    /* Breathing saturation effect */
 }
 
 .artist-image-large {
     width: 100%;
     height: auto;
-    border-radius: 5px;
-    margin-bottom: 10px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .artist-expanded-content a {
     display: block;
-    margin: 10px 0;
+    margin: 15px 0;
     color: #007bff;
     text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 .artist-expanded-content a:hover {
     text-decoration: underline;
+    color: #0056b3;
+}
+
+@keyframes saturationBreath {
+    0% {
+        filter: saturate(1);
+    }
+
+    100% {
+        filter: saturate(1.5);
+    }
+}
+
+.compact-header {
+    background-color: rgba(255, 255, 255, 0.2);
+    /* Semi-transparent background */
+    padding: 10px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    /* Subtle border */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    /* Blur effect for glassmorphism */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    /* Soft shadow */
+    border-radius: 10px;
+    /* Rounded corners */
+}
+
+.compact-header h1 {
+    font-size: 1.5em;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    /* White text color for contrast */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    /* Text shadow for depth */
+}
+
+.compact-header p {
+    font-size: 0.9em;
+    padding: 0;
+    margin: 5px 0 0 0;
+    color: var(--text-color);
+    /* Lighter text color */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    /* Text shadow for depth */
+}
+
+.artist-directory-search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Full viewport height to center vertically */
+}
+
+.search-bar {
+    width: 80%;
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2), 0 4px 6px rgba(0, 0, 0, 0.1) inset;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    color: var(--text-color);
+    font-size: 16px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.search-bar::placeholder {
+    color: rgba(var(--text-color-rgb), 0.7);
+}
+
+.search-bar:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3), 0 4px 6px rgba(0, 0, 0, 0.2) inset;
+}
+}
+
+background: rgba(255, 255, 255, 0.3);
+box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3),
+0 4px 6px rgba(0, 0, 0, 0.2) inset;
+}
 }
