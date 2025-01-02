@@ -404,11 +404,21 @@
     "featuredVideo": "S2HBPCJc",
     "featuredVideoIframe": "https://cdn.jwplayer.com/players/S2HBPCJc-9Gtk2B1J.html"
 },
+
+    {
+        "date": "2025-01-02",
+        "title": "The Rob Show #40 - Trevon Bennett",
+        "imageUrl": "https://storage.googleapis.com/ahoy-podcast-collection/ROB%20EPISODE%2040%20-%20Trevon%20Bennett.jpg",
+        "content": "Join us for an engaging conversation with Trevon Bennett in Episode 40 of The Rob Show. ",
+        "mp3Url": "https://storage.googleapis.com/ahoy-podcast-collection/The%20Rob%20Show%20-%20Episode%2040%20-%20Trevon%20-%20Ready%20-%201.mp3",
+        "active": "true",
+    "goTo": "podcast-tab"
+},
 {
     "date": "2024-12-31",
-    "title": "2024 Year in Review: Ahoy's Milestones & Achievements",
-    "content": "As we wrap up 2024, let's celebrate the milestones that made this year remarkable for Ahoy:\n\n- **Podcasts Released**: 30 episodes\n- **New Songs Added**: 52 tracks\n- **Media Clips Uploaded**: 48 videos\n- **Broadcast Hours**: 876 hours\n- **New Features Launched**: 5 major updates\n- **Community Events Hosted**: 12 gatherings\n\nJoin us in our 'Happy New Year's Special' as we reflect on these achievements and outline our ambitious goals for 2025. Tune in to our New Year's Eve broadcast for a curated mix of this year's highlights. Here's to an even more exciting 2025 with Ahoy!",
-    "active": "true",
+    "title": "2024 A Year in Review: Ahoy's Milestones & Achievements",
+    "content": "As 2024 is a couple of days behind us - lets take some time to reflect on what we have done this year, let's celebrate the milestones that made this year remarkable for Ahoy:\n\n- **Podcasts Released**: 30 episodes\n- **New Songs Added**: 52 tracks\n- **Media Clips Uploaded**: 48 videos\n- **Broadcast Hours**: 876 hours\n- **New Features Launched**: 5 major updates\n- **Community Events Hosted**: 12 gatherings\n\nJoin us in our 'Happy New Year's Special' as we reflect on these achievements and outline our ambitious goals for 2025. Tune in to our New Year's Eve broadcast for a curated mix of this year's highlights. Here's to an even more exciting 2025 with Ahoy!",
+    "active": "false",
     "goTo": "media-tab",
     "imageUrl": "https://storage.googleapis.com/ahoy-dynamic-content/news/new-years-special-2024.jpg",
     "externalLink": "https://ahoy.ooo/new-years-special"
