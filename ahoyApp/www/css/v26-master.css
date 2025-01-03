@@ -4209,10 +4209,117 @@ video::-webkit-media-controls-current-time-display {
     background: rgba(255, 255, 255, 0.3);
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3), 0 4px 6px rgba(0, 0, 0, 0.2) inset;
 }
+
+/* Top Navigation Bar Styles */
+.top-nav {
+    position: fixed;
+    top: 0;
+    height: 32px;
+    width: 100%;
+    background-color: var(--background-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    backdrop-filter: blur(10px);
 }
 
-background: rgba(255, 255, 255, 0.3);
-box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3),
-0 4px 6px rgba(0, 0, 0, 0.2) inset;
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
 }
+
+.nav-logo img {
+    height: 40px;
+    /* Adjust as needed */
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-menu li {
+    margin: 0 15px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #333;
+    /* Adjust as needed */
+    font-family: var(--font-family);
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: var(--gold-color);
+    /* Highlight color on hover */
+}
+
+.nav-toggle {
+    display: none;
+    /* Hide toggle button for always visible nav */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .nav-menu {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        /* Adjust based on nav height */
+        right: 0;
+        background-color: rgba(255, 255, 255, 0.9);
+        width: 100%;
+        display: none;
+        /* Initially hidden */
+    }
+
+    .nav-menu li {
+        margin: 10px 0;
+    }
+
+    .nav-toggle {
+        display: block;
+        /* Show toggle button on smaller screens */
+    }
+}
+
+.nav-search.ahoy-nav-search {
+    width: 30%;
+    /* Adjust width as needed */
+    /* Ensure it doesn't exceed a certain width */
+    position: relative;
+    background: rgba(255, 255, 255, 0.2);
+    /* Semi-transparent background */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    /* Glass-like effect */
+    -webkit-backdrop-filter: blur(10px);
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+}
+
+.ahoy-global-search-bar {
+    width: 100%;
+    border: none;
+    background: transparent;
+    color: var(--text-color);
+    font-size: 14px;
+    padding: 5px;
+    outline: none;
+}
+
+.ahoy-global-search-bar::placeholder {
+    color: rgba(var(--text-color-rgb), 0.7);
 }

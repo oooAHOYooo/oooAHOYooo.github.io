@@ -39,6 +39,26 @@
 <audio id="musicAudioPlayer"></audio>
 <audio id="podcastAudioPlayer"></audio>
 <div id="tabSortza">
+<div class="top-nav-ahoy" x-data="{ open: false }">
+  <div class="nav-container">
+    <!-- Time Display -->
+    <div class="nav-time ahoy-nav-time">
+      <span id="ahoy-current-time"></span>
+    </div>
+    
+    <!-- Dropdown Icon -->
+    <div class="nav-dropdown-icon ahoy-nav-dropdown-icon">
+      <button @click="open = !open" class="ahoy-nav-toggle">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+    
+    <!-- Global Search Bar -->
+    <div class="nav-search ahoy-nav-search">
+      <input type="text" placeholder="Search..." class="ahoy-global-search-bar">
+    </div>
+  </div>
+</div>
 <div id="media-tab-a" class="tab-content">
 <div class="tv-container">
 <div id="media-display-text">
@@ -449,6 +469,24 @@
 <script src="js/src/offlineMode.js"></script>
 <script src="js/src/alumni.js"></script>
 <script src="js/src/artist-database.js"></script>
+
+<!-- Add the top navigation bar -->
+<nav class="top-nav" x-data="{ open: false }">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <img src="./img/favicon_ahoy.png" alt="Ahoy Indie Media Logo" class="nav-logo-img">
+        </div>
+        <div class="nav-links">
+            <button @click="open = !open" class="nav-toggle">Menu</button>
+            <ul :class="{ 'nav-menu': true, 'open': open }">
+                <li><a href="#news-tab" onclick="navigateToTab('news-tab')">News</a></li>
+                <li><a href="#about-tab" onclick="navigateToTab('about-tab')">About</a></li>
+                <li><a href="#community-tab" onclick="navigateToTab('community-tab')">Community</a></li>
+                <li><a href="#settings-tab" onclick="navigateToTab('settings-tab')">Settings</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
 
 </body>
 </html>
