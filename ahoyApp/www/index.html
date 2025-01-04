@@ -15,7 +15,7 @@
 <meta name="format-detection" content="telephone=no">
 <meta name="msapplication-tap-highlight" content="no">
 <meta name="color-scheme" content="light dark">
-<title>Ahoy Indie Media</title>
+<title>Ahoy Indie Media - Live Indie Music, Spotlights, filmmakers and more</title>
 <link rel="dns-prefetch" href="//www.gstatic.com">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
@@ -27,7 +27,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
 <link rel="stylesheet" href="./css/v26-master.css">
 <link rel="icon" type="image/png" href="./img/favicon_ahoy.png">
-<script src="js/src/function_clearCacheAndReset.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.0/dist/cdn.min.js" defer></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-WVDL9N1HDT"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-WVDL9N1HDT');</script>
@@ -39,6 +38,7 @@
 <audio id="musicAudioPlayer"></audio>
 <audio id="podcastAudioPlayer"></audio>
 <div id="tabSortza">
+<!-- MEDIA TAB -->
 <div id="media-tab-a" class="tab-content">
 <div class="tv-container">
 <div id="media-display-text">
@@ -72,6 +72,8 @@
 </table>
 </div>
 </div>
+<!-- END OF MEDIA TAB -->
+<!-- TRUE CLASSIC RADIO TAB -->
 <div id="true-classic-radio" class="tab-content">
 <div class="radio-widget">
 <div class="player-container">
@@ -117,6 +119,8 @@
 </div>
 </div>
 </div>
+<!-- END OF TRUE CLASSIC RADIO TAB -->
+<!-- PODCAST TAB -->
 <div id="podcast-tab" class="tab-content">
 <div class="player-container">
 <div class="song-info">
@@ -157,7 +161,8 @@
 <tbody id="podcastListBody"></tbody>
 </table>
 </div>
-<!--COMMUNITY TAB-->
+<!-- END OF PODCAST TAB -->
+<!-- COMMUNITY TAB -->
 
 <div id="community-tab" class="tab-content">
     <div class="community-container">
@@ -201,9 +206,9 @@
               <button @click="closeArtistView()">Close</button>
               <h2 x-text="selectedArtist.name"></h2>
               <img :src="selectedArtist.image" alt="" class="artist-image-large">
-              <p>More</p>
-              <a :href="selectedArtist.merchLink" target="_blank">Merch</a>
-              <a :href="selectedArtist.externalLink" target="_blank">Visit Website</a>
+              <p x-show="selectedArtist.externalLink">More</p>
+              <a x-show="selectedArtist.merchLink" :href="selectedArtist.merchLink" target="_blank">Merch</a>
+              <a x-show="selectedArtist.externalLink" :href="selectedArtist.externalLink" target="_blank">Visit Website</a>
             </div>
           </div>
         </div>
@@ -221,12 +226,13 @@
             <p>Help us stay indie and ad-free by contributing to our mission.</p>
             <div class="support-content">
                 <p>Support Ahoy Indie Media by contributing to our mission of providing ad-free, quality indie media.</p>
-                <button class="action-button"><a href="https://checkout.square.site/merchant/MLCEJBSG4Z671/checkout/OTECA53PANFVTTCVDCDAZNRX" class="support-button">Support Ahoy Indie Media</a></button>
+                <button class="action-button"><a href="https://checkout.square.site/merchant/MLCEJBSG4Z671/checkout/OTECA53PANFVTTCVDCDAZNRX" class="support-button">Donate to Ahoy Indie Media</a></button>
             </div>
         </section>       
     </div>
 </div>
-<!--ABOUT TAB-->
+<!-- END OF COMMUNITY TAB -->
+<!-- ABOUT TAB -->
 <div id="about-tab" class="tab-content">
 <img src="./img/assets/u_ahoy23.png" alt="Ahoy Indie Media Logo" class="homepage-logo" onclick="navigateToTab('news-tab')">
 <div class="newsSubHeaderMenu" id="homepage-top-submenu">
@@ -253,6 +259,8 @@
 <p class="team-member-role">Movie Star</p>
 </div>
 </div>
+<!-- END OF ABOUT TAB -->
+<!-- SETTINGS TAB -->
 <div class="settings-widget" id="privacy-section">
 <p>To learn more about how we handle your data, please read our</p>
 <a href="https://ahoy.ooo/privacy.html"><button class="action-button">Privacy Policy</button></a>
@@ -261,6 +269,8 @@
 </div>
 </div>
 </div>
+<!-- END OF SETTINGS TAB -->
+<!-- NEWS TAB -->
 <div id="news-tab" class="tab-content active">
 <img src="./img/assets/u_ahoy23.png" alt="Ahoy Indie Media Logo" class="homepage-logo" style="font-family:'Times New Roman',Times,serif;font-size:24px;text-transform:uppercase;">
 <hr>
@@ -283,10 +293,11 @@
 <hr>
 <br>
 <img src="./img/assets/u_ahoy23.png" alt="Ahoy Indie Media Logo" class="homepage-logo" style="font-family:'Times New Roman',Times,serif;font-size:24px;text-transform:uppercase;">
-<p style="font-family:'Times New Roman',Times,serif;font-size:18px;text-align:center;">MMXXIV</p>
-<br><br>
-<hr>
+<p style="font-family:'Times New Roman',Times,serif;font-size:18px;text-align:center;">MMXXV</p>
+
 </div>
+<!-- END OF NEWS TAB -->
+<!-- VINTAGE BROADCAST TAB -->
 <div id="vintage-broadcast-tab" class="tab-content">
  
 
@@ -309,21 +320,10 @@
   </div> -->
 
     
+<!-- BROADCAST REMOTE CONTROLS -->
+    <div class="remote-controls"><button id="prev-button" class="remoteControlButton"><i class="fas fa-step-backward"></i></button><button id="play-pause-button" class="action-button full-width">[► PLAY]</button><button id="next-button" class="remoteControlButton"><i class="fas fa-step-forward"></i></button><button id="rewind-button" class="remoteControlButton"><i class="fas fa-undo"></i></button><button id="shuffle-button" class="remoteControlButton"><i class="fas fa-random"></i></button><button id="fullscreen-button" class="remoteControlButton"><i class="fas fa-expand"></i></button><button id="mute-button" class="remoteControlButton"><i class="fas fa-volume-mute"></i></button><button id="volume-down" class="remoteControlButton"><i class="fas fa-volume-down"></i></button><button id="volume-up" class="remoteControlButton"><i class="fas fa-volume-up"></i></button></div>
+<!-- END OF BROADCAST REMOTE CONTROLS -->
 
-    <div class="remote-controls">
-      <button id="prev-button" class="remoteControlButton"><i class="fas fa-step-backward"></i></button> <!-- Updated button -->
-      <button id="play-pause-button" class="action-button full-width">
-        [► PLAY]
-    </button>
-      <button id="next-button" class="remoteControlButton"><i class="fas fa-step-forward"></i></button>
-      <!-- Removed fast-forward-button -->
-      <button id="rewind-button" class="remoteControlButton"><i class="fas fa-undo"></i></button>
-      <button id="shuffle-button" class="remoteControlButton"><i class="fas fa-random"></i></button>
-      <button id="fullscreen-button" class="remoteControlButton"><i class="fas fa-expand"></i></button>
-      <button id="mute-button" class="remoteControlButton"><i class="fas fa-volume-mute"></i></button>
-      <button id="volume-down" class="remoteControlButton"><i class="fas fa-volume-down"></i></button>
-      <button id="volume-up" class="remoteControlButton"><i class="fas fa-volume-up"></i></button>
-  </div>
 <div id="about-ahoy-broadcast" class="about-section">
   <h3>About Ahoy Broadcast</h3>
   <p>Ahoy Broadcast recreates the essence of classic TV for the digital age, delivering rotating indie playlists that shift throughout the day, just like a traditional TV broadcast would.</p>
@@ -346,7 +346,8 @@
 </div>
 </div>
 </div>
-
+<!-- END OF VINTAGE BROADCAST TAB -->
+<!-- SETTINGS TAB -->
 <div id="settings-tab" class="tab-content">
 <h1>Settings</h1>
 <hr>
@@ -379,7 +380,8 @@
   </div>
 </div>
 <hr>
-<!-- Upcoming Features Section -->
+<!-- END OF SETTINGS TAB -->
+<!-- UPCOMING FEATURES SECTION -->
 <div id="upcoming-features" class="settings-widget">
     <h2>Upcoming Features</h2>
     <button class="action-button" onclick="navigateToTab('community-tab')">  <i class="fas fa-users"></i></button>
@@ -404,34 +406,23 @@
     <!-- Changelog entries will be inserted here by JavaScript -->
   </div>
 </div>
+<!-- END OF UPCOMING FEATURES SECTION -->
 
 <!-- DOCK -->
-<div id="v25-dock-container">
-<div id="v25-dock">
-<div id="v25-icon-container" class="scroll-container">
-<div class="v25-dock-icon" onclick="navigateToTab('news-tab')"><i class="fas fa-home"></i></div>
-<div class="v25-dock-icon" onclick="navigateToTab('true-classic-radio')"><i class="fas fa-music"></i></div>
-<div class="v25-dock-icon" onclick="navigateToTab('vintage-broadcast-tab')">
-  <i class="fas fa-tv"></i> 
-</div>
-<div class="v25-dock-icon" onclick="navigateToTab('podcast-tab')"><i class="fas fa-podcast"></i></div>
-<div class="v25-dock-icon" onclick="navigateToTab('media-tab-a')"><i class="fas fa-image"></i></div>
-
-
-<div class="v25-dock-icon" onclick="navigateToTab('settings-tab')"><i class="fas fa-cog"></i></div>
-</div>
-</div>
-</div>
+<div id="v25-dock-container"><div id="v25-dock"><div id="v25-icon-container" class="scroll-container"><div class="v25-dock-icon" onclick="navigateToTab('news-tab')"><i class="fas fa-home"></i></div><div class="v25-dock-icon" onclick="navigateToTab('true-classic-radio')"><i class="fas fa-music"></i></div><div class="v25-dock-icon" onclick="navigateToTab('vintage-broadcast-tab')"><i class="fas fa-tv"></i></div><div class="v25-dock-icon" onclick="navigateToTab('podcast-tab')"><i class="fas fa-podcast"></i></div><div class="v25-dock-icon" onclick="navigateToTab('media-tab-a')"><i class="fas fa-image"></i></div><div class="v25-dock-icon" onclick="navigateToTab('settings-tab')"><i class="fas fa-cog"></i></div></div></div></div>
 <!-- END OF DOCK -->
 <!-- <div id="sound-timeline-container">
 <div id="sound-timeline-progress"></div> -->
+
+
+<!-- END OF BODY -->
 </div>
-</div>
-</div>
+
+<!-- END OF BODY -->
+<!-- START OF SCRIPTS -->
 <script src="js/src/newsletter.js"></script>
 <!-- <script src="js/src/updates-commits.js"></script> -->
 <script src="js/src/function-switchTheme.js"></script>
-
 <script src="js/src/nav-leftDash.js"></script>
 <script src="js/src/function_today_date.js"></script>
 <script src="js/src/media.js"></script>
@@ -449,6 +440,8 @@
 <script src="js/src/offlineMode.js"></script>
 <script src="js/src/alumni.js"></script>
 <script src="js/src/artist-database.js"></script>
+<script src="js/src/function_clearCacheAndReset.js"></script>
+
 
 </body>
 </html>
