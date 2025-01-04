@@ -380,6 +380,12 @@
   </div>
 </div>
 <hr>
+<!-- Experimental Features Toggle -->
+<div id="experimental-features-widget" class="settings-widget">
+<label for="experimental-toggle">Enable Experimental Features:</label>
+<input type="checkbox" id="experimental-toggle" onclick="toggleExperimentalFeatures()">
+</div>
+<hr>
 <!-- END OF SETTINGS TAB -->
 <!-- UPCOMING FEATURES SECTION -->
 <div id="upcoming-features" class="settings-widget">
@@ -408,8 +414,47 @@
 </div>
 <!-- END OF UPCOMING FEATURES SECTION -->
 
+<!-- ACCOUNT TAB -->
+<div id="account-tab" class="tab-content experimental-feature">
+    <h1>Account</h1>
+    <p>Manage your account settings and preferences here.</p>
+    <!-- Add more account-related content here -->
+</div>
+<!-- END OF ACCOUNT TAB -->
+
+<!-- GAME TAB -->
+<div id="game-tab" class="tab-content experimental-feature">
+    <h1>Games</h1>
+    <p>Explore and play indie games here.</p>
+    <!-- Add more game-related content here -->
+</div>
+<!-- END OF GAME TAB -->
+
+<!-- SEARCH TAB -->
+<div id="search-tab" class="tab-content experimental-feature">
+    <h1>Search</h1>
+    <p>Search across all media, podcasts, and more.</p>
+    <!-- Add more search-related content here -->
+</div>
+<!-- END OF SEARCH TAB -->
+
 <!-- DOCK -->
-<div id="v25-dock-container"><div id="v25-dock"><div id="v25-icon-container" class="scroll-container"><div class="v25-dock-icon" onclick="navigateToTab('news-tab')"><i class="fas fa-home"></i></div><div class="v25-dock-icon" onclick="navigateToTab('true-classic-radio')"><i class="fas fa-music"></i></div><div class="v25-dock-icon" onclick="navigateToTab('vintage-broadcast-tab')"><i class="fas fa-tv"></i></div><div class="v25-dock-icon" onclick="navigateToTab('podcast-tab')"><i class="fas fa-podcast"></i></div><div class="v25-dock-icon" onclick="navigateToTab('media-tab-a')"><i class="fas fa-image"></i></div><div class="v25-dock-icon" onclick="navigateToTab('settings-tab')"><i class="fas fa-cog"></i></div></div></div></div>
+<div id="v25-dock-container">
+    <div id="v25-dock">
+        <div id="v25-icon-container" class="scroll-container">
+            <div class="v25-dock-icon" onclick="navigateToTab('news-tab')"><i class="fas fa-home"></i></div>
+            <div class="v25-dock-icon" onclick="navigateToTab('true-classic-radio')"><i class="fas fa-music"></i></div>
+            <div class="v25-dock-icon" onclick="navigateToTab('vintage-broadcast-tab')"><i class="fas fa-tv"></i></div>
+            <div class="v25-dock-icon" onclick="navigateToTab('podcast-tab')"><i class="fas fa-podcast"></i></div>
+            <div class="v25-dock-icon" onclick="navigateToTab('media-tab-a')"><i class="fas fa-image"></i></div>
+            <div class="v25-dock-icon" onclick="navigateToTab('settings-tab')"><i class="fas fa-cog"></i></div>
+            <!-- New Dock Icons -->
+            <div id="account-dock-icon" class="v25-dock-icon" onclick="navigateToTab('account-tab')"><i class="fas fa-user"></i></div>
+            <div id="game-dock-icon" class="v25-dock-icon" onclick="navigateToTab('game-tab')"><i class="fas fa-gamepad"></i></div>
+            <div id="search-dock-icon" class="v25-dock-icon" onclick="navigateToTab('search-tab')"><i class="fas fa-search"></i></div>
+        </div>
+    </div>
+</div>
 <!-- END OF DOCK -->
 <!-- <div id="sound-timeline-container">
 <div id="sound-timeline-progress"></div> -->
@@ -441,7 +486,8 @@
 <script src="js/src/alumni.js"></script>
 <script src="js/src/artist-database.js"></script>
 <script src="js/src/function_clearCacheAndReset.js"></script>
-
+<script src="js/src/function-toggle-exp-tabs.js"></script>
 
 </body>
 </html>
+  </html>
