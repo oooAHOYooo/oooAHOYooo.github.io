@@ -414,14 +414,15 @@
         "active": "true",
     "goTo": "podcast-tab"
 },
+
 {
-    "date": "2024-12-31",
-    "title": "2024 A Year in Review: Ahoy's Milestones & Achievements",
-    "content": "As 2024 is a couple of days behind us - lets take some time to reflect on what we have done this year, let's celebrate the milestones that made this year remarkable for Ahoy:\n\n- **Podcasts Released**: 30 episodes\n- **New Songs Added**: 52 tracks\n- **Media Clips Uploaded**: 48 videos\n- **Broadcast Hours**: 876 hours\n- **New Features Launched**: 5 major updates\n- **Community Events Hosted**: 12 gatherings\n\nJoin us in our 'Happy New Year's Special' as we reflect on these achievements and outline our ambitious goals for 2025. Tune in to our New Year's Eve broadcast for a curated mix of this year's highlights. Here's to an even more exciting 2025 with Ahoy!",
-    "active": "false",
-    "goTo": "media-tab",
-    "imageUrl": "https://storage.googleapis.com/ahoy-dynamic-content/news/new-years-special-2024.jpg",
-    "externalLink": "https://ahoy.ooo/new-years-special"
+    "date": "2025-01-07",
+    "title": "The Rob Show #41 - Phil Toran",
+    "imageUrl": "https://storage.googleapis.com/ahoy-podcast-collection/the%20rob%20show/ROB%20EPISODE%2041%20-%20Phil%20Toran.jpg",
+    "content": "Phil Toran, a filmmaker - costar of pal-bot - finally joins his old pal Rob. This one is a bit longer but for the fans.",
+    "active": "true",
+"goTo": "podcast-tab"
+
 }
 
 ]
