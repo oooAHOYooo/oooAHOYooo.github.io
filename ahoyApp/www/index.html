@@ -429,9 +429,36 @@
 
 <!-- GAME TAB -->
 <div id="game-tab" class="tab-content experimental-feature">
-    <h1>Games</h1>
-    <p>Explore and play indie games here.</p>
-    <!-- Add more game-related content here -->
+
+    <div id="puddle-game">
+      <h1>Puddle</h1>
+      <p>Guess the 6-letter word of the day! You have 6 attempts.</p>
+  
+      <!-- Alerts -->
+      <div id="alert-box" class="alert">
+          <p id="alert-message"></p>
+      </div>
+  
+      <!-- Game Grid -->
+      <div id="puddle-game-container" class="game-container"></div>
+  
+      <!-- Current Input Display -->
+      <div id="current-input" class="current-input"></div>
+  
+      <!-- Keyboard -->
+      <div id="puddle-keyboard" class="keyboard">
+        <button class="key" data-key="backspace">Backspace</button>
+
+      </div>
+  
+      <!-- Submit Button -->
+      <button id="guess-submit" class="action-button">Submit</button>
+  </div>
+  <h1>About Games</h1>
+  <p>Listen to and play indie games here.</p>
+  <p>Ahoy Games are made with love</p>
+  <!-- Add more game-related content here -->
+
 </div>
 <!-- END OF GAME TAB -->
 
@@ -493,7 +520,7 @@
 <script src="js/src/artist-database.js"></script>
 <script src="js/src/function_clearCacheAndReset.js"></script>
 <script src="js/src/function-toggle-exp-tabs.js"></script>
+<script src="js/src/game-puddle.js"></script>
 
 </body>
 </html>
-  </html>
