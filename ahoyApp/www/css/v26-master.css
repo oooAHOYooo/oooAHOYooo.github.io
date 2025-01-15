@@ -4306,12 +4306,12 @@ video::-webkit-media-controls-current-time-display {
 .letter.partial {
     background-color: orange;
     color: var(--border-color);
-    animation: glow 1s infinite alternate; // Added animation
+    animation: glow 1s infinite alternate;
 }
 
 .letter.incorrect {
     background-color: gray;
-    color: white;
+    color: var(--text-color);
 }
 
 /* Current Input */
@@ -4407,8 +4407,8 @@ video::-webkit-media-controls-current-time-display {
 }
 
 .key.correct {
-    background-color: green;
-    color: white;
+    background-color: mintcream;
+    color: var(--border-color);
 }
 
 .key.incorrect {
@@ -4432,25 +4432,7 @@ video::-webkit-media-controls-current-time-display {
     text-shadow: 2px 2px 0 #000, 4px 4px 0 #ffcc00;
 }
 
-.fun-button {
-    background-color: #ffcc00;
-    color: #000;
-    font-size: 20px;
-    font-weight: bold;
-    border: 2px solid #ff0060;
-    border-radius: 10px;
-    padding: 15px 30px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-}
 
-.fun-button:hover {
-    background-color: #ff0060;
-    color: #fff;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
 
 .tooltip-container {
     position: relative;
@@ -4459,8 +4441,6 @@ video::-webkit-media-controls-current-time-display {
 
 .tooltip {
     position: absolute;
-    top: -40px;
-    /* Adjust as needed */
     left: 50%;
     transform: translateX(-50%);
     background-color: #333;
