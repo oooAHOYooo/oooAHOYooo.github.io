@@ -431,13 +431,18 @@
 <div id="game-tab" class="tab-content experimental-feature">
 
     <div id="puddle-game">
-        <h1>Puddle</h1>
-        <div x-data="{ showTooltip: false }" class="tooltip-container">
-          <h1 @mouseenter="showTooltip = true" @mouseleave="showTooltip = false">Puddle</h1>
-          <div x-show="showTooltip" class="tooltip">
+        <div class="tooltip-container">
+          <h1 onmouseenter="showTooltip(true)" onmouseleave="showTooltip(false)">Puddle</h1>
+          <div id="tooltip" class="tooltip">
               <p>Instructions: Guess the 4-letter word of the day! You have 6 attempts. Good luck!</p>
           </div>
       </div>
+      <script>
+        function showTooltip(show) {
+            const tooltip = document.getElementById('tooltip');
+            tooltip.style.display = show ? 'block' : 'none';
+        }
+      </script>
         
         <!-- Alerts -->
         <div id="alert-box" class="alert">
@@ -452,13 +457,13 @@
         
         <!-- Keyboard -->
         <div id="puddle-keyboard" class="keyboard">
-            <button class="key" data-key="backspace">Backspace</button>
+            <button class="action-button" data-key="backspace">Backspace</button>
         </div>
         
         <!-- Submit Button -->
          <div class="keyboard-row" style="width: 100%; display: flex; justify-content: center; margin-top: 10px;">
         <button id="guess-submit" class="action-button">Enter</button>
-        <button class="action-button" data-key="backspace">Backspace</button>
+      
     </div>
     </div>
     <h1 style="font-size: 10px; margin: 0;">About Games</h1>
