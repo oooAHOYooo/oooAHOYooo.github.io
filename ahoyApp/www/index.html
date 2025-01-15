@@ -431,34 +431,40 @@
 <div id="game-tab" class="tab-content experimental-feature">
 
     <div id="puddle-game">
-      <h1>Puddle</h1>
-      <p>Guess the 6-letter word of the day! You have 6 attempts.</p>
-  
-      <!-- Alerts -->
-      <div id="alert-box" class="alert">
-          <p id="alert-message"></p>
+        <h1>Puddle</h1>
+        <div x-data="{ showTooltip: false }" class="tooltip-container">
+          <h1 @mouseenter="showTooltip = true" @mouseleave="showTooltip = false">Puddle</h1>
+          <div x-show="showTooltip" class="tooltip">
+              <p>Instructions: Guess the 4-letter word of the day! You have 6 attempts. Good luck!</p>
+          </div>
       </div>
-  
-      <!-- Game Grid -->
-      <div id="puddle-game-container" class="game-container"></div>
-  
-      <!-- Current Input Display -->
-      <div id="current-input" class="current-input"></div>
-  
-      <!-- Keyboard -->
-      <div id="puddle-keyboard" class="keyboard">
-        <button class="key" data-key="backspace">Backspace</button>
+        
+        <!-- Alerts -->
+        <div id="alert-box" class="alert">
+            <p id="alert-message"></p>
+        </div>
+        
+        <!-- Game Grid -->
+        <div id="puddle-game-container" class="game-container"></div>
+        
+        <!-- Current Input Display -->
+        <div id="current-input" class="current-input"></div>
+        
+        <!-- Keyboard -->
+        <div id="puddle-keyboard" class="keyboard">
+            <button class="key" data-key="backspace">Backspace</button>
+        </div>
+        
+        <!-- Submit Button -->
+         <div class="keyboard-row" style="width: 100%; display: flex; justify-content: center; margin-top: 10px;">
+        <button id="guess-submit" class="action-button">Enter</button>
+        <button class="action-button" data-key="backspace">Backspace</button>
+    </div>
+    </div>
+    <h1 style="font-size: 10px; margin: 0;">About Games</h1>
+    <p style="font-size: 8px; margin: 0;">Listen to and play indie games here.</p>
 
-      </div>
-  
-      <!-- Submit Button -->
-      <button id="guess-submit" class="action-button">Submit</button>
-  </div>
-  <h1>About Games</h1>
-  <p>Listen to and play indie games here.</p>
-  <p>Ahoy Games are made with love</p>
-  <!-- Add more game-related content here -->
-
+    <!-- Add more game-related content here -->
 </div>
 <!-- END OF GAME TAB -->
 

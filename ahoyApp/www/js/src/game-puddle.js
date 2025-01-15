@@ -2,11 +2,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const dailyWord = getDailyWord();
     let guesses = [];
     const maxGuesses = 6;
-    const wordLength = 6;
+    const wordLength = 4;
 
     // Generate the daily word
     function getDailyWord() {
-        const words = ["indies", "medias", "musics", "vibing", "puddle"]; // Use 6-letter words
+        const words = ["code", "game", "play", "test"]; // Use 4-letter words
         const date = new Date();
         const index = date.getDate() % words.length; // Date-seeded word selection
         return words[index];
@@ -43,6 +43,22 @@ document.addEventListener("DOMContentLoaded", function () {
                     </div>`;
             })
             .join("");
+        updateKeyboard();
+    }
+
+    // Update the keyboard to reflect guessed letters
+    function updateKeyboard() {
+        const keys = document.querySelectorAll("#puddle-keyboard .key");
+        keys.forEach((keyElement) => {
+            const key = keyElement.dataset.key.toLowerCase();
+            if (guesses.some((guess) => guess.includes(key))) {
+                if (dailyWord.includes(key)) {
+                    keyElement.classList.add("correct");
+                } else {
+                    keyElement.classList.add("incorrect");
+                }
+            }
+        });
     }
 
     // Handle input from the virtual keyboard
@@ -56,6 +72,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     `<button class="key" data-key="${key}">${key}</button>`
             )
             .join("");
+
+        // Add the backspace button
+        keyboardContainer.innerHTML += `<button class="key" data-key="backspace">Backspace</button>`;
     }
 
     // Handle keyboard and submit button logic

@@ -2693,8 +2693,8 @@ input[type="date"]:focus {
     max-width: 100%;
     overflow-x: auto;
     scrollbar-width: none;
-    gap: 20px;
-    padding: 5px 20px;
+    gap: 19px;
+    padding: 5px 19px;
 }
 
 #v25-dock::-webkit-scrollbar {
@@ -4379,4 +4379,97 @@ video::-webkit-media-controls-current-time-display {
 .key[data-key="backspace"] {
     grid-column: span 2;
     /* Make it wider if needed */
+}
+
+/* Centering the game container and keyboard */
+#puddle-game-container,
+#puddle-keyboard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    max-width: 600px;
+    /* Adjust as needed */
+}
+
+/* Styling for the keyboard keys */
+.key {
+    margin: 2px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-color);
+    transition: background-color 0.3s ease;
+}
+
+.key.correct {
+    background-color: green;
+    color: white;
+}
+
+.key.incorrect {
+    background-color: gray;
+    color: white;
+}
+
+/* Ensuring the guess rows are centered */
+.guess-row {
+    display: flex;
+    justify-content: center;
+    margin: 5px 0;
+}
+
+.game-description {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff0060;
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 0 #000, 4px 4px 0 #ffcc00;
+}
+
+.fun-button {
+    background-color: #ffcc00;
+    color: #000;
+    font-size: 20px;
+    font-weight: bold;
+    border: 2px solid #ff0060;
+    border-radius: 10px;
+    padding: 15px 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.fun-button:hover {
+    background-color: #ff0060;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.tooltip-container {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip {
+    position: absolute;
+    top: -40px;
+    /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    white-space: nowrap;
+    z-index: 10;
+    display: none;
+}
+
+.tooltip[x-show="true"] {
+    display: block;
 }
