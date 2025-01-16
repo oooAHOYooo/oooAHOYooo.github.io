@@ -421,7 +421,7 @@ button:hover {
     border-left: .91px solid var(--border-color);
     border-right: .91px solid var(--border-color);
     border-top: .91px solid var(--border-color);
-    margin-top: 3px;
+    margin-top: 2px;
     overflow: hidden;
     position: relative;
     z-index: 10;
@@ -448,8 +448,8 @@ button:hover {
 }
 
 .song-info>img {
-    width: 375px;
-    height: 375px;
+    width: 100%;
+    height: 405px;
     object-fit: cover;
     display: block;
     margin-left: auto;
@@ -4454,4 +4454,129 @@ video::-webkit-media-controls-current-time-display {
 
 .tooltip[x-show="true"] {
     display: block;
+}
+
+.app-header {
+    width: 100%;
+    text-align: center;
+    font-size: 10px;
+    font-weight: 300;
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    margin: 0px;
+}
+
+.app-header p {
+    font-size: 10px;
+    font-weight: 300;
+    color: var(--text-color);
+    padding: 0px;
+    margin: 0px;
+}
+
+#experimental-toggle {
+    display: none;
+    /* Hide the default checkbox */
+}
+
+#experimental-toggle+label {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    position: relative;
+}
+
+#experimental-toggle+label::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#experimental-toggle:checked+label::before {
+    background-color: rgba(0, 255, 255, 0.7);
+    transform: translate(-50%, -50%) scale(1.2);
+}
+
+#experimental-toggle+label:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+#search-bar-container {
+    margin: 20px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#search-bar-container input[type="text"] {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: var(--text-color);
+}
+
+#search-bar-container button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#search-bar-container button:hover {
+    background-color: var(--border-color);
+}
+
+#search-bar-container .table-container {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+#search-bar-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#search-bar-container th,
+#search-bar-container td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#search-bar-container th {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+#search-bar-container tr:hover {
+    background-color: rgba(255, 255, 255, 0.1);
 }

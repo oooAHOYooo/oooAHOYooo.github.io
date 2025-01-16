@@ -41,6 +41,9 @@
 <div id="tabSortza">
 <!-- MEDIA TAB -->
 <div id="media-tab-a" class="tab-content">
+<div class="app-header">
+  <p>Media Player</p>
+</div>
 <div class="tv-container">
 <div id="media-display-text">
 <div id="media-artist-name"><p>This is where the Media Artist Name will Go</p></div>
@@ -53,10 +56,31 @@
 </video>
 </div>
 <h2>SEARCH MEDIA LIBRARY:</h2>
-<div class="search-container" id="search-container">
-<input type="text" id="search-input" placeholder="Search by title or artist..."/>
-<button class="action-button" onclick="searchMedia()">Search</button>
-<button id="clear-search" class="action-button">Clear</button>
+<div id="search-bar-container" x-data="searchApp()">
+    <input type="text" x-model="query" placeholder="Search..." />
+    <button @click="performSearch()">Search</button>
+    <button @click="showAllContent()">Show All Content</button>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Source</th>
+                </tr>
+            </thead>
+            <tbody>
+                <template x-for="item in (showAll ? allContent : results)" :key="item.id">
+                    <tr>
+                        <td x-text="item.title"></td>
+                        <td x-text="item.description"></td>
+                        <td x-text="item.source"></td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </div>
 </div>
 <hr>
 <div id="media-sort-buttons" class="sort-buttons-container">
@@ -76,6 +100,9 @@
 <!-- END OF MEDIA TAB -->
 <!-- TRUE CLASSIC RADIO TAB -->
 <div id="true-classic-radio" class="tab-content">
+  <div class="app-header">
+    <p>Music Player</p>
+  </div>
 <div class="radio-widget">
 <div class="player-container">
 <div class="song-info">
@@ -123,7 +150,9 @@
 <!-- END OF TRUE CLASSIC RADIO TAB -->
 <!-- PODCAST TAB -->
 <div id="podcast-tab" class="tab-content">
-
+<div class="app-header">
+  <p>Podcast Player</p>
+</div>
 <div id="podcast-player-container" class="player-container">
 <div class="song-info">
 <div class="podcast-thumbnail-container">
@@ -274,6 +303,9 @@
 <!-- END OF SETTINGS TAB -->
 <!-- NEWS TAB -->
 <div id="news-tab" class="tab-content active">
+  <div class="app-header">
+    <p>Front Page News</p>
+  </div>
 <img src="./img/assets/u_ahoy23.png" alt="Ahoy Indie Media Logo" class="homepage-logo" style="font-family:'Times New Roman',Times,serif;font-size:24px;text-transform:uppercase;">
 <hr>
 <h2 id="calendar-date"></h2>
@@ -301,7 +333,9 @@
 <!-- END OF NEWS TAB -->
 <!-- VINTAGE BROADCAST TAB -->
 <div id="vintage-broadcast-tab" class="tab-content">
- 
+ <div class="app-header">
+  <p>Vintage Broadcast</p>
+ </div>
 
   <div class="broadcast-player-container">
       <video id="video-broadcast-container" width="100%" controls>
@@ -351,10 +385,14 @@
 <!-- END OF VINTAGE BROADCAST TAB -->
 <!-- SETTINGS TAB -->
 <div id="settings-tab" class="tab-content">
-<h1>Settings</h1>
+<div class="app-header">
+  <p>Settings</p>
+</div>
 <hr>
 <div id="mute-audio-widget" class="settings-widget">
 <button class="action-button" onclick="toggleMute()">Mute Audio</button>
+<button class="action-button" onclick="clearCacheAndReset()">Clear Cache & Reset</button>
+<button class="action-button" id="toggle-offline-mode">Offline Mode: Off</button>
 </div>
 <hr>
 <h2>Theme Switcher</h2>
@@ -366,13 +404,6 @@
 <select id="theme-dropdown" class="theme-dropdown"></select>
 </div>
 </div>
-<hr>
-<div id="cache-reset-widget" class="settings-widget">
-  <button class="action-button" onclick="clearCacheAndReset()">Clear Cache & Reset Page</button>
-</div>
-<div id="offline-mode-widget" class="settings-widget">
-  <button class="action-button" id="toggle-offline-mode">Offline Mode: Off</button>
-</div>
 <div id="cacheModal" class="cache-modal">
   <div class="cache-modal-content">
     <p>Cache cleared and page will be reloaded.</p>
@@ -381,19 +412,21 @@
  
   </div>
 </div>
+<!-- UPCOMING FEATURES SECTION -->
+<div id="upcoming-features" class="settings-widget">
+  <h2>Test Upcoming Features</h2>
+  <button class="action-button" onclick="navigateToTab('community-tab')">  <i class="fas fa-users"></i></button>
+</div>
 <hr>
 <!-- Experimental Features Toggle -->
 <div id="experimental-features-widget" class="settings-widget">
-<label for="experimental-toggle">Enable Experimental Features:</label>
-<input type="checkbox" id="experimental-toggle" onclick="toggleExperimentalFeatures()">
+  <p>Enable Experimental Features:</p>
+  <input type="checkbox" id="experimental-toggle" onclick="toggleExperimentalFeatures()">
+  <label for="experimental-toggle"></label>
 </div>
 <hr>
 <!-- END OF SETTINGS TAB -->
-<!-- UPCOMING FEATURES SECTION -->
-<div id="upcoming-features" class="settings-widget">
-    <h2>Upcoming Features</h2>
-    <button class="action-button" onclick="navigateToTab('community-tab')">  <i class="fas fa-users"></i></button>
-</div>
+
 <hr>
 </div>
 <div id="updates-tab" class="tab-content">
@@ -420,7 +453,7 @@
 <div id="account-tab" class="tab-content experimental-feature">
     <h1>Account</h1>
     <p>Manage your account settings and preferences here.</p>
-    <button id="login-button" class="action-button">Login</button>
+    <button id="login-button" class="action-button" onclick="window.location.href='./login.html'">Login</button>
     <button id="logout-button" class="action-button">Logout</button>
     <div id="user-info"></div>
     <!-- Add more account-related content here -->
@@ -474,10 +507,22 @@
 <!-- END OF GAME TAB -->
 
 <!-- SEARCH TAB -->
-<div id="search-tab" class="tab-content experimental-feature">
+<div id="search-tab" class="tab-content experimental-feature" x-data="searchApp()">
+    <div class="app-header">
+        <p>Search</p>
+    </div>
     <h1>Search</h1>
     <p>Search across all media, podcasts, and more.</p>
-    <!-- Add more search-related content here -->
+    <input type="text" x-model="query" placeholder="Enter search query..." class="search-bar">
+    <button @click="performSearch" class="action-button">Search</button>
+    <div x-show="results.length > 0" class="search-results">
+        <template x-for="result in results" :key="result.id">
+            <div class="search-result-item" @click="navigateTo(result.url)">
+                <h3 x-text="result.title"></h3>
+                <p x-text="result.description"></p>
+            </div>
+        </template>
+    </div>
 </div>
 <!-- END OF SEARCH TAB -->
 
@@ -532,6 +577,7 @@
 <script src="js/src/function_clearCacheAndReset.js"></script>
 <script src="js/src/function-toggle-exp-tabs.js"></script>
 <script src="js/src/game-puddle.js"></script>
+<script src="js/src/super-search.js"></script>
 
 </body>
 </html>
