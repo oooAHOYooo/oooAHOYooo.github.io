@@ -4523,25 +4523,35 @@ video::-webkit-media-controls-current-time-display {
     margin-top: 38px;
 }
 
-/* Add this to your CSS file */
 .account-popup {
     position: fixed;
-    width: 90% !important;
-    top: 50%;
-    rights: 0%;
-    transform: translate(-50%, -50%);
+    min-width: 100%;
+    top: 38px;
+    left: 0 !important;
     background-color: var(--background-color);
     border: 1px solid #ccc;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    z-index: 5000;
-
-    max-width: 400px;
-    padding: 20px;
-    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    overflow-y: auto;
-    max-height: 80vh;
-    animation: kaleidoscope 5s infinite linear;
+    z-index: 5000;
+    border-radius: 10px;
+    padding: 20px;
+
+    /* Center children horizontally */
+    justify-content: center;
+    /* Center children vertically */
+}
+
+.account-popup-header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.account-popup-header h3 {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--text-color);
+    margin-right: 40px;
 }
 
 
@@ -4569,6 +4579,53 @@ video::-webkit-media-controls-current-time-display {
     transform: translateY(-2px);
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
 }
+
+
+.mood-flower {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.flower-svg {
+    transform-origin: center;
+    animation: rotateFlower 10s infinite linear;
+}
+
+.petal {
+    transform-origin: center;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+    animation: floatPetal 3s infinite alternate ease-in-out;
+}
+
+.center {
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+@keyframes rotateFlower {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes floatPetal {
+    0% {
+        transform: translateY(0px);
+    }
+
+    100% {
+        transform: translateY(-5px);
+    }
+}
+
+
+
 
 #experimental-toggle {
     display: none;

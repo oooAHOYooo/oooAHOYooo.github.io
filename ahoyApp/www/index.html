@@ -524,6 +524,19 @@
 
 <!-- ACCOUNT TAB -->
 <div id="account-tab" class="tab-content experimental-feature">
+  <div class="app-header">
+    <div class="app-header-1">
+      <a href="index.html"><img src="./img/assets/u_ahoy23.png" alt="Ahoy Indie Media Logo" width="100%" height="16px"></a>
+    </div>
+    <div class="app-header-2">
+      <p>Account</p>
+    </div>
+    <div class="app-header-3">
+      <button id="user-account-button">
+        <i class="fas fa-user" style="font-size: 16px; color:white;"></i>
+      </button>
+    </div>
+  </div>
     <h1>Account</h1>
     <p>Manage your account settings and preferences here.</p>
     <button id="login-button" class="action-button" onclick="window.location.href='./login.html'">Login</button>
@@ -635,33 +648,45 @@
 <div id="sound-timeline-progress"></div> -->
 
 <!-- Add this below each account button in the app header -->
-<div id="account-popup" class="account-popup" style="display: none;" x-data="userActivity()">
-  <button class="close-button" @click="document.getElementById('account-popup').style.display='none'">&times;</button>
+<div id="account-popup" class="account-popup" style="display: none;" x-data="userMood()">
+
+
 
   <div class="account-popup-header">
-    <h2>Your Username</h2>
+    <button class="action-button" onclick="window.location.href='login.html'">Login</button>
+    <h3>Your Potential Username</h3>
+  
   </div>
+  <hr>
   <div class="account-popup-body"> 
     
     
-    <div id="mood-app" x-data="{ mood: 3 }" x-init="init()">
+    <div id="mood-app" x-data="userMood()" x-init="init()">
       <h3>What's your mood right now?</h3>
-      <div class="mood-scale">
-        <label for="mood">Mood (0-5):</label>
-        <input type="range" id="mood" name="mood" min="0" max="5" x-model="mood" @input="updateMood(mood)">
-      </div>
-      <svg width="100" height="100" viewBox="0 0 100 100">
-        <circle cx="50" cy="50" r="40" :fill="['#ff4d4d', '#ff944d', '#ffd24d', '#ffff4d', '#b3ff4d', '#4dff4d'][mood]"></circle>
-        <!-- Add more SVG elements to create a flower shape -->
-      </svg>
+  
+      <div class="mood-flower">
+        <svg class="flower-svg" width="100" height="100" viewBox="0 0 100 100">
+          <circle class="petal" cx="50" cy="20" r="10" fill="#ff4d4d"></circle>
+          <circle class="petal" cx="80" cy="50" r="10" fill="#ff944d"></circle>
+          <circle class="petal" cx="50" cy="80" r="10" fill="#ffd24d"></circle>
+          <circle class="petal" cx="20" cy="50" r="10" fill="#ffff4d"></circle>
+          <circle class="center" cx="50" cy="50" r="15" fill="#b3ff4d"></circle>
+        </svg>
+    </div>
+    <div class="mood-scale">
+      <label for="mood">Mood (0-5):</label>
+      <input type="range" id="mood" name="mood" min="0" max="5" x-model="mood" @input="updateMood(mood)">
+      <button class="action-button" @click="saveMood()">Save Mood</button>
+    </div>
     </div>
 
 
     </div>
   
-  </div>
+<hr>
   <div class="account-popup-footer">
-    <button class="action-button">Logout</button>
+    <button class="action-button" onclick="document.getElementById('account-popup').style.display='none'; navigateToTab('account-tab')">Account Settings</button>
+    <button class="action-button" onclick="document.getElementById('account-popup').style.display='none'">Close Menu</button>
   </div>
 </div>
 <!-- END OF BODY -->
@@ -726,6 +751,20 @@ document.addEventListener('DOMContentLoaded', function() {
 <script src="js/src/super-search.js"></script>
 <script src="js/src/cast.js"></script>
 <script src="js/src/account-popup-app.js"></script>
+
+<!-- MOOD OVER TIME TAB -->
+<div id="mood-over-time-tab" class="tab-content">
+  <h1>Mood Over Time</h1>
+  <ul>
+    <template x-for="entry in moodHistory" :key="entry.timestamp">
+      <li>
+        <span x-text="new Date(entry.timestamp).toLocaleString()"></span>: 
+        <span x-text="entry.mood"></span>
+      </li>
+    </template>
+  </ul>
+</div>
+<!-- END OF MOOD OVER TIME TAB -->
 
 </body>
 </html>
