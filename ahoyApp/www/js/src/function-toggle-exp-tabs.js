@@ -1,7 +1,7 @@
 function toggleExperimentalFeatures() {
     const isExperimentalEnabled = document.getElementById('experimental-toggle').checked;
-    const experimentalTabs = ['game-tab', 'account-tab', 'search-tab'];
-    const experimentalDockIcons = ['game-dock-icon', 'account-dock-icon', 'search-dock-icon'];
+    const experimentalTabs = ['game-tab', 'account-tab', 'search-tab', 'cast-tab'];
+    const experimentalDockIcons = ['game-dock-icon', 'account-dock-icon', 'search-dock-icon', 'cast-dock-icon'];
 
     experimentalTabs.forEach(tabId => {
         const tab = document.getElementById(tabId);
