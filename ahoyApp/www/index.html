@@ -635,11 +635,34 @@
 <div id="sound-timeline-progress"></div> -->
 
 <!-- Add this below each account button in the app header -->
-<div id="account-popup" class="account-popup" style="display: none;">
-  <h3>Recent Activity</h3>
-  <ul id="recent-activity-list">
-      <!-- Recent activity items will be inserted here -->
-  </ul>
+<div id="account-popup" class="account-popup" style="display: none;" x-data="userActivity()">
+  <button class="close-button" @click="document.getElementById('account-popup').style.display='none'">&times;</button>
+
+  <div class="account-popup-header">
+    <h2>Your Username</h2>
+  </div>
+  <div class="account-popup-body"> 
+    
+    
+    <div id="mood-app" x-data="{ mood: 3 }" x-init="init()">
+      <h3>What's your mood right now?</h3>
+      <div class="mood-scale">
+        <label for="mood">Mood (0-5):</label>
+        <input type="range" id="mood" name="mood" min="0" max="5" x-model="mood" @input="updateMood(mood)">
+      </div>
+      <svg width="100" height="100" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="40" :fill="['#ff4d4d', '#ff944d', '#ffd24d', '#ffff4d', '#b3ff4d', '#4dff4d'][mood]"></circle>
+        <!-- Add more SVG elements to create a flower shape -->
+      </svg>
+    </div>
+
+
+    </div>
+  
+  </div>
+  <div class="account-popup-footer">
+    <button class="action-button">Logout</button>
+  </div>
 </div>
 <!-- END OF BODY -->
 </div>
@@ -702,6 +725,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <script src="js/src/game-puddle.js"></script>
 <script src="js/src/super-search.js"></script>
 <script src="js/src/cast.js"></script>
+<script src="js/src/account-popup-app.js"></script>
 
 </body>
 </html>

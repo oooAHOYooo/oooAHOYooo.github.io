@@ -4483,6 +4483,12 @@ video::-webkit-media-controls-current-time-display {
     align-items: center;
 }
 
+.app-header-2 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .app-header-1 {
     justify-content: flex-start;
     /* Align to the left */
@@ -4520,15 +4526,30 @@ video::-webkit-media-controls-current-time-display {
 /* Add this to your CSS file */
 .account-popup {
     position: fixed;
-    top: 38px;
-    left: 50%;
-    transform: translateX(-50%);
+    width: 90% !important;
+    top: 50%;
+    rights: 0%;
+    transform: translate(-50%, -50%);
     background-color: var(--background-color);
     border: 1px solid #ccc;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    z-index: 1000;
-    width: 200px;
+    z-index: 5000;
+
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+    max-height: 80vh;
+    animation: kaleidoscope 5s infinite linear;
+}
+
+
+.account-popup-footer {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
 }
 
 #user-account-button {
