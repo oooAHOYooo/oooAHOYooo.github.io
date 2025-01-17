@@ -6,7 +6,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Generate the daily word
     function getDailyWord() {
-        const words = ["code", "game", "play", "test"]; // Use 4-letter words
+        const words = [
+            "code", "game", "play", "test", "jump", "quiz", "wave", "ring",
+            "ship", "rock", "tree", "wind", "fire", "snow", "rain", "moon",
+            "star", "fish", "bird", "lion", "bear", "wolf", "frog", "deer",
+            "hawk", "duck", "goat", "seal", "crab", "clam", "moth", "beet",
+            "pear", "plum", "kiwi", "lime", "figs", "date", "bean", "corn",
+            "rice", "oats", "when", "milk", "eggs", "tofu", "beef", "pork",
+            "lamb", "veal", "duck", "crab",
+            "bark", "leaf", "root", "stem", "twig", "vine", "bush", "fern",
+            "moss", "reed", "weed", "herb", "bale", "barn", "farm", "gate",
+            "path", "road", "lane", "alley", "yard", "park", "pond", "lake",
+            "hill", "cliff", "peak", "cave", "dune", "reef", "bank", "gulf",
+            "bay", "cove", "isle", "cape", "dock", "pier", "port", "wharf",
+            "raft", "boat", "ship", "yacht", "sail", "deck", "mast", "keel"
+        ]; // Use 4-letter words
         const date = new Date();
         const index = date.getDate() % words.length; // Date-seeded word selection
         return words[index];
