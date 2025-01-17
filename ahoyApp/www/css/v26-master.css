@@ -443,28 +443,46 @@ button:hover {
 
 .song-info {
     width: 100%;
+    display: block;
     align-items: center;
     justify-content: center;
+    max-height: 450px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 0 0 10px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    max-width: 500px;
 }
 
-.song-info>img {
+#coverArt {
     width: 100%;
-    height: 405px;
+    height: 100%;
+    max-width: 500px;
     object-fit: cover;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    border-radius: 5.5px;
-
+    border-top-left-radius: 5.5px;
+    border-top-right-radius: 5.5px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-top: 15px;
 }
 
+
 .player-container {
-    background: linear-gradient(to bottom, #28282876, #1818186c) !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
     border-radius: 8px !important;
-    box-shadow: 0 4px 60px rgba(0, 0, 0, 0.5) !important;
-    padding: 10px;
-
-
+    box-shadow: 0 4px 60px rgba(0, 0, 0, 0.1) !important;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 1px solid rgba(255, 255, 255, 0.18) !important;
 }
 
 #podcast-player-container {
@@ -476,18 +494,17 @@ button:hover {
     border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
-#artist {
-    text-align: center;
+
+
+.sub-text {
+    font-size: 14px;
+    color: var(--text-color);
     margin-top: 0px;
     padding-top: 0px;
+    text-align: center;
 }
 
-#songTitle {
-    text-align: center;
-    color: var(--text-color);
-    font-size: 1.5em;
-    margin-top: 10px;
-}
+#songTitle {}
 
 #podcast-title {
     text-align: center;
@@ -510,13 +527,7 @@ button:hover {
     text-align: center;
 } */
 
-.song-details h2 {
-    margin-top: 0px;
-    padding-top: 0px;
-    color: var(--text-color);
-    margin-bottom: 0px;
-    padding-bottom: 0px;
-}
+
 
 #main-content,
 #sidebar {
@@ -2006,7 +2017,7 @@ input[type="date"]:focus {
 }
 
 .duration-control {
-    margin-top: 10px;
+    margin-top: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2019,7 +2030,7 @@ input[type="date"]:focus {
     width: 90%;
     height: 7.5px;
     border-radius: 5px;
-    background: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.46);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.3);
     cursor: pointer;
@@ -2055,11 +2066,7 @@ input[type="date"]:focus {
     margin-top: 20px;
 }
 
-@media (max-width: 768px) {
-    #coverArt {
-        max-width: 90%;
-    }
-}
+
 
 .song-cover-max {
     width: 100%;
@@ -2208,9 +2215,11 @@ input[type="date"]:focus {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
-    margin-top: 20px;
-    margin-bottom: 30px;
+    margin-top: 5.5px;
+    margin-bottom: 5.5px;
+    padding-top: 5.5px;
+    padding-bottom: 5.5px;
+    padding: 10px;
 }
 
 .podcast-player-controls {
@@ -4457,24 +4466,70 @@ video::-webkit-media-controls-current-time-display {
 }
 
 .app-header {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    text-align: center;
-    font-size: 10px;
-    font-weight: 300;
-    color: var(--text-color);
+    display: flex;
+    justify-content: space-between;
+    max-height: 38px;
+    align-items: center;
+    background-color: var(--background-color);
+    z-index: 1000;
+    /* Ensure the header is above other content */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Optional: Add a shadow for depth */
+}
+
+.app-header-1,
+.app-header-2,
+.app-header-3 {
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0px;
-    margin: 0px;
+}
+
+.app-header-1 {
+    justify-content: flex-start;
+    /* Align to the left */
+}
+
+.app-header-2 {
+    justify-content: center;
+    /* Center align */
+}
+
+.app-header-3 {
+    justify-content: flex-end;
+    padding-right: 5px;
+    /* Align to the right */
 }
 
 .app-header p {
-    font-size: 10px;
+    font-size: 14px;
     font-weight: 300;
     color: var(--text-color);
-    padding: 0px;
-    margin: 0px;
+
+}
+
+#user-account-button {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    font-size: 16px;
+    color: var(--text-color);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#user-account-button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
 }
 
 #experimental-toggle {

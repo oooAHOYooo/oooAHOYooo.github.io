@@ -42,7 +42,17 @@
 <!-- MEDIA TAB -->
 <div id="media-tab-a" class="tab-content">
 <div class="app-header">
-  <p>Media Player</p>
+  <div class="app-header-1">
+    <a href="ahoy.ooo"><img src="./img/assets/u_ahoy23.png" alt="Ahoy Indie Media Logo" width="100%" height="16px"></a>
+  </div>
+  <div class="app-header-2">
+    <p>Media Player</p>
+  </div>
+  <div class="app-header-3">
+    <button id="user-account-button">
+      <i class="fas fa-user" style="font-size: 16px; color:white;"></i>
+    </button>
+  </div>
 </div>
 <div class="tv-container">
 <div id="media-display-text">
@@ -55,13 +65,12 @@
   Your browser does not support the video tag.
 </video>
 </div>
-<h2>SEARCH MEDIA LIBRARY:</h2>
 <div id="search-bar-container" x-data="searchApp()">
-    <input type="text" x-model="query" placeholder="Search..." />
+    <input type="text" x-model="query" placeholder="Search Media Library..." />
     <button @click="performSearch()">Search</button>
-    <button @click="showAllContent()">Show All Content</button>
 
     <div class="table-container">
+        <!--
         <table>
             <thead>
                 <tr>
@@ -80,6 +89,7 @@
                 </template>
             </tbody>
         </table>
+        -->
     </div>
 </div>
 <hr>
@@ -101,16 +111,28 @@
 <!-- TRUE CLASSIC RADIO TAB -->
 <div id="true-classic-radio" class="tab-content">
   <div class="app-header">
-    <p>Music Player</p>
+    <div class="app-header-1">
+      <a href="ahoy.ooo"><img src="./img/assets/u_ahoy23.png" alt="Ahoy Indie Media Logo" width="100%" height="16px"></a>
+    </div>
+    <div class="app-header-2">
+      <p>Music Player</p>
+    </div>
+    <div class="app-header-3">
+      <button id="user-account-button">
+        <i class="fas fa-user" style="font-size: 16px; color:white;"></i>
+      </button>
+    </div>
   </div>
 <div class="radio-widget">
 <div class="player-container">
+  <img id="coverArt" src="" alt="Cover Art">
 <div class="song-info">
-<div class="song-details">
-<h2 id="songTitle">: ________</h2>
-<p id="artist">ARTIST: ________</p>
-</div>
-<img id="coverArt" src="" alt="Cover Art">
+ 
+  <div class="song-details">
+  <h2 class="sub-text" id="songTitle"></h2>
+  <p class="sub-text" id="artist"></p>
+  </div>
+
 </div>
 <div class="duration-control">
 <input type="range" id="durationBar" min="0" max="100" step="1" value="0" class="styled-duration-bar">
@@ -151,7 +173,17 @@
 <!-- PODCAST TAB -->
 <div id="podcast-tab" class="tab-content">
 <div class="app-header">
-  <p>Podcast Player</p>
+  <div class="app-header-1">
+    <a href="ahoy.ooo"><img src="./img/assets/u_ahoy23.png" alt="Ahoy Indie Media Logo" width="100%" height="16px"></a>
+  </div>
+  <div class="app-header-2">
+    <p>Podcast Player</p>
+  </div>
+  <div class="app-header-3">
+    <button id="user-account-button">
+      <i class="fas fa-user" style="font-size: 16px; color:white;"></i>
+    </button>
+  </div>
 </div>
 <div id="podcast-player-container" class="player-container">
 <div class="song-info">
@@ -304,7 +336,17 @@
 <!-- NEWS TAB -->
 <div id="news-tab" class="tab-content active">
   <div class="app-header">
-    <p>Front Page News</p>
+    <div class="app-header-1">
+      <a href="ahoy.ooo"><img src="./img/assets/u_ahoy23.png" alt="Ahoy Indie Media Logo" width="100%" height="16px"></a>
+    </div>
+    <div class="app-header-2">
+      <p>Front Page News</p>
+    </div>
+    <div class="app-header-3">
+      <button id="user-account-button">
+        <i class="fas fa-user" style="font-size: 16px; color:white;"></i>
+      </button>
+    </div>
   </div>
 <img src="./img/assets/u_ahoy23.png" alt="Ahoy Indie Media Logo" class="homepage-logo" style="font-family:'Times New Roman',Times,serif;font-size:24px;text-transform:uppercase;">
 <hr>
@@ -334,7 +376,17 @@
 <!-- VINTAGE BROADCAST TAB -->
 <div id="vintage-broadcast-tab" class="tab-content">
  <div class="app-header">
-  <p>Vintage Broadcast</p>
+  <div class="app-header-1">
+    <a href="ahoy.ooo"><img src="./img/assets/u_ahoy23.png" alt="Ahoy Indie Media Logo" width="100%" height="16px"></a>
+  </div>
+  <div class="app-header-2">
+    <p>Ahoy Broadcast Network</p>
+  </div>
+  <div class="app-header-3">
+    <button id="user-account-button">
+      <i class="fas fa-user"></i>
+    </button>
+  </div>
  </div>
 
   <div class="broadcast-player-container">
@@ -386,7 +438,17 @@
 <!-- SETTINGS TAB -->
 <div id="settings-tab" class="tab-content">
 <div class="app-header">
-  <p>Settings</p>
+  <div class="app-header-1">
+    <a href="ahoy.ooo"><img src="./img/assets/u_ahoy23.png" alt="Ahoy Indie Media Logo" width="100%" height="16px"></a>
+  </div>
+  <div class="app-header-2">
+    <p>Settings</p>
+  </div>
+  <div class="app-header-3">
+    <button id="user-account-button">
+      <i class="fas fa-user" style="font-size: 16px; color:white;"></i>
+    </button>
+  </div>
 </div>
 <hr>
 <div id="mute-audio-widget" class="settings-widget">
@@ -415,7 +477,11 @@
 <!-- UPCOMING FEATURES SECTION -->
 <div id="upcoming-features" class="settings-widget">
   <h2>Test Upcoming Features</h2>
+  <br>
   <button class="action-button" onclick="navigateToTab('community-tab')">  <i class="fas fa-users"></i></button>
+  <button class="action-button" onclick="navigateToTab('game-tab')">  <i class="fas fa-gamepad"></i></button>
+  <button class="action-button" onclick="navigateToTab('cast-tab')">  <i class="fas fa-project-diagram"></i></button>
+  <button class="action-button" onclick="navigateToTab('search-tab')">  <i class="fas fa-search"></i></button>
 </div>
 <hr>
 <!-- Experimental Features Toggle -->
@@ -507,9 +573,14 @@
 <!-- END OF GAME TAB -->
 
 <!-- START OF CAST TAB -->
-<div id="cast-tab" class="tab-content experimental-feature">
+<div id="cast-tab" class="tab-content experimental-feature" x-data="castApp()">
   <h1>Cast</h1>
   <p>Cast your media to your TV.</p>
+  <button @click="connectToFireTV()">Connect to Fire TV</button>
+  <button @click="disconnectFromFireTV()">Disconnect</button>
+  <div x-show="isConnected">
+    <p>Connected to Fire TV</p>
+  </div>
 </div>
 <!-- END OF CAST TAB -->
 
@@ -587,6 +658,7 @@
 <script src="js/src/function-toggle-exp-tabs.js"></script>
 <script src="js/src/game-puddle.js"></script>
 <script src="js/src/super-search.js"></script>
+<script src="js/src/cast.js"></script>
 
 </body>
 </html>
