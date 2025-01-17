@@ -54,6 +54,7 @@
     </button>
   </div>
 </div>
+<hr class="app-header-hr">
 <div class="tv-container">
 <div id="media-display-text">
 <div id="media-artist-name"><p>This is where the Media Artist Name will Go</p></div>
@@ -65,12 +66,13 @@
   Your browser does not support the video tag.
 </video>
 </div>
+<!--
 <div id="search-bar-container" x-data="searchApp()">
     <input type="text" x-model="query" placeholder="Search Media Library..." />
     <button @click="performSearch()">Search</button>
 
     <div class="table-container">
-        <!--
+        
         <table>
             <thead>
                 <tr>
@@ -89,10 +91,11 @@
                 </template>
             </tbody>
         </table>
-        -->
+        
     </div>
 </div>
 <hr>
+-->
 <div id="media-sort-buttons" class="sort-buttons-container">
 <button id="sort-recent" class="action-button">Recent</button>
 <button id="sort-artist-az" class="action-button">Artist A-Z</button>
@@ -123,6 +126,7 @@
       </button>
     </div>
   </div>
+  <hr class="app-header-hr">
 <div class="radio-widget">
 <div class="player-container">
   <img id="coverArt" src="" alt="Cover Art">
@@ -185,6 +189,7 @@
     </button>
   </div>
 </div>
+<hr class="app-header-hr">
 <div id="podcast-player-container" class="player-container">
 <div class="song-info">
 <div class="podcast-thumbnail-container">
@@ -205,6 +210,7 @@
 </div>
 </div>
 </div>
+<hr class="app-header-hr">
 <div id="podcast-search-section" class="terminal-section">
 <h2>SEARCH PODCASTS:</h2>
 <div class="search-container">
@@ -348,6 +354,7 @@
       </button>
     </div>
   </div>
+  <hr class="app-header-hr">
 <img src="./img/assets/u_ahoy23.png" alt="Ahoy Indie Media Logo" class="homepage-logo" style="font-family:'Times New Roman',Times,serif;font-size:24px;text-transform:uppercase;">
 <hr>
 <h2 id="calendar-date"></h2>
@@ -450,7 +457,7 @@
     </button>
   </div>
 </div>
-<hr>
+<hr class="app-header-hr">
 <div id="mute-audio-widget" class="settings-widget">
 <button class="action-button" onclick="toggleMute()">Mute Audio</button>
 <button class="action-button" onclick="clearCacheAndReset()">Clear Cache & Reset</button>
@@ -627,10 +634,46 @@
 <!-- <div id="sound-timeline-container">
 <div id="sound-timeline-progress"></div> -->
 
-
+<!-- Add this below each account button in the app header -->
+<div id="account-popup" class="account-popup" style="display: none;">
+  <h3>Recent Activity</h3>
+  <ul id="recent-activity-list">
+      <!-- Recent activity items will be inserted here -->
+  </ul>
+</div>
 <!-- END OF BODY -->
 </div>
+<script>
+  // Add this script to your existing JavaScript files or create a new one
+document.addEventListener('DOMContentLoaded', function() {
+    const accountButtons = document.querySelectorAll('#user-account-button');
+    const popup = document.getElementById('account-popup');
+    const recentActivityList = document.getElementById('recent-activity-list');
 
+    accountButtons.forEach(button => {
+        button.addEventListener('click', function(event) {
+            // Toggle popup visibility
+            popup.style.display = popup.style.display === 'none' ? 'block' : 'none';
+
+            // Position the popup below the button
+            const rect = button.getBoundingClientRect();
+            popup.style.top = `${rect.bottom}px`;
+            popup.style.left = `${rect.left}px`;
+
+            // Fetch recent activity from cache and display
+            const recentActivity = JSON.parse(localStorage.getItem('recentActivity')) || [];
+            recentActivityList.innerHTML = recentActivity.map(activity => `<li>${activity}</li>`).join('');
+        });
+    });
+
+    // Hide popup when clicking outside
+    document.addEventListener('click', function(event) {
+        if (!popup.contains(event.target) && !event.target.matches('#user-account-button')) {
+            popup.style.display = 'none';
+        }
+    });
+});
+</script>
 <!-- END OF BODY -->
 <!-- START OF SCRIPTS -->
 <script src="js/src/core.js"></script>

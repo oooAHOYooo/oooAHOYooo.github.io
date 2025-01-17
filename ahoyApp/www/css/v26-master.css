@@ -4495,6 +4495,13 @@ video::-webkit-media-controls-current-time-display {
     /* Align to the left */
 }
 
+.app-header-1 a img {
+    display: block;
+    width: 52px;
+    height: auto;
+    padding-left: 5px;
+}
+
 .app-header-2 {
     justify-content: center;
     /* Center align */
@@ -4513,16 +4520,33 @@ video::-webkit-media-controls-current-time-display {
 
 }
 
+.app-header-hr {
+    margin-top: 38px;
+}
+
+/* Add this to your CSS file */
+.account-popup {
+    position: fixed;
+    top: 38px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--background-color);
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    z-index: 1000;
+    width: 200px;
+}
+
 #user-account-button {
-    background-color: rgba(255, 255, 255, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.03);
     cursor: pointer;
-    font-size: 16px;
+    font-size: 14px;
     color: var(--text-color);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
