@@ -136,17 +136,17 @@
   <h2 class="sub-text" id="songTitle"></h2>
   <p class="sub-text" id="artist"></p>
   </div>
+  <div class="duration-control">
+    <input type="range" id="durationBar" min="0" max="100" step="1" value="0" class="styled-duration-bar">
+    </div>
+    <div class="radio-controls">
+    <button class="audio-control-button" id="playBtn">[► PLAY]</button>
+    <button class="audio-control-button" id="add15sBtn">[+15s]</button>
+    <button class="audio-control-button" id="prevBtn">[◄◄ PREV]</button>
+    <button class="audio-control-button" id="nextBtn">[► NEXT]</button>
+    </div>
+</div>
 
-</div>
-<div class="duration-control">
-<input type="range" id="durationBar" min="0" max="100" step="1" value="0" class="styled-duration-bar">
-</div>
-<div class="radio-controls">
-<button class="audio-control-button" id="playBtn">[► PLAY]</button>
-<button class="audio-control-button" id="add15sBtn">[+15s]</button>
-<button class="audio-control-button" id="prevBtn">[◄◄ PREV]</button>
-<button class="audio-control-button" id="nextBtn">[► NEXT]</button>
-</div>
 </div>
 </div>
 <div class="terminal-section">
@@ -190,24 +190,24 @@
   </div>
 </div>
 <hr class="app-header-hr">
+<div class="radio-widget">
 <div id="podcast-player-container" class="player-container">
-<div class="song-info">
-<div class="podcast-thumbnail-container">
-<div class="song-details">
-<h2 id="podcast-title"></h2>
-<p id="podcast-description"></p>
-</div>
-<img id="podcast-thumbnail" src="" alt="Podcast Thumbnail">
-</div>
-<div class="duration-control">
-<input type="range" id="podcastDurationBar" min="0" max="100" step="1" value="0" class="styled-duration-bar">
-</div>
-<div class="podcast-player-controls">
-<button class="audio-control-button" id="playPodcastBtn">[► PLAY]</button>
-<button class="audio-control-button" id="podcast-forward15sBtn">[+15s]</button>
-<button class="audio-control-button" id="podcast-backward15sBtn">[◄◄ PREV]</button>
-<button class="audio-control-button" id="podcast-nextBtn">[► NEXT]</button>
-</div>
+  <img id="podcast-thumbnail" src="" alt="Podcast Thumbnail">
+  <div class="song-info">
+    <div class="song-details">
+      <h2 id="podcast-title"></h2>
+      <p id="podcast-description"></p>
+    </div>
+    <div class="duration-control">
+      <input type="range" id="podcastDurationBar" min="0" max="100" step="1" value="0" class="styled-duration-bar">
+      </div>
+      <div class="podcast-player-controls">
+        <button class="audio-control-button" id="playPodcastBtn">[► PLAY]</button>
+        <button class="audio-control-button" id="podcast-forward15sBtn">[+15s]</button>
+        <button class="audio-control-button" id="podcast-backward15sBtn">[◄◄ PREV]</button>
+        <button class="audio-control-button" id="podcast-nextBtn">[► NEXT]</button>
+        </div>
+  </div>
 </div>
 </div>
 <hr class="app-header-hr">
@@ -617,8 +617,8 @@
         <div id="v25-icon-container" class="scroll-container">
             <div class="v25-dock-icon" onclick="navigateToTab('news-tab')"><i class="fas fa-home"></i></div>
             <div class="v25-dock-icon" onclick="navigateToTab('true-classic-radio')"><i class="fas fa-music"></i></div>
-            <div class="v25-dock-icon" onclick="navigateToTab('vintage-broadcast-tab')"><i class="fas fa-tv"></i></div>
             <div class="v25-dock-icon" onclick="navigateToTab('podcast-tab')"><i class="fas fa-podcast"></i></div>
+            <div class="v25-dock-icon" onclick="navigateToTab('vintage-broadcast-tab')"><i class="fas fa-tv"></i></div>
             <div class="v25-dock-icon" onclick="navigateToTab('media-tab-a')"><i class="fas fa-image"></i></div>
             <div class="v25-dock-icon" onclick="navigateToTab('settings-tab')"><i class="fas fa-cog"></i></div>
             <!-- New Dock Icons -->

@@ -483,16 +483,9 @@ button:hover {
     justify-content: center;
     flex-direction: column;
     border: 1px solid rgba(255, 255, 255, 0.18) !important;
+    min-height: 500px;
 }
 
-#podcast-player-container {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 8px !important;
-    box-shadow: 0 4px 60px rgba(0, 0, 0, 0.5) !important;
-    padding: 10px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-}
 
 
 
@@ -2432,8 +2425,8 @@ input[type="date"]:focus {
 }
 
 #podcast-thumbnail {
-    width: 400px;
-    height: 400px;
+    width: 500px;
+    height: 500px;
     object-position: center;
 }
 
