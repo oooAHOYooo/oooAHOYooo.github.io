@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" x-data="{ currentIndex: 0 }">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,18 +14,20 @@
         <link
             href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic"
             rel="stylesheet">
-        rel="stylesheet">
+        <script
+            src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+            defer></script>
         <style>
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #333;
+            background-color: #2b1b17; /* Warm, earthy background */
             color: #fff!important;
             height: 100vh;
             margin: 0;
         }
 
         a {
-            color: white;
+            color: #ff6f61; /* Warm link color */
         }
         .carousel {
             display: flex;
@@ -40,14 +42,19 @@
             margin: 0 15px;
             transition: transform 0.5s ease;
             text-align: center;
+            background: rgba(255, 255, 255, 0.1); /* Glass effect */
+            border-radius: 15px;
+            padding: 10px;
+            backdrop-filter: blur(10px);
         }
         .carousel-item img {
             width: 100%;
             border-radius: 10px;
-            aspect-ratio: 16 / 9; /* Ensure 16:9 aspect ratio */
+            aspect-ratio: 16 / 9;
         }
         .carousel-item h5 {
             margin: 10px 0 5px;
+            color: #ff6f61; /* Warm heading color */
         }
         .carousel-item p {
             margin: 0;
@@ -55,7 +62,7 @@
         .carousel-item a {
             display: block;
             margin-top: 10px;
-            color: #007bff;
+            color: #ff6f61;
             text-decoration: none;
         }
         .carousel-controls {
@@ -69,7 +76,7 @@
         .carousel-controls button {
             background: none;
             border: none;
-            color: #fff;
+            color: #ff6f61;
             font-size: 2rem;
             cursor: pointer;
         }
@@ -80,7 +87,7 @@
             justify-content: center;
             width: 100%;
             aspect-ratio: 16 / 9;
-            background-color: #333333e1;
+            background-color: rgba(43, 27, 23, 0.9); /* Warm overlay */
             color: #fff;
             top: 0;
         }
@@ -101,6 +108,7 @@
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 20px;
+            color: #ff6f61;
         }
     </style>
     </head>
@@ -114,67 +122,23 @@
         </div>
         <div class="headline">Choose Membership Level</div>
         <div class="carousel">
-            <a href="https://buy.stripe.com/14k03Rb1p8XebwQ3ch"
-                class="carousel-item">
-                <img src="./img/41.webp" alt="Greatest of All Time">
-                <h5>Greatest of All Time</h5>
-                <p>5</p>
-            </a>
-            <a href="https://buy.stripe.com/5kA7wj1qPb5mbwQcMQ"
-                class="carousel-item">
-                <img src="./img/31.webp" alt="Legend">
-                <h5>Legend</h5>
-                <p>4</p>
-            </a>
-            <a href="https://buy.stripe.com/bIY3g3d9x7TaasM147"
-                class="carousel-item">
-                <img src="./img/21.webp" alt="Champion">
-                <h5>Champion</h5>
-                <p>3</p>
-            </a>
-            <a href="https://buy.stripe.com/bIY6sf7Pd6P66cw9AC"
-                class="carousel-item">
-                <img src="./img/01.webp" alt="Pro">
-                <h5>Pro</h5>
-                <p>2</p>
-            </a>
-            <a href="https://buy.stripe.com/8wMcQD7Pd7Ta8kE3cd"
-                class="carousel-item">
-                <img src="./img/11.webp" alt="Rookie">
-                <h5>Rookie</h5>
-                <p>P1</p>
-            </a>
+            <template
+                x-for="(item, index) in [...document.querySelectorAll('.carousel-item')]"
+                :key="index">
+                <a :href="item.href" class="carousel-item"
+                    :style="{ transform: `translateX(${(index - currentIndex) * 230}px)` }">
+                    <img :src="item.querySelector('img').src"
+                        :alt="item.querySelector('img').alt">
+                    <h5 x-text="item.querySelector('h5').textContent"></h5>
+                    <p x-text="item.querySelector('p').textContent"></p>
+                </a>
+            </template>
         </div>
         <div class="carousel-controls">
-            <button id="prevBtn">&lt;</button>
-            <button id="nextBtn">&gt;</button>
+            <button
+                @click="currentIndex = (currentIndex > 0) ? currentIndex - 1 : document.querySelectorAll('.carousel-item').length - 1">&lt;</button>
+            <button
+                @click="currentIndex = (currentIndex < document.querySelectorAll('.carousel-item').length - 1) ? currentIndex + 1 : 0">&gt;</button>
         </div>
-
-        <script>
-        const carousel = document.querySelector('.carousel');
-        const items = document.querySelectorAll('.carousel-item');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        let currentIndex = 0;
-
-        function updateCarousel() {
-            items.forEach((item, index) => {
-                const offset = (index - currentIndex) * 230;
-                item.style.transform = `translateX(${offset}px)`;
-            });
-        }
-
-        prevBtn.addEventListener('click', () => {
-            currentIndex = (currentIndex > 0) ? currentIndex - 1 : items.length - 1;
-            updateCarousel();
-        });
-
-        nextBtn.addEventListener('click', () => {
-            currentIndex = (currentIndex < items.length - 1) ? currentIndex + 1 : 0;
-            updateCarousel();
-        });
-
-        updateCarousel();
-    </script>
     </body>
 </html>

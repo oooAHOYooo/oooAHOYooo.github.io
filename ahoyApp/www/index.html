@@ -31,6 +31,20 @@
 <script src="https://cdn.auth0.com/js/auth0-spa-js/1.24/auth0-spa-js.production.js"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-WVDL9N1HDT"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-WVDL9N1HDT');</script>
+<link rel="stylesheet" href="./css/profile.css">
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const userProfile = JSON.parse(localStorage.getItem('userProfile'));
+        if (userProfile) {
+            document.getElementById('profile-card').innerHTML = `
+                <img src="./img/avatar.png" alt="Avatar">
+                <h2>${userProfile.username || 'Your Name'}</h2>
+                <p>Theme: ${userProfile.theme}</p>
+                <p>Games: ${userProfile.games.join(', ')}</p>
+            `;
+        }
+    });
+</script>
 </head>
 <body>
 <div class="app">
@@ -660,46 +674,9 @@
 <div id="sound-timeline-progress"></div> -->
 
 <!-- Add this below each account button in the app header -->
-<div id="account-popup" class="account-popup" style="display: none;" x-data="userMood()">
-
-
-
-  <div class="account-popup-header">
-    <button class="action-button" onclick="window.location.href='login.html'">Login</button>
-    <h3>Your Potential Username</h3>
-  
-  </div>
-  <hr>
-  <div class="account-popup-body"> 
-    
-    
-    <div id="mood-app" x-data="userMood()" x-init="init()">
-      <h3>What's your mood right now?</h3>
-  
-      <div class="mood-flower">
-        <svg class="flower-svg" width="100" height="100" viewBox="0 0 100 100">
-          <circle class="petal" cx="50" cy="20" r="10" fill="#ff4d4d"></circle>
-          <circle class="petal" cx="80" cy="50" r="10" fill="#ff944d"></circle>
-          <circle class="petal" cx="50" cy="80" r="10" fill="#ffd24d"></circle>
-          <circle class="petal" cx="20" cy="50" r="10" fill="#ffff4d"></circle>
-          <circle class="center" cx="50" cy="50" r="15" fill="#b3ff4d"></circle>
-        </svg>
-    </div>
-    <div class="mood-scale">
-      <label for="mood">Mood (0-5):</label>
-      <input type="range" id="mood" name="mood" min="0" max="5" x-model="mood" @input="updateMood(mood)">
-      <button class="action-button" @click="saveMood()">Save Mood</button>
-    </div>
-    </div>
-
-
-    </div>
-  
-<hr>
-  <div class="account-popup-footer">
-    <button class="action-button" onclick="document.getElementById('account-popup').style.display='none'; navigateToTab('account-tab')">Account Settings</button>
-    <button class="action-button" onclick="document.getElementById('account-popup').style.display='none'">Close Menu</button>
-  </div>
+<div id="account-popup" class="account-popup" style="display: none;">
+  <div id="profile-card" class="profile-card"></div>
+  <button class="action-button" onclick="document.getElementById('account-popup').style.display='none'">Close</button>
 </div>
 <!-- END OF BODY -->
 </div>
