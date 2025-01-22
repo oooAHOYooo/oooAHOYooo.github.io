@@ -1,4 +1,4 @@
-async function saveUserData(username, email, plan) {
+window.saveUserData = async function(username, email, plan) {
     try {
         const usernameCheck = await db.collection("users").where("username", "==", username).get();
         if (!usernameCheck.empty) {

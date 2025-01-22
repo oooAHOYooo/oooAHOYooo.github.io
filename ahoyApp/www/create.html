@@ -90,9 +90,10 @@
             <template x-if="step === 3">
                 <div>
                     <h1>Step 3: Payment</h1>
-                    <p>Proceed to Square's secure checkout.</p>
+                    <p>Proceed to Square's secure checkout or skip for now.</p>
                     <button @click="startPayment(plan)">Proceed to
                         Payment</button>
+                    <button @click="step = 4">Skip Payment</button>
                     <button class="back-button" @click="step = 2">Back</button>
                 </div>
             </template>
@@ -134,5 +135,20 @@
         <script src="js/fire/firebase-config.js"></script>
         <script src="js/fire/firestore.js"></script>
         <script src="js/fire/square-payment.js"></script>
+
+        <script>
+            function startPayment(plan) {
+                if (plan) {
+                    // Existing payment logic
+                } else {
+                    alert('Please select a plan');
+                }
+            }
+
+            function saveUserData(username, email, plan) {
+                // Logic to save user data to Firestore
+                // Ensure this works without payment details
+            }
+        </script>
     </body>
 </html>

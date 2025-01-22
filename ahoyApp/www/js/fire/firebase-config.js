@@ -1,5 +1,5 @@
 const firebaseConfig = {
-    apiKey: "YOUR_API_KEY",
+    apiKey: "AIzaSyBq_IQRwkjh2o-jUkS8tI8wcEek5yMIwmo",
     authDomain: "ahoy-indie-media-da86d.firebaseapp.com",
     projectId: "ahoy-indie-media-da86d",
     storageBucket: "ahoy-indie-media-da86d.appspot.com",

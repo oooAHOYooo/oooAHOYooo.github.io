@@ -39,16 +39,45 @@
 <link rel="stylesheet" href="./css/profile.css">
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        const userProfile = JSON.parse(localStorage.getItem('userProfile'));
-        if (userProfile) {
-            document.getElementById('profile-card').innerHTML = `
-                <img src="./img/avatar.png" alt="Avatar">
-                <h2>${userProfile.username || 'Your Name'}</h2>
-                <p>Theme: ${userProfile.theme}</p>
-                <p>Games: ${userProfile.games.join(', ')}</p>
-            `;
-        }
+        firebase.auth().onAuthStateChanged(user => {
+            const accountPopup = document.getElementById('account-popup');
+            const profileCard = document.getElementById('profile-card');
+
+            if (user) {
+                profileCard.innerHTML = `
+                    <img src="./img/avatar.png" alt="Avatar">
+                    <h2>${user.displayName || 'Your Name'}</h2>
+                    <p>Email: ${user.email}</p>
+                    <button class="action-button" onclick="logout()">Logout</button>
+                `;
+            } else {
+                profileCard.innerHTML = `
+                    <h2>Welcome!</h2>
+                    <p>Please log in to access your account.</p>
+                    <button class="action-button" onclick="login()">Login</button>
+                `;
+            }
+        });
     });
+
+    function login() {
+        const provider = new firebase.auth.GoogleAuthProvider();
+        firebase.auth().signInWithPopup(provider)
+            .then(result => {
+                console.log("User logged in:", result.user);
+            }).catch(error => {
+                console.error("Login failed:", error);
+            });
+    }
+
+    function logout() {
+        firebase.auth().signOut()
+            .then(() => {
+                console.log("User logged out");
+            }).catch(error => {
+                console.error("Logout failed:", error);
+            });
+    }
 </script>
 </head>
 <body>
@@ -681,6 +710,8 @@
 <!-- Add this below each account button in the app header -->
 <div id="account-popup" class="account-popup" style="display: none;">
   <div id="profile-card" class="profile-card"></div>
+  <p>Username</p>
+  <button class="action-button" onclick="window.location.href='login.html'">Login Account</button>
   <button class="action-button" onclick="document.getElementById('account-popup').style.display='none'">Close</button>
 </div>
 <!-- END OF BODY -->
