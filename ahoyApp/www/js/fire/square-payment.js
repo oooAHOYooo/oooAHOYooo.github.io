@@ -1,5 +1,5 @@
-const applicationId = "sq0idp-rDX3FJe7HS01_cFqFpM9xw";  // Your Production Application ID
-const locationId = "LTGWZKEYKEXFC"; // Obtain from Square Dashboard
+const applicationId = "sq0idp-rDX3FJe7HS01_cFqFpM9xw";
+const locationId = "LTGWZKEYKEXFC";
 
 async function startPayment(plan) {
     const payments = window.Square.payments(applicationId, locationId);
@@ -11,7 +11,7 @@ async function startPayment(plan) {
             const result = await card.tokenize();
             if (result.status === 'OK') {
                 alert('Payment successful!');
-                document.querySelector('[x-data]').__x.$data.step = 4;  // Move to step 4 after success
+                document.querySelector('[x-data]').__x.$data.step = 4;
             } else {
                 alert('Payment failed. Please try again.');
             }

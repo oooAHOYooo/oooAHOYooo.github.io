@@ -12,9 +12,6 @@
         <link
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
             rel="stylesheet">
-        <link
-            href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic"
-            rel="stylesheet">
 
         <script
             src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
@@ -80,14 +77,12 @@
             <template x-if="step === 2">
                 <div>
                     <h1>Step 2: Personal Info</h1>
-                    <p>Enter your personal details to get started.</p>
                     <input type="text" placeholder="Full Name"
                         x-model="fullName">
                     <input type="email" placeholder="Email" x-model="email">
                     <button @click="step = 3"
                         :disabled="!fullName || !email">Next</button>
-                    <button class="back-button" @click="step = 1"><i
-                            class="fa fa-arrow-left"></i> Back</button>
+                    <button class="back-button" @click="step = 1">Back</button>
                 </div>
             </template>
 
@@ -96,12 +91,9 @@
                 <div>
                     <h1>Step 3: Payment</h1>
                     <p>Proceed to Square's secure checkout.</p>
-
                     <button @click="startPayment(plan)">Proceed to
                         Payment</button>
-
-                    <button class="back-button" @click="step = 2"><i
-                            class="fa fa-arrow-left"></i> Back</button>
+                    <button class="back-button" @click="step = 2">Back</button>
                 </div>
             </template>
 
@@ -119,7 +111,6 @@
             <template x-if="step === 5">
                 <div>
                     <h1>Customize Your Experience</h1>
-                    <p>Personalize your Ahoy experience with these options.</p>
                     <label>Username:</label>
                     <input type="text" x-model="username">
                     <label>Enable SMS Notifications:</label>
@@ -130,7 +121,7 @@
                         <option value="game2">Game 2</option>
                         <option value="game3">Game 3</option>
                     </select>
-                    <button @click="saveUserData(email, plan)">Save
+                    <button @click="saveUserData(username, email, plan)">Save
                         Profile</button>
                 </div>
             </template>
