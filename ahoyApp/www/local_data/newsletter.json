@@ -430,7 +430,7 @@
     "imageUrl": "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmgwYXlzOWlpNHJrbjBhbGh0cWNrczhocWd1amQ1cm9iYTJsMHh3eSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/g6ZV7HQir5WdRMePor/giphy.gif",
     "content": "We're thrilled to announce a host of new features - some here - some on the way soon. If you give the app a gander - you might have noticed that we now have a top bar - which has our little logo - a display indictating what page you are on - and a little icon of a user - click that baby and you'll see a little popup with basic username funcationality. As you know - this sugar is hard nerdy business making sure all the code works right - but rest assured we are commited and stubborn - - the code will come. In other news, we have decided to partner with Square - to handle all credit card stuff because truth be told - do not want to deal with the burden of security. Anyway - all this to say - the goal is to create a personalized user experience with username support - and the ability to quickly login - and get merch - and support artists one wants to support. - - In other other news, we have also created a new word game - Puddle -  If you want to give it a spin - feel free to turn on the experimental app found in the settings tab. There you will find upcoming and experimental features, ideas and apps - That's all for now folks!  Soon, you'll be able to sign up for Ahoy, which will be the best way to stay connected and get locked in. Stay tuned",
     "active": "true",
-    "goTo": "updates-tab"
+    "goTo": "settings-tab"
 }
 
 ]
