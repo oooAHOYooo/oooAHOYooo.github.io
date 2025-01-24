@@ -1,5 +1,6 @@
 window.addEventListener('DOMContentLoaded', (event) => {
     let isOfflineMode = false;
+    let useLocalData = true; // Toggle to choose between local data or npoint API
 
     document.addEventListener('offlineModeChanged', function(event) {
         isOfflineMode = event.detail;
@@ -7,7 +8,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     });
 
     function fetchAndDisplayNewsletter() {
-        const newsletterDataUrl = isOfflineMode 
+        const newsletterDataUrl = useLocalData || isOfflineMode 
             ? "local_data/newsletter.json" 
             : "https://api.npoint.io/2d370326697768b60f76";
 
