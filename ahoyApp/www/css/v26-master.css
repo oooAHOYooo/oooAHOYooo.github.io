@@ -527,7 +527,9 @@ button:hover {
     padding-top: 150px;
 }
 
-
+#updates-tab {
+    padding-bottom: 200px;
+}
 
 .update-image-container {
     display: flex;
@@ -3885,7 +3887,7 @@ video::-webkit-media-controls-current-time-display {
     width: 100%;
     max-width: 600px;
     margin-top: 10px;
-    font-weight: bold;
+    font-weight: 300;
     color: rgba(var(--text-color-rgb), 1);
 }
 
@@ -3947,6 +3949,13 @@ video::-webkit-media-controls-current-time-display {
 }
 
 .changelog-build {
+    font-size: 12px;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 300;
+    color: #333;
+}
+
+.changelog-author {
     font-size: 12px;
     font-family: 'Barlow', sans-serif;
     font-weight: 300;

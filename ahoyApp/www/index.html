@@ -560,13 +560,20 @@
   <div id="status-header">
     <h1>Changelog</h1>
     <div id="build-info">
-      <span>Current Build: mvp35_c</span>
-      <span>Available on: Web, iOS, Android</span>
+      <p>Current Build: 25_1</p>
+      <p>Available on: Web, iOS, Android</p>
+    </div>
+    <div class="changelog-controls">
+      
+      <button class="action-button" onclick="fetchCommits(1)">Previous</button>
+      <button class="action-button" onclick="fetchCommits(currentPage + 1)">Next</button>
     </div>
   </div>
   <div id="changelog-container">
     <!-- Changelog entries will be inserted here by JavaScript -->
   </div>
+  
+  <a href="https://github.com/oooAHOYooo/oooAHOYooo.github.io" target="_blank"><i class="fab fa-github"><h2>View on Github</h2></i></a>
 </div>
 <!-- END OF UPCOMING FEATURES SECTION -->
 
