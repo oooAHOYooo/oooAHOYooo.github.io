@@ -25,6 +25,30 @@
             src="https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js"></script>
         <script
             src="https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js"></script>
+
+        <style>
+            .wizard {
+                max-height: 80vh; /* Set a maximum height for the wizard */
+                overflow-y: auto; /* Enable vertical scrolling */
+                padding: 10px;
+                box-sizing: border-box;
+            }
+
+            .toggle-button {
+                display: inline-block;
+                padding: 10px 20px;
+                margin: 5px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                cursor: pointer;
+                background-color: #f0f0f0;
+            }
+
+            .toggle-button.active {
+                background-color: #007bff;
+                color: white;
+            }
+        </style>
     </head>
     <body>
         <header>
@@ -37,8 +61,9 @@
                 <div>
                     <h1>Step 1: Choose Your Membership</h1>
                     <p>Select your desired membership plan:</p>
-                    <label>
-                        <input type="radio" x-model="plan" value="basic">
+                    <div class="toggle-button"
+                        :class="{ 'active': plan === 'basic' }"
+                        @click="plan = 'basic'">
                         <strong>Basic Plan</strong> (Free - Every two weeks)
                         <br>
                         <a
@@ -46,27 +71,29 @@
                             target="_blank">
                             View Details
                         </a>
-                    </label>
+                    </div>
 
-                    <label>
-                        <input type="radio" x-model="plan" value="supporter">
+                    <div class="toggle-button"
+                        :class="{ 'active': plan === 'supporter' }"
+                        @click="plan = 'supporter'">
                         <strong>Supporter Plan</strong> ($1/week) <br>
                         <a
                             href="https://checkout.square.site/merchant/MLCEJBSG4Z671/checkout/7RFEZ5IN445HRRV3X2KZGS4P"
                             target="_blank">
                             View Details
                         </a>
-                    </label>
+                    </div>
 
-                    <label>
-                        <input type="radio" x-model="plan" value="super">
+                    <div class="toggle-button"
+                        :class="{ 'active': plan === 'super' }"
+                        @click="plan = 'super'">
                         <strong>Super Supporter</strong> ($10/month) <br>
                         <a
                             href="https://checkout.square.site/merchant/MLCEJBSG4Z671/checkout/CD6UKUXBV4CZBBWNWS4MOFC4"
                             target="_blank">
                             View Details
                         </a>
-                    </label>
+                    </div>
 
                     <button
                         @click="plan ? step = 2 : alert('Please select a plan')">Next</button>
