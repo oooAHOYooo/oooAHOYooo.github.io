@@ -5,74 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Ahoy Indie Media</title>
     <link rel="stylesheet" href="./css/login.css">
-
-    <!-- Auth0 SPA SDK -->
     <script
-      src="https://cdn.auth0.com/js/auth0-spa-js/1.24/auth0-spa-js.production.js"></script>
-
-    <script>
-        let auth0Client;
-
-        async function configureAuth0() {
-            try {
-                auth0Client = await createAuth0Client({
-                    domain: "dev-eytb1k2dke7distu.us.auth0.com",
-                    client_id: "hACFnEwi4XdctxXPSXWjQsF2q7pzWDxK",
-                    redirect_uri: window.location.origin + "/ahoyApp/www/index.html"
-                });
-
-                // Handle the redirect back from Auth0 after login
-                if (window.location.search.includes("code=") && window.location.search.includes("state=")) {
-                    await auth0Client.handleRedirectCallback();
-                    window.history.replaceState({}, document.title, window.location.pathname);
-                    updateUI();
-                }
-
-                // Check if user is already logged in
-                const isAuthenticated = await auth0Client.isAuthenticated();
-                if (isAuthenticated) {
-                    updateUI();
-                }
-            } catch (error) {
-                console.error("Error configuring Auth0:", error);
-            }
-        }
-
-        async function login() {
-            try {
-                await auth0Client.loginWithRedirect();
-            } catch (error) {
-                console.error("Login failed:", error);
-            }
-        }
-
-        async function logout() {
-            try {
-                await auth0Client.logout({
-                    returnTo: window.location.origin + "/ahoyApp/www/login.html"
-                });
-                localStorage.removeItem('user');
-            } catch (error) {
-                console.error("Logout failed:", error);
-            }
-        }
-
-        async function updateUI() {
-            try {
-                const user = await auth0Client.getUser();
-                if (user) {
-                    localStorage.setItem('user', JSON.stringify(user));
-                    document.getElementById('login-message').innerText = `Welcome, ${user.name}`;
-                    document.getElementById('login-button').style.display = "none";
-                    document.getElementById('logout-button').style.display = "block";
-                }
-            } catch (error) {
-                console.error("Error updating UI:", error);
-            }
-        }
-
-        window.onload = configureAuth0;
-    </script>
+      src="https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js"></script>
+    <script
+      src="https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js"></script>
+    <script src="js/fire/firebase-config.js"></script>
   </head>
   <body>
     <div class="login-container">
@@ -80,7 +17,10 @@
         <a href="index.html"><img src="./img/assets/u_ahoy23.png"
             style="width: 300px" /></a>
         <div class="login__menu-container">
-          <button id="login-button" onclick="login()">Login with Auth0</button>
+          <input type="email" id="login-email" placeholder="Email" required>
+          <input type="password" id="login-password" placeholder="Password"
+            required>
+          <button id="login-button" onclick="login()">Login</button>
           <button id="logout-button" onclick="logout()"
             style="display: none;">Logout</button>
         </div>
@@ -92,5 +32,29 @@
       Don't have an account? <a href="./create.html" class="hipster-link">Create
         One</a>
     </p>
+
+    <script>
+      async function login() {
+        const email = document.getElementById('login-email').value;
+        const password = document.getElementById('login-password').value;
+        try {
+          await auth.signInWithEmailAndPassword(email, password);
+          alert("User logged in successfully!");
+          window.location.href = "index.html"; // Redirect to index.html
+        } catch (error) {
+          console.error("Error logging in:", error);
+          alert("Error logging in, please try again.");
+        }
+      }
+
+      async function logout() {
+        try {
+          await auth.signOut();
+          alert("User logged out successfully!");
+        } catch (error) {
+          console.error("Logout failed:", error);
+        }
+      }
+    </script>
   </body>
 </html>

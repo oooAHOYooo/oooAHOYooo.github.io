@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"
-    x-data="{ step: 1, plan: '', username: '', sms: false, games: [] }">
+    x-data="{ step: 1, plan: '', username: '', sms: false, games: [], email: '', password: '' }">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,6 +23,8 @@
         <!-- Firebase SDK -->
         <script
             src="https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js"></script>
+        <script
+            src="https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js"></script>
         <script
             src="https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js"></script>
 
@@ -108,8 +110,10 @@
                     <input type="text" placeholder="Full Name"
                         x-model="fullName">
                     <input type="email" placeholder="Email" x-model="email">
+                    <input type="password" placeholder="Password"
+                        x-model="password">
                     <button @click="step = 3"
-                        :disabled="!fullName || !email">Next</button>
+                        :disabled="!fullName || !email || !password">Next</button>
                     <button class="back-button" @click="step = 1">Back</button>
                 </div>
             </template>
@@ -150,8 +154,7 @@
                         <option value="game2">Game 2</option>
                         <option value="game3">Game 3</option>
                     </select>
-                    <button @click="saveUserData(username, email, plan)">Save
-                        Profile</button>
+                    <button @click="createAccount()">Save Profile</button>
                 </div>
             </template>
         </div>
@@ -173,9 +176,21 @@
                 }
             }
 
-            function saveUserData(username, email, plan) {
-                // Logic to save user data to Firestore
-                // Ensure this works without payment details
+            async function createAccount() {
+                const email = document.querySelector('[x-model="email"]').value;
+                const password = document.querySelector('[x-model="password"]').value;
+                const username = document.querySelector('[x-model="username"]').value;
+                const plan = document.querySelector('[x-model="plan"]').value;
+
+                try {
+                    const userCredential = await auth.createUserWithEmailAndPassword(email, password);
+                    await saveUserData(username, email, plan);
+                    alert("Account created and data saved successfully!");
+                    window.location.href = "index.html"; // Redirect to index.html
+                } catch (error) {
+                    console.error("Error creating account:", error);
+                    alert("Error creating account, please try again.");
+                }
             }
         </script>
     </body>
