@@ -25,8 +25,6 @@ window.saveUserData = async function(username, email, plan) {
             username: username,
             email: email,
             plan: plan,
-            sms: document.getElementById('sms').checked,
-            games: Array.from(document.getElementById('games').selectedOptions).map(option => option.value),
             joinedAt: firebase.firestore.FieldValue.serverTimestamp()
         });
 

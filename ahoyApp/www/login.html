@@ -10,6 +10,17 @@
     <script
       src="https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js"></script>
     <script src="js/fire/firebase-config.js"></script>
+    <style>
+      .login__menu-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .login__menu-container input {
+        margin: 5px 0;
+      }
+    </style>
   </head>
   <body>
     <div class="login-container">
@@ -18,8 +29,14 @@
             style="width: 300px" /></a>
         <div class="login__menu-container">
           <input type="email" id="login-email" placeholder="Email" required>
-          <input type="password" id="login-password" placeholder="Password"
-            required>
+          <div style="position: relative;">
+            <input type="password" id="login-password" placeholder="Password"
+              required>
+            <input type="checkbox" id="toggle-password"
+              style="position: absolute; right: 10px; top: 10px; background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(5px); border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 5px;">
+            <label for="toggle-password"
+              style="color: white; font-size: 10px; font-family:barlow; text-transform: uppercase;opacity: 0.5;position: absolute; right: 30px; top: 10px;">Show</label>
+          </div>
           <button id="login-button" onclick="login()">Login</button>
           <button id="logout-button" onclick="logout()"
             style="display: none;">Logout</button>
@@ -55,6 +72,15 @@
           console.error("Logout failed:", error);
         }
       }
+
+      document.getElementById('toggle-password').addEventListener('change', function() {
+        const passwordField = document.getElementById('login-password');
+        if (this.checked) {
+          passwordField.type = 'text';
+        } else {
+          passwordField.type = 'password';
+        }
+      });
     </script>
   </body>
 </html>
