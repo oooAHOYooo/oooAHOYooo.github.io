@@ -14,44 +14,60 @@
         let auth0Client;
 
         async function configureAuth0() {
-            auth0Client = await createAuth0Client({
-                domain: "dev-eytb1k2dke7distu.us.auth0.com",
-                client_id: "hACFnEwi4XdctxXPSXWjQsF2q7pzWDxK",
-                redirect_uri: window.location.origin + "/ahoyApp/www/index.html"
-            });
+            try {
+                auth0Client = await createAuth0Client({
+                    domain: "dev-eytb1k2dke7distu.us.auth0.com",
+                    client_id: "hACFnEwi4XdctxXPSXWjQsF2q7pzWDxK",
+                    redirect_uri: window.location.origin + "/ahoyApp/www/index.html"
+                });
 
-            // Handle the redirect back from Auth0 after login
-            if (window.location.search.includes("code=") && window.location.search.includes("state=")) {
-                await auth0Client.handleRedirectCallback();
-                window.history.replaceState({}, document.title, window.location.pathname);
-                updateUI();
-            }
+                // Handle the redirect back from Auth0 after login
+                if (window.location.search.includes("code=") && window.location.search.includes("state=")) {
+                    await auth0Client.handleRedirectCallback();
+                    window.history.replaceState({}, document.title, window.location.pathname);
+                    updateUI();
+                }
 
-            // Check if user is already logged in
-            const isAuthenticated = await auth0Client.isAuthenticated();
-            if (isAuthenticated) {
-                updateUI();
+                // Check if user is already logged in
+                const isAuthenticated = await auth0Client.isAuthenticated();
+                if (isAuthenticated) {
+                    updateUI();
+                }
+            } catch (error) {
+                console.error("Error configuring Auth0:", error);
             }
         }
 
         async function login() {
-            await auth0Client.loginWithRedirect();
+            try {
+                await auth0Client.loginWithRedirect();
+            } catch (error) {
+                console.error("Login failed:", error);
+            }
         }
 
         async function logout() {
-            await auth0Client.logout({
-                returnTo: window.location.origin + "/ahoyApp/www/login.html"
-            });
-            localStorage.removeItem('user');
+            try {
+                await auth0Client.logout({
+                    returnTo: window.location.origin + "/ahoyApp/www/login.html"
+                });
+                localStorage.removeItem('user');
+            } catch (error) {
+                console.error("Logout failed:", error);
+            }
         }
 
         async function updateUI() {
-            const user = await auth0Client.getUser();
-            if (user) {
-                localStorage.setItem('user', JSON.stringify(user));
-                document.getElementById('login-message').innerText = `Welcome, ${user.name}`;
-                document.getElementById('login-button').style.display = "none";
-                document.getElementById('logout-button').style.display = "block";
+            try {
+                const user = await auth0Client.getUser();
+                if (user) {
+                    localStorage.setItem('user', JSON.stringify(user));
+                    document.getElementById('login-message').innerText = `Welcome, ${user.name}`;
+                    document.getElementById('login-button').style.display = "none";
+                    document.getElementById('logout-button').style.display = "block";
+                }
+            } catch (error) {
+                console.error("Error updating UI:", error);
             }
         }
 
