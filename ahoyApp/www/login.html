@@ -5,77 +5,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Ahoy Indie Media</title>
     <link rel="stylesheet" href="./css/login.css">
-    <!-- Firebase SDK -->
+
+    <!-- Auth0 SPA SDK -->
     <script
-      src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js"></script>
-    <script
-      src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js"></script>
-    <!-- Firebase SDK -->
-    <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
-        import { getAuth, signInWithEmailAndPassword, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js";
-        import { firebaseConfig } from './js/fire/firebase-config.js'; // Ensure this path is correct
-        
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app);
+      src="https://cdn.auth0.com/js/auth0-spa-js/1.24/auth0-spa-js.production.js"></script>
 
-        window.login = async function() {
-            const email = document.getElementById("login-email").value;
-            const password = document.getElementById("login-password").value;
+    <script>
+        let auth0Client;
 
-            try {
-                const userCredential = await signInWithEmailAndPassword(auth, email, password);
-                localStorage.setItem('isLoggedIn', 'true'); // Save login state
-                window.location.href = '../www/index.html'; // Redirect to home page
-            } catch (error) {
-                console.error(error.message);
+        async function configureAuth0() {
+            auth0Client = await createAuth0Client({
+                domain: "dev-eytb1k2dke7distu.us.auth0.com",
+                client_id: "hACFnEwi4XdctxXPSXWjQsF2q7pzWDxK",
+                redirect_uri: window.location.origin + "/ahoyApp/www/index.html"
+            });
+
+            // Handle the redirect back from Auth0 after login
+            if (window.location.search.includes("code=") && window.location.search.includes("state=")) {
+                await auth0Client.handleRedirectCallback();
+                window.history.replaceState({}, document.title, window.location.pathname);
+                updateUI();
+            }
+
+            // Check if user is already logged in
+            const isAuthenticated = await auth0Client.isAuthenticated();
+            if (isAuthenticated) {
+                updateUI();
             }
         }
 
-        window.setMessage = function(message, type) {
-            const messageElement = document.getElementById("message");
-            messageElement.textContent = message;
-            messageElement.className = type;
+        async function login() {
+            await auth0Client.loginWithRedirect();
         }
 
-        window.resetPassword = async function() {
-            const email = document.getElementById("login-email").value;
-            if (!email) {
-                setMessage("Please enter your email to reset password.", "error");
-                return;
-            }
-            try {
-                await sendPasswordResetEmail(auth, email);
-                setMessage("Password reset email sent!", "success");
-            } catch (error) {
-                setMessage(error.message, "error");
+        async function logout() {
+            await auth0Client.logout({
+                returnTo: window.location.origin + "/ahoyApp/www/login.html"
+            });
+            localStorage.removeItem('user');
+        }
+
+        async function updateUI() {
+            const user = await auth0Client.getUser();
+            if (user) {
+                localStorage.setItem('user', JSON.stringify(user));
+                document.getElementById('login-message').innerText = `Welcome, ${user.name}`;
+                document.getElementById('login-button').style.display = "none";
+                document.getElementById('logout-button').style.display = "block";
             }
         }
+
+        window.onload = configureAuth0;
     </script>
   </head>
   <body>
     <div class="login-container">
       <div class="login__logo-container">
-        <a href="../www/index.html"><img src="./img/assets/u_ahoy23.png"
+        <a href="index.html"><img src="./img/assets/u_ahoy23.png"
             style="width: 300px" /></a>
-        <input type="email" id="login-email" placeholder="Email or Number" />
-        <input type="password" id="login-password" placeholder="Password" />
         <div class="login__menu-container">
-          <button onclick="login()">Login</button>
+          <button id="login-button" onclick="login()">Login with Auth0</button>
+          <button id="logout-button" onclick="logout()"
+            style="display: none;">Logout</button>
         </div>
-        <p id="message"></p>
+        <p id="login-message"></p>
       </div>
     </div>
+
     <p class="hipster-text">
-      Don't have an account? <a href="./create.html"
-        class="hipster-link">Create One</a>
-    </p>
-    <p class="hipster-text"
-      style="font-size: 10px; position: fixed; bottom: 5px; right: 5px;">
-      Forgot your password? <a href="#" onclick="resetPassword()"
-        class="hipster-link">Reset it here</a>
+      Don't have an account? <a href="./create.html" class="hipster-link">Create
+        One</a>
     </p>
   </body>
 </html>
