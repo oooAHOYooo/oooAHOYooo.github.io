@@ -37,6 +37,21 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-WVDL9N1HDT"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-WVDL9N1HDT');</script>
 <link rel="stylesheet" href="./css/profile.css">
+<!-- AUTH0-->
+<script>
+  async function checkAuthStatus() {
+      const user = JSON.parse(localStorage.getItem('user'));
+      if (!user) {
+          window.location.href = "login.html";  // Redirect to login if not authenticated
+      } else {
+          document.getElementById('user-info').innerText = `Welcome, ${user.name}`;
+      }
+  }
+
+  window.onload = checkAuthStatus;
+</script>
+
+
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         firebase.auth().onAuthStateChanged(user => {
