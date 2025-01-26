@@ -758,6 +758,12 @@ document.addEventListener('DOMContentLoaded', function() {
             // Fetch recent activity from cache and display
             const recentActivity = JSON.parse(localStorage.getItem('recentActivity')) || [];
             recentActivityList.innerHTML = recentActivity.map(activity => `<li>${activity}</li>`).join('');
+
+            // Display the username from local storage
+            const user = JSON.parse(localStorage.getItem('user'));
+            if (user) {
+                document.querySelector('#profile-card p').innerText = user.name;
+            }
         });
     });
 

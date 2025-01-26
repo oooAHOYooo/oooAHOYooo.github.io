@@ -1,7 +1,6 @@
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #f0f8ff;
-    /* Light, friendly background */
     color: #333;
     margin: 0;
     display: flex;
@@ -9,16 +8,9 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    /* Align content to the top */
     padding: 20px;
     box-sizing: border-box;
     overflow: hidden;
-}
-
-header {
-    width: 100%;
-    text-align: center;
-    margin-top: 20px;
 }
 
 header img {
@@ -26,39 +18,21 @@ header img {
 }
 
 .wizard {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
     max-width: 500px;
     background-color: rgba(255, 255, 255, 0.8);
-    /* Glass effect */
-    color: #333;
     padding: 30px;
     border-radius: 15px;
     text-align: center;
-    backdrop-filter: blur(10px);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 10;
-    margin-top: 20px;
-    /* Add some margin from the top */
 }
 
 .wizard h1 {
     font-size: 2.5rem;
     margin-bottom: 20px;
     color: #ff6f61;
-    /* Bright heading color */
 }
 
-.wizard p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-}
-
-.wizard input,
-.wizard select {
+.wizard input {
     width: 90%;
     padding: 15px;
     margin-bottom: 20px;
@@ -75,58 +49,6 @@ header img {
     border-radius: 10px;
     font-size: 1.2rem;
     cursor: pointer;
-    margin-top: 10px;
-}
-
-.wizard button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-}
-
-.features {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 20px;
-    box-sizing: border-box;
-    pointer-events: none;
-    z-index: 1;
-}
-
-.features h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
-
-.features p {
-    font-size: 1.2rem;
-    max-width: 600px;
-}
-
-#form-container {
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
-}
-
-#sq-card-number,
-#sq-expiration-date,
-#sq-cvv,
-#sq-postal-code {
-    margin-bottom: 15px;
-}
-
-.wizard input[type="text"],
-.wizard input[type="email"] {
-    max-width: 90%;
-    /* Set max width to 90% */
 }
 
 footer {
@@ -135,134 +57,4 @@ footer {
     margin-top: 20px;
     font-size: 0.9rem;
     color: #666;
-}
-
-.profile-card {
-    width: 300px;
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 15px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    text-align: center;
-    position: relative;
-    z-index: 10;
-}
-
-.profile-card img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-bottom: 15px;
-}
-
-.profile-card h2 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-
-.profile-card p {
-    font-size: 1rem;
-    color: #666;
-}
-
-.cursor-effect {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 1;
-}
-
-.cursor-effect canvas {
-    width: 100%;
-    height: 100%;
-}
-
-.progress-bar {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    margin: 20px 0;
-    padding: 10px 0;
-    background: rgba(0, 0, 0, 0.5);
-    /* Darker background for contrast */
-    border-radius: 10px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    position: relative;
-    z-index: 5;
-    max-width: 500px;
-}
-
-.progress-step {
-    flex: 1;
-    height: 10px;
-    margin: 0 5px;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 5px;
-    transition: background 0.3s ease, box-shadow 0.3s ease;
-    position: relative;
-}
-
-.progress-step.active {
-    background: linear-gradient(90deg, rgba(255, 0, 150, 0.8), rgba(255, 0, 150, 0.4));
-    box-shadow: 0 0 10px rgba(255, 0, 150, 0.5);
-}
-
-.progress-step::after {
-    content: attr(data-step);
-    position: absolute;
-    top: -20px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 0.8rem;
-    color: #fff;
-}
-
-.back-button {
-    background-color: transparent;
-    color: #ff6f61;
-    border: none;
-    font-size: 1rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-    transition: color 0.3s ease;
-}
-
-.back-button i {
-    margin-right: 5px;
-}
-
-.back-button:hover {
-    color: #ff3b3b;
-}
-
-#form-container input {
-    width: 100%;
-    padding: 15px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    font-size: 1rem;
-    box-sizing: border-box;
-}
-
-.next-button-container {
-    margin-top: 20px;
-    /* Add space above the button */
-    text-align: center;
-    /* Center the button */
-}
-
-.next-button-container button {
-    width: 100%;
-    /* Make the button take full width */
-    max-width: 200px;
-    /* Limit the maximum width */
-    margin: 0 auto;
-    /* Center the button horizontally */
 }

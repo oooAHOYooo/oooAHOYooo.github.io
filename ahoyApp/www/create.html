@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"
-    x-data="{ step: 1, plan: '', username: '', sms: false, games: [], email: '', password: '' }">
+    x-data="{ step: 1, plan: '', username: '', sms: false, games: [], email: '', password: '', showPassword: false }">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -117,8 +117,14 @@
                     <input type="text" placeholder="Full Name"
                         x-model="fullName">
                     <input type="email" placeholder="Email" x-model="email">
-                    <input type="password" placeholder="Password"
-                        x-model="password">
+                    <div>
+                        <input :type="showPassword ? 'text' : 'password'"
+                            placeholder="Password" x-model="password">
+                        <label>
+                            <input type="checkbox" x-model="showPassword"> Show
+                            Password
+                        </label>
+                    </div>
                     <button @click="step = 3"
                         :disabled="!fullName || !email || !password">Next</button>
                     <button class="back-button" @click="step = 1">Back</button>
@@ -186,8 +192,15 @@
                     const userCredential = await auth.createUserWithEmailAndPassword(email, password);
                     console.log("User created:", userCredential.user);
 
-                    await saveUserData(username, email, plan);
+                    await db.collection('users').doc(userCredential.user.uid).set({
+                        username: username,
+                        email: email,
+                        plan: plan
+                    });
                     console.log("User data saved for:", username);
+
+                    // Store username in local storage
+                    localStorage.setItem('user', JSON.stringify({ name: username }));
 
                     alert("Account created and data saved successfully!");
                     window.location.href = "index.html"; // Redirect to index.html
