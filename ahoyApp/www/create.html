@@ -50,6 +50,11 @@
                 background-color: #007bff;
                 color: white;
             }
+
+            .plan-button {
+                width: 200px;
+                height: 100px;
+            }
         </style>
     </head>
     <body>
@@ -64,7 +69,7 @@
                 <div>
                     <h1>Step 1: Choose Your Membership</h1>
                     <p>Select your desired membership plan:</p>
-                    <div class="toggle-button"
+                    <div class="toggle-button plan-button"
                         :class="{ 'active': plan === 'basic' }"
                         @click="plan = 'basic'">
                         <strong>Basic Plan</strong> (Free - Every two weeks)
@@ -98,8 +103,10 @@
                         </a>
                     </div>
 
-                    <button
-                        @click="plan ? step = 2 : alert('Please select a plan')">Next</button>
+                    <div class="next-button-container">
+                        <button
+                            @click="plan ? step = 2 : alert('Please select a plan')">Next</button>
+                    </div>
                 </div>
             </template>
 
@@ -175,8 +182,13 @@
                 const plan = document.querySelector('[x-model="plan"]').value;
 
                 try {
+                    console.log("Creating account with email:", email);
                     const userCredential = await auth.createUserWithEmailAndPassword(email, password);
+                    console.log("User created:", userCredential.user);
+
                     await saveUserData(username, email, plan);
+                    console.log("User data saved for:", username);
+
                     alert("Account created and data saved successfully!");
                     window.location.href = "index.html"; // Redirect to index.html
                 } catch (error) {

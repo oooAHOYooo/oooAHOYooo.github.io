@@ -54,8 +54,12 @@
       async function login() {
         const email = document.getElementById('login-email').value;
         const password = document.getElementById('login-password').value;
+        console.log("Attempting login with email:", email);
+
         try {
-          await auth.signInWithEmailAndPassword(email, password);
+          const userCredential = await auth.signInWithEmailAndPassword(email, password);
+          console.log("User logged in:", userCredential.user);
+
           alert("User logged in successfully!");
           window.location.href = "index.html"; // Redirect to index.html
         } catch (error) {

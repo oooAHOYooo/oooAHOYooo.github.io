@@ -250,3 +250,19 @@ footer {
     font-size: 1rem;
     box-sizing: border-box;
 }
+
+.next-button-container {
+    margin-top: 20px;
+    /* Add space above the button */
+    text-align: center;
+    /* Center the button */
+}
+
+.next-button-container button {
+    width: 100%;
+    /* Make the button take full width */
+    max-width: 200px;
+    /* Limit the maximum width */
+    margin: 0 auto;
+    /* Center the button horizontally */
+}
