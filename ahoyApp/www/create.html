@@ -55,6 +55,33 @@
                 width: 200px;
                 height: 100px;
             }
+
+            .success-screen {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 50vh;
+                text-align: center;
+            }
+
+            .success-content {
+                padding: 2rem;
+            }
+
+            .loading-spinner {
+                width: 40px;
+                height: 40px;
+                border: 4px solid #f3f3f3;
+                border-top: 4px solid #007bff;
+                border-radius: 50%;
+                margin: 20px auto;
+                animation: spin 1s linear infinite;
+            }
+
+            @keyframes spin {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+            }
         </style>
     </head>
     <body>
@@ -162,6 +189,18 @@
                     <button @click="createAccount()">Save Profile</button>
                 </div>
             </template>
+
+            <!-- New Step 6: Loading/Success Screen -->
+            <template x-if="step === 6">
+                <div class="success-screen">
+                    <div class="success-content">
+                        <h1>Congratulations! 🎉</h1>
+                        <p>Your profile has been created successfully.</p>
+                        <div class="loading-spinner"></div>
+                        <p>Redirecting you to the homepage...</p>
+                    </div>
+                </div>
+            </template>
         </div>
 
         <footer>
@@ -202,8 +241,14 @@
                     // Store username in local storage
                     localStorage.setItem('user', JSON.stringify({ name: username }));
 
-                    alert("Account created and data saved successfully!");
-                    window.location.href = "index.html"; // Redirect to index.html
+                    // Show success screen
+                    document.querySelector('[x-data]').__x.$data.step = 6;
+
+                    // Redirect after 2 seconds
+                    setTimeout(() => {
+                        window.location.href = "index.html";
+                    }, 2000);
+
                 } catch (error) {
                     console.error("Error creating account:", error);
                     alert("Error creating account, please try again.");
