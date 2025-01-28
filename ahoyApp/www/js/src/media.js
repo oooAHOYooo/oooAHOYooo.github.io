@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   let mediaData = [];
-  let isOfflineMode = false;
+  let isOfflineMode = true;
 
   document.addEventListener('offlineModeChanged', function(event) {
     isOfflineMode = event.detail;
@@ -61,7 +61,9 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll('.mediaThumbnailImage').forEach(img => img.classList.remove('playing'));
 
     // Add 'playing' class to the current thumbnail
-    thumbnailElement.classList.add('playing');
+    if (thumbnailElement) {
+        thumbnailElement.classList.add('playing');
+    }
   }
 
   function selectRandomVideo(videos) {
@@ -153,6 +155,11 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
+
+  // Ensure the video player is loaded and ready
+  document.getElementById("ondemand-video-player").addEventListener('loadeddata', function() {
+    console.log("Video player is ready.");
+  });
 });
 
 function searchMedia() {
