@@ -6,59 +6,17 @@
     <title>Login - Ahoy Indie Media</title>
     <link rel="stylesheet" href="./css/login.css">
     <!-- Load Firebase SDKs -->
-    <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js"></script>
-    
+    <script
+      src="https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js"></script>
+    <script
+      src="https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js"></script>
+
     <!-- Load your config as a regular script, not a module -->
     <script src="js/fire/firebase-config.js"></script>
-    
-    <!-- Your login logic -->
-    <script>
-      async function login() {
-        const email = document.getElementById('login-email').value;
-        const password = document.getElementById('login-password').value;
-        console.log("Attempting login with email:", email);
 
-        if (!email || !password) {
-          alert("Please enter both email and password");
-          return;
-        }
+    <!-- Link to the external login script -->
+    <script src="js/fire/login.js"></script>
 
-        try {
-          // Use firebase.auth() instead of auth
-          const userCredential = await firebase.auth().signInWithEmailAndPassword(email, password);
-          console.log("User logged in:", userCredential.user);
-
-          alert("User logged in successfully!");
-          window.location.href = "index.html";
-        } catch (error) {
-          console.error("Error logging in:", error);
-          alert("Error logging in: " + error.message);
-        }
-      }
-
-      // Make login and logout functions available to the window object
-      window.login = login;
-      window.logout = logout;
-
-      async function logout() {
-        try {
-          await firebase.auth().signOut();
-          alert("User logged out successfully!");
-        } catch (error) {
-          console.error("Logout failed:", error);
-        }
-      }
-
-      document.getElementById('toggle-password').addEventListener('change', function() {
-        const passwordField = document.getElementById('login-password');
-        if (this.checked) {
-          passwordField.type = 'text';
-        } else {
-          passwordField.type = 'password';
-        }
-      });
-    </script>
     <style>
       .login__menu-container {
         display: flex;
@@ -68,6 +26,17 @@
 
       .login__menu-container input {
         margin: 5px 0;
+      }
+
+      #login-status-bar {
+        display: none;
+        margin-top: 10px;
+        padding: 10px;
+        background-color: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+        border-radius: 5px;
+        text-align: center;
       }
     </style>
   </head>
@@ -98,5 +67,6 @@
       Don't have an account? <a href="./create.html" class="hipster-link">Create
         One</a>
     </p>
+    <div id="login-status-bar"></div>
   </body>
 </html>
