@@ -235,9 +235,9 @@
       <template x-if="step === 1">
         <div>
           <h2>Create an Account - Step 1</h2>
-          <input type="text" placeholder="Full Name"
+          <input type="text" placeholder="Enter your full name"
             x-model="fullName" />
-          <input type="email" placeholder="Email" x-model="email" />
+          <input type="email" placeholder="Enter your email" x-model="email" />
           <div>
             <label>
               <input type="checkbox" x-model="showPassword" />
@@ -246,7 +246,7 @@
             <br>
             <input
               :type="showPassword ? 'text' : 'password'"
-              placeholder="Password"
+              placeholder="Create a password"
               x-model="password" />
             <br>
 
