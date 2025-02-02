@@ -133,7 +133,7 @@
     </style>
         <!-- Include Alpine.js -->
         <script
-            src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+            src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.0/dist/cdn.min.js"
             defer></script>
         <!-- Define a global authWizard function -->
         <script defer>
@@ -195,6 +195,9 @@
               alert("Error creating account: " + errorMessage);
             }
           },
+          redirectToIndex: function () {
+            window.location.href = "index.html";
+          }
         };
       };
     </script>
@@ -202,10 +205,12 @@
     <!-- Use x-data="authWizard()" so that the global function is called -->
     <body x-data="authWizard()">
         <header>
-            <img
-                src="http://127.0.0.1:3000/ahoyApp/www/img/assets/u_ahoy23.png"
-                alt="Ahoy Indie Media Logo"
-                style="width: 390px; height: auto;" />
+            <a href="../ahoyApp/www/index.html">
+                <img
+                    src="http://127.0.0.1:3000/ahoyApp/www/img/assets/u_ahoy23.png"
+                    alt="Ahoy Indie Media Logo"
+                    style="width: 390px; height: auto;" />
+            </a>
         </header>
 
         <!-- Login Container (Sign In only) -->
@@ -233,14 +238,17 @@
                         x-model="fullName" />
                     <input type="email" placeholder="Email" x-model="email" />
                     <div>
-                        <input
-                            :type="showPassword ? 'text' : 'password'"
-                            placeholder="Password"
-                            x-model="password" />
                         <label>
                             <input type="checkbox" x-model="showPassword" />
                             Show Password
                         </label>
+                        <br>
+                        <input
+                            :type="showPassword ? 'text' : 'password'"
+                            placeholder="Password"
+                            x-model="password" />
+                        <br>
+
                     </div>
                     <button @click="step = 2"
                         :disabled="!fullName || !email || !password">
@@ -285,6 +293,9 @@
         <!-- Success Message -->
         <div x-show="showSuccess" class="success-message">
             <p x-text="successMessage"></p>
+            <a href="../ahoyApp/www/index.html" class="action-button">
+                <button>Get Started</button>
+            </a>
         </div>
 
         <!-- Log Messages -->
