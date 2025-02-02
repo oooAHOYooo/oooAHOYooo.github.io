@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Authentication is Fun</title>
+        <style>
+        body {text-align: center; background-color: lightseagreen; color: black;}
+        .hidden { display: none; }
+        .auth-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            margin-top: 50px;
+        }
+        .log-messages {
+            margin-top: 20px;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            max-width: 400px;
+            margin: 20px auto;
+            text-align: left;
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+    </style>
+        <!-- Include Alpine.js -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+            defer></script>
+    </head>
+    <body x-data="{ successMessage: '', showSuccess: false, logMessages: '' }">
+        <div class="auth-container" id="authForm">
+            <h2>Sign Up or Sign In</h2>
+            <input type="email" placeholder="email" id="userEmail">
+            <input type="password" placeholder="password" id="userPassword">
+            <br><br>
+            <button id="signUpButton">Sign Up</button>
+            <button id="signInButton">Sign In</button>
+        </div>
+
+        <div id="secretContent" class="hidden">
+            <h3>This is top secret information that you can only see if</h3>
+            <h1>AUTHENTICATED</h1>
+            <button id="signOutButton">Sign Out</button>
+        </div>
+
+        <!-- Success Message -->
+        <div x-show="showSuccess" class="success-message">
+            <p x-text="successMessage"></p>
+        </div>
+
+        <!-- Log Messages -->
+        <div class="log-messages" x-text="logMessages"></div>
+
+        <script type="module">
+        //Update the below URL with the appropriate version if necessary.
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
+        import {
+            getAuth,
+            createUserWithEmailAndPassword,
+            signInWithEmailAndPassword,
+            onAuthStateChanged,
+            signOut
+        //Update the below URL with the appropriate version if necessary.
+        } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
+       
+      
+        // INSERT YOUR FIREBASE CONFIG OBJECT HERE
+
+        const firebaseConfig = {
+    apiKey: "AIzaSyBq_IQRwkjh2o-jUkS8tI8wcEek5yMIwmo",
+    authDomain: "ahoy-indie-media-da86d.firebaseapp.com",
+    projectId: "ahoy-indie-media-da86d",
+    storageBucket: "ahoy-indie-media-da86d.appspot.com",
+    messagingSenderId: "179901301547",
+    appId: "1:179901301547:web:599159f9efb826f464bb6e"
+};
+    
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        const userEmail = document.querySelector("#userEmail");
+        const userPassword = document.querySelector("#userPassword");
+        const authForm = document.querySelector("#authForm");
+        const secretContent = document.querySelector("#secretContent");
+        const signUpButton = document.querySelector("#signUpButton");
+        const signInButton = document.querySelector("#signInButton");
+        const signOutButton = document.querySelector("#signOutButton");
+
+        secretContent.style.display = 'none';
+
+        const updateLog = (message) => {
+            const logDiv = document.querySelector('.log-messages');
+            logDiv.textContent += message + '\n';
+        };
+
+        const userSignUp = async() => {
+            const signUpEmail = userEmail.value;
+            const signUpPassword = userPassword.value;
+            updateLog("Attempting to sign up with email: " + signUpEmail);
+            createUserWithEmailAndPassword(auth, signUpEmail, signUpPassword)
+            .then((userCredential) => {
+                const user = userCredential.user;
+                updateLog("User created successfully: " + JSON.stringify(user));
+                document.querySelector('[x-data]').__x.$data.successMessage = "Your account has been created!";
+                document.querySelector('[x-data]').__x.$data.showSuccess = true;
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                updateLog("Error during sign up: " + errorCode + " " + errorMessage);
+            });
+        }
+
+        const userSignIn = async() => {
+            const signInEmail = userEmail.value;
+            const signInPassword = userPassword.value;
+            updateLog("Attempting to sign in with email: " + signInEmail);
+            signInWithEmailAndPassword(auth, signInEmail, signInPassword)
+            .then((userCredential) => {
+                const user = userCredential.user;
+                updateLog("User signed in successfully: " + JSON.stringify(user));
+                document.querySelector('[x-data]').__x.$data.successMessage = "You have signed in successfully!";
+                document.querySelector('[x-data]').__x.$data.showSuccess = true;
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                updateLog("Error during sign in: " + errorCode + " " + errorMessage);
+            });
+        }
+
+        const checkAuthState = async() => {
+            onAuthStateChanged(auth, user => {
+                if(user) {
+                    authForm.style.display = 'none';
+                    secretContent.style.display = 'block';
+                }
+                else {
+                    authForm.style.display = 'block';
+                    secretContent.style.display = 'none';
+                }
+            })
+        }
+
+        const userSignOut = async() => {
+            await signOut(auth);
+            updateLog("User signed out.");
+        }
+
+        checkAuthState();
+
+        signUpButton.addEventListener('click', userSignUp);
+        signInButton.addEventListener('click', userSignIn);
+        signOutButton.addEventListener('click', userSignOut);
+      </script>
+    </body>
+</html>

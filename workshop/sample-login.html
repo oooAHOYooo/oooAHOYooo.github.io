@@ -1,48 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Authentication is Fun</title>
+        <!-- Import Barlow font from Google Fonts -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;900&display=swap"
+            rel="stylesheet" />
         <style>
-        body {text-align: center; background-color: lightseagreen; color: black;}
-        .hidden { display: none; }
-        .auth-container {
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            display: inline-block;
-            margin-top: 50px;
+      * {
+        font-weight: 300;
+      }
+
+      body {
+        background-color: black !important;
+        background: url("https://i.gifer.com/n4V.gif") no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 90vh;
+        color: white;
+        font-family: 'Barlow', sans-serif;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      .auth-container {
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin-top: 50px;
+        text-align: center;
+        color: white;
+      }
+
+      input[type="email"],
+      input[type="password"],
+      input[type="text"] {
+        width: 300px;
+        height: 40px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        border-radius: 10px;
+        color: white;
+        font-size: 16px;
+        font-family: "Barlow", sans-serif;
+        font-weight: 900;
+        margin: 5px;
+        text-align: center;
+      }
+
+      input::placeholder {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+      button {
+        width: 300px;
+        height: 40px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border: 1px solid black;
+        border-radius: 10px;
+        color: white;
+        font-size: 16px;
+        font-family: "Barlow", sans-serif;
+        font-weight: 900;
+        margin: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #493f3f79;
+        animation: pulse 2s infinite;
+        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+      }
+
+      @keyframes pulse {
+        0% {
+          border-width: 1px;
         }
-        .log-messages {
-            margin-top: 20px;
-            background-color: #f0f0f0;
-            padding: 10px;
-            border-radius: 5px;
-            max-width: 400px;
-            margin: 20px auto;
-            text-align: left;
-            font-family: monospace;
-            white-space: pre-wrap;
+        50% {
+          border-width: 3px;
         }
+        100% {
+          border-width: 1px;
+        }
+      }
+
+      .log-messages {
+        background-color: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 5px;
+        padding: 10px;
+        max-width: 400px;
+        margin: 20px auto;
+        text-align: left;
+        font-family: monospace;
+        white-space: pre-wrap;
+        color: white;
+      }
+
+      .fireworks-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: black;
+        color: white;
+        text-align: center;
+      }
+
+      .fireworks {
+        animation: fireworks 2s ease-out infinite;
+      }
+
+      @keyframes fireworks {
+        0% {
+          transform: scale(0.5);
+          opacity: 0;
+        }
+        50% {
+          transform: scale(1.5);
+          opacity: 1;
+        }
+        100% {
+          transform: scale(0.5);
+          opacity: 0;
+        }
+      }
     </style>
         <!-- Include Alpine.js -->
         <script
             src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
             defer></script>
     </head>
-    <body x-data="{ successMessage: '', showSuccess: false, logMessages: '' }">
-        <div class="auth-container" id="authForm">
-            <h2>Sign Up or Sign In</h2>
-            <input type="email" placeholder="email" id="userEmail">
-            <input type="password" placeholder="password" id="userPassword">
-            <br><br>
-            <button id="signUpButton">Sign Up</button>
+    <!-- Initialize Alpine with the authWizard() function -->
+    <body x-data="authWizard()">
+        <header>
+            <img
+                src="http://127.0.0.1:3000/ahoyApp/www/img/assets/u_ahoy23.png"
+                alt="Ahoy Indie Media Logo"
+                style="width: 390px; height: auto;" />
+        </header>
+
+        <!-- Login Container (only sign in) -->
+        <div class="auth-container" id="authForm"
+            x-show="!showSignUp && !showFireworks">
+            <h2>Sign In</h2>
+            <input type="email" placeholder="Email" id="userEmail" />
+            <input type="password" placeholder="Password" id="userPassword" />
+            <br /><br />
             <button id="signInButton">Sign In</button>
+            <p>
+                <a href="#" @click.prevent="showSignUp = true">Don't have an
+                    account? Create one</a>
+            </p>
         </div>
 
+        <!-- Sign-Up Wizard Container -->
+        <div class="auth-container" x-show="showSignUp && !showFireworks">
+            <template x-if="step === 1">
+                <div>
+                    <h2>Create an Account - Step 1</h2>
+                    <input type="text" placeholder="Full Name"
+                        x-model="fullName" />
+                    <input type="email" placeholder="Email" x-model="email" />
+                    <div>
+                        <input
+                            :type="showPassword ? 'text' : 'password'"
+                            placeholder="Password"
+                            x-model="password" />
+                        <label>
+                            <input type="checkbox" x-model="showPassword" />
+                            Show Password
+                        </label>
+                    </div>
+                    <button @click="step = 2"
+                        :disabled="!fullName || !email || !password">
+                        Next
+                    </button>
+                    <button @click="showSignUp = false">Cancel</button>
+                </div>
+            </template>
+
+            <template x-if="step === 2">
+                <div>
+                    <h2>Create an Account - Step 2</h2>
+                    <p>Review your information and submit.</p>
+                    <p>
+                        <strong>Full Name:</strong>
+                        <span x-text="fullName"></span>
+                    </p>
+                    <p>
+                        <strong>Email:</strong>
+                        <span x-text="email"></span>
+                    </p>
+                    <button @click="createAccount()">Submit</button>
+                    <button @click="step = 1">Back</button>
+                </div>
+            </template>
+        </div>
+
+        <!-- Fireworks / Success Display -->
+        <div x-show="showFireworks" class="fireworks-container">
+            <div class="fireworks">
+                <h1>Yay! You have an account!</h1>
+                <p>Redirecting you to login...</p>
+            </div>
+        </div>
+
+        <!-- Secret Content for Authenticated Users -->
         <div id="secretContent" class="hidden">
             <h3>This is top secret information that you can only see if</h3>
             <h1>AUTHENTICATED</h1>
@@ -58,106 +238,146 @@
         <div class="log-messages" x-text="logMessages"></div>
 
         <script type="module">
-        //Update the below URL with the appropriate version if necessary.
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
-        import {
-            getAuth,
-            createUserWithEmailAndPassword,
-            signInWithEmailAndPassword,
-            onAuthStateChanged,
-            signOut
-        //Update the below URL with the appropriate version if necessary.
-        } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
-       
-      
-        // INSERT YOUR FIREBASE CONFIG OBJECT HERE
+      // Import Firebase modules
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
+      import {
+        getAuth,
+        createUserWithEmailAndPassword,
+        signInWithEmailAndPassword,
+        onAuthStateChanged,
+        signOut,
+      } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
 
-        const firebaseConfig = {
-    apiKey: "AIzaSyBq_IQRwkjh2o-jUkS8tI8wcEek5yMIwmo",
-    authDomain: "ahoy-indie-media-da86d.firebaseapp.com",
-    projectId: "ahoy-indie-media-da86d",
-    storageBucket: "ahoy-indie-media-da86d.appspot.com",
-    messagingSenderId: "179901301547",
-    appId: "1:179901301547:web:599159f9efb826f464bb6e"
-};
-    
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app);
+      // Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyBq_IQRwkjh2o-jUkS8tI8wcEek5yMIwmo",
+        authDomain: "ahoy-indie-media-da86d.firebaseapp.com",
+        projectId: "ahoy-indie-media-da86d",
+        storageBucket: "ahoy-indie-media-da86d.appspot.com",
+        messagingSenderId: "179901301547",
+        appId: "1:179901301547:web:599159f9efb826f464bb6e",
+      };
 
-        const userEmail = document.querySelector("#userEmail");
-        const userPassword = document.querySelector("#userPassword");
-        const authForm = document.querySelector("#authForm");
-        const secretContent = document.querySelector("#secretContent");
-        const signUpButton = document.querySelector("#signUpButton");
-        const signInButton = document.querySelector("#signInButton");
-        const signOutButton = document.querySelector("#signOutButton");
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
 
-        secretContent.style.display = 'none';
+      // DOM elements for sign in and sign out (the wizard handles sign up)
+      const userEmail = document.querySelector("#userEmail");
+      const userPassword = document.querySelector("#userPassword");
+      const authForm = document.querySelector("#authForm");
+      const secretContent = document.querySelector("#secretContent");
+      const signInButton = document.querySelector("#signInButton");
+      const signOutButton = document.querySelector("#signOutButton");
 
-        const updateLog = (message) => {
-            const logDiv = document.querySelector('.log-messages');
-            logDiv.textContent += message + '\n';
+      secretContent.style.display = "none";
+
+      const updateLog = (message) => {
+        const logDiv = document.querySelector(".log-messages");
+        logDiv.textContent += message + "\n";
+      };
+
+      const userSignIn = async () => {
+        const signInEmail = userEmail.value;
+        const signInPassword = userPassword.value;
+        updateLog("Attempting to sign in with email: " + signInEmail);
+        signInWithEmailAndPassword(auth, signInEmail, signInPassword)
+          .then((userCredential) => {
+            const user = userCredential.user;
+            updateLog("User signed in successfully: " + JSON.stringify(user));
+            document.querySelector("[x-data]").__x.$data.successMessage =
+              "You have signed in successfully!";
+            document.querySelector("[x-data]").__x.$data.showSuccess = true;
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            updateLog("Error during sign in: " + errorCode + " " + errorMessage);
+          });
+      };
+
+      const checkAuthState = async () => {
+        onAuthStateChanged(auth, (user) => {
+          if (user) {
+            authForm.style.display = "none";
+            secretContent.style.display = "block";
+          } else {
+            authForm.style.display = "block";
+            secretContent.style.display = "none";
+          }
+        });
+      };
+
+      const userSignOut = async () => {
+        await signOut(auth);
+        updateLog("User signed out.");
+      };
+
+      checkAuthState();
+
+      signInButton.addEventListener("click", userSignIn);
+      signOutButton.addEventListener("click", userSignOut);
+
+      // Attach authWizard to the global scope so Alpine can access it.
+      window.authWizard = function () {
+        return {
+          showSignUp: false,
+          step: 1,
+          email: "",
+          password: "",
+          fullName: "",
+          showPassword: false,
+          showFireworks: false,
+          showSuccess: false,
+          successMessage: "",
+          logMessages: "",
+          createAccount: async function () {
+            if (!this.email || !this.password || !this.fullName) {
+              alert("Please fill in all required fields.");
+              return;
+            }
+            if (this.password.length < 6) {
+              alert("Password must be at least 6 characters long.");
+              return;
+            }
+            try {
+              const userCredential = await createUserWithEmailAndPassword(
+                auth,
+                this.email,
+                this.password
+              );
+              const user = userCredential.user;
+              this.logMessages +=
+                "User created successfully: " + JSON.stringify(user) + "\n";
+              this.successMessage = "Your account has been created!";
+              this.showSuccess = true;
+              this.showSignUp = false;
+              this.showFireworks = true;
+
+              // Reset wizard state
+              this.step = 1;
+              this.email = "";
+              this.password = "";
+              this.fullName = "";
+
+              // Redirect to login after 3 seconds
+              setTimeout(() => {
+                this.showFireworks = false;
+              }, 3000);
+            } catch (error) {
+              const errorCode = error.code;
+              const errorMessage = error.message;
+              this.logMessages +=
+                "Error during sign up: " +
+                errorCode +
+                " " +
+                errorMessage +
+                "\n";
+              alert("Error creating account: " + errorMessage);
+            }
+          },
         };
-
-        const userSignUp = async() => {
-            const signUpEmail = userEmail.value;
-            const signUpPassword = userPassword.value;
-            updateLog("Attempting to sign up with email: " + signUpEmail);
-            createUserWithEmailAndPassword(auth, signUpEmail, signUpPassword)
-            .then((userCredential) => {
-                const user = userCredential.user;
-                updateLog("User created successfully: " + JSON.stringify(user));
-                document.querySelector('[x-data]').__x.$data.successMessage = "Your account has been created!";
-                document.querySelector('[x-data]').__x.$data.showSuccess = true;
-            })
-            .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                updateLog("Error during sign up: " + errorCode + " " + errorMessage);
-            });
-        }
-
-        const userSignIn = async() => {
-            const signInEmail = userEmail.value;
-            const signInPassword = userPassword.value;
-            updateLog("Attempting to sign in with email: " + signInEmail);
-            signInWithEmailAndPassword(auth, signInEmail, signInPassword)
-            .then((userCredential) => {
-                const user = userCredential.user;
-                updateLog("User signed in successfully: " + JSON.stringify(user));
-                document.querySelector('[x-data]').__x.$data.successMessage = "You have signed in successfully!";
-                document.querySelector('[x-data]').__x.$data.showSuccess = true;
-            })
-            .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                updateLog("Error during sign in: " + errorCode + " " + errorMessage);
-            });
-        }
-
-        const checkAuthState = async() => {
-            onAuthStateChanged(auth, user => {
-                if(user) {
-                    authForm.style.display = 'none';
-                    secretContent.style.display = 'block';
-                }
-                else {
-                    authForm.style.display = 'block';
-                    secretContent.style.display = 'none';
-                }
-            })
-        }
-
-        const userSignOut = async() => {
-            await signOut(auth);
-            updateLog("User signed out.");
-        }
-
-        checkAuthState();
-
-        signUpButton.addEventListener('click', userSignUp);
-        signInButton.addEventListener('click', userSignIn);
-        signOutButton.addEventListener('click', userSignOut);
-      </script>
+      };
+    </script>
     </body>
 </html>
