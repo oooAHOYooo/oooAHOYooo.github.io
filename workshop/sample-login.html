@@ -13,10 +13,10 @@
       * {
         font-weight: 300;
       }
-
       body {
         background-color: black !important;
-        background: url("https://i.gifer.com/n4V.gif") no-repeat center center fixed;
+        background: url("https://i.gifer.com/n4V.gif")
+          no-repeat center center fixed;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
@@ -29,11 +29,9 @@
         color: white;
         font-family: 'Barlow', sans-serif;
       }
-
       .hidden {
         display: none;
       }
-
       .auth-container {
         background-color: rgba(255, 255, 255, 0.1);
         backdrop-filter: blur(10px);
@@ -45,7 +43,6 @@
         text-align: center;
         color: white;
       }
-
       input[type="email"],
       input[type="password"],
       input[type="text"] {
@@ -62,11 +59,9 @@
         margin: 5px;
         text-align: center;
       }
-
       input::placeholder {
         color: rgba(255, 255, 255, 0.5);
       }
-
       button {
         width: 300px;
         height: 40px;
@@ -81,13 +76,11 @@
         cursor: pointer;
         transition: background-color 0.3s ease;
       }
-
       button:hover {
         background-color: #493f3f79;
         animation: pulse 2s infinite;
         text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
       }
-
       @keyframes pulse {
         0% {
           border-width: 1px;
@@ -99,7 +92,6 @@
           border-width: 1px;
         }
       }
-
       .log-messages {
         background-color: rgba(255, 255, 255, 0.1);
         border: 1px solid rgba(255, 255, 255, 0.2);
@@ -112,7 +104,6 @@
         white-space: pre-wrap;
         color: white;
       }
-
       .fireworks-container {
         display: flex;
         justify-content: center;
@@ -122,11 +113,9 @@
         color: white;
         text-align: center;
       }
-
       .fireworks {
         animation: fireworks 2s ease-out infinite;
       }
-
       @keyframes fireworks {
         0% {
           transform: scale(0.5);
@@ -146,8 +135,71 @@
         <script
             src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
             defer></script>
+        <!-- Define a global authWizard function -->
+        <script defer>
+      window.authWizard = function () {
+        return {
+          showSignUp: false,
+          step: 1,
+          email: "",
+          password: "",
+          fullName: "",
+          showPassword: false,
+          showFireworks: false,
+          showSuccess: false,
+          successMessage: "",
+          logMessages: "",
+          createAccount: async function () {
+            if (!this.email || !this.password || !this.fullName) {
+              alert("Please fill in all required fields.");
+              return;
+            }
+            if (this.password.length < 6) {
+              alert("Password must be at least 6 characters long.");
+              return;
+            }
+            try {
+              // Use the globally assigned Firebase function
+              const userCredential = await window.createUserWithEmailAndPassword(
+                window.auth,
+                this.email,
+                this.password
+              );
+              const user = userCredential.user;
+              this.logMessages +=
+                "User created successfully: " + JSON.stringify(user) + "\n";
+              this.successMessage = "Your account has been created!";
+              this.showSuccess = true;
+              this.showSignUp = false;
+              this.showFireworks = true;
+
+              // Reset wizard state
+              this.step = 1;
+              this.email = "";
+              this.password = "";
+              this.fullName = "";
+
+              // Hide fireworks after 3 seconds (simulate redirect)
+              setTimeout(() => {
+                this.showFireworks = false;
+              }, 3000);
+            } catch (error) {
+              const errorCode = error.code;
+              const errorMessage = error.message;
+              this.logMessages +=
+                "Error during sign up: " +
+                errorCode +
+                " " +
+                errorMessage +
+                "\n";
+              alert("Error creating account: " + errorMessage);
+            }
+          },
+        };
+      };
+    </script>
     </head>
-    <!-- Initialize Alpine with the authWizard() function -->
+    <!-- Use x-data="authWizard()" so that the global function is called -->
     <body x-data="authWizard()">
         <header>
             <img
@@ -156,8 +208,10 @@
                 style="width: 390px; height: auto;" />
         </header>
 
-        <!-- Login Container (only sign in) -->
-        <div class="auth-container" id="authForm"
+        <!-- Login Container (Sign In only) -->
+        <div
+            class="auth-container"
+            id="authForm"
             x-show="!showSignUp && !showFireworks">
             <h2>Sign In</h2>
             <input type="email" placeholder="Email" id="userEmail" />
@@ -195,7 +249,6 @@
                     <button @click="showSignUp = false">Cancel</button>
                 </div>
             </template>
-
             <template x-if="step === 2">
                 <div>
                     <h2>Create an Account - Step 2</h2>
@@ -237,6 +290,7 @@
         <!-- Log Messages -->
         <div class="log-messages" x-text="logMessages"></div>
 
+        <!-- Firebase and Sign In/Out Script -->
         <script type="module">
       // Import Firebase modules
       import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
@@ -262,7 +316,11 @@
       const app = initializeApp(firebaseConfig);
       const auth = getAuth(app);
 
-      // DOM elements for sign in and sign out (the wizard handles sign up)
+      // Make these available globally for the authWizard component
+      window.auth = auth;
+      window.createUserWithEmailAndPassword = createUserWithEmailAndPassword;
+
+      // Traditional DOM elements for sign in/sign out
       const userEmail = document.querySelector("#userEmail");
       const userPassword = document.querySelector("#userPassword");
       const authForm = document.querySelector("#authForm");
@@ -317,67 +375,6 @@
 
       signInButton.addEventListener("click", userSignIn);
       signOutButton.addEventListener("click", userSignOut);
-
-      // Attach authWizard to the global scope so Alpine can access it.
-      window.authWizard = function () {
-        return {
-          showSignUp: false,
-          step: 1,
-          email: "",
-          password: "",
-          fullName: "",
-          showPassword: false,
-          showFireworks: false,
-          showSuccess: false,
-          successMessage: "",
-          logMessages: "",
-          createAccount: async function () {
-            if (!this.email || !this.password || !this.fullName) {
-              alert("Please fill in all required fields.");
-              return;
-            }
-            if (this.password.length < 6) {
-              alert("Password must be at least 6 characters long.");
-              return;
-            }
-            try {
-              const userCredential = await createUserWithEmailAndPassword(
-                auth,
-                this.email,
-                this.password
-              );
-              const user = userCredential.user;
-              this.logMessages +=
-                "User created successfully: " + JSON.stringify(user) + "\n";
-              this.successMessage = "Your account has been created!";
-              this.showSuccess = true;
-              this.showSignUp = false;
-              this.showFireworks = true;
-
-              // Reset wizard state
-              this.step = 1;
-              this.email = "";
-              this.password = "";
-              this.fullName = "";
-
-              // Redirect to login after 3 seconds
-              setTimeout(() => {
-                this.showFireworks = false;
-              }, 3000);
-            } catch (error) {
-              const errorCode = error.code;
-              const errorMessage = error.message;
-              this.logMessages +=
-                "Error during sign up: " +
-                errorCode +
-                " " +
-                errorMessage +
-                "\n";
-              alert("Error creating account: " + errorMessage);
-            }
-          },
-        };
-      };
     </script>
     </body>
 </html>
