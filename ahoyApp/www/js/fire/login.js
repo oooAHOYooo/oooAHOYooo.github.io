@@ -10,7 +10,7 @@ async function login() {
     }
 
     try {
-        const userCredential = await firebase.auth().signInWithEmailAndPassword(email, password);
+        const userCredential = await auth.signInWithEmailAndPassword(email, password);
         statusBar.innerText = "Login successful! Redirecting...";
         statusBar.style.display = 'block';
 
@@ -27,7 +27,7 @@ async function login() {
 
 async function logout() {
     try {
-        await firebase.auth().signOut();
+        await auth.signOut();
         alert("User logged out successfully!");
     } catch (error) {
         console.error("Logout failed:", error);
