@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" x-data="videoApp()" x-init="initApp()">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ahoy Indie Media - Video Playlist</title>
+  
+  <!-- Video.js CSS -->
+  <link href="https://vjs.zencdn.net/7.20.3/video-js.css" rel="stylesheet" />
+  
+  <!-- Alpine.js -->
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  
+  <!-- Video.js Library -->
+  <script src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
+  
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      padding: 20px;
+    }
+    .video-container {
+      max-width: 640px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 15px;
+      border-radius: 4px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .playlist {
+      margin-top: 20px;
+    }
+    .playlist-item {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+      cursor: pointer;
+    }
+    .playlist-item.active {
+      background: #007bff;
+      color: #fff;
+    }
+    .add-video {
+      margin-top: 20px;
+    }
+    .add-video input, .add-video button {
+      padding: 8px;
+      margin: 5px 0;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .add-video button {
+      background: #28a745;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="video-container">
+    <!-- Video.js player element -->
+    <video 
+      id="video-player" 
+      class="video-js vjs-default-skin" 
+      controls preload="auto" 
+      width="640" 
+      height="360"
+      data-setup="{}">
+      <!-- The source will be set dynamically by Alpine.js -->
+      <source x-bind:src="currentVideo.src" x-bind:type="currentVideo.type">
+      <p class="vjs-no-js">
+        Please enable JavaScript to view this video.
+      </p>
+    </video>
+
+    <!-- Playlist UI -->
+    <div class="playlist">
+      <template x-for="(video, index) in playlist" :key="index">
+        <div 
+          class="playlist-item" 
+          :class="{'active': index === currentIndex}" 
+          @click="selectVideo(index)">
+          <strong x-text="video.title"></strong>
+          <span x-show="video.category"> (<em x-text="video.category"></em>)</span>
+        </div>
+      </template>
+    </div>
+
+    <!-- Add video form -->
+    <div class="add-video">
+      <h3>Add a Video</h3>
+      <input type="text" placeholder="Title" x-model="newVideo.title" />
+      <input type="text" placeholder="Source URL" x-model="newVideo.src" />
+      <input type="text" placeholder="Category (e.g., episodes, clips, promos, live)" x-model="newVideo.category" />
+      <button @click="addVideo()">Add Video</button>
+    </div>
+  </div>
+
+  <script>
+    function videoApp() {
+      return {
+        // The playlist is an array of video objects.
+        // Later, you can fetch this from an external JSON file.
+        playlist: [],
+        currentIndex: 0,
+        player: null,
+        // New video form fields
+        newVideo: {
+          title: '',
+          src: '',
+          category: '',
+          type: 'video/mp4'  // default type; adjust if needed
+        },
+        // Initialize the app
+        initApp() {
+          // Sample playlist from your Google bucket (you can replace this with a fetch call)
+          const samplePlaylist = [
+            {
+              title: "[Tallboyz] - [Clip] - [Dave Gunn] - [NoMusic] - [001]",
+              src: "https://storage.googleapis.com/ahoy-videos/clips/%5Btallboyz%5D-%5Bclip%5D-%5Bdavegunn%5D-%5BnoMusic%5D-%5B001%5D.MOV",
+              type: "video/mp4",
+              category: "clips"
+            },
+            {
+              title: "[Tallboyz] - [Promo] - [Ahoy NextUP Tallboyz]",
+              src: "https://storage.googleapis.com/ahoy-videos/promos/%5Btallboyz%5D-%5Bpromo%5D-Ahoy_NextUP_Tallboyz.mp4",
+              type: "video/mp4",
+              category: "promos"
+            }
+          ];
+          this.playlist = samplePlaylist;
+
+          // Initialize the Video.js player
+          this.player = videojs('video-player');
+
+          // When a video ends, auto-play the next video
+          this.player.on('ended', () => {
+            this.nextVideo();
+          });
+        },
+        // Computed property for the current video
+        get currentVideo() {
+          return this.playlist[this.currentIndex] || { src: '', type: '', title: 'No video available' };
+        },
+        // Select a video from the playlist
+        selectVideo(index) {
+          this.currentIndex = index;
+          this.loadCurrentVideo();
+        },
+        // Load the video at the current index into the player
+        loadCurrentVideo() {
+          this.player.pause();
+          this.player.src({
+            src: this.currentVideo.src,
+            type: this.currentVideo.type
+          });
+          this.player.load();
+          this.player.play();
+        },
+        // Auto-play the next video in the playlist
+        nextVideo() {
+          this.currentIndex = (this.currentIndex + 1) % this.playlist.length;
+          this.loadCurrentVideo();
+        },
+        // Add a new video to the playlist using the form fields
+        addVideo() {
+          if (this.newVideo.title && this.newVideo.src) {
+            this.playlist.push({
+              title: this.newVideo.title,
+              src: this.newVideo.src,
+              type: this.newVideo.type,
+              category: this.newVideo.category
+            });
+            // Clear the input fields
+            this.newVideo.title = '';
+            this.newVideo.src = '';
+            this.newVideo.category = '';
+          }
+        }
+      }
+    }
+  </script>
+</body>
+</html>
