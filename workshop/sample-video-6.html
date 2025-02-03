@@ -4,13 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ahoy Indie Media - Cinematic Library & Broadcast</title>
-  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <!-- Video.js CSS -->
   <link href="https://vjs.zencdn.net/7.20.3/video-js.css" rel="stylesheet" />
   <!-- Alpine.js -->
   <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
   <!-- Video.js Library -->
   <script src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
+  <link rel="stylesheet" href="../ahoyApp/www/css/the-dock.css">
   
   <style>
     /* Cinematic dark background with red accents */
@@ -310,7 +311,24 @@
       </table>
     </section>
   </div>
-  
+  <div id="v25-dock-container"></div>
+    <div id="v25-dock">
+        <div id="v25-icon-container" class="scroll-container">
+            <div class="v25-dock-icon" onclick="navigateToTab('news-tab')"><i class="fas fa-home"></i></div>
+            <div class="v25-dock-icon" onclick="navigateToTab('true-classic-radio')"><i class="fas fa-music"></i></div>
+            <div class="v25-dock-icon" onclick="navigateToTab('podcast-tab')"><i class="fas fa-podcast"></i></div>
+            <div class="v25-dock-icon" onclick="navigateToTab('vintage-broadcast-tab')"><i class="fas fa-tv"></i></div>
+            <div class="v25-dock-icon" onclick="navigateToTab('media-tab-a')"><i class="fas fa-image"></i></div>
+            <div class="v25-dock-icon" onclick="navigateToTab('settings-tab')"><i class="fas fa-cog"></i></div>
+            <!-- New Dock Icons -->
+            <div id="account-dock-icon" class="v25-dock-icon" onclick="navigateToTab('account-tab')"><i class="fas fa-user"></i></div>
+            <div id="game-dock-icon" class="v25-dock-icon" onclick="navigateToTab('game-tab')"><i class="fas fa-gamepad"></i></div>
+            <div id="cast-dock-icon" class="v25-dock-icon" onclick="navigateToTab('cast-tab')"><i class="fas fa-project-diagram"></i></div>
+            <div id="search-dock-icon" class="v25-dock-icon" onclick="navigateToTab('search-tab')"><i class="fas fa-search"></i></div>
+   
+        </div>
+    </div>
+</div>
   <script>
     function videoApp() {
       return {

@@ -1,0 +1,178 @@
+
+/* Additional styles for login and user icons in the dock */
+.v25-dock-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+#dock-username {
+    margin-left: 8px;
+    /* Space between icon and username text */
+    color: #fff;
+    /* White text color */
+    font-size: 14px;
+    /* Smaller font size for username */
+}
+
+.v25-dock-icon.active {
+    background: rgba(var(--border-color), 0.1) !important;
+    /* Use the active color you prefer */
+    transform: scale(1.011);
+    /* Slightly larger than the hover state */
+}
+
+.v25-dock-icon.active i {
+    color: rgba(255, 255, 255, 0.2);
+    /* Change icon color for better contrast */
+}
+
+#v25-dock-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    background-color: rgba(var(--background-color-rgb), 0.7);
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    z-index: 50000;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid rgba(var(--text-color-rgb), 0.1);
+    transition: all 0.3s ease;
+}
+
+
+
+#v25-dock {
+    display: flex;
+    max-width: 100%;
+    overflow-x: auto;
+    scrollbar-width: none;
+    gap: 19px;
+    padding: 5px 19px;
+}
+
+#v25-dock::-webkit-scrollbar {
+    display: none;
+}
+
+.scroll-container {
+    display: flex;
+    gap: 20px;
+}
+
+.v25-dock-icon {
+    flex: none;
+    width: 55px;
+    height: 55px;
+    background: rgba(var(--text-color-rgb), 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.v25-dock-icon::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, rgba(var(--border-color-rgb), 0.7), rgba(var(--secondary-color-rgb), 0.57));
+    z-index: -1;
+    border-radius: 17px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.v25-dock-icon:hover::before,
+.v25-dock-icon:focus::before,
+.v25-dock-icon.active::before {
+    opacity: 1;
+}
+
+.v25-dock-icon:hover,
+.v25-dock-icon:focus,
+.v25-dock-icon.active {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(var(--text-color-rgb), 0.2);
+    background: rgba(var(--border-color-rgb), 0.12);
+}
+
+.v25-dock-icon i {
+    color: var(--text-color);
+    font-size: 24px;
+    transition: all 0.3s ease;
+}
+
+.v25-dock-icon:hover i,
+.v25-dock-icon:focus i,
+.v25-dock-icon.active i {
+
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+/* Tooltip styles */
+.v25-dock-icon::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(var(--background-color-rgb), 0.8);
+    color: var(--text-color);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.v25-dock-icon:hover::after {
+    opacity: 1;
+    visibility: visible;
+    bottom: calc(100% + 10px);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    #v25-dock {
+        gap: 15px;
+        padding: 5px 10px;
+    }
+
+    .v25-dock-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .v25-dock-icon i {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    #v25-dock {
+        gap: 10px;
+    }
+
+    .v25-dock-icon {
+        width: 45px;
+        height: 45px;
+    }
+
+    .v25-dock-icon i {
+        font-size: 20px;
+    }
+}
