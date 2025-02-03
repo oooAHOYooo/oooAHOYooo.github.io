@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en" x-data="videoApp()" x-init="initApp()">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ahoy Indie Media - Cinematic Library</title>
+  
+  <!-- Video.js CSS -->
+  <link href="https://vjs.zencdn.net/7.20.3/video-js.css" rel="stylesheet" />
+  <!-- Alpine.js -->
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <!-- Video.js Library -->
+  <script src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
+  
+  <style>
+    /* Cinematic dark background with subtle red accents */
+    body {
+      margin: 0;
+      padding: 20px;
+      background: linear-gradient(135deg, #0d0d0d, #262626);
+      font-family: 'Helvetica Neue', sans-serif;
+      color: #e0e0e0;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: rgba(20, 20, 20, 0.95);
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8);
+      padding: 20px;
+      border: 1px solid #333;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.8rem;
+      color: #f44336; /* subtle red accent */
+    }
+    header p {
+      margin: 8px 0 0;
+      font-size: 1.2rem;
+      color: #ccc;
+    }
+    /* Featured Section */
+    .featured-section {
+      margin-bottom: 40px;
+    }
+    .featured-title {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      text-align: center;
+      color: #f44336;
+    }
+    .featured-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 15px;
+    }
+    .featured-item {
+      background: rgba(40, 40, 40, 0.9);
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s, background 0.3s;
+    }
+    .featured-item:hover {
+      transform: scale(1.03);
+      background: rgba(60, 60, 60, 0.95);
+    }
+    .featured-item img {
+      width: 100%;
+      display: block;
+    }
+    .featured-item p {
+      margin: 8px;
+      font-size: 16px;
+      text-align: center;
+      color: #e0e0e0;
+    }
+    /* Video Player Section */
+    .player-section {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .control-bar {
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+    .control-bar button {
+      padding: 8px 12px;
+      border: none;
+      border-radius: 8px;
+      background: rgba(40, 40, 40, 0.8);
+      color: #e0e0e0;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .control-bar button:hover {
+      background: rgba(70, 70, 70, 0.9);
+    }
+    /* Library Section */
+    .library-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .library-header h2 {
+      margin: 0;
+      font-size: 1.8rem;
+      color: #f44336;
+    }
+    .view-toggle button {
+      padding: 6px 12px;
+      border: none;
+      border-radius: 8px;
+      background: rgba(40,40,40,0.8);
+      color: #e0e0e0;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .view-toggle button.active,
+    .view-toggle button:hover {
+      background: rgba(70,70,70,0.9);
+    }
+    /* Grid view for library */
+    .library-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+    }
+    .library-card {
+      background: rgba(30, 30, 30, 0.9);
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s, background 0.3s;
+    }
+    .library-card:hover {
+      transform: scale(1.03);
+      background: rgba(50, 50, 50, 0.95);
+    }
+    .library-card img {
+      width: 100%;
+      display: block;
+    }
+    .library-card .info {
+      padding: 8px;
+      text-align: center;
+      font-size: 14px;
+      color: #e0e0e0;
+    }
+    /* List view for library */
+    .library-list {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .library-list th,
+    .library-list td {
+      padding: 10px;
+      border-bottom: 1px solid rgba(80, 80, 80, 0.6);
+      text-align: left;
+      font-size: 14px;
+      color: #e0e0e0;
+    }
+    .library-list tr:hover {
+      background: rgba(50, 50, 50, 0.8);
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <h1>Ahoy Indie Media</h1>
+      <p>Your comprehensive cinematic video library</p>
+    </header>
+
+    <!-- Featured Playlists Section -->
+    <section class="featured-section">
+      <div class="featured-title">Featured Playlists for the Season</div>
+      <div class="featured-grid">
+        <template x-for="playlist in featuredPlaylists" :key="playlist.id">
+          <div class="featured-item" @click="selectVideo(playlist.id); viewMode = 'player'">
+            <img :src="playlist.thumbnail" alt="Featured Thumbnail" />
+            <p x-text="playlist.title"></p>
+          </div>
+        </template>
+      </div>
+    </section>
+
+    <!-- Video Player Section -->
+    <section class="player-section" x-show="viewMode === 'player'">
+      <video id="video-player" class="video-js vjs-default-skin" controls preload="auto" width="640" height="360" data-setup="{}">
+        <source x-bind:src="currentVideo.src" x-bind:type="currentVideo.type" />
+        <p class="vjs-no-js">Please enable JavaScript to view this video.</p>
+      </video>
+      <div class="control-bar">
+        <button @click="prevVideo()">Prev</button>
+        <button @click="togglePlayPause()">
+          <span x-text="isPlaying ? 'Pause' : 'Play'"></span>
+        </button>
+        <button @click="nextVideo()">Next</button>
+        <button @click="togglePip()">PIP</button>
+        <button @click="toggleFullscreen()">Fullscreen</button>
+      </div>
+    </section>
+
+    <!-- Library Section -->
+    <section class="library-section">
+      <div class="library-header">
+        <h2>Library</h2>
+        <div class="view-toggle">
+          <button :class="{'active': libraryViewMode === 'grid'}" @click="libraryViewMode = 'grid'">Grid View</button>
+          <button :class="{'active': libraryViewMode === 'list'}" @click="libraryViewMode = 'list'">List View</button>
+        </div>
+      </div>
+      <!-- Grid View -->
+      <div x-show="libraryViewMode === 'grid'" class="library-grid">
+        <template x-for="video in fullLibrary" :key="video.id">
+          <div class="library-card" @click="selectVideo(video.id); viewMode = 'player'">
+            <img :src="video.thumbnail" alt="Video Thumbnail" />
+            <div class="info">
+              <strong x-text="video.title"></strong><br />
+              <small x-text="video.category"></small>
+            </div>
+          </div>
+        </template>
+      </div>
+      <!-- List View -->
+      <table x-show="libraryViewMode === 'list'" class="library-list">
+        <thead>
+          <tr>
+            <th>Thumbnail</th>
+            <th>Title</th>
+            <th>Category</th>
+          </tr>
+        </thead>
+        <tbody>
+          <template x-for="video in fullLibrary" :key="video.id">
+            <tr @click="selectVideo(video.id); viewMode = 'player'">
+              <td><img :src="video.thumbnail" alt="Thumb" width="80" /></td>
+              <td x-text="video.title"></td>
+              <td x-text="video.category"></td>
+            </tr>
+          </template>
+        </tbody>
+      </table>
+    </section>
+  </div>
+  
+  <script>
+    function videoApp() {
+      return {
+        // Define four distinct playlists – sample data for now.
+        playlists: {
+          episodes: [
+            {
+              id: 1,
+              title: "[Tallboyz] - [Episode] - [Season1]-[001]",
+              src: "https://storage.googleapis.com/ahoy-videos/episodes/%5Btallboyz%5D-%5Bepisode%5D-%5BSeason1%5D-%5B001%5D.mp4",
+              type: "video/mp4",
+              thumbnail: "https://via.placeholder.com/400x225?text=Episode+1",
+              category: "Episodes"
+            },
+            {
+              id: 2,
+              title: "[Tallboyz] - [Episode] - [Season1]-[002]",
+              src: "https://storage.googleapis.com/ahoy-videos/episodes/%5Btallboyz%5D-%5Bepisode%5D-%5BSeason1%5D-%5B002%5D.mp4",
+              type: "video/mp4",
+              thumbnail: "https://via.placeholder.com/400x225?text=Episode+2",
+              category: "Episodes"
+            },
+            {
+              id: 3,
+              title: "[Tallboyz] - [Episode] - [Season1]-[003]",
+              src: "https://storage.googleapis.com/ahoy-videos/episodes/%5Btallboyz%5D-%5Bepisode%5D-%5BSeason1%5D-%5B003%5D.mp4",
+              type: "video/mp4",
+              thumbnail: "https://via.placeholder.com/400x225?text=Episode+3",
+              category: "Episodes"
+            }
+          ],
+          clips: [
+            {
+              id: 4,
+              title: "[Tallboyz] - [Clip] - [Dave Gunn] - [NoMusic] - [001]",
+              src: "https://storage.googleapis.com/ahoy-videos/clips/%5Btallboyz%5D-%5Bclip%5D-%5Bdavegunn%5D-%5BnoMusic%5D-%5B001%5D.MOV",
+              type: "video/mp4",
+              thumbnail: "https://via.placeholder.com/400x225?text=Clip+1",
+              category: "Clips"
+            },
+            {
+              id: 5,
+              title: "[Tallboyz] - [Clip] - [Random] - [001]",
+              src: "https://storage.googleapis.com/ahoy-videos/clips/%5Btallboyz%5D-%5Bclip%5D-%5Brandom%5D-%5B001%5D.mp4",
+              type: "video/mp4",
+              thumbnail: "https://via.placeholder.com/400x225?text=Clip+2",
+              category: "Clips"
+            },
+            {
+              id: 6,
+              title: "[Tallboyz] - [Clip] - [Behind the Scenes] - [001]",
+              src: "https://storage.googleapis.com/ahoy-videos/clips/%5Btallboyz%5D-%5Bclip%5D-%5Bbehindthescenes%5D-%5B001%5D.mp4",
+              type: "video/mp4",
+              thumbnail: "https://via.placeholder.com/400x225?text=Clip+3",
+              category: "Clips"
+            }
+          ],
+          promos: [
+            {
+              id: 7,
+              title: "[Tallboyz] - [Promo] - [Ahoy NextUP Tallboyz]",
+              src: "https://storage.googleapis.com/ahoy-videos/promos/%5Btallboyz%5D-%5Bpromo%5D-Ahoy_NextUP_Tallboyz.mp4",
+              type: "video/mp4",
+              thumbnail: "https://via.placeholder.com/400x225?text=Promo+1",
+              category: "Promos"
+            },
+            {
+              id: 8,
+              title: "[Tallboyz] - [Promo] - [Special Announcement]",
+              src: "https://storage.googleapis.com/ahoy-videos/promos/%5Btallboyz%5D-%5Bpromo%5D-Special_Announcement.mp4",
+              type: "video/mp4",
+              thumbnail: "https://via.placeholder.com/400x225?text=Promo+2",
+              category: "Promos"
+            },
+            {
+              id: 9,
+              title: "[Tallboyz] - [Promo] - [Event Teaser]",
+              src: "https://storage.googleapis.com/ahoy-videos/promos/%5Btallboyz%5D-%5Bpromo%5D-Event_Teaser.mp4",
+              type: "video/mp4",
+              thumbnail: "https://via.placeholder.com/400x225?text=Promo+3",
+              category: "Promos"
+            }
+          ],
+          live: [
+            {
+              id: 10,
+              title: "[Tallboyz] - [Live] - [Concert] - [2022]",
+              src: "https://storage.googleapis.com/ahoy-videos/live/%5Btallboyz%5D-%5Blive%5D-[Concert]-[2022].mp4",
+              type: "video/mp4",
+              thumbnail: "https://via.placeholder.com/400x225?text=Live+1",
+              category: "Live"
+            },
+            {
+              id: 11,
+              title: "[Tallboyz] - [Live] - [Q&A Session] - [2022]",
+              src: "https://storage.googleapis.com/ahoy-videos/live/%5Btallboyz%5D-%5Blive%5D-[QA]-[2022].mp4",
+              type: "video/mp4",
+              thumbnail: "https://via.placeholder.com/400x225?text=Live+2",
+              category: "Live"
+            },
+            {
+              id: 12,
+              title: "[Tallboyz] - [Live] - [Behind the Scenes] - [2022]",
+              src: "https://storage.googleapis.com/ahoy-videos/live/%5Btallboyz%5D-%5Blive%5D-[BTS]-[2022].mp4",
+              type: "video/mp4",
+              thumbnail: "https://via.placeholder.com/400x225?text=Live+3",
+              category: "Live"
+            }
+          ]
+        },
+        // State for the video player and library
+        viewMode: 'player', // 'player' or 'library'
+        libraryViewMode: 'grid', // 'grid' or 'list'
+        currentVideoId: null, // ID of the currently selected video
+        player: null,
+        isPlaying: false,
+        
+        // Computed property: Merge all videos into one comprehensive library.
+        get fullLibrary() {
+          return [
+            ...this.playlists.episodes,
+            ...this.playlists.clips,
+            ...this.playlists.promos,
+            ...this.playlists.live
+          ];
+        },
+        // Computed property: For featured playlists, choose a few items based on the current season.
+        get featuredPlaylists() {
+          const month = new Date().getMonth();
+          if (month === 11 || month === 0) {
+            return this.playlists.promos.slice(0, 2);
+          } else if (month >= 5 && month <= 7) {
+            return this.playlists.live.slice(0, 2);
+          } else {
+            return this.playlists.episodes.slice(0, 2);
+          }
+        },
+        // Computed property: Get the current video object based on currentVideoId.
+        get currentVideo() {
+          return this.fullLibrary.find(video => video.id === this.currentVideoId) || {};
+        },
+        initApp() {
+          if (this.fullLibrary.length > 0) {
+            this.currentVideoId = this.fullLibrary[0].id;
+          }
+          this.player = videojs('video-player');
+          this.loadCurrentVideo();
+          this.player.on('ended', () => { this.nextVideo(); });
+          this.player.on('play', () => { this.isPlaying = true; });
+          this.player.on('pause', () => { this.isPlaying = false; });
+        },
+        loadCurrentVideo() {
+          this.player.pause();
+          if (this.currentVideo && this.currentVideo.src) {
+            this.player.src({
+              src: this.currentVideo.src,
+              type: this.currentVideo.type
+            });
+            this.player.load();
+            this.player.play();
+          }
+        },
+        selectVideo(id) {
+          this.currentVideoId = id;
+          this.loadCurrentVideo();
+        },
+        nextVideo() {
+          let index = this.fullLibrary.findIndex(video => video.id === this.currentVideoId);
+          index = (index + 1) % this.fullLibrary.length;
+          this.currentVideoId = this.fullLibrary[index].id;
+          this.loadCurrentVideo();
+        },
+        prevVideo() {
+          let index = this.fullLibrary.findIndex(video => video.id === this.currentVideoId);
+          index = (index - 1 + this.fullLibrary.length) % this.fullLibrary.length;
+          this.currentVideoId = this.fullLibrary[index].id;
+          this.loadCurrentVideo();
+        },
+        togglePlayPause() {
+          if (this.isPlaying) {
+            this.player.pause();
+          } else {
+            this.player.play();
+          }
+        },
+        async togglePip() {
+          const videoEl = this.player.tech(true).el();
+          if (document.pictureInPictureElement) {
+            await document.exitPictureInPicture();
+          } else if (videoEl.requestPictureInPicture) {
+            try {
+              await videoEl.requestPictureInPicture();
+            } catch (error) {
+              console.error("PIP error:", error);
+            }
+          }
+        },
+        toggleFullscreen() {
+          const container = document.querySelector('.container');
+          if (!document.fullscreenElement) {
+            container.requestFullscreen().catch(err => {
+              console.error(`Error enabling fullscreen: ${err.message} (${err.name})`);
+            });
+          } else {
+            document.exitFullscreen();
+          }
+        }
+      }
+    }
+  </script>
+</body>
+</html>

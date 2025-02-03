@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en" x-data="videoApp()" x-init="initApp()">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ahoy Indie Media - Comprehensive Video Tool</title>
+  
+  <!-- Video.js CSS -->
+  <link href="https://vjs.zencdn.net/7.20.3/video-js.css" rel="stylesheet" />
+  
+  <!-- Alpine.js -->
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  
+  <!-- Video.js Library -->
+  <script src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
+  
+  <style>
+    /* Hipster gradient background */
+    body {
+      margin: 0;
+      padding: 20px;
+      background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+      font-family: 'Helvetica Neue', sans-serif;
+      color: #fff;
+    }
+    /* Glass UI container */
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 16px;
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+    /* Header styling */
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    .header p {
+      margin: 5px 0 0;
+      font-size: 1.2rem;
+    }
+    /* Navigation for distinct playlists and view toggling */
+    .playlist-nav {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .playlist-nav button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.3);
+      color: #fff;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .playlist-nav button.active,
+    .playlist-nav button:hover {
+      background: rgba(255, 255, 255, 0.6);
+    }
+    /* Video player section */
+    .video-player-section {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    /* Custom control bar styling */
+    .control-bar {
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+    .control-bar button {
+      padding: 8px 12px;
+      border: none;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.3);
+      color: #fff;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .control-bar button:hover {
+      background: rgba(255, 255, 255, 0.6);
+    }
+    /* Gallery view grid */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .gallery-item {
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    .gallery-item:hover {
+      transform: scale(1.05);
+    }
+    .gallery-item img {
+      width: 100%;
+      display: block;
+    }
+    .gallery-item p {
+      margin: 8px;
+      font-size: 14px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <h1>Ahoy Indie Media</h1>
+      <p>Comprehensive Video Tool</p>
+    </div>
+    
+    <!-- Playlist Navigation (Select distinct playlists) -->
+    <div class="playlist-nav">
+      <button :class="{'active': selectedCategory === 'episodes'}" @click="selectCategory('episodes')">Episodes</button>
+      <button :class="{'active': selectedCategory === 'clips'}" @click="selectCategory('clips')">Clips</button>
+      <button :class="{'active': selectedCategory === 'promos'}" @click="selectCategory('promos')">Promos</button>
+      <button :class="{'active': selectedCategory === 'live'}" @click="selectCategory('live')">Live</button>
+    </div>
+    
+    <!-- Toggle between Player and Gallery Views -->
+    <div class="playlist-nav">
+      <button :class="{'active': view === 'player'}" @click="view = 'player'">Player View</button>
+      <button :class="{'active': view === 'gallery'}" @click="view = 'gallery'">Gallery View</button>
+    </div>
+    
+    <!-- Video Player Section -->
+    <div x-show="view === 'player'" class="video-player-section">
+      <video
+        id="video-player"
+        class="video-js vjs-default-skin"
+        controls
+        preload="auto"
+        width="640"
+        height="360"
+        data-setup="{}">
+        <source x-bind:src="currentVideo.src" x-bind:type="currentVideo.type" />
+        <p class="vjs-no-js">Please enable JavaScript to view this video.</p>
+      </video>
+      <!-- Custom Control Bar -->
+      <div class="control-bar">
+        <button @click="prevVideo()">Prev</button>
+        <button @click="togglePlayPause()">
+          <span x-text="isPlaying ? 'Pause' : 'Play'"></span>
+        </button>
+        <button @click="nextVideo()">Next</button>
+        <button @click="togglePip()">PIP</button>
+        <button @click="toggleFullscreen()">Fullscreen</button>
+      </div>
+    </div>
+    
+    <!-- Gallery View Section -->
+    <div x-show="view === 'gallery'" class="gallery">
+      <template x-for="video in currentPlaylist" :key="video.id">
+        <div class="gallery-item" @click="selectVideo(video.id); view = 'player'">
+          <img :src="video.thumbnail" alt="Video Thumbnail" />
+          <p x-text="video.title"></p>
+        </div>
+      </template>
+    </div>
+  </div>
+  
+  <script>
+    function videoApp() {
+      return {
+        // Define distinct playlists as objects keyed by category.
+        playlists: {
+          episodes: [
+            {
+              id: 1,
+              title: "[Tallboyz] - [Episode] - [Season1]-[001]",
+              src: "https://storage.googleapis.com/ahoy-videos/episodes/%5Btallboyz%5D-%5Bepisode%5D-%5BSeason1%5D-%5B001%5D.mp4",
+              type: "video/mp4",
+              thumbnail: "https://via.placeholder.com/400x225?text=Episode+1"
+            },
+            {
+              id: 2,
+              title: "[Tallboyz] - [Episode] - [Season1]-[002]",
+              src: "https://storage.googleapis.com/ahoy-videos/episodes/%5Btallboyz%5D-%5Bepisode%5D-%5BSeason1%5D-%5B002%5D.mp4",
+              type: "video/mp4",
+              thumbnail: "https://via.placeholder.com/400x225?text=Episode+2"
+            },
+            {
+              id: 3,
+              title: "[Tallboyz] - [Episode] - [Season1]-[003]",
+              src: "https://storage.googleapis.com/ahoy-videos/episodes/%5Btallboyz%5D-%5Bepisode%5D-%5BSeason1%5D-%5B003%5D.mp4",
+              type: "video/mp4",
+              thumbnail: "https://via.placeholder.com/400x225?text=Episode+3"
+            }
+          ],
+          clips: [
+            {
+              id: 4,
+              title: "[Tallboyz] - [Clip] - [Dave Gunn] - [NoMusic] - [001]",
+              src: "https://storage.googleapis.com/ahoy-videos/clips/%5Btallboyz%5D-%5Bclip%5D-%5Bdavegunn%5D-%5BnoMusic%5D-%5B001%5D.MOV",
+              type: "video/mp4",
+              thumbnail: "https://via.placeholder.com/400x225?text=Clip+1"
+            },
+            {
+              id: 5,
+              title: "[Tallboyz] - [Clip] - [Random] - [001]",
+              src: "https://storage.googleapis.com/ahoy-videos/clips/%5Btallboyz%5D-%5Bclip%5D-%5Brandom%5D-%5B001%5D.mp4",
+              type: "video/mp4",
+              thumbnail: "https://via.placeholder.com/400x225?text=Clip+2"
+            },
+            {
+              id: 6,
+              title: "[Tallboyz] - [Clip] - [Behind the Scenes] - [001]",
+              src: "https://storage.googleapis.com/ahoy-videos/clips/%5Btallboyz%5D-%5Bclip%5D-%5Bbehindthescenes%5D-%5B001%5D.mp4",
+              type: "video/mp4",
+              thumbnail: "https://via.placeholder.com/400x225?text=Clip+3"
+            }
+          ],
+          promos: [
+            {
+              id: 7,
+              title: "[Tallboyz] - [Promo] - [Ahoy NextUP Tallboyz]",
+              src: "https://storage.googleapis.com/ahoy-videos/promos/%5Btallboyz%5D-%5Bpromo%5D-Ahoy_NextUP_Tallboyz.mp4",
+              type: "video/mp4",
+              thumbnail: "https://via.placeholder.com/400x225?text=Promo+1"
+            },
+            {
+              id: 8,
+              title: "[Tallboyz] - [Promo] - [Special Announcement]",
+              src: "https://storage.googleapis.com/ahoy-videos/promos/%5Btallboyz%5D-%5Bpromo%5D-Special_Announcement.mp4",
+              type: "video/mp4",
+              thumbnail: "https://via.placeholder.com/400x225?text=Promo+2"
+            },
+            {
+              id: 9,
+              title: "[Tallboyz] - [Promo] - [Event Teaser]",
+              src: "https://storage.googleapis.com/ahoy-videos/promos/%5Btallboyz%5D-%5Bpromo%5D-Event_Teaser.mp4",
+              type: "video/mp4",
+              thumbnail: "https://via.placeholder.com/400x225?text=Promo+3"
+            }
+          ],
+          live: [
+            {
+              id: 10,
+              title: "[Tallboyz] - [Live] - [Concert] - [2022]",
+              src: "https://storage.googleapis.com/ahoy-videos/live/%5Btallboyz%5D-%5Blive%5D-[Concert]-[2022].mp4",
+              type: "video/mp4",
+              thumbnail: "https://via.placeholder.com/400x225?text=Live+1"
+            },
+            {
+              id: 11,
+              title: "[Tallboyz] - [Live] - [Q&A Session] - [2022]",
+              src: "https://storage.googleapis.com/ahoy-videos/live/%5Btallboyz%5D-%5Blive%5D-[QA]-[2022].mp4",
+              type: "video/mp4",
+              thumbnail: "https://via.placeholder.com/400x225?text=Live+2"
+            },
+            {
+              id: 12,
+              title: "[Tallboyz] - [Live] - [Behind the Scenes] - [2022]",
+              src: "https://storage.googleapis.com/ahoy-videos/live/%5Btallboyz%5D-%5Blive%5D-[BTS]-[2022].mp4",
+              type: "video/mp4",
+              thumbnail: "https://via.placeholder.com/400x225?text=Live+3"
+            }
+          ]
+        },
+        // Currently selected category and view
+        selectedCategory: 'episodes',
+        view: 'player', // either 'player' or 'gallery'
+        // ID of the currently playing video (from the current category playlist)
+        currentVideoId: null,
+        // Video.js player instance
+        player: null,
+        // Track play/pause state
+        isPlaying: false,
+        
+        initApp() {
+          // Set initial category and current video
+          this.selectedCategory = 'episodes';
+          if(this.currentPlaylist.length > 0) {
+            this.currentVideoId = this.currentPlaylist[0].id;
+          }
+          // Initialize Video.js
+          this.player = videojs('video-player');
+          this.loadCurrentVideo();
+          // When video ends, auto-play the next video
+          this.player.on('ended', () => {
+            this.nextVideo();
+          });
+          // Update play/pause state
+          this.player.on('play', () => { this.isPlaying = true; });
+          this.player.on('pause', () => { this.isPlaying = false; });
+        },
+        // Computed: current playlist based on selected category
+        get currentPlaylist() {
+          return this.playlists[this.selectedCategory] || [];
+        },
+        // Computed: the current video object
+        get currentVideo() {
+          return this.currentPlaylist.find(video => video.id === this.currentVideoId) || {};
+        },
+        // Change selected category and reset current video
+        selectCategory(category) {
+          this.selectedCategory = category;
+          if (this.currentPlaylist.length > 0) {
+            this.currentVideoId = this.currentPlaylist[0].id;
+            this.loadCurrentVideo();
+          }
+        },
+        // Select a video by its id
+        selectVideo(id) {
+          this.currentVideoId = id;
+          this.loadCurrentVideo();
+        },
+        // Load the current video into the Video.js player
+        loadCurrentVideo() {
+          this.player.pause();
+          if (this.currentVideo && this.currentVideo.src) {
+            this.player.src({
+              src: this.currentVideo.src,
+              type: this.currentVideo.type
+            });
+            this.player.load();
+            this.player.play();
+          }
+        },
+        // Play the next video in the current playlist
+        nextVideo() {
+          let index = this.currentPlaylist.findIndex(video => video.id === this.currentVideoId);
+          index = (index + 1) % this.currentPlaylist.length;
+          this.currentVideoId = this.currentPlaylist[index].id;
+          this.loadCurrentVideo();
+        },
+        // Play the previous video in the current playlist
+        prevVideo() {
+          let index = this.currentPlaylist.findIndex(video => video.id === this.currentVideoId);
+          index = (index - 1 + this.currentPlaylist.length) % this.currentPlaylist.length;
+          this.currentVideoId = this.currentPlaylist[index].id;
+          this.loadCurrentVideo();
+        },
+        // Toggle play/pause state
+        togglePlayPause() {
+          if (this.isPlaying) {
+            this.player.pause();
+          } else {
+            this.player.play();
+          }
+        },
+        // Toggle Picture-in-Picture mode (if supported)
+        async togglePip() {
+          const videoEl = this.player.tech(true).el();
+          if (document.pictureInPictureElement) {
+            await document.exitPictureInPicture();
+          } else if (videoEl.requestPictureInPicture) {
+            try {
+              await videoEl.requestPictureInPicture();
+            } catch (error) {
+              console.error("PIP error:", error);
+            }
+          }
+        },
+        // Toggle fullscreen on the container element
+        toggleFullscreen() {
+          const container = document.querySelector('.container');
+          if (!document.fullscreenElement) {
+            container.requestFullscreen().catch(err => {
+              console.error(`Error enabling fullscreen: ${err.message} (${err.name})`);
+            });
+          } else {
+            document.exitFullscreen();
+          }
+        }
+      }
+    }
+  </script>
+</body>
+</html>

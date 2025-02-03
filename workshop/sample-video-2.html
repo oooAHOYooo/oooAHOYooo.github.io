@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en" x-data="videoApp()" x-init="initApp()">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ahoy Indie Media - Comprehensive Video Tool</title>
+  
+  <!-- Video.js CSS -->
+  <link href="https://vjs.zencdn.net/7.20.3/video-js.css" rel="stylesheet" />
+  
+  <!-- Alpine.js -->
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  
+  <!-- Video.js Library -->
+  <script src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
+  
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      padding: 20px;
+    }
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 4px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    /* Controls */
+    .controls,
+    .category-filters {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    .controls button,
+    .category-filters button {
+      margin: 5px;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 4px;
+      background: #007bff;
+      color: #fff;
+      cursor: pointer;
+    }
+    .category-filters button.active {
+      background: #28a745;
+    }
+    /* Player Section */
+    .video-player-section {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .playlist {
+      margin-top: 15px;
+    }
+    .playlist-item {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+      cursor: pointer;
+    }
+    .playlist-item.active {
+      background: #007bff;
+      color: #fff;
+    }
+    /* Gallery Section */
+    .gallery {
+      margin-top: 20px;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+    }
+    .gallery-item {
+      background: #f8f9fa;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      cursor: pointer;
+      text-align: center;
+      transition: background 0.3s;
+    }
+    .gallery-item:hover {
+      background: #e2e6ea;
+    }
+    .gallery-item img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+    /* Add Video Form */
+    .add-video {
+      margin-top: 20px;
+    }
+    .add-video input,
+    .add-video button {
+      padding: 8px;
+      margin: 5px 0;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .add-video button {
+      background: #28a745;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- View Toggle Controls -->
+    <div class="controls">
+      <button @click="view = 'player'">Player View</button>
+      <button @click="view = 'gallery'">Gallery View</button>
+    </div>
+
+    <!-- Category Filter Controls -->
+    <div class="category-filters">
+      <button :class="{'active': selectedCategory === 'All'}" @click="selectedCategory = 'All'">All</button>
+      <button :class="{'active': selectedCategory === 'episodes'}" @click="selectedCategory = 'episodes'">Episodes</button>
+      <button :class="{'active': selectedCategory === 'clips'}" @click="selectedCategory = 'clips'">Clips</button>
+      <button :class="{'active': selectedCategory === 'promos'}" @click="selectedCategory = 'promos'">Promos</button>
+      <button :class="{'active': selectedCategory === 'live'}" @click="selectedCategory = 'live'">Live</button>
+    </div>
+
+    <!-- Video Player Section -->
+    <div x-show="view === 'player'" class="video-player-section">
+      <video
+        id="video-player"
+        class="video-js vjs-default-skin"
+        controls
+        preload="auto"
+        width="640"
+        height="360"
+        data-setup="{}">
+        <source x-bind:src="currentVideo.src" x-bind:type="currentVideo.type">
+        <p class="vjs-no-js">
+          Please enable JavaScript to view this video.
+        </p>
+      </video>
+
+      <!-- Playlist (List View) -->
+      <div class="playlist">
+        <template x-for="(video, index) in filteredPlaylist" :key="video.id">
+          <div
+            class="playlist-item"
+            :class="{'active': video.id === currentVideo.id}"
+            @click="selectVideo(video.id)">
+            <strong x-text="video.title"></strong>
+            <span x-show="video.category"> (<em x-text="video.category"></em>)</span>
+          </div>
+        </template>
+      </div>
+    </div>
+
+    <!-- Gallery View Section -->
+    <div x-show="view === 'gallery'" class="gallery">
+      <div class="gallery-grid">
+        <template x-for="video in filteredPlaylist" :key="video.id">
+          <div class="gallery-item" @click="selectVideo(video.id); view = 'player'">
+            <img :src="video.thumbnail || 'https://via.placeholder.com/200x120?text=No+Thumbnail'" alt="Video Thumbnail">
+            <p x-text="video.title"></p>
+            <small x-text="video.category"></small>
+          </div>
+        </template>
+      </div>
+    </div>
+
+    <!-- Add Video Form -->
+    <div class="add-video">
+      <h3>Add a Video</h3>
+      <input type="text" placeholder="Title" x-model="newVideo.title" />
+      <input type="text" placeholder="Source URL" x-model="newVideo.src" />
+      <input type="text" placeholder="Thumbnail URL" x-model="newVideo.thumbnail" />
+      <input type="text" placeholder="Category (episodes, clips, promos, live)" x-model="newVideo.category" />
+      <button @click="addVideo()">Add Video</button>
+    </div>
+  </div>
+
+  <script>
+    function videoApp() {
+      return {
+        // The complete playlist of video objects.
+        // In practice, you might fetch this JSON from your bucket.
+        playlist: [],
+        // Holds the ID of the currently playing video.
+        currentVideoId: null,
+        player: null,
+        // Filtering and view settings.
+        selectedCategory: 'All',
+        view: 'player', // 'player' or 'gallery'
+        // New video form model.
+        newVideo: {
+          title: '',
+          src: '',
+          thumbnail: '',
+          category: '',
+          type: 'video/mp4'
+        },
+        // Initialize the application.
+        initApp() {
+          // Sample playlist – update with your actual JSON data.
+          const samplePlaylist = [
+            {
+              id: 1,
+              title: "[Tallboyz] - [Clip] - [Dave Gunn] - [NoMusic] - [001]",
+              src: "https://storage.googleapis.com/ahoy-videos/clips/%5Btallboyz%5D-%5Bclip%5D-%5Bdavegunn%5D-%5BnoMusic%5D-%5B001%5D.MOV",
+              type: "video/mp4",
+              category: "clips",
+              thumbnail: "https://via.placeholder.com/200x120?text=Clip+Thumb"
+            },
+            {
+              id: 2,
+              title: "[Tallboyz] - [Promo] - [Ahoy NextUP Tallboyz]",
+              src: "https://storage.googleapis.com/ahoy-videos/promos/%5Btallboyz%5D-%5Bpromo%5D-Ahoy_NextUP_Tallboyz.mp4",
+              type: "video/mp4",
+              category: "promos",
+              thumbnail: "https://via.placeholder.com/200x120?text=Promo+Thumb"
+            },
+            {
+              id: 3,
+              title: "[Tallboyz] - [Episode] - [Season 1] - [001]",
+              src: "https://storage.googleapis.com/ahoy-videos/episodes/%5Btallboyz%5D-%5Bepisode%5D-[Season1]-[001].mp4",
+              type: "video/mp4",
+              category: "episodes",
+              thumbnail: "https://via.placeholder.com/200x120?text=Episode+Thumb"
+            },
+            {
+              id: 4,
+              title: "[Tallboyz] - [Live] - [Concert] - [2022]",
+              src: "https://storage.googleapis.com/ahoy-videos/live/%5Btallboyz%5D-%5Blive%5D-[Concert]-[2022].mp4",
+              type: "video/mp4",
+              category: "live",
+              thumbnail: "https://via.placeholder.com/200x120?text=Live+Thumb"
+            }
+          ];
+          this.playlist = samplePlaylist;
+          // Set the first video as current if available.
+          if (this.playlist.length > 0) {
+            this.currentVideoId = this.playlist[0].id;
+          }
+          // Initialize Video.js.
+          this.player = videojs('video-player');
+          this.loadCurrentVideo();
+          // Auto-play the next video when the current one ends.
+          this.player.on('ended', () => {
+            this.nextVideo();
+          });
+        },
+        // Returns the current video object.
+        get currentVideo() {
+          return this.playlist.find(video => video.id === this.currentVideoId) || {};
+        },
+        // Returns the playlist filtered by the selected category.
+        get filteredPlaylist() {
+          if (this.selectedCategory === 'All') {
+            return this.playlist;
+          } else {
+            return this.playlist.filter(video => video.category === this.selectedCategory);
+          }
+        },
+        // Select a video by its ID.
+        selectVideo(id) {
+          this.currentVideoId = id;
+          this.loadCurrentVideo();
+        },
+        // Load the current video into the Video.js player.
+        loadCurrentVideo() {
+          this.player.pause();
+          if (this.currentVideo && this.currentVideo.src) {
+            this.player.src({
+              src: this.currentVideo.src,
+              type: this.currentVideo.type
+            });
+            this.player.load();
+            this.player.play();
+          }
+        },
+        // Auto-play the next video in the filtered playlist.
+        nextVideo() {
+          const currentIndex = this.filteredPlaylist.findIndex(video => video.id === this.currentVideoId);
+          let nextIndex = currentIndex + 1;
+          if (nextIndex >= this.filteredPlaylist.length) {
+            nextIndex = 0;
+          }
+          const nextVideo = this.filteredPlaylist[nextIndex];
+          if (nextVideo) {
+            this.currentVideoId = nextVideo.id;
+            this.loadCurrentVideo();
+          }
+        },
+        // Add a new video using the form data.
+        addVideo() {
+          if (this.newVideo.title && this.newVideo.src) {
+            const newId = this.playlist.length ? Math.max(...this.playlist.map(v => v.id)) + 1 : 1;
+            this.playlist.push({
+              id: newId,
+              title: this.newVideo.title,
+              src: this.newVideo.src,
+              thumbnail: this.newVideo.thumbnail,
+              category: this.newVideo.category.toLowerCase(),
+              type: this.newVideo.type
+            });
+            // Clear the form.
+            this.newVideo.title = '';
+            this.newVideo.src = '';
+            this.newVideo.thumbnail = '';
+            this.newVideo.category = '';
+          }
+        }
+      }
+    }
+  </script>
+</body>
+</html>
