@@ -248,13 +248,25 @@
 			<div class="featured-title">Featured Playlists for the Season</div>
 			<div class="featured-grid">
 			  <template x-for="playlist in featuredPlaylists" :key="playlist.id">
-				<div class="featured-item" @click="selectVideo(playlist.id); viewMode = 'player'">
+				<div class="featured-item" @click="toggleMicroLibrary(playlist.id)">
 				  <img :src="playlist.thumbnail" alt="Featured Thumbnail" />
 				  <p x-text="playlist.title"></p>
 				</div>
 			  </template>
 			</div>
 		  </section>
+
+    <!-- Micro Library Section -->
+    <div x-show="microLibraryVisible" class="micro-library">
+      <div class="micro-library-grid">
+        <template x-for="video in microLibrary" :key="video.id">
+          <div class="micro-library-item" @click="selectVideo(video.id); viewMode = 'player'">
+            <img :src="video.thumbnail" alt="Video Thumbnail" />
+            <p x-text="video.title"></p>
+          </div>
+        </template>
+      </div>
+    </div>
 
     <!-- Library Section (Comprehensive Library excluding Broadcast) -->
     <section class="library-section">
@@ -468,6 +480,8 @@
         currentVideoId: null,          // currently selected video ID
         player: null,
         isPlaying: false,
+        microLibraryVisible: false,
+        microLibrary: [],
         
         // Computed: Comprehensive library (excludes broadcast channel)
         get fullLibrary() {
@@ -629,6 +643,22 @@
             }
           }
           this.viewMode = 'player';
+        },
+        toggleMicroLibrary(playlistId) {
+          this.microLibraryVisible = !this.microLibraryVisible;
+          if (this.microLibraryVisible) {
+            // Example: Include the "Dave Gunn" clip in the micro library
+            this.microLibrary = this.playlists.clips.filter(video => video.title.includes("Dave Gunn"));
+            
+            // Automatically select and play the first video in the micro library
+            if (this.microLibrary.length > 0) {
+              this.currentVideoId = this.microLibrary[0].id;
+              this.loadCurrentVideo();
+              this.viewMode = 'player';
+            }
+          } else {
+            this.microLibrary = [];
+          }
         }
       }
     }
