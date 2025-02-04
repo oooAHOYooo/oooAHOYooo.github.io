@@ -1,0 +1,40 @@
+{
+  "episodes": [
+    {
+      "id": 1,
+      "title": "[Tallboyz] - [Episode] - [Season1]-[001]",
+      "src": "https://storage.googleapis.com/ahoy-videos/episodes/%5Btallboyz%5D-%5Bepisode%5D-%5BSeason1%5D-%5B001%5D.mp4",
+      "type": "video/mp4",
+      "thumbnail": "https://via.placeholder.com/400x225?text=Episode+1",
+      "category": "Episodes"
+    },
+    {
+      "id": 2,
+      "title": "[Tallboyz] - [Episode] - [Season1]-[002]",
+      "src": "https://storage.googleapis.com/ahoy-videos/episodes/%5Btallboyz%5D-%5Bepisode%5D-%5BSeason1%5D-%5B002%5D.mp4",
+      "type": "video/mp4",
+      "thumbnail": "https://via.placeholder.com/400x225?text=Episode+2",
+      "category": "Episodes"
+    }
+
+  ],
+  "clips": [
+    {
+      "id": 4,
+      "title": "[Tallboyz] - [Clip] - [Dave Gunn] - [NoMusic] - [001]",
+      "src": "https://storage.googleapis.com/ahoy-videos/clips/%5Btallboyz%5D-%5Bclip%5D-%5Bdavegunn%5D-%5BnoMusic%5D-%5B001%5D.MOV",
+      "type": "video/mp4",
+      "thumbnail": "https://via.placeholder.com/400x225?text=Clip+1",
+      "category": "Clips"
+    },
+	{
+      "id": 5,
+      "title": "[Tallboyz] - [Skatepart] - [Andrew Leverton] - [NoMusic] - [002]",
+      "src": "https://storage.googleapis.com/ahoy-videos/clips/%5Btallboyz%5D-%5Bclip%5D-%5BAndrewLeverton%5D-%5BnoMusic%5D-%5B002%5D.MOV",
+      "type": "video/mp4",
+      "thumbnail": "https://via.placeholder.com/400x225?text=Clip+2",
+      "category": "Clips"
+    }
+
+  ]
+}
