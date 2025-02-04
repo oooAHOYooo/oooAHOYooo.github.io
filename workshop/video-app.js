@@ -223,12 +223,15 @@ function videoApp() {
       loadCurrentVideo() {
         this.player.pause();
         if (this.currentVideo && this.currentVideo.src) {
+          console.log("Loading video:", this.currentVideo.src, "Type:", this.currentVideo.type);
           this.player.src({
             src: this.currentVideo.src,
             type: this.currentVideo.type
           });
           this.player.load();
           this.player.play();
+        } else {
+          console.error("No valid video source found.");
         }
       },
       // For normal categories: select a category and load the first video from that category.
