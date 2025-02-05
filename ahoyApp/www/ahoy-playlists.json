@@ -1,12 +1,30 @@
 {
   "episodes": [
     {
+      "id": 16,
+      "title": "[Rob Show] - [Episode] - [Pilot]",
+      "src": "https://storage.googleapis.com/ahoy-videos/episodes/rob_show_pilot.mp4",
+      "type": "video/mp4",
+      "thumbnail": "https://via.placeholder.com/400x225?text=Rob+Show+Pilot",
+      "category": "Episodes"
+    },
+    {
+      "id": 17,
+      "title": "[Alive on Central] - [Episode] - [Season Finale]",
+      "src": "https://storage.googleapis.com/ahoy-videos/episodes/alive_on_central_season_finale.mp4",
+      "type": "video/mp4",
+      "thumbnail": "https://via.placeholder.com/400x225?text=Alive+on+Central+Finale",
+      "category": "Episodes"
+    }
+  ],
+  "clips": [
+    {
       "id": 1,
       "title": "[Tallboyz] - [Clip] - [Dave Gunn] - [NoMusic] - [001]",
       "src": "https://storage.googleapis.com/ahoy-videos/clips/%5Btallboyz%5D-%5Bclip%5D-%5Bdavegunn%5D-%5BnoMusic%5D-%5B001%5D.MOV",
       "type": "video/mp4",
       "thumbnail": "https://storage.googleapis.com/ahoy-videos/thumbnails/%5BahoyThumb%5D%5Bclips%5D%5BquietGunn%5D.jpg",
-      "category": "clips"
+      "category": "Clips"
     },
     {
       "id": 2,
@@ -19,13 +37,11 @@
     {
       "id": 3,
       "title": "[Tallboyz] - [Full Part] - [Andrew Leverton]-[Formaility]",
-      "src": "https://storage.googleapis.com/ahoy-videos/thumbnails/%5BahoyThumb%5D%5Bfullpart%5D%5BAndrewLeverton%5D%5BFormatility%5D.jpg",
+      "src": "https://storage.googleapis.com/ahoy-videos/clips/%5Btallboyz%5D-%5Bparts%5D-%5BandrewLeverton%20-%20Formaility%5D%20.mov",
       "type": "video/mp4",
-      "thumbnail": "https://storage.googleapis.com/ahoy-videos/clips/%5Btallboyz%5D-%5Bparts%5D-%5BandrewLeverton%20-%20Formaility%5D%20.mov",
-      "category": "Episodes"
-    }
-  ],
-  "clips": [
+      "thumbnail": "https://storage.googleapis.com/ahoy-videos/thumbnails/%5BahoyThumb%5D%5Bfullpart%5D%5BAndrewLeverton%5D%5BFormatility%5D.jpg",
+      "category": "Clips"
+    },
     {
       "id": 4,
       "title": "[Tallboyz] - [Clip] - [Dave Gunn] - [NoMusic] - [001]",
@@ -54,18 +70,18 @@
   "promos": [
     {
       "id": 7,
-      "title": "[Tallboyz] - [Promo] - [Ahoy NextUP Tallboyz]",
-      "src": "https://storage.googleapis.com/ahoy-videos/promos/%5Btallboyz%5D-%5Bpromo%5D-Ahoy_NextUP_Tallboyz.mp4",
+      "title": "[Promo] - [Ahoy Cabaret @ Best Video] - [Rob hangs fliers around the havens]",
+      "src": "https://storage.googleapis.com/ahoy-videos/promos/%5BahoyCaba%5D%5BPromo%5D%5BCABARET%20FLIERS%20-%20D001%5D-%5Bep2%5D.mov",
       "type": "video/mp4",
-      "thumbnail": "https://via.placeholder.com/400x225?text=Promo+1",
+      "thumbnail": "https://storage.googleapis.com/ag-photography/thumbnails/AG%20-%20Event%20PROMO%20-%20003.jpg",
       "category": "Promos"
     },
     {
       "id": 8,
-      "title": "[Tallboyz] - [Promo] - [Special Announcement]",
-      "src": "https://storage.googleapis.com/ahoy-videos/promos/%5Btallboyz%5D-%5Bpromo%5D-Special_Announcement.mp4",
+      "title": "[Promo] - [Meglio] - [How to find the website]",
+      "src": "https://storage.googleapis.com/ahoy-videos/promos/%5BPromos%5D%5BMeglio%5D%5BRob_Just%20type%20it%20in%5D%5B2022%5D.mp4",
       "type": "video/mp4",
-      "thumbnail": "https://via.placeholder.com/400x225?text=Promo+2",
+      "thumbnail": "https://storage.googleapis.com/ahoy-videos/thumbnails/%5BahoyThumb%5D%5Bpromos%5D%5BMeglio-Teaches-How-To%20Use%20Site%5D.jpg",
       "category": "Promos"
     },
     {
@@ -106,11 +122,11 @@
   "music": [
     {
       "id": 13,
-      "title": "[Music] - [Video] - Song A",
-      "src": "https://storage.googleapis.com/ahoy-videos/music/%5Btallboyz%5D-[music]-SongA.mp4",
+      "title": "[Music Video] - [Samuel Dylan Witch] - [Weary Chest]",
+      "src": "https://storage.googleapis.com/ahoy-videos/music-videos/%5BMusicVideo%5D%5BSamuel%20Dylan%20Witch%5D%5BWeary%20Chest%5D.mp4",
       "type": "video/mp4",
-      "thumbnail": "https://via.placeholder.com/400x225?text=Music+1",
-      "category": "Music"
+      "thumbnail": "https://storage.googleapis.com/ahoy-videos/thumbnails/%5BahoyThumb%5D%5BmusicVideo%5D%5BSamuel%20Dylan%20Witch%5D%5BWeary%20Chest%5D.jpg",
+      "category": "Music Video"
     },
     {
       "id": 14,
