@@ -130,11 +130,11 @@
     },
     {
       "id": 14,
-      "title": "[Music] - [Video] - Song B",
-      "src": "https://storage.googleapis.com/ahoy-videos/music/%5Btallboyz%5D-[music]-SongB.mp4",
+      "title": "[Music Video] - [Justin Arena] - [When You Wake Up]",
+      "src": "https://storage.googleapis.com/ahoy-videos/music-videos/%5BMusicVideo%5D-%5BJustin%20Arena%5D-%5BWhen%20you%20Wake%20Up%5D.mp4",
       "type": "video/mp4",
-      "thumbnail": "https://via.placeholder.com/400x225?text=Music+2",
-      "category": "Music"
+      "thumbnail": "https://storage.googleapis.com/ahoy-videos/thumbnails/%5BahoyThumb%5D%5BmusicVideo%5D%5BJustin%20Arena%5D%5BWhen%20You%20Wake%20Up%5D.jpg",
+      "category": "Music Video"
     },
     {
       "id": 15,
