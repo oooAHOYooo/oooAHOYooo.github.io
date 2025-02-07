@@ -3,17 +3,17 @@
     {
       "id": 16,
       "title": "[Rob Show] - [Episode] - [Pilot]",
-      "src": "https://storage.googleapis.com/ahoy-videos/episodes/rob_show_pilot.mp4",
+     "src": "https://storage.googleapis.com/ahoy-videos/promos/%5BahoyCaba%5D%5BPromo%5D%5BCABARET%20FLIERS%20-%20D001%5D-%5Bep2%5D.mov",
       "type": "video/mp4",
-      "thumbnail": "https://via.placeholder.com/400x225?text=Rob+Show+Pilot",
+      "thumbnail": "https://storage.googleapis.com/ag-photography/thumbnails/AG%20-%20Event%20PROMO%20-%20003.jpg",
       "category": "Episodes"
     },
     {
       "id": 17,
       "title": "[Alive on Central] - [Episode] - [Season Finale]",
-      "src": "https://storage.googleapis.com/ahoy-videos/episodes/alive_on_central_season_finale.mp4",
+      "src": "https://storage.googleapis.com/ahoy-videos/clips/%5Btallboyz%5D-%5Bclip%5D-%5Bdavegunn%5D-%5BnoMusic%5D-%5B001%5D.MOV",
       "type": "video/mp4",
-      "thumbnail": "https://via.placeholder.com/400x225?text=Alive+on+Central+Finale",
+      "thumbnail": "https://storage.googleapis.com/ahoy-videos/thumbnails/%5BahoyThumb%5D%5Bclips%5D%5BquietGunn%5D.jpg",
       "category": "Episodes"
     }
   ],
@@ -43,27 +43,11 @@
       "category": "Clips"
     },
     {
-      "id": 4,
-      "title": "[Tallboyz] - [Clip] - [Dave Gunn] - [NoMusic] - [001]",
-      "src": "https://storage.googleapis.com/ahoy-videos/clips/%5Btallboyz%5D-%5Bclip%5D-%5Bdavegunn%5D-%5BnoMusic%5D-%5B001%5D.MOV",
-      "type": "video/mp4",
-      "thumbnail": "https://via.placeholder.com/400x225?text=Clip+1",
-      "category": "Clips"
-    },
-    {
       "id": 5,
       "title": "[Pal-bot 2] - [Clip] - [Behind the Scenes - Location Scouting]",
       "src": "https://storage.googleapis.com/ahoy-videos/clips/%5Bpal-bot%5D-%5Bclip%5D-%5Bbehindthescenes%5D-%5Blocationscouting%5D-%5B001%5D.mp4",
       "type": "video/mp4",
       "thumbnail": "https://storage.googleapis.com/ahoy-videos/thumbnails/%5BahoyThumb%5D%5Bclips%5D%5BPal-bot%202%5D%5BBehind%20the%20Scenes%20-%20Location%20Scout%5D.jpg",
-      "category": "Clips"
-    },
-    {
-      "id": 6,
-      "title": "[Tallboyz] - [Clip] - [Behind the Scenes] - [001]",
-      "src": "https://storage.googleapis.com/ahoy-videos/clips/%5Btallboyz%5D-%5Bclip%5D-%5Bbehindthescenes%5D-%5B001%5D.mp4",
-      "type": "video/mp4",
-      "thumbnail": "https://via.placeholder.com/400x225?text=Clip+3",
       "category": "Clips"
     }
   ],
@@ -83,40 +67,6 @@
       "type": "video/mp4",
       "thumbnail": "https://storage.googleapis.com/ahoy-videos/thumbnails/%5BahoyThumb%5D%5Bpromos%5D%5BMeglio-Teaches-How-To%20Use%20Site%5D.jpg",
       "category": "Promos"
-    },
-    {
-      "id": 9,
-      "title": "[Tallboyz] - [Promo] - [Event Teaser]",
-      "src": "https://storage.googleapis.com/ahoy-videos/promos/%5Btallboyz%5D-%5Bpromo%5D-Event_Teaser.mp4",
-      "type": "video/mp4",
-      "thumbnail": "https://via.placeholder.com/400x225?text=Promo+3",
-      "category": "Promos"
-    }
-  ],
-  "live": [
-    {
-      "id": 10,
-      "title": "[Tallboyz] - [Live] - [Concert] - [2022]",
-      "src": "https://storage.googleapis.com/ahoy-videos/live/%5Btallboyz%5D-%5Blive%5D-[Concert]-[2022].mp4",
-      "type": "video/mp4",
-      "thumbnail": "https://via.placeholder.com/400x225?text=Live+1",
-      "category": "Live"
-    },
-    {
-      "id": 11,
-      "title": "[Tallboyz] - [Live] - [Q&A Session] - [2022]",
-      "src": "https://storage.googleapis.com/ahoy-videos/live/%5Btallboyz%5D-%5Blive%5D-[QA]-[2022].mp4",
-      "type": "video/mp4",
-      "thumbnail": "https://via.placeholder.com/400x225?text=Live+2",
-      "category": "Live"
-    },
-    {
-      "id": 12,
-      "title": "[Tallboyz] - [Live] - [Behind the Scenes] - [2022]",
-      "src": "https://storage.googleapis.com/ahoy-videos/live/%5Btallboyz%5D-%5Blive%5D-[BTS]-[2022].mp4",
-      "type": "video/mp4",
-      "thumbnail": "https://via.placeholder.com/400x225?text=Live+3",
-      "category": "Live"
     }
   ],
   "music": [
@@ -135,14 +85,6 @@
       "type": "video/mp4",
       "thumbnail": "https://storage.googleapis.com/ahoy-videos/thumbnails/%5BahoyThumb%5D%5BmusicVideo%5D%5BJustin%20Arena%5D%5BWhen%20You%20Wake%20Up%5D.jpg",
       "category": "Music Video"
-    },
-    {
-      "id": 15,
-      "title": "[Music] - [Video] - Song C",
-      "src": "https://storage.googleapis.com/ahoy-videos/music/%5Btallboyz%5D-[music]-SongC.mp4",
-      "type": "video/mp4",
-      "thumbnail": "https://via.placeholder.com/400x225?text=Music+3",
-      "category": "Music"
     }
   ],
   "broadcast": [

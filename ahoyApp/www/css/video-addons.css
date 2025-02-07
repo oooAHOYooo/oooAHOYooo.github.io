@@ -217,4 +217,52 @@
 		background: linear-gradient(to bottom, #555, #333);
 		border-color: #888;
 	  }
+
+	  /* Filtering Container for Library */
+	  .library-filter-container {
+		display: flex;
+		justify-content: flex-end;
+		margin-bottom: 15px;
+		padding: 0 10px;
+	  }
+
+	  /* Filter Dropdown Styling for Library Filtering - Glassy Overlay */
+	  .filter-dropdown-wrapper {
+		position: relative;
+		display: inline-block;
+	  }
+
+	  .filter-dropdown {
+		background: rgba(255, 255, 255, 0.15);
+		border: 1px solid rgba(255, 255, 255, 0.3);
+		border-radius: 8px;
+		padding: 8px 12px;
+		font-family: 'Courier New', Courier, monospace;
+		color: #fff;
+		backdrop-filter: blur(10px);
+		-webkit-backdrop-filter: blur(10px);
+		appearance: none;
+		outline: none;
+		transition: background 0.3s, border 0.3s;
+	  }
+
+	  .filter-dropdown:hover {
+		background: rgba(255, 255, 255, 0.25);
+	  }
+
+	  .filter-dropdown:focus {
+		border-color: #f44336;
+		background: rgba(255, 255, 255, 0.25);
+	  }
+
+	  .filter-dropdown-wrapper::after {
+		content: '\25BC'; /* Down arrow */
+		position: absolute;
+		right: 10px;
+		top: 50%;
+		transform: translateY(-50%);
+		pointer-events: none;
+		color: #fff;
+		font-size: 0.8rem;
+	  }
 	
