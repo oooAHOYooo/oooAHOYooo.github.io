@@ -1,6 +1,6 @@
 function videoApp() {
 	return {
-	  // Set the default category to "clips" so a clip is shown instead of a broadcast
+	  // Set the default category to "clips" so a clip is shown by default
 	  playlists: {},
 	  selectedCategory: 'clips',
 	  viewMode: 'player',             // 'player' or 'library'
@@ -13,7 +13,6 @@ function videoApp() {
 	  selectedSubCategory: "",
 	  // Computed property: combine videos from several categories
 	  get fullLibrary() {
-		// Merge videos from episodes, clips, promos, and music
 		return [
 		  ...(this.playlists.episodes || []),
 		  ...(this.playlists.clips || []),
@@ -56,18 +55,26 @@ function videoApp() {
 		  this.currentVideoId = categoryVideos[randomIndex].id;
 		}
 		
-		this.loadCurrentVideo();
+		// Load the featured video starting at 10 seconds
+		this.loadCurrentVideo(10);
 		
-		// Event listeners for updating play state.
+		// Event listeners to update play state.
 		videoElement.addEventListener('play', () => { this.isPlaying = true; });
 		videoElement.addEventListener('pause', () => { this.isPlaying = false; });
 	  },
-	  loadCurrentVideo() {
+	  // The loadCurrentVideo method now accepts a startTime (default 0).
+	  // It sets the video's currentTime (if the video is long enough) but does NOT auto-play.
+	  loadCurrentVideo(startTime = 0) {
 		this.player.pause();
 		if (this.currentVideo && this.currentVideo.src) {
 		  this.player.src = this.currentVideo.src;
 		  this.player.load();
-		  this.player.play().catch(err => console.error('Error playing video:', err));
+		  this.player.onloadedmetadata = () => {
+			if (this.player.duration > startTime) {
+			  this.player.currentTime = startTime;
+			}
+			// Do NOT auto-play: the big play button overlay will prompt the user.
+		  };
 		} else {
 		  console.error("No valid video source found.");
 		}
@@ -83,13 +90,13 @@ function videoApp() {
 		const categoryVideos = this.filterVideosBySubCategory(subCategory);
 		if (categoryVideos.length > 0) {
 		  this.currentVideoId = categoryVideos[0].id;
-		  this.loadCurrentVideo();
+		  this.loadCurrentVideo(); // Starts at 0 when manually selected
 		}
 		this.viewMode = 'player';
 	  },
 	  selectVideo(id) {
 		this.currentVideoId = id;
-		this.loadCurrentVideo();
+		this.loadCurrentVideo(); // Starts at 0 when manually selected
 	  },
 	  nextVideo() {
 		let index = this.fullLibrary.findIndex(video => video.id === this.currentVideoId);
@@ -107,7 +114,7 @@ function videoApp() {
 		if (this.isPlaying) {
 		  this.player.pause();
 		} else {
-		  this.player.play();
+		  this.player.play().catch(err => console.error('Error playing video:', err));
 		}
 	  },
 	  async togglePip() {
