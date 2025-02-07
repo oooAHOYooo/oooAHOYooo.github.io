@@ -31,6 +31,26 @@ function videoApp() {
 		  return this.playlists.episodes ? this.playlists.episodes.slice(0, 2) : [];
 		}
 	  },
+	  // New computed properties for broadcast
+	  get summerBroadcast() {
+		const summerVideos = (this.playlists.broadcast || []).filter(video => video.season.toLowerCase() === 'summer');
+		// Randomly pick 3 videos from the summer broadcast videos
+		return summerVideos.sort(() => 0.5 - Math.random()).slice(0, 3);
+	  },
+	  get winterBroadcast() {
+		const winterVideos = (this.playlists.broadcast || []).filter(video => video.season.toLowerCase() === 'winter');
+		return winterVideos.sort(() => 0.5 - Math.random()).slice(0, 3);
+	  },
+	  // Choose which seasonal broadcast playlist to use.
+	  // Here we assume summer is May (month 4) through August (month 7)
+	  get currentBroadcastPlaylist() {
+		const month = new Date().getMonth();
+		if (month >= 4 && month <= 7) {
+		  return this.summerBroadcast;
+		} else {
+		  return this.winterBroadcast;
+		}
+	  },
 	  // Computed: Get the current video from the full library.
 	  get currentVideo() {
 		return this.fullLibrary.find(video => video.id === this.currentVideoId) || {};
@@ -39,7 +59,7 @@ function videoApp() {
 		const videoElement = document.getElementById('video-player');
 		this.player = videoElement;
   
-		// Fetch the JSON file (ensure it's served from the same server)
+		// Fetch your JSON file (ensure it's served from the same server)
 		try {
 		  const response = await fetch('./ahoy-playlists.json');
 		  this.playlists = await response.json();
@@ -55,15 +75,15 @@ function videoApp() {
 		  this.currentVideoId = categoryVideos[randomIndex].id;
 		}
 		
-		// Load the featured video starting at 10 seconds
+		// Load the featured video starting at 10 seconds without auto-playing
 		this.loadCurrentVideo(10);
 		
-		// Event listeners to update play state.
+		// Event listeners for updating play state.
 		videoElement.addEventListener('play', () => { this.isPlaying = true; });
 		videoElement.addEventListener('pause', () => { this.isPlaying = false; });
 	  },
-	  // The loadCurrentVideo method now accepts a startTime (default 0).
-	  // It sets the video's currentTime (if the video is long enough) but does NOT auto-play.
+	  // loadCurrentVideo now accepts an optional startTime (default 0)
+	  // It loads the video, sets currentTime if possible, but does NOT auto-play.
 	  loadCurrentVideo(startTime = 0) {
 		this.player.pause();
 		if (this.currentVideo && this.currentVideo.src) {
@@ -73,7 +93,7 @@ function videoApp() {
 			if (this.player.duration > startTime) {
 			  this.player.currentTime = startTime;
 			}
-			// Do NOT auto-play: the big play button overlay will prompt the user.
+			// Do not auto-play: the user must click the big play button.
 		  };
 		} else {
 		  console.error("No valid video source found.");
@@ -90,13 +110,13 @@ function videoApp() {
 		const categoryVideos = this.filterVideosBySubCategory(subCategory);
 		if (categoryVideos.length > 0) {
 		  this.currentVideoId = categoryVideos[0].id;
-		  this.loadCurrentVideo(); // Starts at 0 when manually selected
+		  this.loadCurrentVideo(); // starts at 0 when manually selected
 		}
 		this.viewMode = 'player';
 	  },
 	  selectVideo(id) {
 		this.currentVideoId = id;
-		this.loadCurrentVideo(); // Starts at 0 when manually selected
+		this.loadCurrentVideo(); // starts at 0 when manually selected
 	  },
 	  nextVideo() {
 		let index = this.fullLibrary.findIndex(video => video.id === this.currentVideoId);
@@ -145,6 +165,36 @@ function videoApp() {
 		} else {
 		  alert('Cast feature not available.');
 		}
+	  },
+	  // NEW: Method to start the broadcast system
+	  startBroadcast() {
+		this.selectedCategory = 'broadcast';
+		const playlist = this.currentBroadcastPlaylist;
+		if (playlist.length === 0) return;
+		let now = new Date();
+		let secondsSinceMidnight = now.getHours() * 3600 + now.getMinutes() * 60 + now.getSeconds();
+		// Calculate total duration of the selected broadcast playlist
+		let totalDuration = playlist.reduce((sum, video) => sum + video.duration, 0);
+		let offset = secondsSinceMidnight % totalDuration;
+		let cumulative = 0;
+		for (let video of playlist) {
+		  cumulative += video.duration;
+		  if (offset < cumulative) {
+			let videoOffset = offset - (cumulative - video.duration);
+			this.currentVideoId = video.id;
+			this.player.pause();
+			this.player.src = video.src;
+			this.player.load();
+			this.player.onloadedmetadata = () => {
+			  if (this.player.duration > videoOffset) {
+				this.player.currentTime = videoOffset;
+			  }
+			  this.player.play().catch(err => console.error('Error playing broadcast:', err));
+			};
+			break;
+		  }
+		}
+		this.viewMode = 'player';
 	  }
 	};
   }

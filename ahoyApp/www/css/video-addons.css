@@ -1,4 +1,4 @@
-/* Dark Blue Glassy Container (more translucent) */
+/* Dark Blue Glassy Container (translucent) */
 .container {
 	max-width: 1200px;
 	margin: 0 auto;
@@ -206,5 +206,34 @@
 	  max-width: 100%;
 	  height: auto;
 	}
+  }
+  
+  /* Broadcast Mode Styling (optional if you display the broadcast playlists) */
+  .broadcast-playlist {
+	margin-top: 20px;
+  }
+  .broadcast-playlist h3 {
+	font-size: 1.5rem;
+	color: #aaccff;
+	margin-bottom: 10px;
+  }
+  .broadcast-item {
+	background: rgba(10, 10, 50, 0.6);
+	border: 1px solid rgba(200, 200, 255, 0.3);
+	backdrop-filter: blur(8px);
+	border-radius: 8px;
+	overflow: hidden;
+	cursor: pointer;
+	transition: transform 0.3s;
+	padding: 5px;
+	margin-bottom: 10px;
+  }
+  .broadcast-item:hover {
+	transform: scale(1.02);
+  }
+  .broadcast-item img {
+	width: 100%;
+	display: block;
+	border-radius: 4px;
   }
   
