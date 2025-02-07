@@ -86,31 +86,5 @@
       "thumbnail": "https://storage.googleapis.com/ahoy-videos/thumbnails/%5BahoyThumb%5D%5BmusicVideo%5D%5BJustin%20Arena%5D%5BWhen%20You%20Wake%20Up%5D.jpg",
       "category": "Music Video"
     }
-  ],
-  "broadcast": [
-    {
-      "id": 100,
-      "title": "[Broadcast] - Morning Show",
-      "src": "https://storage.googleapis.com/ahoy-videos/broadcast/morning_show.mp4",
-      "type": "video/mp4",
-      "thumbnail": "https://via.placeholder.com/400x225?text=Broadcast+Morning",
-      "duration": 300
-    },
-    {
-      "id": 101,
-      "title": "[Broadcast] - Noon News",
-      "src": "https://storage.googleapis.com/ahoy-videos/broadcast/noon_news.mp4",
-      "type": "video/mp4",
-      "thumbnail": "https://via.placeholder.com/400x225?text=Broadcast+Noon",
-      "duration": 600
-    },
-    {
-      "id": 102,
-      "title": "[Broadcast] - Evening Special",
-      "src": "https://storage.googleapis.com/ahoy-videos/broadcast/evening_special.mp4",
-      "type": "video/mp4",
-      "thumbnail": "https://via.placeholder.com/400x225?text=Broadcast+Evening",
-      "duration": 900
-    }
   ]
 }

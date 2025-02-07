@@ -32,19 +32,23 @@
 	  .playlist-nav button {
 		flex: 0 0 auto;
 		padding: 8px 12px;
-		border: 2px solid #666;
-		border-radius: 4px;
-		background: linear-gradient(to bottom, #444, #222);
+		border: 1px solid rgba(255, 255, 255, 0.2);
+		border-radius: 8px;
+		background: rgba(40, 40, 40, 0.4);
+		backdrop-filter: blur(8px);
 		color: #fff;
 		font-family: 'Courier New', Courier, monospace;
 		font-size: 14px;
 		cursor: pointer;
-		transition: background 0.3s, border 0.3s;
+		transition: all 0.3s ease;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 	  }
 	  .playlist-nav button.active,
 	  .playlist-nav button:hover {
-		background: linear-gradient(to bottom, #555, #333);
-		border-color: #888;
+		background: rgba(255, 255, 255, 0.16);
+		border-color: rgba(255, 255, 255, 0.4);
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.13);
+		transform: translateY(-1px);
 	  }
 	  /* Featured Section */
 	  .featured-section {
@@ -54,7 +58,7 @@
 		font-size: 1.8rem;
 		margin-bottom: 15px;
 		text-align: center;
-		color: #f44336;
+		color: var(--border-color);
 	  }
 	  .featured-grid {
 		display: grid;
@@ -95,25 +99,32 @@
 		display: flex;
 		justify-content: center;
 		gap: 10px;
-		background-color: #333;
+		background: rgba(255, 255, 255, 0.1);
+		backdrop-filter: blur(10px);
+		-webkit-backdrop-filter: blur(10px);
 		padding: 10px;
 		border-radius: 8px;
-		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+		border: 1px solid rgba(255, 255, 255, 0.2);
+		box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
 	  }
 	  .control-bar button {
 		padding: 8px 12px;
-		border: 2px solid #666;
-		border-radius: 4px;
-		background: linear-gradient(to bottom, #444, #222);
+		border: 1px solid rgba(255, 255, 255, 0.3);
+		border-radius: 8px;
+		background: rgba(255, 255, 255, 0.1);
+		backdrop-filter: blur(5px);
+		-webkit-backdrop-filter: blur(5px);
 		color: #fff;
 		font-family: 'Courier New', Courier, monospace;
 		font-size: 14px;
 		cursor: pointer;
-		transition: background 0.3s, border 0.3s;
+		transition: all 0.3s ease;
 	  }
 	  .control-bar button:hover {
-		background: linear-gradient(to bottom, #555, #333);
-		border-color: #888;
+		background: rgba(255, 255, 255, 0.2);
+		border-color: rgba(255, 255, 255, 0.4);
+		transform: translateY(-1px);
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 	  }
 	  /* Library Section */
 	  .library-header {

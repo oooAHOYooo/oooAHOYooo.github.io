@@ -40,9 +40,9 @@
         <meta name="referrer" content="strict-origin-when-cross-origin">
         <meta http-equiv="X-Content-Type-Options" content="nosniff">
         <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
-        <meta http-equiv="Strict-Transport-Security"
-            content="max-age=31536000;includeSubDomains">
-        <meta http-equiv="X-XSS-Protection" content="1;mode=block">
+        <!-- <meta http-equiv="Strict-Transport-Security"
+            content="max-age=31536000;includeSubDomains"> -->
+        <!-- <meta http-equiv="X-XSS-Protection" content="1;mode=block"> -->
         <meta http-equiv="Content-Security-Policy"
             content="default-src 'self' https://*.firebaseio.com https://*.googleapis.com https://cdnjs.cloudflare.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.firebaseio.com https://*.googleapis.com https://www.gstatic.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; font-src 'self' https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://*.firebaseio.com https://*.googleapis.com wss://*.firebaseio.com;">
         <!-- <meta http-equiv="Cross-Origin-Embedder-Policy" content="require-corp"> -->
@@ -209,7 +209,7 @@
                                     x-for="video in filterVideosBySubCategory(selectedSubCategory)"
                                     :key="video.id">
                                     <div class="library-card"
-                                        @click="selectVideo(video.id); viewMode = 'player'">
+                                        @click="selectVideo(video.id); viewMode = 'player'; playVideo()">
                                         <img :src="video.thumbnail"
                                             alt="Video Thumbnail" />
                                         <div class="info">
