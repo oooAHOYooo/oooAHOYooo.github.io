@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let currentPodcastIndex = 0;
     let podcasts = [];
 
-    const podcastDataUrl = "https://api.npoint.io/4a8a3966abf035799dbb"; 
+    const podcastDataUrl = './local_data/podcastCollection.json'; // Use local JSON file
 
     // Fetch podcast data
     async function fetchPodcasts() {
