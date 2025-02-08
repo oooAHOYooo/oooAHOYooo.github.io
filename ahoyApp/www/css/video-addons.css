@@ -17,9 +17,14 @@
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background: url('./img/background.jpg') no-repeat center center fixed;
+	/* background: url('https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbzVtdmgzcXhmejF0cnIyenh1NTA3NzJxcGd5enpjMHNwemZ5cXdsOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/BwAV60rzKpQLPca6nU/giphy.gif') no-repeat center center fixed; */
 	background-size: cover;
 	z-index: -1;
+  }
+  
+  /* Global font style */
+  body {
+	font-family: 'Barlow', sans-serif;
   }
   
   /* Featured Section */
@@ -27,8 +32,9 @@
 	margin-bottom: 40px;
   }
   .featured-title {
-	font-size: 1.8rem;
-	margin-bottom: 15px;
+	font-size: 1.5rem;
+	margin-bottom: 10px;
+	padding: 5px;
 	text-align: center;
 	color: #aaccff;
   }
@@ -124,7 +130,8 @@
   }
   .library-header h2 {
 	margin: 0;
-	font-size: 1.8rem;
+	font-size: 1.5rem;
+	padding: 5px;
 	color: #aaccff;
   }
   .view-toggle button {
@@ -213,7 +220,8 @@
 	margin-top: 20px;
   }
   .broadcast-playlist h3 {
-	font-size: 1.5rem;
+	font-size: 1.3rem;
+	padding: 5px;
 	color: #aaccff;
 	margin-bottom: 10px;
   }
