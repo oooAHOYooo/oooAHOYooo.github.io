@@ -8,10 +8,10 @@
 	padding: 20px;
 	border: 1px solid rgba(200, 200, 255, 0.2);
 	backdrop-filter: blur(10px);
-  }
-  
-  /* Background Layer */
-  .app-background-layer {
+}
+
+/* Background Layer */
+.app-background-layer {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -20,30 +20,33 @@
 	/* background: url('https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbzVtdmgzcXhmejF0cnIyenh1NTA3NzJxcGd5enpjMHNwemZ5cXdsOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/BwAV60rzKpQLPca6nU/giphy.gif') no-repeat center center fixed; */
 	background-size: cover;
 	z-index: -1;
-  }
-  
-  /* Global font style */
-  body {
+}
+
+/* Global font style */
+body {
 	font-family: 'Barlow', sans-serif;
-  }
-  
-  /* Featured Section */
-  .featured-section {
+}
+
+/* Featured Section */
+.featured-section {
 	margin-bottom: 40px;
-  }
-  .featured-title {
+}
+
+.featured-title {
 	font-size: 1.5rem;
 	margin-bottom: 10px;
 	padding: 5px;
 	text-align: center;
 	color: #aaccff;
-  }
-  .featured-grid {
+}
+
+.featured-grid {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 	gap: 15px;
-  }
-  .featured-item {
+}
+
+.featured-item {
 	background: rgba(10, 10, 50, 0.6);
 	border: 1px solid rgba(200, 200, 255, 0.3);
 	backdrop-filter: blur(8px);
@@ -51,32 +54,37 @@
 	overflow: hidden;
 	cursor: pointer;
 	transition: transform 0.3s, background 0.3s, border 0.3s;
-  }
-  .featured-item:hover {
+}
+
+.featured-item:hover {
 	transform: scale(1.03);
 	background: rgba(10, 10, 50, 0.8);
 	border: 1px solid rgba(200, 200, 255, 0.5);
-  }
-  .featured-item img {
+}
+
+.featured-item img {
 	width: 100%;
 	display: block;
-  }
-  .featured-item p {
+}
+
+.featured-item p {
 	margin: 8px;
 	font-size: 16px;
 	text-align: center;
 	color: #ddeeff;
-  }
-  
-  /* Video Player Section */
-  .player-section {
+}
+
+/* Video Player Section */
+.player-section {
 	text-align: center;
 	margin-bottom: 40px;
-  }
-  .video-wrapper {
+}
+
+.video-wrapper {
 	position: relative;
-  }
-  .video-overlay {
+}
+
+.video-overlay {
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -92,8 +100,9 @@
 	justify-content: center;
 	transition: opacity 0.3s ease;
 	z-index: 2;
-  }
-  .control-bar {
+}
+
+.control-bar {
 	margin-top: 10px;
 	display: flex;
 	justify-content: center;
@@ -102,8 +111,9 @@
 	padding: 10px;
 	border-radius: 8px;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
-  }
-  .control-bar button {
+}
+
+.control-bar button {
 	padding: 8px 12px;
 	border: 2px solid rgba(200, 200, 255, 0.3);
 	border-radius: 4px;
@@ -113,28 +123,31 @@
 	font-size: 14px;
 	cursor: pointer;
 	transition: background 0.3s, border 0.3s;
-  }
-  .control-bar button:hover {
+}
+
+.control-bar button:hover {
 	background: linear-gradient(to bottom, rgba(10, 10, 50, 0.8), rgba(10, 10, 50, 1));
 	border-color: rgba(200, 200, 255, 0.5);
-  }
-  
-  /* Library Section */
-  .library-header {
+}
+
+/* Library Section */
+.library-header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	margin-bottom: 15px;
 	flex-wrap: wrap;
 	gap: 10px;
-  }
-  .library-header h2 {
+}
+
+.library-header h2 {
 	margin: 0;
 	font-size: 1.5rem;
 	padding: 5px;
 	color: #aaccff;
-  }
-  .view-toggle button {
+}
+
+.view-toggle button {
 	padding: 6px 12px;
 	border: 1px solid rgba(200, 200, 255, 0.3);
 	border-radius: 8px;
@@ -142,20 +155,22 @@
 	color: #ddeeff;
 	cursor: pointer;
 	transition: background 0.3s, border 0.3s;
-  }
-  .view-toggle button.active,
-  .view-toggle button:hover {
+}
+
+.view-toggle button.active,
+.view-toggle button:hover {
 	background: rgba(10, 10, 50, 0.8);
 	border: 1px solid rgba(200, 200, 255, 0.5);
-  }
-  
-  /* Grid view for Library */
-  .library-grid {
+}
+
+/* Grid view for Library */
+.library-grid {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 	gap: 15px;
-  }
-  .library-card {
+}
+
+.library-card {
 	background: rgba(10, 10, 50, 0.6);
 	border: 1px solid rgba(200, 200, 255, 0.3);
 	backdrop-filter: blur(8px);
@@ -163,69 +178,76 @@
 	overflow: hidden;
 	cursor: pointer;
 	transition: transform 0.3s, background 0.3s, border 0.3s;
-  }
-  .library-card:hover {
+}
+
+.library-card:hover {
 	transform: scale(1.03);
 	background: rgba(10, 10, 50, 0.8);
 	border: 1px solid rgba(200, 200, 255, 0.5);
-  }
-  .library-card img {
+}
+
+.library-card img {
 	width: 100%;
 	display: block;
-  }
-  .library-card .info {
+}
+
+.library-card .info {
 	padding: 8px;
 	text-align: center;
 	font-size: 14px;
 	color: #ddeeff;
-  }
-  
-  /* List view for Library */
-  .library-list {
+}
+
+/* List view for Library */
+.library-list {
 	width: 100%;
 	border-collapse: collapse;
-  }
-  .library-list th,
-  .library-list td {
+}
+
+.library-list th,
+.library-list td {
 	padding: 10px;
 	border-bottom: 1px solid rgba(80, 80, 100, 0.6);
 	text-align: left;
 	font-size: 14px;
 	color: #ddeeff;
-  }
-  .library-list tr:hover {
+}
+
+.library-list tr:hover {
 	background: rgba(20, 20, 60, 0.8);
 	cursor: pointer;
-  }
-  
-  /* Video element styling */
-  video {
+}
+
+/* Video element styling */
+video {
 	width: 100%;
 	border: 2px solid rgba(200, 200, 255, 0.3);
 	background-color: rgba(10, 10, 50, 0.8);
 	color: #ddeeff;
 	border-radius: 8px;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-  }
-  
-  @media (max-width: 768px) {
+}
+
+@media (max-width: 768px) {
 	video {
-	  max-width: 100%;
-	  height: auto;
+		max-width: 100%;
+		height: auto;
 	}
-  }
-  
-  /* Broadcast Mode Styling (optional if you display the broadcast playlists) */
-  .broadcast-playlist {
+}
+
+/* Broadcast Mode Styling (optional if you display the broadcast playlists) */
+.broadcast-playlist {
 	margin-top: 20px;
-  }
-  .broadcast-playlist h3 {
+}
+
+.broadcast-playlist h3 {
 	font-size: 1.3rem;
 	padding: 5px;
 	color: #aaccff;
 	margin-bottom: 10px;
-  }
-  .broadcast-item {
+}
+
+.broadcast-item {
 	background: rgba(10, 10, 50, 0.6);
 	border: 1px solid rgba(200, 200, 255, 0.3);
 	backdrop-filter: blur(8px);
@@ -235,13 +257,23 @@
 	transition: transform 0.3s;
 	padding: 5px;
 	margin-bottom: 10px;
-  }
-  .broadcast-item:hover {
+}
+
+.broadcast-item:hover {
 	transform: scale(1.02);
-  }
-  .broadcast-item img {
+}
+
+.broadcast-item img {
 	width: 100%;
 	display: block;
 	border-radius: 4px;
-  }
-  
+}
+
+
+.control-bar {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+	overflow-x: scroll;
+}

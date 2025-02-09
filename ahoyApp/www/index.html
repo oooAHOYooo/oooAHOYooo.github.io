@@ -2,18 +2,23 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=yes">
-        
+        <meta name="viewport"
+            content="width=device-width,initial-scale=1,shrink-to-fit=yes">
+
         <!-- Video.js CSS (kept for other parts if needed) -->
-        <link href="https://vjs.zencdn.net/7.20.3/video-js.css" rel="stylesheet" />
+        <link href="https://vjs.zencdn.net/7.20.3/video-js.css"
+            rel="stylesheet" />
 
         <!-- Alpine.js (only one instance) -->
-        <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.0/dist/cdn.min.js" defer></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.0/dist/cdn.min.js"
+            defer></script>
 
         <!-- Video.js Library (kept for other features) -->
         <script src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
         <!-- Video.js Chromecast Plugin -->
-        <script src="https://cdn.jsdelivr.net/npm/videojs-chromecast/dist/videojs-chromecast.min.js"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/videojs-chromecast/dist/videojs-chromecast.min.js"></script>
 
         <meta name="HandheldFriendly" content="true">
         <meta name="apple-mobile-web-app-capable" content="yes">
@@ -21,31 +26,42 @@
         <meta name="apple-mobile-web-app-title" content="Ahoy Indie Media">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="theme-color" content="#ff0060">
-        <meta name="description" content="Ahoy Indie Media - A hand-crafted media company based out of New Haven, Connecticut. We offer a homegrown alternative to mainstream media consumption.">
-        <meta name="keywords" content="Indie Media, Independent Artists, Indie Music, Podcasts, Indie Games, Digital Market, Indie Creators, Indie Culture, Ahoy Indie Media">
+        <meta name="description"
+            content="Ahoy Indie Media - A hand-crafted media company based out of New Haven, Connecticut. We offer a homegrown alternative to mainstream media consumption.">
+        <meta name="keywords"
+            content="Indie Media, Independent Artists, Indie Music, Podcasts, Indie Games, Digital Market, Indie Creators, Indie Culture, Ahoy Indie Media">
         <meta name="robots" content="index, follow">
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="color-scheme" content="light dark">
-        <title>Ahoy Indie Media - Live Indie Music, Spotlights, filmmakers and more</title>
+        <title>Ahoy Indie Media - Live Indie Music, Spotlights, filmmakers and
+            more</title>
         <link rel="dns-prefetch" href="//www.gstatic.com">
         <meta name="referrer" content="strict-origin-when-cross-origin">
         <meta http-equiv="X-Content-Type-Options" content="nosniff">
         <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
-        <meta http-equiv="Strict-Transport-Security" content="max-age=31536000;includeSubDomains">
+        <meta http-equiv="Strict-Transport-Security"
+            content="max-age=31536000;includeSubDomains">
         <meta http-equiv="X-XSS-Protection" content="1;mode=block">
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://*.firebaseio.com https://*.googleapis.com https://cdnjs.cloudflare.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.firebaseio.com https://*.googleapis.com https://www.gstatic.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; font-src 'self' https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://*.firebaseio.com https://*.googleapis.com wss://*.firebaseio.com;">
+        <meta http-equiv="Content-Security-Policy"
+            content="default-src 'self' https://*.firebaseio.com https://*.googleapis.com https://cdnjs.cloudflare.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.firebaseio.com https://*.googleapis.com https://www.gstatic.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; font-src 'self' https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://*.firebaseio.com https://*.googleapis.com wss://*.firebaseio.com;">
         <!-- <meta http-equiv="Cross-Origin-Embedder-Policy" content="require-corp"> -->
         <!-- <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin"> -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
         <link rel="stylesheet" href="./css/v26-master.css">
-        <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js"></script>
+        <script
+            src="https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js"></script>
+        <script
+            src="https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js"></script>
+        <script
+            src="https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js"></script>
 
         <link rel="icon" type="image/png" href="./img/favicon_ahoy.png">
-        <script src="https://cdn.auth0.com/js/auth0-spa-js/1.24/auth0-spa-js.production.js"></script>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-WVDL9N1HDT"></script>
+        <script
+            src="https://cdn.auth0.com/js/auth0-spa-js/1.24/auth0-spa-js.production.js"></script>
+        <script async
+            src="https://www.googletagmanager.com/gtag/js?id=G-WVDL9N1HDT"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -68,7 +84,9 @@
                 <div class="app-header">
                     <div class="app-header-1">
                         <a href="index.html">
-                            <img src="./img/assets/u_ahoy23.png" alt="Ahoy Indie Media Logo" width="100%" height="16px">
+                            <img src="./img/assets/u_ahoy23.png"
+                                alt="Ahoy Indie Media Logo" width="100%"
+                                height="16px">
                         </a>
                     </div>
                     <div class="app-header-2">
@@ -76,33 +94,42 @@
                     </div>
                     <div class="app-header-3">
                         <button id="user-account-button">
-                            <i class="fas fa-user" style="font-size: 16px; color:white;"></i>
+                            <i class="fas fa-user"
+                                style="font-size: 16px; color:white;"></i>
                         </button>
                     </div>
                 </div>
                 <hr class="app-header-hr">
 
                 <!-- VIDEO APP (with modifications to remove broadcast features) -->
-                <div id="video-app" class="container" x-data="videoApp()" x-init="initApp()">
+                <div id="video-app" class="container" x-data="videoApp()"
+                    x-init="initApp()">
                     <!-- Flex container separates the category sidebar and the main player/library area -->
-                    <div class="video-content-wrapper" style="display: flex; flex-wrap: wrap;">
+                    <div class="video-content-wrapper"
+                        style="display: flex; flex-wrap: wrap;">
                         <!-- Main Player and Library Section -->
-                        <div class="player-and-library" style="flex: 1; padding: 10px;">
+                        <div class="player-and-library">
                             <!-- Video Player Section -->
-                            <section class="player-section" x-show="viewMode === 'player'">
+                            <section class="player-section"
+                                x-show="viewMode === 'player'">
                                 <!-- Removed Video.js classes/attributes and added playsinline attributes -->
-                                <video id="video-player" controls playsinline webkit-playsinline preload="auto" width="640" height="360">
-                                    <source x-bind:src="currentVideo.src" x-bind:type="currentVideo.type" />
-                                    <p>Please enable JavaScript to view this video.</p>
+                                <video id="video-player" controls playsinline
+                                    webkit-playsinline preload="auto"
+                                    width="640" height="360">
+                                    <source x-bind:src="currentVideo.src"
+                                        x-bind:type="currentVideo.type" />
+                                    <p>Please enable JavaScript</p>
                                 </video>
                                 <div class="control-bar">
                                     <button @click="prevVideo()">Prev</button>
                                     <button @click="togglePlayPause()">
-                                        <span x-text="isPlaying ? 'Pause' : 'Play'"></span>
+                                        <span
+                                            x-text="isPlaying ? 'Pause' : 'Play'"></span>
                                     </button>
                                     <button @click="nextVideo()">Next</button>
                                     <button @click="togglePip()">PIP</button>
-                                    <button @click="toggleFullscreen()">Fullscreen</button>
+                                    <button
+                                        @click="toggleFullscreen()">Fullscreen</button>
                                     <button @click="castVideo()">Cast</button>
                                 </div>
                             </section>
@@ -113,10 +140,14 @@
                                     <h2>Featured Playlists for the Season</h2>
                                 </div>
                                 <div class="featured-grid">
-                                    <template x-for="playlist in featuredPlaylists" :key="playlist.id">
+                                    <template
+                                        x-for="playlist in featuredPlaylists"
+                                        :key="playlist.id">
                                         <!-- When clicking, we now simply select a clip (from the library) -->
-                                        <div class="featured-item" @click="selectCategory('clips'); selectVideo(playlist.id)">
-                                            <img :src="playlist.thumbnail" alt="Featured Thumbnail" />
+                                        <div class="featured-item"
+                                            @click="selectCategory('clips'); selectVideo(playlist.id)">
+                                            <img :src="playlist.thumbnail"
+                                                alt="Featured Thumbnail" />
                                             <p x-text="playlist.title"></p>
                                         </div>
                                     </template>
@@ -124,11 +155,15 @@
                             </section>
 
                             <!-- Micro Library Section -->
-                            <div x-show="microLibraryVisible" class="micro-library">
+                            <div x-show="microLibraryVisible"
+                                class="micro-library">
                                 <div class="micro-library-grid">
-                                    <template x-for="video in microLibrary" :key="video.id">
-                                        <div class="micro-library-item" @click="selectVideo(video.id); viewMode = 'player'">
-                                            <img :src="video.thumbnail" alt="Video Thumbnail" />
+                                    <template x-for="video in microLibrary"
+                                        :key="video.id">
+                                        <div class="micro-library-item"
+                                            @click="selectVideo(video.id); viewMode = 'player'">
+                                            <img :src="video.thumbnail"
+                                                alt="Video Thumbnail" />
                                             <p x-text="video.title"></p>
                                         </div>
                                     </template>
@@ -141,39 +176,57 @@
                             <div class="library-header">
                                 <h2>Library</h2>
                                 <div class="view-toggle">
-                                    <button :class="{'active': libraryViewMode === 'grid'}" @click="libraryViewMode = 'grid'">Grid View</button>
-                                    <button :class="{'active': libraryViewMode === 'list'}" @click="libraryViewMode = 'list'">List View</button>
+                                    <button
+                                        :class="{'active': libraryViewMode === 'grid'}"
+                                        @click="libraryViewMode = 'grid'">Grid
+                                        View</button>
+                                    <button
+                                        :class="{'active': libraryViewMode === 'list'}"
+                                        @click="libraryViewMode = 'list'">List
+                                        View</button>
                                 </div>
                             </div>
                             <!-- Filtering Container -->
                             <div class="library-filter-container">
                                 <div class="filter-dropdown-wrapper">
                                     <!-- Using Alpine's x-model to bind the selected sub-category -->
-                                    <select class="filter-dropdown" x-model="selectedSubCategory">
-                                        <option value="">All Categories</option>
-                                        <option value="broadcast">Broadcast</option>
-                                        <option value="episodes">Episodes</option>
+                                    <select class="filter-dropdown"
+                                        x-model="selectedSubCategory">
+                                        <option value>All Categories</option>
+                                        <option
+                                            value="broadcast">Broadcast</option>
+                                        <option
+                                            value="episodes">Episodes</option>
                                         <option value="clips">Clips</option>
                                         <option value="promos">Promos</option>
                                         <option value="live">Live Shows</option>
-                                        <option value="music">Music Videos</option>
+                                        <option value="music">Music
+                                            Videos</option>
                                     </select>
                                 </div>
                             </div>
                             <!-- Grid View -->
-                            <div x-show="libraryViewMode === 'grid'" class="library-grid">
-                                <template x-for="video in filterVideosBySubCategory(selectedSubCategory)" :key="video.id">
-                                    <div class="library-card" @click="selectVideo(video.id); viewMode = 'player'">
-                                        <img :src="video.thumbnail" alt="Video Thumbnail" />
+                            <div x-show="libraryViewMode === 'grid'"
+                                class="library-grid">
+                                <template
+                                    x-for="video in filterVideosBySubCategory(selectedSubCategory)"
+                                    :key="video.id">
+                                    <div class="library-card"
+                                        @click="selectVideo(video.id); viewMode = 'player'">
+                                        <img :src="video.thumbnail"
+                                            alt="Video Thumbnail" />
                                         <div class="info">
-                                            <strong x-text="video.title"></strong><br />
-                                            <small x-text="video.category"></small>
+                                            <strong
+                                                x-text="video.title"></strong><br />
+                                            <small
+                                                x-text="video.category"></small>
                                         </div>
                                     </div>
                                 </template>
                             </div>
                             <!-- List View -->
-                            <table x-show="libraryViewMode === 'list'" class="library-list">
+                            <table x-show="libraryViewMode === 'list'"
+                                class="library-list">
                                 <thead>
                                     <tr>
                                         <th>Thumbnail</th>
@@ -182,9 +235,14 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <template x-for="video in filterVideosBySubCategory(selectedSubCategory)" :key="video.id">
-                                        <tr @click="selectVideo(video.id); viewMode = 'player'">
-                                            <td><img :src="video.thumbnail" alt="Thumb" width="80" /></td>
+                                    <template
+                                        x-for="video in filterVideosBySubCategory(selectedSubCategory)"
+                                        :key="video.id">
+                                        <tr
+                                            @click="selectVideo(video.id); viewMode = 'player'">
+                                            <td><img :src="video.thumbnail"
+                                                    alt="Thumb"
+                                                    width="80" /></td>
                                             <td x-text="video.title"></td>
                                             <td x-text="video.category"></td>
                                         </tr>
@@ -203,7 +261,9 @@
                 <div class="app-header">
                     <div class="app-header-1">
                         <a href="index.html">
-                            <img src="./img/assets/u_ahoy23.png" alt="Ahoy Indie Media Logo" width="100%" height="16px">
+                            <img src="./img/assets/u_ahoy23.png"
+                                alt="Ahoy Indie Media Logo" width="100%"
+                                height="16px">
                         </a>
                     </div>
                     <div class="app-header-2">
@@ -211,7 +271,8 @@
                     </div>
                     <div class="app-header-3">
                         <button id="user-account-button">
-                            <i class="fas fa-user" style="font-size: 16px; color:white;"></i>
+                            <i class="fas fa-user"
+                                style="font-size: 16px; color:white;"></i>
                         </button>
                     </div>
                 </div>
@@ -225,13 +286,19 @@
                                 <p class="sub-text" id="artist"></p>
                             </div>
                             <div class="duration-control">
-                                <input type="range" id="durationBar" min="0" max="100" step="1" value="0" class="styled-duration-bar">
+                                <input type="range" id="durationBar" min="0"
+                                    max="100" step="1" value="0"
+                                    class="styled-duration-bar">
                             </div>
                             <div class="radio-controls">
-                                <button class="audio-control-button" id="playBtn">[► PLAY]</button>
-                                <button class="audio-control-button" id="add15sBtn">[+15s]</button>
-                                <button class="audio-control-button" id="prevBtn">[◄◄ PREV]</button>
-                                <button class="audio-control-button" id="nextBtn">[► NEXT]</button>
+                                <button class="audio-control-button"
+                                    id="playBtn">[► PLAY]</button>
+                                <button class="audio-control-button"
+                                    id="add15sBtn">[+15s]</button>
+                                <button class="audio-control-button"
+                                    id="prevBtn">[◄◄ PREV]</button>
+                                <button class="audio-control-button"
+                                    id="nextBtn">[► NEXT]</button>
                             </div>
                         </div>
                     </div>
@@ -239,19 +306,27 @@
                 <div class="terminal-section">
                     <h2>SEARCH SONGS:</h2>
                     <div class="search-container">
-                        <input type="text" id="songSearch" placeholder="Enter search query...">
-                        <button id="searchBtn" class="action-button">Search</button>
-                        <button id="clear-search" class="action-button">Clear</button>
+                        <input type="text" id="songSearch"
+                            placeholder="Enter search query...">
+                        <button id="searchBtn"
+                            class="action-button">Search</button>
+                        <button id="clear-search"
+                            class="action-button">Clear</button>
                     </div>
                 </div>
                 <hr>
                 <div class="song-list">
                     <div class="table-responsive">
-                        <div id="song-sort-buttons" class="sort-buttons-container">
-                            <button class="action-button" id="song-sort-recent">Recently Added</button>
-                            <button class="action-button" id="song-sort-random">Random</button>
-                            <button class="action-button" id="song-sort-title-az">Title A-Z</button>
-                            <button class="action-button" id="song-sort-artist-az">Artist A-Z</button>
+                        <div id="song-sort-buttons"
+                            class="sort-buttons-container">
+                            <button class="action-button"
+                                id="song-sort-recent">Recently Added</button>
+                            <button class="action-button"
+                                id="song-sort-random">Random</button>
+                            <button class="action-button"
+                                id="song-sort-title-az">Title A-Z</button>
+                            <button class="action-button"
+                                id="song-sort-artist-az">Artist A-Z</button>
                         </div>
                         <table id="songListTable">
                             <thead></thead>
@@ -267,7 +342,9 @@
                 <div class="app-header">
                     <div class="app-header-1">
                         <a href="ahoy.ooo">
-                            <img src="./img/assets/u_ahoy23.png" alt="Ahoy Indie Media Logo" width="100%" height="16px">
+                            <img src="./img/assets/u_ahoy23.png"
+                                alt="Ahoy Indie Media Logo" width="100%"
+                                height="16px">
                         </a>
                     </div>
                     <div class="app-header-2">
@@ -275,7 +352,8 @@
                     </div>
                     <div class="app-header-3">
                         <button id="user-account-button">
-                            <i class="fas fa-user" style="font-size: 16px; color:white;"></i>
+                            <i class="fas fa-user"
+                                style="font-size: 16px; color:white;"></i>
                         </button>
                     </div>
                 </div>
@@ -289,13 +367,20 @@
                                 <p id="podcast-description"></p>
                             </div>
                             <div class="duration-control">
-                                <input type="range" id="podcastDurationBar" min="0" max="100" step="1" value="0" class="styled-duration-bar">
+                                <input type="range" id="podcastDurationBar"
+                                    min="0" max="100" step="1" value="0"
+                                    class="styled-duration-bar">
                             </div>
                             <div class="podcast-player-controls">
-                                <button class="audio-control-button" id="playPodcastBtn">[► PLAY]</button>
-                                <button class="audio-control-button" id="podcast-forward15sBtn">[+15s]</button>
-                                <button class="audio-control-button" id="podcast-backward15sBtn">[◄◄ PREV]</button>
-                                <button class="audio-control-button" id="podcast-nextBtn">[► NEXT]</button>
+                                <button class="audio-control-button"
+                                    id="playPodcastBtn">[► PLAY]</button>
+                                <button class="audio-control-button"
+                                    id="podcast-forward15sBtn">[+15s]</button>
+                                <button class="audio-control-button"
+                                    id="podcast-backward15sBtn">[◄◄
+                                    PREV]</button>
+                                <button class="audio-control-button"
+                                    id="podcast-nextBtn">[► NEXT]</button>
                             </div>
                         </div>
                     </div>
@@ -304,17 +389,24 @@
                 <div id="podcast-search-section" class="terminal-section">
                     <h2>SEARCH PODCASTS:</h2>
                     <div class="search-container">
-                        <input type="text" id="podcastSearch" placeholder="Search podcasts...">
-                        <button class="action-button" id="podcastSearchBtn">Search</button>
-                        <button id="clear-search" class="action-button">Clear</button>
+                        <input type="text" id="podcastSearch"
+                            placeholder="Search podcasts...">
+                        <button class="action-button"
+                            id="podcastSearchBtn">Search</button>
+                        <button id="clear-search"
+                            class="action-button">Clear</button>
                     </div>
                 </div>
                 <hr>
                 <div class="sort-buttons-container" id="podcast-sort-buttons">
-                    <button class="action-button" id="podcast-sort-recent">Most Recent</button>
-                    <button class="action-button" id="podcast-sort-random">Random</button>
-                    <button class="action-button" id="podcast-sort-title-az">Title A-Z</button>
-                    <button class="action-button" id="podcast-sort-series-az">Series A-Z</button>
+                    <button class="action-button" id="podcast-sort-recent">Most
+                        Recent</button>
+                    <button class="action-button"
+                        id="podcast-sort-random">Random</button>
+                    <button class="action-button"
+                        id="podcast-sort-title-az">Title A-Z</button>
+                    <button class="action-button"
+                        id="podcast-sort-series-az">Series A-Z</button>
                 </div>
                 <table>
                     <tbody id="podcastListBody"></tbody>
@@ -328,35 +420,51 @@
                     <!-- Community Page Header -->
                     <div class="community-header compact-header">
                         <h1>Ahoy Indie Media Community</h1>
-                        <p>Discover alumni, support creators, explore spotlights.</p>
+                        <p>Discover alumni, support creators, explore
+                            spotlights.</p>
                     </div>
                     <div x-data="artistDirectory()" class="artist-directory">
                         <!-- Search Input -->
                         <div class="artist-directory-search-container">
-                            <label for="artist-search" class="search-label">Search Artists:</label>
-                            <input type="text" id="artist-search" placeholder="Enter name..." x-model="searchQuery" class="search-bar" />
+                            <label for="artist-search"
+                                class="search-label">Search Artists:</label>
+                            <input type="text" id="artist-search"
+                                placeholder="Enter name..."
+                                x-model="searchQuery" class="search-bar" />
                         </div>
                         <!-- Artist Grid -->
                         <div class="artist-grid">
-                            <template x-for="artist in filteredArtists" :key="artist.name">
-                                <div class="artist-card" @click="selectArtist(artist)">
-                                    <img :src="artist.image" alt class="artist-image">
+                            <template x-for="artist in filteredArtists"
+                                :key="artist.name">
+                                <div class="artist-card"
+                                    @click="selectArtist(artist)">
+                                    <img :src="artist.image" alt
+                                        class="artist-image">
                                     <h3 x-text="artist.name"></h3>
                                     <ul>
-                                        <li x-for="song in artist.songs" :key="song" x-text="song"></li>
+                                        <li x-for="song in artist.songs"
+                                            :key="song" x-text="song"></li>
                                     </ul>
                                 </div>
                             </template>
                         </div>
                         <!-- Expanded Artist View (Modal) -->
-                        <div x-show="selectedArtist" class="artist-expanded-view" @click.away="closeArtistView()">
+                        <div x-show="selectedArtist"
+                            class="artist-expanded-view"
+                            @click.away="closeArtistView()">
                             <div class="artist-expanded-content">
-                                <button @click="closeArtistView()">Close</button>
+                                <button
+                                    @click="closeArtistView()">Close</button>
                                 <h2 x-text="selectedArtist.name"></h2>
-                                <img :src="selectedArtist.image" alt class="artist-image-large">
+                                <img :src="selectedArtist.image" alt
+                                    class="artist-image-large">
                                 <p x-show="selectedArtist.externalLink">More</p>
-                                <a x-show="selectedArtist.merchLink" :href="selectedArtist.merchLink" target="_blank">Merch</a>
-                                <a x-show="selectedArtist.externalLink" :href="selectedArtist.externalLink" target="_blank">Visit Website</a>
+                                <a x-show="selectedArtist.merchLink"
+                                    :href="selectedArtist.merchLink"
+                                    target="_blank">Merch</a>
+                                <a x-show="selectedArtist.externalLink"
+                                    :href="selectedArtist.externalLink"
+                                    target="_blank">Visit Website</a>
                             </div>
                         </div>
                     </div>
@@ -371,11 +479,17 @@
                     <!-- Support Us Section -->
                     <section class="support-us">
                         <h2>Support Ahoy Indie Media</h2>
-                        <p>Help us stay indie and ad-free by contributing to our mission.</p>
+                        <p>Help us stay indie and ad-free by contributing to our
+                            mission.</p>
                         <div class="support-content">
-                            <p>Support Ahoy Indie Media by contributing to our mission of providing ad-free, quality indie media.</p>
+                            <p>Support Ahoy Indie Media by contributing to our
+                                mission of providing ad-free, quality indie
+                                media.</p>
                             <button class="action-button">
-                                <a href="https://checkout.square.site/merchant/MLCEJBSG4Z671/checkout/OTECA53PANFVTTCVDCDAZNRX" class="support-button">Donate to Ahoy Indie Media</a>
+                                <a
+                                    href="https://checkout.square.site/merchant/MLCEJBSG4Z671/checkout/OTECA53PANFVTTCVDCDAZNRX"
+                                    class="support-button">Donate to Ahoy Indie
+                                    Media</a>
                             </button>
                         </div>
                     </section>
@@ -385,19 +499,36 @@
 
             <!-- ABOUT TAB -->
             <div id="about-tab" class="tab-content">
-                <img src="./img/assets/u_ahoy23.png" alt="Ahoy Indie Media Logo" class="homepage-logo" onclick="navigateToTab('news-tab')">
+                <img src="./img/assets/u_ahoy23.png" alt="Ahoy Indie Media Logo"
+                    class="homepage-logo" onclick="navigateToTab('news-tab')">
                 <div class="newsSubHeaderMenu" id="homepage-top-submenu">
-                    <button id="about-button" onclick="navigateToTab('about-tab')" class="btnPrimary">About Ahoy</button>
-                    <button id="recently-added-button" onclick="navigateToTab('updates-tab')" class="btnPrimary">App Updates</button>
+                    <button id="about-button"
+                        onclick="navigateToTab('about-tab')"
+                        class="btnPrimary">About Ahoy</button>
+                    <button id="recently-added-button"
+                        onclick="navigateToTab('updates-tab')"
+                        class="btnPrimary">App Updates</button>
                 </div>
                 <div class="body-desc-container">
                     <div class="body-desc-block">
                         <h2 class="about-title">About Ahoy Indie Media</h2>
-                        <p>Ahoy Indie Media is a hand-crafted media company based out of New Haven, Connecticut. Our mission is to provide an alternative avenue for exploring indie media.</p>
-                        <img src="https://storage.googleapis.com/ahoy-dynamic-content/images/about-ahoy-indie-media.jpg" alt="About Ahoy Indie Media" class="body-desc-image">
-                        <p>Our platform is dedicated to supporting independent filmmakers, musicians, podcasters, and creators by providing them with a space to share their work.</p>
-                        <p>We sustain all of our operations through sheer will power. This model allows us to support our artists while keeping the platform accessible and ad-free.</p>
-                        <p>Every piece of content on our platform is here with the express blessings of the artists involved.</p>
+                        <p>Ahoy Indie Media is a hand-crafted media company
+                            based out of New Haven, Connecticut. Our mission is
+                            to provide an alternative avenue for exploring indie
+                            media.</p>
+                        <img
+                            src="https://storage.googleapis.com/ahoy-dynamic-content/images/about-ahoy-indie-media.jpg"
+                            alt="About Ahoy Indie Media"
+                            class="body-desc-image">
+                        <p>Our platform is dedicated to supporting independent
+                            filmmakers, musicians, podcasters, and creators by
+                            providing them with a space to share their work.</p>
+                        <p>We sustain all of our operations through sheer will
+                            power. This model allows us to support our artists
+                            while keeping the platform accessible and
+                            ad-free.</p>
+                        <p>Every piece of content on our platform is here with
+                            the express blessings of the artists involved.</p>
                         <div class="team-widget">
                             <h3>Our Team</h3>
                             <div class="team-member">
@@ -411,9 +542,11 @@
                         </div>
                         <!-- SETTINGS TAB (Privacy section below About) -->
                         <div class="settings-widget" id="privacy-section">
-                            <p>To learn more about how we handle your data, please read our</p>
+                            <p>To learn more about how we handle your data,
+                                please read our</p>
                             <a href="https://ahoy.ooo/privacy.html">
-                                <button class="action-button">Privacy Policy</button>
+                                <button class="action-button">Privacy
+                                    Policy</button>
                             </a>
                         </div>
                         <hr>
@@ -427,7 +560,9 @@
                 <div class="app-header">
                     <div class="app-header-1">
                         <a href="ahoy.ooo">
-                            <img src="./img/assets/u_ahoy23.png" alt="Ahoy Indie Media Logo" width="100%" height="16px">
+                            <img src="./img/assets/u_ahoy23.png"
+                                alt="Ahoy Indie Media Logo" width="100%"
+                                height="16px">
                         </a>
                     </div>
                     <div class="app-header-2">
@@ -435,22 +570,31 @@
                     </div>
                     <div class="app-header-3">
                         <button id="user-account-button">
-                            <i class="fas fa-user" style="font-size: 16px; color:white;"></i>
+                            <i class="fas fa-user"
+                                style="font-size: 16px; color:white;"></i>
                         </button>
                     </div>
                 </div>
                 <hr class="app-header-hr">
-                <img src="./img/assets/u_ahoy23.png" alt="Ahoy Indie Media Logo" class="homepage-logo" style="font-family:'Times New Roman',Times,serif;font-size:24px;text-transform:uppercase;">
+                <img src="./img/assets/u_ahoy23.png" alt="Ahoy Indie Media Logo"
+                    class="homepage-logo"
+                    style="font-family:'Times New Roman',Times,serif;font-size:24px;text-transform:uppercase;">
                 <hr>
                 <h2 id="calendar-date"></h2>
                 <hr>
                 <div class="homepage-subheader">
-                    <p>Based in New Haven, CT, Ahoy Indie Media is a hand-built media company committed to providing an alternative avenue for exploring indie media.</p>
+                    <p>Based in New Haven, CT, Ahoy Indie Media is a hand-built
+                        media company committed to providing an alternative
+                        avenue for exploring indie media.</p>
                 </div>
                 <hr>
                 <div class="newsSubHeaderMenu" id="homepage-top-submenu">
-                    <button id="about-button" onclick="navigateToTab('about-tab')" class="btnPrimary">About Ahoy</button>
-                    <button id="recently-added-button" onclick="navigateToTab('updates-tab')" class="btnPrimary">App Updates</button>
+                    <button id="about-button"
+                        onclick="navigateToTab('about-tab')"
+                        class="btnPrimary">About Ahoy</button>
+                    <button id="recently-added-button"
+                        onclick="navigateToTab('updates-tab')"
+                        class="btnPrimary">App Updates</button>
                 </div>
                 <hr>
                 <p class="front-page-news-text">Front Page News</p>
@@ -460,8 +604,11 @@
                 <hr>
                 <hr>
                 <br>
-                <img src="./img/assets/u_ahoy23.png" alt="Ahoy Indie Media Logo" class="homepage-logo" style="font-family:'Times New Roman',Times,serif;font-size:24px;text-transform:uppercase;">
-                <p style="font-family:'Times New Roman',Times,serif;font-size:18px;text-align:center;">MMXXV</p>
+                <img src="./img/assets/u_ahoy23.png" alt="Ahoy Indie Media Logo"
+                    class="homepage-logo"
+                    style="font-family:'Times New Roman',Times,serif;font-size:24px;text-transform:uppercase;">
+                <p
+                    style="font-family:'Times New Roman',Times,serif;font-size:18px;text-align:center;">MMXXV</p>
             </div>
             <!-- END OF NEWS TAB -->
 
@@ -470,7 +617,9 @@
                 <div class="app-header">
                     <div class="app-header-1">
                         <a href="ahoy.ooo">
-                            <img src="./img/assets/u_ahoy23.png" alt="Ahoy Indie Media Logo" width="100%" height="16px">
+                            <img src="./img/assets/u_ahoy23.png"
+                                alt="Ahoy Indie Media Logo" width="100%"
+                                height="16px">
                         </a>
                     </div>
                     <div class="app-header-2">
@@ -501,23 +650,39 @@
                 </div>
                 <!-- BROADCAST REMOTE CONTROLS -->
                 <div class="remote-controls">
-                    <button id="prev-button" class="remoteControlButton"><i class="fas fa-step-backward"></i></button>
-                    <button id="play-pause-button" class="action-button full-width">[► PLAY]</button>
-                    <button id="next-button" class="remoteControlButton"><i class="fas fa-step-forward"></i></button>
-                    <button id="rewind-button" class="remoteControlButton"><i class="fas fa-undo"></i></button>
-                    <button id="shuffle-button" class="remoteControlButton"><i class="fas fa-random"></i></button>
-                    <button id="fullscreen-button" class="remoteControlButton"><i class="fas fa-expand"></i></button>
-                    <button id="mute-button" class="remoteControlButton"><i class="fas fa-volume-mute"></i></button>
-                    <button id="volume-down" class="remoteControlButton"><i class="fas fa-volume-down"></i></button>
-                    <button id="volume-up" class="remoteControlButton"><i class="fas fa-volume-up"></i></button>
+                    <button id="prev-button" class="remoteControlButton"><i
+                            class="fas fa-step-backward"></i></button>
+                    <button id="play-pause-button"
+                        class="action-button full-width">[► PLAY]</button>
+                    <button id="next-button" class="remoteControlButton"><i
+                            class="fas fa-step-forward"></i></button>
+                    <button id="rewind-button" class="remoteControlButton"><i
+                            class="fas fa-undo"></i></button>
+                    <button id="shuffle-button" class="remoteControlButton"><i
+                            class="fas fa-random"></i></button>
+                    <button id="fullscreen-button"
+                        class="remoteControlButton"><i
+                            class="fas fa-expand"></i></button>
+                    <button id="mute-button" class="remoteControlButton"><i
+                            class="fas fa-volume-mute"></i></button>
+                    <button id="volume-down" class="remoteControlButton"><i
+                            class="fas fa-volume-down"></i></button>
+                    <button id="volume-up" class="remoteControlButton"><i
+                            class="fas fa-volume-up"></i></button>
                 </div>
                 <!-- END OF BROADCAST REMOTE CONTROLS -->
                 <div id="about-ahoy-broadcast" class="about-section">
                     <h3>About Ahoy Broadcast</h3>
-                    <p>Ahoy Broadcast recreates the essence of classic TV for the digital age, delivering rotating indie playlists that shift throughout the day, just like a traditional TV broadcast would.</p>
+                    <p>Ahoy Broadcast recreates the essence of classic TV for
+                        the digital age, delivering rotating indie playlists
+                        that shift throughout the day, just like a traditional
+                        TV broadcast would.</p>
                     <h3>How It Works</h3>
                     <ul>
-                        <li><strong>Time-Based Playlists:</strong> The Ahoy Broadcast feature organizes content into time-based blocks that align with traditional broadcast schedules. These blocks include:
+                        <li><strong>Time-Based Playlists:</strong> The Ahoy
+                            Broadcast feature organizes content into time-based
+                            blocks that align with traditional broadcast
+                            schedules. These blocks include:
                             <ul>
                                 <li>Morning Broadcast (6am-12pm)</li>
                                 <li>Afternoon Broadcast (12pm-6pm)</li>
@@ -525,10 +690,28 @@
                                 <li>Late Night Broadcast (10pm-6am)</li>
                             </ul>
                         </li>
-                        <li><strong>Dynamic Content:</strong> Each block features a curated playlist of indie media, ensuring a fresh experience every time you tune in. The playlists are automatically loaded based on the current time of day.</li>
-                        <li><strong>Interactive Controls:</strong> Users can interact with the broadcast using a set of remote control buttons, allowing them to play, pause, fast forward, rewind, shuffle the playlist, and adjust volume.</li>
-                        <li><strong>Playlist Management:</strong> The playlists are managed through JSON files, which are dynamically loaded based on the current time. This system allows for easy updates and modifications to the content lineup, ensuring that the broadcast remains fresh.</li>
-                        <li><strong>Beta Feature:</strong> Currently, the Ahoy Broadcast is in its beta phase, meaning we're actively working on refining the experience and squashing any bugs. This feature is a significant milestone for us, as it marks our readiness to move forward with our App Store submission.</li>
+                        <li><strong>Dynamic Content:</strong> Each block
+                            features a curated playlist of indie media, ensuring
+                            a fresh experience every time you tune in. The
+                            playlists are automatically loaded based on the
+                            current time of day.</li>
+                        <li><strong>Interactive Controls:</strong> Users can
+                            interact with the broadcast using a set of remote
+                            control buttons, allowing them to play, pause, fast
+                            forward, rewind, shuffle the playlist, and adjust
+                            volume.</li>
+                        <li><strong>Playlist Management:</strong> The playlists
+                            are managed through JSON files, which are
+                            dynamically loaded based on the current time. This
+                            system allows for easy updates and modifications to
+                            the content lineup, ensuring that the broadcast
+                            remains fresh.</li>
+                        <li><strong>Beta Feature:</strong> Currently, the Ahoy
+                            Broadcast is in its beta phase, meaning we're
+                            actively working on refining the experience and
+                            squashing any bugs. This feature is a significant
+                            milestone for us, as it marks our readiness to move
+                            forward with our App Store submission.</li>
                     </ul>
                 </div>
             </div>
@@ -539,7 +722,9 @@
                 <div class="app-header">
                     <div class="app-header-1">
                         <a href="#">
-                            <img src="./img/assets/u_ahoy23.png" alt="Ahoy Indie Media Logo" width="100%" height="16px">
+                            <img src="./img/assets/u_ahoy23.png"
+                                alt="Ahoy Indie Media Logo" width="100%"
+                                height="16px">
                         </a>
                     </div>
                     <div class="app-header-2">
@@ -547,15 +732,20 @@
                     </div>
                     <div class="app-header-3">
                         <button id="user-account-button">
-                            <i class="fas fa-user" style="font-size: 16px; color:white;"></i>
+                            <i class="fas fa-user"
+                                style="font-size: 16px; color:white;"></i>
                         </button>
                     </div>
                 </div>
                 <hr class="app-header-hr">
                 <div id="mute-audio-widget" class="settings-widget">
-                    <button class="action-button" onclick="toggleMute()">Mute Audio</button>
-                    <button class="action-button" onclick="clearCacheAndReset()">Clear Cache & Reset</button>
-                    <button class="action-button" id="toggle-offline-mode">Offline Mode: Off</button>
+                    <button class="action-button" onclick="toggleMute()">Mute
+                        Audio</button>
+                    <button class="action-button"
+                        onclick="clearCacheAndReset()">Clear Cache &
+                        Reset</button>
+                    <button class="action-button"
+                        id="toggle-offline-mode">Offline Mode: Off</button>
                 </div>
                 <hr>
                 <h2>Theme Switcher</h2>
@@ -563,30 +753,43 @@
                 <div id="theme-switcher-widget" class="settings-widget">
                     <p id="theme-title"></p>
                     <div class="theme-switcher-containr">
-                        <label for="theme-dropdown" style="width:100%;">Select Theme:</label>
-                        <select id="theme-dropdown" class="theme-dropdown"></select>
+                        <label for="theme-dropdown" style="width:100%;">Select
+                            Theme:</label>
+                        <select id="theme-dropdown"
+                            class="theme-dropdown"></select>
                     </div>
                 </div>
                 <div id="cacheModal" class="cache-modal">
                     <div class="cache-modal-content">
                         <p>Cache cleared and page will be reloaded.</p>
-                        <button class="cache-cta-button" onclick="closeCacheModal()">Cancel</button>
-                        <button class="cache-cta-button" onclick="reloadPage()">Reload</button>
+                        <button class="cache-cta-button"
+                            onclick="closeCacheModal()">Cancel</button>
+                        <button class="cache-cta-button"
+                            onclick="reloadPage()">Reload</button>
                     </div>
                 </div>
                 <!-- UPCOMING FEATURES SECTION -->
                 <div id="upcoming-features" class="settings-widget">
                     <h2>Test Upcoming Features</h2>
-                    <button class="action-button" onclick="navigateToTab('community-tab')"><i class="fas fa-users"></i></button>
-                    <button class="action-button" onclick="navigateToTab('game-tab')"><i class="fas fa-gamepad"></i></button>
-                    <button class="action-button" onclick="navigateToTab('cast-tab')"><i class="fas fa-project-diagram"></i></button>
-                    <button class="action-button" onclick="navigateToTab('search-tab')"><i class="fas fa-search"></i></button>
+                    <button class="action-button"
+                        onclick="navigateToTab('community-tab')"><i
+                            class="fas fa-users"></i></button>
+                    <button class="action-button"
+                        onclick="navigateToTab('game-tab')"><i
+                            class="fas fa-gamepad"></i></button>
+                    <button class="action-button"
+                        onclick="navigateToTab('cast-tab')"><i
+                            class="fas fa-project-diagram"></i></button>
+                    <button class="action-button"
+                        onclick="navigateToTab('search-tab')"><i
+                            class="fas fa-search"></i></button>
                 </div>
                 <hr>
                 <!-- Experimental Features Toggle -->
                 <div id="experimental-features-widget" class="settings-widget">
                     <p>Enable Experimental Features:</p>
-                    <input type="checkbox" id="experimental-toggle" onclick="toggleExperimentalFeatures()">
+                    <input type="checkbox" id="experimental-toggle"
+                        onclick="toggleExperimentalFeatures()">
                     <label for="experimental-toggle"></label>
                 </div>
                 <hr>
@@ -595,10 +798,15 @@
 
             <hr>
             <div id="updates-tab" class="tab-content">
-                <img src="./img/assets/u_ahoy23.png" alt="Ahoy Indie Media Logo" class="homepage-logo" onclick="navigateToTab('news-tab')">
+                <img src="./img/assets/u_ahoy23.png" alt="Ahoy Indie Media Logo"
+                    class="homepage-logo" onclick="navigateToTab('news-tab')">
                 <div class="newsSubHeaderMenu" id="homepage-top-submenu">
-                    <button id="about-button" onclick="navigateToTab('about-tab')" class="btnPrimary">About Ahoy</button>
-                    <button id="recently-added-button" onclick="navigateToTab('updates-tab')" class="btnPrimary">App Updates</button>
+                    <button id="about-button"
+                        onclick="navigateToTab('about-tab')"
+                        class="btnPrimary">About Ahoy</button>
+                    <button id="recently-added-button"
+                        onclick="navigateToTab('updates-tab')"
+                        class="btnPrimary">App Updates</button>
                 </div>
                 <hr>
                 <div id="status-header">
@@ -608,14 +816,17 @@
                         <p>Available on: Web, iOS, Android</p>
                     </div>
                     <div class="changelog-controls">
-                        <button class="action-button" onclick="fetchCommits(1)">Previous</button>
-                        <button class="action-button" onclick="fetchCommits(currentPage + 1)">Next</button>
+                        <button class="action-button"
+                            onclick="fetchCommits(1)">Previous</button>
+                        <button class="action-button"
+                            onclick="fetchCommits(currentPage + 1)">Next</button>
                     </div>
                 </div>
                 <div id="changelog-container">
                     <!-- Changelog entries will be inserted here by JavaScript -->
                 </div>
-                <a href="https://github.com/oooAHOYooo/oooAHOYooo.github.io" target="_blank">
+                <a href="https://github.com/oooAHOYooo/oooAHOYooo.github.io"
+                    target="_blank">
                     <i class="fab fa-github">
                         <h2>View on Github</h2>
                     </i>
@@ -628,7 +839,9 @@
                 <div class="app-header">
                     <div class="app-header-1">
                         <a href="index.html">
-                            <img src="./img/assets/u_ahoy23.png" alt="Ahoy Indie Media Logo" width="100%" height="16px">
+                            <img src="./img/assets/u_ahoy23.png"
+                                alt="Ahoy Indie Media Logo" width="100%"
+                                height="16px">
                         </a>
                     </div>
                     <div class="app-header-2">
@@ -636,14 +849,17 @@
                     </div>
                     <div class="app-header-3">
                         <button id="user-account-button">
-                            <i class="fas fa-user" style="font-size: 16px; color:white;"></i>
+                            <i class="fas fa-user"
+                                style="font-size: 16px; color:white;"></i>
                         </button>
                     </div>
                 </div>
                 <h1>Account</h1>
                 <p>Manage your account settings and preferences here.</p>
-                <i class="fas fa-user-circle" style="font-size: 48px; color: white;"></i>
-                <button id="login-button" class="action-button" onclick="window.location.href='login.html'">Login</button>
+                <i class="fas fa-user-circle"
+                    style="font-size: 48px; color: white;"></i>
+                <button id="login-button" class="action-button"
+                    onclick="window.location.href='login.html'">Login</button>
                 <div id="user-info"></div>
                 <!-- Add more account-related content here -->
             </div>
@@ -654,7 +870,9 @@
                 <div class="app-header">
                     <div class="app-header-1">
                         <a href="index.html">
-                            <img src="./img/assets/u_ahoy23.png" alt="Ahoy Indie Media Logo" width="100%" height="16px">
+                            <img src="./img/assets/u_ahoy23.png"
+                                alt="Ahoy Indie Media Logo" width="100%"
+                                height="16px">
                         </a>
                     </div>
                     <div class="app-header-2">
@@ -662,15 +880,19 @@
                     </div>
                     <div class="app-header-3">
                         <button id="user-account-button">
-                            <i class="fas fa-user" style="font-size: 16px; color:white;"></i>
+                            <i class="fas fa-user"
+                                style="font-size: 16px; color:white;"></i>
                         </button>
                     </div>
                 </div>
                 <div id="puddle-game">
                     <div class="tooltip-container">
-                        <h1 onmouseenter="showTooltip(true)" onmouseleave="showTooltip(false)" style="font-size: 24px; text-align: center;">Puddle</h1>
+                        <h1 onmouseenter="showTooltip(true)"
+                            onmouseleave="showTooltip(false)"
+                            style="font-size: 24px; text-align: center;">Puddle</h1>
                         <div id="tooltip" class="tooltip">
-                            <p>Instructions: Guess the 4-letter word of the day! You have 6 attempts. Good luck!</p>
+                            <p>Instructions: Guess the 4-letter word of the day!
+                                You have 6 attempts. Good luck!</p>
                         </div>
                     </div>
                     <script>
@@ -684,16 +906,20 @@
                         <p id="alert-message"></p>
                     </div>
                     <!-- Game Grid -->
-                    <div id="puddle-game-container" class="game-container"></div>
+                    <div id="puddle-game-container"
+                        class="game-container"></div>
                     <!-- Current Input Display -->
                     <div id="current-input" class="current-input"></div>
                     <!-- Keyboard -->
                     <div id="puddle-keyboard" class="keyboard">
-                        <button class="action-button" data-key="backspace">Backspace</button>
+                        <button class="action-button"
+                            data-key="backspace">Backspace</button>
                     </div>
                     <!-- Submit Button -->
-                    <div class="keyboard-row" style="width: 100%; display: flex; justify-content: center; margin-top: 10px;">
-                        <button id="guess-submit" class="action-button">Enter</button>
+                    <div class="keyboard-row"
+                        style="width: 100%; display: flex; justify-content: center; margin-top: 10px;">
+                        <button id="guess-submit"
+                            class="action-button">Enter</button>
                     </div>
                 </div>
                 <!-- Add more game-related content here -->
@@ -701,7 +927,8 @@
             <!-- END OF GAME TAB -->
 
             <!-- CAST TAB -->
-            <div id="cast-tab" class="tab-content experimental-feature" x-data="castApp()">
+            <div id="cast-tab" class="tab-content experimental-feature"
+                x-data="castApp()">
                 <h1>Cast</h1>
                 <p>Cast your media to your TV.</p>
                 <button @click="connectToFireTV()">Connect to Fire TV</button>
@@ -713,17 +940,21 @@
             <!-- END OF CAST TAB -->
 
             <!-- SEARCH TAB -->
-            <div id="search-tab" class="tab-content experimental-feature" x-data="searchApp()">
+            <div id="search-tab" class="tab-content experimental-feature"
+                x-data="searchApp()">
                 <div class="app-header">
                     <p>Search</p>
                 </div>
                 <h1>Search</h1>
                 <p>Search across all media, podcasts, and more.</p>
-                <input type="text" x-model="query" placeholder="Enter search query..." class="search-bar">
-                <button @click="performSearch" class="action-button">Search</button>
+                <input type="text" x-model="query"
+                    placeholder="Enter search query..." class="search-bar">
+                <button @click="performSearch"
+                    class="action-button">Search</button>
                 <div x-show="results.length > 0" class="search-results">
                     <template x-for="result in results" :key="result.id">
-                        <div class="search-result-item" @click="navigateTo(result.url)">
+                        <div class="search-result-item"
+                            @click="navigateTo(result.url)">
                             <h3 x-text="result.title"></h3>
                             <p x-text="result.description"></p>
                         </div>
@@ -736,31 +967,55 @@
             <div id="v25-dock-container">
                 <div id="v25-dock">
                     <div id="v25-icon-container" class="scroll-container">
-                        <div class="v25-dock-icon" onclick="navigateToTab('news-tab')"><i class="fas fa-home"></i></div>
-                        <div class="v25-dock-icon" onclick="navigateToTab('media-tab-a')">
+                        <div class="v25-dock-icon"
+                            onclick="navigateToTab('news-tab')"><i
+                                class="fas fa-home"></i></div>
+                        <div class="v25-dock-icon"
+                            onclick="navigateToTab('media-tab-a')">
                             <i class="fas fa-tv"></i>
-                            <i class="fas fa-circle" style="color: #ff0060; font-size: 8px; position: absolute; margin-left: -8px; margin-top: -4px;"></i>
+                            <i class="fas fa-circle"
+                                style="color: #ff0060; font-size: 8px; position: absolute; margin-left: -8px; margin-top: -4px;"></i>
                         </div>
-                        <div class="v25-dock-icon" onclick="navigateToTab('true-classic-radio')"><i class="fas fa-music"></i></div>
-                        <div class="v25-dock-icon" onclick="navigateToTab('podcast-tab')"><i class="fas fa-podcast"></i></div>
-                        <div id="v25-dock-icon" class="v25-dock-icon" onclick="navigateToTab('game-tab')"><i class="fas fa-gamepad"></i></div>
-                        <div class="v25-dock-icon" onclick="navigateToTab('settings-tab')"><i class="fas fa-cog"></i></div>
+                        <div class="v25-dock-icon"
+                            onclick="navigateToTab('true-classic-radio')"><i
+                                class="fas fa-music"></i></div>
+                        <div class="v25-dock-icon"
+                            onclick="navigateToTab('podcast-tab')"><i
+                                class="fas fa-podcast"></i></div>
+                        <div id="v25-dock-icon" class="v25-dock-icon"
+                            onclick="navigateToTab('game-tab')"><i
+                                class="fas fa-gamepad"></i></div>
+                        <div class="v25-dock-icon"
+                            onclick="navigateToTab('settings-tab')"><i
+                                class="fas fa-cog"></i></div>
                         <!-- New Dock Icons -->
-                        <div id="account-dock-icon" class="v25-dock-icon" onclick="navigateToTab('account-tab')"><i class="fas fa-user"></i></div>
-                        <div id="game-dock-icon" class="v25-dock-icon" onclick="navigateToTab('game-tab')"><i class="fas fa-gamepad"></i></div>
-                        <div id="cast-dock-icon" class="v25-dock-icon" onclick="navigateToTab('cast-tab')"><i class="fas fa-project-diagram"></i></div>
-                        <div id="search-dock-icon" class="v25-dock-icon" onclick="navigateToTab('search-tab')"><i class="fas fa-search"></i></div>
+                        <div id="account-dock-icon" class="v25-dock-icon"
+                            onclick="navigateToTab('account-tab')"><i
+                                class="fas fa-user"></i></div>
+                        <div id="game-dock-icon" class="v25-dock-icon"
+                            onclick="navigateToTab('game-tab')"><i
+                                class="fas fa-gamepad"></i></div>
+                        <div id="cast-dock-icon" class="v25-dock-icon"
+                            onclick="navigateToTab('cast-tab')"><i
+                                class="fas fa-project-diagram"></i></div>
+                        <div id="search-dock-icon" class="v25-dock-icon"
+                            onclick="navigateToTab('search-tab')"><i
+                                class="fas fa-search"></i></div>
                     </div>
                 </div>
             </div>
             <!-- END OF DOCK -->
 
             <!-- Account Popup -->
-            <div id="account-popup" class="account-popup" style="display: none;">
+            <div id="account-popup" class="account-popup"
+                style="display: none;">
                 <div id="profile-card" class="profile-card"></div>
                 <p>Username</p>
-                <button class="action-button" onclick="window.location.href='login.html'">Login Account</button>
-                <button class="action-button" onclick="document.getElementById('account-popup').style.display='none'">Close</button>
+                <button class="action-button"
+                    onclick="window.location.href='login.html'">Login
+                    Account</button>
+                <button class="action-button"
+                    onclick="document.getElementById('account-popup').style.display='none'">Close</button>
             </div>
             <!-- END OF BODY -->
 
@@ -835,9 +1090,11 @@
             <div id="mood-over-time-tab" class="tab-content">
                 <h1>Mood Over Time</h1>
                 <ul>
-                    <template x-for="entry in moodHistory" :key="entry.timestamp">
+                    <template x-for="entry in moodHistory"
+                        :key="entry.timestamp">
                         <li>
-                            <span x-text="new Date(entry.timestamp).toLocaleString()"></span>:
+                            <span
+                                x-text="new Date(entry.timestamp).toLocaleString()"></span>:
                             <span x-text="entry.mood"></span>
                         </li>
                     </template>
