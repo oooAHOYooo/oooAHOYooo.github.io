@@ -91,6 +91,9 @@ function videoApp() {
 		videoElement.addEventListener('click', () => {
 			this.togglePlayPause();
 		});
+
+		// Initialize lazy loading for video thumbnails
+		this.initLazyLoadThumbnails();
 	  },
 	  // loadCurrentVideo now accepts an optional startTime (default 0)
 	  // It loads the video, sets currentTime if possible, but does NOT auto-play.
@@ -233,6 +236,26 @@ function videoApp() {
 	  changePlaybackSpeed(speed) {
 		this.playbackSpeed = speed;
 		this.player.playbackRate = this.playbackSpeed;
+	  },
+	  initLazyLoadThumbnails() {
+		const options = {
+		  root: null, // Use the viewport as the container
+		  rootMargin: '0px',
+		  threshold: 0.1 // Trigger when 10% of the element is visible
+		};
+
+		const observer = new IntersectionObserver((entries, observer) => {
+		  entries.forEach(entry => {
+			if (entry.isIntersecting) {
+			  const img = entry.target;
+			  img.src = img.dataset.src; // Load the actual image
+			  observer.unobserve(img); // Stop observing once loaded
+			}
+		  });
+		}, options);
+
+		const thumbnails = document.querySelectorAll('.video-thumbnail[data-src]');
+		thumbnails.forEach(thumbnail => observer.observe(thumbnail));
 	  }
 	};
   }
