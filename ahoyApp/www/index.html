@@ -1028,39 +1028,12 @@
 
             <!-- Scripts -->
             <script>
-                // Account popup script
                 document.addEventListener('DOMContentLoaded', function() {
                     const accountButtons = document.querySelectorAll('#user-account-button');
-                    const popup = document.getElementById('account-popup');
-                    const recentActivityList = document.getElementById('recent-activity-list');
-
                     accountButtons.forEach(button => {
                         button.addEventListener('click', function(event) {
-                            // Toggle popup visibility
-                            popup.style.display = popup.style.display === 'none' ? 'block' : 'none';
-
-                            // Position the popup below the button
-                            const rect = button.getBoundingClientRect();
-                            popup.style.top = `${rect.bottom}px`;
-                            popup.style.left = `${rect.left}px`;
-
-                            // Fetch recent activity from cache and display
-                            const recentActivity = JSON.parse(localStorage.getItem('recentActivity')) || [];
-                            recentActivityList.innerHTML = recentActivity.map(activity => `<li>${activity}</li>`).join('');
-
-                            // Display the username from local storage
-                            const user = JSON.parse(localStorage.getItem('user'));
-                            if (user) {
-                                document.querySelector('#profile-card p').innerText = user.name;
-                            }
+                            window.location.href = 'login.html';
                         });
-                    });
-
-                    // Hide popup when clicking outside
-                    document.addEventListener('click', function(event) {
-                        if (!popup.contains(event.target) && !event.target.matches('#user-account-button')) {
-                            popup.style.display = 'none';
-                        }
                     });
                 });
             </script>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Authentication is Fun</title>
+    <title>Ahoy Indie Media - Authentication</title>
     <!-- Import Barlow font from Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;900&display=swap"
@@ -211,6 +211,16 @@
           alt="Ahoy Indie Media Logo"
           style="width: 390px; height: auto;" />
       </a>
+      <div id="userInfo" class="hidden">
+        <p>Welcome, <span id="username"></span>!</p>
+        <button id="editSettingsButton">Edit Settings</button>
+        <div id="settingsDropdown" class="hidden">
+          <input type="text" id="editUsername" placeholder="Username" />
+          <input type="text" id="editFullName" placeholder="Full Name" />
+          <input type="email" id="editEmail" placeholder="Email" />
+          <button id="saveSettingsButton">Save</button>
+        </div>
+      </div>
     </header>
 
     <!-- Login Container (Sign In only) -->
@@ -299,6 +309,15 @@
     <!-- Log Messages -->
     <div class="log-messages" x-text="logMessages"></div>
 
+    <!-- Settings Modal -->
+    <div id="settingsModal" class="auth-container hidden">
+      <h3>Edit Your Settings</h3>
+      <input type="text" id="editFullName" placeholder="Full Name" />
+      <input type="email" id="editEmail" placeholder="Email" />
+      <button id="saveSettingsButton">Save</button>
+      <button id="closeSettingsButton">Close</button>
+    </div>
+
     <!-- Firebase and Sign In/Out Script -->
     <script type="module">
       // Import Firebase modules
@@ -363,21 +382,43 @@
           });
       };
 
+      const userInfo = document.querySelector("#userInfo");
+      const usernameDisplay = document.querySelector("#username");
+      const editSettingsButton = document.querySelector("#editSettingsButton");
+      const settingsDropdown = document.querySelector("#settingsDropdown");
+      const editUsername = document.querySelector("#editUsername");
+      const editFullName = document.querySelector("#editFullName");
+      const editEmail = document.querySelector("#editEmail");
+      const saveSettingsButton = document.querySelector("#saveSettingsButton");
+
+      const showUserInfo = (user) => {
+        usernameDisplay.textContent = user.email || "User";
+        userInfo.classList.remove("hidden");
+      };
+
+      const toggleSettingsDropdown = () => {
+        settingsDropdown.classList.toggle("hidden");
+      };
+
+      editSettingsButton.addEventListener("click", toggleSettingsDropdown);
+
+      saveSettingsButton.addEventListener("click", () => {
+        // Implement settings save logic here
+        toggleSettingsDropdown();
+      });
+
       const checkAuthState = async () => {
         onAuthStateChanged(auth, (user) => {
           if (user) {
             authForm.style.display = "none";
             secretContent.style.display = "block";
+            showUserInfo(user);
           } else {
             authForm.style.display = "block";
             secretContent.style.display = "none";
+            userInfo.classList.add("hidden");
           }
         });
-      };
-
-      const userSignOut = async () => {
-        await signOut(auth);
-        updateLog("User signed out.");
       };
 
       checkAuthState();
