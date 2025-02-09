@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+        <title>Ahoy Indie Media - Authentication & Dashboard</title>
+        <!-- Import Barlow font -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;900&display=swap"
+            rel="stylesheet" />
+        <style>
+      /* Base styling using your glassy vibe and background */
+      * { font-weight: 300; }
+      body {
+        background: url("https://i.gifer.com/n4V.gif") no-repeat center center fixed;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        margin: 0;
+        font-family: 'Barlow', sans-serif;
+        color: white;
+      }
+      .hidden { display: none; }
+      .auth-container {
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(20px);
+        border-radius: 15px;
+        padding: 40px;
+        text-align: center;
+        max-width: 400px;
+        width: 100%;
+        margin: 10px;
+      }
+      input[type="email"],
+      input[type="password"],
+      input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        background-color: rgba(255, 255, 255, 0.2);
+        border: none;
+        border-radius: 5px;
+        color: white;
+        font-size: 16px;
+      }
+      input::placeholder { color: rgba(255, 255, 255, 0.7); }
+      button {
+        width: 100%;
+        padding: 10px;
+        margin-top: 20px;
+        background-color: rgba(255, 255, 255, 0.3);
+        border: none;
+        border-radius: 5px;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      button:hover { background-color: rgba(255, 255, 255, 0.5); }
+      .link {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        font-size: 14px;
+      }
+      .link:hover { text-decoration: underline; }
+      .log-messages {
+        background-color: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 5px;
+        padding: 10px;
+        max-width: 400px;
+        margin: 20px auto;
+        text-align: left;
+        font-family: monospace;
+        white-space: pre-wrap;
+      }
+      /* Dashboard Navigation Tabs */
+      .nav-tabs {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 20px;
+      }
+      .nav-tabs button {
+        flex: 1;
+        padding: 10px;
+        border: none;
+        background-color: rgba(255, 255, 255, 0.2);
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      .nav-tabs button.active {
+        background-color: rgba(255, 255, 255, 0.5);
+        font-weight: bold;
+      }
+      .dashboard-content {
+        text-align: left;
+      }
+      .activity-item {
+        background-color: rgba(255,255,255,0.2);
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+
+      .login-logo {
+        width: 300px;
+        height: auto;
+        margin-bottom: 20px;
+      }
+    </style>
+        <!-- Include Alpine.js -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.0/dist/cdn.min.js"
+            defer></script>
+        <!-- Firebase initialization (using v9 modular SDK) -->
+        <script type="module" defer>
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
+      import {
+        getAuth,
+        createUserWithEmailAndPassword,
+        signInWithEmailAndPassword,
+        onAuthStateChanged,
+        signOut,
+      } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyBq_IQRwkjh2o-jUkS8tI8wcEek5yMIwmo",
+        authDomain: "ahoy-indie-media-da86d.firebaseapp.com",
+        projectId: "ahoy-indie-media-da86d",
+        storageBucket: "ahoy-indie-media-da86d.appspot.com",
+        messagingSenderId: "179901301547",
+        appId: "1:179901301547:web:599159f9efb826f464bb6e",
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+      // Expose necessary Firebase functions globally so Alpine can use them
+      window.auth = auth;
+      window.createUserWithEmailAndPassword = createUserWithEmailAndPassword;
+      window.signInWithEmailAndPassword = signInWithEmailAndPassword;
+      window.signOut = signOut;
+      window.onAuthStateChanged = onAuthStateChanged;
+    </script>
+    </head>
+    <body x-data="authWizard()" x-init="initAuth()">
+        <a href="index.html"><img src="./img/assets/u_ahoy23.png"
+                alt="Ahoy Indie Media Logo"
+                class="login-logo"></a>
+        <!-- Authentication UI: Sign In / Sign Up -->
+        <div class="auth-container" x-show="!user && !showFireworks">
+            <template x-if="!showSignUp">
+                <div>
+                    <h2>Sign In</h2>
+                    <input type="email" placeholder="Email"
+                        x-model="loginEmail" />
+                    <input type="password" placeholder="Password"
+                        x-model="loginPassword" />
+                    <button @click="loginUser()">Sign In</button>
+                    <p>
+                        <a class="link" href="#"
+                            @click.prevent="showSignUp = true">
+                            Don't have an account? Create one.
+                        </a>
+                    </p>
+                </div>
+            </template>
+            <template x-if="showSignUp">
+                <div>
+                    <template x-if="step === 1">
+                        <div>
+                            <h2>Create an Account - Step 1</h2>
+                            <input type="text" placeholder="Full Name"
+                                x-model="fullName" />
+                            <input type="email" placeholder="Email"
+                                x-model="email" />
+                            <input :type="showPassword ? 'text' : 'password'"
+                                placeholder="Password" x-model="password" />
+                            <button @click="step = 2"
+                                :disabled="!fullName || !email || !password">Next</button>
+                            <button @click="showSignUp = false">Cancel</button>
+                        </div>
+                    </template>
+                    <template x-if="step === 2">
+                        <div>
+                            <h2>Create an Account - Step 2</h2>
+                            <p>Review your information:</p>
+                            <p><strong>Full Name:</strong> <span
+                                    x-text="fullName"></span></p>
+                            <p><strong>Email:</strong> <span
+                                    x-text="email"></span></p>
+                            <button @click="createAccount()">Submit</button>
+                            <button @click="step = 1">Back</button>
+                        </div>
+                    </template>
+                </div>
+            </template>
+        </div>
+
+        <!-- Fireworks / Success Message -->
+        <div class="auth-container" x-show="showFireworks">
+            <h1>Yay! You have an account!</h1>
+            <p>Redirecting you to the dashboard...</p>
+        </div>
+
+        <!-- Dashboard UI for Authenticated Users -->
+        <div class="auth-container" x-show="user">
+            <!-- Navigation Tabs -->
+            <div class="nav-tabs">
+                <button :class="{ active: currentTab === 'dashboard' }"
+                    @click="switchTab('dashboard')">
+                    Dashboard
+                </button>
+                <button :class="{ active: currentTab === 'settings' }"
+                    @click="switchTab('settings')">
+                    Settings
+                </button>
+                <button :class="{ active: currentTab === 'activity' }"
+                    @click="switchTab('activity')">
+                    Activity
+                </button>
+                <button :class="{ active: currentTab === 'account' }"
+                    @click="switchTab('account')">
+                    Account
+                </button>
+            </div>
+            <!-- Dashboard Content -->
+            <div class="dashboard-content">
+                <template x-if="currentTab === 'dashboard'">
+                    <div>
+                        <h3>Dashboard</h3>
+                        <p>
+                            Welcome, <span
+                                x-text="user.displayName || user.email"></span>!
+                            This is your dashboard.
+                        </p>
+                    </div>
+                </template>
+                <template x-if="currentTab === 'settings'">
+                    <div>
+                        <h3>Settings</h3>
+                        <p>Edit your display name:</p>
+                        <input type="text" placeholder="Display Name"
+                            x-model="settings.displayName">
+                        <button @click="updateSettings()">Save Changes</button>
+                    </div>
+                </template>
+                <template x-if="currentTab === 'activity'">
+                    <div>
+                        <h3>Recent Activity</h3>
+                        <template x-for="(item, index) in activity"
+                            :key="index">
+                            <div class="activity-item">
+                                <strong x-text="item.type"></strong>
+                                <p x-text="item.description"></p>
+                                <small
+                                    x-text="new Date(item.timestamp).toLocaleString()"></small>
+                            </div>
+                        </template>
+                        <button @click="fetchActivity()">Refresh
+                            Activity</button>
+                    </div>
+                </template>
+                <template x-if="currentTab === 'account'">
+                    <div>
+                        <h3>Account Information</h3>
+                        <p><strong>Email:</strong> <span
+                                x-text="user.email"></span></p>
+                        <p>
+                            <strong>Last Login:</strong>
+                            <span
+                                x-text="user.metadata?.lastSignInTime || 'Unknown'"></span>
+                        </p>
+                    </div>
+                </template>
+            </div>
+            <button @click="logout()">Sign Out</button>
+        </div>
+
+        <!-- Log Messages (for debugging) -->
+        <div class="log-messages" x-text="logMessages"></div>
+
+        <!-- Alpine Component Script -->
+        <script>
+      function authWizard() {
+        return {
+          // Authentication state
+          user: null,
+          showSignUp: false,
+          step: 1,
+          loginEmail: "",
+          loginPassword: "",
+          email: "",
+          password: "",
+          fullName: "",
+          showPassword: false,
+          showFireworks: false,
+          logMessages: "",
+          // Dashboard properties
+          currentTab: "dashboard",
+          settings: {
+            displayName: ""
+          },
+          activity: [],
+          // Initialize Firebase auth state listener
+          initAuth() {
+            window.onAuthStateChanged(window.auth, (user) => {
+              this.user = user;
+              if (user) {
+                this.logMessages += "User signed in: " + JSON.stringify(user) + "\n";
+                this.settings.displayName = user.displayName || "";
+                // Fetch activity when user signs in
+                this.fetchActivity();
+              } else {
+                this.logMessages += "No user signed in.\n";
+              }
+            });
+          },
+          async loginUser() {
+            try {
+              const userCredential = await window.signInWithEmailAndPassword(window.auth, this.loginEmail, this.loginPassword);
+              this.user = userCredential.user;
+              this.logMessages += "User signed in successfully.\n";
+              // Clear login fields
+              this.loginEmail = "";
+              this.loginPassword = "";
+            } catch (error) {
+              this.logMessages += "Error during sign in: " + error.message + "\n";
+              alert("Error signing in: " + error.message);
+            }
+          },
+          async createAccount() {
+            if (!this.email || !this.password || !this.fullName) {
+              alert("Please fill in all required fields.");
+              return;
+            }
+            if (this.password.length < 6) {
+              alert("Password must be at least 6 characters long.");
+              return;
+            }
+            try {
+              const userCredential = await window.createUserWithEmailAndPassword(window.auth, this.email, this.password);
+              this.user = userCredential.user;
+              this.logMessages += "User created successfully.\n";
+              // Update displayName in Firebase
+              await this.user.updateProfile({ displayName: this.fullName });
+              this.showFireworks = true;
+              // Reset sign-up wizard state
+              this.step = 1;
+              this.email = "";
+              this.password = "";
+              this.fullName = "";
+              setTimeout(() => {
+                this.showFireworks = false;
+              }, 3000);
+            } catch (error) {
+              this.logMessages += "Error during account creation: " + error.message + "\n";
+              alert("Error creating account: " + error.message);
+            }
+          },
+          async logout() {
+            try {
+              await window.signOut(window.auth);
+              this.user = null;
+              this.logMessages += "User signed out successfully.\n";
+            } catch (error) {
+              this.logMessages += "Error during sign out: " + error.message + "\n";
+              alert("Error signing out: " + error.message);
+            }
+          },
+          // Dashboard tab switching
+          switchTab(tab) {
+            this.currentTab = tab;
+          },
+          async updateSettings() {
+            if (this.user && this.settings.displayName) {
+              try {
+                await this.user.updateProfile({ displayName: this.settings.displayName });
+                this.logMessages += "Settings updated successfully.\n";
+                alert("Settings updated!");
+              } catch (error) {
+                this.logMessages += "Error updating settings: " + error.message + "\n";
+                alert("Error updating settings: " + error.message);
+              }
+            }
+          },
+          fetchActivity() {
+            // Dummy activity data for demonstration—replace with real data as needed
+            this.activity = [
+              {
+                type: "Login",
+                description: "User logged in successfully.",
+                timestamp: Date.now() - 60000,
+              },
+              {
+                type: "Settings Update",
+                description: "User updated their display name.",
+                timestamp: Date.now() - 120000,
+              },
+              {
+                type: "Password Change",
+                description: "User changed their password.",
+                timestamp: Date.now() - 300000,
+              },
+            ];
+          },
+        };
+      }
+    </script>
+    </body>
+</html>
