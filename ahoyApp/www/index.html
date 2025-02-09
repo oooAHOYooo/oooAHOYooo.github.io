@@ -47,6 +47,23 @@
             content="default-src 'self' https://*.firebaseio.com https://*.googleapis.com https://cdnjs.cloudflare.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.firebaseio.com https://*.googleapis.com https://www.gstatic.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; font-src 'self' https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://*.firebaseio.com https://*.googleapis.com wss://*.firebaseio.com;">
         <!-- <meta http-equiv="Cross-Origin-Embedder-Policy" content="require-corp"> -->
         <!-- <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin"> -->
+
+        <script>
+          // Your Firebase configuration (the same one you use on the login page)
+          const firebaseConfig = {
+            apiKey: "AIzaSyBq_IQRwkjh2o-jUkS8tI8wcEek5yMIwmo",
+            authDomain: "ahoy-indie-media-da86d.firebaseapp.com",
+            projectId: "ahoy-indie-media-da86d",
+            storageBucket: "ahoy-indie-media-da86d.appspot.com",
+            messagingSenderId: "179901301547",
+            appId: "1:179901301547:web:599159f9efb826f464bb6e",
+          };
+          // Initialize Firebase if it hasn’t been initialized already.
+          if (!firebase.apps.length) {
+            firebase.initializeApp(firebaseConfig);
+          }
+        </script>
+
         <link rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
         <link rel="stylesheet" href="./css/v26-master.css">
@@ -587,6 +604,8 @@
                     style="font-family:'Times New Roman',Times,serif;font-size:24px;text-transform:uppercase;">
                 <hr>
                 <h2 id="calendar-date"></h2>
+                <p id="user-welcome"
+                    style="display: none; font-size: 18px; text-align: center; color: #ff0060;"></p>
                 <hr>
                 <div class="homepage-subheader">
                     <p>Based in New Haven, CT, Ahoy Indie Media is a hand-built
@@ -867,7 +886,7 @@
                     style="font-size: 48px; color: white;"></i>
                 <button id="login-button" class="action-button"
                     onclick="window.location.href='login.html'">Login</button>
-                <div id="user-info"></div>
+                <div id="user-info" style="display: none;"></div>
                 <!-- Add more account-related content here -->
             </div>
             <!-- END OF ACCOUNT TAB -->
@@ -1084,11 +1103,34 @@
 
             <script>
                 document.addEventListener('DOMContentLoaded', function() {
-                    firebase.auth().onAuthStateChanged(user => {
-                        if (!user) {
-                            window.location.href = "login.html"; // Redirect to login if not authenticated
+                    // Initialize Firebase Authentication
+                    const auth = firebase.auth();
+
+                    // Listen for authentication state changes
+                    auth.onAuthStateChanged(user => {
+                        if (user) {
+                            // User is signed in, display their username or email
+                            const userInfoElement = document.getElementById('user-info');
+                            userInfoElement.innerText = `Welcome, ${user.displayName || user.email}`;
+                            userInfoElement.style.display = 'block'; // Ensure the element is visible
+
+                            // Display username under the date
+                            const userWelcomeElement = document.getElementById('user-welcome');
+                            userWelcomeElement.innerText = `Hello, ${user.displayName || user.email}`;
+                            userWelcomeElement.style.display = 'block';
+
+                            // Temporarily change the "Front Page News" text
+                            const frontPageNewsElement = document.querySelector('.front-page-news-text');
+                            const originalText = frontPageNewsElement.innerText;
+                            frontPageNewsElement.innerText = `Welcome, ${user.displayName || user.email}`;
+                            
+                            // Revert back to original text after 5 seconds
+                            setTimeout(() => {
+                                frontPageNewsElement.innerText = originalText;
+                            }, 5000);
                         } else {
-                            document.getElementById('user-info').innerText = `Welcome, ${user.displayName || user.email}`;
+                            // User is signed out, redirect to login page
+                            window.location.href = "login.html";
                         }
                     });
                 });
@@ -1096,5 +1138,7 @@
 
             <!-- Video App Script is loaded in js/src/super-video-app.js -->
         </div>
+        <div id="user-info"
+            style="display: none; position: fixed; bottom: 10px; right: 10px; background-color: rgba(0, 0, 0, 0.5); color: white; padding: 10px; border-radius: 5px;"></div>
     </body>
 </html>
