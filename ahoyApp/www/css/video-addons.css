@@ -276,4 +276,43 @@ video {
 	justify-content: center;
 	gap: 10px;
 	overflow-x: scroll;
+
+}
+
+@media (max-width: 768px) {
+	.control-bar {
+		flex-direction: row;
+		/* Change to column layout for mobile */
+		align-items: center;
+		background-color: red;
+		max-width: 90%;
+		/* Center align items */
+	}
+}
+
+/* Dropdown Styling */
+.filter-dropdown {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid rgba(200, 200, 255, 0.3);
+	border-radius: 8px;
+	background: rgba(10, 10, 50, 0.6);
+	color: #ddeeff;
+	font-size: 16px;
+	backdrop-filter: blur(8px);
+	transition: background 0.3s, border 0.3s;
+	appearance: none;
+	/* Remove default arrow */
+	cursor: pointer;
+}
+
+.filter-dropdown:hover {
+	background: rgba(10, 10, 50, 0.8);
+	border: 1px solid rgba(200, 200, 255, 0.5);
+}
+
+.filter-dropdown:focus {
+	outline: none;
+	border: 1px solid rgba(200, 200, 255, 0.7);
+	box-shadow: 0 0 10px rgba(200, 200, 255, 0.5);
 }

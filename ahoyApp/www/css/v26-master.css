@@ -3727,21 +3727,6 @@ input[type="date"]:focus {
     }
 }
 
-/* Video Player Styles */
-video {
-    width: 100%;
-    border: 2px solid var(--border-color);
-    background-color: var(--background-color);
-    color: var(--text-color);
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-video::-webkit-media-controls-time-remaining-display,
-video::-webkit-media-controls-current-time-display {
-    display: none;
-    /* Hide time display */
-}
 
 
 /* Add this CSS to your stylesheet */

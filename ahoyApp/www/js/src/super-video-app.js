@@ -68,6 +68,9 @@ function videoApp() {
 		  console.error('Error fetching playlists:', error);
 		}
 		
+		// Shuffle the full library
+		this.shuffleLibrary();
+		
 		// Select a random video from the default category ("clips")
 		const categoryVideos = this.playlists[this.selectedCategory] || [];
 		if (categoryVideos.length > 0) {
@@ -81,6 +84,11 @@ function videoApp() {
 		// Event listeners for updating play state.
 		videoElement.addEventListener('play', () => { this.isPlaying = true; });
 		videoElement.addEventListener('pause', () => { this.isPlaying = false; });
+
+		// Add click event listener to toggle play/pause
+		videoElement.addEventListener('click', () => {
+			this.togglePlayPause();
+		});
 	  },
 	  // loadCurrentVideo now accepts an optional startTime (default 0)
 	  // It loads the video, sets currentTime if possible, but does NOT auto-play.
@@ -113,10 +121,12 @@ function videoApp() {
 		  this.loadCurrentVideo(); // starts at 0 when manually selected
 		}
 		this.viewMode = 'player';
+		window.scrollTo(0, 0); // Scroll to the top of the page
 	  },
 	  selectVideo(id) {
 		this.currentVideoId = id;
 		this.loadCurrentVideo(); // starts at 0 when manually selected
+		window.scrollTo(0, 0); // Scroll to the top of the page
 	  },
 	  nextVideo() {
 		let index = this.fullLibrary.findIndex(video => video.id === this.currentVideoId);
@@ -195,6 +205,13 @@ function videoApp() {
 		  }
 		}
 		this.viewMode = 'player';
+	  },
+	  // New method to shuffle the full library
+	  shuffleLibrary() {
+		for (let i = this.fullLibrary.length - 1; i > 0; i--) {
+		  const j = Math.floor(Math.random() * (i + 1));
+		  [this.fullLibrary[i], this.fullLibrary[j]] = [this.fullLibrary[j], this.fullLibrary[i]];
+		}
 	  }
 	};
   }

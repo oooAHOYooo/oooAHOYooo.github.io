@@ -110,6 +110,18 @@
                         <!-- Main Player and Library Section -->
                         <div class="player-and-library">
                             <!-- Video Player Section -->
+                            <!-- <div class="control-bar">
+                                <button @click="prevVideo()">Prev</button>
+                                <button @click="togglePlayPause()">
+                                    <span
+                                        x-text="isPlaying ? 'Pause' : 'Play'"></span>
+                                </button>
+                                <button @click="nextVideo()">Next</button>
+                                <button @click="togglePip()">PIP</button>
+                                <button
+                                    @click="toggleFullscreen()">Fullscreen</button>
+                                <button @click="castVideo()">Cast</button>
+                            </div> -->
                             <section class="player-section"
                                 x-show="viewMode === 'player'">
                                 <!-- Removed Video.js classes/attributes and added playsinline attributes -->
@@ -120,18 +132,7 @@
                                         x-bind:type="currentVideo.type" />
                                     <p>Please enable JavaScript</p>
                                 </video>
-                                <div class="control-bar">
-                                    <button @click="prevVideo()">Prev</button>
-                                    <button @click="togglePlayPause()">
-                                        <span
-                                            x-text="isPlaying ? 'Pause' : 'Play'"></span>
-                                    </button>
-                                    <button @click="nextVideo()">Next</button>
-                                    <button @click="togglePip()">PIP</button>
-                                    <button
-                                        @click="toggleFullscreen()">Fullscreen</button>
-                                    <button @click="castVideo()">Cast</button>
-                                </div>
+
                             </section>
 
                             <!-- Featured Playlists Section -->
@@ -188,6 +189,7 @@
                             </div>
                             <!-- Filtering Container -->
                             <div class="library-filter-container">
+
                                 <div class="filter-dropdown-wrapper">
                                     <!-- Using Alpine's x-model to bind the selected sub-category -->
                                     <select class="filter-dropdown"
@@ -204,6 +206,7 @@
                                             Videos</option>
                                     </select>
                                 </div>
+                                <br>
                             </div>
                             <!-- Grid View -->
                             <div x-show="libraryViewMode === 'grid'"
@@ -631,23 +634,6 @@
                         </button>
                     </div>
                 </div>
-                <div class="broadcast-player-container">
-                    <video id="video-broadcast-container" width="100%" controls>
-                        <source id="video-source" src type="video/mp4">
-                        Your browser does not support the video
-                    </video>
-                </div>
-                <!--
-      <div class="broadcast-on-off-container">
-        <button id="broadcast-on-button" class="action-button full-width">
-          <i class="fas fa-power-off"></i> Start Broadcast
-        </button>
-      </div>
-      -->
-                <div class="broadcast-header">
-                    <h6>Currently Playing:</h6><br>
-                    <h2 id="broadcast-media-title">Loading...</h2>
-                </div>
                 <!-- BROADCAST REMOTE CONTROLS -->
                 <div class="remote-controls">
                     <button id="prev-button" class="remoteControlButton"><i
@@ -670,6 +656,24 @@
                     <button id="volume-up" class="remoteControlButton"><i
                             class="fas fa-volume-up"></i></button>
                 </div>
+                <div class="broadcast-player-container">
+                    <video id="video-broadcast-container" width="100%" controls>
+                        <source id="video-source" src type="video/mp4">
+                        Your browser does not support the video
+                    </video>
+                </div>
+                <!--
+      <div class="broadcast-on-off-container">
+        <button id="broadcast-on-button" class="action-button full-width">
+          <i class="fas fa-power-off"></i> Start Broadcast
+        </button>
+      </div>
+      -->
+                <div class="broadcast-header">
+                    <h6>Currently Playing:</h6><br>
+                    <h2 id="broadcast-media-title">Loading...</h2>
+                </div>
+
                 <!-- END OF BROADCAST REMOTE CONTROLS -->
                 <div id="about-ahoy-broadcast" class="about-section">
                     <h3>About Ahoy Broadcast</h3>
