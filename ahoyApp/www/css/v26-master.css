@@ -4575,6 +4575,10 @@ input[type="date"]:focus {
 }
 
 
+.super-user-icon {
+    color: var(--border-color);
+}
+
 .mood-flower {
     display: flex;
     width: 100%;

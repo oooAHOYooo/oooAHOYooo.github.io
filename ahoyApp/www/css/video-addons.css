@@ -251,10 +251,17 @@ body {
 video {
 	width: 100%;
 	border: 2px solid rgba(200, 200, 255, 0.3);
-	background-color: rgba(10, 10, 50, 0.8);
+	background-color: rgba(10, 10, 50, 0.6);
 	color: #ddeeff;
-	border-radius: 8px;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+	border-radius: 12px;
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+	backdrop-filter: blur(12px);
+	transition: transform 0.3s, box-shadow 0.3s;
+}
+
+video:hover {
+	transform: scale(1.02);
+	box-shadow: 0 12px 24px rgba(0, 0, 0, 0.7);
 }
 
 @media (max-width: 768px) {
@@ -298,38 +305,23 @@ video {
 	border-radius: 4px;
 }
 
-
 .super-video-lofi {
 	position: sticky;
 	top: 10px;
-	/* Adjust as needed */
 	right: 10px;
-	/* Adjust as needed */
 	width: 100%;
-	/* Set a fixed width */
 	z-index: 1000;
-	/* Ensure it stays on top */
+	border: 2px solid rgba(255, 255, 255, 0.2);
+	background: linear-gradient(135deg, rgba(10, 10, 50, 0.6), rgba(20, 20, 60, 0.8));
+	backdrop-filter: blur(15px);
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8);
+	transition: background 0.3s, border 0.3s;
 }
 
-/*
-.control-bar {
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	gap: 10px;
-	overflow-x: scroll;
-
+.super-video-lofi:hover {
+	background: linear-gradient(135deg, rgba(10, 10, 50, 0.8), rgba(20, 20, 60, 1));
+	border-color: rgba(255, 255, 255, 0.4);
 }
-
-@media (max-width: 768px) {
-	.control-bar {
-		flex-direction: row;
-		align-items: center;
-		background-color: red;
-		max-width: 90%;
-	}
-}
-*/
 
 /* Dropdown Styling */
 .filter-dropdown {
