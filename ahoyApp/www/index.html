@@ -127,7 +127,8 @@
                                 <!-- Removed Video.js classes/attributes and added playsinline attributes -->
                                 <video id="video-player" controls playsinline
                                     webkit-playsinline preload="auto"
-                                    width="640" height="360">
+                                    width="640" height="360"
+                                    class="super-video-lofi">
                                     <source x-bind:src="currentVideo.src"
                                         x-bind:type="currentVideo.type" />
                                     <p>Please enable JavaScript</p>
@@ -136,6 +137,7 @@
                             </section>
 
                             <!-- Featured Playlists Section -->
+                            <!--
                             <section class="featured-section">
                                 <div class="featured-title">
                                     <h2>Featured Playlists for the Season</h2>
@@ -144,7 +146,7 @@
                                     <template
                                         x-for="playlist in featuredPlaylists"
                                         :key="playlist.id">
-                                        <!-- When clicking, we now simply select a clip (from the library) -->
+                                   
                                         <div class="featured-item"
                                             @click="selectCategory('clips'); selectVideo(playlist.id)">
                                             <img :src="playlist.thumbnail"
@@ -154,6 +156,7 @@
                                     </template>
                                 </div>
                             </section>
+                            -->
 
                             <!-- Micro Library Section -->
                             <div x-show="microLibraryVisible"

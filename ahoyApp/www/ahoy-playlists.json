@@ -41,14 +41,6 @@
       "type": "video/mp4",
       "thumbnail": "https://storage.googleapis.com/ahoy-videos/thumbnails/%5BahoyThumb%5D%5Bfullpart%5D%5BAndrewLeverton%5D%5BFormatility%5D.jpg",
       "category": "Clips"
-    },
-    {
-      "id": 5,
-      "title": "[Pal-bot 2] - [Clip] - [Behind the Scenes - Location Scouting]",
-      "src": "https://storage.googleapis.com/ahoy-videos/clips/%5Bpal-bot%5D-%5Bclip%5D-%5Bbehindthescenes%5D-%5Blocationscouting%5D-%5B001%5D.mp4",
-      "type": "video/mp4",
-      "thumbnail": "https://storage.googleapis.com/ahoy-videos/thumbnails/%5BahoyThumb%5D%5Bclips%5D%5BPal-bot%202%5D%5BBehind%20the%20Scenes%20-%20Location%20Scout%5D.jpg",
-      "category": "Clips"
     }
   ],
   "promos": [

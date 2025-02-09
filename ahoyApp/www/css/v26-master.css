@@ -4724,3 +4724,8 @@ input[type="date"]:focus {
 #search-bar-container tr:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
+
+#user-account-button svg {
+    transition: stroke 0.3s ease;
+    stroke-width: 2px;
+}

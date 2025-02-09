@@ -119,6 +119,12 @@ function setThemeProperties(
   root.style.setProperty("--text-color-rgb", hexToRgb(textColor));
   root.style.setProperty("--border-color-rgb", hexToRgb(borderColor));
   root.style.setProperty("--secondary-color-rgb", hexToRgb(secondaryColor));
+
+  // Update the SVG icon's outline color
+  const userIcon = document.querySelector('#user-account-button svg');
+  if (userIcon) {
+    userIcon.style.stroke = borderColor; // Use border color for the outline
+  }
 }
 
 // Helper function to convert hex to RGB

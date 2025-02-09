@@ -11,6 +11,8 @@ function videoApp() {
 	  microLibraryVisible: false,
 	  microLibrary: [],
 	  selectedSubCategory: "",
+	  volume: 1.0, // Default volume level
+	  playbackSpeed: 1.0, // Default playback speed
 	  // Computed property: combine videos from several categories
 	  get fullLibrary() {
 		return [
@@ -212,6 +214,25 @@ function videoApp() {
 		  const j = Math.floor(Math.random() * (i + 1));
 		  [this.fullLibrary[i], this.fullLibrary[j]] = [this.fullLibrary[j], this.fullLibrary[i]];
 		}
+	  },
+	  // Method to increase volume
+	  increaseVolume() {
+		this.volume = Math.min(this.volume + 0.1, 1.0);
+		this.player.volume = this.volume;
+	  },
+	  // Method to decrease volume
+	  decreaseVolume() {
+		this.volume = Math.max(this.volume - 0.1, 0.0);
+		this.player.volume = this.volume;
+	  },
+	  // Method to toggle mute
+	  toggleMute() {
+		this.player.muted = !this.player.muted;
+	  },
+	  // Method to change playback speed
+	  changePlaybackSpeed(speed) {
+		this.playbackSpeed = speed;
+		this.player.playbackRate = this.playbackSpeed;
 	  }
 	};
   }

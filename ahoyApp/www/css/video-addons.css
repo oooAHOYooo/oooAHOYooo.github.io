@@ -123,9 +123,38 @@ body {
 	font-size: 14px;
 	cursor: pointer;
 	transition: background 0.3s, border 0.3s;
+	margin: 0 5px;
 }
 
 .control-bar button:hover {
+	background: linear-gradient(to bottom, rgba(10, 10, 50, 0.8), rgba(10, 10, 50, 1));
+	border-color: rgba(200, 200, 255, 0.5);
+}
+
+/* New styles for volume and speed controls */
+.volume-control,
+.speed-control {
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+	margin-top: 10px;
+}
+
+.volume-control button,
+.speed-control button {
+	padding: 8px 12px;
+	border: 2px solid rgba(200, 200, 255, 0.3);
+	border-radius: 4px;
+	background: linear-gradient(to bottom, rgba(10, 10, 50, 0.7), rgba(10, 10, 50, 0.9));
+	color: #ddeeff;
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 14px;
+	cursor: pointer;
+	transition: background 0.3s, border 0.3s;
+}
+
+.volume-control button:hover,
+.speed-control button:hover {
 	background: linear-gradient(to bottom, rgba(10, 10, 50, 0.8), rgba(10, 10, 50, 1));
 	border-color: rgba(200, 200, 255, 0.5);
 }
@@ -270,6 +299,19 @@ video {
 }
 
 
+.super-video-lofi {
+	position: sticky;
+	top: 10px;
+	/* Adjust as needed */
+	right: 10px;
+	/* Adjust as needed */
+	width: 100%;
+	/* Set a fixed width */
+	z-index: 1000;
+	/* Ensure it stays on top */
+}
+
+/*
 .control-bar {
 	width: 100%;
 	display: flex;
@@ -282,13 +324,12 @@ video {
 @media (max-width: 768px) {
 	.control-bar {
 		flex-direction: row;
-		/* Change to column layout for mobile */
 		align-items: center;
 		background-color: red;
 		max-width: 90%;
-		/* Center align items */
 	}
 }
+*/
 
 /* Dropdown Styling */
 .filter-dropdown {
