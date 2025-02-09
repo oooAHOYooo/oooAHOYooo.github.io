@@ -14,83 +14,67 @@
         font-weight: 300;
       }
       body {
-        background-color: black !important;
-        background: url("https://i.gifer.com/n4V.gif")
-          no-repeat center center fixed;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
+        background-color: black;
+        background: url("https://i.gifer.com/n4V.gif") no-repeat center center fixed;
         background-size: cover;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        height: 90vh;
-        color: white;
+        height: 100vh;
+        margin: 0;
         font-family: 'Barlow', sans-serif;
+        color: white;
       }
       .hidden {
         display: none;
       }
       .auth-container {
         background-color: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(10px);
-        border-radius: 10px;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        padding: 20px;
-        margin-top: 50px;
+        backdrop-filter: blur(20px);
+        border-radius: 15px;
+        padding: 40px;
         text-align: center;
-        color: white;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        max-width: 400px;
+        width: 100%;
       }
       input[type="email"],
-      input[type="password"],
-      input[type="text"] {
-        width: 300px;
-        height: 40px;
-        background-color: rgba(255, 255, 255, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        backdrop-filter: blur(10px);
-        border-radius: 10px;
+      input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        background-color: rgba(255, 255, 255, 0.2);
+        border: none;
+        border-radius: 5px;
         color: white;
         font-size: 16px;
-        font-family: "Barlow", sans-serif;
-        font-weight: 900;
-        margin: 5px;
-        text-align: center;
       }
       input::placeholder {
-        color: rgba(255, 255, 255, 0.5);
+        color: rgba(255, 255, 255, 0.7);
       }
       button {
-        width: 300px;
-        height: 40px;
-        background-color: rgba(255, 255, 255, 0.1);
-        border: 1px solid black;
-        border-radius: 10px;
+        width: 100%;
+        padding: 10px;
+        margin-top: 20px;
+        background-color: rgba(255, 255, 255, 0.3);
+        border: none;
+        border-radius: 5px;
         color: white;
         font-size: 16px;
-        font-family: "Barlow", sans-serif;
-        font-weight: 900;
-        margin: 5px;
         cursor: pointer;
         transition: background-color 0.3s ease;
       }
       button:hover {
-        background-color: #493f3f79;
-        animation: pulse 2s infinite;
-        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+        background-color: rgba(255, 255, 255, 0.5);
       }
-      @keyframes pulse {
-        0% {
-          border-width: 1px;
-        }
-        50% {
-          border-width: 3px;
-        }
-        100% {
-          border-width: 1px;
-        }
+      .link {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        font-size: 14px;
+      }
+      .link:hover {
+        text-decoration: underline;
       }
       .log-messages {
         background-color: rgba(255, 255, 255, 0.1);
@@ -231,10 +215,9 @@
       <h2>Sign In</h2>
       <input type="email" placeholder="Email" id="userEmail" />
       <input type="password" placeholder="Password" id="userPassword" />
-      <br /><br />
       <button id="signInButton">Sign In</button>
       <p>
-        <a class="hipster-text" href="#"
+        <a class="link" href="#"
           @click.prevent="showSignUp = true">Don't
           have an account? Create one</a>
       </p>
@@ -248,19 +231,10 @@
           <input type="text" placeholder="Enter your full name"
             x-model="fullName" />
           <input type="email" placeholder="Enter your email" x-model="email" />
-          <div>
-            <label>
-              <input type="checkbox" x-model="showPassword" />
-              Show Password
-            </label>
-            <br>
-            <input
-              :type="showPassword ? 'text' : 'password'"
-              placeholder="Create a password"
-              x-model="password" />
-            <br>
-
-          </div>
+          <input
+            :type="showPassword ? 'text' : 'password'"
+            placeholder="Create a password"
+            x-model="password" />
           <button @click="step = 2"
             :disabled="!fullName || !email || !password">
             Next
@@ -367,19 +341,30 @@
         const signInEmail = userEmail.value;
         const signInPassword = userPassword.value;
         updateLog("Attempting to sign in with email: " + signInEmail);
-        signInWithEmailAndPassword(auth, signInEmail, signInPassword)
-          .then((userCredential) => {
-            const user = userCredential.user;
-            updateLog("User signed in successfully: " + JSON.stringify(user));
-            document.querySelector("[x-data]").__x.$data.successMessage =
-              "You have signed in successfully!";
-            document.querySelector("[x-data]").__x.$data.showSuccess = true;
-          })
-          .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            updateLog("Error during sign in: " + errorCode + " " + errorMessage);
-          });
+        try {
+          const userCredential = await signInWithEmailAndPassword(auth, signInEmail, signInPassword);
+          const user = userCredential.user;
+          updateLog("User signed in successfully: " + JSON.stringify(user));
+          document.querySelector("[x-data]").__x.$data.successMessage = "You have signed in successfully!";
+          document.querySelector("[x-data]").__x.$data.showSuccess = true;
+          showUserInfo(user); // Ensure user info is displayed after sign-in
+        } catch (error) {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          updateLog("Error during sign in: " + errorCode + " " + errorMessage);
+        }
+      };
+
+      const userSignOut = async () => {
+        try {
+          await signOut(auth);
+          updateLog("User signed out successfully.");
+          authForm.style.display = "block";
+          secretContent.style.display = "none";
+          userInfo.classList.add("hidden");
+        } catch (error) {
+          updateLog("Error during sign out: " + error.message);
+        }
       };
 
       const userInfo = document.querySelector("#userInfo");
@@ -403,7 +388,11 @@
       editSettingsButton.addEventListener("click", toggleSettingsDropdown);
 
       saveSettingsButton.addEventListener("click", () => {
-        // Implement settings save logic here
+        const newUsername = editUsername.value;
+        const newFullName = editFullName.value;
+        const newEmail = editEmail.value;
+        // Implement logic to update user settings in Firebase or local state
+        updateLog("Settings updated: " + JSON.stringify({ newUsername, newFullName, newEmail }));
         toggleSettingsDropdown();
       });
 
