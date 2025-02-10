@@ -38,8 +38,8 @@
     <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
     <meta http-equiv="Strict-Transport-Security" content="max-age=31536000;includeSubDomains">
     <meta http-equiv="X-XSS-Protection" content="1;mode=block">
-    <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self' https://*.firebaseio.com https://*.googleapis.com https://cdnjs.cloudflare.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.firebaseio.com https://*.googleapis.com https://www.gstatic.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; font-src 'self' https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://*.firebaseio.com https://*.googleapis.com wss://*.firebaseio.com;">
+    <!-- <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self' https://*.firebaseio.com https://*.googleapis.com https://cdnjs.cloudflare.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.firebaseio.com https://*.googleapis.com https://www.gstatic.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; font-src 'self' https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://*.firebaseio.com https://*.googleapis.com wss://*.firebaseio.com;"> -->
     <!-- <meta http-equiv="Cross-Origin-Embedder-Policy" content="require-corp"> -->
     <!-- <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin"> -->
 
@@ -473,6 +473,12 @@
             <h2 id="calendar-date"></h2>
             <p id="user-welcome" style="display: none; font-size: 18px; text-align: center; color: #ff0060;"></p>
             <hr>
+               <!-- Welcome Component -->
+    <div x-data="userWelcome()" x-init="initUser()">
+        <h1 x-text="'Welcome ' + userEmail"></h1>
+      </div>
+
+      <hr>
             <div class="homepage-subheader">
                 <p>Based in New Haven, CT, Ahoy Indie Media is a hand-built
                     media company committed to providing an alternative
@@ -932,7 +938,28 @@
                 });
             });
         </script>
-
+    <script>
+        function userWelcome() {
+          return {
+            // Default value
+            userEmail: "Guest",
+            initUser() {
+              // Listen for authentication state changes
+              auth.onAuthStateChanged(user => {
+                if (user) {
+                  // Update the welcome message with the user's email
+                  this.userEmail = user.email;
+                } else {
+                  // Optionally handle logged out state
+                  this.userEmail = "Guest";
+                  // Optionally redirect to a login page:
+                  // window.location.href = 'login.html';
+                }
+              });
+            }
+          }
+        }
+      </script>
         <!-- Video App Script is loaded in js/src/super-video-app.js -->
     </div>
     <div id="user-info"
