@@ -10,7 +10,7 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;900&display=swap"
       rel="stylesheet" />
-  <link rel="stylesheet" href="./css/super-login.css">
+    <link rel="stylesheet" href="./css/super-login.css">
     <!-- Include Alpine.js -->
     <script
       src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.0/dist/cdn.min.js"
@@ -24,6 +24,8 @@
         signInWithEmailAndPassword,
         onAuthStateChanged,
         signOut,
+        setPersistence,
+        browserLocalPersistence
       } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
 
       const firebaseConfig = {
@@ -37,6 +39,16 @@
 
       const app = initializeApp(firebaseConfig);
       const auth = getAuth(app);
+
+      // Set auth persistence to local so the user stays logged in across sessions
+      setPersistence(auth, browserLocalPersistence)
+        .then(() => {
+          console.log("Auth persistence set to local.");
+        })
+        .catch((error) => {
+          console.error("Error setting auth persistence:", error);
+        });
+
       // Expose necessary Firebase functions globally so Alpine can use them
       window.auth = auth;
       window.createUserWithEmailAndPassword = createUserWithEmailAndPassword;
@@ -46,22 +58,19 @@
     </script>
   </head>
   <body x-data="authWizard()" x-init="initAuth()">
-    <a href="index.html"><img src="./img/assets/u_ahoy23.png"
-        alt="Ahoy Indie Media Logo"
-        class="login-logo"></a>
+    <a href="index.html">
+      <img src="./img/assets/u_ahoy23.png" alt="Ahoy Indie Media Logo" class="login-logo">
+    </a>
     <!-- Authentication UI: Sign In / Sign Up -->
     <div class="auth-container" x-show="!user && !showFireworks">
       <template x-if="!showSignUp">
         <div>
           <h2>Sign In</h2>
-          <input type="email" placeholder="Email"
-            x-model="loginEmail" />
-          <input type="password" placeholder="Password"
-            x-model="loginPassword" />
+          <input type="email" placeholder="Email" x-model="loginEmail" />
+          <input type="password" placeholder="Password" x-model="loginPassword" />
           <button @click="loginUser()">Sign In</button>
           <p>
-            <a class="link" href="#"
-              @click.prevent="showSignUp = true">
+            <a class="link" href="#" @click.prevent="showSignUp = true">
               Don't have an account? Create one.
             </a>
           </p>
@@ -72,14 +81,10 @@
           <template x-if="step === 1">
             <div>
               <h2>Create an Account - Step 1</h2>
-              <input type="text" placeholder="Full Name"
-                x-model="fullName" />
-              <input type="email" placeholder="Email"
-                x-model="email" />
-              <input :type="showPassword ? 'text' : 'password'"
-                placeholder="Password" x-model="password" />
-              <button @click="step = 2"
-                :disabled="!fullName || !email || !password">Next</button>
+              <input type="text" placeholder="Full Name" x-model="fullName" />
+              <input type="email" placeholder="Email" x-model="email" />
+              <input :type="showPassword ? 'text' : 'password'" placeholder="Password" x-model="password" />
+              <button @click="step = 2" :disabled="!fullName || !email || !password">Next</button>
               <button @click="showSignUp = false">Cancel</button>
             </div>
           </template>
@@ -87,10 +92,8 @@
             <div>
               <h2>Create an Account - Step 2</h2>
               <p>Review your information:</p>
-              <p><strong>Full Name:</strong> <span
-                  x-text="fullName"></span></p>
-              <p><strong>Email:</strong> <span
-                  x-text="email"></span></p>
+              <p><strong>Full Name:</strong> <span x-text="fullName"></span></p>
+              <p><strong>Email:</strong> <span x-text="email"></span></p>
               <button @click="createAccount()">Submit</button>
               <button @click="step = 1">Back</button>
             </div>
@@ -109,20 +112,16 @@
     <div class="auth-container" x-show="user">
       <!-- Navigation Tabs -->
       <div class="nav-tabs">
-        <button :class="{ active: currentTab === 'dashboard' }"
-          @click="switchTab('dashboard')">
+        <button :class="{ active: currentTab === 'dashboard' }" @click="switchTab('dashboard')">
           Dashboard
         </button>
-        <button :class="{ active: currentTab === 'settings' }"
-          @click="switchTab('settings')">
+        <button :class="{ active: currentTab === 'settings' }" @click="switchTab('settings')">
           Settings
         </button>
-        <button :class="{ active: currentTab === 'activity' }"
-          @click="switchTab('activity')">
+        <button :class="{ active: currentTab === 'activity' }" @click="switchTab('activity')">
           Activity
         </button>
-        <button :class="{ active: currentTab === 'account' }"
-          @click="switchTab('account')">
+        <button :class="{ active: currentTab === 'account' }" @click="switchTab('account')">
           Account
         </button>
       </div>
@@ -132,8 +131,7 @@
           <div>
             <h3>Dashboard</h3>
             <p>
-              Welcome, <span
-                x-text="user.displayName || user.email"></span>!
+              Welcome, <span x-text="user.displayName || user.email"></span>!
               This is your dashboard.
             </p>
             <!-- Get Started Button -->
@@ -144,36 +142,30 @@
           <div>
             <h3>Settings</h3>
             <p>Edit your display name:</p>
-            <input type="text" placeholder="Display Name"
-              x-model="settings.displayName">
+            <input type="text" placeholder="Display Name" x-model="settings.displayName">
             <button @click="updateSettings()">Save Changes</button>
           </div>
         </template>
         <template x-if="currentTab === 'activity'">
           <div>
             <h3>Recent Activity</h3>
-            <template x-for="(item, index) in activity"
-              :key="index">
+            <template x-for="(item, index) in activity" :key="index">
               <div class="activity-item">
                 <strong x-text="item.type"></strong>
                 <p x-text="item.description"></p>
-                <small
-                  x-text="new Date(item.timestamp).toLocaleString()"></small>
+                <small x-text="new Date(item.timestamp).toLocaleString()"></small>
               </div>
             </template>
-            <button @click="fetchActivity()">Refresh
-              Activity</button>
+            <button @click="fetchActivity()">Refresh Activity</button>
           </div>
         </template>
         <template x-if="currentTab === 'account'">
           <div>
             <h3>Account Information</h3>
-            <p><strong>Email:</strong> <span
-                x-text="user.email"></span></p>
+            <p><strong>Email:</strong> <span x-text="user.email"></span></p>
             <p>
               <strong>Last Login:</strong>
-              <span
-                x-text="user.metadata?.lastSignInTime || 'Unknown'"></span>
+              <span x-text="user.metadata?.lastSignInTime || 'Unknown'"></span>
             </p>
           </div>
         </template>
