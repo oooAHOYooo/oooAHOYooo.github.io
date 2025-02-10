@@ -1,6 +1,6 @@
 /* Dark Blue Glassy Container (translucent) */
 .container {
-	max-width: 1200px;
+	max-width: 100%;
 	margin: 0 auto;
 	background: rgba(10, 10, 50, 0.5);
 	border-radius: 16px;
@@ -247,9 +247,26 @@ body {
 	cursor: pointer;
 }
 
+/* VIDEO PLAYER CONTAINER */
+
+.player-and-library {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: auto;
+}
+
+.super-video-player-container {
+	width: 100%;
+
+
+}
+
 /* Video element styling */
 video {
 	width: 100%;
+	height: auto;
 	border: 2px solid rgba(200, 200, 255, 0.3);
 	background-color: rgba(10, 10, 50, 0.6);
 	color: #ddeeff;

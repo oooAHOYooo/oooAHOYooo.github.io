@@ -61,6 +61,10 @@ function videoApp() {
 		const videoElement = document.getElementById('video-player');
 		this.player = videoElement;
   
+		// Ensure the video element is responsive
+		videoElement.style.width = '100%';
+		videoElement.style.height = 'auto';
+  
 		// Fetch your JSON file (ensure it's served from the same server)
 		try {
 		  const response = await fetch('./ahoy-playlists.json');
