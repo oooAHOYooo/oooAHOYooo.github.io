@@ -459,10 +459,10 @@
                     <p>Front Page News</p>
                 </div>
                 <div class="app-header-3">
-   
-                
                     <button id="user-account-button">
-                        <i class="fas fa-user" class="super-user-icon">    <p id="super-user-email-placeholder">your Email</p></i>
+                        <i class="fas fa-user super-user-icon">
+                            <p id="super-user-email-placeholder">your Email</p>
+                        </i>
                     </button>
                 </div>
             </div>
@@ -473,12 +473,11 @@
             <h2 id="calendar-date"></h2>
             <p id="user-welcome" style="display: none; font-size: 18px; text-align: center; color: #ff0060;"></p>
             <hr>
-               <!-- Welcome Component -->
-    <div x-data="userWelcome()" x-init="initUser()">
-        <h1 x-text="'Welcome ' + userEmail"></h1>
-      </div>
-
-      <hr>
+            <!-- Welcome Component -->
+            <div x-data="userWelcome()" x-init="initUser()">
+                <h1 x-text="'Welcome ' + userEmail"></h1>
+            </div>
+            <hr>
             <div class="homepage-subheader">
                 <p>Based in New Haven, CT, Ahoy Indie Media is a hand-built
                     media company committed to providing an alternative
@@ -932,34 +931,30 @@
                             frontPageNewsElement.innerText = originalText;
                         }, 5000);
                     } else {
-                        // User is signed out, redirect to login page
-                        window.location.href = "login.html";
+                        // User is signed out, display "Welcome Guest"
+                        const userWelcomeElement = document.getElementById('user-welcome');
+                        userWelcomeElement.innerText = "Welcome Guest";
+                        userWelcomeElement.style.display = 'block';
                     }
                 });
             });
         </script>
-    <script>
-        function userWelcome() {
-          return {
-            // Default value
-            userEmail: "Guest",
-            initUser() {
-              // Listen for authentication state changes
-              auth.onAuthStateChanged(user => {
-                if (user) {
-                  // Update the welcome message with the user's email
-                  this.userEmail = user.email;
-                } else {
-                  // Optionally handle logged out state
-                  this.userEmail = "Guest";
-                  // Optionally redirect to a login page:
-                  // window.location.href = 'login.html';
+        <script>
+            function userWelcome() {
+                return {
+                    userEmail: "Guest",
+                    initUser() {
+                        firebase.auth().onAuthStateChanged(user => {
+                            if (user) {
+                                this.userEmail = user.email;
+                            } else {
+                                this.userEmail = "Guest";
+                            }
+                        });
+                    }
                 }
-              });
             }
-          }
-        }
-      </script>
+        </script>
         <!-- Video App Script is loaded in js/src/super-video-app.js -->
     </div>
     <div id="user-info"
