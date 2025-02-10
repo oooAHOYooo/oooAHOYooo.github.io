@@ -4431,6 +4431,8 @@ input[type="date"]:focus {
 .tooltip-container {
     position: relative;
     display: inline-block;
+    width: 100%;
+    text-align: center;
 }
 
 .tooltip {
@@ -4459,6 +4461,7 @@ input[type="date"]:focus {
     justify-content: space-between;
     max-height: 38px;
     align-items: center;
+    overflow: hidden;
     background-color: var(--background-color);
     z-index: 1000;
     /* Ensure the header is above other content */
@@ -4491,6 +4494,10 @@ input[type="date"]:focus {
     width: 52px;
     height: auto;
     padding-left: 5px;
+}
+.app-header-1:hover {
+    scale: 1.025;
+    transition: scale 0.3s ease-in-out;
 }
 
 .app-header-2 {
@@ -4558,7 +4565,7 @@ input[type="date"]:focus {
     background-color: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.03);
     cursor: pointer;
-    font-size: 14px;
+    font-size: 12px;
     color: var(--text-color);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -4576,6 +4583,29 @@ input[type="date"]:focus {
 .super-user-icon {
     color: var(--border-color);
 }
+
+
+#super-user-email-placeholder {
+    font-size: 8px!important;
+    color: var(--text-color);
+    margin-top: 0px;
+    padding-top: 0px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
 
 .mood-flower {
     display: flex;
