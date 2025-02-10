@@ -1,0 +1,132 @@
+ /* Base styling using your glassy vibe and background */
+      * { font-weight: 300; }
+      body {
+        background: url("https://i.gifer.com/n4V.gif") no-repeat center center fixed;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        margin: 0;
+        font-family: 'Barlow', sans-serif;
+        color: white;
+      }
+      .hidden { display: none; }
+      .auth-container {
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(20px);
+        border-radius: 15px;
+        padding: 40px;
+        text-align: center;
+        max-width: 400px;
+        width: 100%;
+        margin: 10px;
+      }
+      input[type="email"],
+      input[type="password"],
+      input[type="text"] {
+        width: 100%;
+        max-width: 80%;
+        padding: 10px;
+        margin: 10px 0;
+        background-color: rgba(255, 255, 255, 0.2);
+        border: none;
+        border-radius: 5px;
+        color: white;
+        font-size: 16px;
+      }
+      input::placeholder { color: rgba(255, 255, 255, 0.7); }
+      button {
+        width: 100%;
+        padding: 10px;
+        margin-top: 20px;
+        background-color: rgba(255, 255, 255, 0.3);
+        border: none;
+        border-radius: 5px;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      button:hover { background-color: rgba(255, 255, 255, 0.5); }
+      .link {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        font-size: 14px;
+      }
+      .link:hover { text-decoration: underline; }
+      .log-messages {
+        background-color: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 5px;
+        padding: 10px;
+        max-width: 400px;
+        margin: 20px auto;
+        text-align: left;
+        font-family: monospace;
+        white-space: pre-wrap;
+      }
+      /* Dashboard Navigation Tabs */
+      .nav-tabs {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 20px;
+      }
+      .nav-tabs button {
+        flex: 1;
+        padding: 10px;
+        border: none;
+        background-color: rgba(255, 255, 255, 0.2);
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      .nav-tabs button.active {
+        background-color: rgba(255, 255, 255, 0.5);
+        font-weight: bold;
+      }
+      .dashboard-content {
+        text-align: left;
+      }
+      .activity-item {
+        background-color: rgba(255,255,255,0.2);
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+
+      .login-logo {
+        width: 300px;
+        height: auto;
+        margin-bottom: 20px;
+      }
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 600px) {
+  .auth-container, .log-messages {
+    padding: 20px;
+    max-width: 80%;
+  }
+  .nav-tabs {
+    flex-direction: column;
+  }
+  .nav-tabs button {
+    margin-bottom: 10px;
+  }
+}
+
+/* Active status section */
+.active-status {
+  background-color: rgba(0, 255, 0, 0.1);
+  border: 1px solid rgba(0, 255, 0, 0.2);
+  border-radius: 5px;
+  padding: 10px;
+  max-width: 400px;
+  margin: 20px auto;
+  text-align: left;
+  font-family: monospace;
+  white-space: pre-wrap;
+  color: white;
+}
