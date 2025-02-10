@@ -441,13 +441,22 @@
     "goTo": "vintage-broadcast-tab"
 },
 {
-    "date": "2025-02-22",
+    "date": "2025-02-03",
     "title": "Breaking News: Ahoy Cabaret Live @ Best Video!",
     "videoUrl": "https://storage.googleapis.com/ahoy-videos/promos/%5BahoyCaba%5D%5BPromo%5D%5BCABARET%20FLIERS%20-%20D001%5D-%5Bep2%5D.mov",
     "content": "<video width='320' height='240' controls poster='https://storage.googleapis.com/ahoy-videos/promos/%5Bthumbnail%5D%5BahoyCaba%5D%5BROB%20HANGING%20POSTER%20-%20Thumb%201%5D.jpg'><source src='https://storage.googleapis.com/ahoy-videos/promos/%5BahoyCaba%5D%5BPromo%5D%5BCABARET%20FLIERS%20-%20D001%5D-%5Bep2%5D.mov' type='video/mp4'>Your browser does not support the video tag.</video><div><img src='https://storage.googleapis.com/ahoy-dynamic-content/news/%5BahoyCaba%5D%5Bpromo%5D%5B2-22%20-%20Full%20Color%5D-%5B001%5D.jpg' alt='Event Flyer' style='width:100%;max-width:320px;'></div><p> We're going to be filming our pilot episode of the Ahoy Cabaret - an hour long variety show featuring local musical guests - talent - and host Rob Meglio - Doors open at 7 - showtime at 7:45p - - seating is first come first serve - $10 suggest donation - Merch Table on deck - after party guarenteed - stay tuned and spread the word!</p><div><a class='news-add-cal-btn' href='https://www.google.com/calendar/render?action=TEMPLATE&text=Ahoy+Cabaret+Live+at+Best+Video&dates=20250222T190000Z/20250222T214500Z&details=Join+us+for+the+pilot+episode+of+the+Ahoy+Cabaret+at+Best+Video.+Enjoy+an+hour-long+variety+show+featuring+local+musical+guests,+talent,+and+host+Rob+Meglio.+Doors+open+for+food,+drink,+and+mingling+at+7+PM,+showtime+at+7:45+PM.+Seating+is+first+come,+first+serve.+$10+suggested+donation.+Merch+Table+available.+After+party+guaranteed!&location=Best+Video,+New+Haven,+CT' target='_blank'>Add to Google Calendar</a></div>",
     "active": "true",
     "goTo": "media-tab"
-  }
+  },
+  {
+    "date": "2025-02-09",
+    "title": "Merch Update: Ahoy Cabaret",
+    "videoUrl": "",
+    "imageUrl": "https://storage.googleapis.com/ahoy-dynamic-content/news/newsletter%20-%20merch%20updates%20-%20Feb.jpg",
+    "content": "We've been having fun making merch for the cabaret. We're trying our hand at a few new things - like a t shirt(s) - a mini zine - magnets - and a few other things. Stay tuned for updates, and don’t forget to check out the merch in person at the Cabaret on 2.22.25!",
+    "active": "true",
+    "goTo": "podcast-tab"
+}
   
 
 ]
