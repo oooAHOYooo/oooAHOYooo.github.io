@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.cordova.ahoyApp" version="0.3.5" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="io.cordova.ahoyApp" version="2025_001" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
 
     <!-- App Metadata -->
-    <name>Ahoy</name>
+    <name>Ahoy Indie Media</name>
     <description>Ahoy Indie Media is a hand-crafted indie media platform.</description>
     <author email="alex@ahoy.ooo" href="https://ahoy.ooo">Ahoy Indie Media Team</author>
     
@@ -33,7 +33,7 @@
     <!-- Electron Platform Settings -->
     <platform name="electron">
         <!-- Entry point for Electron -->
-<preference name="ElectronMainFile" value="cdv-electron-main.js" />
+        <preference name="ElectronMainFile" value="cdv-electron-main.js" />
         
         <!-- Optional Electron Preferences -->
         <preference name="ElectronBackgroundColor" value="#FFFFFF" />

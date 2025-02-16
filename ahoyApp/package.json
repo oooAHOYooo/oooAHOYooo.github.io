@@ -3,11 +3,11 @@
   "displayName": "Ahoy Indie Media",
   "version": "0.2.8c",
   "description": "Ahoy Indie Media - Your homegrown alternative to mainstream media. Discover and support independent artists, musicians, podcasters, and creators from New Haven, Connecticut. Enjoy ad-free, hand-crafted content that celebrates indie culture.",
-  "main": "cdv-electron-main.js",  
+  "main": "cdv-electron-main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron .",          
-    "build": "electron-builder"     
+    "start": "electron .",
+    "build": "electron-builder"
   },
   "keywords": [
     "indie media",
@@ -39,8 +39,8 @@
     "platforms": [
       "cordova-osx",
       "android",
-      "ios",
-      "electron"
+      "electron",
+      "ios"
     ],
     "plugins": {
       "cordova-plugin-advanced-http": {
@@ -50,7 +50,7 @@
   },
   "build": {
     "appId": "com.ahoyapp.app",
-    "asar": false, 
+    "asar": false,
     "win": {
       "target": "nsis",
       "icon": "www/img/assets/ahoyFav.png"
@@ -60,15 +60,17 @@
       "icon": "www/img/assets/ahoyFav.png"
     },
     "files": [
-      "www/**/*",                  
-      "cdv-electron-main.js",      
-      "cdv-electron-preload.js"    
+      "www/**/*",
+      "cdv-electron-main.js",
+      "cdv-electron-preload.js"
     ],
     "extraResources": [
       {
         "from": "resources/",
         "to": "resources/",
-        "filter": ["**/*"]
+        "filter": [
+          "**/*"
+        ]
       }
     ]
   },
