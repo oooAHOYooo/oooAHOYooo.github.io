@@ -24,7 +24,7 @@
   "license": "MIT",
   "devDependencies": {
     "cordova-android": "^13.0.0",
-    "cordova-electron": "^4.0.0",
+    "cordova-browser": "^7.0.0",
     "cordova-ios": "^7.1.1",
     "cordova-osx": "^7.0.0",
     "cordova-plugin-advanced-http": "^3.3.1",
@@ -38,9 +38,9 @@
   "cordova": {
     "platforms": [
       "cordova-osx",
+      "ios",
       "android",
-      "electron",
-      "ios"
+      "browser"
     ],
     "plugins": {
       "cordova-plugin-advanced-http": {

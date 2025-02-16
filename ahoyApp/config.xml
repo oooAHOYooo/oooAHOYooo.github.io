@@ -41,4 +41,20 @@
         <preference name="ElectronWindowHeight" value="720" />
     </platform>
 
+<platform name="ios">
+    <icon src="resources/ios/16.png" width="16" height="16" />
+    <icon src="resources/ios/29.png" width="29" height="29" />
+    <icon src="resources/ios/32.png" width="32" height="32" />
+    <icon src="resources/ios/40.png" width="40" height="40" />
+    <icon src="resources/ios/57.png" width="57" height="57" />
+    <icon src="resources/ios/60.png" width="60" height="60" />
+    <icon src="resources/ios/76.png" width="76" height="76" />
+    <icon src="resources/ios/120.png" width="120" height="120" />
+    <icon src="resources/ios/180.png" width="180" height="180" />
+    <icon src="resources/ios/256.png" width="256" height="256" />
+    <icon src="resources/ios/512.png" width="512" height="512" />
+    <icon src="resources/ios/1024.png" width="1024" height="1024" />
+</platform>
+
+
 </widget>
