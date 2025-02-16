@@ -3578,17 +3578,12 @@ input[type="date"]:focus {
 
 /* Glassy button styles */
 .audio-control-button {
-    background: rgba(255, 255, 255, 0.2);
-    /* Semi-transparent background */
+    background-color: var(--background-color);
     color: var(--text-color);
     border: 1px solid rgba(255, 255, 255, 0.3);
-    /* Subtle border */
     border-radius: 10px;
-    /* Rounded corners */
     padding: 10px 20px;
-    backdrop-filter: blur(10px);
-    /* Blur effect for glassmorphism */
-    -webkit-backdrop-filter: blur(10px);
+
     /* For Safari */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     /* Soft shadow */
@@ -4495,6 +4490,7 @@ input[type="date"]:focus {
     height: auto;
     padding-left: 5px;
 }
+
 .app-header-1:hover {
     scale: 1.025;
     transition: scale 0.3s ease-in-out;
@@ -4586,7 +4582,7 @@ input[type="date"]:focus {
 
 
 #super-user-email-placeholder {
-    font-size: 8px!important;
+    font-size: 8px !important;
     color: var(--text-color);
     margin-top: 0px;
     padding-top: 0px;
@@ -4598,7 +4594,7 @@ input[type="date"]:focus {
     max-width: 100%;
     padding: 0;
     margin: 0;
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
