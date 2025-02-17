@@ -446,10 +446,6 @@ button:hover {
     display: block;
     align-items: center;
     justify-content: center;
-    max-height: 450px;
-    border-radius: 0 0 10px 10px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    max-width: 500px;
 }
 
 #coverArt {
@@ -464,7 +460,7 @@ button:hover {
     border-top-right-radius: 5.5px;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
-    margin-top: 15px;
+    margin-top: 5px;
 }
 
 
@@ -485,24 +481,38 @@ button:hover {
 
 
 
-
 .sub-text {
-
     text-align: center;
     color: var(--text-color);
-    font-size: 1.5em;
-    margin-bottom: 10px;
-    padding: 0;
+    font-size: .9125em;
+    padding: 10px; /* Add some padding for spacing */
+    text-transform: capitalize;
+    font-family: var(--font-family);
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
+    backdrop-filter: blur(5px); /* Blur effect for a glassy look */
 }
 
-#songTitle {}
+#songTitle {
+    font-weight: 600;
+    font-size: 1.1em;
+}
 
 #podcast-title {
     text-align: center;
     color: var(--text-color);
-    font-size: 1.5em;
-    margin-bottom: 10px;
-    padding: 0;
+    font-weight: 600;
+    font-size: 1.1em;
+    padding: 10px; /* Add some padding for spacing */
+    text-transform: capitalize;
+    font-family: var(--font-family);
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
+    backdrop-filter: blur(5px); /* Blur effect for a glassy look */
 }
 
 .sort-buttons-container {
@@ -510,14 +520,6 @@ button:hover {
     justify-content: center;
     align-items: center;
 }
-
-/* #tabSortza {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-} */
-
 
 
 #main-content,
