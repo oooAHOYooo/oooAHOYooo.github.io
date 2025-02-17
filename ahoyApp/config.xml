@@ -41,7 +41,7 @@
         <preference name="ElectronWindowHeight" value="720" />
     </platform>
 
-<platform name="ios">
+<!-- <platform name="ios">
     <icon src="resources/ios/16.png" width="16" height="16" />
     <icon src="resources/ios/29.png" width="29" height="29" />
     <icon src="resources/ios/32.png" width="32" height="32" />
@@ -54,7 +54,7 @@
     <icon src="resources/ios/256.png" width="256" height="256" />
     <icon src="resources/ios/512.png" width="512" height="512" />
     <icon src="resources/ios/1024.png" width="1024" height="1024" />
-</platform>
+</platform> -->
 
 
 </widget>
