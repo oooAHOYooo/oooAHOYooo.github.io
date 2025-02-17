@@ -13,6 +13,7 @@ function videoApp() {
 	  selectedSubCategory: "",
 	  volume: 1.0, // Default volume level
 	  playbackSpeed: 1.0, // Default playback speed
+	  useRemoteSource: true, // New property to toggle between local and remote source
 	  // Computed property: combine videos from several categories
 	  get fullLibrary() {
 		return [
@@ -67,7 +68,10 @@ function videoApp() {
   
 		// Fetch your JSON file (ensure it's served from the same server)
 		try {
-		  const response = await fetch('./ahoy-playlists.json');
+		  const sourceUrl = this.useRemoteSource 
+			? 'https://storage.googleapis.com/ahoy-dynamic-content/dynamicJson/ahoy-playlists.json'
+			: './ahoy-playlists.json';
+		  const response = await fetch(sourceUrl);
 		  this.playlists = await response.json();
 		  console.log('Playlists loaded:', this.playlists);
 		} catch (error) {
