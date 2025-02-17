@@ -1,10 +1,22 @@
-// Update the URL to point to the local JSON file if needed
-const songsDataUrl = './local_data/radioPlay.json'; // Use local JSON file
+// URLs for JSON data
+const remoteSongsDataUrl = 'https://storage.googleapis.com/ahoy-dynamic-content/dynamicJson/radioPlay.json';
+const localSongsDataUrl = './local_data/radioPlay.json';
+
+// Set default to remote
+let useRemoteData = true;
+
+// Function to toggle data source
+function toggleDataSource() {
+  useRemoteData = !useRemoteData;
+  fetchRadioSongs(); // Re-fetch songs with the new data source
+}
+
 let currentSongIndex = 0;
 let songs = [];
 
-// Fetch the songs data from the local JSON file
+// Fetch the songs data from the selected JSON file
 async function fetchRadioSongs() {
+  const songsDataUrl = useRemoteData ? remoteSongsDataUrl : localSongsDataUrl;
   try {
     const response = await fetch(songsDataUrl);
     const data = await response.json();
@@ -290,3 +302,6 @@ function skipForward15Seconds() {
 
 // Add event listener for the "+15 seconds" button
 document.getElementById('add15sBtn').addEventListener('click', skipForward15Seconds);
+
+// Add event listener to toggle button
+document.getElementById('toggleDataSourceBtn').addEventListener('click', toggleDataSource);
