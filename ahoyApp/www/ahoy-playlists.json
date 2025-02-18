@@ -1,19 +1,36 @@
 {
   "episodes": [
-    {
-      "id": 16,
-      "title": "[Rob Show] - [Episode] - [Pilot]",
-     "src": "https://storage.googleapis.com/ahoy-videos/promos/%5BahoyCaba%5D%5BPromo%5D%5BCABARET%20FLIERS%20-%20D001%5D-%5Bep2%5D.mov",
+   
+        {
+      "id": 17,
+      "title": "[Episode] - [Alive on Central - Episode 2]",
+      "src": "https://storage.googleapis.com/ahoy-videos/episodes/%5Bepisodes%5D%5BAlive%20on%20Central%5D%5Bepisode%202%5D.mp4",
       "type": "video/mp4",
-      "thumbnail": "https://storage.googleapis.com/ag-photography/thumbnails/AG%20-%20Event%20PROMO%20-%20003.jpg",
+      "thumbnail": "https://storage.googleapis.com/ahoy-videos/thumbnails/%5BahoyThumb%5D%5Bepisode%5D%5BAlive%20on%20Central%5D%5BEpisode%202%5D.png",
       "category": "Episodes"
     },
     {
-      "id": 17,
-      "title": "[Alive on Central] - [Episode] - [Season Finale]",
-      "src": "https://storage.googleapis.com/ahoy-videos/clips/%5Btallboyz%5D-%5Bclip%5D-%5Bdavegunn%5D-%5BnoMusic%5D-%5B001%5D.MOV",
+      "id": 18,
+      "title": "[Episode] - [Alive on Central - Episode 3]",
+      "src": "https://storage.googleapis.com/ahoy-videos/episodes/%5Bepisodes%5D%5BAlive%20on%20Central%5D%5Bepisode%203%5D.mp4",
       "type": "video/mp4",
-      "thumbnail": "https://storage.googleapis.com/ahoy-videos/thumbnails/%5BahoyThumb%5D%5Bclips%5D%5BquietGunn%5D.jpg",
+      "thumbnail": "https://storage.googleapis.com/ahoy-videos/thumbnails/%5BahoyThumb%5D%5Bepisode%5D%5BAlive%20on%20Central%5D%5BEpisode%203%5D.png",
+      "category": "Episodes"
+    },
+    {
+      "id": 19,
+      "title": "[Episode] - [Alive on Central - Episode 4]",
+      "src": "https://storage.googleapis.com/ahoy-videos/episodes/%5Bepisodes%5D%5BAlive%20on%20Central%5D%5Bepisode%204%5D.mp4",
+      "type": "video/mp4",
+      "thumbnail": "https://storage.googleapis.com/ahoy-videos/thumbnails/%5BahoyThumb%5D%5Bepisode%5D%5BAlive%20on%20Central%5D%5BEpisode%204%5D.png",
+      "category": "Episodes"
+    },
+    {
+      "id": 20,
+      "title": "[Episode] - [Alive on Central - Episode 5]",
+      "src": "https://storage.googleapis.com/ahoy-videos/episodes/%5Bepisodes%5D%5BAlive%20on%20Central%5D%5Bepisode%205%5D.mp4",
+      "type": "video/mp4",
+      "thumbnail": "https://storage.googleapis.com/ahoy-videos/thumbnails/%5BahoyThumb%5D%5Bepisode%5D%5BAlive%20on%20Central%5D%5BEpisode%205%5D.png",
       "category": "Episodes"
     }
   ],
@@ -92,14 +109,6 @@
       "src": "https://storage.googleapis.com/ahoy-videos/episodes/%5Bepisodes%5D%5BahoyCaba%5D%5Bepisode%201%5D.mp4",
       "type": "video/mp4",
       "thumbnail": "https://storage.googleapis.com/ahoy-videos/thumbnails/%5BahoyThumb%5D%5BCaba%5D%5Bep1%5D.jpg",
-      "category": "Episodes"
-    },
-    {
-      "id": 17,
-      "title": "[Episode] - [Alive on Central - Episode 2]",
-      "src": "https://storage.googleapis.com/ahoy-videos/episodes/%5Bepisodes%5D%5BAlive%20on%20Central%5D%5Bepisode%202%5D.mp4",
-      "type": "video/mp4",
-      "thumbnail": "https://storage.googleapis.com/ahoy-videos/thumbnails/%5BahoyThumb%5D%5Bepisode%5D%5BAlive%20on%20Central%5D%5BEpisode%202%5D.png",
       "category": "Episodes"
     }
   ]

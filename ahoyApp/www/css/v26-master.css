@@ -479,20 +479,27 @@ button:hover {
     min-height: 500px;
 }
 
-
+.song-details {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
 
 .sub-text {
     text-align: center;
     color: var(--text-color);
     font-size: .9125em;
-    padding: 10px; /* Add some padding for spacing */
+    padding: 10px;
     text-transform: capitalize;
     font-family: var(--font-family);
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
-    backdrop-filter: blur(5px); /* Blur effect for a glassy look */
+    background-color: rgba(255, 255, 255, 0.225);
+    border-radius: 2px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    margin-top: 2px;
+    margin-bottom: 2px;
+    width: 90%;
 }
 
 #songTitle {
@@ -503,16 +510,16 @@ button:hover {
 #podcast-title {
     text-align: center;
     color: var(--text-color);
-    font-weight: 600;
-    font-size: 1.1em;
-    padding: 10px; /* Add some padding for spacing */
+    font-size: .9125em;
+    padding: 10px;
     text-transform: capitalize;
     font-family: var(--font-family);
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
-    backdrop-filter: blur(5px); /* Blur effect for a glassy look */
+    background-color: rgba(255, 255, 255, 0.225);
+    border-radius: 2px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    margin-top: 2px;
+    margin-bottom: 2px;
+    width: 90%;
 }
 
 .sort-buttons-container {
@@ -2025,9 +2032,8 @@ input[type="date"]:focus {
     width: 90%;
     height: 7.5px;
     border-radius: 5px;
-    background: rgba(255, 255, 255, 0.46);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.146);
+    border: 1px solid rgba(0, 0, 0, 0.3);
     cursor: pointer;
 }
 
@@ -2214,7 +2220,6 @@ input[type="date"]:focus {
     margin-bottom: 5.5px;
     padding-top: 5.5px;
     padding-bottom: 5.5px;
-    padding: 10px;
 }
 
 .podcast-player-controls {
@@ -2231,7 +2236,6 @@ input[type="date"]:focus {
     .podcast-player-controls {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 10px;
         width: 100%;
     }
 
