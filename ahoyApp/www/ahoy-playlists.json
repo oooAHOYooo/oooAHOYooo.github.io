@@ -85,6 +85,22 @@
       "type": "video/mov",
       "thumbnail": "https://storage.googleapis.com/ahoy-videos/thumbnails/%5BahoyThumb%5D%5BPROMO%5D%5BAhoy%20Cabaret%5D%5BBV%20Update%5D.jpg",
       "category": "Promos"
+    },
+    {
+      "id": 16,
+      "title": "[Episode] - [Ahoy Cabaret - Episode 1] - [Holiday Spectacular]",
+      "src": "https://storage.googleapis.com/ahoy-videos/episodes/%5Bepisodes%5D%5BahoyCaba%5D%5Bepisode%201%5D.mp4",
+      "type": "video/mp4",
+      "thumbnail": "https://storage.googleapis.com/ahoy-videos/thumbnails/%5BahoyThumb%5D%5BCaba%5D%5Bep1%5D.jpg",
+      "category": "Episodes"
+    },
+    {
+      "id": 17,
+      "title": "[Episode] - [Alive on Central - Episode 2]",
+      "src": "https://storage.googleapis.com/ahoy-videos/episodes/%5Bepisodes%5D%5BAlive%20on%20Central%5D%5Bepisode%202%5D.mp4",
+      "type": "video/mp4",
+      "thumbnail": "https://storage.googleapis.com/ahoy-videos/thumbnails/%5BahoyThumb%5D%5Bepisode%5D%5BAlive%20on%20Central%5D%5BEpisode%202%5D.png",
+      "category": "Episodes"
     }
   ]
 }
