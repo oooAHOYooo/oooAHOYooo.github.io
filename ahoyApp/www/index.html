@@ -565,6 +565,9 @@
                 <!-- Welcome Component -->
                 <div x-data="userWelcome()" x-init="initUser()">
                     <h1 x-text="'Welcome ' + userEmail"></h1>
+                    <p>
+                        <a href="login.html" style="color: #ff0060;">Login</a>
+                    </p>
                 </div>
                 <hr>
                 <div class="homepage-subheader">
@@ -873,21 +876,20 @@
                     </div>
                 </div>
                 <div id="puddle-game">
-                    <div class="tooltip-container">
-                        <h1 onmouseenter="showTooltip(true)"
-                            onmouseleave="showTooltip(false)"
-                            style="font-size: 24px; text-align: center;">Puddle</h1>
+                    <h3>Puddle</h3>
+                    <p style="text-align:center;line-height:1.25;">
+                        Puddle is a word game where you have to guess the
+                        4-letter word of the day - try to guess it in 6
+                        attempts or less - same word applies to all players
+                        - God speed - if you get it wrong - you're out - if
+                        you get it right - you're in - good luck!
+                        </p>
                         <div id="tooltip" class="tooltip">
                             <p>Instructions: Guess the 4-letter word of the day!
                                 You have 6 attempts. Good luck!</p>
                         </div>
                     </div>
-                    <script>
-                    function showTooltip(show) {
-                        const tooltip = document.getElementById('tooltip');
-                        tooltip.style.display = show ? 'block' : 'none';
-                    }
-                </script>
+                
                     <!-- Alerts -->
                     <div id="alert-box" class="alert">
                         <p id="alert-message"></p>
