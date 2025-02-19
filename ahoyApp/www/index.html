@@ -1025,20 +1025,7 @@
             <script src="js/fire/firestore.js" type="module"></script>
             <script src="js/src/super-video-app.js"></script>
 
-            <!-- MOOD OVER TIME TAB -->
-            <div id="mood-over-time-tab" class="tab-content">
-                <h1>Mood Over Time</h1>
-                <ul>
-                    <template x-for="entry in moodHistory"
-                        :key="entry.timestamp">
-                        <li>
-                            <span
-                                x-text="new Date(entry.timestamp).toLocaleString()"></span>:
-                            <span x-text="entry.mood"></span>
-                        </li>
-                    </template>
-                </ul>
-            </div>
+       
             <!-- END OF MOOD OVER TIME TAB -->
 
             <script>
