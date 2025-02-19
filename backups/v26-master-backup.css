@@ -2963,9 +2963,6 @@ input[type="date"]:focus {
     }
 }
 
-
-
-
 #playlist-mgmt-section {
     background: rgba(255, 255, 255, 0.7);
     /* Semi-transparent white background */
@@ -4564,34 +4561,6 @@ input[type="date"]:focus {
     width: 100%;
     justify-content: center;
     align-items: center;
-}
-
-.welcome-container {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.welcome-text {
-    font-size: 1.1em;
-    font-weight: 600;
-    color: var(--text-color);
-    padding: 10px;
-    text-align: center;
-    line-height: 1.25;
-    background-color: rgba(255, 255, 255, 0.225);
-    border-radius: 2px;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    margin-top: 2px;
-    margin-bottom: 2px;
-    width: 90%;
-}
-
-.welcome-text-link {
-    color: var(--text-color);
-    text-decoration: underline;
 }
 
 #user-account-button {

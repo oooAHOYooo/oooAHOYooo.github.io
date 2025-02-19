@@ -557,15 +557,14 @@
                     style="font-family:'Times New Roman',Times,serif;font-size:24px;text-transform:uppercase;">
                 <hr>
                 <h2 id="calendar-date"></h2>
-                <p id="user-welcome"
-                    style="display: none; font-size: 18px; text-align: center; color: #ff0060;"></p>
+             
                 <hr>
                 <!-- Welcome Component -->
-                <div x-data="userWelcome()" x-init="initUser()">
-                    <h1 x-text="'Welcome ' + userEmail"></h1>
+                <div class="welcome-container" x-data="userWelcome()" x-init="initUser()">
+                    <h1 class="welcome-text" x-text="'Welcome ' + userEmail"></h1>
                     <template x-if="userEmail === 'Guest'">
-                        <p>
-                            Not logged in? <a href="login.html" style="color: #ff0060;">Log in here</a>
+                        <p style="text-align:center;line-height:1.25;">
+                            Not logged in? <a class="welcome-text-link" href="login.html">Log in here</a>
                         </p>
                     </template>
                 </div>
