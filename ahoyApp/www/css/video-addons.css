@@ -47,7 +47,7 @@ body {
 }
 
 .featured-item {
-	background: rgba(10, 10, 50, 0.6);
+	background: rgba(10, 10, 50, 0.16);
 	border: 1px solid rgba(200, 200, 255, 0.3);
 	backdrop-filter: blur(8px);
 	border-radius: 12px;
@@ -200,13 +200,15 @@ body {
 }
 
 .library-card {
-	background: rgba(10, 10, 50, 0.6);
+	border-color: var(--border-color);
+	background: var(--background-color);
 	border: 1px solid rgba(200, 200, 255, 0.3);
 	backdrop-filter: blur(8px);
 	border-radius: 12px;
 	overflow: hidden;
 	cursor: pointer;
 	transition: transform 0.3s, background 0.3s, border 0.3s;
+	font-weight: 400;
 }
 
 .library-card:hover {
@@ -224,7 +226,8 @@ body {
 	padding: 8px;
 	text-align: center;
 	font-size: 14px;
-	color: #ddeeff;
+	color: var(--text-color);
+	font-weight: 400;
 }
 
 /* List view for Library */
@@ -259,8 +262,6 @@ body {
 
 .super-video-player-container {
 	width: 100%;
-
-
 }
 
 /* Video element styling */
