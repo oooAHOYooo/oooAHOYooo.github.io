@@ -6,9 +6,7 @@
         <meta name="viewport"
             content="width=device-width,initial-scale=1,shrink-to-fit=yes">
 
-        <!-- Video.js CSS (kept for other parts if needed) -->
-        <link href="https://vjs.zencdn.net/7.20.3/video-js.css"
-            rel="stylesheet" />
+  
 
         <!-- Alpine.js (only one instance) -->
         <script
@@ -565,9 +563,11 @@
                 <!-- Welcome Component -->
                 <div x-data="userWelcome()" x-init="initUser()">
                     <h1 x-text="'Welcome ' + userEmail"></h1>
-                    <p>
-                        <a href="login.html" style="color: #ff0060;">Login</a>
-                    </p>
+                    <template x-if="userEmail === 'Guest'">
+                        <p>
+                            Not logged in? <a href="login.html" style="color: #ff0060;">Log in here</a>
+                        </p>
+                    </template>
                 </div>
                 <hr>
                 <div class="homepage-subheader">
