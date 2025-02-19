@@ -926,6 +926,30 @@
             </div>
             <!-- END OF CAST TAB -->
 
+            <!-- SEARCH TAB -->
+            <div id="search-tab" class="tab-content experimental-feature"
+                x-data="searchApp()">
+                <div class="app-header">
+                    <p>Search</p>
+                </div>
+                <h1>Search</h1>
+                <p>Search across all media, podcasts, and more.</p>
+                <input type="text" x-model="query"
+                    placeholder="Enter search query..." class="search-bar">
+                <button @click="performSearch"
+                    class="action-button">Search</button>
+                <div x-show="results.length > 0" class="search-results">
+                    <template x-for="result in results" :key="result.id">
+                        <div class="search-result-item"
+                            @click="navigateTo(result.url)">
+                            <h3 x-text="result.title"></h3>
+                            <p x-text="result.description"></p>
+                        </div>
+                    </template>
+                </div>
+            </div>
+            <!-- END OF SEARCH TAB -->
+
             <!-- DOCK -->
             <div id="v25-dock-container">
                 <div id="v25-dock">
