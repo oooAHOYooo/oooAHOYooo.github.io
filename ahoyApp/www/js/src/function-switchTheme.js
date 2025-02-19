@@ -1,4 +1,4 @@
-const themes = ["light", "dark", "pink", "ellie", "bug", "licorice", "old yella", "gradientPink"]; // List of available themes
+const themes = ["cream", "dark", "flamenco jimbo", "ellie", "bug", "licorice", "old yella", "gradientPink", "deep purple"]; // Updated available themes
 
 // Initialize with gradientPink as the default theme
 let theme = themes[Math.floor(Math.random() * themes.length)];
@@ -10,15 +10,15 @@ function switchTheme(selectedTheme) {
   theme = selectedTheme || theme; // Use the passed theme or the current one
 
   // Define theme properties based on the selected theme
-  if (theme === "light") {
+  if (theme === "cream") {
     setThemeProperties(
       root,
-      "#ffffff", // Background color: white
-      "#000000", // Text color: black
-      "#cccccc", // Border color: light gray
-      "#e0e0e0", // Secondary color: gray for secondary elements
-      "#f0f0f0", // Button color: very light gray
-      "#ffd700"  // Gold color: used for highlights or accents
+      "#25ced1", // Background color
+      "#FFF",    // Text color
+      "#fceade", // Border color
+      "#ff8a5b", // Secondary color
+      "#ea526f", // Button color
+      "#ea526f"  // Gold color (using same as button)
     );
   } else if (theme === "dark") {
     setThemeProperties(
@@ -30,15 +30,15 @@ function switchTheme(selectedTheme) {
       "#1a3a5a", // Button color: shady navy
       "#bbbbbb"  // Gold color: light gray (used as a highlight color here)
     );
-  } else if (theme === "pink") {
+  } else if (theme === "flamenco jimbo") {
     setThemeProperties(
       root,
-      "#ff4d6d", // Background color: bright pink
-      "#ffffff", // Text color: white
-      "#ff758f", // Border color: soft pink
-      "#ff8fa3", // Secondary color: lighter pink
-      "#ffb3c1", // Button color: very light pink
-      "#ffccd5"  // Gold color: palest pink (used as a highlight color here)
+      "#ffe5ec", // Background color
+      "#ff4d6d", // Text color
+      "#ffccd5", // Border color
+      "#fff0f3", // Secondary color
+      "#c9184a", // Button color
+      "#c9184a"  // Gold color (using same as button)
     );
   } else if (theme === "ellie") {
     setThemeProperties(
@@ -79,6 +79,16 @@ function switchTheme(selectedTheme) {
       "#ff006e", // Secondary color: bright pink
       "#8338ec", // Button color: bright purple
       "#3a86ff"  // Gold color: bright blue (used as a highlight color here)
+    );
+  } else if (theme === "deep purple") {
+    setThemeProperties(
+      root,
+      "#10002b", // Background color
+      "#240046", // Text color
+      "#9d4edd", // Border color
+      "#c77dff", // Secondary color
+      "#ffdab9", // Button color
+      "#ffdab9"  // Gold color (using same as button)
     );
   } else if (theme === "gradientPink") { // Default theme
     setThemeProperties(

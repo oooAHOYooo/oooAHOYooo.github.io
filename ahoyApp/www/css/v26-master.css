@@ -503,14 +503,15 @@ button:hover {
 }
 
 #songTitle {
-    font-weight: 600;
-    font-size: 1.1em;
+    font-weight: 400;
+    font-size: 1.251em;
 }
 
 #podcast-title {
     text-align: center;
     color: var(--text-color);
-    font-size: .9125em;
+    font-weight: 400;
+    font-size: 1.251em;
     padding: 10px;
     text-transform: capitalize;
     font-family: var(--font-family);
@@ -2051,7 +2052,7 @@ input[type="date"]:focus {
     height: 12.5px;
     border: none;
     border-radius: 50%;
-    background: #ffffff;
+    background: var(--border-color);
     cursor: pointer;
 }
 
