@@ -2056,6 +2056,34 @@ input[type="date"]:focus {
     cursor: pointer;
 }
 
+.play-all-section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.playlist-info {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.playlist-ui {
+    margin-top: 10px;
+}
+
+.playlist-ui ol {
+    list-style-type: decimal;
+    padding-left: 20px;
+}
+
+.active-playlist-item {
+    font-weight: bold;
+    color: #ff0060;
+}
+
 
 .volume-control {
     display: flex;

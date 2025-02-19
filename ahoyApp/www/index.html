@@ -288,6 +288,29 @@
                     </div>
                 </div>
                 <hr>
+                 <!-- Play All Section (uses Alpine.js for reactive playlist UI) -->
+                 <div class="play-all-section" x-data>
+                    <button id="playAllBtn" class="action-button" @click="window.playAllSongs()">
+                      Play Daily Playlist 
+                    </button>
+                    <!-- Display the playlist with Alpine binding -->
+                    <div class="playlist-ui" style="margin-top: 10px;">
+                      <ol>
+                        <template x-for="(song, index) in $store.playlist.songs" :key="index">
+                          <li 
+                            x-text="song.songTitle + ' - ' + song.artist" 
+                            :class="{'active-playlist-item': index === $store.playlist.currentSongIndex}">
+                          </li>
+                        </template>
+                      </ol>
+                    </div>
+                    <!-- Show the number of songs remaining -->
+                    <div class="playlist-info" >
+                      <span x-text="$store.playlist.songs.length - $store.playlist.currentSongIndex"></span>
+                      <span> song(s) remaining</span>
+                    </div>
+                  </div>
+    <hr>
                 <div class="song-list">
                     <div class="table-responsive">
                         <div id="song-sort-buttons"

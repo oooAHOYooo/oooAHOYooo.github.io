@@ -97,13 +97,18 @@ function updateRadioPlayer(index) {
   audioPlayer.src = song.mp3url;
 
   // Reset the progress bar and play button
-  document.getElementById('durationBar').value = 0; // Updated to use durationBar
+  document.getElementById('durationBar').value = 0;
 
-  // Update duration bar max value and reset current value
+  // Update duration bar max value and reset current value when metadata is loaded
   audioPlayer.onloadedmetadata = () => {
     document.getElementById('durationBar').max = audioPlayer.duration;
     document.getElementById('durationBar').value = 0;
   };
+
+  // Update the playlist UI highlight if it exists
+  if (document.getElementById("playlistUI")) {
+    updatePlaylistHighlight(index);
+  }
 
   // Store current song index in local storage
   localStorage.setItem('currentSongIndex', index);
@@ -243,6 +248,12 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     fetchRadioSongs();
   }
+
+  // Register the Play All button event if it exists
+  const playAllBtn = document.getElementById("playAllBtn");
+  if (playAllBtn) {
+    playAllBtn.addEventListener("click", playAllSongs);
+  }
 });
 
 // Function to sort songs based on criteria
@@ -305,3 +316,113 @@ document.getElementById('add15sBtn').addEventListener('click', skipForward15Seco
 
 // Add event listener to toggle button
 document.getElementById('toggleDataSourceBtn').addEventListener('click', toggleDataSource);
+
+// Function to display the playlist UI
+function displayPlaylist(playlist) {
+  if (window.Alpine && Alpine.store('playlist')) {
+    Alpine.store('playlist').setPlaylist(playlist, currentSongIndex);
+  } else {
+    // Fallback if Alpine is not available: update the DOM directly.
+    const playlistUI = document.getElementById("playlistUI");
+    if (!playlistUI) return;
+    playlistUI.innerHTML = "";
+    const listEl = document.createElement("ol");
+    playlist.forEach((song, index) => {
+      const li = document.createElement("li");
+      li.textContent = `${song.songTitle} - ${song.artist}`;
+      li.id = "playlist-item-" + index;
+      listEl.appendChild(li);
+    });
+    playlistUI.appendChild(listEl);
+    updatePlaylistHighlight(currentSongIndex);
+  }
+}
+
+// Function to update the highlighted song in the playlist UI
+function updatePlaylistHighlight(activeIndex) {
+  const playlistUI = document.getElementById("playlistUI");
+  if (!playlistUI) return;
+  const items = playlistUI.querySelectorAll("li");
+  items.forEach((item, index) => {
+    item.classList.toggle("active-playlist-item", index === activeIndex);
+  });
+}
+
+// Function to play all songs in random order and display the playlist UI
+function playAllSongs() {
+  if (!songs || songs.length === 0) {
+    // If songs are not yet loaded, fetch them then try again
+    fetchRadioSongs().then(() => {
+      playAllSongs();
+    });
+    return;
+  }
+  // Compute today's seed based on the date (YYYYMMDD)
+  const todayStr = new Date().toISOString().slice(0,10).replace(/-/g, '');
+  const seed = parseInt(todayStr, 10);
+
+  // Create a shuffled copy using the seeded shuffle so that it's the same for everyone today.
+  let songsCopy = [...songs];
+  seededShuffleArray(songsCopy, seed);
+
+  // Build a playlist long enough for ~1 hour (3600 seconds).
+  // We assume that "duration" exists on a song object in seconds.
+  // If missing, a default of 180 seconds (3 minutes) is used.
+  let playlist = [];
+  let totalDuration = 0;
+  for (let i = 0; i < songsCopy.length; i++) {
+    const duration = songsCopy[i].duration ? parseFloat(songsCopy[i].duration) : 180;
+    if (totalDuration < 3600 || playlist.length === 0) {
+      playlist.push(songsCopy[i]);
+      totalDuration += duration;
+    } else {
+      break;
+    }
+  }
+  // If there were not enough songs to reach 1 hour, you could choose to loop or just use what we have.
+  // For now, we use the accumulated playlist.
+
+  // Update the global songs array to become today's playlist used for "Play All".
+  songs = playlist;
+  currentSongIndex = 0;
+  // Update UI using Alpine store (or fallback DOM)
+  displayPlaylist(songs);
+  updateRadioPlayer(currentSongIndex);
+  document.getElementById("musicAudioPlayer").play();
+}
+
+// Expose playAllSongs globally so Alpine (and your HTML) can call it.
+window.playAllSongs = playAllSongs;
+
+// ----------- SEEDED SHUFFLE UTILS --------------
+// A seeded random generator function: mulberry32
+function mulberry32(a) {
+  return function() {
+    var t = a += 0x6D2B79F5;
+    t = Math.imul(t ^ (t >>> 15), t | 1);
+    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  }
+}
+
+// Shuffle array using a seeded random number generator
+function seededShuffleArray(array, seed) {
+  let random = mulberry32(seed);
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
+// ----------- ALPINE STORE FOR PLAYLIST --------------
+// When Alpine initializes, define a global store called "playlist"
+document.addEventListener('alpine:init', () => {
+  Alpine.store('playlist', {
+    songs: [],
+    currentSongIndex: 0,
+    setPlaylist(newPlaylist, currentIndex) {
+      this.songs = newPlaylist;
+      this.currentSongIndex = currentIndex;
+    }
+  });
+});
