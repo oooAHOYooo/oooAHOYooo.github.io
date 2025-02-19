@@ -22,8 +22,8 @@ async function fetchRadioSongs() {
     const data = await response.json();
     songs = data.songs;
 
-    // Sort songs by the highest id value first
-    songs.sort((a, b) => b.id - a.id);
+    // Randomly shuffle songs as the default order
+    shuffleArray(songs);
 
     // Store songs in local storage
     localStorage.setItem('songs', JSON.stringify(songs));
@@ -235,8 +235,8 @@ document.addEventListener('DOMContentLoaded', () => {
     songs = JSON.parse(storedSongs);
     currentSongIndex = parseInt(localStorage.getItem('currentSongIndex')) || 0;
     
-    // Sort songs by the highest id value first
-    songs.sort((a, b) => b.id - a.id);
+    // Randomly shuffle songs as the default order
+    shuffleArray(songs);
     
     updateRadioPlayer(currentSongIndex);
     populateSongList();

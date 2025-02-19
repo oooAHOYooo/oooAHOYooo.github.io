@@ -84,7 +84,7 @@ function switchTheme(selectedTheme) {
     setThemeProperties(
       root,
       "#10002b", // Background color
-      "#240046", // Text color
+      "#c77dff", // Text color
       "#9d4edd", // Border color
       "#c77dff", // Secondary color
       "#ffdab9", // Button color

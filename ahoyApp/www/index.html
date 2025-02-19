@@ -760,6 +760,7 @@
                 <!-- UPCOMING FEATURES SECTION -->
                 <div id="upcoming-features" class="settings-widget">
                     <h2>Test Upcoming Features</h2>
+                    <br>
                     <button class="action-button"
                         onclick="navigateToTab('community-tab')"><i
                             class="fas fa-users"></i></button>
@@ -772,7 +773,7 @@
                 <hr>
                 <!-- Experimental Features Toggle -->
                 <div id="experimental-features-widget" class="settings-widget">
-                    <p>Enable Experimental Features:</p>
+                    <p style="text-align:center;">Enable Experimental Features:</p>
                     <input type="checkbox" id="experimental-toggle"
                         onclick="toggleExperimentalFeatures()">
                     <label for="experimental-toggle"></label>
@@ -797,21 +798,19 @@
                 </div>
                 <hr>
                 <div id="status-header">
-                    <h1>Changelog</h1>
-                    <div id="build-info">
-                        <p>Current Build: 25_1</p>
-                        <p>Available on: Web, iOS, Android</p>
-                    </div>
-                    <div class="changelog-controls">
+                    <h2>Github Changelog</h2>
+              
+                   
+                </div>
+                <div id="changelog-container">
+                    <!-- Changelog entries will be inserted here by JavaScript -->
+                </div>
+                 <div class="changelog-controls">
                         <button class="action-button"
                             onclick="fetchCommits(1)">Previous</button>
                         <button class="action-button"
                             onclick="fetchCommits(currentPage + 1)">Next</button>
                     </div>
-                </div>
-                <div id="changelog-container">
-                    <!-- Changelog entries will be inserted here by JavaScript -->
-                </div>
                 <a href="https://github.com/oooAHOYooo/oooAHOYooo.github.io"
                     target="_blank">
                     <i class="fab fa-github">
@@ -841,9 +840,8 @@
                     </div>
                 </div>
                 <h1>Account</h1>
-                <p>Manage your account settings and preferences here.</p>
-                <i class="fas fa-user-circle"
-                    style="font-size: 48px; color: white;"></i>
+                <p style="text-align:center;">Manage your account settings and preferences here.</p>
+                
                 <button id="login-button" class="action-button"
                     onclick="window.location.href='login.html'">Login</button>
                 <div id="user-info" style="display: none;"></div>
