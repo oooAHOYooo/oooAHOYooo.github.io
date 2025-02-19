@@ -117,5 +117,25 @@
 
     <!-- END OF CONDITIONAL AND CODE LOGIC -->
     <!-- HOpe you enjoyed this journey -->
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Initialize Firebase Authentication using v10 (ensure configuration consistency)
+      const auth = firebase.auth();
+      
+      // Listen for authentication state changes
+      auth.onAuthStateChanged(user => {
+        const userInfoElement = document.getElementById('user-info');
+        userInfoElement.style.display = 'block';
+        if (user) {
+          // If the user is logged in, show their display name or email
+          userInfoElement.innerText = `Welcome, ${user.displayName || user.email}`;
+        } else {
+          // Alternatively, display a message prompting them to sign in
+          userInfoElement.innerText = "Welcome, please sign in.";
+        }
+      });
+    });
+    </script>
   </body>
 </html>

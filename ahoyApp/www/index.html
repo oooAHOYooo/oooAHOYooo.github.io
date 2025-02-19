@@ -553,8 +553,8 @@
                         <br>
 <h2>Daily, Seeded Playlist Feature:</h2>
                         <p>
-                            When the user clicks the Play All (Random Order) button, the playAllSongs() function runs. It computes a seed from today’s date (in the form YYYYMMDD) and uses that to seed the shuffle so that everyone sees the same order on a given day. It then builds a playlist by accumulating songs until the total duration reaches about one hour.
-When the user clicks the Play All (Random Order) button, the playAllSongs() function runs. It computes a seed from today’s date (in the form YYYYMMDD) and uses that to seed the shuffle so that everyone sees the same order on a given day. It then builds a playlist by accumulating songs until the total duration reaches about one hour.
+                            When the user clicks the Play All (Random Order) button, the playAllSongs() function runs. It computes a seed from today's date (in the form YYYYMMDD) and uses that to seed the shuffle so that everyone sees the same order on a given day. It then builds a playlist by accumulating songs until the total duration reaches about one hour.
+When the user clicks the Play All (Random Order) button, the playAllSongs() function runs. It computes a seed from today's date (in the form YYYYMMDD) and uses that to seed the shuffle so that everyone sees the same order on a given day. It then builds a playlist by accumulating songs until the total duration reaches about one hour.
                         </p>
                     </div>
                 </div>
@@ -588,7 +588,10 @@ When the user clicks the Play All (Random Order) button, the playAllSongs() func
                     style="font-family:'Times New Roman',Times,serif;font-size:24px;text-transform:uppercase;">
                 <hr>
                 <h2 id="calendar-date"></h2>
-             
+                <hr>
+                <div id="user-info"
+                style="display: none; position: fixed; bottom: 10px; right: 10px; background-color: rgba(0, 0, 0, 0.5); color: white; padding: 10px; border-radius: 5px;">
+            </div>
                 <hr>
                 <!-- Welcome Component -->
                 <div class="welcome-container" x-data="userWelcome()" x-init="initUser()">
@@ -1050,7 +1053,6 @@ When the user clicks the Play All (Random Order) button, the playAllSongs() func
             <script src="js/src/super-video-app.js"></script>
 
        
-            <!-- END OF MOOD OVER TIME TAB -->
 
             <script>
             document.addEventListener('DOMContentLoaded', function () {
@@ -1060,34 +1062,40 @@ When the user clicks the Play All (Random Order) button, the playAllSongs() func
                 // Listen for authentication state changes
                 auth.onAuthStateChanged(user => {
                     if (user) {
-                        // User is signed in, display their username or email
+                        // User is signed in, display their name or email
                         const userInfoElement = document.getElementById('user-info');
                         userInfoElement.innerText = `Welcome, ${user.displayName || user.email}`;
-                        userInfoElement.style.display = 'block'; // Ensure the element is visible
+                        userInfoElement.style.display = 'block'; // Make sure it's visible
 
-                        // Display username under the date
-                        const userWelcomeElement = document.getElementById('user-welcome');
-                        userWelcomeElement.innerText = `Hello, ${user.displayName || user.email}`;
-                        userWelcomeElement.style.display = 'block';
-
-                        // Temporarily change the "Front Page News" text
-                        const frontPageNewsElement = document.querySelector('.front-page-news-text');
-                        const originalText = frontPageNewsElement.innerText;
-                        frontPageNewsElement.innerText = `Welcome, ${user.displayName || user.email}`;
-
-                        // Revert back to original text after 5 seconds
-                        setTimeout(() => {
-                            frontPageNewsElement.innerText = originalText;
-                        }, 5000);
+                        // Optionally, update other UI elements if needed...
                     } else {
-                        // User is signed out, display "Welcome Guest" and prompt to sign in
-                        const userWelcomeElement = document.getElementById('user-welcome');
-                        userWelcomeElement.innerText = "Welcome Guest. Not logged in? Sign in.";
-                        userWelcomeElement.style.display = 'block';
+                        // User is signed out, display guest welcome text
+                        const userInfoElement = document.getElementById('user-info');
+                        userInfoElement.innerText = "Welcome Guest. Not logged in? Sign in.";
+                        userInfoElement.style.display = 'block';
                     }
                 });
             });
         </script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+              // Initialize Firebase Authentication using v10 (ensure configuration consistency)
+              const auth = firebase.auth();
+              
+              // Listen for authentication state changes
+              auth.onAuthStateChanged(user => {
+                const userInfoElement = document.getElementById('user-info');
+                userInfoElement.style.display = 'block';
+                if (user) {
+                  // If the user is logged in, show their display name or email
+                  userInfoElement.innerText = `Welcome, ${user.displayName || user.email}`;
+                } else {
+                  // Alternatively, display a message prompting them to sign in
+                  userInfoElement.innerText = "Welcome, please sign in.";
+                }
+              });
+            });
+            </script>
             <script>
             function userWelcome() {
                 return {
@@ -1106,9 +1114,7 @@ When the user clicks the Play All (Random Order) button, the playAllSongs() func
         </script>
             <!-- Video App Script is loaded in js/src/super-video-app.js -->
         </div>
-        <div id="user-info"
-            style="display: none; position: fixed; bottom: 10px; right: 10px; background-color: rgba(0, 0, 0, 0.5); color: white; padding: 10px; border-radius: 5px;">
-        </div>
+ 
     </body>
 
 </html>
