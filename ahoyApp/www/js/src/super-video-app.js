@@ -13,7 +13,7 @@ function videoApp() {
 	  selectedSubCategory: "",
 	  volume: 1.0, // Default volume level
 	  playbackSpeed: 1.0, // Default playback speed
-	  useRemoteSource: true, // New property to toggle between local and remote source
+	  useRemoteSource: false, // New property to toggle between local and remote source
 	  // Computed property: combine videos from several categories
 	  get fullLibrary() {
 		return [
