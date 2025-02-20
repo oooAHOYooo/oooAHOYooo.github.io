@@ -24,6 +24,18 @@
       "name": "Jack Galvin",
       "description": "Jack Galvin is a surfer and filmmaker from Newport, Rhode Island.",
       "thumbnail": "https://storage.googleapis.com/ahoy-podcast-collection/ROB%20EPISODE%2036%20-%20JACK%20GALVIN.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Phil Toran",
+      "description": "Phil Toran, a filmmaker - costar of pal-bot - finally joins his old pal Rob.",
+      "thumbnail": "https://storage.googleapis.com/ahoy-podcast-collection/the%20rob%20show/ROB%20EPISODE%2041%20-%20Phil%20Toran.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Trevon Bennett",
+      "description": "Trevon Bennett, a local musician and songwriter, joins Rob for an engaging conversation in this episode of The Rob Show",
+      "thumbnail": "https://storage.googleapis.com/ahoy-podcast-collection/ROB%20EPISODE%2040%20-%20Trevon%20Bennett.jpg"
     }
   ]
 }

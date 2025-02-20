@@ -58,6 +58,22 @@
       "type": "video/mp4",
       "thumbnail": "https://storage.googleapis.com/ahoy-videos/thumbnails/%5BahoyThumb%5D%5Bfullpart%5D%5BAndrewLeverton%5D%5BFormatility%5D.jpg",
       "category": "Clips"
+    },
+    {
+      "id": 17,
+      "title": "[Tallboyz] - [Dave Gunn]-[30 Days 30 Hotdogs]",
+      "src": "https://storage.googleapis.com/ahoy-videos/clips/%5Btallboyz%5D-%5Bclip%5D-%5BDave%20Gunn%5D-%5B30%20Days%2030%20Hotdogs%5D.mp4",
+      "type": "video/mp4",
+      "thumbnail": "https://storage.googleapis.com/ahoy-videos/thumbnails/%5BahoyThumb%5D%5Bclip%5D%5BTallboyz%5D%5BDave%20Gunn%20-%20Hotdog%20Days%5D.png",
+      "category": "Clips"
+    },
+    {
+      "id": 18,
+      "title": "[Tallboyz] - [Full Part] - [Always Next Time]-[Dave Gunn]",
+      "src": "https://storage.googleapis.com/ahoy-videos/clips/%5Bclips%5D-%5Bfull%20part%5D-%5BAlways%20Next%20Time%5D%20-%20%5BDave%5D.mp4",
+      "type": "video/mp4",
+      "thumbnail": "https://storage.googleapis.com/ahoy-videos/thumbnails/%5BahoyThumb%5D%5Bclips%5D%5BAlways%20Next%20Time%5D%5BDave%20Gunn%5D.jpg",
+      "category": "Clips"
     }
   ],
   "promos": [
