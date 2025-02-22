@@ -4,7 +4,6 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Ahoy Beta Signup</title>
-        <link rel="stylesheet" href="/css/beta.css">
         <script
             src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.0/dist/cdn.min.js"
             defer></script>
@@ -12,67 +11,51 @@
             href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap"
             rel="stylesheet">
     </head>
-    <body>
+    <body style="font-family: 'Barlow', sans-serif; background-color: #f4f4f9; margin: 0; padding: 0;">
 
-        <section class="beta-signup-section" x-data="{ submitted: false }">
-            <img src="images/ahoy-logo-red.png" alt="Ahoy Logo"
-                class="responsive-logo">
-            <h2>Join the Ahoy Beta Program</h2>
-            <p>Sign up to be among the first to experience the Ahoy Indie Media
-                platform and provide valuable feedback.</p>
+        <section class="beta-signup-section" x-data="{ submitted: false }" style="max-width: 600px; margin: 50px auto; background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+            <img src="images/ahoy-logo-red.png" alt="Ahoy Logo" class="responsive-logo" style="width: 150px; display: block; margin: 0 auto 20px;">
+            <h2 style="text-align: center; color: #333;">Join the Ahoy Beta Program</h2>
+            <p style="text-align: center; color: #666;">Sign up to be among the first to experience the Ahoy Indie Media platform and provide valuable feedback.</p>
 
-            <form id="betaSignupForm"
-                action="https://formspree.io/f/mvgganpo" method="POST"
-                x-show="!submitted" @submit.prevent="submitted = true">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name"
-                        placeholder="Your Name" required>
+            <form id="betaSignupForm" action="https://formspree.io/f/mvgganpo" method="POST" x-show="!submitted" @submit.prevent="submitted = true" style="margin-top: 20px;">
+                <div class="form-group" style="margin-bottom: 15px;">
+                    <label for="name" style="display: block; color: #333;">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
                 </div>
 
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email"
-                        placeholder="Your Email" required>
+                <div class="form-group" style="margin-bottom: 15px;">
+                    <label for="email" style="display: block; color: #333;">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Your Email" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
                 </div>
 
-                <div class="form-group">
-                    <label for="platform">Preferred Platform</label>
-                    <select id="platform" name="platform" required>
+                <div class="form-group" style="margin-bottom: 15px;">
+                    <label for="platform" style="display: block; color: #333;">Preferred Platform</label>
+                    <select id="platform" name="platform" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
                         <option value="iOS">iOS (TestFlight)</option>
-                        <option value="Android">Android (Google Play
-                            Beta)</option>
+                        <option value="Android">Android (Google Play Beta)</option>
                         <option value="Web">Web Browser</option>
                     </select>
                 </div>
 
-                <div class="form-group">
-                    <label for="feedback">Additional Comments</label>
-                    <textarea id="feedback" name="feedback"
-                        placeholder="What are you excited about?"
-                        rows="4"></textarea>
+                <div class="form-group" style="margin-bottom: 15px;">
+                    <label for="feedback" style="display: block; color: #333;">Additional Comments</label>
+                    <textarea id="feedback" name="feedback" placeholder="What are you excited about?" rows="4" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;"></textarea>
                 </div>
 
-                <div class="form-group agree-to-terms">
-                    <label>
-                        <p>By joining the Ahoy Beta Test Program, you will gain
-                            early access to the app and commit to providing
-                            valuable feedback to enhance the user experience.
-                            You will receive email notifications with download
-                            links for the latest beta versions of the Ahoy app.
-                            Updates will be sent only when a new version is
-                            available.</p>
+                <div class="form-group agree-to-terms" style="margin-bottom: 15px;">
+                    <label style="color: #333;">
+                        <p>By joining the Ahoy Beta Test Program, you will gain early access to the app and commit to providing valuable feedback to enhance the user experience. You will receive email notifications with download links for the latest beta versions of the Ahoy app. Updates will be sent only when a new version is available.</p>
                     </label>
-                    <input type="checkbox" name="agreement" required>
+                    <input type="checkbox" name="agreement" required style="margin-top: 10px;">
                 </div>
 
-                <button type="submit" class="cta-button">Sign Up</button>
+                <button type="submit" class="cta-button" style="width: 100%; padding: 10px; background-color: #e63946; color: #fff; border: none; border-radius: 4px; cursor: pointer;">Sign Up</button>
             </form>
 
-            <div x-show="submitted" class="thank-you-message">
-                <h3>Thank You!</h3>
-                <p>You’ve successfully signed up for the Ahoy Beta Program.
-                    We’ll be in touch soon!</p>
+            <div x-show="submitted" class="thank-you-message" style="text-align: center; margin-top: 20px;">
+                <h3 style="color: #333;">Thank You!</h3>
+                <p style="color: #666;">You’ve successfully signed up for the Ahoy Beta Program. We’ll be in touch soon!</p>
             </div>
         </section>
 
