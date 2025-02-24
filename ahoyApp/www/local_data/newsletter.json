@@ -471,7 +471,28 @@
     "active": "true",
     "goTo": "media-tab",
     "imageUrl": "https://storage.googleapis.com/ahoy-dynamic-content/news/%5BahoyNewsThumb%5D%5BShowTonight%5D%5B2-22-25%5D.jpg"
-}
+},
+{
+    "date": "2025-02-24",
+    "title": "Ahoy Cabaret Live @ Best Video – Night Recap & Episode Announcement",
+    "imageUrl": "https://storage.googleapis.com/ahoy-dynamic-content/news/ahoyCaba-ep2/%5BAHOY%20CABA%20BTS%20EP2%5D13.jpg",
+    "additionalImages": [
+      "https://storage.googleapis.com/ahoy-dynamic-content/news/ahoyCaba-ep2/%5BAHOY%20CABA%20BTS%20EP2%5D14.jpg",
+      "https://storage.googleapis.com/ahoy-dynamic-content/news/ahoyCaba-ep2/%5BAHOY%20CABA%20BTS%20EP2%5D15.jpg",
+      "https://storage.googleapis.com/ahoy-dynamic-content/news/ahoyCaba-ep2/%5BAHOY%20CABA%20BTS%20EP2%5D16.jpg",
+      "https://storage.googleapis.com/ahoy-dynamic-content/news/ahoyCaba-ep2/%5BAHOY%20CABA%20BTS%20EP2%5D17.jpg",
+      "https://storage.googleapis.com/ahoy-dynamic-content/news/ahoyCaba-ep2/%5BAHOY%20CABA%20BTS%20EP2%5D18.jpg",
+      "https://storage.googleapis.com/ahoy-dynamic-content/news/ahoyCaba-ep2/%5BAHOY%20CABA%20BTS%20EP2%5D19.jpg",
+      "https://storage.googleapis.com/ahoy-dynamic-content/news/ahoyCaba-ep2/%5BAHOY%20CABA%20BTS%20EP2%5D20.jpg",
+      "https://storage.googleapis.com/ahoy-dynamic-content/news/ahoyCaba-ep2/%5BAHOY%20CABA%20BTS%20EP2%5D21.jpg",
+      "https://storage.googleapis.com/ahoy-dynamic-content/news/ahoyCaba-ep2/%5BAHOY%20CABA%20BTS%20EP2%5D22.jpg",
+      "https://storage.googleapis.com/ahoy-dynamic-content/news/ahoyCaba-ep2/%5BAHOY%20CABA%20BTS%20EP2%5D23.jpg",
+      "https://storage.googleapis.com/ahoy-dynamic-content/news/ahoyCaba-ep2/%5BAHOY%20CABA%20BTS%20EP2%5D24.jpg"
+      
+      
+    ],
+    "content": "This past Saturday night - we debuted the Ahoy Cabaret at Best Video - Shout out to everyone who came out and showed love - shout out to the bands and talent- shout out to the hosts Rob Meglio and Josh Sanders - the crew - Chris and Martin - Ellen for running the merch table - and lastly Best Video for hosting us. We are putting together a full episode and an abridged version recap of the night and hope to have that out by the end of the week. Stay tuned - and stay we hope to be back at Best Video soon!"
+  }
   
 
 ]

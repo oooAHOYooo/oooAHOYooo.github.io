@@ -21,19 +21,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 console.log('Fetched JSON data:', newsletterData);
                 const activeData = newsletterData.filter(item => item.active !== "false" && item.active !== false);
                 const sortedData = activeData.sort((a, b) => new Date(b.date) - new Date(a.date));
-                const groupedByMonth = {};
                 let currentPage = 1;
                 const itemsPerPage = 100;
-
-                // Group data by month and year
-                sortedData.forEach(item => {
-                    const date = new Date(item.date);
-                    const monthYear = date.toLocaleString('default', { month: 'long', year: 'numeric' });
-                    if (!groupedByMonth[monthYear]) {
-                        groupedByMonth[monthYear] = [];
-                    }
-                    groupedByMonth[monthYear].push(item);
-                });
 
                 function displayNewsletter(data, append = false) {
                     const newsletterList = document.getElementById('newsletter-list');
@@ -63,8 +52,28 @@ window.addEventListener('DOMContentLoaded', (event) => {
                                     <iframe src="${newsletter.featuredVideoIframe}" width="100%" height="100%" frameborder="0" scrolling="auto" title="${newsletter.title}" style="position:absolute;top:0;left:0;" allowfullscreen></iframe>
                                 </div>
                             `;
-                        } else if (newsletter.imageUrl) {
-                            const linkAction = newsletter.externalLink ? `window.open('${newsletter.externalLink}', '_blank')` : `navigateToTab('${newsletter.goTo}')`;
+                        }
+                        // Check if there are multiple images (gallery)
+                        else if (newsletter.imageUrl && newsletter.additionalImages && newsletter.additionalImages.length > 0) {
+                            // Combine the main image with additional images
+                            const galleryImages = [newsletter.imageUrl, ...newsletter.additionalImages];
+                            htmlContent += `<div class="newsletter-gallery-grid" style="display:flex; flex-wrap:wrap; justify-content:center;">`;
+                            galleryImages.forEach((img, index) => {
+                                htmlContent += `
+                                    <img src="${img}" alt="${newsletter.title} - ${index+1}" 
+                                        class="gallery-thumb lazy-load" 
+                                        data-gallery-index="${index}" 
+                                        data-gallery='${JSON.stringify(galleryImages)}'
+                                        style="cursor:pointer; max-width:30%; margin:5px;">
+                                `;
+                            });
+                            htmlContent += `</div>`;
+                        }
+                        // Else, display a single image
+                        else if (newsletter.imageUrl) {
+                            const linkAction = newsletter.externalLink 
+                                ? `window.open('${newsletter.externalLink}', '_blank')` 
+                                : `navigateToTab('${newsletter.goTo}')`;
                             htmlContent += `
                                 <div class="newsletter-image-container">
                                     <img src="${newsletter.imageUrl}" alt="${newsletter.title}" class="newsletter-image-background">
@@ -73,31 +82,104 @@ window.addEventListener('DOMContentLoaded', (event) => {
                             `;
                         }
 
+                        // Add newsletter content text
                         htmlContent += `<p>${newsletter.content}</p>`;
                         div.innerHTML = htmlContent;
                         newsletterList.appendChild(div);
                     });
 
                     lazyLoadImages(); // Apply lazy loading to the images
+                    initGalleryListeners(); // Initialize gallery click events
                 }
 
-                // Function to apply lazy loading to images using Intersection Observer
+                // Lazy load images using Intersection Observer
                 function lazyLoadImages() {
                     const lazyImages = document.querySelectorAll('.lazy-load');
-
                     const observer = new IntersectionObserver((entries, observer) => {
                         entries.forEach(entry => {
                             if (entry.isIntersecting) {
                                 const image = entry.target;
-                                image.src = image.dataset.src || image.src; // Load image when in view
+                                image.src = image.dataset.src || image.src;
                                 image.classList.remove('lazy-load');
-                                observer.unobserve(image); // Stop observing once image is loaded
+                                observer.unobserve(image);
                             }
                         });
                     });
+                    lazyImages.forEach(image => observer.observe(image));
+                }
 
-                    lazyImages.forEach(image => {
-                        observer.observe(image); // Start observing each lazy-load image
+                // Gallery modal functions
+                function openGalleryModal(galleryImages, startIndex) {
+                    let modal = document.getElementById('gallery-modal');
+                    if (!modal) {
+                        modal = document.createElement('div');
+                        modal.id = 'gallery-modal';
+                        // Basic inline styles for modal
+                        modal.style.position = 'fixed';
+                        modal.style.top = '0';
+                        modal.style.left = '0';
+                        modal.style.width = '100%';
+                        modal.style.height = '100%';
+                        modal.style.backgroundColor = 'rgba(0,0,0,0.8)';
+                        modal.style.display = 'flex';
+                        modal.style.alignItems = 'center';
+                        modal.style.justifyContent = 'center';
+                        modal.style.zIndex = '1000';
+                        modal.innerHTML = `
+                            <span id="modal-close" style="position:absolute;top:20px;right:30px;font-size:30px;color:white;cursor:pointer;">&times;</span>
+                            <img id="modal-image" src="" alt="" style="max-width:90%; max-height:80%;">
+                            <div id="modal-prev" style="position:absolute;left:20px;font-size:30px;color:white;cursor:pointer;">&#10094;</div>
+                            <div id="modal-next" style="position:absolute;right:20px;font-size:30px;color:white;cursor:pointer;">&#10095;</div>
+                        `;
+                        document.body.appendChild(modal);
+
+                        // Close modal event
+                        document.getElementById('modal-close').addEventListener('click', closeGalleryModal);
+                        modal.addEventListener('click', function(e) {
+                            if (e.target === modal) {
+                                closeGalleryModal();
+                            }
+                        });
+                    }
+
+                    let currentIndex = startIndex;
+                    const modalImage = document.getElementById('modal-image');
+                    function updateModalImage() {
+                        modalImage.src = galleryImages[currentIndex];
+                    }
+                    updateModalImage();
+
+                    // Next and Previous navigation
+                    document.getElementById('modal-next').onclick = function(e) {
+                        e.stopPropagation();
+                        currentIndex = (currentIndex + 1) % galleryImages.length;
+                        updateModalImage();
+                    };
+                    document.getElementById('modal-prev').onclick = function(e) {
+                        e.stopPropagation();
+                        currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+                        updateModalImage();
+                    };
+
+                    modal.style.display = 'flex';
+                }
+
+                function closeGalleryModal() {
+                    const modal = document.getElementById('gallery-modal');
+                    if (modal) {
+                        modal.style.display = 'none';
+                    }
+                }
+
+                // Initialize click listeners on gallery thumbnails
+                function initGalleryListeners() {
+                    const galleryThumbs = document.querySelectorAll('.gallery-thumb');
+                    galleryThumbs.forEach(thumb => {
+                        thumb.addEventListener('click', function() {
+                            const galleryImages = JSON.parse(this.getAttribute('data-gallery'));
+                            const index = parseInt(this.getAttribute('data-gallery-index'));
+                            openGalleryModal(galleryImages, index);
+                        });
                     });
                 }
 
@@ -111,17 +193,15 @@ window.addEventListener('DOMContentLoaded', (event) => {
                                 displayNewsletter(sortedData, true); // Load next page and append
                             }
                         }
-                    }, { rootMargin: '0px 0px 200px 0px' }); // Trigger when the user is 200px from the bottom
+                    }, { rootMargin: '0px 0px 200px 0px' });
 
-                    // Attach the observer to the last element in the list
                     observer.observe(document.querySelector('#newsletter-list > .newsletter-item:last-child'));
                 }
 
-                // Function to navigate to a specific tab
+                // Function to navigate to a specific tab (example implementation)
                 function navigateToTab(tabName) {
-                    // Implement the logic to navigate to the specified tab
                     console.log(`Navigating to tab: ${tabName}`);
-                    // Example: window.location.href = `#${tabName}`;
+                    // Implement your tab navigation logic here
                 }
 
                 displayNewsletter(sortedData); // Display the first page of items
