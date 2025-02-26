@@ -13,7 +13,7 @@ function videoApp() {
 	  selectedSubCategory: "",
 	  volume: 1.0, // Default volume level
 	  playbackSpeed: 1.0, // Default playback speed
-	  useRemoteSource: false, // New property to toggle between local and remote source
+	  useRemoteSource: true, // New property to toggle between local and remote source
 	  // Computed property: combine videos from several categories
 	  get fullLibrary() {
 		return [
@@ -23,37 +23,37 @@ function videoApp() {
 		  ...(this.playlists.music || [])
 		];
 	  },
-	  // Computed: For featured playlists (optional seasonal logic)
-	  get featuredPlaylists() {
-		const month = new Date().getMonth();
-		if (month === 11 || month === 0) {
-		  return this.playlists.promos ? this.playlists.promos.slice(0, 2) : [];
-		} else if (month >= 5 && month <= 7) {
-		  return this.playlists.music ? this.playlists.music.slice(0, 2) : [];
-		} else {
-		  return this.playlists.episodes ? this.playlists.episodes.slice(0, 2) : [];
-		}
-	  },
-	  // New computed properties for broadcast
-	  get summerBroadcast() {
-		const summerVideos = (this.playlists.broadcast || []).filter(video => video.season.toLowerCase() === 'summer');
-		// Randomly pick 3 videos from the summer broadcast videos
-		return summerVideos.sort(() => 0.5 - Math.random()).slice(0, 3);
-	  },
-	  get winterBroadcast() {
-		const winterVideos = (this.playlists.broadcast || []).filter(video => video.season.toLowerCase() === 'winter');
-		return winterVideos.sort(() => 0.5 - Math.random()).slice(0, 3);
-	  },
-	  // Choose which seasonal broadcast playlist to use.
-	  // Here we assume summer is May (month 4) through August (month 7)
-	  get currentBroadcastPlaylist() {
-		const month = new Date().getMonth();
-		if (month >= 4 && month <= 7) {
-		  return this.summerBroadcast;
-		} else {
-		  return this.winterBroadcast;
-		}
-	  },
+	  // // Computed: For featured playlists (optional seasonal logic)
+	  // get featuredPlaylists() {
+	  //   const month = new Date().getMonth();
+	  //   if (month === 11 || month === 0) {
+	  //     return this.playlists.promos ? this.playlists.promos.slice(0, 2) : [];
+	  //   } else if (month >= 5 && month <= 7) {
+	  //     return this.playlists.music ? this.playlists.music.slice(0, 2) : [];
+	  //   } else {
+	  //     return this.playlists.episodes ? this.playlists.episodes.slice(0, 2) : [];
+	  //   }
+	  // },
+	  // // New computed properties for broadcast
+	  // get summerBroadcast() {
+	  //   const summerVideos = (this.playlists.broadcast || []).filter(video => video.season.toLowerCase() === 'summer');
+	  //   // Randomly pick 3 videos from the summer broadcast videos
+	  //   return summerVideos.sort(() => 0.5 - Math.random()).slice(0, 3);
+	  // },
+	  // get winterBroadcast() {
+	  //   const winterVideos = (this.playlists.broadcast || []).filter(video => video.season.toLowerCase() === 'winter');
+	  //   return winterVideos.sort(() => 0.5 - Math.random()).slice(0, 3);
+	  // },
+	  // // Choose which seasonal broadcast playlist to use.
+	  // // Here we assume summer is May (month 4) through August (month 7)
+	  // get currentBroadcastPlaylist() {
+	  //   const month = new Date().getMonth();
+	  //   if (month >= 4 && month <= 7) {
+	  //     return this.summerBroadcast;
+	  //   } else {
+	  //     return this.winterBroadcast;
+	  //   }
+	  // },
 	  // Computed: Get the current video from the full library.
 	  get currentVideo() {
 		return this.fullLibrary.find(video => video.id === this.currentVideoId) || {};
