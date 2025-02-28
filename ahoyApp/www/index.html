@@ -96,6 +96,98 @@
         <audio id="musicAudioPlayer"></audio>
         <audio id="podcastAudioPlayer"></audio>
         <div id="tabSortza">
+
+
+<!-- NOW PLAYING WIDGET -->
+<div id="now-playing-widget" class="now-playing-widget">
+    <div class="now-playing-content">
+        <button class="close-button" onclick="toggleNowPlaying()">✖️</button>
+        <div class="album-art"></div>
+        <h2 class="song-title">Glimpse of Us</h2>
+        <p class="artist-name">Joji</p>
+        <div class="controls">
+            <button class="control-button">⏮️</button>
+            <button class="control-button">▶️</button>
+            <button class="control-button">⏭️</button>
+        </div>
+    </div>
+</div>
+<style>
+    .now-playing-widget {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    background-color: #1a1a1a;
+    border-radius: 20px;
+    padding: 20px;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none; /* Initially hidden */
+    z-index: 1000;
+}
+
+.now-playing-content {
+    text-align: center;
+}
+
+.album-art {
+    width: 100px;
+    height: 100px;
+    background-color: #333;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+}
+
+.song-title {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.artist-name {
+    font-size: 14px;
+    color: #aaa;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.control-button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+</style>
+<script>
+    function toggleNowPlaying() {
+    const widget = document.getElementById('now-playing-widget');
+    widget.style.display = widget.style.display === 'none' ? 'block' : 'none';
+}
+
+// Example: Automatically show the widget when a song starts playing
+function showNowPlaying() {
+    const widget = document.getElementById('now-playing-widget');
+    widget.style.display = 'block';
+}
+</script>
+
+
             <!-- MEDIA TAB -->
             <div id="media-tab-a" class="tab-content">
                 <div class="app-header">
