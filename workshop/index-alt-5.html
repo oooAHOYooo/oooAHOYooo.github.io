@@ -71,32 +71,53 @@
       display: flex;
       height: 100vh;
       overflow: hidden;
+      background-color: #549F93; /* Updated to Persian green */
+      color: #E2C2FF; /* Updated to Mauve */
     }
 
-    /* THEMES */
-    :root {
-      /* Flamenco Jimbo Theme */
-      --background-color: #f5f5dc; /* beige */
-      --text-color: #8b4513; /* saddle brown */
-      --border-color: #f4a460; /* sandy brown */
-      --secondary-color: #deb887; /* burlywood */
-      --button-color: #d2b48c; /* tan */
-      --highlight-color: #a0522d; /* sienna */
+    /* Remove specific theme styles and use general styles for all elements */
+    .left-dashboard, .glass-card, .settings-widget, .nav-button, .action-button {
+      background-color: #98ff98; /* Minty pale green background */
+      border-color: #006400; /* Dark green borders for contrast */
+      color: #006400; /* Dark green text for readability */
     }
 
-    body.flamenco {
-      background-color: var(--background-color);
-      color: var(--text-color);
+    .nav-button:hover, .action-button:hover {
+      background-color: #8EEB8E; /* Slightly lighter green for hover state */
     }
 
-    .cream-theme {
-      /* Cream Theme */
-      --background-color: #f5f5dc; /* beige */
-      --text-color: #8b4513; /* saddle brown */
-      --border-color: #f4a460; /* sandy brown */
-      --secondary-color: #deb887; /* burlywood */
-      --button-color: #d2b48c; /* tan */
-      --highlight-color: #a0522d; /* sienna */
+    .nav-button.active, .action-button.active {
+      background-color: #76C776; /* Even darker green for active state */
+      font-weight: bold;
+    }
+
+    /* Additional elements styling */
+    hr, .bordered {
+      border-color: #006400; /* Dark green borders */
+    }
+
+    /* Simplify and unify button and interactive elements styling */
+    .button, .control-button, .remoteControlButton {
+      background-color: #98ff98;
+      color: #006400;
+      border: 1px solid #006400;
+    }
+
+    .button:hover, .control-button:hover, .remoteControlButton:hover {
+      background-color: #8EEB8E;
+    }
+
+    /* Ensure all text inputs and other form elements match the theme */
+    input, select, textarea {
+      background-color: #E6FFE6; /* Very light green for inputs */
+      color: #006400;
+      border: 1px solid #006400;
+    }
+
+    /* Adjust specific widget or card styles */
+    .glass-card, .settings-widget {
+      background-color: #98ff98;
+      backdrop-filter: blur(10px); /* Soften the background slightly */
     }
 
     /* SIDEBAR MENU */
@@ -115,19 +136,19 @@
 
     /* BUTTONS AND INTERACTIVE ELEMENTS */
     .nav-button, .action-button {
+      background-color: #9FAF90; /* Updated to Cambridge blue for a subtle contrast */
+      color: #006400; /* Dark green text for readability */
       border: 1px solid var(--border-color);
-      background-color: var(--button-color);
-      color: var(--text-color);
       padding: 8px; /* Slightly reduced padding */
       font-size: 12px; /* Smaller font size for compactness */
     }
 
     .nav-button:hover, .action-button:hover {
-      background-color: var(--highlight-color);
+      background-color: #8EEB8E; /* Slightly lighter green for hover state */
     }
 
     .nav-button.active {
-      background-color: var(--highlight-color);
+      background-color: #76C776; /* Even darker green for active state */
       font-weight: bold;
     }
 
@@ -195,7 +216,6 @@
       flex: 1;
       overflow-y: auto;
       padding: 20px;
-      background-color: #ffffff;
       position: relative;
     }
     .section-header {
@@ -215,16 +235,12 @@
 
     /* SIMPLE BUTTONS, HEADERS, ETC. */
     .action-button {
-      background-color: #ff0060;
       color: #fff;
       border: none;
       padding: 8px 12px;
       border-radius: 4px;
       margin: 5px 0;
       cursor: pointer;
-    }
-    .action-button:hover {
-      background-color: #d60052;
     }
 
     .sub-text {
@@ -628,7 +644,7 @@
         <div class="left-dashboard">
             <div class="logo-container">
                 <img
-                    src="./img/assets/u_ahoy23.png"
+                    src="./assets/u_ahoy23.png"
                     alt="Ahoy Indie Media Logo"
                     onclick="showTab('news-tab')" />
             </div>
