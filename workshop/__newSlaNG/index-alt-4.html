@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width,initial-scale=1,shrink-to-fit=yes" />
+
+        <!-- Firebase (Core + Firestore + Auth) -->
+        <script
+            src="https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js"></script>
+        <script
+            src="https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js"></script>
+        <script
+            src="https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js"></script>
+
+        <!-- Video.js (JS) -->
+        <script src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
+
+        <!-- Meta & Basic Info -->
+        <meta name="HandheldFriendly" content="true" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="apple-mobile-web-app-title" content="Ahoy Indie Media" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="theme-color" content="#ff0060" />
+
+        <meta
+            name="description"
+            content="Ahoy Indie Media - A hand-crafted media company based out of New Haven, Connecticut. We offer a homegrown alternative to mainstream media consumption." />
+        <meta
+            name="keywords"
+            content="Indie Media, Independent Artists, Indie Music, Podcasts, Indie Games, Digital Market, Indie Creators, Indie Culture, Ahoy Indie Media" />
+        <meta name="robots" content="index, follow" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <meta name="color-scheme" content="light dark" />
+
+        <title>Ahoy Indie Media - Live Indie Music, Spotlights, Filmmakers &
+            More</title>
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
+        <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+        <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
+        <meta
+            http-equiv="Strict-Transport-Security"
+            content="max-age=31536000;includeSubDomains" />
+        <meta http-equiv="X-XSS-Protection" content="1;mode=block" />
+
+        <!-- Fav Icon -->
+        <link rel="icon" type="image/png" href="./img/favicon_ahoy.png" />
+
+        <!-- Google Analytics -->
+        <script async
+            src="https://www.googletagmanager.com/gtag/js?id=G-WVDL9N1HDT"></script>
+        <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag("js", new Date());
+    gtag("config", "G-WVDL9N1HDT");
+  </script>
+
+        <!-- Inline CSS (No External Files) -->
+        <style>
+    /* GLOBAL RESET */
+    * {
+      margin: 0; 
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    body {
+      background-color: #f2f2f2;
+      color: #333;
+      display: flex; /* layout: left sidebar + main content */
+      height: 100vh;
+      overflow: hidden; /* so content won't scroll entire body if you want a fixed layout */
+    }
+
+    /* LEFT DASHBOARD (Sidebar) */
+    .left-dashboard {
+      width: 240px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      border-right: 1px solid rgba(255,255,255,0.3);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 20px 10px 80px; /* extra bottom padding to ensure room for Now Playing */
+      box-shadow: 0px 0px 10px rgba(0,0,0,0.15);
+      position: relative;
+    }
+    .logo-container {
+      width: 100%;
+      margin-bottom: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .logo-container img {
+      max-width: 120px;
+      cursor: pointer;
+    }
+    .nav-section {
+      width: 100%;
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 100px; /* leave space for the Now Playing widget at bottom */
+    }
+    .nav-button {
+      background: rgba(255,255,255,0.2);
+      border: 1px solid rgba(255,255,255,0.3);
+      color: #333;
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+      text-align: left;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+    .nav-button:hover {
+      background: rgba(255,255,255,0.4);
+    }
+    .nav-button.active {
+      background: rgba(255,255,255,0.6);
+      font-weight: bold;
+    }
+
+    /* NOW PLAYING WIDGET IN SIDEBAR */
+    .now-playing-widget {
+      position: absolute;
+      bottom: 20px;
+      left: 10px;
+      right: 10px;
+      background-color: rgba(0,0,0,0.7);
+      border-radius: 8px;
+      padding: 10px;
+      color: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
+    }
+    .now-playing-art {
+      width: 50px; 
+      height: 50px;
+      background-color: #333;
+      border-radius: 4px;
+      flex-shrink: 0;
+      object-fit: cover; 
+    }
+    .now-playing-info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .now-playing-controls {
+      display: flex; 
+      gap: 5px;
+    }
+    .now-playing-controls button {
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 18px;
+      cursor: pointer;
+      padding: 0 5px;
+    }
+    .now-playing-song {
+      font-size: 14px;
+      font-weight: bold;
+    }
+    .now-playing-artist {
+      font-size: 12px;
+      color: #bbb;
+    }
+
+    /* MAIN APP CONTENT */
+    .main-content {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px;
+      background-color: #ffffff;
+      position: relative;
+    }
+    .section-header {
+      margin-bottom: 20px;
+    }
+    hr {
+      margin: 20px 0;
+    }
+
+    /* TAB CONTENTS */
+    .tab-content {
+      display: none; /* hidden by default; we show with JavaScript */
+    }
+    .tab-content.active {
+      display: block;
+    }
+
+    /* SIMPLE BUTTONS, HEADERS, ETC. */
+    .action-button {
+      background-color: #ff0060;
+      color: #fff;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      margin: 5px 0;
+      cursor: pointer;
+    }
+    .action-button:hover {
+      background-color: #d60052;
+    }
+
+    .sub-text {
+      font-size: 14px;
+      color: #666;
+    }
+
+    .app-header {
+      margin-bottom: 10px;
+    }
+
+    /* "GLASS" CARDS */
+    .glass-card {
+      background: rgba(255,255,255,0.3);
+      backdrop-filter: blur(10px);
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    /* MEDIA TAB (Video) */
+    .video-content-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .player-and-library {
+      flex: 1;
+    }
+    .player-section video {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      background: #000;
+    }
+    .library-section {
+      flex: 1;
+      min-width: 300px;
+    }
+    .library-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 10px;
+    }
+    .library-card {
+      background: #eee;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 4px;
+      text-align: center;
+      transition: background-color 0.1s ease;
+    }
+    .library-card:hover {
+      background: #ddd;
+    }
+    .library-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto 5px auto;
+    }
+    .library-list {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .library-list th,
+    .library-list td {
+      border: 1px solid #ccc;
+      padding: 8px;
+    }
+
+    /* Etc. (Keeping your existing styles for other tabs) */
+    /* ... omitted for brevity but keep your original styles for each tab ... */
+  </style>
+
+        <!-- Firebase config -->
+        <script>
+    // Your Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyBq_IQRwkjh2o-jUkS8tI8wcEek5yMIwmo",
+      authDomain: "ahoy-indie-media-da86d.firebaseapp.com",
+      projectId: "ahoy-indie-media-da86d",
+      storageBucket: "ahoy-indie-media-da86d.appspot.com",
+      messagingSenderId: "179901301547",
+      appId: "1:179901301547:web:599159f9efb826f464bb6e",
+    };
+    if (!firebase.apps.length) {
+      firebase.initializeApp(firebaseConfig);
+    }
+  </script>
+    </head>
+
+    <body>
+        <!-- ========== LEFT DASHBOARD ========== -->
+        <div class="left-dashboard">
+
+            <!-- Logo -->
+            <div class="logo-container">
+                <img
+                    src="./img/assets/u_ahoy23.png"
+                    alt="Ahoy Indie Media Logo"
+                    onclick="showTab('news-tab')" />
+            </div>
+
+            <!-- Navigation -->
+            <div class="nav-section">
+                <button class="nav-button" data-tab="news-tab"
+                    onclick="showTab('news-tab')">🏠 News</button>
+                <button class="nav-button" data-tab="media-tab-a"
+                    onclick="showTab('media-tab-a')">📺 Media</button>
+                <button class="nav-button" data-tab="music-tab"
+                    onclick="showTab('music-tab')">🎵 Music</button>
+                <button class="nav-button" data-tab="podcast-tab"
+                    onclick="showTab('podcast-tab')">🎙️ Podcasts</button>
+                <button class="nav-button" data-tab="community-tab"
+                    onclick="showTab('community-tab')">👥 Community</button>
+                <button class="nav-button" data-tab="about-tab"
+                    onclick="showTab('about-tab')">ℹ️ About</button>
+                <button class="nav-button" data-tab="updates-tab"
+                    onclick="showTab('updates-tab')">🚀 Updates</button>
+                <button class="nav-button" data-tab="settings-tab"
+                    onclick="showTab('settings-tab')">⚙️ Settings</button>
+                <button class="nav-button" data-tab="account-tab"
+                    onclick="showTab('account-tab')">👤 Account</button>
+                <button class="nav-button" data-tab="game-tab"
+                    onclick="showTab('game-tab')">🎮 Games</button>
+                <button class="nav-button" data-tab="cast-tab"
+                    onclick="showTab('cast-tab')">📡 Cast</button>
+            </div>
+
+            <!-- NOW PLAYING WIDGET (Inside Sidebar) -->
+            <div id="now-playing-widget" class="now-playing-widget">
+                <img id="npAlbumArt" class="now-playing-art" src
+                    alt="Album Art" />
+                <div class="now-playing-info">
+                    <div id="npSong" class="now-playing-song">No Track</div>
+                    <div id="npArtist" class="now-playing-artist">No
+                        Artist</div>
+                </div>
+                <div class="now-playing-controls">
+                    <button onclick="playPrevious()">⏮️</button>
+                    <button onclick="togglePlayPause()">▶️</button>
+                    <button onclick="playNext()">⏭️</button>
+                </div>
+            </div>
+
+        </div>
+        <!-- END LEFT DASHBOARD -->
+
+        <!-- ========== MAIN CONTENT AREA ========== -->
+        <div class="main-content">
+
+            <!-- 
+      TABS: 
+      For brevity, I'll keep only a few sections. 
+      In your real code, you'll have news-tab, media-tab-a, etc.
+    -->
+
+            <!-- NEWS TAB (Front Page) -->
+            <div id="news-tab" class="tab-content">
+                <div class="app-header">
+                    <h2 class="section-header">Front Page News</h2>
+                </div>
+                <hr />
+                <!-- ... the rest of your News tab content ... -->
+            </div>
+            <!-- END NEWS TAB -->
+
+            <!-- MUSIC TAB -->
+            <div id="music-tab" class="tab-content">
+                <div class="app-header">
+                    <h2 class="section-header">Music Player</h2>
+                </div>
+                <hr />
+                <!-- Example: We'll fetch data from your GCS JSON file here. -->
+                <div class="radio-widget">
+                    <!-- ... music controls as you had before ... -->
+                    <button class="action-button" onclick="loadPlaylist()">Load
+                        Playlist from GCS</button>
+                </div>
+            </div>
+            <!-- END MUSIC TAB -->
+
+            <!-- 
+      Include your other tabs: media-tab-a, podcast-tab, community-tab, 
+      about-tab, updates-tab, etc. 
+      (For brevity, not all are repeated here.)
+    -->
+
+        </div>
+        <!-- END MAIN CONTENT -->
+
+        <!-- ========== SCRIPTS ========== -->
+        <script>
+    /**
+     * showTab(tabId): 
+     *   Hides all .tab-content, shows only the one matching tabId, 
+     *   updates nav buttons to set the "active" class.
+     */
+    function showTab(tabId) {
+      // Hide all tab contents
+      const allTabs = document.querySelectorAll('.tab-content');
+      allTabs.forEach(tab => {
+        tab.style.display = 'none';
+        tab.classList.remove('active');
+      });
+
+      // Remove 'active' from all nav buttons
+      const navButtons = document.querySelectorAll('.nav-button');
+      navButtons.forEach(btn => btn.classList.remove('active'));
+
+      // Show the requested tab
+      const targetTab = document.getElementById(tabId);
+      if (targetTab) {
+        targetTab.style.display = 'block';
+        targetTab.classList.add('active');
+      }
+
+      // Mark the matching nav button as active
+      const matchingBtn = document.querySelector(`.nav-button[data-tab="${tabId}"]`);
+      if (matchingBtn) {
+        matchingBtn.classList.add('active');
+      }
+    }
+
+    // On page load, choose a default tab
+    document.addEventListener('DOMContentLoaded', function() {
+      showTab('music-tab'); // e.g. default to Music tab
+      initFirebaseAuth();
+    });
+
+    /* =============== 
+       Example "Now Playing" Controls 
+       (Adapt as needed for your actual audio logic) 
+    ================ */
+    let currentTrackIndex = 0;
+    let loadedPlaylist = []; // We'll load from JSON
+
+    function playPrevious() {
+      currentTrackIndex = Math.max(0, currentTrackIndex - 1);
+      updateNowPlaying();
+    }
+
+    function playNext() {
+      currentTrackIndex = Math.min(loadedPlaylist.length - 1, currentTrackIndex + 1);
+      updateNowPlaying();
+    }
+
+    function togglePlayPause() {
+      // For your real app, connect to an HTML audio element or player logic
+      alert("Play/Pause toggled (implement your real logic).");
+    }
+
+    function updateNowPlaying() {
+      if (loadedPlaylist.length === 0) {
+        document.getElementById('npSong').textContent = "No Track Loaded";
+        document.getElementById('npArtist').textContent = "No Artist";
+        document.getElementById('npAlbumArt').src = "";
+        return;
+      }
+      const track = loadedPlaylist[currentTrackIndex];
+      document.getElementById('npSong').textContent = track.title || "Unknown";
+      document.getElementById('npArtist').textContent = track.artist || "Unknown";
+      document.getElementById('npAlbumArt').src = track.albumArt || "";
+    }
+
+    /**
+     * loadPlaylist():
+     *   Example of fetching your GCS JSON file (ahoy-playlists.json),
+     *   then storing it in loadedPlaylist. We show the first track in "Now Playing."
+     */
+    function loadPlaylist() {
+      const url = "https://storage.googleapis.com/ahoy-dynamic-content/dynamicJson/ahoy-playlists.json";
+      fetch(url)
+        .then(resp => resp.json())
+        .then(data => {
+          // Suppose data is an array of tracks, or "data.playlist" might be the array, etc.
+          // Adjust to your JSON structure. E.g. data["tracks"] or data[0].songs, etc.
+          // For a simple example, assume data is an array:
+          loadedPlaylist = data; 
+          currentTrackIndex = 0;
+          updateNowPlaying();
+        })
+        .catch(err => {
+          console.error("Error loading playlist from GCS:", err);
+        });
+    }
+
+    /* =============== 
+       Basic Auth 
+    ================ */
+    function initFirebaseAuth() {
+      const auth = firebase.auth();
+      auth.onAuthStateChanged(user => {
+        const userInfoElement = document.getElementById('user-info');
+        const welcomeMessage = document.getElementById('welcome-message');
+        if (userInfoElement) userInfoElement.style.display = 'block';
+
+        if (user) {
+          if (userInfoElement) {
+            userInfoElement.innerText = "Welcome, " + (user.displayName || user.email);
+          }
+          if (welcomeMessage) {
+            welcomeMessage.textContent = "Welcome " + (user.displayName || user.email);
+          }
+        } else {
+          if (userInfoElement) {
+            userInfoElement.innerText = "Welcome, please sign in.";
+          }
+          if (welcomeMessage) {
+            welcomeMessage.textContent = "Welcome Guest";
+          }
+        }
+      });
+    }
+  </script>
+
+        <!-- Your existing scripts below (unchanged) -->
+        <script src="js/src/core.js"></script>
+        <script src="js/src/newsletter.js"></script>
+        <script src="js/src/function-switchTheme.js"></script>
+        <script src="js/src/function_today_date.js"></script>
+        <script src="js/src/super-song.js"></script>
+        <script src="js/src/new-super-pod.js"></script>
+        <script src="js/src/true-toggles.js"></script>
+        <script src="js/src/true-recent.js"></script>
+        <script src="js/src/true-full-recent.js"></script>
+        <script src="js/src/basic-audio-controls.js"></script>
+        <script src="js/src/audio-visualization.js"></script>
+        <script src="js/src/vintageBroadcast.js"></script>
+        <script src="js/src/changelog.js"></script>
+        <script src="js/src/offlineMode.js"></script>
+        <script src="js/src/alumni.js"></script>
+        <script src="js/src/artist-database.js"></script>
+        <script src="js/src/function_clearCacheAndReset.js"></script>
+        <script src="js/src/function-toggle-exp-tabs.js"></script>
+        <script src="js/src/game-puddle.js"></script>
+        <script src="js/src/super-search.js"></script>
+        <script src="js/src/cast.js"></script>
+        <script src="js/src/account-popup-app.js"></script>
+        <script src="js/fire/firebase-config.js" type="module"></script>
+        <script src="js/fire/firestore.js" type="module"></script>
+        <script src="js/src/super-video-app.js"></script>
+    </body>
+</html>

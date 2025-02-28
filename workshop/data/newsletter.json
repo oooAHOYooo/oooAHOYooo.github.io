@@ -1,0 +1,506 @@
+[
+    {
+        "date": "2024-02-12",
+        "title": " New Song : 'Electro' by Corla Reefer",
+        "imageUrl": "https://bandlabimages.azureedge.net/v1.0/users/11a502cc-97ef-45bd-83f0-272b4b2abd79/260x260",
+        "content": "Ready for the release of a song titled 'Electro' by Corla Reefer, marking our 23rd song out of our target launch goal of 1000. Thank you for your continued support along this musical journey.</p>"
+    },
+    {
+        "date": "2024-02-15",
+        "title": "New Rob Show",
+        "content": "Rob Show #18 | My Own Grenade",
+        "imageUrl": "https://ahoypodcast.s3.us-east-2.amazonaws.com/The+Rob+Show+-+Ep18+-+My+Own+Grendade.jpg"
+    },
+    {
+        "date": "2024-02-20",
+        "title": "New Music : My Own Grenade ",
+        "content": "Last week we had My Own Grenade on the Rob Show and fell in love with these folks - they have generously given Ahoy permission to stream their work! We added 6 to the Mix. <br><br> For more of My Own Grenade - here is a brief about them: My Own Grenade is a Connecticut based hard rock/punk band. Founded in 1996, Tim Rooney (vocals), Mike Reid (guitar/vocals), Mike Testa (guitar), Chris Siano (bass), and Buddy Oberheim (drums) are dedicated to writing, recording, and performing original songs. My Own Grenade was voted the #2 punk band in the New Haven area in the 1999 Great Band Slam sponsored by the New Haven Advocate. After releasing our debut CD, Randal's Last Stand, we've been writing new material for our second release due out in summer 2000. Connecticut appearances have included Toad's Place and the Tune Inn (New Haven), the Webster Theater (Hartford), and Shenanigans (Norwalk). We have also played Don Hill's and The Spiral Lounge in New York City. 3 out of 4 fans report that repeated exposure to My Own Grenade increased their listening pleasure. Side effects include hot flashes, sweaty palms, and decreased dancing inhibitions. When used regularly, MOG is proven to cause a ruckus. In August 1998 and June 1999, we performed live on WRIU (90.3 FM), the University of Rhode Island radio station. In 1997, we were selected as finalists in the 'Modern Rock Wars' sponsored by WMRQ (104.1) in Hartford.",
+        "imageUrl": "https://ahoycollection.s3.us-east-2.amazonaws.com/my+own+grenade.jpeg"
+
+    },
+
+    {
+        "date": "2024-03-04",
+        "title": "New Music : S.G Carlson",
+        "imageUrl": "https://ahoycollection.s3.us-east-2.amazonaws.com/SGCarlson-AhoyIndieMedia.png",
+        "content": "Check out the latest track 'How I Got Fat While Living Skinny' by S.G. Carlson.",
+        "songLink": {
+            "id": 30,
+            "playButton": true,
+            "mp3url": "https://ahoycollection.s3.us-east-2.amazonaws.com/S.G.+Carlson+-+How+I+Got+Fat+While+Living+Skinny.mp3",
+            "backgroundImageUrl": "https://ahoycollection.s3.us-east-2.amazonaws.com/SGCarlson-AhoyIndieMedia.png"
+        }
+    },
+    {
+          
+        "date": "2024-03-08",
+        "title": "The Rob Show - Ep 19 - Paul Wildy",
+        "imageUrl": "https://ahoypodcast.s3.us-east-2.amazonaws.com/The+Rob+Show+-+Ep19+-+Paul+Wildy.jpg",
+        "content": "Paul Wildy, a 20+ year cab driver in New Haven, shares his experiences from working on the Carter campaign to witnessing the city's evolution over decades.",
+        "mp3Url": "https://ahoypodcast.s3.us-east-2.amazonaws.com/ready+The+Rob+Show+-+Ep+19+-+Paul+Wildly.mp3",
+        "backgroundImageUrl": "https://ahoycollection.s3.us-east-2.amazonaws.com/SGCarlson-AhoyIndieMedia.png"
+    
+    },
+    {
+          
+        "date": "2024-03-19",
+        "title": "The Rob Show - Ep 20 - Pat Clendenen",
+        "imageUrl": "https://ahoypodcast.s3.us-east-2.amazonaws.com/The+Rob+Show+-+Ep20+-+Pat+Clendenen.jpg",
+        "content": "Pat Clendenen, originally from New Haven, returns after 25 years in Boston. A local lawyer and power lifter, Pat is also venturing into skateboarding.",
+        "mp3Url": "https://ahoypodcast.s3.us-east-2.amazonaws.com/SUPERready+The+Rob+Show+-+Ep+20+-+Pat+Clendenen.mp3"
+    },
+    {
+        "date": "2024-03-20",
+        "title": "New Justin Arena Songs Added",
+        "imageUrl": "https://f4.bcbits.com/img/a3851680380_16.jpg",
+        "content": "Dive into Justin Arena and enjoy some fresh tunes - We've added 3 new songs to the collection - 'Framework', 'Fruit In The Shower', and 'No 1'. ",
+        "mp3Url": "https://ahoycollection.s3.us-east-2.amazonaws.com/Justin+Arena+-+Framework.mp3"
+    },
+    {
+        "date": "2024-04-04",
+        "title": "New Song: 'Moon Views, Know by Feel, Chokecherries' by The Tines",
+        "imageUrl": "https://storage.googleapis.com/ahoy-song-collection/ready_theTinesAlbumArtwork.jpg",
+        "content": "Introducing a new addition to our music collection - 'Moon Views, Know by Feel, Chokecherries' by The Tines."
+    },
+    {
+        "date": "2024-04-05",
+        "title": "New Rob Show: 'Dave Gunn",
+        "imageUrl": "https://storage.googleapis.com/ahoy-podcast-collection/readyThe%20Rob%20Show%20-%20Ep23%20-%20Dave%20Gunn%20-%204.4.24.jpg",
+        "content": "CoFounder of the Tallboyz - Born in Hamden - Pro Rollerblader - Former Hockey Player - Alum of the Rob Show"
+    },
+    {
+        "date": "2024-04-15",
+        "title": "The Rob Show #24 - Ellen Martin",
+        "imageUrl": "https://storage.googleapis.com/ahoy-podcast-collection/The%20Rob%20Show%20-%20Ep24%20-%20Ellen%20Martin.jpg",
+        "content": "Ellen Martin - neuroscientist from the UK, finally makes it on the Rob show!",
+        "mp3Url": "https://storage.googleapis.com/ahoy-podcast-collection/ready%2BThe%20Rob%20Show%20-%20Ep%2024%20-%20Ellen%20Martin.mp3"
+    },
+    {
+        "date": "2024-04-30",
+        "title": "The Rob Show #26 - Dan Carbonella",
+        "imageUrl": "https://storage.googleapis.com/ahoy-podcast-collection/The%20Rob%20Show%20-%20Ep26%20-%20Dan%20Carbonella%20-%204.26.24.jpg",
+        "content": "Dan Carbonella - manager of Koffee? joins the Rob Show - finally",
+        "mp3Url": "https://storage.googleapis.com/ahoy-podcast-collection/readyRobShow_Dan_ep26.mp3"
+    },
+    {
+        "date": "2024-05-10",
+        "title": "The Rob Show #28 - Alex Gonzalez",
+        "imageUrl": "https://storage.googleapis.com/ahoy-podcast-collection/The%20Rob%20Show%20-%20Ep28%20-%20Alex%20Gonzalez%20-%205.10.24.jpg",
+        "content": "Alex Gonzalez - founder of Ahoy - joins the Rob Show",
+        "mp3Url": "https://storage.googleapis.com/ahoy-podcast-collection/ready_The%20Rob%20Show%20-%20Ep28%20-%20Alex%20Gonzalez.mp3"
+    },
+    {
+        "date": "2024-05-23",
+        "title": "The Rob Show #29 - Andrew Leverton",
+        "imageUrl": "https://storage.googleapis.com/ahoy-podcast-collection/Rob%20Show%20-%20Ep29%20-%20Andrew%20Leverton%20-%205.17.24.jpg",
+        "content": "Andrew Leverton - co-captain of the Tallboyz - returns to the Rob Show",
+        "mp3Url": "https://storage.googleapis.com/ahoy-podcast-collection/readyRobShow_Andrew_ep29.mp3"
+    },
+    {
+        "date": "2024-05-25",
+        "title": "New Clips Added",
+        "imageUrl": "https://cdn.jwplayer.com/thumbs/l2o4EqgV-640.jpg",
+        "content": "Dove deep into the archives and added some forgotten gems including when Alex Gonzalez made the news, a Rob Meglio fitness instructional video, and a remastered Samuel Dylan Witch Music Video",
+        "mp3Url": "#"
+    },
+    {
+        "date": "2024-05-26",
+        "title": "Added Folk Punk Dad - Live Performance to the Media Mix",
+        "imageUrl": "https://cdn.jwplayer.com/v2/media/IdqbXxlv/poster.jpg?width=720",
+        "content": "Added the New Haven's Own - Folk Punk Dad - live performance to the media mix",
+        "mp3Url": "#"
+    },
+    {
+        "date": "2024-05-26",
+        "title": "Added a Music Video by Clones of Clarence - directed by Alex Gonzalez to the media mix",
+        "imageUrl": "https://cdn.jwplayer.com/v2/media/S4VUFsmU/poster.jpg?width=720",
+        "content": "Added a Music Video by Clones of Clarence - directed by Alex Gonzalez to the media mix",
+        "mp3Url": "#"
+    },
+    {
+        "date": "2024-06-25",
+        "title": "The 2nd Annual Pig Roast drops July 6th ",
+        "imageUrl": "https://storage.googleapis.com/ahoy-dynamic-content/ahoyPig.png",
+        "content": "We base all Ahoy operations out of South Eastern New England - if you're in 100 mile radius and are a fan of ahoy come and enjoy some authentic cuban pig!",
+        "mp3Url": "#"
+    },
+    {
+        "date": "2024-06-26",
+        "title": "2 New Rob Shows Back to Back ",
+        "imageUrl": "https://storage.googleapis.com/ahoy-dynamic-content/Rob%20Show%202%20News.jpg",
+        "content": "Oy oy - the Rob Show is alive and well and back with two new episodes back to back - these were the episodes Rob recorded when Alex was away in Singapore.",
+        "mp3Url": "#"
+    },
+    {
+        "date": "2024-07-24",
+        "title": "Obsolete Full Length Skate Film Out Now",
+        "content": "<iframe src='https://cdn.jwplayer.com/players/dKiWH9zw-9Gtk2B1J.html' width='100%' height='100%' style='min-height:400px;' frameborder='0' title='tallboyz Obsolete Trailer [2024]'  allowfullscreen></iframe><br>The Tallboyz 5th full length skate film is out now - watch it on <a href='https://www.youtube.com/watch?v=X7555555' class='article-link'>YouTube</a>.<p class='body-text'><b>Featured Skaters:</b> Dave Gunn, Tadd Labozzetta, Josh Weaver, Ian Hutchinson, Nigel Klein, Julian Hinsch, Dave Hartnett, Mark Wojda, Don Sanders, Nick Chongo Sellen, Jay Kouch, Tyler Knight, Brad, Alec Gerhart, Matt Ragone, Brendan Brown, Eric Larson, Rob Dargiewicz, Chapi, Nick Tomanelli, Olivier De Tomas, Marcello Savona, Leon Toppin, Chuck Winfield, Aaron Kalat, Connor Murphy, Jeremy Raff, Bella Sadik, Jay O'Neill & Ed Braxton.</p><p class='body-text'>Watch the trailer <a href='https://cdn.jwplayer.com/previews/dKiWH9zw-9Gtk2B1J' class='article-link'>here</a>. <br><br> Read about them in <a href='https://www.rollernews.com/2024/07/21/obsolete/' class='article-link'>rollernews</a>.</p>"
+    },
+    {
+        "date": "2024-08-20",
+        "title": "Jake Custer - New Music Added",
+        "imageUrl": "https://storage.googleapis.com/ahoy-song-collection/ahoy_jake-custer.jpg",
+        "content": "Added 5 new songs by Jake Custer to the media mix",
+        "mp3Url": "#",
+        "goTo": "#",
+        "active": "true"
+    },
+    {
+        "date": "2024-08-22",
+        "title": "'Alive on Central' Episodes 2-5 Now Streaming",
+        "content": "Added 4 episodes of Alive on Central to the media mix. Shoutout to Jack Galvin out in Newport. He's organizing another film festival this September 9 Central Film Festival If you're in the area, check it out!",
+        "active": "true",
+        "goTo": "media-tab",
+        "imageUrl": "https://cdn.jwplayer.com/v2/media/omiMcvN8/poster.jpg?width=720",
+        "externalLink": "https://www.newportthisweek.com/articles/9-central-film-festival-returns-sept-9/"
+    },
+ 
+    {
+        "date": "2024-08-22",
+        "title": "9 Central Film Festival Festival Shoutout",
+        "content": "9 Central Film Festival If you're in the area, check it out! <br><br>Stay tuned for more Newport",
+        "active": "false",
+        "goTo": "media-tab",
+        "imageUrl": "https://cdn.jwplayer.com/v2/media/VqtV35od/poster.jpg?width=720",
+        "additionalImages": [
+            "https://www.newportthisweek.com/wp-content/uploads/images/2023-08-31/25p1.jpg",
+            "https://www.newportthisweek.com/wp-content/uploads/images/2023-08-31/25p2.jpg"
+        ],
+        "externalLink": "https://www.newportthisweek.com/articles/9-central-film-festival-returns-sept-9/"
+    },
+
+{
+    "date": "2024-09-03",
+    "title": "Emerging from Construction: Exciting Updates Ahead",
+    "content": "Not sure if you noticed but we've been adding  new features to the app left and right - spent the summer in construction mode - but we're almost out - and we're excited to share some new features with you soon - poke around - and enjoy. ",
+    "active": "true",
+    "goTo": "updates-tab",
+    "imageUrl": "https://storage.googleapis.com/ahoy-dynamic-content/news/ahoy-construction.jpg"
+},
+{
+    "date": "2024-09-16",
+    "title": "The Rob Show Returns: New Episodes Every Thursday at 4pm!",
+    "content": "Ahoy, listeners! The Rob Show is back with a bang for a new season! We're happy to announce our commitment to bringing you fresh episodes every Thursday at 4pm, in time to energize that final stretch of the workweek. So gather 'round the water cooler, buckle up with a beevy, and join us every week weekly dose of inspiration and insight from the one and only Rob. The Rob Show is here to make your Thursdays the highlight of your work week!",
+    "active": "true",
+    "goTo": "podcast-tab"
+},
+{
+    "date": "2024-09-19",
+    "title": "The Rob Show Episode 33 with Guest Rob Meglio - Listen Now!",
+    "content": "Exciting news, Ahoy listeners! Today marks the release of The Rob Show Episode 33 featuring the one and only Rob Meglio. Tune in now to catch this special episode and enjoy the engaging conversation and insights. Don't miss out on this week's dose of inspiration and entertainment! <br><br><button onclick=\"navigateToTab('podcast-tab')\" class=\"cta-button\">Go to Podcast</button>",
+    "active": "true",
+    "goTo": "podcast-tab",
+    "imageUrl": "https://storage.googleapis.com/ahoy-podcast-collection/ROB%20SHOW%20-%20FALL%2024%20-%20EP33.jpg"
+},
+{
+    "date": "2024-09-26",
+    "title": "The Rob Show Episode 34 with Jerry Ornelas - Out Now!",
+    "content": "We're back with another episode of The Rob Show! This week, Rob sits down with Jerry Ornelas for an engaging conversation you won't want to miss. Tune in now for some fresh insights and entertaining dialogue. <br><br><button onclick=\"navigateToTab('podcast-tab')\" class=\"cta-button\">Listen Now</button>",
+    "active": "true",
+    "goTo": "podcast-tab",
+    "imageUrl": "https://storage.googleapis.com/ahoy-podcast-collection/ROB%20EPISODE%2034%20-%20JERRY%20ORNELAS.jpg"
+},
+{
+    "date": "2024-10-03",
+    "title": "The Rob Show Episode 35 with Phoebe Kebabian - Listen Now!",
+    "imageUrl": "https://storage.googleapis.com/ahoy-podcast-collection/ROB%20EPISODE%2035%20-%20PHOEBE%20KEBABIAN.jpg",
+    "content": "Exciting news, Ahoy listeners! Today marks the release of The Rob Show Episode 35 featuring Phoebe Kebabian. Join Rob and Phoebe for a candid discussion as she shares her plans of moving to California and her journey as an aspiring actress. Don't miss it. <br><br><button onclick=\"navigateToTab('podcast-tab')\" class=\"cta-button\">Listen Now</button>",
+    "active": "true",
+    "goTo": "podcast-tab"
+},
+{
+    "date": "2024-10-25",
+    "title": "Exciting News: Ahoy Merch Coming Soon!",
+    "imageUrl": "https://storage.googleapis.com/ahoy-dynamic-content/images/bts-merch/Ahoy%20BTS%20MERCH%20-%20FALL%202024%20-%203.jpeg",
+    "content": "Ahoy, fans! We're excited to announce that we're about to launch a merch store! Get ready to grab some exclusive Ahoy gear and show your support in style. We're vinly cutting graphics for shirts, burning cassette tapes, working on prints, and more, which means it will take some time. Our goal is to launch an online store later this year and have a solid merch table for various venues. Check out some behind-the-scenes graphics below for a sneak peek at what's coming.",
+    "active": "true",
+    "goTo": "merch-tab",
+ "additionalImages": [
+
+    "https://storage.googleapis.com/ahoy-dynamic-content/images/bts-merch/Ahoy%20BTS%20MERCH%20-%20FALL%202024%20-%201.jpeg",
+    "https://storage.googleapis.com/ahoy-dynamic-content/images/bts-merch/Ahoy%20BTS%20MERCH%20-%20FALL%202024%20-%202.jpeg",
+    "https://storage.googleapis.com/ahoy-dynamic-content/images/bts-merch/Ahoy%20BTS%20MERCH%20-%20FALL%202024%20-%203.jpeg",
+    "https://storage.googleapis.com/ahoy-dynamic-content/images/bts-merch/Ahoy%20BTS%20MERCH%20-%20FALL%202024%20-%204.jpeg",
+    "https://storage.googleapis.com/ahoy-dynamic-content/images/bts-merch/Ahoy%20BTS%20MERCH%20-%20FALL%202024%20-%205.jpeg",
+    "https://storage.googleapis.com/ahoy-dynamic-content/images/bts-merch/Ahoy%20BTS%20MERCH%20-%20FALL%202024%20-%206.jpeg",
+    "https://storage.googleapis.com/ahoy-dynamic-content/images/bts-merch/Ahoy%20BTS%20MERCH%20-%20FALL%202024%20-%207.jpeg",
+    "https://storage.googleapis.com/ahoy-dynamic-content/images/bts-merch/Ahoy%20BTS%20MERCH%20-%20FALL%202024%20-%208.jpeg",
+    "https://storage.googleapis.com/ahoy-dynamic-content/images/bts-merch/Ahoy%20BTS%20MERCH%20-%20FALL%202024%20-%209.jpeg",
+
+    "https://storage.googleapis.com/ahoy-dynamic-content/images/bts-merch/Ahoy%20BTS%20MERCH%20-%20FALL%202024%20-%2012.jpeg",
+    "https://storage.googleapis.com/ahoy-dynamic-content/images/bts-merch/Ahoy%20BTS%20MERCH%20-%20FALL%202024%20-%2013.jpeg",
+    "https://storage.googleapis.com/ahoy-dynamic-content/images/bts-merch/Ahoy%20BTS%20MERCH%20-%20FALL%202024%20-%2014.jpeg",
+    "https://storage.googleapis.com/ahoy-dynamic-content/images/bts-merch/Ahoy%20BTS%20MERCH%20-%20FALL%202024%20-%2015.jpeg",
+    "https://storage.googleapis.com/ahoy-dynamic-content/images/bts-merch/Ahoy%20BTS%20MERCH%20-%20FALL%202024%20-%2016.jpeg",
+    "https://storage.googleapis.com/ahoy-dynamic-content/images/bts-merch/Ahoy%20BTS%20MERCH%20-%20FALL%202024%20-%2017.jpeg",
+    "https://storage.googleapis.com/ahoy-dynamic-content/images/bts-merch/Ahoy%20BTS%20MERCH%20-%20FALL%202024%20-%2018.jpeg",
+    "https://storage.googleapis.com/ahoy-dynamic-content/images/bts-merch/Ahoy%20BTS%20MERCH%20-%20FALL%202024%20-%2019.jpeg",
+    "https://storage.googleapis.com/ahoy-dynamic-content/images/bts-merch/Ahoy%20BTS%20MERCH%20-%20FALL%202024%20-%2022.jpeg",
+    "https://storage.googleapis.com/ahoy-dynamic-content/images/bts-merch/Ahoy%20BTS%20MERCH%20-%20FALL%202024%20-%2023.jpeg",
+    "https://storage.googleapis.com/ahoy-dynamic-content/images/bts-merch/Ahoy%20BTS%20MERCH%20-%20FALL%202024%20-%2024.jpeg",
+    "https://storage.googleapis.com/ahoy-dynamic-content/images/bts-merch/Ahoy%20BTS%20MERCH%20-%20FALL%202024%20-%2025.jpeg",
+    "https://storage.googleapis.com/ahoy-dynamic-content/images/bts-merch/Ahoy%20BTS%20MERCH%20-%20FALL%202024%20-%2026.jpeg"
+]
+},
+{
+    "date": "2024-10-24",
+    "title": "Ahoy Indie Media: Headed to the App Store!",
+    "imageUrl": "https://storage.googleapis.com/ahoy-dynamic-content/news/AHOY-ART-FALL-2024.jpg",
+    "content": "Ahoy Indie Media is almost ready to hit the App Store! We've made progress since launching, and are now focusing on UI improvements, casting features to work across devices, and more. Stay tuned for updates as we finalize the app for the App Store, and soon you'll be able to enjoy Ahoy anywhere, anytime!"
+},
+
+{
+    "date": "2024-10-28",
+    "title": "The Rob Show #36 - Jack Galvin",
+    "imageUrl": "https://storage.googleapis.com/ahoy-podcast-collection/ROB%20EPISODE%2036%20-%20JACK%20GALVIN.jpg",
+    "content": "New episode of The Rob Show with Jack Galvin, a Newport Rhode Island surfer and filmmaker.",
+    "active": "true",
+    "goTo": "podcast-tab"
+},
+{
+    "date": "2024-10-29",
+    "title": "The Rob Show Alumni are friends ",
+    "imageUrl": "https://storage.googleapis.com/ahoy-dynamic-content/news/Rob%20Show%20Alum%20Wish%20you%20a%20Happy%20Halloween.jpg",
+    "content": "here they are at a Halloween Party",
+    "active": "true",
+    "goTo": "podcast-tab"
+},
+{
+    "date": "2024-11-05",
+    "title": "Rob Show Episode 37 - Kevin McHaon",
+    "imageUrl": "https://storage.googleapis.com/ahoy-dynamic-content/news/ROB%20EPISODE%2037%20-%20Kevin%20McHaon.jpg",
+    "content": "Join us for an exciting episode with Kevin McHaon.",
+    "active": "true",
+    "goTo": "podcast-tab"
+},
+{
+    "date": "2024-11-11",
+    "title": "Experience the nostalgic feel of broadcast TV with our curated indie content : New Feature Coming Soon",
+    "imageUrl": "https://storage.googleapis.com/ahoy-dynamic-content/news/App%20Updates%20v%203_4.png",
+    "content": "Coming soon: Ahoy Broadcast - a broadcast network feature. Content changes 4 times a day to match traditional broadcast schedules: Morning Mix (6am-12pm), Afternoon (12pm-6pm), Evening (6pm-10pm), and Late Night (10pm-6am). Time-based playlists populate curated indie content. We're hoping to create a nostalgic feel of broadcast TV with our curated indie content.",
+    "active": "true",
+    "goTo": "updates-tab"
+  },
+  {
+    "date": "2024-11-12", 
+    "title": "Rob Show Episode 38 - Justin Neafsey",
+    "imageUrl": "https://storage.googleapis.com/ahoy-podcast-collection/ROB%20EPISODE%2038%20-%20Justin%20Neafsey.jpg",
+    "content": "New Rob Show with Justin Neafsey - musician and guitarist from CT",
+    "active": "true",
+    "goTo": "podcast-tab"
+  },
+  {
+    "date": "2024-11-14", 
+    "title": "Major Update: Ahoy Broadcast Beta Now Live!",
+    "imageUrl": "https://storage.googleapis.com/ahoy-dynamic-content/news/AHOY%20BROADCAST%20-%20FEATURE%20ANNOUNCEMENT.jpg",
+    "content": "We've quietly rolled out our biggest update yet - the Ahoy Broadcast feature is now available in Beta! This is our crown jewel, bringing a nostalgic broadcast TV experience to indie content. While still riddled with bugs, this release marks a major milestone and we're now nearly feature complete for the mvp of the app and are ready to move forward with our App Store submission. Stay tuned for a smoother experience as we polish things up!<br><br><div style=\"text-align: center;\"><button onclick=\"navigateToTab('vintage-broadcast-tab')\" class=\"action-button beta-try-button\">Try the Beta Now</button></div>",
+    "active": "true", 
+    "goTo": "vintage-broadcast-tab"
+  },
+  {
+    "date": "2024-11-15",
+    "title": "Now Available: Josh Kebabian Interview",
+    "imageUrl": "https://cdn.jwplayer.com/thumbs/v8JQHACa-1920.jpg", 
+    "content": "We've dug into our archives to bring you our interview with Josh Kebabian, now available on-demand! Check out the conversation in our media section <button onclick=\"navigateToTab('media-tab-a')\" class=\"action-button\"><i class=\"fas fa-image\"></i></button>. This interview has also been added to our broadcast rotation <button onclick=\"navigateToTab('vintage-broadcast-tab')\" class=\"action-button\"><i class=\"fas fa-tv\"></i></button> and will be playing during morning and afternoon hours for the next week. ",
+    "active": "true",
+    "goTo": "vintage-broadcast-tab"
+  },
+  {
+    "date": "2024-11-18",
+    "title": "The Rob Show #39 - Dr. Tyler Rice",
+    "imageUrl": "https://storage.googleapis.com/ahoy-podcast-collection/ROB%20EPISODE%2039%20-%20Dr%20Tyler%20Rice.jpg",
+    "content": "Dr. Tyler Rice joins Rob for an discussion in this episode of The Rob Show.",
+    "active": "true",
+    "goTo": "podcast-tab"
+  },
+  {
+    "date": "2024-11-19",
+    "title": "Rediscovered Track: Spider in Stereo - 'Float'",
+    "imageUrl": "https://storage.googleapis.com/ahoy-song-collection/Spider%20in%20Stereo%20-%20Float.jpg",
+    "content": "We've unearthed an old draft of 'Float' by Spider in Stereo from an old hard drive and have done our best to remaster it. Perhaps one day we'll record it again. Check it out",
+    "active": "true",
+    "goTo": "true-classic-radio"
+},
+{
+    "date": "2024-11-20",
+    "title": "Rediscovered Interview: Sam Carlson",
+    "imageUrl": "https://cdn.jwplayer.com/thumbs/U6zdhV93-1920.jpg",
+    "content": "We've unearthed an exclusive interview with Sam Carlson, originally recorded on January 03, 2023. The conversation is now available on-demand in our media section <button onclick=\"navigateToTab('media-tab-a')\" class=\"action-button\"><i class=\"fas fa-image\"></i></button>. Additionally, it has been added to our broadcast rotation <button onclick=\"navigateToTab('vintage-broadcast-tab')\" class=\"action-button\"><i class=\"fas fa-tv\"></i></button>  and will be airing during afternoon hours for the next week. Don't miss this chance to catch up with Sam Carlson",
+    "active": "true",
+    "goTo": "vintage-broadcast-tab"
+},
+{
+    "date": "2024-11-23",
+    "title": "Thanksgiving Special: Pal-bot 2",
+    "imageUrl": "https://cdn.jwplayer.com/thumbs/7wYLrZIM-1920.jpg",
+    "content": "Celebrate Thanksgiving with us as we present 'Pal-bot 2' on our broadcast channel all day! This annual treat will be available from Thursday to Sunday of Thanksgiving weekend, showcasing exclusive behind-the-scenes content. Tune in to our broadcast network <button onclick=\"navigateToTab('vintage-broadcast-tab')\" class=\"action-button\"><i class=\"fas fa-tv\"></i></button> and enjoy 'Pal-bot 2' throughout the holiday!",
+    "active": "true",
+    "goTo": "vintage-broadcast-tab"
+},
+{
+    "date": "2024-11-28",
+    "title": "Thanksgiving Special: Pal-bot 2",
+    "imageUrl": "https://storage.googleapis.com/ahoy-dynamic-content/news/palbot2-maratahon-thumb.jpg", 
+    "content": " Celebrate Thanksgiving with us as we present 'Pal-bot 2' on our broadcast channel. This annual tradition will be available from Thursday to Sunday of Thanksgiving weekend, showcasing behind-the-scenes content. Tune in via  <button onclick=\"navigateToTab('vintage-broadcast-tab')\" class=\"action-button\"><i class=\"fas fa-tv\"></i></button> and enjoy 'Pal-bot 2' throughout the holiday! - Happy Thanksgiving - from all of us at Ahoy Indie Media",
+    "active": "true",
+    "goTo": "vintage-broadcast-tab"
+},
+{
+    "date": "2024-12-04",
+    "title": "Ahoy Indie Media is Now on Reddit!",
+    "imageUrl": "https://storage.googleapis.com/ahoy-dynamic-content/AHOY%20ON%20REDIT.jpg",
+    "content": "Exciting news, Ahoy fans! We're happy to announce that Ahoy Indie Media is now on Reddit. Join us for exclusive behind-the-scenes content and deep cuts. While we remain committed to not advertising on social media, we wanted a way to connect with our fans and spread news about new content. We believe Reddit is the best platform for this. Follow us to help spread our reach and stay updated on all things Ahoy! <button onclick=\"window.location.href='https://www.reddit.com/r/AhoyIndieMedia/'\" class=\"action-button\"><i class=\"fas fa-reddit\"></i> Follow us on Reddit</button>",
+        "active": "false",
+    "goTo": "https://www.reddit.com/r/AhoyIndieMedia/"
+},
+{
+    "date": "2024-12-05",
+    "title": "Welcome to My Friend..., the newest podcast from Ahoy Indie Media!",
+    "imageUrl": "https://storage.googleapis.com/ahoy-podcast-collection/my-friend/MY%20FRIEND%20-%20Thomas%20King.jpg",
+    "content": "Join your host, Alex Gonzalez, as he invites a friend to dive into the wonderfully mundane, the unexpectedly delightful, and the sometimes downright weird corners of life. Each episode is a cozy conversation designed to spark curiosity and connection.  Check it out now <button onclick=\"navigateToTab('podcast-tab')\" class=\"action-button\"><i class=\"fas fa-podcast\"></i></button>",
+    "active": "true",
+    "goTo": "podcast-tab"
+},
+{
+    "date": "2024-12-11",
+    "title": "Welcome Mintea: New Artist from Trumbull,CT",
+    "imageUrl": "https://storage.googleapis.com/ahoy-dynamic-content/news/mintea.jpg",
+    "content": "We're excited to welcome mintea to our collection! Hailing from Trumbull, CT, mintea brings a unique blend of sci-fi and fairy pop to the mix. We've added three  tracks: '7eleven', 'weird', and 'fairy wings'. Give a listen today! ",
+    "active": "true",
+    "goTo": "true-classic-radio"
+},
+{
+    "date": "2024-12-12",
+    "title": "Upcoming New Show : The Ahoy Cabaret ",
+    "imageUrl": "https://storage.googleapis.com/ahoy-dynamic-content/images/bts-ahoy-caba-ep-1/%5BAHOY%20CABA%20BTS%20EP1%5DWhatsApp%20Image%202024-12-11%20at%2023.35.56.jpeg",
+    "content": "Last night marked an exciting milestone as we filmed our first episode of the Ahoy Cabaret - a new live experience we've been planning for some bit. Last night was a big step - as we successfully filmed our 'live' set - shout out to host Josh Sanders - Guest Pat Clenenen - music act Ellen Martin - and our audience member - Chris Batista - - - Stay tuned - it'll be out soon",
+    "additionalImages": [
+        "https://storage.googleapis.com/ahoy-dynamic-content/images/bts-ahoy-caba-ep-1/%5BAHOY%20CABA%20BTS%20EP1%5DWhatsApp%20Image%202024-12-06%20at%2023.16.37.jpeg",
+        "https://storage.googleapis.com/ahoy-dynamic-content/images/bts-ahoy-caba-ep-1/%5BAHOY%20CABA%20BTS%20EP1%5DWhatsApp%20Image%202024-12-11%20at%2023.36.22.jpeg",
+        "https://storage.googleapis.com/ahoy-dynamic-content/images/bts-ahoy-caba-ep-1/%5BAHOY%20CABA%20BTS%20EP1%5DWhatsApp%20Image%202024-12-11%20at%2023.36.24.jpeg",
+        "https://storage.googleapis.com/ahoy-dynamic-content/images/bts-ahoy-caba-ep-1/%5BAHOY%20CABA%20BTS%20EP1%5DWhatsApp%20Image%202024-12-12%20at%2012.25.38.jpeg",
+        "https://storage.googleapis.com/ahoy-dynamic-content/images/bts-ahoy-caba-ep-1/%5BAHOY%20CABA%20BTS%20EP1%5DWhatsApp%20Image%202024-12-12%20at%2012.25.39.jpeg"
+    ],
+    "active": "true",
+    "goTo": "media-tab"
+},
+{
+    "date": "2024-12-17",
+    "title": "mintea's 'Last Christmas' Music Video Added",
+    "imageUrl": "https://cdn.jwplayer.com/thumbs/0aNgsscy-1920.jpg",
+    "content": "Ahoy is happy to present mintea's cover of 'Last Christmas' by Wham! This rendition, featuring vocals, production, and synth by Abby (Mintea), along with contributions from Hanna, Rachel, Josh, Sammy, Christina (Kiki), and Reed Mayhew, is now available and part of our broadcast rotation and available on demand in our media collection. <br><br> Discover more of mintea's music on <a href='https://mintea.bandcamp.com'>Bandcamp</a>, <a href='https://soundcloud.com/sleepymintea'>SoundCloud</a>, and <a href='https://www.instagram.com/sleepymintea'>Instagram</a>.",
+    "active": "true",
+    "goTo": "media-tab",
+    "featuredVideo": "0aNgsscy",
+    "featuredVideoIframe": "https://cdn.jwplayer.com/players/0aNgsscy-9Gtk2B1J.html"
+},
+
+{
+    "date": "2024-12-18",
+    "title": "Ahoy Cabaret: Episode 1 – A Holiday Spectacular",
+    "content": "Step into the spotlight with the inaugural episode of Ahoy Cabaret, a live variety show filmed in East Haven, CT. Hosted by Josh Sanders, this evening features a musical performance by Ellen Martin, a special guest appearance by Pat Clendenen, and the ever-enthusiastic Chris Batista cheering on from the audience. Produced by Alex Gonzalez, this is just the beginning of a series celebrating creativity, community, and the magic of live entertainment.",
+    "active": "true",
+    "goTo": "media-tab",
+    "featuredVideo": "S2HBPCJc",
+    "featuredVideoIframe": "https://cdn.jwplayer.com/players/S2HBPCJc-9Gtk2B1J.html"
+},
+
+    {
+        "date": "2025-01-02",
+        "title": "The Rob Show #40 - Trevon Bennett",
+        "imageUrl": "https://storage.googleapis.com/ahoy-podcast-collection/ROB%20EPISODE%2040%20-%20Trevon%20Bennett.jpg",
+        "content": "Join us for an engaging conversation with Trevon Bennett in Episode 40 of The Rob Show. ",
+        "mp3Url": "https://storage.googleapis.com/ahoy-podcast-collection/The%20Rob%20Show%20-%20Episode%2040%20-%20Trevon%20-%20Ready%20-%201.mp3",
+        "active": "true",
+    "goTo": "podcast-tab"
+},
+
+{
+    "date": "2025-01-07",
+    "title": "The Rob Show #41 - Phil Toran",
+    "imageUrl": "https://storage.googleapis.com/ahoy-podcast-collection/the%20rob%20show/ROB%20EPISODE%2041%20-%20Phil%20Toran.jpg",
+    "content": "Phil Toran, a filmmaker - costar of pal-bot - finally joins his old pal Rob. This one is a bit longer but for the fans.",
+    "active": "true",
+"goTo": "podcast-tab"
+
+},
+{
+    "date": "2025-01-24",
+    "title": "Exciting New Features!",
+    "imageUrl": "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmgwYXlzOWlpNHJrbjBhbGh0cWNrczhocWd1amQ1cm9iYTJsMHh3eSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/g6ZV7HQir5WdRMePor/giphy.gif",
+    "content": "We're thrilled to announce a host of new features - some here - some on the way soon. If you give the app a gander - you might have noticed that we now have a top bar - which has our little logo - a display indictating what page you are on - and a little icon of a user - click that baby and you'll see a little popup with basic username funcationality. As you know - this sugar is hard nerdy business making sure all the code works right - but rest assured we are commited and stubborn - - the code will come. In other news, we have decided to partner with Square - to handle all credit card stuff because truth be told - do not want to deal with the burden of security. Anyway - all this to say - the goal is to create a personalized user experience with username support - and the ability to quickly login - and get merch - and support artists one wants to support. - - In other other news, we have also created a new word game - Puddle -  If you want to give it a spin - feel free to turn on the experimental app found in the settings tab. There you will find upcoming and experimental features, ideas and apps - That's all for now folks!  Soon, you'll be able to sign up for Ahoy, which will be the best way to stay connected and get locked in. Stay tuned",
+    "active": "true",
+    "goTo": "settings-tab"
+},
+{
+    "date": "2025-02-02",
+    "title": "6 more weeks of winter",
+    "imageUrl": "https://storage.googleapis.com/ahoy-dynamic-content/news/Ahoy%20-%20Happy%20Groundhog.jpg",
+    "content": "Happy Groundhog Day! Did you know that Groundhog Day is celebrated every year on February 2nd? According to tradition, if a groundhog sees its shadow, there will be six more weeks of winter. If it doesn't, spring will arrive early. The most famous groundhog, Punxsutawney Phil, has been predicting the weather since 1887 and he has - in fact - predicted - 6 more weeks of winter. To everyone celebrating publically - or privately - we hope you have a great groundhog day from our family to yours.",
+    "active": "true",
+    "goTo": "vintage-broadcast-tab"
+},
+{
+    "date": "2025-02-03",
+    "title": "Breaking News: Ahoy Cabaret Live @ Best Video!",
+    "videoUrl": "https://storage.googleapis.com/ahoy-videos/promos/%5BahoyCaba%5D%5BPromo%5D%5BCABARET%20FLIERS%20-%20D001%5D-%5Bep2%5D.mov",
+    "content": "<video width='320' height='240' controls poster='https://storage.googleapis.com/ahoy-videos/promos/%5Bthumbnail%5D%5BahoyCaba%5D%5BROB%20HANGING%20POSTER%20-%20Thumb%201%5D.jpg'><source src='https://storage.googleapis.com/ahoy-videos/promos/%5BahoyCaba%5D%5BPromo%5D%5BCABARET%20FLIERS%20-%20D001%5D-%5Bep2%5D.mov' type='video/mp4'>Your browser does not support the video tag.</video><div><img src='https://storage.googleapis.com/ahoy-dynamic-content/news/%5BahoyCaba%5D%5Bpromo%5D%5B2-22%20-%20Full%20Color%5D-%5B001%5D.jpg' alt='Event Flyer' style='width:100%;max-width:320px;'></div><p> We're going to be filming our pilot episode of the Ahoy Cabaret - an hour long variety show featuring local musical guests - talent - and host Rob Meglio - Doors open at 7 - showtime at 7:45p - - seating is first come first serve - $10 suggest donation - Merch Table on deck - after party guarenteed - stay tuned and spread the word!</p><div><a class='news-add-cal-btn' href='https://www.google.com/calendar/render?action=TEMPLATE&text=Ahoy+Cabaret+Live+at+Best+Video&dates=20250222T190000Z/20250222T214500Z&details=Join+us+for+the+pilot+episode+of+the+Ahoy+Cabaret+at+Best+Video.+Enjoy+an+hour-long+variety+show+featuring+local+musical+guests,+talent,+and+host+Rob+Meglio.+Doors+open+for+food,+drink,+and+mingling+at+7+PM,+showtime+at+7:45+PM.+Seating+is+first+come,+first+serve.+$10+suggested+donation.+Merch+Table+available.+After+party+guaranteed!&location=Best+Video,+New+Haven,+CT' target='_blank'>Add to Google Calendar</a></div>",
+    "active": "true",
+    "goTo": "media-tab"
+  },
+  {
+    "date": "2025-02-09",
+    "title": "Merch Update: Ahoy Cabaret",
+    "videoUrl": "",
+    "imageUrl": "https://storage.googleapis.com/ahoy-dynamic-content/news/newsletter%20-%20merch%20updates%20-%20Feb.jpg",
+    "content": "We've been having fun making merch for the cabaret. We're trying our hand at a few new things - like a t shirt(s) - a mini zine - magnets - and a few other things. Stay tuned for updates, and don’t forget to check out the merch in person at the Cabaret on 2.22.25!",
+    "active": "true",
+    "goTo": "podcast-tab"
+},
+{
+    "date": "2025-02-18",
+    "title": "Ahoy Cabaret - Best Video Update - 4 days to go!",
+    "content": "<video width='320' height='240' controls poster='https://storage.googleapis.com/ahoy-videos/thumbnails/%5BahoyThumb%5D%5BPROMO%5D%5BAhoy%20Cabaret%5D%5BBV%20Update%5D.jpg'><source src='https://storage.googleapis.com/ahoy-videos/promos/%5Bpromo%5D%5BahoyCaba%5D%5BRob%20BV%20Update-T3%5D.mov' type='video/mp4'>Your browser does not support the video tag.</video><div><img src='https://storage.googleapis.com/ahoy-dynamic-content/news/%5BahoyCaba%5D%5Bpromo%5D%5B2-22%20-%20Full%20Color%5D-%5B001%5D.jpg' alt='Event Flyer' style='width:100%;max-width:320px;'></div><p> We are almost set for Best Video this weekend! Check out this behind the scenes recap of our crew preparing for the big show.</p><div><a class='news-add-cal-btn' href='https://www.google.com/calendar/render?action=TEMPLATE&text=Ahoy+Cabaret+Live+at+Best+Video&dates=20250222T190000Z/20250222T214500Z&details=Join+us+for+the+pilot+episode+of+the+Ahoy+Cabaret+at+Best+Video.+Enjoy+an+hour-long+variety+show+featuring+local+musical+guests,+talent,+and+host+Rob+Meglio.+Doors+open+for+food,+drink,+and+mingling+at+7+PM,+showtime+at+7:45+PM.+Seating+is+first+come,+first+serve.+$10+suggested+donation.+Merch+Table+available.+After+party+guaranteed!&location=Best+Video,+New+Haven,+CT' target='_blank'>Add to Google Calendar</a></div>",
+    "active": "true",
+    "goTo": "media-tab"
+},
+{
+    "date": "2025-02-22",
+    "title": "Tonight's the Night!",
+    "content": "Last night the dress rehearsal went well and we are ready for tonight! The Ahoy Cabaret is live at Best Video! Join us for an hour-long variety show featuring local musical guests, talent, and host Rob Meglio. Doors open for food, drink, and mingling at 7 PM, showtime at 7:45 PM. Seating is first come, first serve. $10 suggested donation. Merch Table available. After party guaranteed!",
+    "active": "true",
+    "goTo": "media-tab",
+    "imageUrl": "https://storage.googleapis.com/ahoy-dynamic-content/news/%5BahoyNewsThumb%5D%5BShowTonight%5D%5B2-22-25%5D.jpg"
+},
+{
+    "date": "2025-02-24",
+    "title": "Ahoy Cabaret Live @ Best Video – Night Recap & Episode Announcement",
+    "imageUrl": "https://storage.googleapis.com/ahoy-dynamic-content/news/ahoyCaba-ep2/%5BAHOY%20CABA%20BTS%20EP2%5D13.jpg",
+    "additionalImages": [
+      "https://storage.googleapis.com/ahoy-dynamic-content/news/ahoyCaba-ep2/%5BAHOY%20CABA%20BTS%20EP2%5D14.jpg",
+      "https://storage.googleapis.com/ahoy-dynamic-content/news/ahoyCaba-ep2/%5BAHOY%20CABA%20BTS%20EP2%5D15.jpg",
+      "https://storage.googleapis.com/ahoy-dynamic-content/news/ahoyCaba-ep2/%5BAHOY%20CABA%20BTS%20EP2%5D16.jpg",
+      "https://storage.googleapis.com/ahoy-dynamic-content/news/ahoyCaba-ep2/%5BAHOY%20CABA%20BTS%20EP2%5D17.jpg",
+      "https://storage.googleapis.com/ahoy-dynamic-content/news/ahoyCaba-ep2/%5BAHOY%20CABA%20BTS%20EP2%5D18.jpg",
+      "https://storage.googleapis.com/ahoy-dynamic-content/news/ahoyCaba-ep2/%5BAHOY%20CABA%20BTS%20EP2%5D19.jpg",
+      "https://storage.googleapis.com/ahoy-dynamic-content/news/ahoyCaba-ep2/%5BAHOY%20CABA%20BTS%20EP2%5D20.jpg",
+      "https://storage.googleapis.com/ahoy-dynamic-content/news/ahoyCaba-ep2/%5BAHOY%20CABA%20BTS%20EP2%5D21.jpg",
+      "https://storage.googleapis.com/ahoy-dynamic-content/news/ahoyCaba-ep2/%5BAHOY%20CABA%20BTS%20EP2%5D22.jpg",
+      "https://storage.googleapis.com/ahoy-dynamic-content/news/ahoyCaba-ep2/%5BAHOY%20CABA%20BTS%20EP2%5D23.jpg",
+      "https://storage.googleapis.com/ahoy-dynamic-content/news/ahoyCaba-ep2/%5BAHOY%20CABA%20BTS%20EP2%5D24.jpg"
+      
+      
+    ],
+    "content": "This past Saturday night - we debuted the Ahoy Cabaret at Best Video - Shout out to everyone who came out and showed love - shout out to the bands and talent- shout out to the hosts Rob Meglio and Josh Sanders - the crew - Chris and Martin - Ellen for running the merch table - and lastly Best Video for hosting us. We are putting together a full episode and an abridged version recap of the night and hope to have that out by the end of the week. Stay tuned - and stay we hope to be back at Best Video soon!"
+  },
+  {
+    "date": "2025-02-25",
+    "title": "Lost Tapes Recovered: The Coulter Davis Interview",
+    "imageUrl": "https://storage.googleapis.com/ahoy-videos/thumbnails/%5BahoyThumb%5D%5Bepisodes%5D%5BRob%20Show%20-%20Lost%20Interview%20with%20Coulter%20Davis%5D.jpg",
+    "content": "We have recovered a lost tape from the vaults - an interview with the classic New Havener, Coulter Davis known for his work with the bands Clones of Clarence and Fella Gazelle. Though Coulter has long left us for Seattle - his impact on the havens will live on.",
+    "active": "true",
+    "goTo": "media-tab"
+  }
+  
+
+]

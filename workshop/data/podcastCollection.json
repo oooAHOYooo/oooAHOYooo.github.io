@@ -1,0 +1,241 @@
+{
+  "podcasts": [
+    {
+      "id": 32,
+      "title": "The Rob Show #41 - Phil Toran",
+      "description": "Phil Toran, a filmmaker - costar of pal-bot - finally joins his old pal Rob.",
+      "date": "2025-01-07",
+      "active": true,
+      "mp3url": "https://storage.googleapis.com/ahoy-podcast-collection/the%20rob%20show/Rob%20Show%20-%20Ep41%20-%20Phil-Toran-UNCUT.mp3", 
+      "thumbnail": "https://storage.googleapis.com/ahoy-podcast-collection/the%20rob%20show/ROB%20EPISODE%2041%20-%20Phil%20Toran.jpg" 
+    },
+    {
+      "id": 31,
+      "title": "The Rob Show #40 - Trevon Bennett",
+      "description": "Trevon Bennett, a local musician and songwriter, joins Rob for an engaging conversation in this episode of The Rob Show",
+      "date": "2025-01-02",
+      "active": true,
+      "mp3url": "https://storage.googleapis.com/ahoy-podcast-collection/The%20Rob%20Show%20-%20Episode%2040%20-%20Trevon%20-%20Ready%20-%201.mp3", 
+      "thumbnail": "https://storage.googleapis.com/ahoy-podcast-collection/ROB%20EPISODE%2040%20-%20Trevon%20Bennett.jpg" 
+    },
+    
+    
+    {
+      "id": 30,
+      "title": "My Friend #001 - Thomas King",
+      "description": "Join your host, Alex Gonzalez, as he invites Thomas King to dive into the wonderfully mundane, the unexpectedly delightful, and the sometimes downright weird corners of life.",
+      "date": "2024-12-06",
+      "active": true,
+      "mp3url": "https://storage.googleapis.com/ahoy-podcast-collection/my-friend/podcast_myFriend_ep1_thomasKing.mp3", 
+      "thumbnail": "https://storage.googleapis.com/ahoy-podcast-collection/my-friend/MY%20FRIEND%20-%20Thomas%20King.jpg" 
+    },
+    {
+      "id": 28,
+      "title": "The Rob Show #39 - Dr. Tyler Rice",
+      "description": "Dr. Tyler Rice joins Rob for an insightful discussion in this episode of The Rob Show.",
+      "date": "2024-11-18",
+      "active": true,
+      "mp3url": "https://storage.googleapis.com/ahoy-podcast-collection/The%20Rob%20Show%20-%20Fall%202024%20-%20Ep%2039%20-%20Tyler%20Rice.mp3",
+      "thumbnail": "https://storage.googleapis.com/ahoy-podcast-collection/ROB%20EPISODE%2039%20-%20Dr%20Tyler%20Rice.jpg"
+    },
+    {
+      "id": 27,
+      "title": "The Rob Show #38 - Justin Neafsey",
+      "description": "Justin Neafsey, a musician and guitarist from CT, joins Rob for an engaging conversation in this episode of The Rob Show",
+      "date": "2024-11-12",
+      "active": true,
+      "mp3url": "https://storage.googleapis.com/ahoy-podcast-collection/The%20Rob%20Show%20-%20Episode%2038%20-%20Justin%20Neafsey%20.mp3",
+      "thumbnail": "https://storage.googleapis.com/ahoy-podcast-collection/ROB%20EPISODE%2038%20-%20Justin%20Neafsey.jpg"
+    },
+    {
+      "id": 26,
+      "title": "The Rob Show #37 - Kevin McHahon",
+      "description": "Kevin McHahon, a local musician and songwriter, joins Rob for an engaging conversation in this episode of The Rob Show",
+      "date": "2024-11-05", 
+      "active": true,
+      "mp3url": "https://storage.googleapis.com/ahoy-podcast-collection/ep37_kevin_The%20Rob%20Show%20-%20Fall%202024.mp3",
+      "thumbnail": "https://storage.googleapis.com/ahoy-podcast-collection/ROB%20EPISODE%2037%20-%20Kevin%20McHaon.jpg"
+    },
+    {
+      "id": 25,
+      "title": "The Rob Show #36 - Jack Galvin",
+      "description": "Jack Galvin, a Newport Rhode Island surfer and filmmaker.",
+      "date": "2024-10-28",
+      "active": true,
+      "mp3url": "https://storage.googleapis.com/ahoy-podcast-collection/ready-rs-ep36-jackgalvin.mp3",
+      "thumbnail": "https://storage.googleapis.com/ahoy-podcast-collection/ROB%20EPISODE%2036%20-%20JACK%20GALVIN.jpg"
+    },
+    {
+      "id": 24,
+      "title": "The Rob Show #35 - Phoebe Kebabian",
+      "description": "Phoebe Kebabian, an aspiring actress who plans on leaving for California, joins Rob for an insightful discussion in this episode of The Rob Show",
+      "date": "2024-10-03",
+      "active": false,
+      "mp3url": "https://storage.googleapis.com/ahoy-podcast-collection/ready_episode_35_Phoebe_Kebabian_The%20Rob%20Show%20-%20Fall%202024.mp3",
+      "thumbnail": "https://storage.googleapis.com/ahoy-podcast-collection/ROB%20EPISODE%2035%20-%20PHOEBE%20KEBABIAN.jpg"
+    },
+    {
+      "id": 23,
+      "title": "The Rob Show #34 - Jerry Ornelas",
+      "description": "Jerry Ornelas joins Rob for an engaging conversation in this episode of The Rob Show",
+      "date": "2024-09-26",
+      "active": false,
+      "mp3url": "https://storage.googleapis.com/ahoy-podcast-collection/ready-ep34-Jerry-The%20Rob%20Show%20-%20Fall%202024.mp3",
+      "thumbnail": "https://storage.googleapis.com/ahoy-podcast-collection/ROB%20EPISODE%2034%20-%20JERRY%20ORNELAS.jpg"
+    },
+    {
+      "id": 22,
+      "title": "The Rob Show #33 - Rob Meglio",
+      "description": "Rob Meglio is an actor, writer, and comedian - he's been in a few movies - and he's a regular on the New Haven scene",
+      "date": "2024-06-26",
+      "active": false,
+      "mp3url": "https://storage.googleapis.com/ahoy-podcast-collection/ready-The%20Rob%20Show%20-%20Episode%2033%20-%20Rob%20Meglio%20-%20Fall%202024.mp3",
+      "thumbnail": "https://storage.googleapis.com/ahoy-podcast-collection/ROB%20SHOW%20-%20FALL%202024%20-%20EP33.jpg"
+    },
+    {
+      "id": 21,
+      "title": "The Rob Show #32 - Tom Berry III",
+      "description": "####",
+      "date": "2024-06-26",
+      "mp3url": "https://storage.googleapis.com/ahoy-podcast-collection/ready_RobShow_Berry_ep32.mp3",
+      "thumbnail": "https://storage.googleapis.com/ahoy-podcast-collection/Rob%20Show%20-%20Ep%2032%20-%20Tom%20Berry%20III.jpg"
+    },
+    {
+      "id": 20,
+      "title": "The Rob Show #31 - Casey Delbasso",
+      "description": "####",
+      "date": "2024-06-26",
+      "mp3url": "https://storage.googleapis.com/ahoy-podcast-collection/ready_RobShow_CaseyDelbasso_ep31.mp3",
+      "thumbnail": "https://storage.googleapis.com/ahoy-podcast-collection/Rob%20Show%20-%20Ep%2031%20-%20Casey%20Delbasso.jpg"
+    },
+    {
+      "id": 19,
+      "title": "The Rob Show #30 - Kyle Middleton",
+      "description": "Kyle Middleton is a graphic designer from CT",
+      "date": "2024-05-30",
+      "mp3url": "https://storage.googleapis.com/ahoy-podcast-collection/ready%20The%20Rob%20Show%20-%20Ep%2030%20-%20Kyle.mp3",
+      "thumbnail": "https://storage.googleapis.com/ahoy-podcast-collection/Rob%20Show%20-%20Ep%2030%20-%20Kyle%20Middleton.jpg"
+    },
+    {
+      "id": 18,
+      "title": "The Rob Show #29 - Andrew Leverton",
+      "description": "Andrew, co-captain of the Tallboyz, is back on the Rob Show - talking shop about everything including the new Tallboyz video premiere",
+      "date": "2024-05-23",
+      "mp3url": "https://storage.googleapis.com/ahoy-podcast-collection/readyRobShow_Andrew_ep29.mp3",
+      "thumbnail": "https://storage.googleapis.com/ahoy-podcast-collection/Rob%20Show%20-%20Ep29%20-%20Andrew%20Leverton%20-%205.17.24.jpg"
+    },
+    {
+      "id": 17,
+      "title": "The Rob Show #28 - Alex Gonzalez",
+      "description": "Alex founder of Ahoy - talks to Rob about behind the scenes - friendships with the Tallboyz and future Willy Wonka type plans",
+      "date": "2024-05-10",
+      "mp3url": "https://storage.googleapis.com/ahoy-podcast-collection/ready_The%20Rob%20Show%20-%20Ep28%20-%20Alex%20Gonzalez.mp3",
+      "thumbnail": "https://storage.googleapis.com/ahoy-podcast-collection/The%20Rob%20Show%20-%20Ep28%20-%20Alex%20Gonzalez%20-%205.10.24.jpg"
+    },
+    {
+      "id": 16,
+      "title": "The Rob Show #27 - Dave Gunn + Tyler Mirando",
+      "description": "Tallboyz OG's Tyler and Dave join Rob in a remastered Rob Show Classic -  Originally recorded May 2023",
+      "date": "2024-05-08",
+      "mp3url": "https://storage.googleapis.com/ahoy-podcast-collection/ready_RobShow_classic_Dave_Tyler_Ep27.mp3",
+      "thumbnail": "https://storage.googleapis.com/ahoy-podcast-collection/The%20Rob%20Show%20-%20Ep27%20-%20Remastered%20Classic%20-5.08.24.jpg"
+    },
+    {
+      "id": 15,
+      "title": "The Rob Show #26 - Dan Carbonella",
+      "description": "Dan Carbonella, Manager of Koffee? finally joins the Rob Show",
+      "date": "2024-04-29",
+      "mp3url": "https://storage.googleapis.com/ahoy-podcast-collection/readyRobShow_Dan_ep26.mp3",
+      "thumbnail": "https://storage.googleapis.com/ahoy-podcast-collection/The%20Rob%20Show%20-%20Ep26%20-%20Dan%20Carbonella%20-%204.26.24.jpg"
+    },
+    {
+      "id": 14,
+      "title": "The Rob Show #25 - Lizzie Considine",
+      "description": "Lizzie Considine living in the havens while originally from Stamford",
+      "date": "2024-04-26",
+      "mp3url": "https://storage.googleapis.com/ahoy-podcast-collection/ready%20The%20Rob%20Show%20-%20Ep%2025%20-%20Lizzie%20Considine.mp3",
+      "thumbnail": "https://storage.googleapis.com/ahoy-podcast-collection/The%20Rob%20Show%20-%20Ep25%20-%20Lizzie%20Consindine%20_%204.21.24.jpg"
+    },
+    {
+      "id": 13,
+      "title": "The Rob Show #24 - Ellen Martin",
+      "description": "Ellen Martin - neuroscientist from the UK",
+      "date": "2024-04-15",
+      "mp3url": "https://storage.googleapis.com/ahoy-podcast-collection/ready%2BThe%20Rob%20Show%20-%20Ep%2024%20-%20Ellen%20Martin.mp3",
+      "thumbnail": "https://storage.googleapis.com/ahoy-podcast-collection/The%20Rob%20Show%20-%20Ep24%20-%20Ellen%20Martin.jpg"
+    },
+    {
+      "id": 12,
+      "title": "The Rob Show #23 - Dave Gunn",
+      "description": "CoFounder of the Tallboyz - Born in Hamden - Pro Rollerblader - Former Hockey Player - Alum of the Rob Show",
+      "date": "2024-04-04",
+      "mp3url": "https://storage.googleapis.com/ahoy-podcast-collection/ready%20The%20Rob%20Show%20-%20Ep%2023%20-%20Dave%20Gunn.mp3",
+      "thumbnail": "https://storage.googleapis.com/ahoy-podcast-collection/readyThe%20Rob%20Show%20-%20Ep23%20-%20Dave%20Gunn%20-%204.4.24.jpg"
+    },
+    {
+      "id": 11,
+      "title": "The Rob Show #22 - Sam Carlson",
+      "description": "In this episode, Sam Carlson talks about the new construction going on around the Havens and beyond. Also discussing the solar eclipse.",
+      "date": "2024-03-28",
+      "mp3url": "https://ahoypodcast.s3.us-east-2.amazonaws.com/ready+The+Rob+Show+-+Ep+22+-+Sam+Carlson.mp3",
+      "thumbnail": "https://ahoypodcast.s3.us-east-2.amazonaws.com/The+Rob+Show+-+Ep22+-+Sam+Carlson+-+3.28.24.jpg"
+    },
+    {
+      "id": 10,
+      "title": "The Rob Show #21 -  Tony Rick and Andrew August",
+      "description": "In this episode, Tony Rick and Andrew August join the show to discuss their latest projects and insights into their creative processes.",
+      "releaseDate": "Tuesday, March 26",
+      "mp3url": "https://ahoypodcast.s3.us-east-2.amazonaws.com/ready%2BThe+Rob+Show+-+Ep+21+-+Tony+Rick+and+Andrew+August.mp3",
+      "thumbnail": "https://ahoypodcast.s3.us-east-2.amazonaws.com/The+Rob+Show+-+Ep21+-+Tony+Rick+and+Andrew+August.jpg"
+    },
+    {
+      "id": 9,
+      "title": "The Rob Show #20 - Pat Clendenen",
+      "description": "Pat Clendenen, originally from New Haven, returns after 25 years in Boston. A local lawyer and power lifter, Pat is also venturing into skateboarding.",
+      "mp3url": "https://ahoypodcast.s3.us-east-2.amazonaws.com/SUPERready+The+Rob+Show+-+Ep+20+-+Pat+Clendenen.mp3",
+      "thumbnail": "https://ahoypodcast.s3.us-east-2.amazonaws.com/The+Rob+Show+-+Ep20+-+Pat+Clendenen.jpg"
+    },
+    {
+      "id": 8,
+      "title": "The Rob Show #19 - Paul Wildy",
+      "description": "Paul Wildy, a 20 plus year cab driver in New Haven, shares his experiences from working on the Carter campaign to witnessing the citys evolution over the decades",
+      "mp3url": "https://ahoypodcast.s3.us-east-2.amazonaws.com/ready+The+Rob+Show+-+Ep+19+-+Paul+Wildly.mp3",
+      "thumbnail": "https://ahoypodcast.s3.us-east-2.amazonaws.com/The+Rob+Show+-+Ep19+-+Paul+Wildy.jpg"
+    },
+    {
+      "id": 7,
+      "title": "The Rob Show #18 - My Own Grenade",
+      "description": "My own grenade has been around since the 90s. What started as a highschool friendship has led to a lifetime of music.",
+      "mp3url": "https://ahoypodcast.s3.us-east-2.amazonaws.com/ready_The+Rob+Show+-+Ep+18+-+My+Own+Gernade.mp3",
+      "thumbnail": "https://ahoypodcast.s3.us-east-2.amazonaws.com/The+Rob+Show+-+Ep18+-+My+Own+Grendade.jpg"
+    },
+    {
+      "id": 6,
+      "title": "The Rob Show #17 - Aidan Bauer",
+      "description": "In episode 17 of The Rob Show, Aidan Bauer, a game designer, programmer, and artist, delves into gaming, climbing, and life in New Haven",
+      "mp3url": "https://ahoypodcast.s3.us-east-2.amazonaws.com/ready_The+Rob+Show+-+Ep+17+-+Aidan+Baur++-+2_7_23.mp3",
+      "thumbnail": "https://ahoypodcast.s3.us-east-2.amazonaws.com/The+Rob+Show+-+Ep17+-+Aidan+Bauer.png"
+    },
+    {
+      "id": 5,
+      "title": "The Rob Show #16 - Joshua Sanders",
+      "description": "The Rob Show is Back with ever festive Joshua Sanders, a former Califorian/Texian who loves Christmas.",
+      "mp3url": "https://ahoypodcast.s3.us-east-2.amazonaws.com/ready_The+Rob+Show+-+Ep+16+-+Joshua+Sanders.mp3",
+      "thumbnail": "https://ahoypodcast.s3.us-east-2.amazonaws.com/The+Rob+Show+-+Ep16+-+Josh+Sanders+copy.png"
+    },
+    {
+      "id": 1,
+      "title": "The Rob Show #14 - Ray Meglio",
+      "description": "The Rob Show is Back at with a very special guest - his father - Ray Meglio",
+      "mp3url": "https://ahoypodcast.s3.us-east-2.amazonaws.com/The+Rob+Show+-+Ep+14+-+Ray+Meglio+-+11_14_23.mp3",
+      "thumbnail": "https://ahoypodcast.s3.us-east-2.amazonaws.com/Ahoy+Podcast+Default.png"
+    },
+    {
+      "id": 3,
+      "title": "Found Cassettes # 1 - Samuel Dylan Witch",
+      "description": "Old Shin Harmonica - the creation of a lost song",
+      "mp3url": "https://ahoypodcast.s3.us-east-2.amazonaws.com/foundSDW_nov23_1.mp3",
+      "thumbnail": "https://ahoypodcast.s3.us-east-2.amazonaws.com/Ahoy+Podcast+Default.png"
+    }
+  ]
+}
