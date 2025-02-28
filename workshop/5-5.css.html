@@ -1,0 +1,563 @@
+<!-- Inline CSS (No External Files) -->
+<style>
+/* GLOBAL RESET */
+* {
+margin: 0; 
+padding: 0;
+box-sizing: border-box;
+font-family: Arial, sans-serif;
+}
+body {
+display: flex;
+height: 100vh;
+overflow: hidden;
+background-color: #549F93; /* Updated to Persian green */
+color: #E2C2FF; /* Updated to Mauve */
+}
+
+/* Remove specific theme styles and use general styles for all elements */
+.left-dashboard, .glass-card, .settings-widget, .nav-button, .action-button {
+background-color: #98ff98; /* Minty pale green background */
+border-color: #006400; /* Dark green borders for contrast */
+color: #006400; /* Dark green text for readability */
+}
+
+.nav-button:hover, .action-button:hover {
+background-color: #8EEB8E; /* Slightly lighter green for hover state */
+}
+
+.nav-button.active, .action-button.active {
+background-color: #76C776; /* Even darker green for active state */
+font-weight: bold;
+}
+
+/* Additional elements styling */
+hr, .bordered {
+border-color: #006400; /* Dark green borders */
+}
+
+/* Simplify and unify button and interactive elements styling */
+.button, .control-button, .remoteControlButton {
+background-color: #98ff98;
+color: #006400;
+border: 1px solid #006400;
+}
+
+.button:hover, .control-button:hover, .remoteControlButton:hover {
+background-color: #8EEB8E;
+}
+
+/* Ensure all text inputs and other form elements match the theme */
+input, select, textarea {
+background-color: #E6FFE6; /* Very light green for inputs */
+color: #006400;
+border: 1px solid #006400;
+}
+
+/* Adjust specific widget or card styles */
+.glass-card, .settings-widget {
+background-color: #98ff98;
+backdrop-filter: blur(10px); /* Soften the background slightly */
+}
+
+/* SIDEBAR MENU */
+.left-dashboard {
+width: 240px;
+background: rgba(255, 255, 255, 0.1);
+backdrop-filter: blur(12px);
+border-right: 1px solid var(--border-color);
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 10px; /* Reduced padding for more compact look */
+box-shadow: 0px 0px 10px rgba(0,0,0,0.15);
+font-size: 12px; /* Smaller font size for compactness */
+}
+
+/* BUTTONS AND INTERACTIVE ELEMENTS */
+.nav-button, .action-button {
+background-color: #9FAF90; /* Updated to Cambridge blue for a subtle contrast */
+color: #006400; /* Dark green text for readability */
+border: 1px solid var(--border-color);
+padding: 8px; /* Slightly reduced padding */
+font-size: 12px; /* Smaller font size for compactness */
+}
+
+.nav-button:hover, .action-button:hover {
+background-color: #8EEB8E; /* Slightly lighter green for hover state */
+}
+
+.nav-button.active {
+background-color: #76C776; /* Even darker green for active state */
+font-weight: bold;
+}
+
+/* ADDITIONAL STYLING */
+.glass-card, .settings-widget {
+background-color: var(--secondary-color);
+}
+
+.section-header, .welcome-text {
+color: var(--highlight-color);
+}
+
+/* LEFT DASHBOARD (Sidebar) */
+.left-dashboard {
+width: 240px;
+background: rgba(255, 255, 255, 0.1);
+backdrop-filter: blur(12px);
+border-right: 1px solid rgba(255,255,255,0.3);
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 20px 10px;
+box-shadow: 0px 0px 10px rgba(0,0,0,0.15);
+}
+.logo-container {
+width: 100%;
+margin-bottom: 30px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.logo-container img {
+max-width: 120px;
+cursor: pointer;
+}
+.nav-section {
+width: 100%;
+margin-top: 10px;
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
+.nav-button {
+background: rgba(255,255,255,0.2);
+border: 1px solid rgba(255,255,255,0.3);
+color: #333;
+width: 100%;
+padding: 10px;
+font-size: 14px;
+text-align: left;
+border-radius: 8px;
+cursor: pointer;
+transition: background 0.2s ease;
+}
+.nav-button:hover {
+background: rgba(255,255,255,0.4);
+}
+.nav-button.active {
+background: rgba(255,255,255,0.6);
+font-weight: bold;
+}
+
+/* MAIN APP CONTENT */
+.main-content {
+flex: 1;
+overflow-y: auto;
+padding: 20px;
+position: relative;
+}
+.section-header {
+margin-bottom: 20px;
+}
+hr {
+margin: 20px 0;
+}
+
+/* TAB CONTENTS */
+.tab-content {
+display: none; /* hidden by default; we show with JavaScript */
+}
+.tab-content.active {
+display: block;
+}
+
+/* SIMPLE BUTTONS, HEADERS, ETC. */
+.action-button {
+color: #fff;
+border: none;
+padding: 8px 12px;
+border-radius: 4px;
+margin: 5px 0;
+cursor: pointer;
+}
+
+.sub-text {
+font-size: 14px;
+color: #666;
+}
+
+.app-header {
+margin-bottom: 10px;
+}
+
+/* "GLASS" CARDS */
+.glass-card {
+background: rgba(255,255,255,0.3);
+backdrop-filter: blur(10px);
+border-radius: 8px;
+padding: 20px;
+margin-bottom: 20px;
+box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* MEDIA TAB (Video) */
+.video-content-wrapper {
+display: flex;
+flex-wrap: wrap;
+gap: 20px;
+}
+.player-and-library {
+flex: 1;
+}
+.player-section video {
+width: 100%;
+max-width: 100%;
+height: auto;
+background: #000;
+}
+.library-section {
+flex: 1;
+min-width: 300px;
+}
+.library-grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+gap: 10px;
+}
+.library-card {
+background: #eee;
+padding: 10px;
+cursor: pointer;
+border-radius: 4px;
+text-align: center;
+transition: background-color 0.1s ease;
+}
+.library-card:hover {
+background: #ddd;
+}
+.library-card img {
+width: 100%;
+height: auto;
+display: block;
+margin: 0 auto 5px auto;
+}
+.library-list {
+width: 100%;
+border-collapse: collapse;
+}
+.library-list th,
+.library-list td {
+border: 1px solid #ccc;
+padding: 8px;
+}
+
+/* NOW PLAYING WIDGET */
+#now-playing-widget {
+position: fixed;
+bottom: 20px;
+right: 20px;
+width: 300px;
+background-color: #1a1a1a;
+border-radius: 20px;
+padding: 20px;
+color: #fff;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+display: none; /* Initially hidden */
+z-index: 1000;
+}
+.now-playing-content {
+text-align: center;
+position: relative;
+}
+.album-art {
+width: 100px;
+height: 100px;
+background-color: #333;
+border-radius: 50%;
+margin: 0 auto 20px;
+}
+.controls {
+display: flex;
+justify-content: center;
+gap: 10px;
+margin-top: 10px;
+}
+.control-button {
+background: none;
+border: none;
+color: #fff;
+font-size: 20px;
+cursor: pointer;
+}
+.close-button {
+position: absolute;
+top: 0;
+right: 0;
+background: none;
+border: none;
+color: #fff;
+font-size: 16px;
+cursor: pointer;
+}
+
+/* MUSIC PLAYER (was "true-classic-radio") */
+.radio-widget {
+background-color: #fff;
+padding: 10px;
+border-radius: 6px;
+box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+margin-bottom: 20px;
+}
+.player-container {
+display: flex;
+align-items: center;
+gap: 20px;
+}
+.player-container img {
+width: 120px;
+height: 120px;
+background-color: #ccc;
+object-fit: cover;
+border-radius: 4px;
+}
+.song-info {
+flex: 1;
+}
+.duration-control {
+margin: 10px 0;
+}
+.styled-duration-bar {
+width: 100%;
+}
+.radio-controls,
+.podcast-player-controls {
+display: flex;
+gap: 10px;
+align-items: center;
+}
+.audio-control-button {
+cursor: pointer;
+border: 1px solid #ccc;
+padding: 6px 10px;
+background-color: #f7f7f7;
+}
+.audio-control-button:hover {
+background-color: #e1e1e1;
+}
+
+/* COMMUNITY TAB */
+.community-header {
+text-align: center;
+}
+.artist-directory-search-container {
+margin-bottom: 20px;
+}
+.search-bar {
+padding: 6px;
+width: 200px;
+margin-left: 10px;
+}
+.artist-grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+gap: 15px;
+}
+.artist-card {
+background-color: #fafafa;
+border-radius: 4px;
+padding: 10px;
+text-align: center;
+cursor: pointer;
+transition: transform 0.1s ease-in-out;
+}
+.artist-card:hover {
+transform: scale(1.02);
+background-color: #f0f0f0;
+}
+.artist-image {
+width: 100px;
+height: 100px;
+object-fit: cover;
+margin-bottom: 5px;
+border-radius: 50%;
+}
+.artist-expanded-view {
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+background: #fff;
+z-index: 999;
+border-radius: 8px;
+width: 90%;
+max-width: 500px;
+box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+.artist-expanded-content {
+padding: 20px;
+}
+.artist-image-large {
+width: 150px;
+height: 150px;
+object-fit: cover;
+border-radius: 8px;
+display: block;
+margin-bottom: 10px;
+}
+
+/* ABOUT TAB */
+.body-desc-container {
+margin: 20px 0;
+}
+.body-desc-block {
+margin-bottom: 30px;
+}
+.body-desc-image {
+width: 100%;
+max-width: 600px;
+display: block;
+margin: 10px auto;
+}
+.team-widget {
+margin-top: 20px;
+}
+.team-member {
+margin-bottom: 10px;
+}
+.team-member-name {
+font-weight: bold;
+}
+.settings-widget {
+background-color: #f9f9f9;
+padding: 15px;
+border-radius: 6px;
+margin: 20px 0;
+}
+
+/* NEWS TAB */
+.homepage-logo {
+max-width: 200px;
+display: block;
+margin: 20px auto;
+cursor: pointer;
+}
+.welcome-container {
+text-align: center;
+margin: 20px auto;
+}
+.welcome-text {
+font-size: 18px;
+margin-bottom: 10px;
+}
+.homepage-subheader {
+text-align: center;
+margin-top: 10px;
+}
+
+/* VINTAGE BROADCAST TAB */
+.broadcast-player-container {
+margin: 10px 0;
+}
+.broadcast-player-container video {
+width: 100%;
+height: auto;
+}
+.remote-controls {
+display: flex;
+flex-wrap: wrap;
+gap: 10px;
+margin-bottom: 20px;
+}
+.remoteControlButton {
+padding: 8px 12px;
+border: 1px solid #ccc;
+cursor: pointer;
+}
+.broadcast-header {
+margin: 20px 0;
+}
+
+/* SETTINGS TAB */
+.cache-modal {
+display: none; /* toggled by JS */
+position: fixed;
+left: 0; 
+top: 0;
+width: 100%; 
+height: 100%;
+background-color: rgba(0,0,0,0.5);
+z-index: 1000;
+}
+.cache-modal-content {
+background: #fff;
+width: 300px;
+margin: 100px auto;
+padding: 20px;
+border-radius: 6px;
+text-align: center;
+}
+.cache-cta-button {
+margin: 5px;
+padding: 8px 12px;
+cursor: pointer;
+}
+
+/* UPDATES TAB */
+.changelog-controls {
+margin-top: 20px;
+text-align: center;
+}
+
+/* ACCOUNT TAB */
+.account-popup {
+position: absolute;
+right: 20px;
+top: 80px;
+background: #fff;
+border: 1px solid #ccc;
+padding: 15px;
+border-radius: 6px;
+z-index: 999;
+}
+
+/* GAMES TAB (Puddle) */
+.game-container {
+display: flex;
+flex-wrap: wrap;
+gap: 10px;
+justify-content: center;
+margin: 20px 0;
+}
+.current-input,
+#alert-box {
+text-align: center;
+margin: 10px 0;
+}
+.keyboard {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 5px;
+margin: 10px 0;
+}
+.keyboard-row {
+display: flex;
+justify-content: center;
+}
+.tooltip {
+background-color: #ffffc2;
+padding: 10px;
+border-radius: 4px;
+margin: 10px auto;
+width: 300px;
+display: none; /* show with JS if needed */
+text-align: center;
+}
+
+/* CAST TAB */
+.tab-content button {
+margin: 5px 0;
+}
+</style>
