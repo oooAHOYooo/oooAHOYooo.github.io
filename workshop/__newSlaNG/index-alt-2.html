@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" x-data="{ currentTab: 'music-tab' }" x-cloak>
     <head>
         <meta charset="utf-8" />
         <meta
@@ -53,11 +53,6 @@
         <!-- Fav Icon -->
         <link rel="icon" type="image/png" href="./img/favicon_ahoy.png" />
 
-        <!-- Auth0 (if you still need it) -->
-        <script
-            src="https://cdn.auth0.com/js/auth0-spa-js/1.24/auth0-spa-js.production.js"
-            defer></script>
-
         <!-- Google Analytics -->
         <script async
             src="https://www.googletagmanager.com/gtag/js?id=G-WVDL9N1HDT"></script>
@@ -79,10 +74,11 @@
     body {
       background-color: #f2f2f2;
       color: #333;
-      display: flex; /* to accommodate the left sidebar + main content */
+      display: flex; /* layout: left sidebar + main content */
       height: 100vh;
-      overflow: hidden; /* optional if you want a fixed layout */
+      overflow: hidden; /* so content won't scroll entire body if you want a fixed layout */
     }
+    [x-cloak] { display: none !important; }
 
     /* LEFT DASHBOARD (Sidebar) */
     .left-dashboard {
@@ -149,9 +145,9 @@
       margin: 20px 0;
     }
 
-    /* TAB CONTENTS (use .tab-content to toggle display) */
+    /* TAB CONTENTS */
     .tab-content {
-      display: none; /* hidden by default; show with JS */
+      display: none; /* hidden by default; we show with x-show in Alpine */
     }
     .tab-content.active {
       display: block;
@@ -159,10 +155,10 @@
 
     /* SIMPLE BUTTONS, HEADERS, ETC. */
     .action-button {
-      background-color: #c72a665d;
+      background-color: #ff0060;
       color: #fff;
       border: none;
-      padding: 16px 55px;
+      padding: 8px 12px;
       border-radius: 4px;
       margin: 5px 0;
       cursor: pointer;
@@ -176,15 +172,11 @@
       color: #666;
     }
 
-    /* HEADERS IN TABS */
     .app-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
       margin-bottom: 10px;
     }
 
-    /* A QUICK "GLASS" CARD FEEL FOR WIDGETS */
+    /* "GLASS" CARDS */
     .glass-card {
       background: rgba(255,255,255,0.3);
       backdrop-filter: blur(10px);
@@ -194,7 +186,7 @@
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
 
-    /* MEDIA TAB EXAMPLE LAYOUT */
+    /* MEDIA TAB (Video) */
     .video-content-wrapper {
       display: flex;
       flex-wrap: wrap;
@@ -224,6 +216,10 @@
       cursor: pointer;
       border-radius: 4px;
       text-align: center;
+      transition: background-color 0.1s ease;
+    }
+    .library-card:hover {
+      background: #ddd;
     }
     .library-card img {
       width: 100%;
@@ -336,16 +332,8 @@
     }
 
     /* COMMUNITY TAB */
-    .community-container {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
     .community-header {
       text-align: center;
-    }
-    .compact-header h1 {
-      margin-bottom: 10px;
     }
     .artist-directory-search-container {
       margin-bottom: 20px;
@@ -425,6 +413,10 @@
     .team-member-name {
       font-weight: bold;
     }
+    .team-member-role {
+      font-size: 12px;
+      color: #666;
+    }
     .settings-widget {
       background-color: #f9f9f9;
       padding: 15px;
@@ -498,7 +490,7 @@
       cursor: pointer;
     }
 
-    /* UPDATES TAB (Changelog) */
+    /* UPDATES TAB */
     .changelog-controls {
       margin-top: 20px;
       text-align: center;
@@ -556,7 +548,7 @@
     }
   </style>
 
-        <!-- Firebase config (Initialize only once) -->
+        <!-- Firebase config (Initialize once) -->
         <script>
     // Your Firebase configuration
     const firebaseConfig = {
@@ -574,75 +566,120 @@
     </head>
 
     <body>
-
         <!-- ========== LEFT DASHBOARD ========== -->
-        <div class="left-dashboard">
+        <div class="left-dashboard"
+            style="max-height: 100vh; overflow-y: auto;">
             <div class="logo-container">
-                <!-- Clicking the logo sends user to "news-tab" by default -->
                 <img
                     src="./img/assets/u_ahoy23.png"
                     alt="Ahoy Indie Media Logo"
-                    onclick="navigateToTab('news-tab')" />
+                    @click="currentTab = 'news-tab'" />
             </div>
-            <div class="nav-section">
-                <!-- Use text or any icons you prefer -->
-                <button class="nav-button" onclick="navigateToTab('news-tab')"
-                    id="nav-news">🏠 News</button>
-                <button class="nav-button"
-                    onclick="navigateToTab('media-tab-a')" id="nav-media">📺
-                    Media</button>
-                <button class="nav-button"
-                    onclick="navigateToTab('true-classic-radio')"
-                    id="nav-music">🎵 Music</button>
-                <button class="nav-button"
-                    onclick="navigateToTab('podcast-tab')" id="nav-podcast">🎙️
-                    Podcasts</button>
-                <button class="nav-button"
-                    onclick="navigateToTab('community-tab')"
-                    id="nav-community">👥 Community</button>
-                <button class="nav-button" onclick="navigateToTab('about-tab')"
-                    id="nav-about">ℹ️ About</button>
-                <button class="nav-button"
-                    onclick="navigateToTab('updates-tab')" id="nav-updates">🚀
-                    Updates</button>
-                <button class="nav-button"
-                    onclick="navigateToTab('settings-tab')" id="nav-settings">⚙️
-                    Settings</button>
 
-                <!-- Optional "experimental" items -->
-                <button class="nav-button"
-                    onclick="navigateToTab('account-tab')" id="nav-account">👤
-                    Account</button>
-                <button class="nav-button" onclick="navigateToTab('game-tab')"
-                    id="nav-game">🎮 Games</button>
-                <button class="nav-button" onclick="navigateToTab('cast-tab')"
-                    id="nav-cast">📡 Cast</button>
+            <!-- Login Section -->
+            <div x-data="userWelcome()" class="login-section"
+                style="margin-top: 20px;">
+                <p
+                    x-text="userEmail === 'Guest' ? 'Not logged in' : ('Logged in as: ' + userEmail)"></p>
+                <button x-show="userEmail === 'Guest'" @click="login()"
+                    class="action-button">Log In</button>
             </div>
-        </div>
+            <hr />
 
-        <!-- ========== MAIN CONTENT AREA ========== -->
-        <div class="main-content" id="mainContent">
-
-            <!-- NOW PLAYING WIDGET (optional floating) -->
-            <div id="now-playing-widget">
+            <!-- Now Playing Widget -->
+            <div id="now-playing-widget"
+                style="display: block; position: relative; width: 100%; margin-top: 20px;">
                 <div class="now-playing-content">
-                    <button class="close-button"
-                        onclick="toggleNowPlaying()">✖️</button>
-                    <div class="album-art"></div>
-                    <h2 class="song-title">Glimpse of Us</h2>
-                    <p class="artist-name">Joji</p>
-                    <div class="controls">
-                        <button class="control-button">⏮️</button>
-                        <button class="control-button">▶️</button>
-                        <button class="control-button">⏭️</button>
+                    <div class="album-art"
+                        style="width: 80px; height: 80px;"></div>
+                    <div
+                        style="display: flex; flex-direction: column; align-items: center;">
+                        <h3 style="font-size: 14px;">Now Playing:</h3>
+                        <p id="now-playing-title" style="font-size: 12px;">No
+                            media playing...</p>
+                    </div>
+                    <div class="controls" style="gap: 5px;">
+                        <button class="control-button"
+                            @click="playPrevious()">⏮️</button>
+                        <button class="control-button"
+                            @click="togglePlayPause()">▶️/⏸️</button>
+                        <button class="control-button"
+                            @click="playNext()">⏭️</button>
                     </div>
                 </div>
             </div>
+            <hr />
 
-            <!-- ========== TABS ========== -->
+            <div class="nav-section">
+                <!-- Each button sets `currentTab` to the ID of the tab we want to show.
+           The "active" class toggles if the tab matches the currentTab. -->
+                <button
+                    class="nav-button"
+                    :class="{ 'active': currentTab === 'news-tab' }"
+                    @click="currentTab = 'news-tab'">🏠 News</button>
+
+                <button
+                    class="nav-button"
+                    :class="{ 'active': currentTab === 'media-tab-a' }"
+                    @click="currentTab = 'media-tab-a'">📺 Media</button>
+
+                <button
+                    class="nav-button"
+                    :class="{ 'active': currentTab === 'true-classic-radio' }"
+                    @click="currentTab = 'true-classic-radio'">🎵 Music</button>
+
+                <button
+                    class="nav-button"
+                    :class="{ 'active': currentTab === 'podcast-tab' }"
+                    @click="currentTab = 'podcast-tab'">🎙️ Podcasts</button>
+
+                <button
+                    class="nav-button"
+                    :class="{ 'active': currentTab === 'community-tab' }"
+                    @click="currentTab = 'community-tab'">👥 Community</button>
+
+                <button
+                    class="nav-button"
+                    :class="{ 'active': currentTab === 'about-tab' }"
+                    @click="currentTab = 'about-tab'">ℹ️ About</button>
+
+                <button
+                    class="nav-button"
+                    :class="{ 'active': currentTab === 'updates-tab' }"
+                    @click="currentTab = 'updates-tab'">🚀 Updates</button>
+
+                <button
+                    class="nav-button"
+                    :class="{ 'active': currentTab === 'settings-tab' }"
+                    @click="currentTab = 'settings-tab'">⚙️ Settings</button>
+
+                <!-- Optional "experimental" items -->
+                <button
+                    class="nav-button"
+                    :class="{ 'active': currentTab === 'account-tab' }"
+                    @click="currentTab = 'account-tab'">👤 Account</button>
+
+                <button
+                    class="nav-button"
+                    :class="{ 'active': currentTab === 'game-tab' }"
+                    @click="currentTab = 'game-tab'">🎮 Games</button>
+
+                <button
+                    class="nav-button"
+                    :class="{ 'active': currentTab === 'cast-tab' }"
+                    @click="currentTab = 'cast-tab'">📡 Cast</button>
+            </div>
+        </div>
+        <!-- END LEFT DASHBOARD -->
+
+        <!-- ========== MAIN CONTENT AREA ========== -->
+        <div class="main-content">
+
+            <!-- ========== TABS (x-show) ========== -->
 
             <!-- MEDIA TAB -->
-            <div id="media-tab-a" class="tab-content">
+            <div id="media-tab-a" class="tab-content"
+                x-show="currentTab === 'media-tab-a'">
                 <div class="app-header">
                     <h2 class="section-header">Media Player</h2>
                 </div>
@@ -654,8 +691,7 @@
                     <div class="player-and-library">
                         <section class="player-section"
                             x-show="viewMode === 'player'">
-                            <div class="super-video-player-container"
-                                style="margin-bottom: 20px;">
+                            <div style="margin-bottom: 20px;">
                                 <video
                                     id="video-player"
                                     controls
@@ -679,13 +715,13 @@
                             <div class="view-toggle" style="margin-top: 10px;">
                                 <button
                                     class="action-button"
-                                    :class="{'active': libraryViewMode === 'grid'}"
+                                    :class="{ 'active': libraryViewMode === 'grid' }"
                                     @click="libraryViewMode = 'grid'">
                                     Grid
                                 </button>
                                 <button
                                     class="action-button"
-                                    :class="{'active': libraryViewMode === 'list'}"
+                                    :class="{ 'active': libraryViewMode === 'list' }"
                                     @click="libraryViewMode = 'list'">
                                     List
                                 </button>
@@ -693,8 +729,7 @@
                         </div>
 
                         <!-- Filter -->
-                        <div class="library-filter-container"
-                            style="margin-bottom: 10px;">
+                        <div style="margin-bottom: 10px;">
                             <select
                                 class="action-button"
                                 style="padding: 5px;"
@@ -760,7 +795,8 @@
             <!-- END MEDIA TAB -->
 
             <!-- TRUE CLASSIC RADIO TAB -->
-            <div id="true-classic-radio" class="tab-content">
+            <div id="true-classic-radio" class="tab-content"
+                x-show="currentTab === 'true-classic-radio'">
                 <div class="app-header">
                     <h2 class="section-header">Music Player</h2>
                 </div>
@@ -798,14 +834,14 @@
                     </div>
                 </div>
 
-                <div class="terminal-section glass-card">
+                <div class="glass-card">
                     <h2>SEARCH SONGS:</h2>
-                    <div class="search-container" style="margin: 10px 0;">
+                    <div style="margin:10px 0;">
                         <input
                             type="text"
                             id="songSearch"
                             placeholder="Enter search query..."
-                            style="padding: 5px;" />
+                            style="padding:5px;" />
                         <button id="searchBtn"
                             class="action-button">Search</button>
                         <button id="clear-search"
@@ -822,8 +858,7 @@
                         @click="window.playAllSongs()">
                         Play Daily Playlist
                     </button>
-                    <!-- Display the playlist with Alpine binding -->
-                    <div class="playlist-ui" style="margin-top: 10px;">
+                    <div style="margin-top: 10px;">
                         <ol>
                             <template
                                 x-for="(song, index) in $store.playlist.songs"
@@ -834,8 +869,7 @@
                             </template>
                         </ol>
                     </div>
-                    <!-- Show the number of songs remaining -->
-                    <div class="playlist-info" style="margin-top: 10px;">
+                    <div style="margin-top:10px;">
                         <span
                             x-text="$store.playlist.songs.length - $store.playlist.currentSongIndex"></span>
                         <span> song(s) remaining</span>
@@ -844,9 +878,8 @@
                 <hr />
 
                 <div class="song-list">
-                    <div class="table-responsive">
-                        <div id="song-sort-buttons"
-                            style="margin-bottom: 10px;">
+                    <div>
+                        <div style="margin-bottom:10px;">
                             <button class="action-button"
                                 id="song-sort-recent">Recently Added</button>
                             <button class="action-button"
@@ -866,7 +899,8 @@
             <!-- END TRUE CLASSIC RADIO TAB -->
 
             <!-- PODCAST TAB -->
-            <div id="podcast-tab" class="tab-content">
+            <div id="podcast-tab" class="tab-content"
+                x-show="currentTab === 'podcast-tab'">
                 <div class="app-header">
                     <h2 class="section-header">Podcast Player</h2>
                 </div>
@@ -905,10 +939,9 @@
                 </div>
                 <hr />
 
-                <div id="podcast-search-section"
-                    class="terminal-section glass-card">
+                <div class="glass-card">
                     <h2>SEARCH PODCASTS:</h2>
-                    <div class="search-container" style="margin:10px 0;">
+                    <div style="margin:10px 0;">
                         <input
                             type="text"
                             id="podcastSearch"
@@ -940,111 +973,105 @@
             <!-- END PODCAST TAB -->
 
             <!-- COMMUNITY TAB -->
-            <div id="community-tab" class="tab-content">
-                <div class="community-container">
-                    <div class="community-header compact-header">
-                        <h1>Ahoy Indie Media Community</h1>
-                        <p>Discover alumni, support creators, explore
-                            spotlights.</p>
-                    </div>
-
-                    <div x-data="artistDirectory()" class="artist-directory">
-                        <!-- Search Input -->
-                        <div class="artist-directory-search-container">
-                            <label for="artist-search">Search Artists:</label>
-                            <input
-                                type="text"
-                                id="artist-search"
-                                placeholder="Enter name..."
-                                class="search-bar"
-                                x-model="searchQuery" />
-                        </div>
-                        <!-- Artist Grid -->
-                        <div class="artist-grid">
-                            <template x-for="artist in filteredArtists"
-                                :key="artist.name">
-                                <div
-                                    class="artist-card"
-                                    @click="selectArtist(artist)">
-                                    <img :src="artist.image" alt="artist"
-                                        class="artist-image" />
-                                    <h3 x-text="artist.name"></h3>
-                                    <ul>
-                                        <li x-for="song in artist.songs"
-                                            :key="song" x-text="song"></li>
-                                    </ul>
-                                </div>
-                            </template>
-                        </div>
-
-                        <!-- Expanded Artist View (Modal) -->
-                        <div
-                            x-show="selectedArtist"
-                            class="artist-expanded-view"
-                            @click.away="closeArtistView()">
-                            <div class="artist-expanded-content">
-                                <button
-                                    @click="closeArtistView()">Close</button>
-                                <h2 x-text="selectedArtist.name"></h2>
-                                <img
-                                    :src="selectedArtist.image"
-                                    alt="artist"
-                                    class="artist-image-large" />
-                                <p x-show="selectedArtist.externalLink">More</p>
-                                <a
-                                    x-show="selectedArtist.merchLink"
-                                    :href="selectedArtist.merchLink"
-                                    target="_blank">Merch</a>
-                                <a
-                                    x-show="selectedArtist.externalLink"
-                                    :href="selectedArtist.externalLink"
-                                    target="_blank">Visit Website</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Rob Show Alumni Section -->
-                    <section class="rob-show-alumni">
-                        <h2>Rob Show Alumni</h2>
-                        <p>Meet the guests who have joined the Rob Show</p>
-                        <div class="alumni-grid"></div>
-                    </section>
-
-                    <!-- Support Us Section -->
-                    <section class="support-us glass-card">
-                        <h2>Support Ahoy Indie Media</h2>
-                        <p>
-                            Help us stay indie and ad-free by contributing to
-                            our mission.
-                        </p>
-                        <button class="action-button">
-                            <a
-                                href="https://checkout.square.site/merchant/MLCEJBSG4Z671/checkout/OTECA53PANFVTTCVDCDAZNRX"
-                                style="color:#fff; text-decoration:none;"
-                                target="_blank">
-                                Donate to Ahoy Indie Media
-                            </a>
-                        </button>
-                    </section>
+            <div id="community-tab" class="tab-content"
+                x-show="currentTab === 'community-tab'">
+                <div class="community-header">
+                    <h1>Ahoy Indie Media Community</h1>
+                    <p>Discover alumni, support creators, explore
+                        spotlights.</p>
                 </div>
+
+                <div x-data="artistDirectory()" class="artist-directory">
+                    <!-- Search Input -->
+                    <div class="artist-directory-search-container">
+                        <label for="artist-search">Search Artists:</label>
+                        <input
+                            type="text"
+                            id="artist-search"
+                            placeholder="Enter name..."
+                            class="search-bar"
+                            x-model="searchQuery" />
+                    </div>
+                    <!-- Artist Grid -->
+                    <div class="artist-grid">
+                        <template x-for="artist in filteredArtists"
+                            :key="artist.name">
+                            <div class="artist-card"
+                                @click="selectArtist(artist)">
+                                <img :src="artist.image" alt
+                                    class="artist-image" />
+                                <h3 x-text="artist.name"></h3>
+                                <ul>
+                                    <li x-for="song in artist.songs" :key="song"
+                                        x-text="song"></li>
+                                </ul>
+                            </div>
+                        </template>
+                    </div>
+
+                    <!-- Expanded Artist View (Modal) -->
+                    <div
+                        x-show="selectedArtist"
+                        class="artist-expanded-view"
+                        @click.away="closeArtistView()">
+                        <div class="artist-expanded-content">
+                            <button @click="closeArtistView()">Close</button>
+                            <h2 x-text="selectedArtist.name"></h2>
+                            <img :src="selectedArtist.image" alt
+                                class="artist-image-large" />
+                            <p x-show="selectedArtist.externalLink">More</p>
+                            <a
+                                x-show="selectedArtist.merchLink"
+                                :href="selectedArtist.merchLink"
+                                target="_blank">Merch</a>
+                            <a
+                                x-show="selectedArtist.externalLink"
+                                :href="selectedArtist.externalLink"
+                                target="_blank">Visit Website</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rob Show Alumni Section -->
+                <section class="rob-show-alumni" style="margin-top:20px;">
+                    <h2>Rob Show Alumni</h2>
+                    <p>Meet the guests who have joined the Rob Show</p>
+                    <div class="alumni-grid"></div>
+                </section>
+
+                <!-- Support Us Section -->
+                <section class="support-us glass-card">
+                    <h2>Support Ahoy Indie Media</h2>
+                    <p>Help us stay indie and ad-free by contributing to our
+                        mission.</p>
+                    <button class="action-button">
+                        <a
+                            href="https://checkout.square.site/merchant/MLCEJBSG4Z671/checkout/OTECA53PANFVTTCVDCDAZNRX"
+                            style="color:#fff; text-decoration:none;"
+                            target="_blank">
+                            Donate to Ahoy Indie Media
+                        </a>
+                    </button>
+                </section>
             </div>
             <!-- END COMMUNITY TAB -->
 
             <!-- ABOUT TAB -->
-            <div id="about-tab" class="tab-content">
+            <div id="about-tab" class="tab-content"
+                x-show="currentTab === 'about-tab'">
                 <div style="text-align:center;">
                     <img
                         src="./img/assets/u_ahoy23.png"
                         alt="Ahoy Indie Media Logo"
                         class="homepage-logo"
-                        onclick="navigateToTab('news-tab')" />
+                        @click="currentTab = 'news-tab'" />
                 </div>
+
                 <div style="text-align:center; margin-top:10px;">
                     <button class="action-button"
-                        onclick="navigateToTab('about-tab')">About Ahoy</button>
+                        @click="currentTab = 'about-tab'">About Ahoy</button>
                     <button class="action-button"
-                        onclick="navigateToTab('updates-tab')">App
-                        Updates</button>
+                        @click="currentTab = 'updates-tab'">App Updates</button>
                 </div>
 
                 <div class="body-desc-container">
@@ -1069,10 +1096,9 @@
                             space to share their work.
                         </p>
                         <p>
-                            We sustain all of our operations through sheer will
-                            power.
-                            This model allows us to keep the platform accessible
-                            and ad-free.
+                            We sustain operations through sheer will power,
+                            keeping the
+                            platform accessible and ad-free.
                         </p>
                         <p>
                             Every piece of content on our platform is here with
@@ -1092,7 +1118,6 @@
                             </div>
                         </div>
 
-                        <!-- Privacy -->
                         <div class="settings-widget" id="privacy-section">
                             <p>To learn more about how we handle your data, read
                                 our</p>
@@ -1103,23 +1128,17 @@
                         </div>
                         <hr />
 
-                        <p style="text-align:center;">
-                            Nerdy Notes for those who care about features and
-                            code:
-                        </p>
+                        <p style="text-align:center;">Nerdy Notes for those who
+                            care:</p>
                         <hr /><br />
                         <h2>Daily, Seeded Playlist Feature:</h2>
                         <p>
-                            When the user clicks the "Play All" (Random Order)
-                            button, the
-                            <code>playAllSongs()</code> function runs. It
-                            computes a seed from
-                            today's date (<em>YYYYMMDD</em>) so everyone sees
-                            the same
-                            order on a given day. It then builds a playlist by
-                            accumulating
-                            songs until the total duration reaches about one
-                            hour.
+                            When you click "Play All" (Random Order), the app
+                            seeds from
+                            today's date (YYYYMMDD) so everyone sees the same
+                            order for
+                            that day. It accumulates songs until total duration
+                            ~1 hour.
                         </p>
                     </div>
                 </div>
@@ -1127,7 +1146,8 @@
             <!-- END ABOUT TAB -->
 
             <!-- NEWS TAB (Front Page) -->
-            <div id="news-tab" class="tab-content active">
+            <div id="news-tab" class="tab-content"
+                x-show="currentTab === 'news-tab'">
                 <div class="app-header">
                     <h2 class="section-header">Front Page News</h2>
                 </div>
@@ -1163,8 +1183,7 @@
                     <p>
                         Based in New Haven, CT, Ahoy Indie Media is a hand-built
                         media
-                        company committed to providing an alternative avenue for
-                        exploring
+                        company providing an alternative avenue for exploring
                         indie media.
                     </p>
                 </div>
@@ -1172,20 +1191,17 @@
 
                 <div style="text-align:center; margin-bottom:20px;">
                     <button class="action-button"
-                        onclick="navigateToTab('about-tab')">About Ahoy</button>
+                        @click="currentTab = 'about-tab'">About Ahoy</button>
                     <button class="action-button"
-                        onclick="navigateToTab('updates-tab')">App
-                        Updates</button>
+                        @click="currentTab = 'updates-tab'">App Updates</button>
                 </div>
                 <hr />
 
-                <p class="front-page-news-text"
-                    style="text-align:center; font-weight:bold;">Front Page
+                <p style="text-align:center; font-weight:bold;">Front Page
                     News</p>
                 <hr />
 
                 <div id="newsletter-list"></div>
-
                 <hr /><hr /><br />
 
                 <div style="text-align:center;">
@@ -1202,7 +1218,8 @@
             <!-- END NEWS TAB -->
 
             <!-- VINTAGE BROADCAST TAB -->
-            <div id="vintage-broadcast-tab" class="tab-content">
+            <div id="vintage-broadcast-tab" class="tab-content"
+                x-show="currentTab === 'vintage-broadcast-tab'">
                 <div class="app-header">
                     <h2 class="section-header">Ahoy Broadcast Network</h2>
                 </div>
@@ -1240,52 +1257,37 @@
                 </div>
                 <hr />
 
-                <div id="about-ahoy-broadcast" class="about-section glass-card">
+                <div class="glass-card">
                     <h3>About Ahoy Broadcast</h3>
                     <p>
-                        Ahoy Broadcast recreates the essence of classic TV for
-                        the digital
-                        age, delivering rotating indie playlists that shift
-                        throughout the
-                        day, just like a traditional broadcast would.
+                        Ahoy Broadcast recreates the classic TV feel, rotating
+                        indie
+                        playlists throughout the day in scheduled blocks.
                     </p>
                     <h3>How It Works</h3>
                     <ul>
-                        <li>
-                            <strong>Time-Based Playlists:</strong> The broadcast
-                            organizes content
-                            into time-based blocks (morning, afternoon, evening,
-                            late night).
-                        </li>
-                        <li>
-                            <strong>Dynamic Content:</strong> Each block
-                            features a curated
-                            playlist of indie media, automatically loaded based
-                            on current time.
-                        </li>
-                        <li>
-                            <strong>Interactive Controls:</strong> Users can
-                            play, pause, fast
-                            forward, rewind, shuffle, and adjust volume.
-                        </li>
-                        <li>
-                            <strong>Beta Feature:</strong> The broadcast is in
-                            beta; we’re
-                            refining the experience and squashing bugs.
-                        </li>
+                        <li>Time-based playlists (morning, afternoon, evening,
+                            late night).</li>
+                        <li>Curated indie media loaded automatically based on
+                            the time.</li>
+                        <li>Interactive remote controls for skipping, shuffling,
+                            volume, etc.</li>
+                        <li>Beta phase: actively refining and squashing
+                            bugs.</li>
                     </ul>
                 </div>
             </div>
             <!-- END VINTAGE BROADCAST TAB -->
 
             <!-- SETTINGS TAB -->
-            <div id="settings-tab" class="tab-content">
+            <div id="settings-tab" class="tab-content"
+                x-show="currentTab === 'settings-tab'">
                 <div class="app-header">
                     <h2 class="section-header">Settings</h2>
                 </div>
                 <hr />
 
-                <div id="mute-audio-widget" class="settings-widget">
+                <div class="settings-widget">
                     <button class="action-button" onclick="toggleMute()">Mute
                         Audio</button>
                     <button class="action-button"
@@ -1298,7 +1300,7 @@
 
                 <h2>Theme Switcher</h2>
                 <hr />
-                <div id="theme-switcher-widget" class="settings-widget">
+                <div class="settings-widget">
                     <p id="theme-title">Select Theme</p>
                     <select id="theme-dropdown" style="padding:5px;"></select>
                 </div>
@@ -1314,19 +1316,17 @@
                 </div>
                 <hr />
 
-                <!-- UPCOMING FEATURES -->
-                <div id="upcoming-features" class="settings-widget">
+                <div class="settings-widget">
                     <h2>Test Upcoming Features</h2><br />
                     <button class="action-button"
-                        onclick="navigateToTab('community-tab')">👥
+                        @click="currentTab = 'community-tab'">👥
                         Community</button>
                     <button class="action-button"
-                        onclick="navigateToTab('cast-tab')">📡 Cast</button>
+                        @click="currentTab = 'cast-tab'">📡 Cast</button>
                 </div>
                 <hr />
 
-                <!-- Experimental Features Toggle -->
-                <div id="experimental-features-widget" class="settings-widget">
+                <div class="settings-widget">
                     <p style="text-align:center;">Enable Experimental
                         Features:</p>
                     <input type="checkbox" id="experimental-toggle"
@@ -1337,20 +1337,20 @@
             <!-- END SETTINGS TAB -->
 
             <!-- UPDATES TAB -->
-            <div id="updates-tab" class="tab-content">
+            <div id="updates-tab" class="tab-content"
+                x-show="currentTab === 'updates-tab'">
                 <div style="text-align:center;">
                     <img
                         src="./img/assets/u_ahoy23.png"
                         alt="Ahoy Indie Media Logo"
                         class="homepage-logo"
-                        onclick="navigateToTab('news-tab')" />
+                        @click="currentTab = 'news-tab'" />
                 </div>
                 <div style="text-align:center; margin-top:10px;">
                     <button class="action-button"
-                        onclick="navigateToTab('about-tab')">About Ahoy</button>
+                        @click="currentTab = 'about-tab'">About Ahoy</button>
                     <button class="action-button"
-                        onclick="navigateToTab('updates-tab')">App
-                        Updates</button>
+                        @click="currentTab = 'updates-tab'">App Updates</button>
                 </div>
                 <hr />
 
@@ -1378,7 +1378,8 @@
             <!-- END UPDATES TAB -->
 
             <!-- ACCOUNT TAB -->
-            <div id="account-tab" class="tab-content experimental-feature">
+            <div id="account-tab" class="tab-content experimental-feature"
+                x-show="currentTab === 'account-tab'">
                 <div class="app-header">
                     <h2 class="section-header">Account</h2>
                 </div>
@@ -1397,7 +1398,8 @@
             <!-- END ACCOUNT TAB -->
 
             <!-- GAME TAB -->
-            <div id="game-tab" class="tab-content experimental-feature">
+            <div id="game-tab" class="tab-content experimental-feature"
+                x-show="currentTab === 'game-tab'">
                 <div class="app-header">
                     <h2 class="section-header">Games</h2>
                 </div>
@@ -1405,19 +1407,16 @@
 
                 <div id="puddle-game">
                     <h3>Puddle</h3>
-                    <p style="text-align:center; line-height:1.25;">
-                        Puddle is a word game where you guess the 4-letter word
-                        of the day.
-                        You have 6 attempts. Same word applies to all players.
-                        Good luck!
+                    <p style="text-align:center;">
+                        Guess the 4-letter word of the day within 6 attempts.
+                        Same word for all players!
                     </p>
                     <div id="tooltip" class="tooltip">
-                        <p>Instructions: Guess the 4-letter word in 6 attempts.
-                            Good luck!</p>
+                        <p>Instructions: Guess the 4-letter word in 6 tries.</p>
                     </div>
                 </div>
 
-                <div id="alert-box" class="alert" style="display:none;">
+                <div id="alert-box" style="display:none; text-align:center;">
                     <p id="alert-message"></p>
                 </div>
                 <div id="puddle-game-container" class="game-container"></div>
@@ -1435,7 +1434,7 @@
 
             <!-- CAST TAB -->
             <div id="cast-tab" class="tab-content experimental-feature"
-                x-data="castApp()">
+                x-show="currentTab === 'cast-tab'" x-data="castApp()">
                 <div class="app-header">
                     <h2 class="section-header">Cast</h2>
                 </div>
@@ -1454,14 +1453,11 @@
         </div>
         <!-- END MAIN CONTENT -->
 
-        <!-- ========== SCRIPTS ========== -->
-
-        <!-- Global Scripts (same as original) -->
+        <!-- ========== SCRIPTS (same as your original) ========== -->
         <script src="js/src/core.js"></script>
         <script src="js/src/newsletter.js"></script>
         <script src="js/src/function-switchTheme.js"></script>
-        <script src="js/src/nav-leftDash.js"></script>
-        <!-- You can adapt to left dash as needed -->
+        <!-- "nav-leftDash.js" is no longer needed for tab switching, but keep anything else you want. -->
         <script src="js/src/function_today_date.js"></script>
         <script src="js/src/super-song.js"></script>
         <script src="js/src/new-super-pod.js"></script>
@@ -1514,6 +1510,22 @@
         },
       };
     }
+  </script>
+
+        <!-- New script for debugging -->
+        <script>
+    document.addEventListener('alpine:init', () => {
+      Alpine.data('debugTabs', () => ({
+        currentTab: 'music-tab',  // Assuming 'music-tab' is the correct ID
+        init() {
+          console.log('Current tab on init:', this.currentTab);
+        },
+        setCurrentTab(tab) {
+          this.currentTab = tab;
+          console.log('Tab changed to:', this.currentTab);
+        }
+      }));
+    });
   </script>
     </body>
 </html>
