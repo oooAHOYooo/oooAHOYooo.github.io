@@ -7,9 +7,6 @@
             content="width=device-width,initial-scale=1,shrink-to-fit=yes" />
 
         <!-- Firebase (Core + Firestore + Auth) -->
-        <link
-            href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap"
-            rel="stylesheet">
         <script
             src="https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js"></script>
         <script
@@ -919,35 +916,36 @@
   </script>
         <script>
             document.addEventListener('DOMContentLoaded', async () => {
-              try {
-                // Fetch the JSON
-                const url = "ahoy-playlists.json"; // Adjust the path if necessary
-                const response = await fetch(url);
-                if (!response.ok) throw new Error("Network response was not ok");
-        
-                // Parse the JSON
-                const data = await response.json();
-        
-                // Assuming you have a function or a way to render videos in your application:
-                const container = document.querySelector('.media-container'); // Ensure this selector matches your HTML
-                if (!container) throw new Error("Container for media not found");
-        
-                // Process each category of videos
-                ['episodes', 'clips', 'promos', 'music'].forEach(category => {
-                  data[category].forEach(video => {
-                    const videoElement = document.createElement('video');
-                    videoElement.src = video.src;
-                    videoElement.type = video.type;
-                    videoElement.controls = true;
-                    container.appendChild(videoElement);
-                  });
-                });
-        
-                console.log("Media data loaded and displayed successfully.");
-              } catch (err) {
-                console.error("Error fetching or displaying media data:", err);
-              }
+                try {
+                    // Fetch the JSON
+                    const url = "./data/radioPlay.json"; // Adjust the path if necessary
+                    const response = await fetch(url);
+                    if (!response.ok) throw new Error("Network response was not ok");
+
+                    // Parse the JSON
+                    const data = await response.json();
+
+                    // Assuming you have a function or a way to render songs in your application:
+                    const container = document.querySelector('#songListBody'); // Ensure this selector matches your HTML
+                    if (!container) throw new Error("Container for songs not found");
+
+                    // Process each song
+                    data.songs.forEach(song => {
+                        const row = document.createElement('tr');
+                        const titleCell = document.createElement('td');
+                        titleCell.textContent = song.songTitle;
+                        const artistCell = document.createElement('td');
+                        artistCell.textContent = song.artist;
+                        row.appendChild(titleCell);
+                        row.appendChild(artistCell);
+                        container.appendChild(row);
+                    });
+
+                    console.log("Song data loaded and displayed successfully.");
+                } catch (err) {
+                    console.error("Error fetching or displaying song data:", err);
+                }
             });
-          </script>
+        </script>
     </body>
 </html>

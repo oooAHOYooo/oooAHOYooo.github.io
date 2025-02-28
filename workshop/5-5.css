@@ -1,11 +1,9 @@
-< !-- Inline CSS (No External Files) --><style>
-
 /* GLOBAL RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Barlow', sans-serif;
 }
 
 /* OVERALL BODY - Pastel Mint with Glass-Like Parallax */
