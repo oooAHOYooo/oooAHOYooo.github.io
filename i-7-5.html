@@ -34,7 +34,7 @@
         <meta name="format-detection" content="telephone=no" />
         <meta name="msapplication-tap-highlight" content="no" />
         <meta name="color-scheme" content="light dark" />
-
+<link rel="stylesheet" href="./workshop/5-5.css">
         <title>Ahoy Indie Media - Live Indie Music, Spotlights, Filmmakers &
             More</title>
         <meta name="referrer" content="strict-origin-when-cross-origin" />
@@ -813,6 +813,15 @@
             </div>
             <!-- END CAST TAB -->
 
+            <!-- SNIPS TAB -->
+            <div id="snips-tab" class="tab-content">
+                <video id="snip-video" controls autoplay loop muted></video>
+                <h3 id="snip-title"></h3>
+                <p id="snip-description"></p>
+                <button onclick="snipViewer().prevSnip()">Previous Snip</button>
+                <button onclick="snipViewer().nextSnip()">Next Snip</button>
+            </div>
+
         </div>
         <!-- END MAIN CONTENT -->
 
@@ -949,31 +958,44 @@
             });
         </script>
         <script>
-            function clipViewer() {
+            function snipViewer() {
                 return {
                     snips: [
-                        { src: "https://storage.googleapis.com/ahoy-videos/snips/surprise-engagement-and-a-robotic-dilemma.mp4", title: "Clip 1", description: "Funny moment from the show" },
-                        { src: "https://storage.googleapis.com/ahoy-videos/snips/palbot-causes-tension-in-couples-relationship.mp4", title: "Clip 2", description: "Hilarious crowd reaction" },
-                        { src: "https://storage.googleapis.com/ahoy-videos/snips/palbot-causes-tension-in-couples-relationship.mp4", title: "Clip 3", description: "Behind-the-scenes blooper" }
+                        { src: "https://storage.googleapis.com/ahoy-videos/snips/surprise-engagement-and-a-robotic-dilemma.mp4", title: "Snip 1", description: "Funny moment from the show" },
+                        { src: "https://storage.googleapis.com/ahoy-videos/snips/palbot-causes-tension-in-couples-relationship.mp4", title: "Snip 2", description: "Hilarious crowd reaction" },
+                        { src: "https://storage.googleapis.com/ahoy-videos/snips/palbot-causes-tension-in-couples-relationship.mp4", title: "Snip 3", description: "Behind-the-scenes blooper" }
                     ],
                     currentIndex: 0,
 
-                    get currentClip() {
+                    get currentSnip() {
                         return this.snips[this.currentIndex];
                     },
 
-                    nextClip() {
+                    nextSnip() {
                         this.currentIndex = (this.currentIndex + 1) % this.snips.length;
+                        this.updateSnip();
                     },
 
-                    prevClip() {
+                    prevSnip() {
                         this.currentIndex = (this.currentIndex - 1 + this.snips.length) % this.snips.length;
+                        this.updateSnip();
+                    },
+
+                    updateSnip() {
+                        const video = document.getElementById('snip-video');
+                        const title = document.getElementById('snip-title');
+                        const description = document.getElementById('snip-description');
+
+                        video.src = this.currentSnip.src;
+                        title.textContent = this.currentSnip.title;
+                        description.textContent = this.currentSnip.description;
+                        video.play();
                     }
                 };
             }
         </script>
         <style>
-            #clips-tab .clip-container {
+            #snips-tab .clip-container {
                 position: relative;
                 width: 100%;
                 height: 90vh;
@@ -983,21 +1005,21 @@
                 align-items: center;
             }
 
-            #clips-tab video {
+            #snips-tab video {
                 width: 100%;
                 height: 80vh;
                 object-fit: cover;
                 border-radius: 10px;
             }
 
-            #clips-tab .clip-controls {
+            #snips-tab .clip-controls {
                 position: absolute;
                 bottom: 20px;
                 display: flex;
                 gap: 10px;
             }
 
-            #clips-tab .clip-info {
+            #snips-tab .clip-info {
                 position: absolute;
                 bottom: 80px;
                 background: rgba(0, 0, 0, 0.6);
