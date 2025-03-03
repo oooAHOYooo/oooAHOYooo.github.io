@@ -74,14 +74,23 @@
     }
   </script>
 
+        <style>
+            /* Existing styles */
+            .hidden {
+                display: none;
+            }
+        </style>
+
     </head>
 
     <body>
         <!-- ========== LEFT DASHBOARD ========== -->
         <div class="left-dashboard">
+            <!-- Toggle Button -->
+            <button onclick="toggleSidebar()" class="toggle-sidebar-btn">Toggle Sidebar</button>
             <div class="logo-container">
                 <img
-                    src="./assets/u_ahoy23.png"
+                    src="./images/u_ahoy23.png"
                     alt="Ahoy Indie Media Logo"
                     onclick="showTab('news-tab')" />
             </div>
@@ -961,11 +970,33 @@
             function snipViewer() {
                 return {
                     snips: [
-                        { src: "https://storage.googleapis.com/ahoy-videos/snips/surprise-engagement-and-a-robotic-dilemma.mp4", title: "Snip 1", description: "Funny moment from the show" },
-                        { src: "https://storage.googleapis.com/ahoy-videos/snips/palbot-causes-tension-in-couples-relationship.mp4", title: "Snip 2", description: "Hilarious crowd reaction" },
-                        { src: "https://storage.googleapis.com/ahoy-videos/snips/palbot-causes-tension-in-couples-relationship.mp4", title: "Snip 3", description: "Behind-the-scenes blooper" }
+                        { src: "https://storage.googleapis.com/ahoy-videos/snips/palbot-causes-tension-in-couples-relationship.mp4", title: "Snip 1", description: "A tense moment" },
+                        { src: "https://storage.googleapis.com/ahoy-videos/snips/surprise-engagement-and-a-robotic-dilemma.mp4", title: "Snip 2", description: "A surprise engagement" },
+                        { src: "https://storage.googleapis.com/ahoy-videos/snips/palbot-causes-tension-in-couples-relationship.mp4", title: "Snip 1", description: "A tense moment" },
                     ],
                     currentIndex: 0,
+                    touchStartY: 0,
+                    touchEndY: 0,
+
+                    init() {
+                        const videoContainer = document.getElementById('snip-video');
+                        videoContainer.addEventListener('touchstart', (e) => {
+                            this.touchStartY = e.changedTouches[0].screenY;
+                        }, false);
+
+                        videoContainer.addEventListener('touchend', (e) => {
+                            this.touchEndY = e.changedTouches[0].screenY;
+                            this.handleSwipeGesture();
+                        }, false);
+                    },
+
+                    handleSwipeGesture() {
+                        if (this.touchStartY > this.touchEndY + 50) {
+                            this.nextSnip();
+                        } else if (this.touchEndY > this.touchStartY + 50) {
+                            this.prevSnip();
+                        }
+                    },
 
                     get currentSnip() {
                         return this.snips[this.currentIndex];
@@ -993,6 +1024,11 @@
                     }
                 };
             }
+
+            document.addEventListener('DOMContentLoaded', function() {
+                const viewer = snipViewer();
+                viewer.init();
+            });
         </script>
         <style>
             #snips-tab .clip-container {
@@ -1029,5 +1065,11 @@
                 text-align: center;
             }
         </style>
+        <script>
+            function toggleSidebar() {
+                const sidebar = document.querySelector('.left-dashboard');
+                sidebar.classList.toggle('hidden');
+            }
+        </script>
     </body>
 </html>
