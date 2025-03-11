@@ -1,6 +1,6 @@
 window.addEventListener('DOMContentLoaded', (event) => {
     let isOfflineMode = false;
-    let useLocalData = false; // Toggle to choose between local data or remote API
+    let useLocalData = true; // Toggle to choose between local data or remote API
 
     document.addEventListener('offlineModeChanged', function(event) {
         isOfflineMode = event.detail;
