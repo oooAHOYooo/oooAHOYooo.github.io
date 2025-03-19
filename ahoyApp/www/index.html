@@ -220,21 +220,33 @@ function showNowPlaying() {
                             <section class="player-section"
                                 x-show="viewMode === 'player'">
                                 <div class="super-video-player-container">
-                                    <video id="video-player" controls
-                                        playsinline webkit-playsinline
-                                        preload="auto"
-                                        class="super-video-lofi">
+                                    <video id="video-player"
+                                           class="super-video-lofi"
+                                           controls
+                                           playsinline
+                                           webkit-playsinline
+                                           preload="auto">
                                         <source x-bind:src="currentVideo.src"
-                                            x-bind:type="currentVideo.type" />
+                                                x-bind:type="currentVideo.type" />
                                         <p>Please enable JavaScript</p>
                                     </video>
-                                    <div class="video-controls">
-                                        <!-- Existing control buttons -->
-                                        <button class="control-button" @click="prevVideo()">⏮️</button>
-                                        <button class="control-button" @click="togglePlayPause()">▶️</button>
-                                        <button class="control-button" @click="nextVideo()">⏭️</button>
-                                        <!-- Share Button -->
-                                        <button @click="shareCurrentVideo()" class="control-button share-button">🔗 Share</button>
+
+                                    <!-- Glass-like Controls Container -->
+                                    <div class="video-controls-glass">
+                                        <!-- Symmetrical control buttons -->
+                                        <button class="control-glass-button" @click="prevVideo()">
+                                            <i class="fas fa-backward"></i>
+                                        </button>
+                                        <button class="control-glass-button" @click="togglePlayPause()">
+                                            <i class="fas fa-play"></i>
+                                        </button>
+                                        <button class="control-glass-button" @click="nextVideo()">
+                                            <i class="fas fa-forward"></i>
+                                        </button>
+                                        <!-- Share button: triggers the Share Modal -->
+                                        <button class="control-glass-button" @click="openShareModal()">
+                                            <i class="fas fa-share"></i>
+                                        </button>
                                     </div>
                                 </div>
                             </section>
