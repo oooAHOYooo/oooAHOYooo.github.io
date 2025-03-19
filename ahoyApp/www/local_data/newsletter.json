@@ -507,8 +507,25 @@
     "imageUrl": "https://storage.googleapis.com/ahoy-dynamic-content/news/Ahoy%20Cabaret%20-%203.22.25.jpg",
     "content": "Join us for another night of the Ahoy Cabaret on March 22, 2025. This time around - you'll find us in the classic New Haven staple - coffee with a K ( Koffee? ) We’re filming our second episode, and got an incredible lineup of musical acts, including Samuel Dylan Witch, Jake Custer, Justin Neafsey and more - - , alongside poetry, and surprise performances— all hosted by Rob Meglio and Tyler Mirando. Doors open at 7:30 PM for food, drinks, and mingles - before the show kicks off at 8 PM. Seating is first come, first served, with a $10 suggested donation. Stick around for the after-party and grab some exclusive merch. Space is limited, so mark your calendar and make plans to join us if you can - - if you can't make it - no worries - we will be filming the entire show - and hope to have it out by the end of the month. Excited for this one - see you soon ",
     "active": "true",
-    "goTo": "media-tab"
+    "goTo": "media-tab-a"
+  },
+  {
+    "date": "2025-03-14",
+    "title": "Ahoy Cabaret Live @ Koffee? - This Saturday Night - 3.22.25",
+    "imageUrl": "https://storage.googleapis.com/ahoy-dynamic-content/news/ahoyCaba-ep3/AHOY%20KOFFEE%20.jpg",
+    "content": "This saturday night - we got another cabaret coming live out of New Haven's finest - the one and only - K?  Doors open at 7:30 - showtime at 8 - $10 suggested donation - after party at blue orchid - come through!",
+    "active": "true",
+    "goTo": "media-tab-a"
+  },
+  {
+    "date": "2025-03-18",
+    "title": "Ahoy Cabaret Epsiode 2 - Out Now for Streaming",
+    "imageUrl": "https://storage.googleapis.com/ahoy-dynamic-content/news/Ahoy%20Caba%20-%20Ep%202%20-%20a.jpeg",
+    "content": "We got the full episode up of the previous cabaret we shot at Best Video on 2.22.25 -     be sure to catch the next one this Saturday night - live at Koffee? ",
+     "active": "true",
+    "goTo": "media-tab-a"
   }
+  
   
 
 ]
