@@ -217,7 +217,6 @@ function showNowPlaying() {
                         style="display: flex; flex-wrap: wrap;">
                         <!-- Main Player and Library Section -->
                         <div class="player-and-library">
-
                             <section class="player-section"
                                 x-show="viewMode === 'player'">
                                 <div class="super-video-player-container">
@@ -229,10 +228,16 @@ function showNowPlaying() {
                                             x-bind:type="currentVideo.type" />
                                         <p>Please enable JavaScript</p>
                                     </video>
+                                    <div class="video-controls">
+                                        <!-- Existing control buttons -->
+                                        <button class="control-button" @click="prevVideo()">⏮️</button>
+                                        <button class="control-button" @click="togglePlayPause()">▶️</button>
+                                        <button class="control-button" @click="nextVideo()">⏭️</button>
+                                        <!-- Share Button -->
+                                        <button @click="shareCurrentVideo()" class="control-button share-button">🔗 Share</button>
+                                    </div>
                                 </div>
-
                             </section>
-
                         </div>
 
                         <!-- Library Section (starts in List View) -->
@@ -277,16 +282,17 @@ function showNowPlaying() {
                                 <template
                                     x-for="video in filterVideosBySubCategory(selectedSubCategory)"
                                     :key="video.id">
-                                    <div class="library-card"
-                                        @click="selectVideo(video.id); viewMode = 'player'">
-                                        <img :src="video.thumbnail"
-                                            alt="Video Thumbnail" />
-                                        <div class="info">
-                                            <strong
-                                                x-text="video.title"></strong><br />
-                                            <small
-                                                x-text="video.category"></small>
-                                        </div>
+                                    <div class="library-card">
+                                        <a :href="'?mediaId=' + video.id" @click.prevent="selectVideo(video.id); viewMode = 'player'">
+                                            <img :src="video.thumbnail"
+                                                alt="Video Thumbnail" />
+                                            <div class="info">
+                                                <strong
+                                                    x-text="video.title"></strong><br />
+                                                <small
+                                                    x-text="video.category"></small>
+                                            </div>
+                                        </a>
                                     </div>
                                 </template>
                             </div>

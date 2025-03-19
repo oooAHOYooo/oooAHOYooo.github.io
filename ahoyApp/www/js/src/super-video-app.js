@@ -102,6 +102,8 @@ function videoApp() {
 
 		// Initialize lazy loading for video thumbnails
 		this.initLazyLoadThumbnails();
+
+		this.handleRouting();
 	  },
 	  // loadCurrentVideo now accepts an optional startTime (default 0)
 	  // It loads the video, sets currentTime if possible, but does NOT auto-play.
@@ -140,6 +142,8 @@ function videoApp() {
 		this.currentVideoId = id;
 		this.loadCurrentVideo(); // starts at 0 when manually selected
 		window.scrollTo(0, 0); // Scroll to the top of the page
+		// Update the URL without reloading the page
+		window.history.pushState({}, '', `?mediaId=${id}`);
 	  },
 	  nextVideo() {
 		let index = this.fullLibrary.findIndex(video => video.id === this.currentVideoId);
@@ -264,6 +268,23 @@ function videoApp() {
 
 		const thumbnails = document.querySelectorAll('.video-thumbnail[data-src]');
 		thumbnails.forEach(thumbnail => observer.observe(thumbnail));
+	  },
+	  // New method to handle URL routing
+	  handleRouting() {
+		const urlParams = new URLSearchParams(window.location.search);
+		const mediaId = urlParams.get('mediaId');
+		if (mediaId) {
+		  this.selectVideo(mediaId);
+		}
+	  },
+	  // New method to copy the current URL to the clipboard
+	  shareCurrentVideo() {
+		const url = window.location.href;
+		navigator.clipboard.writeText(url).then(() => {
+		  alert('Link copied to clipboard!');
+		}).catch(err => {
+		  console.error('Failed to copy: ', err);
+		});
 	  }
 	};
   }
