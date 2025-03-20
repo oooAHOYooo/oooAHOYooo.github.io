@@ -524,6 +524,19 @@
     "content": "We got the full episode up of the previous cabaret we shot at Best Video on 2.22.25 -     be sure to catch the next one this Saturday night - live at Koffee? ",
      "active": "true",
     "goTo": "media-tab-a"
+  },
+  {
+    "date": "2025-03-20",
+    "title": "We've been making merch for the cabaret",
+    "imageUrl": "https://storage.googleapis.com/ahoy-dynamic-content/news/ahoyCaba-ep3/Ahoy%20Merch%20-%20Batch%202%20-%201.jpeg",
+    "content": "We ordered a batch offinely threaded shirts and are finally getting the hang of this vinyl cutter - going to see how far we can get - come through and grab one while you can- first come - first serve- doors open at 7:30 - showtime at 8pm",
+    "active": "true",
+    "goTo": "media-tab-a",
+    "additionalImages": [
+
+      "https://storage.googleapis.com/ahoy-dynamic-content/news/ahoyCaba-ep3/Ahoy%20Merch%20-%20Batch%202%20-%204.jpeg",
+      "https://storage.googleapis.com/ahoy-dynamic-content/news/ahoyCaba-ep3/Ahoy%20Merch%20-%20Batch%202%20-%205.jpeg"
+    ]
   }
   
   
