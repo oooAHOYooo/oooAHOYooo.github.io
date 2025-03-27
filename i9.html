@@ -84,38 +84,84 @@
                 position: relative;
                 user-select: none;
                 z-index: 1;
+                transition: transform 0.1s ease-out, box-shadow 0.2s ease;
+            }
+
+            .draggable:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
             }
 
             .draggable.dragging {
                 z-index: 1000;
-                opacity: 0.8;
+                cursor: grabbing;
+                box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
             }
 
             .drag-handle {
-                display: none; /* Hidden by default */
+                display: none;
                 position: absolute;
                 top: 0;
                 left: 0;
                 right: 0;
-                background: #44444410;
-                padding: 5px;
+                background: linear-gradient(to right, #ff006010, #ff006020);
+                padding: 8px;
                 border-radius: 4px 4px 0 0;
-                cursor: move;
-                color: #67676741;
+                cursor: grab;
+                color: #ff0060;
                 text-align: center;
-                transition: opacity 0.2s ease;
+                opacity: 0;
+                transform: translateY(-5px);
+                transition: all 0.2s ease;
             }
 
-            /* Show drag handle on hover */
             .draggable:hover .drag-handle {
                 display: block;
                 opacity: 1;
+                transform: translateY(0);
             }
 
-            /* Make sure the handle stays visible while dragging */
             .draggable.dragging .drag-handle {
                 display: block;
                 opacity: 1;
+                background: linear-gradient(to right, #ff006020, #ff006040);
+                cursor: grabbing;
+            }
+
+            @keyframes blur-others {
+                from { filter: blur(0); }
+                to { filter: blur(2px); }
+            }
+
+            .blur-except-dragging {
+                animation: blur-others 0.2s forwards;
+            }
+
+            .reset-layout {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                background: rgba(255, 0, 96, 0.1);
+                border: 1px solid rgba(255, 0, 96, 0.2);
+                color: #545454;
+                padding: 8px;
+                border-radius: 50%;
+                width: 32px;
+                height: 32px;
+                cursor: pointer;
+                font-size: 12px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.2s ease;
+                opacity: 0.6;
+                z-index: 1000;
+            }
+
+            .reset-layout:hover {
+                opacity: 1;
+                transform: scale(1.1);
+                background: rgba(141, 141, 141, 0.2);
             }
         </style>
 
@@ -1113,16 +1159,45 @@
             // Update the makeDraggable function
             function makeDraggable() {
                 const widgets = document.querySelectorAll('.glass-card, .radio-widget, .player-container');
+                const sidebar = document.querySelector('.left-dashboard');
                 
+                // Add reset button if it doesn't exist
+                if (!document.querySelector('.reset-layout')) {
+                    const resetButton = document.createElement('button');
+                    resetButton.className = 'reset-layout';
+                    resetButton.innerHTML = '↺';
+                    resetButton.title = 'Reset Layout';
+                    document.body.appendChild(resetButton);
+                    
+                    resetButton.addEventListener('click', () => {
+                        widgets.forEach(widget => {
+                            // Store original position before any dragging
+                            if (!widget.dataset.originalPosition) {
+                                const rect = widget.getBoundingClientRect();
+                                widget.dataset.originalPosition = JSON.stringify({
+                                    x: rect.left,
+                                    y: rect.top
+                                });
+                            }
+                            
+                            // Animate back to original position
+                            widget.style.transition = 'transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)';
+                            widget.style.transform = 'translate3d(0, 0, 0)';
+                            
+                            // Reset tracking variables
+                            widget.xOffset = 0;
+                            widget.yOffset = 0;
+                        });
+                    });
+                }
+
                 widgets.forEach(widget => {
-                    // Only add draggable functionality if not already added
                     if (!widget.classList.contains('draggable')) {
                         widget.classList.add('draggable');
                         
-                        // Create drag handle
                         const handle = document.createElement('div');
                         handle.className = 'drag-handle';
-                        handle.innerHTML = '⋮⋮ Drag';
+                        handle.innerHTML = '↔ Drag Me';
                         widget.insertBefore(handle, widget.firstChild);
 
                         let isDragging = false;
@@ -1132,23 +1207,6 @@
                         let initialY;
                         let xOffset = 0;
                         let yOffset = 0;
-
-                        // Get the parent tab container
-                        const getTabContainer = () => widget.closest('.tab-content');
-
-                        // Get boundaries
-                        const getBoundaries = () => {
-                            const container = getTabContainer();
-                            const containerRect = container.getBoundingClientRect();
-                            const widgetRect = widget.getBoundingClientRect();
-                            
-                            return {
-                                left: containerRect.left,
-                                right: containerRect.right - widgetRect.width,
-                                top: containerRect.top,
-                                bottom: containerRect.bottom - widgetRect.height
-                            };
-                        };
 
                         handle.addEventListener('mousedown', dragStart);
                         document.addEventListener('mousemove', drag);
@@ -1161,6 +1219,13 @@
                                 initialY = e.clientY - yOffset;
                                 isDragging = true;
                                 widget.classList.add('dragging');
+                                
+                                // Add blur to other widgets
+                                widgets.forEach(w => {
+                                    if (w !== widget) {
+                                        w.classList.add('blur-except-dragging');
+                                    }
+                                });
                             }
                         }
 
@@ -1168,16 +1233,14 @@
                             if (isDragging) {
                                 e.preventDefault();
                                 
-                                // Get current tab container boundaries
-                                const bounds = getBoundaries();
+                                const sidebarRect = sidebar.getBoundingClientRect();
                                 
-                                // Calculate new position
                                 let newX = e.clientX - initialX;
                                 let newY = e.clientY - initialY;
                                 
-                                // Constrain to boundaries
-                                newX = Math.max(bounds.left - bounds.left, Math.min(bounds.right - bounds.left, newX));
-                                newY = Math.max(bounds.top - bounds.top, Math.min(bounds.bottom - bounds.top, newY));
+                                if (e.clientX < sidebarRect.right + 20) {
+                                    newX = sidebarRect.right - initialX + 20;
+                                }
                                 
                                 currentX = newX;
                                 currentY = newY;
@@ -1192,6 +1255,11 @@
                             if (isDragging) {
                                 isDragging = false;
                                 widget.classList.remove('dragging');
+                                
+                                // Remove blur from other widgets
+                                widgets.forEach(w => {
+                                    w.classList.remove('blur-except-dragging');
+                                });
                             }
                         }
 
@@ -1212,7 +1280,6 @@
             // Initialize draggable functionality after DOM loads
             document.addEventListener('DOMContentLoaded', function() {
                 makeDraggable();
-                // ... existing DOMContentLoaded code ...
             });
         </script>
     </body>
