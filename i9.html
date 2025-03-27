@@ -163,6 +163,190 @@
                 transform: scale(1.1);
                 background: rgba(141, 141, 141, 0.2);
             }
+
+            /* Add these styles */
+            .song-row {
+                transition: background-color 0.2s ease;
+            }
+
+            .song-row:hover {
+                background-color: rgba(255, 0, 96, 0.1);
+            }
+
+            #songListTable {
+                width: 100%;
+                border-collapse: collapse;
+            }
+
+            #songListTable td {
+                padding: 8px;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            }
+
+            #songListTable .action-button {
+                padding: 4px 8px;
+                min-width: 32px;
+            }
+
+            /* Add these styles */
+            .news-item {
+                margin-bottom: 30px;
+                padding: 25px;
+                border-radius: 12px;
+                transition: all 0.3s ease;
+            }
+
+            .news-item:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            }
+
+            .news-header {
+                margin-bottom: 20px;
+            }
+
+            .news-header h3 {
+                margin: 0;
+                color: #ff0060;
+                font-size: 24px;
+                line-height: 1.3;
+            }
+
+            .news-header small {
+                color: #666;
+                display: block;
+                margin-top: 5px;
+                font-size: 14px;
+            }
+
+            .news-image {
+                margin: 20px 0;
+                text-align: center;
+            }
+
+            .news-image img {
+                width: 100%;
+                max-width: 800px;
+                height: auto;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            .news-content {
+                line-height: 1.8;
+                margin: 20px 0;
+                font-size: 16px;
+                color: #333;
+            }
+
+            .news-gallery {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 15px;
+                margin-top: 20px;
+            }
+
+            .news-gallery img {
+                width: 100%;
+                height: 250px;
+                object-fit: cover;
+                border-radius: 8px;
+                transition: transform 0.3s ease;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            .news-gallery img:hover {
+                transform: scale(1.05);
+            }
+
+            .news-navigation {
+                margin-top: 20px;
+                text-align: right;
+            }
+
+            .news-video {
+                margin: 20px 0;
+                position: relative;
+                padding-bottom: 56.25%; /* 16:9 aspect ratio */
+                height: 0;
+                overflow: hidden;
+            }
+
+            .news-video iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: 8px;
+            }
+
+            .error-message {
+                color: #ff0060;
+                text-align: center;
+                padding: 20px;
+                font-size: 16px;
+            }
+
+            /* Responsive design */
+            @media (max-width: 768px) {
+                .news-item {
+                    padding: 15px;
+                }
+
+                .news-header h3 {
+                    font-size: 20px;
+                }
+
+                .news-gallery {
+                    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                }
+
+                .news-gallery img {
+                    height: 150px;
+                }
+            }
+
+            /* Add these styles */
+            .loading-indicator {
+                text-align: center;
+                padding: 20px;
+                margin-top: 20px;
+            }
+
+            .loading-spinner {
+                display: inline-block;
+                width: 30px;
+                height: 30px;
+                border: 3px solid rgba(255, 0, 96, 0.2);
+                border-radius: 50%;
+                border-top-color: #ff0060;
+                animation: spin 1s ease-in-out infinite;
+            }
+
+            @keyframes spin {
+                to { transform: rotate(360deg); }
+            }
+
+            #newsletter-list {
+                overflow-y: auto;
+                padding: 20px;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+            .news-item {
+                opacity: 0;
+                transform: translateY(20px);
+                animation: fadeInUp 0.5s ease forwards;
+            }
+
+            @keyframes fadeInUp {
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
         </style>
 
     </head>
@@ -1019,34 +1203,145 @@
   </script>
         <script>
             document.addEventListener('DOMContentLoaded', async () => {
+                let page = 1;
+                const itemsPerPage = 5;
+                let allNewsItems = [];
+                let isLoading = false;
+                
                 try {
-                    // Fetch the JSON
-                    const url = "./data/radioPlay.json"; // Adjust the path if necessary
-                    const response = await fetch(url);
-                    if (!response.ok) throw new Error("Network response was not ok");
+                    // Fetch the newsletter data
+                    const response = await fetch('./ahoyApp/www/local_data/newsletter.json');
+                    if (!response.ok) throw new Error('Failed to fetch newsletter data');
+                    allNewsItems = await response.json();
 
-                    // Parse the JSON
-                    const data = await response.json();
+                    // Sort news items by date (most recent first)
+                    allNewsItems.sort((a, b) => new Date(b.date) - new Date(a.date));
+                    
+                    // Initial load
+                    loadMoreNews();
+                    
+                    // Add scroll listener
+                    window.addEventListener('scroll', () => {
+                        const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+                        
+                        // If we're near the bottom (within 100px) and not currently loading
+                        if (scrollTop + clientHeight >= scrollHeight - 100 && !isLoading) {
+                            loadMoreNews();
+                        }
+                    });
+                    
+                } catch (error) {
+                    console.error('Error loading newsletter:', error);
+                    const newsletterList = document.getElementById('newsletter-list');
+                    if (newsletterList) {
+                        newsletterList.innerHTML = '<p class="error-message">Failed to load news. Please try again later.</p>';
+                    }
+                }
 
-                    // Assuming you have a function or a way to render songs in your application:
-                    const container = document.querySelector('#songListBody'); // Ensure this selector matches your HTML
-                    if (!container) throw new Error("Container for songs not found");
+                function loadMoreNews() {
+                    isLoading = true;
+                    const newsletterList = document.getElementById('newsletter-list');
+                    
+                    // Calculate start and end indices for this page
+                    const start = (page - 1) * itemsPerPage;
+                    const end = start + itemsPerPage;
+                    const pageItems = allNewsItems.slice(start, end);
+                    
+                    // If no more items to load, remove loading indicator and return
+                    if (pageItems.length === 0) {
+                        const loadingIndicator = document.querySelector('.loading-indicator');
+                        if (loadingIndicator) {
+                            loadingIndicator.remove();
+                        }
+                        return;
+                    }
 
-                    // Process each song
-                    data.songs.forEach(song => {
-                        const row = document.createElement('tr');
-                        const titleCell = document.createElement('td');
-                        titleCell.textContent = song.songTitle;
-                        const artistCell = document.createElement('td');
-                        artistCell.textContent = song.artist;
-                        row.appendChild(titleCell);
-                        row.appendChild(artistCell);
-                        container.appendChild(row);
+                    // Create and append news items
+                    pageItems.forEach(item => {
+                        // Skip inactive items
+                        if (item.active === "false") return;
+
+                        const newsCard = document.createElement('div');
+                        newsCard.className = 'glass-card news-item';
+                        
+                        // Format date
+                        const date = new Date(item.date);
+                        const formattedDate = date.toLocaleDateString('en-US', {
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric'
+                        });
+
+                        // Build the HTML content
+                        let content = `
+                            <div class="news-header">
+                                <h3>${item.title}</h3>
+                                <small>${formattedDate}</small>
+                            </div>
+                        `;
+
+                        if (item.imageUrl) {
+                            content += `
+                                <div class="news-image">
+                                    <img src="${item.imageUrl}" alt="${item.title}" loading="lazy" />
+                                </div>
+                            `;
+                        }
+
+                        content += `
+                            <div class="news-content">
+                                ${item.content}
+                            </div>
+                        `;
+
+                        if (item.featuredVideoIframe) {
+                            content += `
+                                <div class="news-video">
+                                    <iframe src="${item.featuredVideoIframe}" 
+                                            width="100%" 
+                                            height="400" 
+                                            frameborder="0" 
+                                            allowfullscreen>
+                                    </iframe>
+                                </div>
+                            `;
+                        }
+
+                        if (item.additionalImages && item.additionalImages.length > 0) {
+                            content += `
+                                <div class="news-gallery">
+                                    ${item.additionalImages.map(imgUrl => 
+                                        `<img src="${imgUrl}" alt="Additional image" loading="lazy" />`
+                                    ).join('')}
+                                </div>
+                            `;
+                        }
+
+                        if (item.goTo && !item.goTo.startsWith('http')) {
+                            content += `
+                                <div class="news-navigation">
+                                    <button class="action-button" onclick="showTab('${item.goTo}')">
+                                        View More
+                                    </button>
+                                </div>
+                            `;
+                        }
+
+                        newsCard.innerHTML = content;
+                        newsletterList.appendChild(newsCard);
                     });
 
-                    console.log("Song data loaded and displayed successfully.");
-                } catch (err) {
-                    console.error("Error fetching or displaying song data:", err);
+                    // Add or update loading indicator
+                    let loadingIndicator = document.querySelector('.loading-indicator');
+                    if (!loadingIndicator) {
+                        loadingIndicator = document.createElement('div');
+                        loadingIndicator.className = 'loading-indicator';
+                        loadingIndicator.innerHTML = '<div class="loading-spinner"></div>';
+                        newsletterList.appendChild(loadingIndicator);
+                    }
+
+                    page++;
+                    isLoading = false;
                 }
             });
         </script>
