@@ -534,6 +534,137 @@
             #podcast-progress::-webkit-slider-thumb:hover {
                 transform: scale(1.2);
             }
+
+            /* Add these styles */
+            .music-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+                gap: 16px;
+                padding: 20px;
+                margin-bottom: 100px; /* Space for player */
+            }
+
+            .song-card {
+                background: rgba(255, 255, 255, 0.05);
+                border-radius: 8px;
+                overflow: hidden;
+                transition: all 0.3s ease;
+                cursor: pointer;
+                position: relative;
+            }
+
+            .song-card:hover {
+                background: rgba(255, 255, 255, 0.1);
+                transform: translateY(-4px);
+                box-shadow: 0 4px 12px rgba(255, 0, 96, 0.1);
+            }
+
+            .song-thumbnail {
+                width: 100%;
+                aspect-ratio: 1;
+                object-fit: cover;
+                border-radius: 4px;
+            }
+
+            .song-info {
+                padding: 12px;
+            }
+
+            .song-title {
+                font-size: 14px;
+                font-weight: 500;
+                margin: 0 0 4px 0;
+                color: #333;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .song-artist {
+                font-size: 12px;
+                color: #666;
+                margin: 0;
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+
+            /* Add play button overlay */
+            .song-card::after {
+                content: '▶️';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) scale(0.8);
+                font-size: 32px;
+                opacity: 0;
+                transition: all 0.2s ease;
+                text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            }
+
+            .song-card:hover::after {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
+
+            /* Add these styles for the music player */
+            .music-player {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: rgba(255, 255, 255, 0.98);
+                padding: 12px 24px;
+                box-shadow: 0 -2px 15px rgba(0, 0, 0, 0.1);
+                display: none;
+                grid-template-columns: auto 1fr auto;
+                gap: 20px;
+                align-items: center;
+                z-index: 1000;
+                backdrop-filter: blur(10px);
+            }
+
+            .music-player.active {
+                display: grid;
+            }
+
+            .player-btn {
+                background: none;
+                border: none;
+                font-size: 20px;
+                cursor: pointer;
+                padding: 8px;
+                border-radius: 50%;
+                transition: all 0.2s ease;
+            }
+
+            .player-btn:hover {
+                background: rgba(255, 0, 96, 0.1);
+            }
+
+            #music-progress {
+                width: 100%;
+                height: 4px;
+                -webkit-appearance: none;
+                background: rgba(255, 0, 96, 0.1);
+                border-radius: 2px;
+                outline: none;
+            }
+
+            #music-progress::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                width: 12px;
+                height: 12px;
+                background: #ff0060;
+                border-radius: 50%;
+                cursor: pointer;
+                transition: all 0.2s ease;
+            }
+
+            #music-progress::-webkit-slider-thumb:hover {
+                transform: scale(1.2);
+            }
         </style>
 
     </head>
@@ -687,86 +818,18 @@
                 </div>
                 <hr />
 
-                <div class="radio-widget">
-                    <div class="player-container">
-                        <img id="coverArt" alt="Cover Art" />
-                        <div class="song-info">
-                            <div class="song-details">
-                                <h2 class="sub-text" id="songTitle"></h2>
-                                <p class="sub-text" id="artist"></p>
-                            </div>
-                            <div class="duration-control">
-                                <input
-                                    type="range"
-                                    id="durationBar"
-                                    min="0"
-                                    max="100"
-                                    step="1"
-                                    value="0"
-                                    class="styled-duration-bar" />
-                            </div>
-                            <div class="radio-controls">
-                                <button class="audio-control-button"
-                                    id="playBtn">[►]</button>
-                                <button class="audio-control-button"
-                                    id="add15sBtn">[+15s]</button>
-                                <button class="audio-control-button"
-                                    id="prevBtn">[⏮️]</button>
-                                <button class="audio-control-button"
-                                    id="nextBtn">[⏭️]</button>
-                            </div>
-                        </div>
+                <div class="music-grid"></div>
+                <div class="music-player">
+                    <div class="now-playing-info">
+                        <h4 id="now-playing-title">Select a song to play</h4>
+                        <p id="now-playing-artist"></p>
                     </div>
-                </div>
-
-                <div class="glass-card">
-                    <h2>SEARCH SONGS:</h2>
-                    <div style="margin:10px 0;">
-                        <input
-                            type="text"
-                            id="songSearch"
-                            placeholder="Enter search query..."
-                            style="padding:5px;" />
-                        <button id="searchBtn"
-                            class="action-button">Search</button>
-                        <button id="clear-search"
-                            class="action-button">Clear</button>
+                    <div class="player-controls">
+                        <button class="player-btn" id="prev-15s">⏪</button>
+                        <button class="player-btn" id="play-pause">▶️</button>
+                        <button class="player-btn" id="next-15s">⏩</button>
                     </div>
-                </div>
-                <hr />
-
-                <!-- Play All Section -->
-                <div class="glass-card">
-                    <button id="playAllBtn" class="action-button">Play Daily
-                        Playlist</button>
-                    <div style="margin-top: 10px;">
-                        <ol>
-                            <li>Example Song - Artist</li>
-                            <!-- ... dynamically loaded ... -->
-                        </ol>
-                    </div>
-                    <div style="margin-top:10px;">
-                        <span>0</span>
-                        <span> song(s) remaining</span>
-                    </div>
-                </div>
-                <hr />
-
-                <div class="song-list">
-                    <div style="margin-bottom:10px;">
-                        <button class="action-button"
-                            id="song-sort-recent">Recently Added</button>
-                        <button class="action-button"
-                            id="song-sort-random">Random</button>
-                        <button class="action-button"
-                            id="song-sort-title-az">Title A-Z</button>
-                        <button class="action-button"
-                            id="song-sort-artist-az">Artist A-Z</button>
-                    </div>
-                    <table id="songListTable">
-                        <thead></thead>
-                        <tbody id="songListBody"></tbody>
-                    </table>
+                    <input type="range" id="music-progress" min="0" max="100" value="0">
                 </div>
             </div>
             <!-- END MUSIC TAB -->
@@ -1713,134 +1776,125 @@
         <script>
             // Add this to your existing DOMContentLoaded event listener
             document.addEventListener('DOMContentLoaded', async function() {
-                // ... existing code ...
+                const musicTab = document.getElementById('music-tab');
+                if (!musicTab) return;
 
-                // Initialize podcast section
-                let currentPodcast = null;
-                let audioPlayer = new Audio();
-                
-                async function loadPodcasts() {
-                    try {
-                        const response = await fetch('./ahoyApp/www/local_data/podcastCollection.json');
-                        if (!response.ok) throw new Error('Failed to fetch podcasts');
-                        const data = await response.json();
+                // Clear existing content
+                musicTab.innerHTML = `
+                    <div class="app-header">
+                        <h2 class="section-header">Music Player</h2>
+                    </div>
+                    <hr/>
+                    <div class="music-grid"></div>
+                    <div class="music-player">
+                        <div class="now-playing-info">
+                            <h4 id="now-playing-title">Select a song to play</h4>
+                            <p id="now-playing-artist"></p>
+                        </div>
+                        <div class="player-controls">
+                            <button class="player-btn" id="prev-15s">⏪</button>
+                            <button class="player-btn" id="play-pause">▶️</button>
+                            <button class="player-btn" id="next-15s">⏩</button>
+                        </div>
+                        <input type="range" id="music-progress" min="0" max="100" value="0">
+                    </div>
+                `;
+
+                // Initialize audio player
+                const audioPlayer = new Audio();
+                let currentSong = null;
+
+                // Load and display songs
+                try {
+                    const response = await fetch('./ahoyApp/www/local_data/radioPlay.json');
+                    if (!response.ok) throw new Error('Failed to fetch songs');
+                    const data = await response.json();
+
+                    // Shuffle songs
+                    const shuffledSongs = [...data.songs].sort(() => Math.random() - 0.5);
+
+                    // Get grid container
+                    const gridContainer = document.querySelector('.music-grid');
+
+                    // Create song cards
+                    shuffledSongs.forEach(song => {
+                        const card = document.createElement('div');
+                        card.className = 'song-card';
                         
-                        // Sort podcasts by date (most recent first)
-                        const podcasts = data.podcasts.sort((a, b) => new Date(b.date) - new Date(a.date));
+                        const imageUrl = song.coverArt || song.thumbnail || './img/default-album.jpg';
                         
-                        const podcastTab = document.getElementById('podcast-tab');
-                        const gridContainer = document.createElement('div');
-                        gridContainer.className = 'podcast-grid';
-                        
-                        // Create podcast cards
-                        podcasts.forEach(podcast => {
-                            if (podcast.active === false) return;
-                            
-                            const card = document.createElement('div');
-                            card.className = 'podcast-card';
-                            
-                            // Simplify the card content
-                            card.innerHTML = `
-                                <img src="${podcast.thumbnail}" alt="${podcast.title}" class="podcast-thumbnail" loading="lazy">
-                                <div class="podcast-info">
-                                    <h3 class="podcast-title">${podcast.title}</h3>
-                                    <p class="podcast-date">${new Date(podcast.date).toLocaleDateString('en-US', {
-                                        year: 'numeric',
-                                        month: 'short'
-                                    })}</p>
-                                </div>
-                            `;
-                            
-                            // Show full description on hover via title attribute
-                            card.title = podcast.description;
-                            
-                            card.addEventListener('click', () => playPodcast(podcast));
-                            gridContainer.appendChild(card);
-                        });
-                        
-                        // Create fixed player at bottom
-                        const player = document.createElement('div');
-                        player.className = 'podcast-player';
-                        player.innerHTML = `
-                            <div class="now-playing-info">
-                                <h4 id="now-playing-title">Select a podcast to play</h4>
-                                <p id="now-playing-description"></p>
+                        card.innerHTML = `
+                            <img src="${imageUrl}" alt="${song.songTitle}" class="song-thumbnail" loading="lazy">
+                            <div class="song-info">
+                                <h3 class="song-title">${song.songTitle}</h3>
+                                <p class="song-artist">${song.artist}</p>
                             </div>
-                            <div class="player-controls">
-                                <button class="player-btn" id="prev-15s">⏪</button>
-                                <button class="player-btn" id="play-pause">▶️</button>
-                                <button class="player-btn" id="next-15s">⏩</button>
-                            </div>
-                            <input type="range" id="podcast-progress" min="0" max="100" value="0">
                         `;
                         
-                        // Insert the grid and player
-                        podcastTab.appendChild(gridContainer);
-                        podcastTab.appendChild(player);
-                        
-                        // Setup player controls
-                        setupPlayerControls();
-                        
-                    } catch (error) {
-                        console.error('Error loading podcasts:', error);
-                    }
-                }
-                
-                function setupPlayerControls() {
-                    const player = document.querySelector('.podcast-player');
+                        card.addEventListener('click', () => playSong(song));
+                        gridContainer.appendChild(card);
+                    });
+
+                    // Setup player controls
                     const playPauseBtn = document.getElementById('play-pause');
                     const prev15sBtn = document.getElementById('prev-15s');
                     const next15sBtn = document.getElementById('next-15s');
-                    const progressBar = document.getElementById('podcast-progress');
-                    
-                    playPauseBtn.addEventListener('click', togglePlayPause);
-                    prev15sBtn.addEventListener('click', () => skip(-15));
-                    next15sBtn.addEventListener('click', () => skip(15));
-                    
-                    audioPlayer.addEventListener('timeupdate', updateProgress);
-                    progressBar.addEventListener('input', seekTo);
-                }
-                
-                function playPodcast(podcast) {
-                    currentPodcast = podcast;
-                    audioPlayer.src = podcast.mp3url;
-                    audioPlayer.play();
-                    
-                    document.getElementById('now-playing-title').textContent = podcast.title;
-                    document.getElementById('now-playing-description').textContent = podcast.description;
-                    document.querySelector('.podcast-player').classList.add('active');
-                    document.getElementById('play-pause').textContent = '⏸️';
-                }
-                
-                function togglePlayPause() {
-                    if (!currentPodcast) return;
-                    
-                    if (audioPlayer.paused) {
-                        audioPlayer.play();
-                        document.getElementById('play-pause').textContent = '⏸️';
-                    } else {
-                        audioPlayer.pause();
-                        document.getElementById('play-pause').textContent = '▶️';
+                    const progressBar = document.getElementById('music-progress');
+                    const player = document.querySelector('.music-player');
+
+                    function playSong(song) {
+                        currentSong = song;
+                        audioPlayer.src = song.mp3url;
+                        audioPlayer.play()
+                            .then(() => {
+                                document.getElementById('now-playing-title').textContent = song.songTitle;
+                                document.getElementById('now-playing-artist').textContent = song.artist;
+                                player.classList.add('active');
+                                playPauseBtn.textContent = '⏸️';
+                            })
+                            .catch(error => {
+                                console.error('Error playing song:', error);
+                            });
                     }
+
+                    playPauseBtn.addEventListener('click', () => {
+                        if (!currentSong) return;
+                        
+                        if (audioPlayer.paused) {
+                            audioPlayer.play();
+                            playPauseBtn.textContent = '⏸️';
+                        } else {
+                            audioPlayer.pause();
+                            playPauseBtn.textContent = '▶️';
+                        }
+                    });
+
+                    prev15sBtn.addEventListener('click', () => {
+                        if (!currentSong) return;
+                        audioPlayer.currentTime = Math.max(0, audioPlayer.currentTime - 15);
+                    });
+
+                    next15sBtn.addEventListener('click', () => {
+                        if (!currentSong) return;
+                        audioPlayer.currentTime = Math.min(audioPlayer.duration, audioPlayer.currentTime + 15);
+                    });
+
+                    audioPlayer.addEventListener('timeupdate', () => {
+                        if (!currentSong) return;
+                        const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+                        progressBar.value = progress;
+                    });
+
+                    progressBar.addEventListener('input', () => {
+                        if (!currentSong) return;
+                        const time = (progressBar.value / 100) * audioPlayer.duration;
+                        audioPlayer.currentTime = time;
+                    });
+
+                } catch (error) {
+                    console.error('Error loading songs:', error);
+                    musicTab.innerHTML += '<p class="error-message">Failed to load songs. Please try again later.</p>';
                 }
-                
-                function skip(seconds) {
-                    if (!currentPodcast) return;
-                    audioPlayer.currentTime += seconds;
-                }
-                
-                function updateProgress() {
-                    const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
-                    document.getElementById('podcast-progress').value = progress;
-                }
-                
-                function seekTo() {
-                    const progress = document.getElementById('podcast-progress').value;
-                    audioPlayer.currentTime = (progress / 100) * audioPlayer.duration;
-                }
-                
-                // Initialize podcasts
-                loadPodcasts();
             });
         </script>
     </body>
