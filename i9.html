@@ -349,15 +349,41 @@
                 }
             }
 
-            .news-tab {
-                height: auto;
-                overflow-y: visible;
+            /* Add these styles */
+            .scroll-to-top {
+                position: fixed;
+                bottom: 30px;
+                right: 30px;
+                background: rgba(255, 0, 96, 0.9);
+                color: white;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                border: none;
+                cursor: pointer;
+                display: none;
+                justify-content: center;
+                align-items: center;
+                font-size: 24px;
+                box-shadow: 0 4px 12px rgba(255, 0, 96, 0.3);
+                transition: all 0.3s ease;
+                z-index: 1000;
             }
 
-            .tab-content {
-                height: auto;
-                overflow-y: visible;
-                padding-bottom: 100px;
+            .scroll-to-top:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 6px 15px rgba(255, 0, 96, 0.4);
+                background: rgba(255, 0, 96, 1);
+            }
+
+            .scroll-to-top.visible {
+                display: flex;
+                animation: fadeIn 0.3s ease;
+            }
+
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
             }
         </style>
 
@@ -1212,19 +1238,11 @@
                     
                     // Add scroll listener
                     window.addEventListener('scroll', () => {
-                        // Get the news tab element
-                        const newsTab = document.getElementById('news-tab');
+                        const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
                         
-                        // Only check for scroll if news tab is active
-                        if (newsTab.classList.contains('active')) {
-                            const windowHeight = window.innerHeight;
-                            const documentHeight = document.documentElement.scrollHeight;
-                            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                            
-                            // If we're near the bottom (within 200px) and not currently loading
-                            if (documentHeight - (scrollTop + windowHeight) < 200 && !isLoading) {
-                                loadMoreNews();
-                            }
+                        // If we're near the bottom (within 100px) and not currently loading
+                        if (scrollTop + clientHeight >= scrollHeight - 100 && !isLoading) {
+                            loadMoreNews();
                         }
                     });
                     
@@ -1573,6 +1591,33 @@
             // Initialize draggable functionality after DOM loads
             document.addEventListener('DOMContentLoaded', function() {
                 makeDraggable();
+            });
+        </script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Create scroll to top button
+                const scrollButton = document.createElement('button');
+                scrollButton.className = 'scroll-to-top';
+                scrollButton.innerHTML = '↑';
+                scrollButton.title = 'Scroll to Top';
+                document.body.appendChild(scrollButton);
+
+                // Show/hide scroll button based on scroll position
+                window.addEventListener('scroll', () => {
+                    if (window.pageYOffset > 300) {
+                        scrollButton.classList.add('visible');
+                    } else {
+                        scrollButton.classList.remove('visible');
+                    }
+                });
+
+                // Smooth scroll to top when clicked
+                scrollButton.addEventListener('click', () => {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
             });
         </script>
     </body>

@@ -10,7 +10,7 @@
 body {
     display: flex;
     height: 100vh;
-    overflow: hidden;
+    overflow-y: auto;
     background: linear-gradient(135deg, #d1ffd2 0%, #b3ebc0 100%);
     color: #1f4d2e;
     /* Deep mint/green for text contrast */
