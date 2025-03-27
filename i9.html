@@ -329,10 +329,11 @@
             }
 
             #newsletter-list {
-                overflow-y: auto;
+                overflow-y: visible;
                 padding: 20px;
                 max-width: 1200px;
                 margin: 0 auto;
+                height: auto;
             }
 
             .news-item {
@@ -346,6 +347,17 @@
                     opacity: 1;
                     transform: translateY(0);
                 }
+            }
+
+            .news-tab {
+                height: auto;
+                overflow-y: visible;
+            }
+
+            .tab-content {
+                height: auto;
+                overflow-y: visible;
+                padding-bottom: 100px;
             }
         </style>
 
@@ -719,12 +731,7 @@
                         onclick="showTab('news-tab')" />
                 </div>
 
-                <div style="text-align:center; margin-top:10px;">
-                    <button class="action-button"
-                        onclick="showTab('about-tab')">About Ahoy</button>
-                    <button class="action-button"
-                        onclick="showTab('updates-tab')">App Updates</button>
-                </div>
+            
 
                 <div class="body-desc-container">
                     <div class="body-desc-block">
@@ -806,46 +813,19 @@
 
                 <div style="text-align:center;">
                     <img
-                        src="./img/assets/u_ahoy23.png"
+                        src="./ahoyApp/www/img/assets/u_ahoy23.png"
                         alt="Ahoy Indie Media Logo"
                         class="homepage-logo" />
                 </div>
-                <hr />
+             
 
                 <h2 id="calendar-date" style="text-align:center;"></h2>
+          
                 <hr />
 
-                <!-- Simple user welcome -->
-                <div class="welcome-container">
-                    <h1 class="welcome-text" id="welcome-message">Welcome
-                        Guest</h1>
-                    <p style="text-align:center;">
-                        Not logged in?
-                        <a href="login.html" style="color: #ff0060;">Log in
-                            here</a>
-                    </p>
-                </div>
-                <hr />
+           
 
-                <div class="homepage-subheader">
-                    <p>
-                        Based in New Haven, CT, Ahoy Indie Media is a hand-built
-                        media
-                        company providing an alternative avenue for exploring
-                        indie media.
-                    </p>
-                </div>
-                <hr />
-
-                <div style="text-align:center; margin-bottom:20px;">
-                    <button class="action-button"
-                        onclick="showTab('about-tab')">About Ahoy</button>
-                    <button class="action-button"
-                        onclick="showTab('updates-tab')">App Updates</button>
-                </div>
-                <hr />
-
-                <p style="text-align:center; font-weight:bold;">Front Page
+                <p style="text-align:center; font-weight:300; font-size:20px;">Front Page
                     News</p>
                 <hr />
 
@@ -932,7 +912,12 @@
                     <h2 class="section-header">Settings</h2>
                 </div>
                 <hr />
-
+				<div style="text-align:center; margin-top:10px;">
+                    <button class="action-button"
+                        onclick="showTab('about-tab')">About Ahoy</button>
+                    <button class="action-button"
+                        onclick="showTab('updates-tab')">App Updates</button>
+                </div>
                 <div class="settings-widget">
                     <button class="action-button" onclick="toggleMute()">Mute
                         Audio</button>
@@ -990,12 +975,7 @@
                         class="homepage-logo"
                         onclick="showTab('news-tab')" />
                 </div>
-                <div style="text-align:center; margin-top:10px;">
-                    <button class="action-button"
-                        onclick="showTab('about-tab')">About Ahoy</button>
-                    <button class="action-button"
-                        onclick="showTab('updates-tab')">App Updates</button>
-                </div>
+           
                 <hr />
 
                 <div id="status-header">
@@ -1027,6 +1007,16 @@
                     <h2 class="section-header">Account</h2>
                 </div>
                 <hr />
+				    <!-- Simple user welcome -->
+					<div class="welcome-container">
+						<h1 class="welcome-text" id="welcome-message">Welcome
+							Guest</h1>
+						<p style="text-align:center;">
+							Not logged in?
+							<a href="login.html" style="color: #ff0060;">Log in
+								here</a>
+						</p>
+					</div>
                 <p style="text-align:center;">
                     Manage your account settings and preferences here.
                 </p>
@@ -1222,11 +1212,19 @@
                     
                     // Add scroll listener
                     window.addEventListener('scroll', () => {
-                        const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+                        // Get the news tab element
+                        const newsTab = document.getElementById('news-tab');
                         
-                        // If we're near the bottom (within 100px) and not currently loading
-                        if (scrollTop + clientHeight >= scrollHeight - 100 && !isLoading) {
-                            loadMoreNews();
+                        // Only check for scroll if news tab is active
+                        if (newsTab.classList.contains('active')) {
+                            const windowHeight = window.innerHeight;
+                            const documentHeight = document.documentElement.scrollHeight;
+                            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                            
+                            // If we're near the bottom (within 200px) and not currently loading
+                            if (documentHeight - (scrollTop + windowHeight) < 200 && !isLoading) {
+                                loadMoreNews();
+                            }
                         }
                     });
                     
