@@ -558,6 +558,15 @@
       "https://storage.googleapis.com/ahoy-dynamic-content/news/ahoyCaba-ep3/show%20stills/Ahoy%20Caba%20-%20Show%203%20-11.jpg",
       "https://storage.googleapis.com/ahoy-dynamic-content/news/ahoyCaba-ep3/show%20stills/Ahoy%20Caba%20-%20Show%203%20-12.jpg"
     ]
+  },
+  {
+    "id": "ahoyPoets1",
+    "date": "4.16.25",
+    "title": "Ahoy Poets & Performers",
+    "imageUrl": "https://storage.googleapis.com/ahoy-dynamic-content/images/ahoyPoet-1/UPDATED_Come%20thru%20to%20Ahoy's%20next%20event%20-%204.16.25%20at%20Koffee.png",
+    "content": "Join us for the debut of our new event series - Ahoy Poets & Friends! We're creating a cozy, high-energy night of poetry and performance in the heart of New Haven.\n\nLocal poets and performers will take the stage to share original pieces and favorite poems in a fast-paced, one-hour live show — hosted by the iconic Mickey Vampiro and recorded for Ahoy Indie Media.\n\nExpect heart, rhythm, and raw creativity. Grab a drink, settle in, and let the words move you.\n\nWednesday, April 16 · 7PM · Koffee\nSuggested donation: $10\nMerch available (stickers + magnets!)\nLimited seating — come early!\n\nWe hope to make this a recurring series celebrating New Haven's vibrant poetry and performance community.\n\nFor more details visit: <a href='https://ahoy.ooo/newhaven.html' class='event-link'>ahoy.ooo/newhaven.html</a>",
+    "active": "true",
+    "goTo": "@newhaven.html"
   }
   
   
