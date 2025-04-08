@@ -1,0 +1,2006 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width,initial-scale=1,shrink-to-fit=yes" />
+
+        <!-- Firebase (Core + Firestore + Auth) -->
+        <script
+            src="https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js"></script>
+        <script
+            src="https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js"></script>
+        <script
+            src="https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js"></script>
+
+        <!-- Video.js (JS) -->
+        <script src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
+
+        <!-- Meta & Basic Info -->
+        <meta name="HandheldFriendly" content="true" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="apple-mobile-web-app-title" content="Ahoy Indie Media" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="theme-color" content="#ff0060" />
+        <meta
+            name="description"
+            content="Ahoy Indie Media - A hand-crafted media company based out of New Haven, Connecticut. We offer a homegrown alternative to mainstream media consumption." />
+        <meta
+            name="keywords"
+            content="Indie Media, Independent Artists, Indie Music, Podcasts, Indie Games, Digital Market, Indie Creators, Indie Culture, Ahoy Indie Media" />
+        <meta name="robots" content="index, follow" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <meta name="color-scheme" content="light dark" />
+<link rel="stylesheet" href="./workshop/5-6.css">
+        <title>Ahoy Indie Media - Live Indie Music, Spotlights, Filmmakers &
+            More</title>
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
+        <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+        <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
+        <meta
+            http-equiv="Strict-Transport-Security"
+            content="max-age=31536000;includeSubDomains" />
+        <meta http-equiv="X-XSS-Protection" content="1;mode=block" />
+
+        <!-- Fav Icon -->
+        <link rel="icon" type="image/png" href="./img/favicon_ahoy.png" />
+
+        <!-- Google Analytics -->
+        <script async
+            src="https://www.googletagmanager.com/gtag/js?id=G-WVDL9N1HDT"></script>
+        <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag("js", new Date());
+    gtag("config", "G-WVDL9N1HDT");
+  </script>
+        <!-- Firebase config (Initialize once) -->
+        <script>
+    // Your Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyBq_IQRwkjh2o-jUkS8tI8wcEek5yMIwmo",
+      authDomain: "ahoy-indie-media-da86d.firebaseapp.com",
+      projectId: "ahoy-indie-media-da86d",
+      storageBucket: "ahoy-indie-media-da86d.appspot.com",
+      messagingSenderId: "179901301547",
+      appId: "1:179901301547:web:599159f9efb826f464bb6e",
+    };
+    if (!firebase.apps.length) {
+      firebase.initializeApp(firebaseConfig);
+    }
+  </script>
+
+        <style>
+            /* Existing styles */
+            .hidden {
+                display: none;
+            }
+            /* Add these styles */
+            .draggable {
+                position: relative;
+                user-select: none;
+                z-index: 1;
+                transition: transform 0.1s ease-out, box-shadow 0.2s ease;
+            }
+
+            .draggable:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            }
+
+            .draggable.dragging {
+                z-index: 1000;
+                cursor: grabbing;
+                box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+            }
+
+            .drag-handle {
+                display: none;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                background: linear-gradient(to right, #ff006010, #ff006020);
+                padding: 8px;
+                border-radius: 4px 4px 0 0;
+                cursor: grab;
+                color: #ff0060;
+                text-align: center;
+                opacity: 0;
+                transform: translateY(-5px);
+                transition: all 0.2s ease;
+            }
+
+            .draggable:hover .drag-handle {
+                display: block;
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            .draggable.dragging .drag-handle {
+                display: block;
+                opacity: 1;
+                background: linear-gradient(to right, #ff006020, #ff006040);
+                cursor: grabbing;
+            }
+
+            @keyframes blur-others {
+                from { filter: blur(0); }
+                to { filter: blur(2px); }
+            }
+
+            .blur-except-dragging {
+                animation: blur-others 0.2s forwards;
+            }
+
+            .reset-layout {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                background: rgba(255, 0, 96, 0.1);
+                border: 1px solid rgba(255, 0, 96, 0.2);
+                color: #545454;
+                padding: 8px;
+                border-radius: 50%;
+                width: 32px;
+                height: 32px;
+                cursor: pointer;
+                font-size: 12px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.2s ease;
+                opacity: 0.6;
+                z-index: 1000;
+            }
+
+            .reset-layout:hover {
+                opacity: 1;
+                transform: scale(1.1);
+                background: rgba(141, 141, 141, 0.2);
+            }
+
+            /* Add these styles */
+            .song-row {
+                transition: background-color 0.2s ease;
+            }
+
+            .song-row:hover {
+                background-color: rgba(255, 0, 96, 0.1);
+            }
+
+            #songListTable {
+                width: 100%;
+                border-collapse: collapse;
+            }
+
+            #songListTable td {
+                padding: 8px;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            }
+
+            #songListTable .action-button {
+                padding: 4px 8px;
+                min-width: 32px;
+            }
+
+            /* Add these styles */
+            .news-item {
+                margin-bottom: 30px;
+                padding: 25px;
+                border-radius: 12px;
+                transition: all 0.3s ease;
+            }
+
+            .news-item:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            }
+
+            .news-header {
+                margin-bottom: 20px;
+            }
+
+            .news-header h3 {
+                margin: 0;
+                color: #ff0060;
+                font-size: 24px;
+                line-height: 1.3;
+            }
+
+            .news-header small {
+                color: #666;
+                display: block;
+                margin-top: 5px;
+                font-size: 14px;
+            }
+
+            .news-image {
+                margin: 20px 0;
+                text-align: center;
+            }
+
+            .news-image img {
+                width: 100%;
+                max-width: 800px;
+                height: auto;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            .news-content {
+                line-height: 1.8;
+                margin: 20px 0;
+                font-size: 16px;
+                color: #333;
+            }
+
+            .news-gallery {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 15px;
+                margin-top: 20px;
+            }
+
+            .news-gallery img {
+                width: 100%;
+                height: 250px;
+                object-fit: cover;
+                border-radius: 8px;
+                transition: transform 0.3s ease;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            .news-gallery img:hover {
+                transform: scale(1.05);
+            }
+
+            .news-navigation {
+                margin-top: 20px;
+                text-align: right;
+            }
+
+            .news-video {
+                margin: 20px 0;
+                position: relative;
+                padding-bottom: 56.25%; /* 16:9 aspect ratio */
+                height: 0;
+                overflow: hidden;
+            }
+
+            .news-video iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: 8px;
+            }
+
+            .error-message {
+                color: #ff0060;
+                text-align: center;
+                padding: 20px;
+                font-size: 16px;
+            }
+
+            /* Responsive design */
+            @media (max-width: 768px) {
+                .news-item {
+                    padding: 15px;
+                }
+
+                .news-header h3 {
+                    font-size: 20px;
+                }
+
+                .news-gallery {
+                    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                }
+
+                .news-gallery img {
+                    height: 150px;
+                }
+            }
+
+            /* Add these styles */
+            .loading-indicator {
+                text-align: center;
+                padding: 20px;
+                margin-top: 20px;
+            }
+
+            .loading-spinner {
+                display: inline-block;
+                width: 30px;
+                height: 30px;
+                border: 3px solid rgba(255, 0, 96, 0.2);
+                border-radius: 50%;
+                border-top-color: #ff0060;
+                animation: spin 1s ease-in-out infinite;
+            }
+
+            @keyframes spin {
+                to { transform: rotate(360deg); }
+            }
+
+            #newsletter-list {
+                overflow-y: visible;
+                padding: 20px;
+                max-width: 1200px;
+                margin: 0 auto;
+                height: auto;
+            }
+
+            .news-item {
+                opacity: 0;
+                transform: translateY(20px);
+                animation: fadeInUp 0.5s ease forwards;
+            }
+
+            @keyframes fadeInUp {
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            /* Add these styles */
+            .scroll-to-top {
+                position: fixed;
+                bottom: 30px;
+                right: 30px;
+                background: rgba(255, 0, 96, 0.9);
+                color: white;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                border: none;
+                cursor: pointer;
+                display: none;
+                justify-content: center;
+                align-items: center;
+                font-size: 24px;
+                box-shadow: 0 4px 12px rgba(255, 0, 96, 0.3);
+                transition: all 0.3s ease;
+                z-index: 1000;
+            }
+
+            .scroll-to-top:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 6px 15px rgba(255, 0, 96, 0.4);
+                background: rgba(255, 0, 96, 1);
+            }
+
+            .scroll-to-top.visible {
+                display: flex;
+                animation: fadeIn 0.3s ease;
+            }
+
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+
+            /* Update these styles */
+            .podcast-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+                gap: 16px;
+                padding: 20px;
+            }
+
+            .podcast-card {
+                background: rgba(255, 255, 255, 0.05);
+                border-radius: 8px;
+                overflow: hidden;
+                transition: all 0.3s ease;
+                cursor: pointer;
+                position: relative;
+            }
+
+            .podcast-card:hover {
+                background: rgba(255, 255, 255, 0.1);
+                transform: translateY(-4px);
+                box-shadow: 0 4px 12px rgba(255, 0, 96, 0.1);
+            }
+
+            .podcast-thumbnail {
+                width: 100%;
+                aspect-ratio: 1;
+                object-fit: cover;
+                border-radius: 4px;
+            }
+
+            .podcast-info {
+                padding: 12px;
+            }
+
+            .podcast-title {
+                font-size: 14px;
+                font-weight: 500;
+                margin: 0 0 4px 0;
+                color: #333;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .podcast-description {
+                font-size: 12px;
+                color: #666;
+                margin: 0;
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+
+            .podcast-date {
+                font-size: 11px;
+                color: #ff0060;
+                margin-top: 4px;
+                opacity: 0.8;
+            }
+
+            /* Add play button overlay */
+            .podcast-card::after {
+                content: '▶️';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) scale(0.8);
+                font-size: 32px;
+                opacity: 0;
+                transition: all 0.2s ease;
+                text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            }
+
+            .podcast-card:hover::after {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
+
+            /* Update player styles for better visibility */
+            .podcast-player {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: rgba(255, 255, 255, 0.98);
+                padding: 12px 24px;
+                box-shadow: 0 -2px 15px rgba(0, 0, 0, 0.1);
+                display: none;
+                z-index: 1000;
+                backdrop-filter: blur(10px);
+            }
+
+            .podcast-player.active {
+                display: grid;
+                grid-template-columns: auto 1fr auto;
+                gap: 20px;
+                align-items: center;
+            }
+
+            .now-playing-info {
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+            }
+
+            #now-playing-title {
+                font-size: 14px;
+                font-weight: 500;
+                margin: 0;
+                color: #333;
+            }
+
+            #now-playing-description {
+                font-size: 12px;
+                color: #666;
+                margin: 0;
+            }
+
+            .player-controls {
+                display: flex;
+                gap: 12px;
+                align-items: center;
+                justify-content: center;
+            }
+
+            #podcast-progress {
+                width: 100%;
+                height: 4px;
+                -webkit-appearance: none;
+                background: rgba(255, 0, 96, 0.1);
+                border-radius: 2px;
+                outline: none;
+            }
+
+            #podcast-progress::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                width: 12px;
+                height: 12px;
+                background: #ff0060;
+                border-radius: 50%;
+                cursor: pointer;
+                transition: all 0.2s ease;
+            }
+
+            #podcast-progress::-webkit-slider-thumb:hover {
+                transform: scale(1.2);
+            }
+
+            /* Add these styles */
+            .music-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+                gap: 16px;
+                padding: 20px;
+                margin-bottom: 100px; /* Space for player */
+            }
+
+            .song-card {
+                background: rgba(255, 255, 255, 0.05);
+                border-radius: 8px;
+                overflow: hidden;
+                transition: all 0.3s ease;
+                cursor: pointer;
+                position: relative;
+            }
+
+            .song-card:hover {
+                background: rgba(255, 255, 255, 0.1);
+                transform: translateY(-4px);
+                box-shadow: 0 4px 12px rgba(255, 0, 96, 0.1);
+            }
+
+            .song-thumbnail {
+                width: 100%;
+                aspect-ratio: 1;
+                object-fit: cover;
+                border-radius: 4px;
+            }
+
+            .song-info {
+                padding: 12px;
+            }
+
+            .song-title {
+                font-size: 14px;
+                font-weight: 500;
+                margin: 0 0 4px 0;
+                color: #333;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .song-artist {
+                font-size: 12px;
+                color: #666;
+                margin: 0;
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+
+            /* Add play button overlay */
+            .song-card::after {
+                content: '▶️';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) scale(0.8);
+                font-size: 32px;
+                opacity: 0;
+                transition: all 0.2s ease;
+                text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            }
+
+            .song-card:hover::after {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
+
+            /* Add these styles for the music player */
+            .music-player {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: rgba(255, 255, 255, 0.98);
+                padding: 12px 24px;
+                box-shadow: 0 -2px 15px rgba(0, 0, 0, 0.1);
+                display: none;
+                grid-template-columns: auto 1fr auto;
+                gap: 20px;
+                align-items: center;
+                z-index: 1000;
+                backdrop-filter: blur(10px);
+            }
+
+            .music-player.active {
+                display: grid;
+            }
+
+            .player-btn {
+                background: none;
+                border: none;
+                font-size: 20px;
+                cursor: pointer;
+                padding: 8px;
+                border-radius: 50%;
+                transition: all 0.2s ease;
+            }
+
+            .player-btn:hover {
+                background: rgba(255, 0, 96, 0.1);
+            }
+
+            #music-progress {
+                width: 100%;
+                height: 4px;
+                -webkit-appearance: none;
+                background: rgba(255, 0, 96, 0.1);
+                border-radius: 2px;
+                outline: none;
+            }
+
+            #music-progress::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                width: 12px;
+                height: 12px;
+                background: #ff0060;
+                border-radius: 50%;
+                cursor: pointer;
+                transition: all 0.2s ease;
+            }
+
+            #music-progress::-webkit-slider-thumb:hover {
+                transform: scale(1.2);
+            }
+
+            /* Update the left-dashboard styles */
+            .left-dashboard {
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 100vh;
+                width: 240px;
+                overflow-y: auto;
+                z-index: 1000;
+                background: #f0f9f0; /* Solid light mint color */
+                border-right: 1px solid rgba(0, 100, 0, 0.1);
+                transition: transform 0.3s ease;
+            }
+
+            /* Add styles for the toggle button */
+            .toggle-sidebar-btn {
+                position: fixed;
+                top: 20px;
+                left: 20px;
+                z-index: 1001;
+                padding: 8px 12px;
+                background: #98ff98;
+                border: 1px solid #006400;
+                border-radius: 4px;
+                color: #006400;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+
+            .toggle-sidebar-btn:hover {
+                background: #8EEB8E;
+            }
+
+            /* Add styles for when sidebar is hidden */
+            .left-dashboard.hidden {
+                transform: translateX(-240px);
+            }
+
+            /* When sidebar is hidden, adjust toggle button position */
+            .left-dashboard.hidden + .toggle-sidebar-btn {
+                left: 20px;
+            }
+
+            /* Update the main content margin */
+            .main-content {
+                margin-left: 240px;
+                transition: margin-left 0.3s ease;
+            }
+
+            /* Adjust main content when sidebar is hidden */
+            .left-dashboard.hidden ~ .main-content {
+                margin-left: 0;
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <!-- ========== LEFT DASHBOARD ========== -->
+        <button onclick="toggleSidebar()" class="toggle-sidebar-btn">☰</button>
+        <div class="left-dashboard">
+            <div class="logo-container">
+                <img
+                    src="./images/u_ahoy23.png"
+                    alt="Ahoy Indie Media Logo"
+                    onclick="showTab('news-tab')" />
+            </div>
+            <div class="nav-section">
+                <!-- We associate each button with a data-tab attribute. 
+           The showTab(tabId) function will reveal that tab and mark this button active. -->
+                <button class="nav-button" data-tab="news-tab"
+                    onclick="showTab('news-tab')">🏠 News</button>
+                <button class="nav-button" data-tab="media-tab-a"
+                    onclick="showTab('media-tab-a')">📺 Media</button>
+                <button class="nav-button" data-tab="snips-tab"
+                    onclick="showTab('snips-tab')">🎬 Snips</button>
+                <button class="nav-button" data-tab="music-tab"
+                    onclick="showTab('music-tab')">🎵 Music</button>
+                <button class="nav-button" data-tab="podcast-tab"
+                    onclick="showTab('podcast-tab')">🎙️ Podcasts</button>
+                <button class="nav-button" data-tab="community-tab"
+                    onclick="showTab('community-tab')">👥 Community</button>
+                <button class="nav-button" data-tab="about-tab"
+                    onclick="showTab('about-tab')">ℹ️ About</button>
+                <button class="nav-button" data-tab="updates-tab"
+                    onclick="showTab('updates-tab')">🚀 Updates</button>
+                <button class="nav-button" data-tab="settings-tab"
+                    onclick="showTab('settings-tab')">⚙️ Settings</button>
+
+                <button class="nav-button" data-tab="account-tab"
+                    onclick="showTab('account-tab')">👤 Account</button>
+                <button class="nav-button" data-tab="game-tab"
+                    onclick="showTab('game-tab')">🎮 Games</button>
+                <button class="nav-button" data-tab="cast-tab"
+                    onclick="showTab('cast-tab')">📡 Cast</button>
+            </div>
+            <!-- Now Playing Widget -->
+            <div id="now-playing-widget"
+                style="display: block; position: relative; width: 100%; margin-top: 20px;">
+                <div class="now-playing-content">
+                    <div class="album-art"
+                        style="width: 80px; height: 80px;"></div>
+                    <div
+                        style="display: flex; flex-direction: column; align-items: center;">
+                        <h3 style="font-size: 14px;">Now Playing:</h3>
+                        <p id="now-playing-title" style="font-size: 12px;">No
+                            media
+                            playing...</p>
+                    </div>
+                    <div class="controls" style="gap: 5px;">
+                        <button class="control-button"
+                            @click="playPrevious()">⏮️</button>
+                        <button class="control-button"
+                            @click="togglePlayPause()">▶️/⏸️</button>
+                        <button class="control-button"
+                            @click="playNext()">⏭️</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END LEFT DASHBOARD -->
+
+        <hr />
+
+     
+
+            <!-- ========== TABS ========== -->
+
+            <!-- MEDIA TAB -->
+            <div id="media-tab-a" class="tab-content">
+                <div class="app-header">
+                    <h2 class="section-header">Media Player</h2>
+                </div>
+                <hr />
+
+                <div class="video-content-wrapper" x-data="videoApp()"
+                    x-init="initApp()">
+                    <!-- Main Player -->
+                    <div class="player-and-library">
+                        <section class="player-section"
+                            x-show="viewMode === 'player'">
+                            <div style="margin-bottom: 20px;">
+                                <video
+                                    id="video-player"
+                                    controls
+                                    playsinline
+                                    webkit-playsinline
+                                    preload="auto"
+                                    style="width: 100%; background: #000;"
+                                    x-bind:src="currentVideo.src"
+                                    x-bind:type="currentVideo.type">
+                                    <p>Please enable JavaScript</p>
+                                </video>
+                            </div>
+                        </section>
+                    </div>
+
+                    <!-- Library Section -->
+                    <section class="library-section">
+                        <div class="library-header"
+                            style="margin-bottom: 10px;">
+                            <h2>Library</h2>
+                            <div class="view-toggle" style="margin-top: 10px;">
+                                <button class="action-button">Grid</button>
+                                <button class="action-button">List</button>
+                            </div>
+                        </div>
+
+                        <!-- Filter -->
+                        <div style="margin-bottom: 10px;">
+                            <select class="action-button" style="padding: 5px;">
+                                <option>All Categories</option>
+                                <option value="broadcast">Broadcast</option>
+                                <option value="episodes">Episodes</option>
+                                <option value="clips">Snips</option>
+                                <option value="promos">Promos</option>
+                                <option value="live">Live Shows</option>
+                                <option value="music">Music Videos</option>
+                            </select>
+                        </div>
+
+                        <div class="library-grid">
+                            <!-- Sample item... in practice, your JavaScript populates. -->
+                            <div class="library-card">
+                                <img src="./img/example_thumbnail.jpg"
+                                    alt="Thumb" />
+                                <div class="info">
+                                    <strong>Sample Video Title</strong><br />
+                                    <small>Category</small>
+                                </div>
+                            </div>
+                        </div>
+
+                    </section>
+                </div>
+            </div>
+            <!-- END MEDIA TAB -->
+
+            <!-- MUSIC TAB (originally "true-classic-radio") -->
+            <div id="music-tab" class="tab-content">
+                <div class="app-header">
+                    <h2 class="section-header">Music Player</h2>
+                </div>
+                <hr />
+
+                <div class="music-grid"></div>
+                <div class="music-player">
+                    <div class="now-playing-info">
+                        <h4 id="now-playing-title">Select a song to play</h4>
+                        <p id="now-playing-artist"></p>
+                    </div>
+                    <div class="player-controls">
+                        <button class="player-btn" id="prev-15s">⏪</button>
+                        <button class="player-btn" id="play-pause">▶️</button>
+                        <button class="player-btn" id="next-15s">⏩</button>
+                    </div>
+                    <input type="range" id="music-progress" min="0" max="100" value="0">
+                </div>
+            </div>
+            <!-- END MUSIC TAB -->
+
+            <!-- PODCAST TAB -->
+            <div id="podcast-tab" class="tab-content">
+                <div class="app-header">
+                    <h2 class="section-header">Podcast Player</h2>
+                </div>
+                <hr />
+
+
+                <table style="width:100%;">
+                    <tbody id="podcastListBody"></tbody>
+                </table>
+            </div>
+            <!-- END PODCAST TAB -->
+
+            <!-- COMMUNITY TAB -->
+            <div id="community-tab" class="tab-content">
+                <div class="community-header">
+                    <h1>Ahoy Indie Media Community</h1>
+                    <p>Discover alumni, support creators, explore
+                        spotlights.</p>
+                </div>
+
+                <!-- Example search area -->
+                <div class="artist-directory-search-container">
+                    <label for="artist-search">Search Artists:</label>
+                    <input
+                        type="text"
+                        id="artist-search"
+                        placeholder="Enter name..."
+                        class="search-bar" />
+                </div>
+                <div class="artist-grid">
+                    <!-- Example card (dynamically loaded in your JS) -->
+                    <div class="artist-card">
+                        <img src="./img/example_artist.jpg" alt
+                            class="artist-image" />
+                        <h3>Artist Name</h3>
+                        <ul>
+                            <li>Song #1</li>
+                            <li>Song #2</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <section class="rob-show-alumni" style="margin-top:20px;">
+                    <h2>Rob Show Alumni</h2>
+                    <p>Meet the guests who have joined the Rob Show</p>
+                    <div class="alumni-grid"></div>
+                </section>
+
+                <section class="support-us glass-card">
+                    <h2>Support Ahoy Indie Media</h2>
+                    <p>Help us stay indie and ad-free by contributing to our
+                        mission.</p>
+                    <button class="action-button">
+                        <a
+                            href="https://checkout.square.site/merchant/MLCEJBSG4Z671/checkout/OTECA53PANFVTTCVDCDAZNRX"
+                            style="color:#fff; text-decoration:none;"
+                            target="_blank">
+                            Donate to Ahoy Indie Media
+                        </a>
+                    </button>
+                </section>
+            </div>
+            <!-- END COMMUNITY TAB -->
+
+            <!-- ABOUT TAB -->
+            <div id="about-tab" class="tab-content">
+                <div style="text-align:center;">
+                    <img
+                        src="./img/assets/u_ahoy23.png"
+                        alt="Ahoy Indie Media Logo"
+                        class="homepage-logo"
+                        onclick="showTab('news-tab')" />
+                </div>
+
+            
+
+                <div class="body-desc-container">
+                    <div class="body-desc-block">
+                        <h2 class="about-title">About Ahoy Indie Media</h2>
+                        <p>
+                            Ahoy Indie Media is a hand-crafted media company
+                            based out of
+                            New Haven, Connecticut. Our mission is to provide an
+                            alternative
+                            avenue for exploring indie media.
+                        </p>
+                        <img
+                            src="https://storage.googleapis.com/ahoy-dynamic-content/images/about-ahoy-indie-media.jpg"
+                            alt="About Ahoy Indie Media"
+                            class="body-desc-image" />
+                        <p>
+                            Our platform is dedicated to supporting independent
+                            filmmakers,
+                            musicians, podcasters, and creators by providing
+                            them with a
+                            space to share their work.
+                        </p>
+                        <p>
+                            We sustain operations through sheer will power,
+                            keeping the
+                            platform accessible and ad-free.
+                        </p>
+                        <p>
+                            Every piece of content on our platform is here with
+                            the express
+                            blessings of the artists involved.
+                        </p>
+
+                        <div class="team-widget">
+                            <h3>Our Team</h3>
+                            <div class="team-member">
+                                <p class="team-member-name">Alex Gonzalez</p>
+                                <p class="team-member-role">Founder</p>
+                            </div>
+                            <div class="team-member">
+                                <p class="team-member-name">Rob Meglio</p>
+                                <p class="team-member-role">Movie Star</p>
+                            </div>
+                        </div>
+
+                        <div class="settings-widget" id="privacy-section">
+                            <p>To learn more about how we handle your data, read
+                                our</p>
+                            <a href="https://ahoy.ooo/privacy.html">
+                                <button class="action-button">Privacy
+                                    Policy</button>
+                            </a>
+                        </div>
+                        <hr />
+
+                        <p style="text-align:center;">Nerdy Notes for those who
+                            care:</p>
+                        <hr /><br />
+                        <h2>Daily, Seeded Playlist Feature:</h2>
+                        <p>
+                            When you click "Play All" (Random Order), the app
+                            seeds from
+                            today's date (YYYYMMDD) so everyone sees the same
+                            order for
+                            that day. It accumulates songs until total duration
+                            ~1 hour.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- END ABOUT TAB -->
+
+            <!-- NEWS TAB (Front Page) -->
+            <div id="news-tab" class="tab-content">
+                <div class="app-header">
+                    <h2 class="section-header">Front Page News</h2>
+                </div>
+                <hr />
+
+                <div style="text-align:center;">
+                    <img
+                        src="./ahoyApp/www/img/assets/u_ahoy23.png"
+                        alt="Ahoy Indie Media Logo"
+                        class="homepage-logo" />
+                </div>
+             
+
+                <h2 id="calendar-date" style="text-align:center;"></h2>
+          
+                <hr />
+
+           
+
+                <p style="text-align:center; font-weight:300; font-size:20px;">Front Page
+                    News</p>
+                <hr />
+
+                <div id="newsletter-list"></div>
+                <hr /><hr /><br />
+
+                <div style="text-align:center;">
+                    <img
+                        src="./img/assets/u_ahoy23.png"
+                        alt="Ahoy Indie Media Logo"
+                        class="homepage-logo" />
+                    <p
+                        style="font-family:'Times New Roman',Times,serif;font-size:18px;">
+                        MMXXV
+                    </p>
+                </div>
+            </div>
+            <!-- END NEWS TAB -->
+
+            <!-- VINTAGE BROADCAST TAB -->
+            <div id="vintage-broadcast-tab" class="tab-content">
+                <div class="app-header">
+                    <h2 class="section-header">Ahoy Broadcast Network</h2>
+                </div>
+                <hr />
+
+                <div class="remote-controls">
+                    <button id="prev-button" class="remoteControlButton">⏮️
+                        Prev</button>
+                    <button id="play-pause-button"
+                        class="remoteControlButton">[► Play]</button>
+                    <button id="next-button" class="remoteControlButton">⏭️
+                        Next</button>
+                    <button id="rewind-button" class="remoteControlButton">⏪
+                        Rewind</button>
+                    <button id="shuffle-button" class="remoteControlButton">🔀
+                        Shuffle</button>
+                    <button id="fullscreen-button" class="remoteControlButton">⛶
+                        Full</button>
+                    <button id="mute-button" class="remoteControlButton">🔇
+                        Mute</button>
+                    <button id="volume-down" class="remoteControlButton">🔉
+                        Down</button>
+                    <button id="volume-up" class="remoteControlButton">🔊
+                        Up</button>
+                </div>
+                <div class="broadcast-player-container">
+                    <video id="video-broadcast-container" width="100%" controls>
+                        <source id="video-source" src type="video/mp4" />
+                        Your browser does not support video.
+                    </video>
+                </div>
+                <div class="broadcast-header">
+                    <h6>Currently Playing:</h6>
+                    <h2 id="broadcast-media-title">Loading...</h2>
+                </div>
+                <hr />
+
+                <div class="glass-card">
+                    <h3>About Ahoy Broadcast</h3>
+                    <p>
+                        Ahoy Broadcast recreates the classic TV feel, rotating
+                        indie
+                        playlists throughout the day in scheduled blocks.
+                    </p>
+                    <h3>How It Works</h3>
+                    <ul>
+                        <li>Time-based playlists (morning, afternoon, evening,
+                            late night).</li>
+                        <li>Curated indie media automatically loaded based on
+                            time.</li>
+                        <li>Interactive remote controls for skipping, shuffling,
+                            volume, etc.</li>
+                        <li>Beta phase: actively refining and squashing
+                            bugs.</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- END VINTAGE BROADCAST TAB -->
+
+            <!-- SETTINGS TAB -->
+            <div id="settings-tab" class="tab-content">
+                <div class="app-header">
+                    <h2 class="section-header">Settings</h2>
+                </div>
+                <hr />
+				<div style="text-align:center; margin-top:10px;">
+                    <button class="action-button"
+                        onclick="showTab('about-tab')">About Ahoy</button>
+                    <button class="action-button"
+                        onclick="showTab('updates-tab')">App Updates</button>
+                </div>
+                <div class="settings-widget">
+                    <button class="action-button" onclick="toggleMute()">Mute
+                        Audio</button>
+                    <button class="action-button"
+                        onclick="clearCacheAndReset()">Clear Cache &
+                        Reset</button>
+                    <button class="action-button"
+                        id="toggle-offline-mode">Offline Mode: Off</button>
+                </div>
+                <hr />
+
+                <h2>Theme Switcher</h2>
+                <hr />
+                <div class="settings-widget">
+                    <p id="theme-title">Select Theme</p>
+                    <select id="theme-dropdown" style="padding:5px;"></select>
+                </div>
+
+                <div id="cacheModal" class="cache-modal">
+                    <div class="cache-modal-content">
+                        <p>Cache cleared and page will be reloaded.</p>
+                        <button class="cache-cta-button"
+                            onclick="closeCacheModal()">Cancel</button>
+                        <button class="cache-cta-button"
+                            onclick="reloadPage()">Reload</button>
+                    </div>
+                </div>
+                <hr />
+
+                <div class="settings-widget">
+                    <h2>Test Upcoming Features</h2><br />
+                    <button class="action-button"
+                        onclick="showTab('community-tab')">👥 Community</button>
+                    <button class="action-button"
+                        onclick="showTab('cast-tab')">📡 Cast</button>
+                </div>
+                <hr />
+
+                <div class="settings-widget">
+                    <p style="text-align:center;">Enable Experimental
+                        Features:</p>
+                    <input type="checkbox" id="experimental-toggle"
+                        onclick="toggleExperimentalFeatures()" />
+                </div>
+                <hr />
+            </div>
+            <!-- END SETTINGS TAB -->
+
+            <!-- UPDATES TAB -->
+            <div id="updates-tab" class="tab-content">
+                <div style="text-align:center;">
+                    <img
+                        src="./img/assets/u_ahoy23.png"
+                        alt="Ahoy Indie Media Logo"
+                        class="homepage-logo"
+                        onclick="showTab('news-tab')" />
+                </div>
+           
+                <hr />
+
+                <div id="status-header">
+                    <h2>Github Changelog</h2>
+                </div>
+
+                <div id="changelog-container"></div>
+
+                <div class="changelog-controls">
+                    <button class="action-button"
+                        onclick="fetchCommits(1)">Previous</button>
+                    <button class="action-button"
+                        onclick="fetchCommits(currentPage + 1)">Next</button>
+                </div>
+                <br />
+
+                <p style="text-align:center;">
+                    <a href="https://github.com/oooAHOYooo/oooAHOYooo.github.io"
+                        target="_blank" style="color:#ff0060;">
+                        View on Github
+                    </a>
+                </p>
+            </div>
+            <!-- END UPDATES TAB -->
+
+            <!-- ACCOUNT TAB -->
+            <div id="account-tab" class="tab-content">
+                <div class="app-header">
+                    <h2 class="section-header">Account</h2>
+                </div>
+                <hr />
+				    <!-- Simple user welcome -->
+					<div class="welcome-container">
+						<h1 class="welcome-text" id="welcome-message">Welcome
+							Guest</h1>
+						<p style="text-align:center;">
+							Not logged in?
+							<a href="login.html" style="color: #ff0060;">Log in
+								here</a>
+						</p>
+					</div>
+                <p style="text-align:center;">
+                    Manage your account settings and preferences here.
+                </p>
+                <button
+                    id="login-button"
+                    class="action-button"
+                    onclick="window.location.href='login.html'">
+                    Login
+                </button>
+                <div id="user-info" style="display:none;"></div>
+            </div>
+            <!-- END ACCOUNT TAB -->
+
+            <!-- GAME TAB -->
+            <div id="game-tab" class="tab-content">
+                <div class="app-header">
+                    <h2 class="section-header">Games</h2>
+                </div>
+                <hr />
+
+                <div id="puddle-game">
+                    <h3>Puddle</h3>
+                    <p style="text-align:center;">
+                        Guess the 4-letter word of the day within 6 attempts.
+                        Same word for all players!
+                    </p>
+                    <div id="tooltip" class="tooltip">
+                        <p>Instructions: Guess the 4-letter word in 6 tries.</p>
+                    </div>
+                </div>
+
+                <div id="alert-box" style="display:none; text-align:center;">
+                    <p id="alert-message"></p>
+                </div>
+                <div id="puddle-game-container" class="game-container"></div>
+                <div id="current-input" class="current-input"></div>
+                <div id="puddle-keyboard" class="keyboard">
+                    <button class="action-button"
+                        data-key="backspace">Backspace</button>
+                </div>
+                <div class="keyboard-row">
+                    <button id="guess-submit"
+                        class="action-button">Enter</button>
+                </div>
+            </div>
+            <!-- END GAME TAB -->
+
+            <!-- CAST TAB -->
+            <div id="cast-tab" class="tab-content">
+                <div class="app-header">
+                    <h2 class="section-header">Cast</h2>
+                </div>
+                <hr />
+                <p>Cast your media to your TV.</p>
+                <button class="action-button">Connect to Fire TV</button>
+                <button class="action-button">Disconnect</button>
+                <div style="margin-top:10px;">
+                    <p id="firetv-status" style="display:none;">Connected to
+                        Fire TV</p>
+                </div>
+            </div>
+            <!-- END CAST TAB -->
+
+            <!-- SNIPS TAB -->
+            <div id="snips-tab" class="tab-content">
+                <video id="snip-video" controls autoplay loop muted></video>
+                <h3 id="snip-title"></h3>
+                <p id="snip-description"></p>
+                <button onclick="snipViewer().prevSnip()">Previous Snip</button>
+                <button onclick="snipViewer().nextSnip()">Next Snip</button>
+            </div>
+
+        </div>
+        <!-- END MAIN CONTENT -->
+
+        <!-- ========== SCRIPTS ========== -->
+        <script>
+    /**
+     * showTab(tabId): 
+     *   Hides all .tab-content, shows only the one matching tabId, and 
+     *   updates nav buttons to set the "active" class on the clicked button.
+     */
+    function showTab(tabId) {
+      // Hide all tab contents
+      const allTabs = document.querySelectorAll('.tab-content');
+      allTabs.forEach(tab => {
+        tab.style.display = 'none';
+        tab.classList.remove('active');
+      });
+
+      // Remove 'active' from all nav buttons
+      const navButtons = document.querySelectorAll('.nav-button');
+      navButtons.forEach(btn => btn.classList.remove('active'));
+
+      // Show the requested tab
+      const targetTab = document.getElementById(tabId);
+      if (targetTab) {
+        targetTab.style.display = 'block';
+        targetTab.classList.add('active');
+      }
+
+      // Mark the matching nav button as active
+      const matchingBtn = document.querySelector(`.nav-button[data-tab="${tabId}"]`);
+      if (matchingBtn) {
+        matchingBtn.classList.add('active');
+      }
+    }
+
+    // On page load, choose a default tab
+    document.addEventListener('DOMContentLoaded', function() {
+      // e.g., show the "music-tab" by default:
+      showTab('music-tab');
+    });
+
+    // Example toggleNowPlaying() 
+    function toggleNowPlaying() {
+      const widget = document.getElementById('now-playing-widget');
+      widget.style.display = (widget.style.display === 'block') ? 'none' : 'block';
+    }
+
+    // ... rest of your existing JS calls ...
+
+  </script>
+
+        <!-- Your existing scripts below -->
+        <!-- <script src="js/src/core.js"></script> -->
+        <!-- <script src="js/src/newsletter.js"></script> -->
+        <!-- <script src="js/src/function-switchTheme.js"></script> -->
+        <!-- <script src="js/src/function_today_date.js"></script> -->
+        <!-- <script src="js/src/super-song.js"></script> -->
+        <!-- <script src="js/src/new-super-pod.js"></script> -->
+        <!-- <script src="js/src/true-toggles.js"></script> -->
+        <!-- <script src="js/src/true-recent.js"></script> -->
+        <!-- <script src="js/src/true-full-recent.js"></script> -->
+        <!-- <script src="js/src/basic-audio-controls.js"></script> -->
+        <!-- <script src="js/src/audio-visualization.js"></script> -->
+        <!-- <script src="js/src/vintageBroadcast.js"></script> -->
+        <!-- <script src="js/src/changelog.js"></script> -->
+        <!-- <script src="js/src/offlineMode.js"></script> -->
+        <!-- <script src="js/src/alumni.js"></script> -->
+        <!-- <script src="js/src/artist-database.js"></script> -->
+        <!-- <script src="js/src/function_clearCacheAndReset.js"></script> -->
+        <!-- <script src="js/src/function-toggle-exp-tabs.js"></script> -->
+        <!-- <script src="js/src/game-puddle.js"></script> -->
+        <!-- <script src="js/src/super-search.js"></script> -->
+        <!-- <script src="js/src/cast.js"></script> -->
+        <!-- <script src="js/src/account-popup-app.js"></script> -->
+        <!-- <script src="js/fire/firebase-config.js" type="module"></script> -->
+        <!-- <script src="js/fire/firestore.js" type="module"></script> -->
+        <!-- <script src="js/src/super-video-app.js"></script> -->
+
+        <!-- Basic Auth Handling -->
+        <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const auth = firebase.auth();
+      auth.onAuthStateChanged(user => {
+        const userInfoElement = document.getElementById('user-info');
+        const welcomeMessage = document.getElementById('welcome-message');
+
+        userInfoElement.style.display = 'block';
+        if (user) {
+          userInfoElement.innerText = "Welcome, " + (user.displayName || user.email);
+          if (welcomeMessage) {
+            welcomeMessage.textContent = "Welcome " + (user.displayName || user.email);
+          }
+        } else {
+          userInfoElement.innerText = "Welcome, please sign in.";
+          if (welcomeMessage) {
+            welcomeMessage.textContent = "Welcome Guest";
+          }
+        }
+      });
+    });
+  </script>
+        <script>
+            document.addEventListener('DOMContentLoaded', async () => {
+                let page = 1;
+                const itemsPerPage = 5;
+                let allNewsItems = [];
+                let isLoading = false;
+                
+                try {
+                    // Fetch the newsletter data
+                    const response = await fetch('./ahoyApp/www/local_data/newsletter.json');
+                    if (!response.ok) throw new Error('Failed to fetch newsletter data');
+                    allNewsItems = await response.json();
+
+                    // Sort news items by date (most recent first)
+                    allNewsItems.sort((a, b) => new Date(b.date) - new Date(a.date));
+                    
+                    // Initial load
+                    loadMoreNews();
+                    
+                    // Add scroll listener
+                    window.addEventListener('scroll', () => {
+                        const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+                        
+                        // If we're near the bottom (within 100px) and not currently loading
+                        if (scrollTop + clientHeight >= scrollHeight - 100 && !isLoading) {
+                            loadMoreNews();
+                        }
+                    });
+                    
+                } catch (error) {
+                    console.error('Error loading newsletter:', error);
+                    const newsletterList = document.getElementById('newsletter-list');
+                    if (newsletterList) {
+                        newsletterList.innerHTML = '<p class="error-message">Failed to load news. Please try again later.</p>';
+                    }
+                }
+
+                function loadMoreNews() {
+                    isLoading = true;
+                    const newsletterList = document.getElementById('newsletter-list');
+                    
+                    // Calculate start and end indices for this page
+                    const start = (page - 1) * itemsPerPage;
+                    const end = start + itemsPerPage;
+                    const pageItems = allNewsItems.slice(start, end);
+                    
+                    // If no more items to load, remove loading indicator and return
+                    if (pageItems.length === 0) {
+                        const loadingIndicator = document.querySelector('.loading-indicator');
+                        if (loadingIndicator) {
+                            loadingIndicator.remove();
+                        }
+                        return;
+                    }
+
+                    // Create and append news items
+                    pageItems.forEach(item => {
+                        // Skip inactive items
+                        if (item.active === "false") return;
+
+                        const newsCard = document.createElement('div');
+                        newsCard.className = 'glass-card news-item';
+                        
+                        // Format date
+                        const date = new Date(item.date);
+                        const formattedDate = date.toLocaleDateString('en-US', {
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric'
+                        });
+
+                        // Build the HTML content
+                        let content = `
+                            <div class="news-header">
+                                <h3>${item.title}</h3>
+                                <small>${formattedDate}</small>
+                            </div>
+                        `;
+
+                        if (item.imageUrl) {
+                            content += `
+                                <div class="news-image">
+                                    <img src="${item.imageUrl}" alt="${item.title}" loading="lazy" />
+                                </div>
+                            `;
+                        }
+
+                        content += `
+                            <div class="news-content">
+                                ${item.content}
+                            </div>
+                        `;
+
+                        if (item.featuredVideoIframe) {
+                            content += `
+                                <div class="news-video">
+                                    <iframe src="${item.featuredVideoIframe}" 
+                                            width="100%" 
+                                            height="400" 
+                                            frameborder="0" 
+                                            allowfullscreen>
+                                    </iframe>
+                                </div>
+                            `;
+                        }
+
+                        if (item.additionalImages && item.additionalImages.length > 0) {
+                            content += `
+                                <div class="news-gallery">
+                                    ${item.additionalImages.map(imgUrl => 
+                                        `<img src="${imgUrl}" alt="Additional image" loading="lazy" />`
+                                    ).join('')}
+                                </div>
+                            `;
+                        }
+
+                        if (item.goTo && !item.goTo.startsWith('http')) {
+                            content += `
+                                <div class="news-navigation">
+                                    <button class="action-button" onclick="showTab('${item.goTo}')">
+                                        View More
+                                    </button>
+                                </div>
+                            `;
+                        }
+
+                        newsCard.innerHTML = content;
+                        newsletterList.appendChild(newsCard);
+                    });
+
+                    // Add or update loading indicator
+                    let loadingIndicator = document.querySelector('.loading-indicator');
+                    if (!loadingIndicator) {
+                        loadingIndicator = document.createElement('div');
+                        loadingIndicator.className = 'loading-indicator';
+                        loadingIndicator.innerHTML = '<div class="loading-spinner"></div>';
+                        newsletterList.appendChild(loadingIndicator);
+                    }
+
+                    page++;
+                    isLoading = false;
+                }
+            });
+        </script>
+        <script>
+            function snipViewer() {
+                return {
+                    snips: [
+                        { src: "https://storage.googleapis.com/ahoy-videos/snips/palbot-causes-tension-in-couples-relationship.mp4", title: "Snip 1", description: "A tense moment" },
+                        { src: "https://storage.googleapis.com/ahoy-videos/snips/surprise-engagement-and-a-robotic-dilemma.mp4", title: "Snip 2", description: "A surprise engagement" },
+                        { src: "https://storage.googleapis.com/ahoy-videos/snips/palbot-causes-tension-in-couples-relationship.mp4", title: "Snip 1", description: "A tense moment" },
+                    ],
+                    currentIndex: 0,
+                    touchStartY: 0,
+                    touchEndY: 0,
+
+                    init() {
+                        const videoContainer = document.getElementById('snip-video');
+                        videoContainer.addEventListener('touchstart', (e) => {
+                            this.touchStartY = e.changedTouches[0].screenY;
+                        }, false);
+
+                        videoContainer.addEventListener('touchend', (e) => {
+                            this.touchEndY = e.changedTouches[0].screenY;
+                            this.handleSwipeGesture();
+                        }, false);
+                    },
+
+                    handleSwipeGesture() {
+                        if (this.touchStartY > this.touchEndY + 50) {
+                            this.nextSnip();
+                        } else if (this.touchEndY > this.touchStartY + 50) {
+                            this.prevSnip();
+                        }
+                    },
+
+                    get currentSnip() {
+                        return this.snips[this.currentIndex];
+                    },
+
+                    nextSnip() {
+                        this.currentIndex = (this.currentIndex + 1) % this.snips.length;
+                        this.updateSnip();
+                    },
+
+                    prevSnip() {
+                        this.currentIndex = (this.currentIndex - 1 + this.snips.length) % this.snips.length;
+                        this.updateSnip();
+                    },
+
+                    updateSnip() {
+                        const video = document.getElementById('snip-video');
+                        const title = document.getElementById('snip-title');
+                        const description = document.getElementById('snip-description');
+
+                        video.src = this.currentSnip.src;
+                        title.textContent = this.currentSnip.title;
+                        description.textContent = this.currentSnip.description;
+                        video.play();
+                    }
+                };
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+                const viewer = snipViewer();
+                viewer.init();
+            });
+        </script>
+        <style>
+            #snips-tab .clip-container {
+                position: relative;
+                width: 100%;
+                height: 90vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            #snips-tab video {
+                width: 100%;
+                height: 80vh;
+                object-fit: cover;
+                border-radius: 10px;
+            }
+
+            #snips-tab .clip-controls {
+                position: absolute;
+                bottom: 20px;
+                display: flex;
+                gap: 10px;
+            }
+
+            #snips-tab .clip-info {
+                position: absolute;
+                bottom: 80px;
+                background: rgba(0, 0, 0, 0.6);
+                padding: 10px;
+                border-radius: 10px;
+                color: white;
+                text-align: center;
+            }
+        </style>
+        <script>
+            function toggleSidebar() {
+                const sidebar = document.querySelector('.left-dashboard');
+                const mainContent = document.querySelector('.main-content');
+                sidebar.classList.toggle('hidden');
+                
+                if (sidebar.classList.contains('hidden')) {
+                    mainContent.style.marginLeft = '0';
+                } else {
+                    mainContent.style.marginLeft = '240px';
+                }
+            }
+        </script>
+        <script>
+            // Update the makeDraggable function
+            function makeDraggable() {
+                const widgets = document.querySelectorAll('.glass-card, .radio-widget, .player-container');
+                const sidebar = document.querySelector('.left-dashboard');
+                
+                // Add reset button if it doesn't exist
+                if (!document.querySelector('.reset-layout')) {
+                    const resetButton = document.createElement('button');
+                    resetButton.className = 'reset-layout';
+                    resetButton.innerHTML = '↺';
+                    resetButton.title = 'Reset Layout';
+                    document.body.appendChild(resetButton);
+                    
+                    resetButton.addEventListener('click', () => {
+                        widgets.forEach(widget => {
+                            // Store original position before any dragging
+                            if (!widget.dataset.originalPosition) {
+                                const rect = widget.getBoundingClientRect();
+                                widget.dataset.originalPosition = JSON.stringify({
+                                    x: rect.left,
+                                    y: rect.top
+                                });
+                            }
+                            
+                            // Animate back to original position
+                            widget.style.transition = 'transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)';
+                            widget.style.transform = 'translate3d(0, 0, 0)';
+                            
+                            // Reset tracking variables
+                            widget.xOffset = 0;
+                            widget.yOffset = 0;
+                        });
+                    });
+                }
+
+                widgets.forEach(widget => {
+                    if (!widget.classList.contains('draggable')) {
+                        widget.classList.add('draggable');
+                        
+                        const handle = document.createElement('div');
+                        handle.className = 'drag-handle';
+                        handle.innerHTML = '↔ Drag Me';
+                        widget.insertBefore(handle, widget.firstChild);
+
+                        let isDragging = false;
+                        let currentX;
+                        let currentY;
+                        let initialX;
+                        let initialY;
+                        let xOffset = 0;
+                        let yOffset = 0;
+
+                        handle.addEventListener('mousedown', dragStart);
+                        document.addEventListener('mousemove', drag);
+                        document.addEventListener('mouseup', dragEnd);
+
+                        function dragStart(e) {
+                            if (e.target === handle) {
+                                e.preventDefault();
+                                initialX = e.clientX - xOffset;
+                                initialY = e.clientY - yOffset;
+                                isDragging = true;
+                                widget.classList.add('dragging');
+                                
+                                // Add blur to other widgets
+                                widgets.forEach(w => {
+                                    if (w !== widget) {
+                                        w.classList.add('blur-except-dragging');
+                                    }
+                                });
+                            }
+                        }
+
+                        function drag(e) {
+                            if (isDragging) {
+                                e.preventDefault();
+                                
+                                const sidebarRect = sidebar.getBoundingClientRect();
+                                
+                                let newX = e.clientX - initialX;
+                                let newY = e.clientY - initialY;
+                                
+                                if (e.clientX < sidebarRect.right + 20) {
+                                    newX = sidebarRect.right - initialX + 20;
+                                }
+                                
+                                currentX = newX;
+                                currentY = newY;
+                                xOffset = currentX;
+                                yOffset = currentY;
+
+                                setTranslate(currentX, currentY, widget);
+                            }
+                        }
+
+                        function dragEnd() {
+                            if (isDragging) {
+                                isDragging = false;
+                                widget.classList.remove('dragging');
+                                
+                                // Remove blur from other widgets
+                                widgets.forEach(w => {
+                                    w.classList.remove('blur-except-dragging');
+                                });
+                            }
+                        }
+
+                        function setTranslate(xPos, yPos, el) {
+                            el.style.transform = `translate3d(${xPos}px, ${yPos}px, 0)`;
+                        }
+                    }
+                });
+            }
+
+            // Update showTab to reinitialize draggable elements
+            const originalShowTab = showTab;
+            showTab = function(tabId) {
+                originalShowTab(tabId);
+                makeDraggable();
+            };
+
+            // Initialize draggable functionality after DOM loads
+            document.addEventListener('DOMContentLoaded', function() {
+                makeDraggable();
+            });
+        </script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Create scroll to top button
+                const scrollButton = document.createElement('button');
+                scrollButton.className = 'scroll-to-top';
+                scrollButton.innerHTML = '↑';
+                scrollButton.title = 'Scroll to Top';
+                document.body.appendChild(scrollButton);
+
+                // Show/hide scroll button based on scroll position
+                window.addEventListener('scroll', () => {
+                    if (window.pageYOffset > 300) {
+                        scrollButton.classList.add('visible');
+                    } else {
+                        scrollButton.classList.remove('visible');
+                    }
+                });
+
+                // Smooth scroll to top when clicked
+                scrollButton.addEventListener('click', () => {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        </script>
+        <script>
+            // Add this to your existing DOMContentLoaded event listener
+            document.addEventListener('DOMContentLoaded', async function() {
+                const musicTab = document.getElementById('music-tab');
+                if (!musicTab) return;
+
+                // Clear existing content
+                musicTab.innerHTML = `
+                    <div class="app-header">
+                        <h2 class="section-header">Music Player</h2>
+                    </div>
+                    <hr/>
+                    <div class="music-grid"></div>
+                    <div class="music-player">
+                        <div class="now-playing-info">
+                            <h4 id="now-playing-title">Select a song to play</h4>
+                            <p id="now-playing-artist"></p>
+                        </div>
+                        <div class="player-controls">
+                            <button class="player-btn" id="prev-15s">⏪</button>
+                            <button class="player-btn" id="play-pause">▶️</button>
+                            <button class="player-btn" id="next-15s">⏩</button>
+                        </div>
+                        <input type="range" id="music-progress" min="0" max="100" value="0">
+                    </div>
+                `;
+
+                // Initialize audio player
+                const audioPlayer = new Audio();
+                let currentSong = null;
+
+                // Load and display songs
+                try {
+                    const response = await fetch('./ahoyApp/www/local_data/radioPlay.json');
+                    if (!response.ok) throw new Error('Failed to fetch songs');
+                    const data = await response.json();
+
+                    // Shuffle songs
+                    const shuffledSongs = [...data.songs].sort(() => Math.random() - 0.5);
+
+                    // Get grid container
+                    const gridContainer = document.querySelector('.music-grid');
+
+                    // Create song cards
+                    shuffledSongs.forEach(song => {
+                        const card = document.createElement('div');
+                        card.className = 'song-card';
+                        
+                        const imageUrl = song.coverArt || song.thumbnail || './img/default-album.jpg';
+                        
+                        card.innerHTML = `
+                            <img src="${imageUrl}" alt="${song.songTitle}" class="song-thumbnail" loading="lazy">
+                            <div class="song-info">
+                                <h3 class="song-title">${song.songTitle}</h3>
+                                <p class="song-artist">${song.artist}</p>
+                            </div>
+                        `;
+                        
+                        card.addEventListener('click', () => playSong(song));
+                        gridContainer.appendChild(card);
+                    });
+
+                    // Setup player controls
+                    const playPauseBtn = document.getElementById('play-pause');
+                    const prev15sBtn = document.getElementById('prev-15s');
+                    const next15sBtn = document.getElementById('next-15s');
+                    const progressBar = document.getElementById('music-progress');
+                    const player = document.querySelector('.music-player');
+
+                    function playSong(song) {
+                        currentSong = song;
+                        audioPlayer.src = song.mp3url;
+                        audioPlayer.play()
+                            .then(() => {
+                                document.getElementById('now-playing-title').textContent = song.songTitle;
+                                document.getElementById('now-playing-artist').textContent = song.artist;
+                                player.classList.add('active');
+                                playPauseBtn.textContent = '⏸️';
+                            })
+                            .catch(error => {
+                                console.error('Error playing song:', error);
+                            });
+                    }
+
+                    playPauseBtn.addEventListener('click', () => {
+                        if (!currentSong) return;
+                        
+                        if (audioPlayer.paused) {
+                            audioPlayer.play();
+                            playPauseBtn.textContent = '⏸️';
+                        } else {
+                            audioPlayer.pause();
+                            playPauseBtn.textContent = '▶️';
+                        }
+                    });
+
+                    prev15sBtn.addEventListener('click', () => {
+                        if (!currentSong) return;
+                        audioPlayer.currentTime = Math.max(0, audioPlayer.currentTime - 15);
+                    });
+
+                    next15sBtn.addEventListener('click', () => {
+                        if (!currentSong) return;
+                        audioPlayer.currentTime = Math.min(audioPlayer.duration, audioPlayer.currentTime + 15);
+                    });
+
+                    audioPlayer.addEventListener('timeupdate', () => {
+                        if (!currentSong) return;
+                        const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+                        progressBar.value = progress;
+                    });
+
+                    progressBar.addEventListener('input', () => {
+                        if (!currentSong) return;
+                        const time = (progressBar.value / 100) * audioPlayer.duration;
+                        audioPlayer.currentTime = time;
+                    });
+
+                } catch (error) {
+                    console.error('Error loading songs:', error);
+                    musicTab.innerHTML += '<p class="error-message">Failed to load songs. Please try again later.</p>';
+                }
+            });
+        </script>
+        <script>
+            // Load and display podcasts
+            document.addEventListener('DOMContentLoaded', async () => {
+                try {
+                    const response = await fetch('./ahoyApp/www/local_data/podcastCollection.json');
+                    const data = await response.json();
+                    const podcastGrid = document.getElementById('podcastGrid');
+                    
+                    data.podcasts.forEach(podcast => {
+                        if (podcast.active) {
+                            const podcastCard = document.createElement('div');
+                            podcastCard.className = 'bg-white/10 backdrop-blur-md rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:transform hover:scale-105';
+                            
+                            podcastCard.innerHTML = `
+                                <div class="relative">
+                                    <img src="${podcast.thumbnail}" alt="${podcast.title}" class="w-full h-48 object-cover">
+                                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                                        <h3 class="text-white text-xl font-bold">${podcast.title}</h3>
+                                        <p class="text-white/80 text-sm">${new Date(podcast.date).toLocaleDateString()}</p>
+                                    </div>
+                                </div>
+                                <div class="p-4">
+                                    <p class="text-white/90 mb-4">${podcast.description}</p>
+                                    <div class="flex justify-between items-center">
+                                        <audio controls class="w-full">
+                                            <source src="${podcast.mp3url}" type="audio/mpeg">
+                                            Your browser does not support the audio element.
+                                        </audio>
+                                    </div>
+                                </div>
+                            `;
+                            
+                            podcastGrid.appendChild(podcastCard);
+                        }
+                    });
+                } catch (error) {
+                    console.error('Error loading podcasts:', error);
+                    const podcastGrid = document.getElementById('podcastGrid');
+                    podcastGrid.innerHTML = `
+                        <div class="col-span-full text-center text-white/80">
+                            <p>Failed to load podcasts. Please try again later.</p>
+                        </div>
+                    `;
+                }
+            });
+        </script>
+    </body>
+</html>
