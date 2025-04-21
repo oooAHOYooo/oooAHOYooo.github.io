@@ -57,14 +57,17 @@ window.addEventListener('DOMContentLoaded', (event) => {
                         else if (newsletter.imageUrl && newsletter.additionalImages && newsletter.additionalImages.length > 0) {
                             // Combine the main image with additional images
                             const galleryImages = [newsletter.imageUrl, ...newsletter.additionalImages];
-                            htmlContent += `<div class="newsletter-gallery-grid" style="display:flex; flex-wrap:wrap; justify-content:center;">`;
+                            htmlContent += `<div class="newsletter-gallery-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 0 auto; max-width: 1200px;">`;
                             galleryImages.forEach((img, index) => {
                                 htmlContent += `
-                                    <img src="${img}" alt="${newsletter.title} - ${index+1}" 
-                                        class="gallery-thumb lazy-load" 
-                                        data-gallery-index="${index}" 
-                                        data-gallery='${JSON.stringify(galleryImages)}'
-                                        style="cursor:pointer; max-width:30%; margin:5px;">
+                                    <div style="position: relative; padding-bottom: 75%; overflow: hidden;">
+                                        <img src="${img}" 
+                                            alt="${newsletter.title} - ${index+1}" 
+                                            class="gallery-thumb lazy-load" 
+                                            data-gallery-index="${index}" 
+                                            data-gallery='${JSON.stringify(galleryImages)}'
+                                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; cursor: pointer; background: rgba(0,0,0,0.05);">
+                                    </div>
                                 `;
                             });
                             htmlContent += `</div>`;
