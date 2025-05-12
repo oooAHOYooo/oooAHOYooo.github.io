@@ -19,8 +19,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const remotePodcastDataUrl = 'https://storage.googleapis.com/ahoy-dynamic-content/dynamicJson/podcastCollection.json';
     const localPodcastDataUrl = './local_data/podcastCollection.json';
     
-    // Toggle flag for remote fetching, default is true
-    let useRemoteFetch = true;
+    // Toggle flag for remote fetching, default is false
+    let useRemoteFetch = false;
 
     // Fetch podcast data from the appropriate URL
     async function fetchPodcasts() {
