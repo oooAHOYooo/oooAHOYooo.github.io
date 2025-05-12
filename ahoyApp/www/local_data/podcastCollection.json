@@ -1,13 +1,13 @@
 {
   "podcasts": [
     {
-      "id": 32,
+      "id": 33,
       "title": "The Rob Show #42 - Michelle Caserta",
       "description": "Michelle Caserta, Rob's former teacher and mentor, joins the show to discuss her career and life.",
       "date": "2025-05-09",
-      "active": false,
+      "active": true,
       "mp3url": "https://storage.googleapis.com/ahoy-podcast-collection/the%20rob%20show/Rob%20Show%20-%20Ep42%20-%20Michelle%20Caserta.mp3",
-      "thumbnail": "https://storage.googleapis.com/ahoy-podcast-collection/the%20rob%20show/ROB%20EPISODE%2042%20-%20Michelle%20Caserta.jpg"
+      "thumbnail": "https://storage.googleapis.com/ahoy-podcast-collection/The%20Rob%20Show%20-%20Ep%2042.png"
     },
     {
       "id": 32,
