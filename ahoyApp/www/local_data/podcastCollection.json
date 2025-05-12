@@ -1,7 +1,16 @@
 {
   "podcasts": [
     {
-      "id": 42,
+      "id": 35,
+      "title": "The Rob Show #43 - John Bock and John Churchhill",
+      "description": "John Bock & John Churchhill, two local musicians, join Rob for an engaging conversation in this episode of The Rob Show",
+      "date": "2025-05-12",
+      "active": true,
+      "mp3url": "https://storage.googleapis.com/ahoy-podcast-collection/RS_EP_43_%20John%20and%20John.mp3",
+      "thumbnail": "https://storage.googleapis.com/ahoy-podcast-collection/The%20Rob%20Show%20-%20Ep%2043.jpg"
+    },
+    {
+      "id": 33,
       "title": "The Rob Show #42 - Michelle Caserta",
       "description": "Michelle Caserta, Rob's former teacher and mentor, joins the show to discuss her career and life.",
       "date": "2025-05-09",
