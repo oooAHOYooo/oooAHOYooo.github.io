@@ -946,6 +946,49 @@
         cursor: not-allowed;
     }
 
+    /* Artist Outreach Section Styles */
+    .artist-outreach {
+        margin-top: 2rem;
+        padding: 1.5rem;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 12px;
+        text-align: center;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .artist-outreach h3 {
+        color: #ffdd57;
+        margin-bottom: 0.75rem;
+        font-size: 1.6rem;
+        text-shadow: 0 0 10px rgba(255, 221, 87, 0.3);
+    }
+
+    .artist-outreach p {
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: 1.25rem;
+        font-size: 1.1rem;
+        line-height: 1.5;
+    }
+
+    .artist-outreach .action-btn {
+        margin: 0 auto;
+    }
+
+    @media (max-width: 768px) {
+        .artist-outreach {
+            padding: 1.25rem;
+            margin-top: 1.5rem;
+        }
+
+        .artist-outreach h3 {
+            font-size: 1.4rem;
+        }
+
+        .artist-outreach p {
+            font-size: 1rem;
+        }
+    }
+
     /* Add visit counter styles */
     .visit-counter {
         position: fixed;
@@ -1309,7 +1352,15 @@
               </form>
             </div>
 
-          
+            <div class="artist-outreach">
+              <h3>Are You an Artist?</h3>
+              <p>Have content to share, a poem to read, or a song to play? We'd love to hear from you!</p>
+              <a href="mailto:contact@ahoy.ooo" class="action-btn secondary-btn">
+                <i class="fas fa-envelope"></i>
+                Reach Out to Us @ contact@ahoy.ooo
+              </a>
+            </div>
+
           </div>
         </div>
       </div>
