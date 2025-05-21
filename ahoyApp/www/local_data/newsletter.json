@@ -8,6 +8,14 @@
         "goTo": "podcast-tab"
     },
     {
+        "date": "2025-05-21",
+        "title": "Poets and Friends #2 - Tonight at Koffee!",
+        "imageUrl": "https://storage.googleapis.com/ahoy-dynamic-content/ahoy-new-haven/Event%20Graphics/FLYER%20PRINT%201%20.jpg",
+        "content": "Join us tonight at 8pm sharp for Poets and Friends #2 at Koffee! We've got new merch and shrinky dinks to share. Come through and experience the power of spoken word with New Haven's finest poets!",
+        "active": "true",
+        "goTo": "events-tab"
+    },
+    {
         "date": "2025-05-12",
         "title": "The Rob Show #43 - John & John",
         "imageUrl": "https://storage.googleapis.com/ahoy-podcast-collection/The%20Rob%20Show%20-%20Ep%2043.jpg",
