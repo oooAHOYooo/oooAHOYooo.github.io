@@ -1,0 +1,46 @@
+{
+  "events": [
+    {
+      "title": "Poets and Friends #2",
+      "date": "2025-05-21T20:00:00",
+      "venue": {
+        "name": "Koffee?",
+        "address": "104 Audubon Street, New Haven, CT 06511",
+        "url": "https://www.koffeefamily.com"
+      },
+      "tags": ["Poetry", "Performance", "Live Event"],
+      "image": "https://storage.googleapis.com/ahoy-dynamic-content/ahoy-new-haven/Event%20Graphics/FLYER%20PRINT%201%20.jpg",
+      "description": "Join us for an evening of poetry and community at Koffee? Experience the power of spoken word and connect with local poets and performers.",
+      "donation": 10,
+      "mapEmbed": "<iframe width=\"100%\" height=\"100%\" frameborder=\"0\" src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2997.5!2d-72.9289!3d41.3107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDE4JzM4LjUiTiA3MsKwNTUnNDQuMCJX!5e0!3m2!1sen!2sus!4v1635180941414!5m2!1sen!2sus\"></iframe>"
+    },
+    {
+      "title": "Ahoy Cabaret Show 4",
+      "date": "2025-06-01T19:00:00",
+      "venue": {
+        "name": "Location TBA",
+        "address": "New Haven Area",
+        "url": null
+      },
+      "tags": ["Cabaret", "Music", "Performance", "Coming Soon"],
+      "image": null,
+      "description": "The Ahoy Cabaret returns for its fourth installment this summer! Details about the venue and exact date will be announced soon. Stay connected for updates about this upcoming variety show featuring local talent.",
+      "donation": 10,
+      "mapEmbed": null
+    },
+    {
+      "title": "Ahoy Cabaret Show 3",
+      "date": "2025-03-22T19:00:00",
+      "venue": {
+        "name": "Koffee?",
+        "address": "104 Audubon Street, New Haven, CT 06511",
+        "url": "https://koffeect.com"
+      },
+      "tags": ["Cabaret", "Music", "Performance"],
+      "image": "https://storage.googleapis.com/ahoy-dynamic-content/news/Ahoy%20Cabaret%20-%203.22.25.jpg",
+      "description": "Join us for an unforgettable evening of cabaret performances featuring New Haven's finest artists!",
+      "donation": 10,
+      "mapEmbed": "<iframe width=\"100%\" height=\"100%\" frameborder=\"0\" src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2997.5!2d-72.9289!3d41.3107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDE4JzM4LjUiTiA3MsKwNTUnNDQuMCJX!5e0!3m2!1sen!2sus!4v1635180941414!5m2!1sen!2sus\"></iframe>"
+    }
+  ]
+} 
