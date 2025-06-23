@@ -17,7 +17,8 @@
       content="https://ahoymrag.github.io/experiments/newhaven.html">
     <meta property="og:image"
       content="https://ahoymrag.github.io/experiments/images/ahoy_newhaven.jpg">
-    <script defer data-domain="ahoynewhaven.org" src="https://plausible.io/js/script.js"></script> 
+    <script defer data-domain="ahoynewhaven.org"
+      src="https://plausible.io/js/script.js"></script>
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Ahoy Indie Media · New Haven">
     <meta name="twitter:description"
@@ -29,8 +30,8 @@
   <body>
     <!-- Add visit counter element -->
     <div class="visit-counter">
-        <i class="fas fa-eye"></i>
-        <span id="visitCount">Loading...</span>
+      <i class="fas fa-eye"></i>
+      <span id="visitCount">Loading...</span>
     </div>
 
     <div class="super-container">
@@ -46,19 +47,48 @@
           <div class="about-text">
             <p>We're building a platform for local New Haven artists,
               musicians,
-              and performers to share their craft across our little city city.</p>
+              and performers to share their craft across our little city
+              city.</p>
           </div>
         </div>
       </header>
+
+      <!-- Back in September Section -->
+      <div class="section-header">
+        <h2>Back in September</h2>
+      </div>
+      <div class="glass featured">
+        <div class="event-date">September 2025</div>
+        <div class="event-title">Returning Soon</div>
+        <div class="event-details">
+          <img
+            src="https://storage.googleapis.com/ahoy-dynamic-content/Marketing/Back%20to%20School%20Campaign%202025/AHOY%20-%20Back%20September%20_%20002.jpg"
+            alt="Back in September - Ahoy"
+            class="event-image"
+            onclick="openModal(this.src, event)">
+          <p>We'll be back with more events and performances in September. Stay
+            tuned for updates!</p>
+          <div class="action-buttons">
+            <a href="https://instagram.com/ahoyindiemedia"
+              class="action-btn secondary-btn" target="_blank">
+              <i class="fab fa-instagram"></i>
+              Follow for Updates
+            </a>
+          </div>
+        </div>
+      </div>
 
       <!-- Media Gallery Section -->
       <div class="section-header">
         <h2>Media Gallery</h2>
       </div>
       <div class="gallery-nav">
-        <button class="gallery-filter active" data-filter="all">All Events</button>
-        <button class="gallery-filter" data-filter="cabaret">Cabaret Shows</button>
-        <button class="gallery-filter" data-filter="poetry">Poetry Nights</button>
+        <button class="gallery-filter active" data-filter="all">All
+          Events</button>
+        <button class="gallery-filter" data-filter="cabaret">Cabaret
+          Shows</button>
+        <button class="gallery-filter" data-filter="poetry">Poetry
+          Nights</button>
       </div>
       <div class="media-gallery-grid" id="newhaven-gallery">
         <!-- Gallery items will be loaded from JSON -->
@@ -80,17 +110,20 @@
           </div>
         </div>
         <div class="event-details">
-          <img src="https://storage.googleapis.com/ahoy-dynamic-content/ahoy-new-haven/Event%20Graphics/FLYER%20PRINT%201%20.jpg" 
-               alt="Poets and Friends #2" 
-               class="event-image"
-               onclick="openModal(this.src, event)">
+          <img
+            src="https://storage.googleapis.com/ahoy-dynamic-content/ahoy-new-haven/Event%20Graphics/FLYER%20PRINT%201%20.jpg"
+            alt="Poets and Friends #2"
+            class="event-image"
+            onclick="openModal(this.src, event)">
           <div class="tags">
             <span class="tag">Poetry</span>
             <span class="tag">Performance</span>
             <span class="tag">Live Event</span>
           </div>
 
-          <p>Join us for an evening of poetry and community at Koffee? Experience the power of spoken word and connect with local poets and performers.</p>
+          <p>Join us for an evening of poetry and community at Koffee?
+            Experience the power of spoken word and connect with local poets and
+            performers.</p>
 
           <div class="donation-info">
             <p>Free Entry</p>
@@ -98,10 +131,9 @@
             <small>Supporting local poets and performers</small>
           </div>
 
-         
-
           <div class="map-container">
-            <iframe width="100%" height="100%" frameborder="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2997.5!2d-72.9289!3d41.3107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDE4JzM4LjUiTiA3MsKwNTUnNDQuMCJX!5e0!3m2!1sen!2sus!4v1635180941414!5m2!1sen!2sus"></iframe>
+            <iframe width="100%" height="100%" frameborder="0"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2997.5!2d-72.9289!3d41.3107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDE4JzM4LjUiTiA3MsKwNTUnNDQuMCJX!5e0!3m2!1sen!2sus!4v1635180941414!5m2!1sen!2sus"></iframe>
           </div>
         </div>
       </div>
@@ -128,7 +160,10 @@
               <span class="tag">Performance</span>
               <span class="tag">Coming Soon</span>
             </div>
-            <p>The Ahoy Cabaret returns for its fourth installment this summer! Details about the venue and exact date will be announced soon. Stay connected for updates about this upcoming variety show featuring local talent.</p>
+            <p>The Ahoy Cabaret returns for its fourth installment this summer!
+              Details about the venue and exact date will be announced soon.
+              Stay connected for updates about this upcoming variety show
+              featuring local talent.</p>
 
             <div class="donation-info">
               <p>Free Entry</p>
@@ -313,7 +348,7 @@
     <div id="imageModal" class="modal" onclick="closeModal()">
       <div class="modal-content">
         <span class="close-modal">&times;</span>
-        <img class="modal-image" src="" alt="Full size image">
+        <img class="modal-image" src alt="Full size image">
         <div class="modal-nav">
           <button onclick="navigateGallery(-1, event)">❮</button>
           <button onclick="navigateGallery(1, event)">❯</button>
@@ -403,33 +438,43 @@
     <footer class="site-footer">
       <div class="footer-content">
         <div class="footer-brand">
-          
+
         </div>
-        
+
         <div class="footer-about">
           <br>
           <img src="https://ahoy.ooo/ahoyApp/www/img/assets/u_ahoy23.png"
             alt="Ahoy Logo" class="footer-logo">
-            <br><br>
-          <p><strong>Ahoy Indie Media</strong> is a hand-crafted media company based in New Haven, Connecticut. We're building an alternative avenue for exploring indie media, supporting independent filmmakers, musicians, podcasters, and creators with a space to share their work.</p>
-          
-          <p>We sustain our operations through sheer will power, keeping the platform accessible and ad-free. Every piece of content on our platform is here with the express blessings of the artists involved.</p>
+          <br><br>
+          <p><strong>Ahoy Indie Media</strong> is a hand-crafted media company
+            based in New Haven, Connecticut. We're building an alternative
+            avenue for exploring indie media, supporting independent filmmakers,
+            musicians, podcasters, and creators with a space to share their
+            work.</p>
+
+          <p>We sustain our operations through sheer will power, keeping the
+            platform accessible and ad-free. Every piece of content on our
+            platform is here with the express blessings of the artists
+            involved.</p>
 
           <div class="footer-cta">
             <h2>How could you get involved?</h2>
             <h3>Launch Ahoy</h3>
-            <p>Experience our hand-coded platform - a new way to discover and support independent creators.</p>
-            
+            <p>Experience our hand-coded platform - a new way to discover and
+              support independent creators.</p>
+
             <div class="steps-container">
               <div class="step">
                 <span class="step-number">1</span>
-                <p>Launch <a href="https://ahoy.ooo" class="highlight-link" target="_blank">ahoy.ooo</a> and explore our curated collection</p>
+                <p>Launch <a href="https://ahoy.ooo" class="highlight-link"
+                    target="_blank">ahoy.ooo</a> and explore our curated
+                  collection</p>
               </div>
               <div class="step">
                 <span class="step-number">2</span>
                 <p>Discover new artists and share the gems</p>
               </div>
-             
+
               <div class="step">
                 <span class="step-number">3</span>
                 <p>Join us at live events and be part of the community</p>
@@ -437,31 +482,39 @@
             </div>
 
             <div class="cta-buttons">
-              <a href="https://ahoy.ooo" class="action-btn primary-btn" target="_blank">
+              <a href="https://ahoy.ooo" class="action-btn primary-btn"
+                target="_blank">
                 <i class="fas fa-rocket"></i>
                 Launch Platform
               </a>
             </div>
 
             <div class="newsletter-section">
-              <form id="newsletter-form" action="https://formspree.io/f/xldrvdzz" method="POST" class="newsletter-form">
+              <form id="newsletter-form"
+                action="https://formspree.io/f/xldrvdzz" method="POST"
+                class="newsletter-form">
                 <div class="form-group">
-                  <input type="email" name="email" placeholder="Enter your email for updates" required>
+                  <input type="email" name="email"
+                    placeholder="Enter your email for updates" required>
                   <input type="hidden" name="source" value="newhaven_events">
-                  <input type="hidden" name="form_type" value="newsletter_signup">
+                  <input type="hidden" name="form_type"
+                    value="newsletter_signup">
                   <button type="submit" class="submit-btn">
                     <i class="fas fa-paper-plane"></i>
                     Subscribe
                   </button>
                 </div>
-                <p class="form-note">Get early access to new features and exclusive content drops</p>
+                <p class="form-note">Get early access to new features and
+                  exclusive content drops</p>
               </form>
             </div>
 
             <div class="artist-outreach">
               <h3>Are You an Artist?</h3>
-              <p>Have content to share, a poem to read, or a song to play? We'd love to hear from you!</p>
-              <a href="mailto:contact@ahoy.ooo" class="action-btn secondary-btn">
+              <p>Have content to share, a poem to read, or a song to play? We'd
+                love to hear from you!</p>
+              <a href="mailto:contact@ahoy.ooo"
+                class="action-btn secondary-btn">
                 <i class="fas fa-envelope"></i>
                 Reach Out to Us @ contact@ahoy.ooo
               </a>
