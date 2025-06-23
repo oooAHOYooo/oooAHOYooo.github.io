@@ -1244,3 +1244,45 @@ h1 {
     height: 35px;
   }
 }
+
+.back-in-sept {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0 1.5rem 0;
+  width: 100%;
+}
+
+.news-item {
+  background: rgba(255, 165, 75, 0.18);
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  color: #111;
+  box-shadow: none;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.news-item img {
+  max-width: 320px;
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 1.2rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.news-item h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 1rem 0 0.5rem 0;
+  color: #111;
+}
+
+.news-item p {
+  font-size: 1.1rem;
+  color: #222;
+  margin: 0;
+}
