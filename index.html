@@ -20,6 +20,36 @@
     <link rel="stylesheet" href="index.css">
     <!-- CSS3 -->
 
+    <!-- Hover Text Change Styles -->
+    <style>
+      .hover-text-change {
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        color: white;
+      }
+      
+      .hover-text-change::before {
+        content: attr(data-hover-text);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        white-space: nowrap;
+        color: white;
+      }
+      
+      .hover-text-change:hover::before {
+        opacity: 1;
+      }
+      
+      .hover-text-change:hover {
+        color: transparent;
+      }
+    </style>
+
     <!-- Google tag (gtag.js) -->
     <script async
       src="https://www.googletagmanager.com/gtag/js?id=G-WVDL9N1HDT"></script>
@@ -41,36 +71,44 @@
               style="max-width: 320px;"></a>
         </div>
         <div class="splash-beta-menu-container">
-          <a href="./ahoyApp/www/index.html"><button>Launch Web App</button></a>
+          <a href="https://app.ahoy.ooo"
+            title="Visit app.ahoy.ooo - Our New Platform App"><button
+              class="hover-text-change" data-hover-text="app.ahoy.ooo">Launch
+              Beta Web
+              App</button></a>
           <br><br>
-          <a href="./newhaven.html"><button>Ahoy New Haven</button></a>
+          <a href="https://newhaven.ahoy.ooo"
+            title="Visit newhaven.ahoy.ooo - Our New Event Platform"><button
+              class="hover-text-change" data-hover-text="newhaven.ahoy.ooo">Ahoy
+              New
+              Haven</button></a>
           <br><br>
 
         </div>
 
         <p class="year-copy">&copy; MMXXV</p>
         <div class="back-in-sept">
-          <h3 class="back-sept-title">Back in September</h3>
-          <p class="back-sept-text">We're back in September with a new season of
-            events and
-            performances.</p>
+          <h3 class="back-sept-title">we are back</h3>
+          <p class="back-sept-text">We're back with <strong>two
+              products</strong>: our <strong>platform app</strong> for
+            artist content and an <strong>event platform</strong> for live
+            shows. Experience indie
+            media with technology.</p>
+
         </div>
-      </footer>
 
-    </div>
+        <!-- END OF APP -->
 
-    <!-- END OF APP -->
+        <footer>
 
-    <footer>
+        </main>
 
-    </main>
+        <!-- SCRIPTS AND CONDITIONAL LOGIC -->
+        <!-- SCRIPTS AND CONDITIONAL LOGIC -->
+        <!-- SCRIPTS AND CONDITIONAL LOGIC -->
 
-    <!-- SCRIPTS AND CONDITIONAL LOGIC -->
-    <!-- SCRIPTS AND CONDITIONAL LOGIC -->
-    <!-- SCRIPTS AND CONDITIONAL LOGIC -->
-
-    <!-- CODE = BACKGROUND CHANGES DEPENDING ON Page Refresh - or Hour -->
-    <script>
+        <!-- CODE = BACKGROUND CHANGES DEPENDING ON Page Refresh - or Hour -->
+        <script>
       const day = new Date();
       const hr = day.getHours();
     
@@ -115,8 +153,8 @@
       }
     </script>
 
-    <!-- CONTENT FADE IN AND ZOOM CODE -->
-    <script>
+        <!-- CONTENT FADE IN AND ZOOM CODE -->
+        <script>
       window.addEventListener("load", function () {
         var loadingScreen = document.getElementById("loading-screen");
         var content = document.querySelector(".fade-in-zoom");
@@ -124,10 +162,10 @@
       });
     </script>
 
-    <!-- END OF CONDITIONAL AND CODE LOGIC -->
-    <!-- HOpe you enjoyed this journey -->
+        <!-- END OF CONDITIONAL AND CODE LOGIC -->
+        <!-- HOpe you enjoyed this journey -->
 
-    <script>
+        <script>
     document.addEventListener('DOMContentLoaded', function () {
       // Initialize Firebase Authentication using v10 (ensure configuration consistency)
       const auth = firebase.auth();
@@ -146,5 +184,5 @@
       });
     });
     </script>
-  </body>
-</html>
+      </body>
+    </html>
