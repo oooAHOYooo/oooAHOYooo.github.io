@@ -63,126 +63,181 @@
   </head>
 
   <body id="index-body">
-    <div class="full-monte">
-      <div class="splash-container">
-        <div class="logo-container">
-          <a href="./ahoyApp/www/index.html"><img
-              src="./images/Ahoy-Indie-Media-DEFAULT-COVER-A-8.jpg"
-              style="max-width: 320px;"></a>
-        </div>
-        <div class="splash-beta-menu-container">
-          <a href="https://app.ahoy.ooo"
-            title="Visit app.ahoy.ooo - Our New Platform App"><button
-              class="hover-text-change" data-hover-text="app.ahoy.ooo">Launch
-              Beta Web
-              App</button></a>
-          <br><br>
-          <a href="https://newhaven.ahoy.ooo"
-            title="Visit newhaven.ahoy.ooo - Our New Event Platform"><button
-              class="hover-text-change" data-hover-text="newhaven.ahoy.ooo">Ahoy
-              New
-              Haven</button></a>
-          <br><br>
+    <div class="landing fade-in-zoom">
+      <header class="landing-header">
+        <a class="brand" href="./ahoyApp/www/index.html"
+          aria-label="Open Ahoy Web App">
+          <img class="brand-logo"
+            src="./images/Ahoy-Indie-Media-DEFAULT-COVER-A-8.jpg"
+            alt="Ahoy Indie Media" />
+        </a>
+      </header>
 
-        </div>
+      <main class="landing-main">
+        <section class="hero">
+          <div class="hero-head">
+            <p class="hero-subtitle">
+              Launch the web app, download the beta builds, and find live shows
+              through Ahoy Events.
+            </p>
+          </div>
 
-        <p class="year-copy">&copy; MMXXV</p>
-        <div class="back-in-sept">
-          <h3 class="back-sept-title">we are back</h3>
-          <p class="back-sept-text">We're back with <strong>two
-              products</strong>: our <strong>platform app</strong> for
-            artist content and an <strong>event platform</strong> for live
-            shows. Experience indie
-            media with technology.</p>
+          <div class="widget-stack" aria-label="Primary actions">
+            <section class="widget widget-launch"
+              aria-label="Launch the web app">
+              <h2 class="widget-title">Launch</h2>
+              <p class="widget-text">Jump into the platform right now in your
+                browser.</p>
+              <div class="widget-actions">
+                <a class="cta primary hover-text-change"
+                  data-hover-text="app.ahoy.ooo"
+                  href="https://app.ahoy.ooo" title="Launch the web app">
+                  Launch Web App
+                </a>
+              </div>
+            </section>
 
-        </div>
+            <section class="widget widget-download"
+              aria-label="Download the beta apps">
+              <h2 class="widget-title">Download</h2>
+              <p class="widget-text">Get the latest beta builds (Mac +
+                Android).</p>
+              <div class="widget-actions">
+                <a class="cta hover-text-change" data-hover-text="download.html"
+                  href="download.html" title="Download page">
+                  Download Beta Apps
+                </a>
+              </div>
+              <div class="download-row" aria-label="Quick downloads">
+                <a class="download-chip"
+                  href="https://storage.googleapis.com/ahoy-dynamic-content/ahoyv247-app-debug.apk"
+                  title="Direct download: Android v24.7 APK">
+                  Android v24.7 (APK)
+                </a>
+                <a class="download-chip"
+                  href="https://storage.googleapis.com/ahoy-dynamic-content/app-debug.apk"
+                  title="Direct download: Android v24.3 APK">
+                  Android v24.3 (APK)
+                </a>
+              </div>
+            </section>
 
-        <!-- END OF APP -->
+            <section class="widget widget-events" aria-label="Ahoy events">
+              <h2 class="widget-title">Ahoy Events</h2>
+              <p class="widget-text">Discover live shows and what’s happening
+                around New Haven.</p>
+              <div class="widget-actions">
+                <a class="cta"
+                  href="./events/"
+                  title="Explore Ahoy Events">
+                  Explore Events
+                </a>
+              </div>
+            </section>
+          </div>
+        </section>
+      </main>
 
-        <footer>
+      <footer class="landing-footer">
+        <p class="year-copy">&copy; MMXXVI</p>
+      </footer>
+    </div>
 
-        </main>
+    <!-- SCRIPTS AND CONDITIONAL LOGIC -->
+    <!-- SCRIPTS AND CONDITIONAL LOGIC -->
+    <!-- SCRIPTS AND CONDITIONAL LOGIC -->
 
-        <!-- SCRIPTS AND CONDITIONAL LOGIC -->
-        <!-- SCRIPTS AND CONDITIONAL LOGIC -->
-        <!-- SCRIPTS AND CONDITIONAL LOGIC -->
-
-        <!-- CODE = BACKGROUND CHANGES DEPENDING ON Page Refresh - or Hour -->
-        <script>
+    <!-- CODE = BACKGROUND CHANGES DEPENDING ON Page Refresh - or Hour -->
+    <script>
       const day = new Date();
-      const hr = day.getHours();
-    
-      if (window.innerWidth > 300) {
-        document.body.style.backgroundColor = "#000";
-        document.body.style.backgroundSize = "cover"; // Ensure the background covers the whole page
-        document.body.style.backgroundPosition = "center"; // Center the background image
-    
+      const hr = day.getHours(); // 0-23
+      const body = document.body;
+      const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+      const saveData = Boolean(connection && connection.saveData);
+      const effectiveType = (connection && connection.effectiveType) ? connection.effectiveType : "";
+      const isSlowConnection = ["slow-2g", "2g"].includes(effectiveType);
+      const isDesktop = window.matchMedia && window.matchMedia("(min-width: 860px)").matches;
+
+      // Always default to a dark black/blue background (even if no GIF matches or fails to load).
+      function applyDefaultBackground() {
+        body.style.backgroundColor = "#000814";
+        body.style.backgroundImage = "linear-gradient(180deg, #000814 0%, #001d3d 100%)";
+        body.style.backgroundSize = "cover";
+        body.style.backgroundPosition = "center";
+        body.style.backgroundRepeat = "no-repeat";
+      }
+
+      // Only apply GIF if it successfully loads; otherwise keep the default.
+      function applyGifBackgroundIfLoads(url) {
+        if (!url) return;
+        const img = new Image();
+        img.onload = () => {
+          body.style.backgroundImage = `url('${url}')`;
+        };
+        img.onerror = () => {
+          // Keep default background.
+        };
+        img.src = url;
+      }
+
+      applyDefaultBackground();
+
+      // Performance: only load big background GIFs on desktop + non data-saver connections.
+      if (isDesktop && !saveData && !isSlowConnection) {
+        let gifUrl = null;
+
         if (hr === 5) {
-          document.body.style.backgroundImage =
-            "url('https://thumbs.gfycat.com/FrayedQuaintAnteater-max-1mb.gif')";
+          gifUrl = "https://thumbs.gfycat.com/FrayedQuaintAnteater-max-1mb.gif";
         } else if (hr === 6 || hr === 12) {
-          document.body.style.backgroundImage =
-            "url('https://www.icegif.com/wp-content/uploads/2022/02/icegif-536.gif')";
+          gifUrl = "https://www.icegif.com/wp-content/uploads/2022/02/icegif-536.gif";
         } else if (hr === 7 || hr === 13 || hr === 14) {
-          document.body.style.backgroundImage =
-            "url('https://thumbs.gfycat.com/BackLankyGangesdolphin-size_restricted.gif')";
+          gifUrl = "https://thumbs.gfycat.com/BackLankyGangesdolphin-size_restricted.gif";
         } else if (hr === 8 || hr === 9 || hr === 10) {
-          document.body.style.backgroundImage =
-            "url('https://media1.giphy.com/media/wkKyBT94rB196/giphy.gif?cid=ecf05e47b9ypgsrn61em96kw5zberiuv0vmdperhn0uq9ch2&rid=giphy.gif&ct=g')";
+          gifUrl = "https://media1.giphy.com/media/wkKyBT94rB196/giphy.gif?cid=ecf05e47b9ypgsrn61em96kw5zberiuv0vmdperhn0uq9ch2&rid=giphy.gif&ct=g";
         } else if (hr === 11) {
-          document.body.style.backgroundImage =
-            "url('https://i.gifer.com/ARqO.gif')";
+          gifUrl = "https://i.gifer.com/ARqO.gif";
         } else if (hr === 15 || hr === 16) {
-          document.body.style.backgroundImage =
-            "url('https://s.yimg.com/uu/api/res/1.2/rVdUX8eVa31S_5JDCvvp0A--~B/Zmk9ZmlsbDtweW9mZj0wO3c9NjQwO2g9MzYwO3NtPTE7YXBwaWQ9eXRhY2h5b24-/http://media.zenfs.com/en-US/video/video.storyful.com/866362344b92b1cb1d9c3a36db9b0520')";
+          gifUrl = "https://s.yimg.com/uu/api/res/1.2/rVdUX8eVa31S_5JDCvvp0A--~B/Zmk9ZmlsbDtweW9mZj0wO3c9NjQwO2g9MzYwO3NtPTE7YXBwaWQ9eXRhY2h5b24-/http://media.zenfs.com/en-US/video/video.storyful.com/866362344b92b1cb1d9c3a36db9b0520";
         } else if (hr === 17 || hr === 18 || hr === 19 || hr === 20) {
-          document.body.style.backgroundImage =
-            "url('https://media.tenor.com/S8_V9lNMc3oAAAAM/waves-awesome.gif')";
+          gifUrl = "https://media.tenor.com/S8_V9lNMc3oAAAAM/waves-awesome.gif";
         } else if (hr === 22) {
-          document.body.style.backgroundImage =
-            "url('https://i.pinimg.com/originals/c6/36/2e/c6362e4ca5fa5e887c6b9ddfcb82c13d.gif')";
+          gifUrl = "https://i.pinimg.com/originals/c6/36/2e/c6362e4ca5fa5e887c6b9ddfcb82c13d.gif";
         } else if (hr === 23) {
-          document.body.style.backgroundImage =
-            "url('https://i.pinimg.com/originals/fc/38/97/fc389789c5fbe80b36df05e8ee441c66.gif')";
-        } else if (hr === 24) {
-          document.body.style.backgroundImage =
-            "url('https://c.tenor.com/lWbWfolwJfIAAAAC/ocean-night.gif')";
+          gifUrl = "https://i.pinimg.com/originals/fc/38/97/fc389789c5fbe80b36df05e8ee441c66.gif";
+        } else if (hr === 0 || hr === 1 || hr === 2 || hr === 3 || hr === 4 || hr === 21) {
+          gifUrl = "https://c.tenor.com/lWbWfolwJfIAAAAC/ocean-night.gif";
         }
-      } else {
-        document.body.style.backgroundColor = "#000f2b85;";
+
+        applyGifBackgroundIfLoads(gifUrl);
       }
     </script>
 
-        <!-- CONTENT FADE IN AND ZOOM CODE -->
-        <script>
+    <!-- CONTENT FADE IN AND ZOOM CODE -->
+    <script>
       window.addEventListener("load", function () {
-        var loadingScreen = document.getElementById("loading-screen");
         var content = document.querySelector(".fade-in-zoom");
-        content.classList.add("show");
+        if (content) content.classList.add("show");
       });
     </script>
 
-        <!-- END OF CONDITIONAL AND CODE LOGIC -->
-        <!-- HOpe you enjoyed this journey -->
+    <!-- END OF CONDITIONAL AND CODE LOGIC -->
+    <!-- HOpe you enjoyed this journey -->
 
-        <script>
+    <script>
     document.addEventListener('DOMContentLoaded', function () {
-      // Initialize Firebase Authentication using v10 (ensure configuration consistency)
+      // Optional: only runs if Firebase + #user-info exist on the page.
+      if (!window.firebase || !firebase.auth) return;
+      const userInfoElement = document.getElementById('user-info');
+      if (!userInfoElement) return;
+
       const auth = firebase.auth();
-      
-      // Listen for authentication state changes
       auth.onAuthStateChanged(user => {
-        const userInfoElement = document.getElementById('user-info');
         userInfoElement.style.display = 'block';
-        if (user) {
-          // If the user is logged in, show their display name or email
-          userInfoElement.innerText = `Welcome, ${user.displayName || user.email}`;
-        } else {
-          // Alternatively, display a message prompting them to sign in
-          userInfoElement.innerText = "Welcome, please sign in.";
-        }
+        userInfoElement.innerText = user
+          ? `Welcome, ${user.displayName || user.email}`
+          : "Welcome, please sign in.";
       });
     });
     </script>
-      </body>
-    </html>
+  </body>
+</html>

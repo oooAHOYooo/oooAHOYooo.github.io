@@ -1,0 +1,45 @@
+{
+  "export_info": {
+    "export_date": "2025-09-10 20:46:46",
+    "total_submissions": 3,
+    "data_type": "Artist Performance Submissions"
+  },
+  "submissions": [
+    {
+      "id": "2025-09-09T19:23:23.725091",
+      "name": "Alex Gonzalez",
+      "email": "alex@ahoy.ooo",
+      "performance_type": "music",
+      "description": "Musician",
+      "availability": "Friday Nights",
+      "links": "",
+      "submission_date": "2025-09-09T19:23:23.725107",
+      "status": "pending"
+    },
+    {
+      "id": "2025-09-09T19:32:46.801602",
+      "name": "Test McGee",
+      "email": "yoyo@mama.com",
+      "performance_type": "cabaret",
+      "description": "I juggle",
+      "availability": "",
+      "links": "",
+      "submission_date": "2025-09-09T19:32:46.801617",
+      "status": "pending"
+    },
+    {
+      "id": "2025-09-10T02:47:16.325659",
+      "name": "Ellen",
+      "email": "ellen@ellen.com",
+      "performance_type": "other",
+      "description": "Cuddle",
+      "availability": "All night all day",
+      "links": "",
+      "submission_date": "2025-09-10T02:47:16.325664",
+      "status": "pending",
+      "ip_address": "10.207.151.69",
+      "user_agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_6_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/140.0.7339.101 Mobile/15E148 Safari/604.1"
+    }
+  ]
+}
+

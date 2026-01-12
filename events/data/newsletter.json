@@ -1,0 +1,64 @@
+{
+  "export_info": {
+    "export_date": "2025-09-10 20:46:46",
+    "total_subscribers": 3,
+    "data_type": "Newsletter Subscribers"
+  },
+  "subscribers": [
+    {
+      "id": "sub_20250909_200052_alex",
+      "email": "alex@ahoy.ooo",
+      "signup_date": "2025-09-09 20:00:52",
+      "signup_timestamp": 1757462452.013169,
+      "status": "active",
+      "device_type": "Desktop",
+      "referrer_domain": "127.0.0.1:5001",
+      "campaign_source": "",
+      "campaign_medium": "",
+      "email_domain": "ahoy.ooo",
+      "is_mobile": false,
+      "region": "Local",
+      "country": "Local",
+      "signup_hour": 20,
+      "signup_weekday": "Tuesday",
+      "timezone": "EST"
+    },
+    {
+      "id": "sub_20250909_200118_professo",
+      "email": "professorgonzz@gmail.com",
+      "signup_date": "2025-09-09 20:01:18",
+      "signup_timestamp": 1757462478.345202,
+      "status": "active",
+      "device_type": "Desktop",
+      "referrer_domain": "127.0.0.1:5001",
+      "campaign_source": "",
+      "campaign_medium": "",
+      "email_domain": "gmail.com",
+      "is_mobile": false,
+      "region": "Local",
+      "country": "Local",
+      "signup_hour": 20,
+      "signup_weekday": "Tuesday",
+      "timezone": "EST"
+    },
+    {
+      "id": "sub_20250910_024005_ellenedg",
+      "email": "ellenedgemartin@gmail.com",
+      "signup_date": "2025-09-10 02:40:05",
+      "signup_timestamp": 1757472005.887408,
+      "status": "active",
+      "device_type": "Mobile",
+      "referrer_domain": "ahoynewhaven.org",
+      "campaign_source": "",
+      "campaign_medium": "",
+      "email_domain": "gmail.com",
+      "is_mobile": true,
+      "region": "Local",
+      "country": "Local",
+      "signup_hour": 2,
+      "signup_weekday": "Wednesday",
+      "timezone": "EST"
+    }
+  ]
+}
+

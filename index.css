@@ -1,3 +1,309 @@
+:root {
+    --page-pad-x: clamp(14px, 4vw, 22px);
+    --section-gap: clamp(10px, 3.2vw, 16px);
+    --card-pad: clamp(14px, 3.6vw, 18px);
+}
+
+.fade-in-zoom {
+    opacity: 0;
+    transform: translateY(6px) scale(0.99);
+    transition: opacity 450ms ease, transform 450ms ease;
+}
+
+.fade-in-zoom.show {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+#index-body {
+    margin: 0;
+    min-height: 100vh;
+    color: rgba(255, 255, 255, 0.92);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+.landing {
+    max-width: 1060px;
+    margin: 0 auto;
+    padding: 18px var(--page-pad-x) 22px;
+}
+
+.landing-header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: var(--section-gap);
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.brand-logo {
+    width: clamp(110px, 18vw, 140px);
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    gap: var(--section-gap);
+    align-items: stretch;
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.hero-head {
+    padding: 10px 2px 0;
+    text-align: center;
+}
+
+.kicker {
+    margin: 0 0 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-family: 'Barlow Mono', monospace;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.hero-title {
+    margin: 0 0 10px;
+    font-size: clamp(28px, 4vw, 44px);
+    line-height: 1.08;
+    font-family: 'Barlow Mono', monospace;
+    letter-spacing: 0.01em;
+}
+
+.hero-subtitle {
+    margin: 0 0 12px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.78);
+    font-family: 'Barlow Mono', monospace;
+}
+
+.widget-stack {
+    display: flex;
+    flex-direction: column;
+    gap: var(--section-gap);
+    position: relative;
+    isolation: isolate;
+}
+
+.widget {
+    padding: var(--card-pad);
+    background: rgba(0, 0, 0, 0.28);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 18px;
+    position: relative;
+    transform: translateZ(0);
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.26);
+}
+
+/* Subtle "stack of cards" feel (mobile-first): z-index layering (no overlap) */
+
+.widget-launch {
+    z-index: 3;
+}
+
+.widget-download {
+    z-index: 2;
+}
+
+.widget-events {
+    z-index: 1;
+}
+
+/* Backplate layer behind each widget (fast: no animation, no blur) */
+.widget::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 18px;
+    transform: translate(5px, 5px);
+    background: linear-gradient(180deg, rgba(0, 41, 82, 0.35), rgba(0, 0, 0, 0.15));
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Extra depth behind the whole stack */
+.widget-stack::before {
+    content: "";
+    position: absolute;
+    inset: -40px -30px;
+    background:
+        radial-gradient(600px 240px at 20% 10%, rgba(0, 119, 255, 0.15), transparent 60%),
+        radial-gradient(520px 260px at 80% 40%, rgba(0, 255, 163, 0.06), transparent 55%),
+        radial-gradient(420px 240px at 30% 90%, rgba(255, 0, 120, 0.07), transparent 60%);
+    z-index: -2;
+    pointer-events: none;
+    filter: saturate(1.05);
+}
+
+/* Keep blur off on mobile for performance; enable only on larger screens + supported browsers */
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    @media (min-width: 860px) {
+        .widget {
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        .cta {
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+    }
+}
+
+/* Desktop polish: hover lift (only when hovering is real) */
+@media (hover: hover) and (pointer: fine) {
+    .widget {
+        transition: transform 140ms ease, box-shadow 140ms ease;
+    }
+    .widget:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 18px 52px rgba(0, 0, 0, 0.32);
+    }
+}
+
+.widget-title {
+    margin: 0 0 6px;
+    font-size: 16px;
+    font-family: 'Barlow Mono', monospace;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.widget-text {
+    margin: 0 0 12px;
+    font-size: 12px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.78);
+    font-family: 'Barlow Mono', monospace;
+}
+
+.widget-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 10px 0 12px;
+}
+
+.cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 14px;
+    min-height: 44px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    text-decoration: none;
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.22);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+    font-family: 'Barlow Mono', monospace;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.cta.primary {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.32);
+}
+
+.download-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.download-chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    background: rgba(0, 0, 0, 0.18);
+    color: rgba(255, 255, 255, 0.88);
+    text-decoration: none;
+    font-family: 'Barlow Mono', monospace;
+    font-size: 12px;
+    min-height: 40px;
+}
+
+.hero-panel {
+    padding: 18px;
+    background: rgba(0, 0, 0, 0.22);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 18px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.panel-card {
+    text-align: left;
+}
+
+.panel-title {
+    margin: 0 0 8px;
+    font-size: 16px;
+    font-family: 'Barlow Mono', monospace;
+}
+
+.panel-text {
+    margin: 0 0 12px;
+    font-size: 12px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.75);
+    font-family: 'Barlow Mono', monospace;
+}
+
+.panel-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.mini-link {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(0, 0, 0, 0.18);
+    border-radius: 14px;
+    padding: 10px 12px;
+    font-family: 'Barlow Mono', monospace;
+    font-size: 12px;
+}
+
+.landing-footer {
+    margin-top: 14px;
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 860px) {
+    .landing {
+        padding-top: 18px;
+    }
+}
+
 .full-monte {
     display: flex;
     justify-content: center;

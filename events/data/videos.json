@@ -1,0 +1,83 @@
+{
+  "videos": [
+    {
+      "id": "poets-and-friends-4",
+      "event_id": "2025-10-30T18:30:00",
+      "title": "Poets & Friends #4: Spooky Edition - Live Show Recording",
+      "description": "Full recording of the Spooky Edition poetry and performance event",
+      "url": "https://storage.googleapis.com/ahoy-videos/live/poets/Poets4Total.mp4",
+      "duration": null,
+      "file_size": null,
+      "format": "MP4",
+      "status": "available",
+      "upload_date": "2025-11-18",
+      "thumbnail": "/static/event-imgs/poets4/poets4.jpg"
+    },
+    {
+      "id": "poets-and-friends-3",
+      "event_id": "2025-09-24T19:00:00",
+      "title": "Poets and Friends #3 - Live Show Recording",
+      "description": "Full recording of the live poetry and performance event",
+      "url": "https://storage.googleapis.com/ahoy-videos/live/poets/Ahoy_poets%20and%20friends%20-%203%20-%20ready.mov",
+      "duration": "39 minutes",
+      "file_size": "3.4GB",
+      "format": "MOV",
+      "status": "available",
+      "upload_date": "2025-10-01",
+      "thumbnail": "/static/event-imgs/posters/Poets-3-Poster.jpg"
+    },
+    {
+      "id": "poets-and-friends-2",
+      "event_id": "2025-05-21T20:00:00",
+      "title": "Poets and Friends #2 - Live Show Recording",
+      "description": "Recording of the second poetry gathering",
+      "url": null,
+      "duration": null,
+      "file_size": null,
+      "format": null,
+      "status": "coming_soon",
+      "upload_date": null,
+      "thumbnail": "/static/event-imgs/community-sent/8.jpg"
+    },
+    {
+      "id": "poets-and-friends-1",
+      "event_id": "2025-04-16T19:00:00",
+      "title": "Poets and Friends #1 - Live Show Recording",
+      "description": "Recording of the first poetry gathering",
+      "url": null,
+      "duration": null,
+      "file_size": null,
+      "format": null,
+      "status": "coming_soon",
+      "upload_date": null,
+      "thumbnail": "/static/event-imgs/poets1/12.jpg"
+    },
+    {
+      "id": "ahoy-cabaret-2",
+      "event_id": "2025-02-22T19:00:00",
+      "title": "Ahoy Cabaret #2 - Live Show Recording",
+      "description": "Recording of the second cabaret event",
+      "url": null,
+      "duration": null,
+      "file_size": null,
+      "format": null,
+      "status": "coming_soon",
+      "upload_date": null,
+      "thumbnail": "/static/event-imgs/cabaret-1-2/2.jpg"
+    },
+    {
+      "id": "ahoy-cabaret-1",
+      "event_id": "2024-12-15T20:00:00",
+      "title": "Ahoy Cabaret #1 - Live Show Recording",
+      "description": "Recording of the first cabaret event",
+      "url": null,
+      "duration": null,
+      "file_size": null,
+      "format": null,
+      "status": "coming_soon",
+      "upload_date": null,
+      "thumbnail": "/static/event-imgs/cabaret-1-2/47.jpg"
+    }
+  ]
+}
+

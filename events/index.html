@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ahoy Events</title>
+    <link rel="icon" type="image/x-icon" href="../ahoyApp/www/img/favicon_ahoy.png" />
+    <link rel="stylesheet" href="./events.css" />
+  </head>
+
+  <body>
+    <header class="top">
+      <a class="back" href="../index.html" aria-label="Back to Ahoy Indie Media home">← Home</a>
+      <div class="title-wrap">
+        <h1 class="title">Ahoy Events</h1>
+        <p class="subtitle">Live shows, community, and what’s happening in New Haven.</p>
+      </div>
+    </header>
+
+    <main class="content">
+      <section class="panel">
+        <div class="panel-head">
+          <h2 class="panel-title">Upcoming + recent</h2>
+          <p class="panel-note">Local JSON-powered.</p>
+        </div>
+
+        <div id="stats" class="stats" aria-label="Ahoy stats" hidden></div>
+
+        <div id="events" class="events" aria-live="polite"></div>
+
+        <div id="events-empty" class="empty" hidden>
+          No events yet — check back soon.
+        </div>
+      </section>
+    </main>
+
+    <script>
+      function safeText(v) {
+        return (v ?? "").toString();
+      }
+
+      function formatWhen(dateStr, timeStr) {
+        if (!dateStr && !timeStr) return "";
+        if (dateStr && timeStr) return `${dateStr} · ${timeStr}`;
+        return dateStr || timeStr || "";
+      }
+
+      function countAvailableVideos(videos) {
+        if (!Array.isArray(videos)) return 0;
+        return videos.filter(v => v && v.url).length;
+      }
+
+      function buildVideoLookup(videos) {
+        const map = new Map();
+        if (!Array.isArray(videos)) return map;
+        for (const v of videos) {
+          if (v?.event_id) map.set(v.event_id, v);
+        }
+        return map;
+      }
+
+      function renderStats({ eventsCount, subsCount, submissionsCount, availableVideosCount }) {
+        const stats = document.getElementById("stats");
+        if (!stats) return;
+        stats.hidden = false;
+        stats.innerHTML = "";
+
+        const items = [
+          { k: "Events", v: eventsCount },
+          { k: "Subscribers", v: subsCount },
+          { k: "Submissions", v: submissionsCount },
+          { k: "Videos", v: availableVideosCount },
+        ];
+
+        for (const it of items) {
+          const chip = document.createElement("div");
+          chip.className = "stat";
+          chip.innerHTML = `<span class="stat-k">${it.k}</span><span class="stat-v">${it.v}</span>`;
+          stats.appendChild(chip);
+        }
+      }
+
+      async function loadData() {
+        const container = document.getElementById("events");
+        const empty = document.getElementById("events-empty");
+
+        try {
+          const [eventsRes, videosRes, newsletterRes, submissionsRes] = await Promise.all([
+            fetch("./data/events.json"),
+            fetch("./data/videos.json"),
+            fetch("./data/newsletter.json"),
+            fetch("./data/artist_submissions.json"),
+          ]);
+
+          if (!eventsRes.ok) throw new Error("Failed to load events JSON");
+          const eventsData = await eventsRes.json();
+          const videosData = videosRes.ok ? await videosRes.json() : { videos: [] };
+          const newsletterData = newsletterRes.ok ? await newsletterRes.json() : { subscribers: [], export_info: {} };
+          const submissionsData = submissionsRes.ok ? await submissionsRes.json() : { submissions: [], export_info: {} };
+
+          const events = Array.isArray(eventsData?.events) ? eventsData.events : [];
+          const videos = Array.isArray(videosData?.videos) ? videosData.videos : [];
+          const videoByEventId = buildVideoLookup(videos);
+
+          renderStats({
+            eventsCount: events.length,
+            subsCount: Number(newsletterData?.export_info?.total_subscribers ?? (newsletterData?.subscribers?.length ?? 0)),
+            submissionsCount: Number(submissionsData?.export_info?.total_submissions ?? (submissionsData?.submissions?.length ?? 0)),
+            availableVideosCount: countAvailableVideos(videos),
+          });
+
+          // Sort: soonest first by id/date (id is ISO datetime in this dataset)
+          events.sort((a, b) => new Date(a?.id || a?.date || 0) - new Date(b?.id || b?.date || 0));
+
+          if (!events.length) {
+            empty.hidden = false;
+            return;
+          }
+
+          const frag = document.createDocumentFragment();
+          for (const ev of events) {
+            const card = document.createElement("article");
+            card.className = "card";
+
+            const imgUrl = ev?.image;
+            if (imgUrl) {
+              const img = document.createElement("img");
+              img.className = "card-img";
+              img.loading = "lazy";
+              img.alt = safeText(ev?.title || "Event image");
+              img.src = imgUrl;
+              card.appendChild(img);
+            }
+
+            const body = document.createElement("div");
+            body.className = "card-body";
+
+            const title = document.createElement("h3");
+            title.className = "card-title";
+            title.textContent = safeText(ev?.title);
+
+            const meta = document.createElement("p");
+            meta.className = "card-meta";
+
+            const when = formatWhen(ev?.date, ev?.time);
+            const where = safeText(ev?.venue) ? ` · ${safeText(ev?.venue)}` : "";
+            meta.textContent = `${when}${where}`.trim();
+
+            const desc = document.createElement("p");
+            desc.className = "card-desc";
+            desc.textContent = safeText(ev?.description);
+
+            const links = document.createElement("div");
+            links.className = "card-links";
+
+            const address = safeText(ev?.venue_address);
+            if (address) {
+              const maps = document.createElement("a");
+              maps.className = "chip";
+              maps.href = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
+              maps.target = "_blank";
+              maps.rel = "noopener noreferrer";
+              maps.textContent = "Map";
+              links.appendChild(maps);
+            }
+
+            if (ev?.rsvp_enabled && ev?.rsvp_external_url) {
+              const rsvp = document.createElement("a");
+              rsvp.className = "chip";
+              rsvp.href = ev.rsvp_external_url;
+              rsvp.target = "_blank";
+              rsvp.rel = "noopener noreferrer";
+              rsvp.textContent = "RSVP";
+              links.appendChild(rsvp);
+            }
+
+            const video = videoByEventId.get(ev?.id);
+            if (video?.url) {
+              const watch = document.createElement("a");
+              watch.className = "chip";
+              watch.href = video.url;
+              watch.target = "_blank";
+              watch.rel = "noopener noreferrer";
+              watch.textContent = "Watch";
+              links.appendChild(watch);
+            }
+
+            body.appendChild(title);
+            if (meta.textContent) body.appendChild(meta);
+            if (desc.textContent) body.appendChild(desc);
+            if (links.childElementCount) body.appendChild(links);
+
+            card.appendChild(body);
+            frag.appendChild(card);
+          }
+
+          container.appendChild(frag);
+        } catch (e) {
+          empty.hidden = false;
+          empty.textContent = "Couldn’t load events right now.";
+        }
+      }
+
+      loadData();
+    </script>
+  </body>
+</html>
+
