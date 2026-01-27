@@ -39,3 +39,6 @@ electron-packager-config.json
 .gradle/
 .idea/
 .vscode/
+
+# Redirect tracker logs
+redirect_logs.csv
