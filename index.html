@@ -108,21 +108,150 @@
 
     /* Logo/Brand */
     .brand {
-      font-size: 48px;
-      font-weight: 300;
-      letter-spacing: 2px;
-      color: rgba(255, 255, 255, 0.95);
-      margin-bottom: 24px;
-      text-shadow: 0 2px 20px rgba(255, 255, 255, 0.1);
-      animation: pulse 2s ease-in-out infinite;
+      width: 280px;
+      height: 280px;
+      margin: 0 auto 32px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: logoFloat 3s ease-in-out infinite, logoGlow 2s ease-in-out infinite;
     }
 
-    @keyframes pulse {
+    .brand img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 0 30px rgba(59, 130, 246, 0.6))
+              drop-shadow(0 0 60px rgba(139, 92, 246, 0.4))
+              drop-shadow(0 0 90px rgba(6, 182, 212, 0.3));
+      animation: logoPulse 2s ease-in-out infinite, logoRotate 8s linear infinite;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Animated glow ring around logo */
+    .brand::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 120%;
+      height: 120%;
+      border-radius: 50%;
+      background: conic-gradient(
+        from 0deg,
+        rgba(59, 130, 246, 0.3),
+        rgba(139, 92, 246, 0.3),
+        rgba(6, 182, 212, 0.3),
+        rgba(59, 130, 246, 0.3)
+      );
+      animation: rotateGlow 3s linear infinite;
+      filter: blur(20px);
+      z-index: 1;
+    }
+
+    .brand::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 140%;
+      height: 140%;
+      border-radius: 50%;
+      background: radial-gradient(
+        circle,
+        rgba(59, 130, 246, 0.2) 0%,
+        rgba(139, 92, 246, 0.15) 30%,
+        transparent 70%
+      );
+      animation: pulseGlow 2s ease-in-out infinite;
+      z-index: 0;
+    }
+
+    @keyframes logoFloat {
       0%, 100% {
-        opacity: 0.95;
+        transform: translateY(0) scale(1);
       }
       50% {
-        opacity: 1;
+        transform: translateY(-10px) scale(1.05);
+      }
+    }
+
+    @keyframes logoGlow {
+      0%, 100% {
+        filter: drop-shadow(0 0 30px rgba(59, 130, 246, 0.6))
+                drop-shadow(0 0 60px rgba(139, 92, 246, 0.4))
+                drop-shadow(0 0 90px rgba(6, 182, 212, 0.3));
+      }
+      50% {
+        filter: drop-shadow(0 0 40px rgba(59, 130, 246, 0.8))
+                drop-shadow(0 0 80px rgba(139, 92, 246, 0.6))
+                drop-shadow(0 0 120px rgba(6, 182, 212, 0.5));
+      }
+    }
+
+    @keyframes logoPulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.08);
+      }
+    }
+
+    @keyframes logoRotate {
+      0% {
+        filter: drop-shadow(0 0 30px rgba(59, 130, 246, 0.6))
+                drop-shadow(0 0 60px rgba(139, 92, 246, 0.4))
+                drop-shadow(0 0 90px rgba(6, 182, 212, 0.3))
+                hue-rotate(0deg);
+      }
+      25% {
+        filter: drop-shadow(0 0 30px rgba(139, 92, 246, 0.6))
+                drop-shadow(0 0 60px rgba(6, 182, 212, 0.4))
+                drop-shadow(0 0 90px rgba(59, 130, 246, 0.3))
+                hue-rotate(90deg);
+      }
+      50% {
+        filter: drop-shadow(0 0 30px rgba(6, 182, 212, 0.6))
+                drop-shadow(0 0 60px rgba(59, 130, 246, 0.4))
+                drop-shadow(0 0 90px rgba(139, 92, 246, 0.3))
+                hue-rotate(180deg);
+      }
+      75% {
+        filter: drop-shadow(0 0 30px rgba(139, 92, 246, 0.6))
+                drop-shadow(0 0 60px rgba(59, 130, 246, 0.4))
+                drop-shadow(0 0 90px rgba(6, 182, 212, 0.3))
+                hue-rotate(270deg);
+      }
+      100% {
+        filter: drop-shadow(0 0 30px rgba(59, 130, 246, 0.6))
+                drop-shadow(0 0 60px rgba(139, 92, 246, 0.4))
+                drop-shadow(0 0 90px rgba(6, 182, 212, 0.3))
+                hue-rotate(360deg);
+      }
+    }
+
+    @keyframes rotateGlow {
+      0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+      }
+      100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+      }
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% {
+        opacity: 0.4;
+        transform: translate(-50%, -50%) scale(1);
+      }
+      50% {
+        opacity: 0.7;
+        transform: translate(-50%, -50%) scale(1.1);
       }
     }
 
@@ -221,7 +350,9 @@
       }
 
       .brand {
-        font-size: 36px;
+        width: 200px;
+        height: 200px;
+        margin-bottom: 24px;
       }
 
       .message {
@@ -254,6 +385,60 @@
         left: 100%;
       }
     }
+
+    /* Sparkle particles */
+    .sparkle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: white;
+      border-radius: 50%;
+      pointer-events: none;
+      animation: sparkleFloat 3s ease-out infinite;
+      box-shadow: 0 0 6px rgba(255, 255, 255, 0.8),
+                  0 0 12px rgba(59, 130, 246, 0.6);
+    }
+
+    @keyframes sparkleFloat {
+      0% {
+        opacity: 0;
+        transform: translateY(0) scale(0);
+      }
+      20% {
+        opacity: 1;
+        transform: translateY(-20px) scale(1);
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(-100px) scale(0);
+      }
+    }
+
+    /* Shimmer effect on logo */
+    .brand img::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+      );
+      animation: shimmer 2s ease-in-out infinite;
+    }
+
+    @keyframes shimmer {
+      0% {
+        left: -100%;
+      }
+      100% {
+        left: 100%;
+      }
+    }
   </style>
 </head>
 <body>
@@ -262,7 +447,9 @@
   <div class="blob blob-3"></div>
 
   <div class="container">
-    <div class="brand">AHOY</div>
+    <div class="brand">
+      <img src="./images/u_ahoy23.png" alt="Ahoy Indie Media" />
+    </div>
     <div class="message">Taking you to the app...</div>
     <a href="https://app.ahoy.ooo" class="link">app.ahoy.ooo</a>
     <div class="loader">
@@ -273,6 +460,34 @@
   </div>
 
   <script>
+    // Create sparkle particles
+    function createSparkle() {
+      const sparkle = document.createElement('div');
+      sparkle.className = 'sparkle';
+      const container = document.querySelector('.container');
+      const brand = document.querySelector('.brand');
+      const brandRect = brand.getBoundingClientRect();
+      const containerRect = container.getBoundingClientRect();
+      
+      const x = Math.random() * brandRect.width + (brandRect.left - containerRect.left);
+      const y = brandRect.top - containerRect.top + brandRect.height / 2;
+      
+      sparkle.style.left = x + 'px';
+      sparkle.style.top = y + 'px';
+      sparkle.style.animationDelay = Math.random() * 0.5 + 's';
+      
+      container.appendChild(sparkle);
+      
+      setTimeout(() => {
+        sparkle.remove();
+      }, 3000);
+    }
+
+    // Create sparkles periodically
+    setInterval(createSparkle, 300);
+    setInterval(createSparkle, 600);
+    setInterval(createSparkle, 900);
+
     // Smooth redirect after a brief moment
     setTimeout(() => {
       window.location.replace("https://app.ahoy.ooo");
