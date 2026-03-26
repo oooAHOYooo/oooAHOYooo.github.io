@@ -3,12 +3,19 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Redirecting to Ahoy…</title>
+  <title>Taking you to Ahoy…</title>
   <link rel="canonical" href="https://app.ahoy.ooo" />
-  <meta http-equiv="refresh" content="2; url=https://app.ahoy.ooo" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script>
+    // Handle redirects and prevent loops
+    (function() {
+      const host = window.location.hostname;
+      if (host === 'app.ahoy.ooo') {
+        // If we hit the app subdomain but it still points to the landing page repo,
+        // redirect to the actual app subfolder.
+        window.location.replace('/ahoyApp/www/index.html');
+      }
+    })();
+  </script>
   <style>
     * {
       margin: 0;
@@ -17,487 +24,79 @@
     }
 
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      min-height: 100vh;
-      background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0f1419 100%);
-      background-attachment: fixed;
+      background-color: #000000;
+      color: #ffffff;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
+      animation: fadeIn 0.8s ease-out;
     }
 
-    /* Animated background blobs */
-    .blob {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(80px);
-      opacity: 0.3;
-      animation: float 20s ease-in-out infinite;
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
-    .blob-1 {
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle, #3b82f6 0%, #1e40af 100%);
-      top: -200px;
-      left: -200px;
-      animation-delay: 0s;
-    }
-
-    .blob-2 {
-      width: 400px;
-      height: 400px;
-      background: radial-gradient(circle, #8b5cf6 0%, #5b21b6 100%);
-      bottom: -150px;
-      right: -150px;
-      animation-delay: 5s;
-    }
-
-    .blob-3 {
-      width: 350px;
-      height: 350px;
-      background: radial-gradient(circle, #06b6d4 0%, #0891b2 100%);
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      animation-delay: 10s;
-    }
-
-    @keyframes float {
-      0%, 100% {
-        transform: translate(0, 0) scale(1);
-      }
-      33% {
-        transform: translate(30px, -30px) scale(1.1);
-      }
-      66% {
-        transform: translate(-20px, 20px) scale(0.9);
-      }
-    }
-
-    /* Glass container */
-    .container {
-      position: relative;
-      z-index: 10;
-      backdrop-filter: blur(20px) saturate(180%);
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 24px;
-      padding: 64px 48px;
-      box-shadow: 
-        0 8px 32px rgba(0, 0, 0, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
-      text-align: center;
-      max-width: 600px;
-      width: 90%;
-      animation: fadeInUp 0.8s ease-out;
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Logo/Brand */
-    .brand {
-      width: 280px;
-      height: 280px;
-      margin: 0 auto 32px;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      animation: logoFloat 3s ease-in-out infinite, logoGlow 2s ease-in-out infinite;
-    }
-
-    .brand img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      filter: drop-shadow(0 0 30px rgba(59, 130, 246, 0.6))
-              drop-shadow(0 0 60px rgba(139, 92, 246, 0.4))
-              drop-shadow(0 0 90px rgba(6, 182, 212, 0.3));
-      animation: logoPulse 2s ease-in-out infinite, logoRotate 8s linear infinite;
-      position: relative;
-      z-index: 2;
-    }
-
-    /* Animated glow ring around logo */
-    .brand::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 120%;
-      height: 120%;
-      border-radius: 50%;
-      background: conic-gradient(
-        from 0deg,
-        rgba(59, 130, 246, 0.3),
-        rgba(139, 92, 246, 0.3),
-        rgba(6, 182, 212, 0.3),
-        rgba(59, 130, 246, 0.3)
-      );
-      animation: rotateGlow 3s linear infinite;
-      filter: blur(20px);
-      z-index: 1;
-    }
-
-    .brand::after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 140%;
-      height: 140%;
-      border-radius: 50%;
-      background: radial-gradient(
-        circle,
-        rgba(59, 130, 246, 0.2) 0%,
-        rgba(139, 92, 246, 0.15) 30%,
-        transparent 70%
-      );
-      animation: pulseGlow 2s ease-in-out infinite;
-      z-index: 0;
-    }
-
-    @keyframes logoFloat {
-      0%, 100% {
-        transform: translateY(0) scale(1);
-      }
-      50% {
-        transform: translateY(-10px) scale(1.05);
-      }
-    }
-
-    @keyframes logoGlow {
-      0%, 100% {
-        filter: drop-shadow(0 0 30px rgba(59, 130, 246, 0.6))
-                drop-shadow(0 0 60px rgba(139, 92, 246, 0.4))
-                drop-shadow(0 0 90px rgba(6, 182, 212, 0.3));
-      }
-      50% {
-        filter: drop-shadow(0 0 40px rgba(59, 130, 246, 0.8))
-                drop-shadow(0 0 80px rgba(139, 92, 246, 0.6))
-                drop-shadow(0 0 120px rgba(6, 182, 212, 0.5));
-      }
-    }
-
-    @keyframes logoPulse {
-      0%, 100% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.08);
-      }
-    }
-
-    @keyframes logoRotate {
-      0% {
-        filter: drop-shadow(0 0 30px rgba(59, 130, 246, 0.6))
-                drop-shadow(0 0 60px rgba(139, 92, 246, 0.4))
-                drop-shadow(0 0 90px rgba(6, 182, 212, 0.3))
-                hue-rotate(0deg);
-      }
-      25% {
-        filter: drop-shadow(0 0 30px rgba(139, 92, 246, 0.6))
-                drop-shadow(0 0 60px rgba(6, 182, 212, 0.4))
-                drop-shadow(0 0 90px rgba(59, 130, 246, 0.3))
-                hue-rotate(90deg);
-      }
-      50% {
-        filter: drop-shadow(0 0 30px rgba(6, 182, 212, 0.6))
-                drop-shadow(0 0 60px rgba(59, 130, 246, 0.4))
-                drop-shadow(0 0 90px rgba(139, 92, 246, 0.3))
-                hue-rotate(180deg);
-      }
-      75% {
-        filter: drop-shadow(0 0 30px rgba(139, 92, 246, 0.6))
-                drop-shadow(0 0 60px rgba(59, 130, 246, 0.4))
-                drop-shadow(0 0 90px rgba(6, 182, 212, 0.3))
-                hue-rotate(270deg);
-      }
-      100% {
-        filter: drop-shadow(0 0 30px rgba(59, 130, 246, 0.6))
-                drop-shadow(0 0 60px rgba(139, 92, 246, 0.4))
-                drop-shadow(0 0 90px rgba(6, 182, 212, 0.3))
-                hue-rotate(360deg);
-      }
-    }
-
-    @keyframes rotateGlow {
-      0% {
-        transform: translate(-50%, -50%) rotate(0deg);
-      }
-      100% {
-        transform: translate(-50%, -50%) rotate(360deg);
-      }
-    }
-
-    @keyframes pulseGlow {
-      0%, 100% {
-        opacity: 0.4;
-        transform: translate(-50%, -50%) scale(1);
-      }
-      50% {
-        opacity: 0.7;
-        transform: translate(-50%, -50%) scale(1.1);
-      }
-    }
-
-    /* Main message */
-    .message {
-      font-size: 20px;
-      font-weight: 400;
-      color: rgba(255, 255, 255, 0.8);
+    .logo {
+      width: 240px;
+      height: auto;
+      max-width: 80%;
       margin-bottom: 32px;
-      line-height: 1.6;
     }
 
-    /* Link */
-    .link {
-      display: inline-block;
-      color: rgba(255, 255, 255, 0.9);
-      text-decoration: none;
-      font-size: 18px;
-      font-weight: 500;
-      padding: 16px 32px;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 12px;
-      backdrop-filter: blur(10px);
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
+    .message {
+      font-size: 1.1rem;
+      font-weight: 400;
+      opacity: 0.6;
+      letter-spacing: 0.05em;
     }
 
-    .link::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-      transition: left 0.5s ease;
-    }
-
-    .link:hover {
-      background: rgba(255, 255, 255, 0.12);
-      border-color: rgba(255, 255, 255, 0.25);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-    }
-
-    .link:hover::before {
-      left: 100%;
-    }
-
-    /* Loading indicator */
-    .loader {
-      margin-top: 40px;
+    /* Simple loading dots */
+    .dots {
+      margin-top: 12px;
       display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 8px;
+      gap: 6px;
     }
 
     .dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.6);
-      animation: bounce 1.4s ease-in-out infinite;
-    }
-
-    .dot:nth-child(1) {
-      animation-delay: 0s;
-    }
-
-    .dot:nth-child(2) {
-      animation-delay: 0.2s;
-    }
-
-    .dot:nth-child(3) {
-      animation-delay: 0.4s;
-    }
-
-    @keyframes bounce {
-      0%, 80%, 100% {
-        transform: scale(0.8);
-        opacity: 0.5;
-      }
-      40% {
-        transform: scale(1.2);
-        opacity: 1;
-      }
-    }
-
-    /* Responsive */
-    @media (max-width: 640px) {
-      .container {
-        padding: 48px 32px;
-      }
-
-      .brand {
-        width: 200px;
-        height: 200px;
-        margin-bottom: 24px;
-      }
-
-      .message {
-        font-size: 18px;
-      }
-
-      .link {
-        font-size: 16px;
-        padding: 14px 28px;
-      }
-    }
-
-    /* Subtle shine effect */
-    .container::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.03), transparent);
-      animation: shine 3s ease-in-out infinite;
-    }
-
-    @keyframes shine {
-      0% {
-        left: -100%;
-      }
-      50%, 100% {
-        left: 100%;
-      }
-    }
-
-    /* Sparkle particles */
-    .sparkle {
-      position: absolute;
-      width: 4px;
-      height: 4px;
+      width: 6px;
+      height: 6px;
       background: white;
       border-radius: 50%;
-      pointer-events: none;
-      animation: sparkleFloat 3s ease-out infinite;
-      box-shadow: 0 0 6px rgba(255, 255, 255, 0.8),
-                  0 0 12px rgba(59, 130, 246, 0.6);
+      opacity: 0.3;
+      animation: pulse 1.5s infinite;
     }
 
-    @keyframes sparkleFloat {
-      0% {
-        opacity: 0;
-        transform: translateY(0) scale(0);
-      }
-      20% {
-        opacity: 1;
-        transform: translateY(-20px) scale(1);
-      }
-      100% {
-        opacity: 0;
-        transform: translateY(-100px) scale(0);
-      }
-    }
+    .dot:nth-child(2) { animation-delay: 0.2s; }
+    .dot:nth-child(3) { animation-delay: 0.4s; }
 
-    /* Shimmer effect on logo */
-    .brand img::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255, 255, 255, 0.4),
-        transparent
-      );
-      animation: shimmer 2s ease-in-out infinite;
-    }
-
-    @keyframes shimmer {
-      0% {
-        left: -100%;
-      }
-      100% {
-        left: 100%;
-      }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.3; }
+      50% { transform: scale(1.2); opacity: 0.8; }
     }
   </style>
 </head>
 <body>
-  <div class="blob blob-1"></div>
-  <div class="blob blob-2"></div>
-  <div class="blob blob-3"></div>
-
-  <div class="container">
-    <div class="brand">
-      <img src="./images/u_ahoy23.png" alt="Ahoy Indie Media" />
-    </div>
-    <div class="message">Taking you to the app...</div>
-    <a href="https://app.ahoy.ooo" class="link">app.ahoy.ooo</a>
-    <div class="loader">
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-    </div>
+  <img src="./u_ahoy23.png" alt="Ahoy Indie Media" class="logo" />
+  <div class="message">Taking you to the app</div>
+  <div class="dots">
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
   </div>
 
   <script>
-    // Create sparkle particles
-    function createSparkle() {
-      const sparkle = document.createElement('div');
-      sparkle.className = 'sparkle';
-      const container = document.querySelector('.container');
-      const brand = document.querySelector('.brand');
-      const brandRect = brand.getBoundingClientRect();
-      const containerRect = container.getBoundingClientRect();
-      
-      const x = Math.random() * brandRect.width + (brandRect.left - containerRect.left);
-      const y = brandRect.top - containerRect.top + brandRect.height / 2;
-      
-      sparkle.style.left = x + 'px';
-      sparkle.style.top = y + 'px';
-      sparkle.style.animationDelay = Math.random() * 0.5 + 's';
-      
-      container.appendChild(sparkle);
-      
-      setTimeout(() => {
-        sparkle.remove();
-      }, 3000);
-    }
-
-    // Create sparkles periodically
-    setInterval(createSparkle, 300);
-    setInterval(createSparkle, 600);
-    setInterval(createSparkle, 900);
-
-    // Smooth redirect after a brief moment
+    // Trigger the redirect after a short delay
     setTimeout(() => {
-      window.location.replace("https://app.ahoy.ooo");
-    }, 1500);
-
-    // Fallback: redirect on link click
-    document.querySelector('.link').addEventListener('click', (e) => {
-      e.preventDefault();
-      window.location.replace("https://app.ahoy.ooo");
-    });
+      if (window.location.hostname !== 'app.ahoy.ooo') {
+        window.location.replace("https://app.ahoy.ooo");
+      }
+    }, 1000);
   </script>
 </body>
 </html>
