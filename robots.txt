@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /newhaven
+Disallow: /ahoyApp
+Disallow: /*.json$
+
+Sitemap: https://ahoy.ooo/sitemap.xml
