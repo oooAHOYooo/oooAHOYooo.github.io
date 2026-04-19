@@ -1,0 +1,10 @@
+{
+  "functions": {
+    "api/track-redirect.js": {
+      "maxDuration": 10
+    },
+    "api/track-redirect-resend.js": {
+      "maxDuration": 10
+    }
+  }
+}
