@@ -263,12 +263,20 @@
       border-radius: 12px;
       border: 1px solid rgba(100, 180, 255, 0.1);
       transition: all 0.3s;
+      position: relative;
     }
 
     .feature:hover {
       background: rgba(100, 180, 255, 0.1);
       border-color: rgba(100, 180, 255, 0.3);
       transform: translateY(-4px);
+    }
+
+    .feature[onclick]:hover {
+      background: rgba(100, 180, 255, 0.15);
+      border-color: rgba(100, 180, 255, 0.4);
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(100, 180, 255, 0.2);
     }
 
     .feature h3 {
@@ -297,12 +305,20 @@
       border-radius: 12px;
       border: 1px solid rgba(100, 180, 255, 0.15);
       transition: all 0.3s;
+      position: relative;
     }
 
     .event-item:hover {
       background: rgba(100, 180, 255, 0.15);
       border-color: rgba(100, 180, 255, 0.3);
       transform: translateY(-4px);
+    }
+
+    .event-item[onclick]:hover {
+      background: rgba(100, 180, 255, 0.2);
+      border-color: rgba(100, 180, 255, 0.4);
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(100, 180, 255, 0.2);
     }
 
     .event-date {
@@ -342,83 +358,6 @@
       margin-bottom: 20px;
     }
 
-    /* Scattered Images */
-    .floating-image {
-      position: fixed;
-      width: 200px;
-      height: 250px;
-      border-radius: 16px;
-      overflow: hidden;
-      background: rgba(26, 5, 18, 0.1);
-      backdrop-filter: blur(4px);
-      border: 1px solid rgba(100, 180, 255, 0.15);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-      z-index: 2;
-      pointer-events: none;
-    }
-
-    .floating-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0.85;
-    }
-
-    .floating-image:nth-child(1) {
-      top: 300px;
-      left: 5%;
-      transform: rotate(-8deg);
-      animation: float-1 6s ease-in-out infinite;
-    }
-
-    .floating-image:nth-child(2) {
-      top: 800px;
-      right: 8%;
-      transform: rotate(6deg);
-      animation: float-2 7s ease-in-out infinite;
-    }
-
-    .floating-image:nth-child(3) {
-      top: 1400px;
-      left: 10%;
-      transform: rotate(-5deg);
-      animation: float-3 8s ease-in-out infinite;
-    }
-
-    .floating-image:nth-child(4) {
-      top: 1900px;
-      right: 5%;
-      transform: rotate(7deg);
-      animation: float-4 6.5s ease-in-out infinite;
-    }
-
-    @keyframes float-1 {
-      0%, 100% { transform: rotate(-8deg) translateY(0); }
-      50% { transform: rotate(-8deg) translateY(-20px); }
-    }
-
-    @keyframes float-2 {
-      0%, 100% { transform: rotate(6deg) translateY(0); }
-      50% { transform: rotate(6deg) translateY(20px); }
-    }
-
-    @keyframes float-3 {
-      0%, 100% { transform: rotate(-5deg) translateY(0); }
-      50% { transform: rotate(-5deg) translateY(-15px); }
-    }
-
-    @keyframes float-4 {
-      0%, 100% { transform: rotate(7deg) translateY(0); }
-      50% { transform: rotate(7deg) translateY(15px); }
-    }
-
-    @media (max-width: 1200px) {
-      .floating-image {
-        width: 150px;
-        height: 180px;
-        display: none;
-      }
-    }
 
     /* Event Gallery */
     .gallery-section {
@@ -578,6 +517,79 @@
       transform: scale(1.1);
     }
 
+    /* App Download Section */
+    .download-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 50px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .download-section h2 {
+      font-family: 'Funnel Display', sans-serif;
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .download-section p {
+      font-size: 1.15rem;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 30px;
+    }
+
+    .download-platforms {
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .download-link {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      padding: 30px;
+      background: rgba(100, 180, 255, 0.08);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      border: 1px solid rgba(100, 180, 255, 0.2);
+      text-decoration: none;
+      color: white;
+      transition: all 0.3s;
+      min-width: 200px;
+      box-shadow: inset 0 0 20px rgba(100, 180, 255, 0.05), 0 8px 32px rgba(0, 0, 0, 0.2);
+    }
+
+    .download-link:hover {
+      background: rgba(100, 180, 255, 0.15);
+      border-color: rgba(100, 180, 255, 0.4);
+      transform: translateY(-4px);
+      box-shadow: inset 0 0 20px rgba(100, 180, 255, 0.1), 0 12px 40px rgba(100, 180, 255, 0.2);
+    }
+
+    .download-icon {
+      font-size: 3.5rem;
+      filter: drop-shadow(0 4px 12px rgba(100, 180, 255, 0.3));
+    }
+
+    .download-label {
+      font-weight: 700;
+      font-size: 1.1rem;
+      font-family: 'Funnel Display', sans-serif;
+    }
+
+    .download-status {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.6);
+      font-style: italic;
+    }
+
     /* Responsive */
     @media (max-width: 768px) {
       .card {
@@ -607,6 +619,12 @@
         gap: 15px;
       }
 
+      .hero-logo {
+        width: 90%;
+        max-width: 320px;
+        margin-bottom: 20px;
+      }
+
       .btn {
         width: 100%;
       }
@@ -617,20 +635,6 @@
   <canvas id="canvas-bg"></canvas>
 
   <div class="container">
-    <!-- Scattered Event Images -->
-    <div class="floating-image">
-      <img src="https://storage.googleapis.com/ahoy-dynamic-content/studio/poets09_BTS/Studio_Poets%239_ELLENMARTIN_%202026-03-27%20at%2017.19.15%20(1).jpeg" alt="Poets & Friends Event">
-    </div>
-    <div class="floating-image">
-      <img src="https://storage.googleapis.com/ahoy-dynamic-content/studio/poets09_BTS/Studio_Poets%239_AlexGonzalez_%202026-03-27%20at%2007.31.38.jpeg" alt="Poets & Friends Event">
-    </div>
-    <div class="floating-image">
-      <img src="https://storage.googleapis.com/ahoy-dynamic-content/news/ahoyCaba-ep2/%5BAHOY%20CABA%20BTS%20EP2%5D15.jpg" alt="Ahoy Cabaret Event">
-    </div>
-    <div class="floating-image">
-      <img src="https://storage.googleapis.com/ahoy-dynamic-content/news/ahoyCaba-ep2/%5BAHOY%20CABA%20BTS%20EP2%5D19.jpg" alt="Ahoy Cabaret Event">
-    </div>
-
     <!-- Navigation -->
     <nav>
       <nav-content>
@@ -665,8 +669,8 @@
             <h3>Independent Music</h3>
             <p>Curated playlists and exclusive releases from New Haven musicians</p>
           </div>
-          <div class="feature">
-            <h3>Local Films & Podcasts</h3>
+          <div class="feature" onclick="window.location.href='https://app.ahoy.ooo/podcasts'" style="cursor: pointer;">
+            <h3>Local Films & Podcasts →</h3>
             <p>Original video and audio content from the community</p>
           </div>
           <div class="feature">
@@ -699,20 +703,41 @@
       <div class="card" id="events">
         <h2>Upcoming Events</h2>
         <div class="events-grid">
-          <div class="event-item">
+          <div class="event-item" onclick="window.location.href='https://app.ahoy.ooo/events'" style="cursor: pointer;">
             <div class="event-date">Thu, Apr 30</div>
-            <div class="event-title">Poets & Friends #10</div>
+            <div class="event-title">Poets & Friends #10 →</div>
             <div class="event-location">Koffee?, 104 Audubon St, New Haven</div>
             <p style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.7); margin-top: 12px; line-height: 1.6;">April poetry night. 6:30–8:15 PM. 3–5 minutes to share your favorite work or an original piece. Want to read? E-mail alex@ahoy.ooo</p>
           </div>
-          <div class="event-item">
+          <div class="event-item" onclick="window.location.href='https://app.ahoy.ooo/events'" style="cursor: pointer;">
             <div class="event-date">Fri, May 15</div>
-            <div class="event-title">Ahoy @ The Night Market</div>
+            <div class="event-title">Ahoy @ The Night Market →</div>
             <div class="event-location">New Haven Night Market</div>
             <p style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.7); margin-top: 12px; line-height: 1.6;">5:30 PM – 10:30 PM. Official booth featuring our streaming platform release. Exclusive merch, free giveaways and good vibes!</p>
           </div>
         </div>
         <button class="btn btn-primary" style="display: block; margin: 60px auto 0;" onclick="window.location.href='https://app.ahoy.ooo/events'">View Past Events</button>
+      </div>
+
+
+      <!-- App Download CTA -->
+      <div class="card download-section">
+        <h2>Get the App</h2>
+        <p>Stream New Haven's creative community anywhere, anytime.</p>
+        <div class="download-platforms">
+          <a href="https://play.google.com/store/apps/details?id=ooo.ahoy.app&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" class="download-link">
+            <span class="download-label">Google Play</span>
+            <span class="download-status">Available Now</span>
+          </a>
+          <div class="download-link" style="opacity: 0.6; cursor: not-allowed;">
+            <span class="download-label">App Store</span>
+            <span class="download-status">Coming Soon</span>
+          </div>
+          <div class="download-link" style="opacity: 0.6; cursor: not-allowed;">
+            <span class="download-label">Mac</span>
+            <span class="download-status">Coming Soon</span>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1351,7 +1376,7 @@
           const material = new THREE.MeshBasicMaterial({
             map: texture,
             transparent: true,
-            opacity: 0.65,
+            opacity: 0.45,
             side: THREE.DoubleSide
           });
 
