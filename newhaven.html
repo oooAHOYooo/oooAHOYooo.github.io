@@ -1,16 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ahoy Indie Media · New Haven's Creative Platform</title>
-  <meta name="description" content="Discover indie music, podcasts, films, and live events from New Haven artists. Ahoy is an independent streaming platform celebrating local creators.">
+  <title>Ahoy Indie Media · New Haven's Homemade Media Platform</title>
+  <meta name="description"
+    content="Discover indie music, podcasts, films, and live events from New Haven artists. Ahoy is an independent streaming platform celebrating local creators.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://ahoy.ooo/newhaven">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ahoy.ooo/newhaven">
+  <meta property="og:title" content="Ahoy Indie Media · New Haven's Creative Platform">
+  <meta property="og:description"
+    content="Discover indie music, podcasts, films, and live events from New Haven artists. Ad-free. 100% of tips go to creators.">
+  <meta property="og:image"
+    content="https://storage.googleapis.com/ahoy-dynamic-content/studio/cabaret_BTS/Ahoy%20Indie%20Media%20-%20Cabaret%20Best%20Video%202025%20-%20Pat%20Clendenen.jpeg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ahoy Indie Media · New Haven's Creative Platform">
+  <meta name="twitter:description" content="Ad-free indie streaming. 100% of tips reach the artist.">
+  <meta name="twitter:image"
+    content="https://storage.googleapis.com/ahoy-dynamic-content/studio/cabaret_BTS/Ahoy%20Indie%20Media%20-%20Cabaret%20Best%20Video%202025%20-%20Pat%20Clendenen.jpeg">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600;700&family=Funnel+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600;700&family=Funnel+Display:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -18,7 +34,8 @@
       box-sizing: border-box;
     }
 
-    html, body {
+    html,
+    body {
       width: 100%;
       height: 100%;
       font-family: 'IBM Plex Sans', sans-serif;
@@ -208,8 +225,17 @@
     }
 
     @keyframes bounce {
-      0%, 100% { transform: translateX(-50%) translateY(0); opacity: 0.6; }
-      50% { transform: translateX(-50%) translateY(8px); opacity: 1; }
+
+      0%,
+      100% {
+        transform: translateX(-50%) translateY(0);
+        opacity: 0.6;
+      }
+
+      50% {
+        transform: translateX(-50%) translateY(8px);
+        opacity: 1;
+      }
     }
 
     .hero-buttons {
@@ -716,7 +742,56 @@
       }
     }
   </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Event",
+      "name": "Poets & Friends #10",
+      "startDate": "2026-04-30T18:30",
+      "endDate": "2026-04-30T20:15",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "location": {
+        "@type": "Place",
+        "name": "Koffee?",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "104 Audubon St",
+          "addressLocality": "New Haven",
+          "addressRegion": "CT"
+        }
+      },
+      "organizer": { "@type": "Organization", "name": "Ahoy Indie Media", "url": "https://ahoy.ooo" },
+      "description": "Monthly poetry night. 3–5 minutes to share your favorite work or an original piece."
+    },
+    {
+      "@type": "Event",
+      "name": "Ahoy @ The New Haven Night Market",
+      "startDate": "2026-05-15T17:30",
+      "endDate": "2026-05-15T22:30",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "location": {
+        "@type": "Place",
+        "name": "New Haven Night Market",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "New Haven",
+          "addressRegion": "CT"
+        }
+      },
+      "organizer": { "@type": "Organization", "name": "Ahoy Indie Media", "url": "https://ahoy.ooo" },
+      "description": "Official Ahoy booth featuring our streaming platform release. Exclusive merch, free giveaways, and live music.",
+      "isAccessibleForFree": true,
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+  ]
+}
+</script>
 </head>
+
 <body>
   <canvas id="canvas-bg"></canvas>
 
@@ -734,8 +809,10 @@
     </nav>
 
     <!-- Hidden story element for camera parallax flavor -->
-    <div style="position: fixed; top: 50%; left: 20px; z-index: -1; opacity: 0; pointer-events: none; font-size: 0.8rem; color: rgba(100, 180, 255, 0.3); max-width: 120px; line-height: 1.4;">
-      <p style="margin-bottom: 8px;">Move your cursor to explore the depths gently—the ocean responds to your presence.</p>
+    <div
+      style="position: fixed; top: 50%; left: 20px; z-index: -1; opacity: 0; pointer-events: none; font-size: 0.8rem; color: rgba(100, 180, 255, 0.3); max-width: 120px; line-height: 1.4;">
+      <p style="margin-bottom: 8px;">Move your cursor to explore the depths gently—the ocean responds to your presence.
+      </p>
     </div>
 
     <!-- Scroll Container -->
@@ -743,10 +820,12 @@
       <!-- Hero Card -->
       <div class="card hero-card" style="position: relative;">
         <img src="https://ahoy.ooo/ahoyApp/www/img/assets/u_ahoy23.png" alt="Ahoy" class="hero-logo">
-        <p>A creative platform built around New Haven. Discover indie music, podcasts, films, and live events from the artists that make our city vibrant.</p>
+        <p>A homemade media platform built in New Haven. Discover indie music, podcasts, films, and live events from the
+          artists that make our city vibrant.</p>
         <div class="hero-buttons">
           <button class="btn btn-primary" onclick="window.location.href='https://app.ahoy.ooo'">Launch the App</button>
-          <button class="btn btn-secondary" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">Learn More</button>
+          <button class="btn btn-secondary"
+            onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">Learn More</button>
         </div>
         <div class="scroll-hint">
           <span>Explore</span>
@@ -759,7 +838,9 @@
       <!-- About Card -->
       <div class="card" id="about">
         <h2>What is Ahoy Indie Media?</h2>
-        <p>Ahoy is an independent streaming platform celebrating New Haven's creative community. Built by creators, for creators, we're dedicated to amplifying local voices and connecting audiences with authentic, independent content.</p>
+        <p>Ahoy is an independent streaming platform celebrating New Haven's creative community. Built by creators, for
+          creators, we're dedicated to amplifying local voices and connecting audiences with authentic, independent
+          content.</p>
 
         <div class="features-grid">
           <div class="feature" onclick="window.location.href='https://app.ahoy.ooo/music'" style="cursor: pointer;">
@@ -792,9 +873,10 @@
       <!-- Boost: Support Artists, No Cuts -->
       <div class="card" style="text-align: center; background: rgba(100, 180, 255, 0.08); margin-top: 80px;">
         <h2>The "No Cuts" Promise</h2>
-        <h3 style="font-family: 'Funnel Display', sans-serif; font-size: 1.8rem; font-weight: 700; margin-bottom: 20px; letter-spacing: -0.3px;">Support Artists, Not Platforms</h3>
-        <p style="margin-bottom: 20px;">Most platforms take a cut of creator earnings. We don't. When you donate, 100% goes to the artist. We add processing fees on top so the creator's share remains untouched.</p>
-        <button class="btn btn-primary" onclick="window.location.href='https://app.ahoy.ooo/artists'">Discover Artists</button>
+        <p style="margin-bottom: 20px;">Most platforms take a cut of creator earnings. We don't. When you donate, 100%
+          goes to the artist. We add processing fees on top so the creator's share remains untouched.</p>
+        <button class="btn btn-primary" onclick="window.location.href='https://app.ahoy.ooo/artists'">Discover
+          Artists</button>
       </div>
 
       <!-- How It Works -->
@@ -803,10 +885,11 @@
         <div class="how-it-works-grid">
           <!-- Listen -->
           <div class="how-it-works-path">
-            <h3>Listen</h3>
+            <h3>Enjoy</h3>
             <div class="how-it-works-step">
               <div class="how-it-works-step-number">1</div>
-              <div class="how-it-works-step-text"><strong>Discover:</strong> Browse New Haven and beyond independent artists.</div>
+              <div class="how-it-works-step-text"><strong>Discover:</strong> Browse New Haven and beyond independent
+                artists.</div>
             </div>
             <div class="how-it-works-step">
               <div class="how-it-works-step-number">2</div>
@@ -814,7 +897,8 @@
             </div>
             <div class="how-it-works-step">
               <div class="how-it-works-step-number">3</div>
-              <div class="how-it-works-step-text"><strong>Boost:</strong> Support favorites—100% of your tip reaches the artist.</div>
+              <div class="how-it-works-step-text"><strong>Boost:</strong> Support favorites—100% of your tip reaches the
+                artist.</div>
             </div>
           </div>
 
@@ -823,11 +907,13 @@
             <h3>Create</h3>
             <div class="how-it-works-step">
               <div class="how-it-works-step-number">1</div>
-              <div class="how-it-works-step-text"><strong>Submit:</strong> Send us your work for review and onboarding.</div>
+              <div class="how-it-works-step-text"><strong>Submit:</strong> Send us your work for review and onboarding.
+              </div>
             </div>
             <div class="how-it-works-step">
               <div class="how-it-works-step-number">2</div>
-              <div class="how-it-works-step-text"><strong>Grow:</strong> Get featured in front of a dedicated local audience.</div>
+              <div class="how-it-works-step-text"><strong>Grow:</strong> Get featured in front of a dedicated local
+                audience.</div>
             </div>
             <div class="how-it-works-step">
               <div class="how-it-works-step-number">3</div>
@@ -869,16 +955,49 @@
             <div class="event-date">Thu, Apr 30</div>
             <div class="event-title">Poets & Friends #10 →</div>
             <div class="event-location">Koffee?, 104 Audubon St, New Haven</div>
-            <p style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.7); margin-top: 12px; line-height: 1.6;">April poetry night. 6:30–8:15 PM. 3–5 minutes to share your favorite work or an original piece. Want to read? E-mail alex@ahoy.ooo</p>
+            <p style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.7); margin-top: 12px; line-height: 1.6;">April
+              poetry night. 6:30–8:15 PM. 3–5 minutes to share your favorite work or an original piece. Want to read?
+              E-mail alex@ahoy.ooo</p>
           </div>
-          <div class="event-item" onclick="window.location.href='https://app.ahoy.ooo/events'" style="cursor: pointer;">
-            <div class="event-date">Fri, May 15</div>
+          <div class="event-item" onclick="window.location.href='https://app.ahoy.ooo/events'"
+            style="cursor: pointer; border-color: rgba(100, 180, 255, 0.35); background: rgba(100, 180, 255, 0.12);">
+            <div class="event-date">Fri, May 15 · Free Entry</div>
             <div class="event-title">Ahoy @ The Night Market →</div>
             <div class="event-location">New Haven Night Market</div>
-            <p style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.7); margin-top: 12px; line-height: 1.6;">5:30 PM – 10:30 PM. Official booth featuring our streaming platform release. Exclusive merch, free giveaways and good vibes!</p>
+            <p style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.7); margin-top: 12px; line-height: 1.6;">
+              5:30 – 10:30 PM. Come find our booth for the official streaming platform launch. Exclusive merch, free
+              giveaways, live demos, and good vibes. This is the one.
+            </p>
+            <div id="nightmarket-countdown" style="margin-top: 16px; display: flex; gap: 16px;">
+              <div style="text-align: center;">
+                <div id="nm-days"
+                  style="font-family: 'IBM Plex Mono', monospace; font-size: 1.4rem; font-weight: 700; color: #64b4ff;">
+                  --</div>
+                <div
+                  style="font-size: 0.7rem; color: rgba(255,255,255,0.5); letter-spacing: 0.1em; text-transform: uppercase;">
+                  days</div>
+              </div>
+              <div style="text-align: center;">
+                <div id="nm-hours"
+                  style="font-family: 'IBM Plex Mono', monospace; font-size: 1.4rem; font-weight: 700; color: #64b4ff;">
+                  --</div>
+                <div
+                  style="font-size: 0.7rem; color: rgba(255,255,255,0.5); letter-spacing: 0.1em; text-transform: uppercase;">
+                  hrs</div>
+              </div>
+              <div style="text-align: center;">
+                <div id="nm-mins"
+                  style="font-family: 'IBM Plex Mono', monospace; font-size: 1.4rem; font-weight: 700; color: #64b4ff;">
+                  --</div>
+                <div
+                  style="font-size: 0.7rem; color: rgba(255,255,255,0.5); letter-spacing: 0.1em; text-transform: uppercase;">
+                  min</div>
+              </div>
+            </div>
           </div>
         </div>
-        <button class="btn btn-primary" style="display: block; margin: 60px auto 0;" onclick="window.location.href='https://app.ahoy.ooo/events'">View Past Events</button>
+        <button class="btn btn-primary" style="display: block; margin: 60px auto 0;"
+          onclick="window.location.href='https://app.ahoy.ooo/events'">View Past Events</button>
       </div>
 
 
@@ -887,7 +1006,8 @@
         <h2>Get the App</h2>
         <p>Stream New Haven's creative community anywhere, anytime.</p>
         <div class="download-platforms">
-          <a href="https://play.google.com/store/apps/details?id=ooo.ahoy.app&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" class="download-link">
+          <a href="https://play.google.com/store/apps/details?id=ooo.ahoy.app&pcampaignid=web_share" target="_blank"
+            rel="noopener noreferrer" class="download-link">
             <span class="download-label">Google Play</span>
             <span class="download-status">Available Now</span>
           </a>
@@ -900,7 +1020,8 @@
             <span class="download-status">Coming Soon</span>
           </div>
         </div>
-        <button class="btn btn-primary" style="margin-top: 40px;" onclick="window.location.href='https://app.ahoy.ooo'">Launch Web App</button>
+        <button class="btn btn-primary" style="margin-top: 40px;"
+          onclick="window.location.href='https://app.ahoy.ooo'">Launch Web App</button>
       </div>
 
       <!-- Artist CTA -->
@@ -913,8 +1034,10 @@
       <!-- Developer CTA -->
       <div class="card" style="text-align: center; background: rgba(100, 180, 255, 0.08); margin-top: 80px;">
         <h2>Are You a Developer?</h2>
-        <p style="margin-bottom: 30px;">We're a tiny, scrappy team with big ambitions. Help us improve the code, ship new features, and keep the platform independent.</p>
-        <button class="btn btn-primary" onclick="window.location.href='https://github.com/oooAHOYooo'">View GitHub</button>
+        <p style="margin-bottom: 30px;">We're a tiny, scrappy team with big ambitions. Help us improve the code, ship
+          new features, and keep the platform independent.</p>
+        <button class="btn btn-primary" onclick="window.location.href='https://github.com/oooAHOYooo'">View
+          GitHub</button>
       </div>
     </div>
 
@@ -932,7 +1055,8 @@
 
     <!-- Footer -->
     <footer>
-      <p>Made with love in New Haven by <a href="https://littlemarket.org" target="_blank" style="color: #64b4ff; text-decoration: none;">Little Market</a></p>
+      <p>Made with love in New Haven by <a href="https://littlemarket.org" target="_blank"
+          style="color: #64b4ff; text-decoration: none;">Little Market</a></p>
       <p style="font-size: 0.8rem; opacity: 0.5;">Copyright 2026 • Ahoy Indie Media</p>
     </footer>
   </div>
@@ -2341,5 +2465,25 @@
     // Initialize gallery on load
     initGallery();
   </script>
+  <script>
+    function updateNightMarketCountdown() {
+      const target = new Date('2026-05-15T17:30:00');
+      const now = new Date();
+      const diff = target - now;
+      if (diff <= 0) {
+        document.getElementById('nightmarket-countdown').innerHTML = '<span style="color:#64b4ff;font-family:IBM Plex Mono,monospace;">Happening now 🎉</span>';
+        return;
+      }
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      document.getElementById('nm-days').textContent = String(days).padStart(2, '0');
+      document.getElementById('nm-hours').textContent = String(hours).padStart(2, '0');
+      document.getElementById('nm-mins').textContent = String(mins).padStart(2, '0');
+    }
+    updateNightMarketCountdown();
+    setInterval(updateNightMarketCountdown, 30000);
+  </script>
 </body>
+
 </html>
