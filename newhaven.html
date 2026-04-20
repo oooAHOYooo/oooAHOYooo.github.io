@@ -286,6 +286,64 @@
       margin-top: 40px;
     }
 
+    /* How It Works */
+    .how-it-works-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .how-it-works-path {
+      padding: 30px;
+      background: rgba(100, 180, 255, 0.08);
+      border-radius: 12px;
+      border: 1px solid rgba(100, 180, 255, 0.15);
+      transition: all 0.3s;
+    }
+
+    .how-it-works-path:hover {
+      background: rgba(100, 180, 255, 0.12);
+      border-color: rgba(100, 180, 255, 0.25);
+      transform: translateY(-4px);
+    }
+
+    .how-it-works-path h3 {
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+      font-weight: 800;
+      font-family: 'Funnel Display', sans-serif;
+    }
+
+    .how-it-works-step {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 18px;
+      align-items: flex-start;
+    }
+
+    .how-it-works-step-number {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(100, 180, 255, 0.15);
+      border: 1px solid rgba(100, 180, 255, 0.3);
+      color: #64b4ff;
+      font-weight: 800;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+
+    .how-it-works-step-text {
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.5;
+    }
+
     .feature {
       padding: 30px;
       background: rgba(100, 180, 255, 0.05);
@@ -730,6 +788,71 @@
         </div>
       </div>
 
+      <!-- How It Works -->
+      <div class="card" style="text-align: center;">
+        <h2>How It Works</h2>
+        <div class="how-it-works-grid">
+          <!-- Listen -->
+          <div class="how-it-works-path">
+            <h3>Listen</h3>
+            <div class="how-it-works-step">
+              <div class="how-it-works-step-number">1</div>
+              <div class="how-it-works-step-text">Browse New Haven's creative community</div>
+            </div>
+            <div class="how-it-works-step">
+              <div class="how-it-works-step-number">2</div>
+              <div class="how-it-works-step-text">Stream music, podcasts, films, and live TV — ad-free</div>
+            </div>
+            <div class="how-it-works-step">
+              <div class="how-it-works-step-number">3</div>
+              <div class="how-it-works-step-text">Boost your favorites directly — every dollar reaches the artist</div>
+            </div>
+          </div>
+
+          <!-- Create -->
+          <div class="how-it-works-path">
+            <h3>Create</h3>
+            <div class="how-it-works-step">
+              <div class="how-it-works-step-number">1</div>
+              <div class="how-it-works-step-text">Submit your music, films, or podcasts</div>
+            </div>
+            <div class="how-it-works-step">
+              <div class="how-it-works-step-number">2</div>
+              <div class="how-it-works-step-text">Build your audience in front of listeners who care</div>
+            </div>
+            <div class="how-it-works-step">
+              <div class="how-it-works-step-number">3</div>
+              <div class="how-it-works-step-text">Get paid directly — no cuts, no middleman</div>
+            </div>
+          </div>
+
+          <!-- Contribute -->
+          <div class="how-it-works-path">
+            <h3>Contribute</h3>
+            <div class="how-it-works-step">
+              <div class="how-it-works-step-number">1</div>
+              <div class="how-it-works-step-text">Fork the repo on GitHub</div>
+            </div>
+            <div class="how-it-works-step">
+              <div class="how-it-works-step-number">2</div>
+              <div class="how-it-works-step-text">Submit pull requests — fixes, features, improvements</div>
+            </div>
+            <div class="how-it-works-step">
+              <div class="how-it-works-step-number">3</div>
+              <div class="how-it-works-step-text">Help us build the future of indie media</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Boost: Support Artists, No Cuts -->
+      <div class="card" style="text-align: center; background: rgba(100, 180, 255, 0.08); margin-top: 80px;">
+        <h2>Support Artists, No Cuts</h2>
+        <p style="margin-bottom: 20px;">Every dollar you donate goes directly to the artist. Processing and platform fees are on top—so creators always get exactly what you give them.</p>
+        <p style="margin-bottom: 30px; font-size: 0.95rem; color: rgba(255, 255, 255, 0.8); font-style: italic;">Most platforms deduct fees from creator earnings. We don't.</p>
+        <button class="btn btn-primary" onclick="window.location.href='https://app.ahoy.ooo/artists'">Discover Artists</button>
+      </div>
+
       <!-- Event Gallery -->
       <div class="card gallery-section" id="gallery">
         <h2>Event Gallery</h2>
@@ -790,15 +913,10 @@
       <div class="card" style="text-align: center; background: rgba(100, 180, 255, 0.08); margin-top: 80px;">
         <h2>Are You a Developer?</h2>
         <p style="margin-bottom: 30px;">Ahoy is a tiny, scrappy independent company with big ambitions. We're always looking for talented developers to contribute pull requests, improve our code, and help us build the future of independent media. Whether it's bug fixes, features, or optimizations—we'd love your help.</p>
-        <button class="btn btn-primary" onclick="window.location.href='https://github.com/oooAHOYooo/oooAHOYooo.github.io'">View on GitHub</button>
-      </div>
-
-      <!-- Boost: Support Artists, No Cuts -->
-      <div class="card" style="text-align: center; background: rgba(100, 180, 255, 0.08); margin-top: 80px;">
-        <h2>Support Artists, No Cuts</h2>
-        <p style="margin-bottom: 20px;">Every dollar you donate goes directly to the artist. Processing and platform fees are on top—so creators always get exactly what you give them.</p>
-        <p style="margin-bottom: 30px; font-size: 0.95rem; color: rgba(255, 255, 255, 0.8); font-style: italic;">Most platforms deduct fees from creator earnings. We don't.</p>
-        <button class="btn btn-primary" onclick="window.location.href='https://app.ahoy.ooo/artists'">Discover Artists</button>
+        <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+          <button class="btn btn-primary" onclick="window.location.href='https://github.com/oooAHOYooo/ahoy-little-platform'">View Platform</button>
+          <button class="btn btn-secondary" onclick="window.location.href='https://github.com/oooAHOYooo/oooAHOYooo.github.io'">View Landing</button>
+        </div>
       </div>
     </div>
 
