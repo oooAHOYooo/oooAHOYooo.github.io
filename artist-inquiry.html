@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artist Inquiry · Ahoy Indie Media</title>
+  <meta name="description" content="Get your music, podcasts, or films in front of the people who care most. Submit your work to Ahoy.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600;700&family=Funnel+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      min-height: 100vh;
+      font-family: 'IBM Plex Sans', sans-serif;
+      background: #0a0e27;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      min-height: 100vh;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(100, 180, 255, 0.1);
+      padding: 20px 60px;
+    }
+
+    nav-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+
+    .logo {
+      width: 58px;
+      height: auto;
+      filter: drop-shadow(0 2px 8px rgba(100, 180, 255, 0.3));
+      cursor: pointer;
+    }
+
+    nav a {
+      color: rgba(255, 255, 255, 0.85);
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 700;
+      font-family: 'Funnel Display', sans-serif;
+      transition: color 0.3s;
+      padding: 8px 0;
+      white-space: nowrap;
+    }
+
+    nav a:hover {
+      color: #64b4ff;
+    }
+
+    .back-link {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255, 255, 255, 0.85);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: color 0.3s;
+      margin-bottom: 40px;
+    }
+
+    .back-link:hover {
+      color: #64b4ff;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 600px;
+      margin-top: 120px;
+    }
+
+    .form-card {
+      padding: 60px 50px;
+      border-radius: 20px;
+      background: rgba(26, 5, 18, 0.05);
+      backdrop-filter: blur(1px);
+      border: 1px solid rgba(100, 180, 255, 0.25);
+      box-shadow: inset 0 0 40px rgba(100, 180, 255, 0.05), 0 8px 32px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      font-family: 'Funnel Display', sans-serif;
+      font-size: 2.8rem;
+      margin-bottom: 15px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 40px;
+      line-height: 1.6;
+    }
+
+    .form-group {
+      margin-bottom: 24px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 12px 16px;
+      background: rgba(100, 180, 255, 0.08);
+      border: 1px solid rgba(100, 180, 255, 0.2);
+      border-radius: 8px;
+      color: white;
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 0.95rem;
+      transition: all 0.3s;
+    }
+
+    input::placeholder, textarea::placeholder {
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    input:focus, textarea:focus, select:focus {
+      outline: none;
+      background: rgba(100, 180, 255, 0.12);
+      border-color: rgba(100, 180, 255, 0.35);
+      box-shadow: inset 0 0 10px rgba(100, 180, 255, 0.08), 0 0 0 3px rgba(100, 180, 255, 0.1);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+      font-family: 'IBM Plex Sans', sans-serif;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 14px 36px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: all 0.3s;
+      letter-spacing: 0.8px;
+      font-family: 'IBM Plex Mono', monospace;
+      margin-top: 10px;
+    }
+
+    .btn-primary {
+      background: rgba(100, 180, 255, 0.12);
+      backdrop-filter: blur(8px);
+      color: white;
+      border: 1px solid rgba(100, 180, 255, 0.25);
+      box-shadow: inset 0 0 15px rgba(100, 180, 255, 0.08), 0 4px 12px rgba(100, 180, 255, 0.15);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      background: rgba(100, 180, 255, 0.18);
+      box-shadow: inset 0 0 15px rgba(100, 180, 255, 0.12), 0 8px 20px rgba(100, 180, 255, 0.25);
+      border-color: rgba(100, 180, 255, 0.4);
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        padding: 15px 30px;
+      }
+
+      .form-card {
+        padding: 40px 30px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .container {
+        margin-top: 100px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <nav-content>
+      <a href="/newhaven.html" class="logo" style="text-decoration: none; color: white; font-size: 1.5rem; font-weight: 800;">AHOY</a>
+    </nav-content>
+  </nav>
+
+  <a href="/newhaven.html" class="back-link">← Back to Home</a>
+
+  <div class="container">
+    <div class="form-card">
+      <h1>Are You an Artist?</h1>
+      <p class="subtitle">Get your music, podcasts, or films in front of the people who care most.</p>
+
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="form-group">
+          <label for="name">Full Name *</label>
+          <input type="text" id="name" name="name" required placeholder="Your name">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required placeholder="your@email.com">
+        </div>
+
+        <div class="form-group">
+          <label for="artist-name">Artist / Project Name *</label>
+          <input type="text" id="artist-name" name="artist_name" required placeholder="Your artist or project name">
+        </div>
+
+        <div class="form-group">
+          <label for="media-type">Type of Content *</label>
+          <select id="media-type" name="media_type" required>
+            <option value="">Select content type...</option>
+            <option value="music">Music</option>
+            <option value="podcast">Podcast</option>
+            <option value="film">Film</option>
+            <option value="performance">Performance / Live Event</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="genre">Genre / Category</label>
+          <input type="text" id="genre" name="genre" placeholder="e.g., Indie Hip-Hop, Experimental Podcast">
+        </div>
+
+        <div class="form-group">
+          <label for="portfolio">Portfolio / Links</label>
+          <input type="url" id="portfolio" name="portfolio" placeholder="Link to your work (Spotify, SoundCloud, website, etc.)">
+        </div>
+
+        <div class="form-group">
+          <label for="bio">Tell Us About Your Work *</label>
+          <textarea id="bio" name="bio" required placeholder="What's your story? What makes your work unique?"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="social">Social Media Handles (Optional)</label>
+          <input type="text" id="social" name="social" placeholder="@instagram @twitter">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit Application</button>
+      </form>
+
+      <p style="font-size: 0.85rem; color: rgba(255, 255, 255, 0.5); margin-top: 30px; text-align: center;">
+        We'll review your submission and get back to you within 7 days.
+      </p>
+    </div>
+  </div>
+</body>
+</html>
