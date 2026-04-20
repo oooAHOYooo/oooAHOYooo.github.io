@@ -183,6 +183,35 @@
       line-height: 1.8;
     }
 
+    .scroll-hint {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      color: rgba(100, 180, 255, 0.6);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      animation: bounce 2s infinite;
+    }
+
+    .scroll-hint svg {
+      width: 20px;
+      height: 20px;
+      stroke: rgba(100, 180, 255, 0.6);
+      stroke-width: 2;
+      fill: none;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); opacity: 0.6; }
+      50% { transform: translateX(-50%) translateY(8px); opacity: 1; }
+    }
+
     .hero-buttons {
       display: flex;
       gap: 20px;
@@ -653,12 +682,18 @@
     <!-- Scroll Container -->
     <div class="scroll-container">
       <!-- Hero Card -->
-      <div class="card hero-card">
+      <div class="card hero-card" style="position: relative;">
         <img src="https://ahoy.ooo/ahoyApp/www/img/assets/u_ahoy23.png" alt="Ahoy" class="hero-logo">
         <p>A creative platform built around New Haven. Discover indie music, podcasts, films, and live events from the artists that make our city vibrant.</p>
         <div class="hero-buttons">
           <button class="btn btn-primary" onclick="window.location.href='https://app.ahoy.ooo'">Launch the App</button>
           <button class="btn btn-secondary" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">Learn More</button>
+        </div>
+        <div class="scroll-hint">
+          <span>Explore</span>
+          <svg viewBox="0 0 24 24">
+            <path d="M12 5v14M5 12l7 7 7-7"></path>
+          </svg>
         </div>
       </div>
 
@@ -758,11 +793,12 @@
         <button class="btn btn-primary" onclick="window.location.href='https://github.com/oooAHOYooo/oooAHOYooo.github.io'">View on GitHub</button>
       </div>
 
-      <!-- Patron of the Arts -->
+      <!-- Boost: Support Artists, No Cuts -->
       <div class="card" style="text-align: center; background: rgba(100, 180, 255, 0.08); margin-top: 80px;">
-        <h2>Be a Patron of the Arts</h2>
-        <p style="margin-bottom: 30px;">Support the creators you love with Boost. 100% of every boost goes directly to the creators—we coded it so there are zero platform fees. One-click support that fuels the independent voices shaping New Haven's culture.</p>
-        <button class="btn btn-primary" onclick="window.location.href='https://app.ahoy.ooo'">Start Boosting</button>
+        <h2>Support Artists, No Cuts</h2>
+        <p style="margin-bottom: 20px;">Every dollar you donate goes directly to the artist. Processing and platform fees are on top—so creators always get exactly what you give them.</p>
+        <p style="margin-bottom: 30px; font-size: 0.95rem; color: rgba(255, 255, 255, 0.8); font-style: italic;">Most platforms deduct fees from creator earnings. We don't.</p>
+        <button class="btn btn-primary" onclick="window.location.href='https://app.ahoy.ooo/artists'">Discover Artists</button>
       </div>
     </div>
 
