@@ -131,7 +131,7 @@
 
     /* Floating Card Sections */
     .card {
-      max-width: 1200px;
+      max-width: 900px;
       margin: 0 auto;
       padding: 60px 50px;
       margin-bottom: 100px;
@@ -524,8 +524,6 @@
       align-items: center;
       text-align: center;
       gap: 50px;
-      max-width: 900px;
-      margin: 0 auto;
     }
 
     .download-section h2 {
@@ -647,6 +645,11 @@
       </nav-content>
     </nav>
 
+    <!-- Hidden story element for camera parallax flavor -->
+    <div style="position: fixed; top: 50%; left: 20px; z-index: -1; opacity: 0; pointer-events: none; font-size: 0.8rem; color: rgba(100, 180, 255, 0.3); max-width: 120px; line-height: 1.4;">
+      <p style="margin-bottom: 8px;">Move your cursor to explore the depths gently—the ocean responds to your presence.</p>
+    </div>
+
     <!-- Scroll Container -->
     <div class="scroll-container">
       <!-- Hero Card -->
@@ -738,6 +741,28 @@
             <span class="download-status">Coming Soon</span>
           </div>
         </div>
+        <button class="btn btn-primary" style="margin-top: 40px;" onclick="window.location.href='https://app.ahoy.ooo'">Launch Web App</button>
+      </div>
+
+      <!-- Artist CTA -->
+      <div class="card" style="text-align: center; background: rgba(100, 180, 255, 0.08); margin-top: 80px;">
+        <h2>Are You an Artist?</h2>
+        <p style="margin-bottom: 30px;">Join the Ahoy community and share your work with New Haven. Get your music, podcasts, films, and performances in front of audiences who care about authentic, independent content.</p>
+        <button class="btn btn-primary" onclick="window.location.href='mailto:contributors@ahoy.ooo?subject=Artist%20Inquiry'">Get in Touch</button>
+      </div>
+
+      <!-- Developer CTA -->
+      <div class="card" style="text-align: center; background: rgba(100, 180, 255, 0.08); margin-top: 80px;">
+        <h2>Are You a Developer?</h2>
+        <p style="margin-bottom: 30px;">Ahoy is a tiny, scrappy independent company with big ambitions. We're always looking for talented developers to contribute pull requests, improve our code, and help us build the future of independent media. Whether it's bug fixes, features, or optimizations—we'd love your help.</p>
+        <button class="btn btn-primary" onclick="window.location.href='https://github.com/oooAHOYooo/oooAHOYooo.github.io'">View on GitHub</button>
+      </div>
+
+      <!-- Patron of the Arts -->
+      <div class="card" style="text-align: center; background: rgba(100, 180, 255, 0.08); margin-top: 80px;">
+        <h2>Be a Patron of the Arts</h2>
+        <p style="margin-bottom: 30px;">Support the creators you love with Boost. 100% of every boost goes directly to the creators—we coded it so there are zero platform fees. One-click support that fuels the independent voices shaping New Haven's culture.</p>
+        <button class="btn btn-primary" onclick="window.location.href='https://app.ahoy.ooo'">Start Boosting</button>
       </div>
     </div>
 
@@ -2035,9 +2060,9 @@
         return true;
       });
 
-      // Camera dolly - mouse X controls horizontal panning, scroll controls depth
-      const targetCameraX = mouseX * 120; // Stronger horizontal response
-      camera.position.x += (targetCameraX - camera.position.x) * 0.06;
+      // Camera dolly - gentle horizontal panning as you explore, scroll controls depth
+      const targetCameraX = mouseX * 35; // Subtle parallax response for depth perception
+      camera.position.x += (targetCameraX - camera.position.x) * 0.04;
 
       // Direct scroll-to-depth mapping: as user scrolls down, camera descends
       // Scroll moves camera down by up to 400 units (toward ocean floor at y=-180)
