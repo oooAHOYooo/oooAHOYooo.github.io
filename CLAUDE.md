@@ -11,8 +11,10 @@ Ahoy Indie Media is a New Haven-based independent streaming platform celebrating
 ## Architecture
 
 ### Core Pages
-- **`newhaven.html`** (71KB) — Main landing page featuring an interactive Three.js underwater scene with animated jellyfish, particles, and gallery frames. Contains all styling and JavaScript inline. This is the primary engagement page directing users to the app.
-- **`index.html`** — Minimal redirect page (ahoy.ooo → app.ahoy.ooo). Displays loading animation and transfers to the app subdomain.
+- **`index.html`** — Primary public marketing homepage for `ahoy.ooo`. No redirect. Includes the brand story, app links, support contact, and SEO metadata.
+- **`newhaven.html`** — Legacy New Haven landing page route. Kept as an alternate entry point for the same marketing content.
+- **`support.html`** — Support page with contact email, FAQ, privacy link, and review-friendly contact details.
+- **`privacy.html`** — Public privacy policy for the website and related app services.
 - **`newhaven-gallery.json`** — Gallery image metadata for the landing page gallery grid.
 
 ### API & Serverless
@@ -34,6 +36,11 @@ python3 -m http.server 8000
 ```
 
 Or use Claude Code's `/dev` command to launch a dev server.
+
+### Route Notes
+- `vercel.json` rewrites `/newhaven`, `/support`, and `/privacy` to the matching static pages.
+- `newhaven/`, `support/`, and `privacy/` contain folder shims so the clean URLs also work on static hosts.
+- Root `index.html` is the canonical marketing surface for Apple review and general visitors.
 
 ### File Structure
 - HTML files at root directory (`.html`)
@@ -135,5 +142,6 @@ Edit `newhaven.html`:
 
 - Founder/CTO: Alex Gonzalez
 - Vision: Create a code-independent, ad-free media platform celebrating New Haven's creative community
+- Support: contact@littlemarket.org
 - Contributor inquiries: contributors@ahoy.ooo
 - Investment inquiries: invest@ahoy.ooo

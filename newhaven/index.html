@@ -6,7 +6,7 @@
   <title>Ahoy Indie Media</title>
   <meta name="robots" content="noindex, follow" />
   <script>
-    fetch('./index.html')
+    fetch('../index.html')
       .then(function (response) { return response.text(); })
       .then(function (html) {
         document.open();
@@ -14,10 +14,9 @@
         document.close();
       });
   </script>
-</head>
-<body>
   <noscript>
-    <p><a href="./index.html">Open the homepage</a></p>
+    <p><a href="../index.html">Open the homepage</a></p>
   </noscript>
-</body>
+</head>
+<body></body>
 </html>

@@ -1,5 +1,8 @@
 User-agent: *
+Allow: /
 Allow: /newhaven
+Allow: /support
+Allow: /privacy
 Disallow: /ahoyApp
 Disallow: /*.json$
 

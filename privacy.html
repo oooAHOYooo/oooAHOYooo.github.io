@@ -1,94 +1,344 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Privacy Policy</title>
-        <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 20px;
-            padding: 0;
-            color: #333;
-        }
-        h1, h2, h3 {
-            color: #0056b3;
-        }
-        .container {
-            max-width: 800px;
-            margin: auto;
-        }
-    </style>
-    </head>
-    <body>
-        <div class="container">
-            <h1>Privacy Policy</h1>
-            <p>Last updated: October 30, 2024</p>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Policy | Ahoy Indie Media</title>
+  <meta name="description" content="Privacy policy for Ahoy Indie Media, including the website and related app services." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#08111f" />
+  <link rel="canonical" href="https://ahoy.ooo/privacy" />
+  <link rel="icon" type="image/png" href="/u_ahoy23.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600;700&family=Funnel+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      color-scheme: dark;
+      --panel: rgba(11, 22, 38, 0.78);
+      --border: rgba(135, 186, 255, 0.18);
+      --text: rgba(255, 255, 255, 0.96);
+      --muted: rgba(255, 255, 255, 0.72);
+      --accent: #7fc0ff;
+      --shadow: 0 24px 60px rgba(0, 0, 0, 0.34);
+    }
 
-            <h2>Introduction</h2>
-            <p>Welcome to Ahoy Indie Media. This Privacy Policy explains how we
-                collect, use, disclose, and safeguard your information when you
-                use our mobile application. Please read this privacy policy
-                carefully. If you do not agree with the terms of this privacy
-                policy, please do not access the application.</p>
+    * {
+      box-sizing: border-box;
+    }
 
-            <h2>Information We Collect</h2>
-            <p>We only collect anonymous IP addresses to analyze traffic to our
-                site.
-                We do not collect any personal data, and we do not have any
-                management accounts.</p>
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background:
+        radial-gradient(900px 600px at 18% 10%, rgba(127, 192, 255, 0.18), transparent 55%),
+        linear-gradient(180deg, #08111f 0%, #050914 100%);
+      color: var(--text);
+      font-family: "IBM Plex Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      overflow-x: hidden;
+    }
 
-            <h2>Use of Your Information</h2>
-            <p>We use the anonymous IP addresses solely to understand the amount
-                of traffic
-                visiting our site. We do not use this information for any other
-                purpose.</p>
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.72), transparent 90%);
+      opacity: 0.35;
+    }
 
-            <h2>Disclosure of Your Information</h2>
-            <p>We do not sell or share any data collected. All information
-                remains anonymous
-                and is used only for internal traffic analysis.</p>
+    a {
+      color: inherit;
+    }
 
-            <h2>Security of Your Information</h2>
-            <p>We use administrative, technical, and physical security measures
-                to help protect any information we collect. While we have taken
-                reasonable steps to secure the information, please be aware that
-                no security measures are perfect or impenetrable.</p>
+    .page {
+      position: relative;
+      z-index: 1;
+      width: min(920px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 18px 0 36px;
+    }
 
-            <h2>Policy for Children</h2>
-            <p>We do not knowingly solicit information from or market to
-                children under the age of 13. If we learn that we have collected
-                personal information from a child under age 13 without
-                verification of parental consent, we will delete that
-                information as quickly as possible.</p>
+    .topbar,
+    .card {
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      background: var(--panel);
+      backdrop-filter: blur(16px);
+      box-shadow: var(--shadow);
+    }
 
-            <h2>Permissions and Sensitive Information</h2>
-            <p>Our application does not request permissions to access sensitive
-                information on your device. We adhere to the following
-                guidelines:</p>
-            <ul>
-                <li>We only collect anonymous IP addresses for traffic
-                    analysis.</li>
-                <li>We do not sell or share any data accessed through these
-                    means.</li>
-                <li>Users have the right to decline any permission request, and
-                    we respect their decision.</li>
-                <li>We provide clear explanations for why any data is needed
-                    and how it will be used.</li>
-            </ul>
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 14px 16px;
+    }
 
-            <h2>Changes to This Privacy Policy</h2>
-            <p>We may update this Privacy Policy from time to time. We will
-                notify you of any changes by posting the new Privacy Policy on
-                this page. You are advised to review this Privacy Policy
-                periodically for any changes.</p>
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
 
-            <h2>Contact Us</h2>
-            <p>If you have questions or comments about this Privacy Policy,
-                please contact us at:</p>
-            <p>Email: alex@ahoy.ooo</p>
-            <p>Address: Ahoy Indie Media, New Haven, Connecticut</p>
+    .brand img {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+    }
+
+    .brand-copy {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .brand-copy strong {
+      font-family: "Funnel Display", system-ui, sans-serif;
+      font-size: 1rem;
+    }
+
+    .brand-copy span {
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      text-decoration: none;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.9rem;
+      font-weight: 600;
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .hero,
+    .card {
+      margin-top: 22px;
+      padding: clamp(22px, 4vw, 34px);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(127, 192, 255, 0.12);
+      border: 1px solid rgba(127, 192, 255, 0.18);
+      color: rgba(255, 255, 255, 0.9);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2 {
+      margin: 0;
+      font-family: "Funnel Display", system-ui, sans-serif;
+      letter-spacing: -0.04em;
+    }
+
+    h1 {
+      margin-top: 16px;
+      font-size: clamp(2.8rem, 7vw, 4.6rem);
+      line-height: 0.96;
+    }
+
+    h2 {
+      font-size: clamp(1.4rem, 2.5vw, 2rem);
+      margin-bottom: 10px;
+    }
+
+    .lead,
+    p,
+    li {
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 0.98rem;
+    }
+
+    .lead {
+      margin: 18px 0 0;
+      max-width: 70ch;
+      font-size: clamp(1.02rem, 2vw, 1.16rem);
+    }
+
+    ul {
+      margin: 10px 0 0 20px;
+      padding: 0;
+    }
+
+    .grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .two-up {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      margin-top: 16px;
+    }
+
+    .subcard {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .subcard h3 {
+      margin: 0 0 8px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.98rem;
+    }
+
+    .subcard p {
+      margin: 0;
+    }
+
+    .callout {
+      margin-top: 16px;
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(127, 192, 255, 0.12);
+      border: 1px solid rgba(127, 192, 255, 0.18);
+    }
+
+    .callout a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .callout a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 14px;
+      margin: 24px 0 10px;
+      padding: 8px 4px 0;
+      color: rgba(255, 255, 255, 0.62);
+      font-size: 0.92rem;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 760px) {
+      .topbar,
+      .two-up {
+        grid-template-columns: 1fr;
+        display: grid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Ahoy Indie Media home">
+        <img src="/u_ahoy23.png" alt="Ahoy Indie Media logo" />
+        <span class="brand-copy">
+          <strong>Ahoy Indie Media</strong>
+          <span>Privacy policy</span>
+        </span>
+      </a>
+      <a class="button" href="/support">Support</a>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="eyebrow">Last updated April 29, 2026</div>
+        <h1>Privacy Policy</h1>
+        <p class="lead">
+          This policy explains how Ahoy Indie Media handles information across the website and related app services.
+          It is written to be straightforward and review-friendly.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>What we collect</h2>
+        <div class="grid two-up">
+          <div class="subcard">
+            <h3>Information you provide</h3>
+            <p>
+              We may collect information you send us directly, such as account details, support messages, creator
+              submissions, and any information you enter while using the app or website.
+            </p>
+          </div>
+          <div class="subcard">
+            <h3>Automatic information</h3>
+            <p>
+              We may automatically receive limited technical data such as IP address, device or browser details, and
+              basic usage logs so the service can run, stay secure, and improve over time.
+            </p>
+          </div>
         </div>
-    </body>
+      </section>
+
+      <section class="card">
+        <h2>How we use information</h2>
+        <ul>
+          <li>Provide and operate the website and app.</li>
+          <li>Respond to support requests and account questions.</li>
+          <li>Understand usage patterns and improve the experience.</li>
+          <li>Protect the service from abuse, fraud, or security issues.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Sharing and retention</h2>
+        <ul>
+          <li>We do not sell personal information.</li>
+          <li>We may share data with service providers that help us host, operate, or support the product.</li>
+          <li>We keep information only as long as needed for the reasons above or as required by law.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Your choices</h2>
+        <p>
+          You can contact us to ask about your information, correct a problem, or request help with account-related
+          issues. If you no longer want to use the service, email us and we will help where we can.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>Contact</h2>
+        <div class="callout">
+          <p>
+            For privacy questions, support, or follow-up on a request, email
+            <a href="mailto:contact@littlemarket.org">contact@littlemarket.org</a>.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>Ahoy Indie Media</div>
+      <div><a href="/">ahoy.ooo</a></div>
+    </footer>
+  </div>
+</body>
 </html>

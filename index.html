@@ -2,101 +2,707 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Taking you to Ahoy…</title>
-  <link rel="canonical" href="https://app.ahoy.ooo" />
-  <script>
-    // Handle redirects and prevent loops
-    (function() {
-      const host = window.location.hostname;
-      if (host === 'app.ahoy.ooo') {
-        // If we hit the app subdomain but it still points to the landing page repo,
-        // redirect to the actual app subfolder.
-        window.location.replace('/ahoyApp/www/index.html');
-      }
-    })();
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ahoy Indie Media | New Haven's Independent Streaming Platform</title>
+  <meta name="description" content="Ahoy Indie Media is a New Haven streaming platform for independent music, podcasts, events, and films. Discover local shows, support creators, and stream ad-free." />
+  <meta name="keywords" content="Ahoy Indie Media, New Haven, independent streaming, local shows, podcasts, music, events, films, creator support" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="theme-color" content="#08111f" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Ahoy Indie Media" />
+  <link rel="canonical" href="https://ahoy.ooo/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ahoy.ooo/" />
+  <meta property="og:title" content="Ahoy Indie Media | New Haven's Independent Streaming Platform" />
+  <meta property="og:description" content="Discover independent music, podcasts, events, and films from New Haven. Stream ad-free and support creators directly." />
+  <meta property="og:image" content="https://ahoy.ooo/images/github-app-preview.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ahoy Indie Media | New Haven's Independent Streaming Platform" />
+  <meta name="twitter:description" content="Discover independent music, podcasts, events, and films from New Haven. Stream ad-free and support creators directly." />
+  <meta name="twitter:image" content="https://ahoy.ooo/images/github-app-preview.jpg" />
+  <link rel="icon" type="image/png" href="/u_ahoy23.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/ahoyApp/www/resources/icons/ios/180.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600;700&family=Funnel+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Ahoy Indie Media",
+    "url": "https://ahoy.ooo/",
+    "email": "contact@littlemarket.org",
+    "description": "Ahoy Indie Media is a New Haven streaming platform for independent music, podcasts, events, and films.",
+    "sameAs": [
+      "https://github.com/oooAHOYooo"
+    ]
+  }
   </script>
   <style>
+    :root {
+      color-scheme: dark;
+      --bg: #08111f;
+      --bg-deep: #040814;
+      --panel: rgba(11, 22, 38, 0.72);
+      --panel-border: rgba(135, 186, 255, 0.18);
+      --text: rgba(255, 255, 255, 0.96);
+      --muted: rgba(255, 255, 255, 0.72);
+      --accent: #7fc0ff;
+      --accent-strong: #f3b66f;
+      --accent-soft: rgba(127, 192, 255, 0.14);
+      --shadow: 0 24px 60px rgba(0, 0, 0, 0.34);
+    }
+
     * {
-      margin: 0;
-      padding: 0;
       box-sizing: border-box;
     }
 
+    html,
     body {
-      background-color: #000000;
-      color: #ffffff;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      height: 100vh;
-      width: 100vw;
+      margin: 0;
+      min-height: 100%;
+      background:
+        radial-gradient(1000px 700px at 20% 0%, rgba(127, 192, 255, 0.18), transparent 55%),
+        radial-gradient(700px 500px at 80% 15%, rgba(243, 182, 111, 0.12), transparent 52%),
+        linear-gradient(180deg, #08111f 0%, #050914 100%);
+      color: var(--text);
+      font-family: "IBM Plex Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.72), transparent 90%);
+      opacity: 0.35;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .page {
+      position: relative;
+      z-index: 1;
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 18px 0 40px;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 12px;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 14px 16px;
+      margin-bottom: 18px;
+      border: 1px solid var(--panel-border);
+      border-radius: 20px;
+      background: rgba(6, 12, 22, 0.68);
+      backdrop-filter: blur(16px);
+      box-shadow: var(--shadow);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .brand img {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.26);
+    }
+
+    .brand-copy {
       display: flex;
       flex-direction: column;
+      gap: 2px;
+    }
+
+    .brand-copy strong {
+      font-family: "Funnel Display", system-ui, sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.02em;
+    }
+
+    .brand-copy span {
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 0.92rem;
+      font-family: "IBM Plex Mono", monospace;
+      letter-spacing: 0.02em;
+    }
+
+    .nav a:hover {
+      color: var(--text);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+      gap: 24px;
+      align-items: stretch;
+      margin-top: 28px;
+    }
+
+    .hero-main,
+    .hero-aside,
+    .card {
+      border: 1px solid var(--panel-border);
+      border-radius: 28px;
+      background: var(--panel);
+      backdrop-filter: blur(16px);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-main {
+      padding: clamp(26px, 4vw, 44px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-main::after {
+      content: "";
+      position: absolute;
+      inset: auto -80px -140px auto;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(127, 192, 255, 0.22), transparent 65%);
+      filter: blur(12px);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(127, 192, 255, 0.12);
+      border: 1px solid rgba(127, 192, 255, 0.18);
+      color: rgba(255, 255, 255, 0.88);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      margin: 0;
+      max-width: 12ch;
+      font-family: "Funnel Display", system-ui, sans-serif;
+      font-size: clamp(3rem, 7vw, 5.8rem);
+      line-height: 0.92;
+      letter-spacing: -0.05em;
+    }
+
+    .hero p {
+      margin: 18px 0 0;
+      max-width: 62ch;
+      font-size: clamp(1.05rem, 2vw, 1.2rem);
+      line-height: 1.75;
+      color: var(--muted);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .button {
+      display: inline-flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
-      animation: fadeIn 0.8s ease-out;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      text-decoration: none;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.94rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    .button:hover {
+      transform: translateY(-1px);
     }
 
-    .logo {
-      width: 240px;
-      height: auto;
-      max-width: 80%;
-      margin-bottom: 32px;
+    .button.primary {
+      background: linear-gradient(180deg, rgba(127, 192, 255, 0.24), rgba(127, 192, 255, 0.14));
+      border-color: rgba(127, 192, 255, 0.34);
     }
 
-    .message {
-      font-size: 1.1rem;
-      font-weight: 400;
-      opacity: 0.6;
-      letter-spacing: 0.05em;
+    .button.secondary {
+      background: rgba(255, 255, 255, 0.04);
     }
 
-    /* Simple loading dots */
-    .dots {
-      margin-top: 12px;
+    .button.strong {
+      background: linear-gradient(180deg, rgba(243, 182, 111, 0.25), rgba(243, 182, 111, 0.15));
+      border-color: rgba(243, 182, 111, 0.35);
+    }
+
+    .hero-points {
       display: flex;
-      gap: 6px;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
     }
 
-    .dot {
-      width: 6px;
-      height: 6px;
-      background: white;
+    .point {
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.84);
+      font-size: 0.9rem;
+    }
+
+    .hero-aside {
+      padding: 22px;
+      display: grid;
+      gap: 14px;
+      align-content: start;
+    }
+
+    .aside-card {
+      padding: 18px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .aside-card h2,
+    .section h2 {
+      margin: 0 0 10px;
+      font-family: "Funnel Display", system-ui, sans-serif;
+      font-size: clamp(1.45rem, 2.5vw, 2.1rem);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+    }
+
+    .aside-card p,
+    .section p,
+    .section li {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 0.98rem;
+    }
+
+    .section {
+      margin-top: 24px;
+      padding: clamp(22px, 4vw, 34px);
+    }
+
+    .section-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: end;
+      margin-bottom: 18px;
+    }
+
+    .section-header p {
+      max-width: 60ch;
+    }
+
+    .grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .features {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .feature {
+      padding: 18px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .feature h3 {
+      margin: 0 0 8px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 1rem;
+      letter-spacing: 0.03em;
+      color: rgba(255, 255, 255, 0.92);
+    }
+
+    .feature a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .feature a:hover {
+      text-decoration: underline;
+    }
+
+    .split {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .list {
+      display: grid;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .list-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .step {
+      width: 30px;
+      height: 30px;
       border-radius: 50%;
-      opacity: 0.3;
-      animation: pulse 1.5s infinite;
+      flex: 0 0 auto;
+      display: grid;
+      place-items: center;
+      background: rgba(127, 192, 255, 0.14);
+      color: var(--accent);
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 700;
+      font-size: 0.9rem;
     }
 
-    .dot:nth-child(2) { animation-delay: 0.2s; }
-    .dot:nth-child(3) { animation-delay: 0.4s; }
+    .list-item strong {
+      display: block;
+      margin-bottom: 4px;
+      color: rgba(255, 255, 255, 0.94);
+      font-size: 0.98rem;
+    }
 
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); opacity: 0.3; }
-      50% { transform: scale(1.2); opacity: 0.8; }
+    .support-band {
+      margin-top: 24px;
+      padding: clamp(22px, 4vw, 34px);
+      border-radius: 28px;
+      background: linear-gradient(180deg, rgba(127, 192, 255, 0.16), rgba(255, 255, 255, 0.04));
+      border: 1px solid rgba(127, 192, 255, 0.16);
+    }
+
+    .support-band .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .meta-card {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .meta-card span {
+      display: block;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: rgba(255, 255, 255, 0.54);
+      margin-bottom: 8px;
+    }
+
+    .meta-card a {
+      color: var(--text);
+      text-decoration: none;
+      word-break: break-word;
+    }
+
+    .meta-card a:hover {
+      color: var(--accent);
+    }
+
+    footer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 14px;
+      margin: 24px 0 10px;
+      padding: 8px 4px 0;
+      color: rgba(255, 255, 255, 0.62);
+      font-size: 0.92rem;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 960px) {
+      .hero,
+      .features,
+      .split,
+      .meta-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        width: min(100% - 20px, 1180px);
+        padding-top: 10px;
+      }
+
+      .topbar {
+        top: 8px;
+        padding: 12px;
+        border-radius: 18px;
+      }
+
+      .brand-copy span,
+      .nav a {
+        font-size: 0.82rem;
+      }
+
+      .hero-main,
+      .hero-aside,
+      .card,
+      .section,
+      .support-band {
+        border-radius: 22px;
+      }
     }
   </style>
 </head>
 <body>
-  <img src="./u_ahoy23.png" alt="Ahoy Indie Media" class="logo" />
-  <div class="message">Taking you to the app</div>
-  <div class="dots">
-    <div class="dot"></div>
-    <div class="dot"></div>
-    <div class="dot"></div>
-  </div>
+  <div class="page">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Ahoy Indie Media home">
+        <img src="/u_ahoy23.png" alt="Ahoy Indie Media logo" />
+        <span class="brand-copy">
+          <strong>Ahoy Indie Media</strong>
+          <span>New Haven streaming platform</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="/newhaven">New Haven</a>
+        <a href="/support">Support</a>
+        <a href="/privacy">Privacy</a>
+        <a href="https://app.ahoy.ooo" target="_blank" rel="noopener noreferrer">Open App</a>
+      </nav>
+    </header>
 
-  <script>
-    // Trigger the redirect after a short delay
-    setTimeout(() => {
-      if (window.location.hostname !== 'app.ahoy.ooo') {
-        window.location.replace("https://app.ahoy.ooo");
-      }
-    }, 1000);
-  </script>
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-main">
+          <div class="eyebrow">Independent media from New Haven</div>
+          <h1 id="hero-title">Ahoy Indie Media</h1>
+          <p>
+            Ahoy Indie Media is a New Haven streaming platform for independent music, podcasts, events, and films.
+            It is built to feel local, ad-free, and direct, with support flowing back to creators and communities.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="https://app.ahoy.ooo" target="_blank" rel="noopener noreferrer">Open the App</a>
+            <a class="button strong" href="/newhaven">View New Haven</a>
+            <a class="button secondary" href="/support">Support</a>
+          </div>
+          <div class="hero-points" aria-label="Highlights">
+            <span class="point">Ad-free</span>
+            <span class="point">Local shows</span>
+            <span class="point">Direct creator support</span>
+          </div>
+        </div>
+
+        <aside class="hero-aside">
+          <div class="aside-card">
+            <h2>What it is</h2>
+            <p>
+              A home for local listening and watching: curated music, in-house podcasts, live events, and short-form
+              video centered on New Haven creators.
+            </p>
+          </div>
+          <div class="aside-card">
+            <h2>What to expect</h2>
+            <p>
+              The site now keeps people on the marketing homepage instead of sending them away. Support, privacy, and
+              app links are available directly from the landing page.
+            </p>
+          </div>
+          <div class="aside-card">
+            <h2>Need help?</h2>
+            <p>
+              Use <a href="/support">Support</a> for common questions or email
+              <a href="mailto:contact@littlemarket.org">contact@littlemarket.org</a>.
+            </p>
+          </div>
+        </aside>
+      </section>
+
+      <section class="card section" id="about">
+        <div class="section-header">
+          <div>
+            <h2>Built for local media</h2>
+            <p>
+              The homepage keeps the New Haven story front and center: independent work, direct support, and a clean
+              path to the app.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid features">
+          <div class="feature">
+            <h3>Music and podcasts</h3>
+            <p>Stream independent releases, in-house podcasts, and archived stories from New Haven creators.</p>
+          </div>
+          <div class="feature">
+            <h3>Events and shows</h3>
+            <p>Find live events, poetry nights, screenings, and local performances from the app and the New Haven page.</p>
+          </div>
+          <div class="feature">
+            <h3>Direct support</h3>
+            <p>Creators can be supported directly through the app instead of through a generic marketplace cut.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="card section" id="how">
+        <div class="section-header">
+          <div>
+            <h2>How it works</h2>
+            <p>
+              The site should be easy to understand in review and easy to use on a phone. These steps cover the basics
+              of the app experience.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid split">
+          <div class="list">
+            <div class="list-item">
+              <div class="step">1</div>
+              <div>
+                <strong>Create an account</strong>
+                <p>Open the app, choose Sign Up, and follow the prompts to get started.</p>
+              </div>
+            </div>
+            <div class="list-item">
+              <div class="step">2</div>
+              <div>
+                <strong>Explore local media</strong>
+                <p>Browse music, podcasts, live events, and video from New Haven and nearby creators.</p>
+              </div>
+            </div>
+          </div>
+          <div class="list">
+            <div class="list-item">
+              <div class="step">3</div>
+              <div>
+                <strong>Use the wallet to support creators</strong>
+                <p>The wallet is used for in-app support and purchases so fans can boost artists directly.</p>
+              </div>
+            </div>
+            <div class="list-item">
+              <div class="step">4</div>
+              <div>
+                <strong>Find shows fast</strong>
+                <p>Use Events or the New Haven page to see upcoming shows, venues, and schedules.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="support-band" id="contact">
+        <div class="section-header" style="margin-bottom: 10px;">
+          <div>
+            <h2>Contact and review links</h2>
+            <p>
+              Use these links for support, privacy, and project access. The support email is
+              <a href="mailto:contact@littlemarket.org">contact@littlemarket.org</a>.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid meta-grid">
+          <div class="meta-card">
+            <span>Support</span>
+            <a href="mailto:contact@littlemarket.org">contact@littlemarket.org</a>
+          </div>
+          <div class="meta-card">
+            <span>Privacy policy</span>
+            <a href="/privacy">ahoy.ooo/privacy</a>
+          </div>
+          <div class="meta-card">
+            <span>Project link</span>
+            <a href="https://github.com/oooAHOYooo" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+          <div class="meta-card">
+            <span>App</span>
+            <a href="https://app.ahoy.ooo" target="_blank" rel="noopener noreferrer">app.ahoy.ooo</a>
+          </div>
+        </div>
+
+        <div class="actions">
+          <a class="button primary" href="/support">Open Support</a>
+          <a class="button secondary" href="/privacy">Read Privacy Policy</a>
+          <a class="button strong" href="https://play.google.com/store/apps/details?id=ooo.ahoy.app&pcampaignid=web_share" target="_blank" rel="noopener noreferrer">Google Play</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>Made in New Haven by <a href="https://littlemarket.org" target="_blank" rel="noopener noreferrer">Little Market</a></div>
+      <div>Copyright 2026 · Ahoy Indie Media</div>
+    </footer>
+  </div>
 </body>
 </html>

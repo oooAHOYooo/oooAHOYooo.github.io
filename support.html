@@ -1,171 +1,481 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Support Ahoy</title>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap"
-            rel="stylesheet">
-        <style>
-            @keyframes float {
-                0% { transform: translateZ(0px) rotateX(2deg); }
-                50% { transform: translateZ(20px) rotateX(1deg); }
-                100% { transform: translateZ(0px) rotateX(2deg); }
-            }
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Support Ahoy Indie Media</title>
+  <meta name="description" content="Get help with Ahoy Indie Media. Find account, wallet, and local show answers, plus the support email and privacy policy." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#08111f" />
+  <link rel="canonical" href="https://ahoy.ooo/support" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ahoy.ooo/support" />
+  <meta property="og:title" content="Support Ahoy Indie Media" />
+  <meta property="og:description" content="Find help for accounts, wallet support, local shows, and contact details for Ahoy Indie Media." />
+  <link rel="icon" type="image/png" href="/u_ahoy23.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600;700&family=Funnel+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I create an account?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Open the app, choose Sign Up, and follow the prompts. If you get stuck, email contact@littlemarket.org."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does the wallet work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The wallet is used for in-app support and purchases so fans can boost creators directly."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I find local shows?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Use the Events section in the app or the New Haven page to browse upcoming shows, venues, and schedules."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I contact you?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Email contact@littlemarket.org for support or general questions."
+        }
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #08111f;
+      --panel: rgba(11, 22, 38, 0.78);
+      --border: rgba(135, 186, 255, 0.18);
+      --text: rgba(255, 255, 255, 0.96);
+      --muted: rgba(255, 255, 255, 0.72);
+      --accent: #7fc0ff;
+      --shadow: 0 24px 60px rgba(0, 0, 0, 0.34);
+    }
 
-            .space-container {
-                perspective: 1000px;
-                transform-style: preserve-3d;
-                padding: 50px 20px;
-                background: linear-gradient(to bottom, #000924, #1a1a3a);
-                min-height: 100vh;
-                overflow: hidden;
-                position: relative;
-            }
+    * {
+      box-sizing: border-box;
+    }
 
-            .floating-section {
-                transform-style: preserve-3d;
-                animation: float 6s ease-in-out infinite;
-                transform: rotateX(10deg);
-                transition: all 0.3s ease;
-            }
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background:
+        radial-gradient(900px 600px at 18% 10%, rgba(127, 192, 255, 0.18), transparent 55%),
+        radial-gradient(700px 500px at 80% 12%, rgba(243, 182, 111, 0.1), transparent 50%),
+        linear-gradient(180deg, #08111f 0%, #050914 100%);
+      color: var(--text);
+      font-family: "IBM Plex Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      overflow-x: hidden;
+    }
 
-            .floating-section:hover {
-                transform: translateZ(50px) rotateX(0deg);
-            }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.72), transparent 90%);
+      opacity: 0.35;
+    }
 
-            .star {
-                position: absolute;
-                width: 2px;
-                height: 2px;
-                background: white;
-                opacity: 0.5;
-                animation: twinkle 1s infinite;
-            }
+    a {
+      color: inherit;
+    }
 
-            @keyframes twinkle {
-                0%, 100% { opacity: 0.5; }
-                50% { opacity: 1; }
-            }
-        </style>
-    </head>
-    <body
-        style="font-family: 'Barlow', sans-serif; background-color: #f4f4f9; margin: 0; padding: 0;">
+    .page {
+      position: relative;
+      z-index: 1;
+      width: min(1060px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 18px 0 36px;
+    }
 
-        <div class="space-container" id="spaceContainer">
-            <section class="floating-section"
-                style="max-width: 800px; margin: 50px auto; text-align: center; background-color: rgba(51, 51, 51, 0.9); padding: 20px; border-radius: 8px; backdrop-filter: blur(5px);">
-                <a href="https://ahoy.ooo"><img
-                        src="https://ahoy.ooo/ahoyApp/www/img/assets/u_ahoy23.png"
-                        alt="Ahoy Logo" style="width: 100px; height: auto;"></a>
-                <h1 style="color: #fff;">Become a Supporter</h1>
-                <p style="color: #ffffff; font-weight: bold;">Your support is
-                    crucial for the success of our community events! Vote with
-                    your contribution and help us continue bringing
-                    experiences to life.</p>
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 14px 16px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: rgba(6, 12, 22, 0.68);
+      backdrop-filter: blur(16px);
+      box-shadow: var(--shadow);
+    }
 
-                <!-- Commented out existing plan features -->
-                <!--
-                <div style="margin-top: 30px;">
-                    <div style="background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); margin-bottom: 20px;">
-                        <h2 style="color: #333;">Basic</h2>
-                        <p style="color: #666;">$5/month</p>
-                        <ul style="list-style: none; padding: 0; color: #666;">
-                            <li>Access to beta features</li>
-                            <li>Community support</li>
-                            <li>Get credited as a supporter</li>
-                            <li>Free Access to Live Events + Exclusive Stickers</li>
-                        </ul>
-                        <button style="margin-top: 10px; padding: 10px; background-color: #ff6f61; color: #fff; border: none; border-radius: 4px; cursor: pointer;">
-                            <a href="https://square.link/u/Ksm7YXCx" style="color: #fff; text-decoration: none;">Join Now</a>
-                        </button>
-                    </div>
-                    <div style="background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); margin-bottom: 20px;">
-                        <h2 style="color: #333;">Pro</h2>
-                        <p style="color: #666;">$15/month</p>
-                        <ul style="list-style: none; padding: 0; color: #666;">
-                            <li>All Basic features</li>
-                            <li>Priority support</li>
-                            <li>Exclusive content</li>
-                            <li>Stickers and fun graphics</li>
-                            <li>Exclusive access to in-house taping</li>
-                        </ul>
-                        <button style="margin-top: 10px; padding: 10px; background-color: #ff6f61; color: #fff; border: none; border-radius: 4px; cursor: pointer;">
-                            <a href="https://square.link/u/UKDgN5ku" style="color: #fff; text-decoration: none;">Join Now</a>
-                        </button>
-                    </div>
-                    <div style="background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); margin-bottom: 20px;">
-                        <h2 style="color: #333;">Elite</h2>
-                        <p style="color: #666;">$30/month</p>
-                        <ul style="list-style: none; padding: 0; color: #666;">
-                            <li>All Pro features</li>
-                            <li>Early access to new features</li>
-                            <li>T-shirts and custom art sent to you</li>
-                            <li>Exclusive access to in-house taping</li>
-                        </ul>
-                        <button style="margin-top: 10px; padding: 10px; background-color: #ff6f61; color: #fff; border: none; border-radius: 4px; cursor: pointer;">
-                            <a href="https://square.link/u/jExaHLEK" style="color: #fff; text-decoration: none;">Join Now</a>
-                        </button>
-                    </div>
-                </div>
-                -->
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
 
-                <!-- New section for Poetry Night support -->
-                <div
-                    style="margin-top: 30px; background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-                    <h2 style="color: #333;">Support the Poetry Night</h2>
-                    <p style="color: #777;">Join us in supporting the Poetry
-                        Night, your contributions will help us continue to host
-                        these events.</p>
-                    <button
-                        style="margin-top: 10px; padding: 15px; background-color: #ff6f61; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: 16px;">
-                        <a href="https://square.link/u/kM8CFT8I"
-                            style="color: #fff; text-decoration: none;">Support
-                            The Poetry Night</a>
-                    </button>
-                </div>
+    .brand img {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+    }
 
-                <!-- New section for Cabaret support -->
-                <div
-                    style="margin-top: 30px; background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-                    <h2 style="color: #333;">Support the Cabaret</h2>
-                    <p style="color: #777;">Join us in supporting the Cabaret,
-                        your contributions will go towards the production of the
-                        show.</p>
-                    <button
-                        style="margin-top: 10px; padding: 15px; background-color: #ff6f61; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: 16px;">
-                        <a href="https://square.link/u/kM8CFT8I"
-                            style="color: #fff; text-decoration: none;">Support
-                            The Cabaret</a>
-                    </button>
-                </div>
+    .brand-copy {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
 
-                <hr>
-                <h2 style="color: #f1f1f1;">Our Latest Poetry Events</h2>
-                <img
-                    src="https://storage.googleapis.com/ahoy-dynamic-content/Live%20Shows/Poets%20and%20Friends%20%231%20-%204.16.25%20-%20Koffee/ahoy-4-16-25-loop.gif"
-                    alt="Ahoy Poetry Event"
-                    style="width:100%; height:auto; border: 2px solid #yourColorScheme;">
+    .brand-copy strong {
+      font-family: "Funnel Display", system-ui, sans-serif;
+      font-size: 1rem;
+    }
 
-                <h2 style="color: #f1f1f1;">Our Latest Cabarets</h2>
-                <img
-                    src="https://storage.googleapis.com/ahoy-dynamic-content/news/ahoyCaba-ep3/Ahoy%20Cabaret%20-%203.22.25.jpg"
-                    alt="Ahoy Cabaret"
-                    style="width:100%; height:auto; border: 2px solid #yourColorScheme;">
-            </section>
+    .brand-copy span {
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .hero,
+    .card {
+      margin-top: 22px;
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      background: var(--panel);
+      backdrop-filter: blur(16px);
+      box-shadow: var(--shadow);
+    }
+
+    .hero {
+      padding: clamp(26px, 4vw, 42px);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(127, 192, 255, 0.12);
+      border: 1px solid rgba(127, 192, 255, 0.18);
+      color: rgba(255, 255, 255, 0.9);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2 {
+      margin: 0;
+      font-family: "Funnel Display", system-ui, sans-serif;
+      letter-spacing: -0.04em;
+    }
+
+    h1 {
+      margin-top: 16px;
+      font-size: clamp(2.8rem, 7vw, 5rem);
+      line-height: 0.94;
+      max-width: 10ch;
+    }
+
+    .lead {
+      margin: 18px 0 0;
+      max-width: 60ch;
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: clamp(1.02rem, 2vw, 1.18rem);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      text-decoration: none;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.94rem;
+      font-weight: 600;
+      transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+    }
+
+    .button.primary {
+      background: linear-gradient(180deg, rgba(127, 192, 255, 0.24), rgba(127, 192, 255, 0.14));
+      border-color: rgba(127, 192, 255, 0.34);
+    }
+
+    .button.secondary {
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .info-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      margin-top: 22px;
+    }
+
+    .info-card {
+      padding: 18px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .info-card h2 {
+      margin-bottom: 8px;
+      font-size: 1.35rem;
+    }
+
+    .info-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .contact {
+      display: grid;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .contact a {
+      color: var(--accent);
+      text-decoration: none;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.98rem;
+      word-break: break-word;
+    }
+
+    .contact a:hover {
+      text-decoration: underline;
+    }
+
+    .faq {
+      padding: clamp(22px, 4vw, 34px);
+    }
+
+    .faq h2 {
+      font-size: clamp(1.55rem, 3vw, 2.2rem);
+      margin-bottom: 12px;
+    }
+
+    .faq p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    details {
+      margin-top: 14px;
+      padding: 18px 18px 8px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    summary {
+      cursor: pointer;
+      list-style: none;
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 600;
+      font-size: 0.98rem;
+      color: rgba(255, 255, 255, 0.94);
+      padding-bottom: 10px;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details p {
+      padding: 0 0 10px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .link-chip {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 14px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      text-decoration: none;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.88rem;
+    }
+
+    footer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 14px;
+      margin: 24px 0 10px;
+      padding: 8px 4px 0;
+      color: rgba(255, 255, 255, 0.62);
+      font-size: 0.92rem;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 760px) {
+      .topbar,
+      .info-grid {
+        grid-template-columns: 1fr;
+        display: grid;
+      }
+
+      .topbar {
+        gap: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Ahoy Indie Media home">
+        <img src="/u_ahoy23.png" alt="Ahoy Indie Media logo" />
+        <span class="brand-copy">
+          <strong>Ahoy Indie Media</strong>
+          <span>Support and FAQ</span>
+        </span>
+      </a>
+      <div class="hero-actions" style="margin-top: 0;">
+        <a class="button secondary" href="/">Home</a>
+        <a class="button primary" href="mailto:contact@littlemarket.org">Email support</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="eyebrow">Support page</div>
+        <h1>Ahoy Indie Media</h1>
+        <p class="lead">
+          Ahoy Indie Media is a New Haven streaming platform for independent music, podcasts, events, and films.
+          If you need help, start here. For direct support, contact <a href="mailto:contact@littlemarket.org">contact@littlemarket.org</a>.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="mailto:contact@littlemarket.org">contact@littlemarket.org</a>
+          <a class="button secondary" href="/privacy">Privacy policy</a>
+          <a class="button secondary" href="https://app.ahoy.ooo" target="_blank" rel="noopener noreferrer">Open app</a>
         </div>
+      </section>
 
-        <script>
-            // Add stars to the background
-            const container = document.getElementById('spaceContainer');
-            for (let i = 0; i < 100; i++) {
-                const star = document.createElement('div');
-                star.className = 'star';
-                star.style.left = `${Math.random() * 100}%`;
-                star.style.top = `${Math.random() * 100}%`;
-                container.appendChild(star);
-            }
-        </script>
-    </body>
+      <section class="card faq">
+        <h2>FAQ</h2>
+        <p>Here are the common questions we expect people to ask during review and day-to-day use.</p>
+
+        <details>
+          <summary>How do I create an account?</summary>
+          <p>Open the app, choose Sign Up, and follow the prompts. If anything gets stuck, email contact@littlemarket.org.</p>
+        </details>
+
+        <details>
+          <summary>How does the wallet work?</summary>
+          <p>The wallet is the in-app balance used for support and purchases so fans can boost creators directly.</p>
+        </details>
+
+        <details>
+          <summary>How do I find local shows?</summary>
+          <p>Use the Events section in the app or the New Haven page to browse upcoming shows, venues, and schedules.</p>
+        </details>
+
+        <details>
+          <summary>How do I contact you?</summary>
+          <p>Email <a href="mailto:contact@littlemarket.org">contact@littlemarket.org</a> for support or general questions.</p>
+        </details>
+
+        <details>
+          <summary>Where is the privacy policy?</summary>
+          <p>The current policy lives at <a href="/privacy">ahoy.ooo/privacy</a>.</p>
+        </details>
+      </section>
+
+      <section class="card faq">
+        <h2>Quick links</h2>
+        <div class="links">
+          <a class="link-chip" href="/">Homepage</a>
+          <a class="link-chip" href="/newhaven">New Haven</a>
+          <a class="link-chip" href="/privacy">Privacy policy</a>
+          <a class="link-chip" href="https://github.com/oooAHOYooo" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+      </section>
+
+      <section class="card faq">
+        <h2>Contact</h2>
+        <div class="grid info-grid">
+          <div class="info-card">
+            <h2>Email</h2>
+            <p>The primary contact for support is below.</p>
+            <div class="contact">
+              <a href="mailto:contact@littlemarket.org">contact@littlemarket.org</a>
+            </div>
+          </div>
+          <div class="info-card">
+            <h2>Social</h2>
+            <p>Project updates and public links.</p>
+            <div class="links">
+              <a class="link-chip" href="https://github.com/oooAHOYooo" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a class="link-chip" href="https://littlemarket.org" target="_blank" rel="noopener noreferrer">Little Market</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>Ahoy Indie Media support</div>
+      <div>Copyright 2026 · <a href="/">ahoy.ooo</a></div>
+    </footer>
+  </div>
+</body>
 </html>
