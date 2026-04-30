@@ -1,0 +1,14 @@
+{
+  "project": "2983415551432326206",
+  "forms": {
+    "artistInquiry": {
+      "name": "Artist Inquiry"
+    },
+    "onboarding": {
+      "name": "Creator Onboarding"
+    },
+    "betaSignup": {
+      "name": "Beta Signup"
+    }
+  }
+}
