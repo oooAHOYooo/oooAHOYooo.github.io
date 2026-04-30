@@ -64,6 +64,18 @@
       box-sizing: border-box;
     }
 
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
     html,
     body {
       margin: 0;
@@ -532,6 +544,121 @@
       color: #fff;
     }
 
+    .gallery-section {
+      margin-top: 24px;
+      padding: clamp(22px, 4vw, 34px);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      aspect-ratio: 16 / 10;
+      border: 1px solid var(--panel-border);
+      background: var(--bg-deep);
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 32px 64px rgba(0, 0, 0, 0.5);
+      border-color: rgba(255, 255, 255, 0.3);
+      z-index: 2;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    /* Lightbox Styles */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.92);
+      backdrop-filter: blur(12px);
+      z-index: 2000;
+      display: none;
+      place-items: center;
+      padding: 24px;
+      cursor: zoom-out;
+    }
+
+    .lightbox.active {
+      display: grid;
+    }
+
+    .lightbox-content {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 95vw;
+      max-height: 95vh;
+      animation: lightboxScale 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    @keyframes lightboxScale {
+      from {
+        transform: scale(0.9);
+        opacity: 0;
+      }
+
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .lightbox-content img {
+      max-width: 100%;
+      max-height: 85vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: 0 40px 100px rgba(0, 0, 0, 0.8);
+    }
+
+    .lightbox-close {
+      position: fixed;
+      top: 24px;
+      right: 24px;
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      color: #fff;
+      font-size: 2.5rem;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0.8;
+      transition: all 0.2s;
+      z-index: 2001;
+      backdrop-filter: blur(4px);
+    }
+
+    .lightbox-close:hover {
+      opacity: 1;
+    }
+
     footer {
       display: flex;
       flex-wrap: wrap;
@@ -564,6 +691,18 @@
 
       .nav {
         justify-content: flex-start;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 4px;
+        margin-top: 16px;
+      }
+
+      .gallery-item {
+        border-radius: 4px;
+        aspect-ratio: 1 / 1;
+        border: none;
       }
     }
 
@@ -636,7 +775,6 @@
         <span>☰</span>
       </button>
       <nav class="nav" id="nav-menu" aria-label="Primary">
-        <a href="/newhaven">New Haven</a>
         <a href="/support">Support</a>
         <a href="/privacy">Privacy</a>
         <a href="https://app.ahoy.ooo" target="_blank" rel="noopener noreferrer">Open App</a>
@@ -651,6 +789,7 @@
             <img class="hero-logo" src="/images/Ahoy%20Indie%20Media%20-%20App%20Icon%20-%20May%2026.png"
               alt="Ahoy Indie Media logo" />
           </a>
+          <h1 id="hero-title" class="visually-hidden">Ahoy Indie Media</h1>
           <p>
             Ahoy Indie Media is a New Haven streaming platform for independent music, podcasts, events, and films.
             It is built to feel local, ad-free, and direct, with support flowing back to creators and communities.
@@ -765,8 +904,41 @@
             </div>
           </div>
         </div>
-      </section>
+        <section class="card gallery-section" id="gallery">
+          <div class="section-header">
+            <div>
+              <h2>App Experience</h2>
+              <p>
+                A look at the Ahoy Indie Media app interface. Built for creators and fans to connect directly in a clean,
+                local environment.
+              </p>
+            </div>
+          </div>
+          <div class="gallery-grid">
+            <div class="gallery-item"><img src="/images/product-imgs-may-26/1.png" alt="Ahoy App Screen 1"
+                loading="lazy"></div>
+            <div class="gallery-item"><img src="/images/product-imgs-may-26/2.png" alt="Ahoy App Screen 2"
+                loading="lazy"></div>
+            <div class="gallery-item"><img src="/images/product-imgs-may-26/3.png" alt="Ahoy App Screen 3"
+                loading="lazy"></div>
+            <div class="gallery-item"><img src="/images/product-imgs-may-26/4.png" alt="Ahoy App Screen 4"
+                loading="lazy"></div>
+            <div class="gallery-item"><img src="/images/product-imgs-may-26/5.png" alt="Ahoy App Screen 5"
+                loading="lazy"></div>
+            <div class="gallery-item"><img src="/images/product-imgs-may-26/6.png" alt="Ahoy App Screen 6"
+                loading="lazy"></div>
+            <div class="gallery-item"><img src="/images/product-imgs-may-26/7.png" alt="Ahoy App Screen 7"
+                loading="lazy"></div>
+          </div>
+        </section>
     </main>
+
+    <div class="lightbox" id="lightbox">
+      <div class="lightbox-content">
+        <button class="lightbox-close" id="lightbox-close">&times;</button>
+        <img id="lightbox-img" src="" alt="Enlarged view">
+      </div>
+    </div>
 
     <footer>
       <div>Made in New Haven by <a href="https://littlemarket.org" target="_blank" rel="noopener noreferrer">Little
@@ -806,6 +978,32 @@
     });
 
     heroLogo?.classList.toggle('show', window.innerWidth <= 768);
+
+    // Lightbox Logic
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.getElementById('lightbox-close');
+    const galleryItems = document.querySelectorAll('.gallery-item img');
+
+    galleryItems.forEach(img => {
+      img.parentElement.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    const closeLightbox = () => {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+    };
+
+    lightboxClose?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeLightbox();
+    });
+
+    lightbox?.addEventListener('click', closeLightbox);
   </script>
 </body>
 
