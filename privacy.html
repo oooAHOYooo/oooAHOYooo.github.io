@@ -11,15 +11,16 @@
   <link rel="icon" type="image/png" href="/u_ahoy23.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600;700&family=Funnel+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.cdnfonts.com/css/cubano" rel="stylesheet" />
   <style>
     :root {
       color-scheme: dark;
       --panel: rgba(11, 22, 38, 0.78);
       --border: rgba(135, 186, 255, 0.18);
-      --text: rgba(255, 255, 255, 0.96);
-      --muted: rgba(255, 255, 255, 0.72);
-      --accent: #7fc0ff;
+      --text: #ffffff;
+      --muted: rgba(255, 255, 255, 0.82);
+      --accent: #ffffff;
       --shadow: 0 24px 60px rgba(0, 0, 0, 0.34);
     }
 
@@ -101,13 +102,16 @@
     }
 
     .brand-copy strong {
-      font-family: "Funnel Display", system-ui, sans-serif;
+      font-family: "Cubano", sans-serif;
       font-size: 1rem;
+      letter-spacing: 0.02em;
+      color: #fff;
     }
 
     .brand-copy span {
-      color: var(--muted);
+      color: #fff;
       font-size: 0.85rem;
+      opacity: 0.82;
     }
 
     .button {
@@ -119,9 +123,10 @@
       border-radius: 14px;
       border: 1px solid rgba(255, 255, 255, 0.18);
       text-decoration: none;
-      font-family: "IBM Plex Mono", monospace;
+      font-family: "IBM Plex Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       font-size: 0.9rem;
       font-weight: 600;
+      color: #fff;
       background: rgba(255, 255, 255, 0.04);
     }
 
@@ -135,10 +140,10 @@
       display: inline-flex;
       padding: 8px 12px;
       border-radius: 999px;
-      background: rgba(127, 192, 255, 0.12);
-      border: 1px solid rgba(127, 192, 255, 0.18);
-      color: rgba(255, 255, 255, 0.9);
-      font-family: "IBM Plex Mono", monospace;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      color: #fff;
+      font-family: "IBM Plex Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       font-size: 0.8rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -147,8 +152,8 @@
     h1,
     h2 {
       margin: 0;
-      font-family: "Funnel Display", system-ui, sans-serif;
-      letter-spacing: -0.04em;
+      font-family: "Cubano", sans-serif;
+      letter-spacing: 0.035em;
     }
 
     h1 {
@@ -165,9 +170,10 @@
     .lead,
     p,
     li {
-      color: var(--muted);
+      color: #fff;
       line-height: 1.7;
       font-size: 0.98rem;
+      opacity: 0.84;
     }
 
     .lead {
@@ -200,8 +206,9 @@
 
     .subcard h3 {
       margin: 0 0 8px;
-      font-family: "IBM Plex Mono", monospace;
+      font-family: "IBM Plex Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       font-size: 0.98rem;
+      color: #fff;
     }
 
     .subcard p {
@@ -212,12 +219,12 @@
       margin-top: 16px;
       padding: 18px;
       border-radius: 18px;
-      background: rgba(127, 192, 255, 0.12);
-      border: 1px solid rgba(127, 192, 255, 0.18);
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.16);
     }
 
     .callout a {
-      color: var(--accent);
+      color: #fff;
       text-decoration: none;
     }
 
@@ -232,12 +239,13 @@
       gap: 14px;
       margin: 24px 0 10px;
       padding: 8px 4px 0;
-      color: rgba(255, 255, 255, 0.62);
+      color: #fff;
       font-size: 0.92rem;
+      opacity: 0.76;
     }
 
     footer a {
-      color: var(--accent);
+      color: #fff;
       text-decoration: none;
     }
 

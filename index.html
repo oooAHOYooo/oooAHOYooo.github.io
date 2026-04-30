@@ -25,7 +25,8 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/ahoyApp/www/resources/icons/ios/180.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600;700&family=Funnel+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.cdnfonts.com/css/cubano" rel="stylesheet" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -46,11 +47,10 @@
       --bg-deep: #040814;
       --panel: rgba(11, 22, 38, 0.72);
       --panel-border: rgba(135, 186, 255, 0.18);
-      --text: rgba(255, 255, 255, 0.96);
-      --muted: rgba(255, 255, 255, 0.72);
-      --accent: #7fc0ff;
-      --accent-strong: #f3b66f;
-      --accent-soft: rgba(127, 192, 255, 0.14);
+      --text: #ffffff;
+      --muted: rgba(255, 255, 255, 0.82);
+      --accent: #ffffff;
+      --accent-soft: rgba(255, 255, 255, 0.1);
       --shadow: 0 24px 60px rgba(0, 0, 0, 0.34);
     }
 
@@ -134,14 +134,16 @@
     }
 
     .brand-copy strong {
-      font-family: "Funnel Display", system-ui, sans-serif;
+      font-family: "Cubano", sans-serif;
       font-size: 1rem;
       letter-spacing: 0.02em;
+      color: #fff;
     }
 
     .brand-copy span {
-      color: var(--muted);
+      color: #fff;
       font-size: 0.85rem;
+      opacity: 0.82;
     }
 
     .nav {
@@ -154,10 +156,11 @@
 
     .nav a {
       text-decoration: none;
-      color: var(--muted);
+      color: #fff;
       font-size: 0.92rem;
-      font-family: "IBM Plex Mono", monospace;
+      font-family: "IBM Plex Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       letter-spacing: 0.02em;
+      opacity: 0.86;
     }
 
     .nav a:hover {
@@ -195,7 +198,7 @@
       width: 320px;
       height: 320px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(127, 192, 255, 0.22), transparent 65%);
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.18), transparent 65%);
       filter: blur(12px);
       pointer-events: none;
     }
@@ -206,10 +209,10 @@
       gap: 8px;
       padding: 8px 12px;
       border-radius: 999px;
-      background: rgba(127, 192, 255, 0.12);
-      border: 1px solid rgba(127, 192, 255, 0.18);
-      color: rgba(255, 255, 255, 0.88);
-      font-family: "IBM Plex Mono", monospace;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      color: #fff;
+      font-family: "IBM Plex Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       font-size: 0.8rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -219,10 +222,10 @@
     .hero h1 {
       margin: 0;
       max-width: 12ch;
-      font-family: "Funnel Display", system-ui, sans-serif;
+      font-family: "Cubano", sans-serif;
       font-size: clamp(3rem, 7vw, 5.8rem);
       line-height: 0.92;
-      letter-spacing: -0.05em;
+      letter-spacing: 0.02em;
     }
 
     .hero p {
@@ -230,7 +233,8 @@
       max-width: 62ch;
       font-size: clamp(1.05rem, 2vw, 1.2rem);
       line-height: 1.75;
-      color: var(--muted);
+      color: #fff;
+      opacity: 0.84;
     }
 
     .hero-actions {
@@ -249,10 +253,11 @@
       border-radius: 14px;
       border: 1px solid rgba(255, 255, 255, 0.18);
       text-decoration: none;
-      font-family: "IBM Plex Mono", monospace;
+      font-family: "IBM Plex Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       font-size: 0.94rem;
       font-weight: 600;
       letter-spacing: 0.02em;
+      color: #fff;
       transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease;
     }
 
@@ -261,8 +266,8 @@
     }
 
     .button.primary {
-      background: linear-gradient(180deg, rgba(127, 192, 255, 0.24), rgba(127, 192, 255, 0.14));
-      border-color: rgba(127, 192, 255, 0.34);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.08));
+      border-color: rgba(255, 255, 255, 0.24);
     }
 
     .button.secondary {
@@ -270,8 +275,8 @@
     }
 
     .button.strong {
-      background: linear-gradient(180deg, rgba(243, 182, 111, 0.25), rgba(243, 182, 111, 0.15));
-      border-color: rgba(243, 182, 111, 0.35);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.08));
+      border-color: rgba(255, 255, 255, 0.24);
     }
 
     .hero-points {
@@ -286,8 +291,9 @@
       border-radius: 999px;
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid rgba(255, 255, 255, 0.1);
-      color: rgba(255, 255, 255, 0.84);
+      color: #fff;
       font-size: 0.9rem;
+      opacity: 0.9;
     }
 
     .hero-aside {
@@ -307,19 +313,21 @@
     .aside-card h2,
     .section h2 {
       margin: 0 0 10px;
-      font-family: "Funnel Display", system-ui, sans-serif;
+      font-family: "Cubano", sans-serif;
       font-size: clamp(1.45rem, 2.5vw, 2.1rem);
       line-height: 1.05;
-      letter-spacing: -0.03em;
+      letter-spacing: 0.035em;
+      color: #fff;
     }
 
     .aside-card p,
     .section p,
     .section li {
       margin: 0;
-      color: var(--muted);
+      color: #fff;
       line-height: 1.65;
       font-size: 0.98rem;
+      opacity: 0.82;
     }
 
     .section {
@@ -358,14 +366,14 @@
 
     .feature h3 {
       margin: 0 0 8px;
-      font-family: "IBM Plex Mono", monospace;
+      font-family: "IBM Plex Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       font-size: 1rem;
-      letter-spacing: 0.03em;
-      color: rgba(255, 255, 255, 0.92);
+      letter-spacing: 0.04em;
+      color: #fff;
     }
 
     .feature a {
-      color: var(--accent);
+      color: #fff;
       text-decoration: none;
     }
 
@@ -400,9 +408,9 @@
       flex: 0 0 auto;
       display: grid;
       place-items: center;
-      background: rgba(127, 192, 255, 0.14);
-      color: var(--accent);
-      font-family: "IBM Plex Mono", monospace;
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+      font-family: "IBM Plex Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       font-weight: 700;
       font-size: 0.9rem;
     }
@@ -410,7 +418,7 @@
     .list-item strong {
       display: block;
       margin-bottom: 4px;
-      color: rgba(255, 255, 255, 0.94);
+      color: #fff;
       font-size: 0.98rem;
     }
 
@@ -418,8 +426,8 @@
       margin-top: 24px;
       padding: clamp(22px, 4vw, 34px);
       border-radius: 28px;
-      background: linear-gradient(180deg, rgba(127, 192, 255, 0.16), rgba(255, 255, 255, 0.04));
-      border: 1px solid rgba(127, 192, 255, 0.16);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.04));
+      border: 1px solid rgba(255, 255, 255, 0.16);
     }
 
     .support-band .actions {
@@ -445,22 +453,23 @@
 
     .meta-card span {
       display: block;
-      font-family: "IBM Plex Mono", monospace;
+      font-family: "IBM Plex Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       font-size: 0.78rem;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      color: rgba(255, 255, 255, 0.54);
+      color: #fff;
+      opacity: 0.72;
       margin-bottom: 8px;
     }
 
     .meta-card a {
-      color: var(--text);
+      color: #fff;
       text-decoration: none;
       word-break: break-word;
     }
 
     .meta-card a:hover {
-      color: var(--accent);
+      color: #fff;
     }
 
     footer {
@@ -470,12 +479,13 @@
       gap: 14px;
       margin: 24px 0 10px;
       padding: 8px 4px 0;
-      color: rgba(255, 255, 255, 0.62);
+      color: #fff;
       font-size: 0.92rem;
+      opacity: 0.76;
     }
 
     footer a {
-      color: var(--accent);
+      color: #fff;
       text-decoration: none;
     }
 
