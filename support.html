@@ -53,6 +53,22 @@
           "@type": "Answer",
           "text": "Email contact@littlemarket.org for support or general questions."
         }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I delete my account?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In the app: Go to Settings → Danger Zone → Delete Account. By email: Contact contact@littlemarket.org with 'Delete my account' + your email address."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What data do you collect?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We collect account details (email, name), usage data (plays, skips), and content preferences (saved music, playlists). Payments are processed by Stripe; we don't store card details."
+        }
       }
     ]
   }
@@ -112,6 +128,9 @@
     }
 
     .topbar {
+      position: sticky;
+      top: 12px;
+      z-index: 20;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -443,6 +462,29 @@
         <details>
           <summary>How do I contact you?</summary>
           <p>Email <a href="mailto:contact@littlemarket.org">contact@littlemarket.org</a> for support or general questions.</p>
+        </details>
+
+        <details>
+          <summary>How do I delete my account?</summary>
+          <p>
+            <strong>In the app:</strong> Go to Settings → Danger Zone → Delete Account. You'll need to confirm twice.<br><br>
+            <strong>By email:</strong> Contact <a href="mailto:contact@littlemarket.org">contact@littlemarket.org</a> with "Delete my account" + your email address, and we'll process the deletion.<br><br>
+            When you delete your account, we immediately remove your profile, saved music, playlists, wallet balance, and listening history. We retain transaction records for 7 years for tax/legal compliance.
+          </p>
+        </details>
+
+        <details>
+          <summary>What data do you collect?</summary>
+          <p>
+            We collect the following to provide the service:
+            <ul>
+              <li><strong>Account:</strong> Email, display name, password (encrypted)</li>
+              <li><strong>Usage:</strong> What you play, bookmark, skip, and how long you listen</li>
+              <li><strong>Content preferences:</strong> Your saved music, shows, playlists</li>
+              <li><strong>Payments:</strong> Processed by Stripe (we don't store card details)</li>
+            </ul>
+            All data is encrypted in transit and stored securely in our database.
+          </p>
         </details>
 
         <details>

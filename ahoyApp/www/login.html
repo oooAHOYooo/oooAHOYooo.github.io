@@ -154,6 +154,26 @@
             <input type="text" placeholder="Display Name"
               x-model="settings.displayName">
             <button @click="updateSettings()">Save Changes</button>
+            <hr style="margin: 20px 0; border: 0; border-top: 1px solid rgba(255,255,255,0.1);">
+            <div class="danger-zone" style="margin-top: 20px; padding: 15px; border: 1px solid rgba(255, 59, 48, 0.3); border-radius: 12px; background: rgba(255, 59, 48, 0.05);">
+              <h4 style="color: #ff3b30; margin: 0 0 10px;">Danger Zone</h4>
+              <p style="font-size: 0.85rem; margin-bottom: 15px; opacity: 0.8;">Once you delete your account, there is no going back. Please be certain.</p>
+              
+              <template x-if="!confirmDelete">
+                <button @click="confirmDelete = true" style="background: #ff3b30; border: none; color: white; padding: 10px 15px; border-radius: 8px; font-weight: 600; cursor: pointer;">Delete Account</button>
+              </template>
+              
+              <template x-if="confirmDelete">
+                <div style="animation: fadeIn 0.3s ease;">
+                  <p style="font-weight: 700; color: #ff3b30; margin-bottom: 10px;">Are you absolutely sure?</p>
+                  <p style="font-size: 0.85rem; margin-bottom: 15px;">This will permanently delete your profile, saved tracks, playlists, listening history, and wallet. There is no going back.</p>
+                  <div style="display: flex; gap: 10px;">
+                    <button @click="deleteAccount()" style="background: #ff3b30; border: none; color: white; padding: 10px 15px; border-radius: 8px; font-weight: 600; cursor: pointer;">Yes, Delete Everything</button>
+                    <button @click="confirmDelete = false" style="background: rgba(255,255,255,0.1); border: none; color: white; padding: 10px 15px; border-radius: 8px; cursor: pointer;">Cancel</button>
+                  </div>
+                </div>
+              </template>
+            </div>
           </div>
         </template>
         <template x-if="currentTab === 'activity'">
@@ -208,6 +228,7 @@
           settings: {
             displayName: ""
           },
+          confirmDelete: false,
           activity: [],
           // Initialize Firebase auth state listener
           initAuth() {
@@ -278,6 +299,25 @@
             } catch (error) {
               this.logMessages += "Error during sign out: " + error.message + "\n";
               alert("Error signing out: " + error.message);
+            }
+          },
+          async deleteAccount() {
+            if (!this.user) return;
+            try {
+              // Note: In a production app, you might want to call a backend function to clean up user data
+              // or use Firebase's delete method.
+              await this.user.delete();
+              this.user = null;
+              this.confirmDelete = false;
+              alert("Your account has been permanently deleted. We are sorry to see you go.");
+              window.location.href = "login.html";
+            } catch (error) {
+              if (error.code === 'auth/requires-recent-login') {
+                alert("For security reasons, you must have recently signed in to delete your account. Please log out and log back in, then try again.");
+              } else {
+                this.logMessages += "Error deleting account: " + error.message + "\n";
+                alert("Error deleting account: " + error.message);
+              }
             }
           },
           // Dashboard tab switching

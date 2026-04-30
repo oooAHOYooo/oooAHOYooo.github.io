@@ -133,9 +133,9 @@ This code was hand-written by Alex Gonzalez circa 2023
 
 
 # Seeking Investors and Contributors
-We are actively seeking investors who share our vision for independent media and are interested in supporting the growth of Ahoy Indie Media. If you are passionate about the project and would like to explore investment opportunities, please reach out to us at invest@ahoy.ooo
+We are actively seeking investors who share our vision for independent media and are interested in supporting the growth of Ahoy Indie Media. If you are passionate about the project and would like to explore investment opportunities, please reach out to us at contact@littlemarket.org
 
-Additionally, we welcome contributions from individuals with expertise in media, technology, design, and marketing. If you believe in our mission and would like to contribute to the development and expansion of Ahoy Indie Media, please get in touch with us at contributors@ahoy.ooo
+Additionally, we welcome contributions from individuals with expertise in media, technology, design, and marketing. If you believe in our mission and would like to contribute to the development and expansion of Ahoy Indie Media, please get in touch with us at contact@littlemarket.org
 
 
 

@@ -143,5 +143,5 @@ Edit `newhaven.html`:
 - Founder/CTO: Alex Gonzalez
 - Vision: Create a code-independent, ad-free media platform celebrating New Haven's creative community
 - Support: contact@littlemarket.org
-- Contributor inquiries: contributors@ahoy.ooo
-- Investment inquiries: invest@ahoy.ooo
+- Contributor inquiries: contact@littlemarket.org
+- Investment inquiries: contact@littlemarket.org

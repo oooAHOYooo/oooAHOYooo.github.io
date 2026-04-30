@@ -274,16 +274,12 @@
     }
 
     .hero-logo {
-      display: none;
+      display: block;
       height: 240px;
       width: auto;
       box-shadow: 0 20px 48px rgba(0, 0, 0, 0.4);
       margin-bottom: 24px;
       object-fit: contain;
-    }
-
-    .hero-logo.show {
-      display: block;
     }
 
     .hero-logo-link {
@@ -573,7 +569,7 @@
 
     @media (max-width: 768px) {
       .topbar {
-        position: relative;
+        /* Remove relative override to keep it sticky */
       }
 
       .nav {
@@ -588,7 +584,7 @@
         display: none;
       }
 
-      .hero-logo.show {
+      .hero-logo {
         display: block;
       }
     }
