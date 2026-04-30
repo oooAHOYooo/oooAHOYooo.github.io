@@ -6,14 +6,9 @@
   <title>Ahoy Indie Media</title>
   <meta name="robots" content="noindex, follow" />
   <script>
-    fetch('./index.html')
-      .then(function (response) { return response.text(); })
-      .then(function (html) {
-        document.open();
-        document.write(html);
-        document.close();
-      });
+    window.location.href = "/";
   </script>
+  <meta http-equiv="refresh" content="0; url=/" />
 </head>
 <body>
   <noscript>

@@ -7,15 +7,19 @@
       "maxDuration": 10
     }
   },
-  "rewrites": [
+  "redirects": [
     {
       "source": "/newhaven",
-      "destination": "/newhaven/index.html"
+      "destination": "/",
+      "permanent": true
     },
     {
       "source": "/newhaven/",
-      "destination": "/newhaven/index.html"
-    },
+      "destination": "/",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
     {
       "source": "/support",
       "destination": "/support/index.html"
