@@ -249,12 +249,12 @@
 
     /* Featured card visual panel */
     .featured-visual {
-      background: linear-gradient(135deg, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0.02) 100%);
+      background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 100%);
       border-left: 1px solid rgba(255,255,255,0.08);
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 40px;
+      padding: 32px;
       position: relative;
       overflow: hidden;
     }
@@ -263,20 +263,113 @@
       content: "";
       position: absolute;
       inset: -60px;
-      background: radial-gradient(circle at 60% 40%, rgba(255,255,255,0.12), transparent 65%);
+      background: radial-gradient(circle at 60% 40%, rgba(100,220,140,0.08), transparent 65%);
       pointer-events: none;
     }
 
-    .featured-visual svg {
-      width: 90px;
-      height: 90px;
-      opacity: 0.18;
+    /* Play Store preview card */
+    .store-preview {
+      width: 100%;
+      max-width: 360px;
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.5);
+      position: relative;
+      z-index: 1;
+      color: #000;
+      font-family: "IBM Plex Sans", system-ui, sans-serif;
     }
 
-    .crown {
-      font-size: 5rem;
-      line-height: 1;
-      filter: drop-shadow(0 0 30px rgba(255,255,255,0.3));
+    .store-preview-header {
+      background: #f8f9fa;
+      padding: 16px 16px 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 1px solid #e8eaed;
+    }
+
+    .store-preview-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      flex-shrink: 0;
+      object-fit: contain;
+    }
+
+    .store-preview-meta { flex: 1; min-width: 0; }
+
+    .store-preview-meta h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #202124;
+      margin-bottom: 2px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .store-preview-meta span {
+      font-size: 0.78rem;
+      color: #01875f;
+      font-weight: 500;
+    }
+
+    .store-preview-body {
+      padding: 14px 16px;
+    }
+
+    .store-preview-rating {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 12px;
+      font-size: 0.8rem;
+      color: #5f6368;
+    }
+
+    .stars { color: #f4a818; letter-spacing: -1px; }
+
+    .store-preview-install {
+      display: block;
+      width: 100%;
+      background: #01875f;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .store-preview-install:hover { background: #017550; }
+
+    .store-preview-screenshots {
+      display: flex;
+      gap: 6px;
+      padding: 12px 16px;
+      overflow: hidden;
+      background: #f8f9fa;
+      border-top: 1px solid #e8eaed;
+    }
+
+    .store-preview-screenshots img {
+      height: 80px;
+      width: auto;
+      border-radius: 6px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .store-preview-screenshots .ss-placeholder {
+      height: 80px;
+      width: 50px;
+      border-radius: 6px;
+      background: #e8eaed;
+      flex-shrink: 0;
     }
 
     .badge-row {
@@ -341,45 +434,67 @@
 
   <div class="platforms">
 
-    <!-- Mac App Store — Crown Jewel -->
+    <!-- Google Play — Featured -->
     <div class="platform-card featured">
-      <div class="card-body">
-        <span class="platform-tag tag-mac">Mac App Store</span>
-        <h2>Ahoy for Mac</h2>
-        <div class="badge-row">
-          <span class="badge">macOS</span>
-          <span class="badge">Native app</span>
-          <span class="badge">Mac App Store</span>
-        </div>
-        <p>
-          The full Ahoy experience, built for Mac. Stream music, podcasts, live events, and video from New Haven's independent creator community. Available now on the Mac App Store.
-        </p>
-        <div class="card-actions">
-          <a class="btn btn-primary" href="https://apps.apple.com/us/app/ahoy-indie-media/id6741055171" target="_blank" rel="noopener noreferrer">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-            Mac App Store
-          </a>
-        </div>
-      </div>
-      <div class="featured-visual">
-        <div class="crown">&#8963;</div>
-      </div>
-    </div>
-
-    <!-- Google Play -->
-    <div class="platform-card">
       <div class="card-body">
         <span class="platform-tag tag-android">Google Play</span>
         <h2>Ahoy for Android</h2>
         <div class="badge-row">
           <span class="badge">Android</span>
           <span class="badge">Google Play Store</span>
+          <span class="badge">Free</span>
         </div>
-        <p>Download Ahoy from the Google Play Store and start streaming local independent media on your Android device.</p>
+        <p>
+          Download Ahoy from the Google Play Store and start streaming local independent music, podcasts, events, and film from New Haven creators — ad-free, on your Android device.
+        </p>
         <div class="card-actions">
           <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=ooo.ahoy.app&hl=en_US" target="_blank" rel="noopener noreferrer">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76a2 2 0 0 0 2.81.72l10.65-6.14-3.01-3.01-10.45 8.43zm16.4-10.61L16.12 11l-9.63-5.55a2 2 0 0 0-3.31 1.51v14.08l10.4-8.4 3 3.02 2.99-2.51zM20.45 9.5l-2.91-1.68-3.5 3.18 3.5 3.18 2.94-1.7a2 2 0 0 0 0-3.48l-.03.5z"/></svg>
-            Google Play
+            Get it on Google Play
+          </a>
+        </div>
+      </div>
+      <div class="featured-visual">
+        <a href="https://play.google.com/store/apps/details?id=ooo.ahoy.app&hl=en_US" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
+          <div class="store-preview">
+            <div class="store-preview-header">
+              <img class="store-preview-icon" src="/images/Ahoy%20Indie%20Media%20-%20App%20Icon%20-%20May%2026.png" alt="Ahoy icon" />
+              <div class="store-preview-meta">
+                <h3>Ahoy Indie Media</h3>
+                <span>Little Market</span>
+              </div>
+            </div>
+            <div class="store-preview-body">
+              <div class="store-preview-rating">
+                <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                <span>New Haven independent media</span>
+              </div>
+              <a class="store-preview-install" href="https://play.google.com/store/apps/details?id=ooo.ahoy.app&hl=en_US" target="_blank" rel="noopener noreferrer">Install</a>
+            </div>
+            <div class="store-preview-screenshots">
+              <div class="ss-placeholder"></div>
+              <div class="ss-placeholder"></div>
+              <div class="ss-placeholder"></div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Mac App Store -->
+    <div class="platform-card">
+      <div class="card-body">
+        <span class="platform-tag tag-mac">Mac App Store</span>
+        <h2>Ahoy for Mac</h2>
+        <div class="badge-row">
+          <span class="badge">macOS</span>
+          <span class="badge">Native app</span>
+        </div>
+        <p>The full Ahoy experience, built for Mac. Available now on the Mac App Store.</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://apps.apple.com/us/app/ahoy-indie-media/id6741055171" target="_blank" rel="noopener noreferrer">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            Mac App Store
           </a>
         </div>
       </div>
