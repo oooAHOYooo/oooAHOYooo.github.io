@@ -35,6 +35,14 @@
     {
       "source": "/privacy/",
       "destination": "/privacy/index.html"
+    },
+    {
+      "source": "/download",
+      "destination": "/download.html"
+    },
+    {
+      "source": "/download/",
+      "destination": "/download.html"
     }
   ]
 }

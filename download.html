@@ -1,135 +1,456 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-        <style>
-            :root {
-                --background-color: #FF0060;
-                --text-color: #000;
-                --button-color: rgba(255, 255, 255, 0.236);
-                --gold: #ff0060;
-            }
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Download — Ahoy Indie Media</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.cdnfonts.com/css/cubano" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-            body {
-                background: var(--background-color);
-                font-family: 'Inter', sans-serif;
-                margin: 0;
-                padding: 0;
-                backdrop-filter: blur(10px);
-                color: white;
-            }
+    :root {
+      --bg: #08111f;
+      --panel: rgba(11, 22, 38, 0.72);
+      --panel-border: rgba(135, 186, 255, 0.18);
+      --text: #ffffff;
+      --muted: rgba(255, 255, 255, 0.68);
+      --shadow: 0 24px 60px rgba(0, 0, 0, 0.34);
+    }
 
-            span {
-                font-weight: 600;
-            }
+    html, body {
+      min-height: 100%;
+      background:
+        radial-gradient(1000px 700px at 20% 0%, rgba(127, 192, 255, 0.15), transparent 55%),
+        radial-gradient(600px 400px at 85% 20%, rgba(255, 255, 255, 0.06), transparent 52%),
+        linear-gradient(180deg, #08111f 0%, #050914 100%);
+      color: var(--text);
+      font-family: "IBM Plex Sans", system-ui, sans-serif;
+      overflow-x: hidden;
+    }
 
-            .download-container {
-                background-color: var(--background-color);
-                color: var(--text-color);
-                text-align: center;
-                border-radius: 20px;
-                margin: 20px auto;
-                width: 95%;
-                max-width: 600px;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                backdrop-filter: blur(10px);
-                border: 1px solid rgba(255, 255, 255, 0.18);
-                padding: 20px;
-            }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: linear-gradient(180deg, rgba(0,0,0,0.72), transparent 90%);
+      opacity: 0.35;
+    }
 
-            @media (max-width: 600px) {
-                .download-container {
-                    width: 80%;
-                    padding: 15px;
-                }
+    .page {
+      position: relative;
+      z-index: 1;
+      width: min(1100px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 18px 0 60px;
+    }
 
-                .download-link {
-                    width: 100%;
-                    padding: 15px;
-                    font-size: 18px;
-                }
-            }
+    /* ── Topbar ── */
+    .topbar {
+      position: sticky;
+      top: 12px;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 14px 16px;
+      margin-bottom: 48px;
+      border: 1px solid var(--panel-border);
+      border-radius: 20px;
+      background: rgba(6, 12, 22, 0.68);
+      backdrop-filter: blur(16px);
+      box-shadow: var(--shadow);
+    }
 
-            @media (max-width: 420px) {
-                .download-container {
-                    width: 100%;
-                    padding: 10px;
-                }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: #fff;
+    }
 
-                .download-link {
-                    width: 100%;
-                    padding: 10px;
-                    font-size: 16px;
-                }
+    .brand img {
+      height: 48px;
+      width: auto;
+      border-radius: 12px;
+      object-fit: contain;
+    }
 
-                .platforms {
-                    flex-direction: column;
-                    align-items: center;
-                }
-            }
+    .brand strong {
+      font-family: "Cubano", sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.02em;
+    }
 
-            .platforms {
-                display: flex;
-                justify-content: space-around;
-                flex-wrap: wrap;
-                margin-top: 40px;
-            }
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
 
-            .download-link {
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                background-color: var(--button-color);
-                color: var(--text-color);
-                padding: 20px 40px;
-                margin: 10px;
-                border-radius: 10px;
-                width: 200px;
-                transition: background-color 0.3s ease, transform 0.3s ease;
-                text-decoration: none;
-                font-size: 20px;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-            }
+    .nav-links a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 0.92rem;
+      opacity: 0.78;
+      transition: opacity 0.2s;
+    }
 
-            .download-link i {
-                margin-right: 10px;
-            }
+    .nav-links a:hover { opacity: 1; }
 
-            .download-link:hover {
-                background-color: var(--gold);
-                color:white;
-                transform: scale(1.1);
-            }
-        </style>
-        <title>Download Beta App</title>
-    </head>
-    <body>
-        <div class="download-container">
-            <a href="index.html"><img src="/images/Ahoy%20Indie%20Media%20-%20App%20Icon%20-%20May%2026.png" alt="Ahoy Logo"
-                    style="width: 100%; height: auto; margin:0;"></a>
-            <h1>Beta App Download</h1>
-            <p>Latest version: v28b</p>
-            <div class="platforms">
-                <h2>Latest Beta</h2>
-                <a href="ahoyApp/index.html" class="download-link"><i
-                        class="fab fa-apple"></i> Mac OS
-                    v0.2.8-c (DMG)</a>
-                <h2>Previous Versions</h2>
-                <a
-                    href="https://storage.googleapis.com/ahoy-dynamic-content/ahoyv247-app-debug.apk"
-                    class="download-link"><i class="fab fa-android"></i> Android
-                    v24.7</a>
-                <a
-                    href="https://storage.googleapis.com/ahoy-dynamic-content/app-debug.apk"
-                    class="download-link"><i
-                        class="fab fa-android"></i> Android v24.3</a>
+    /* ── Hero ── */
+    .hero {
+      text-align: center;
+      margin-bottom: 56px;
+    }
 
-            </div>
-            <p><span>Note:</span> Devices using ahoy v24.3 - v28b must be set to
-                Developer Mode</p>
+    .hero img {
+      width: 100px;
+      height: 100px;
+      border-radius: 24px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-family: "Cubano", sans-serif;
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      letter-spacing: 0.03em;
+      line-height: 1;
+      margin-bottom: 14px;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      max-width: 48ch;
+      margin: 0 auto;
+    }
+
+    /* ── Platform grid ── */
+    .platforms {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 18px;
+    }
+
+    /* Crown jewel — Mac App Store — spans full width */
+    .platform-card.featured {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      align-items: stretch;
+    }
+
+    .platform-card {
+      border: 1px solid var(--panel-border);
+      border-radius: 24px;
+      background: var(--panel);
+      backdrop-filter: blur(16px);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .platform-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 32px 72px rgba(0,0,0,0.45);
+    }
+
+    .card-body {
+      padding: clamp(24px, 4vw, 40px);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .platform-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 600;
+      width: fit-content;
+    }
+
+    .tag-mac    { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.22); color: #fff; }
+    .tag-ios    { background: rgba(200,200,255,0.1);  border: 1px solid rgba(200,200,255,0.2);  color: #d4d4ff; }
+    .tag-android{ background: rgba(100,220,140,0.1);  border: 1px solid rgba(100,220,140,0.2);  color: #7de8a0; }
+    .tag-linux  { background: rgba(255,200,100,0.1);  border: 1px solid rgba(255,200,100,0.2);  color: #ffd27a; }
+    .tag-beta   { background: rgba(255,160,80,0.12);  border: 1px solid rgba(255,160,80,0.22);  color: #ffb060; }
+
+    .platform-card h2 {
+      font-family: "Cubano", sans-serif;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      letter-spacing: 0.03em;
+      line-height: 1.1;
+      color: #fff;
+    }
+
+    .platform-card p {
+      color: var(--muted);
+      font-size: 0.97rem;
+      line-height: 1.65;
+    }
+
+    .card-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: auto;
+      padding-top: 6px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 46px;
+      padding: 0 20px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.18);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: #fff;
+      transition: transform 0.18s ease, background 0.18s ease;
+      cursor: pointer;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-primary {
+      background: linear-gradient(180deg, rgba(255,255,255,0.22), rgba(255,255,255,0.1));
+      border-color: rgba(255,255,255,0.28);
+    }
+
+    .btn-ghost {
+      background: rgba(255,255,255,0.05);
+    }
+
+    .btn-disabled {
+      opacity: 0.38;
+      pointer-events: none;
+      cursor: default;
+    }
+
+    /* Featured card visual panel */
+    .featured-visual {
+      background: linear-gradient(135deg, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0.02) 100%);
+      border-left: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .featured-visual::before {
+      content: "";
+      position: absolute;
+      inset: -60px;
+      background: radial-gradient(circle at 60% 40%, rgba(255,255,255,0.12), transparent 65%);
+      pointer-events: none;
+    }
+
+    .featured-visual svg {
+      width: 90px;
+      height: 90px;
+      opacity: 0.18;
+    }
+
+    .crown {
+      font-size: 5rem;
+      line-height: 1;
+      filter: drop-shadow(0 0 30px rgba(255,255,255,0.3));
+    }
+
+    .badge-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: var(--muted);
+    }
+
+    /* Footer */
+    footer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 14px;
+      margin-top: 48px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    footer a { color: #fff; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 700px) {
+      .platform-card.featured { grid-template-columns: 1fr; }
+      .featured-visual { display: none; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <header class="topbar">
+    <a class="brand" href="/">
+      <img src="/images/Ahoy%20Indie%20Media%20-%20App%20Icon%20-%20May%2026.png" alt="Ahoy logo" />
+      <strong>Ahoy Indie Media</strong>
+    </a>
+    <nav class="nav-links">
+      <a href="/">Home</a>
+      <a href="/support">Support</a>
+      <a href="/privacy">Privacy</a>
+      <a href="https://app.ahoy.ooo" target="_blank" rel="noopener noreferrer">Open App</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <img src="/images/Ahoy%20Indie%20Media%20-%20App%20Icon%20-%20May%2026.png" alt="Ahoy Indie Media" />
+    <h1>Get Ahoy</h1>
+    <p>Stream independent music, podcasts, events, and film from New Haven creators — ad-free, on every platform.</p>
+  </div>
+
+  <div class="platforms">
+
+    <!-- Mac App Store — Crown Jewel -->
+    <div class="platform-card featured">
+      <div class="card-body">
+        <span class="platform-tag tag-mac">Mac App Store</span>
+        <h2>Ahoy for Mac</h2>
+        <div class="badge-row">
+          <span class="badge">macOS</span>
+          <span class="badge">Native app</span>
+          <span class="badge">Mac App Store</span>
         </div>
-    </body>
+        <p>
+          The full Ahoy experience, built for Mac. Stream music, podcasts, live events, and video from New Haven's independent creator community. Available now on the Mac App Store.
+        </p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://apps.apple.com/us/app/ahoy-indie-media/id6741055171" target="_blank" rel="noopener noreferrer">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            Mac App Store
+          </a>
+        </div>
+      </div>
+      <div class="featured-visual">
+        <div class="crown">&#8963;</div>
+      </div>
+    </div>
+
+    <!-- Google Play -->
+    <div class="platform-card">
+      <div class="card-body">
+        <span class="platform-tag tag-android">Google Play</span>
+        <h2>Ahoy for Android</h2>
+        <div class="badge-row">
+          <span class="badge">Android</span>
+          <span class="badge">Google Play Store</span>
+        </div>
+        <p>Download Ahoy from the Google Play Store and start streaming local independent media on your Android device.</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=ooo.ahoy.app&hl=en_US" target="_blank" rel="noopener noreferrer">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76a2 2 0 0 0 2.81.72l10.65-6.14-3.01-3.01-10.45 8.43zm16.4-10.61L16.12 11l-9.63-5.55a2 2 0 0 0-3.31 1.51v14.08l10.4-8.4 3 3.02 2.99-2.51zM20.45 9.5l-2.91-1.68-3.5 3.18 3.5 3.18 2.94-1.7a2 2 0 0 0 0-3.48l-.03.5z"/></svg>
+            Google Play
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- iOS App Store -->
+    <div class="platform-card">
+      <div class="card-body">
+        <span class="platform-tag tag-ios">App Store</span>
+        <h2>Ahoy for iPhone</h2>
+        <div class="badge-row">
+          <span class="badge">iOS</span>
+          <span class="badge">App Store</span>
+        </div>
+        <p>Ahoy for iPhone is currently under review by Apple. It will be available on the App Store very soon.</p>
+        <div class="card-actions">
+          <span class="btn btn-primary btn-disabled">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            Coming Soon
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mac Beta DMG -->
+    <div class="platform-card">
+      <div class="card-body">
+        <span class="platform-tag tag-beta">Beta</span>
+        <h2>Mac Beta (DMG)</h2>
+        <div class="badge-row">
+          <span class="badge">macOS</span>
+          <span class="badge">DMG</span>
+          <span class="badge">Developer Mode</span>
+        </div>
+        <p>Early access build for Mac. Requires Developer Mode enabled on your machine. Not yet on the Mac App Store — use this to test the latest features first.</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="/ahoyApp/index.html">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+            Download DMG
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Linux -->
+    <div class="platform-card">
+      <div class="card-body">
+        <span class="platform-tag tag-linux">Linux</span>
+        <h2>Ahoy for Linux</h2>
+        <div class="badge-row">
+          <span class="badge">Linux</span>
+          <span class="badge">Beta</span>
+        </div>
+        <p>Linux build coming soon. If you're on Linux and want early access, reach out and we'll get you set up.</p>
+        <div class="card-actions">
+          <a class="btn btn-ghost" href="mailto:contact@littlemarket.org">Contact for access</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <div>Made in New Haven by <a href="https://littlemarket.org" target="_blank" rel="noopener noreferrer">Little Market</a></div>
+    <div style="display:flex;gap:20px;">
+      <a href="/support">Support</a>
+      <a href="/privacy">Privacy</a>
+    </div>
+    <div>Copyright 2026 · Ahoy Indie Media</div>
+  </footer>
+
+</div>
+</body>
 </html>

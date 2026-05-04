@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>404 — Ahoy Indie Media</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.cdnfonts.com/css/cubano" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      height: 100%;
+      background: #08111f;
+      color: #fff;
+      font-family: "IBM Plex Sans", system-ui, sans-serif;
+      overflow: hidden;
+    }
+
+    canvas {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .center {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      gap: 20px;
+      text-align: center;
+      padding: 24px;
+    }
+
+    .logo {
+      width: 120px;
+      height: 120px;
+      border-radius: 28px;
+      box-shadow: 0 0 60px rgba(100, 180, 255, 0.35);
+      animation: bob 3s ease-in-out infinite;
+    }
+
+    @keyframes bob {
+      0%, 100% { transform: translateY(0px) rotate(-2deg); }
+      50%       { transform: translateY(-14px) rotate(2deg); }
+    }
+
+    h1 {
+      font-family: "Cubano", sans-serif;
+      font-size: clamp(5rem, 18vw, 11rem);
+      line-height: 1;
+      letter-spacing: 0.04em;
+      background: linear-gradient(180deg, #fff 30%, rgba(100, 180, 255, 0.6));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    p {
+      font-size: 1.1rem;
+      opacity: 0.72;
+      max-width: 36ch;
+      line-height: 1.6;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 8px;
+    }
+
+    a.btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 22px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.18);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #fff;
+      transition: transform 0.18s ease, background 0.18s ease;
+    }
+
+    a.btn.primary {
+      background: linear-gradient(180deg, rgba(255,255,255,0.18), rgba(255,255,255,0.08));
+      border-color: rgba(255,255,255,0.24);
+    }
+
+    a.btn.secondary {
+      background: rgba(255,255,255,0.04);
+    }
+
+    a.btn:hover { transform: translateY(-2px); }
+  </style>
+</head>
+<body>
+  <canvas id="c"></canvas>
+
+  <div class="center">
+    <img class="logo" src="/images/Ahoy%20Indie%20Media%20-%20App%20Icon%20-%20May%2026.png" alt="Ahoy logo" />
+    <h1>404</h1>
+    <p>Looks like you sailed off the map. This page doesn't exist — but the platform does.</p>
+    <div class="actions">
+      <a class="btn primary" href="/">Back to shore</a>
+      <a class="btn secondary" href="/download.html">Download the app</a>
+    </div>
+  </div>
+
+  <script>
+    const canvas = document.getElementById('c');
+    const ctx = canvas.getContext('2d');
+    let W, H, stars = [];
+
+    function resize() {
+      W = canvas.width = window.innerWidth;
+      H = canvas.height = window.innerHeight;
+    }
+
+    function init() {
+      stars = Array.from({ length: 120 }, () => ({
+        x: Math.random() * W,
+        y: Math.random() * H,
+        r: Math.random() * 1.6 + 0.3,
+        a: Math.random(),
+        speed: Math.random() * 0.004 + 0.001,
+        drift: (Math.random() - 0.5) * 0.15,
+      }));
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, W, H);
+      for (const s of stars) {
+        s.a += s.speed;
+        s.x += s.drift;
+        if (s.x > W + 4) s.x = -4;
+        if (s.x < -4) s.x = W + 4;
+        const alpha = (Math.sin(s.a) * 0.5 + 0.5) * 0.7 + 0.1;
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(180, 220, 255, ${alpha})`;
+        ctx.fill();
+      }
+      requestAnimationFrame(draw);
+    }
+
+    window.addEventListener('resize', () => { resize(); init(); });
+    resize();
+    init();
+    draw();
+  </script>
+</body>
+</html>
