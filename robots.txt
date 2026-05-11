@@ -3,7 +3,10 @@ Allow: /
 Allow: /newhaven
 Allow: /support
 Allow: /privacy
+Allow: /download
 Disallow: /ahoyApp
+Disallow: /workshop
+Disallow: /iS
 Disallow: /*.json$
 
 Sitemap: https://ahoy.ooo/sitemap.xml

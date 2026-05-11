@@ -4,6 +4,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WVDL9N1HDT"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-WVDL9N1HDT');</script>
   <title>Ahoy Indie Media | New Haven's Independent Streaming Platform</title>
   <meta name="description"
     content="Ahoy Indie Media is a New Haven streaming platform for independent music, podcasts, events, and films. Stream ad-free and support creators directly." />
@@ -19,30 +21,67 @@
   <meta property="og:description"
     content="Discover independent music, podcasts, events, and films from New Haven. Stream ad-free and support creators directly." />
   <meta property="og:image" content="https://ahoy.ooo/images/github-app-preview.jpg" />
+  <meta property="og:image:width" content="1446" />
+  <meta property="og:image:height" content="1484" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Ahoy Indie Media | New Haven's Independent Streaming Platform" />
   <meta name="twitter:description"
     content="Discover independent music, podcasts, events, and films from New Haven. Stream ad-free and support creators directly." />
   <meta name="twitter:image" content="https://ahoy.ooo/images/github-app-preview.jpg" />
   <link rel="icon" type="image/png" href="/images/Ahoy%20Indie%20Media%20-%20App%20Icon%20-%20May%2026.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/ahoyApp/www/resources/icons/ios/180.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/Ahoy%20Indie%20Media%20-%20App%20Icon%20-%20May%2026.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
     rel="stylesheet" />
   <link href="https://fonts.cdnfonts.com/css/cubano?display=swap" rel="stylesheet" />
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Ahoy Indie Media",
-    "url": "https://ahoy.ooo/",
-    "email": "contact@littlemarket.org",
-    "description": "Ahoy Indie Media is a New Haven streaming platform for independent music, podcasts, events, and films.",
-    "sameAs": [
-      "https://github.com/oooAHOYooo"
-    ]
-  }
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Ahoy Indie Media",
+      "url": "https://ahoy.ooo/",
+      "email": "contact@littlemarket.org",
+      "description": "Ahoy Indie Media is a New Haven streaming platform for independent music, podcasts, events, and films.",
+      "sameAs": [
+        "https://github.com/oooAHOYooo"
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "MobileApplication",
+      "name": "Ahoy Indie Media",
+      "operatingSystem": "ANDROID",
+      "applicationCategory": "EntertainmentApplication",
+      "description": "Stream independent music, podcasts, events, and film from New Haven creators — ad-free.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "installUrl": "https://play.google.com/store/apps/details?id=ooo.ahoy.app"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Ahoy Indie Media",
+      "url": "https://ahoy.ooo/",
+      "email": "contact@littlemarket.org",
+      "description": "New Haven's independent streaming platform for local music, podcasts, events, and film — ad-free.",
+      "areaServed": {
+        "@type": "City",
+        "name": "New Haven",
+        "sameAs": "https://en.wikipedia.org/wiki/New_Haven,_Connecticut"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "New Haven",
+        "addressRegion": "CT",
+        "addressCountry": "US"
+      }
+    }
+  ]
   </script>
   <style>
     :root {
@@ -801,7 +840,7 @@
         </span>
       </a>
       <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-        <span>☰</span>
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><rect y="4" width="22" height="2" rx="1" fill="currentColor"/><rect y="10" width="22" height="2" rx="1" fill="currentColor"/><rect y="16" width="22" height="2" rx="1" fill="currentColor"/></svg>
       </button>
       <nav class="nav" id="nav-menu" aria-label="Primary">
         <a href="/download">Download</a>
@@ -825,9 +864,8 @@
             It is built to feel local, ad-free, and direct, with support flowing back to creators and communities.
           </p>
           <div class="hero-actions">
-            <a class="button primary" href="https://app.ahoy.ooo" target="_blank" rel="noopener noreferrer">Open the
-              App</a>
-            <a class="button secondary" href="/support">Support</a>
+            <a class="button primary" href="https://app.ahoy.ooo" target="_blank" rel="noopener noreferrer" onclick="gtag('event','open_app_click',{location:'homepage_hero'})">Open the App</a>
+            <a class="button secondary" href="/download" onclick="gtag('event','download_click',{location:'homepage_hero'})">Download</a>
           </div>
           <div class="hero-points" aria-label="Highlights">
             <span class="point">Ad-free</span>
@@ -936,17 +974,17 @@
         <section class="card gallery-section" id="gallery">
 
           <div class="gallery-grid">
-            <div class="gallery-item"><img src="/images/product-imgs-may-26/1.png" alt="Ahoy App Screen 1"
+            <div class="gallery-item"><img src="/images/product-imgs-may-26/1.png" alt="Ahoy app home feed showing independent music from New Haven artists"
                 loading="lazy" decoding="async"></div>
-            <div class="gallery-item"><img src="/images/product-imgs-may-26/2.png" alt="Ahoy App Screen 2"
+            <div class="gallery-item"><img src="/images/product-imgs-may-26/2.png" alt="Ahoy app music tab browsing local New Haven indie tracks"
                 loading="lazy" decoding="async"></div>
-            <div class="gallery-item"><img src="/images/product-imgs-may-26/3.png" alt="Ahoy App Screen 3"
+            <div class="gallery-item"><img src="/images/product-imgs-may-26/3.png" alt="Ahoy app podcast screen featuring New Haven creators"
                 loading="lazy" decoding="async"></div>
-            <div class="gallery-item"><img src="/images/product-imgs-may-26/5.png" alt="Ahoy App Screen 5"
+            <div class="gallery-item"><img src="/images/product-imgs-may-26/5.png" alt="Ahoy app events listing for local New Haven shows"
                 loading="lazy" decoding="async"></div>
-            <div class="gallery-item"><img src="/images/product-imgs-may-26/6.png" alt="Ahoy App Screen 6"
+            <div class="gallery-item"><img src="/images/product-imgs-may-26/6.png" alt="Ahoy app artist profile page for an independent New Haven musician"
                 loading="lazy" decoding="async"></div>
-            <div class="gallery-item"><img src="/images/product-imgs-may-26/7.png" alt="Ahoy App Screen 7"
+            <div class="gallery-item"><img src="/images/product-imgs-may-26/7.png" alt="Ahoy app film and video tab streaming local independent films"
                 loading="lazy" decoding="async"></div>
           </div>
         </section>
@@ -954,7 +992,9 @@
 
     <div class="lightbox" id="lightbox">
       <div class="lightbox-content">
-        <button class="lightbox-close" id="lightbox-close">&times;</button>
+        <button class="lightbox-close" id="lightbox-close" aria-label="Close">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><line x1="2" y1="2" x2="18" y2="18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="18" y1="2" x2="2" y2="18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+        </button>
         <img id="lightbox-img" src="" alt="Enlarged view">
       </div>
     </div>
@@ -963,6 +1003,7 @@
       <div>Made in New Haven by <a href="https://littlemarket.org" target="_blank" rel="noopener noreferrer">Little
           Market</a></div>
       <div style="display: flex; gap: 20px;">
+        <a href="/download">Download</a>
         <a href="/support">Support</a>
         <a href="/privacy">Privacy</a>
       </div>
