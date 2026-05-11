@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WVDL9N1HDT"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-WVDL9N1HDT');</script>
+  <title>Join Ahoy Indie Media — iOS Early Access & Waitlist</title>
+  <meta name="description" content="Sign up for early access to Ahoy Indie Media on iOS. Share your name, email, and anything we should know to get you set up." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#08111f" />
+  <link rel="canonical" href="https://ahoy.ooo/join" />
+  <link rel="icon" type="image/png" href="/images/Ahoy%20Indie%20Media%20-%20App%20Icon%20-%20May%2026.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/Ahoy%20Indie%20Media%20-%20App%20Icon%20-%20May%2026.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ahoy.ooo/join" />
+  <meta property="og:title" content="Join Ahoy Indie Media" />
+  <meta property="og:description" content="Sign up for early access to Ahoy on iOS. We'll get you set up personally." />
+  <meta property="og:image" content="https://ahoy.ooo/images/github-app-preview.jpg" />
+  <meta property="og:image:width" content="1446" />
+  <meta property="og:image:height" content="1484" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Join Ahoy Indie Media" />
+  <meta name="twitter:description" content="Sign up for early access to Ahoy on iOS. We'll get you set up personally." />
+  <meta name="twitter:image" content="https://ahoy.ooo/images/github-app-preview.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.cdnfonts.com/css/cubano" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #08111f;
+      --panel: rgba(11, 22, 38, 0.72);
+      --panel-border: rgba(135, 186, 255, 0.18);
+      --text: #ffffff;
+      --muted: rgba(255, 255, 255, 0.68);
+      --shadow: 0 24px 60px rgba(0, 0, 0, 0.34);
+      --accent: #64b4ff;
+    }
+
+    html, body {
+      min-height: 100%;
+      background:
+        radial-gradient(1000px 700px at 20% 0%, rgba(127, 192, 255, 0.15), transparent 55%),
+        radial-gradient(600px 400px at 85% 20%, rgba(255, 255, 255, 0.06), transparent 52%),
+        linear-gradient(180deg, #08111f 0%, #050914 100%);
+      color: var(--text);
+      font-family: "IBM Plex Sans", system-ui, sans-serif;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: linear-gradient(180deg, rgba(0,0,0,0.72), transparent 90%);
+      opacity: 0.35;
+    }
+
+    .page {
+      position: relative;
+      z-index: 1;
+      width: min(680px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 18px 0 60px;
+    }
+
+    /* Topbar */
+    .topbar {
+      position: sticky;
+      top: 12px;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 14px 16px;
+      margin-bottom: 48px;
+      border: 1px solid var(--panel-border);
+      border-radius: 20px;
+      background: rgba(6, 12, 22, 0.68);
+      backdrop-filter: blur(16px);
+      box-shadow: var(--shadow);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .brand img {
+      height: 36px;
+      width: auto;
+      border-radius: 10px;
+    }
+
+    .brand strong {
+      font-family: "Cubano", sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 0.9rem;
+      opacity: 0.72;
+      transition: opacity 0.2s;
+    }
+
+    .nav-links a:hover { opacity: 1; }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      padding: 8px;
+      line-height: 1;
+    }
+
+    .nav-links.active {
+      display: flex;
+      position: absolute;
+      top: calc(100% + 12px);
+      right: 0;
+      min-width: 200px;
+      background: rgba(6, 12, 22, 0.95);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--panel-border);
+      border-radius: 16px;
+      padding: 8px 0;
+      flex-direction: column;
+      z-index: 100;
+    }
+
+    .nav-links.active a {
+      padding: 12px 18px;
+      display: block;
+      opacity: 0.86;
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .hero img {
+      width: 80px;
+      height: 80px;
+      border-radius: 20px;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.5);
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-family: "Cubano", sans-serif;
+      font-size: clamp(2.2rem, 6vw, 3.4rem);
+      letter-spacing: 0.03em;
+      line-height: 1.05;
+      margin-bottom: 14px;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      max-width: 46ch;
+      margin: 0 auto 20px;
+    }
+
+    /* TestFlight banner */
+    .testflight-banner {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: rgba(100, 180, 255, 0.1);
+      border: 1px solid rgba(100, 180, 255, 0.28);
+      color: var(--accent);
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s;
+      margin-bottom: 8px;
+    }
+
+    .testflight-banner:hover {
+      background: rgba(100, 180, 255, 0.18);
+    }
+
+    .testflight-banner svg { flex-shrink: 0; }
+
+    .testflight-note {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+
+    /* Card */
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--panel-border);
+      border-radius: 28px;
+      backdrop-filter: blur(16px);
+      box-shadow: var(--shadow);
+      padding: clamp(28px, 5vw, 48px);
+    }
+
+    .card h2 {
+      font-family: "Cubano", sans-serif;
+      font-size: 1.4rem;
+      letter-spacing: 0.02em;
+      margin-bottom: 6px;
+    }
+
+    .card-subtitle {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+
+    /* Form */
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 18px;
+    }
+
+    label {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.82);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    input, textarea {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--panel-border);
+      border-radius: 12px;
+      color: #fff;
+      font-family: "IBM Plex Sans", system-ui, sans-serif;
+      font-size: 1rem;
+      padding: 14px 16px;
+      transition: border-color 0.2s, background 0.2s;
+      outline: none;
+      width: 100%;
+    }
+
+    input::placeholder, textarea::placeholder {
+      color: rgba(255,255,255,0.3);
+    }
+
+    input:focus, textarea:focus {
+      border-color: rgba(100, 180, 255, 0.5);
+      background: rgba(255,255,255,0.07);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+      line-height: 1.6;
+    }
+
+    .submit-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      min-height: 52px;
+      margin-top: 8px;
+      padding: 0 24px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.28);
+      background: linear-gradient(180deg, rgba(255,255,255,0.22), rgba(255,255,255,0.1));
+      color: #fff;
+      font-family: "IBM Plex Mono", "IBM Plex Sans", monospace;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      transition: transform 0.18s ease, background 0.18s ease;
+    }
+
+    .submit-btn:hover { transform: translateY(-2px); }
+    .submit-btn:active { transform: none; }
+
+    /* Success state */
+    .success-message {
+      display: none;
+      text-align: center;
+      padding: 32px 0 8px;
+    }
+
+    .success-message h3 {
+      font-family: "Cubano", sans-serif;
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+    }
+
+    .success-message p {
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* Footer */
+    footer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 14px;
+      margin-top: 48px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    footer a { color: #fff; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .menu-toggle { display: block; }
+      .submit-btn { font-size: 0.95rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <header class="topbar">
+    <a class="brand" href="/">
+      <img src="/images/Ahoy%20Indie%20Media%20-%20App%20Icon%20-%20May%2026.png" alt="Ahoy Indie Media logo" fetchpriority="high" decoding="async" />
+      <strong>Ahoy Indie Media</strong>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><rect y="4" width="22" height="2" rx="1" fill="currentColor"/><rect y="10" width="22" height="2" rx="1" fill="currentColor"/><rect y="16" width="22" height="2" rx="1" fill="currentColor"/></svg>
+    </button>
+    <nav class="nav-links" id="nav-menu">
+      <a href="/">Home</a>
+      <a href="/download">Download</a>
+      <a href="/support">Support</a>
+      <a href="https://app.ahoy.ooo" target="_blank" rel="noopener noreferrer">Open App</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <img src="/images/Ahoy%20Indie%20Media%20-%20App%20Icon%20-%20May%2026.png" alt="Ahoy Indie Media" width="80" height="80" fetchpriority="high" decoding="async" />
+    <h1>Join Ahoy</h1>
+    <p>iOS is coming. Drop us your info and we'll get you set up personally — early access, account help, or just to say hello.</p>
+    <a class="testflight-banner" href="https://testflight.apple.com/join/XtbXJFZd" target="_blank" rel="noopener noreferrer" onclick="gtag('event','testflight_click',{location:'join_page'})">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+      Try on iOS via TestFlight
+    </a>
+    <div class="testflight-note">Full App Store release coming soon</div>
+  </div>
+
+  <div class="card">
+    <h2>Say hello</h2>
+    <p class="card-subtitle">Tell us a bit about yourself. We read every message and respond personally.</p>
+
+    <form id="join-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <div class="form-group">
+        <label for="name">Your name</label>
+        <input type="text" id="name" name="name" placeholder="Alex" required autocomplete="name" />
+      </div>
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email" />
+      </div>
+      <div class="form-group">
+        <label for="message">Anything else</label>
+        <textarea id="message" name="message" placeholder="What brought you here? Are you a listener, a creator, or just curious? Any questions about getting set up?"></textarea>
+      </div>
+      <input type="hidden" name="_subject" value="New Ahoy join request" />
+      <button type="submit" class="submit-btn">Send it →</button>
+    </form>
+
+    <div class="success-message" id="success-message">
+      <h3>You're in.</h3>
+      <p>Thanks for reaching out — we'll be in touch soon.<br />In the meantime, try the app at <a href="https://app.ahoy.ooo" target="_blank" rel="noopener noreferrer">app.ahoy.ooo</a>.</p>
+    </div>
+  </div>
+
+  <footer>
+    <div>Made in New Haven by <a href="https://littlemarket.org" target="_blank" rel="noopener noreferrer">Little Market</a></div>
+    <div style="display:flex;gap:20px;">
+      <a href="/download">Download</a>
+      <a href="/support">Support</a>
+      <a href="/privacy">Privacy</a>
+    </div>
+    <div>Copyright 2026 · Ahoy Indie Media</div>
+  </footer>
+
+</div>
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const nav = document.getElementById('nav-menu');
+  toggle?.addEventListener('click', () => {
+    const open = nav.classList.toggle('active');
+    toggle.setAttribute('aria-expanded', open);
+  });
+  document.addEventListener('click', (e) => {
+    if (!toggle?.contains(e.target) && !nav?.contains(e.target)) {
+      nav?.classList.remove('active');
+      toggle?.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  const form = document.getElementById('join-form');
+  const success = document.getElementById('success-message');
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = form.querySelector('.submit-btn');
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        form.style.display = 'none';
+        success.style.display = 'block';
+        gtag('event', 'join_form_submit', { location: 'join_page' });
+      } else {
+        btn.textContent = 'Something went wrong — try again';
+        btn.disabled = false;
+      }
+    } catch {
+      btn.textContent = 'Something went wrong — try again';
+      btn.disabled = false;
+    }
+  });
+</script>
+</body>
+</html>
