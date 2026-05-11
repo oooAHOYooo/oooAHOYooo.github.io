@@ -342,10 +342,116 @@
     footer a { color: #fff; text-decoration: none; }
     footer a:hover { text-decoration: underline; }
 
+    /* Platform cards */
+    .platforms {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .platform-card {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      padding: clamp(24px, 4vw, 36px);
+      border: 1px solid var(--panel-border);
+      border-radius: 28px;
+      background: var(--panel);
+      backdrop-filter: blur(16px);
+      box-shadow: var(--shadow);
+      text-decoration: none;
+      color: var(--text);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .platform-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 32px 72px rgba(0,0,0,0.45);
+    }
+
+    .platform-card.android { border-color: rgba(100, 220, 140, 0.28); }
+    .platform-card.android:hover { border-color: rgba(100, 220, 140, 0.5); }
+
+    .platform-card.web { border-color: rgba(135, 186, 255, 0.28); }
+    .platform-card.web:hover { border-color: rgba(135, 186, 255, 0.5); }
+
+    .platform-card.ios { border-color: rgba(200, 180, 255, 0.28); }
+    .platform-card.ios:hover { border-color: rgba(200, 180, 255, 0.5); }
+
+    .platform-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .android .platform-icon { background: rgba(100, 220, 140, 0.12); color: #7de8a0; }
+    .web .platform-icon { background: rgba(135, 186, 255, 0.12); color: #87baff; }
+    .ios .platform-icon { background: rgba(200, 180, 255, 0.12); color: #c8b4ff; }
+
+    .platform-body { flex: 1; min-width: 0; }
+
+    .platform-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .android .platform-tag { color: #7de8a0; }
+    .web .platform-tag { color: #87baff; }
+    .ios .platform-tag { color: #c8b4ff; }
+
+    .platform-body h3 {
+      font-family: "Cubano", sans-serif;
+      font-size: 1.3rem;
+      letter-spacing: 0.02em;
+      line-height: 1.1;
+      margin-bottom: 5px;
+    }
+
+    .platform-body p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.55;
+    }
+
+    .platform-arrow {
+      font-size: 1.5rem;
+      opacity: 0.5;
+      flex-shrink: 0;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+
+    .platform-card:hover .platform-arrow {
+      opacity: 1;
+      transform: translateX(4px);
+    }
+
+    .platforms-heading {
+      font-family: "Cubano", sans-serif;
+      font-size: 1.1rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-top: 48px;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
     @media (max-width: 600px) {
       .nav-links { display: none; }
       .menu-toggle { display: block; }
       .submit-btn { font-size: 0.95rem; }
+      .platform-card { gap: 16px; }
+      .platform-icon { width: 46px; height: 46px; border-radius: 12px; }
+      .platform-body h3 { font-size: 1.1rem; }
     }
   </style>
 </head>
@@ -404,6 +510,48 @@
       <h3>You're in.</h3>
       <p>Thanks for reaching out — we'll be in touch soon.<br />In the meantime, try the app at <a href="https://app.ahoy.ooo" target="_blank" rel="noopener noreferrer">app.ahoy.ooo</a>.</p>
     </div>
+  </div>
+
+  <p class="platforms-heading">Get the app</p>
+
+  <div class="platforms">
+
+    <a class="platform-card android" href="https://play.google.com/store/apps/details?id=ooo.ahoy.app&hl=en_US" target="_blank" rel="noopener noreferrer" onclick="gtag('event','download_click',{platform:'android',location:'join_page'})">
+      <div class="platform-icon">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.18 23.76a2 2 0 0 0 2.81.72l10.65-6.14-3.01-3.01-10.45 8.43zm16.4-10.61L16.12 11l-9.63-5.55a2 2 0 0 0-3.31 1.51v14.08l10.4-8.4 3 3.02 2.99-2.51zM20.45 9.5l-2.91-1.68-3.5 3.18 3.5 3.18 2.94-1.7a2 2 0 0 0 0-3.48l-.03.5z"/></svg>
+      </div>
+      <div class="platform-body">
+        <div class="platform-tag">Available now</div>
+        <h3>Ahoy for Android</h3>
+        <p>Download free on the Google Play Store and start streaming New Haven's independent scene today.</p>
+      </div>
+      <div class="platform-arrow">→</div>
+    </a>
+
+    <a class="platform-card web" href="https://app.ahoy.ooo" target="_blank" rel="noopener noreferrer" onclick="gtag('event','open_app_click',{location:'join_page'})">
+      <div class="platform-icon">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      </div>
+      <div class="platform-body">
+        <div class="platform-tag">Any device</div>
+        <h3>Open in your browser</h3>
+        <p>No download needed — stream Ahoy directly from app.ahoy.ooo on any phone, tablet, or computer.</p>
+      </div>
+      <div class="platform-arrow">→</div>
+    </a>
+
+    <a class="platform-card ios" href="https://testflight.apple.com/join/XtbXJFZd" target="_blank" rel="noopener noreferrer" onclick="gtag('event','testflight_click',{location:'join_page_bottom'})">
+      <div class="platform-icon">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+      </div>
+      <div class="platform-body">
+        <div class="platform-tag">Early access · iOS</div>
+        <h3>Get it on TestFlight</h3>
+        <p>iPhone users — join the beta now via Apple TestFlight. Full App Store release coming soon.</p>
+      </div>
+      <div class="platform-arrow">→</div>
+    </a>
+
   </div>
 
   <footer>
