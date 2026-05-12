@@ -453,7 +453,7 @@
       display: flex;
       gap: 10px;
       padding: 10px;
-      animation: marquee-scroll 6s linear infinite;
+      animation: marquee-scroll 14s linear infinite;
       width: max-content;
     }
 
@@ -464,6 +464,81 @@
     @keyframes marquee-scroll {
       0%   { transform: translateX(0); }
       100% { transform: translateX(-50%); }
+    }
+
+    @keyframes marquee-scroll-reverse {
+      0%   { transform: translateX(-50%); }
+      100% { transform: translateX(0); }
+    }
+
+    .aside-marquee-track.reverse {
+      animation-name: marquee-scroll-reverse;
+    }
+
+    .wide-marquee {
+      overflow: hidden;
+      margin: 32px 0 0;
+    }
+
+    .wide-marquee-track {
+      display: flex;
+      gap: 14px;
+      animation: marquee-scroll 22s linear infinite;
+      width: max-content;
+    }
+
+    .wide-marquee:hover .wide-marquee-track {
+      animation-play-state: paused;
+    }
+
+    .wide-marquee-track img {
+      height: 180px;
+      width: auto;
+      border-radius: 14px;
+      object-fit: cover;
+      flex-shrink: 0;
+      display: block;
+    }
+
+    .cta-section {
+      text-align: center;
+      padding: clamp(48px, 8vw, 96px) clamp(24px, 5vw, 64px);
+      background: linear-gradient(135deg, rgba(100, 180, 255, 0.07) 0%, rgba(157, 126, 255, 0.07) 100%);
+      border: 1px solid rgba(100, 180, 255, 0.15);
+      border-radius: 28px;
+      margin: 32px 0 0;
+    }
+
+    .cta-section .eyebrow {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #9d7eff;
+      margin-bottom: 16px;
+    }
+
+    .cta-section h2 {
+      font-family: "Cubano", sans-serif;
+      font-size: clamp(2.2rem, 6vw, 4rem);
+      line-height: 1.05;
+      letter-spacing: 0.03em;
+      color: #fff;
+      margin: 0 0 20px;
+    }
+
+    .cta-section p {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: rgba(255,255,255,0.65);
+      max-width: 520px;
+      margin: 0 auto 36px;
+      line-height: 1.6;
+    }
+
+    .cta-section .cta-actions {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
     }
 
     .aside-marquee-track img {
@@ -1041,6 +1116,43 @@
             </div>
           </div>
         </div>
+        <div class="wide-marquee" aria-hidden="true">
+          <div class="wide-marquee-track">
+            <img src="/images/getOn/cambellrice.png" alt="">
+            <img src="/images/product-imgs-may-26/1.png" alt="">
+            <img src="/images/updates/AhoyUpdates-JustinArena.png" alt="">
+            <img src="/images/product-imgs-may-26/2.png" alt="">
+            <img src="/images/SGCarlson-AhoyIndieMedia.png" alt="">
+            <img src="/images/product-imgs-may-26/3.png" alt="">
+            <img src="/images/getOn/jackgalvin.png" alt="">
+            <img src="/images/product-imgs-may-26/5.png" alt="">
+            <img src="/images/updates/AhoyUpdates-RiddleM.png" alt="">
+            <img src="/images/product-imgs-may-26/6.png" alt="">
+            <img src="/images/getOn/youthxl.png" alt="">
+            <img src="/images/product-imgs-may-26/7.png" alt="">
+            <img src="/images/ahoy_jake-custer.jpg" alt="">
+            <img src="/images/getOn/samueldylanwitch.png" alt="">
+            <img src="/images/Ahoy-Indie-Media---The-Rob-Show---Season-2---Episode-1---2023.jpg" alt="">
+            <img src="/images/updates/AhoyUpdates-YouthXL.png" alt="">
+            <img src="/images/getOn/cambellrice.png" alt="">
+            <img src="/images/product-imgs-may-26/1.png" alt="">
+            <img src="/images/updates/AhoyUpdates-JustinArena.png" alt="">
+            <img src="/images/product-imgs-may-26/2.png" alt="">
+            <img src="/images/SGCarlson-AhoyIndieMedia.png" alt="">
+            <img src="/images/product-imgs-may-26/3.png" alt="">
+            <img src="/images/getOn/jackgalvin.png" alt="">
+            <img src="/images/product-imgs-may-26/5.png" alt="">
+            <img src="/images/updates/AhoyUpdates-RiddleM.png" alt="">
+            <img src="/images/product-imgs-may-26/6.png" alt="">
+            <img src="/images/getOn/youthxl.png" alt="">
+            <img src="/images/product-imgs-may-26/7.png" alt="">
+            <img src="/images/ahoy_jake-custer.jpg" alt="">
+            <img src="/images/getOn/samueldylanwitch.png" alt="">
+            <img src="/images/Ahoy-Indie-Media---The-Rob-Show---Season-2---Episode-1---2023.jpg" alt="">
+            <img src="/images/updates/AhoyUpdates-YouthXL.png" alt="">
+          </div>
+        </div>
+
         <section class="card gallery-section" id="gallery">
 
           <div class="gallery-grid">
@@ -1068,6 +1180,16 @@
         <img id="lightbox-img" src="" alt="Enlarged view">
       </div>
     </div>
+
+    <section class="cta-section" aria-labelledby="cta-title">
+      <div class="eyebrow">New Haven indie media</div>
+      <h2 id="cta-title">Ready to listen?</h2>
+      <p>Stream music, podcasts, and live events from independent New Haven creators — ad-free, direct, and built for the community.</p>
+      <div class="cta-actions">
+        <a class="button primary" href="/join" onclick="gtag('event','open_app_click',{location:'homepage_cta'})">Join free</a>
+        <a class="button secondary" href="/download" onclick="gtag('event','download_click',{location:'homepage_cta'})">Download the app</a>
+      </div>
+    </section>
 
     <footer>
       <div>Made in New Haven by <a href="https://littlemarket.org" target="_blank" rel="noopener noreferrer">Little
