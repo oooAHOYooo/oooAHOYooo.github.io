@@ -253,14 +253,21 @@
       background: rgba(255, 255, 255, 0.08);
       border-radius: 10px;
     }
+.nav a.night-market-link {
+  color: #ff0060;
+  opacity: 0.9;
+  font-weight: 600;
+}
+.nav a.night-market-link:hover { opacity: 1; text-shadow: 0 0 10px rgba(255, 0, 96, 0.4); }
 
-    .menu-toggle {
-      display: none;
-      background: none;
-      border: none;
-      color: #fff;
-      cursor: pointer;
-      padding: 8px;
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 8px;
+}
       font-size: 1.5rem;
       line-height: 1;
     }
@@ -1016,11 +1023,11 @@
         <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><rect y="4" width="22" height="2" rx="1" fill="currentColor"/><rect y="10" width="22" height="2" rx="1" fill="currentColor"/><rect y="16" width="22" height="2" rx="1" fill="currentColor"/></svg>
       </button>
       <nav class="nav" id="nav-menu" aria-label="Primary">
-        <a href="/join">Join</a>
         <a href="/download">Download</a>
         <a href="/support">Support</a>
-        <a href="/privacy">Privacy</a>
-        <a href="/join">Open App</a>
+        <a href="/contact">Contact</a>
+        <a href="/nightmarket" class="night-market-link">Night Market</a>
+        <a href="https://app.ahoy.ooo" target="_blank" rel="noopener noreferrer">Open App</a>
       </nav>
     </header>
 
