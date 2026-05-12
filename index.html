@@ -475,29 +475,45 @@
       animation-name: marquee-scroll-reverse;
     }
 
+    .wide-marquee-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 32px 0 0;
+    }
+
     .wide-marquee {
       overflow: hidden;
-      margin: 32px 0 0;
     }
 
     .wide-marquee-track {
       display: flex;
-      gap: 14px;
+      gap: 10px;
       animation: marquee-scroll 22s linear infinite;
       width: max-content;
     }
+
+    .wide-marquee-track.offset-1 { animation-delay: -7s; }
+    .wide-marquee-track.offset-2 { animation-delay: -14s; animation-name: marquee-scroll-reverse; }
 
     .wide-marquee:hover .wide-marquee-track {
       animation-play-state: paused;
     }
 
     .wide-marquee-track img {
-      height: 180px;
+      height: 160px;
       width: auto;
-      border-radius: 14px;
+      border-radius: 12px;
       object-fit: cover;
       flex-shrink: 0;
       display: block;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .wide-marquee-track img:hover {
+      transform: scale(1.04);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.5);
     }
 
     .cta-section {
@@ -1116,40 +1132,66 @@
             </div>
           </div>
         </div>
-        <div class="wide-marquee" aria-hidden="true">
-          <div class="wide-marquee-track">
-            <img src="/images/getOn/cambellrice.png" alt="">
-            <img src="/images/product-imgs-may-26/1.png" alt="">
-            <img src="/images/updates/AhoyUpdates-JustinArena.png" alt="">
-            <img src="/images/product-imgs-may-26/2.png" alt="">
-            <img src="/images/SGCarlson-AhoyIndieMedia.png" alt="">
-            <img src="/images/product-imgs-may-26/3.png" alt="">
-            <img src="/images/getOn/jackgalvin.png" alt="">
-            <img src="/images/product-imgs-may-26/5.png" alt="">
-            <img src="/images/updates/AhoyUpdates-RiddleM.png" alt="">
-            <img src="/images/product-imgs-may-26/6.png" alt="">
-            <img src="/images/getOn/youthxl.png" alt="">
-            <img src="/images/product-imgs-may-26/7.png" alt="">
-            <img src="/images/ahoy_jake-custer.jpg" alt="">
-            <img src="/images/getOn/samueldylanwitch.png" alt="">
-            <img src="/images/Ahoy-Indie-Media---The-Rob-Show---Season-2---Episode-1---2023.jpg" alt="">
-            <img src="/images/updates/AhoyUpdates-YouthXL.png" alt="">
-            <img src="/images/getOn/cambellrice.png" alt="">
-            <img src="/images/product-imgs-may-26/1.png" alt="">
-            <img src="/images/updates/AhoyUpdates-JustinArena.png" alt="">
-            <img src="/images/product-imgs-may-26/2.png" alt="">
-            <img src="/images/SGCarlson-AhoyIndieMedia.png" alt="">
-            <img src="/images/product-imgs-may-26/3.png" alt="">
-            <img src="/images/getOn/jackgalvin.png" alt="">
-            <img src="/images/product-imgs-may-26/5.png" alt="">
-            <img src="/images/updates/AhoyUpdates-RiddleM.png" alt="">
-            <img src="/images/product-imgs-may-26/6.png" alt="">
-            <img src="/images/getOn/youthxl.png" alt="">
-            <img src="/images/product-imgs-may-26/7.png" alt="">
-            <img src="/images/ahoy_jake-custer.jpg" alt="">
-            <img src="/images/getOn/samueldylanwitch.png" alt="">
-            <img src="/images/Ahoy-Indie-Media---The-Rob-Show---Season-2---Episode-1---2023.jpg" alt="">
-            <img src="/images/updates/AhoyUpdates-YouthXL.png" alt="">
+        <div class="wide-marquee-wrap">
+          <div class="wide-marquee">
+            <div class="wide-marquee-track">
+              <img src="/images/getOn/cambellrice.png" alt="Campbell Rice">
+              <img src="/images/product-imgs-may-26/1.png" alt="Ahoy app">
+              <img src="/images/updates/AhoyUpdates-JustinArena.png" alt="Justin Arena">
+              <img src="/images/product-imgs-may-26/2.png" alt="Ahoy app">
+              <img src="/images/SGCarlson-AhoyIndieMedia.png" alt="SG Carlson">
+              <img src="/images/product-imgs-may-26/3.png" alt="Ahoy app">
+              <img src="/images/getOn/jackgalvin.png" alt="Jack Galvin">
+              <img src="/images/product-imgs-may-26/5.png" alt="Ahoy app">
+              <img src="/images/getOn/cambellrice.png" alt="Campbell Rice">
+              <img src="/images/product-imgs-may-26/1.png" alt="Ahoy app">
+              <img src="/images/updates/AhoyUpdates-JustinArena.png" alt="Justin Arena">
+              <img src="/images/product-imgs-may-26/2.png" alt="Ahoy app">
+              <img src="/images/SGCarlson-AhoyIndieMedia.png" alt="SG Carlson">
+              <img src="/images/product-imgs-may-26/3.png" alt="Ahoy app">
+              <img src="/images/getOn/jackgalvin.png" alt="Jack Galvin">
+              <img src="/images/product-imgs-may-26/5.png" alt="Ahoy app">
+            </div>
+          </div>
+          <div class="wide-marquee">
+            <div class="wide-marquee-track offset-1">
+              <img src="/images/updates/AhoyUpdates-RiddleM.png" alt="Riddle M">
+              <img src="/images/product-imgs-may-26/6.png" alt="Ahoy app">
+              <img src="/images/getOn/youthxl.png" alt="YouthXL">
+              <img src="/images/product-imgs-may-26/7.png" alt="Ahoy app">
+              <img src="/images/ahoy_jake-custer.jpg" alt="Jake Custer">
+              <img src="/images/getOn/samueldylanwitch.png" alt="Samuel Dylan Witch">
+              <img src="/images/Ahoy-Indie-Media---The-Rob-Show---Season-2---Episode-1---2023.jpg" alt="The Rob Show">
+              <img src="/images/updates/AhoyUpdates-YouthXL.png" alt="YouthXL">
+              <img src="/images/updates/AhoyUpdates-RiddleM.png" alt="Riddle M">
+              <img src="/images/product-imgs-may-26/6.png" alt="Ahoy app">
+              <img src="/images/getOn/youthxl.png" alt="YouthXL">
+              <img src="/images/product-imgs-may-26/7.png" alt="Ahoy app">
+              <img src="/images/ahoy_jake-custer.jpg" alt="Jake Custer">
+              <img src="/images/getOn/samueldylanwitch.png" alt="Samuel Dylan Witch">
+              <img src="/images/Ahoy-Indie-Media---The-Rob-Show---Season-2---Episode-1---2023.jpg" alt="The Rob Show">
+              <img src="/images/updates/AhoyUpdates-YouthXL.png" alt="YouthXL">
+            </div>
+          </div>
+          <div class="wide-marquee">
+            <div class="wide-marquee-track offset-2">
+              <img src="/images/product-imgs-may-26/7.png" alt="Ahoy app">
+              <img src="/images/getOn/cambellrice.png" alt="Campbell Rice">
+              <img src="/images/product-imgs-may-26/3.png" alt="Ahoy app">
+              <img src="/images/updates/AhoyUpdates-YouthXL.png" alt="YouthXL">
+              <img src="/images/product-imgs-may-26/1.png" alt="Ahoy app">
+              <img src="/images/ahoy_jake-custer.jpg" alt="Jake Custer">
+              <img src="/images/product-imgs-may-26/5.png" alt="Ahoy app">
+              <img src="/images/SGCarlson-AhoyIndieMedia.png" alt="SG Carlson">
+              <img src="/images/product-imgs-may-26/7.png" alt="Ahoy app">
+              <img src="/images/getOn/cambellrice.png" alt="Campbell Rice">
+              <img src="/images/product-imgs-may-26/3.png" alt="Ahoy app">
+              <img src="/images/updates/AhoyUpdates-YouthXL.png" alt="YouthXL">
+              <img src="/images/product-imgs-may-26/1.png" alt="Ahoy app">
+              <img src="/images/ahoy_jake-custer.jpg" alt="Jake Custer">
+              <img src="/images/product-imgs-may-26/5.png" alt="Ahoy app">
+              <img src="/images/SGCarlson-AhoyIndieMedia.png" alt="SG Carlson">
+            </div>
           </div>
         </div>
 
@@ -1178,6 +1220,7 @@
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><line x1="2" y1="2" x2="18" y2="18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="18" y1="2" x2="2" y2="18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
         </button>
         <img id="lightbox-img" src="" alt="Enlarged view">
+        <a id="lightbox-cta" class="button primary" href="https://app.ahoy.ooo" target="_blank" rel="noopener noreferrer" onclick="gtag('event','open_app_click',{location:'lightbox'})" style="margin-top:16px;display:inline-block;">Open in Ahoy</a>
       </div>
     </div>
 
@@ -1186,7 +1229,7 @@
       <h2 id="cta-title">Ready to listen?</h2>
       <p>Stream music, podcasts, and live events from independent New Haven creators — ad-free, direct, and built for the community.</p>
       <div class="cta-actions">
-        <a class="button primary" href="/join" onclick="gtag('event','open_app_click',{location:'homepage_cta'})">Join free</a>
+        <a class="button primary" href="https://app.ahoy.ooo/login" target="_blank" rel="noopener noreferrer" onclick="gtag('event','open_app_click',{location:'homepage_cta'})">Join free</a>
         <a class="button secondary" href="/download" onclick="gtag('event','download_click',{location:'homepage_cta'})">Download the app</a>
       </div>
     </section>
@@ -1236,14 +1279,19 @@
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
     const lightboxClose = document.getElementById('lightbox-close');
-    const galleryItems = document.querySelectorAll('.gallery-item img');
 
-    galleryItems.forEach(img => {
-      img.parentElement.addEventListener('click', () => {
-        lightboxImg.src = img.src;
-        lightbox.classList.add('active');
-        document.body.style.overflow = 'hidden';
-      });
+    const openLightbox = (src) => {
+      lightboxImg.src = src;
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    };
+
+    document.querySelectorAll('.gallery-item img').forEach(img => {
+      img.parentElement.addEventListener('click', () => openLightbox(img.src));
+    });
+
+    document.querySelectorAll('.wide-marquee-track img').forEach(img => {
+      img.addEventListener('click', () => openLightbox(img.src));
     });
 
     const closeLightbox = () => {
