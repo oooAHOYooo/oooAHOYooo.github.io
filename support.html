@@ -339,6 +339,42 @@
       opacity: 0.84;
     }
 
+    .faq-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 18px 0 24px;
+    }
+
+    .faq-nav a,
+    .solution-link {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 0 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      text-decoration: none;
+      font-size: 0.92rem;
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .faq-nav a:hover,
+    .faq-nav a:focus-visible,
+    .solution-link:hover,
+    .solution-link:focus-visible {
+      background: rgba(255, 255, 255, 0.11);
+      outline: none;
+    }
+
+    .faq details {
+      scroll-margin-top: 120px;
+    }
+
+    .faq details + details {
+      margin-top: 10px;
+    }
+
     details {
       margin-top: 14px;
       padding: 18px 18px 8px;
@@ -460,31 +496,46 @@
       <section class="card faq">
         <h2>FAQ</h2>
         <p>Here are the common questions we expect people to ask during review and day-to-day use.</p>
+        <div class="faq-nav" aria-label="FAQ links">
+          <a href="#faq-account">Create an account</a>
+          <a href="#faq-wallet">Wallet help</a>
+          <a href="#faq-shows">Find local shows</a>
+          <a href="#faq-contact">Contact support</a>
+          <a href="#faq-delete">Delete account</a>
+          <a href="#faq-data">Data collected</a>
+          <a href="#faq-privacy">Privacy policy</a>
+        </div>
 
-        <details>
+        <details id="faq-account">
           <summary>How do I create an account?</summary>
           <p>Open the app, choose Sign Up, and follow the prompts. If anything gets stuck, email
             contact@littlemarket.org.</p>
+          <a class="solution-link" href="https://app.ahoy.ooo" target="_blank" rel="noopener noreferrer">Open the app to
+            sign up</a>
         </details>
 
-        <details>
+        <details id="faq-wallet">
           <summary>How does the wallet work?</summary>
           <p>The wallet is the in-app balance used for support and purchases so fans can boost creators directly.</p>
+          <a class="solution-link" href="https://app.ahoy.ooo" target="_blank" rel="noopener noreferrer">Open the app to
+            review wallet balance</a>
         </details>
 
-        <details>
+        <details id="faq-shows">
           <summary>How do I find local shows?</summary>
           <p>Use the Events section in the app or the New Haven page to browse upcoming shows, venues, and schedules.
           </p>
+          <a class="solution-link" href="/newhaven">Go to the New Haven page</a>
         </details>
 
-        <details>
+        <details id="faq-contact">
           <summary>How do I contact you?</summary>
           <p>Email <a href="mailto:contact@littlemarket.org">contact@littlemarket.org</a> for support or general
             questions.</p>
+          <a class="solution-link" href="mailto:contact@littlemarket.org">Email support</a>
         </details>
 
-        <details>
+        <details id="faq-delete">
           <summary>How do I delete my account?</summary>
           <p>
             <strong>In the app:</strong> Go to Settings → Danger Zone → Delete Account. You'll need to confirm
@@ -494,9 +545,10 @@
             When you delete your account, we immediately remove your profile, saved music, playlists, wallet balance,
             and listening history. We retain transaction records for 7 years for tax/legal compliance.
           </p>
+          <a class="solution-link" href="mailto:contact@littlemarket.org">Request deletion by email</a>
         </details>
 
-        <details>
+        <details id="faq-data">
           <summary>What data do you collect?</summary>
           <p>
             We collect the following to provide the service:
@@ -508,11 +560,13 @@
           </ul>
           All data is encrypted in transit and stored securely in our database.
           </p>
+          <a class="solution-link" href="/privacy">Read the privacy policy</a>
         </details>
 
-        <details>
+        <details id="faq-privacy">
           <summary>Where is the privacy policy?</summary>
           <p>The current policy lives at <a href="/privacy">ahoy.ooo/privacy</a>.</p>
+          <a class="solution-link" href="/privacy">Open privacy policy</a>
         </details>
       </section>
 
