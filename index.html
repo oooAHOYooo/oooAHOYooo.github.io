@@ -442,6 +442,39 @@
       align-content: start;
     }
 
+    .aside-marquee {
+      overflow: hidden;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .aside-marquee-track {
+      display: flex;
+      gap: 10px;
+      padding: 10px;
+      animation: marquee-scroll 6s linear infinite;
+      width: max-content;
+    }
+
+    .aside-marquee:hover .aside-marquee-track {
+      animation-play-state: paused;
+    }
+
+    @keyframes marquee-scroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .aside-marquee-track img {
+      height: 90px;
+      width: auto;
+      border-radius: 10px;
+      object-fit: cover;
+      flex-shrink: 0;
+      display: block;
+    }
+
     .aside-card {
       padding: 18px;
       border-radius: 20px;
@@ -847,7 +880,7 @@
         <a href="/download">Download</a>
         <a href="/support">Support</a>
         <a href="/privacy">Privacy</a>
-        <a href="https://app.ahoy.ooo" target="_blank" rel="noopener noreferrer">Open App</a>
+        <a href="/join">Open App</a>
       </nav>
     </header>
 
@@ -855,7 +888,7 @@
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-main">
           <div class="eyebrow">Independent media from New Haven</div>
-          <a href="https://app.ahoy.ooo" target="_blank" rel="noopener noreferrer" class="hero-logo-link">
+          <a href="/join" class="hero-logo-link">
             <img class="hero-logo" src="/images/Ahoy%20Indie%20Media%20-%20App%20Icon%20-%20May%2026.png"
               alt="Ahoy Indie Media logo" width="1024" height="1024" decoding="async" fetchpriority="high" />
           </a>
@@ -865,7 +898,7 @@
             It is built to feel local, ad-free, and direct, with support flowing back to creators and communities.
           </p>
           <div class="hero-actions">
-            <a class="button primary" href="https://app.ahoy.ooo" target="_blank" rel="noopener noreferrer" onclick="gtag('event','open_app_click',{location:'homepage_hero'})">Open the App</a>
+            <a class="button primary" href="/join" onclick="gtag('event','open_app_click',{location:'homepage_hero'})">Join</a>
             <a class="button secondary" href="/download" onclick="gtag('event','download_click',{location:'homepage_hero'})">Download</a>
           </div>
           <div class="hero-points" aria-label="Highlights">
@@ -876,6 +909,42 @@
         </div>
 
         <aside class="hero-aside">
+          <div class="aside-marquee" aria-hidden="true">
+            <div class="aside-marquee-track">
+              <img src="/images/product-imgs-may-26/1.png" alt="">
+              <img src="/images/getOn/cambellrice.png" alt="">
+              <img src="/images/product-imgs-may-26/2.png" alt="">
+              <img src="/images/updates/AhoyUpdates-JustinArena.png" alt="">
+              <img src="/images/product-imgs-may-26/3.png" alt="">
+              <img src="/images/getOn/jackgalvin.png" alt="">
+              <img src="/images/product-imgs-may-26/5.png" alt="">
+              <img src="/images/SGCarlson-AhoyIndieMedia.png" alt="">
+              <img src="/images/product-imgs-may-26/6.png" alt="">
+              <img src="/images/updates/AhoyUpdates-RiddleM.png" alt="">
+              <img src="/images/product-imgs-may-26/7.png" alt="">
+              <img src="/images/getOn/youthxl.png" alt="">
+              <img src="/images/updates/AhoyUpdates-YouthXL.png" alt="">
+              <img src="/images/ahoy_jake-custer.jpg" alt="">
+              <img src="/images/getOn/samueldylanwitch.png" alt="">
+              <img src="/images/Ahoy-Indie-Media---The-Rob-Show---Season-2---Episode-1---2023.jpg" alt="">
+              <img src="/images/product-imgs-may-26/1.png" alt="">
+              <img src="/images/getOn/cambellrice.png" alt="">
+              <img src="/images/product-imgs-may-26/2.png" alt="">
+              <img src="/images/updates/AhoyUpdates-JustinArena.png" alt="">
+              <img src="/images/product-imgs-may-26/3.png" alt="">
+              <img src="/images/getOn/jackgalvin.png" alt="">
+              <img src="/images/product-imgs-may-26/5.png" alt="">
+              <img src="/images/SGCarlson-AhoyIndieMedia.png" alt="">
+              <img src="/images/product-imgs-may-26/6.png" alt="">
+              <img src="/images/updates/AhoyUpdates-RiddleM.png" alt="">
+              <img src="/images/product-imgs-may-26/7.png" alt="">
+              <img src="/images/getOn/youthxl.png" alt="">
+              <img src="/images/updates/AhoyUpdates-YouthXL.png" alt="">
+              <img src="/images/ahoy_jake-custer.jpg" alt="">
+              <img src="/images/getOn/samueldylanwitch.png" alt="">
+              <img src="/images/Ahoy-Indie-Media---The-Rob-Show---Season-2---Episode-1---2023.jpg" alt="">
+            </div>
+          </div>
           <div class="aside-card">
             <h2>What it is</h2>
             <p>
