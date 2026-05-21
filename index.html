@@ -12,7 +12,7 @@
       content="Ahoy Indie Media is a New Haven streaming platform for independent music, podcasts, events, and films. Stream ad-free and support creators directly." />
     <meta name="robots"
       content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-    <meta name="theme-color" content="#08111f" />
+    <meta name="theme-color" content="#010710" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style"
       content="black-translucent" />
@@ -98,15 +98,15 @@
     <style>
     :root {
       color-scheme: dark;
-      --bg: #08111f;
-      --bg-deep: #040814;
-      --panel: rgba(11, 22, 38, 0.72);
-      --panel-border: rgba(135, 186, 255, 0.18);
+      --bg: #010710;
+      --bg-deep: #00040a;
+      --panel: rgba(2, 10, 22, 0.85);
+      --panel-border: rgba(70, 130, 210, 0.16);
       --text: #ffffff;
       --muted: rgba(255, 255, 255, 0.82);
       --accent: #ffffff;
       --accent-soft: rgba(255, 255, 255, 0.1);
-      --shadow: 0 24px 60px rgba(0, 0, 0, 0.34);
+      --shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
     }
 
     * {
@@ -130,9 +130,9 @@
       margin: 0;
       min-height: 100%;
       background:
-        radial-gradient(1000px 700px at 20% 0%, rgba(127, 192, 255, 0.18), transparent 55%),
-        radial-gradient(700px 500px at 80% 15%, rgba(243, 182, 111, 0.12), transparent 52%),
-        linear-gradient(180deg, #08111f 0%, #050914 100%);
+        radial-gradient(1000px 700px at 20% 0%, rgba(30, 80, 170, 0.12), transparent 55%),
+        radial-gradient(700px 500px at 80% 15%, rgba(10, 40, 110, 0.08), transparent 52%),
+        linear-gradient(180deg, #010710 0%, #00040a 100%);
       color: var(--text);
       font-family: "IBM Plex Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       overflow-x: hidden;
@@ -149,6 +149,26 @@
       background-size: 44px 44px;
       mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.72), transparent 90%);
       opacity: 0.35;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      top: -20vh;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 900px;
+      height: 600px;
+      pointer-events: none;
+      background: radial-gradient(ellipse at center, rgba(255, 0, 96, 0.07) 0%, transparent 68%);
+      animation: orb-drift 12s ease-in-out infinite alternate;
+      z-index: 0;
+    }
+
+    @keyframes orb-drift {
+      0%   { transform: translateX(-55%) translateY(0px); opacity: 0.7; }
+      50%  { transform: translateX(-48%) translateY(30px); opacity: 1; }
+      100% { transform: translateX(-52%) translateY(-20px); opacity: 0.8; }
     }
 
     a {
@@ -265,12 +285,12 @@
       background: rgba(255, 255, 255, 0.08);
       border-radius: 10px;
     }
-.nav a.night-market-link {
+.nav a.newsletter-link {
   color: #ff0060;
   opacity: 0.9;
   font-weight: 600;
 }
-.nav a.night-market-link:hover { opacity: 1; text-shadow: 0 0 10px rgba(255, 0, 96, 0.4); }
+.nav a.newsletter-link:hover { opacity: 1; text-shadow: 0 0 10px rgba(255, 0, 96, 0.4); }
 
 .menu-toggle {
   display: none;
@@ -279,10 +299,9 @@
   color: #fff;
   cursor: pointer;
   padding: 8px;
+  font-size: 1.5rem;
+  line-height: 1;
 }
-      font-size: 1.5rem;
-      line-height: 1;
-    }
 
     .nav.active {
       display: flex;
@@ -291,7 +310,7 @@
       right: 0;
       margin-top: 8px;
       min-width: 200px;
-      background: rgba(6, 12, 22, 0.95);
+      background: rgba(2, 8, 18, 0.97);
       backdrop-filter: blur(16px);
       border: 1px solid var(--panel-border);
       border-radius: 16px;
@@ -350,16 +369,32 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 8px 12px;
+      padding: 8px 14px;
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      color: #fff;
+      background: rgba(255, 0, 96, 0.08);
+      border: 1px solid rgba(255, 0, 96, 0.28);
+      color: rgba(255, 120, 155, 0.95);
       font-family: "IBM Plex Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       font-size: 0.8rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       margin-bottom: 18px;
+    }
+
+    .eyebrow::before {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #ff0060;
+      box-shadow: 0 0 6px rgba(255, 0, 96, 0.8);
+      animation: dot-pulse 2.4s ease-in-out infinite;
+    }
+
+    @keyframes dot-pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: 0.4; transform: scale(0.7); }
     }
 
     .hero h1 {
@@ -403,38 +438,79 @@
     }
 
     .button {
+      position: relative;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       min-height: 48px;
-      padding: 0 18px;
+      padding: 0 22px;
       border-radius: 14px;
-      border: 1px solid rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.15);
       text-decoration: none;
       font-family: "IBM Plex Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       font-size: 0.94rem;
       font-weight: 600;
       letter-spacing: 0.02em;
       color: #fff;
-      transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+      backdrop-filter: blur(14px) saturate(1.4);
+      -webkit-backdrop-filter: blur(14px) saturate(1.4);
+      overflow: hidden;
+      transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+      z-index: 0;
+    }
+
+    .button::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.18);
+      transform: translateY(100%);
+      transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+      z-index: -1;
+      border-radius: inherit;
+    }
+
+    .button:hover::before {
+      transform: translateY(0);
     }
 
     .button:hover {
-      transform: translateY(-1px);
+      transform: translateY(-2px);
+      border-color: rgba(255, 255, 255, 0.32);
+      box-shadow: 0 8px 32px rgba(80, 140, 255, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.22);
     }
 
     .button.primary {
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.08));
-      border-color: rgba(255, 255, 255, 0.24);
+      background: linear-gradient(160deg, rgba(255, 0, 96, 0.72) 0%, rgba(200, 0, 70, 0.55) 100%);
+      border-color: rgba(255, 0, 96, 0.5);
+      box-shadow: inset 0 1px 0 rgba(255, 120, 160, 0.28), 0 4px 28px rgba(255, 0, 96, 0.28);
+      animation: btn-breathe 3.2s ease-in-out infinite;
+    }
+
+    .button.primary::before {
+      background: rgba(255, 0, 96, 0.55);
+    }
+
+    .button.primary:hover {
+      border-color: rgba(255, 0, 96, 0.75);
+      box-shadow: 0 8px 36px rgba(255, 0, 96, 0.42), inset 0 1px 0 rgba(255, 160, 180, 0.3);
+      animation: none;
+    }
+
+    @keyframes btn-breathe {
+      0%, 100% { box-shadow: inset 0 1px 0 rgba(255, 120, 160, 0.28), 0 4px 28px rgba(255, 0, 96, 0.28); }
+      50%       { box-shadow: inset 0 1px 0 rgba(255, 120, 160, 0.28), 0 6px 40px rgba(255, 0, 96, 0.48); }
     }
 
     .button.secondary {
       background: rgba(255, 255, 255, 0.04);
+      border-color: rgba(255, 255, 255, 0.10);
     }
 
     .button.strong {
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.08));
-      border-color: rgba(255, 255, 255, 0.24);
+      background: linear-gradient(160deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.06) 100%);
+      border-color: rgba(255, 255, 255, 0.22);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18), 0 4px 20px rgba(0, 0, 0, 0.3);
     }
 
     .hero-points {
@@ -445,13 +521,22 @@
     }
 
     .point {
-      padding: 10px 12px;
+      padding: 10px 14px;
       border-radius: 999px;
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid rgba(255, 255, 255, 0.1);
       color: #fff;
       font-size: 0.9rem;
       opacity: 0.9;
+      transition: background 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
+      cursor: default;
+    }
+
+    .point:hover {
+      background: rgba(255, 0, 96, 0.1);
+      border-color: rgba(255, 0, 96, 0.3);
+      transform: translateY(-2px);
+      opacity: 1;
     }
 
     .hero-aside {
@@ -532,7 +617,7 @@
 
     .wide-marquee-track img:hover {
       transform: scale(1.04);
-      box-shadow: 0 12px 32px rgba(0,0,0,0.5);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.5), 0 0 0 1px rgba(255, 0, 96, 0.25);
     }
 
     .cta-section {
@@ -1034,7 +1119,7 @@
     <div class="page">
       <header class="topbar">
         <a class="brand" href="https://app.ahoy.ooo" target="_blank"
-          rel="noopener noreferrer" aria-label="Open Ahoy App">
+          rel="noopener noreferrer" aria-label="Open Ahoy App App">
           <img
             src="/images/Ahoy%20Indie%20Media%20-%20App%20Icon%20-%20May%2026.png"
             alt="Ahoy Indie Media logo" / loading="lazy">
@@ -1055,7 +1140,7 @@
           <a href="/download">Download</a>
           <a href="/support">Support</a>
           <a href="/contact">Contact</a>
-          <a href="/nightmarket" class="night-market-link">Night Market</a>
+          <a href="mailto:contact@littlemarket.org?subject=Newsletter" class="newsletter-link">Newsletter</a>
           <a href="https://app.ahoy.ooo" target="_blank"
             rel="noopener noreferrer">Open App</a>
         </nav>
@@ -1065,7 +1150,7 @@
         <section class="hero" aria-labelledby="hero-title">
           <div class="hero-main">
             <div class="eyebrow">Independent media from New Haven</div>
-            <a href="/join" class="hero-logo-link">
+            <a href="https://app.ahoy.ooo" target="_blank" rel="noopener noreferrer" class="hero-logo-link">
               <img class="hero-logo"
                 src="/images/Ahoy%20Indie%20Media%20-%20App%20Icon%20-%20May%2026.png"
                 alt="Ahoy Indie Media logo" width="1024" height="1024"
@@ -1079,10 +1164,8 @@
               flowing back to creators and communities.
             </p>
             <div class="hero-actions">
-              <a class="button primary" href="/join"
-                onclick="gtag('event','open_app_click',{location:'homepage_hero'})">Join</a>
-              <a class="button secondary" href="/download"
-                onclick="gtag('event','download_click',{location:'homepage_hero'})">Download</a>
+              <a class="button primary" href="https://app.ahoy.ooo" target="_blank" rel="noopener noreferrer"
+                onclick="gtag('event','open_app_click',{location:'homepage_hero'})">Open Ahoy App</a>
             </div>
             <div class="hero-points" aria-label="Highlights">
               <span class="point">Ad-free</span>
@@ -1556,13 +1639,9 @@
           <p>Stream music, podcasts, and live events from independent New Haven
             creators — ad-free, direct, and built for the community.</p>
           <div class="cta-actions">
-            <a class="button primary" href="https://app.ahoy.ooo/login"
+            <a class="button primary" href="https://app.ahoy.ooo"
               target="_blank" rel="noopener noreferrer"
-              onclick="gtag('event','open_app_click',{location:'homepage_cta'})">Join
-              free</a>
-            <a class="button secondary" href="/download"
-              onclick="gtag('event','download_click',{location:'homepage_cta'})">Download
-              the app</a>
+              onclick="gtag('event','open_app_click',{location:'homepage_cta'})">Open Ahoy App</a>
           </div>
         </section>
 
@@ -1571,7 +1650,7 @@
               target="_blank" rel="noopener noreferrer">Little
               Market</a></div>
           <div style="display: flex; gap: 20px;">
-            <a href="/join">Join</a>
+            <a href="https://app.ahoy.ooo" target="_blank" rel="noopener noreferrer">Open App</a>
             <a href="/download">Download</a>
             <a href="/support">Support</a>
             <a href="/privacy">Privacy</a>
