@@ -649,6 +649,104 @@
       box-shadow: 0 12px 32px rgba(0,0,0,0.5), 0 0 0 1px rgba(255, 0, 96, 0.25);
     }
 
+    /* Newsletter section */
+    .newsletter-section {
+      text-align: center;
+      padding: clamp(48px, 8vw, 80px) clamp(24px, 5vw, 64px);
+      background: linear-gradient(135deg, rgba(255, 0, 96, 0.06) 0%, rgba(157, 126, 255, 0.08) 100%);
+      border: 1px solid rgba(255, 0, 96, 0.18);
+      border-radius: 28px;
+      margin: 32px 0 0;
+    }
+
+    .newsletter-section .eyebrow {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #ff6090;
+      margin-bottom: 16px;
+    }
+
+    .newsletter-section h2 {
+      font-family: "Cubano", sans-serif;
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      line-height: 1.05;
+      letter-spacing: 0.03em;
+      color: #fff;
+      margin: 0 0 14px;
+    }
+
+    .newsletter-section p {
+      font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+      color: rgba(255,255,255,0.6);
+      max-width: 440px;
+      margin: 0 auto 32px;
+      line-height: 1.6;
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .newsletter-form input[type="email"] {
+      flex: 1;
+      min-width: 220px;
+      padding: 14px 18px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 0, 96, 0.25);
+      border-radius: 12px;
+      color: #fff;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .newsletter-form input[type="email"]::placeholder {
+      color: rgba(255,255,255,0.35);
+    }
+
+    .newsletter-form input[type="email"]:focus {
+      border-color: rgba(255, 0, 96, 0.55);
+      background: rgba(255, 255, 255, 0.09);
+    }
+
+    .newsletter-form button[type="submit"] {
+      padding: 14px 24px;
+      background: #ff0060;
+      border: none;
+      border-radius: 12px;
+      color: #fff;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+      white-space: nowrap;
+    }
+
+    .newsletter-form button[type="submit"]:hover {
+      background: #e0004e;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 20px rgba(255, 0, 96, 0.4);
+    }
+
+    .newsletter-success {
+      display: none;
+      margin-top: 16px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.85rem;
+      color: #ff6090;
+      letter-spacing: 0.05em;
+    }
+
     .cta-section {
       text-align: center;
       padding: clamp(48px, 8vw, 96px) clamp(24px, 5vw, 64px);
@@ -1174,7 +1272,7 @@
           <a href="/download">Download</a>
           <a href="/support">Support</a>
           <a href="/contact">Contact</a>
-          <a href="mailto:contact@littlemarket.org?subject=Newsletter" class="newsletter-link">Newsletter</a>
+          <a href="#newsletter" class="newsletter-link">Newsletter</a>
           <a href="https://app.ahoy.ooo" target="_blank"
             rel="noopener noreferrer" class="nav-cta">Open App</a>
         </nav>
@@ -1659,6 +1757,29 @@
           </div>
         </div>
 
+        <section class="newsletter-section fade-up" id="newsletter" aria-labelledby="newsletter-title">
+          <div class="eyebrow">Stay in the loop</div>
+          <h2 id="newsletter-title">New Haven, in your inbox</h2>
+          <p>Drops, events, and local music from the Ahoy community — no noise, no ads.</p>
+          <form
+            class="newsletter-form"
+            action="https://formspree.io/f/YOUR_FORMSPREE_ID"
+            method="POST"
+            id="newsletter-form"
+          >
+            <input
+              type="email"
+              name="email"
+              placeholder="your@email.com"
+              required
+              autocomplete="email"
+              aria-label="Email address"
+            />
+            <button type="submit">Subscribe</button>
+          </form>
+          <div class="newsletter-success" id="newsletter-success">You're in. Welcome to Ahoy.</div>
+        </section>
+
         <section class="cta-section fade-up" aria-labelledby="cta-title">
           <div class="eyebrow">New Haven indie media</div>
           <h2 id="cta-title">Ready?</h2>
@@ -1747,6 +1868,24 @@
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
     }, { threshold: 0.1 });
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    const newsletterForm = document.getElementById('newsletter-form');
+    const newsletterSuccess = document.getElementById('newsletter-success');
+    newsletterForm?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const data = new FormData(newsletterForm);
+      try {
+        const res = await fetch(newsletterForm.action, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          newsletterForm.style.display = 'none';
+          newsletterSuccess.style.display = 'block';
+        }
+      } catch (_) {}
+    });
   </script>
     </body>
 
