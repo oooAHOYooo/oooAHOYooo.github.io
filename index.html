@@ -35,8 +35,9 @@
       content="Discover independent music, podcasts, events, and films from New Haven. Stream ad-free and support creators directly." />
     <meta name="twitter:image"
       content="https://ahoy.ooo/images/github-app-preview.jpg" />
+    <link rel="icon" type="image/png" href="/favicon.png" sizes="32x32" />
     <link rel="icon" type="image/png"
-      href="/images/Ahoy%20Indie%20Media%20-%20App%20Icon%20-%20May%2026.png" />
+      href="/images/Ahoy%20Indie%20Media%20-%20App%20Icon%20-%20May%2026.png" sizes="512x512" />
     <link rel="apple-touch-icon" sizes="180x180"
       href="/images/Ahoy%20Indie%20Media%20-%20App%20Icon%20-%20May%2026.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -291,6 +292,34 @@
   font-weight: 600;
 }
 .nav a.newsletter-link:hover { opacity: 1; text-shadow: 0 0 10px rgba(255, 0, 96, 0.4); }
+
+.nav a.nav-cta {
+  padding: 8px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: linear-gradient(160deg, rgba(255,255,255,0.12), rgba(255,255,255,0.05));
+  backdrop-filter: blur(10px);
+  opacity: 1;
+  font-weight: 600;
+  transition: background 0.22s ease, border-color 0.22s ease, transform 0.18s ease, box-shadow 0.22s ease;
+}
+.nav a.nav-cta:hover {
+  background: linear-gradient(160deg, rgba(255,255,255,0.2), rgba(255,255,255,0.1));
+  border-color: rgba(255,255,255,0.35);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(80,140,255,0.15);
+}
+
+/* scroll fade-in */
+.fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 .menu-toggle {
   display: none;
@@ -784,8 +813,9 @@
       flex: 0 0 auto;
       display: grid;
       place-items: center;
-      background: rgba(255, 255, 255, 0.08);
-      color: #fff;
+      background: rgba(255, 0, 96, 0.15);
+      border: 1px solid rgba(255, 0, 96, 0.35);
+      color: #ff6090;
       font-family: "IBM Plex Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       font-weight: 700;
       font-size: 0.9rem;
@@ -1142,7 +1172,7 @@
           <a href="/contact">Contact</a>
           <a href="mailto:contact@littlemarket.org?subject=Newsletter" class="newsletter-link">Newsletter</a>
           <a href="https://app.ahoy.ooo" target="_blank"
-            rel="noopener noreferrer">Open App</a>
+            rel="noopener noreferrer" class="nav-cta">Open App</a>
         </nav>
       </header>
 
@@ -1230,14 +1260,6 @@
               </p>
             </div>
             <div class="aside-card">
-              <h2>What to expect</h2>
-              <p>
-                Full platform home-coded app that will get better with time.
-                Dedicated community of artists and
-                developers. Local people trying to make.
-              </p>
-            </div>
-            <div class="aside-card">
               <h2>Need help?</h2>
               <p>
                 Use <a href="/support">Support</a> for common questions or email
@@ -1248,14 +1270,13 @@
           </aside>
         </section>
 
-        <section class="card section" id="about">
+        <section class="card section fade-up" id="about">
           <div class="section-header">
             <div>
               <h2>Built for local media</h2>
               <p>
-                The homepage keeps the New Haven story front and center:
-                independent work, direct support, and a clean
-                path to the app.
+                A platform built by New Haven people, for New Haven people —
+                independent work, no ads, and money that flows directly to creators.
               </p>
             </div>
           </div>
@@ -1280,7 +1301,7 @@
           </div>
         </section>
 
-        <section class="card section" id="how">
+        <section class="card section fade-up" id="how">
           <div class="section-header">
             <div>
               <h2>How it works</h2>
@@ -1299,8 +1320,9 @@
                 <div class="step">1</div>
                 <div>
                   <strong>Create an account</strong>
-                  <p>Open the app, login, and enjoy access tofeatures like
+                  <p>Open the app, sign in, and enjoy access to features like
                     saving content, creating playlists, and more.</p>
+
                 </div>
               </a>
               <a href="https://app.ahoy.ooo" target="_blank" rel="noopener"
@@ -1633,7 +1655,7 @@
           </div>
         </div>
 
-        <section class="cta-section" aria-labelledby="cta-title">
+        <section class="cta-section fade-up" aria-labelledby="cta-title">
           <div class="eyebrow">New Haven indie media</div>
           <h2 id="cta-title">Ready?</h2>
           <p>Stream music, podcasts, and live events from independent New Haven
@@ -1646,9 +1668,8 @@
         </section>
 
         <footer>
-          <div>Made in New Haven by <a href="https://littlemarket.org"
-              target="_blank" rel="noopener noreferrer">Little
-              Market</a></div>
+          <div>Made with care in New Haven by <a href="https://littlemarket.org"
+              target="_blank" rel="noopener noreferrer">Little Market</a></div>
           <div style="display: flex; gap: 20px;">
             <a href="https://app.ahoy.ooo" target="_blank" rel="noopener noreferrer">Open App</a>
             <a href="/download">Download</a>
@@ -1717,6 +1738,11 @@
     });
 
     lightbox?.addEventListener('click', closeLightbox);
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
   </script>
     </body>
 
