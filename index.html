@@ -1242,6 +1242,36 @@
         width: auto;
         height: 220px;
       }
+
+      .hero-main {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .hero-main .eyebrow {
+        align-self: center;
+      }
+
+      .hero-logo-link {
+        display: block;
+      }
+
+      .hero-logo {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-actions,
+      .hero-points {
+        justify-content: center;
+      }
     }
   </style>
   </head>
@@ -1298,6 +1328,8 @@
             <div class="hero-actions">
               <a class="button primary" href="https://app.ahoy.ooo" target="_blank" rel="noopener noreferrer"
                 onclick="gtag('event','open_app_click',{location:'homepage_hero'})">OPEN AHOY APP</a>
+              <a class="button secondary" href="https://play.google.com/store/apps/details?id=ooo.ahoy.app&pcampaignid=web_share" target="_blank" rel="noopener noreferrer"
+                onclick="gtag('event','android_download_click',{location:'homepage_hero'})">GET ON ANDROID</a>
             </div>
             <div class="hero-points" aria-label="Highlights">
               <span class="point">Ad-free</span>
@@ -1408,9 +1440,7 @@
             <div>
               <h2>How it works</h2>
               <p>
-                Sign up. Listen to music, podcasts, the radio, watch video and
-                live tv - all from indie creators. If you want to support you
-                could "boost" where all of the artists get all of the proceeds.
+                Sign up, explore music, podcasts, and live events from New Haven creators — all ad-free. Boost artists you love and every dollar goes directly to them.
               </p>
             </div>
           </div>
