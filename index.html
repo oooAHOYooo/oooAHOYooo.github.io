@@ -101,13 +101,13 @@
       color-scheme: dark;
       --bg: #010710;
       --bg-deep: #00040a;
-      --panel: rgba(2, 10, 22, 0.85);
-      --panel-border: rgba(70, 130, 210, 0.16);
+      --panel: rgba(1, 6, 16, 0.88);
+      --panel-border: rgba(70, 130, 210, 0.18);
       --text: #ffffff;
       --muted: rgba(255, 255, 255, 0.82);
       --accent: #ffffff;
       --accent-soft: rgba(255, 255, 255, 0.1);
-      --shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
+      --shadow: 0 24px 60px rgba(0, 0, 0, 0.7);
     }
 
     * {
@@ -149,7 +149,6 @@
         linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
       background-size: 44px 44px;
       mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.72), transparent 90%);
-      opacity: 0.35;
     }
 
     body::after {
@@ -158,18 +157,58 @@
       top: -20vh;
       left: 50%;
       transform: translateX(-50%);
-      width: 900px;
-      height: 600px;
+      width: 1100px;
+      height: 700px;
       pointer-events: none;
-      background: radial-gradient(ellipse at center, rgba(255, 0, 96, 0.07) 0%, transparent 68%);
-      animation: orb-drift 12s ease-in-out infinite alternate;
+      background: radial-gradient(ellipse at center, rgba(255, 0, 96, 0.09) 0%, rgba(200, 0, 80, 0.04) 42%, transparent 68%);
+      animation: orb-drift 14s ease-in-out infinite alternate, orb-breathe 6s ease-in-out infinite;
       z-index: 0;
     }
 
     @keyframes orb-drift {
-      0%   { transform: translateX(-55%) translateY(0px); opacity: 0.7; }
-      50%  { transform: translateX(-48%) translateY(30px); opacity: 1; }
-      100% { transform: translateX(-52%) translateY(-20px); opacity: 0.8; }
+      0%   { transform: translateX(-55%) translateY(0px); }
+      50%  { transform: translateX(-47%) translateY(36px); }
+      100% { transform: translateX(-53%) translateY(-24px); }
+    }
+
+    @keyframes orb-breathe {
+      0%, 100% { opacity: 0.55; filter: blur(0px); }
+      50%       { opacity: 1;    filter: blur(2px); }
+    }
+
+    /* second ambient orb — deep blue, bottom-right */
+    .bg-orb-blue {
+      position: fixed;
+      bottom: -15vh;
+      right: -10vw;
+      width: 800px;
+      height: 600px;
+      border-radius: 50%;
+      pointer-events: none;
+      background: radial-gradient(ellipse at center, rgba(30, 80, 220, 0.09) 0%, rgba(10, 40, 140, 0.04) 48%, transparent 70%);
+      animation: orb-blue-drift 18s ease-in-out infinite alternate, orb-blue-breathe 8s ease-in-out infinite;
+      z-index: 0;
+    }
+
+    @keyframes orb-blue-drift {
+      0%   { transform: translate(0px, 0px); }
+      50%  { transform: translate(-60px, -40px); }
+      100% { transform: translate(30px, -20px); }
+    }
+
+    @keyframes orb-blue-breathe {
+      0%, 100% { opacity: 0.5; }
+      50%       { opacity: 1; }
+    }
+
+    /* grid overlay breathes */
+    body::before {
+      animation: grid-breathe 10s ease-in-out infinite;
+    }
+
+    @keyframes grid-breathe {
+      0%, 100% { opacity: 0.28; }
+      50%       { opacity: 0.45; }
     }
 
     a {
@@ -220,9 +259,15 @@
       margin-bottom: 18px;
       border: 1px solid var(--panel-border);
       border-radius: 20px;
-      background: rgba(6, 12, 22, 0.68);
-      backdrop-filter: blur(16px);
-      box-shadow: var(--shadow);
+      background: rgba(2, 6, 14, 0.78);
+      backdrop-filter: blur(20px) saturate(1.5);
+      box-shadow: var(--shadow), inset 0 1px 0 rgba(255,255,255,0.07);
+      animation: topbar-breathe 10s ease-in-out infinite;
+    }
+
+    @keyframes topbar-breathe {
+      0%, 100% { border-color: rgba(70, 130, 210, 0.14); box-shadow: 0 24px 60px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.06); }
+      50%       { border-color: rgba(70, 130, 210, 0.26); box-shadow: 0 28px 70px rgba(0,0,0,0.75), inset 0 1px 0 rgba(255,255,255,0.11); }
     }
 
     .brand {
@@ -380,6 +425,12 @@
       padding: clamp(26px, 4vw, 44px);
       position: relative;
       overflow: hidden;
+      animation: panel-breathe 8s ease-in-out infinite;
+    }
+
+    @keyframes panel-breathe {
+      0%, 100% { box-shadow: 0 24px 60px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.06); }
+      50%       { box-shadow: 0 32px 80px rgba(0,0,0,0.75), inset 0 1px 0 rgba(255,255,255,0.12), 0 0 60px rgba(255,0,96,0.05); }
     }
 
     .hero-main::after {
@@ -858,8 +909,15 @@
     .feature {
       padding: 18px;
       border-radius: 20px;
-      background: rgba(255, 255, 255, 0.04);
+      background: rgba(255, 255, 255, 0.03);
       border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .feature:hover {
+      background: rgba(255, 255, 255, 0.055);
+      border-color: rgba(255, 255, 255, 0.14);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.1), 0 8px 24px rgba(0,0,0,0.4);
     }
 
     .feature h3 {
@@ -1277,6 +1335,7 @@
   </head>
 
   <body>
+    <div class="bg-orb-blue" aria-hidden="true"></div>
     <a class="skip-link" href="#main-content">Skip to main content</a>
     <div class="page">
       <header class="topbar">
