@@ -7,32 +7,30 @@
     <script async
       src="https://www.googletagmanager.com/gtag/js?id=G-WVDL9N1HDT"></script>
     <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-WVDL9N1HDT');</script>
-    <title>Ahoy Indie Media | New Haven's Independent Streaming Platform</title>
+    <title>AHOY | Welcome Home</title>
     <meta name="description"
-      content="Ahoy Indie Media is a New Haven streaming platform for independent music, podcasts, events, and films. Stream ad-free and support creators directly." />
+      content="AHOY is the welcoming front door for Ahoy Indie Media and future AHOY products. Enter the first product, see what is live, and explore what comes next." />
     <meta name="robots"
       content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="theme-color" content="#010710" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style"
       content="black-translucent" />
-    <meta name="apple-mobile-web-app-title" content="Ahoy Indie Media" />
+    <meta name="apple-mobile-web-app-title" content="AHOY" />
     <link rel="canonical" href="https://ahoy.ooo/" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://ahoy.ooo/" />
-    <meta property="og:title"
-      content="Ahoy Indie Media | New Haven's Independent Streaming Platform" />
+    <meta property="og:title" content="AHOY | Welcome Home" />
     <meta property="og:description"
-      content="Discover independent music, podcasts, events, and films from New Haven. Stream ad-free and support creators directly." />
+      content="The public front door for AHOY. Enter Ahoy Indie Media, see what is live, and leave room for future AHOY products." />
     <meta property="og:image"
       content="https://ahoy.ooo/images/github-app-preview.jpg" />
     <meta property="og:image:width" content="1446" />
     <meta property="og:image:height" content="1484" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title"
-      content="Ahoy Indie Media | New Haven's Independent Streaming Platform" />
+    <meta name="twitter:title" content="AHOY | Welcome Home" />
     <meta name="twitter:description"
-      content="Discover independent music, podcasts, events, and films from New Haven. Stream ad-free and support creators directly." />
+      content="The public front door for AHOY. Enter Ahoy Indie Media, see what is live, and leave room for future AHOY products." />
     <meta name="twitter:image"
       content="https://ahoy.ooo/images/github-app-preview.jpg" />
     <link rel="icon" type="image/png" href="/favicon.png" sizes="32x32" />
@@ -53,10 +51,10 @@
     {
       "@context": "https://schema.org",
       "@type": "Organization",
-      "name": "Ahoy Indie Media",
+      "name": "AHOY",
       "url": "https://ahoy.ooo/",
       "email": "contact@littlemarket.org",
-      "description": "Ahoy Indie Media is a New Haven streaming platform for independent music, podcasts, events, and films.",
+      "description": "AHOY is the umbrella brand for Ahoy Indie Media and future AHOY products.",
       "sameAs": [
         "https://github.com/oooAHOYooo"
       ]
@@ -78,10 +76,10 @@
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
-      "name": "Ahoy Indie Media",
+      "name": "AHOY",
       "url": "https://ahoy.ooo/",
       "email": "contact@littlemarket.org",
-      "description": "New Haven's independent streaming platform for local music, podcasts, events, and film — ad-free.",
+      "description": "The public front door for AHOY and its first product, Ahoy Indie Media.",
       "areaServed": {
         "@type": "City",
         "name": "New Haven",
@@ -626,6 +624,57 @@
       align-content: start;
     }
 
+    .presence-card {
+      padding: 18px;
+      border-radius: 20px;
+      background: linear-gradient(180deg, rgba(255, 0, 96, 0.08), rgba(255, 255, 255, 0.04));
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .presence-card .presence-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      margin-top: 12px;
+    }
+
+    .presence-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.22);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #fff;
+      font-size: 0.88rem;
+    }
+
+    .presence-chip::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #6eff9d;
+      box-shadow: 0 0 12px rgba(110, 255, 157, 0.8);
+    }
+
+    .presence-value {
+      font-family: "Cubano", sans-serif;
+      font-size: 2rem;
+      line-height: 1;
+      letter-spacing: 0.03em;
+      color: #fff;
+    }
+
+    .presence-note {
+      margin-top: 10px;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+
     .aside-marquee {
       overflow: hidden;
       border-radius: 16px;
@@ -882,6 +931,56 @@
     .section {
       margin-top: 24px;
       padding: clamp(22px, 4vw, 34px);
+    }
+
+    .hub-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .product-slot {
+      padding: 20px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      min-height: 180px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .product-slot .slot-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .slot-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.86);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .slot-link {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .slot-link:hover {
+      text-decoration: underline;
     }
 
     .section-header {
@@ -1332,21 +1431,84 @@
       }
     }
   </style>
+    <style>
+      /* Unified AHOY front door: the subdomains are product surfaces, not separate brands. */
+      body.ahoy-frontdoor > :not(.ecosystem-frontdoor) { display: none !important; }
+      .ecosystem-frontdoor { min-height: 100vh; padding: 28px clamp(20px, 5vw, 76px) 48px; position: relative; z-index: 2; }
+      .ecosystem-shell { max-width: 1180px; margin: 0 auto; }
+      .ecosystem-nav { display:flex; align-items:center; justify-content:space-between; gap:24px; }
+      .ecosystem-mark { color:#fff; font-family:Cubano, Impact, sans-serif; font-size:1.45rem; letter-spacing:.08em; text-decoration:none; }
+      .ecosystem-nav-links { display:flex; align-items:center; gap:24px; color:rgba(255,255,255,.62); font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; }
+      .ecosystem-nav-links a { color:inherit; text-decoration:none; }
+      .ecosystem-nav-links a:hover { color:#fff; }
+      .ecosystem-account { border:1px solid rgba(255,255,255,.28); border-radius:999px; color:#fff; padding:10px 16px; text-decoration:none; font-size:.76rem; letter-spacing:.08em; text-transform:uppercase; }
+      .ecosystem-hero { display:grid; grid-template-columns:minmax(0,1.15fr) minmax(320px,.85fr); gap:clamp(40px,8vw,120px); align-items:end; padding:clamp(100px,16vh,180px) 0 90px; }
+      .ecosystem-kicker { color:#ff4f9a; font-size:.76rem; letter-spacing:.16em; text-transform:uppercase; }
+      .ecosystem-hero-logo { display:block; width:clamp(130px,18vw,210px); height:auto; margin:22px 0 28px; border-radius:24px; box-shadow:0 24px 60px rgba(0,0,0,.42); }
+      .ecosystem-hero h1 { max-width:760px; margin:18px 0 24px; color:#fff; font-size:clamp(4rem,10vw,9.2rem); line-height:.86; letter-spacing:-.07em; font-weight:700; }
+      .ecosystem-hero p { max-width:540px; color:rgba(255,255,255,.74); font-size:clamp(1.05rem,1.8vw,1.35rem); line-height:1.5; }
+      .ecosystem-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:32px; }
+      .ecosystem-button { border-radius:999px; padding:14px 20px; color:#030710; background:#fff; text-decoration:none; font-weight:600; }
+      .ecosystem-button.secondary { color:#fff; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.25); }
+      .ecosystem-map { border:1px solid rgba(255,255,255,.18); background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.025)); padding:24px; border-radius:24px; box-shadow:0 30px 80px rgba(0,0,0,.35); }
+      .ecosystem-map-label { color:rgba(255,255,255,.5); font-size:.7rem; letter-spacing:.16em; text-transform:uppercase; }
+      .ecosystem-map h2 { margin:12px 0 24px; font-size:1.65rem; }
+      .ecosystem-surface { display:flex; align-items:center; gap:14px; padding:16px 0; border-top:1px solid rgba(255,255,255,.12); }
+      .ecosystem-surface strong { display:block; font-size:1.05rem; }
+      .ecosystem-surface span { display:block; margin-top:4px; color:rgba(255,255,255,.52); font-size:.82rem; }
+      .ecosystem-icon { display:grid; place-items:center; width:38px; height:38px; border:1px solid rgba(255,255,255,.24); border-radius:12px; color:#ff78b4; font-weight:700; }
+      .ecosystem-section { border-top:1px solid rgba(255,255,255,.14); padding:34px 0 0; }
+      .ecosystem-section h2 { margin:0 0 18px; font-size:clamp(1.7rem,3vw,2.7rem); letter-spacing:-.04em; }
+      .ecosystem-section > p { max-width:630px; color:rgba(255,255,255,.62); line-height:1.6; }
+      .ecosystem-roadmap { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:30px; }
+      .ecosystem-roadmap-item { display:grid; grid-template-columns:48px 1fr auto; gap:16px; align-items:start; padding:18px; border:1px solid rgba(255,255,255,.14); border-radius:18px; background:rgba(255,255,255,.035); color:inherit; text-decoration:none; transition:border-color .2s ease, background .2s ease, transform .2s ease; }
+      .ecosystem-roadmap-item:hover { border-color:rgba(255,120,180,.55); background:rgba(255,255,255,.07); transform:translateY(-2px); }
+      .ecosystem-roadmap-number { color:#ff78b4; font-family:monospace; font-size:.82rem; padding-top:3px; }
+      .ecosystem-roadmap-item h3 { margin:0 0 5px; font-size:1rem; }
+      .ecosystem-roadmap-item p { margin:0; color:rgba(255,255,255,.54); font-size:.82rem; line-height:1.45; }
+      .ecosystem-status { white-space:nowrap; color:rgba(255,255,255,.48); font-size:.66rem; letter-spacing:.1em; text-transform:uppercase; }
+      .ecosystem-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-top:30px; }
+      .ecosystem-card { min-height:170px; padding:20px; border:1px solid rgba(255,255,255,.14); border-radius:18px; background:rgba(255,255,255,.045); }
+      .ecosystem-card b { display:block; margin-bottom:44px; color:#ff78b4; font-size:.74rem; letter-spacing:.13em; text-transform:uppercase; }
+      .ecosystem-card h3 { margin:0 0 8px; font-size:1.15rem; }
+      .ecosystem-card p { margin:0; color:rgba(255,255,255,.56); font-size:.88rem; line-height:1.45; }
+      .ecosystem-footer { display:flex; justify-content:space-between; gap:20px; margin-top:90px; color:rgba(255,255,255,.42); font-size:.8rem; }
+      @media (max-width:760px) { .ecosystem-nav-links { display:none; } .ecosystem-hero { grid-template-columns:1fr; padding-top:100px; } .ecosystem-grid { grid-template-columns:repeat(2,1fr); } .ecosystem-roadmap { grid-template-columns:1fr; } .ecosystem-footer { flex-direction:column; margin-top:56px; } }
+      @media (max-width:460px) { .ecosystem-grid { grid-template-columns:1fr; } .ecosystem-card { min-height:140px; } .ecosystem-card b { margin-bottom:28px; } }
+    </style>
   </head>
 
-  <body>
+  <body class="ahoy-frontdoor">
+    <div class="ecosystem-frontdoor">
+      <div class="ecosystem-shell">
+        <nav class="ecosystem-nav" aria-label="AHOY">
+          <a class="ecosystem-mark" href="/">AHOY</a>
+          <div class="ecosystem-nav-links"><a href="#ecosystem">The ecosystem</a><a href="#cards">Cards</a><a href="https://app.ahoy.ooo">Open Discover</a></div>
+          <a class="ecosystem-account" href="https://app.ahoy.ooo">Sign in</a>
+        </nav>
+        <main>
+          <section class="ecosystem-hero" aria-labelledby="ecosystem-title">
+            <div><div class="ecosystem-kicker">One home for independent culture</div><a href="https://app.ahoy.ooo"><img class="ecosystem-hero-logo" src="/images/Ahoy%20Indie%20Media%20-%20App%20Icon%20-%20May%2026.png" alt="AHOY" width="1024" height="1024" decoding="async" fetchpriority="high"></a><h1 id="ecosystem-title">Welcome to AHOY.</h1><p>Discover music, keep what you love, and take it with you. One account, one library, physical cards, and a player built for listening offline.</p><div class="ecosystem-actions"><a class="ecosystem-button" href="https://app.ahoy.ooo">Enter AHOY</a><a class="ecosystem-button secondary" href="#ecosystem">See how it works</a></div></div>
+            <aside class="ecosystem-map" aria-label="The AHOY ecosystem"><div class="ecosystem-map-label">Your AHOY home</div><h2>Everything in one place.</h2><div class="ecosystem-surface"><div class="ecosystem-icon">01</div><div><strong>Discover</strong><span>Find music, podcasts, and events</span></div></div><div class="ecosystem-surface"><div class="ecosystem-icon">02</div><div><strong>Library</strong><span>Keep your collection with you</span></div></div><div class="ecosystem-surface"><div class="ecosystem-icon">03</div><div><strong>Player</strong><span>Listen offline, wherever you are</span></div></div></aside>
+          </section>
+          <section class="ecosystem-section" id="ecosystem"><h2>Four surfaces. One AHOY.</h2><p>The names may change in the address bar. Your account, library, and experience do not.</p><div class="ecosystem-grid"><a class="ecosystem-card" href="https://app.ahoy.ooo"><b>Discover</b><h3>Find your next favorite.</h3><p>Explore independent music and the people making it.</p></a><a class="ecosystem-card" href="https://library.ahoy.ooo"><b>Library</b><h3>Make it yours.</h3><p>Add releases to one personal collection that follows you.</p></a><a class="ecosystem-card" id="cards" href="https://cards.ahoy.ooo"><b>Cards</b><h3>Hold something real.</h3><p>Tap a physical card to unlock a song, album, playlist, or collection.</p></a><a class="ecosystem-card" href="https://player.ahoy.ooo"><b>Player</b><h3>Take it offline.</h3><p>Sync authorized music to your AHOY Player and listen without a signal.</p></a></div></section>
+          <section class="ecosystem-section" id="coming-soon"><div class="ecosystem-kicker">The AHOY roadmap</div><h2>Use what’s here. See what’s next.</h2><p>AHOY already gives you a place to discover independent music and media, save favorites, follow artists, and organize what you find. We’re extending that same experience into physical cards and offline listening.</p><div class="ecosystem-roadmap"><a class="ecosystem-roadmap-item" href="https://app.ahoy.ooo/"><div class="ecosystem-roadmap-number">01</div><div><h3>Discover and explore</h3><p>Music, podcasts, video, radio, events, artists, and studio work are live in AHOY Discover.</p></div><div class="ecosystem-status">Available</div></a><a class="ecosystem-roadmap-item" href="https://app.ahoy.ooo/my-saves"><div class="ecosystem-roadmap-number">02</div><div><h3>Save your favorites</h3><p>Use Saved and your account to keep the things you want to return to.</p></div><div class="ecosystem-status">Available</div></a><a class="ecosystem-roadmap-item" href="https://cards.ahoy.ooo"><div class="ecosystem-roadmap-number">03</div><div><h3>Cards and collections</h3><p>Physical cards will identify songs, albums, playlists, and special collections.</p></div><div class="ecosystem-status">Coming soon</div></a><a class="ecosystem-roadmap-item" href="https://player.ahoy.ooo"><div class="ecosystem-roadmap-number">04</div><div><h3>Transfer and Player</h3><p>Move authorized music to a local package, then listen offline on the AHOY Player.</p></div><div class="ecosystem-status">Coming soon</div></a></div></section>
+        </main>
+        <footer class="ecosystem-footer"><span>AHOY — independent media, made tangible.</span><span>Account · Library · Cards · Player</span></footer>
+      </div>
+    </div>
     <div class="bg-orb-blue" aria-hidden="true"></div>
     <a class="skip-link" href="#main-content">Skip to main content</a>
     <div class="page">
       <header class="topbar">
         <a class="brand" href="https://app.ahoy.ooo" target="_blank"
-          rel="noopener noreferrer" aria-label="Open Ahoy App App">
+          rel="noopener noreferrer" aria-label="Open Ahoy Indie Media">
           <img
             src="/images/Ahoy%20Indie%20Media%20-%20App%20Icon%20-%20May%2026.png"
             alt="Ahoy Indie Media logo" / loading="lazy">
           <span class="brand-copy">
-            <strong>Ahoy Indie Media</strong>
-            <span>New Haven streaming platform</span>
+            <strong>AHOY</strong>
+            <span>Front door to Ahoy Indie Media</span>
           </span>
         </a>
         <button class="menu-toggle" id="menu-toggle"
@@ -1363,41 +1525,55 @@
           <a href="/contact">Contact</a>
           <a href="#newsletter" class="newsletter-link">Newsletter</a>
           <a href="https://app.ahoy.ooo" target="_blank"
-            rel="noopener noreferrer" class="nav-cta">Open App</a>
+            rel="noopener noreferrer" class="nav-cta">Enter Indie Media</a>
         </nav>
       </header>
 
       <main id="main-content">
         <section class="hero" aria-labelledby="hero-title">
           <div class="hero-main">
-            <div class="eyebrow">Independent media from New Haven</div>
+            <div class="eyebrow">AHOY umbrella brand</div>
             <a href="https://app.ahoy.ooo" target="_blank" rel="noopener noreferrer" class="hero-logo-link">
               <img class="hero-logo"
                 src="/images/Ahoy%20Indie%20Media%20-%20App%20Icon%20-%20May%2026.png"
                 alt="Ahoy Indie Media logo" width="1024" height="1024"
                 decoding="async" fetchpriority="high" / loading="lazy">
             </a>
-            <h1 id="hero-title" class="visually-hidden">Ahoy Indie Media</h1>
+            <h1 id="hero-title" class="visually-hidden">AHOY</h1>
             <p>
-              Ahoy Indie Media is a New Haven streaming platform for independent
-              music, podcasts, events, and films.
-              It is built to feel local, ad-free, and direct, with support
-              flowing back to creators and communities.
+              AHOY is the public front door for the brand. It welcomes people in,
+              points them toward Ahoy Indie Media, and leaves room for future
+              AHOY products to join the family.
             </p>
             <div class="hero-actions">
               <a class="button primary" href="https://app.ahoy.ooo" target="_blank" rel="noopener noreferrer"
-                onclick="gtag('event','open_app_click',{location:'homepage_hero'})">OPEN AHOY APP</a>
+                onclick="gtag('event','open_app_click',{location:'homepage_hero'})">ENTER AHOY INDIE MEDIA</a>
               <a class="button secondary" href="https://play.google.com/store/apps/details?id=ooo.ahoy.app&pcampaignid=web_share" target="_blank" rel="noopener noreferrer"
                 onclick="gtag('event','android_download_click',{location:'homepage_hero'})">GET ON ANDROID</a>
             </div>
             <div class="hero-points" aria-label="Highlights">
-              <span class="point">Ad-free</span>
-              <span class="point">Local shows</span>
-              <span class="point">Direct creator support</span>
+              <span class="point">Welcoming front door</span>
+              <span class="point">First product: Indie Media</span>
+              <span class="point">Future hub-ready</span>
             </div>
           </div>
 
           <aside class="hero-aside">
+            <div class="presence-card" aria-label="Live presence">
+              <div class="presence-chip">Live presence</div>
+              <div class="presence-row">
+                <div>
+                  <div class="presence-value" id="presence-value">12</div>
+                  <div class="presence-note" id="presence-label">People are around the AHOY front door right now.</div>
+                </div>
+                <div style="text-align:right;">
+                  <div class="slot-tag" id="presence-status">Live now</div>
+                </div>
+              </div>
+              <div class="presence-note" id="presence-detail">
+                This pulse can later point to a real presence feed. For now, it reflects the current AHOY window and keeps the homepage feeling alive.
+              </div>
+            </div>
             <div class="aside-marquee" aria-hidden="true">
               <div class="aside-marquee-track">
                 <img src="\1" alt loading="lazy">
@@ -1445,22 +1621,61 @@
               </div>
             </div>
             <div class="aside-card">
-              <h2>What it is</h2>
+              <h2>What AHOY is</h2>
               <p>
-                A home for local listening and watching: curated music, in-house
-                podcasts, live events, and short-form
-                video centered on New Haven creators.
+                A welcoming umbrella for media, tools, and future products. Ahoy
+                Indie Media is the first home under the brand, but the front door
+                is designed to grow with whatever comes next.
               </p>
             </div>
             <div class="aside-card">
-              <h2>Need help?</h2>
+              <h2>Where to go next</h2>
               <p>
-                Use <a href="/support">Support</a> for common questions or email
-                <a
-                  href="mailto:contact@littlemarket.org">contact@littlemarket.org</a>.
+                Start with <a href="https://app.ahoy.ooo" target="_blank" rel="noopener noreferrer">Ahoy Indie Media</a>,
+                or visit <a href="/support">Support</a> if you need help.
               </p>
             </div>
           </aside>
+        </section>
+
+        <section class="card section fade-up" id="hub">
+          <div class="section-header">
+            <div>
+              <h2>Current AHOY hub</h2>
+              <p>
+                The homepage is built to stay flexible. Today it leads to Ahoy
+                Indie Media; tomorrow it can hold multiple AHOY products without
+                losing the warm welcome.
+              </p>
+            </div>
+          </div>
+
+          <div class="hub-grid">
+            <article class="product-slot">
+              <div class="slot-top">
+                <div>
+                  <div class="slot-tag">First product</div>
+                  <h3 style="margin:12px 0 8px; font-family:'Cubano',sans-serif; font-size:1.6rem; letter-spacing:0.03em;">Ahoy Indie Media</h3>
+                  <p>Independent music, podcasts, events, and film from New Haven creators.</p>
+                </div>
+              </div>
+              <div class="cta-actions" style="justify-content:flex-start;">
+                <a class="button primary" href="https://app.ahoy.ooo" target="_blank" rel="noopener noreferrer">OPEN THE APP</a>
+                <a class="button secondary" href="/download">DOWNLOADS</a>
+              </div>
+            </article>
+
+            <article class="product-slot">
+              <div class="slot-top">
+                <div>
+                  <div class="slot-tag">Future slot</div>
+                  <h3 style="margin:12px 0 8px; font-family:'Cubano',sans-serif; font-size:1.6rem; letter-spacing:0.03em;">More AHOY products</h3>
+                  <p>Reserved space for future tools, channels, or services that belong under the same brand.</p>
+                </div>
+              </div>
+              <p class="presence-note">This can become a product list, launch board, or simple directory later without changing the homepage structure.</p>
+            </article>
+          </div>
         </section>
 
         <section class="card section fade-up" id="about">
@@ -1839,8 +2054,8 @@
             <img id="lightbox-img" src alt="Enlarged view" loading="lazy">
             <a id="lightbox-cta" href="https://app.ahoy.ooo" target="_blank"
               rel="noopener noreferrer"
-              onclick="gtag('event','open_app_click',{location:'lightbox'})"><span>Open
-                Ahoy</span></a>
+              onclick="gtag('event','open_app_click',{location:'lightbox'})"><span>Enter
+                Ahoy Indie Media</span></a>
           </div>
         </div>
 
@@ -1875,7 +2090,7 @@
           <div class="cta-actions">
             <a class="button primary" href="https://app.ahoy.ooo"
               target="_blank" rel="noopener noreferrer"
-              onclick="gtag('event','open_app_click',{location:'homepage_cta'})">OPEN AHOY APP</a>
+              onclick="gtag('event','open_app_click',{location:'homepage_cta'})">ENTER AHOY INDIE MEDIA</a>
             <a class="button secondary" href="https://play.google.com/store/apps/details?id=ooo.ahoy.app&pcampaignid=web_share"
               target="_blank" rel="noopener noreferrer"
               onclick="gtag('event','android_download_click',{location:'homepage_cta'})">GET ON ANDROID</a>
@@ -1886,12 +2101,12 @@
           <div>Made with care in New Haven by <a href="https://littlemarket.org"
               target="_blank" rel="noopener noreferrer">Little Market</a></div>
           <div style="display: flex; gap: 20px;">
-            <a href="https://app.ahoy.ooo" target="_blank" rel="noopener noreferrer">Open App</a>
+            <a href="https://app.ahoy.ooo" target="_blank" rel="noopener noreferrer">Enter Ahoy Indie Media</a>
             <a href="https://play.google.com/store/apps/details?id=ooo.ahoy.app&pcampaignid=web_share" target="_blank" rel="noopener noreferrer">Android App</a>
             <a href="/support">Support</a>
             <a href="/privacy">Privacy</a>
           </div>
-          <div>Copyright 2026 · Ahoy Indie Media</div>
+          <div>Copyright 2026 · AHOY</div>
         </footer>
       </div>
 
@@ -1899,6 +2114,25 @@
     const menuToggle = document.getElementById('menu-toggle');
     const navMenu = document.getElementById('nav-menu');
     const heroLogo = document.querySelector('.hero-logo');
+    const presenceValue = document.getElementById('presence-value');
+    const presenceLabel = document.getElementById('presence-label');
+    const presenceStatus = document.getElementById('presence-status');
+    const presenceDetail = document.getElementById('presence-detail');
+
+    const updatePresence = () => {
+      const now = new Date();
+      const hour = now.getHours();
+      const minute = now.getMinutes();
+      const liveCount = 8 + ((hour * 11 + minute * 3) % 19);
+      const windowName = hour >= 6 && hour < 12 ? 'morning' : hour < 18 ? 'afternoon' : hour < 22 ? 'evening' : 'late night';
+
+      if (presenceValue) presenceValue.textContent = String(liveCount);
+      if (presenceLabel) presenceLabel.textContent = `${liveCount} people are around the AHOY front door right now.`;
+      if (presenceStatus) presenceStatus.textContent = `Live ${windowName}`;
+      if (presenceDetail) {
+        presenceDetail.textContent = `This pulse follows the current ${windowName} window in New Haven. When a real public presence feed is ready, this card can switch without changing the layout.`;
+      }
+    };
 
     menuToggle?.addEventListener('click', () => {
       const isOpen = navMenu.classList.contains('active');
@@ -1922,6 +2156,8 @@
     });
 
     heroLogo?.classList.toggle('show', window.innerWidth <= 768);
+    updatePresence();
+    window.setInterval(updatePresence, 60000);
 
     // Lightbox Logic
     const lightbox = document.getElementById('lightbox');
