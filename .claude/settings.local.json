@@ -4,7 +4,21 @@
       "Bash(git add *)",
       "Bash(git commit -m ' *)",
       "Bash(git push *)",
-      "Bash(git commit *)"
+      "Bash(git commit *)",
+      "Bash(python3 -c \"from PIL import Image; img = Image.open\\('/Users/agworkywork/oooAHOYooo.github.io/images/github-app-preview.jpg'\\); print\\(img.size\\)\")",
+      "Bash(python3 -c \"import struct,zlib; f=open\\('/Users/agworkywork/oooAHOYooo.github.io/images/github-app-preview.jpg','rb'\\).read\\(\\); print\\('jpg, checking...'\\); import subprocess; result=subprocess.run\\(['identify','/Users/agworkywork/oooAHOYooo.github.io/images/github-app-preview.jpg'],capture_output=True,text=True\\); print\\(result.stdout\\)\")",
+      "Bash(git -C /Users/agworkywork/oooAHOYooo.github.io add index.html)",
+      "Bash(git -C /Users/agworkywork/oooAHOYooo.github.io commit -m ' *)",
+      "Bash(git *)",
+      "Bash(python3 -m http.server 8000)",
+      "Bash(open http://localhost:8000)",
+      "Bash(python3 -m http.server 8000 --directory /Users/agworkywork/oooAHOYooo.github.io)",
+      "Bash(open -a \"Cursor\" /Users/agworkywork/oooAHOYooo.github.io/index.html)",
+      "Bash(open -a \"Visual Studio Code\" /Users/agworkywork/oooAHOYooo.github.io/index.html)",
+      "Bash(open /Users/agworkywork/oooAHOYooo.github.io/index.html)",
+      "Bash(perl -i -0pe 's/\\(<img\\\\b\\(?![^>]*loading=\\)[^>]*\\)\\(>\\)/$1 loading=\"lazy\"$2/g' /Users/agworkywork/oooAHOYooo.github.io/index.html)",
+      "Bash(python3 -c ' *)",
+      "Bash(sips -z 32 32 \"images/Ahoy Indie Media - App Icon - May 26.png\" --out /tmp/favicon32.png)"
     ]
   }
 }

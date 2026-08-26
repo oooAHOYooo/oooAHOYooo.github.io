@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AHOY</title>
+  <meta name="description" content="AHOY." />
+  <meta name="theme-color" content="#05070d" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #05070d;
+      --panel: rgba(12, 15, 24, 0.82);
+      --border: rgba(255, 255, 255, 0.08);
+      --text: #f5f7fb;
+      --muted: rgba(245, 247, 251, 0.68);
+      --accent: #ff0060;
+      --shadow: 0 28px 70px rgba(0, 0, 0, 0.42);
+    }
+
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      overflow: hidden;
+      background:
+        radial-gradient(900px 500px at 50% 10%, rgba(255, 0, 96, 0.08), transparent 58%),
+        linear-gradient(180deg, #02030a 0%, #05070d 100%);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.75), transparent 88%);
+    }
+
+    .wrap {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      perspective: 1200px;
+      perspective-origin: 50% 46%;
+    }
+
+    .home {
+      position: relative;
+      width: min(920px, 100%);
+      text-align: center;
+      padding: clamp(28px, 6vw, 72px);
+      transform-style: preserve-3d;
+    }
+
+    .mark {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 92px;
+      height: 92px;
+      border-radius: 28px;
+      margin-bottom: 16px;
+      transform: translateZ(180px);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 16px 36px rgba(255, 0, 96, 0.18);
+      overflow: hidden;
+    }
+
+    .mark img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(3rem, 7vw, 5.6rem);
+      letter-spacing: 0.14em;
+      line-height: 1;
+      text-transform: uppercase;
+      text-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+      transform: translateZ(140px);
+    }
+
+    .sub {
+      margin: 12px 0 0;
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: var(--muted);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      transform: translateZ(100px);
+    }
+
+    .search {
+      margin: 28px auto 0;
+      width: min(680px, 100%);
+      display: grid;
+      place-items: center;
+      gap: 10px;
+      padding: 18px 18px 20px;
+      border-radius: 28px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      transform: translateZ(60px);
+      overflow: hidden;
+      min-height: 160px;
+    }
+
+    .search .sail {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px 8px 12px 12px;
+      background: linear-gradient(160deg, rgba(255,255,255,0.95), rgba(255,255,255,0.72));
+      position: relative;
+      z-index: 2;
+      transform: translateY(-4px);
+      clip-path: polygon(50% 0%, 82% 20%, 100% 60%, 86% 100%, 14% 100%, 0% 60%, 18% 20%);
+      box-shadow: 0 0 16px rgba(255,255,255,0.55);
+    }
+
+    .wave3d {
+      position: relative;
+      width: min(540px, 92%);
+      height: 74px;
+      transform-style: preserve-3d;
+      transform: perspective(800px) rotateX(66deg) translateZ(14px);
+    }
+
+    .wave3d::before,
+    .wave3d::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 120%;
+      height: 26px;
+      border-radius: 999px;
+      transform: translate(-50%, -50%);
+      background:
+        radial-gradient(circle at 6% 50%, rgba(255,255,255,0.3) 0 3px, transparent 3.4px),
+        radial-gradient(circle at 14% 50%, rgba(255,255,255,0.3) 0 3px, transparent 3.4px),
+        radial-gradient(circle at 22% 50%, rgba(255,255,255,0.28) 0 3px, transparent 3.4px),
+        radial-gradient(circle at 30% 50%, rgba(255,255,255,0.28) 0 3px, transparent 3.4px),
+        radial-gradient(circle at 38% 50%, rgba(255,255,255,0.26) 0 3px, transparent 3.4px),
+        radial-gradient(circle at 46% 50%, rgba(255,255,255,0.26) 0 3px, transparent 3.4px),
+        radial-gradient(circle at 54% 50%, rgba(255,255,255,0.24) 0 3px, transparent 3.4px),
+        radial-gradient(circle at 62% 50%, rgba(255,255,255,0.24) 0 3px, transparent 3.4px),
+        radial-gradient(circle at 70% 50%, rgba(255,255,255,0.22) 0 3px, transparent 3.4px),
+        radial-gradient(circle at 78% 50%, rgba(255,255,255,0.22) 0 3px, transparent 3.4px),
+        radial-gradient(circle at 86% 50%, rgba(255,255,255,0.2) 0 3px, transparent 3.4px);
+      opacity: 0.9;
+      filter: blur(0.2px);
+      animation: wave-drift 4.5s linear infinite;
+    }
+
+    .wave3d::after {
+      top: 58%;
+      opacity: 0.45;
+      filter: blur(6px);
+      transform: translate(-50%, -50%) scale(1.08);
+      animation-direction: reverse;
+    }
+
+    .waveboat {
+      position: absolute;
+      left: 50%;
+      top: 46%;
+      width: 62px;
+      height: 40px;
+      transform: translateX(-50%) translateZ(36px) rotate(-6deg);
+      animation: boat-float 4.8s ease-in-out infinite;
+      z-index: 3;
+    }
+
+    .waveboat::before {
+      content: "";
+      position: absolute;
+      left: 7px;
+      bottom: 0;
+      width: 48px;
+      height: 16px;
+      background: linear-gradient(180deg, #ffb347, #e36b12);
+      clip-path: polygon(10% 40%, 90% 40%, 78% 100%, 22% 100%);
+      border-radius: 0 0 18px 18px;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.3);
+    }
+
+    .waveboat::after {
+      content: "";
+      position: absolute;
+      left: 24px;
+      bottom: 11px;
+      width: 2px;
+      height: 20px;
+      background: rgba(255,255,255,0.92);
+      box-shadow: 0 0 12px rgba(255,255,255,0.45);
+    }
+
+    .waveboat span {
+      position: absolute;
+      left: 26px;
+      bottom: 11px;
+      width: 0;
+      height: 0;
+      border-top: 0 solid transparent;
+      border-bottom: 16px solid transparent;
+      border-left: 24px solid rgba(255,255,255,0.96);
+      filter: drop-shadow(0 0 8px rgba(255,255,255,0.38));
+    }
+
+    .wave-words {
+      position: relative;
+      z-index: 2;
+      color: rgba(245, 247, 251, 0.86);
+      font-size: 0.95rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .cta {
+      margin: 24px auto 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 0 22px;
+      border-radius: 999px;
+      background: linear-gradient(160deg, rgba(255, 0, 96, 0.88), rgba(195, 0, 70, 0.76));
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      box-shadow: 0 14px 34px rgba(255, 0, 96, 0.22);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+      transform: translateZ(80px);
+    }
+
+    .cta:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 40px rgba(255, 0, 96, 0.3);
+    }
+
+    .pill-row {
+      margin-top: 22px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      transform: translateZ(30px);
+    }
+
+    .pill {
+      padding: 9px 13px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.04);
+      color: rgba(245,247,251,0.82);
+      font-size: 0.88rem;
+    }
+
+    .footer {
+      margin-top: 28px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      transform: translateZ(10px);
+    }
+
+    .footer a {
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .footer a:hover { text-decoration: underline; }
+
+    .starfield,
+    .starfield::before,
+    .starfield::after {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      content: "";
+    }
+
+    @keyframes wave-drift {
+      from { transform: translate(-50%, -50%) translateX(0); }
+      to { transform: translate(-50%, -50%) translateX(-10%); }
+    }
+
+    @keyframes boat-float {
+      0%, 100% { transform: translateX(-50%) translateY(0) translateZ(36px) rotate(-6deg); }
+      50% { transform: translateX(-50%) translateY(-6px) translateZ(42px) rotate(4deg); }
+    }
+
+    .starfield {
+      background:
+        radial-gradient(circle at 20% 30%, rgba(255,255,255,0.55) 0 1px, transparent 1.5px),
+        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.45) 0 1px, transparent 1.5px),
+        radial-gradient(circle at 40% 70%, rgba(255,255,255,0.5) 0 1px, transparent 1.5px),
+        radial-gradient(circle at 65% 55%, rgba(255,255,255,0.35) 0 1px, transparent 1.5px);
+      opacity: 0.6;
+      animation: drift 26s linear infinite;
+      transform: translateZ(-500px);
+    }
+
+    .starfield::before {
+      background:
+        radial-gradient(circle at 10% 10%, rgba(255,255,255,0.35) 0 1px, transparent 1.5px),
+        radial-gradient(circle at 30% 80%, rgba(255,255,255,0.42) 0 1px, transparent 1.5px),
+        radial-gradient(circle at 55% 25%, rgba(255,255,255,0.3) 0 1px, transparent 1.5px),
+        radial-gradient(circle at 92% 70%, rgba(255,255,255,0.4) 0 1px, transparent 1.5px);
+      opacity: 0.45;
+      animation: drift-reverse 40s linear infinite;
+    }
+
+    .starfield::after {
+      background:
+        radial-gradient(circle at 15% 55%, rgba(255, 0, 96, 0.22) 0 2px, transparent 2.5px),
+        radial-gradient(circle at 74% 38%, rgba(111, 157, 255, 0.22) 0 2px, transparent 2.5px);
+      opacity: 0.7;
+      animation: pulse 8s ease-in-out infinite;
+    }
+
+    .tunnel {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      transform-style: preserve-3d;
+      perspective: 1200px;
+    }
+
+    .tunnel-line {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: min(86vw, 1000px);
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+      transform-origin: center;
+      animation: tunnel-breathe 6s ease-in-out infinite;
+    }
+
+    .tunnel-line.one { transform: translate(-50%, -50%) rotateX(70deg) translateZ(-320px); }
+    .tunnel-line.two { transform: translate(-50%, -50%) rotateX(70deg) translateZ(-120px); opacity: 0.8; }
+    .tunnel-line.three { transform: translate(-50%, -50%) rotateX(70deg) translateZ(140px); opacity: 0.55; }
+    .tunnel-line.four { transform: translate(-50%, -50%) rotateX(70deg) translateZ(360px); opacity: 0.35; }
+
+    .crawl {
+      position: fixed;
+      left: 50%;
+      top: 62%;
+      width: min(82vw, 900px);
+      transform-style: preserve-3d;
+      transform: translateX(-50%) rotateX(68deg) translateZ(-240px);
+      transform-origin: center top;
+      animation: crawl 13s linear infinite;
+      pointer-events: none;
+      text-align: center;
+    }
+
+    .crawl .line {
+      margin: 18px 0;
+      font-size: clamp(1.2rem, 2.4vw, 2.2rem);
+      line-height: 1.25;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(245, 247, 251, 0.92);
+      text-shadow: 0 0 18px rgba(255,255,255,0.08);
+    }
+
+    .crawl .line.emphasis {
+      color: #ffcc66;
+      letter-spacing: 0.24em;
+    }
+
+    @keyframes crawl {
+      0% { opacity: 0; transform: translateX(-50%) rotateX(70deg) translateZ(260px) scale(1.1); }
+      8% { opacity: 1; }
+      100% { opacity: 1; transform: translateX(-50%) rotateX(70deg) translateZ(-1200px) scale(0.2); }
+    }
+
+    @keyframes tunnel-breathe {
+      0%, 100% { opacity: 0.25; }
+      50% { opacity: 0.7; }
+    }
+
+    @keyframes drift {
+      from { transform: translate3d(0, 0, -500px); }
+      to { transform: translate3d(0, -60px, -500px); }
+    }
+
+    @keyframes drift-reverse {
+      from { transform: translate3d(0, 0, -520px); }
+      to { transform: translate3d(0, 70px, -520px); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.45; }
+      50% { opacity: 0.9; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .starfield, .starfield::before, .starfield::after,
+      .tunnel-line, .crawl { animation: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="starfield" aria-hidden="true"></div>
+  <div class="tunnel" aria-hidden="true">
+    <div class="tunnel-line one"></div>
+    <div class="tunnel-line two"></div>
+    <div class="tunnel-line three"></div>
+    <div class="tunnel-line four"></div>
+  </div>
+  <div class="wrap">
+    <main class="home" aria-label="AHOY display">
+      <div class="mark" aria-hidden="true">
+        <img src="/images/ahoy-logo-red.png" alt="" />
+      </div>
+      <h1>AHOY</h1>
+      <p class="sub">Enter Indie Media</p>
+
+      <div class="search" aria-label="Live presence">
+        <div class="wave3d" aria-hidden="true">
+          <div class="waveboat"><span></span></div>
+        </div>
+        <div class="wave-words" id="presence">AHOY is afloat</div>
+      </div>
+
+      <a class="cta" href="https://app.ahoy.ooo" target="_blank" rel="noopener noreferrer">Open Ahoy Indie Media</a>
+
+      <div class="pill-row" aria-hidden="true">
+        <span class="pill">Music</span>
+        <span class="pill">Podcasts</span>
+        <span class="pill">Events</span>
+      </div>
+
+      <div class="footer">
+        <a href="/">Home</a> · <a href="/support">Support</a>
+      </div>
+    </main>
+  </div>
+
+  <div class="crawl" aria-hidden="true">
+    <div class="line">AHOY</div>
+    <div class="line">INDIE MEDIA</div>
+    <div class="line emphasis">ENTER</div>
+  </div>
+
+  <script>
+    const presence = document.getElementById('presence');
+    const updatePresence = () => {
+      const states = [
+        'AHOY is afloat',
+        'Sailing forward',
+        'On the wave',
+        'Indie Media ahead'
+      ];
+      const now = new Date();
+      presence.textContent = states[now.getMinutes() % states.length];
+    };
+    updatePresence();
+    window.setInterval(updatePresence, 60000);
+  </script>
+</body>
+</html>
