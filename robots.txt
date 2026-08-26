@@ -4,6 +4,8 @@ Allow: /newhaven
 Allow: /support
 Allow: /privacy
 Allow: /download
+Allow: /non-profit
+Disallow: /misc
 Disallow: /ahoyApp
 Disallow: /workshop
 Disallow: /iS

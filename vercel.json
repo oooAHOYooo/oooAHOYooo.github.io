@@ -68,6 +68,22 @@
       "destination": "/join.html"
     },
     {
+      "source": "/non-profit",
+      "destination": "/non-profit.html"
+    },
+    {
+      "source": "/non-profit/",
+      "destination": "/non-profit.html"
+    },
+    {
+      "source": "/misc",
+      "destination": "/misc.html"
+    },
+    {
+      "source": "/misc/",
+      "destination": "/misc.html"
+    },
+    {
       "source": "/scret-mission",
       "destination": "/scret-mission/index.html"
     },

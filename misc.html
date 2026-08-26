@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Misc · AHOY Working Documents</title>
+  <link rel="icon" type="image/png" href="/images/Ahoy%20Indie%20Media%20-%20App%20Icon%20-%20May%2026.png" />
+  <style>
+    :root { --ink:#17202b; --muted:#66717d; --paper:#f5f4ef; --line:#aeb6bd; --pink:#db367c; --blue:#2769a8; --green:#21835a; }
+    * { box-sizing:border-box; }
+    html,body { margin:0; min-height:100%; background:var(--paper); color:var(--ink); font:14px/1.55 ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace; }
+    body:before { content:""; position:fixed; inset:0; pointer-events:none; opacity:.34; background-image:linear-gradient(#1a273008 1px,transparent 1px),linear-gradient(90deg,#1a273008 1px,transparent 1px); background-size:28px 28px; }
+    .wrap { position:relative; width:min(900px,calc(100% - 32px)); margin:auto; padding:28px 0 70px; }
+    a { color:inherit; }
+    .top { display:flex; justify-content:space-between; gap:18px; margin-bottom:70px; color:var(--muted); font-size:10px; letter-spacing:.12em; text-transform:uppercase; }
+    .top a { color:var(--ink); text-decoration:none; }
+    .eyebrow { color:var(--pink); font-size:10px; letter-spacing:.18em; text-transform:uppercase; }
+    h1,h2,h3,p { margin:0; }
+    h1 { margin-top:12px; font:700 clamp(3rem,8vw,6rem)/.86 Arial,sans-serif; letter-spacing:-.1em; }
+    h2 { font:700 25px/1 Arial,sans-serif; letter-spacing:-.06em; }
+    .intro { display:flex; justify-content:space-between; align-items:end; gap:36px; margin-bottom:35px; }
+    .intro p { max-width:350px; color:var(--muted); font-size:12px; }
+    .panel { padding:25px; border:1px solid #88949d; background:#f8f7f2; box-shadow:8px 8px 0 #17202b18; }
+    .login { max-width:460px; margin:0 auto; }
+    label { display:block; margin:20px 0 7px; color:var(--muted); font-size:10px; letter-spacing:.12em; text-transform:uppercase; }
+    input { width:100%; padding:13px 14px; border:1px solid var(--ink); background:#fffefa; color:var(--ink); font:inherit; }
+    button { margin-top:14px; padding:12px 16px; border:1px solid var(--ink); background:var(--ink); color:#fff; font:700 11px/1 ui-monospace,SFMono-Regular,Menlo,monospace; letter-spacing:.08em; text-transform:uppercase; cursor:pointer; }
+    button:hover { background:#334354; }
+    .error { min-height:22px; margin-top:10px; color:#b21f57; font-size:11px; }
+    .note { margin-top:18px; color:var(--muted); font-size:11px; }
+    [hidden] { display:none !important; }
+    .directory { margin-top:35px; }
+    .directory-head { display:flex; justify-content:space-between; align-items:end; gap:20px; padding-bottom:12px; border-bottom:2px solid var(--ink); }
+    .directory-head p { max-width:420px; color:var(--muted); font-size:11px; }
+    .docs { display:grid; gap:12px; margin-top:18px; }
+    .doc { display:block; padding:18px; border:1px solid #8e9aa3; background:#fffefa; text-decoration:none; box-shadow:3px 3px 0 #17202b16; }
+    .doc:hover { border-color:var(--pink); transform:translate(-2px,-2px); }
+    .doc small { display:block; margin-bottom:7px; color:var(--green); font-size:9px; letter-spacing:.12em; text-transform:uppercase; }
+    .doc strong { display:block; font:700 18px/1 Arial,sans-serif; letter-spacing:-.04em; }
+    .doc p { margin-top:8px; color:var(--muted); font-size:11px; }
+    .doc code { display:block; margin-top:12px; color:var(--blue); font-size:9px; }
+    .workflow { margin-top:52px; padding-top:20px; border-top:1px solid var(--line); }
+    .workflow ol { margin:16px 0 0; padding-left:22px; }
+    .workflow li { margin:8px 0; color:var(--muted); font-size:12px; }
+    .workflow strong { color:var(--ink); }
+    footer { display:flex; justify-content:space-between; gap:18px; margin-top:55px; padding-top:18px; border-top:1px solid var(--line); color:var(--muted); font-size:10px; letter-spacing:.08em; text-transform:uppercase; }
+    @media(max-width:600px) { .top,.intro,.directory-head,footer { display:block; } .top span { display:block; margin-top:10px; } .intro p { margin-top:24px; } .directory-head p { margin-top:12px; } footer span { display:block; margin-top:8px; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="top"><a href="/">← AHOY</a><span>misc / working documents</span></header>
+
+    <main>
+      <section id="gate" class="panel login" aria-labelledby="gate-title">
+        <div class="eyebrow">Private working shelf</div>
+        <h1 id="gate-title">Misc.</h1>
+        <p class="note">Enter the working password to view the document directory.</p>
+        <form id="gate-form">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" inputmode="numeric" autocomplete="off" required />
+          <button type="submit">Enter directory →</button>
+          <div id="error" class="error" role="alert" aria-live="polite"></div>
+        </form>
+        <p class="note">This is a lightweight client-side gate for working drafts, not secure authentication. Do not place confidential or sensitive information here.</p>
+      </section>
+
+      <section id="directory" class="directory" hidden aria-labelledby="directory-title">
+        <div class="directory-head"><h2 id="directory-title" tabindex="-1">Working document directory</h2><p>These pages live in the AHOY public-site repository so they can be revised, reviewed, and linked while the product is being built.</p></div>
+        <div class="docs">
+          <a class="doc" href="/non-profit"><small>Proposal · public benefit</small><strong>AHOY as a public benefit</strong><p>White paper on a New Haven nonprofit successor, grant readiness, governance, programs, and the transition from the current business.</p><code>/non-profit.html</code></a>
+          <a class="doc" href="/secret-mission"><small>System map · private working document</small><strong>How AHOY fits together</strong><p>Working map of the AHOY repositories, products, content systems, ownership layer, and open technical decisions.</p><code>/secret-mission/index.html</code></a>
+          <a class="doc" href="https://github.com/oooAHOYooo/ahoy-player" target="_blank" rel="noopener noreferrer"><small>Experimental project · GitHub ↗</small><strong>AHOY Player</strong><p>Experimental player work for a shared AHOY playback experience across web, desktop, and device surfaces.</p><code>github.com/oooAHOYooo/ahoy-player</code></a>
+        </div>
+        <div class="workflow"><h2>Developing these documents through GitHub</h2><ol><li><strong>Edit the HTML in the repository.</strong> Each document is a versioned page instead of a separate Google Doc.</li><li><strong>Use a branch for meaningful changes.</strong> Name it for the work, such as <code>docs/nonprofit-revision</code>.</li><li><strong>Preview locally.</strong> Check the page at its real route, including mobile width, before sharing it.</li><li><strong>Open a pull request.</strong> Use the PR description to explain the change, intended audience, and any facts that still need verification.</li><li><strong>Merge the approved version.</strong> The public site deploys from the repository; the document history stays attached to the code and commit.</li></ol></div>
+      </section>
+    </main>
+
+    <footer><span>AHOY / private working shelf</span><span><a href="/non-profit">Nonprofit proposal</a> · <a href="/">Home</a></span></footer>
+  </div>
+  <script>
+    (function () {
+      var form = document.getElementById('gate-form');
+      var password = document.getElementById('password');
+      var error = document.getElementById('error');
+      var gate = document.getElementById('gate');
+      var directory = document.getElementById('directory');
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        if (password.value === '1234') {
+          gate.hidden = true;
+          directory.hidden = false;
+          password.value = '';
+          document.getElementById('directory-title').focus();
+        } else {
+          error.textContent = 'That password does not match.';
+          password.select();
+        }
+      });
+    }());
+  </script>
+</body>
+</html>

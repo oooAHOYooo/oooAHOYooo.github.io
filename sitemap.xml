@@ -21,6 +21,11 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://ahoy.ooo/non-profit</loc>
+    <lastmod>2026-08-26</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://ahoy.ooo/privacy</loc>
     <lastmod>2026-05-11</lastmod>
     <priority>0.4</priority>
