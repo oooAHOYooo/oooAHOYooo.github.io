@@ -66,6 +66,22 @@
     {
       "source": "/join/",
       "destination": "/join.html"
+    },
+    {
+      "source": "/scret-mission",
+      "destination": "/scret-mission/index.html"
+    },
+    {
+      "source": "/scret-mission/",
+      "destination": "/scret-mission/index.html"
+    },
+    {
+      "source": "/secret-mission",
+      "destination": "/secret-mission/index.html"
+    },
+    {
+      "source": "/secret-mission/",
+      "destination": "/secret-mission/index.html"
     }
   ]
 }

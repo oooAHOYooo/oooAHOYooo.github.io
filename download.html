@@ -192,6 +192,9 @@
     }
 
     .platform-card {
+      --card-accent: rgba(255,255,255,0.65);
+      position: relative;
+      isolation: isolate;
       border: 1px solid var(--panel-border);
       border-radius: 24px;
       background: var(--panel);
@@ -200,6 +203,29 @@
       overflow: hidden;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
+
+    .platform-card:not(.featured)::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto;
+      height: 4px;
+      background: var(--card-accent);
+      box-shadow: 0 0 24px var(--card-accent);
+      z-index: 1;
+    }
+
+    .platform-card:not(.featured)::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 100% 0%, var(--card-glow), transparent 46%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .ios-card { --card-accent: #aaa7ff; --card-glow: rgba(170,167,255,0.14); }
+    .mac-card { --card-accent: #ffae68; --card-glow: rgba(255,174,104,0.14); }
+    .linux-card { --card-accent: #ffd27a; --card-glow: rgba(255,210,122,0.12); }
 
     .platform-card:hover {
       transform: translateY(-4px);
@@ -211,6 +237,9 @@
       display: flex;
       flex-direction: column;
       gap: 14px;
+      min-height: 318px;
+      position: relative;
+      z-index: 2;
     }
 
     .platform-tag {
@@ -644,7 +673,7 @@
   <div class="hero">
     <img src="/images/Ahoy%20Indie%20Media%20-%20App%20Icon%20-%20May%2026.png" alt="Ahoy Indie Media" width="100" height="100" fetchpriority="high" decoding="async" />
     <h1>Download Ahoy</h1>
-    <p>Stream independent music, podcasts, events, and film from New Haven creators — ad-free, on every platform.</p>
+    <p>Stream independent music, podcasts, events, and film from New Haven creators — ad-free, with Android available today.</p>
   </div>
 
   <div class="platforms">
@@ -670,8 +699,7 @@
         </div>
       </div>
       <div class="featured-visual">
-        <a href="https://play.google.com/store/apps/details?id=ooo.ahoy.app&hl=en_US" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
-          <div class="store-preview">
+        <div class="store-preview" aria-label="Google Play listing preview">
             <div class="store-preview-header">
               <img class="store-preview-icon" src="/images/Ahoy%20Indie%20Media%20-%20App%20Icon%20-%20May%2026.png" alt="Ahoy icon" width="52" height="52" loading="lazy" decoding="async" />
               <div class="store-preview-meta">
@@ -692,12 +720,11 @@
               <div class="ss-placeholder"></div>
             </div>
           </div>
-        </a>
       </div>
     </div>
 
     <!-- iOS App Store -->
-    <div class="platform-card">
+    <div class="platform-card ios-card">
       <div class="card-body">
         <span class="platform-tag tag-ios">App Store</span>
         <h2>Ahoy for iPhone</h2>
@@ -705,7 +732,7 @@
           <span class="badge">iOS</span>
           <span class="badge">App Store</span>
         </div>
-        <p>Ahoy for iPhone is currently under review by Apple. It will be available on the App Store very soon.</p>
+        <p>The iPhone app is currently in review with Apple. Check back here for the App Store link when it is available.</p>
         <div class="card-actions">
           <span class="btn btn-primary btn-disabled">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
@@ -716,37 +743,37 @@
     </div>
 
     <!-- Mac Beta DMG -->
-    <div class="platform-card">
+    <div class="platform-card mac-card">
       <div class="card-body">
-        <span class="platform-tag tag-beta">Beta</span>
-        <h2>Mac Beta (DMG)</h2>
+        <span class="platform-tag tag-beta">Mac Beta</span>
+        <h2>Ahoy for Mac</h2>
         <div class="badge-row">
           <span class="badge">macOS</span>
-          <span class="badge">DMG</span>
-          <span class="badge">Developer Mode</span>
+          <span class="badge">Browser build</span>
+          <span class="badge">Beta</span>
         </div>
-        <p>Early access build for Mac. Requires Developer Mode enabled on your machine. Not yet on the Mac App Store — use this to test the latest features first.</p>
+        <p>Try the early Mac build in your browser. It is still in beta and is not yet available through the Mac App Store.</p>
         <div class="card-actions">
           <a class="btn btn-primary" href="/ahoyApp/index.html">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
-            Download DMG
+            Open Mac beta
           </a>
         </div>
       </div>
     </div>
 
     <!-- Linux -->
-    <div class="platform-card">
+    <div class="platform-card linux-card">
       <div class="card-body">
         <span class="platform-tag tag-linux">Linux</span>
         <h2>Ahoy for Linux</h2>
         <div class="badge-row">
           <span class="badge">Linux</span>
-          <span class="badge">Beta</span>
+          <span class="badge">Coming soon</span>
         </div>
-        <p>Linux build coming soon. If you're on Linux and want early access, reach out and we'll get you set up.</p>
+        <p>Ahoy for Linux is coming soon.</p>
         <div class="card-actions">
-          <a class="btn btn-ghost" href="mailto:contact@littlemarket.org">Contact for access</a>
+          <span class="btn btn-ghost btn-disabled">Coming Soon</span>
         </div>
       </div>
     </div>
