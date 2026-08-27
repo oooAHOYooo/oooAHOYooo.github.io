@@ -97,6 +97,9 @@
     <style>
     :root {
       color-scheme: dark;
+      --pointer-x: 50%;
+      --pointer-y: 18%;
+      --pointer-glow: 0;
       --bg: #010710;
       --bg-deep: #00040a;
       --panel: rgba(1, 6, 16, 0.88);
@@ -158,7 +161,7 @@
       width: 1100px;
       height: 700px;
       pointer-events: none;
-      background: radial-gradient(ellipse at center, rgba(255, 0, 96, 0.09) 0%, rgba(200, 0, 80, 0.04) 42%, transparent 68%);
+      background: radial-gradient(ellipse at var(--pointer-x) var(--pointer-y), rgba(255, 0, 96, calc(0.09 + var(--pointer-glow) * 0.045)) 0%, rgba(200, 0, 80, 0.04) 42%, transparent 68%);
       animation: orb-drift 14s ease-in-out infinite alternate, orb-breathe 6s ease-in-out infinite;
       z-index: 0;
     }
@@ -186,6 +189,27 @@
       background: radial-gradient(ellipse at center, rgba(30, 80, 220, 0.09) 0%, rgba(10, 40, 140, 0.04) 48%, transparent 70%);
       animation: orb-blue-drift 18s ease-in-out infinite alternate, orb-blue-breathe 8s ease-in-out infinite;
       z-index: 0;
+    }
+
+    @keyframes pointer-pulse {
+      0% { filter: brightness(1); }
+      45% { filter: brightness(1.18); }
+      100% { filter: brightness(1); }
+    }
+
+    body.pointer-pulse::after,
+    body.pointer-pulse .bg-orb-blue {
+      animation: pointer-pulse 700ms ease-out, orb-drift 14s ease-in-out infinite alternate, orb-breathe 6s ease-in-out infinite;
+    }
+
+    body.pointer-pulse .bg-orb-blue {
+      animation: pointer-pulse 700ms ease-out, orb-blue-drift 18s ease-in-out infinite alternate, orb-blue-breathe 8s ease-in-out infinite;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      body::before,
+      body::after,
+      .bg-orb-blue { animation: none !important; }
     }
 
     @keyframes orb-blue-drift {
@@ -1444,10 +1468,18 @@
       .ecosystem-account { border:1px solid rgba(255,255,255,.28); border-radius:999px; color:#fff; padding:10px 16px; text-decoration:none; font-size:.76rem; letter-spacing:.08em; text-transform:uppercase; }
       .ecosystem-hero { display:grid; grid-template-columns:minmax(0,1.15fr) minmax(320px,.85fr); gap:clamp(40px,8vw,120px); align-items:end; padding:clamp(100px,16vh,180px) 0 90px; }
       .seasonal-hero { position:relative; overflow:hidden; margin-top:clamp(70px,12vh,130px); padding:clamp(38px,6vw,78px); border:1px solid rgba(255,120,180,.34); border-radius:28px; background:radial-gradient(circle at 80% 10%, rgba(255,92,148,.25), transparent 42%), linear-gradient(135deg, rgba(255,255,255,.1), rgba(255,255,255,.025)); box-shadow:0 28px 90px rgba(0,0,0,.32); }
-      .seasonal-hero::after { content:""; position:absolute; width:260px; height:260px; right:-70px; bottom:-130px; border:1px solid rgba(255,255,255,.18); border-radius:50%; box-shadow:0 0 0 28px rgba(255,255,255,.04), 0 0 0 56px rgba(255,255,255,.025); }
+      .seasonal-hero::after { display:none; }
       .seasonal-kicker { position:relative; z-index:1; color:#ff78b4; font-size:.76rem; letter-spacing:.18em; text-transform:uppercase; }
-      .seasonal-hero h2 { position:relative; z-index:1; max-width:850px; margin:18px 0 12px; color:#fff; font-size:clamp(3rem,8vw,7.6rem); line-height:.86; letter-spacing:-.07em; }
+      .seasonal-hero h2 { position:relative; z-index:1; max-width:850px; margin:18px 0 12px; color:#fff; font-family:Cubano,Impact,sans-serif; font-size:clamp(3rem,8vw,7.6rem); line-height:.86; letter-spacing:-.07em; }
       .seasonal-hero p { position:relative; z-index:1; max-width:590px; margin:0; color:rgba(255,255,255,.72); font-size:clamp(1.1rem,2vw,1.45rem); line-height:1.45; }
+      .launch-app { position:relative; overflow:hidden; display:flex; align-items:flex-end; justify-content:space-between; gap:32px; min-height:clamp(260px,34vw,410px); margin-top:clamp(34px,6vw,72px); padding:clamp(28px,5vw,62px); border:1px solid rgba(255,120,180,.42); border-radius:28px; background:radial-gradient(circle at 78% 10%,rgba(255,130,190,.32),transparent 38%),linear-gradient(135deg,#141c2b 0%,#281929 48%,#40142d 100%); box-shadow:0 28px 90px rgba(0,0,0,.38); }
+      .launch-app::before { display:none; }
+      .launch-app-copy,.launch-app-action { position:relative; z-index:1; }
+      .launch-app-kicker { margin-bottom:16px; color:#ff78b4; font-size:.78rem; letter-spacing:.18em; text-transform:uppercase; }
+      .launch-app h2 { max-width:8ch; margin:0; color:#fff; font-family:Cubano,Impact,sans-serif; font-size:clamp(3.6rem,8vw,8.6rem); line-height:.82; letter-spacing:-.08em; }
+      .launch-app p { max-width:34ch; margin:22px 0 0; color:rgba(255,255,255,.7); font-size:clamp(1rem,1.5vw,1.2rem); line-height:1.5; }
+      .launch-app-button { display:inline-flex; align-items:center; justify-content:center; min-height:54px; padding:0 24px; border:1px solid rgba(255,255,255,.35); border-radius:999px; background:#fff; color:#080910; text-decoration:none; font-weight:700; box-shadow:0 12px 30px rgba(0,0,0,.2); transition:transform .2s ease,box-shadow .2s ease; }
+      .launch-app-button:hover { transform:translateY(-2px); box-shadow:0 16px 36px rgba(0,0,0,.3); }
       .ecosystem-kicker { color:#ff4f9a; font-size:.76rem; letter-spacing:.16em; text-transform:uppercase; }
       .ecosystem-hero-logo { display:block; width:clamp(130px,18vw,210px); height:auto; margin:22px 0 28px; border-radius:24px; box-shadow:0 24px 60px rgba(0,0,0,.42); }
       .ecosystem-hero h1 { max-width:760px; margin:18px 0 24px; color:#fff; font-size:clamp(4rem,10vw,9.2rem); line-height:.86; letter-spacing:-.07em; font-weight:700; }
@@ -1463,8 +1495,20 @@
       .ecosystem-surface span { display:block; margin-top:4px; color:rgba(255,255,255,.52); font-size:.82rem; }
       .ecosystem-icon { display:grid; place-items:center; width:38px; height:38px; border:1px solid rgba(255,255,255,.24); border-radius:12px; color:#ff78b4; font-weight:700; }
       .ecosystem-section { border-top:1px solid rgba(255,255,255,.14); padding:34px 0 0; }
-      .ecosystem-section h2 { margin:0 0 18px; font-size:clamp(1.7rem,3vw,2.7rem); letter-spacing:-.04em; }
+      .ecosystem-section h2 { margin:0 0 18px; font-family:Cubano,Impact,sans-serif; font-size:clamp(1.7rem,3vw,2.7rem); letter-spacing:-.04em; }
       .ecosystem-section > p { max-width:630px; color:rgba(255,255,255,.62); line-height:1.6; }
+      .cards-section { margin-top:clamp(70px,10vw,130px); }
+      .cards-feature { display:grid; grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr); gap:clamp(28px,6vw,84px); align-items:center; margin-top:30px; padding:clamp(20px,4vw,42px); border:1px solid rgba(255,120,180,.24); border-radius:26px; background:linear-gradient(90deg,rgba(4,8,18,.98) 0%,rgba(4,8,18,.88) 42%,rgba(4,8,18,.32) 100%),url('images/ahoy-nfc-cards-concept.png') center/cover no-repeat; overflow:hidden; }
+      .cards-feature-copy h3 { max-width:11ch; margin:0 0 18px; font-size:clamp(2rem,4.4vw,4.2rem); line-height:.94; letter-spacing:-.06em; }
+      .cards-feature-copy p { max-width:42ch; margin:0; color:rgba(255,255,255,.65); line-height:1.65; }
+      .cards-steps { display:grid; gap:14px; margin-top:28px; }
+      .cards-step { display:grid; grid-template-columns:34px 1fr; gap:12px; align-items:start; }
+      .cards-step-number { display:grid; place-items:center; width:28px; height:28px; border:1px solid rgba(255,120,180,.5); border-radius:50%; color:#ff78b4; font:600 .72rem/1 monospace; }
+      .cards-step strong { display:block; margin-bottom:4px; font-size:.92rem; }
+      .cards-step span { color:rgba(255,255,255,.52); font-size:.82rem; line-height:1.45; }
+      .cards-feature-visual { min-width:0; }
+      .cards-feature-visual img { display:none; }
+      .cards-note { margin-top:16px; color:rgba(255,255,255,.42); font-size:.74rem; letter-spacing:.04em; }
       .ecosystem-roadmap { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:30px; }
       .ecosystem-roadmap-item { display:grid; grid-template-columns:48px 1fr auto; gap:16px; align-items:start; padding:18px; border:1px solid rgba(255,255,255,.14); border-radius:18px; background:rgba(255,255,255,.035); color:inherit; text-decoration:none; transition:border-color .2s ease, background .2s ease, transform .2s ease; }
       .ecosystem-roadmap-item:hover { border-color:rgba(255,120,180,.55); background:rgba(255,255,255,.07); transform:translateY(-2px); }
@@ -1479,7 +1523,9 @@
       .ecosystem-card p { margin:0; color:rgba(255,255,255,.56); font-size:.88rem; line-height:1.45; }
       .ecosystem-footer { display:flex; justify-content:space-between; gap:20px; margin-top:90px; color:rgba(255,255,255,.42); font-size:.8rem; }
       @media (max-width:760px) { .ecosystem-nav-links { display:none; } .ecosystem-hero { grid-template-columns:1fr; padding-top:100px; } .ecosystem-grid { grid-template-columns:repeat(2,1fr); } .ecosystem-roadmap { grid-template-columns:1fr; } .ecosystem-footer { flex-direction:column; margin-top:56px; } }
+      @media (max-width:760px) { .launch-app { display:block; min-height:0; } .launch-app-action { margin-top:28px; } }
       @media (max-width:460px) { .ecosystem-grid { grid-template-columns:1fr; } .ecosystem-card { min-height:140px; } .ecosystem-card b { margin-bottom:28px; } }
+      @media (max-width:760px) { .cards-feature { grid-template-columns:1fr; } .cards-feature-copy h3 { max-width:14ch; } }
     </style>
   </head>
 
@@ -1488,16 +1534,18 @@
       <div class="ecosystem-shell">
         <nav class="ecosystem-nav" aria-label="AHOY">
           <a class="ecosystem-mark" href="/">AHOY</a>
-          <div class="ecosystem-nav-links"><a href="#ecosystem">The ecosystem</a><a href="#cards">Cards</a><a href="https://app.ahoy.ooo">Open Discover</a></div>
+          <div class="ecosystem-nav-links"><a href="#ecosystem">The ecosystem</a><a href="#physical-cards">Cards</a><a href="https://app.ahoy.ooo">Open Discover</a></div>
           <a class="ecosystem-account" href="https://app.ahoy.ooo">Sign in</a>
         </nav>
         <main>
           <section class="seasonal-hero" aria-labelledby="seasonal-title"><div class="seasonal-kicker">A note from AHOY</div><h2 id="seasonal-title">Summer is almost over.</h2><p>We’re back in business September 4th!</p></section>
+          <section class="launch-app" aria-labelledby="launch-app-title"><div class="launch-app-copy"><div class="launch-app-kicker">The AHOY app</div><h2 id="launch-app-title">Launch app.</h2><p>Open AHOY Indie Media and start discovering independent music, podcasts, events, and film.</p></div><div class="launch-app-action"><a class="launch-app-button" href="https://app.ahoy.ooo">Open AHOY</a></div></section>
           <section class="ecosystem-hero" aria-labelledby="ecosystem-title">
             <div><a href="https://app.ahoy.ooo"><img class="ecosystem-hero-logo" src="images/Ahoy%20Indie%20Media%20-%20App%20Icon%20-%20May%2026.png" alt="AHOY" width="1024" height="1024" decoding="async" fetchpriority="high"></a><h1 id="ecosystem-title">Welcome to AHOY.</h1><p>Discover music. Keep what you love. Take it with you.</p><div class="ecosystem-actions"><a class="ecosystem-button" href="https://app.ahoy.ooo">Enter AHOY</a><a class="ecosystem-button secondary" href="/download">Download</a><a class="ecosystem-button secondary" href="#ecosystem">See how it works</a></div></div>
             <aside class="ecosystem-map" aria-label="The AHOY ecosystem"><div class="ecosystem-map-label">Your AHOY home</div><h2>Everything in one place.</h2><div class="ecosystem-surface"><div class="ecosystem-icon">01</div><div><strong>Discover</strong><span>Find music, podcasts, and events</span></div></div><div class="ecosystem-surface"><div class="ecosystem-icon">02</div><div><strong>Library</strong><span>Keep your collection with you</span></div></div><div class="ecosystem-surface"><div class="ecosystem-icon">03</div><div><strong>Player</strong><span>Listen offline, wherever you are</span></div></div></aside>
           </section>
-          <section class="ecosystem-section" id="ecosystem"><h2>Four surfaces. One AHOY.</h2><p>The names may change in the address bar. Your account, library, and experience do not.</p><div class="ecosystem-grid"><a class="ecosystem-card" href="https://app.ahoy.ooo"><b>Discover</b><h3>Find your next favorite.</h3><p>Explore independent music and the people making it.</p></a><a class="ecosystem-card" href="https://library.ahoy.ooo"><b>Library</b><h3>Make it yours.</h3><p>Add releases to one personal collection that follows you.</p></a><a class="ecosystem-card" id="cards" href="https://cards.ahoy.ooo"><b>Cards</b><h3>Hold something real.</h3><p>Tap a physical card to unlock a song, album, playlist, or collection.</p></a><a class="ecosystem-card" href="https://player.ahoy.ooo"><b>Player</b><h3>Take it offline.</h3><p>Sync authorized music to your AHOY Player and listen without a signal.</p></a></div></section>
+          <section class="ecosystem-section" id="ecosystem"><h2>Four surfaces. One AHOY.</h2><p>The names may change in the address bar. Your account, library, and experience do not.</p><div class="ecosystem-grid"><a class="ecosystem-card" href="https://app.ahoy.ooo"><b>Discover</b><h3>Find your next favorite.</h3><p>Explore independent music and the people making it.</p></a><a class="ecosystem-card" href="https://library.ahoy.ooo"><b>Library</b><h3>Make it yours.</h3><p>Add releases to one personal collection that follows you.</p></a><a class="ecosystem-card" href="#physical-cards"><b>Cards</b><h3>Hold something real.</h3><p>Tap a physical card to unlock a song, album, playlist, or collection.</p></a><a class="ecosystem-card" href="https://player.ahoy.ooo"><b>Player</b><h3>Take it offline.</h3><p>Sync authorized music to your AHOY Player and listen without a signal.</p></a></div></section>
+          <section class="ecosystem-section cards-section" id="physical-cards" aria-labelledby="physical-cards-title"><div class="ecosystem-kicker">Physical AHOY cards · coming soon</div><div class="cards-feature"><div class="cards-feature-copy"><h2 id="physical-cards-title">Music you can hold.</h2><p>A physical NFC card gives a release a place in your pocket, on your wall, or in your collection. Tap it with a phone to open the matching AHOY destination — a song, an album, a playlist, or a special drop.</p><div class="cards-steps"><div class="cards-step"><div class="cards-step-number">01</div><div><strong>Tap</strong><span>Bring your phone close to the contactless mark.</span></div></div><div class="cards-step"><div class="cards-step-number">02</div><div><strong>Open</strong><span>The card takes you to its AHOY music or media page.</span></div></div><div class="cards-step"><div class="cards-step-number">03</div><div><strong>Keep it</strong><span>Collect a physical artifact from the independent artists you follow.</span></div></div></div><div class="cards-note">Concept preview · availability and artist releases will be announced.</div></div><div class="cards-feature-visual"><img src="images/ahoy-nfc-cards-concept.png" alt="Concept render of three matte and frosted AHOY NFC music cards with waveform details" width="1536" height="864" loading="lazy" decoding="async"></div></div></section>
           <section class="ecosystem-section" id="coming-soon"><div class="ecosystem-kicker">The AHOY roadmap</div><h2>Use what’s here. See what’s next.</h2><p>AHOY already gives you a place to discover independent music and media, save favorites, follow artists, and organize what you find. We’re extending that same experience into physical cards and offline listening.</p><div class="ecosystem-roadmap"><a class="ecosystem-roadmap-item" href="https://app.ahoy.ooo/"><div class="ecosystem-roadmap-number">01</div><div><h3>Discover and explore</h3><p>Music, podcasts, video, radio, events, artists, and studio work are live in AHOY Discover.</p></div><div class="ecosystem-status">Available</div></a><a class="ecosystem-roadmap-item" href="https://app.ahoy.ooo/my-saves"><div class="ecosystem-roadmap-number">02</div><div><h3>Save your favorites</h3><p>Use Saved and your account to keep the things you want to return to.</p></div><div class="ecosystem-status">Available</div></a><a class="ecosystem-roadmap-item" href="https://cards.ahoy.ooo"><div class="ecosystem-roadmap-number">03</div><div><h3>Cards and collections</h3><p>Physical cards will identify songs, albums, playlists, and special collections.</p></div><div class="ecosystem-status">Coming soon</div></a><a class="ecosystem-roadmap-item" href="https://player.ahoy.ooo"><div class="ecosystem-roadmap-number">04</div><div><h3>Transfer and Player</h3><p>Move authorized music to a local package, then listen offline on the AHOY Player.</p></div><div class="ecosystem-status">Coming soon</div></a></div></section>
         </main>
         <footer class="ecosystem-footer"><span>AHOY — independent media, made tangible.</span><span>Account · Library · Cards · Player</span></footer>
@@ -2117,6 +2165,23 @@
       </div>
 
       <script>
+    const root = document.documentElement;
+    let pointerPulseTimer;
+    window.addEventListener('pointermove', (event) => {
+      const x = (event.clientX / window.innerWidth) * 100;
+      const y = (event.clientY / window.innerHeight) * 100;
+      root.style.setProperty('--pointer-x', `${x}%`);
+      root.style.setProperty('--pointer-y', `${y}%`);
+      root.style.setProperty('--pointer-glow', '1');
+      document.body.classList.remove('pointer-pulse');
+      window.clearTimeout(pointerPulseTimer);
+      requestAnimationFrame(() => document.body.classList.add('pointer-pulse'));
+      pointerPulseTimer = window.setTimeout(() => {
+        document.body.classList.remove('pointer-pulse');
+        root.style.setProperty('--pointer-glow', '0');
+      }, 700);
+    }, { passive: true });
+
     const menuToggle = document.getElementById('menu-toggle');
     const navMenu = document.getElementById('nav-menu');
     const heroLogo = document.querySelector('.hero-logo');
