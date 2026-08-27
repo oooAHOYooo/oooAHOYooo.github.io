@@ -44,6 +44,7 @@
     <link
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet" />
     <link href="https://fonts.cdnfonts.com/css/cubano?display=swap"
       rel="stylesheet" />
     <script type="application/ld+json">
@@ -100,6 +101,8 @@
       --pointer-x: 50%;
       --pointer-y: 18%;
       --pointer-glow: 0;
+      --spot-x: 72%;
+      --spot-y: 18%;
       --bg: #010710;
       --bg-deep: #00040a;
       --panel: rgba(1, 6, 16, 0.88);
@@ -161,8 +164,9 @@
       width: 1100px;
       height: 700px;
       pointer-events: none;
-      background: radial-gradient(ellipse at var(--pointer-x) var(--pointer-y), rgba(255, 0, 96, calc(0.09 + var(--pointer-glow) * 0.045)) 0%, rgba(200, 0, 80, 0.04) 42%, transparent 68%);
+      background: radial-gradient(ellipse at var(--pointer-x) var(--pointer-y), rgba(33, 155, 184, calc(0.12 + var(--pointer-glow) * 0.045)) 0%, rgba(19, 87, 126, 0.05) 42%, transparent 68%), radial-gradient(ellipse at var(--spot-x) var(--spot-y), rgba(211, 73, 91, 0.08) 0%, transparent 40%);
       animation: orb-drift 14s ease-in-out infinite alternate, orb-breathe 6s ease-in-out infinite;
+      transition: background 3.8s ease;
       z-index: 0;
     }
 
@@ -916,6 +920,22 @@
       flex-wrap: wrap;
     }
 
+    .account-section {
+      margin-top: 28px;
+      padding: clamp(28px, 5vw, 56px);
+      text-align: center;
+      border: 1px solid rgba(91, 190, 199, 0.28);
+      border-radius: 28px;
+      background: linear-gradient(135deg, rgba(13, 48, 68, 0.82), rgba(4, 15, 25, 0.92));
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+    }
+
+    .account-section .eyebrow { color: #78d0d2; }
+    .account-section .eyebrow::before { background: #32aeb7; box-shadow: 0 0 8px rgba(50, 174, 183, 0.75); }
+    .account-section h2 { margin: 0 0 12px; font-family: "Barlow Condensed", sans-serif; font-size: clamp(2.5rem, 6vw, 5.4rem); line-height: 0.9; letter-spacing: -0.04em; text-transform: uppercase; }
+    .account-section p { max-width: 620px; margin: 0 auto; color: rgba(255,255,255,.7); line-height: 1.6; }
+    .account-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+
     .aside-marquee-track img {
       height: 90px;
       width: auto;
@@ -1466,17 +1486,19 @@
       .ecosystem-nav-links a { color:inherit; text-decoration:none; }
       .ecosystem-nav-links a:hover { color:#fff; }
       .ecosystem-account { border:1px solid rgba(255,255,255,.28); border-radius:999px; color:#fff; padding:10px 16px; text-decoration:none; font-size:.76rem; letter-spacing:.08em; text-transform:uppercase; }
+      .ecosystem-top-action { border-radius:999px; padding:10px 15px; color:#06131d !important; background:#fff; font-weight:600; letter-spacing:.08em; }
+      .ecosystem-top-action.secondary { color:#fff !important; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.22); }
       .ecosystem-hero { display:grid; grid-template-columns:minmax(0,1.15fr) minmax(320px,.85fr); gap:clamp(40px,8vw,120px); align-items:end; padding:clamp(100px,16vh,180px) 0 90px; }
-      .seasonal-hero { position:relative; overflow:hidden; margin-top:clamp(70px,12vh,130px); padding:clamp(38px,6vw,78px); border:1px solid rgba(255,120,180,.34); border-radius:28px; background:radial-gradient(circle at 80% 10%, rgba(255,92,148,.25), transparent 42%), linear-gradient(135deg, rgba(255,255,255,.1), rgba(255,255,255,.025)); box-shadow:0 28px 90px rgba(0,0,0,.32); }
+      .seasonal-hero { position:relative; overflow:hidden; margin-top:clamp(70px,12vh,130px); padding:clamp(38px,6vw,78px); border:1px solid rgba(91,190,199,.3); border-radius:28px; background:radial-gradient(circle at 80% 10%, rgba(36,132,155,.24), transparent 42%), linear-gradient(135deg, rgba(13,48,68,.92), rgba(6,19,31,.96)); box-shadow:0 28px 90px rgba(0,0,0,.32); }
       .seasonal-hero::after { display:none; }
-      .seasonal-kicker { position:relative; z-index:1; color:#ff78b4; font-size:.76rem; letter-spacing:.18em; text-transform:uppercase; }
-      .seasonal-hero h2 { position:relative; z-index:1; max-width:850px; margin:18px 0 12px; color:#fff; font-family:Cubano,Impact,sans-serif; font-size:clamp(3rem,8vw,7.6rem); line-height:.86; letter-spacing:-.07em; }
+      .seasonal-kicker { position:relative; z-index:1; color:#78d0d2; font-size:.76rem; letter-spacing:.18em; text-transform:uppercase; }
+      .seasonal-hero h2 { position:relative; z-index:1; max-width:850px; margin:18px 0 12px; color:#fff; font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:clamp(3.4rem,8vw,8rem); line-height:.82; letter-spacing:-.012em; text-transform:uppercase; }
       .seasonal-hero p { position:relative; z-index:1; max-width:590px; margin:0; color:rgba(255,255,255,.72); font-size:clamp(1.1rem,2vw,1.45rem); line-height:1.45; }
-      .launch-app { position:relative; overflow:hidden; display:flex; align-items:flex-end; justify-content:space-between; gap:32px; min-height:clamp(260px,34vw,410px); margin-top:clamp(34px,6vw,72px); padding:clamp(28px,5vw,62px); border:1px solid rgba(255,120,180,.42); border-radius:28px; background:radial-gradient(circle at 78% 10%,rgba(255,130,190,.32),transparent 38%),linear-gradient(135deg,#141c2b 0%,#281929 48%,#40142d 100%); box-shadow:0 28px 90px rgba(0,0,0,.38); }
+      .launch-app { position:relative; overflow:hidden; display:flex; align-items:flex-end; justify-content:space-between; gap:32px; min-height:clamp(260px,34vw,410px); margin-top:clamp(34px,6vw,72px); padding:clamp(28px,5vw,62px); border:1px solid rgba(91,190,199,.35); border-radius:28px; background:radial-gradient(circle at 78% 10%,rgba(34,135,158,.3),transparent 38%),linear-gradient(135deg,#102b3a 0%,#102332 48%,#1f3441 100%); box-shadow:0 28px 90px rgba(0,0,0,.38); }
       .launch-app::before { display:none; }
       .launch-app-copy,.launch-app-action { position:relative; z-index:1; }
-      .launch-app-kicker { margin-bottom:16px; color:#ff78b4; font-size:.78rem; letter-spacing:.18em; text-transform:uppercase; }
-      .launch-app h2 { max-width:8ch; margin:0; color:#fff; font-family:Cubano,Impact,sans-serif; font-size:clamp(3.6rem,8vw,8.6rem); line-height:.82; letter-spacing:-.08em; }
+      .launch-app-kicker { margin-bottom:16px; color:#78d0d2; font-size:.78rem; letter-spacing:.18em; text-transform:uppercase; }
+      .launch-app h2 { max-width:8ch; margin:0; color:#fff; font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:clamp(4rem,9vw,9rem); line-height:.78; letter-spacing:-.012em; text-transform:uppercase; }
       .launch-app p { max-width:34ch; margin:22px 0 0; color:rgba(255,255,255,.7); font-size:clamp(1rem,1.5vw,1.2rem); line-height:1.5; }
       .launch-app-button { display:inline-flex; align-items:center; justify-content:center; min-height:54px; padding:0 24px; border:1px solid rgba(255,255,255,.35); border-radius:999px; background:#fff; color:#080910; text-decoration:none; font-weight:700; box-shadow:0 12px 30px rgba(0,0,0,.2); transition:transform .2s ease,box-shadow .2s ease; }
       .launch-app-button:hover { transform:translateY(-2px); box-shadow:0 16px 36px rgba(0,0,0,.3); }
@@ -1495,7 +1517,7 @@
       .ecosystem-surface span { display:block; margin-top:4px; color:rgba(255,255,255,.52); font-size:.82rem; }
       .ecosystem-icon { display:grid; place-items:center; width:38px; height:38px; border:1px solid rgba(255,255,255,.24); border-radius:12px; color:#ff78b4; font-weight:700; }
       .ecosystem-section { border-top:1px solid rgba(255,255,255,.14); padding:34px 0 0; }
-      .ecosystem-section h2 { margin:0 0 18px; font-family:Cubano,Impact,sans-serif; font-size:clamp(1.7rem,3vw,2.7rem); letter-spacing:-.04em; }
+      .ecosystem-section h2 { margin:0 0 18px; font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:clamp(1.9rem,3vw,3rem); letter-spacing:-.005em; text-transform:uppercase; }
       .ecosystem-section > p { max-width:630px; color:rgba(255,255,255,.62); line-height:1.6; }
       .cards-section { margin-top:clamp(70px,10vw,130px); }
       .cards-feature { display:grid; grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr); gap:clamp(28px,6vw,84px); align-items:center; margin-top:30px; padding:clamp(20px,4vw,42px); border:1px solid rgba(255,120,180,.24); border-radius:26px; background:linear-gradient(90deg,rgba(4,8,18,.98) 0%,rgba(4,8,18,.88) 42%,rgba(4,8,18,.32) 100%),url('images/ahoy-nfc-cards-concept.png') center/cover no-repeat; overflow:hidden; }
@@ -1534,7 +1556,7 @@
       <div class="ecosystem-shell">
         <nav class="ecosystem-nav" aria-label="AHOY">
           <a class="ecosystem-mark" href="/">AHOY</a>
-          <div class="ecosystem-nav-links"><a href="#ecosystem">The ecosystem</a><a href="#physical-cards">Cards</a><a href="https://app.ahoy.ooo">Open Discover</a></div>
+          <div class="ecosystem-nav-links"><a href="#ecosystem">The ecosystem</a><a href="#physical-cards">Cards</a><a class="ecosystem-top-action" href="https://app.ahoy.ooo">Open AHOY</a><a class="ecosystem-top-action secondary" href="/download">Download</a></div>
           <a class="ecosystem-account" href="https://app.ahoy.ooo">Sign in</a>
         </nav>
         <main>
@@ -2151,6 +2173,16 @@
           </div>
         </section>
 
+        <section class="account-section fade-up" id="account" aria-labelledby="account-title">
+          <div class="eyebrow">One AHOY account</div>
+          <h2 id="account-title">Make yourself at home.</h2>
+          <p>Create your AHOY account once. Your sign-in, saved music, library, and account settings will follow you between ahoy.ooo and app.ahoy.ooo.</p>
+          <div class="account-actions">
+            <a class="button primary" href="/account.html">CREATE AN ACCOUNT</a>
+            <a class="button secondary" href="https://app.ahoy.ooo">SIGN IN</a>
+          </div>
+        </section>
+
         <footer>
           <div>Made with care in New Haven by <a href="https://littlemarket.org"
               target="_blank" rel="noopener noreferrer">Little Market</a></div>
@@ -2167,6 +2199,12 @@
       <script>
     const root = document.documentElement;
     let pointerPulseTimer;
+    const moveBreathingSpots = () => {
+      root.style.setProperty('--spot-x', `${18 + Math.random() * 64}%`);
+      root.style.setProperty('--spot-y', `${8 + Math.random() * 78}%`);
+    };
+    moveBreathingSpots();
+    window.setInterval(moveBreathingSpots, 4200);
     window.addEventListener('pointermove', (event) => {
       const x = (event.clientX / window.innerWidth) * 100;
       const y = (event.clientY / window.innerHeight) * 100;
