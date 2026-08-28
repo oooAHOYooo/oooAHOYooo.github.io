@@ -663,7 +663,7 @@
     body::before { background-image:linear-gradient(rgba(48,91,82,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(48,91,82,.07) 1px,transparent 1px); opacity:.35; }
     .topbar { background:rgba(248,252,250,.64); border-color:rgba(75,119,105,.18); box-shadow:var(--shadow); }
     .platforms { grid-template-columns:repeat(2,minmax(0,1fr)); }
-    .platform-card.featured { display:grid; grid-column:auto; grid-template-columns:1fr; } .platform-card.player-card { display:block; }
+    .platform-card.featured { display:grid; grid-column:auto; grid-template-columns:1fr; } .platform-card.player-card { display:block; grid-column:auto; max-width:none; }
     .featured-visual { display:none; }
     .brand { color:var(--text); } .brand img { filter:none; mix-blend-mode:multiply; width:150px; height:auto; } .brand strong { display:none; }
     .nav-links a { color:var(--text); } .nav-links a.night-market-link { color:#d73578; }
@@ -699,9 +699,8 @@
   </header>
 
   <div class="hero">
-    <img src="images/updatedAhoy_A.png" alt="AHOY Indie Media logo" width="3000" height="1478" fetchpriority="high" decoding="async" />
-    <h1>AHOY Player.</h1>
-    <p>Organize your MP3 collection, keep your music close, and listen offline.</p>
+    <h1>AHOY products.</h1>
+    <p>Discover independent media, or organize your own MP3 collection and listen offline.</p>
     <p class="hero-context"><a href="/#about-ahoy">About AHOY</a></p>
   </div>
 
