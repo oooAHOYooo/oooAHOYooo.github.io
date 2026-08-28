@@ -667,7 +667,7 @@
     .featured-visual { display:none; }
     .brand { color:var(--text); } .brand img { filter:none; mix-blend-mode:multiply; width:150px; height:auto; } .brand strong { display:none; }
     .nav-links a { color:var(--text); } .nav-links a.night-market-link { color:#d73578; }
-    .hero { margin:clamp(70px,12vw,150px) auto 86px; max-width:820px; } .hero img { width:min(330px,70vw); filter:none; mix-blend-mode:multiply; } .hero h1 { color:var(--text); font-family:"Cubano",sans-serif; font-size:clamp(3rem,8vw,6rem); } .hero p,.hero-context a { color:var(--muted); } .hero-context a { color:#3853b9; }
+    .hero { margin:clamp(70px,12vw,150px) auto 86px; max-width:1000px; } .hero img { width:min(330px,70vw); filter:none; mix-blend-mode:multiply; } .hero-kicker { margin-bottom:10px; color:var(--text); font-family:"Cubano",sans-serif; font-size:clamp(3.2rem,8.6vw,6.4rem); line-height:.9; letter-spacing:.035em; } .hero h1 { color:var(--text); font-family:"Cubano",sans-serif; font-size:clamp(3rem,8vw,6rem); } .hero p,.hero-context a { color:var(--muted); } .hero-context a { color:#3853b9; }
     .platform-card { background:var(--panel); border-color:var(--panel-border); box-shadow:var(--shadow); } .platform-card.featured { background:rgba(242,248,255,.78); } .platform-card h2 { color:var(--text); } .card-body p { color:var(--muted); }
     .tag-android { background:rgba(34,145,107,.1); border-color:rgba(34,145,107,.22); color:#28765f; } .tag-beta { background:rgba(237,151,72,.12); border-color:rgba(237,151,72,.28); color:#a76828; }
     .badge { background:rgba(85,121,108,.1); border-color:rgba(85,121,108,.18); color:#5c776e; } .btn-primary { background:#1b7ff0; border-color:#1b7ff0; box-shadow:0 10px 24px rgba(27,127,240,.2); } .btn-ghost { color:var(--text); border-color:rgba(75,119,105,.22); }
@@ -678,7 +678,7 @@
     :root { --text:#111; --muted:#454545; --panel-border:rgba(17,17,17,.16); --shadow:0 24px 70px rgba(17,17,17,.1); }
     .nav-links a, .hero h1, .hero p, .hero-context a, .platform-card h2, .card-body p, footer, footer a { color:#111; }
     .screenshots-heading, .screenshots-grid { display:none !important; }
-    .hero-context a { color:#111; } .platform-card { border-color:rgba(17,17,17,.16); } .tag-beta { color:#111; border-color:rgba(17,17,17,.24); background:rgba(17,17,17,.06); } .tag-android { color:#111; border-color:rgba(17,17,17,.18); background:rgba(17,17,17,.05); }
+    .hero-kicker { color:#111; } .hero-context a { color:#111; } .platform-card { border-color:rgba(17,17,17,.16); } .tag-beta { color:#111; border-color:rgba(17,17,17,.24); background:rgba(17,17,17,.06); } .tag-android { color:#111; border-color:rgba(17,17,17,.18); background:rgba(17,17,17,.05); }
     .badge { color:#333; border-color:rgba(17,17,17,.16); background:rgba(17,17,17,.05); } .btn-primary { color:#fff; background:#111; border-color:#111; box-shadow:0 10px 24px rgba(17,17,17,.16); } .store-preview-install { background:#111; } footer { border-color:rgba(17,17,17,.14); }
   </style>
 </head>
@@ -686,19 +686,20 @@
 <div class="page">
 
   <header class="topbar">
-    <a class="brand" href="/">
+    <a class="brand" href="https://ahoy.ooo" aria-label="AHOY home">
       <img src="images/updatedAhoy_A.png" alt="AHOY Indie Media logo" />
     </a>
     <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
       <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><rect y="4" width="22" height="2" rx="1" fill="currentColor"/><rect y="10" width="22" height="2" rx="1" fill="currentColor"/><rect y="16" width="22" height="2" rx="1" fill="currentColor"/></svg>
     </button>
     <nav class="nav-links" id="nav-menu">
-      <a href="/" aria-label="AHOY home">AHOY</a>
-      <a href="/#about-ahoy">About</a>
+      <a href="about.html">About</a>
+      <a href="https://app.ahoy.ooo/login">Login</a>
     </nav>
   </header>
 
   <div class="hero">
+    <div class="hero-kicker">Download</div>
     <h1>AHOY products.</h1>
     <p>Discover independent media, or organize your own MP3 collection and listen offline.</p>
     <p class="hero-context"><a href="/#about-ahoy">About AHOY</a></p>
