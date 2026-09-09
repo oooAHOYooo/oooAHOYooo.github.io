@@ -235,6 +235,7 @@
     .ios-card { --card-accent: #aaa7ff; --card-glow: rgba(170,167,255,0.14); }
     .mac-card { --card-accent: #ffae68; --card-glow: rgba(255,174,104,0.14); }
     .linux-card { --card-accent: #ffd27a; --card-glow: rgba(255,210,122,0.12); }
+    .cli-card { --card-accent: #77a6ff; --card-glow: rgba(119,166,255,0.14); }
 
     .platform-card:hover {
       transform: translateY(-4px);
@@ -463,6 +464,19 @@
       background: rgba(255,255,255,0.07);
       border: 1px solid rgba(255,255,255,0.12);
       color: var(--muted);
+    }
+
+    .terminal-command {
+      margin: 0;
+      padding: 14px 16px;
+      overflow-x: auto;
+      border: 1px solid rgba(17,17,17,0.14);
+      border-radius: 12px;
+      background: rgba(17,17,17,0.06);
+      color: #111;
+      font: 0.82rem/1.6 "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      white-space: pre-wrap;
+      word-break: break-word;
     }
 
     /* Screenshots gallery */
@@ -766,6 +780,21 @@
         <div class="card-actions">
           <a class="btn btn-primary" href="https://ahoy-player.onrender.com/download.html" target="_blank" rel="noopener noreferrer">Download AHOY Player</a>
         </div>
+      </div>
+    </div>
+
+    <!-- AHOY Player CLI -->
+    <div class="platform-card cli-card">
+      <div class="card-body">
+        <span class="platform-tag tag-beta">AHOY Player CLI</span>
+        <h2>AHOY Player CLI</h2>
+        <div class="badge-row">
+          <span class="badge">Terminal</span>
+          <span class="badge">Local music</span>
+          <span class="badge">Work in progress</span>
+        </div>
+        <p>Scan your Music folder and open the AHOY Player terminal interface from a local AHOY Player checkout.</p>
+        <pre class="terminal-command"><code>cd ~/ahoyMp3 &amp;&amp; npm run ahoy -- scan ~/Music &amp;&amp; npm run ahoy -- tui</code></pre>
       </div>
     </div>
 
