@@ -93,7 +93,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 18px;
-      padding: 14px 16px;
+      padding: 12px 14px;
       margin-bottom: 48px;
       border: 1px solid var(--panel-border);
       border-radius: 20px;
@@ -497,7 +497,7 @@
       border-radius: 12px;
       background: rgba(17,17,17,0.06);
       color: #111;
-      font: 0.8rem/1.55 "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      font: 0.72rem/1.4 "SFMono-Regular", Consolas, "Liberation Mono", monospace;
       white-space: pre;
       word-break: normal;
     }
@@ -817,22 +817,14 @@
           <span class="badge">Build 0.1.0</span>
         </div>
         <p>Keep your MP3s local. This command installs AHOY Player the first time, or updates it later—then scans your Music folder and opens the player.</p>
-        <pre class="terminal-command"><code id="cli-command">(
-  set -e
-  if [ -d "$HOME/ahoyMp3/.git" ]; then
-    cd "$HOME/ahoyMp3"
-    git pull --ff-only
-  elif [ -e "$HOME/ahoyMp3" ]; then
-    echo "Can't update: ~/ahoyMp3 is not an AHOY Player checkout." &gt;&amp;2
-    exit 1
-  else
-    git clone https://github.com/oooAHOYooo/ahoy-player.git "$HOME/ahoyMp3"
-    cd "$HOME/ahoyMp3"
-  fi
-  npm install
-  npm run ahoy -- scan "$HOME/Music"
-  npm run ahoy -- tui
-)</code></pre>
+        <pre class="terminal-command"><code id="cli-command">if [ -d "$HOME/ahoyMp3/.git" ]; then
+  git -C "$HOME/ahoyMp3" pull --ff-only
+else
+  git clone https://github.com/oooAHOYooo/ahoy-player.git "$HOME/ahoyMp3"
+fi &amp;&amp;
+npm --prefix "$HOME/ahoyMp3" install &amp;&amp;
+npm --prefix "$HOME/ahoyMp3" run ahoy -- scan "$HOME/Music" &amp;&amp;
+npm --prefix "$HOME/ahoyMp3" run ahoy -- tui</code></pre>
         <div class="card-actions">
           <button class="btn btn-primary" id="copy-cli-command" type="button">Copy command</button>
         </div>
