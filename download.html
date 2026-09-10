@@ -5,19 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-WVDL9N1HDT"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-WVDL9N1HDT');</script>
-  <title>Download AHOY Player</title>
-  <meta name="description" content="Download AHOY Player to organize and play your MP3 collection offline." />
+  <title>Download Ahoy Streamer and Ahoy Player</title>
+  <meta name="description" content="Download Ahoy Streamer for independent media and Ahoy Player to organize and play your MP3 collection offline." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://ahoy.ooo/download" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://ahoy.ooo/download" />
-  <meta property="og:title" content="Download Ahoy Indie Media" />
+  <meta property="og:title" content="Download Ahoy Streamer and Ahoy Player" />
   <meta property="og:description" content="Stream independent music, podcasts, events, and film from New Haven creators — free and ad-free on Android." />
   <meta property="og:image" content="https://ahoy.ooo/images/github-app-preview.jpg" />
   <meta property="og:image:width" content="1446" />
   <meta property="og:image:height" content="1484" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Download Ahoy Indie Media" />
+  <meta name="twitter:title" content="Download Ahoy Streamer and Ahoy Player" />
   <meta name="twitter:description" content="Stream independent music, podcasts, events, and film from New Haven creators — free and ad-free on Android." />
   <meta name="twitter:image" content="https://ahoy.ooo/images/github-app-preview.jpg" />
   <link rel="icon" type="image/png" href="/images/Ahoy%20Indie%20Media%20-%20App%20Icon%20-%20May%2026.png" />
@@ -26,7 +26,7 @@
   {
     "@context": "https://schema.org",
     "@type": "MobileApplication",
-    "name": "Ahoy Indie Media",
+    "name": "Ahoy Streamer",
     "operatingSystem": "ANDROID",
     "applicationCategory": "EntertainmentApplication",
     "description": "Stream independent music, podcasts, events, and film from New Haven creators — ad-free.",
@@ -133,7 +133,7 @@
     .nav-links a {
       text-decoration: none;
       color: #fff;
-      font-size: 0.92rem;
+      font-size: 0.78rem;
       opacity: 0.78;
       transition: opacity 0.2s;
     }
@@ -302,8 +302,11 @@
       border-radius: 12px;
       border: 1px solid rgba(255,255,255,0.18);
       text-decoration: none;
-      font-size: 0.92rem;
+      font-size: 0.7rem;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
       font-weight: 600;
+      text-transform: uppercase;
+      white-space: nowrap;
       color: #fff;
       transition: transform 0.18s ease, background 0.18s ease;
       cursor: pointer;
@@ -643,16 +646,17 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      gap: 14px;
-      margin-top: 48px;
-      padding-top: 16px;
+      gap: 8px;
+      margin-top: 32px;
+      padding-top: 12px;
       border-top: 1px solid rgba(255,255,255,0.07);
       color: var(--muted);
-      font-size: 0.88rem;
+      font-size: 0.76rem;
     }
 
     footer a { color: #fff; text-decoration: none; }
     footer a:hover { text-decoration: underline; }
+    footer div[style] { gap: 12px !important; }
 
     .menu-toggle {
       display: none;
@@ -724,7 +728,7 @@
 
   <header class="topbar">
     <a class="brand" href="https://ahoy.ooo" aria-label="AHOY home">
-      <img src="images/updatedAhoy_A.png" alt="AHOY Indie Media logo" />
+      <img src="images/updatedAhoy_A.png" alt="AHOY Streamer logo" />
     </a>
     <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
       <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><rect y="4" width="22" height="2" rx="1" fill="currentColor"/><rect y="10" width="22" height="2" rx="1" fill="currentColor"/><rect y="16" width="22" height="2" rx="1" fill="currentColor"/></svg>
@@ -738,7 +742,7 @@
   <div class="hero">
     <div class="hero-kicker">Download</div>
     <h1>AHOY products.</h1>
-    <p>Discover independent media, or organize your own MP3 collection and listen offline.</p>
+    <p>Stream independent media, or organize your own MP3 collection and listen offline.</p>
     <p class="hero-context"><a href="/#about-ahoy">About AHOY</a></p>
   </div>
 
@@ -748,28 +752,27 @@
     <div class="platform-card featured">
       <div class="card-body">
         <span class="platform-tag tag-android">Web app</span>
-        <h2>AHOY Discover</h2>
+        <h2>Ahoy Streamer</h2>
         <div class="badge-row">
           <span class="badge">Browser</span>
           <span class="badge">Independent media</span>
           <span class="badge">Build 1.1.5</span>
         </div>
         <p>
-          AHOY Discover is the web app for independent music, podcasts, events, and film from New Haven creators.
+          Ahoy Streamer is the web app for independent music, podcasts, events, and film from New Haven creators.
         </p>
         <div class="card-actions">
-          <a class="btn btn-primary" href="https://app.ahoy.ooo" target="_blank" rel="noopener noreferrer" onclick="gtag('event','discover_web_app_click',{location:'download_page'})">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76a2 2 0 0 0 2.81.72l10.65-6.14-3.01-3.01-10.45 8.43zm16.4-10.61L16.12 11l-9.63-5.55a2 2 0 0 0-3.31 1.51v14.08l10.4-8.4 3 3.02 2.99-2.51zM20.45 9.5l-2.91-1.68-3.5 3.18 3.5 3.18 2.94-1.7a2 2 0 0 0 0-3.48l-.03.5z"/></svg>
-            Launch AHOY Discover
+          <a class="btn btn-primary" href="https://app.ahoy.ooo" target="_blank" rel="noopener noreferrer" onclick="gtag('event','streamer_web_app_click',{location:'download_page'})">
+            Launch Ahoy Streamer
           </a>
         </div>
       </div>
       <div class="featured-visual">
-        <div class="store-preview" aria-label="AHOY Discover Google Play listing preview">
+        <div class="store-preview" aria-label="Ahoy Streamer Google Play listing preview">
             <div class="store-preview-header">
               <img class="store-preview-icon" src="/images/Ahoy%20Indie%20Media%20-%20App%20Icon%20-%20May%2026.png" alt="Ahoy icon" width="52" height="52" loading="lazy" decoding="async" />
               <div class="store-preview-meta">
-                <h3>AHOY Discover</h3>
+                <h3>Ahoy Streamer</h3>
                 <span>Little Market</span>
               </div>
             </div>
@@ -793,13 +796,13 @@
     <div class="platform-card player-card">
       <div class="card-body">
         <span class="platform-tag tag-beta">Player</span>
-        <h2>AHOY Player</h2>
+        <h2>Ahoy Player</h2>
         <div class="badge-row">
           <span class="badge">MP3 organizer</span>
           <span class="badge">Offline listening</span>
           <span class="badge">Build 0.1.0</span>
         </div>
-        <p>Organize your MP3s, build a local collection, and listen offline with the AHOY Player. This download is an early work in progress.</p>
+        <p>Keep your MP3 collection organized, local, and ready to play offline.</p>
         <div class="card-actions">
           <a class="btn btn-primary" href="https://ahoy-player.onrender.com/download.html" target="_blank" rel="noopener noreferrer">Download AHOY Player</a>
         </div>
@@ -826,7 +829,7 @@ npm --prefix "$HOME/ahoyMp3" install &amp;&amp;
 npm --prefix "$HOME/ahoyMp3" run ahoy -- scan "$HOME/Music" &amp;&amp;
 npm --prefix "$HOME/ahoyMp3" run ahoy -- tui</code></pre>
         <div class="card-actions">
-          <button class="btn btn-primary" id="copy-cli-command" type="button">Copy command</button>
+          <button class="btn btn-primary" id="copy-cli-command" type="button">Copy + launch Ahoy CLI</button>
         </div>
         <details class="terminal-help">
           <summary>Need a terminal?</summary>
