@@ -479,7 +479,15 @@
       font-weight: 600;
     }
 
-    .terminal-help p { margin: 8px 0 0; }
+    .card-body .terminal-help p {
+      display: grid;
+      gap: 2px;
+      margin: 8px 0 0;
+      font-size: 0.78rem;
+      line-height: 1.45;
+    }
+
+    .terminal-help p span { display: block; }
 
     .terminal-command {
       margin: 0;
@@ -830,7 +838,7 @@
         </div>
         <details class="terminal-help">
           <summary>Need a terminal?</summary>
-          <p><strong>Mac:</strong> ⌘ Space → Terminal → Return. <strong>Windows:</strong> Start → Terminal → Enter (CLI coming soon). <strong>Linux:</strong> Ctrl + Alt + T.</p>
+          <p><span><strong>Mac</strong> · ⌘ Space → Terminal → Return</span><span><strong>Windows</strong> · Start → Terminal → Enter</span><span><strong>Linux</strong> · Ctrl + Alt + T</span></p>
         </details>
       </div>
     </div>
