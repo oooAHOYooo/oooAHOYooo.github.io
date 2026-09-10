@@ -466,18 +466,20 @@
       color: var(--muted);
     }
 
-    .terminal-command {
-      margin: 0;
-      padding: 14px 16px;
-      overflow-x: auto;
-      border: 1px solid rgba(17,17,17,0.14);
-      border-radius: 12px;
-      background: rgba(17,17,17,0.06);
-      color: #111;
-      font: 0.82rem/1.6 "SFMono-Regular", Consolas, "Liberation Mono", monospace;
-      white-space: pre-wrap;
-      word-break: break-word;
+    .terminal-help {
+      color: var(--muted);
+      font-size: 0.82rem;
+      line-height: 1.55;
     }
+
+    .terminal-help summary {
+      width: fit-content;
+      color: var(--text);
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .terminal-help p { margin: 8px 0 0; }
 
     /* Screenshots gallery */
     .screenshots-heading {
@@ -793,11 +795,15 @@
           <span class="badge">Local music</span>
           <span class="badge">Build 0.1.0</span>
         </div>
-        <p>No desktop app download is required. This installs the AHOY Player source locally, scans your Music folder, and opens the terminal interface.</p>
-        <pre class="terminal-command"><code>git clone https://github.com/oooAHOYooo/ahoy-player.git ~/ahoyMp3 &amp;&amp; cd ~/ahoyMp3 &amp;&amp; npm install &amp;&amp; npm run ahoy -- scan ~/Music &amp;&amp; npm run ahoy -- tui</code></pre>
+        <p>New here? Copy Install. Already have AHOY Player? Copy Update. Then paste into Terminal and press Return.</p>
         <div class="card-actions">
-          <button class="btn btn-primary" id="copy-cli-command" type="button">Copy command</button>
+          <button class="btn btn-primary" type="button" data-cli-command="git clone https://github.com/oooAHOYooo/ahoy-player.git ~/ahoyMp3 &amp;&amp; cd ~/ahoyMp3 &amp;&amp; npm install &amp;&amp; npm run ahoy -- scan ~/Music &amp;&amp; npm run ahoy -- tui">Copy Install</button>
+          <button class="btn btn-ghost" type="button" data-cli-command="cd ~/ahoyMp3 &amp;&amp; git pull --ff-only &amp;&amp; npm install &amp;&amp; npm run ahoy -- scan ~/Music &amp;&amp; npm run ahoy -- tui">Copy Update</button>
         </div>
+        <details class="terminal-help">
+          <summary>Need a terminal?</summary>
+          <p><strong>Mac:</strong> ⌘ Space → type Terminal → Return. <strong>Windows:</strong> Start → type Terminal → Enter. <strong>Linux:</strong> Ctrl + Alt + T.</p>
+        </details>
       </div>
     </div>
 
@@ -919,27 +925,27 @@
     }
   });
 
-  const copyCliCommand = document.getElementById('copy-cli-command');
-  const cliCommand = document.querySelector('.terminal-command code');
-  copyCliCommand?.addEventListener('click', async () => {
-    const command = cliCommand?.textContent?.trim();
-    if (!command) return;
-    try {
-      await navigator.clipboard.writeText(command);
-    } catch {
-      const textarea = document.createElement('textarea');
-      textarea.value = command;
-      textarea.setAttribute('readonly', '');
-      textarea.style.position = 'fixed';
-      textarea.style.opacity = '0';
-      document.body.appendChild(textarea);
-      textarea.select();
-      document.execCommand('copy');
-      textarea.remove();
-    }
-    const label = copyCliCommand.textContent;
-    copyCliCommand.textContent = 'Copied!';
-    setTimeout(() => { copyCliCommand.textContent = label; }, 1800);
+  document.querySelectorAll('[data-cli-command]').forEach(button => {
+    button.addEventListener('click', async () => {
+      const command = button.dataset.cliCommand;
+      if (!command) return;
+      try {
+        await navigator.clipboard.writeText(command);
+      } catch {
+        const textarea = document.createElement('textarea');
+        textarea.value = command;
+        textarea.setAttribute('readonly', '');
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = '0';
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        textarea.remove();
+      }
+      const label = button.textContent;
+      button.textContent = 'Copied!';
+      setTimeout(() => { button.textContent = label; }, 1800);
+    });
   });
 </script>
 </body>
