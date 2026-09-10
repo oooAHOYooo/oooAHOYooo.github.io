@@ -795,6 +795,9 @@
         </div>
         <p>No desktop app download is required. This installs the AHOY Player source locally, scans your Music folder, and opens the terminal interface.</p>
         <pre class="terminal-command"><code>git clone https://github.com/oooAHOYooo/ahoy-player.git ~/ahoyMp3 &amp;&amp; cd ~/ahoyMp3 &amp;&amp; npm install &amp;&amp; npm run ahoy -- scan ~/Music &amp;&amp; npm run ahoy -- tui</code></pre>
+        <div class="card-actions">
+          <button class="btn btn-primary" id="copy-cli-command" type="button">Copy command</button>
+        </div>
       </div>
     </div>
 
@@ -914,6 +917,29 @@
       nav?.classList.remove('active');
       toggle?.setAttribute('aria-expanded', 'false');
     }
+  });
+
+  const copyCliCommand = document.getElementById('copy-cli-command');
+  const cliCommand = document.querySelector('.terminal-command code');
+  copyCliCommand?.addEventListener('click', async () => {
+    const command = cliCommand?.textContent?.trim();
+    if (!command) return;
+    try {
+      await navigator.clipboard.writeText(command);
+    } catch {
+      const textarea = document.createElement('textarea');
+      textarea.value = command;
+      textarea.setAttribute('readonly', '');
+      textarea.style.position = 'fixed';
+      textarea.style.opacity = '0';
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      textarea.remove();
+    }
+    const label = copyCliCommand.textContent;
+    copyCliCommand.textContent = 'Copied!';
+    setTimeout(() => { copyCliCommand.textContent = label; }, 1800);
   });
 </script>
 </body>
