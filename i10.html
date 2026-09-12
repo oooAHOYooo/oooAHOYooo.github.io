@@ -53,10 +53,11 @@
             src="https://www.googletagmanager.com/gtag/js?id=G-WVDL9N1HDT"></script>
         <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
+    function gtag(){ dataLayer.push(arguments); if (arguments[0] === 'event' && window.posthog) { window.posthog.capture(arguments[1], arguments[2] || {}); } }
     gtag("js", new Date());
     gtag("config", "G-WVDL9N1HDT");
   </script>
+        <script src="/analytics/posthog.js"></script>
         <!-- Firebase config (Initialize once) -->
         <script>
     // Your Firebase configuration

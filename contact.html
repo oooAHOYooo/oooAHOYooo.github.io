@@ -4,7 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-WVDL9N1HDT"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-WVDL9N1HDT');</script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);if(arguments[0]==='event'&&window.posthog){window.posthog.capture(arguments[1],arguments[2]||{})}}gtag('js',new Date());gtag('config','G-WVDL9N1HDT');</script>
+  <script src="/analytics/posthog.js"></script>
   <title>Contact Ahoy Indie Media — Reach Out & Share Content</title>
   <meta name="description" content="Get in touch with Ahoy Indie Media. Send us a message, share content via drag-and-drop, and join the New Haven independent scene." />
   <meta name="robots" content="index, follow" />

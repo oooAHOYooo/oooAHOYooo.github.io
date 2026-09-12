@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script async
       src="https://www.googletagmanager.com/gtag/js?id=G-WVDL9N1HDT"></script>
-    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-WVDL9N1HDT');</script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);if(arguments[0]==='event'&&window.posthog){window.posthog.capture(arguments[1],arguments[2]||{})}}gtag('js',new Date());gtag('config','G-WVDL9N1HDT');</script>
+    <script src="/analytics/posthog.js"></script>
     <title>AHOY | Welcome Home</title>
     <meta name="description"
       content="AHOY is home to Ahoy Streamer, Ahoy Player, and the Ahoy Player CLI — tools for discovering, collecting, and enjoying independent media." />

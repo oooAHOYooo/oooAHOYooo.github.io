@@ -5,7 +5,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-WVDL9N1HDT"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-WVDL9N1HDT');</script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);if(arguments[0]==='event'&&window.posthog){window.posthog.capture(arguments[1],arguments[2]||{})}}gtag('js',new Date());gtag('config','G-WVDL9N1HDT');</script>
+  <script src="/analytics/posthog.js"></script>
   <title>Privacy Policy | Ahoy Indie Media</title>
   <meta name="description"
     content="Privacy policy for Ahoy Indie Media, including the website and related app services." />
@@ -300,7 +301,7 @@
 
     <main>
       <section class="hero">
-        <div class="eyebrow">Last updated April 29, 2026</div>
+        <div class="eyebrow">Last updated September 11, 2026</div>
         <h1>Privacy Policy</h1>
         <p class="lead">
           This policy explains how Ahoy Indie Media handles information across the website and related app services.
@@ -321,9 +322,9 @@
           <div class="subcard">
             <h3>Automatic information</h3>
             <p>
-              We receive limited technical data and usage logs, including artist plays and login frequency. This helps
-              us
-              ensure creators are attributed correctly and the service stays reliable.
+              We receive limited technical data and usage logs, including artist plays, login frequency, and website
+              interactions. We use PostHog, a product analytics service, to understand aggregate website use and
+              conversion activity. This helps us ensure creators are attributed correctly and the service stays reliable.
             </p>
           </div>
         </div>
