@@ -847,22 +847,15 @@
             <div class="nutrition-heading"><span>Product Facts</span><span>CLI</span></div>
             <div class="nutrition-row"><span>Platform</span><strong>macOS + Linux</strong></div>
             <div class="nutrition-row"><span>Catalog</span><strong>Local Music</strong></div>
-            <div class="nutrition-row"><span>Serving</span><strong>Build 0.1.0</strong></div>
+            <div class="nutrition-row"><span>Serving</span><strong>Always Current</strong></div>
             <div class="nutrition-row"><span>Interface</span><strong>Terminal TUI</strong></div>
             <div class="nutrition-footer">* Direct terminal installation &amp; audio toolkit.</div>
           </div>
         </details>
-        <p>Keep your MP3s local. This command installs AHOY Player the first time, or updates it later—then scans your Music folder and opens the player.</p>
-        <pre class="terminal-command"><code id="cli-command">if [ -d "$HOME/ahoyMp3/.git" ]; then
-  git -C "$HOME/ahoyMp3" pull --ff-only
-else
-  git clone https://github.com/oooAHOYooo/ahoy-player.git "$HOME/ahoyMp3"
-fi &amp;&amp;
-npm --prefix "$HOME/ahoyMp3" install &amp;&amp;
-npm --prefix "$HOME/ahoyMp3" run ahoy -- scan "$HOME/Music" &amp;&amp;
-npm --prefix "$HOME/ahoyMp3" run ahoy -- tui</code></pre>
+        <p>Keep your MP3s local. This one command installs the global <code>ahoy</code> terminal player; run it again later to update. Then use <code>ahoy scan ~/Music</code> and <code>ahoy player</code> from any folder.</p>
+        <pre class="terminal-command"><code id="cli-command">curl -fsSL https://raw.githubusercontent.com/oooAHOYooo/ahoy-player/main/scripts/install-cli.sh | bash</code></pre>
         <div class="card-actions">
-          <button class="btn btn-primary" id="copy-cli-command" type="button">Copy + launch Ahoy CLI</button>
+          <button class="btn btn-primary" id="copy-cli-command" type="button">Copy Ahoy installer</button>
         </div>
         <details class="terminal-help">
           <summary>Need a terminal?</summary>
