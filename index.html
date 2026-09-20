@@ -1498,14 +1498,16 @@
       .seasonal-kicker { position:relative; z-index:1; color:#78d0d2; font-size:.76rem; letter-spacing:.18em; text-transform:uppercase; }
       .seasonal-hero h2 { position:relative; z-index:1; max-width:850px; margin:18px 0 12px; color:#fff; font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:clamp(3.4rem,8vw,8rem); line-height:.82; letter-spacing:-.012em; text-transform:uppercase; }
       .seasonal-hero p { position:relative; z-index:1; max-width:590px; margin:0; color:rgba(255,255,255,.72); font-size:clamp(1.1rem,2vw,1.45rem); line-height:1.45; }
-      .launch-app { position:relative; overflow:hidden; display:flex; align-items:flex-end; justify-content:space-between; gap:32px; min-height:clamp(260px,34vw,410px); margin-top:clamp(34px,6vw,72px); padding:clamp(28px,5vw,62px); border:1px solid rgba(91,190,199,.35); border-radius:28px; background:linear-gradient(90deg,rgba(3,12,22,.92) 0%,rgba(3,12,22,.7) 48%,rgba(3,12,22,.18) 100%),url('images/AHOY_OPEN_THE_APP.jpg') center/cover no-repeat; box-shadow:0 28px 90px rgba(0,0,0,.38); }
+      .launch-app { position:relative; overflow:hidden; display:flex; align-items:flex-end; justify-content:space-between; gap:32px; min-height:clamp(260px,34vw,410px); margin-top:clamp(34px,6vw,72px); padding:clamp(28px,5vw,62px); border:1px solid rgba(91,190,199,.35); border-radius:28px; background:linear-gradient(90deg,rgba(3,12,22,.92) 0%,rgba(3,12,22,.7) 48%,rgba(3,12,22,.18) 100%),url('images/AHOY_OPEN_THE_APP.jpg') center/cover no-repeat; box-shadow:0 28px 90px rgba(0,0,0,.38); text-decoration:none; color:inherit; cursor:pointer; transition:transform .25s ease, border-color .25s ease, box-shadow .25s ease; }
+      .launch-app:hover { transform:translateY(-3px); border-color:rgba(91,190,199,.7); box-shadow:0 34px 100px rgba(0,0,0,.45); }
+      .launch-app:hover .launch-app-button { transform:translateY(-2px); box-shadow:0 16px 36px rgba(0,0,0,.3); background:#fdfdfd; }
+      .launch-app:focus-visible { outline:2px solid #8ee8e4; outline-offset:4px; }
       .launch-app::before { display:none; }
       .launch-app-copy,.launch-app-action { position:relative; z-index:1; }
       .launch-app-kicker { margin-bottom:16px; color:#78d0d2; font-size:.78rem; letter-spacing:.18em; text-transform:uppercase; }
       .launch-app h2 { max-width:8ch; margin:0; color:#fff; font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:clamp(4rem,9vw,9rem); line-height:.78; letter-spacing:-.012em; text-transform:uppercase; }
       .launch-app p { max-width:34ch; margin:22px 0 0; color:rgba(255,255,255,.7); font-size:clamp(1rem,1.5vw,1.2rem); line-height:1.5; }
       .launch-app-button { display:inline-flex; align-items:center; justify-content:center; min-height:54px; padding:0 24px; border:1px solid rgba(255,255,255,.35); border-radius:999px; background:#fff; color:#080910; text-decoration:none; font-weight:700; box-shadow:0 12px 30px rgba(0,0,0,.2); transition:transform .2s ease,box-shadow .2s ease; }
-      .launch-app h2 { font-family:'Barlow Condensed',sans-serif; font-size:clamp(3.4rem,8vw,7rem); line-height:.84; letter-spacing:-.015em; text-transform:uppercase; }
       .launch-app-button:hover { transform:translateY(-2px); box-shadow:0 16px 36px rgba(0,0,0,.3); }
       .ecosystem-kicker { color:#ff4f9a; font-size:.76rem; letter-spacing:.16em; text-transform:uppercase; }
       .ecosystem-hero-logo { display:block; width:min(100%,420px); height:auto; margin:22px 0 28px; filter:invert(1); mix-blend-mode:screen; }
@@ -1548,10 +1550,11 @@
       .ecosystem-card b { display:block; margin-bottom:44px; color:#ff78b4; font-size:.74rem; letter-spacing:.13em; text-transform:uppercase; }
       .ecosystem-card h3 { margin:0 0 8px; font-size:1.15rem; }
       .ecosystem-card p { margin:0; color:rgba(255,255,255,.56); font-size:.88rem; line-height:1.45; }
-      .homepage-downloads { margin-top:clamp(70px,10vw,120px); padding:clamp(32px,5vw,58px); border:1px solid rgba(91,190,199,.3); border-radius:28px; background:linear-gradient(135deg, rgba(7,31,48,.98), rgba(10,74,83,.82)); box-shadow:0 28px 90px rgba(0,0,0,.32); }
+      .homepage-downloads { margin-top:clamp(70px,10vw,120px); padding:clamp(32px,5vw,58px); border:1px solid rgba(91,190,199,.35); border-radius:28px; background:linear-gradient(135deg, rgba(7,31,48,.98), rgba(10,74,83,.82)); box-shadow:0 28px 90px rgba(0,0,0,.32), 0 0 40px rgba(91,190,199,.08); }
       .homepage-downloads h2 { margin:0 0 16px; color:#fff; font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:clamp(3.4rem,8vw,7rem); line-height:.84; letter-spacing:-.015em; text-transform:uppercase; }
       .homepage-downloads p { max-width:620px; margin:0; color:rgba(255,255,255,.7); line-height:1.5; }
       .download-links { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); grid-auto-rows:1fr; gap:12px; margin-top:28px; }
+      .download-links.single-col { grid-template-columns:1fr; }
       .download-links a { display:flex; flex-direction:column; justify-content:center; min-height:72px; padding:16px 18px; border:1px solid rgba(255,255,255,.16); border-radius:18px; color:#fff; text-decoration:none; background:rgba(3,12,22,.42); transition:background .2s ease, border-color .2s ease, transform .2s ease; }
       .download-links a span { display:block; margin-top:5px; color:#ff78b4; font-size:.72rem; letter-spacing:.07em; text-transform:uppercase; white-space:nowrap; }
       .download-links a:hover { border-color:#ff78b4; background:rgba(255,120,180,.14); transform:translateY(-2px); }
@@ -1559,13 +1562,19 @@
       .download-product + .download-product { margin-top:34px; }
       .download-product h3 { margin:0 0 12px; color:#78d0d2; font-size:.78rem; letter-spacing:.18em; text-transform:uppercase; }
       .download-product .download-links { margin-top:0; }
-      .ecosystem-footer { display:flex; justify-content:space-between; gap:20px; margin-top:90px; color:rgba(255,255,255,.42); font-size:.8rem; }
+      .download-row-split { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin-top:34px; }
+      .download-row-split .download-product { margin-top:0; }
+      .ecosystem-footer { display:flex; justify-content:center; align-items:center; flex-wrap:wrap; gap:10px; margin-top:90px; padding:24px 0 16px; border-top:1px solid rgba(255,255,255,.1); color:rgba(255,255,255,.45); font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; text-align:center; }
+      .ecosystem-footer a { color:rgba(255,255,255,.6); text-decoration:none; transition:color .2s ease; }
+      .ecosystem-footer a:hover { color:#fff; }
+      .ecosystem-footer .sep { color:rgba(255,255,255,.25); margin:0 4px; user-select:none; }
       .about-ahoy { display:grid; grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr); gap:28px; margin-top:clamp(70px,10vw,120px); padding-top:28px; border-top:1px solid rgba(255,255,255,.12); }
       .about-ahoy h2 { margin:0; color:#fff; font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:clamp(3rem,6vw,5.5rem); line-height:.86; letter-spacing:-.015em; text-transform:uppercase; }
       .about-ahoy p { max-width:680px; margin:0; color:rgba(255,255,255,.62); line-height:1.65; }
       .about-ahoy a { color:#ff78b4; }
-      @media (max-width:760px) { .ecosystem-nav-links { display:none; } .ecosystem-hero { grid-template-columns:1fr; padding-top:100px; } .ecosystem-grid { grid-template-columns:repeat(2,1fr); } .ecosystem-roadmap { grid-template-columns:1fr; } .ecosystem-footer { flex-direction:column; margin-top:56px; } }
+      @media (max-width:760px) { .ecosystem-nav-links { display:none; } .ecosystem-hero { grid-template-columns:1fr; padding-top:100px; } .ecosystem-grid { grid-template-columns:repeat(2,1fr); } .ecosystem-roadmap { grid-template-columns:1fr; } .ecosystem-footer { margin-top:56px; } }
       @media (max-width:760px) { .launch-app { display:block; min-height:0; } .launch-app-action { margin-top:28px; } }
+      @media (max-width:540px) { .download-row-split { grid-template-columns:1fr; gap:28px; } }
       @media (max-width:460px) { .ecosystem-grid { grid-template-columns:1fr; } .ecosystem-card { min-height:140px; } .ecosystem-card b { margin-bottom:28px; } .download-links { grid-template-columns:1fr; } }
       @media (max-width:760px) { .cards-feature { grid-template-columns:1fr; } .cards-feature-copy h3 { max-width:14ch; } }
     </style>
@@ -1580,12 +1589,12 @@
           <a class="ecosystem-account" href="https://app.ahoy.ooo">Sign in / Sign up</a>
         </nav>
         <main>
-          <section class="launch-app" aria-labelledby="launch-app-title"><div class="launch-app-copy"><div class="launch-app-kicker">Ahoy Streamer · web app</div><h2 id="launch-app-title">Launch Streamer.</h2><p>Find independent music, podcasts, events, and film from New Haven creators.</p></div><div class="launch-app-action"><a class="launch-app-button" href="https://app.ahoy.ooo">Launch web app</a></div></section>
+          <a class="launch-app" href="https://app.ahoy.ooo" aria-labelledby="launch-app-title"><div class="launch-app-copy"><div class="launch-app-kicker">Ahoy Streamer · web app</div><h2 id="launch-app-title">Launch Streamer.</h2><p>Find independent music, podcasts, events, and film from New Haven creators.</p></div><div class="launch-app-action"><span class="launch-app-button">Launch web app</span></div></a>
           <section class="seasonal-hero" aria-labelledby="seasonal-title"><div class="seasonal-kicker">Featured upcoming event</div><h2 id="seasonal-title">AHOY Poets and Friends #13.</h2><p>Join us September 24, 2026 for the next AHOY Poets and Friends.</p><div class="launch-app-action"><a class="launch-app-button" href="https://app.ahoy.ooo/events/v/2026-09-24T18:30:00">See event details</a></div></section>
-          <section class="homepage-downloads" id="downloads" aria-labelledby="downloads-title"><div class="launch-app-kicker">AHOY products</div><h2 id="downloads-title">Download Ahoy Products.</h2><div class="download-product"><h3>Ahoy Streamer</h3><div class="download-links"><a href="https://app.ahoy.ooo">Web app<span>Launch Streamer →</span></a><a href="https://play.google.com/store/apps/details?id=ooo.ahoy.app&hl=en_US">Android<span>Install from Google Play →</span></a></div></div><div class="download-product"><h3>Ahoy Player</h3><div class="download-links"><a href="https://ahoy-player.onrender.com/download.html">Desktop app<span>Download Player →</span></a></div></div><div class="download-product"><h3>Ahoy Player CLI</h3><div class="download-links"><a href="/download.html">Download page<span>Get the CLI →</span></a></div></div></section>
+          <section class="homepage-downloads" id="downloads" aria-labelledby="downloads-title"><div class="launch-app-kicker">AHOY products</div><h2 id="downloads-title">Download Ahoy Products.</h2><div class="download-product"><h3>Ahoy Streamer</h3><div class="download-links"><a href="https://app.ahoy.ooo">Web app<span>Launch Streamer →</span></a><a href="https://play.google.com/store/apps/details?id=ooo.ahoy.app&amp;hl=en_US">Android<span>Install from Google Play →</span></a></div></div><div class="download-row-split"><div class="download-product"><h3>Ahoy Player</h3><div class="download-links single-col"><a href="https://ahoy-player.onrender.com/download.html">Desktop app<span>Download Player →</span></a></div></div><div class="download-product"><h3>Ahoy Player CLI</h3><div class="download-links single-col"><a href="/download.html">Download page<span>Get the CLI →</span></a></div></div></div></section>
         </main>
-        <section class="about-ahoy" aria-labelledby="about-ahoy-title"><h2 id="about-ahoy-title">About AHOY</h2><p>AHOY has been building independent media in New Haven since late 2019, putting on local events and making room for artists, musicians, podcasters, and creators. The current catalog represents 14 artists. It is maintained by solo developer <a href="https://app.ahoy.ooo">Alex Gonzalez</a>, and we’re currently working toward becoming a nonprofit so the work can serve the community for the long term. <a href="about.html">Learn more about AHOY.</a></p></section>
-        <footer class="ecosystem-footer"><span>AHOY</span><span>Account · Library · Cards · Player</span></footer>
+        <section class="about-ahoy" aria-labelledby="about-ahoy-title"><h2 id="about-ahoy-title">About AHOY</h2><p>AHOY has been building independent media in New Haven since late 2019, putting on local events and working with artists, musicians, podcasters, and creators. It is developed and maintained by <a href="https://alexgonzalez.ooo">Alex Gonzalez</a>. At the moment, we're knee deep in launching new products and working toward becoming a nonprofit so the work can serve the community for the long term. <a href="about.html">Learn more about AHOY.</a></p></section>
+        <footer class="ecosystem-footer"><a href="/">AHOY</a><span class="sep">|</span><a href="about.html">ABOUT</a><span class="sep">|</span><a href="/download">DOWNLOAD</a><span class="sep">|</span><a href="https://app.ahoy.ooo">SIGN IN</a></footer>
       </div>
     </div>
     <div class="bg-orb-blue" aria-hidden="true"></div>
