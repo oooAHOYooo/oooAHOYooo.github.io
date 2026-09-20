@@ -722,6 +722,20 @@
     .screenshots-heading, .screenshots-grid { display:none !important; }
     .hero-kicker { color:#111; } .hero-context a { color:#111; } .platform-card { border-color:rgba(17,17,17,.16); } .tag-beta { color:#111; border-color:rgba(17,17,17,.24); background:rgba(17,17,17,.06); } .tag-android { color:#111; border-color:rgba(17,17,17,.18); background:rgba(17,17,17,.05); }
     .badge { color:#333; border-color:rgba(17,17,17,.16); background:rgba(17,17,17,.05); } .btn-primary { color:#fff; background:#111; border-color:#111; box-shadow:0 10px 24px rgba(17,17,17,.16); } .store-preview-install { background:#111; } footer { border-color:rgba(17,17,17,.14); }
+    /* Food Label / Ingredients Dropdown */
+    .ingredients-dropdown { margin: 10px 0 16px; font-family: ui-monospace, "IBM Plex Mono", SFMono-Regular, Menlo, monospace; font-size: 0.72rem; }
+    .ingredients-dropdown summary { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border: 1px dashed rgba(17,17,17,.4); border-radius: 4px; background: rgba(17,17,17,.04); color: #111; cursor: pointer; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; list-style: none; user-select: none; transition: background .2s ease, border-color .2s ease, color .2s ease; }
+    .ingredients-dropdown summary::-webkit-details-marker { display: none; }
+    .ingredients-dropdown summary::after { content: "▾"; font-size: .8rem; transition: transform .2s ease; margin-left: 2px; }
+    .ingredients-dropdown[open] summary::after { transform: rotate(180deg); }
+    .ingredients-dropdown summary:hover { background: #111; color: #fff; border-color: #111; }
+    .nutrition-card { margin-top: 8px; max-width: 320px; padding: 10px 12px; border: 2px solid #111; border-radius: 4px; background: #fff; color: #111; box-shadow: 2px 3px 0 rgba(17,17,17,.12); }
+    .nutrition-heading { font-weight: 800; font-size: .8rem; letter-spacing: .06em; text-transform: uppercase; border-bottom: 3px solid #111; padding-bottom: 2px; margin-bottom: 6px; display: flex; justify-content: space-between; }
+    .nutrition-row { display: flex; justify-content: space-between; gap: 10px; padding: 3px 0; border-bottom: 1px solid rgba(17,17,17,.15); font-size: .68rem; }
+    .nutrition-row:last-of-type { border-bottom: none; }
+    .nutrition-row span { color: #555; text-transform: uppercase; font-weight: 500; }
+    .nutrition-row strong { color: #111; font-weight: 700; text-align: right; }
+    .nutrition-footer { margin-top: 6px; padding-top: 4px; border-top: 1px dashed rgba(17,17,17,.3); font-size: .62rem; color: #555; font-style: italic; }
   </style>
 </head>
 <body>
@@ -736,7 +750,7 @@
     </button>
     <nav class="nav-links" id="nav-menu">
       <a href="about.html">About</a>
-      <a href="https://app.ahoy.ooo/login">Login</a>
+      <a href="https://ahoy-id.onrender.com/">Login</a>
     </nav>
   </header>
 
@@ -754,11 +768,17 @@
       <div class="card-body">
         <span class="platform-tag tag-android">Web app</span>
         <h2>Ahoy Streamer</h2>
-        <div class="badge-row">
-          <span class="badge">Browser</span>
-          <span class="badge">Independent media</span>
-          <span class="badge">Build 1.1.5</span>
-        </div>
+        <details class="ingredients-dropdown">
+          <summary>Ingredients &amp; Specs</summary>
+          <div class="nutrition-card">
+            <div class="nutrition-heading"><span>Product Facts</span><span>Web</span></div>
+            <div class="nutrition-row"><span>Platform</span><strong>Browser</strong></div>
+            <div class="nutrition-row"><span>Flavor</span><strong>Independent Media</strong></div>
+            <div class="nutrition-row"><span>Serving</span><strong>Build 1.1.5</strong></div>
+            <div class="nutrition-row"><span>Corporate Ads</span><strong>0g (None)</strong></div>
+            <div class="nutrition-footer">* 100% locally sourced New Haven media.</div>
+          </div>
+        </details>
         <p>
           Ahoy Streamer is the web app for independent music, podcasts, events, and film from New Haven creators.
         </p>
@@ -798,11 +818,17 @@
       <div class="card-body">
         <span class="platform-tag tag-beta">Player</span>
         <h2>Ahoy Player</h2>
-        <div class="badge-row">
-          <span class="badge">MP3 organizer</span>
-          <span class="badge">Offline listening</span>
-          <span class="badge">Build 0.1.0</span>
-        </div>
+        <details class="ingredients-dropdown">
+          <summary>Ingredients &amp; Specs</summary>
+          <div class="nutrition-card">
+            <div class="nutrition-heading"><span>Product Facts</span><span>Desktop</span></div>
+            <div class="nutrition-row"><span>Function</span><strong>MP3 Organizer</strong></div>
+            <div class="nutrition-row"><span>Playback</span><strong>Offline Listening</strong></div>
+            <div class="nutrition-row"><span>Serving</span><strong>Build 0.1.0</strong></div>
+            <div class="nutrition-row"><span>Ownership</span><strong>100% Local Files</strong></div>
+            <div class="nutrition-footer">* Getting back to the days of owning your music.</div>
+          </div>
+        </details>
         <p>Keep your MP3 collection organized, local, and ready to play offline.</p>
         <div class="card-actions">
           <a class="btn btn-primary" href="https://ahoy-player.onrender.com/download.html" target="_blank" rel="noopener noreferrer">Download AHOY Player</a>
@@ -815,11 +841,17 @@
       <div class="card-body">
         <span class="platform-tag tag-beta">AHOY Player CLI</span>
         <h2>AHOY Player CLI</h2>
-        <div class="badge-row">
-          <span class="badge">macOS + Linux</span>
-          <span class="badge">Local music</span>
-          <span class="badge">Build 0.1.0</span>
-        </div>
+        <details class="ingredients-dropdown">
+          <summary>Ingredients &amp; Specs</summary>
+          <div class="nutrition-card">
+            <div class="nutrition-heading"><span>Product Facts</span><span>CLI</span></div>
+            <div class="nutrition-row"><span>Platform</span><strong>macOS + Linux</strong></div>
+            <div class="nutrition-row"><span>Catalog</span><strong>Local Music</strong></div>
+            <div class="nutrition-row"><span>Serving</span><strong>Build 0.1.0</strong></div>
+            <div class="nutrition-row"><span>Interface</span><strong>Terminal TUI</strong></div>
+            <div class="nutrition-footer">* Direct terminal installation &amp; audio toolkit.</div>
+          </div>
+        </details>
         <p>Keep your MP3s local. This command installs AHOY Player the first time, or updates it later—then scans your Music folder and opens the player.</p>
         <pre class="terminal-command"><code id="cli-command">if [ -d "$HOME/ahoyMp3/.git" ]; then
   git -C "$HOME/ahoyMp3" pull --ff-only
@@ -844,10 +876,16 @@ npm --prefix "$HOME/ahoyMp3" run ahoy -- tui</code></pre>
       <div class="card-body">
         <span class="platform-tag tag-ios">App Store</span>
         <h2>Ahoy for iPhone</h2>
-        <div class="badge-row">
-          <span class="badge">iOS</span>
-          <span class="badge">App Store</span>
-        </div>
+        <details class="ingredients-dropdown">
+          <summary>Ingredients &amp; Specs</summary>
+          <div class="nutrition-card">
+            <div class="nutrition-heading"><span>Product Facts</span><span>iOS</span></div>
+            <div class="nutrition-row"><span>Platform</span><strong>Apple iOS</strong></div>
+            <div class="nutrition-row"><span>Channel</span><strong>App Store</strong></div>
+            <div class="nutrition-row"><span>Status</span><strong>Under Review</strong></div>
+            <div class="nutrition-footer">* Freshly brewing for mobile.</div>
+          </div>
+        </details>
         <p>The iPhone app is currently in review with Apple. Check back here for the App Store link when it is available.</p>
         <div class="card-actions">
           <span class="btn btn-primary btn-disabled">
@@ -863,11 +901,16 @@ npm --prefix "$HOME/ahoyMp3" run ahoy -- tui</code></pre>
       <div class="card-body">
         <span class="platform-tag tag-beta">Mac Beta</span>
         <h2>Ahoy for Mac</h2>
-        <div class="badge-row">
-          <span class="badge">macOS</span>
-          <span class="badge">Browser build</span>
-          <span class="badge">Beta</span>
-        </div>
+        <details class="ingredients-dropdown">
+          <summary>Ingredients &amp; Specs</summary>
+          <div class="nutrition-card">
+            <div class="nutrition-heading"><span>Product Facts</span><span>macOS</span></div>
+            <div class="nutrition-row"><span>Platform</span><strong>macOS</strong></div>
+            <div class="nutrition-row"><span>Type</span><strong>Browser Build</strong></div>
+            <div class="nutrition-row"><span>Status</span><strong>Beta</strong></div>
+            <div class="nutrition-footer">* Pre-release developer build.</div>
+          </div>
+        </details>
         <p>Try the early Mac build in your browser. It is still in beta and is not yet available through the Mac App Store.</p>
         <div class="card-actions">
           <a class="btn btn-primary" href="/ahoyApp/index.html">
@@ -883,10 +926,15 @@ npm --prefix "$HOME/ahoyMp3" run ahoy -- tui</code></pre>
       <div class="card-body">
         <span class="platform-tag tag-linux">Linux</span>
         <h2>Ahoy for Linux</h2>
-        <div class="badge-row">
-          <span class="badge">Linux</span>
-          <span class="badge">Coming soon</span>
-        </div>
+        <details class="ingredients-dropdown">
+          <summary>Ingredients &amp; Specs</summary>
+          <div class="nutrition-card">
+            <div class="nutrition-heading"><span>Product Facts</span><span>Linux</span></div>
+            <div class="nutrition-row"><span>Platform</span><strong>Linux</strong></div>
+            <div class="nutrition-row"><span>Status</span><strong>Coming Soon</strong></div>
+            <div class="nutrition-footer">* Native build in development.</div>
+          </div>
+        </details>
         <p>Ahoy for Linux is coming soon.</p>
         <div class="card-actions">
           <span class="btn btn-ghost btn-disabled">Coming Soon</span>

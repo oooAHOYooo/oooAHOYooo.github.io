@@ -1564,10 +1564,12 @@
       .download-product .download-links { margin-top:0; }
       .download-row-split { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin-top:34px; }
       .download-row-split .download-product { margin-top:0; }
-      .ecosystem-footer { display:flex; justify-content:center; align-items:center; flex-wrap:wrap; gap:10px; margin-top:90px; padding:24px 0 16px; border-top:1px solid rgba(255,255,255,.1); color:rgba(255,255,255,.45); font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; text-align:center; }
+      .ecosystem-footer { display:flex; flex-direction:column; justify-content:center; align-items:center; gap:14px; margin-top:90px; padding:24px 0 32px; border-top:1px solid rgba(255,255,255,.1); color:rgba(255,255,255,.45); font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; text-align:center; }
+      .ecosystem-footer-nav { display:flex; justify-content:center; align-items:center; flex-wrap:wrap; gap:10px; }
       .ecosystem-footer a { color:rgba(255,255,255,.6); text-decoration:none; transition:color .2s ease; }
       .ecosystem-footer a:hover { color:#fff; }
       .ecosystem-footer .sep { color:rgba(255,255,255,.25); margin:0 4px; user-select:none; }
+      .ecosystem-footer-copy { font-family:ui-monospace, "IBM Plex Mono", SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size:.68rem; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,.32); margin-top:4px; }
       .about-ahoy { display:grid; grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr); gap:28px; margin-top:clamp(70px,10vw,120px); padding-top:28px; border-top:1px solid rgba(255,255,255,.12); }
       .about-ahoy h2 { margin:0; color:#fff; font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:clamp(3rem,6vw,5.5rem); line-height:.86; letter-spacing:-.015em; text-transform:uppercase; }
       .about-ahoy p { max-width:680px; margin:0; color:rgba(255,255,255,.62); line-height:1.65; }
@@ -1586,15 +1588,15 @@
         <nav class="ecosystem-nav" aria-label="AHOY">
           <a class="ecosystem-mark" href="/" aria-label="AHOY home"><img src="images/updatedAhoy_A.png" alt="AHOY Indie Media" width="3000" height="1478"></a>
           <div class="ecosystem-nav-links"><a href="about.html">About</a><a class="ecosystem-top-action secondary" href="/download">Download</a></div>
-          <a class="ecosystem-account" href="https://app.ahoy.ooo">Sign in / Sign up</a>
+          <a class="ecosystem-account" href="https://ahoy-id.onrender.com/">Sign in / Sign up</a>
         </nav>
         <main>
           <a class="launch-app" href="https://app.ahoy.ooo" aria-labelledby="launch-app-title"><div class="launch-app-copy"><div class="launch-app-kicker">Ahoy Streamer · web app</div><h2 id="launch-app-title">Launch Streamer.</h2><p>Find independent music, podcasts, events, and film from New Haven creators.</p></div><div class="launch-app-action"><span class="launch-app-button">Launch web app</span></div></a>
           <section class="seasonal-hero" aria-labelledby="seasonal-title"><div class="seasonal-kicker">Featured upcoming event</div><h2 id="seasonal-title">AHOY Poets and Friends #13.</h2><p>Join us September 24, 2026 for the next AHOY Poets and Friends.</p><div class="launch-app-action"><a class="launch-app-button" href="https://app.ahoy.ooo/events/v/2026-09-24T18:30:00">See event details</a></div></section>
           <section class="homepage-downloads" id="downloads" aria-labelledby="downloads-title"><div class="launch-app-kicker">AHOY products</div><h2 id="downloads-title">Download Ahoy Products.</h2><div class="download-product"><h3>Ahoy Streamer</h3><div class="download-links"><a href="https://app.ahoy.ooo">Web app<span>Launch Streamer →</span></a><a href="https://play.google.com/store/apps/details?id=ooo.ahoy.app&amp;hl=en_US">Android<span>Install from Google Play →</span></a></div></div><div class="download-row-split"><div class="download-product"><h3>Ahoy Player</h3><div class="download-links single-col"><a href="https://ahoy-player.onrender.com/download.html">Desktop app<span>Download Player →</span></a></div></div><div class="download-product"><h3>Ahoy Player CLI</h3><div class="download-links single-col"><a href="/download.html">Download page<span>Get the CLI →</span></a></div></div></div></section>
         </main>
-        <section class="about-ahoy" aria-labelledby="about-ahoy-title"><h2 id="about-ahoy-title">About AHOY</h2><p>AHOY has been building independent media in New Haven since late 2019, putting on local events and working with artists, musicians, podcasters, and creators. It is developed and maintained by <a href="https://alexgonzalez.ooo">Alex Gonzalez</a>. At the moment, we're knee deep in launching new products and working toward becoming a nonprofit so the work can serve the community for the long term. <a href="about.html">Learn more about AHOY.</a></p></section>
-        <footer class="ecosystem-footer"><a href="/">AHOY</a><span class="sep">|</span><a href="about.html">ABOUT</a><span class="sep">|</span><a href="/download">DOWNLOAD</a><span class="sep">|</span><a href="https://app.ahoy.ooo">SIGN IN</a></footer>
+        <section class="about-ahoy" aria-labelledby="about-ahoy-title"><h2 id="about-ahoy-title">About AHOY</h2><p>AHOY has been building independent media in New Haven since late 2019, putting on local events and working with artists, musicians, podcasters, and creators. It is developed and maintained by <a href="https://alexgonzalez.ooo/">Alex Gonzalez</a>. At the moment, we're knee deep in launching new products and working toward becoming a nonprofit. <a href="about.html">Learn more about AHOY.</a></p></section>
+        <footer class="ecosystem-footer"><div class="ecosystem-footer-nav"><a href="/">AHOY</a><span class="sep">|</span><a href="about.html">ABOUT</a><span class="sep">|</span><a href="/download">DOWNLOAD</a><span class="sep">|</span><a href="https://ahoy-id.onrender.com/">SIGN IN</a></div><div class="ecosystem-footer-copy">© 2026 AHOY INDIE MEDIA</div></footer>
       </div>
     </div>
     <div class="bg-orb-blue" aria-hidden="true"></div>
@@ -1842,7 +1844,7 @@
               </a>
             </div>
             <div class="list">
-              <a href="https://app.ahoy.ooo/login" target="_blank"
+              <a href="https://ahoy-id.onrender.com/" target="_blank"
                 rel="noopener" class="list-item">
                 <div class="step">3</div>
                 <div>
@@ -2203,7 +2205,7 @@
           <p>Create your AHOY account once. Your sign-in, saved music, library, and account settings will follow you between ahoy.ooo and app.ahoy.ooo.</p>
           <div class="account-actions">
             <a class="button primary" href="/account.html">CREATE AN ACCOUNT</a>
-            <a class="button secondary" href="https://app.ahoy.ooo">SIGN IN</a>
+            <a class="button secondary" href="https://ahoy-id.onrender.com/">SIGN IN</a>
           </div>
         </section>
 
