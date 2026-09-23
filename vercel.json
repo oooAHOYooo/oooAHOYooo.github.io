@@ -52,6 +52,14 @@
       "destination": "/privacy/index.html"
     },
     {
+      "source": "/products",
+      "destination": "/products.html"
+    },
+    {
+      "source": "/products/",
+      "destination": "/products.html"
+    },
+    {
       "source": "/download",
       "destination": "/download.html"
     },

@@ -3,6 +3,7 @@ Allow: /
 Allow: /newhaven
 Allow: /support
 Allow: /privacy
+Allow: /products
 Allow: /download
 Allow: /non-profit
 Disallow: /misc

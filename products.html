@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WVDL9N1HDT"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);if(arguments[0]==='event'&&window.posthog){window.posthog.capture(arguments[1],arguments[2]||{})}}gtag('js',new Date());gtag('config','G-WVDL9N1HDT');</script>
+  <script src="/analytics/posthog.js"></script>
+  <title>AHOY Products · Download and Explore | Streamer, Market, Player</title>
+  <meta name="description" content="Download and explore Ahoy products: Ahoy Streamer, Ahoy Market, Ahoy Player, and Ahoy Player CLI for independent media, community commerce, and local music." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://ahoy.ooo/products" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ahoy.ooo/products" />
+  <meta property="og:title" content="AHOY Products · Download and Explore" />
+  <meta property="og:description" content="Stream independent media, explore the community marketplace, or organize your own MP3 collection and listen offline." />
+  <meta property="og:image" content="https://ahoy.ooo/images/github-app-preview.jpg" />
+  <meta property="og:image:width" content="1446" />
+  <meta property="og:image:height" content="1484" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AHOY Products · Download and Explore" />
+  <meta name="twitter:description" content="Stream independent media, explore the community marketplace, or organize your own MP3 collection and listen offline." />
+  <meta name="twitter:image" content="https://ahoy.ooo/images/github-app-preview.jpg" />
+  <link rel="icon" type="image/png" href="/images/Ahoy%20Indie%20Media%20-%20App%20Icon%20-%20May%2026.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/Ahoy%20Indie%20Media%20-%20App%20Icon%20-%20May%2026.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "AHOY Products",
+    "itemListElement": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Ahoy Streamer",
+        "operatingSystem": "All",
+        "applicationCategory": "EntertainmentApplication",
+        "url": "https://app.ahoy.ooo"
+      },
+      {
+        "@type": "WebApplication",
+        "name": "Ahoy Market",
+        "applicationCategory": "ShoppingApplication",
+        "url": "https://ahoy-marketplace-mq0f.onrender.com/"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Ahoy Player",
+        "operatingSystem": "macOS, Windows, Linux",
+        "applicationCategory": "MultimediaApplication",
+        "url": "https://ahoy-player.onrender.com/download.html"
+      }
+    ]
+  }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.cdnfonts.com/css/cubano" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #eef6f2;
+      --panel: rgba(248, 252, 250, .78);
+      --panel-border: rgba(17, 17, 17, .16);
+      --text: #111;
+      --muted: #454545;
+      --shadow: 0 24px 70px rgba(17, 17, 17, .1);
+    }
+
+    html, body {
+      min-height: 100%;
+      background: radial-gradient(circle at 82% 8%, rgba(116, 185, 255, .38), transparent 38%), linear-gradient(145deg, #f5faf5 0%, #e9f1ec 62%, #e4f0fd 100%);
+      color: var(--text);
+      font-family: "IBM Plex Sans", system-ui, sans-serif;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(48, 91, 82, .07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(48, 91, 82, .07) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, .72), transparent 90%);
+      opacity: 0.35;
+    }
+
+    .page {
+      position: relative;
+      z-index: 1;
+      width: min(1100px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 18px 0 60px;
+    }
+
+    /* ── Topbar ── */
+    .topbar {
+      position: sticky;
+      top: 12px;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 12px 14px;
+      margin-bottom: 48px;
+      border: 1px solid var(--panel-border);
+      border-radius: 20px;
+      background: rgba(248, 252, 250, .64);
+      backdrop-filter: blur(16px);
+      box-shadow: var(--shadow);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .brand img {
+      width: 150px;
+      height: auto;
+      object-fit: contain;
+      filter: none;
+      mix-blend-mode: multiply;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text);
+      font-size: 0.78rem;
+      opacity: 0.85;
+      transition: opacity 0.2s;
+    }
+
+    .nav-links a:hover { opacity: 1; }
+    .nav-links a.active-link { font-weight: 700; opacity: 1; }
+
+    /* ── Hero ── */
+    .hero {
+      text-align: center;
+      margin: clamp(70px, 12vw, 150px) auto 86px;
+      max-width: 1000px;
+    }
+
+    .hero-kicker {
+      margin-bottom: 10px;
+      color: var(--text);
+      font-family: "Cubano", sans-serif;
+      font-size: clamp(3.2rem, 8.6vw, 6.4rem);
+      line-height: .9;
+      letter-spacing: .035em;
+    }
+
+    .hero h1 {
+      color: var(--text);
+      font-family: "Cubano", sans-serif;
+      font-size: clamp(3rem, 8vw, 6rem);
+      letter-spacing: 0.03em;
+      line-height: 1;
+      margin-bottom: 14px;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      max-width: 52ch;
+      margin: 0 auto;
+    }
+
+    .hero-context {
+      margin-top: 14px;
+      font-size: 0.88rem;
+    }
+
+    .hero-context a {
+      color: var(--text);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* ── Platform grid ── */
+    .platforms {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .platform-card {
+      position: relative;
+      isolation: isolate;
+      border: 1px solid var(--panel-border);
+      border-radius: 24px;
+      background: var(--panel);
+      backdrop-filter: blur(16px);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .platform-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 32px 72px rgba(17, 17, 17, 0.16);
+    }
+
+    .card-body {
+      padding: clamp(24px, 4vw, 40px);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      min-height: 318px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .platform-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 600;
+      width: fit-content;
+    }
+
+    .tag-android {
+      color: #111;
+      border: 1px solid rgba(17, 17, 17, .18);
+      background: rgba(17, 17, 17, .05);
+    }
+
+    .tag-beta {
+      color: #111;
+      border: 1px solid rgba(17, 17, 17, .24);
+      background: rgba(17, 17, 17, .06);
+    }
+
+    .platform-card h2 {
+      font-family: "Cubano", sans-serif;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      letter-spacing: 0.03em;
+      line-height: 1.1;
+      color: var(--text);
+    }
+
+    .platform-card p {
+      color: var(--muted);
+      font-size: 0.97rem;
+      line-height: 1.65;
+    }
+
+    .card-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: auto;
+      padding-top: 6px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 46px;
+      padding: 0 20px;
+      border-radius: 12px;
+      border: 1px solid var(--panel-border);
+      text-decoration: none;
+      font-size: 0.7rem;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-weight: 600;
+      text-transform: uppercase;
+      white-space: nowrap;
+      color: #fff;
+      transition: transform 0.18s ease, background 0.18s ease;
+      cursor: pointer;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-primary {
+      color: #fff;
+      background: #111;
+      border-color: #111;
+      box-shadow: 0 10px 24px rgba(17, 17, 17, .16);
+    }
+
+    .terminal-help {
+      color: var(--muted);
+      font-size: 0.82rem;
+      line-height: 1.55;
+    }
+
+    .terminal-help summary {
+      width: fit-content;
+      color: var(--text);
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .card-body .terminal-help p {
+      display: grid;
+      gap: 2px;
+      margin: 8px 0 0;
+      font-size: 0.78rem;
+      line-height: 1.45;
+    }
+
+    .terminal-help p span { display: block; }
+
+    .terminal-command {
+      margin: 0;
+      padding: 14px 16px;
+      overflow-x: auto;
+      border: 1px solid rgba(17, 17, 17, 0.14);
+      border-radius: 12px;
+      background: rgba(17, 17, 17, 0.06);
+      color: #111;
+      font: 0.72rem/1.4 "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      white-space: pre;
+      word-break: normal;
+    }
+
+    /* Food Label / Ingredients Dropdown */
+    .ingredients-dropdown {
+      margin: 10px 0 16px;
+      font-family: ui-monospace, "IBM Plex Mono", SFMono-Regular, Menlo, monospace;
+      font-size: 0.72rem;
+    }
+
+    .ingredients-dropdown summary {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border: 1px dashed rgba(17, 17, 17, .4);
+      border-radius: 4px;
+      background: rgba(17, 17, 17, .04);
+      color: #111;
+      cursor: pointer;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      list-style: none;
+      user-select: none;
+      transition: background .2s ease, border-color .2s ease, color .2s ease;
+    }
+
+    .ingredients-dropdown summary::-webkit-details-marker { display: none; }
+    .ingredients-dropdown summary::after {
+      content: "▾";
+      font-size: .8rem;
+      transition: transform .2s ease;
+      margin-left: 2px;
+    }
+
+    .ingredients-dropdown[open] summary::after { transform: rotate(180deg); }
+    .ingredients-dropdown summary:hover { background: #111; color: #fff; border-color: #111; }
+
+    .nutrition-card {
+      margin-top: 8px;
+      max-width: 320px;
+      padding: 10px 12px;
+      border: 2px solid #111;
+      border-radius: 4px;
+      background: #fff;
+      color: #111;
+      box-shadow: 2px 3px 0 rgba(17, 17, 17, .12);
+    }
+
+    .nutrition-heading {
+      font-weight: 800;
+      font-size: .8rem;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      border-bottom: 3px solid #111;
+      padding-bottom: 2px;
+      margin-bottom: 6px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .nutrition-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 3px 0;
+      border-bottom: 1px solid rgba(17, 17, 17, .15);
+      font-size: .68rem;
+    }
+
+    .nutrition-row:last-of-type { border-bottom: none; }
+    .nutrition-row span { color: #555; text-transform: uppercase; font-weight: 500; }
+    .nutrition-row strong { color: #111; font-weight: 700; text-align: right; }
+    .nutrition-footer {
+      margin-top: 6px;
+      padding-top: 4px;
+      border-top: 1px dashed rgba(17, 17, 17, .3);
+      font-size: .62rem;
+      color: #555;
+      font-style: italic;
+    }
+
+    /* Subfolder banner */
+    .download-callout {
+      margin-top: 48px;
+      padding: 24px 28px;
+      border: 1px solid var(--panel-border);
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.65);
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .download-callout-text h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .download-callout-text p {
+      font-size: 0.86rem;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    /* Footer */
+    footer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 8px;
+      margin-top: 56px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(17, 17, 17, .14);
+      color: var(--muted);
+      font-size: 0.76rem;
+    }
+
+    footer a { color: var(--text); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text);
+      cursor: pointer;
+      padding: 8px;
+      line-height: 1;
+    }
+
+    .nav-links.active {
+      display: flex;
+      position: absolute;
+      top: calc(100% + 12px);
+      right: 0;
+      min-width: 200px;
+      background: rgba(248, 252, 250, 0.98);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--panel-border);
+      border-radius: 16px;
+      padding: 8px 0;
+      flex-direction: column;
+      z-index: 100;
+      box-shadow: var(--shadow);
+    }
+
+    .nav-links.active a {
+      padding: 12px 18px;
+      display: block;
+      color: var(--text);
+    }
+
+    .nav-links.active a:hover { background: rgba(17, 17, 17, 0.05); }
+
+    @media (max-width: 760px) {
+      .hero { margin-top: 72px; }
+      .platforms { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .menu-toggle { display: block; }
+      .btn { width: 100%; justify-content: center; }
+      .download-callout { flex-direction: column; align-items: flex-start; }
+      .download-callout .btn { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <header class="topbar">
+    <a class="brand" href="https://ahoy.ooo" aria-label="AHOY home">
+      <img src="images/updatedAhoy_A.png" alt="AHOY logo" />
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><rect y="4" width="22" height="2" rx="1" fill="currentColor"/><rect y="10" width="22" height="2" rx="1" fill="currentColor"/><rect y="16" width="22" height="2" rx="1" fill="currentColor"/></svg>
+    </button>
+    <nav class="nav-links" id="nav-menu">
+      <a href="about.html">About</a>
+      <a href="/products" class="active-link">Products</a>
+      <a href="/download">Downloads</a>
+      <a href="https://ahoy-id.onrender.com/">Login</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <div class="hero-kicker">Download and explore</div>
+    <h1>AHOY products.</h1>
+    <p>Stream independent media, explore the community marketplace, or organize your own MP3 collection and listen offline.</p>
+    <p class="hero-context"><a href="/#about-ahoy">About AHOY</a> · <a href="/download">Dedicated downloads &amp; installers →</a></p>
+  </div>
+
+  <div class="platforms">
+
+    <!-- Card 1: Ahoy Streamer -->
+    <div class="platform-card">
+      <div class="card-body">
+        <span class="platform-tag tag-android">Web app</span>
+        <h2>Ahoy Streamer</h2>
+        <details class="ingredients-dropdown">
+          <summary>Specs</summary>
+          <div class="nutrition-card">
+            <div class="nutrition-heading"><span>Product Facts</span><span>Web</span></div>
+            <div class="nutrition-row"><span>Platform</span><strong>Browser</strong></div>
+            <div class="nutrition-row"><span>Flavor</span><strong>Independent Media</strong></div>
+            <div class="nutrition-row"><span>Serving</span><strong>Build 1.1.5</strong></div>
+            <div class="nutrition-row"><span>Corporate Ads</span><strong>0g (None)</strong></div>
+            <div class="nutrition-footer">* 100% locally sourced New Haven media.</div>
+          </div>
+        </details>
+        <p>
+          Ahoy Streamer is the web app for independent music, podcasts, events, and film from New Haven creators.
+        </p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://app.ahoy.ooo" target="_blank" rel="noopener noreferrer" onclick="gtag('event','streamer_web_app_click',{location:'products_page'})">
+            Launch Ahoy Streamer
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2: Ahoy Market -->
+    <div class="platform-card">
+      <div class="card-body">
+        <span class="platform-tag tag-android">Marketplace</span>
+        <h2>Ahoy Market</h2>
+        <details class="ingredients-dropdown">
+          <summary>Specs</summary>
+          <div class="nutrition-card">
+            <div class="nutrition-heading"><span>Product Facts</span><span>Market</span></div>
+            <div class="nutrition-row"><span>Platform</span><strong>Web / Browser</strong></div>
+            <div class="nutrition-row"><span>Catalog</span><strong>Music, Merch &amp; Drops</strong></div>
+            <div class="nutrition-row"><span>Serving</span><strong>Build 0.2.0</strong></div>
+            <div class="nutrition-row"><span>Creator Payout</span><strong>Direct Support</strong></div>
+            <div class="nutrition-footer">* Buy directly from independent New Haven creators.</div>
+          </div>
+        </details>
+        <p>
+          Ahoy Market connects you directly with independent artists, musicians, and creators for music releases, physical merch, and community drops.
+        </p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://ahoy-marketplace-mq0f.onrender.com/" target="_blank" rel="noopener noreferrer" onclick="gtag('event','market_web_app_click',{location:'products_page'})">
+            Explore Ahoy Market
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3: Ahoy Player -->
+    <div class="platform-card player-card">
+      <div class="card-body">
+        <span class="platform-tag tag-beta">Player</span>
+        <h2>Ahoy Player</h2>
+        <details class="ingredients-dropdown">
+          <summary>Specs</summary>
+          <div class="nutrition-card">
+            <div class="nutrition-heading"><span>Product Facts</span><span>Desktop</span></div>
+            <div class="nutrition-row"><span>Function</span><strong>MP3 Organizer</strong></div>
+            <div class="nutrition-row"><span>Playback</span><strong>Offline Listening</strong></div>
+            <div class="nutrition-row"><span>Serving</span><strong>Build 0.1.0</strong></div>
+            <div class="nutrition-row"><span>Ownership</span><strong>100% Local Files</strong></div>
+            <div class="nutrition-footer">* Getting back to the days of owning your music.</div>
+          </div>
+        </details>
+        <p>Keep your MP3 collection organized, local, and ready to play offline.</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://ahoy-player.onrender.com/download.html" target="_blank" rel="noopener noreferrer">
+            Download Ahoy Player
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4: Ahoy Player CLI -->
+    <div class="platform-card cli-card">
+      <div class="card-body">
+        <span class="platform-tag tag-beta">AHOY Player CLI</span>
+        <h2>AHOY Player CLI</h2>
+        <details class="ingredients-dropdown">
+          <summary>Specs</summary>
+          <div class="nutrition-card">
+            <div class="nutrition-heading"><span>Product Facts</span><span>CLI</span></div>
+            <div class="nutrition-row"><span>Platform</span><strong>macOS + Linux</strong></div>
+            <div class="nutrition-row"><span>Catalog</span><strong>Local Music</strong></div>
+            <div class="nutrition-row"><span>Serving</span><strong>Always Current</strong></div>
+            <div class="nutrition-row"><span>Interface</span><strong>Terminal TUI</strong></div>
+            <div class="nutrition-footer">* Direct terminal installation &amp; audio toolkit.</div>
+          </div>
+        </details>
+        <p>Keep your MP3s local. This one command installs the global <code>ahoy</code> terminal player; run it again later to update. Then use <code>ahoy scan ~/Music</code> and <code>ahoy player</code> from any folder.</p>
+        <pre class="terminal-command"><code id="cli-command">curl -fsSL https://raw.githubusercontent.com/oooAHOYooo/ahoy-player/main/scripts/install-cli.sh | bash</code></pre>
+        <div class="card-actions">
+          <button class="btn btn-primary" id="copy-cli-command" type="button">Copy Ahoy installer</button>
+        </div>
+        <details class="terminal-help">
+          <summary>Need a terminal?</summary>
+          <p><span><strong>Mac</strong> · ⌘ Space → Terminal → Return</span><span><strong>Windows</strong> · Start → Terminal → Enter</span><span><strong>Linux</strong> · Ctrl + Alt + T</span></p>
+        </details>
+      </div>
+    </div>
+
+  </div>
+
+  <section class="download-callout">
+    <div class="download-callout-text">
+      <h3>Looking for downloadable apps &amp; raw builds?</h3>
+      <p>Visit the downloads section for desktop app packages, Mac beta releases, and terminal installers.</p>
+    </div>
+    <a class="btn btn-primary" href="/download">Browse Downloads →</a>
+  </section>
+
+  <footer>
+    <div>Made in New Haven by <a href="https://littlemarket.org" target="_blank" rel="noopener noreferrer">Little Market</a></div>
+    <div style="display:flex;gap:20px;">
+      <a href="/">Home</a>
+      <a href="/products">Products</a>
+      <a href="/download">Downloads</a>
+      <a href="/privacy">Privacy</a>
+    </div>
+    <div>Copyright 2026 · Ahoy Indie Media</div>
+  </footer>
+
+</div>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const nav = document.getElementById('nav-menu');
+  toggle?.addEventListener('click', () => {
+    const open = nav.classList.toggle('active');
+    toggle.setAttribute('aria-expanded', open);
+  });
+  document.addEventListener('click', (e) => {
+    if (!toggle?.contains(e.target) && !nav?.contains(e.target)) {
+      nav?.classList.remove('active');
+      toggle?.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  const copyCliCommand = document.getElementById('copy-cli-command');
+  const cliCommand = document.getElementById('cli-command');
+  copyCliCommand?.addEventListener('click', async () => {
+    const command = cliCommand?.textContent?.trim();
+    if (!command) return;
+    try {
+      await navigator.clipboard.writeText(command);
+    } catch {
+      const textarea = document.createElement('textarea');
+      textarea.value = command;
+      textarea.setAttribute('readonly', '');
+      textarea.style.position = 'fixed';
+      textarea.style.opacity = '0';
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      textarea.remove();
+    }
+    const label = copyCliCommand.textContent;
+    copyCliCommand.textContent = 'Copied!';
+    setTimeout(() => { copyCliCommand.textContent = label; }, 1800);
+  });
+</script>
+</body>
+</html>

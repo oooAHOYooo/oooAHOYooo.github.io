@@ -6,20 +6,20 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-WVDL9N1HDT"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);if(arguments[0]==='event'&&window.posthog){window.posthog.capture(arguments[1],arguments[2]||{})}}gtag('js',new Date());gtag('config','G-WVDL9N1HDT');</script>
   <script src="/analytics/posthog.js"></script>
-  <title>Download Ahoy Streamer and Ahoy Player</title>
-  <meta name="description" content="Download Ahoy Streamer for independent media and Ahoy Player to organize and play your MP3 collection offline." />
+  <title>Download AHOY Apps · Desktop Player, CLI &amp; Builds</title>
+  <meta name="description" content="Download Ahoy Player desktop app, CLI tools, and native application builds to organize and play your local MP3 collection offline." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://ahoy.ooo/download" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://ahoy.ooo/download" />
-  <meta property="og:title" content="Download Ahoy Streamer and Ahoy Player" />
-  <meta property="og:description" content="Stream independent music, podcasts, events, and film from New Haven creators — free and ad-free on Android." />
+  <meta property="og:title" content="Download AHOY Apps · Desktop Player &amp; CLI" />
+  <meta property="og:description" content="Download Ahoy Player desktop app, CLI tools, and native application builds to organize and play your local MP3 collection offline." />
   <meta property="og:image" content="https://ahoy.ooo/images/github-app-preview.jpg" />
   <meta property="og:image:width" content="1446" />
   <meta property="og:image:height" content="1484" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Download Ahoy Streamer and Ahoy Player" />
-  <meta name="twitter:description" content="Stream independent music, podcasts, events, and film from New Haven creators — free and ad-free on Android." />
+  <meta name="twitter:title" content="Download AHOY Apps · Desktop Player &amp; CLI" />
+  <meta name="twitter:description" content="Download Ahoy Player desktop app, CLI tools, and native application builds to organize and play your local MP3 collection offline." />
   <meta name="twitter:image" content="https://ahoy.ooo/images/github-app-preview.jpg" />
   <link rel="icon" type="image/png" href="/images/Ahoy%20Indie%20Media%20-%20App%20Icon%20-%20May%2026.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/images/Ahoy%20Indie%20Media%20-%20App%20Icon%20-%20May%2026.png" />
@@ -184,9 +184,6 @@
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       gap: 18px;
     }
-    .ios-card,
-    .linux-card,
-    .mac-card,
     .featured,
     .screenshots-heading,
     .screenshots-grid { display: none; }
@@ -715,7 +712,7 @@
     .badge { background:rgba(85,121,108,.1); border-color:rgba(85,121,108,.18); color:#5c776e; } .btn-primary { background:#1b7ff0; border-color:#1b7ff0; box-shadow:0 10px 24px rgba(27,127,240,.2); } .btn-ghost { color:var(--text); border-color:rgba(75,119,105,.22); }
     .store-preview { background:rgba(252,255,253,.9); border-color:rgba(75,119,105,.2); } .store-preview-meta h3,.store-preview-meta span,.store-preview-rating span:last-child { color:var(--text); } .store-preview-install { background:#15945e; }
     footer { color:#789087; border-color:rgba(75,119,105,.16); } footer a { color:var(--text); }
-    @media(max-width:760px) { .hero { margin-top:72px; } .platform-card.featured { grid-template-columns:1fr; } }
+    @media(max-width:760px) { .hero { margin-top:72px; } .platform-card.featured { grid-template-columns:1fr; } .platforms { grid-template-columns: 1fr; } }
     /* Keep the Player surface monochrome: the product itself supplies the color. */
     :root { --text:#111; --muted:#454545; --panel-border:rgba(17,17,17,.16); --shadow:0 24px 70px rgba(17,17,17,.1); }
     .nav-links a, .hero h1, .hero p, .hero-context a, .platform-card h2, .card-body p, footer, footer a { color:#111; }
@@ -750,15 +747,22 @@
     </button>
     <nav class="nav-links" id="nav-menu">
       <a href="about.html">About</a>
+      <a href="/products">Products</a>
+      <a href="/download" style="font-weight:700;">Downloads</a>
       <a href="https://ahoy-id.onrender.com/">Login</a>
     </nav>
   </header>
 
+  <div style="margin-bottom:28px; padding:12px 18px; border:1px solid var(--panel-border); border-radius:14px; background:rgba(255,255,255,0.7); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; font-size:0.84rem;">
+    <span>Looking for our web products? Check out <strong>Ahoy Streamer</strong> and <strong>Ahoy Market</strong> on the Products page.</span>
+    <a href="/products" style="color:var(--text); font-weight:700; text-decoration:underline;">Explore Products →</a>
+  </div>
+
   <div class="hero">
-    <div class="hero-kicker">Download</div>
-    <h1>AHOY products.</h1>
-    <p>Stream independent media, or organize your own MP3 collection and listen offline.</p>
-    <p class="hero-context"><a href="/#about-ahoy">About AHOY</a></p>
+    <div class="hero-kicker">Downloads</div>
+    <h1>Download AHOY.</h1>
+    <p>Dedicated desktop apps, terminal tools, and local offline player builds.</p>
+    <p class="hero-context"><a href="/products">View all products (Streamer &amp; Market) →</a></p>
   </div>
 
   <div class="platforms">
@@ -961,6 +965,8 @@
     <div>Made in New Haven by <a href="https://littlemarket.org" target="_blank" rel="noopener noreferrer">Little Market</a></div>
     <div style="display:flex;gap:20px;">
       <a href="/">Home</a>
+      <a href="/products">Products</a>
+      <a href="/download">Downloads</a>
       <a href="/privacy">Privacy</a>
     </div>
     <div>Copyright 2026 · Ahoy Indie Media</div>
