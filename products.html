@@ -6,20 +6,20 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-WVDL9N1HDT"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);if(arguments[0]==='event'&&window.posthog){window.posthog.capture(arguments[1],arguments[2]||{})}}gtag('js',new Date());gtag('config','G-WVDL9N1HDT');</script>
   <script src="/analytics/posthog.js"></script>
-  <title>AHOY Products · Download and Explore | Streamer, Market, Player</title>
-  <meta name="description" content="Download and explore Ahoy products: Ahoy Streamer, Ahoy Market, Ahoy Player, and Ahoy Player CLI for independent media, community commerce, and local music." />
+  <title>AHOY Products · Download and Explore | Streamer, Market, Player, ID</title>
+  <meta name="description" content="Download and explore Ahoy products: Ahoy Streamer, Ahoy Market, Ahoy Player, Ahoy Player CLI, and Ahoy ID for independent media, community commerce, and unified identity." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://ahoy.ooo/products" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://ahoy.ooo/products" />
   <meta property="og:title" content="AHOY Products · Download and Explore" />
-  <meta property="og:description" content="Stream independent media, explore the community marketplace, or organize your own MP3 collection and listen offline." />
+  <meta property="og:description" content="Stream independent media, explore the community marketplace, sign in with AHOY ID, or organize your own MP3 collection and listen offline." />
   <meta property="og:image" content="https://ahoy.ooo/images/github-app-preview.jpg" />
   <meta property="og:image:width" content="1446" />
   <meta property="og:image:height" content="1484" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="AHOY Products · Download and Explore" />
-  <meta name="twitter:description" content="Stream independent media, explore the community marketplace, or organize your own MP3 collection and listen offline." />
+  <meta name="twitter:description" content="Stream independent media, explore the community marketplace, sign in with AHOY ID, or organize your own MP3 collection and listen offline." />
   <meta name="twitter:image" content="https://ahoy.ooo/images/github-app-preview.jpg" />
   <link rel="icon" type="image/png" href="/images/Ahoy%20Indie%20Media%20-%20App%20Icon%20-%20May%2026.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/images/Ahoy%20Indie%20Media%20-%20App%20Icon%20-%20May%2026.png" />
@@ -48,6 +48,12 @@
         "operatingSystem": "macOS, Windows, Linux",
         "applicationCategory": "MultimediaApplication",
         "url": "https://ahoy-player.onrender.com/download.html"
+      },
+      {
+        "@type": "WebApplication",
+        "name": "Ahoy ID",
+        "applicationCategory": "SecurityApplication",
+        "url": "https://id.ahoy.ooo/signin"
       }
     ]
   }
@@ -207,6 +213,10 @@
       box-shadow: var(--shadow);
       overflow: hidden;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .platform-card.id-card {
+      grid-column: 1 / -1;
     }
 
     .platform-card:hover {
@@ -519,14 +529,14 @@
       <a href="about.html">About</a>
       <a href="/products" class="active-link">Products</a>
       <a href="/download">Downloads</a>
-      <a href="https://ahoy-id.onrender.com/">Login</a>
+      <a href="https://id.ahoy.ooo/signin">Login</a>
     </nav>
   </header>
 
   <div class="hero">
     <div class="hero-kicker">Download and explore</div>
     <h1>AHOY products.</h1>
-    <p>Stream independent media, explore the community marketplace, or organize your own MP3 collection and listen offline.</p>
+    <p>Stream independent media, explore the community marketplace, sign in with AHOY ID, or organize your own MP3 collection and listen offline.</p>
     <p class="hero-context"><a href="/#about-ahoy">About AHOY</a> · <a href="/download">Dedicated downloads &amp; installers →</a></p>
   </div>
 
@@ -636,6 +646,33 @@
           <summary>Need a terminal?</summary>
           <p><span><strong>Mac</strong> · ⌘ Space → Terminal → Return</span><span><strong>Windows</strong> · Start → Terminal → Enter</span><span><strong>Linux</strong> · Ctrl + Alt + T</span></p>
         </details>
+      </div>
+    </div>
+
+    <!-- Card 5: Ahoy ID -->
+    <div class="platform-card id-card">
+      <div class="card-body">
+        <span class="platform-tag tag-android">Identity</span>
+        <h2>Ahoy ID</h2>
+        <details class="ingredients-dropdown">
+          <summary>Specs</summary>
+          <div class="nutrition-card">
+            <div class="nutrition-heading"><span>Product Facts</span><span>Identity</span></div>
+            <div class="nutrition-row"><span>Layer</span><strong>Single Sign-On (SSO)</strong></div>
+            <div class="nutrition-row"><span>Auth Method</span><strong>Passkeys &amp; Sessions</strong></div>
+            <div class="nutrition-row"><span>Scope</span><strong>Every AHOY Product</strong></div>
+            <div class="nutrition-row"><span>Privacy Boundary</span><strong>Private Data Isolated</strong></div>
+            <div class="nutrition-footer">* Identity travels. Private product data does not.</div>
+          </div>
+        </details>
+        <p>
+          One AHOY ID for every AHOY product. Sign in once with passkeys, then approve the identity details each first-party experience may receive. Libraries, purchases, downloads, media, and NFC remain outside AHOY ID.
+        </p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://id.ahoy.ooo/signin" target="_blank" rel="noopener noreferrer" onclick="gtag('event','id_signin_click',{location:'products_page'})">
+            Sign In with AHOY ID
+          </a>
+        </div>
       </div>
     </div>
 
