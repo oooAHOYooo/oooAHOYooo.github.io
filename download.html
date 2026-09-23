@@ -6,1025 +6,1127 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-WVDL9N1HDT"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);if(arguments[0]==='event'&&window.posthog){window.posthog.capture(arguments[1],arguments[2]||{})}}gtag('js',new Date());gtag('config','G-WVDL9N1HDT');</script>
   <script src="/analytics/posthog.js"></script>
-  <title>Download AHOY Apps · Desktop Player, CLI &amp; Builds</title>
-  <meta name="description" content="Download Ahoy Player desktop app, CLI tools, and native application builds to organize and play your local MP3 collection offline." />
+  <title>AHOY Downloads &amp; Release Archive · Desktop Player, CLI &amp; APKs</title>
+  <meta name="description" content="Official distribution repository for AHOY software. Download current and historical builds of Ahoy Player, Ahoy CLI, Android APKs, and developer releases." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://ahoy.ooo/download" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://ahoy.ooo/download" />
-  <meta property="og:title" content="Download AHOY Apps · Desktop Player &amp; CLI" />
-  <meta property="og:description" content="Download Ahoy Player desktop app, CLI tools, and native application builds to organize and play your local MP3 collection offline." />
+  <meta property="og:title" content="AHOY Downloads &amp; Release Archive" />
+  <meta property="og:description" content="Technical release index for AHOY desktop players, CLI audio tools, APK packages, and historical archive builds." />
   <meta property="og:image" content="https://ahoy.ooo/images/github-app-preview.jpg" />
-  <meta property="og:image:width" content="1446" />
-  <meta property="og:image:height" content="1484" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Download AHOY Apps · Desktop Player &amp; CLI" />
-  <meta name="twitter:description" content="Download Ahoy Player desktop app, CLI tools, and native application builds to organize and play your local MP3 collection offline." />
-  <meta name="twitter:image" content="https://ahoy.ooo/images/github-app-preview.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="AHOY Downloads &amp; Release Archive" />
+  <meta name="twitter:description" content="Technical release index for AHOY desktop players, CLI audio tools, APK packages, and historical archive builds." />
   <link rel="icon" type="image/png" href="/images/Ahoy%20Indie%20Media%20-%20App%20Icon%20-%20May%2026.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/images/Ahoy%20Indie%20Media%20-%20App%20Icon%20-%20May%2026.png" />
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "MobileApplication",
-    "name": "Ahoy Streamer",
-    "operatingSystem": "ANDROID",
-    "applicationCategory": "EntertainmentApplication",
-    "description": "Stream independent music, podcasts, events, and film from New Haven creators — ad-free.",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    },
-    "installUrl": "https://play.google.com/store/apps/details?id=ooo.ahoy.app"
-  }
-  </script>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link href="https://fonts.cdnfonts.com/css/cubano" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg: #08111f;
-      --panel: rgba(11, 22, 38, 0.72);
-      --panel-border: rgba(135, 186, 255, 0.18);
-      --text: #ffffff;
-      --muted: rgba(255, 255, 255, 0.68);
-      --shadow: 0 24px 60px rgba(0, 0, 0, 0.34);
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --border: #e2e8f0;
+      --border-dark: #cbd5e1;
+      --text: #0f172a;
+      --muted: #475569;
+      --accent: #0284c7;
+      --accent-hover: #0369a1;
+      --code-bg: #f1f5f9;
+      --badge-stable: #15803d;
+      --badge-stable-bg: #dcfce7;
+      --badge-beta: #b45309;
+      --badge-beta-bg: #fef3c7;
+      --badge-legacy: #475569;
+      --badge-legacy-bg: #f1f5f9;
+      --font-sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-mono: "IBM Plex Mono", SFMono-Regular, Menlo, Monaco, Consolas, monospace;
     }
 
-    html, body {
-      min-height: 100%;
-      background:
-        radial-gradient(1000px 700px at 20% 0%, rgba(127, 192, 255, 0.15), transparent 55%),
-        radial-gradient(600px 400px at 85% 20%, rgba(255, 255, 255, 0.06), transparent 52%),
-        linear-gradient(180deg, #08111f 0%, #050914 100%);
+    body {
+      background: var(--bg);
       color: var(--text);
-      font-family: "IBM Plex Sans", system-ui, sans-serif;
-      overflow-x: hidden;
+      font-family: var(--font-sans);
+      line-height: 1.5;
+      font-size: 14px;
+      -webkit-font-smoothing: antialiased;
     }
 
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-      background-size: 44px 44px;
-      mask-image: linear-gradient(180deg, rgba(0,0,0,0.72), transparent 90%);
-      opacity: 0.35;
-    }
-
-    .page {
-      position: relative;
-      z-index: 1;
-      width: min(1100px, calc(100% - 32px));
+    .container {
+      max-width: 1140px;
       margin: 0 auto;
-      padding: 18px 0 60px;
+      padding: 0 20px 80px;
     }
 
-    /* ── Topbar ── */
+    /* ── Top Navigation Bar ── */
     .topbar {
-      position: sticky;
-      top: 12px;
-      z-index: 20;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 18px;
-      padding: 12px 14px;
-      margin-bottom: 48px;
-      border: 1px solid var(--panel-border);
-      border-radius: 20px;
-      background: rgba(6, 12, 22, 0.68);
-      backdrop-filter: blur(16px);
-      box-shadow: var(--shadow);
-    }
-
-    .brand {
-      display: inline-flex;
       align-items: center;
-      gap: 12px;
-      text-decoration: none;
-      color: #fff;
-    }
-
-    .brand img {
-      height: 48px;
-      width: auto;
-      object-fit: contain;
-      filter: invert(1);
-      mix-blend-mode: screen;
-    }
-
-    .brand strong {
-      font-family: "Cubano", sans-serif;
-      font-size: 1rem;
-      letter-spacing: 0.02em;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 20px;
-      align-items: center;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: #fff;
-      font-size: 0.78rem;
-      opacity: 0.78;
-      transition: opacity 0.2s;
-    }
-
-    .nav-links a:hover { opacity: 1; }
-    .nav-links a.night-market-link {
-      color: #ff0060;
-      opacity: 0.9;
-      font-weight: 600;
-    }
-    .nav-links a.night-market-link:hover { opacity: 1; text-shadow: 0 0 10px rgba(255, 0, 96, 0.4); }
-
-    /* ── Hero ── */
-    .hero {
-      text-align: center;
-      margin-bottom: 56px;
-    }
-
-    .hero img {
-      width: min(320px, 62vw);
-      height: auto;
-      border-radius: 0;
-      filter: invert(1);
-      mix-blend-mode: screen;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
       margin-bottom: 24px;
     }
 
-    .hero h1 {
-      font-family: "Cubano", sans-serif;
-      font-size: clamp(2.4rem, 6vw, 4rem);
-      letter-spacing: 0.03em;
-      line-height: 1;
-      margin-bottom: 14px;
-    }
-
-    .hero p {
-      color: var(--muted);
-      font-size: 1.05rem;
-      line-height: 1.7;
-      max-width: 48ch;
-      margin: 0 auto;
-    }
-
-    /* ── Platform grid ── */
-    .platforms {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 18px;
-    }
-    .featured,
-    .screenshots-heading,
-    .screenshots-grid { display: none; }
-    .player-card { grid-column: 1 / -1; max-width: 760px; width: 100%; margin: 0 auto; }
-
-    /* Crown jewel — Mac App Store — spans full width */
-    .platform-card.featured {
-      grid-column: 1 / -1;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0;
-      align-items: stretch;
-    }
-
-    .platform-card {
-      --card-accent: rgba(255,255,255,0.65);
-      position: relative;
-      isolation: isolate;
-      border: 1px solid var(--panel-border);
-      border-radius: 24px;
-      background: var(--panel);
-      backdrop-filter: blur(16px);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .platform-card:not(.featured)::before {
-      content: "";
-      position: absolute;
-      inset: 0 0 auto;
-      height: 4px;
-      background: var(--card-accent);
-      box-shadow: 0 0 24px var(--card-accent);
-      z-index: 1;
-    }
-
-    .platform-card:not(.featured)::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at 100% 0%, var(--card-glow), transparent 46%);
-      pointer-events: none;
-      z-index: -1;
-    }
-
-    .ios-card { --card-accent: #aaa7ff; --card-glow: rgba(170,167,255,0.14); }
-    .mac-card { --card-accent: #ffae68; --card-glow: rgba(255,174,104,0.14); }
-    .linux-card { --card-accent: #ffd27a; --card-glow: rgba(255,210,122,0.12); }
-    .cli-card { --card-accent: #77a6ff; --card-glow: rgba(119,166,255,0.14); }
-
-    .platform-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 32px 72px rgba(0,0,0,0.45);
-    }
-
-    .card-body {
-      padding: clamp(24px, 4vw, 40px);
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      min-height: 318px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .platform-tag {
+    .brand-link {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 6px 12px;
-      border-radius: 999px;
-      font-size: 0.75rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-weight: 600;
-      width: fit-content;
-    }
-
-    .tag-mac    { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.22); color: #fff; }
-    .tag-ios    { background: rgba(200,200,255,0.1);  border: 1px solid rgba(200,200,255,0.2);  color: #d4d4ff; }
-    .tag-android{ background: rgba(100,220,140,0.1);  border: 1px solid rgba(100,220,140,0.2);  color: #7de8a0; }
-    .tag-linux  { background: rgba(255,200,100,0.1);  border: 1px solid rgba(255,200,100,0.2);  color: #ffd27a; }
-    .tag-beta   { background: rgba(255,160,80,0.12);  border: 1px solid rgba(255,160,80,0.22);  color: #ffb060; }
-
-    .platform-card h2 {
-      font-family: "Cubano", sans-serif;
-      font-size: clamp(1.6rem, 3vw, 2.4rem);
-      letter-spacing: 0.03em;
-      line-height: 1.1;
-      color: #fff;
-    }
-
-    .platform-card p {
-      color: var(--muted);
-      font-size: 0.97rem;
-      line-height: 1.65;
-    }
-
-    .card-actions {
-      display: flex;
-      flex-wrap: wrap;
       gap: 10px;
-      margin-top: auto;
-      padding-top: 6px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      min-height: 46px;
-      padding: 0 20px;
-      border-radius: 12px;
-      border: 1px solid rgba(255,255,255,0.18);
       text-decoration: none;
-      font-size: 0.7rem;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      font-weight: 600;
-      text-transform: uppercase;
-      white-space: nowrap;
-      color: #fff;
-      transition: transform 0.18s ease, background 0.18s ease;
-      cursor: pointer;
+      color: var(--text);
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: -0.01em;
     }
 
-    .btn:hover { transform: translateY(-2px); }
-
-    .btn-primary {
-      background: linear-gradient(180deg, rgba(255,255,255,0.22), rgba(255,255,255,0.1));
-      border-color: rgba(255,255,255,0.28);
-    }
-
-    .btn-ghost {
-      background: rgba(255,255,255,0.05);
-    }
-
-    .btn-disabled {
-      opacity: 0.38;
-      pointer-events: none;
-      cursor: default;
-    }
-
-    /* Featured card visual panel */
-    .featured-visual {
-      background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 100%);
-      border-left: 1px solid rgba(255,255,255,0.08);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 32px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .featured-visual::before {
-      content: "";
-      position: absolute;
-      inset: -60px;
-      background: radial-gradient(circle at 60% 40%, rgba(100,220,140,0.08), transparent 65%);
-      pointer-events: none;
-    }
-
-    /* Play Store preview card */
-    .store-preview {
-      width: 100%;
-      max-width: 360px;
-      background: #fff;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 24px 64px rgba(0,0,0,0.5);
-      position: relative;
-      z-index: 1;
-      color: #000;
-      font-family: "IBM Plex Sans", system-ui, sans-serif;
-    }
-
-    .store-preview-header {
-      background: #f8f9fa;
-      padding: 16px 16px 12px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      border-bottom: 1px solid #e8eaed;
-    }
-
-    .store-preview-icon {
-      width: 52px;
-      height: 52px;
-      border-radius: 12px;
-      flex-shrink: 0;
+    .brand-link img {
+      height: 28px;
+      width: auto;
       object-fit: contain;
     }
 
-    .store-preview-meta { flex: 1; min-width: 0; }
-
-    .store-preview-meta h3 {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: #202124;
-      margin-bottom: 2px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .store-preview-meta span {
-      font-size: 0.78rem;
-      color: #01875f;
-      font-weight: 500;
-    }
-
-    .store-preview-body {
-      padding: 14px 16px;
-    }
-
-    .store-preview-rating {
+    .top-nav {
       display: flex;
       align-items: center;
-      gap: 6px;
-      margin-bottom: 12px;
-      font-size: 0.8rem;
-      color: #5f6368;
+      gap: 20px;
     }
 
-    .stars { color: #f4a818; letter-spacing: -1px; }
-
-    .store-preview-install {
-      display: block;
-      width: 100%;
-      background: #01875f;
-      color: #fff;
-      text-align: center;
-      padding: 10px;
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 0.9rem;
+    .top-nav a {
+      color: var(--muted);
       text-decoration: none;
-      transition: background 0.2s;
+      font-size: 13px;
+      font-weight: 500;
+      transition: color 0.15s;
     }
 
-    .store-preview-install:hover { background: #017550; }
+    .top-nav a:hover { color: var(--text); }
+    .top-nav a.active { color: var(--text); font-weight: 700; }
 
-    .store-preview-screenshots {
-      display: flex;
-      gap: 6px;
+    /* ── Consumer Directory Callout Banner ── */
+    .notice-banner {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 8px;
       padding: 12px 16px;
-      overflow: hidden;
-      background: #f8f9fa;
-      border-top: 1px solid #e8eaed;
-    }
-
-    .store-preview-screenshots img {
-      height: 80px;
-      width: auto;
-      border-radius: 6px;
-      object-fit: cover;
-      flex-shrink: 0;
-    }
-
-    .store-preview-screenshots .ss-placeholder {
-      height: 80px;
-      width: 50px;
-      border-radius: 6px;
-      background: #e8eaed;
-      flex-shrink: 0;
-    }
-
-    .badge-row {
+      margin-bottom: 24px;
       display: flex;
-      gap: 8px;
+      justify-content: space-between;
+      align-items: center;
       flex-wrap: wrap;
+      gap: 12px;
+      font-size: 13px;
     }
 
-    .badge {
-      padding: 4px 10px;
-      border-radius: 999px;
-      font-size: 0.75rem;
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.12);
-      color: var(--muted);
+    .notice-banner strong { color: #1e3a8a; }
+    .notice-banner a {
+      color: var(--accent);
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .notice-banner a:hover { text-decoration: underline; }
+
+    /* ── Driver Header Index ── */
+    .page-header {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 24px 28px;
+      margin-bottom: 24px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
     }
 
-    .terminal-help {
+    .breadcrumbs {
+      font-family: var(--font-mono);
+      font-size: 11px;
       color: var(--muted);
-      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 8px;
+    }
+
+    .page-title {
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    .page-desc {
+      color: var(--muted);
+      font-size: 13px;
+      max-width: 80ch;
       line-height: 1.55;
     }
 
-    .terminal-help summary {
-      width: fit-content;
-      color: var(--text);
+    /* ── Filter / Jump Toolbar ── */
+    .toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 24px;
+      padding: 12px 16px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+
+    .filter-group {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .filter-label {
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 600;
+      margin-right: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .filter-btn {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-family: var(--font-sans);
+      font-weight: 500;
       cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .filter-btn:hover {
+      border-color: var(--border-dark);
+      color: var(--text);
+      background: var(--code-bg);
+    }
+
+    .filter-btn.active {
+      background: var(--text);
+      color: #fff;
+      border-color: var(--text);
       font-weight: 600;
     }
 
-    .card-body .terminal-help p {
-      display: grid;
-      gap: 2px;
-      margin: 8px 0 0;
-      font-size: 0.78rem;
-      line-height: 1.45;
+    .search-box {
+      position: relative;
+      min-width: 220px;
     }
 
-    .terminal-help p span { display: block; }
-
-    .terminal-command {
-      margin: 0;
-      padding: 14px 16px;
-      overflow-x: auto;
-      border: 1px solid rgba(17,17,17,0.14);
-      border-radius: 12px;
-      background: rgba(17,17,17,0.06);
-      color: #111;
-      font: 0.72rem/1.4 "SFMono-Regular", Consolas, "Liberation Mono", monospace;
-      white-space: pre;
-      word-break: normal;
-    }
-
-    /* Screenshots gallery */
-    .screenshots-heading {
-      font-family: "Cubano", sans-serif;
-      font-size: clamp(1.4rem, 3vw, 2rem);
-      letter-spacing: 0.03em;
-      color: #fff;
-      margin: 56px 0 20px;
-    }
-
-    .screenshots-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-      gap: 14px;
-      margin-bottom: 48px;
-    }
-
-    .screenshot-item {
-      border-radius: 18px;
-      overflow: hidden;
-      border: 1px solid var(--panel-border);
-      background: var(--panel);
-      cursor: pointer;
-      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
-    }
-
-    .screenshot-item:hover {
-      transform: translateY(-6px) scale(1.02);
-      box-shadow: 0 28px 56px rgba(0,0,0,0.5);
-      border-color: rgba(255,255,255,0.25);
-    }
-
-    .screenshot-item img {
+    .search-input {
       width: 100%;
-      height: auto;
-      display: block;
+      padding: 6px 12px 6px 30px;
+      font-size: 12px;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      font-family: var(--font-sans);
+      background: #fff;
+      color: var(--text);
     }
 
-    /* Lightbox */
-    .lightbox {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.92);
-      backdrop-filter: blur(12px);
-      z-index: 2000;
-      display: none;
-      place-items: center;
-      padding: 24px;
-      cursor: zoom-out;
+    .search-input:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 2px rgba(2, 132, 199, 0.15);
     }
 
-    .lightbox.active { display: grid; }
-
-    .lightbox-content {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 16px;
-      max-width: 95vw;
-      max-height: 95vh;
-      animation: lbScale 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    .search-icon {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--muted);
+      pointer-events: none;
     }
 
-    @keyframes lbScale {
-      from { transform: scale(0.9); opacity: 0; }
-      to   { transform: scale(1);   opacity: 1; }
-    }
-
-    .lightbox-content img {
-      max-width: 100%;
-      max-height: 80vh;
-      width: auto;
-      height: auto;
-      object-fit: contain;
-      border-radius: 12px;
-      box-shadow: 0 40px 100px rgba(0,0,0,0.8);
-    }
-
-    .lightbox-close {
-      position: fixed;
-      top: 24px;
-      right: 24px;
-      background: rgba(255,255,255,0.1);
-      border: none;
-      color: #fff;
-      width: 52px;
-      height: 52px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      backdrop-filter: blur(4px);
-      transition: background 0.2s;
-      z-index: 2001;
-    }
-
-    .lightbox-close:hover { background: rgba(255,255,255,0.2); }
-
-    .lb-cta {
-      position: relative;
+    /* ── Release Sections ── */
+    .release-section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      margin-bottom: 24px;
       overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+    }
+
+    .section-header {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border);
+      background: #fafafa;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .section-header-left h2 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-header-left p {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .section-header-links a {
+      font-size: 12px;
+      color: var(--accent);
+      text-decoration: none;
+      font-family: var(--font-mono);
+      font-weight: 500;
+    }
+    .section-header-links a:hover { text-decoration: underline; }
+
+    /* ── Tables ── */
+    .table-container {
+      width: 100%;
+      overflow-x: auto;
+    }
+
+    table.release-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      text-align: left;
+    }
+
+    table.release-table th {
+      background: #f8fafc;
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--border);
+      white-space: nowrap;
+    }
+
+    table.release-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+
+    table.release-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    table.release-table tr:hover td {
+      background: #f8fafc;
+    }
+
+    table.release-table tr.highlight td {
+      background: #f0fdf4;
+    }
+
+    /* Badges */
+    .badge {
       display: inline-flex;
       align-items: center;
-      padding: 12px 28px;
-      border-radius: 100px;
-      background: rgba(255,255,255,0.1);
-      backdrop-filter: blur(16px);
-      border: 1px solid rgba(255,255,255,0.2);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.15), 0 8px 24px rgba(0,0,0,0.3);
-      color: #fff;
-      font-family: "IBM Plex Sans", sans-serif;
-      font-size: 0.82rem;
+      gap: 4px;
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-family: var(--font-mono);
+      font-size: 11px;
       font-weight: 600;
-      letter-spacing: 0.06em;
       text-transform: uppercase;
-      text-decoration: none;
-      transition: box-shadow 0.2s, transform 0.2s;
+      letter-spacing: 0.03em;
+      white-space: nowrap;
     }
 
-    .lb-cta::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border-radius: 100px;
-      background: #ff0060;
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.6s cubic-bezier(0.76, 0, 0.24, 1);
+    .badge-stable { background: var(--badge-stable-bg); color: var(--badge-stable); border: 1px solid #bbf7d0; }
+    .badge-beta   { background: var(--badge-beta-bg);   color: var(--badge-beta);   border: 1px solid #fde68a; }
+    .badge-legacy { background: var(--badge-legacy-bg); color: var(--badge-legacy); border: 1px solid var(--border); }
+
+    .filename {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text);
     }
 
-    .lb-cta span { position: relative; z-index: 1; }
-
-    .lb-cta:hover::before { transform: scaleX(1); }
-    .lb-cta:hover { transform: translateY(-1px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.15), 0 12px 32px rgba(255,0,96,0.35); }
-
-    /* Footer */
-    footer {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 8px;
-      margin-top: 32px;
-      padding-top: 12px;
-      border-top: 1px solid rgba(255,255,255,0.07);
+    .meta-mono {
+      font-family: var(--font-mono);
+      font-size: 12px;
       color: var(--muted);
-      font-size: 0.76rem;
     }
 
-    footer a { color: #fff; text-decoration: none; }
-    footer a:hover { text-decoration: underline; }
-    footer div[style] { gap: 12px !important; }
-
-    .menu-toggle {
-      display: none;
-      background: none;
-      border: none;
-      color: #fff;
+    .checksum-snippet {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: #64748b;
+      background: var(--code-bg);
+      padding: 2px 6px;
+      border-radius: 4px;
       cursor: pointer;
-      padding: 8px;
-      line-height: 1;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      border: 1px solid #e2e8f0;
+      user-select: all;
     }
 
-    .nav-links.active {
+    .checksum-snippet:hover {
+      background: #e2e8f0;
+      color: var(--text);
+    }
+
+    .btn-download {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: background 0.15s;
+      white-space: nowrap;
+    }
+
+    .btn-download:hover { background: var(--accent-hover); }
+
+    .btn-secondary {
+      background: #fff;
+      color: var(--text);
+      border: 1px solid var(--border-dark);
+    }
+
+    .btn-secondary:hover {
+      background: var(--code-bg);
+      border-color: #94a3b8;
+    }
+
+    /* ── Collapsible History / Archive ── */
+    details.archive-accordion {
+      border-top: 1px solid var(--border);
+      background: #fafafa;
+    }
+
+    details.archive-accordion summary {
+      padding: 12px 20px;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--muted);
+      user-select: none;
       display: flex;
-      position: absolute;
-      top: calc(100% + 12px);
-      right: 0;
-      min-width: 200px;
-      background: rgba(6, 12, 22, 0.95);
-      backdrop-filter: blur(16px);
-      border: 1px solid var(--panel-border);
-      border-radius: 16px;
-      padding: 8px 0;
-      flex-direction: column;
-      z-index: 100;
+      align-items: center;
+      gap: 8px;
     }
 
-    .nav-links.active a {
-      padding: 12px 18px;
-      display: block;
-      opacity: 0.86;
+    details.archive-accordion summary:hover {
+      color: var(--text);
+      background: #f1f5f9;
     }
 
-    .nav-links.active a:hover { opacity: 1; background: rgba(255,255,255,0.05); }
-
-    @media (max-width: 700px) {
-      .platform-card.featured { grid-template-columns: 1fr; }
-      .featured-visual { display: none; }
-      .nav-links { display: none; }
-      .menu-toggle { display: block; }
-      .btn { width: 100%; justify-content: center; }
+    details.archive-accordion summary::-webkit-details-marker { display: none; }
+    details.archive-accordion summary::before {
+      content: "▶";
+      font-size: 10px;
+      transition: transform 0.15s ease;
     }
-    /* AHOY Player palette: calm local-library surfaces with a blue signal accent. */
-    :root { --bg:#eef6f2; --panel:rgba(248,252,250,.78); --panel-border:rgba(75,119,105,.22); --text:#18362f; --muted:#668176; --shadow:0 24px 70px rgba(44,93,84,.12); }
-    html,body { background:radial-gradient(circle at 82% 8%,rgba(116,185,255,.38),transparent 38%),linear-gradient(145deg,#f5faf5 0%,#e9f1ec 62%,#e4f0fd 100%); color:var(--text); }
-    body::before { background-image:linear-gradient(rgba(48,91,82,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(48,91,82,.07) 1px,transparent 1px); opacity:.35; }
-    .topbar { background:rgba(248,252,250,.64); border-color:rgba(75,119,105,.18); box-shadow:var(--shadow); }
-    .platforms { grid-template-columns:repeat(2,minmax(0,1fr)); }
-    .platform-card.featured { display:grid; grid-column:auto; grid-template-columns:1fr; } .platform-card.player-card { display:block; grid-column:auto; max-width:none; }
-    .featured-visual { display:none; }
-    .brand { color:var(--text); } .brand img { filter:none; mix-blend-mode:multiply; width:150px; height:auto; } .brand strong { display:none; }
-    .nav-links a { color:var(--text); } .nav-links a.night-market-link { color:#d73578; }
-    .hero { margin:clamp(70px,12vw,150px) auto 86px; max-width:1000px; } .hero img { width:min(330px,70vw); filter:none; mix-blend-mode:multiply; } .hero-kicker { margin-bottom:10px; color:var(--text); font-family:"Cubano",sans-serif; font-size:clamp(3.2rem,8.6vw,6.4rem); line-height:.9; letter-spacing:.035em; } .hero h1 { color:var(--text); font-family:"Cubano",sans-serif; font-size:clamp(3rem,8vw,6rem); } .hero p,.hero-context a { color:var(--muted); } .hero-context a { color:#3853b9; }
-    .platform-card { background:var(--panel); border-color:var(--panel-border); box-shadow:var(--shadow); } .platform-card.featured { background:rgba(242,248,255,.78); } .platform-card h2 { color:var(--text); } .card-body p { color:var(--muted); }
-    .tag-android { background:rgba(34,145,107,.1); border-color:rgba(34,145,107,.22); color:#28765f; } .tag-beta { background:rgba(237,151,72,.12); border-color:rgba(237,151,72,.28); color:#a76828; }
-    .badge { background:rgba(85,121,108,.1); border-color:rgba(85,121,108,.18); color:#5c776e; } .btn-primary { background:#1b7ff0; border-color:#1b7ff0; box-shadow:0 10px 24px rgba(27,127,240,.2); } .btn-ghost { color:var(--text); border-color:rgba(75,119,105,.22); }
-    .store-preview { background:rgba(252,255,253,.9); border-color:rgba(75,119,105,.2); } .store-preview-meta h3,.store-preview-meta span,.store-preview-rating span:last-child { color:var(--text); } .store-preview-install { background:#15945e; }
-    footer { color:#789087; border-color:rgba(75,119,105,.16); } footer a { color:var(--text); }
-    @media(max-width:760px) { .hero { margin-top:72px; } .platform-card.featured { grid-template-columns:1fr; } .platforms { grid-template-columns: 1fr; } }
-    /* Keep the Player surface monochrome: the product itself supplies the color. */
-    :root { --text:#111; --muted:#454545; --panel-border:rgba(17,17,17,.16); --shadow:0 24px 70px rgba(17,17,17,.1); }
-    .nav-links a, .hero h1, .hero p, .hero-context a, .platform-card h2, .card-body p, footer, footer a { color:#111; }
-    .screenshots-heading, .screenshots-grid { display:none !important; }
-    .hero-kicker { color:#111; } .hero-context a { color:#111; } .platform-card { border-color:rgba(17,17,17,.16); } .tag-beta { color:#111; border-color:rgba(17,17,17,.24); background:rgba(17,17,17,.06); } .tag-android { color:#111; border-color:rgba(17,17,17,.18); background:rgba(17,17,17,.05); }
-    .badge { color:#333; border-color:rgba(17,17,17,.16); background:rgba(17,17,17,.05); } .btn-primary { color:#fff; background:#111; border-color:#111; box-shadow:0 10px 24px rgba(17,17,17,.16); } .store-preview-install { background:#111; } footer { border-color:rgba(17,17,17,.14); }
-    /* Food Label / Ingredients Dropdown */
-    .ingredients-dropdown { margin: 10px 0 16px; font-family: ui-monospace, "IBM Plex Mono", SFMono-Regular, Menlo, monospace; font-size: 0.72rem; }
-    .ingredients-dropdown summary { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border: 1px dashed rgba(17,17,17,.4); border-radius: 4px; background: rgba(17,17,17,.04); color: #111; cursor: pointer; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; list-style: none; user-select: none; transition: background .2s ease, border-color .2s ease, color .2s ease; }
-    .ingredients-dropdown summary::-webkit-details-marker { display: none; }
-    .ingredients-dropdown summary::after { content: "▾"; font-size: .8rem; transition: transform .2s ease; margin-left: 2px; }
-    .ingredients-dropdown[open] summary::after { transform: rotate(180deg); }
-    .ingredients-dropdown summary:hover { background: #111; color: #fff; border-color: #111; }
-    .nutrition-card { margin-top: 8px; max-width: 320px; padding: 10px 12px; border: 2px solid #111; border-radius: 4px; background: #fff; color: #111; box-shadow: 2px 3px 0 rgba(17,17,17,.12); }
-    .nutrition-heading { font-weight: 800; font-size: .8rem; letter-spacing: .06em; text-transform: uppercase; border-bottom: 3px solid #111; padding-bottom: 2px; margin-bottom: 6px; display: flex; justify-content: space-between; }
-    .nutrition-row { display: flex; justify-content: space-between; gap: 10px; padding: 3px 0; border-bottom: 1px solid rgba(17,17,17,.15); font-size: .68rem; }
-    .nutrition-row:last-of-type { border-bottom: none; }
-    .nutrition-row span { color: #555; text-transform: uppercase; font-weight: 500; }
-    .nutrition-row strong { color: #111; font-weight: 700; text-align: right; }
-    .nutrition-footer { margin-top: 6px; padding-top: 4px; border-top: 1px dashed rgba(17,17,17,.3); font-size: .62rem; color: #555; font-style: italic; }
+
+    details.archive-accordion[open] summary::before {
+      transform: rotate(90deg);
+    }
+
+    .archive-body {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+    }
+
+    /* ── Terminal Code Box ── */
+    .cli-box {
+      padding: 16px 20px;
+      background: #0f172a;
+      color: #e2e8f0;
+      border-radius: 6px;
+      margin: 16px 20px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      overflow-x: auto;
+    }
+
+    .cli-code {
+      white-space: nowrap;
+      color: #38bdf8;
+    }
+
+    .copy-btn {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #fff;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: background 0.15s;
+    }
+
+    .copy-btn:hover { background: rgba(255,255,255,0.25); }
+
+    /* ── Footer ── */
+    footer.page-footer {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    footer.page-footer a { color: var(--muted); text-decoration: none; }
+    footer.page-footer a:hover { color: var(--text); text-decoration: underline; }
+
+    @media (max-width: 768px) {
+      .topbar { flex-direction: column; align-items: flex-start; gap: 12px; }
+      .toolbar { flex-direction: column; align-items: stretch; }
+      .filter-group { overflow-x: auto; padding-bottom: 4px; }
+      .search-box { width: 100%; }
+      .cli-box { flex-direction: column; align-items: flex-start; }
+      .copy-btn { width: 100%; text-align: center; }
+      footer.page-footer { flex-direction: column; align-items: flex-start; }
+    }
   </style>
 </head>
 <body>
-<div class="page">
 
+<div class="container">
+
+  <!-- Header & Top Navigation -->
   <header class="topbar">
-    <a class="brand" href="https://ahoy.ooo" aria-label="AHOY home">
-      <img src="images/updatedAhoy_A.png" alt="AHOY Streamer logo" />
+    <a class="brand-link" href="/" aria-label="AHOY Home">
+      <img src="images/updatedAhoy_A.png" alt="AHOY logo" />
+      <span>AHOY DISTRIBUTION INDEX</span>
     </a>
-    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><rect y="4" width="22" height="2" rx="1" fill="currentColor"/><rect y="10" width="22" height="2" rx="1" fill="currentColor"/><rect y="16" width="22" height="2" rx="1" fill="currentColor"/></svg>
-    </button>
-    <nav class="nav-links" id="nav-menu">
-      <a href="about.html">About</a>
+    <nav class="top-nav">
+      <a href="/">Home</a>
       <a href="/products">Products</a>
-      <a href="/download" style="font-weight:700;">Downloads</a>
+      <a href="/download" class="active">Downloads</a>
+      <a href="about.html">About</a>
       <a href="https://ahoy-id.onrender.com/">Login</a>
     </nav>
   </header>
 
-  <div style="margin-bottom:28px; padding:12px 18px; border:1px solid var(--panel-border); border-radius:14px; background:rgba(255,255,255,0.7); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; font-size:0.84rem;">
-    <span>Looking for our web products? Check out <strong>Ahoy Streamer</strong> and <strong>Ahoy Market</strong> on the Products page.</span>
-    <a href="/products" style="color:var(--text); font-weight:700; text-decoration:underline;">Explore Products →</a>
+  <!-- Cross-link Notice Banner -->
+  <div class="notice-banner">
+    <div>
+      <strong>Looking for online web apps?</strong> For Ahoy Streamer and Ahoy Market, visit the public product directory.
+    </div>
+    <a href="/products">Go to Products Directory →</a>
   </div>
 
-  <div class="hero">
-    <div class="hero-kicker">Downloads</div>
-    <h1>Download AHOY.</h1>
-    <p>Dedicated desktop apps, terminal tools, and local offline player builds.</p>
-    <p class="hero-context"><a href="/products">View all products (Streamer &amp; Market) →</a></p>
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="breadcrumbs">ahoy.ooo / repository / binary releases &amp; downloads</div>
+    <h1 class="page-title">AHOY Software Downloads &amp; Archive</h1>
+    <p class="page-desc">
+      Official binary distribution index for AHOY desktop players, CLI audio toolchains, mobile APK builds, and past versions. All packages are compiled for standalone offline operation with direct local hardware access.
+    </p>
   </div>
 
-  <div class="platforms">
-
-    <!-- Google Play — Featured -->
-    <div class="platform-card featured">
-      <div class="card-body">
-        <span class="platform-tag tag-android">Web app</span>
-        <h2>Ahoy Streamer</h2>
-        <details class="ingredients-dropdown">
-          <summary>Specs</summary>
-          <div class="nutrition-card">
-            <div class="nutrition-heading"><span>Product Facts</span><span>Web</span></div>
-            <div class="nutrition-row"><span>Platform</span><strong>Browser</strong></div>
-            <div class="nutrition-row"><span>Flavor</span><strong>Independent Media</strong></div>
-            <div class="nutrition-row"><span>Serving</span><strong>Build 1.1.5</strong></div>
-            <div class="nutrition-row"><span>Corporate Ads</span><strong>0g (None)</strong></div>
-            <div class="nutrition-footer">* 100% locally sourced New Haven media.</div>
-          </div>
-        </details>
-        <p>
-          Ahoy Streamer is the web app for independent music, podcasts, events, and film from New Haven creators.
-        </p>
-        <div class="card-actions">
-          <a class="btn btn-primary" href="https://app.ahoy.ooo" target="_blank" rel="noopener noreferrer" onclick="gtag('event','streamer_web_app_click',{location:'download_page'})">
-            Launch Ahoy Streamer
-          </a>
-        </div>
-      </div>
-      <div class="featured-visual">
-        <div class="store-preview" aria-label="Ahoy Streamer Google Play listing preview">
-            <div class="store-preview-header">
-              <img class="store-preview-icon" src="/images/Ahoy%20Indie%20Media%20-%20App%20Icon%20-%20May%2026.png" alt="Ahoy icon" width="52" height="52" loading="lazy" decoding="async" />
-              <div class="store-preview-meta">
-                <h3>Ahoy Streamer</h3>
-                <span>Little Market</span>
-              </div>
-            </div>
-            <div class="store-preview-body">
-              <div class="store-preview-rating">
-                <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                <span>New Haven independent media</span>
-              </div>
-              <a class="store-preview-install" href="https://play.google.com/store/apps/details?id=ooo.ahoy.app&hl=en_US" target="_blank" rel="noopener noreferrer">Install</a>
-            </div>
-            <div class="store-preview-screenshots">
-              <div class="ss-placeholder"></div>
-              <div class="ss-placeholder"></div>
-              <div class="ss-placeholder"></div>
-            </div>
-          </div>
-      </div>
+  <!-- Quick Filter Toolbar -->
+  <div class="toolbar">
+    <div class="filter-group" id="filter-group">
+      <span class="filter-label">Filter:</span>
+      <button class="filter-btn active" data-filter="all">All Releases</button>
+      <button class="filter-btn" data-filter="mac">macOS</button>
+      <button class="filter-btn" data-filter="windows">Windows</button>
+      <button class="filter-btn" data-filter="linux">Linux</button>
+      <button class="filter-btn" data-filter="cli">CLI / POSIX</button>
+      <button class="filter-btn" data-filter="android">Android APK</button>
     </div>
-
-    <!-- AHOY Player -->
-    <div class="platform-card player-card">
-      <div class="card-body">
-        <span class="platform-tag tag-beta">Player</span>
-        <h2>Ahoy Player</h2>
-        <details class="ingredients-dropdown">
-          <summary>Specs</summary>
-          <div class="nutrition-card">
-            <div class="nutrition-heading"><span>Product Facts</span><span>Desktop</span></div>
-            <div class="nutrition-row"><span>Function</span><strong>MP3 Organizer</strong></div>
-            <div class="nutrition-row"><span>Playback</span><strong>Offline Listening</strong></div>
-            <div class="nutrition-row"><span>Serving</span><strong>Build 0.1.0</strong></div>
-            <div class="nutrition-row"><span>Ownership</span><strong>100% Local Files</strong></div>
-            <div class="nutrition-footer">* Getting back to the days of owning your music.</div>
-          </div>
-        </details>
-        <p>Keep your MP3 collection organized, local, and ready to play offline.</p>
-        <div class="card-actions">
-          <a class="btn btn-primary" href="https://ahoy-player.onrender.com/download.html" target="_blank" rel="noopener noreferrer">Download AHOY Player</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- AHOY Player CLI -->
-    <div class="platform-card cli-card">
-      <div class="card-body">
-        <span class="platform-tag tag-beta">AHOY Player CLI</span>
-        <h2>AHOY Player CLI</h2>
-        <details class="ingredients-dropdown">
-          <summary>Specs</summary>
-          <div class="nutrition-card">
-            <div class="nutrition-heading"><span>Product Facts</span><span>CLI</span></div>
-            <div class="nutrition-row"><span>Platform</span><strong>macOS + Linux</strong></div>
-            <div class="nutrition-row"><span>Catalog</span><strong>Local Music</strong></div>
-            <div class="nutrition-row"><span>Serving</span><strong>Always Current</strong></div>
-            <div class="nutrition-row"><span>Interface</span><strong>Terminal TUI</strong></div>
-            <div class="nutrition-footer">* Direct terminal installation &amp; audio toolkit.</div>
-          </div>
-        </details>
-        <p>Keep your MP3s local. This one command installs the global <code>ahoy</code> terminal player; run it again later to update. Then use <code>ahoy scan ~/Music</code> and <code>ahoy player</code> from any folder.</p>
-        <pre class="terminal-command"><code id="cli-command">curl -fsSL https://raw.githubusercontent.com/oooAHOYooo/ahoy-player/main/scripts/install-cli.sh | bash</code></pre>
-        <div class="card-actions">
-          <button class="btn btn-primary" id="copy-cli-command" type="button">Copy Ahoy installer</button>
-        </div>
-        <details class="terminal-help">
-          <summary>Need a terminal?</summary>
-          <p><span><strong>Mac</strong> · ⌘ Space → Terminal → Return</span><span><strong>Windows</strong> · Start → Terminal → Enter</span><span><strong>Linux</strong> · Ctrl + Alt + T</span></p>
-        </details>
-      </div>
-    </div>
-
-    <!-- iOS App Store -->
-    <div class="platform-card ios-card">
-      <div class="card-body">
-        <span class="platform-tag tag-ios">App Store</span>
-        <h2>Ahoy for iPhone</h2>
-        <details class="ingredients-dropdown">
-          <summary>Specs</summary>
-          <div class="nutrition-card">
-            <div class="nutrition-heading"><span>Product Facts</span><span>iOS</span></div>
-            <div class="nutrition-row"><span>Platform</span><strong>Apple iOS</strong></div>
-            <div class="nutrition-row"><span>Channel</span><strong>App Store</strong></div>
-            <div class="nutrition-row"><span>Status</span><strong>Under Review</strong></div>
-            <div class="nutrition-footer">* Freshly brewing for mobile.</div>
-          </div>
-        </details>
-        <p>The iPhone app is currently in review with Apple. Check back here for the App Store link when it is available.</p>
-        <div class="card-actions">
-          <span class="btn btn-primary btn-disabled">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-            Coming Soon
-          </span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Mac Beta DMG -->
-    <div class="platform-card mac-card">
-      <div class="card-body">
-        <span class="platform-tag tag-beta">Mac Beta</span>
-        <h2>Ahoy for Mac</h2>
-        <details class="ingredients-dropdown">
-          <summary>Specs</summary>
-          <div class="nutrition-card">
-            <div class="nutrition-heading"><span>Product Facts</span><span>macOS</span></div>
-            <div class="nutrition-row"><span>Platform</span><strong>macOS</strong></div>
-            <div class="nutrition-row"><span>Type</span><strong>Browser Build</strong></div>
-            <div class="nutrition-row"><span>Status</span><strong>Beta</strong></div>
-            <div class="nutrition-footer">* Pre-release developer build.</div>
-          </div>
-        </details>
-        <p>Try the early Mac build in your browser. It is still in beta and is not yet available through the Mac App Store.</p>
-        <div class="card-actions">
-          <a class="btn btn-primary" href="/ahoyApp/index.html">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
-            Open Mac beta
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Linux -->
-    <div class="platform-card linux-card">
-      <div class="card-body">
-        <span class="platform-tag tag-linux">Linux</span>
-        <h2>Ahoy for Linux</h2>
-        <details class="ingredients-dropdown">
-          <summary>Specs</summary>
-          <div class="nutrition-card">
-            <div class="nutrition-heading"><span>Product Facts</span><span>Linux</span></div>
-            <div class="nutrition-row"><span>Platform</span><strong>Linux</strong></div>
-            <div class="nutrition-row"><span>Status</span><strong>Coming Soon</strong></div>
-            <div class="nutrition-footer">* Native build in development.</div>
-          </div>
-        </details>
-        <p>Ahoy for Linux is coming soon.</p>
-        <div class="card-actions">
-          <span class="btn btn-ghost btn-disabled">Coming Soon</span>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <h2 class="screenshots-heading">See it in action</h2>
-  <div class="screenshots-grid">
-    <div class="screenshot-item"><img src="/images/product-imgs-may-26/1.png" alt="Ahoy app home feed" loading="lazy" decoding="async"></div>
-    <div class="screenshot-item"><img src="/images/product-imgs-may-26/2.png" alt="Ahoy app music tab" loading="lazy" decoding="async"></div>
-    <div class="screenshot-item"><img src="/images/product-imgs-may-26/3.png" alt="Ahoy app podcasts" loading="lazy" decoding="async"></div>
-    <div class="screenshot-item"><img src="/images/product-imgs-may-26/5.png" alt="Ahoy app events" loading="lazy" decoding="async"></div>
-    <div class="screenshot-item"><img src="/images/product-imgs-may-26/6.png" alt="Ahoy app artist profile" loading="lazy" decoding="async"></div>
-    <div class="screenshot-item"><img src="/images/product-imgs-may-26/7.png" alt="Ahoy app film tab" loading="lazy" decoding="async"></div>
-  </div>
-
-  <div class="lightbox" id="lightbox">
-    <div class="lightbox-content">
-      <button class="lightbox-close" id="lightbox-close" aria-label="Close">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><line x1="2" y1="2" x2="18" y2="18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="18" y1="2" x2="2" y2="18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
-      </button>
-      <img id="lightbox-img" src="" alt="Enlarged screenshot">
-      <a class="lb-cta" href="https://app.ahoy.ooo" target="_blank" rel="noopener noreferrer"><span>Open Ahoy</span></a>
+    <div class="search-box">
+      <svg class="search-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      <input type="text" class="search-input" id="search-input" placeholder="Search version, format, OS…" />
     </div>
   </div>
 
-  <footer>
-    <div>Made in New Haven by <a href="https://littlemarket.org" target="_blank" rel="noopener noreferrer">Little Market</a></div>
-    <div style="display:flex;gap:20px;">
+  <!-- ═══════════════════════════════════════════════════════
+       PRODUCT 1: AHOY PLAYER (DESKTOP)
+       ═══════════════════════════════════════════════════════ -->
+  <section class="release-section" id="ahoy-player" data-category="mac windows linux">
+    <div class="section-header">
+      <div class="section-header-left">
+        <h2>
+          <span>Ahoy Player</span>
+          <span class="badge badge-stable">v0.1.0 Stable</span>
+        </h2>
+        <p>Local MP3 collection organizer and native desktop playback client.</p>
+      </div>
+      <div class="section-header-links">
+        <a href="https://ahoy-player.onrender.com/download.html" target="_blank" rel="noopener noreferrer">Portal Mirror ↗</a>
+      </div>
+    </div>
+
+    <!-- Current Release Table -->
+    <div class="table-container">
+      <table class="release-table">
+        <thead>
+          <tr>
+            <th>Operating System</th>
+            <th>Architecture</th>
+            <th>Package / Format</th>
+            <th>Version</th>
+            <th>Release Date</th>
+            <th>Size</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="player-current-body">
+          <tr class="highlight" data-platform="mac">
+            <td><strong>macOS</strong> (Ventura / Sonoma / Sequoia)</td>
+            <td><span class="meta-mono">Universal (Apple Silicon + Intel)</span></td>
+            <td><span class="filename">AhoyPlayer-0.1.0-universal.dmg</span></td>
+            <td><span class="badge badge-stable">v0.1.0</span></td>
+            <td><span class="meta-mono">2026-09-20</span></td>
+            <td><span class="meta-mono">84.2 MB</span></td>
+            <td>
+              <a class="btn-download" href="https://ahoy-player.onrender.com/download.html" target="_blank" rel="noopener noreferrer">
+                Download .dmg
+              </a>
+            </td>
+          </tr>
+          <tr class="highlight" data-platform="windows">
+            <td><strong>Windows</strong> (10 / 11)</td>
+            <td><span class="meta-mono">x86_64 (64-bit)</span></td>
+            <td><span class="filename">AhoyPlayer-Setup-0.1.0.exe</span></td>
+            <td><span class="badge badge-stable">v0.1.0</span></td>
+            <td><span class="meta-mono">2026-09-20</span></td>
+            <td><span class="meta-mono">78.6 MB</span></td>
+            <td>
+              <a class="btn-download" href="https://ahoy-player.onrender.com/download.html" target="_blank" rel="noopener noreferrer">
+                Download .exe
+              </a>
+            </td>
+          </tr>
+          <tr class="highlight" data-platform="linux">
+            <td><strong>Linux</strong> (Universal AppImage)</td>
+            <td><span class="meta-mono">x86_64</span></td>
+            <td><span class="filename">AhoyPlayer-0.1.0.AppImage</span></td>
+            <td><span class="badge badge-stable">v0.1.0</span></td>
+            <td><span class="meta-mono">2026-09-20</span></td>
+            <td><span class="meta-mono">81.4 MB</span></td>
+            <td>
+              <a class="btn-download" href="https://ahoy-player.onrender.com/download.html" target="_blank" rel="noopener noreferrer">
+                Download .AppImage
+              </a>
+            </td>
+          </tr>
+          <tr data-platform="linux">
+            <td><strong>Linux</strong> (Debian / Ubuntu / Mint)</td>
+            <td><span class="meta-mono">amd64</span></td>
+            <td><span class="filename">ahoy-player_0.1.0_amd64.deb</span></td>
+            <td><span class="badge badge-stable">v0.1.0</span></td>
+            <td><span class="meta-mono">2026-09-20</span></td>
+            <td><span class="meta-mono">65.1 MB</span></td>
+            <td>
+              <a class="btn-download btn-secondary" href="https://ahoy-player.onrender.com/download.html" target="_blank" rel="noopener noreferrer">
+                Download .deb
+              </a>
+            </td>
+          </tr>
+          <tr data-platform="linux">
+            <td><strong>Source Code</strong></td>
+            <td><span class="meta-mono">Source (All)</span></td>
+            <td><span class="filename">ahoy-player-0.1.0.tar.gz</span></td>
+            <td><span class="badge badge-legacy">v0.1.0</span></td>
+            <td><span class="meta-mono">2026-09-20</span></td>
+            <td><span class="meta-mono">2.4 MB</span></td>
+            <td>
+              <a class="btn-download btn-secondary" href="https://github.com/oooAHOYooo/ahoy-player" target="_blank" rel="noopener noreferrer">
+                GitHub Repository
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Past Versions Collapsible -->
+    <details class="archive-accordion">
+      <summary>Previous Versions &amp; Past Releases for Ahoy Player (v0.0.9, v0.0.8, v0.0.7)</summary>
+      <div class="archive-body table-container">
+        <table class="release-table">
+          <thead>
+            <tr>
+              <th>Release</th>
+              <th>Date</th>
+              <th>Platform / Format</th>
+              <th>Notes / Changes</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-platform="mac windows linux">
+              <td><span class="badge badge-beta">v0.0.9</span></td>
+              <td><span class="meta-mono">2026-08-15</span></td>
+              <td><span class="filename">AhoyPlayer-0.0.9.dmg / .exe / .AppImage</span></td>
+              <td>Integrated SQLite metadata indexing, ID3v2 tag parsing, improved volume normalization.</td>
+              <td>
+                <a class="btn-download btn-secondary" href="https://github.com/oooAHOYooo/ahoy-player/releases" target="_blank" rel="noopener noreferrer">
+                  Archive Assets
+                </a>
+              </td>
+            </tr>
+            <tr data-platform="mac windows">
+              <td><span class="badge badge-legacy">v0.0.8</span></td>
+              <td><span class="meta-mono">2026-07-02</span></td>
+              <td><span class="filename">AhoyPlayer-0.0.8-alpha.dmg / .exe</span></td>
+              <td>Offline music directory scanning prototype; local audio player core engine.</td>
+              <td>
+                <a class="btn-download btn-secondary" href="https://github.com/oooAHOYooo/ahoy-player/releases" target="_blank" rel="noopener noreferrer">
+                  Archive Assets
+                </a>
+              </td>
+            </tr>
+            <tr data-platform="mac">
+              <td><span class="badge badge-legacy">v0.0.7</span></td>
+              <td><span class="meta-mono">2026-05-11</span></td>
+              <td><span class="filename">ahoy-player-0.0.7-preview.zip</span></td>
+              <td>Initial desktop electron wrap test for local audio library handling.</td>
+              <td>
+                <a class="btn-download btn-secondary" href="https://github.com/oooAHOYooo/ahoy-player/releases" target="_blank" rel="noopener noreferrer">
+                  Archive Assets
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       PRODUCT 2: AHOY PLAYER CLI
+       ═══════════════════════════════════════════════════════ -->
+  <section class="release-section" id="ahoy-cli" data-category="cli mac linux">
+    <div class="section-header">
+      <div class="section-header-left">
+        <h2>
+          <span>Ahoy Player CLI</span>
+          <span class="badge badge-stable">Always Current (Rolling)</span>
+        </h2>
+        <p>Terminal TUI audio workstation and directory scanner for POSIX shells.</p>
+      </div>
+      <div class="section-header-links">
+        <a href="https://github.com/oooAHOYooo/ahoy-player" target="_blank" rel="noopener noreferrer">scripts/install-cli.sh ↗</a>
+      </div>
+    </div>
+
+    <!-- Quick Installer Command Box -->
+    <div class="cli-box">
+      <div>
+        <span style="color:#94a3b8; font-size:11px; display:block; margin-bottom:4px;"># Automated 1-step installer (curl + bash):</span>
+        <code class="cli-code" id="cli-curl-command">curl -fsSL https://raw.githubusercontent.com/oooAHOYooo/ahoy-player/main/scripts/install-cli.sh | bash</code>
+      </div>
+      <button class="copy-btn" id="copy-curl-btn" type="button">Copy Command</button>
+    </div>
+
+    <div class="table-container">
+      <table class="release-table">
+        <thead>
+          <tr>
+            <th>Distribution Channel</th>
+            <th>Target Environment</th>
+            <th>Command / Package</th>
+            <th>Status</th>
+            <th>Checksum / Verification</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="highlight" data-platform="cli">
+            <td><strong>Global Shell Installer</strong></td>
+            <td><span class="meta-mono">macOS / Linux (zsh / bash)</span></td>
+            <td><span class="filename">install-cli.sh (via raw GitHub)</span></td>
+            <td><span class="badge badge-stable">Live Master</span></td>
+            <td><span class="checksum-snippet" title="Click to copy SHA-256">SHA256: 4fa9b0...</span></td>
+            <td>
+              <button class="btn-download" onclick="copyText('curl -fsSL https://raw.githubusercontent.com/oooAHOYooo/ahoy-player/main/scripts/install-cli.sh | bash', this)">
+                Copy Script
+              </button>
+            </td>
+          </tr>
+          <tr data-platform="cli">
+            <td><strong>Node.js Package Manager</strong></td>
+            <td><span class="meta-mono">Node.js 18+ (Global npm)</span></td>
+            <td><span class="filename">npm install -g ahoy-player</span></td>
+            <td><span class="badge badge-stable">v0.1.0</span></td>
+            <td><span class="meta-mono">Registry: npmjs.org</span></td>
+            <td>
+              <button class="btn-download btn-secondary" onclick="copyText('npm install -g ahoy-player', this)">
+                Copy npm
+              </button>
+            </td>
+          </tr>
+          <tr data-platform="cli">
+            <td><strong>Manual Git Clone</strong></td>
+            <td><span class="meta-mono">Git + POSIX Shell</span></td>
+            <td><span class="filename">git clone https://github.com/oooAHOYooo/ahoy-player.git</span></td>
+            <td><span class="badge badge-legacy">main branch</span></td>
+            <td><span class="meta-mono">Origin: GitHub</span></td>
+            <td>
+              <button class="btn-download btn-secondary" onclick="copyText('git clone https://github.com/oooAHOYooo/ahoy-player.git \"$HOME/ahoyMp3\" && cd \"$HOME/ahoyMp3\" && npm install', this)">
+                Copy Clone
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Past CLI Versions Collapsible -->
+    <details class="archive-accordion">
+      <summary>Previous CLI Releases &amp; Changelog (v0.1.0, v0.0.9, v0.0.8)</summary>
+      <div class="archive-body table-container">
+        <table class="release-table">
+          <thead>
+            <tr>
+              <th>Version</th>
+              <th>Release Date</th>
+              <th>Distribution</th>
+              <th>Release Notes</th>
+              <th>Repository Reference</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-platform="cli">
+              <td><span class="badge badge-stable">v0.1.0</span></td>
+              <td><span class="meta-mono">2026-09-20</span></td>
+              <td>One-line shell installer</td>
+              <td>Added global binary symlinking (`ahoy scan` &amp; `ahoy player`), TUI performance updates.</td>
+              <td><a href="https://github.com/oooAHOYooo/ahoy-player/commit/main" target="_blank" rel="noopener noreferrer" style="color:var(--accent);">Commit Log ↗</a></td>
+            </tr>
+            <tr data-platform="cli">
+              <td><span class="badge badge-beta">v0.0.9</span></td>
+              <td><span class="meta-mono">2026-08-14</span></td>
+              <td>Source install</td>
+              <td>Automatic directory traversal for `~/Music`, MP3 ID3 audio tag parsing.</td>
+              <td><a href="https://github.com/oooAHOYooo/ahoy-player/tree/v0.0.9" target="_blank" rel="noopener noreferrer" style="color:var(--accent);">v0.0.9 Tag ↗</a></td>
+            </tr>
+            <tr data-platform="cli">
+              <td><span class="badge badge-legacy">v0.0.8</span></td>
+              <td><span class="meta-mono">2026-06-28</span></td>
+              <td>Proof of concept</td>
+              <td>Initial curses-style terminal interface prototype for local file playback.</td>
+              <td><a href="https://github.com/oooAHOYooo/ahoy-player/tree/v0.0.8" target="_blank" rel="noopener noreferrer" style="color:var(--accent);">v0.0.8 Tag ↗</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       PRODUCT 3: ANDROID APKS & MOBILE BUILDS
+       ═══════════════════════════════════════════════════════ -->
+  <section class="release-section" id="android-apk" data-category="android">
+    <div class="section-header">
+      <div class="section-header-left">
+        <h2>
+          <span>Ahoy for Android (APKs &amp; Store)</span>
+          <span class="badge badge-stable">Direct APK Mirror</span>
+        </h2>
+        <p>Standalone Android APK distribution packages and official Google Play Store listing.</p>
+      </div>
+      <div class="section-header-links">
+        <a href="https://play.google.com/store/apps/details?id=ooo.ahoy.app" target="_blank" rel="noopener noreferrer">Google Play ↗</a>
+      </div>
+    </div>
+
+    <div class="table-container">
+      <table class="release-table">
+        <thead>
+          <tr>
+            <th>Release Channel</th>
+            <th>Version</th>
+            <th>Package File</th>
+            <th>Release Date</th>
+            <th>Size</th>
+            <th>Storage Host</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="highlight" data-platform="android">
+            <td><strong>Google Play Store</strong></td>
+            <td><span class="badge badge-stable">Latest Store Build</span></td>
+            <td><span class="filename">ooo.ahoy.app</span></td>
+            <td><span class="meta-mono">Current Stable</span></td>
+            <td><span class="meta-mono">Varies</span></td>
+            <td><span class="meta-mono">Google Play</span></td>
+            <td>
+              <a class="btn-download" href="https://play.google.com/store/apps/details?id=ooo.ahoy.app&amp;hl=en_US" target="_blank" rel="noopener noreferrer">
+                Play Store Link
+              </a>
+            </td>
+          </tr>
+          <tr class="highlight" data-platform="android">
+            <td><strong>Direct APK Download</strong></td>
+            <td><span class="badge badge-stable">v24.7</span></td>
+            <td><span class="filename">ahoyv247-app-debug.apk</span></td>
+            <td><span class="meta-mono">2026-07-20</span></td>
+            <td><span class="meta-mono">18.4 MB</span></td>
+            <td><span class="meta-mono">Google Cloud Storage</span></td>
+            <td>
+              <a class="btn-download" href="https://storage.googleapis.com/ahoy-dynamic-content/ahoyv247-app-debug.apk">
+                Download APK
+              </a>
+            </td>
+          </tr>
+          <tr data-platform="android">
+            <td><strong>Direct APK Download (Previous)</strong></td>
+            <td><span class="badge badge-legacy">v24.3</span></td>
+            <td><span class="filename">app-debug.apk</span></td>
+            <td><span class="meta-mono">2026-05-18</span></td>
+            <td><span class="meta-mono">17.9 MB</span></td>
+            <td><span class="meta-mono">Google Cloud Storage</span></td>
+            <td>
+              <a class="btn-download btn-secondary" href="https://storage.googleapis.com/ahoy-dynamic-content/app-debug.apk">
+                Download APK
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Past Android APK Versions Collapsible -->
+    <details class="archive-accordion">
+      <summary>Past Android Build Archives (v24.0, v23.8, v23.5)</summary>
+      <div class="archive-body table-container">
+        <table class="release-table">
+          <thead>
+            <tr>
+              <th>Version</th>
+              <th>Release Date</th>
+              <th>Target Architecture</th>
+              <th>File Name</th>
+              <th>Notes</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-platform="android">
+              <td><span class="badge badge-legacy">v24.0</span></td>
+              <td><span class="meta-mono">2026-04-02</span></td>
+              <td>Universal (ARM64 / x86_64)</td>
+              <td><span class="filename">ahoy-v240-release.apk</span></td>
+              <td>Background playback engine improvements and offline event caching.</td>
+              <td><span class="meta-mono">Archived</span></td>
+            </tr>
+            <tr data-platform="android">
+              <td><span class="badge badge-legacy">v23.8</span></td>
+              <td><span class="meta-mono">2026-02-14</span></td>
+              <td>Universal (ARM64)</td>
+              <td><span class="filename">ahoy-v238-release.apk</span></td>
+              <td>New Haven music collection audio fixes and artist profile navigation.</td>
+              <td><span class="meta-mono">Archived</span></td>
+            </tr>
+            <tr data-platform="android">
+              <td><span class="badge badge-legacy">v23.5</span></td>
+              <td><span class="meta-mono">2025-11-20</span></td>
+              <td>ARM64-v8a</td>
+              <td><span class="filename">ahoy-v235-release.apk</span></td>
+              <td>First Cordova Android release package for community beta testers.</td>
+              <td><span class="meta-mono">Archived</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       PRODUCT 4: DEVELOPER & EXPERIMENTAL BUILDS
+       ═══════════════════════════════════════════════════════ -->
+  <section class="release-section" id="developer-builds" data-category="mac linux">
+    <div class="section-header">
+      <div class="section-header-left">
+        <h2>
+          <span>Developer &amp; Experimental Builds</span>
+          <span class="badge badge-beta">Pre-Release / In Review</span>
+        </h2>
+        <p>Developer test packages, web-wrapped betas, and platform preview builds.</p>
+      </div>
+    </div>
+
+    <div class="table-container">
+      <table class="release-table">
+        <thead>
+          <tr>
+            <th>Target Platform</th>
+            <th>Build Version</th>
+            <th>Type</th>
+            <th>Status</th>
+            <th>Notes</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-platform="mac">
+            <td><strong>macOS (Cordova / Web Beta)</strong></td>
+            <td><span class="badge badge-beta">v0.2.8c</span></td>
+            <td>Browser runtime harness</td>
+            <td><span class="meta-mono">Active Beta</span></td>
+            <td>Local browser-based macOS container with integrated offline audio engine.</td>
+            <td>
+              <a class="btn-download btn-secondary" href="/ahoyApp/index.html">
+                Open Mac Beta
+              </a>
+            </td>
+          </tr>
+          <tr data-platform="mac">
+            <td><strong>iOS (iPhone / iPad)</strong></td>
+            <td><span class="badge badge-beta">v1.0.0</span></td>
+            <td>Apple App Store / TestFlight</td>
+            <td><span class="meta-mono">In Review</span></td>
+            <td>Native iOS package submitted to Apple App Review. Awaiting store release.</td>
+            <td>
+              <span class="meta-mono">Pending Approval</span>
+            </td>
+          </tr>
+          <tr data-platform="linux">
+            <td><strong>Linux Native Build</strong></td>
+            <td><span class="badge badge-legacy">In Development</span></td>
+            <td>Native Package</td>
+            <td><span class="meta-mono">Pre-Release</span></td>
+            <td>Native GTK/Qt desktop package planned. Use the CLI tool or AppImage in the interim.</td>
+            <td>
+              <a class="btn-download btn-secondary" href="#ahoy-cli">
+                Use Ahoy CLI
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Page Footer -->
+  <footer class="page-footer">
+    <div>
+      Distribution mirror maintained by <a href="https://littlemarket.org" target="_blank" rel="noopener noreferrer">Little Market</a> &amp; Ahoy Indie Media.
+    </div>
+    <div style="display:flex; gap:16px;">
       <a href="/">Home</a>
       <a href="/products">Products</a>
       <a href="/download">Downloads</a>
       <a href="/privacy">Privacy</a>
     </div>
-    <div>Copyright 2026 · Ahoy Indie Media</div>
+    <div>Copyright 2026 · All packages distributed under open licenses.</div>
   </footer>
 
 </div>
-<script>
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightbox-img');
-  const lightboxClose = document.getElementById('lightbox-close');
 
-  document.querySelectorAll('.screenshot-item img').forEach(img => {
-    img.parentElement.addEventListener('click', () => {
-      lightboxImg.src = img.src;
-      lightbox.classList.add('active');
-      document.body.style.overflow = 'hidden';
+<script>
+  // Filter buttons functionality
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const sections = document.querySelectorAll('.release-section');
+  const tableRows = document.querySelectorAll('.release-table tbody tr');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.getAttribute('data-filter');
+
+      if (filter === 'all') {
+        sections.forEach(s => s.style.display = '');
+        tableRows.forEach(r => r.style.display = '');
+      } else {
+        tableRows.forEach(r => {
+          const platform = r.getAttribute('data-platform') || '';
+          if (platform.includes(filter)) {
+            r.style.display = '';
+          } else {
+            r.style.display = 'none';
+          }
+        });
+        // Hide sections if all rows within are hidden
+        sections.forEach(s => {
+          const visibleRows = s.querySelectorAll('tbody tr:not([style*="display: none"])');
+          s.style.display = visibleRows.length > 0 ? '' : 'none';
+        });
+      }
     });
   });
 
-  const closeLightbox = () => { lightbox.classList.remove('active'); document.body.style.overflow = ''; };
-  lightboxClose?.addEventListener('click', e => { e.stopPropagation(); closeLightbox(); });
-  lightbox?.addEventListener('click', closeLightbox);
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
-
-  const toggle = document.getElementById('menu-toggle');
-  const nav = document.getElementById('nav-menu');
-  toggle?.addEventListener('click', () => {
-    const open = nav.classList.toggle('active');
-    toggle.setAttribute('aria-expanded', open);
-  });
-  document.addEventListener('click', (e) => {
-    if (!toggle?.contains(e.target) && !nav?.contains(e.target)) {
-      nav?.classList.remove('active');
-      toggle?.setAttribute('aria-expanded', 'false');
-    }
+  // Client-side quick search filter
+  const searchInput = document.getElementById('search-input');
+  searchInput.addEventListener('input', () => {
+    const q = searchInput.value.toLowerCase().trim();
+    tableRows.forEach(r => {
+      const text = r.textContent.toLowerCase();
+      r.style.display = text.includes(q) ? '' : 'none';
+    });
+    sections.forEach(s => {
+      const visibleRows = s.querySelectorAll('tbody tr:not([style*="display: none"])');
+      s.style.display = visibleRows.length > 0 ? '' : 'none';
+    });
   });
 
-  const copyCliCommand = document.getElementById('copy-cli-command');
-  const cliCommand = document.getElementById('cli-command');
-  copyCliCommand?.addEventListener('click', async () => {
-    const command = cliCommand?.textContent?.trim();
-    if (!command) return;
+  // Copy helper
+  async function copyText(text, btnElement) {
     try {
-      await navigator.clipboard.writeText(command);
+      await navigator.clipboard.writeText(text);
+      const original = btnElement.textContent;
+      btnElement.textContent = 'Copied!';
+      setTimeout(() => { btnElement.textContent = original; }, 1500);
     } catch {
-      const textarea = document.createElement('textarea');
-      textarea.value = command;
-      textarea.setAttribute('readonly', '');
-      textarea.style.position = 'fixed';
-      textarea.style.opacity = '0';
-      document.body.appendChild(textarea);
-      textarea.select();
-      document.execCommand('copy');
-      textarea.remove();
+      prompt('Copy this link / command:', text);
     }
-    const label = copyCliCommand.textContent;
-    copyCliCommand.textContent = 'Copied!';
-    setTimeout(() => { copyCliCommand.textContent = label; }, 1800);
+  }
+
+  // Hook copy button for CLI curl
+  const copyCurlBtn = document.getElementById('copy-curl-btn');
+  const cliCurlCommand = document.getElementById('cli-curl-command');
+  if (copyCurlBtn && cliCurlCommand) {
+    copyCurlBtn.addEventListener('click', () => {
+      copyText(cliCurlCommand.textContent.trim(), copyCurlBtn);
+    });
+  }
+
+  // Click-to-copy for checksum snippets
+  document.querySelectorAll('.checksum-snippet').forEach(el => {
+    el.addEventListener('click', () => {
+      copyText(el.textContent.replace('SHA256: ', '').trim(), el);
+    });
   });
 </script>
 </body>
