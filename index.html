@@ -2350,6 +2350,34 @@
         }
       } catch (_) {}
     });
+
+    // AHOY ID Session Detection
+    (function () {
+      fetch('https://id.ahoy.ooo/api/v1/me', { credentials: 'include' })
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (data) {
+          if (!data || !data.account) return;
+          var name = data.account.displayName || (data.account.email ? data.account.email.split('@')[0] : 'Member');
+          var accountLinks = document.querySelectorAll('.ecosystem-account');
+          accountLinks.forEach(function (el) {
+            el.href = 'https://id.ahoy.ooo/signin';
+            el.textContent = 'Signed in as ' + name;
+            el.title = 'AHOY ID: ' + (data.account.email || name);
+            el.style.borderColor = '#78d0d2';
+            el.style.color = '#78d0d2';
+            el.style.background = 'rgba(120, 208, 210, 0.12)';
+          });
+          var ctaPrimary = document.querySelector('.account-actions .button.primary');
+          var ctaSecondary = document.querySelector('.account-actions .button.secondary');
+          if (ctaPrimary && ctaSecondary) {
+            ctaPrimary.href = 'https://app.ahoy.ooo';
+            ctaPrimary.textContent = 'ENTER AHOY INDIE MEDIA';
+            ctaSecondary.href = 'https://id.ahoy.ooo/signin';
+            ctaSecondary.textContent = 'MANAGE AHOY ID (' + name + ')';
+          }
+        })
+        .catch(function () {});
+    })();
   </script>
     </body>
 
