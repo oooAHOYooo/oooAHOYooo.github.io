@@ -1673,6 +1673,21 @@
       .homepage-downloads { margin-top:clamp(70px,10vw,120px); padding:clamp(32px,5vw,58px); border:1px solid rgba(91,190,199,.35); border-radius:28px; background:linear-gradient(135deg, rgba(7,31,48,.98), rgba(10,74,83,.82)); box-shadow:0 28px 90px rgba(0,0,0,.32), 0 0 40px rgba(91,190,199,.08); }
       .homepage-downloads h2 { margin:0 0 16px; color:#fff; font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:clamp(3.4rem,8vw,7rem); line-height:.84; letter-spacing:-.015em; text-transform:uppercase; }
       .homepage-downloads p { max-width:620px; margin:0; color:rgba(255,255,255,.7); line-height:1.5; }
+      .foundation-feature { display:grid; grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr); gap:clamp(28px,5vw,64px); align-items:center; margin-top:clamp(54px,8vw,92px); padding:clamp(24px,4vw,48px); overflow:hidden; border:1px solid rgba(218,236,117,.36); border-radius:28px; background:linear-gradient(130deg,rgba(17,26,25,.97),rgba(22,35,31,.94) 58%,rgba(30,39,31,.9)); box-shadow:0 28px 90px rgba(0,0,0,.32); }
+      .foundation-feature-copy { position:relative; z-index:1; }
+      .foundation-feature-kicker { display:flex; align-items:center; gap:10px; margin:0 0 20px; color:#d9ec75; font-size:.72rem; letter-spacing:.17em; text-transform:uppercase; }
+      .foundation-feature-kicker::before { content:""; width:8px; height:8px; border-radius:50%; background:#d9ec75; box-shadow:0 0 16px rgba(217,236,117,.6); }
+      .foundation-feature h2 { max-width:10ch; margin:0; color:#fff; font-family:'Barlow Condensed',sans-serif; font-size:clamp(3.25rem,6vw,6rem); line-height:.86; letter-spacing:-.015em; text-transform:uppercase; }
+      .foundation-feature-copy>p:not(.foundation-feature-kicker) { max-width:53ch; margin:20px 0 0; color:rgba(255,255,255,.72); font-size:clamp(1rem,1.3vw,1.12rem); line-height:1.65; }
+      .foundation-feature-link { display:inline-flex; align-items:center; gap:28px; min-height:48px; margin-top:25px; padding:0 18px; border:1px solid rgba(217,236,117,.62); border-radius:999px; color:#f4f5e8; text-decoration:none; font-size:.82rem; letter-spacing:.06em; text-transform:uppercase; transition:background .2s ease,transform .2s ease; }
+      .foundation-feature-link:hover { transform:translateY(-2px); background:rgba(217,236,117,.12); }
+      .foundation-feature-link span { color:#d9ec75; font-size:1.1rem; }
+      .foundation-feature-photos { display:grid; grid-template-columns:1fr 1fr; grid-template-rows:clamp(145px,19vw,230px) clamp(105px,12vw,145px); gap:10px; }
+      .foundation-feature-photos img { display:block; width:100%; height:100%; object-fit:cover; border:1px solid rgba(255,255,255,.2); border-radius:15px; filter:grayscale(1); }
+      .foundation-feature-photos img:first-child { grid-row:1 / 3; }
+      .foundation-feature-photos img:nth-child(2) { object-position:center 38%; }
+      .foundation-feature-photos img:nth-child(3) { object-position:center 48%; }
+      .foundation-feature-photo-note { grid-column:1 / -1; margin:-2px 0 0; color:rgba(255,255,255,.44); font-family:ui-monospace,monospace; font-size:.62rem; letter-spacing:.13em; text-align:right; text-transform:uppercase; }
       .download-links { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); grid-auto-rows:1fr; gap:12px; margin-top:28px; }
       .download-links.single-col { grid-template-columns:1fr; }
       .download-links a { display:flex; flex-direction:column; justify-content:center; min-height:72px; padding:16px 18px; border:1px solid rgba(255,255,255,.16); border-radius:18px; color:#fff; text-decoration:none; background:rgba(3,12,22,.42); transition:background .2s ease, border-color .2s ease, transform .2s ease; }
@@ -1699,6 +1714,8 @@
       @media (max-width:540px) { .download-row-split { grid-template-columns:1fr; gap:28px; } }
       @media (max-width:460px) { .ecosystem-grid { grid-template-columns:1fr; } .ecosystem-card { min-height:140px; } .ecosystem-card b { margin-bottom:28px; } .download-links { grid-template-columns:1fr; } }
       @media (max-width:760px) { .cards-feature { grid-template-columns:1fr; } .cards-feature-copy h3 { max-width:14ch; } }
+      @media (max-width:760px) { .foundation-feature { grid-template-columns:1fr; gap:30px; } .foundation-feature h2 { max-width:12ch; } .foundation-feature-photos { grid-template-rows:190px 120px; } }
+      @media (max-width:460px) { .foundation-feature { padding:22px; border-radius:22px; } .foundation-feature-photos { grid-template-rows:165px 100px; gap:7px; } .foundation-feature-photos img { border-radius:11px; } }
     </style>
   </head>
 
@@ -1718,6 +1735,20 @@
           <a class="launch-app" href="https://app.ahoy.ooo" aria-labelledby="launch-app-title"><div class="launch-app-copy"><div class="launch-app-kicker">Ahoy Streamer · web app</div><h2 id="launch-app-title">Launch Streamer.</h2><p>Find independent music, podcasts, events, and film from New Haven creators.</p></div><div class="launch-app-action"><span class="launch-app-button">Launch web app</span></div></a>
           <section class="seasonal-hero" aria-labelledby="seasonal-title"><div class="seasonal-kicker">Featured upcoming event</div><h2 id="seasonal-title">AHOY Poets and Friends #13.</h2><p>Join us September 24, 2026 for the next AHOY Poets and Friends.</p><div class="launch-app-action"><a class="launch-app-button" href="https://app.ahoy.ooo/events/v/2026-09-24T18:30:00">See event details</a></div></section>
           <section class="homepage-downloads" id="downloads" aria-labelledby="downloads-title"><div class="launch-app-kicker">AHOY products</div><h2 id="downloads-title">Download and explore Ahoy products.</h2><div class="download-row-split"><div class="download-product"><h3>Ahoy Streamer</h3><div class="download-links single-col"><a href="https://app.ahoy.ooo" target="_blank" rel="noopener noreferrer">Web app<span>Launch Streamer →</span></a></div></div><div class="download-product"><h3>Ahoy Market</h3><div class="download-links single-col"><a href="https://market.ahoy.ooo" target="_blank" rel="noopener noreferrer">Marketplace<span>Explore Ahoy Market →</span></a></div></div></div><div class="download-row-split"><div class="download-product"><h3>Ahoy Player</h3><div class="download-links single-col"><a href="https://ahoy-player.onrender.com/download.html" target="_blank" rel="noopener noreferrer">Desktop app<span>Download Player →</span></a></div></div><div class="download-product"><h3>Ahoy Player CLI</h3><div class="download-links single-col"><a href="/products">Terminal CLI<span>Get the CLI →</span></a></div></div></div><div class="download-row-split" style="margin-top:20px;"><div class="download-product" style="grid-column:1 / -1;"><h3>Ahoy ID</h3><div class="download-links single-col"><a href="https://id.ahoy.ooo/signin" target="_blank" rel="noopener noreferrer">Independent Identity Layer<span>Sign in with AHOY ID →</span></a></div></div></div></section>
+          <section class="foundation-feature" aria-labelledby="foundation-feature-title">
+            <div class="foundation-feature-copy">
+              <p class="foundation-feature-kicker">Ahoy Media Arts Foundation · 501(c)(3) application filed</p>
+              <h2 id="foundation-feature-title">A new chapter for AHOY.</h2>
+              <p>Ahoy Media Arts Foundation has just filed for 501(c)(3) recognition. The Foundation will carry AHOY’s work in independent media, arts education, public programs, and creative technology into its next chapter.</p>
+              <a class="foundation-feature-link" href="https://foundation.ahoy.ooo/">Visit the Foundation <span aria-hidden="true">↗</span></a>
+            </div>
+            <div class="foundation-feature-photos" aria-label="Scenes from AHOY performances and community gatherings">
+              <img src="/images/foundation/community-performance.jpg" alt="A poet reading into a microphone at an intimate community event" loading="lazy" width="1400" height="1400">
+              <img src="/images/foundation/live-music.jpg" alt="A live singer sharing a song with the room" loading="lazy" width="1400" height="1400">
+              <img src="/images/foundation/creative-gathering.jpg" alt="Neighbors gathered for a local arts event" loading="lazy" width="1400" height="1400">
+              <p class="foundation-feature-photo-note">AHOY gatherings · New Haven</p>
+            </div>
+          </section>
         </main>
         <section class="about-ahoy" aria-labelledby="about-ahoy-title"><h2 id="about-ahoy-title">About AHOY</h2><p>AHOY has been building independent media in New Haven since late 2019, putting on local events and working with artists, musicians, podcasters, and creators. It is developed and maintained by <a href="https://alexgonzalez.ooo/">Alex Gonzalez</a>. At the moment, we're knee deep in launching new products and working toward becoming a nonprofit. <a href="about.html">Learn more about AHOY.</a></p></section>
         <footer class="ecosystem-footer"><div class="ecosystem-footer-nav"><a href="/">AHOY</a><span class="sep">|</span><a href="about.html">ABOUT</a><span class="sep">|</span><a href="/products">PRODUCTS</a><span class="sep">|</span><a href="/products">DOWNLOAD</a><span class="sep">|</span><a href="https://id.ahoy.ooo/signin">SIGN IN</a></div><div class="ecosystem-footer-copy">© 2026 AHOY INDIE MEDIA</div></footer>
