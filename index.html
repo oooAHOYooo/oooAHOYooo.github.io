@@ -869,12 +869,28 @@
       box-shadow: 0 4px 20px rgba(255, 0, 96, 0.4);
     }
 
+    .newsletter-form button[type="submit"]:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
     .newsletter-success {
       display: none;
       margin-top: 16px;
       font-family: "IBM Plex Mono", monospace;
       font-size: 0.85rem;
       color: #ff6090;
+      letter-spacing: 0.05em;
+    }
+
+    .newsletter-error {
+      display: none;
+      margin-top: 16px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.85rem;
+      color: #ffad70;
       letter-spacing: 0.05em;
     }
 
@@ -2298,7 +2314,7 @@
           <p>Drops, events, and local music from the Ahoy community — no noise, no ads.</p>
           <form
             class="newsletter-form"
-            action="https://formspree.io/f/mpqnrdqe"
+            action="/api/newsletter"
             method="POST"
             id="newsletter-form"
           >
@@ -2313,6 +2329,7 @@
             <button type="submit">Subscribe</button>
           </form>
           <div class="newsletter-success" id="newsletter-success">You're in. Welcome to Ahoy.</div>
+          <div class="newsletter-error" id="newsletter-error">Something went wrong. Please try again.</div>
         </section>
 
         <section class="cta-section fade-up" aria-labelledby="cta-title">
@@ -2346,6 +2363,7 @@
           <div style="display: flex; gap: 20px;">
             <a href="https://app.ahoy.ooo" target="_blank" rel="noopener noreferrer">Enter Ahoy Indie Media</a>
             <a href="https://play.google.com/store/apps/details?id=ooo.ahoy.app&pcampaignid=web_share" target="_blank" rel="noopener noreferrer">Android App</a>
+            <a href="#newsletter">Newsletter</a>
             <a href="/support">Support</a>
             <a href="/privacy">Privacy</a>
           </div>
@@ -2463,20 +2481,49 @@
 
     const newsletterForm = document.getElementById('newsletter-form');
     const newsletterSuccess = document.getElementById('newsletter-success');
+    const newsletterError = document.getElementById('newsletter-error');
     newsletterForm?.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const data = new FormData(newsletterForm);
+      const btn = newsletterForm.querySelector('button[type="submit"]');
+      const originalText = btn ? btn.textContent : 'Subscribe';
+      if (btn) {
+        btn.textContent = 'Subscribing…';
+        btn.disabled = true;
+      }
+      if (newsletterError) newsletterError.style.display = 'none';
+
+      const emailInput = newsletterForm.querySelector('input[type="email"]');
+      const email = emailInput ? emailInput.value.trim() : '';
+
       try {
         const res = await fetch(newsletterForm.action, {
           method: 'POST',
-          body: data,
-          headers: { 'Accept': 'application/json' }
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({ email })
         });
         if (res.ok) {
           newsletterForm.style.display = 'none';
-          newsletterSuccess.style.display = 'block';
+          if (newsletterSuccess) newsletterSuccess.style.display = 'block';
+          if (typeof gtag === 'function') {
+            gtag('event', 'newsletter_signup', { location: 'homepage' });
+          }
+        } else {
+          if (newsletterError) newsletterError.style.display = 'block';
+          if (btn) {
+            btn.textContent = originalText;
+            btn.disabled = false;
+          }
         }
-      } catch (_) {}
+      } catch (_) {
+        if (newsletterError) newsletterError.style.display = 'block';
+        if (btn) {
+          btn.textContent = originalText;
+          btn.disabled = false;
+        }
+      }
     });
 
     // AHOY ID Session Detection

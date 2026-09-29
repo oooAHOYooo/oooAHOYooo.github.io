@@ -4,7 +4,7 @@ const QUERIES = {
   summary: `SELECT count() AS views, uniq(distinct_id) AS visitors, countIf(event = '$pageview' AND timestamp >= now() - INTERVAL 1 DAY) AS views_24h FROM events WHERE event = '$pageview' AND timestamp >= now() - INTERVAL 30 DAY`,
   pages: `SELECT properties.$pathname AS path, any(properties.$title) AS title, count() AS views, uniq(distinct_id) AS visitors, max(timestamp) AS last_view FROM events WHERE event = '$pageview' AND timestamp >= now() - INTERVAL 30 DAY GROUP BY path ORDER BY views DESC LIMIT 12`,
   hours: `SELECT toHour(toTimeZone(timestamp, 'America/New_York')) AS hour, count() AS views FROM events WHERE event = '$pageview' AND timestamp >= now() - INTERVAL 30 DAY GROUP BY hour ORDER BY hour`,
-  activity: `SELECT timestamp, event, properties.$pathname AS path, properties.$title AS title, distinct_id FROM events WHERE event IN ('$pageview', '$identify') AND timestamp >= now() - INTERVAL 7 DAY ORDER BY timestamp DESC LIMIT 30`
+  activity: `SELECT timestamp, event, properties.$pathname AS path, properties.$title AS title, distinct_id FROM events WHERE event IN ('$pageview', '$identify', 'newsletter_signup') AND timestamp >= now() - INTERVAL 7 DAY ORDER BY timestamp DESC LIMIT 30`
 };
 
 async function verifyOwner(token) {
