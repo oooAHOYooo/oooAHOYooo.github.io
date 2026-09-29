@@ -1714,6 +1714,19 @@
       .about-ahoy h2 { margin:0; color:#fff; font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:clamp(3rem,6vw,5.5rem); line-height:.86; letter-spacing:-.015em; text-transform:uppercase; }
       .about-ahoy p { max-width:680px; margin:0; color:rgba(255,255,255,.62); line-height:1.65; }
       .about-ahoy a { color:#ff78b4; }
+      .ecosystem-newsletter { margin-top:clamp(60px,8vw,100px); padding:clamp(32px,5vw,56px); border:1px solid rgba(255,120,180,.28); border-radius:28px; background:linear-gradient(135deg, rgba(8,26,44,.95) 0%, rgba(20,14,34,.92) 50%, rgba(10,40,50,.9) 100%); box-shadow:0 28px 90px rgba(0,0,0,.35), 0 0 40px rgba(255,120,180,.08); text-align:center; }
+      .ecosystem-newsletter .eyebrow { color:#ff78b4; font-size:.76rem; letter-spacing:.18em; text-transform:uppercase; font-weight:700; margin-bottom:12px; }
+      .ecosystem-newsletter h2 { margin:0 0 14px; color:#fff; font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:clamp(2.8rem,6vw,5.2rem); line-height:.88; letter-spacing:-.015em; text-transform:uppercase; }
+      .ecosystem-newsletter p { max-width:540px; margin:0 auto 28px; color:rgba(255,255,255,.7); font-size:clamp(.95rem,1.8vw,1.08rem); line-height:1.55; }
+      .ecosystem-newsletter-form { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; max-width:480px; margin:0 auto; }
+      .ecosystem-newsletter-form input[type="email"] { flex:1; min-width:220px; padding:14px 20px; background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.22); border-radius:9999px; color:#fff; font-family:inherit; font-size:.95rem; outline:none; transition:border-color .2s ease, background .2s ease, box-shadow .2s ease; }
+      .ecosystem-newsletter-form input[type="email"]::placeholder { color:rgba(255,255,255,.4); }
+      .ecosystem-newsletter-form input[type="email"]:focus { border-color:#ff78b4; background:rgba(255,255,255,.12); box-shadow:0 0 16px rgba(255,120,180,.25); }
+      .ecosystem-newsletter-form button[type="submit"] { padding:14px 28px; background:#ff0060; border:none; border-radius:9999px; color:#fff; font-family:inherit; font-size:.88rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; cursor:pointer; transition:background .2s ease, transform .2s ease, box-shadow .2s ease; white-space:nowrap; }
+      .ecosystem-newsletter-form button[type="submit"]:hover { background:#e0004e; transform:translateY(-2px); box-shadow:0 8px 24px rgba(255,0,96,.45); }
+      .ecosystem-newsletter-form button[type="submit"]:disabled { opacity:.6; cursor:not-allowed; transform:none; box-shadow:none; }
+      .ecosystem-newsletter-success { display:none; margin-top:18px; color:#78d0d2; font-family:'Barlow Condensed',sans-serif; font-size:1.5rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; }
+      .ecosystem-newsletter-error { display:none; margin-top:14px; color:#ffad70; font-size:.88rem; }
       @media (max-width:760px) { .ecosystem-nav-links { display:none; } .ecosystem-hero { grid-template-columns:1fr; padding-top:100px; } .ecosystem-grid { grid-template-columns:repeat(2,1fr); } .ecosystem-roadmap { grid-template-columns:1fr; } .ecosystem-footer { margin-top:56px; } }
       @media (max-width:760px) { .launch-app { display:block; min-height:0; } .launch-app-action { margin-top:28px; } }
       @media (max-width:540px) { .download-row-split { grid-template-columns:1fr; gap:28px; } }
@@ -1727,7 +1740,7 @@
       <div class="ecosystem-shell">
         <nav class="ecosystem-nav" aria-label="AHOY">
           <a class="ecosystem-mark" href="/" aria-label="AHOY home"><img src="images/updatedAhoy_A.png" alt="AHOY Indie Media" width="3000" height="1478"></a>
-          <div class="ecosystem-nav-links"><a href="about.html">About</a><a class="ecosystem-top-action secondary" href="/products">Download &amp; explore</a></div>
+          <div class="ecosystem-nav-links"><a href="about.html">About</a><a href="#newsletter">Newsletter</a><a class="ecosystem-top-action secondary" href="/products">Download &amp; explore</a></div>
           <a class="ecosystem-account" href="https://id.ahoy.ooo/signin" aria-label="Sign in with AHOY ID">
             <span class="pill-dot"></span>
             <span class="pill-label">Sign in</span>
@@ -1739,8 +1752,31 @@
           <section class="seasonal-hero" aria-labelledby="seasonal-title"><div class="seasonal-hero-copy"><div class="seasonal-kicker">Now streaming · 15 live performance clips</div><h2 id="seasonal-title">Poets &amp; Friends #13.</h2><p>All acts from the September 24 show at Koffee? on Audubon are now streaming.</p><div class="launch-app-action"><a class="launch-app-button" href="https://app.ahoy.ooo/whats-new/2026/sep/videos/poets-friends-13-all-acts-now-streaming-2026-09-25">Watch all 15 acts</a></div></div><a class="seasonal-hero-art" href="https://app.ahoy.ooo/whats-new/2026/sep/videos/poets-friends-13-all-acts-now-streaming-2026-09-25" aria-label="Watch Poets and Friends 13, featuring Paul Wildy"><img src="https://app.ahoy.ooo/static/thumbnails/poets-and-friends-13-part-1-paul-wildy_7aeecfa84620.jpg" alt="Poets and Friends 13 performance with Paul Wildy" loading="lazy" width="1200" height="630"></a></section>
           <section class="homepage-downloads" id="downloads" aria-labelledby="downloads-title"><div class="launch-app-kicker">AHOY products</div><h2 id="downloads-title">Download and explore Ahoy products.</h2><div class="download-row-split"><div class="download-product"><h3>Ahoy Streamer</h3><div class="download-links single-col"><a href="https://app.ahoy.ooo" target="_blank" rel="noopener noreferrer">Web app<span>Launch Streamer →</span></a></div></div><div class="download-product"><h3>Ahoy Market</h3><div class="download-links single-col"><a href="https://market.ahoy.ooo" target="_blank" rel="noopener noreferrer">Marketplace<span>Explore Ahoy Market →</span></a></div></div></div><div class="download-row-split"><div class="download-product"><h3>Ahoy Player</h3><div class="download-links single-col"><a href="https://ahoy-player.onrender.com/download.html" target="_blank" rel="noopener noreferrer">Desktop app<span>Download Player →</span></a></div></div><div class="download-product"><h3>Ahoy Player CLI</h3><div class="download-links single-col"><a href="/products">Terminal CLI<span>Get the CLI →</span></a></div></div></div><div class="download-row-split" style="margin-top:20px;"><div class="download-product" style="grid-column:1 / -1;"><h3>Ahoy ID</h3><div class="download-links single-col"><a href="https://id.ahoy.ooo/signin" target="_blank" rel="noopener noreferrer">Independent Identity Layer<span>Sign in with AHOY ID →</span></a></div></div></div></section>
         </main>
+        <section class="ecosystem-newsletter" id="newsletter" aria-labelledby="newsletter-title">
+          <div class="eyebrow">Stay in the loop</div>
+          <h2 id="newsletter-title">New Haven, in your inbox.</h2>
+          <p>Drops, events, and independent local media from the AHOY community — no noise, no ads.</p>
+          <form
+            class="ecosystem-newsletter-form"
+            action="/api/newsletter"
+            method="POST"
+            id="ecosystem-newsletter-form"
+          >
+            <input
+              type="email"
+              name="email"
+              placeholder="your@email.com"
+              required
+              autocomplete="email"
+              aria-label="Email address"
+            />
+            <button type="submit">Subscribe</button>
+          </form>
+          <div class="ecosystem-newsletter-success" id="ecosystem-newsletter-success">You're in. Welcome aboard.</div>
+          <div class="ecosystem-newsletter-error" id="ecosystem-newsletter-error">Something went wrong. Please try again.</div>
+        </section>
         <section class="about-ahoy" aria-labelledby="about-ahoy-title"><h2 id="about-ahoy-title">About AHOY</h2><p>AHOY has been building independent media in New Haven since late 2019, putting on local events and working with artists, musicians, podcasters, and creators. It is developed and maintained by <a href="https://alexgonzalez.ooo/">Alex Gonzalez</a>. At the moment, we're knee deep in launching new products and working toward becoming a nonprofit. <a href="about.html">Learn more about AHOY.</a></p></section>
-        <footer class="ecosystem-footer"><div class="ecosystem-footer-nav"><a href="/">AHOY</a><span class="sep">|</span><a href="about.html">ABOUT</a><span class="sep">|</span><a href="/products">PRODUCTS</a><span class="sep">|</span><a href="/products">DOWNLOAD</a><span class="sep">|</span><a href="https://id.ahoy.ooo/signin">SIGN IN</a></div><div class="ecosystem-footer-copy">© 2026 AHOY INDIE MEDIA</div></footer>
+        <footer class="ecosystem-footer"><div class="ecosystem-footer-nav"><a href="/">AHOY</a><span class="sep">|</span><a href="about.html">ABOUT</a><span class="sep">|</span><a href="#newsletter">NEWSLETTER</a><span class="sep">|</span><a href="/products">PRODUCTS</a><span class="sep">|</span><a href="/products">DOWNLOAD</a><span class="sep">|</span><a href="https://id.ahoy.ooo/signin">SIGN IN</a></div><div class="ecosystem-footer-copy">© 2026 AHOY INDIE MEDIA</div></footer>
       </div>
     </div>
     <div class="bg-orb-blue" aria-hidden="true"></div>
@@ -2479,52 +2515,59 @@
     }, { threshold: 0.1 });
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-    const newsletterForm = document.getElementById('newsletter-form');
-    const newsletterSuccess = document.getElementById('newsletter-success');
-    const newsletterError = document.getElementById('newsletter-error');
-    newsletterForm?.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const btn = newsletterForm.querySelector('button[type="submit"]');
-      const originalText = btn ? btn.textContent : 'Subscribe';
-      if (btn) {
-        btn.textContent = 'Subscribing…';
-        btn.disabled = true;
-      }
-      if (newsletterError) newsletterError.style.display = 'none';
+    function bindNewsletter(formId, successId, errorId) {
+      const form = document.getElementById(formId);
+      const success = document.getElementById(successId);
+      const error = document.getElementById(errorId);
+      if (!form) return;
 
-      const emailInput = newsletterForm.querySelector('input[type="email"]');
-      const email = emailInput ? emailInput.value.trim() : '';
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const btn = form.querySelector('button[type="submit"]');
+        const originalText = btn ? btn.textContent : 'Subscribe';
+        if (btn) {
+          btn.textContent = 'Subscribing…';
+          btn.disabled = true;
+        }
+        if (error) error.style.display = 'none';
 
-      try {
-        const res = await fetch(newsletterForm.action, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-          },
-          body: JSON.stringify({ email })
-        });
-        if (res.ok) {
-          newsletterForm.style.display = 'none';
-          if (newsletterSuccess) newsletterSuccess.style.display = 'block';
-          if (typeof gtag === 'function') {
-            gtag('event', 'newsletter_signup', { location: 'homepage' });
+        const emailInput = form.querySelector('input[type="email"]');
+        const email = emailInput ? emailInput.value.trim() : '';
+
+        try {
+          const res = await fetch(form.action, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+            },
+            body: JSON.stringify({ email })
+          });
+          if (res.ok) {
+            form.style.display = 'none';
+            if (success) success.style.display = 'block';
+            if (typeof gtag === 'function') {
+              gtag('event', 'newsletter_signup', { location: 'homepage' });
+            }
+          } else {
+            if (error) error.style.display = 'block';
+            if (btn) {
+              btn.textContent = originalText;
+              btn.disabled = false;
+            }
           }
-        } else {
-          if (newsletterError) newsletterError.style.display = 'block';
+        } catch (_) {
+          if (error) error.style.display = 'block';
           if (btn) {
             btn.textContent = originalText;
             btn.disabled = false;
           }
         }
-      } catch (_) {
-        if (newsletterError) newsletterError.style.display = 'block';
-        if (btn) {
-          btn.textContent = originalText;
-          btn.disabled = false;
-        }
-      }
-    });
+      });
+    }
+
+    bindNewsletter('ecosystem-newsletter-form', 'ecosystem-newsletter-success', 'ecosystem-newsletter-error');
+    bindNewsletter('newsletter-form', 'newsletter-success', 'newsletter-error');
 
     // AHOY ID Session Detection
     (function () {
