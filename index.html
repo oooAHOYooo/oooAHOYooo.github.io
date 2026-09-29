@@ -1758,7 +1758,7 @@
           <p>Drops, events, and independent local media from the AHOY community — no noise, no ads.</p>
           <form
             class="ecosystem-newsletter-form"
-            action="/api/newsletter"
+            action="https://formspree.io/f/mpqnrdqe"
             method="POST"
             id="ecosystem-newsletter-form"
           >
@@ -1773,7 +1773,7 @@
             <button type="submit">Subscribe</button>
           </form>
           <div class="ecosystem-newsletter-success" id="ecosystem-newsletter-success">You're in. Welcome aboard.</div>
-          <div class="ecosystem-newsletter-error" id="ecosystem-newsletter-error">Something went wrong. Please try again.</div>
+          <div class="ecosystem-newsletter-error" id="ecosystem-newsletter-error" role="alert">Something went wrong. Please try again.</div>
         </section>
         <section class="about-ahoy" aria-labelledby="about-ahoy-title"><h2 id="about-ahoy-title">About AHOY</h2><p>AHOY has been building independent media in New Haven since late 2019, putting on local events and working with artists, musicians, podcasters, and creators. It is developed and maintained by <a href="https://alexgonzalez.ooo/">Alex Gonzalez</a>. At the moment, we're knee deep in launching new products and working toward becoming a nonprofit. <a href="about.html">Learn more about AHOY.</a></p></section>
         <footer class="ecosystem-footer"><div class="ecosystem-footer-nav"><a href="/">AHOY</a><span class="sep">|</span><a href="about.html">ABOUT</a><span class="sep">|</span><a href="#newsletter">NEWSLETTER</a><span class="sep">|</span><a href="/products">PRODUCTS</a><span class="sep">|</span><a href="/products">DOWNLOAD</a><span class="sep">|</span><a href="https://id.ahoy.ooo/signin">SIGN IN</a></div><div class="ecosystem-footer-copy">© 2026 AHOY INDIE MEDIA</div></footer>
@@ -2350,7 +2350,7 @@
           <p>Drops, events, and local music from the Ahoy community — no noise, no ads.</p>
           <form
             class="newsletter-form"
-            action="/api/newsletter"
+            action="https://formspree.io/f/mpqnrdqe"
             method="POST"
             id="newsletter-form"
           >
@@ -2365,7 +2365,7 @@
             <button type="submit">Subscribe</button>
           </form>
           <div class="newsletter-success" id="newsletter-success">You're in. Welcome to Ahoy.</div>
-          <div class="newsletter-error" id="newsletter-error">Something went wrong. Please try again.</div>
+          <div class="newsletter-error" id="newsletter-error" role="alert">Something went wrong. Please try again.</div>
         </section>
 
         <section class="cta-section fade-up" aria-labelledby="cta-title">
@@ -2531,17 +2531,13 @@
         }
         if (error) error.style.display = 'none';
 
-        const emailInput = form.querySelector('input[type="email"]');
-        const email = emailInput ? emailInput.value.trim() : '';
-
         try {
           const res = await fetch(form.action, {
             method: 'POST',
             headers: {
-              'Content-Type': 'application/json',
               'Accept': 'application/json'
             },
-            body: JSON.stringify({ email })
+            body: new FormData(form)
           });
           if (res.ok) {
             form.style.display = 'none';
@@ -2550,14 +2546,22 @@
               gtag('event', 'newsletter_signup', { location: 'homepage' });
             }
           } else {
-            if (error) error.style.display = 'block';
+            const result = await res.json().catch(() => ({}));
+            const message = result.errors?.map(item => item.message).filter(Boolean).join(' ') || 'Could not subscribe right now. Please try again.';
+            if (error) {
+              error.textContent = message;
+              error.style.display = 'block';
+            }
             if (btn) {
               btn.textContent = originalText;
               btn.disabled = false;
             }
           }
         } catch (_) {
-          if (error) error.style.display = 'block';
+          if (error) {
+            error.textContent = 'Could not connect. Please try again.';
+            error.style.display = 'block';
+          }
           if (btn) {
             btn.textContent = originalText;
             btn.disabled = false;
