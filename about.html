@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="/analytics/posthog.js"></script>
   <title>About AHOY · Independent Media in New Haven</title>
-  <meta name="description" content="Learn about AHOY, an independent media project rooted in New Haven since late 2019.">
+  <meta name="description" content="AHOY puts on live events in New Haven and builds tools for independent media.">
   <link rel="icon" type="image/svg+xml" href="images/ahoy-favicon-white.svg?v=2">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,11 +29,16 @@
     .hero-title-row img { display:block; width:clamp(100px,16vw,175px); height:auto; margin-bottom:24px; filter:invert(1); mix-blend-mode:screen; }
     .hero p, .hero .kicker { position:relative; z-index:1; }
     .content { position:relative; overflow:hidden; margin-top:clamp(28px,5vw,64px); padding:clamp(34px,6vw,68px); border:1px solid rgba(142,232,228,.2); border-top:1px solid rgba(142,232,228,.3); border-radius:28px; background:linear-gradient(135deg,rgba(8,31,49,.72),rgba(5,10,20,.5)); box-shadow:0 24px 80px rgba(0,0,0,.22); }
-    .content::after { content:""; position:absolute; width:300px; height:300px; right:-120px; bottom:-170px; border-radius:50%; background:radial-gradient(circle,rgba(255,120,180,.2),transparent 68%); pointer-events:none; }
+    .content::before, .content::after { content:""; position:absolute; border-radius:50%; pointer-events:none; animation:card-glow-breathe 18s ease-in-out infinite alternate; }
+    .content::before { width:420px; height:420px; left:-180px; top:-180px; background:radial-gradient(circle,rgba(102,207,211,.16),transparent 68%); }
+    .content::after { width:360px; height:360px; right:-140px; bottom:-170px; background:radial-gradient(circle,rgba(255,120,180,.2),transparent 68%); animation-delay:-9s; }
+    @keyframes card-glow-breathe { from { opacity:.45; transform:translate3d(0,0,0) scale(.88); } to { opacity:1; transform:translate3d(22px,-14px,0) scale(1.18); } }
     .content h2, .content > div { position:relative; z-index:1; }
     .content h2 { max-width:7ch; color:#fff; font-size:clamp(10rem,28vw,24rem); line-height:.72; letter-spacing:-.055em; }
     .content p { font-size:clamp(1.05rem,1.5vw,1.2rem); line-height:1.65; }
     .content a, .content a:visited, .content a:hover, .content a:active { color:var(--ink); }
+    .content a.product-link { text-decoration-color:rgba(142,232,228,.48); text-decoration-thickness:1px; text-underline-offset:4px; transition:color .2s ease,text-decoration-color .2s ease; }
+    .content a.product-link:hover, .content a.product-link:focus-visible { color:#8ee8e4; text-decoration-color:currentColor; }
     .about-logo-link { display:inline-flex; align-items:center; min-height:48px; padding:10px 4px; }
     .about-logo-link img { display:block; width:112px; height:auto; filter:invert(1); mix-blend-mode:screen; }
     @media(min-width:900px){
@@ -44,10 +49,13 @@
     @media(max-width:700px){.hero-title-row{align-items:flex-start;flex-direction:column;gap:8px}.hero-title-row img{width:125px;margin-bottom:10px}.hero-title-row h1{margin-bottom:8px}}
   </style>
   <style>
-    .links { justify-content: center; }
-    .download-button { font-family: "IBM Plex Mono", monospace; text-transform: uppercase; letter-spacing: .04em; transition: transform .2s ease, background .2s ease, box-shadow .2s ease; }
-    .download-button:hover { transform: translateY(-2px); background: var(--pink); box-shadow: 0 10px 24px rgba(255,120,180,.35); }
-    .download-button:active { transform: translateY(1px); box-shadow: 0 4px 12px rgba(255,120,180,.2); }
+    .links { justify-content:flex-start; margin-top:22px; }
+    .download-button { display:inline-flex; align-items:center; gap:14px; padding:8px 0; border-bottom:1px solid rgba(142,232,228,.55); font-size:.96rem; font-weight:600; letter-spacing:.01em; text-decoration:none; transition:border-color .25s ease; }
+    .download-button span { color:#8ee8e4; font-size:1.25rem; font-weight:400; line-height:1; transition:transform .25s ease; }
+    .download-button:hover { border-color:var(--pink); }
+    .download-button:hover span { transform:translateX(4px); }
+    .download-button:focus-visible { outline:2px solid #8ee8e4; outline-offset:5px; }
+    @media(prefers-reduced-motion:reduce){.content::before,.content::after{animation:none}.download-button,.download-button span{transition:none}}
     .site-footer { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; margin-top:clamp(48px,5vw,72px); padding:24px 0 40px; color:rgba(255,255,255,.45); font-family:"IBM Plex Mono",monospace; font-size:.72rem; text-align:center; }
     .site-footer a { display:inline-flex; align-items:center; color:rgba(255,255,255,.7); text-decoration:none; transition:color .2s ease; }
     .site-footer a:hover { color:var(--pink); }
@@ -67,17 +75,18 @@
           <h2 id="story-title">Built close to home.</h2>
         </div>
         <div>
-          <p>Since late 2019, AHOY has been putting on events around New Haven and making room for artists, musicians, podcasters, filmmakers, and other independent creators. The project grows from the belief that local work ought to have a durable place to be found, shared, and remembered.</p>
-          <p>Today, AHOY is becoming a baby ecosystem: <strong>Streamer</strong> is our web app for finding media; <strong>Market</strong> connects you directly with creator drops and physical merch; <strong>Player</strong> helps organize your content and mp3 collections and to listen offline and also lo key get back to the days of owning the music; <strong>ID</strong> connects your identity across every product while keeping private product data separate; and <strong>Cards</strong> explore a physical way to hold onto the work.</p>
+          <p>AHOY puts on live events in New Haven and builds tools for independent media. We want local artists' work to be easy to find, enjoy, and keep. AHOY is actively working toward 501(c)(3) nonprofit status.</p>
+          <p><strong><a class="product-link" href="products.html#streamer">Streamer</a></strong> brings music, podcasts, events, and film together online. <strong><a class="product-link" href="products.html#market">Market</a></strong> features creator releases and merch. <strong><a class="product-link" href="products.html#player">Player</a></strong> organizes MP3s for offline listening. <strong><a class="product-link" href="products.html#id">ID</a></strong> is AHOY's account system. <strong><a class="product-link" href="cards.html">Cards</a></strong> is an experiment with physical media.</p>
+          <p><a href="https://alexgonzalez.ooo/">Alex Gonzalez</a> created AHOY and continues to build and maintain its software.</p>
           <div class="links">
-            <a class="button download-button" href="/products">DOWNLOAD &amp; EXPLORE</a>
+            <a class="download-button" href="/products">Explore the products <span aria-hidden="true">→</span></a>
           </div>
         </div>
       </section>
     </main>
     <footer class="site-footer">
       <a href="/" aria-label="Back to AHOY home"><img src="images/updatedAhoy_A.png" alt="AHOY Indie Media"></a>
-      <div class="footer-credit">Maintained and developed by <a href="https://littlemarket.org" target="_blank" rel="noopener noreferrer">littlemarket.org</a></div>
+      <div class="footer-credit">Software development by <a href="https://littlemarket.org" target="_blank" rel="noopener noreferrer">littlemarket.org</a></div>
       <span>© MMXXVI AHOY Indie Media</span>
     </footer>
   </div>

@@ -206,6 +206,7 @@
     .platform-card {
       position: relative;
       isolation: isolate;
+      scroll-margin-top: 112px;
       border: 1px solid var(--panel-border);
       border-radius: 24px;
       background: var(--panel);
@@ -543,7 +544,7 @@
   <div class="platforms">
 
     <!-- Card 1: Ahoy Streamer -->
-    <div class="platform-card">
+    <div class="platform-card" id="streamer">
       <div class="card-body">
         <span class="platform-tag tag-android">Web app</span>
         <h2>Ahoy Streamer</h2>
@@ -570,7 +571,7 @@
     </div>
 
     <!-- Card 2: Ahoy Market -->
-    <div class="platform-card">
+    <div class="platform-card" id="market">
       <div class="card-body">
         <span class="platform-tag tag-android">Marketplace</span>
         <h2>Ahoy Market</h2>
@@ -597,7 +598,7 @@
     </div>
 
     <!-- Card 3: Ahoy Player -->
-    <div class="platform-card player-card">
+    <div class="platform-card player-card" id="player">
       <div class="card-body">
         <span class="platform-tag tag-beta">Player</span>
         <h2>Ahoy Player</h2>
@@ -650,7 +651,7 @@
     </div>
 
     <!-- Card 5: Ahoy ID -->
-    <div class="platform-card id-card">
+    <div class="platform-card id-card" id="id">
       <div class="card-body">
         <span class="platform-tag tag-android">Identity</span>
         <h2>Ahoy ID</h2>
