@@ -734,25 +734,26 @@
   <!-- ═══════════════════════════════════════════════════════
        PRODUCT 2: AHOY PLAYER CLI
        ═══════════════════════════════════════════════════════ -->
-  <section class="release-section" id="ahoy-cli" data-category="cli mac linux">
+  <section class="release-section" id="ahoy-cli" data-category="cli mac linux windows">
     <div class="section-header">
       <div class="section-header-left">
         <h2>
           <span>Ahoy Player CLI</span>
-          <span class="badge badge-stable">Always Current (Rolling)</span>
+          <span class="badge badge-stable" id="cli-latest-version">Latest: v0.2.3</span>
         </h2>
-        <p>Terminal TUI audio workstation and directory scanner for POSIX shells.</p>
+        <p>Terminal music player and directory scanner. Node.js 20+ required; audio playback currently works on macOS and Linux.</p>
       </div>
       <div class="section-header-links">
         <a href="https://github.com/oooAHOYooo/ahoy-player" target="_blank" rel="noopener noreferrer">scripts/install-cli.sh ↗</a>
+        <a id="cli-release-link" href="https://github.com/oooAHOYooo/ahoy-player/releases/latest" target="_blank" rel="noopener noreferrer">Latest CLI release ↗</a>
       </div>
     </div>
 
     <!-- Quick Installer Command Box -->
     <div class="cli-box">
       <div>
-        <span style="color:#94a3b8; font-size:11px; display:block; margin-bottom:4px;"># Automated 1-step installer (curl + bash):</span>
-        <code class="cli-code" id="cli-curl-command">curl -fsSL https://raw.githubusercontent.com/oooAHOYooo/ahoy-player/main/scripts/install-cli.sh | bash</code>
+        <span style="color:#94a3b8; font-size:11px; display:block; margin-bottom:4px;"># Install the latest terminal CLI package (Node.js 20+):</span>
+        <code class="cli-code" id="cli-curl-command">npm install --global https://github.com/oooAHOYooo/ahoy-player/releases/download/v0.2.3/ahoy-player-terminal-0.2.3.tgz</code>
       </div>
       <button class="copy-btn" id="copy-curl-btn" type="button">Copy Command</button>
     </div>
@@ -784,25 +785,13 @@
           </tr>
           <tr data-platform="cli">
             <td><strong>Node.js Package Manager</strong></td>
-            <td><span class="meta-mono">Node.js 18+ (Global npm)</span></td>
-            <td><span class="filename">npm install -g ahoy-player</span></td>
-            <td><span class="badge badge-stable">v0.1.0</span></td>
-            <td><span class="meta-mono">Registry: npmjs.org</span></td>
+            <td><span class="meta-mono">Node.js 20+ · macOS / Linux / Windows</span></td>
+            <td><span class="filename" id="cli-npm-command">npm install --global https://github.com/oooAHOYooo/ahoy-player/releases/download/v0.2.3/ahoy-player-terminal-0.2.3.tgz</span></td>
+            <td><span class="badge badge-stable" id="cli-package-status">GitHub release · v0.2.3</span></td>
+            <td><span class="meta-mono">Release asset</span></td>
             <td>
-              <button class="btn-download btn-secondary" onclick="copyText('npm install -g ahoy-player', this)">
-                Copy npm
-              </button>
-            </td>
-          </tr>
-          <tr data-platform="cli">
-            <td><strong>Manual Git Clone</strong></td>
-            <td><span class="meta-mono">Git + POSIX Shell</span></td>
-            <td><span class="filename">git clone https://github.com/oooAHOYooo/ahoy-player.git</span></td>
-            <td><span class="badge badge-legacy">main branch</span></td>
-            <td><span class="meta-mono">Origin: GitHub</span></td>
-            <td>
-              <button class="btn-download btn-secondary" onclick="copyText('git clone https://github.com/oooAHOYooo/ahoy-player.git \"$HOME/ahoyMp3\" && cd \"$HOME/ahoyMp3\" && npm install', this)">
-                Copy Clone
+              <button class="btn-download btn-secondary" onclick="copyText(document.getElementById('cli-npm-command').textContent.trim(), this)">
+                Copy install
               </button>
             </td>
           </tr>
@@ -1129,5 +1118,6 @@
     });
   });
 </script>
+<script src="/scripts/ahoy-player-release.js" defer></script>
 </body>
 </html>

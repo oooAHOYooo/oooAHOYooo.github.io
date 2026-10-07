@@ -631,17 +631,18 @@
           <summary>Specs</summary>
           <div class="nutrition-card">
             <div class="nutrition-heading"><span>Product Facts</span><span>CLI</span></div>
-            <div class="nutrition-row"><span>Platform</span><strong>macOS + Linux</strong></div>
+            <div class="nutrition-row"><span>Platform</span><strong>macOS, Linux + Windows TUI</strong></div>
             <div class="nutrition-row"><span>Catalog</span><strong>Local Music</strong></div>
-            <div class="nutrition-row"><span>Serving</span><strong>Always Current</strong></div>
+            <div class="nutrition-row"><span>Latest release</span><strong id="cli-current-version">v0.2.3</strong></div>
             <div class="nutrition-row"><span>Interface</span><strong>Terminal TUI</strong></div>
             <div class="nutrition-footer">* Direct terminal installation &amp; audio toolkit.</div>
           </div>
         </details>
-        <p>Keep your MP3s local. This one command installs the global <code>ahoy</code> terminal player; run it again later to update. Then use <code>ahoy scan ~/Music</code> and <code>ahoy player</code> from any folder.</p>
-        <pre class="terminal-command"><code id="cli-command">curl -fsSL https://raw.githubusercontent.com/oooAHOYooo/ahoy-player/main/scripts/install-cli.sh | bash</code></pre>
+        <p>Keep your MP3s local. Install the global <code>ahoy</code> command with Node.js 20+, then use <code>ahoy scan ~/Music</code> and <code>ahoy player</code> from any folder. macOS and Linux support audio playback; Windows currently supports library commands and the TUI.</p>
+        <pre class="terminal-command"><code id="cli-command">npm install --global https://github.com/oooAHOYooo/ahoy-player/releases/download/v0.2.3/ahoy-player-terminal-0.2.3.tgz</code></pre>
         <div class="card-actions">
           <button class="btn btn-primary" id="copy-cli-command" type="button">Copy Ahoy installer</button>
+          <a class="btn btn-secondary" id="cli-release-link" href="https://github.com/oooAHOYooo/ahoy-player/releases/latest" target="_blank" rel="noopener noreferrer">View latest release</a>
         </div>
         <details class="terminal-help">
           <summary>Need a terminal?</summary>
@@ -737,5 +738,6 @@
     setTimeout(() => { copyCliCommand.textContent = label; }, 1800);
   });
 </script>
+<script src="/scripts/ahoy-player-release.js" defer></script>
 </body>
 </html>
