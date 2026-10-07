@@ -1843,13 +1843,13 @@
           <div class="ecosystem-newsletter-success" id="ecosystem-newsletter-success">You're in. Welcome aboard.</div>
           <div class="ecosystem-newsletter-error" id="ecosystem-newsletter-error" role="alert">Something went wrong. Please try again.</div>
         </section>
-        <section class="about-ahoy" aria-labelledby="about-ahoy-title"><h2 id="about-ahoy-title">About AHOY</h2><p>AHOY has been building independent media in New Haven since late 2019, putting on local events and working with artists, musicians, podcasters, and creators. It is developed and maintained by <a href="https://alexgonzalez.ooo/">Alex Gonzalez</a>. At the moment, we're knee deep in launching new products and working toward becoming a nonprofit. <a href="about.html">Learn more about AHOY.</a></p></section>
+        <section class="about-ahoy" id="about-ahoy" aria-labelledby="about-ahoy-title"><h2 id="about-ahoy-title">About AHOY</h2><p>AHOY has been building independent media in New Haven since late 2019, putting on local events and working with artists, musicians, podcasters, and creators. It is developed and maintained by <a href="https://alexgonzalez.ooo/">Alex Gonzalez</a>. At the moment, we're knee deep in launching new products and working toward becoming a nonprofit. <a href="about.html">Learn more about AHOY.</a></p></section>
 
         <footer class="ecosystem-footer"><div class="ecosystem-footer-nav"><a href="/">AHOY</a><span class="sep">|</span><a href="about.html">ABOUT</a><span class="sep">|</span><a href="#newsletter">NEWSLETTER</a><span class="sep">|</span><a href="/products">PRODUCTS</a><span class="sep">|</span><a href="/products">DOWNLOAD</a><span class="sep">|</span><a href="https://id.ahoy.ooo/signin">SIGN IN</a></div><div class="ecosystem-footer-copy">© 2026 AHOY INDIE MEDIA</div></footer>
       </div>
     </div>
     <div class="bg-orb-blue" aria-hidden="true"></div>
-    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <template class="legacy-homepage">
     <div class="page">
       <header class="topbar">
         <a class="brand" href="https://app.ahoy.ooo" target="_blank"
@@ -1911,64 +1911,18 @@
 
           <aside class="hero-aside">
             <div class="presence-card" aria-label="Live presence">
-              <div class="presence-chip">Live presence</div>
+              <div class="presence-chip">Site activity</div>
               <div class="presence-row">
                 <div>
-                  <div class="presence-value" id="presence-value">12</div>
-                  <div class="presence-note" id="presence-label">People are around the AHOY front door right now.</div>
+                  <div class="presence-value" id="presence-value">—</div>
+                  <div class="presence-note" id="presence-label">A live visitor count is not connected yet.</div>
                 </div>
                 <div style="text-align:right;">
-                  <div class="slot-tag" id="presence-status">Live now</div>
+                  <div class="slot-tag" id="presence-status">Not live</div>
                 </div>
               </div>
               <div class="presence-note" id="presence-detail">
-                This pulse can later point to a real presence feed. For now, it reflects the current AHOY window and keeps the homepage feeling alive.
-              </div>
-            </div>
-            <div class="aside-marquee" aria-hidden="true">
-              <div class="aside-marquee-track">
-                <img src="\1" alt loading="lazy">
-                <img src="\1" alt loading="lazy">
-                <img src="\1" alt loading="lazy">
-                <img
-                  src="https://storage.googleapis.com/ahoy-dynamic-content/_2026/marketing_tallboyz/Tallboyz%20-%20Ahoy%20Indie%20Media%20_%205.jpg"
-                  alt loading="lazy">
-                <img src="\1" alt loading="lazy">
-                <img src="\1" alt loading="lazy">
-                <img src="\1" alt loading="lazy">
-                <img src="\1" alt loading="lazy">
-                <img src="\1" alt loading="lazy">
-                <img src="\1" alt loading="lazy">
-                <img src="\1" alt loading="lazy">
-                <img src="\1" alt loading="lazy">
-                <img src="\1" alt loading="lazy">
-                <img src="\1" alt loading="lazy">
-                <img src="\1" alt loading="lazy">
-                <img src="\1" alt loading="lazy">
-                <img
-                  src="/images/Ahoy-Indie-Media---The-Rob-Show---Season-2---Episode-1---2023.jpg"
-                  alt loading="lazy">
-                <img src="\1" alt loading="lazy">
-                <img src="\1" alt loading="lazy">
-                <img src="\1" alt loading="lazy">
-                <img
-                  src="https://storage.googleapis.com/ahoy-dynamic-content/_2026/marketing_tallboyz/Tallboyz%20-%20Ahoy%20Indie%20Media%20_%205.jpg"
-                  alt loading="lazy">
-                <img src="\1" alt loading="lazy">
-                <img src="\1" alt loading="lazy">
-                <img src="\1" alt loading="lazy">
-                <img src="\1" alt loading="lazy">
-                <img src="\1" alt loading="lazy">
-                <img src="\1" alt loading="lazy">
-                <img src="\1" alt loading="lazy">
-                <img src="\1" alt loading="lazy">
-                <img src="\1" alt loading="lazy">
-                <img src="\1" alt loading="lazy">
-                <img src="\1" alt loading="lazy">
-                <img src="\1" alt loading="lazy">
-                <img
-                  src="/images/Ahoy-Indie-Media---The-Rob-Show---Season-2---Episode-1---2023.jpg"
-                  alt loading="lazy">
+                This card will show visitor activity when a real presence feed is available.
               </div>
             </div>
             <div class="aside-card">
@@ -2475,8 +2429,7 @@
           <div>Copyright 2026 · AHOY</div>
         </footer>
       </div>
-
-
+    </template>
 
       <script>
     const root = document.documentElement;
@@ -2511,18 +2464,10 @@
     const presenceDetail = document.getElementById('presence-detail');
 
     const updatePresence = () => {
-      const now = new Date();
-      const hour = now.getHours();
-      const minute = now.getMinutes();
-      const liveCount = 8 + ((hour * 11 + minute * 3) % 19);
-      const windowName = hour >= 6 && hour < 12 ? 'morning' : hour < 18 ? 'afternoon' : hour < 22 ? 'evening' : 'late night';
-
-      if (presenceValue) presenceValue.textContent = String(liveCount);
-      if (presenceLabel) presenceLabel.textContent = `${liveCount} people are around the AHOY front door right now.`;
-      if (presenceStatus) presenceStatus.textContent = `Live ${windowName}`;
-      if (presenceDetail) {
-        presenceDetail.textContent = `This pulse follows the current ${windowName} window in New Haven. When a real public presence feed is ready, this card can switch without changing the layout.`;
-      }
+      if (presenceValue) presenceValue.textContent = '—';
+      if (presenceLabel) presenceLabel.textContent = 'A live visitor count is not connected yet.';
+      if (presenceStatus) presenceStatus.textContent = 'Not live';
+      if (presenceDetail) presenceDetail.textContent = 'This card will show visitor activity when a real presence feed is available.';
     };
 
     menuToggle?.addEventListener('click', () => {
@@ -2533,15 +2478,15 @@
 
     document.addEventListener('click', (e) => {
       if (!e.target.closest('.topbar')) {
-        navMenu.classList.remove('active');
-        menuToggle.setAttribute('aria-expanded', 'false');
+      navMenu?.classList.remove('active');
+        menuToggle?.setAttribute('aria-expanded', 'false');
       }
     });
 
     window.addEventListener('resize', () => {
       if (window.innerWidth > 768) {
-        navMenu.classList.remove('active');
-        menuToggle.setAttribute('aria-expanded', 'false');
+        navMenu?.classList.remove('active');
+        menuToggle?.setAttribute('aria-expanded', 'false');
       }
       heroLogo?.classList.toggle('show', window.innerWidth <= 768);
     });
