@@ -24,6 +24,21 @@
   ],
   "redirects": [
     {
+      "source": "/signin",
+      "destination": "https://id.ahoy.ooo/signin",
+      "permanent": false
+    },
+    {
+      "source": "/signin/",
+      "destination": "https://id.ahoy.ooo/signin",
+      "permanent": false
+    },
+    {
+      "source": "/signin.html",
+      "destination": "https://id.ahoy.ooo/signin",
+      "permanent": false
+    },
+    {
       "source": "/newhaven",
       "destination": "/",
       "permanent": true
