@@ -6,20 +6,20 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-WVDL9N1HDT"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);if(arguments[0]==='event'&&window.posthog){window.posthog.capture(arguments[1],arguments[2]||{})}}gtag('js',new Date());gtag('config','G-WVDL9N1HDT');</script>
   <script src="/analytics/posthog.js"></script>
-  <title>AHOY Products · Download and Explore | Streamer, Market, Player, ID</title>
-  <meta name="description" content="Download and explore Ahoy products: Ahoy Streamer, Ahoy Market, Ahoy Player, Ahoy Player CLI, and Ahoy ID for independent media, community commerce, and unified identity." />
+  <title>AHOY Products · Download and Explore | Streamer, Streamer CLI, Market, Player, ID</title>
+  <meta name="description" content="Download and explore Ahoy products: Ahoy Streamer, Ahoy Streamer CLI, Ahoy Market, Ahoy Player, Ahoy Player CLI, and Ahoy ID for independent media, community commerce, and unified identity." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://ahoy.ooo/products" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://ahoy.ooo/products" />
   <meta property="og:title" content="AHOY Products · Download and Explore" />
-  <meta property="og:description" content="Stream independent media, explore the community marketplace, sign in with AHOY ID, or organize your own MP3 collection and listen offline." />
+  <meta property="og:description" content="Stream independent media in your browser or terminal, explore the community marketplace, sign in with AHOY ID, or organize your own MP3 collection and listen offline." />
   <meta property="og:image" content="https://ahoy.ooo/images/github-app-preview.jpg" />
   <meta property="og:image:width" content="1446" />
   <meta property="og:image:height" content="1484" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="AHOY Products · Download and Explore" />
-  <meta name="twitter:description" content="Stream independent media, explore the community marketplace, sign in with AHOY ID, or organize your own MP3 collection and listen offline." />
+  <meta name="twitter:description" content="Stream independent media in your browser or terminal, explore the community marketplace, sign in with AHOY ID, or organize your own MP3 collection and listen offline." />
   <meta name="twitter:image" content="https://ahoy.ooo/images/github-app-preview.jpg" />
   <link rel="icon" type="image/png" href="/images/Ahoy%20Indie%20Media%20-%20App%20Icon%20-%20May%2026.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/images/Ahoy%20Indie%20Media%20-%20App%20Icon%20-%20May%2026.png" />
@@ -35,6 +35,13 @@
         "operatingSystem": "All",
         "applicationCategory": "EntertainmentApplication",
         "url": "https://app.ahoy.ooo"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "AHOY Streamer CLI",
+        "operatingSystem": "macOS, Windows, Linux",
+        "applicationCategory": "EntertainmentApplication",
+        "url": "https://github.com/oooAHOYooo/ahoy-streamer-cli"
       },
       {
         "@type": "WebApplication",
@@ -310,6 +317,11 @@
       box-shadow: 0 10px 24px rgba(17, 17, 17, .16);
     }
 
+    .btn-secondary {
+      color: var(--text);
+      background: rgba(255, 255, 255, .62);
+    }
+
     .terminal-help {
       color: var(--muted);
       font-size: 0.82rem;
@@ -537,7 +549,7 @@
   <div class="hero">
     <div class="hero-kicker">Download and explore</div>
     <h1>AHOY products.</h1>
-    <p>Stream independent media, explore the community marketplace, sign in with AHOY ID, or organize your own MP3 collection and listen offline.</p>
+    <p>Stream independent media in your browser or terminal, explore the community marketplace, sign in with AHOY ID, or organize your own MP3 collection and listen offline.</p>
     <p class="hero-context"><a href="/#about-ahoy">About AHOY</a> · <a href="/download">Dedicated downloads &amp; installers →</a></p>
   </div>
 
@@ -565,6 +577,35 @@
         <div class="card-actions">
           <a class="btn btn-primary" href="https://app.ahoy.ooo" target="_blank" rel="noopener noreferrer" onclick="gtag('event','streamer_web_app_click',{location:'products_page'})">
             Launch Ahoy Streamer
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card: AHOY Streamer CLI -->
+    <div class="platform-card" id="streamer-cli">
+      <div class="card-body">
+        <span class="platform-tag tag-beta">Early testing</span>
+        <h2>AHOY Streamer CLI</h2>
+        <details class="ingredients-dropdown">
+          <summary>Specs</summary>
+          <div class="nutrition-card">
+            <div class="nutrition-heading"><span>Product Facts</span><span>Terminal</span></div>
+            <div class="nutrition-row"><span>Platform</span><strong>macOS, Windows, Linux</strong></div>
+            <div class="nutrition-row"><span>Experience</span><strong>Music, video &amp; more</strong></div>
+            <div class="nutrition-row"><span>Interface</span><strong>Keyboard TUI + JSON</strong></div>
+            <div class="nutrition-footer">* A public source build for your terminal; package release is in progress.</div>
+          </div>
+        </details>
+        <p>
+          Turn your terminal into a little AHOY listening room. Browse music, videos, podcasts, artists, events, Studio, Radio, and AHOY TV channel libraries, then play audio or watch video rendered as shifting grayscale mosaics and Braille art. A keyboard-first interface keeps the catalog close, while a JSON command mode lets scripts and AI agents search and inspect it too.
+        </p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://github.com/oooAHOYooo/ahoy-streamer-cli" target="_blank" rel="noopener noreferrer">
+            Explore the source
+          </a>
+          <a class="btn btn-secondary" href="https://github.com/oooAHOYooo/ahoy-streamer-cli#start-here" target="_blank" rel="noopener noreferrer">
+            Getting started
           </a>
         </div>
       </div>
