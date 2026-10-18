@@ -51,6 +51,30 @@
   ],
   "rewrites": [
     {
+      "source": "/products/streamer",
+      "destination": "/product-guides/streamer.html"
+    },
+    {
+      "source": "/products/streamer-tui",
+      "destination": "/product-guides/streamer-tui.html"
+    },
+    {
+      "source": "/products/market",
+      "destination": "/product-guides/market.html"
+    },
+    {
+      "source": "/products/player",
+      "destination": "/product-guides/player.html"
+    },
+    {
+      "source": "/products/player-cli",
+      "destination": "/product-guides/player-cli.html"
+    },
+    {
+      "source": "/products/id",
+      "destination": "/product-guides/id.html"
+    },
+    {
       "source": "/support",
       "destination": "/support/index.html"
     },

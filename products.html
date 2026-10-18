@@ -6,8 +6,8 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-WVDL9N1HDT"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);if(arguments[0]==='event'&&window.posthog){window.posthog.capture(arguments[1],arguments[2]||{})}}gtag('js',new Date());gtag('config','G-WVDL9N1HDT');</script>
   <script src="/analytics/posthog.js"></script>
-  <title>AHOY Products · Download and Explore | Streamer, Streamer CLI, Market, Player, ID</title>
-  <meta name="description" content="Download and explore Ahoy products: Ahoy Streamer, Ahoy Streamer CLI, Ahoy Market, Ahoy Player, Ahoy Player CLI, and Ahoy ID for independent media, community commerce, and unified identity." />
+  <title>AHOY Products · Download and Explore | Streamer, Streamer TUI, Market, Player, ID</title>
+  <meta name="description" content="Download and explore Ahoy products: Ahoy Streamer, Ahoy Streamer TUI, Ahoy Market, Ahoy Player, Ahoy Player CLI, and Ahoy ID for independent media, community commerce, and unified identity." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://ahoy.ooo/products" />
   <meta property="og:type" content="website" />
@@ -38,7 +38,7 @@
       },
       {
         "@type": "SoftwareApplication",
-        "name": "AHOY Streamer CLI",
+        "name": "AHOY Streamer TUI",
         "operatingSystem": "macOS, Windows, Linux",
         "applicationCategory": "EntertainmentApplication",
         "url": "https://github.com/oooAHOYooo/ahoy-streamer-cli"
@@ -575,18 +575,18 @@
           Ahoy Streamer is the web app for independent music, podcasts, events, and film from New Haven creators.
         </p>
         <div class="card-actions">
-          <a class="btn btn-primary" href="https://app.ahoy.ooo" target="_blank" rel="noopener noreferrer" onclick="gtag('event','streamer_web_app_click',{location:'products_page'})">
-            Launch Ahoy Streamer
+          <a class="btn btn-primary" href="/products/streamer">
+            What is Ahoy Streamer?
           </a>
         </div>
       </div>
     </div>
 
-    <!-- Card: AHOY Streamer CLI -->
-    <div class="platform-card" id="streamer-cli">
+    <!-- Card: AHOY Streamer TUI -->
+    <div class="platform-card" id="streamer-tui">
       <div class="card-body">
         <span class="platform-tag tag-beta">Early testing</span>
-        <h2>AHOY Streamer CLI</h2>
+        <h2>AHOY Streamer TUI</h2>
         <details class="ingredients-dropdown">
           <summary>Specs</summary>
           <div class="nutrition-card">
@@ -594,18 +594,15 @@
             <div class="nutrition-row"><span>Platform</span><strong>macOS, Windows, Linux</strong></div>
             <div class="nutrition-row"><span>Experience</span><strong>Music, video &amp; more</strong></div>
             <div class="nutrition-row"><span>Interface</span><strong>Keyboard TUI + JSON</strong></div>
-            <div class="nutrition-footer">* A public source build for your terminal; package release is in progress.</div>
+            <div class="nutrition-footer">* Early testing; follow the setup guide for your computer.</div>
           </div>
         </details>
         <p>
-          Turn your terminal into a little AHOY listening room. Browse music, videos, podcasts, artists, events, Studio, Radio, and AHOY TV channel libraries, then play audio or watch video rendered as shifting grayscale mosaics and Braille art. A keyboard-first interface keeps the catalog close, while a JSON command mode lets scripts and AI agents search and inspect it too.
+          Browse AHOY music, videos, podcasts, artists, events, Studio, Radio, and AHOY TV from a keyboard-driven terminal interface. Play media there, or use the small JSON command interface to search and inspect the catalog from scripts and agents.
         </p>
         <div class="card-actions">
-          <a class="btn btn-primary" href="https://github.com/oooAHOYooo/ahoy-streamer-cli" target="_blank" rel="noopener noreferrer">
-            Explore the source
-          </a>
-          <a class="btn btn-secondary" href="https://github.com/oooAHOYooo/ahoy-streamer-cli#start-here" target="_blank" rel="noopener noreferrer">
-            Getting started
+          <a class="btn btn-primary" href="/products/streamer-tui">
+            Meet the Streamer TUI
           </a>
         </div>
       </div>
@@ -631,8 +628,8 @@
           Ahoy Market connects you directly with independent artists, musicians, and creators for music releases, physical merch, and community drops.
         </p>
         <div class="card-actions">
-          <a class="btn btn-primary" href="https://market.ahoy.ooo" target="_blank" rel="noopener noreferrer" onclick="gtag('event','market_web_app_click',{location:'products_page'})">
-            Explore Ahoy Market
+          <a class="btn btn-primary" href="/products/market">
+            What is Ahoy Market?
           </a>
         </div>
       </div>
@@ -656,8 +653,8 @@
         </details>
         <p>Keep your MP3 collection organized, local, and ready to play offline.</p>
         <div class="card-actions">
-          <a class="btn btn-primary" id="player-release-link" href="https://github.com/oooAHOYooo/ahoy-player/releases/latest" target="_blank" rel="noopener noreferrer">
-            Download Ahoy Player
+          <a class="btn btn-primary" href="/products/player">
+            About Ahoy Player
           </a>
         </div>
       </div>
@@ -680,15 +677,9 @@
           </div>
         </details>
         <p>Keep your MP3s local. Install the global <code>ahoy</code> command with Node.js 20+, then use <code>ahoy scan ~/Music</code> and <code>ahoy player</code> from any folder. macOS and Linux support audio playback; Windows currently supports library commands and the TUI.</p>
-        <pre class="terminal-command"><code id="cli-command">npm install --global https://github.com/oooAHOYooo/ahoy-player/releases/download/v0.2.3/ahoy-player-terminal-0.2.3.tgz</code></pre>
         <div class="card-actions">
-          <button class="btn btn-primary" id="copy-cli-command" type="button">Copy Ahoy installer</button>
-          <a class="btn btn-secondary" id="cli-release-link" href="https://github.com/oooAHOYooo/ahoy-player/releases/latest" target="_blank" rel="noopener noreferrer">View latest release</a>
+          <a class="btn btn-primary" href="/products/player-cli">About Ahoy Player CLI</a>
         </div>
-        <details class="terminal-help">
-          <summary>Need a terminal?</summary>
-          <p><span><strong>Mac</strong> · ⌘ Space → Terminal → Return</span><span><strong>Windows</strong> · Start → Terminal → Enter</span><span><strong>Linux</strong> · Ctrl + Alt + T</span></p>
-        </details>
       </div>
     </div>
 
@@ -712,8 +703,8 @@
           One AHOY ID for every AHOY product. Sign in once with passkeys, then approve the identity details each first-party experience may receive. Libraries, purchases, downloads, media, and NFC remain outside AHOY ID.
         </p>
         <div class="card-actions">
-          <a class="btn btn-primary" href="https://id.ahoy.ooo/signin" target="_blank" rel="noopener noreferrer" onclick="gtag('event','id_signin_click',{location:'products_page'})">
-            Sign In with AHOY ID
+          <a class="btn btn-primary" href="/products/id">
+            What is AHOY ID?
           </a>
         </div>
       </div>
