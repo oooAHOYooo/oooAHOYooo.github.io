@@ -8,7 +8,6 @@
   <link rel="icon" type="image/png" href="/images/Ahoy%20Indie%20Media%20-%20App%20Icon%20-%20May%2026.png">
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.cdnfonts.com/css/cubano" rel="stylesheet">
-  <link rel="stylesheet" href="/css/install-wizard.css">
   <style>
     *{box-sizing:border-box} body{margin:0;min-height:100vh;background:radial-gradient(circle at 82% 8%,rgba(116,185,255,.38),transparent 38%),linear-gradient(145deg,#f5faf5,#e9f1ec 62%,#e4f0fd);color:#111;font-family:"IBM Plex Sans",system-ui,sans-serif} body:before{content:"";position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(rgba(48,91,82,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(48,91,82,.07) 1px,transparent 1px);background-size:44px 44px;opacity:.35} main{position:relative;max-width:860px;width:calc(100% - 32px);margin:0 auto;padding:24px 0 72px} header{display:flex;justify-content:space-between;align-items:center;border:1px solid #1112;border-radius:18px;background:#f8fcfaaa;padding:12px 16px} header img{width:140px} a{color:inherit} header nav{display:flex;gap:20px} .crumb{margin:72px 0 18px;color:#4a5550;font-size:.9rem} .panel{border:1px solid #1112;border-radius:28px;background:#f8fcfacc;box-shadow:0 24px 70px #1111;padding:clamp(26px,6vw,58px)} .eyebrow{font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#4c635c} h1{font-family:Cubano,sans-serif;font-size:clamp(2.7rem,8vw,5.5rem);line-height:.98;margin:16px 0} .desc{font-size:1.2rem;line-height:1.65;color:#454545;max-width:58ch} .meta{margin:28px 0 10px;color:#66716d;font-size:.9rem} .explain{font-size:1rem;line-height:1.7;max-width:62ch} .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px} .button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 20px;border:1px solid #111;border-radius:12px;background:#111;color:white;text-decoration:none;font-weight:700} .back{display:inline-block;margin-top:25px;text-underline-offset:4px} @media(max-width:600px){header nav a:first-child{display:none}.crumb{margin-top:48px}.button{width:100%}}
 
@@ -16,72 +15,58 @@
     .fact{padding:18px;border:1px solid #1112;border-radius:16px;background:#ffffff80}
     .fact h2{margin:0 0 8px;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:#4c635c}
     .fact p{margin:0;color:#303936;font-size:.96rem;line-height:1.6}
-    .setup{margin-top:28px;padding-top:24px;border-top:1px solid #1112}
-    .setup h2{font-family:Cubano,sans-serif;font-size:1.65rem;margin:0 0 8px}
-    .setup-intro{margin:0 0 14px;color:#454545;line-height:1.6}
-    .setup-option{margin:10px 0;border:1px solid #1112;border-radius:14px;background:#ffffff80;overflow:hidden}
-    .setup-option summary{padding:14px 16px;font-weight:700;cursor:pointer}
-    .setup-content{padding:0 16px 16px;color:#454545;line-height:1.6}
-    .setup-content p{margin:0 0 10px}
+    .setup{margin-top:30px;padding-top:26px;border-top:1px solid #1112}
+    .setup h2{font-family:Cubano,sans-serif;font-size:1.75rem;margin:0 0 8px}
+    .setup p{color:#454545;line-height:1.65}
+    .download-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:20px 0}
+    .download-card{display:flex;flex-direction:column;gap:5px;min-height:148px;padding:18px;border:1px solid #1113;border-radius:16px;background:#fff;color:#111;text-decoration:none;box-shadow:0 8px 25px #1111;transition:transform .15s,box-shadow .15s}
+    .download-card:hover,.download-card:focus-visible{transform:translateY(-2px);box-shadow:0 12px 30px #1112;outline:2px solid #111;outline-offset:2px}
+    .download-card .os{font-size:.76rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#4c635c}
+    .download-card strong{font-size:1.1rem}.download-card small{color:#59635e;line-height:1.45}
+    .download-card .cta{margin-top:auto;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+    .steps{padding-left:22px;line-height:1.7;color:#303936}.steps li{margin:8px 0}
     pre{overflow-x:auto;padding:14px;border-radius:10px;background:#111;color:#f8fcfa;font-size:.86rem;line-height:1.55;white-space:pre}
-    @media(max-width:600px){.quick-facts{grid-template-columns:1fr}.setup-option summary{padding:14px}}
+    .source-option{margin-top:28px;border:1px solid #1112;border-radius:14px;background:#ffffff80}
+    .source-option summary{padding:15px 18px;font-weight:700;cursor:pointer}
+    .source-option p{padding:0 18px 16px;margin:0;line-height:1.6;color:#454545}
+    .fine-print{font-size:.9rem;color:#59635e;line-height:1.6}
+    @media(max-width:600px){.quick-facts,.download-grid{grid-template-columns:1fr}.download-card{min-height:132px}}
 
   </style>
 </head>
 <body><main>
   <header><a href="/" aria-label="AHOY home"><img src="/images/updatedAhoy_A.png" alt="AHOY"></a><nav><a href="/products">Products</a><a href="/download">Downloads</a></nav></header>
   <p class="crumb"><a href="/products">All products</a> / AHOY Streamer TUI</p>
-  <section class="panel" aria-labelledby="title"><div class="eyebrow">Keyboard driven TUI · macOS, Windows, and Linux</div><h1 id="title">AHOY Streamer TUI</h1><p class="desc">A keyboard driven terminal listening room for discovering and playing independent media from AHOY Streamer.</p><p class="explain">Browse music, videos, podcasts, artists, events, Studio, Radio, AHOY TV, and Search. Play supported audio and video in the terminal. A small JSON command interface is also available for scripts and agents. The setup steps below get you running on Linux, macOS, or Windows.</p><div class="quick-facts"><section class="fact"><h2>Who it’s for</h2><p>For listeners who enjoy keyboard-driven apps and are comfortable opening a terminal. Its JSON commands also suit scripts and agents.</p></section><section class="fact"><h2>What you need</h2><p>Python 3.11 or newer and an internet connection to browse the public catalog. Real device playback has not yet been manually verified.</p></section></div><p class="meta"><strong>Status:</strong> Early testing draft · Python package not published · Linux quick installer · macOS and Windows setup below</p>
-    <div class="actions"><button class="button" type="button" id="install-wizard-open">Open install wizard</button></div>
-    <section class="setup" aria-labelledby="setup-title">
-      <h2 id="setup-title">Get started</h2>
-      <p class="setup-intro">Pick your computer below. The TUI is still in early testing, so these steps install it from the public source repository.</p>
-      <details class="setup-option" open>
-        <summary>Linux · quick install</summary>
-        <div class="setup-content"><p>Open a terminal, run the installer, then launch the app:</p>
-          <pre><code data-wizard-option="linux">curl -fsSL https://raw.githubusercontent.com/oooAHOYooo/ahoy-streamer-cli/main/install.sh | bash
-~/.local/bin/ahoy-streamer</code></pre>
-          <p>The installer creates an isolated Python environment. If Git or Python setup tools are missing, it asks before installing system prerequisites.</p>
-        </div>
-      </details>
-      <details class="setup-option">
-        <summary>macOS · install from source</summary>
-        <div class="setup-content"><p>Requires Python 3.11 or newer and Git. In Terminal, run:</p>
-          <pre><code data-wizard-option="mac">git clone --branch main --single-branch https://github.com/oooAHOYooo/ahoy-streamer-cli.git
-cd ahoy-streamer-cli
-python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install -e .
-ahoy-streamer</code></pre>
-          <p>macOS 13 or newer supports the experimental terminal video renderer by default. On macOS 12 and older, videos open in a browser.</p>
-        </div>
-      </details>
-      <details class="setup-option">
-        <summary>Windows · install from source</summary>
-        <div class="setup-content"><p>Requires Python 3.11 or newer and Git. Open PowerShell and run:</p>
-          <pre><code data-wizard-option="windows">git clone --branch main --single-branch https://github.com/oooAHOYooo/ahoy-streamer-cli.git
-cd ahoy-streamer-cli
-py -3 -m venv .venv
-.venv\Scripts\Activate.ps1
-python -m pip install -e .
-ahoy-streamer</code></pre>
-          <p>Terminal video is silent on Windows. The setup guide covers playback controls and optional media dependencies.</p>
-        </div>
-      </details>
-      <p class="setup-intro">Audio and video support varies by format and system. See the <a href="https://github.com/oooAHOYooo/ahoy-streamer-cli#quick-install-on-linux-or-omarchy" target="_blank" rel="noopener noreferrer">full setup and troubleshooting notes on GitHub ↗</a>.</p>
+  <section class="panel" aria-labelledby="title">
+    <div class="eyebrow">Keyboard driven TUI · macOS, Windows, and Linux</div>
+    <h1 id="title">AHOY Streamer TUI</h1>
+    <p class="desc">Discover independent music and video from AHOY Streamer in a keyboard-driven terminal.</p>
+    <p class="explain">Browse music, videos, podcasts, and more. JSON commands are available for scripts and agents.</p>
+
+    <section class="setup" aria-labelledby="download-title">
+      <h2 id="download-title">Download for your computer</h2>
+      <p>Choose your system, download the ZIP, and extract it. Python is bundled; Git isn’t needed. Browsing the public catalog needs an internet connection.</p>
+      <div class="download-grid">
+        <a class="download-card" href="https://github.com/oooAHOYooo/ahoy-streamer-cli/releases/download/v0.1.0-standalone-preview.1/ahoy-streamer-macos-apple-silicon-preview.zip"><span class="os">macOS</span><strong>Apple Silicon</strong><small>Mac with an M-series chip</small><span class="cta">Download ZIP ↗</span></a>
+        <a class="download-card" href="https://github.com/oooAHOYooo/ahoy-streamer-cli/releases/download/v0.1.0-standalone-preview.1/ahoy-streamer-macos-intel-preview.zip"><span class="os">macOS</span><strong>Intel Mac</strong><small>Mac with an Intel processor</small><span class="cta">Download ZIP ↗</span></a>
+        <a class="download-card" href="https://github.com/oooAHOYooo/ahoy-streamer-cli/releases/download/v0.1.0-standalone-preview.1/ahoy-streamer-windows-x64-preview.zip"><span class="os">Windows</span><strong>Windows x64</strong><small>64-bit Windows computer</small><span class="cta">Download ZIP ↗</span></a>
+        <a class="download-card" href="https://github.com/oooAHOYooo/ahoy-streamer-cli/releases/download/v0.1.0-standalone-preview.1/ahoy-streamer-linux-x64-preview.zip"><span class="os">Linux</span><strong>Linux x64</strong><small>64-bit Intel or AMD computer</small><span class="cta">Download ZIP ↗</span></a>
+      </div>
+      <p class="fine-print">On a Mac, choose Apple menu → About This Mac to see whether it lists a chip or an Intel processor. Linux ARM users can use the source-install instructions below.</p>
+      <p class="meta"><strong>Status:</strong> Standalone preview v0.1.0 · live playback still in testing</p>
     </section>
-<a class="back" href="/products">← Back to all AHOY products</a></section>
-</main>
-<dialog class="install-wizard" id="install-wizard" aria-labelledby="wizard-title">
-  <div class="install-wizard-inner">
-    <div class="install-wizard-head"><div><h2 id="wizard-title">Install wizard</h2><p>Follow these three steps on your computer. Requires Python 3.11 or newer. macOS and Windows setup also requires Git.</p></div><button class="install-wizard-close" id="wizard-close" type="button" aria-label="Close install wizard">×</button></div>
-    <label class="install-wizard-label" for="wizard-platform">Your computer</label>
-    <select id="wizard-platform"><option value="mac">macOS</option><option value="windows">Windows</option><option value="linux">Linux</option></select>
-    <section class="install-wizard-step"><h3>1. Open a terminal</h3><p id="wizard-terminal-help"></p></section>
-    <section class="install-wizard-step"><h3>2. Paste this install command</h3><pre><code id="wizard-install-command"></code></pre><button class="install-wizard-action" id="wizard-copy-install" type="button">Copy install command</button></section>
-    <section class="install-wizard-step"><h3>3. Launch the app</h3><pre><code id="wizard-launch-command"></code></pre><button class="install-wizard-action" id="wizard-copy-launch" type="button">Copy launch command</button></section>
-    <p class="install-wizard-status" id="wizard-status" role="status" aria-live="polite"></p>
-    <p class="install-wizard-note">The wizard copies commands for you; your browser cannot open or run your local terminal.</p>
-  </div>
-</dialog>
-<script src="/scripts/install-wizard.js" defer></script></body></html>
+
+    <section class="setup" aria-labelledby="start-title">
+      <h2 id="start-title">Start listening</h2>
+      <ol class="steps"><li>Extract the ZIP you downloaded.</li><li>Open Terminal or PowerShell in the extracted folder.</li><li>Run the command for your system:</li></ol>
+      <p><strong>Mac or Linux</strong></p><pre><code>./ahoy-streamer</code></pre>
+      <p><strong>Windows PowerShell</strong></p><pre><code>.\ahoy-streamer.exe</code></pre>
+      <p class="fine-print">If Mac or Linux says “permission denied,” run <code>chmod +x ahoy-streamer</code> once and try again. The Mac preview is unsigned; macOS may ask you to approve it in Privacy &amp; Security. <a href="https://support.apple.com/102445">Apple’s opening guide</a> explains that step.</p>
+      <p class="fine-print">Supported standalone audio is included. Soundtracks during terminal video on Mac and Linux need optional <a href="https://mpv.io/installation/">mpv</a>; Windows terminal video is silent. Audio and video playback have not yet been checked on every device.</p>
+    </section>
+
+    <details class="source-option"><summary>Install from source or use another system</summary><p>The <a href="https://github.com/oooAHOYooo/ahoy-streamer-cli#quick-install">GitHub setup guide</a> has Python-based installation for macOS, Linux, and Windows, including Linux ARM. Source installs require Python 3.11 or newer.</p></details>
+    <div class="actions"><a class="button" href="https://github.com/oooAHOYooo/ahoy-streamer-cli/releases/tag/v0.1.0-standalone-preview.1">Release notes and checksums ↗</a></div>
+    <a class="back" href="/products">← Back to all AHOY products</a>
+  </section>
+</main></body></html>
