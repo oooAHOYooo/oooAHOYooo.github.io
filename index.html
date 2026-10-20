@@ -998,7 +998,7 @@
 
     .hub-grid {
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
+      grid-template-columns: 1fr;
       gap: 14px;
       margin-top: 16px;
     }
@@ -1738,7 +1738,6 @@
       .ahoy-map-node:hover { transform:translateY(-2px); border-color:rgba(120,208,210,.5); background:rgba(120,208,210,.09); }
       .ahoy-map-node:focus-visible { outline:2px solid #8ee8e4; outline-offset:3px; }
       .ahoy-map-item--streamer { grid-column:1; grid-row:1; justify-self:end; }
-      .ahoy-map-item--market { grid-column:3; grid-row:1; justify-self:start; }
       .ahoy-map-item--player { grid-column:1; grid-row:2; justify-self:end; }
       .ahoy-map-item--cli { grid-column:3; grid-row:2; justify-self:start; }
       .ahoy-map-node small { display:block; margin-bottom:7px; color:#ff91bd; font-size:.62rem; letter-spacing:.14em; text-transform:uppercase; }
@@ -1809,10 +1808,9 @@
           </div>
           <div class="ahoy-map-stage" role="group" aria-label="AHOY products connected through shared identity">
             <svg class="ahoy-map-connections" viewBox="0 0 1000 560" preserveAspectRatio="none" aria-hidden="true">
-              <path d="M500 250 L180 130 M500 250 L820 130 M500 250 L180 370 M500 250 L820 370 M500 250 L500 510" />
+              <path d="M500 250 L180 130 M500 250 L180 370 M500 250 L820 370 M500 250 L500 510" />
             </svg>
             <div class="ahoy-map-item ahoy-map-item--streamer"><a class="ahoy-map-node" href="https://app.ahoy.ooo" target="_blank" rel="noopener noreferrer"><small>Listen · Watch · Discover</small><strong>Ahoy Streamer</strong><span>Streams music, podcasts, events, and films from New Haven creators.</span></a></div>
-            <div class="ahoy-map-item ahoy-map-item--market"><a class="ahoy-map-node" href="https://market.ahoy.ooo" target="_blank" rel="noopener noreferrer"><small>Shop · Support</small><strong>Ahoy Market</strong><span>Purchase MP3s and other digital releases, plus physical merchandise from creators.</span></a></div>
             <div class="ahoy-map-item ahoy-map-item--player"><a class="ahoy-map-node" href="https://github.com/oooAHOYooo/ahoy-player/releases/latest" target="_blank" rel="noopener noreferrer"><small>Collect · Enjoy</small><strong>Ahoy Player</strong><span>Your desktop home for independent media.</span></a></div>
             <div class="ahoy-map-item ahoy-map-item--cli"><a class="ahoy-map-node" href="/products"><small>Build · Organize</small><strong>Ahoy Player CLI</strong><span>Bring your media library into the terminal.</span></a></div>
             <div class="ahoy-map-center" role="img" aria-label="AHOY"><img src="/images/updatedAhoy_A.png" alt="" width="3000" height="1478" loading="lazy"></div>
@@ -1970,19 +1968,6 @@
               </div>
             </article>
 
-            <article class="product-slot">
-              <div class="slot-top">
-                <div>
-                  <div class="slot-tag">Marketplace</div>
-                  <h3 style="margin:12px 0 8px; font-family:'Cubano',sans-serif; font-size:1.6rem; letter-spacing:0.03em;">Ahoy Market</h3>
-                  <p>Community marketplace for independent music, physical merch, and creator drops.</p>
-                </div>
-              </div>
-              <div class="cta-actions" style="justify-content:flex-start;">
-                <a class="button primary" href="https://market.ahoy.ooo" target="_blank" rel="noopener noreferrer">EXPLORE MARKET</a>
-                <a class="button secondary" href="/products">ALL PRODUCTS</a>
-              </div>
-            </article>
           </div>
         </section>
 
@@ -2050,17 +2035,9 @@
               </a>
             </div>
             <div class="list">
-              <a href="https://market.ahoy.ooo" target="_blank"
-                rel="noopener" class="list-item">
-                <div class="step">3</div>
-                <div>
-                  <strong>Directly support local creators</strong>
-                  <p>Boost artists you love — 100% of your support goes straight to them, no platform cut.</p>
-                </div>
-              </a>
               <a href="https://app.ahoy.ooo/events" target="_blank"
                 rel="noopener" class="list-item">
-                <div class="step">4</div>
+                <div class="step">3</div>
                 <div>
                   <strong>Find shows</strong>
                   <p>Check out the events page to see our upcoming shows,
