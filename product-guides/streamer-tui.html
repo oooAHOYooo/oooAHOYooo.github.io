@@ -8,6 +8,7 @@
   <link rel="icon" type="image/png" href="/images/Ahoy%20Indie%20Media%20-%20App%20Icon%20-%20May%2026.png">
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.cdnfonts.com/css/cubano" rel="stylesheet">
+  <link rel="stylesheet" href="/css/install-wizard.css">
   <style>
     *{box-sizing:border-box} body{margin:0;min-height:100vh;background:radial-gradient(circle at 82% 8%,rgba(116,185,255,.38),transparent 38%),linear-gradient(145deg,#f5faf5,#e9f1ec 62%,#e4f0fd);color:#111;font-family:"IBM Plex Sans",system-ui,sans-serif} body:before{content:"";position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(rgba(48,91,82,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(48,91,82,.07) 1px,transparent 1px);background-size:44px 44px;opacity:.35} main{position:relative;max-width:860px;width:calc(100% - 32px);margin:0 auto;padding:24px 0 72px} header{display:flex;justify-content:space-between;align-items:center;border:1px solid #1112;border-radius:18px;background:#f8fcfaaa;padding:12px 16px} header img{width:140px} a{color:inherit} header nav{display:flex;gap:20px} .crumb{margin:72px 0 18px;color:#4a5550;font-size:.9rem} .panel{border:1px solid #1112;border-radius:28px;background:#f8fcfacc;box-shadow:0 24px 70px #1111;padding:clamp(26px,6vw,58px)} .eyebrow{font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#4c635c} h1{font-family:Cubano,sans-serif;font-size:clamp(2.7rem,8vw,5.5rem);line-height:.98;margin:16px 0} .desc{font-size:1.2rem;line-height:1.65;color:#454545;max-width:58ch} .meta{margin:28px 0 10px;color:#66716d;font-size:.9rem} .explain{font-size:1rem;line-height:1.7;max-width:62ch} .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px} .button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 20px;border:1px solid #111;border-radius:12px;background:#111;color:white;text-decoration:none;font-weight:700} .back{display:inline-block;margin-top:25px;text-underline-offset:4px} @media(max-width:600px){header nav a:first-child{display:none}.crumb{margin-top:48px}.button{width:100%}}
 
@@ -31,14 +32,14 @@
   <header><a href="/" aria-label="AHOY home"><img src="/images/updatedAhoy_A.png" alt="AHOY"></a><nav><a href="/products">Products</a><a href="/download">Downloads</a></nav></header>
   <p class="crumb"><a href="/products">All products</a> / AHOY Streamer TUI</p>
   <section class="panel" aria-labelledby="title"><div class="eyebrow">Keyboard driven TUI · macOS, Windows, and Linux</div><h1 id="title">AHOY Streamer TUI</h1><p class="desc">A keyboard driven terminal listening room for discovering and playing independent media from AHOY Streamer.</p><p class="explain">Browse music, videos, podcasts, artists, events, Studio, Radio, AHOY TV, and Search. Play supported audio and video in the terminal. A small JSON command interface is also available for scripts and agents. The setup steps below get you running on Linux, macOS, or Windows.</p><div class="quick-facts"><section class="fact"><h2>Who it’s for</h2><p>For listeners who enjoy keyboard-driven apps and are comfortable opening a terminal. Its JSON commands also suit scripts and agents.</p></section><section class="fact"><h2>What you need</h2><p>Python 3.11 or newer and an internet connection to browse the public catalog. Real device playback has not yet been manually verified.</p></section></div><p class="meta"><strong>Status:</strong> Early testing draft · Python package not published · Linux quick installer · macOS and Windows setup below</p>
-    <div class="actions"><a class="button" href="#setup-title">Choose install steps ↓</a></div>
+    <div class="actions"><button class="button" type="button" id="install-wizard-open">Open install wizard</button></div>
     <section class="setup" aria-labelledby="setup-title">
       <h2 id="setup-title">Get started</h2>
       <p class="setup-intro">Pick your computer below. The TUI is still in early testing, so these steps install it from the public source repository.</p>
       <details class="setup-option" open>
         <summary>Linux · quick install</summary>
         <div class="setup-content"><p>Open a terminal, run the installer, then launch the app:</p>
-          <pre><code>curl -fsSL https://raw.githubusercontent.com/oooAHOYooo/ahoy-streamer-cli/main/install.sh | bash
+          <pre><code data-wizard-option="linux">curl -fsSL https://raw.githubusercontent.com/oooAHOYooo/ahoy-streamer-cli/main/install.sh | bash
 ~/.local/bin/ahoy-streamer</code></pre>
           <p>The installer creates an isolated Python environment. If Git or Python setup tools are missing, it asks before installing system prerequisites.</p>
         </div>
@@ -46,7 +47,7 @@
       <details class="setup-option">
         <summary>macOS · install from source</summary>
         <div class="setup-content"><p>Requires Python 3.11 or newer and Git. In Terminal, run:</p>
-          <pre><code>git clone --branch main --single-branch https://github.com/oooAHOYooo/ahoy-streamer-cli.git
+          <pre><code data-wizard-option="mac">git clone --branch main --single-branch https://github.com/oooAHOYooo/ahoy-streamer-cli.git
 cd ahoy-streamer-cli
 python3 -m venv .venv
 source .venv/bin/activate
@@ -58,7 +59,7 @@ ahoy-streamer</code></pre>
       <details class="setup-option">
         <summary>Windows · install from source</summary>
         <div class="setup-content"><p>Requires Python 3.11 or newer and Git. Open PowerShell and run:</p>
-          <pre><code>git clone --branch main --single-branch https://github.com/oooAHOYooo/ahoy-streamer-cli.git
+          <pre><code data-wizard-option="windows">git clone --branch main --single-branch https://github.com/oooAHOYooo/ahoy-streamer-cli.git
 cd ahoy-streamer-cli
 py -3 -m venv .venv
 .venv\Scripts\Activate.ps1
@@ -70,4 +71,17 @@ ahoy-streamer</code></pre>
       <p class="setup-intro">Audio and video support varies by format and system. See the <a href="https://github.com/oooAHOYooo/ahoy-streamer-cli#quick-install-on-linux-or-omarchy" target="_blank" rel="noopener noreferrer">full setup and troubleshooting notes on GitHub ↗</a>.</p>
     </section>
 <a class="back" href="/products">← Back to all AHOY products</a></section>
-</main></body></html>
+</main>
+<dialog class="install-wizard" id="install-wizard" aria-labelledby="wizard-title">
+  <div class="install-wizard-inner">
+    <div class="install-wizard-head"><div><h2 id="wizard-title">Install wizard</h2><p>Follow these three steps on your computer. Requires Python 3.11 or newer. macOS and Windows setup also requires Git.</p></div><button class="install-wizard-close" id="wizard-close" type="button" aria-label="Close install wizard">×</button></div>
+    <label class="install-wizard-label" for="wizard-platform">Your computer</label>
+    <select id="wizard-platform"><option value="mac">macOS</option><option value="windows">Windows</option><option value="linux">Linux</option></select>
+    <section class="install-wizard-step"><h3>1. Open a terminal</h3><p id="wizard-terminal-help"></p></section>
+    <section class="install-wizard-step"><h3>2. Paste this install command</h3><pre><code id="wizard-install-command"></code></pre><button class="install-wizard-action" id="wizard-copy-install" type="button">Copy install command</button></section>
+    <section class="install-wizard-step"><h3>3. Launch the app</h3><pre><code id="wizard-launch-command"></code></pre><button class="install-wizard-action" id="wizard-copy-launch" type="button">Copy launch command</button></section>
+    <p class="install-wizard-status" id="wizard-status" role="status" aria-live="polite"></p>
+    <p class="install-wizard-note">The wizard copies commands for you; your browser cannot open or run your local terminal.</p>
+  </div>
+</dialog>
+<script src="/scripts/install-wizard.js" defer></script></body></html>
