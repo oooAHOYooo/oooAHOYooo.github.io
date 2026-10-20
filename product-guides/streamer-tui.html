@@ -65,7 +65,24 @@
       <p class="fine-print">Supported standalone audio is included. Soundtracks during terminal video on Mac and Linux need optional <a href="https://mpv.io/installation/">mpv</a>; Windows terminal video is silent. Audio and video playback have not yet been checked on every device.</p>
     </section>
 
-    <details class="source-option"><summary>Install from source or use another system</summary><p>The <a href="https://github.com/oooAHOYooo/ahoy-streamer-cli#quick-install">GitHub setup guide</a> has Python-based installation for macOS, Linux, and Windows, including Linux ARM. Source installs require Python 3.11 or newer.</p></details>
+    <section class="setup" aria-labelledby="terminal-install-title">
+      <h2 id="terminal-install-title">Install from the terminal</h2>
+      <p>Prefer a command you can paste? These install the current source version in your user account. They need an internet connection and Python 3.11 or newer; the ZIP downloads above include Python and need fewer prerequisites.</p>
+      <p><strong>macOS or Linux (Terminal)</strong></p>
+      <pre><code>curl -fsSL https://raw.githubusercontent.com/oooAHOYooo/ahoy-streamer-cli/main/install.sh | bash
+~/.local/bin/ahoy-streamer</code></pre>
+      <p class="fine-print">The installer also needs Git and Python’s venv/pip. On supported Linux systems it offers to install missing packages. On a Mac, install <a href="https://www.python.org/downloads/macos/">Python 3.11+</a> and run <code>xcode-select --install</code> if Git is missing. Paste the first line again to update. Uninstall with <code>~/.local/bin/ahoy-streamer-uninstall</code>.</p>
+      <p><strong>Windows 10/11 (PowerShell)</strong></p>
+      <pre><code>$app = Join-Path $env:LOCALAPPDATA 'AHOY Streamer'
+py -3 -m venv $app
+if ($LASTEXITCODE -ne 0) { throw 'Python 3.11+ with venv is required.' }
+&amp; (Join-Path $app 'Scripts\python.exe') -m pip install --disable-pip-version-check --upgrade 'https://github.com/oooAHOYooo/ahoy-streamer-cli/archive/refs/heads/main.zip'
+if ($LASTEXITCODE -ne 0) { throw 'Install failed; check the error above.' }
+&amp; (Join-Path $app 'Scripts\ahoy-streamer.exe')</code></pre>
+      <p class="fine-print">If <code>py -3 --version</code> fails, install <a href="https://www.python.org/downloads/windows/">Python 3.11+</a> first. Paste the same block again to update. Later, launch with <code>&amp; (Join-Path $env:LOCALAPPDATA 'AHOY Streamer\Scripts\ahoy-streamer.exe')</code>.</p>
+    </section>
+
+    <details class="source-option"><summary>More setup help and other systems</summary><p>The <a href="https://github.com/oooAHOYooo/ahoy-streamer-cli#quick-install">GitHub setup guide</a> covers troubleshooting, Linux ARM, optional video audio, and removing the Windows source install.</p></details>
     <div class="actions"><a class="button" href="https://github.com/oooAHOYooo/ahoy-streamer-cli/releases/tag/v0.1.0-standalone-preview.1">Release notes and checksums ↗</a></div>
     <a class="back" href="/products">← Back to all AHOY products</a>
   </section>
