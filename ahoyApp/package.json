@@ -3,7 +3,7 @@
   "displayName": "Ahoy Indie Media",
   "version": "0.2.8c",
   "description": "Ahoy Indie Media - Your homegrown alternative to mainstream media. Discover and support independent artists, musicians, podcasters, and creators from New Haven, Connecticut. Enjoy ad-free, hand-crafted content that celebrates indie culture.",
-  "main": "cdv-electron-main.js",
+  "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron .",
@@ -23,14 +23,14 @@
   "author": "Alex Gonzalez",
   "license": "MIT",
   "devDependencies": {
-    "cordova-android": "^13.0.0",
+    "cordova-android": "^15.1.0",
     "cordova-browser": "^7.0.0",
-    "cordova-ios": "^7.1.1",
+    "cordova-ios": "^8.1.1",
     "cordova-osx": "^7.0.0",
     "cordova-plugin-advanced-http": "^3.3.1",
-    "cordova-plugin-file": "^8.1.2",
-    "electron": "^23.1.0",
-    "electron-builder": "^23.6.0",
+    "cordova-plugin-file": "^8.1.3",
+    "electron": "^45.0.0",
+    "electron-builder": "^26.15.3",
     "macos": "^0.0.1",
     "osx": "^0.1.0",
     "windows": "^0.1.2"
@@ -61,8 +61,7 @@
     },
     "files": [
       "www/**/*",
-      "cdv-electron-main.js",
-      "cdv-electron-preload.js"
+      "main.js"
     ],
     "extraResources": [
       {

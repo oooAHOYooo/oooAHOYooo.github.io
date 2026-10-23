@@ -9,9 +9,9 @@ function createWindow() {
     width: 1440,  // Adjusted width for modern MacBook Pro
     height: 900,  // Adjusted height for modern MacBook Pro
     webPreferences: {
-      nodeIntegration: true,
-      contextIsolation: false,
-      enableRemoteModule: true,
+      nodeIntegration: false,
+      contextIsolation: true,
+      sandbox: true,
     },
     titleBarStyle: 'hiddenInset',  // Modern macOS look
     vibrancy: 'ultra-dark',  // Enable macOS vibrancy effect
