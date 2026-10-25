@@ -43,17 +43,24 @@
     <p class="desc">Discover independent music and video from AHOY Streamer in a keyboard-driven terminal.</p>
     <p class="explain">Browse music, videos, podcasts, and more. JSON commands are available for scripts and agents.</p>
 
+    <section class="setup" id="homebrew-install" aria-labelledby="homebrew-title">
+      <h2 id="homebrew-title">Install with Homebrew</h2>
+      <p>On macOS 13 or newer, install the preview with one command. Homebrew adds the AHOY tap automatically; Python is not required.</p>
+      <pre><code>brew install oooAHOYooo/ahoy-streamer/ahoy-streamer</code></pre>
+      <p class="fine-print">After installation, update with <code>brew upgrade ahoy-streamer</code> or remove it with <code>brew uninstall ahoy-streamer</code>. This is an unofficial project tap. The preview is unsigned and not notarized by Apple; live playback is still being tested.</p>
+    </section>
+
     <section class="setup" aria-labelledby="download-title">
       <h2 id="download-title">Download for your computer</h2>
-      <p>Choose your system, download the ZIP, and extract it. Python is bundled; Git isn’t needed. Browsing the public catalog needs an internet connection.</p>
+      <p>Standalone ZIPs are available for macOS, Windows, and Linux. Choose your system, download the ZIP, and extract it. Python is bundled; Git isn’t needed. Browsing the public catalog needs an internet connection.</p>
       <div class="download-grid">
-        <a class="download-card" href="https://github.com/oooAHOYooo/ahoy-streamer-cli/releases/download/v0.1.0-standalone-preview.1/ahoy-streamer-macos-apple-silicon-preview.zip"><span class="os">macOS</span><strong>Apple Silicon</strong><small>Mac with an M-series chip</small><span class="cta">Download ZIP ↗</span></a>
-        <a class="download-card" href="https://github.com/oooAHOYooo/ahoy-streamer-cli/releases/download/v0.1.0-standalone-preview.1/ahoy-streamer-macos-intel-preview.zip"><span class="os">macOS</span><strong>Intel Mac</strong><small>Mac with an Intel processor</small><span class="cta">Download ZIP ↗</span></a>
-        <a class="download-card" href="https://github.com/oooAHOYooo/ahoy-streamer-cli/releases/download/v0.1.0-standalone-preview.1/ahoy-streamer-windows-x64-preview.zip"><span class="os">Windows</span><strong>Windows x64</strong><small>64-bit Windows computer</small><span class="cta">Download ZIP ↗</span></a>
-        <a class="download-card" href="https://github.com/oooAHOYooo/ahoy-streamer-cli/releases/download/v0.1.0-standalone-preview.1/ahoy-streamer-linux-x64-preview.zip"><span class="os">Linux</span><strong>Linux x64</strong><small>64-bit Intel or AMD computer</small><span class="cta">Download ZIP ↗</span></a>
+        <a class="download-card" href="https://github.com/oooAHOYooo/ahoy-streamer-cli/releases/download/v0.1.0-standalone-preview.2/ahoy-streamer-macos-apple-silicon-preview.zip"><span class="os">macOS</span><strong>Apple Silicon</strong><small>Mac with an M-series chip</small><span class="cta">Download ZIP ↗</span></a>
+        <a class="download-card" href="https://github.com/oooAHOYooo/ahoy-streamer-cli/releases/download/v0.1.0-standalone-preview.2/ahoy-streamer-macos-intel-preview.zip"><span class="os">macOS</span><strong>Intel Mac</strong><small>Mac with an Intel processor</small><span class="cta">Download ZIP ↗</span></a>
+        <a class="download-card" href="https://github.com/oooAHOYooo/ahoy-streamer-cli/releases/download/v0.1.0-standalone-preview.2/ahoy-streamer-windows-x64-preview.zip"><span class="os">Windows</span><strong>Windows x64</strong><small>64-bit Windows computer</small><span class="cta">Download ZIP ↗</span></a>
+        <a class="download-card" href="https://github.com/oooAHOYooo/ahoy-streamer-cli/releases/download/v0.1.0-standalone-preview.2/ahoy-streamer-linux-x64-preview.zip"><span class="os">Linux</span><strong>Linux x64</strong><small>64-bit Intel or AMD computer</small><span class="cta">Download ZIP ↗</span></a>
       </div>
       <p class="fine-print">On a Mac, choose Apple menu → About This Mac to see whether it lists a chip or an Intel processor. Linux ARM users can use the source-install instructions below.</p>
-      <p class="meta"><strong>Status:</strong> Standalone preview v0.1.0 · live playback still in testing</p>
+      <p class="meta"><strong>Status:</strong> v0.1.0 standalone preview 2 · live playback still in testing</p>
     </section>
 
     <section class="setup" aria-labelledby="start-title">
@@ -83,7 +90,7 @@ if ($LASTEXITCODE -ne 0) { throw 'Install failed; check the error above.' }
     </section>
 
     <details class="source-option"><summary>More setup help and other systems</summary><p>The <a href="https://github.com/oooAHOYooo/ahoy-streamer-cli#quick-install">GitHub setup guide</a> covers troubleshooting, Linux ARM, optional video audio, and removing the Windows source install.</p></details>
-    <div class="actions"><a class="button" href="https://github.com/oooAHOYooo/ahoy-streamer-cli/releases/tag/v0.1.0-standalone-preview.1">Release notes and checksums ↗</a></div>
+    <div class="actions"><a class="button" href="https://github.com/oooAHOYooo/ahoy-streamer-cli/releases/tag/v0.1.0-standalone-preview.2">Release notes and checksums ↗</a></div>
     <a class="back" href="/products">← Back to all AHOY products</a>
   </section>
 </main></body></html>
