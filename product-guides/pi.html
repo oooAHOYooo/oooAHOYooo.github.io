@@ -25,6 +25,78 @@
     pre{overflow-x:auto;padding:14px;border-radius:10px;background:#111;color:#f8fcfa;font-size:.86rem;line-height:1.55;white-space:pre}
     .screenshot-placeholder{margin:0 0 28px;padding:26px;border:1px dashed #1115;border-radius:18px;background:#ffffff55;color:#52605a;text-align:center}
     .screenshot-placeholder strong{display:block;margin-bottom:5px;color:#303936}
+    .handbuild-note{margin-top:28px;padding:20px 22px;border:1px solid #1112;border-left:4px solid #306f61;border-radius:14px;background:#f3f7f3}
+    .handbuild-note h2{margin:0 0 7px;font-family:Cubano,sans-serif;font-size:1.35rem}
+    .handbuild-note p{margin:0;color:#454545;line-height:1.6}
+    .pi-builder{margin-top:30px;padding-top:24px;border-top:1px solid #1112}
+    .pi-builder h2{margin:8px 0;font-family:Cubano,sans-serif;font-size:clamp(1.8rem,4vw,2.5rem);line-height:1.05}
+    .pi-builder-intro{max-width:64ch;margin:0;color:#454545;line-height:1.6}
+    .build-tier-choices{margin:22px 0 0;padding:0;border:0}
+    .build-tier-choices legend{color:#303936;font-size:.9rem;font-weight:700}
+    .build-tier-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:10px}
+    .build-tier{display:grid;grid-template-columns:18px 1fr;align-items:start;gap:10px;min-height:146px;padding:15px;border:1px solid #1112;border-radius:14px;background:#fff;cursor:pointer;transition:border-color .18s ease,background .18s ease,box-shadow .18s ease}
+    .build-tier.is-selected{border-color:#397663;background:#f1f6f2;box-shadow:0 0 0 2px rgba(57,118,99,.12)}
+    .build-tier input{width:16px;height:16px;margin:2px 0 0;accent-color:#306f61}
+    .build-tier:focus-within{outline:3px solid rgba(48,130,111,.2);outline-offset:2px}
+    .build-tier-content{display:flex;flex-direction:column;min-height:100%;gap:8px}
+    .build-tier-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:7px}
+    .build-tier-top strong{color:#16251f;font-size:.95rem}
+    .build-tier-tag{color:#52605a;font-size:.6rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+    .build-tier-description{color:#52605a;font-size:.77rem;line-height:1.45}
+    .build-tier-action{margin-top:auto;padding-top:4px;color:#214f45;font-size:.73rem;font-weight:700}
+    .build-tier.is-selected .build-tier-action{color:#163b32}
+    .builder-layout{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(230px,.9fr);gap:22px;margin-top:20px}
+    .builder-stage{display:grid;place-items:center;min-height:270px;padding:28px 20px;border:1px solid #1112;border-radius:16px;background:#e8eeea;perspective:900px;overflow:hidden}
+    .pi-device{--case-color:#245447;--case-edge:#173b33;--case-detail:#9fe0b3;--brand-ink:#f5fff8;position:relative;width:220px;height:140px;transform-style:preserve-3d;transform:rotateX(-12deg) rotateY(-26deg);transition:width .25s ease,height .25s ease,transform .16s ease}
+    .pi-device[data-shape="compact"]{width:184px;height:122px}
+    .pi-device[data-shape="open"]{width:228px;height:146px}
+    .pi-device[data-finish="midnight"]{--case-color:#273038;--case-edge:#14191e;--case-detail:#aab8c1;--brand-ink:#f3f6f8}
+    .pi-device[data-finish="sand"]{--case-color:#e1d4b9;--case-edge:#ac9977;--case-detail:#72654e;--brand-ink:#453c2c}
+    .pi-device-front{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;border:1px solid color-mix(in srgb,var(--case-detail) 50%,transparent);border-radius:18px;background:var(--case-color);color:var(--brand-ink);box-shadow:inset 0 1px rgba(255,255,255,.22),0 16px 24px #1113;transform:translateZ(18px)}
+    .pi-device[data-shape="compact"] .pi-device-front{border-radius:10px}
+    .pi-device[data-shape="open"] .pi-device-front{border:5px solid var(--case-edge);border-radius:13px;background:#dce5df}
+    .pi-device-side{position:absolute;top:0;left:calc(100% - 1px);width:36px;height:100%;border:1px solid var(--case-edge);border-radius:0 10px 10px 0;background:var(--case-edge);transform:rotateY(90deg);transform-origin:left center}
+    .pi-device[data-shape="compact"] .pi-device-side{width:25px}
+    .pi-device[data-shape="open"] .pi-device-side{background:#84978d;border-color:#52655b}
+    .pi-device-top{position:absolute;top:-18px;left:0;width:100%;height:36px;border:1px solid color-mix(in srgb,var(--case-detail) 45%,transparent);border-radius:13px 13px 0 0;background:color-mix(in srgb,var(--case-color) 82%,white);transform:rotateX(90deg);transform-origin:bottom center}
+    .pi-device[data-shape="open"] .pi-device-top{background:#c9d4cd}
+    .pi-device-brand{font-family:Cubano,sans-serif;font-size:1.25rem;letter-spacing:.06em}
+    .pi-device-label{color:var(--case-detail);font-size:.52rem;font-weight:700;letter-spacing:.23em;text-transform:uppercase}
+    .pi-device-ports{display:flex;gap:5px;margin-top:4px}
+    .pi-device-ports i{display:block;width:15px;height:5px;border:1px solid var(--case-detail);border-radius:3px;opacity:.85}
+    .builder-controls{display:flex;flex-direction:column;gap:14px;justify-content:center}
+    .builder-control label{display:block;margin-bottom:6px;color:#303936;font-size:.82rem;font-weight:700}
+    .builder-control output{margin-left:6px;color:#52605a;font-weight:500}
+    .builder-control select,.builder-control input[type="range"]{width:100%}
+    .builder-control select{height:44px;padding:0 12px;border:1px solid #1113;border-radius:9px;background:#fff;color:#111;font:inherit}
+    .builder-control input[type="text"]{width:100%;height:44px;padding:0 12px;border:1px solid #1113;border-radius:9px;background:#fff;color:#111;font:inherit}
+    .builder-control select:disabled{background:#e9eeea;color:#66716d;cursor:not-allowed}
+    .builder-control select:focus,.builder-control input:focus-visible{outline:3px solid rgba(48,130,111,.24);border-color:#306f61}
+    .builder-control-help{display:block;margin-top:5px;color:#66716d;font-size:.72rem;line-height:1.45}
+    .builder-extra-options{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px;padding-top:16px;border-top:1px solid #1112}
+    .builder-check{display:flex;align-items:flex-start;gap:8px;color:#303936;font-size:.8rem;line-height:1.45}
+    .builder-check input{flex:0 0 auto;width:16px;height:16px;margin:2px 0 0;accent-color:#306f61}
+    .builder-save-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:18px}
+    .builder-save{min-height:46px;padding:0 18px;border:1px solid #163b32;border-radius:10px;background:#163b32;color:#fff;font:inherit;font-weight:700;cursor:pointer}
+    .builder-save:hover{background:#205747}
+    .builder-status{margin:0;color:#52605a;font-size:.82rem;line-height:1.5}
+    #pi-custom-label-control{margin-top:14px}
+    .builder-note{margin:12px 0 0;color:#66716d;font-size:.78rem;line-height:1.5}
+    .request-list{margin-top:30px;padding:clamp(22px,4vw,32px);border:1px solid rgba(48,91,82,.2);border-radius:20px;background:#f1f5f1}
+    .request-list h2{margin:8px 0 10px;font-family:Cubano,sans-serif;font-size:clamp(1.65rem,4vw,2.2rem);line-height:1.1}
+    .request-list-intro{max-width:62ch;margin:0;color:#454545;line-height:1.6}
+    .request-form{display:grid;grid-template-columns:1fr 1.25fr auto;align-items:end;gap:12px;margin-top:22px}
+    .request-field label{display:block;margin-bottom:6px;color:#303936;font-size:.82rem;font-weight:700}
+    .request-field input{width:100%;min-height:48px;padding:0 14px;border:1px solid #1113;border-radius:10px;background:#ffffffd9;color:#111;font:inherit}
+    .request-field input:focus{outline:3px solid rgba(48,130,111,.25);border-color:#306f61}
+    .request-submit{min-height:48px;padding:0 18px;border:0;border-radius:10px;background:#163b32;color:#fff;font:inherit;font-weight:700;cursor:pointer;transition:transform .2s ease,background .2s ease}
+    .request-submit:hover{transform:translateY(-1px);background:#205747}
+    .request-submit:disabled{opacity:.65;cursor:wait;transform:none}
+    .request-privacy{margin:13px 0 0;color:#52605a;font-size:.78rem;line-height:1.5}
+    .request-privacy a{color:#214f45;text-underline-offset:3px}
+    .request-success{margin-top:18px;padding:14px 16px;border:1px solid rgba(48,91,82,.22);border-radius:12px;background:#ffffffb8;color:#214f45;line-height:1.5}
+    @media(max-width:700px){.build-tier-grid{grid-template-columns:1fr}.build-tier{min-height:0}.builder-extra-options{grid-template-columns:1fr}}
+    @media(max-width:600px){.builder-layout{grid-template-columns:1fr}.builder-stage{min-height:235px}.request-form{grid-template-columns:1fr}.request-submit{width:100%}}
     @media(max-width:600px){.quick-facts{grid-template-columns:1fr}.setup-option summary{padding:14px}}
 
   </style>
@@ -47,7 +119,238 @@
       <p>The initial software groundwork is in place. Next comes testing boot, playback, and HDMI audio on a Pi 4, followed by a downloadable image and remote-friendly setup and navigation.</p>
       <p>The original Raspberry Pi is a separate research target; support is not confirmed. Pricing and availability will follow hardware testing.</p>
     </section>
+    <section class="handbuild-note" aria-labelledby="handbuild-title">
+      <h2 id="handbuild-title">Custom-built, by hand.</h2>
+      <p>Our plan is to custom-build each AHOY Pi ourselves, one at a time. We’re imagining the enclosure, finish, and setup together with the people who may use it.</p>
+    </section>
+    <section class="pi-builder" aria-labelledby="builder-title">
+      <div class="eyebrow">Concept builder · Just for fun</div>
+      <h2 id="builder-title">Build your AHOY Pi.</h2>
+      <p class="pi-builder-intro">Try out a look and save your favorite idea. This 3D-style concept is imaginary for now; it doesn’t represent final hardware, materials, or confirmed options.</p>
+      <fieldset class="build-tier-choices">
+        <legend>Choose a build</legend>
+        <div class="build-tier-grid">
+          <label class="build-tier is-selected">
+            <input type="radio" name="pi-tier" value="core" checked>
+            <span class="build-tier-content"><span class="build-tier-top"><strong>Core</strong><span class="build-tier-tag">The essentials</span></span><span class="build-tier-description">AHOY Pi concept with a standard hand-built enclosure.</span><span class="build-tier-action">Selected build</span></span>
+          </label>
+          <label class="build-tier">
+            <input type="radio" name="pi-tier" value="living-room">
+            <span class="build-tier-content"><span class="build-tier-top"><strong>Living Room</strong><span class="build-tier-tag">TV first</span></span><span class="build-tier-description">Core concept with a choice of case finish for your setup.</span><span class="build-tier-action">Choose this build</span></span>
+          </label>
+          <label class="build-tier">
+            <input type="radio" name="pi-tier" value="custom">
+            <span class="build-tier-content"><span class="build-tier-top"><strong>Custom Build</strong><span class="build-tier-tag">Most choice</span></span><span class="build-tier-description">Explore different case shapes, finishes, and a personal label idea.</span><span class="build-tier-action">Choose this build</span></span>
+          </label>
+        </div>
+      </fieldset>
+      <div class="builder-layout">
+        <div class="builder-stage" aria-hidden="true">
+          <div class="pi-device" id="pi-device" data-shape="rounded" data-finish="forest">
+            <div class="pi-device-top"></div>
+            <div class="pi-device-side"></div>
+            <div class="pi-device-front">
+              <span class="pi-device-brand">AHOY</span>
+              <span class="pi-device-label">indie media</span>
+              <span class="pi-device-ports"><i></i><i></i><i></i></span>
+            </div>
+          </div>
+        </div>
+        <div class="builder-controls">
+          <div class="builder-control">
+            <label for="pi-shape">Enclosure idea</label>
+            <select id="pi-shape">
+              <option value="rounded">Rounded case</option>
+              <option value="compact">Compact case</option>
+              <option value="open">Open-frame idea</option>
+            </select>
+            <span class="builder-control-help" id="pi-shape-help">Choose Custom Build to explore enclosure shapes.</span>
+          </div>
+          <div class="builder-control">
+            <label for="pi-finish">Finish idea</label>
+            <select id="pi-finish">
+              <option value="forest">Sea glass green</option>
+              <option value="midnight">Midnight</option>
+              <option value="sand">Warm sand</option>
+            </select>
+            <span class="builder-control-help" id="pi-finish-help">Choose Living Room or Custom Build to explore finishes.</span>
+          </div>
+          <div class="builder-control">
+            <label for="pi-rotation">Rotate the view <output id="pi-rotation-value" for="pi-rotation">−26°</output></label>
+            <input id="pi-rotation" type="range" min="-55" max="35" value="-26">
+          </div>
+        </div>
+      </div>
+      <div class="builder-extra-options">
+        <div>
+          <label class="builder-check"><input id="pi-own-pi" type="checkbox"><span>I already have a Raspberry Pi 4</span></label>
+          <span class="builder-control-help">This is a preference only; compatibility is still being tested.</span>
+        </div>
+        <div class="builder-control">
+          <label for="pi-setup-preference">What kind of setup would you prefer?</label>
+          <select id="pi-setup-preference"><option value="simple">Keep setup simple</option><option value="tinker">I like to tinker</option></select>
+          <span class="builder-control-help">Just an idea for now; setup options aren’t confirmed.</span>
+        </div>
+      </div>
+      <div class="builder-control" id="pi-custom-label-control" hidden>
+        <label for="pi-custom-label">Personal label idea</label>
+        <input id="pi-custom-label" type="text" maxlength="12" placeholder="Your AHOY Pi">
+        <span class="builder-control-help">A concept for a custom label—not a confirmed engraving option.</span>
+      </div>
+      <div class="builder-save-row">
+        <button class="builder-save" type="button" id="pi-save-design">Save this design</button>
+        <p class="builder-status" id="pi-design-status" role="status" aria-live="polite">Your saved concept stays in this browser on this device.</p>
+      </div>
+      <p class="builder-note">These choices are for exploring ideas only. Final case design and component options will depend on hardware testing.</p>
+    </section>
+    <section class="request-list" aria-labelledby="request-list-title">
+      <div class="eyebrow">Get the first update</div>
+      <h2 id="request-list-title">Join the preorder request list.</h2>
+      <p class="request-list-intro">Leave your email and we’ll let you know when AHOY Pi pricing, availability, and next steps are ready. This is an interest request, not a preorder or purchase.</p>
+      <form class="request-form" id="ahoy-pi-request-form" action="https://formspree.io/f/xnjwledy" method="POST">
+        <div class="request-field"><label for="ahoy-pi-name">Name <span>(optional)</span></label><input id="ahoy-pi-name" name="name" type="text" autocomplete="name"></div>
+        <div class="request-field"><label for="ahoy-pi-email">Email address</label><input id="ahoy-pi-email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required></div>
+        <input type="hidden" name="_subject" value="AHOY Pi preorder request list">
+        <input type="hidden" name="request_type" value="AHOY Pi availability updates">
+        <button class="request-submit" type="submit">Join the list</button>
+      </form>
+      <p class="request-privacy">We’ll use your details to contact you about AHOY Pi availability. See our <a href="/privacy.html">privacy policy</a>.</p>
+      <div class="request-success" id="ahoy-pi-request-success" role="status" hidden>Thanks for your interest. We’ll be in touch when AHOY Pi details are ready.</div>
+    </section>
     <div class="actions"><a class="button" href="https://app.ahoy.ooo">Open AHOY Streamer</a></div>
     <a class="back" href="/products">← Back to all AHOY products</a>
   </section>
-</main></body></html>
+</main>
+<script>
+  const piDevice = document.getElementById('pi-device');
+  const piShape = document.getElementById('pi-shape');
+  const piFinish = document.getElementById('pi-finish');
+  const piRotation = document.getElementById('pi-rotation');
+  const piRotationValue = document.getElementById('pi-rotation-value');
+  const piDesignStatus = document.getElementById('pi-design-status');
+  const piSaveButton = document.getElementById('pi-save-design');
+  const piTierChoices = [...document.querySelectorAll('input[name="pi-tier"]')];
+  const piOwnPi = document.getElementById('pi-own-pi');
+  const piSetupPreference = document.getElementById('pi-setup-preference');
+  const piCustomLabel = document.getElementById('pi-custom-label');
+  const piCustomLabelControl = document.getElementById('pi-custom-label-control');
+  const piDeviceBrand = document.querySelector('.pi-device-brand');
+  const piDesignStorageKey = 'ahoy-pi-concept-design-v1';
+
+  function applyPiDesign(design) {
+    const tier = ['core', 'living-room', 'custom'].includes(design.tier) ? design.tier : 'core';
+    let shape = ['rounded', 'compact', 'open'].includes(design.shape) ? design.shape : 'rounded';
+    let finish = ['forest', 'midnight', 'sand'].includes(design.finish) ? design.finish : 'forest';
+    const setupPreference = ['simple', 'tinker'].includes(design.setupPreference) ? design.setupPreference : 'simple';
+    const requestedRotation = Number(design.rotation);
+    const rotation = Math.max(-55, Math.min(35, Number.isFinite(requestedRotation) ? requestedRotation : -26));
+    let customLabel = typeof design.customLabel === 'string' ? design.customLabel.slice(0, 12) : '';
+    if (tier === 'core') { shape = 'rounded'; finish = 'forest'; customLabel = ''; }
+    if (tier === 'living-room') { shape = 'rounded'; customLabel = ''; }
+    piTierChoices.forEach(choice => { choice.checked = choice.value === tier; });
+    piShape.value = shape;
+    piFinish.value = finish;
+    piRotation.value = rotation;
+    piOwnPi.checked = Boolean(design.ownPi);
+    piSetupPreference.value = setupPreference;
+    piCustomLabel.value = customLabel;
+    renderPiDesign(false);
+  }
+
+  function currentPiDesign() {
+    const selectedTier = piTierChoices.find(choice => choice.checked)?.value || 'core';
+    return {
+      tier: selectedTier,
+      shape: piShape.value,
+      finish: piFinish.value,
+      rotation: Number(piRotation.value),
+      ownPi: piOwnPi.checked,
+      setupPreference: piSetupPreference.value,
+      customLabel: piCustomLabel.value.trim()
+    };
+  }
+
+  function renderPiDesign(markUnsaved = true) {
+    const design = currentPiDesign();
+    const tier = design.tier;
+    const shapeEditable = tier === 'custom';
+    const finishEditable = tier !== 'core';
+    piShape.disabled = !shapeEditable;
+    piFinish.disabled = !finishEditable;
+    piCustomLabelControl.hidden = !shapeEditable;
+    piCustomLabel.disabled = !shapeEditable;
+    piDevice.dataset.shape = design.shape;
+    piDevice.dataset.finish = design.finish;
+    piDevice.style.transform = `rotateX(-12deg) rotateY(${design.rotation}deg)`;
+    piDeviceBrand.textContent = design.customLabel || 'AHOY';
+    piRotationValue.textContent = `${design.rotation < 0 ? '−' : ''}${Math.abs(design.rotation)}°`;
+    piTierChoices.forEach(choice => {
+      const card = choice.closest('.build-tier');
+      const action = card.querySelector('.build-tier-action');
+      card.classList.toggle('is-selected', choice.checked);
+      action.textContent = choice.checked ? 'Selected build' : 'Choose this build';
+    });
+    if (markUnsaved) piDesignStatus.textContent = 'You have unsaved changes. Save this idea to keep it on this device.';
+  }
+
+  [piShape, piFinish, piRotation, piOwnPi, piSetupPreference, piCustomLabel].forEach(control => {
+    control.addEventListener(control.type === 'range' ? 'input' : 'change', () => renderPiDesign());
+  });
+  piCustomLabel.addEventListener('input', () => renderPiDesign());
+  piTierChoices.forEach(choice => choice.addEventListener('change', () => {
+    if (choice.value === 'core') {
+      piShape.value = 'rounded';
+      piFinish.value = 'forest';
+      piCustomLabel.value = '';
+    } else if (choice.value === 'living-room') {
+      piShape.value = 'rounded';
+      piCustomLabel.value = '';
+    }
+    renderPiDesign();
+  }));
+  renderPiDesign(false);
+
+  try {
+    const savedPiDesign = localStorage.getItem(piDesignStorageKey);
+    if (savedPiDesign) {
+      applyPiDesign(JSON.parse(savedPiDesign));
+      piDesignStatus.textContent = 'Your saved concept is loaded. Change it any time and save again.';
+      piSaveButton.textContent = 'Update saved design';
+    }
+  } catch {
+    piDesignStatus.textContent = 'Design saving is unavailable in this browser. You can still explore the options.';
+  }
+
+  piSaveButton.addEventListener('click', () => {
+    try {
+      localStorage.setItem(piDesignStorageKey, JSON.stringify(currentPiDesign()));
+      piDesignStatus.textContent = 'Design saved in this browser on this device.';
+      piSaveButton.textContent = 'Update saved design';
+    } catch {
+      piDesignStatus.textContent = 'Could not save in this browser. You can still explore the options.';
+    }
+  });
+
+  const requestForm = document.getElementById('ahoy-pi-request-form');
+  const requestSuccess = document.getElementById('ahoy-pi-request-success');
+  requestForm?.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const submitButton = requestForm.querySelector('.request-submit');
+    submitButton.disabled = true;
+    submitButton.textContent = 'Sending…';
+    try {
+      const response = await fetch(requestForm.action, {
+        method: 'POST',
+        body: new FormData(requestForm),
+        headers: { Accept: 'application/json' }
+      });
+      if (!response.ok) throw new Error('Request failed');
+      requestForm.hidden = true;
+      requestSuccess.hidden = false;
+    } catch {
+      submitButton.disabled = false;
+      submitButton.textContent = 'Could not send — try again';
+    }
+  });
+</script>
+</body></html>

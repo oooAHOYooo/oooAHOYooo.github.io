@@ -1639,18 +1639,6 @@
       .event-promo:hover .launch-app-button { transform:translateY(-2px); box-shadow:0 16px 36px rgba(0,0,0,.3); background:#fdfdfd; }
       .event-promo + .seasonal-hero { margin-top:clamp(28px,4vw,44px); }
       @media (max-width:760px) { .event-promo { display:block; min-height:0; } .event-promo-action { margin-top:26px; } }
-      .xbox-promo { display:flex; align-items:center; justify-content:space-between; gap:32px; min-height:clamp(230px,26vw,340px); margin-top:clamp(18px,3vw,28px); padding:clamp(28px,5vw,56px); border:1px solid rgba(135,220,76,.4); border-radius:28px; background:radial-gradient(ellipse at 82% 50%,rgba(75,160,45,.24),transparent 38%),linear-gradient(110deg,rgba(5,15,12,.98),rgba(6,23,16,.92) 62%,rgba(9,37,22,.84)); box-shadow:0 28px 90px rgba(0,0,0,.32); }
-      .xbox-promo-copy { position:relative; z-index:1; }
-      .xbox-promo-kicker { margin-bottom:12px; color:#9bdc65; font-size:.76rem; letter-spacing:.18em; text-transform:uppercase; }
-      .xbox-promo h2 { max-width:10ch; margin:0; color:#fff; font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:clamp(3.2rem,7vw,6.8rem); line-height:.84; letter-spacing:-.012em; text-transform:uppercase; }
-      .xbox-promo p { max-width:38ch; margin:16px 0 0; color:rgba(255,255,255,.8); font-size:clamp(1rem,1.5vw,1.2rem); line-height:1.5; }
-      .xbox-promo-action { margin-top:24px; }
-      .xbox-promo-action .launch-app-button { text-decoration:none; }
-      .xbox-placeholder { position:relative; flex:0 0 clamp(150px,22vw,250px); aspect-ratio:1; display:grid; place-items:center; border:1px solid rgba(155,220,101,.25); border-radius:24px; background:linear-gradient(145deg,rgba(11,30,20,.94),rgba(4,13,9,.88)); box-shadow:0 20px 55px rgba(0,0,0,.35),inset 0 1px rgba(255,255,255,.06); }
-      .xbox-placeholder img { display:block; width:74%; aspect-ratio:1; object-fit:cover; border-radius:22%; box-shadow:0 8px 24px rgba(93,190,49,.28); }
-      .xbox-placeholder-label { position:absolute; bottom:12px; left:0; right:0; color:rgba(212,242,197,.72); font-size:.6rem; font-weight:700; letter-spacing:.18em; text-align:center; text-transform:uppercase; }
-      @media (max-width:760px) { .xbox-promo { align-items:flex-start; } .xbox-placeholder { flex-basis:120px; } .xbox-placeholder-label { display:none; } }
-      @media (max-width:540px) { .xbox-promo { display:block; } .xbox-placeholder { width:min(180px,100%); margin:28px auto 0; } }
       .seasonal-hero { display:grid; grid-template-columns:minmax(0,1fr) minmax(260px,.72fr); gap:clamp(28px,5vw,64px); align-items:center; position:relative; overflow:hidden; min-height:clamp(280px,32vw,420px); margin-top:clamp(70px,12vh,130px); padding:clamp(30px,5vw,64px); border:1px solid rgba(91,190,199,.3); border-radius:28px; background:linear-gradient(110deg,rgba(3,12,22,.96),rgba(3,12,22,.88) 60%,rgba(3,12,22,.72)),url('https://app.ahoy.ooo/static/event-imgs/poets13/poets-and-friends-13-poster.png') center/cover no-repeat; box-shadow:0 28px 90px rgba(0,0,0,.32); }
       .seasonal-hero-copy { position:relative; z-index:1; }
       .seasonal-hero-art { position:relative; z-index:1; display:block; overflow:hidden; border:1px solid rgba(255,255,255,.24); border-radius:18px; box-shadow:0 20px 55px rgba(0,0,0,.42); }
@@ -1736,46 +1724,33 @@
       .about-ahoy h2 { margin:0; color:#fff; font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:clamp(3rem,6vw,5.5rem); line-height:.86; letter-spacing:-.015em; text-transform:uppercase; }
       .about-ahoy p { max-width:680px; margin:0; color:rgba(255,255,255,.62); line-height:1.65; }
       .about-ahoy a { color:#ff78b4; }
-      .ahoy-map { position:relative; margin-top:24px; padding:clamp(20px,4vw,42px); overflow:hidden; border:1px solid rgba(120,208,210,.2); border-radius:26px; background:linear-gradient(145deg,rgba(9,28,43,.58),rgba(8,12,26,.42)); box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 22px 60px rgba(0,0,0,.18); backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px); }
-      .ahoy-map::before { content:""; position:absolute; inset:0; pointer-events:none; background:radial-gradient(ellipse at 50% 48%,rgba(120,208,210,.1),transparent 48%),radial-gradient(ellipse at 82% 15%,rgba(255,120,180,.07),transparent 35%); }
-      .ahoy-map-heading { position:relative; z-index:1; display:flex; align-items:end; justify-content:space-between; gap:20px; margin-bottom:24px; }
-      .ahoy-map-heading h3 { margin:7px 0 0; color:#fff; font-family:'Barlow Condensed',sans-serif; font-size:clamp(1.8rem,3vw,2.6rem); line-height:.95; text-transform:uppercase; }
-      .ahoy-map-heading p { max-width:340px; margin:0; color:rgba(255,255,255,.52); font-size:.82rem; line-height:1.5; }
-      .ahoy-map-kicker { color:#78d0d2; font-size:.68rem; letter-spacing:.16em; text-transform:uppercase; }
-      .ahoy-map-stage { position:relative; display:grid; grid-template-columns:minmax(0,1fr) 160px minmax(0,1fr); grid-template-rows:1fr 1fr auto; gap:18px 34px; align-items:center; min-height:500px; }
-      .ahoy-map-connections { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; }
-      .ahoy-map-connections path { fill:none; stroke:rgba(120,208,210,.24); stroke-width:1.5; stroke-dasharray:4 7; vector-effect:non-scaling-stroke; }
-      .ahoy-map-item { position:relative; z-index:1; }
-      .ahoy-map-node { position:relative; z-index:1; display:block; width:min(100%,285px); padding:17px 19px; border:1px solid rgba(255,255,255,.14); border-radius:17px; background:linear-gradient(145deg,rgba(255,255,255,.085),rgba(255,255,255,.025)); box-shadow:0 12px 30px rgba(0,0,0,.16),inset 0 1px 0 rgba(255,255,255,.08); color:inherit; text-decoration:none; transition:transform .2s ease,border-color .2s ease,background .2s ease; }
-      .ahoy-map-node:hover { transform:translateY(-2px); border-color:rgba(120,208,210,.5); background:rgba(120,208,210,.09); }
-      .ahoy-map-node:focus-visible { outline:2px solid #8ee8e4; outline-offset:3px; }
-      .ahoy-map-item--streamer { grid-column:1; grid-row:1; justify-self:end; }
-      .ahoy-map-item--player { grid-column:1; grid-row:2; justify-self:end; }
-      .ahoy-map-item--cli { grid-column:3; grid-row:2; justify-self:start; }
-      .ahoy-map-node small { display:block; margin-bottom:7px; color:#ff91bd; font-size:.62rem; letter-spacing:.14em; text-transform:uppercase; }
-      .ahoy-map-node strong { display:block; color:#fff; font-size:1rem; }
-      .ahoy-map-node span { display:block; margin-top:5px; color:rgba(255,255,255,.5); font-size:.76rem; line-height:1.4; }
-      .ahoy-map-center { position:relative; z-index:2; grid-column:2; grid-row:1 / span 2; display:grid; place-items:center; justify-self:center; width:154px; aspect-ratio:1; border:1px solid rgba(120,208,210,.42); border-radius:50%; background:radial-gradient(circle at 35% 30%,rgba(120,208,210,.16),rgba(5,18,30,.78) 70%); box-shadow:0 0 0 8px rgba(120,208,210,.035),0 0 48px rgba(91,190,199,.16),inset 0 1px 0 rgba(255,255,255,.22); }
-      .ahoy-map-center img { display:block; width:84%; height:auto; filter:invert(1); mix-blend-mode:screen; }
-      .ahoy-map-id-layer { position:relative; z-index:2; grid-column:1 / -1; grid-row:3; justify-self:center; width:min(100%,560px); padding:14px 20px; border:1px solid rgba(255,120,180,.24); border-radius:16px; background:linear-gradient(120deg,rgba(255,120,180,.07),rgba(120,208,210,.08)); text-align:center; }
-      .ahoy-map-id-layer small { display:block; margin-bottom:4px; color:#ff91bd; font-size:.58rem; letter-spacing:.15em; text-transform:uppercase; }
-      .ahoy-map-id-layer a { color:#fff; text-decoration:none; }
-      .ahoy-map-id-layer a:hover { color:#8ee8e4; }
-      .ahoy-map-id-layer strong { font-size:1rem; }
-      .ahoy-map-id-layer span { display:block; margin-top:3px; color:rgba(255,255,255,.58); font-size:.76rem; }
-      @media (max-width:640px) {
-        .ahoy-map-heading { align-items:start; flex-direction:column; }
-        .ahoy-map-heading p { max-width:42ch; }
-        .ahoy-map-stage { grid-template-columns:1fr 1fr; grid-template-rows:auto auto auto auto; gap:12px; min-height:0; }
-        .ahoy-map-connections { display:none; }
-        .ahoy-map-center { grid-column:1 / span 2; grid-row:1; width:94px; margin:0 auto 8px; }
-        .ahoy-map-item { grid-row:auto; grid-column:auto; justify-self:stretch; width:auto; }
-        .ahoy-map-node { padding:14px; }
-        .ahoy-map-node strong { font-size:.9rem; }
-        .ahoy-map-node span { font-size:.7rem; }
-        .ahoy-map-id-layer { grid-column:1 / span 2; grid-row:auto; }
-      }
-      @media (prefers-reduced-motion:reduce) { .ahoy-map-node { transition:none; } }
+      .ahoy-map { position:relative; margin-top:24px; padding:clamp(22px,4vw,46px); overflow:hidden; border:1px solid rgba(120,208,210,.2); border-radius:28px; background:linear-gradient(145deg,rgba(9,28,43,.72),rgba(8,12,26,.58)); box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 22px 60px rgba(0,0,0,.18); backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px); }
+      .ahoy-map::before { content:""; position:absolute; inset:0; pointer-events:none; background:radial-gradient(ellipse at 12% 8%,rgba(120,208,210,.1),transparent 36%),radial-gradient(ellipse at 90% 12%,rgba(255,120,180,.08),transparent 34%); }
+      .ahoy-map-heading { position:relative; z-index:1; margin-bottom:26px; }
+      .ahoy-map-heading h3 { margin:8px 0 10px; color:#fff; font-family:'Barlow Condensed',sans-serif; font-size:clamp(2.4rem,5vw,4.4rem); line-height:.9; text-transform:uppercase; }
+      .ahoy-map-heading p { max-width:54ch; margin:0; color:rgba(255,255,255,.66); font-size:clamp(.95rem,1.4vw,1.08rem); line-height:1.6; }
+      .ahoy-map-kicker { color:#78d0d2; font-size:.72rem; font-weight:600; letter-spacing:.16em; text-transform:uppercase; }
+      .ahoy-product-link { display:inline-flex; align-items:center; gap:8px; margin-top:23px; color:#8ee8e4; font-size:.9rem; font-weight:700; text-decoration:none; transition:gap .2s ease,color .2s ease; }
+      .ahoy-product-link:hover { gap:13px; color:#fff; }
+      .ahoy-product-link:focus-visible,.ahoy-product-card:focus-visible { outline:2px solid #8ee8e4; outline-offset:4px; }
+      .ahoy-product-grid { position:relative; z-index:1; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; }
+      .ahoy-product-card { --product-accent:#ff91bd; display:flex; flex-direction:column; min-height:206px; padding:20px; border:1px solid rgba(255,255,255,.12); border-radius:19px; background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.028)); color:inherit; text-decoration:none; box-shadow:0 12px 28px rgba(0,0,0,.14),inset 0 1px 0 rgba(255,255,255,.05); transition:transform .2s ease,border-color .2s ease,background .2s ease,box-shadow .2s ease; }
+      .ahoy-product-card:hover { transform:translateY(-3px); border-color:color-mix(in srgb,var(--product-accent) 52%,transparent); background:linear-gradient(145deg,color-mix(in srgb,var(--product-accent) 11%,rgba(255,255,255,.06)),rgba(255,255,255,.025)); box-shadow:0 18px 36px rgba(0,0,0,.22); }
+      .ahoy-product-card--pink { --product-accent:#ff91bd; }
+      .ahoy-product-card--violet { --product-accent:#c2a6ff; }
+      .ahoy-product-card--blue { --product-accent:#8fc9ff; }
+      .ahoy-product-card--green { --product-accent:#a8df86; }
+      .ahoy-product-card--gold { --product-accent:#ffd17e; }
+      .ahoy-product-card-top { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:16px; }
+      .ahoy-product-icon { display:grid; place-items:center; width:40px; height:40px; border:1px solid color-mix(in srgb,var(--product-accent) 34%,transparent); border-radius:13px; background:color-mix(in srgb,var(--product-accent) 12%,transparent); color:var(--product-accent); font-family:'IBM Plex Mono',monospace; font-size:.82rem; font-weight:700; letter-spacing:-.04em; }
+      .ahoy-product-icon img { display:block; width:100%; height:100%; border-radius:inherit; object-fit:cover; }
+      .ahoy-product-status { color:rgba(255,255,255,.48); font-size:.62rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; }
+      .ahoy-product-card h4 { margin:0; color:#fff; font-size:1.08rem; font-weight:700; letter-spacing:-.02em; }
+      .ahoy-product-card p { margin:8px 0 18px; color:rgba(255,255,255,.62); font-size:.82rem; line-height:1.55; }
+      .ahoy-product-card .ahoy-product-link { margin-top:auto; font-size:.8rem; }
+      @media (max-width:900px) { .ahoy-product-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+      @media (max-width:640px) { .ahoy-map { padding:22px 18px; } .ahoy-product-grid { grid-template-columns:1fr; gap:11px; } .ahoy-product-card { min-height:0; padding:18px; } }
+      @media (prefers-reduced-motion:reduce) { .ahoy-product-card,.ahoy-product-link { transition:none; } .ahoy-product-card:hover { transform:none; } }
       .ecosystem-newsletter { margin-top:clamp(60px,8vw,100px); padding:clamp(32px,5vw,56px); border:1px solid rgba(255,120,180,.28); border-radius:28px; background:linear-gradient(135deg, rgba(8,26,44,.95) 0%, rgba(20,14,34,.92) 50%, rgba(10,40,50,.9) 100%); box-shadow:0 28px 90px rgba(0,0,0,.35), 0 0 40px rgba(255,120,180,.08); text-align:center; }
       .ecosystem-newsletter .eyebrow { color:#ff78b4; font-size:.76rem; letter-spacing:.18em; text-transform:uppercase; font-weight:700; margin-bottom:12px; }
       .ecosystem-newsletter h2 { margin:0 0 14px; color:#fff; font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:clamp(2.8rem,6vw,5.2rem); line-height:.88; letter-spacing:-.015em; text-transform:uppercase; }
@@ -1812,22 +1787,44 @@
         <main>
           <a class="launch-app" href="https://app.ahoy.ooo" aria-labelledby="launch-app-title"><div class="launch-app-copy"><div class="launch-app-kicker">Ahoy Streamer · web app</div><h2 id="launch-app-title">Launch Streamer.</h2><p>Find independent music, podcasts, events, and film from New Haven creators.</p></div><div class="launch-app-action"><span class="launch-app-button">Launch web app</span></div></a>
           <a class="event-promo" href="https://partiful.com/e/dRxJ53mjASqtlEc04jDo" target="_blank" rel="noopener noreferrer" aria-labelledby="event-promo-title"><div class="event-promo-copy"><div class="event-promo-kicker">November 19, 2026 · 6:30 PM · Koffee?</div><h2 id="event-promo-title">Poets and Friends #15</h2><p>Join us in New Haven for an evening of poetry, community, and good company.</p></div><div class="event-promo-action"><span class="launch-app-button">RSVP on Partiful</span></div></a>
-          <section class="xbox-promo" aria-labelledby="xbox-promo-title"><div class="xbox-promo-copy"><div class="xbox-promo-kicker">Now on Xbox</div><h2 id="xbox-promo-title">AHOY on Xbox</h2><p>Find AHOY in the Xbox Store.</p><div class="xbox-promo-action"><a class="launch-app-button" href="https://apps.microsoft.com/detail/9n6qb77pd6rt?hl=en-US&amp;gl=AZ" target="_blank" rel="noopener noreferrer">View in Xbox Store ↗</a></div></div><div class="xbox-placeholder" role="img" aria-label="AHOY Xbox app icon"><img src="https://store-images.s-microsoft.com/image/apps.55230.14009246088898516.ca3a47ba-acc9-47c0-b92d-b45f9332b001.7407634f-c14c-43cf-b642-f2b1d0a3f0a8?h=170" alt="" loading="lazy" width="170" height="170"><span class="xbox-placeholder-label">Xbox app icon</span></div></section>
           <section class="seasonal-hero" aria-labelledby="seasonal-title"><div class="seasonal-hero-copy"><div class="seasonal-kicker">Now streaming · 15 live performance clips</div><h2 id="seasonal-title">Poets &amp; Friends #13.</h2><p>All acts from the September 24 show at Koffee? on Audubon are now streaming.</p><div class="launch-app-action"><a class="launch-app-button" href="https://app.ahoy.ooo/whats-new/2026/sep/videos/poets-friends-13-all-acts-now-streaming-2026-09-25">Watch all 15 acts</a></div></div><a class="seasonal-hero-art" href="https://app.ahoy.ooo/whats-new/2026/sep/videos/poets-friends-13-all-acts-now-streaming-2026-09-25" aria-label="Watch Poets and Friends 13, featuring Paul Wildy"><img src="https://app.ahoy.ooo/static/thumbnails/poets-and-friends-13-part-1-paul-wildy_7aeecfa84620.jpg" alt="Poets and Friends 13 performance with Paul Wildy" loading="lazy" width="1200" height="630"></a></section>
         <section class="ahoy-map" id="downloads" aria-labelledby="ahoy-map-title">
           <div class="ahoy-map-heading">
-            <div><div class="ahoy-map-kicker">A connected ecosystem</div><h3 id="ahoy-map-title">One home. Many ways in.</h3></div>
-            <p>Explore the AHOY products and how they fit together. Choose a way to discover, support, collect, or organize independent media.</p>
+            <div class="ahoy-map-kicker">A good place to start</div>
+            <h3 id="ahoy-map-title">Find your way into AHOY.</h3>
+            <p>Come discover something new, bring your own music along, or find the tools that fit how you like to listen.</p>
           </div>
-          <div class="ahoy-map-stage" role="group" aria-label="AHOY products connected through shared identity">
-            <svg class="ahoy-map-connections" viewBox="0 0 1000 560" preserveAspectRatio="none" aria-hidden="true">
-              <path d="M500 250 L180 130 M500 250 L180 370 M500 250 L820 370 M500 250 L500 510" />
-            </svg>
-            <div class="ahoy-map-item ahoy-map-item--streamer"><a class="ahoy-map-node" href="https://app.ahoy.ooo" target="_blank" rel="noopener noreferrer"><small>Listen · Watch · Discover</small><strong>Ahoy Streamer</strong><span>Streams music, podcasts, events, and films from New Haven creators.</span></a></div>
-            <div class="ahoy-map-item ahoy-map-item--player"><a class="ahoy-map-node" href="https://github.com/oooAHOYooo/ahoy-player/releases/latest" target="_blank" rel="noopener noreferrer"><small>Collect · Enjoy</small><strong>Ahoy Player</strong><span>Your desktop home for independent media.</span></a></div>
-            <div class="ahoy-map-item ahoy-map-item--cli"><a class="ahoy-map-node" href="/products"><small>Build · Organize</small><strong>Ahoy Player CLI</strong><span>Bring your media library into the terminal.</span></a></div>
-            <div class="ahoy-map-center" role="img" aria-label="AHOY"><img src="/images/updatedAhoy_A.png" alt="" width="3000" height="1478" loading="lazy"></div>
-            <div class="ahoy-map-id-layer"><small>Shared identity layer</small><a href="https://id.ahoy.ooo/signin" target="_blank" rel="noopener noreferrer"><strong>Ahoy ID</strong><span>One account across AHOY products.</span></a></div>
+          <div class="ahoy-product-grid" aria-label="More AHOY products">
+            <a class="ahoy-product-card ahoy-product-card--pink" href="https://app.ahoy.ooo" target="_blank" rel="noopener noreferrer">
+              <div class="ahoy-product-card-top"><span class="ahoy-product-icon" aria-hidden="true">▶</span><span class="ahoy-product-status">Web app</span></div>
+              <h4>Ahoy Streamer</h4><p>Discover New Haven music, podcasts, events, and films—all in one place.</p>
+              <span class="ahoy-product-link">Explore Ahoy Streamer <span aria-hidden="true">↗</span></span>
+            </a>
+            <a class="ahoy-product-card ahoy-product-card--violet" href="/product-guides/streamer-tui.html">
+              <div class="ahoy-product-card-top"><span class="ahoy-product-icon" aria-hidden="true">&gt;_</span><span class="ahoy-product-status">Preview release</span></div>
+              <h4>AHOY Streamer TUI</h4><p>Explore AHOY from your keyboard with a fast, terminal-based app.</p>
+              <span class="ahoy-product-link">Meet Streamer TUI <span aria-hidden="true">→</span></span>
+            </a>
+            <a class="ahoy-product-card ahoy-product-card--blue" href="/product-guides/player-cli.html">
+              <div class="ahoy-product-card-top"><span class="ahoy-product-icon" aria-hidden="true">$_</span><span class="ahoy-product-status">For your terminal</span></div>
+              <h4>AHOY Player CLI</h4><p>Scan, organize, and play your local music library from the command line.</p>
+              <span class="ahoy-product-link">Explore Player CLI <span aria-hidden="true">→</span></span>
+            </a>
+            <a class="ahoy-product-card ahoy-product-card--green" href="https://id.ahoy.ooo/signin" target="_blank" rel="noopener noreferrer">
+              <div class="ahoy-product-card-top"><span class="ahoy-product-icon" aria-hidden="true">ID</span><span class="ahoy-product-status">One AHOY account</span></div>
+              <h4>Ahoy ID</h4><p>One simple sign-in to carry your account across AHOY products.</p>
+              <span class="ahoy-product-link">Sign in with Ahoy ID <span aria-hidden="true">→</span></span>
+            </a>
+            <a class="ahoy-product-card ahoy-product-card--gold" href="/product-guides/pi.html">
+              <div class="ahoy-product-card-top"><span class="ahoy-product-icon" aria-hidden="true">TV</span><span class="ahoy-product-status">In development</span></div>
+              <h4>AHOY Pi</h4><p>A little AHOY box for your TV, built to bring Streamer to the big screen.</p>
+              <span class="ahoy-product-link">Meet AHOY Pi <span aria-hidden="true">→</span></span>
+            </a>
+            <a class="ahoy-product-card ahoy-product-card--green" href="https://apps.microsoft.com/detail/9n6qb77pd6rt?hl=en-US&amp;gl=AZ" target="_blank" rel="noopener noreferrer">
+              <div class="ahoy-product-card-top"><span class="ahoy-product-icon"><img src="https://store-images.s-microsoft.com/image/apps.55230.14009246088898516.ca3a47ba-acc9-47c0-b92d-b45f9332b001.7407634f-c14c-43cf-b642-f2b1d0a3f0a8?h=170" alt="" loading="lazy" width="40" height="40"></span><span class="ahoy-product-status">On Xbox</span></div>
+              <h4>AHOY on Xbox</h4><p>Bring AHOY to the big screen. Find the app in the Xbox Store.</p>
+              <span class="ahoy-product-link">View in Xbox Store <span aria-hidden="true">↗</span></span>
+            </a>
           </div>
         </section>
         </main>
