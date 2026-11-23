@@ -1,3 +1,22 @@
+# AHOY Analytics & Traffic Updates
+
+## Automated Daily Traffic Digest (Resend + GitHub Actions)
+
+A scheduled GitHub Actions workflow (`.github/workflows/daily-traffic-report.yml`) runs daily at 14:00 UTC (9:00 AM EST) and dispatches a formatted audience and traffic digest via Resend.
+
+### Setup (GitHub Repository Secrets):
+In GitHub → **Settings** → **Secrets and variables** → **Actions**, add:
+- `RESEND_API_KEY`: Your API key from [resend.com](https://resend.com)
+- `NOTIFICATION_EMAIL`: Your email address where you want to receive the daily update
+- `RESEND_FROM_EMAIL`: (Optional) Sender email, e.g. `traffic@ahoy.ooo` (defaults to `AHOY Traffic <onboarding@resend.dev>`)
+- `POSTHOG_PERSONAL_API_KEY`: (Optional) PostHog personal API key to pull live PostHog HogQL stats
+- `POSTHOG_PROJECT_ID`: (Optional) PostHog numeric project ID
+
+To trigger an immediate test report:
+Go to GitHub → **Actions** → **Daily Traffic Report** → **Run workflow**.
+
+---
+
 # Static Site Redirect Tracking
 
 Two options for tracking redirects on your static GitHub Pages site:
